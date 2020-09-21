@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="evolve_lfm20_00_000" listed="false">
+    <label>LFM-20</label>
+    <description><![CDATA[
+<br /><h1>Overview</h1><p>Radio Frequency (RF) Controlled, 120 VAC, Scene Capable, Isolated Contact Fixture Module</p> <br /><h2>Inclusion Information</h2><p> Tap the button.</p> <br /><h2>Exclusion Information</h2><p>Tap the button 3 times, then press and hold (Ex. tap, tap, tap, hold)</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Evolve</property>
+      <property name="modelId">LFM-20</property>
+      <property name="manufacturerId">0113</property>
+      <property name="manufacturerRef">5246:3133</property>
+      <property name="dbReference">356</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Night Light<br /><h1>Overview</h1><p>In night-light mode the LED on the switch will turn ON when the switch is turned OFF.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

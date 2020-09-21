@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="isurpass_smokedetector_00_000" listed="false">
+    <label>Smoke Detector Carbon monoxide detector, smoke detector</label>
+    <description><![CDATA[
+Carbon monoxide detector, smoke detector<br /><h1>Overview</h1><p>The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.</p> <br /><h2>Inclusion Information</h2><ul><li>Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.</li> <li>If Inclusion Process is successful, Green led will turn off.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Press the pin 3 times within 1.5s.</li> <li>If Exclusion Process is successful, Green led is Blinking 6 times, then turn off. </li> </ul><br /><h2>Wakeup Information</h2><ul><li>Wake up Notification is transmitted every 24 hours by default.</li> <li>Wake up Notification is transmitted after Notification Report is Transmitted.</li> </ul>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen iSurpass Technology Co. ,Ltd</property>
+      <property name="modelId">Smoke Detector</property>
+      <property name="manufacturerId">021C</property>
+      <property name="manufacturerRef">8002:1000</property>
+      <property name="dbReference">728</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Battery, Notification, Reset locally Notification, Binary report<br /><h1>Overview</h1><p>Association group 1: Lifeline association groupInclude command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Root device Group (binary sensor)</label>
+        <description><![CDATA[
+Binary smoke sensor via lifeline and on status Chance of smoke detection<br /><h1>Overview</h1><p>Association group 2: Root Device group(Binary Sensor)Binary Sensor Command Class: Compatible with 300 series1-Binary Sensor reports status of smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Root device Group (notification)</label>
+        <description><![CDATA[
+smoke status as notification report and on status change of smoke detection<br /><h1>Overview</h1><p>Association group 3: Root Device group(Notification)1-Notification reports reports status of detect smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

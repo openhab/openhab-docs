@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vrcz1_00_000" listed="false">
+    <label>VRCZ1 1-Zone Dimming Controller/ Virtual Matching Dimmer Remote</label>
+    <description><![CDATA[
+1-Zone Dimming Controller/ Virtual Matching Dimmer Remote<br /><h1>Overview</h1><ul><li>Leviton Vizia+ 1 Zone dimming controller/Virtual matching dimmer remote</li> <li>Controls dimming of remote load</li> </ul><br /><h2>Inclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Brightness</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRCZ1</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0D02:0224</property>
+      <property name="dbReference">1208</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The VRCZ1 can be associated with a single device.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

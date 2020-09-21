@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fortrezz_wwa02_00_000" listed="false">
+    <label>WWA-01 / WWA-02 Wireless Water and Temperature Alarm</label>
+    <description><![CDATA[
+Wireless Water and Temperature Alarm<br /><h1>Overview</h1><p> This product will provide you with the peace of mind and protection you expect. Leaking pipes, corroded water heaters, fixtures in bathrooms and laundry rooms, refrigerator drip pans, etc. can all cause water damage. The WWA-01AA is a Z-WaveTM enabled device and will send a water leak alert on any Z-WaveTM enabled network. A WWA-01AA unit that is not in a Z-WaveTM network will still alert you to water leaks using the audio alarm. The WWA-01AA must not be used in life support and/or safety applications. Information provided in this manual is for your convenience and may be superseded by updates. The specifications and this manual are subject to change without notice. It is your responsibility to ensure that the WWA-01AA meets your specifications.</p> <br /><h2>Inclusion Information</h2><p>1) Set up the inclusion mode at the controller; 2) Press the button (or hold the button for approx. 2 seconds) until the controller indicates the unit has been included in the network. Also, a beep will be heard when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode. </p> <br /><h2>Exclusion Information</h2><p>1) Set up the exclusion mode at the controller; 2) Press the button for approx. 2 seconds until the controller indicates the unit has been removed from the network. A beep will also be heard when the exclusion completes.</p> <br /><h2>Wakeup Information</h2><p> To remain awake and listen for commands (when in a network), press and hold the button for at least 2 seconds. The WWA-01AA will stay awake for approx. 30 seconds. </p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">FortrezZ LLC</property>
+      <property name="modelId">WWA-01 / WWA-02</property>
+      <property name="manufacturerId">0084</property>
+      <property name="manufacturerRef">0053:0216,0061:010C,0063:010C</property>
+      <property name="dbReference">222</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Low Temperature Trigger Point</label>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: High Temperature Trigger Point</label>
+        <default>70</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Water and Temperature Alarms</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Water Alarms</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Temperature Alarms</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

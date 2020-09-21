@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_tuxedotouchwifi_00_000" listed="false">
+    <label>Tuxedo Touch Tuxedo Touch Keypad and Z-Wave Controller</label>
+    <description><![CDATA[
+Tuxedo Touch Keypad and Z-Wave Controller<br /><h1>Overview</h1><p>Honeywell Home Tuxedo Touch is a 7", high-resolution graphic touchscreen and controller that integrates security with home and business automation. It provides opportunities to capture new prospects and markets by seamlessly integrating security with voice commands, video viewing and recording, and the ability to control Z-Wave® enabled thermostats, lights, locks and shades.  It may be used as a secondary controller within a Z-Wave network.</p> <br /><h2>Inclusion Information</h2><p><strong>Note that any z-wave devices that may be on the Tuxedo Touch if it acts as a primary controller will be removed when it is added as a secondary controller!  </strong>It is recommended that all devices that may be on the Tuxedo Touch if it acts as primary controller be manually removed and added to the new primary controller before changing the Tuxedo Touch to a secondary controller.</p> <p>Note that all devices on the primary controller will be added to the Tuxedo Touch when it becomes a secondary controller, but device names will not be moved over.  They must manually be changed on the Tuxedo Touch if this is desired.</p> <p>Access the Automation menu from the main page of the Tuxedo Touch.  Press the Z-Wave Setup button (third button from the left) and toggle the Z-Wave Primary Ctrl button to change the Tuxedo Touch to be a secondary controller.  It will prompt you to allow the change.</p> <p>Put the primary controller in inclusion mode.</p> <p>From the Z-Wave Setup screen on the Tuxedo Touch, press the Add Device button.  The primary controller should add the Tuxedo Touch as a secondary controller.  If successful, the Tuxedo Touch will display "Controller Add Success."</p> <br /><h2>Exclusion Information</h2><p>Put the primary controller in exclusion mode.</p> <p>On the Tuxedo Touch, press Automation and then Z-Wave Setup.  From the Z-Wave Setup screen, press Remove Device.</p> <p>From the Z-Wave Setup screen on the Tuxedo Touch, press the Add Device button.  The primary controller should exclude the Tuxedo Touch as a secondary controller.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">Tuxedo Touch</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">941</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

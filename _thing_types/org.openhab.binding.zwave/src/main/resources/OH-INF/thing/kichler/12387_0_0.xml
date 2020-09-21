@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kichler_12387_00_000" listed="false">
+    <label>12387 Design Pro LED Z Wave Dimmer Module</label>
+    <description><![CDATA[
+Design Pro LED Z Wave Dimmer Module<br /><h1>Overview</h1><p>The Kichler Z-Wave® full range dimmer is designed to allow your Kichler Design Pro LED fixtures to communicate with one another as well as to be added to an already existing Z-Wave network.</p> <br /><h2>Inclusion Information</h2><p><strong>NOTE: There is a time limit of approx. 20 seconds to complete Step 1. If light fixture(s) blink 10 times while performing Step 1, this means that the time has expired and it will be necessary to repeat the process from the beginning.</strong></p> <ol><li>Press &amp; release recessed RESET button. (The secondary dimmer light fixture will blink 2 times)</li> <li>Press &amp; hold both (+) button and (-) button until both the primary dimmer light fixture and secondary dimmer light fixture blink 2 times. (Hold for approx. 2 seconds)</li> </ol><br /><h2>Exclusion Information</h2><p><strong>NOTE: There is a time limit of approx. 20 seconds to complete Step 1. If light fixture(s) blink 10 times while performing Step 1, this means that the time has expired and it will be necessary to repeat the process from the beginning.</strong></p> <ol><li>Press &amp; release recessed RESET button. (Secondary dimmer light fixture will blink 2 times)</li> <li>Press &amp; hold both (+) and (-) until both the primary and secondary dimmer light fixtures blink 2 times (Hold approx. 2 seconds)</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Kichler</property>
+      <property name="modelId">12387</property>
+      <property name="manufacturerId">0114</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">668</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

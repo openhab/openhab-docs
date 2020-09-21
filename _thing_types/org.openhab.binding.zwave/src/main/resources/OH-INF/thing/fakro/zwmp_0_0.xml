@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_zwmp_00_000" listed="false">
+    <label>ZWMP Weather Module</label>
+    <description><![CDATA[
+Weather Module<br /><h1>Overview</h1><p>The ZWMP weather module (performing the controlling function similarly to the ZWP10 remote control and ZWK10 keyboard) enables remote control of electronic accessories compatible with the Z-Wave system, e.g. ZWS12 or ZWS30 motors for operating FAKRO roof windows. This module is equipped with three digital inputs (No. 7, 8 and 9 in Figure 1) into which signals from various external devices can be plugged, e.g. rain or wind sensors, thermostat, timer switch, EIB system, etc. This module can operate up to 231 devices simultaneously or in groups</p> <br /><h2>Inclusion Information</h2><p>Associating the weather module (controller) results in its being categorized as SECONDARY. Associating the module with the network consists in sending data to it from PRIMARY controller. </p> <p>Press “In/Ex” button three times in ZWMP module which is to be added to the network. </p> <p>After successful inclusion lights 2 &amp; 4 should be on steady.</p> <p>Lights 1 &amp; 3 flash for 2-3 sec. if there is a programming error.</p> <br /><h2>Exclusion Information</h2><p>Restoring default settings of the controller leads to the following information being deleted from its memory:</p> <ul><li>network, to which the module has been added;</li> <li>devices associated with the ZWMP module.</li> </ul><p> Within 1.5 sec., press:</p> <ul><li><strong>“In/Ex”</strong> button twice and then</li> <li><strong>SEL</strong> button once.</li> </ul><p>Alternate flashing of 1&amp;4 and then 2&amp;3 indocate default settings have been restored.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">ZWMP</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0007:0001</property>
+      <property name="dbReference">636</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Group 6</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_ubs_01_000" listed="false">
+    <label>WiDom Universal Relay Switch WiDom Universal Relay Switch</label>
+    <description><![CDATA[
+WiDom Universal Relay Switch<br /><h1>Overview</h1><p>WiDOM Universal Relay Switch is an ON\\OFF device based on latching relay and can be used as both a local and remote switch.</p> <br /><h2>Inclusion Information</h2><p>By default, if the device is not included in any network, as soon as it is powered the Network Wide Inclusion procedure starts and lasts for about 1 minute. The procedure can be reactivated at the next device restart or by <strong>pressing the (R) button</strong>.</p> <p>The device may be included in the network through Normal Inclusion by <strong>pressing the (B) button once or three times or alternatively by pressing the external switch once. </strong></p> <p>INFO:</p> <p>During the inclusion procedure activated by a single click on the external switch, the system also automatically determines the switch type (See parameter No. 62)</p> <br /><h2>Exclusion Information</h2><p>After the exclusion function has been activated from the controller, the device can be removed, putting it in <em>Learning Mode</em> by</p> <p><strong>pressing the (B) button once or three times</strong></p> <p>or more conveniently by</p> <p><strong>using the external switch</strong> after having enabled the learning mode activation from external switch (see parameter N°65).</p> <br /><h2>Wakeup Information</h2><p>If there is a SUC (Static Update Controller) or SIS (SUC ID Server) in the network, a network update can be requested by pr<strong>essing the external switch four times. </strong></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WiDom Universal Relay Switch</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">0012:0104</property>
+      <property name="versionMin">1.0</property>
+      <property name="versionMax">1.7</property>
+      <property name="dbReference">298</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Device status 1 click</label>
+        <description>Device status when the external switch receives 1 click</description>
+        <default>1</default>
+        <options>
+          <option value="1">TOGGLE</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Device status 2 click</label>
+        <description><![CDATA[
+Device status when the external switch receives 2 clicks<br /><h1>Overview</h1><p>Device status when the external switch receives 2 clicks</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">TOGGLE</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices that will be notified of changes in its status</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices that will be controlled by a single click on the external switch</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices that will be controlled by a double click on the external switch</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices that will be controlled by a triple click on the external switch</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices that will be controlled by hold on the external switch</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

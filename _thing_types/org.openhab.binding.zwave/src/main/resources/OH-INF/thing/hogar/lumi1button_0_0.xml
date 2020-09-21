@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hogar_lumi1button_00_000" listed="false">
+    <label>Lumi 1 button ZWave Z-Wave Switch with 1 on/off light switches</label>
+    <description><![CDATA[
+Z-Wave Switch with 1 on/off light switches<br /><h1>Overview</h1><p>With a stunning glass face and an advanced capacitive touch sensor, all you need to do is just use a finger for turning your lights on and off. Tap once on the backlit touch button to switch the device on and tap it again to turn it off, it’s that simple. This 1 Touch Switch ensures an accurate response to every command that is sent through it.<br /><br />The Hogar 1 Touch Switch can operate either independently or as a part of the Hogar smart home automation system, and even with any other certified Z-Wave home automation system. It is an extremely easy-to-use panel that can be installed in a standard BS 3 gang box. Its operating capabilities include a bi-stable mode, a relay mode or a touch pulse mode for scene control with a maximum load current of 3 amp. It communicates with the Hogar smart home automation system using the Z-Wave wireless communication protocol.</p> <br /><h2>Inclusion Information</h2><p>Touch and hold any key on the panel for more than 5 seconds. All indication lights will blink in blue. At this point release the key, the touch panel will start the inclusion process.</p> <br /><h2>Exclusion Information</h2><p>Touch and hold any key on the panel for more than 5 seconds. All indication lights will blink in blue. At this point release the key, the touch panel will start the exclusion process.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hogar Controls</property>
+      <property name="modelId">Lumi 1 button ZWave</property>
+      <property name="manufacturerId">0293</property>
+      <property name="manufacturerRef">0003:4411</property>
+      <property name="dbReference">1178</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

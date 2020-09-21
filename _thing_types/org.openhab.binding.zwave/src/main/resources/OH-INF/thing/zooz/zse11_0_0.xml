@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse11_00_000" listed="false">
+    <label>ZSE11 Q Sensor</label>
+    <description><![CDATA[
+Q Sensor<br /><h1>Overview</h1><ul><li>Quick and reliable motion alerts to Z-Wave hub</li> <li>Accurate temperature and humidity monitoring</li> <li>Lux sensor for smart light automation</li> <li>Battery or Micro USB power</li> <li>The latest S2 security and Z-Wave Plus chip</li> <li>Supports OTA fiormware updates</li> <li>Built-in tamper switch for extra security</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Put your Z-Wave hub into inclusion mode.</li> <li>Click the Z-Wave button 3 times as quickly as possible. The LED indicator will start blinking to confirm inclusion mode and turn off once inclusion is completed. The sensor will automatically pair as a repeater if connected to USB power, so special button sequence required.</li> </ol><p>NEVER include the sensor powered with USB and then switch over to batteries. Your hub will recognize the sensor as a Z-Wave repeater and the batteries will drain quickly. Always include the sensor powered by batteries only if you're planning to use it as a battery device.</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the sensor within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave binding into exclusion mode.</li> <li>Press and release the Z-Wave button 3 times quickly.</li> <li>Your hub will confirm exclusion and the sensor will disappear from your controller's device list.</li> </ol><br /><h2>Wakeup Information</h2><p>The sensor's wake-up intevral is set to 4 hours by default to save battery life. Use the Wake up Command Class to adjust the interval (in seconds, working in 3600s intervals, with 120 as min and 86400 as max values). Press and hold the Z-Wave button for 3 seconds to wake the sensor up manually. During wake-up, the sensor turns on the Z-Wave radio for a couple of seconds to receive communication from the hub. Long wake-up intervals will not affect how often the sensor reports motion or other values to your hub.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE11</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0201:0006</property>
+      <property name="dbReference">1279</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>12: Motion sensitivity</label>
+        <description><![CDATA[
+Motion sensitivity<br /><h1>Overview</h1><p>0 is disabled, 1 is low sensitivity, and 8 is high sensitivity.</p>
+        ]]></description>
+        <default>6</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="10" max="3600">
+        <label>13: Motion clear time</label>
+        <description><![CDATA[
+The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><p>The delay in seconds before the sensor reports no motion to the hub and associated devices after detecting the last motion activity.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Basic Set reports</label>
+        <description>Enable/disable Basic Set reports on motion detection</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Basic Set report value on motion detection</label>
+        <default>0</default>
+        <options>
+          <option value="0">Motion 0xFF; No motion 0x00</option>
+          <option value="1">Motion 0x00; No motion 0xFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Binary Sensor reports</label>
+        <description>Enabled/disable Binary Sensor reports on motion detection</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Temperature scale</label>
+        <default>2</default>
+        <options>
+          <option value="0">Celcius</option>
+          <option value="2">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: LED motion indicator</label>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Low battery notification</label>
+        <description>The device will report low battery if below this level</description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_2" type="integer" groupName="configuration"
+                 min="1" max="744">
+        <label>172: Reporting frequency</label>
+        <description><![CDATA[
+The reporting frequency for battery, temperature, humidity, and light level<br /><h1>Overview</h1><p>Set the reporting frequency for battery, temperature, humidity, and light level. This is the minimum interval in which the sensor will send updates to the hub even if the reporting threshold isn't met. The values correspond to the number of hours.</p> <p>Note: Frequent reports will affect battery life.</p>
+        ]]></description>
+        <default>4</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_182_1" type="integer" groupName="configuration">
+        <label>182: Battery reporting threshold</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="15">15%</option>
+          <option value="20">20%</option>
+          <option value="25">25%</option>
+          <option value="30">30%</option>
+          <option value="35">35%</option>
+          <option value="40">40%</option>
+          <option value="45">45%</option>
+          <option value="50">50%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_183_2" type="integer" groupName="configuration"
+                 min="1" max="144">
+        <label>183: Temperature reporting threshold</label>
+        <description><![CDATA[
+Temperature reporting threshold<br /><h1>Overview</h1><p>The sensor will report a new temperature value to the hub whenever temperature changes by the number of degrees entered as value.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_184_1" type="integer" groupName="configuration"
+                 min="0" max="80">
+        <label>184: Humidity reporting threshold</label>
+        <description><![CDATA[
+Humidity reporting threshold<br /><h1>Overview</h1><p>Set the reporting threshold for humidity. The sensor will report a new humidity value to the hub whenever humidity changes by the percentage number entered as value.</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_185_2" type="integer" groupName="configuration"
+                 min="0" max="30000">
+        <label>185: Lux reporting threshold</label>
+        <description><![CDATA[
+Lux reporting threshold<br /><h1>Overview</h1><p>Set the reporting threshold for lux. The sensor will report new lux to the hub whenever the brightness level changes by the number of lux entered as value.</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>This device will send a Notification and Sensor Multilevel Report to Group 1 whenever it detects motion</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This device will send a Basic Set command to Group 2 whenever it detects motion</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_phpsr03_00_000" listed="false">
+    <label>PH-PSR03 Z-WAVE Remote</label>
+    <description><![CDATA[
+Z-WAVE Remote<br /><h1>Overview</h1><p>Zipato Z-Wave Remote is a simple controller for controlling AV device through Z-Wave-to-IR extender, and it can also control 8 ON/OFF lighting groups via basic set, based on Z-Wave technology. It is the Z-Wave plus product, it support the security, OTA... all the newest features of the Z-Wave technology. <br />Z-Wave is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances. <br />This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>The device adopts the Z-Wave 500 series chip. When your Z-Wave network system is all made by Z-Wave 500 series devices, the network system will have the advantages as below.</p> <ul><li>Concurrent multi-channel support reduces external interference</li> <li>Better RF range, about 10 meters improvement indoors.</li> <li>Supports 100 Kbps transmission speed</li> </ul><h1>POWER UP PROCEDURE</h1> <p>The device can not work normally in the first time. Please activate the battery through micro USB before the first use. After the device is activated by connecting to micro USB, the device will start charging and LED will light on with red color. If the battery is full charged, LED will light on with green color. When device is charging, it will send Wake Up Notification to controller minutely.</p> <h2>BATTERY POWER CHECK</h2> <p>When any keys around the central key is pressed, the device will check the battery power. If the power level is too low, the red LED will flash once after pressing. Please charge the device through micro USB immediately.</p> <h2>NWI</h2> <p>When it poweres up, the device will check if it is already added to the network. If it isn’t, it will automatically start the NWI mode. The LED will flash in every second and continue for about 30 seconds, until timeout or successful inclusion by controller. You can hold down the central key and then press the top-right key 3 times within 1.5 seconds to abort the NWI mode.</p> <br /><h2>Inclusion Information</h2><ol><li>Put the Z-Wave Controller in inclusion mode.</li> <li>Hold down the central key, then press the top-right key 3 times</li> <li>within 1.5 seconds to enter inclusion mode.</li> <li>After successful inclusion, the device will wake to receive the</li> <li>setting command from Z-Wave Controller in about 20 seconds.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put the Z-Wave Controller in exclusion mode.</li> <li>Hold down the central key, then press the top-right key 3 times within 1.5 seconds to enter exclusion mode. Node ID has been excluded.</li> </ol><br /><h2>Wakeup Information</h2><p>After the device is added to the network, it will wake-up once per day in default. When it wakes up it will broadcast the “Wake Up Notification” message to the network, and wake-up 10 seconds to receive the setting commands. To wake-up the device immediately, please hold down the central key, then press the top-right key once within. The device will wake-up for 10 seconds.</p> <p>When device is charging, it will send Wake Up Notification to controller minutely.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_emergency" typeId="alarm_emergency">
+        <label>Alarm (emergency)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=EMERGENCY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PH-PSR03</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0008:001D</property>
+      <property name="dbReference">985</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Basic Set Level<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light.</p> <ul><li>The 255 means turn on the light.</li> <li>For dimmer equipment 1 to 100 means the light strength. 0 means turn off the light.</li> </ul>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Customer Function<br /><h1>Overview</h1><p>Customer function switch, using bit control.</p> <p>Bit0: Switch AV control/ Lighting group control. (0: AV control, 1: lighting group control)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <ul><li>0 means turn off auto report battery.</li> <li>Each tick means 30 minutes.</li> <li>The default value is 12(6 hours).</li> </ul>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Lighting Group 1</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Lighting Group 2</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Lighting Group 3</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Lighting Group 4</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Lighting Group 5</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Lighting Group 6</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Lighting Group 7</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Lighting Group 8</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

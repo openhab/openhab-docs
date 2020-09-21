@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_wte_00_000" listed="false">
+    <label>WTE Widom Smart Dimmer</label>
+    <description><![CDATA[
+Widom Smart Dimmer<br /><h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wall device" that controls the luminosity level and/or fan speed. A universal device that controls the light intensity of all types of dimmable lights, including LED lamps and energy-saving lamps. The Smart TE Dimmer includes the ON / OFF control option of non-dimmable loads. </p> <p>WiDom Smart TE Dimmer is very easy to install and works with both momentary and toggle switches.  </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart TE Dimmer will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>WiDom Smart TE Dimmer is compatible with all Z-Wave/Z-Wave Plus certified controllers. The device supports both the Network Wide Inclusion mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and Normal Inclusion. By default, the inclusion procedure starts in Normal Inclusion mode and after a short timeout the procedure continues in Network Wide Inclusion mode that lasts for about 20 Seconds.</p> <p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed.</p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in Learning Mode. If you are using the WiDom Multi Sensor Room Controller, the procedure of exclusion can be activated by Removing a node from the Z-Wave network and any click sequence on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED and the App_status in the interface is OK. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Meter (KWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WTE</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0A00</property>
+      <property name="dbReference">995</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>1: Start-up status</label>
+        <description>Defines the status of the device, in term of light level, following a restart.</description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-126" max="127">
+        <label>2: Fade On Time</label>
+        <description>Defines the time spent to switch the load from complete OFF to complete ON</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="-126" max="127">
+        <label>3: Fade Off Time</label>
+        <description>Defines the time spent to switch the load from complete ON to complete OFF</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>4: Local Dimming Time</label>
+        <description><![CDATA[
+Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>Defines the time spent to switch the controlled load when the external switch is hold down</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>10: Minimum Light Level</label>
+        <description>Defines which light level will correspond to 1% in the range between 1 and 98%</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>11: Maximum Light Level</label>
+        <description>Defines which light level will correspond to 99% in the range between 2 and 99%</description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Dimmable Load</label>
+        <description>Define if the connected loads are dimmable or not</description>
+        <default>1</default>
+        <options>
+          <option value="0">NON_DIMMABLE_LOAD</option>
+          <option value="1">DIMMABLE LOAD</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Type of external switch</label>
+        <description>Defines the type of external switch connected to the device</description>
+        <default>1</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Dimming</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The 2nd association group allows to propagate the status of the controller device to its associated devices. The devices of the 2nd association group will receive a “Start level change” command by pressing the external switch of the dimmer (controller device), and a “Stop level change” command when the switch is released.  The “Start level change” also sets the dimming duration and start level for the controlled devices by propagating its local diming time and its current value. </p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

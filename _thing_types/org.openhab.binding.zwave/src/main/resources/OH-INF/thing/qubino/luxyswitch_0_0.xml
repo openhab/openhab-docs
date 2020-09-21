@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_luxyswitch_00_000" listed="false">
+    <label>ZMNKAD Qubino Luxy Smart Switch</label>
+    <description><![CDATA[
+Qubino Luxy Smart Switch<br /><h1>Overview</h1><p>The Qubino LUXY Smart Switch is ideal for gentle illumination of any room, for visual and sound notifications, and for controlling various loads, using the built-in relay.</p> <br /><h2>Inclusion Information</h2><p>Manual inclusion is triggered by the following procedure: </p> <ul><li>Full white needs to be active (c-button 2). The user can select it by quickly pressing the c-button2 once.</li> <li>When full white is enabled, press c-button3 and hold it for 5 seconds (while white is glowing, hold c-button3 for 5 seconds).</li> <li>After 5 seconds, the device starts flashing, with the following pattern: green 1 second on, 0.5 second off.</li> <li>Once the device receives a nodeId or after 10 seconds, it stops flashing and turns green. </li> </ul><br /><h2>Exclusion Information</h2><p>Exclusion is triggered by the following procedure:</p> <ul><li>Full white needs to be active (c-button 2).</li> <li>When full white is enabled, press c-button3 and hold it for 5 seconds (while white is glowing hold c-button3 for 5 seconds).</li> <li>After 5 seconds, the device starts flashing with the following pattern: red 1 second on, 0.5 second off. </li> <li>Once the device loses its nodeId or after 10 seconds, it stops flashing and turns red. </li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="notification_siren" typeId="notification_siren">
+        <label>Alarm (SIREN) 0</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="color_color1" typeId="color_color">
+        <label>Color Control 1</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR:1</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature1" typeId="color_temperature">
+        <label>Color Temperature 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR:1;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="notification_siren1" typeId="notification_siren">
+        <label>Alarm (SIREN) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power2" typeId="alarm_power">
+        <label>Alarm (power) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNKAD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0008:0052</property>
+      <property name="dbReference">1196</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Relay contact type</label>
+        <description>Relay contact type</description>
+        <default>0</default>
+        <options>
+          <option value="0">NO</option>
+          <option value="1">NC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Turning off alarming</label>
+        <description><![CDATA[
+Turning off alarming<br /><h1>Overview</h1><p>Default value 1</p> <p>0 – only by z-wave command (basic set, switch multilevel set, switch multilevel start/stop level change, sound switch play tone, sound switch configuration, switch color set, switch color start/stop level change, notification report idle)</p> <p>1 – capacitive input or z-wave command (basic set, switch multilevel set, switch multilevel start/stop level change, sound switch play tone, sound switch configuration, switch color set, switch color start/stop level change, notification report idle)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Only by Z-Wave</option>
+          <option value="1">Capacitive input or by Z-wave</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>10: Auto On timer</label>
+        <description><![CDATA[
+Auto On timer<br /><h1>Overview</h1><p>Defines the time after which the device is turned to last known state.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns on</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>11: Auto Off timer</label>
+        <description><![CDATA[
+Auto Off timer<br /><h1>Overview</h1><p>Defines the time after which the device is turned off.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>12: Auto On timer relay</label>
+        <description><![CDATA[
+Auto On timer relay<br /><h1>Overview</h1><p>Defines the time after which the device's relay is turned to last known state.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30  – 32535 seconds after which the device turns on</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>13: Auto Off timer relay</label>
+        <description><![CDATA[
+Auto Off timer relay<br /><h1>Overview</h1><p>Defines the time after which the device's relay is turned off.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>30: Restore state on power failure</label>
+        <description><![CDATA[
+Restore state on power failure<br /><h1>Overview</h1><p>Default value 1</p> <p>1 – enabled (the device will restore state on power failure)</p> <p>0 – dissabled (the device will not restore state on power failure and will remain off)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Restore relay state on power failure</label>
+        <description><![CDATA[
+Restore relay state on power failure<br /><h1>Overview</h1><p>Default value 1</p> <p>1 – enabled (the device will restore state on power failure)</p> <p>0 – disabled (the device will not restore state on power failure and will remain off)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power Consumption Reporting Threshold</label>
+        <description><![CDATA[
+Power Consumption Reporting Threshold<br /><h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set (by default), the device will report any power consumption changes of 10% or more compared to the last reading.</p> <p>Values (size is 1 byte dec):</p> <p>default value 10</p> <p>0 - Power consumption reporting disabled</p> <p>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</p> <p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>42: Power Consumption Threshold (time)</label>
+        <description><![CDATA[
+Power Consumption Threshold (time)<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <p>default value 0</p> <p>0 - Power consumption reporting disabled</p> <p>30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_70_2" type="integer" groupName="configuration"
+                 min="0" max="2300">
+        <label>70: Overload safety switch</label>
+        <description><![CDATA[
+Overload safety switch<br /><h1>Overview</h1><p>The function allows for turning off the controlled device in case of exceeding the defined power for more than 5s. Controlled device can be turned back on by input I1 or sending a control frame.</p> <p>Values (size is 2 byte dec):</p> <p>default value 2300</p> <p>1 – 2300 = 1 W – 2300W</p> <p>0 = function not active</p> <p>ⓘ NOTE: This functionality is not an overload safety protection, please check the technical specifications chapter for more details.</p> <p>In case of overload the following message will be send towards the controller:</p> <p>COMMAND_CLASS_NOTIFICATION_V5</p> <p>The Alarm V1 type field set to 0x00</p> <p>Notification Type 0x08 and 0x08 (Overload detected)</p>
+        ]]></description>
+        <default>2300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Root endpoint<br /><h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_DEVICE_RESET_LOCALLY, DEVICE_RESET_LOCALLY_NOTIFICATION, COMMAND_CLASS_SWITCH_MULTILEVEL_V4, SWITCH_MULTILEVEL_REPORT_V4, COMMAND_CLASS_SWITCH_COLOR_V3, SWITCH_COLOR_REPORT_V3, COMMAND_CLASS_NOTIFICATION_V8, NOTIFICATION_REPORT_V8, COMMAND_CLASS_SWITCH_BINARY, SWITCH_BINARY_REPORT, COMMAND_CLASS_METER, METER_REPORT</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: LEDs on/off</label>
+        <description><![CDATA[
+Root endpoint<br /><h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_BASIC_V2, BASIC_SET_V2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Change of brightness</label>
+        <description><![CDATA[
+Root endpoint<br /><h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_SWITCH_MULTILEVEL_V4, SWITCH_MULTILEVEL_SET_V4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Change of color</label>
+        <description><![CDATA[
+Root endpoint<br /><h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_SWITCH_COLOR_V3, SWITCH_COLOR_SET_V3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Relay on/off</label>
+        <description><![CDATA[
+Root endpoint<br /><h1>Overview</h1><p><strong>Command Class/Command</strong></p> <p>COMMAND_CLASS_SWITCH_MULTILEVEL_V4, SWITCH_MULTILEVEL_SET_V4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vda_wallz503_00_000" listed="false">
+    <label>WallZ-503 Vitrum Thermostat</label>
+    <description><![CDATA[
+Vitrum Thermostat<br /><h1>Overview</h1><h1>Vitrum Wireless Thermostat</h1> <h2>Features:</h2> <p>Touch operated button with RGB back-light. Based on Z-Wave ® 500 module for wider coverage and higher data rate. Very low power consumption in standby. Easy installation. Acoustic feedback at button press. Over-the-air firmware update.</p> <br /><h2>Inclusion Information</h2><p>The device supports both Normal Inclusion and Network Wide Inclusion.</p> <p>Follow the steps below to include the device into the network:</p> <ol><li>Check the device is not already included in a Z-Wave network by pressing any button on the front panel: the LED button should blink with red colour shortly. Should the device be already included, follow the instructions below to excluded it from the network.</li> <li>Set the controller into “Inclusion Mode”. Refer to the controller documentation to set the controller into Inclusion mode.</li> <li>Set the device into Learn Mode by pressing and holding button No.1 (on the top left of the device) for longer than 4 seconds. The device will enter into inclusion mode by blinking magenta LED button No.1. Upon successful completion, the device LEDs will blink green three times.</li> <li>Should for any reasons the device fail the normal inclusion, the device turns to enter into the Network Wide Inclusion Mode up to 4 times. Any time the device enters into Wide Inclusion Mode, LED Button No.1 blinks Magenta.</li> </ol><br /><h2>Exclusion Information</h2><p>Before starting to exclude the device from the network set the controller into “Exclusion Mode”.</p> <p>Please refer to the controller documentation to set the controller into Exclusion mode.</p> <p>The device can be excluded from a network only if previously included. Check that by pressing a button on the front panel: the LED button should not blink with red colour shortly. Follow the steps below to exclude the device from the network:</p> <ol><li>Press and hold button No.1 (on the top left of the front panel device) for around 6 seconds and after that press 3 times the same button shortly within 3 seconds.</li> <li>LED Button No.1 blinks red upon completely the device exclusion successfully.</li> <li>Check the device is removed from the network by pressing button No.1: the LED button blinks red shortly.</li> </ol><br /><h2>Wakeup Information</h2><p>To send a Node info frame press and release shortly the hidden button (see picture on Installation paragraph) on the front end top-back of the device; a short audio signal (beep), will confirm the Node Info transmission. If parameter 217 is set at 1 or 2 (see parameter table below), each button send a “Multichannel Capability Report”. As default, parameter 217 is Off</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="vda_wallz503_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="vda_wallz503_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="vda_wallz503_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Sensor (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="vda_wallz503_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode1" typeId="vda_wallz503_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">VDA</property>
+      <property name="modelId">WallZ-503</property>
+      <property name="manufacturerId">010A</property>
+      <property name="manufacturerRef">7117:1018</property>
+      <property name="dbReference">1197</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: EP Type Button N.1</label>
+        <description>EP Type Button</description>
+        <default>0</default>
+        <options>
+          <option value="0">EP_OFF</option>
+          <option value="1">EP_DIMMER - CC SWITCH MULTILEVEL-par 31 to 36</option>
+          <option value="2">EP_SWITCHBUTTON - CC BASIC - see par 31 to 36</option>
+          <option value="3">EP_PUSHBUTTON - CC BASIC - see par 31 to 36</option>
+          <option value="4">EP_TIMER - TBC - not implemented</option>
+          <option value="5">EP_CURTAIN - motor control with 2 buttons</option>
+          <option value="6">EP_VISUAL - visual signal</option>
+          <option value="7">EP_SCENE_PB -transmitting scene ON only</option>
+          <option value="8">EP_SCENE_TOGGLE -toggle between scenes ID1 and ID2</option>
+          <option value="9">EP_SCENE_PB_TOGGLE -toggle bet. scenes ID1 and ID2</option>
+          <option value="15">EP_MASTER_OFF - TBC</option>
+          <option value="23">EP_MENU_DIN - not implemented</option>
+          <option value="24">EP_NOT_INTEROPERABLE-for “EP_ ” 4, 5, 6</option>
+          <option value="25">EP_SCENE_MASTER - hotel function</option>
+          <option value="26">EP_CENTRAL_SCENE -through the lifeline group</option>
+          <option value="27">EP_CURTAIN_FULL_CONTROL -motor cont. in one button</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="vda_wallz503_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="5">Resume</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="vda_wallz503_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="">UNKNOWN_4</option>
+        <option value="">UNKNOWN_5</option>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="2">Auto (High)</option>
+        <option value="3">On (high)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="vda_wallz503_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="2">High</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="vda_wallz503_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="5">Resume</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="vda_wallz503_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="">UNKNOWN_4</option>
+        <option value="">UNKNOWN_5</option>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="2">Auto (High)</option>
+        <option value="3">On (high)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="rtc_ct200_00_000" listed="false">
+    <label>CT200 Vivint Element Thermostat w/ other sensors</label>
+    <description><![CDATA[
+Vivint Element Thermostat w/ other sensors<br /><h1>Overview</h1><p>This thermostat is provided by Vivint, but can join a non-Vivint ZWave network.</p> <br /><h2>Inclusion Information</h2><p>The Vivint Element Thermostat is a Z-Wave® compliant thermostat. It has an onboard radio that can be added to an existing Z-Wave® network. This device can be used on a network with products from different vendors.</p> <ol><li>Set your primary controller to INCLUDE mode to add the thermostat as a node on your network (see your specific controller’s User Manual for detailed instructions).</li> <li>The Thermostat main screen shows a welcome message. Press the SIDE button to continue.</li> <li>Press the SIDE button to initiate the inclusion process. This initiates the network connection process. <ul><li>If inclusion fails, the screen says “Failed”. Press the SIDE button to try adding again.</li> </ul></li> <li>When the Thermostat has been successfully included to a Z-Wave network, the screen displays a confirmation check mark. Press the SIDE button to continue. You can now configure the thermostat to work with your HVAC system.</li> <li>Your primary controller indicates that the thermostat was successfully added to its network (see your specific controller’s User Manual for details).</li> </ol><br /><h2>Exclusion Information</h2><p>The Vivint Element can be excluded from the Z-Wave network process similar to the inclusion process. Set your primary controller to EXCLUDE.</p> <br /><h2>Wakeup Information</h2><p>When your thermostat is running on battery power, the Z-Wave radio will turn off to help conserve battery life. The Thermostat Z-Wave radio module supports Z-Wave beaming, which allows other devices in the network to wake up the Z-Wave module and accept commands and then go back to sleep.</p> <p>When your thermostat is running on C-Wire power, the Z-Wave radio will stay on and actively help route messages within the Z-Wave network. The thermostat’s node type is fixed when it is included to the Z-Wave network; if the C-Wire is present and powered when including to the network, the thermostat will remain an alwayslistening node until it is removed from the network.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="rtc_ct200_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="rtc_ct200_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="rtc_ct200_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Sensor (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity1" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="rtc_ct200_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state1" typeId="thermostat_state">
+        <label>Thermostat Operating State 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling1" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating1" typeId="thermostat_setpoint">
+        <label>Setpoint (heating) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode1" typeId="rtc_ct200_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate1" typeId="rtc_ct200_00_000_thermostat_fanstate">
+        <label>Thermostat fan state 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE:1</property>
+        </properties>
+      </channel>
+      <channel id="battery-level1" typeId="system.battery-level">
+        <label>Battery Level 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset1" typeId="time_offset">
+        <label>Clock Time Offset 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity2" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Radio Thermostat Company of America (RTC)</property>
+      <property name="modelId">CT200</property>
+      <property name="manufacturerId">0098</property>
+      <property name="manufacturerRef">C801:001D</property>
+      <property name="dbReference">742</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_wo" type="integer" groupName="configuration">
+        <label>1: Temperature Reporting Threshold (8-bit)</label>
+        <description><![CDATA[
+This value determines the reporting threshold<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled.</p> <p>Unsupported values are ignored.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="2">0.5 degrees F</option>
+          <option value="3">1.0 degrees F</option>
+          <option value="4">1.5 degrees F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>2: HVAC Settings</label>
+        <description><![CDATA[
+Retrieves the HVAC Settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1_wo" type="integer" groupName="configuration">
+        <label>3: Utility Lock</label>
+        <description><![CDATA[
+Enable or Disable the Utility Lock<br /><h1>Overview</h1><p>If set to 0, the utility lock is disabled. All other values (1-255) enable the utility lock.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
+        <label>4: C-Wire/Battery Status</label>
+        <description><![CDATA[
+Query power which source is in use<br /><h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire.</p> <p>If 0x02, the thermostat is powered by batteries.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Powered by C-Wire</option>
+          <option value="2">Powered by battery</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>5: Humidity Reporting Threshold</label>
+        <description><![CDATA[
+This value determines the reporting threshold<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values are ignored.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Auxiliary/Emergency</label>
+        <description><![CDATA[
+Auxiliary / Emergency Heat Pump Mode<br /><h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled.</p> <p>All other values (1-255) enable auxiliary / emergency heat.</p> <p>This can only be enabled when the thermostat is set to Heat Pump mode.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Thermostat Swing Temp</label>
+        <description><![CDATA[
+Temperature spread between the on and off temperatures<br /><h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.</p> <p>A value of 0x01 is 0.5F and 0x02 is 1.0F.</p> <p>The supported values may vary from thermostat to thermostat but typically the allowed values are 0.5F (0x01) to 4.0F (0x08).</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">0.5 degrees Fahrenheit</option>
+          <option value="2">1.0 degrees Fahrenheit</option>
+          <option value="3">1.5 degrees Fahrenheit</option>
+          <option value="4">2.0 degrees Fahrenheit</option>
+          <option value="5">2.5 degrees Fahrenheit</option>
+          <option value="6">3.0 degrees Fahrenheit</option>
+          <option value="7">3.5 degrees Fahrenheit</option>
+          <option value="8">4.0 degrees Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Thermostat Diff Temp</label>
+        <description><![CDATA[
+How far off from target temp before turning on unit<br /><h1>Overview</h1><p>The thermostat differential temperature is in units of 0.5 degrees</p> <p>Fahrenheit. A value of 0x04 is 2.0F and 0x06 is 3.0F. The differential</p> <p>temperature must be an integer value. Non-integer values, such</p> <p>as 1.5F (0x03), should not be used. The supported values may vary</p> <p>from thermostat to thermostat but typically, the allowed values are</p> <p>2.0F (0x04) to 6.0F (0x0C).</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="4">2.0 degrees Fahrenheit</option>
+          <option value="6">3.0 degrees Fahrenheit</option>
+          <option value="8">4.0 degrees Fahrenheit</option>
+          <option value="10">5.0 degrees Fahrenheit</option>
+          <option value="12">6.0 degrees Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Thermostat Recovery Mode</label>
+        <description><![CDATA[
+Bring a space back to a normal occupied temp<br /><h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or</p> <p>economy (0x02).</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">Fast Recovery Mode</option>
+          <option value="2">Economy Recovery Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Simple UI Mode</label>
+        <description><![CDATA[
+Toggle Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple UI mode is disabled. If set to 1, Simple UI mode</p> <p>is enabled.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Multicast</label>
+        <description><![CDATA[
+Toggle Multicast Mode<br /><h1>Overview</h1><p>If set to 0, Multicast is disabled. If set to 1, Multicast is enabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Main Display Selection</label>
+        <description><![CDATA[
+Control which info is displayed in the main display area<br /><h1>Overview</h1><p>This configuration Param on the CT110 sets what information is displayed in the main thermostat display area (the largest central numbers on the display). The default values is to display the Temperature (0x01) on the main numbers.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Show Temperature</option>
+          <option value="2">Show (unknown)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>14: Save Energy Mode Type</label>
+        <description><![CDATA[
+Save Energy Mode behavior<br /><h1>Overview</h1><p>This configuration value is used to read/write what behavior Save Energy Mode causes in the thermostat when the thermostat enters Save Energy Mode.</p>
+        ]]></description>
+        <default>2</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>15: Fan Timer</label>
+        <description><![CDATA[
+Activate Fan w/ auto shutoff timer<br /><h1>Overview</h1><p>This configuration is used to activate the fan with an automatic shut-off timer.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="-6" max="6">
+        <label>17: Temperature Calibration</label>
+        <description><![CDATA[
+Temperature Calibration / Offset<br /><h1>Overview</h1><p>This configuration is used to set the temperature offset of the thermostat. The valid values are from -6 to 6. Note: although the thermostat UI can set calibrations in intervals of 0.5°F, this parameter can only accept whole numbers.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Display Units</label>
+        <description><![CDATA[
+Celsius or Fahrenheit<br /><h1>Overview</h1><p>This configuration is used to set units used by the device to display temperature.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fahrenheit</option>
+          <option value="1">Celcius</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct200_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

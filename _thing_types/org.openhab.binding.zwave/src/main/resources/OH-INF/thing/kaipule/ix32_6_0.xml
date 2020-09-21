@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kaipule_ix32_06_000" listed="false">
+    <label>DP-32 / IX-30 / IX-32 PIR Sensor</label>
+    <description><![CDATA[
+PIR Sensor<br /><h1>Overview</h1><p>The hardware board for the IX30 (wall) and IX32 (ceiling) is the same thing and reports the same Type and ID.</p> <br /><h2>Inclusion Information</h2><p>Enter the Inclusion Mode of gateway, and press the tamper switch 3 times within 1.5s, then the PIR sensor will stay in enrollment state until successfully enrolled into network or enrollment time out after 30s.</p> <br /><h2>Exclusion Information</h2><p>Enter the Exclusion Mode of gateway, and press the tamper switch 3 times within 1.5s, then the PIR sensor will be removed after a period of time.</p> <br /><h2>Wakeup Information</h2><p>Quickly press tamper switch once, the PIR sensor will automatically send wake-up information, and there will be 10s after wake-up to receive gateway setting information.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Kaipule Technology Co., Ltd.</property>
+      <property name="modelId">DP-32 / IX-30 / IX-32</property>
+      <property name="manufacturerId">0214</property>
+      <property name="manufacturerRef">0002:0002,0003:0002</property>
+      <property name="versionMin">6.0</property>
+      <property name="dbReference">667</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>1: Basic Set</label>
+        <description><![CDATA[
+Basic Set<br /><h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to control that deivce when the PIR is triggered.</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="120">
+        <label>2: Turn Off Light Time Configuration</label>
+        <description><![CDATA[
+Turn Off Light Time Configuration<br /><h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to Group 2 and send Basic Set = 0x00 to turn of light after 5 x t seconds- Set value t means to send the BAsic Set command after t seconds.</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="120">
+        <label>3: PIR Sensor Alarm Elimination Time Configuration</label>
+        <description><![CDATA[
+PIR Sensor Alarm Elimination Time Configuration<br /><h1>Overview</h1><p>Min time is 5s. Eg If the config is 1, this means it will eliminate alarm after 1 * 5s = 5 seconds</p> <p>The selected value is multiplied with 5. After this time the sensor will report PIR OFF.</p> <p>E.g. If you select value --&gt; 3 * 5s = 15 seconds.</p> <p>The Sensor will report PIR Off after 15 seconds.</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Send "notification_Report" to the device in Life line group</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Command</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When sensor is triggered:</p> <p>[Command Class BAsic, Basic Set, Value = 0xFF(default 0xFF, configurable, see Config Parameters)</p> <p>When light up timeout:</p> <p>[Command Class BAsic, BAsic Set, Value =0x00]</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

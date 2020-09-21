@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz74_00_000" listed="false">
+    <label>TZ74 Insert two channel switch module</label>
+    <description><![CDATA[
+Insert two channel switch module<br /><h1>Overview</h1><p>This z-wave in-wall dual relay switch module TZ74 is a transceiver which is a Z-WaveTM enabled device and is fully compatible with any Z-WaveTM enabled network. Mini size design let the module can easily hide itself into the wall box and that will be good for the house decoration. There are many kind of application by using the module to switch AC power On and Off , one main application is the light control. The new smart relay calibration technology can reduce the inrush current caused by the load and let the module work perfectly with many kind of light like incandescent, fluorescent and LED light.</p> <br /><h2>Inclusion Information</h2><p>Have Z-Wave Controller entered inclusion mode. Pressing On/Off button three times within 1.5 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Have Z-Wave controller entered exclusion mode. Pressing On/Off button three times within 1.5 seconds will enter exclusion mode.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ74</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0311:0304</property>
+      <property name="dbReference">809</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Change the state of indicator light</label>
+        <description>Default status of socket LED is on as indicator when the load is off</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED is off when load is off</option>
+          <option value="1">LED is on when load is off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Memory Function</label>
+        <description>Default with memory: the socket staus is same as before when power is on</description>
+        <default>1</default>
+        <options>
+          <option value="0">socket status depends on switch</option>
+          <option value="1">socket status is same as before power outage</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Invert switch</label>
+        <description>In the edge mode invert switch - no effect if Pulse or Edge-toggle modes</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">In the edge mode invert switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Edge, Pulse, or Edge Toggle Mode</label>
+        <description>Set how the switch controls the module</description>
+        <default>3</default>
+        <options>
+          <option value="1">Edge Mode</option>
+          <option value="2">Pulse Mode</option>
+          <option value="3">Edge-toggle Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

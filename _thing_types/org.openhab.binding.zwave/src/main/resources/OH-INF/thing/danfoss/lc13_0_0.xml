@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="danfoss_lc13_00_000" listed="false">
+    <label>LC-13 Living Connect Z Thermostat</label>
+    <description><![CDATA[
+Living Connect Z Thermostat<br /><h1>Overview</h1><p>This is a Z-Wave controlled electronic radiator thermostat by Danfoss. It is controlled by either a Z-Wave compatible controller or a central device called Danfoss LinkTM CC. It uses Z-Wave wireless communication technology, is easy to install and is supplied with adaptors for all thermostatic valves manufactured by Danfoss and most other radiator valve manufacturers.</p> <p>It is battery powered, compact and very easy to operate with only three buttons on the front.</p> <p><strong>Technical Features</strong></p> <ul><li>Easy to operate - only three buttons</li> <li>Open window function</li> <li>Valve exercise function</li> <li>PID control (precise control)</li> <li>Adaptive learning</li> <li>Weekly programs with adjustable temperature set-backs</li> <li>Battery lifetime 2 years</li> <li>Min./max. temp. limitation</li> <li>Child lock</li> <li>Holiday/away function</li> </ul><p>To reset the device, you have to take the batteries out, hold the button, put the batteries back in and continue holding the button for &gt; 5 s for the device to reset.</p> <br /><h2>Inclusion Information</h2><p>Short push middle button</p> <br /><h2>Exclusion Information</h2><p>Short push middle button</p> <br /><h2>Wakeup Information</h2><p>Short push middle button</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="protection_local" typeId="protection_local">
+        <label>Local protection</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_PROTECTION;type=PROTECTION_LOCAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Danfoss</property>
+      <property name="modelId">LC-13</property>
+      <property name="manufacturerId">0002</property>
+      <property name="manufacturerRef">0005:0004,8005:0001,8005:0002</property>
+      <property name="dbReference">165</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Target for Wakeup and Override Notifications</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

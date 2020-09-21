@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wayne_wdtc20_00_000" listed="false">
+    <label>WDTC-20 Thermostat</label>
+    <description><![CDATA[
+Thermostat<br /><h1>Overview</h1><p>The Wayne-Dalton Z-Wave® Enabled Thermostat is compatible with most standard 24 Volt heating and cooling systems including:</p> <ul><li>1 and 2 stage heat pump systems</li> <li>1 or 2 stage normal heating systems</li> <li>1 stage cooling systems</li> </ul><p>The Wayne-Dalton Z-Wave® Enabled Thermostat also features:</p> <ul><li>Support for all Z-Wave® controllers</li> <li>“Home” and “Away” programs via Z-Wave® or manual operation</li> <li>“Heat” and “Cool” modes via Z-Wave® or manual operation</li> <li>Temperature setting up or down via Z-Wave® or manual operation</li> <li>Easy Energy Savings buttons and Mode Switch</li> <li>Low Battery indicator</li> </ul><p>The Z-Wave® Enabled Thermostat is a new arrival into the Wayne-Dalton Z-Wave® product line and contains many new features that were not conceived when some Z-Wave® controllers were initially developed. The Wayne-Dalton Z-Wave® Enabled Thermostat has a special compatibility mode and is designed to work with your Z-Wave® network regardless of the manufacturer of your controller or its date of manufacture. When programming your thermostat to your controller, if it does not respond to the commands, reprogram it using the alternate programming method.</p> <p>The Z-Wave® Enabled Thermostat is designed to live by your schedule rather than forcing you to live by the rigid schedule it was programmed with. Now you can program it to the “Away” Scene on a controller such as the Wireless Gateway and when you leave the house you can activate that Scene from your car to set-back your thermostat, then when you arrive home, you can activate the “Home” Scene to return the thermostat to your normal setting.</p> <br /><h2>Inclusion Information</h2><ol><li>Set your primary controller to INCLUDE mode, to add the thermostat as a node on your network (see your specific controller’s User Manual for detailed instructions.)</li> <li>Press and release the BIND button on the thermostat.</li> </ol><p>Your controller will indicate the thermostat was successfully added to its network (see your specific controller’s User Manual for details.) Also, your thermostat will indicate it was successfully added to the network by flashing the entire Z-Wave® logo.</p> <br /><h2>Exclusion Information</h2><ol><li>Press the REMOVE DEVICE button located in ThinkEssentials® on the DESIGN TAB.</li> <li>Press and release the BIND button on the thermostat. If successful, ThinkEssentials® will display a message that the device was removed successfully and a thermostat icon will appear.</li> </ol>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Room Temperature</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="wayne_wdtc20_00_000_thermostat_mode">
+        <label>Thermostat Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (Cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (Heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Display Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_INDICATOR</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wayne Dalton</property>
+      <property name="modelId">WDTC-20</property>
+      <property name="manufacturerId">0008</property>
+      <property name="manufacturerRef">0007:0020</property>
+      <property name="dbReference">1071</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="wayne_wdtc20_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

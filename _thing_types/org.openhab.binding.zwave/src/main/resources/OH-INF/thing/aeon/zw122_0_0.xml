@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw122_00_000" listed="false">
+    <label>ZW122 Water Sensor 6</label>
+    <description><![CDATA[
+Water Sensor 6<br /><h1>Overview</h1><p>The ZW122  contains 4 sensing points, which would be more accurately to detect the presence and absence of water or detect whether there is water leak in some places of your home. The Water Sensor 6 has an inbuilt buzzer that can play alarm sounds to let you know when the water is detected.</p> <br /><h2>Inclusion Information</h2><ol><li>Let your Z-Wave primary controller/gateway enter into adding/inclusion mode. Take your Sensor near to your primary controller.</li> <li>Press the Action Button once on your Sensor, the green LED will blink.</li> <li>If your Water Sensor has been successfully added to your Z-Wave network, its green LED will be solid for 2 seconds and then the orange LED will fast blink for 10 minutes if the Sensor does not receive the Wake Up No More info Command from Controller. If the adding was unsuccessful and the red LED will be solid for 2 seconds and then become colourful gradient for a few seconds before it turns off, repeat the above steps.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Turn your primary controller into device removal mode. Take the Sensor unit near to your primary controller.</li> <li>Press the Action Button on your Sensor.</li> <li>If your Water Sensor is successfully removed from the Z-Wave network, the RGB LED will become a colourful gradient for a few seconds and then turn off. If the removing was unsuccessful, the blue LED will be solid for 2 seconds and then turn off, repeat the above steps</li> </ol><br /><h2>Wakeup Information</h2><p>Press the Action Button on the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.<br />If you want your Sensor to keep awake for a longer time, press and hold the Action Button on the back of the Sensor unit for 3 seconds, then your Sensor will wake up for 10 minutes and the orange LED will fast blink while it is awake.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood1" typeId="alarm_flood">
+        <label>Alarm (flood) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood2" typeId="alarm_flood">
+        <label>Alarm (flood) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=FLOOD</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW122</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:007A,0102:007A,0202:007A</property>
+      <property name="dbReference">721</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Enable/Disable Power On Wake Period</label>
+        <description><![CDATA[
+Enables or disables a wake period of 10 minutes after power up.<br /><h1>Overview</h1><p>Enable/disable wake up for 10 minutes state when re-power on the Sensor. ( 0 = Disable, 1 = Enable. )</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="15" max="255">
+        <label>8: WakeUp Time Out</label>
+        <description><![CDATA[
+The number of seconds for the device to stay awake after the WakeUp is sent out.<br /><h1>Overview</h1><p>Set the timeout to go into the sleep state after the Wake Up Notification was sent out. 15 - 255</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>9: Current power mode (read only)</label>
+        <description><![CDATA[
+Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Battery power</p> <p>Value 2: 0=sleeping after powered on, 1=keep awake for 10 min after power on, 2=always awake</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>10: Alarm time for buzzer</label>
+        <description>Set the alarm time for the buzzer when triggered</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_10_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Repeat cyle</label>
+        <description><![CDATA[
+Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the buzzer from ON state to OFF state</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_10_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Time of buzzer keeping ON state</label>
+        <description>Time of buzzer keeping ON state</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_10_4_7FFF0000" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>10: Time of buzzer keeping OFF state</label>
+        <description>Time of buzzer keeping OFF state</description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>39: Low Battery Threshold</label>
+        <description><![CDATA[
+Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the low battery value. Range: 10% to 50%. </p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_48_1" type="integer" groupName="configuration">
+        <label>48: Enable/Disable Sensor report</label>
+        <description>Enable/Disable Sensor report</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Sensor report</option>
+          <option value="1">Enable Sensor report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_49_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>49: Set the upper limit value (overheat)</label>
+        <description>Set the upper limit value (overheat)</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_49_4_0000FF00" type="integer" groupName="configuration">
+        <label>49: Temperature Unit</label>
+        <description><![CDATA[
+Celsius or Fahrenheit<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_49_4_7FFF0000" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>49: Temperature value</label>
+        <description><![CDATA[
+Temperature value<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_50_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>50: Set the lower limit value (underheat)</label>
+        <description>Set the lower limit value (underheat)</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_50_4_0000FF00" type="integer" groupName="configuration">
+        <label>50: Temperature underheat unit</label>
+        <description><![CDATA[
+Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_50_4_7FFF0000" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>50: Temperature limit value</label>
+        <description><![CDATA[
+Temperature limit value<br /><h1>Overview</h1><p>US Version: 0x01400100 (32 °F), other versions: 0x00000000 (0 °C)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_57_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>57: Recover limit value</label>
+        <description>Set the recover limit value of the temperature sensor</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_57_2_0000000F" type="integer" groupName="configuration">
+        <label>57: Temperature recover unit</label>
+        <description><![CDATA[
+Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_57_2_0000FF00" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>57: Recover limit value</label>
+        <description>Recover limit value</description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_64_1" type="integer" groupName="configuration">
+        <label>64: Default Temperature Unit</label>
+        <description><![CDATA[
+Sets the default temperature unit.<br /><h1>Overview</h1><p>Sets the default temperature unit.  0 = Celsius unit. 1 = Fahrenheit unit.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_84_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>84: State of tilt sensor</label>
+        <description><![CDATA[
+State of tilt sensor, read only<br /><h1>Overview</h1><p>0=main unit horizontal, 1=main unit vertical</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_86_1" type="integer" groupName="configuration">
+        <label>86: Enable/Disable the buzzer</label>
+        <description><![CDATA[
+Enables or disables the buzzer<br /><h1>Overview</h1><p>Enable/Disable the buzzer 1 - Enabled, 0 - Disabled</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_87_1" type="integer" groupName="configuration"
+                 min="1" max="55">
+        <label>87: Buzzer Trigger(s)</label>
+        <description><![CDATA[
+Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To set which sensor is triggered the buzzer will alarm.</p> <ul><li>1 = If the Water leak is triggered, the buzzer will alarm.</li> <li>2 = If the vibration is triggered, the buzzer will alarm.</li> <li>4 = If the tilt sensor is triggered, the buzzer will alarm.</li> <li>16 = If the under heat is triggered, the buzzer will alarm.</li> <li>32 = If the overheat is triggered, the buzzer will alarm.</li> </ul><p>Note: if the value = 1+2+4+16+32=55, which means if any sensor is triggered, the buzzer will alarm. </p>
+        ]]></description>
+        <default>55</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_88_1" type="integer" groupName="configuration">
+        <label>88: Basic Set sent to association group 3</label>
+        <description>Basic Set sent to association group 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Send nothing</option>
+          <option value="1">Water present 0xFF, no water present 0x00</option>
+          <option value="2">Water present 0x00, no water present 0xFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_89_1" type="integer" groupName="configuration">
+        <label>89: Basic Set sent to association group 4</label>
+        <description>Basic Set sent to association group 4</description>
+        <default>0</default>
+        <options>
+          <option value="0">Send nothing</option>
+          <option value="1">Water present 0xFF, no water present 0x00</option>
+          <option value="2">Water present 0x00, no water present 0xFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_94_1" type="integer" groupName="configuration">
+        <label>94: Power source level reported</label>
+        <description>0=report USB, 1=report Battery</description>
+        <default>0</default>
+        <options>
+          <option value="0">Report USB power level</option>
+          <option value="1">Report Battery power level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_1_00000065" type="integer" groupName="configuration">
+        <label>101: Lifeline Report Type</label>
+        <description><![CDATA[
+To set what unsolicited report would be sent to the Lifeline group.<br /><h1>Overview</h1><p>To set what unsolicited report would be sent to the Lifeline group.</p> <ul><li>0 = Send Nothing.</li> <li>1 = Battery Report.</li> <li>2 = Multilevel sensor report for temperature.</li> <li>3 = Battery Report and Multilevel sensor report for temperature. </li> </ul>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Send Nothing</option>
+          <option value="1">Battery Report</option>
+          <option value="2">Temperature</option>
+          <option value="3">Battery and Temperature</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>111: Lifeline Report Interval</label>
+        <description><![CDATA[
+Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1><p>Set the interval time for sending the unsolicited report that configured by parameter 0x65. (Valid values 0x05-0x28DE80)</p> <p>Note: 1. The unit of interval time is second if USB power. 2. If battery power, the minimum interval time is equal to Wake Up interval set by the Wake Up CC. </p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_135_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>135: Sensor reports for non multichannel devices</label>
+        <description>Sensor reports for non multichannel devices</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_136_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>136: Sensor probe status</label>
+        <description>Sensor probe status (read only)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_201_2" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>201: Temperature calibration</label>
+        <description>Temperature calibration</description>
+        <default>1</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_201_2_0000000F" type="integer" groupName="configuration">
+        <label>201: Temperature unit</label>
+        <description><![CDATA[
+Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>201: Calibration value</label>
+        <description>Calibration value</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Lock configuration</label>
+        <description>Enable/Disable lock configuration</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable configuration locked</option>
+          <option value="1">Enable configuration locked</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration" readOnly="true">
+        <label>255: Reset device to factory default</label>
+        <description>Reset device to factory default</description>
+        <default>1</default>
+        <options>
+          <option value="1">do nothing</option>
+          <option value="1431655765">Reset device to factory defaults</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor Status</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Sensor 1 Alarm</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor 2 Alarm</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

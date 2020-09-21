@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsa22_00_000" listed="false">
+    <label>DSA22 4 button keyfob</label>
+    <description><![CDATA[
+4 button keyfob<br /><h1>Overview</h1><p>Remote controls revolutionized the way we could do things. They changed the way we watch TV. They changed we listen to music. They even changed the way we park our cars. And then they stopped revolutionizing and instead evolved to become more and more complex. They became bigger. They became weighed down with too many buttons, too many confusing things that you <em>could</em> do.</p> <p>The Aeotec Key Fob Remote Control takes the remote back to where it began. It’s easy to use. It’s simple. It’s small. It’s there for when you need it and it’s out of sight for when you don’t. It’s been designed to further the Z-Wave revolution.</p> <br /><h2>Inclusion Information</h2><ol><li>Using something such as a pin or a paper clip, press the Learn button on the Key Fob Remote Control. Its light will begin to pulse.</li> <li>Press the Include button on your primary Z-Wave controller. If you’re unsure of how to do this, refer to its user manual.</li> <li>Once the two devices have exchanged information, the light on the Key Fob Remote Control will stay lit for 2 seconds.</li> </ol><br /><h2>Exclusion Information</h2><p>Resetting your Key Fob Remote Control</p> <p>If you ever want to completely reset your Key Fob Remote Control’s settings, you can.</p> <ol><li>Using a pin or a paper clip, press and hold the Mode button 10 seconds.</li> <li>The green and red light are blinking when Key Fob Remote Control is resetting, and the green light on your Key Fob Remote Control will stay lit for 2 seconds when successful. If learn unsuccess, the red light on the Portable Panic Button will stay lit for 2 seconds, then repeat from start step 1 again.</li> </ol><br /><h2>Wakeup Information</h2><p>Not Provided</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number_param0" typeId="scene_number">
+        <label>Scene Number [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSA22</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0001:0016</property>
+      <property name="dbReference">78</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_241_1" type="integer" groupName="configuration">
+        <label>241: Mode of Button 1 (upper left)</label>
+        <description>Defines the switching mode of Button 1</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_242_1" type="integer" groupName="configuration">
+        <label>242: Mode of Button 2 (upper right)</label>
+        <description>Defines the switching mode of Button 2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_243_1" type="integer" groupName="configuration">
+        <label>243: Mode of Button 3 (lower left)</label>
+        <description>Defines the switching mode of Button 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_244_1" type="integer" groupName="configuration">
+        <label>244: Mode of Button 4 (lower right)</label>
+        <description>Defines the switching mode of Button 4</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Scene 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Scene 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Scene 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Scene 4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

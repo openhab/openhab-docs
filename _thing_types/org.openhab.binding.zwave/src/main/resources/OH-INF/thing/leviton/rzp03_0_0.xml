@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_rzp03_00_000" listed="false">
+    <label>RZP03 Scene Capable Plug-In Lamp Dimming Module</label>
+    <description><![CDATA[
+Scene Capable Plug-In Lamp Dimming Module<br /><h1>Overview</h1><p>Scene Capable Plug-In Lamp Dimming Module , Rated: 120VAC, 60Hz, Incandescent: 300W max., 60W min </p> <br /><h2>Inclusion Information</h2><p>Press the ON/OFF button on the module</p> <br /><h2>Exclusion Information</h2><p>Press the ON/OFF button on the module</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">RZP03</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0201:0206</property>
+      <property name="dbReference">373</property>
+      <property name="commandClass:COMMAND_CLASS_BASIC">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_APPLICATION_STATUS">ccAdd</property>
+      <property name="commandClass:COMMAND_CLASS_SWITCH_MULTILEVEL">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SWITCH_ALL">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_ACTIVATION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_ACTUATOR_CONF">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_SPECIFIC">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_POWERLEVEL">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_NODE_NAMING">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_HAIL">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_VERSION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_PROPRIETARY">setVersion=1</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

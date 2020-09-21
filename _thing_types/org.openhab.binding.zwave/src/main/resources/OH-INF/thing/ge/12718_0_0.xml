@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_12718_00_000" listed="false">
+    <label>12718 Smart Dimmer</label>
+    <description><![CDATA[
+Smart Dimmer<br /><h1>Overview</h1><p> Transform any home into a smart home with the GE Z-Wave Smart Lighting Control Lamp Module with Dimmer Control. The lamp module enables wireless control of on/off and dim functions for standard incandescent table and floor lamps, as well as dimmable fluorescent, LED and CFL fixtures and more! Use the dimmer control to customize the lighting output and create the perfect ambiance for any room. The space-saving horizontal module plugs into a standard wall receptacle without blocking the second outlet or obstructing placement of furniture. It provides a Z-Wave enabled outlet for the lamp you would like to control and one always-on, standard pass-through AC outlet for other electrical appliances. Take control of your home lighting with GE Z-Wave Smart Lighting Controls! </p> <br /><h2>Inclusion Information</h2><p>Single press and release the manual/program button on the smart dimmer to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Single press and release the manual/program button on the smart dimmer to exclude it from the network</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">12718</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5044:3031</property>
+      <property name="dbReference">339</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Dimmer steps</label>
+        <description>number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Time between dimmer steps</label>
+        <description>Timing of the steps (10ms increments)</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Load sensing</label>
+        <description>Turn load sensing on or off</description>
+        <default>0</default>
+        <options>
+          <option value="0">disable (default)</option>
+          <option value="1">enable load sensing</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

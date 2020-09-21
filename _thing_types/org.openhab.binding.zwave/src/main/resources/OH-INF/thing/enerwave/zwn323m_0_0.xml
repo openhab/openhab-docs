@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zwn323m_00_000" listed="false">
+    <label>Plug-In Smart Meter Dimmer Switch ZWN323M</label>
+    <description><![CDATA[
+ZWN323M<br /><h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled device and is fully interoperable with other Z-Wave certified device. In a Z-Wave network, ZWN-323M enable you to remotely ON/OFF&amp;Dim control a Z-Wave ZWN-323M also acts as a repeater, retransmitting the RF signal from one device to another until the intended device is reached. With a horizontal design, the ZWN-323M plug-in dimmer module will not block other nearby AC outlets.</p> <br /><h2>Inclusion Information</h2><p> While the gateway/remote is in the adding mode and the blue LED blinks on the ZWN-323M, press the program button on the module. </p> <br /><h2>Exclusion Information</h2><p>While the gateway or remote in the deleting mode, press the program button on the ZWN-323M. The gateway or remote will verify the deleting, remove the module from the current Z-Wave network, and the LED will blink on the module. </p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">Plug-In Smart Meter Dimmer Switch</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0111:0202</property>
+      <property name="dbReference">756</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Synchronization of load power and LED indicator</label>
+        <description>Synchronization of load power and LED indicator</description>
+        <default>0</default>
+        <options>
+          <option value="0">Power on, LED off</option>
+          <option value="1">Power on, LED on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Autosend Interval (METER_REPORT)</label>
+        <description><![CDATA[
+Autosend Interval (METER_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend Interval (send METER_REPORT)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Autosend interval (SENSOR_MULTILEVEL_REPORT)</label>
+        <description><![CDATA[
+Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Accumulated Autosend Interval ( METER_REPORT)</label>
+        <description><![CDATA[
+Accumulated Autosend Interval ( METER_REPORT)<br /><h1>Overview</h1><p>Accumulated Energy Autosend Interval report (send METER_REPORT)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Enable automatic notifications</label>
+        <description><![CDATA[
+Enable automatic notifications<br /><h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Not report (METER_REPORT)</option>
+          <option value="1">Send (METER_REPORT) only</option>
+          <option value="2">Send (SENSOR_MULTI_LEVEL_REPORT) only</option>
+          <option value="3">Send both</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Minimum change in wattage report</label>
+        <description><![CDATA[
+Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Notifications</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: StatusReport</label>
+        <description>Send basic report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: PowerReport</label>
+        <description>PowerReport: Send meter power report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

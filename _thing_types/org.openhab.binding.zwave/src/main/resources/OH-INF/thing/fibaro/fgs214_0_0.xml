@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgs214_00_000" listed="false">
+    <label>FGS214 Single Switch 1x1.5KW</label>
+    <description><![CDATA[
+Single Switch 1x1.5KW<br /><h1>Overview</h1><p>The remotely operated FIBARO  Smart  Module  and  Double  Smart  Module are designed to turn electrical devices or circuits on and off. Smart Module allows to control one device or circuit. The compact size of the device allows for the product to be installed in the housings of other devices. The devices can be controlled either via the Z-Wave™ network or with buttons connected directly to them.<br /><br />Main features:</p> <ul><li>Works with various types of switches and buttons.</li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 en-cryption and S2 Authenticated with PRNG-based encryption.</li> <li>Works as a Z-Wave signal repeater (all non-battery operated de-vices within the network will act as repeaters to increase reliabili-ty of the network).</li> <li>May be used with all devices certified with the Z-Wave Plus™ certificate and should be compatible with such devices produced by other manufacturers.</li> </ul><p>The device is a Security Enabled Z-Wave Plus product and  a  Security  Enabled  Z-Wave  Controller  must  be used in order to fully utilize the product.</p> <br /><h2>Inclusion Information</h2><p>Fibaro Switch must be placed within the range of Home Center<br />controller, as adding mode requires direct communication with the<br />controller.<br /><br />Find key no. 1 which allows to switch circuit 1 on, in accordance<br />with the diagram<br />During the installation it is recommended to use a<br />momentary key connected to S1.<br /><br />Add Fibaro Switch to the network by pushing three times key no. 1<br />or push-button B located inside the housing of the device. For<br />toggle switch perform 3 position changes.<br /><br />The controller indicates when the device is correctly added to the<br />network.<br /><br /><strong>CAUTION</strong><br />Fibaro Switch cancels the "learning" mode after<br />key no. 1 is pressed once. Therefore, pressing key<br />no. 1 four times will not add the devices to the<br />network. The same applies to push-button B.</p> <br /><h2>Exclusion Information</h2><p>Find key no. 1 which allows to switch circuit 1 on, in accordance<br />with the diagram<br />During removing it is recommended to use a<br />momentary key connected to S1.<br /><br />Remove Fibaro Switch from the network by pushing three times key no. 1<br />or push-button B located inside the housing of the device. For<br />toggle switch perform 3 position changes.<br /><br />The controller indicates when the device is correctly removed from the<br />network.</p> <br /><h2>Wakeup Information</h2><p>Mains powered device.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGS214</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0404:1000</property>
+      <property name="dbReference">1282</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Remember relays state</label>
+        <description><![CDATA[
+Determines the state of relays after power supply failure (e.g. power outage).<br /><h1>Overview</h1><p>0 – relays remain switched off after restoring power<br />1 – restore remembered state of relays after restoring power<br />2 – restore remembered state of relays after restoring power, but for toggle switches (parameter 20/21 set to 1) set the same state as the current state of the switches</p> <p>For auto OFF and flashing modes the parameter is not relevant and the relay will always remain switched off.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">off after restoring power</option>
+          <option value="1">state of relays after restoring power</option>
+          <option value="2">Restore state after restoring power see overview</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: S1 input – switch type</label>
+        <description><![CDATA[
+Type of the device connected to the S1 terminal.<br /><h1>Overview</h1><p>0 – momentary switch<br />1 – toggle switch synchronized (contact closed - ON, contact opened - OFF) <br />2 – toggle switch with memory (device changes status when switch changes status)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">momentary switch</option>
+          <option value="1">toggle switch synchronized</option>
+          <option value="2">toggle switch with memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: S2 input – switch type</label>
+        <description><![CDATA[
+Type of the device connected to the S2 terminal.<br /><h1>Overview</h1><p>0 – momentary switch<br />1 – toggle switch synchronized (contact closed - ON, contact opened - OFF) <br />2 – toggle switch with memory (device changes status when switch changes status)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">momentary switch</option>
+          <option value="1">toggle switch synchronized</option>
+          <option value="2">toggle switch with memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Inputs orientation</label>
+        <description><![CDATA[
+Reversing operation of S1 and S2 inputs.<br /><h1>Overview</h1><p>This parameter allows reversing operation of S1 and S2 inputs without changing the wiring. Use in case of incorrect wiring.</p> <p>0 – default (S1 - 1st channel, S2 - 2nd channel)<br />1 – reversed (S1 - 2nd channel, S2 - 1st channel)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default</option>
+          <option value="1">reversed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_000000FF" type="integer" groupName="configuration">
+        <label>30: Alarm configuration 1 Action Type</label>
+        <description><![CDATA[
+which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Default Value [0x05, 0xFF, 0x00, 0x00] (Water Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action: 0x00 – no action, 0x01 – turn ON, 0x02 – turn OFF, 0x03 – turn ON/OFF continuously</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">turn ON</option>
+          <option value="2">turn OFF</option>
+          <option value="3">turn ON/OFF continuously</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration 1 Event/State</label>
+        <description>Event/State Parameters</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot - Notify Status</label>
+        <description>Notification Status</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot - Notify Type</label>
+        <description>Notification Type</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_000000FF" type="integer" groupName="configuration">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description><![CDATA[
+Water Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Default Value [0x05, 0xFF, 0x00, 0x00] (Water Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action: 0x00 – no action, 0x01 – turn ON, 0x02 – turn OFF, 0x03 – turn ON/OFF continuously</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">turn ON</option>
+          <option value="2">turn OFF</option>
+          <option value="3">turn ON/OFF continuously</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description>Event/State Parameters</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description>Notification Status</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description>Notification Type</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_32_4_000000FF" type="integer" groupName="configuration">
+        <label>32: Alarm configuration - 3rd slot - Smoke Alarm</label>
+        <description><![CDATA[
+Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action: 0x00 – no action, 0x01 – turn ON, 0x02 – turn OFF, 0x03 – turn ON/OFF continuously</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">turn ON</option>
+          <option value="2">turn OFF</option>
+          <option value="3">turn ON/OFF continuously</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description>Event/State</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description>Notification Status</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description>Notification Type</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_33_4_000000FF" type="integer" groupName="configuration">
+        <label>33: Alarm configuration - 4th slot - CO Alarm</label>
+        <description><![CDATA[
+Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action: 0x00 – no action, 0x01 – turn ON, 0x02 – turn OFF, 0x03 – turn ON/OFF continuously</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">turn ON</option>
+          <option value="2">turn OFF</option>
+          <option value="3">turn ON/OFF continuously</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - CO Alarm</label>
+        <description>Event/State</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - CO Alarm</label>
+        <description>Notification Status</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_33_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot - CO Alarm</label>
+        <description>Notification Type</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_34_4_000000FF" type="integer" groupName="configuration">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description><![CDATA[
+Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action: 0x00 – no action, 0x01 – turn ON, 0x02 – turn OFF, 0x03 – turn ON/OFF continuously</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no action</option>
+          <option value="1">turn ON</option>
+          <option value="2">turn OFF</option>
+          <option value="3">turn ON/OFF continuously</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description>Event/State</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description>Notification Status</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description>Notification Type</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>35: Alarm configuration – duration</label>
+        <description><![CDATA[
+Duration of alarm se-quence<br /><h1>Overview</h1><p>This parameter defines duration of alarm se-quence. When time set in this parameter elaps-es, alarm is cancelled and relays restore normal operation, but do not recover state from before the alarm.<br />0 – infinite<br />1-32400 (1s-9h, 1s step) – duration</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>40: S1 input – scenes sent</label>
+        <description><![CDATA[
+Actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).<br /><br />Enabling scenes for triple click disables entering the device in learning mode by triple clicking.<br /><br />0 – no scenes sent<br />1 – Key pressed 1 time<br />2 – Key pressed 2 times<br />4 – Key pressed 3 times<br />8 – Key hold down and key released</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>41: S2 input – scenes sent</label>
+        <description><![CDATA[
+Actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).<br /><br />Enabling scenes for triple click disables entering the device in learning mode by triple clicking.<br /><br />0 – no scenes sent<br />1 – Key pressed 1 time<br />2 – Key pressed 2 times<br />4 – Key pressed 3 times<br />8 – Key hold down and key released</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration">
+        <label>150: Operating mode</label>
+        <description><![CDATA[
+Operating mode for channel controlled with Q output.<br /><h1>Overview</h1><p>This parameter allows to choose operating mode for channel controlled with Q/Q1 output. For timed modes (value 1, 2 or 3), time is set with parameter 154 and reaction to input change is set with parameter 152.<br /><br />0 – standard operation<br />1 – delayed OFF<br />2 – auto OFF<br />3 – flashing</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">standard operation</option>
+          <option value="1">delayed OFF</option>
+          <option value="2">auto OFF</option>
+          <option value="3">flashing</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration">
+        <label>152: Reaction to input change in delayed/auto OFF modes</label>
+        <description><![CDATA[
+Reaction when changing state of S1 input in timed modes<br /><h1>Overview</h1><p>This parameter determines how the device reacts when changing state of S1 input in timed modes for first channel.<br /><br />0 – cancel mode and set default state<br />1 – no reaction, mode runs until it ends<br />2 – reset timer, start counting time from the beginning</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">cancel mode and set default state</option>
+          <option value="1">no reaction, mode runs until it ends</option>
+          <option value="2">reset timer</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_154_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>154: Time for delayed/auto OFF and flashing modes</label>
+        <description><![CDATA[
+Sets time parameter used in timed modes.<br /><h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes for first channel. For de-layed/auto OFF modes it determines duration, for flashing mode it determines cycle period.<br /><br />0 – 0.1 seconds<br />1-32000 – 0.1-3200 seconds, 0.1s step</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_156_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: S1: Switch ON sent to 2nd association group</label>
+        <description><![CDATA[
+S1 input – Switch ON value sent to 2nd association group<br /><h1>Overview</h1><p>This parameter defines value sent with Switch ON command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_157_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>157: S1: Switch OFF sent to 2nd association group</label>
+        <description><![CDATA[
+S1 input – Switch OFF value sent to 2nd association group<br /><h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_158_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>158: S1: Double Click sent to 2nd association group</label>
+        <description><![CDATA[
+S1 input – Double Click value sent to 2nd association group<br /><h1>Overview</h1><p>This parameter defines value sent with Double Click command to devices in 2nd association group when using S1 input.<br /><br />0 – turn off<br />1-99 – turn on and set level<br />255 – turn on with last level</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_162_1" type="integer" groupName="configuration">
+        <label>162: Q/Q1 output type</label>
+        <description><![CDATA[
+This parameter determines type of Q/Q1 output.<br /><h1>Overview</h1><p>0 – Normally Open (relay contacts opened turned off, closed when turned on)<br />1 – Normally Closed (relay contacts closed turned off, opened when turned on)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normally Open</option>
+          <option value="1">Normally Closed</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Device status and al-lows for assigning single device only<br /><h1>Overview</h1><p>1st association group – “Lifeline” reports the device status and al-lows for assigning single device only (main controller by default).</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off</label>
+        <description><![CDATA[
+Turn the associated devices on/off<br /><h1>Overview</h1><p>2nd association group –  “On/Off” is used to turn the associated devices on/off reflecting input operation (uses Basic command class).</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

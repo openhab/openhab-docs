@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wintop_dhswinblwdhs_00_000" listed="false">
+    <label>DHS-WIN-BLW-DHS Blind controller</label>
+    <description><![CDATA[
+Blind controller<br /><h1>Overview</h1><p>The DHS Z-Wave AC Motor Shutter Controller DHS-WIN-BLW-DHS is Z-Wave Shutter device specifically designed for use in smart homes and offices. </p> <p>The product allows to operate roller blinds/shutters wirelessly using a Z-wave enabled (AUS/NZ version 921.42 MHz) controllers (compatible universal remote controllers, control panels, gateways, PC with Z-Wave USB dongle) or manually via connected manual switch.</p> <p>The shutter controller can act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful to eliminate “RF deadspots” when the radio range of the Z-Wave network is influenced. This function is part of the Z-Wave network functionality and is set up via Z-Wave controller.</p> <br /><h2>Inclusion Information</h2><ol><li>Connect the Z-Wave Shutter Controller to the motor, power circuits and to the manual switches as per instructions in the section INSTALLATION above.</li> <li>When the Shutter Controller is not yet included in a Z-Wave network, NWI works for 30 seconds when the Shutter Controller is power ON. Make sure your Z-Wave Gateway is in the correct operating mode (inclusion). To include/exclude press 5 times any connected buttons. During the whole procedure controller (Gateway) and Z-Wave Shutter Controller must be in close proximity of 3 m. Successful inclusion will be indicated by your Z-Wave remote controller (Gateway). In case inclusion was not successful, try the procedure again or reset network settings by running exclusion procedure (see below).</li> <li>Once the Z-Wave Shutter Controller has been added into your Z-Wave home network successfully, you may need to assign it to a speciö c button on your controller (Gateway). Refer to your Z-Wave controller (Gateway) / panel for instructions on how to do this.</li> <li>Now, you can control your lamp via your Z-Wave Gateway or other controller</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Install Connect the Z-Wave Shutter Controller to the load, power circuits and to the manual switch as per instructions in the section INSTALLATION above.</li> <li>Start exclusion procedure on your controller and when requested press and release any connected button 5 times. During the whole procedure the controller and Z-Wave Shutter Controller must be close proximity of not more then 3 m.</li> <li>Successful exclusion will be indicated by your Z-Wave remote controller. LED on the Z-Wave Shutter Controller will start slow blinking. In case exclusion was not successful, try the procedure again.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wintop</property>
+      <property name="modelId">DHS-WIN-BLW-DHS</property>
+      <property name="manufacturerId">0097</property>
+      <property name="manufacturerRef">0024:0055</property>
+      <property name="dbReference">859</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Buttons mode</label>
+        <description><![CDATA[
+Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>One push button: One button is used (chose any), press while moving up and down stops, while stopped moves to opposite direction to previous.</li> <li>Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down if stopped and stops if moving up, Hold Up/Down moves in up/down, Release stops.</li> <li>Two toggle switch: Switch to Up/Down moves up/down.</li> <li>Two paddles with Power and Direction: Hold Up button to move blinds up. If Down button is pressed, blinds will move down. Release Up button to stop.</li> </ul>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">One push button</option>
+          <option value="1">Two paddles with Power and Direction</option>
+          <option value="2">Two toggle switch</option>
+          <option value="3">Two buttons with neutral position</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Automatically close after</label>
+        <description>If not zero, automatically close blind after a user defined time</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: What to do on RF close command</label>
+        <description>What to do on RF close command</description>
+        <default>0</default>
+        <options>
+          <option value="0">Close</option>
+          <option value="1">Ignore</option>
+          <option value="2">Open</option>
+          <option value="3">Open if closed, otherwise Close</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>4: Typical click timeout</label>
+        <description>Typical time used to differentiate click, hold, double and triple clicks</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Invert buttons</label>
+        <description>Invert buttons</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Action on button press or hold</label>
+        <description>Which command sent to Association group on button press or hold.</description>
+        <default>1</default>
+        <options>
+          <option value="1">Basic</option>
+          <option value="2">Send Scene</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Set LED indication mode</label>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Show working state</option>
+          <option value="2">Always on</option>
+          <option value="3">Show opened state</option>
+          <option value="4">Indicator Command Class</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Full close time</label>
+        <description><![CDATA[
+Time to go from opened to closed state<br /><h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Full open time</label>
+        <description><![CDATA[
+Time to go from closed to open state<br /><h1>Overview</h1><p> Time to go from closed to open state. This value may differ from full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="24">
+        <label>12: Node Id of the blocking device</label>
+        <description><![CDATA[
+Node Id of the blocking device<br /><h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Useful with door opening detector: if the door is open, block the blind not to break shades while they move. </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Blocking mode command</label>
+        <description><![CDATA[
+Blocking mode command<br /><h1>Overview</h1><p>Defines which command from blocking device to interpret as closed door and hence, unprotected.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Invert open and close relays</label>
+        <description>Invert open and close relays</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Click, press and hold of up/down buttons</label>
+        <description>Click, press and hold of up/down buttons</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send Reports on blind state change</label>
+        <description>Send Reports on blind state change</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

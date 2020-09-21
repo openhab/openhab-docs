@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_zts110_00_000" listed="false">
+    <label>ZTS-110 ZTS-110 Z Wave Thermostat</label>
+    <description><![CDATA[
+ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-Wave enabled programmable thermostat that allows you to control your room temperature with programmable time schedule such as WAKE, AWAY, HOME and SLEEP event which can maximize energy conservation and comfort while minimizing the effort required to maintaining the appropriate temperature in your home whether you are at home or away.</p> <p>Also, you can use the ZTS-110 to control / check your room temperature by smart phone or PC while you are at home or outside through Z-Wave gateway.</p> <p>Read following scenarios carefully before you start as it matters to the battery life under Z-Wave operation:</p> <p>ZTS-110 can be powered by 4 x AA batteries, and/or 24Vac C wire.</p> <ol><li>If it is powered by batteries or powered by batteries first then applied with 24Vac before Z-Wave inclusion, ZTS-110 will self-configure to FLiRS mode which will save battery life by sleeping.</li> <li>If it is powered by 24Vac or powered by 24Vac first then applied with batteries before Z-Wave inclusion, ZTS-110 will self-configure to Always Listening Mode which will not sleep.</li> <li>After inclusion process, ZTS-110 will not detect power source and not allow changing operation mode. You must perform exclusion process first if need to change Z-Wave operation mode.</li> <li>After Z-Wave inclusion process, if you reset ZTS-110 to default while both 24Vac and batteries are applied, ZTS-110 will take 24Vac as primary power source and self-configure to Always Listening Mode, because reset to default process will automatically exclude ZTS-110 from the Z-Wave network. You should disconnect the power source and re-apply the power so ZTS-110 can detect the power source type and self-configure to corresponding mode.</li> </ol><br /><h2>Inclusion Information</h2><ol><li>Press and hold "Home" key for 2 seconds to set ZTS-110 to Add (Inclusion) / Delete (Exclusion) Mode.</li> <li>Press "Prog" key once, it will search the network. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press and hold "Home" key for 2 seconds to set ZTS-110 to Add (Inclusion) / Delete (Exclusion) Mode.</li> <li>Press "Prog" key once, it will search the network.</li> </ol>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="remotec_zts110_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="remotec_zts110_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="remotec_zts110_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZTS-110</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">0200:8031,0202:8031</property>
+      <property name="dbReference">203</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>1: Swing</label>
+        <description>Set Swing value from 1F/.5C to 4F/2.0C Available settings: 1 - 4</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>2: Differntial</label>
+        <description>Set Differential value from 1F/.5C to 4F/2.0C Available settings: 1 - 4</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="500" max="4000">
+        <label>3: Set Filter Counter</label>
+        <description>Set filter replacement timer from 500 to 4000 hours.</description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="9999">
+        <label>4: Report Filter Counter</label>
+        <description>READ ONLY: Data in hours</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Scale of Temperature</label>
+        <description>Set Temperature Scale to Farhenheit or Centigrade. DEFAULT =1 Farhenheit</description>
+        <default>1</default>
+        <options>
+          <option value="0">Centigrade</option>
+          <option value="1">Farhenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="37" max="99">
+        <label>6: Upper Limit of Setpoint A</label>
+        <description><![CDATA[
+Upper Limit of Setpoint A<br /><h1>Overview</h1><p>Determines Upper Limit of set point A. Unit in celsius A=(B+2)min (37.0 C)max, Unit in Fahrenheit A=(B+4)min (99.0 F)max  </p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="5" max="95">
+        <label>7: Lower Limit of Setpoint B</label>
+        <description><![CDATA[
+Lower Limit of Setpoint B<br /><h1>Overview</h1><p>Determines Lower Limit of set point B. Unit in celsius (5.0 C to 35.0 C) Unit in Fahrenheit (41.0 F to 95.0  F)  </p>
+        ]]></description>
+        <default>41</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Easy Mode</label>
+        <description>Set Easy Mode 0:DISABLE 1:ENABLED DEFAULT:ENABLED</description>
+        <default>1</default>
+        <options>
+          <option value="0">Easy Mode Disabled</option>
+          <option value="1">Easy Mode Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Time Format</label>
+        <description>Configures for 12 or 24 Hour format. Default is 12 Hours.</description>
+        <default>1</default>
+        <options>
+          <option value="0">24 Hour Format</option>
+          <option value="1">12 Hour Format</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Repeat Basic Set Counter</label>
+        <description><![CDATA[
+Repeat Basic Set Counter<br /><h1>Overview</h1><p>Thermostat sends 'Basic Set' command to its association node repeatedly ever X minutes.</p> <ul><li>0 = Disabled or</li> <li>Set to Enabled Values available 3 to 255.  </li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>11: AUTO report by room temperature</label>
+        <description><![CDATA[
+AUTO report by room temperature<br /><h1>Overview</h1><p>Trigger AUTO report if room temperature is different from last report.</p> <ul><li>0 = Disabled or</li> <li>set value from 1 to 8 where each number corresponds to 1 Degree F or .5 Degrees Celsius.  </li> </ul>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="-10" max="10">
+        <label>12: Sensor temperature calibration.</label>
+        <description><![CDATA[
+Sensor temperature calibration.<br /><h1>Overview</h1><ul><li>0 = Disabled or</li> <li>set value from 1 to 10 in 1 degree F increments or -1 to -10 in 1 degree F increments . </li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="16">
+        <label>13: AUTO report by time interval.</label>
+        <description><![CDATA[
+AUTO report by time interval.<br /><h1>Overview</h1><ul><li>0 = Disabled or</li> <li>set value from 1 to 16 where 1 = .5 hours and each consecutive number increases time by .5 hours. </li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Heat Pump</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Compressor</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Update</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="remotec_zts110_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="5">Resume</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zts110_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zts110_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

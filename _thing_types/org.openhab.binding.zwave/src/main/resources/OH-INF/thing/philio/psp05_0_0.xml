@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_psp05_00_000" listed="false">
+    <label>PSP05 Motion Sensor</label>
+    <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>Zwave plus battery operated motion sensor.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-WaveTM Controller entered inclusion mode.</li> <li>Pressing button once to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-WaveTM Controller entered exclusion mode.</li> <li>Pressing button once to enter the exclusion mode.</li> <li>Node ID has been excluded</li> </ol><br /><h2>Wakeup Information</h2><p>Open the cover and press the button once.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PSP05</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:0050</property>
+      <property name="dbReference">600</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Basic Set Level</label>
+        <description>Setting the BASIC command value to turn on the light.</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+Adjust the PIR Sensitivity<br /><h1>Overview</h1><p>This setting sets the sensitivity of the PIR (motion) sensor. A setting of 0 (zero) will disable the sensor, with 99 being the highest level of sensitivity. The default sensitivity setting is 80.</p> <p>The higher the sensitivity, the greater the range of detection (things farther away will trigger the sensor). However, this may also result in things that are nearer triggering the sensor too frequently.</p>
+        ]]></description>
+        <default>80</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Multi-Sensor Function Switch</label>
+        <description>Parameter to set the sensor functions.</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: Customer Function</label>
+        <description>Parameter to set the Customer Function.</description>
+        <default>4</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000002" type="integer" groupName="configuration">
+        <label>7: Bit 1: Motion OFF Reporting</label>
+        <description><![CDATA[
+Sends notification when motion has completed.<br /><h1>Overview</h1><p>Sends notification when motion has completed.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Don't Send Report</option>
+          <option value="1">Send Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000004" type="integer" groupName="configuration">
+        <label>7: Bit 2: Enable PIR super sensitivity mode.</label>
+        <description>Enable PIR super sensitivity mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
+        <label>7: Bit 4: Notification Type</label>
+        <description><![CDATA[
+Method used to send notifications on motion<br /><h1>Overview</h1><p>Indicates method used to send notifications in the event of motion being triggered. Either Binary Sensor or Notification</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Report Notification</option>
+          <option value="1">Binary Sensor</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
+        <label>7: Bit 5: Send Multi CC in auto report</label>
+        <description><![CDATA[
+Send Multi CC in auto report<br /><h1>Overview</h1><p>Investigation required to determine purpose of this.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Enable</option>
+          <option value="1">Disable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
+        <label>7: Bit 6: Send Battery Report when Triggered</label>
+        <description>Whether or not a battery status report should be sent when triggered</description>
+        <default>0</default>
+        <options>
+          <option value="0">Enable</option>
+          <option value="1">Disable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>8: Re-detection interval</label>
+        <description><![CDATA[
+Multiples of 8 seconds to wait before re-detection<br /><h1>Overview</h1><p>By default, the sensor will wait 24 seconds (3 x 8) after detecting motion before it will send a further detection report. This value can be increased to a maximum of 127 (which is 127 * 8), meaning the re-detection interval will be 1,016 seconds (~17 minutes). The minimum value is 1 (1 * 8), meaning a re-detection interval of 8 seconds.</p> <p>The default is a value of 3, meaning a re-detection interval of 24 seconds.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>9: Turn off light time</label>
+        <description><![CDATA[
+Time to wait after lighting has been turned on before turning off again<br /><h1>Overview</h1><p>Number of seconds (in multiples of 8) to wait before turning off lights that were turned on as a result of motion occurring. A default value of 4 means (4 x 8) 32 seconds later, lights will be turned off.</p> <p>This setting should only be used when you are using association groups to control lighting events. If you are controlling on/off events as a result of motion through independent rules, this setting is irrelevant.</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Batery level reporting interval</label>
+        <description><![CDATA[
+How frequently battery status should be reported<br /><h1>Overview</h1><p>The frequency (in multiples of 'Tick Time') that the device should send battery status reports. If set to 0, battery status reports are not sent.</p> <p>The default 'tick time' (see other parameter settings) is 30, meaning 30 minutes. The default value of this parameter is 12, meaning that a battery report will be sent every 6 hours (12 * 30 minutes).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: Tick Interval</label>
+        <description><![CDATA[
+Interval time for sending reports<br /><h1>Overview</h1><p>This setting is used by the battery reporting interval setting. This setting defines the 'tick interval' or the number of time blocks to wait between sending reports. The default value of 30 means that a tick interval is 30 minutes.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+The group 1 is for receiving the report message<br /><h1>Overview</h1><p>The group 1 is for receiving the report message, like triggered event, temperature, illumination etc.</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+The group 2 is for light control<br /><h1>Overview</h1><p>The group 2 is for light control, the device will send the "Basic Set" command to this group. </p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

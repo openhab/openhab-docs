@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="monoprice_wallsocket_00_000" listed="false">
+    <label>PID15654 Z Wave Wall Socket Plug In Receptical</label>
+    <description><![CDATA[
+Z Wave Wall Socket Plug In Receptical<br /><h1>Overview</h1><p>Monitor and manage energy consumption to reduce costs with the Monoprice Z-Wave Plus® Wall Socket Smart Plug. This product is a Z-Wave® switched AC plug-in adapter. AC power can be remotely switched on or off manually with a button on the plug, remotely using Z-Wave manual control, or automatically with Z-Wave programming or triggered response.</p> <p>Using Z-Wave commands, you can query the plug-in to report the power consumption, either as direct wattage or the kilowatt hours (kWh). It also includes two USB ports, one capable of 1A of charging power and the other capable of 2.4A of charging power, so you can keep your mobile devices charged without using another AC power socket for a wall charger.</p> <br /><h2>Inclusion Information</h2><h1>Non-Secure</h1> <p>Triple-click the Z-Button on the plug-in.</p> <h1>Secure</h1> <p>Press and hold the Z-Button for about 3 seconds. The LED indicator will begin blinking rapidly.</p> <br /><h2>Exclusion Information</h2><p>Triple-click the Z-Button on the plug-in.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Monoprice</property>
+      <property name="modelId">PID15654</property>
+      <property name="manufacturerId">0202</property>
+      <property name="manufacturerRef">0101:0005,0208:0101</property>
+      <property name="dbReference">628</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>20: Overload Protection</label>
+        <description><![CDATA[
+If current exceeds 16.5A over 5 seconds, relay will turn off.<br /><h1>Overview</h1><p>If current exceeds 16.5A over 5 seconds, relay will turn off.</p> <p>0 - The function is disabled</p> <p>1 - The function is enabled.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>21: Device Status after Power Failure</label>
+        <description><![CDATA[
+Define how the plug reacts after power failure<br /><h1>Overview</h1><p>Define how the plug reacts after power failure:</p> <p>0 - Smart Plug returns to previous state after a power failure.</p> <p>1 - Smart Plug does not memorize its state after a powerfailure.</p> <p>Connected device will be on after the power supply is reconnected.</p> <p>2 - Smart Plug does not memorize its state after a power failure.</p> <p>Connected device will be off after the power supply is reconnected.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>24: Notifcation on Load Change</label>
+        <description><![CDATA[
+Smart Plug can send notifications to association device load state changes.<br /><h1>Overview</h1><p>Smart Plug can send notifications to association device load state changes.</p> <p>0 -Disabled.</p> <p>1 - Basic report.</p> <p>2 - Basic report only when Load condition not changed by Z-WAVE Command.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>27: Indicator Modes</label>
+        <description><![CDATA[
+LED in the device will indicate the state of load<br /><h1>Overview</h1><p>After smart plug is included into a Z-Wave network, the LED in the device will indicate the state of load.</p> <p>0 - The LED will follow the status (on/off) of its load.</p> <p>1 - When the state of Switch’s load changed, The LED will follow the status (on/off) of its load, but the red LED will turn off after 5 seconds if there is not any switch action.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>151: Threshold of power report</label>
+        <description><![CDATA[
+Power Threshold at which to send meter report<br /><h1>Overview</h1><p>Power threshold to be interpreted, when the change value of load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p> <p>Available settings: 0 - 65535 (0 - 65535W)</p> <p>0 - The function is disabled.</p> <p>Default setting: 50 (50W)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>152: Percentage Threshold of Power Report</label>
+        <description><![CDATA[
+Percentage Threshold at which to send meter report<br /><h1>Overview</h1><p>Power percentage threshold to be interpreted, when change value of the load power exceeds the setting threshold, the smart plug will send meter report to association device (Group Lifeline).</p> <p>Available settings: 0 - 255 (0 - 255%)</p> <p>0 - The function is disabled.</p> <p>Default setting: 10 (10%)</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_171_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>171: Power Report Frequency</label>
+        <description><![CDATA[
+The interval of sending power report to association device (Group Lifeline).<br /><h1>Overview</h1><p>The interval of sending power report to association device (Group Lifeline).</p> <p>Available settings: 5- 2678400 (5 - 2678400 seconds)</p> <p>0 -The function is disabled.</p> <p>Default setting: 30 (30 seconds).</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_172_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>172: Energy Report Frequency</label>
+        <description><![CDATA[
+The interval of sending energy report to association device (Group Lifeline).<br /><h1>Overview</h1><p>The interval of sending energy report to association device (Group Lifeline).</p> <p>Available settings: 5- 2678400 (5 - 2678400 seconds)</p> <p>0 -The function is disabled.</p> <p>Default setting: 300 (300 seconds).</p>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_173_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>173: Voltage Report Frequency</label>
+        <description><![CDATA[
+The interval of sending voltage report to association device (Group Lifeline)<br /><h1>Overview</h1><p>The interval of sending voltage report to association device (Group Lifeline)</p> <p>Available settings: 5- 2678400 (5 - 2678400 seconds)</p> <p>0 -The function is disabled.</p> <p>Default setting: 0 (disabled).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_174_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>174: Electricity Report Frequency</label>
+        <description><![CDATA[
+Interval for sending electricity report.<br /><h1>Overview</h1><p>The interval of sending electricity report to association device (Group Lifeline).</p> <p>Available settings: 5- 2678400 (5 - 2678400 seconds)</p> <p>0 -The function is disabled.</p> <p>Default setting: 0 (disabled).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Basic Report</label>
+        <description><![CDATA[
+Sends Basic Report at On/Off event<br /><h1>Overview</h1><p>Association command class allows Smart Plug to communicate with other Z-Wave devices directly, such as sending BASIC REPORT whenever the smart plug is turn on or off.</p> <p>Smart Plug supports 1 association grouping.</p> <p>The max number of associated nodes is 5.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

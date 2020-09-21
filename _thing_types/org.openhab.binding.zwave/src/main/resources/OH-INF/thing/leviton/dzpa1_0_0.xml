@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_dzpa1_00_000" listed="false">
+    <label>DZPA1 Plug-in Appliance Module</label>
+    <description><![CDATA[
+Plug-in Appliance Module<br /><h1>Overview</h1><p>On/Off (binary) plug in module for lamps or small appliances.</p> <p>Rated:</p> <ul><li>600W LED and CFL</li> <li>1800W resistive</li> <li>1800W Incandescent/Halogen</li> <li>1800VA Flourescent</li> <li>1800VA Inductive</li> <li>1/2 HP 9.8A Motor</li> <li>120VAC, 60 Hz</li> </ul><br /><h2>Inclusion Information</h2><p>Leviton Decora SmartTM Z-Wave® devices support two methods of inclusion.</p> <p>When using a Z-Wave PlusTM certified controller choose Network Wide Inclusion.</p> <p><em>Network Wide Inclusion:</em></p> <p>Network Wide Inclusion allows your device to be added to the network using devices already in the network to assist with communication. Work your way from the closest devices to the controller outward.</p> <ul><li>Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will blink amber.</li> <li>Tap the control button one time. The Locator LED will quickly flash green.</li> <li>The Decora SmartTM Z-Wave® device is ready to learn into the Z-Wave® network.</li> <li>Follow directions in the Z-Wave® controller to complete the adding process.</li> <li>Upon successful addition to network the LED will turn off and then blink green 3 times.</li> <li>If the adding process is not successful the LED will flash red 3 times.</li> </ul><p><em>Traditional Inclusion:</em></p> <p>For older controllers Traditional Inclusion is supported. Depending on the age of the controller the controller will need to be 3 to 35 feet from the device when including.</p> <ul><li>Enter Programming Mode by holding the control button for 7 seconds, the Locator LED</li> <li>will blink amber.</li> <li>The Decora SmartTM Z-Wave® device is ready to add to the Z-Wave® network.</li> <li>Follow directions in the Z-Wave® controller to enter learn mode.</li> <li>Tap the control button one time. The Locator LED will quickly flash green.</li> <li>The Z-Wave® controller will begin to pair with the Decora SmartTM device.</li> <li>Upon successful addition to the network the LED will turn off and then blink green 3 times.</li> <li>If the adding process is not successful the LED will flash red 3 times.</li> </ul><br /><h2>Exclusion Information</h2><p>When removing a device from a Z-Wave® network best practice is to use the exclusion command found in the Z-Wave® controller.</p> <ul><li>Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will turn amber.</li> <li>Follow directions in the Z-Wave® controller to enter exclusion mode.</li> <li>Tap the control button one time. The Locator LED will quickly flash green.</li> <li>The Z-Wave® controller will exclude the Decora SmartTM device.</li> <li>The Z-Wave® controller will confirm successful exclusion from the network.</li> </ul>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">DZPA1</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">1A02:0334,3601:0001</property>
+      <property name="dbReference">305</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Locator LED Status</label>
+        <description><![CDATA[
+Controls state of on-device LED<br /><h1>Overview</h1><p>Defines the behavior of the green LED.</p> <p>Default is Night Light mode where LED is on when switch is off.</p> <p>Valid values: 0 to 255</p> <ul><li>0 = LED off</li> <li>254 (0xFE) = Status mode</li> <li>255 (0xFF) = Locator mode</li> </ul>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">LED always off</option>
+          <option value="254">LED on when switch is ON</option>
+          <option value="255">LED on when switch is OFF</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>Notification frame is sent</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

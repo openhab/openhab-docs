@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="innovus_smoothremote_00_000" listed="false">
+    <label>SmoothRemote SmoothRemote</label>
+    <description><![CDATA[
+SmoothRemote<br /><h1>Overview</h1><p>The company's Z-Wave product portfolio is rounded off with the "SmoothRemote" remote control. This allows all INNOVUS devices as well as other third-party Z-Wave devices to be conveniently controlled from the sofa. </p> <p>The application fields are virtually unlimited. For example, the lights in the entire house can be switched on or off from the living room, unnecessary consumers switched off, or the room temperature in other rooms lowered or increased. All processes can be conveniently and easily set up via the House Control System</p> <br /><h2>Inclusion Information</h2><p>The remote can be added to or removed from a Z-Wave network by triple clicking the Shift button</p> <br /><h2>Exclusion Information</h2><p>The remote can be added to or removed from a Z-Wave network by triple clicking the Shift button</p> <br /><h2>Wakeup Information</h2><p>It is possible to make the device send a Wake Up Notification clicking VIII button 4 times</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">INNOVUS</property>
+      <property name="modelId">SmoothRemote</property>
+      <property name="manufacturerId">0077</property>
+      <property name="manufacturerRef">0002:0001</property>
+      <property name="dbReference">440</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>0: Button Press Time</label>
+        <description><![CDATA[
+Button Press Time<br /><h1>Overview</h1><p> Time for presses on a single button to register as seperate and not part of a sequence, measured in 0.01s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning</strong>: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Button Multiple Press Time</label>
+        <description><![CDATA[
+Button Multiple Press Time<br /><h1>Overview</h1><p>Time for presses on multiple buttons to register as seperate and not part of a sequence, measured in 0.01 s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning</strong>: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Button Hold Time</label>
+        <description><![CDATA[
+Button Hold Time<br /><h1>Overview</h1><p>Time for presses to register as being held down in 0.01s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning:</strong> All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. </p>
+        ]]></description>
+        <default>40</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>3: Network Update Interval</label>
+        <description><![CDATA[
+Network Update Interval<br /><h1>Overview</h1><p>Time between network updates in 256 seconds. Disabled if 0.</p> <p><strong>Warning:</strong> All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. </p>
+        ]]></description>
+        <default>168</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Click I</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Click II</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Click III</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Click IV</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Click V</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Click VI</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Click VII</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Click VIII</label>
+        <description>SWITCH ALL ON</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Click Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Double Click I</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Double Click II</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Double Click III</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Double Click IV</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: Double Click V</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: Double Click VI</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: Double Click VII</label>
+        <description>BASIC SET</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_17" type="text" groupName="association" multiple="true">
+        <label>17: Double Click VIII</label>
+        <description>SWITCH ALL OFF</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_18" type="text" groupName="association" multiple="true">
+        <label>18: Double Click Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_19" type="text" groupName="association" multiple="true">
+        <label>19: Hold I</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_20" type="text" groupName="association" multiple="true">
+        <label>20: Hold II</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_21" type="text" groupName="association" multiple="true">
+        <label>21: Hold III</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_22" type="text" groupName="association" multiple="true">
+        <label>22: Hold IV</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_23" type="text" groupName="association" multiple="true">
+        <label>23: Hold V</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_24" type="text" groupName="association" multiple="true">
+        <label>24: Hold VI</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_25" type="text" groupName="association" multiple="true">
+        <label>25: Hold VII</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_26" type="text" groupName="association" multiple="true">
+        <label>26: Hold VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_27" type="text" groupName="association" multiple="true">
+        <label>27: Hold Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_28" type="text" groupName="association" multiple="true">
+        <label>28: Click followed by Hold I</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_29" type="text" groupName="association" multiple="true">
+        <label>29: Click followed by Hold II</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_30" type="text" groupName="association" multiple="true">
+        <label>30: Click followed by Hold III</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_31" type="text" groupName="association" multiple="true">
+        <label>31: Click followed by Hold IV</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_32" type="text" groupName="association" multiple="true">
+        <label>32: Click followed by Hold V</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_33" type="text" groupName="association" multiple="true">
+        <label>33: Click followed by Hold VI</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_34" type="text" groupName="association" multiple="true">
+        <label>34: Click followed by Hold VII</label>
+        <description>SWITCH MULTILEVEL START LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_35" type="text" groupName="association" multiple="true">
+        <label>35: Click followed by Hold VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_36" type="text" groupName="association" multiple="true">
+        <label>36: Click followed by Hold Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_37" type="text" groupName="association" multiple="true">
+        <label>37: Release I</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_38" type="text" groupName="association" multiple="true">
+        <label>38: Release II</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_39" type="text" groupName="association" multiple="true">
+        <label>39: Release III</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_40" type="text" groupName="association" multiple="true">
+        <label>40: Release IV</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_41" type="text" groupName="association" multiple="true">
+        <label>41: Release V</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_42" type="text" groupName="association" multiple="true">
+        <label>42: Release VI</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_43" type="text" groupName="association" multiple="true">
+        <label>43: Release VII</label>
+        <description>SWITCH MULTILEVEL STOP LEVEL CHANGE</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_44" type="text" groupName="association" multiple="true">
+        <label>44: Release VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_45" type="text" groupName="association" multiple="true">
+        <label>45: Release Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_46" type="text" groupName="association" multiple="true">
+        <label>46: Click (Shift) followed by Click I</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_47" type="text" groupName="association" multiple="true">
+        <label>47: Click (Shift) followed by Click II</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_48" type="text" groupName="association" multiple="true">
+        <label>48: Click (Shift) followed by Click III</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_49" type="text" groupName="association" multiple="true">
+        <label>49: Click (Shift) followed by Click IV</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_50" type="text" groupName="association" multiple="true">
+        <label>50: Click (Shift) followed by Click V</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_51" type="text" groupName="association" multiple="true">
+        <label>51: Click (Shift) followed by Click VI</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_52" type="text" groupName="association" multiple="true">
+        <label>52: Click (Shift) followed by Click VII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_53" type="text" groupName="association" multiple="true">
+        <label>53: Click (Shift) followed by Click VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_54" type="text" groupName="association" multiple="true">
+        <label>54: Double Click (Shift) followed by Click I</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_55" type="text" groupName="association" multiple="true">
+        <label>55: Double Click (Shift) followed by Click II</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_56" type="text" groupName="association" multiple="true">
+        <label>56: Double Click (Shift) followed by Click III</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_57" type="text" groupName="association" multiple="true">
+        <label>57: Double Click (Shift) followed by Click IV</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_58" type="text" groupName="association" multiple="true">
+        <label>58: Double Click (Shift) followed by Click V</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_59" type="text" groupName="association" multiple="true">
+        <label>59: Double Click (Shift) followed by Click VI</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_60" type="text" groupName="association" multiple="true">
+        <label>60: Double Click (Shift) followed by Click VII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_61" type="text" groupName="association" multiple="true">
+        <label>61: Double Click (Shift) followed by Click VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_62" type="text" groupName="association" multiple="true">
+        <label>62: Triple Click VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_63" type="text" groupName="association" multiple="true">
+        <label>63: Triple Click Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_64" type="text" groupName="association" multiple="true">
+        <label>64: 4x Click VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_65" type="text" groupName="association" multiple="true">
+        <label>65: 4x Click Shift</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_66" type="text" groupName="association" multiple="true">
+        <label>66: Double Click followed by Hold (Shift)</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_67" type="text" groupName="association" multiple="true">
+        <label>67: Triple Click followed by Hold (Shift)</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <parameter name="group_68" type="text" groupName="association" multiple="true">
+        <label>68: Triple Click (Shift) followed by Triple Click VIII</label>
+        <description>HAIL</description>
+        <multipleLimit>30</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="pixela_schwzhs03_00_000" listed="false">
+    <label>ZHS03 Wall Controller</label>
+    <description><![CDATA[
+Wall Controller<br /><h1>Overview</h1><p>The SCHWAIGER ZHS03 Z-Wave Secure Wall Controller is a Z-Wave device that can both control other Z-Wave devices and activate predefined scenes in an IP gateway. Although it is controlling other devices, the Wall Controller cannot act as Z-Wave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network. The device can be used in different modes that are selected by configuration parameters:</p> <ol><li>Control of groups of other Z-Wave devices using 'ON', 'OFF' and Dim commands.</li> <li>Activation of predefined scenes in Gateways or other Z-Wave devices.</li> </ol><p>This device support <strong>secure communication</strong> when included by a controller that also supports securecommunication. The device will then send all commands as secure commands unless the receiving device cannot accept them. Then the command is send the normal way automatically.</p> <p><strong>Batteries</strong><br /><br />The unit is operated by batteries. Use only batteries of correct type. Never mix old and new batteries in the same device. Used batteries contain hazardous substances and should not be disposed of with household waste!<br /><br />Battery Type:  <strong>1 x CR2032</strong></p> <p><strong>Installation Guidelines</strong><br /><br />On factory default state pushing any button for one seconds starts inclusion (red/green LED blinking fast). Thisbehavior can be used to test the factory default or exclusion state.<br /><br />The device can be mounted on every dry and flat surface using either screws or double side adhesive. First the mounting base is fixed on the wall. Next step the switch frame is placed on the 2 frame and the electronic insert is used to fix the frame to the mounting base as shown on the image. Finally the switching paddle(s) are mounted on the electronic base.<br /><br />For battery change, the switching paddle(s) need to be removed. The CR battery can be replaced by pushingthe little nipple above the battery. The old battery will slide out and the new battery is inserted until the nipple will hold it again.<br /><br />The device can be operated in two different modes:<br /><br /><strong>Operation Mode:</strong></p> <p>This is the mode where the device is controlling other Z-Wave devices or isactivating scenes.<br /><br /><strong>Management Mode:</strong></p> <p>The device is turned into the management mode by pushing all four buttons for 5 sec. A blinking green LED indicates the management mode. In the management mode the buttons of the device have different functions. If no further action is performed, the device will turn back tothe normal mode after 10 sec. Any management action terminates the management mode as well.<br /><br />In management mode the following actions can be performed:</p> <p><strong>Button 1:</strong></p> <p>Re-Inclusion/Exclusion: Every re-inclusion or exclusion attempt is confirmed by hittingthis button. Any button press stops the mode as well.</p> <p><strong>Button 2:</strong></p> <p>Send Node Information Frame and Wake up Notification. (see explanation below)</p> <p><strong>Button 3:</strong></p> <p>Factory Default Reset. After clicking on button 3 keep button 4 pushed for &gt;4 seconds</p> <p><strong>Button 4:</strong></p> <p>Enter into Association mode to assign target devices to one of the four association. Referto the manuals section about association for more information how to set and unset association groups.</p> <p><strong>Factory Reset</strong><br /><br />The device can be set back to factory defaults without performing an exclusion process. Please executes the following steps: (1) Turn the device into Management Mode, (2) click on Button 3, (3) keep button 4 pushed for 4 seconds.</p> <p><strong>Child Protection</strong><br /><br />The device can be turn into a child protection mode. In this mode all local operation is disabled. The device can be turned into a child protection mode. In this mode all local operation is disabled. The child protection mode MUST be turned on wirelessly. However, in protected by sequence mode it is possible to unlock the device for local operation by pressing any button for 5 seconds. The unlock state will last for 5 seconds.</p> <p><strong>LED Control</strong><br /><br />1. Confirmation - green 2 sec<br />2. Failure - red 2 sec<br />3. Button press confirmation - green 1/4 sec<br />4. Waiting for Network Management mode selection - green blinks<br />5. Waiting for group selection in Association Set Mode - green fast blink<br />6. Waiting for NIF in Association Set Mode - green-red - off blink</p> <br /><h2>Inclusion Information</h2><ul><li>Turn the Z-Wave Controller into inclusion mode</li> <li>Turn the device into the management mode by pushing all four buttons for 5 sec. A blinking green LED indicates the management mode.</li> <li>Press button 1 to start a network wide inclusion or button 3 to start a lokal inclusion.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Turn the Z-Wave Controller into exclusion mode</li> <li>Turn the device into the management mode by pushing all four buttons for 5 sec. A blinking green LED indicates the management mode.</li> <li>Press button 1 to start a network wide exclusion or button 3 to start a lokal exclusion.</li> </ul><br /><h2>Wakeup Information</h2><p>This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.<br /><br />This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device.<br /><br />The device will stay awake right after inclusion for 10 seconds allowing the controller to perform certa inconfiguration actions. It is possible to manually wake up the device by pushing button 2 in management mode.<br /><br />The minimum allowed wakeup time is 240s but it is strongly recommended to define a much longer interval since the only purpose of a wakeup should be the reporting of the battery status or an update of the child protection settings. Defining Node ID of 0 as a destination of the Wakeup Notification will disable the periodical wakeup function entirely.<br /><br />It is possible to set the node ID to 255 to send wakeup notifications as broadcast. In this mode device takes more time to go to sleep and drains battery faster, but can notify all it's direct neighbors about a wakeup.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Pixela Corporation</property>
+      <property name="modelId">ZHS03</property>
+      <property name="manufacturerId">0277</property>
+      <property name="manufacturerRef">0004:0256</property>
+      <property name="dbReference">1227</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: Button 1 and 3 pair mode</label>
+        <description><![CDATA[
+Button 1 and 3 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 works with group A, button 3 with groups C. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group A, double click with group C.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Separately</option>
+          <option value="1">In pair without double clicks</option>
+          <option value="2">In pair with double clicks</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: Button 2 and 4 pair mode</label>
+        <description><![CDATA[
+Button 2 and 4 pair mode<br /><h1>Overview</h1><p>In separate mode button 2 works with group B, button 4 with groups D. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B, double click with group D.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Seperately</option>
+          <option value="1">In pair without double clicks</option>
+          <option value="2">In pair with double clicks</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>11: Command to Control Group A</label>
+        <description><![CDATA[
+Command to Control Group A<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group A when the related button is pressed.</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="7">Control Door Lock</option>
+          <option value="8">Central Scene to Gateway</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>12: Command to Control Group B</label>
+        <description><![CDATA[
+Command to Control Group B<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group B when the related button is pressed.</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="7">Control Door Lock</option>
+          <option value="8">Central Scene to Gateway</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>13: Command to Control Group C</label>
+        <description><![CDATA[
+Command to Control Group C<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group C when the related button is pressed.</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="7">Control Door Lock</option>
+          <option value="8">Central Scene to Gateway</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>14: Command to Control Group D</label>
+        <description><![CDATA[
+Command to Control Group D<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group A when the related button is pressed.</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="7">Control Door Lock</option>
+          <option value="8">Central Scene to Gateway</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>21: Send the following Switch All commands</label>
+        <description>Send the following Switch All commands</description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch off only</option>
+          <option value="2">Switch on only</option>
+          <option value="255">Switch all on and off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>22: Invert buttons</label>
+        <description>Invert buttons</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>25: Blocks wakeup even when wakeup interval is set</label>
+        <description><![CDATA[
+Blocks wakeup even when wakeup interval is set<br /><h1>Overview</h1><p>If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Wakeup is blocked</option>
+          <option value="1">Wakeup is possible if configured accordingly</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>30: Send unsolicited Battery Report on Wake Up</label>
+        <description>Send unsolicited Battery Report on Wake Up</description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">To same node as wake up notification</option>
+          <option value="2">Broadcast to neighbors</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control Group A</label>
+        <description>Controlled by button 1 or single clicks of buttons 1 and 3</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Control Group B</label>
+        <description>Controlled by button 2 or single clicks of buttons 2 and 4</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Control Group C</label>
+        <description>Controlled by button 3 or double clicks of buttons 1 and 3</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control Group D</label>
+        <description>Controlled by button 4 or double clicks of buttons 2 and 4</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

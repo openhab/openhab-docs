@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="inovelli_lzw30sn_00_000" listed="false">
+    <label>LZW30-SN Red Series On/Off switch</label>
+    <description><![CDATA[
+Red Series On/Off switch<br /><h1>Overview</h1><p>Inovelli’s new on/off switch is packed with features and designed with your house in mind.</p> <p>From a hardware side we’ve upgraded our Z-Wave module for better distance and added in one of our favorite features: power monitoring. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, or your existing dumb switch.</p> <p>From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.</p> <br /><h2>Inclusion Information</h2><p>Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.</p> <br /><h2>Exclusion Information</h2><p>Put your HUB in Exclusion mode and press the Config Button 3X until your HUB says the device is excluded.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param8" typeId="inovelli_lzw30sn_00_000_config_decimal_param8">
+        <label>LED strip effect</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=8</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="inovelli_lzw30sn_00_000_config_decimal_param5">
+        <label>LED Indicator Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Inovelli</property>
+      <property name="modelId">LZW30-SN</property>
+      <property name="manufacturerId">031E</property>
+      <property name="manufacturerRef">0002:0001</property>
+      <property name="dbReference">1113</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Power On State</label>
+        <description><![CDATA[
+Power On State<br /><h1>Overview</h1><p>When power is restored, the switch reverts to either On, Off or last level</p> <p>0 = Returns to State before Power Outage</p> <p>1 = On</p> <p>2 = Off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Prior State</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Invert Switch</label>
+        <description><![CDATA[
+Invert Switch<br /><h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap Up = Off)</p> <p>0 = Disabled</p> <p>1 = Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>3: Auto Off Timer</label>
+        <description><![CDATA[
+Auto Off Timer<br /><h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = Disabled</p> <p>1= 1 second</p> <p>32767 = 32767 seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>4: Association Behavior</label>
+        <description><![CDATA[
+Association Behavior<br /><h1>Overview</h1><p>When should the switch send commands to the associated devices:</p> <p>01 = Local, 02 = 3-Way, 03 = 3-Way &amp; Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub &amp; Local, 06 = Z-Wave Hub &amp; 3-Way, 07 = Z-Wave Hub &amp; Local &amp; 3-Way, 08 = Timer, 09 = Timer &amp; Local, 10 = Timer &amp; 3-Way, 11 =Timer &amp; 3-Way &amp; Local, 12 = Timer &amp; Z-Wave Hub, 13 = Timer &amp; Z-Wave Hub &amp; Local, 14 = Timer &amp; Z-Wave Hub &amp; 3-Way, 15 = All</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: LED Indicator Color</label>
+        <description><![CDATA[
+LED Indicator Color<br /><h1>Overview</h1><p>This will set the default color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).  Se website for more info.</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p>
+        ]]></description>
+        <default>170</default>
+        <options>
+          <option value="0">Red</option>
+          <option value="21">Orange</option>
+          <option value="42">Yellow</option>
+          <option value="85">Green</option>
+          <option value="127">Cyan</option>
+          <option value="170">Blue</option>
+          <option value="212">Violet</option>
+          <option value="234">Pink</option>
+          <option value="255">White</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: LED Indicator Intensity</label>
+        <description><![CDATA[
+LED Indicator Intensity<br /><h1>Overview</h1><p>This will set the intensity of the LED bar (ie: how bright it is) in 10% increments</p> <p>0 = Off</p> <p>1 = Low</p> <p>5 = Medium</p> <p>10 = High</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">10%</option>
+          <option value="2">20%</option>
+          <option value="3">30%</option>
+          <option value="4">40%</option>
+          <option value="5">50%</option>
+          <option value="6">60%</option>
+          <option value="7">70%</option>
+          <option value="8">80%</option>
+          <option value="9">90%</option>
+          <option value="10">100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED Indicator Intensity (When Off)</label>
+        <description><![CDATA[
+LED Indicator Intensity (When Off)<br /><h1>Overview</h1><p>This is the intensity of the LED bar when the switch is off in 10% increments.</p> <p>0 = Off</p> <p>1 = Low</p> <p>5 = Medium</p> <p>10 = High</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">10%</option>
+          <option value="2">20%</option>
+          <option value="3">30%</option>
+          <option value="4">40%</option>
+          <option value="5">50%</option>
+          <option value="6">60%</option>
+          <option value="7">70%</option>
+          <option value="8">80%</option>
+          <option value="9">90%</option>
+          <option value="10">100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration"
+                 min="0" max="83823359">
+        <label>8: LED Strip Effect</label>
+        <description><![CDATA[
+LED Strip Effect<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>Byte 1 = Color.  This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).</p> <p>Byte 2 = Brightness.  Sets the brightness in 10% increments.</p> <p>Byte 3 = Duration. </p> <p>Byte 4 = Effect. Sets the effect: 0 = Off, 1 = Solid, 2 = Fast Blink, 3 = Slow Blink, 4 = Pulse</p> <p>Addition:  To get the final code for the desired color/effect/duration, use this calculator:  https://nathanfiscus.github.io/inovelli-notification-calc/</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: LED Strip Effect (Color)</label>
+        <description><![CDATA[
+LED Strip Effect (Color)<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).</p> <p>0 = Red</p> <p>21 = Orange</p> <p>42 = Yellow</p> <p>85 = Green</p> <p>127 = Cyan</p> <p>170 = Blue</p> <p>212 = Violet</p> <p>234 = Pink</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Red</option>
+          <option value="21">Orange</option>
+          <option value="42">Yellow</option>
+          <option value="85">Green</option>
+          <option value="127">Cyan</option>
+          <option value="170">Blue</option>
+          <option value="212">Violet</option>
+          <option value="234">Pink</option>
+          <option value="255">White</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4_0000FF00" type="integer" groupName="configuration">
+        <label>8: LED Strip Effect (Brightness)</label>
+        <description><![CDATA[
+LED Strip Effect (Brightness)<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>Sets the brightness in 10% increments.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">10%</option>
+          <option value="2">20%</option>
+          <option value="3">30%</option>
+          <option value="4">40%</option>
+          <option value="5">50%</option>
+          <option value="6">60%</option>
+          <option value="7">70%</option>
+          <option value="8">80%</option>
+          <option value="9">90%</option>
+          <option value="10">100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: LED Strip Effect (Duration)</label>
+        <description><![CDATA[
+LED Strip Effect (Duration)<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>1 = 1 Second</p> <p>2 = 2 Seconds</p> <p>3 = 3 Seconds</p> <p>4 = 4 Seconds</p> <p>5 = 5 Seconds</p> <p>6 = 6 Seconds</p> <p>7 = 7 Seconds</p> <p>8 = 8 Seconds</p> <p>9 = 9 Seconds</p> <p>10 = 10 Seconds</p> <p>20 = 20 Seconds</p> <p>30 = 30 Seconds</p> <p>40 = 40 Seconds</p> <p>50 = 50 Seconds</p> <p>60 = 60 Seconds</p> <p>62 = 2 Minutes</p> <p>63 = 3 Minutes</p> <p>64 = 4 Minutes</p> <p>65 = 5 Minutes</p> <p>255 = Indefinitely</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_4_7F000000" type="integer" groupName="configuration">
+        <label>8: LED Strip Effect (Effect)</label>
+        <description><![CDATA[
+LED Strip Effect (Effect)<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>0 = Off</p> <p>1 = Solid</p> <p>2 = Fast Blink</p> <p>3 = Slow Blink</p> <p>4 = Pulse</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Solid</option>
+          <option value="2">Fast Blink</option>
+          <option value="3">Slow Blink</option>
+          <option value="4">Pulse</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: LED Strip Timeout</label>
+        <description><![CDATA[
+LED Strip Timeout<br /><h1>Overview</h1><p>When the LED strip is disabled (LED Strip Intensity is set to 0), this setting allows the LED strip to turn on temporarily while being adjusted.  Time is in seconds.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Stay Off</option>
+          <option value="1">One Second</option>
+          <option value="2">Two Seconds</option>
+          <option value="3">Three Seconds</option>
+          <option value="4">Four Seconds</option>
+          <option value="5">Five Seconds</option>
+          <option value="6">Six Seconds</option>
+          <option value="7">Seven Seconds</option>
+          <option value="8">Eight Seconds</option>
+          <option value="9">Nine Seconds</option>
+          <option value="10">Ten Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: Active Power Reports</label>
+        <description><![CDATA[
+Active Power Reports<br /><h1>Overview</h1><p>The power level change that will result in a new power report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>11: Periodic Power &amp; Energy Reports</label>
+        <description><![CDATA[
+Periodic Power &amp; Energy Reports<br /><h1>Overview</h1><p>Time period between consecutive power and energy reports being sent (in seconds)</p> <p>0 = 0 seconds</p> <p>1 = 1 second</p> <p>32767 = 32767 seconds</p> <p>Timer resets after every report is sent</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>12: Energy Reports</label>
+        <description><![CDATA[
+Energy Reports<br /><h1>Overview</h1><p>The energy level change that will result in a new energy report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Enable Instant On</label>
+        <description><![CDATA[
+Enable Instant On<br /><h1>Overview</h1><p>Enable instant on (ie: disable the 700ms delay) for physical switch. Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled.</p> 0: No Delay 1: 700ms Delay (default)
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No delay</option>
+          <option value="1">700ms delay</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Members of this group will receive unsolicited messages related to the status of the switch.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>1. Single press Up button sends BasicSet (0xFF)</p> <p>and</p> <p>2. Single press Down sends BasicSet (0x00)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="inovelli_lzw30sn_00_000_config_decimal_param8">
+    <item-type>Number</item-type>
+    <label>LED Strip Effect (Effect)</label>
+    <description>LED Strip Effect (Effect)</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Solid</option>
+        <option value="2">Fast Blink</option>
+        <option value="3">Slow Blink</option>
+        <option value="4">Pulse</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="inovelli_lzw30sn_00_000_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>LED Indicator Color</label>
+    <description>LED Indicator Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Red</option>
+        <option value="21">Orange</option>
+        <option value="42">Yellow</option>
+        <option value="85">Green</option>
+        <option value="127">Cyan</option>
+        <option value="170">Blue</option>
+        <option value="212">Violet</option>
+        <option value="234">Pink</option>
+        <option value="255">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

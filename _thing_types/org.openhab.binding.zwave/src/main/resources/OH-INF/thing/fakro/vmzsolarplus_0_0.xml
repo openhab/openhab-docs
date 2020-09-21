@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_vmzsolarplus_00_000" listed="false">
+    <label>VMZ Solar z-wave plus Awning Blind z-wave plus version</label>
+    <description>Awning Blind z-wave plus version</description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">VMZ Solar z-wave plus</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0006:0112</property>
+      <property name="dbReference">750</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: operating mode</label>
+        <description><![CDATA[
+operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p>0 - manual</p> <p>1 - semiauto: goes down automatically but does not go up.</p> <p>2 - auto</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">manual</option>
+          <option value="1">semiauto</option>
+          <option value="2">auto</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: winter mode</label>
+        <description><![CDATA[
+Summer/Winter mode<br /><h1>Overview</h1><p>summer mode: go down if sun shines and go up if it is cloudy</p> <p>winter mode: if temperature is below 0 deg C and sun shines then go up if it is cloudy go down. If temperature is above 0 deg C works as a summer mode</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">summer mode only</option>
+          <option value="2">winter mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="30">
+        <label>3: Delay time</label>
+        <description><![CDATA[
+delay to auto shade<br /><h1>Overview</h1><p>Delay time in minutes after which the shade is open or closed in auto mode</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="3" max="100">
+        <label>4: Level of sensitivity for day</label>
+        <description><![CDATA[
+Level of insolation to open/close the shades<br /><h1>Overview</h1><p>Level of insolation in mA to open/close the shades in the auto mode</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>5: Temperature</label>
+        <description><![CDATA[
+Temperature<br /><h1>Overview</h1><p>T[<sup>o</sup>C] = x minus 50</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: STM active</label>
+        <description>STM AutoShade active</description>
+        <default>0</default>
+        <options>
+          <option value="0">no</option>
+          <option value="1">yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Restore last position</label>
+        <description><![CDATA[
+Restore last position<br /><h1>Overview</h1><p>Restore last position or always go down till the end.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">go down</option>
+          <option value="2">restore last position</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>17: Insolation level</label>
+        <description><![CDATA[
+Current on autoshade solar panel<br /><h1>Overview</h1><p>Current from autoshade solar panel for loading battery: 0 - 255 mA</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>21: Motor current</label>
+        <description><![CDATA[
+Motor current<br /><h1>Overview</h1><p>Current used by motor: 10[mA] - 2,55[A]</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_77_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>77: CLOSE current</label>
+        <description><![CDATA[
+CLOSE current<br /><h1>Overview</h1><p>CLOSE current: 1[mA] - 255[mA]</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_78_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>78: OPEN current</label>
+        <description><![CDATA[
+OPEN current<br /><h1>Overview</h1><p>OPEN current: 1[mA] - 255[mA]</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_79_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>79: CLOSE overload current</label>
+        <description><![CDATA[
+CLOSE overload current<br /><h1>Overview</h1><p>CLOSE overload current: 10[mA] - 2,55[A]</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>80: OPEN overload current</label>
+        <description><![CDATA[
+OPEN overload current<br /><h1>Overview</h1><p>OPEN overload current: 10[mA] - 2,55[A]</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_99_1" type="integer" groupName="configuration">
+        <label>99: Restore default config values</label>
+        <description><![CDATA[
+Restore default config values<br /><h1>Overview</h1><p>Restore default config values.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">restore default config values</option>
+          <option value="2">user values</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Autoexclude</label>
+        <description>Autoexclude</description>
+        <default>1</default>
+        <options>
+          <option value="1">Off</option>
+          <option value="2">On</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BasicRepeat</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>&lt;commandClass&gt;BASIC&lt;/commandClass&gt;</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: MultilevelRepeat</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>&lt;commandClass&gt;SWITCH_MULTILEVEL&lt;/commandClass&gt;</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: BasicControl</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>&lt;commandClass&gt;BASIC&lt;/commandClass&gt;</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

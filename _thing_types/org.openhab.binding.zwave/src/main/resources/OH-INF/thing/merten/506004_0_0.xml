@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_506004_00_000" listed="false">
+    <label>506004 Transmitter Flush-Mounted 4-Gang Switch</label>
+    <description><![CDATA[
+Transmitter Flush-Mounted 4-Gang Switch<br /><h1>Overview</h1><p>The flush-mounted transmitter is a battery-powered radio transmitter to which you can connect up to four make contacts (e.g. push-buttons)</p> <p>Line pairs are:</p> <ul><li>red/white-red: Input E1</li> <li>green/white-green: Input E2</li> <li>brown/white-brown: Input E3</li> <li>blue/white-blue: Input E4</li> </ul><p><strong>Attention:</strong> The flush-mounted transmitter can be damaged. Never connect the flush mounted transmitter to 230 V</p> <br /><h2>Inclusion Information</h2><p>Triple click on operating surface of a connected switch</p> <br /><h2>Exclusion Information</h2><p>Triple click on operating surface of a connected switch</p> <br /><h2>Wakeup Information</h2><p>Triple click on operating surface of a connected switch. Wait until the LED goes out.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary1" typeId="sensor_binary">
+        <label>Binary Sensor 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 3</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary2" typeId="sensor_binary">
+        <label>Binary Sensor 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer3" typeId="switch_dimmer">
+        <label>Dimmer 4</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary3" typeId="sensor_binary">
+        <label>Binary Sensor 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">506004</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">0003:0004</property>
+      <property name="dbReference">56</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: Group 1 (red)</label>
+        <default>4</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER roller shutter as long as button is pressed</option>
+          <option value="54">Move roller shutter single-surface</option>
+          <option value="55">RAISE roller shutter as long as button is pressed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Group 2 (green)</label>
+        <default>4</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER roller shutter as long as button is pressed</option>
+          <option value="54">Move roller shutter single-surface</option>
+          <option value="55">RAISE roller shutter as long as button is pressed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Group3 (brown)</label>
+        <default>4</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER roller shutter as long as button is pressed</option>
+          <option value="54">Move roller shutter single-surface</option>
+          <option value="55">RAISE roller shutter as long as button is pressed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Group 4 (blue)</label>
+        <default>4</default>
+        <options>
+          <option value="0">Switching/dimming/shutters dual-surface</option>
+          <option value="4">Switching single-surface</option>
+          <option value="44">Doorbell function</option>
+          <option value="52">LOWER roller shutter as long as button is pressed</option>
+          <option value="54">Move roller shutter single-surface</option>
+          <option value="55">RAISE roller shutter as long as button is pressed</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Red Cables</label>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Green Cables</label>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Brown Cables</label>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Blue Cables</label>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

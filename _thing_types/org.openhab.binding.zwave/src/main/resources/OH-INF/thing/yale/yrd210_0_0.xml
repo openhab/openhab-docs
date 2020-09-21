@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_yrd210_00_000" listed="false">
+    <label>YRD210 Push Button Deadbolt</label>
+    <description><![CDATA[
+Push Button Deadbolt<br /><h1>Overview</h1><p>The Yale Real Living™ Stand-alone Touchscreen Deadbolt Lock combines a robust lockset with a contemporary electronic aesthetic.</p> <p>Users benefit from an interactive touchscreen that makes day-to-day access effortless, as well as offering voice-guided programming for simple updates to user information in the event of staffing changes or security breaches. Yale Real Living™ is engineered for quick and ea</p> <br /><h2>Inclusion Information</h2><ol><li>Enter Master Code #</li> <li>Enter 7 #</li> </ol><p>If lock is <strong>not on the network</strong>,</p> <ul><li>Keypad model will flash BLUE;</li> <li>press ‘1#’ to join the network ;</li> <li>lock will beep three times to indicate lock has joined the network successfully.</li> </ul><ul><li>Touch model voice response will say” Network Mode”;</li> <li>lock screen will display ‘1’;</li> <li>select ‘1#’ to join the network .</li> <li>Voice response will say “Joining the wireless network” and then “Completed” when lock has successfully joined the network.</li> </ul><br /><h2>Exclusion Information</h2><ol><li>Enter Master Code #</li> <li>Enter 7 #</li> </ol><p>If lock is <strong>on the network</strong>, </p> <ul><li>Keypad model will flash RED;</li> <li>press ‘3#’ to leave the network ;</li> <li>lock will beep three times to indicate lock has left the network successfully.</li> </ul><ul><li>Touch model voice response will say” Network Mode”;</li> <li>lock screen will display ‘3’;</li> <li>select ‘3#’ to leave the network .</li> <li>Voice response will say “Exit the wireless network” and then “Completed” when lock has successfully left the network.</li> </ul>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm Raw</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">YRD210</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">0004:0000,0004:0209,0004:AA00</property>
+      <property name="dbReference">235</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Audio Mode</label>
+        <default>3</default>
+        <options>
+          <option value="1">Silent</option>
+          <option value="2">Low</option>
+          <option value="3">High</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Auto relock</label>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>3: Relock time</label>
+        <description><![CDATA[
+Seconds; automatically re-lock after specified time<br /><h1>Overview</h1><p>Seconds; after successful code entry and unit unlocks, it will automatically re-lock after specified time</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>4: Wrong Code Entry Limit</label>
+        <description><![CDATA[
+The number of invalid code entries before TAMPER Alarm.<br /><h1>Overview</h1><p>The number of invalid code entries lock will accept before sending TAMPER Alarm.</p> <p>When number of wrong code entries is exceeded, lock will disable keypad for the time specified by Shutdown Time parameter.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Language</label>
+        <default>1</default>
+        <options>
+          <option value="1">English</option>
+          <option value="2">Spanish</option>
+          <option value="3">French</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>7: Shutdown Time</label>
+        <description><![CDATA[
+Time unit will be inoperable after too many wrong codes<br /><h1>Overview</h1><p>Number of seconds unit will be inoperable after number of wrong code entries is exceeded.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operating Mode</label>
+        <description><![CDATA[
+Operating Mode<br /><h1>Overview</h1><p>Normal Mode</p> <p>Vacation Mode - all user codes disabled</p> <p>Privacy Mode - all user codes disabled and RF Lock/Unlock disabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Vacation</option>
+          <option value="2">Privacy</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Alarm Reports</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

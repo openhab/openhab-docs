@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 org.eclipse.smarthome.thing-description.xsd">
+
+	<thing-type id="device" listed="false">
+		<label>Unknown Device</label>
+		<description><![CDATA[
+		  This device has not been fully discovered by the binding. There are a few possible reasons for this -:
+		  <ul>
+		  <li><b>The device is not in the database.</b> If the device attributes show that this device has a valid
+		  manufacturer ID, device ID and type, then this is likely the case (eg. you see a label like "<i>Z-Wave node 1
+		  (0082:6015:020D::2.0)</i>"). Even if the device appears to be in the database, some manufacturers use multiple
+		  sets of references for different regions or versions, and your device references may not be in the database.
+		  In either case, the database must be updated and you should raise an issue to get this addressed.
+		  <li><b>The device initialisation is not complete.</b> Once the device is included into the network, the binding
+		  must interrogate it to find out what type of device it is. One part of this process is to get the manufacturer
+		  information required to identify the device, and until this is done, the device will remain unknown. For mains
+		  powered devices, this will occur quickly, however for battery devices the device must be woken up a number of
+		  times to allow the discovery phase to complete. This must be performed with the device close to the controller.  
+		  </ul> 
+		]]></description>
+
+        <!-- CONFIGURATION DESCRIPTIONS -->
+        <config-description>
+
+            <!-- PARAMETER DEFINITIONS -->
+            <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+                <label>Node ID</label>
+            </parameter>
+        </config-description>
+
+	</thing-type>
+
+</thing:thing-descriptions>

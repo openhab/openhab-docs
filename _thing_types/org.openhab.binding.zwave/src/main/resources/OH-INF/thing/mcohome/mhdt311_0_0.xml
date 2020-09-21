@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhdt311_00_000" listed="false">
+    <label>MH-DT311 MCOHome Dimmer Switch</label>
+    <description><![CDATA[
+MCOHome Dimmer Switch<br /><h1>Overview</h1><p>Dimmer Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control the light level. It supports basic command class， multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /><h2>Inclusion Information</h2><p>Set controller into Add/Remove mode, and press 3 clicks on "+" or "-" button to add/remove. If succeed, green LED flicks 4 times.</p> <br /><h2>Exclusion Information</h2><p>Set controller into Add/Remove mode, and press 3 clicks on "+" or "-" button to add/remove. If succeed, green LED flicks 4 times.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-DT311</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">D311:5102</property>
+      <property name="dbReference">1199</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Dimmer state saved or not when power down</label>
+        <description><![CDATA[
+Dimmer state saved or not when power down<br /><h1>Overview</h1><p>0 - Dimmer will be off when powered again</p> <p>1 - Dimmer will keep the same state when powered again</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: Dimming mode</label>
+        <description><![CDATA[
+Dimming mode<br /><h1>Overview</h1><p>0 - leading edge</p> <p>1 - trailing edge </p> <p>2 - On/off only</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Auto detection of dimming mode when powered on</label>
+        <description><![CDATA[
+Auto detection of dimming mode when powered on<br /><h1>Overview</h1><p>0 - Auto detection disabled</p> <p>1 - Auto detection enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>4: LED Backlit brightness level</label>
+        <description><![CDATA[
+LED Backlit brightness level<br /><h1>Overview</h1><p>0 - LED disabled </p> <p>1-10 Min level-Max level</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>5: Minimum brightness level</label>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>6: Maximum brightness level</label>
+        <default>63</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="2550">
+        <label>7: Single dimming step time (Manual)</label>
+        <description>Single dimming step time (Manual)</description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>8: Single dimming step size (Manual)</label>
+        <description>Single dimming step size (Manual)</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="2550">
+        <label>9: Single dimming step time (Auto)</label>
+        <description>Single dimming step time (Auto)</description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>10: Single dimming step size (Auto)</label>
+        <description>Single dimming step size (Auto)</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>11: The dimming percentage single touch</label>
+        <description>The dimming percentage single touch</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Reporting interval for dimming level</label>
+        <description>Reporting interval for dimming level</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: External switch type</label>
+        <description>External switch type</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>14: External switch input</label>
+        <description>External switch input</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>15: Energy meter reporting</label>
+        <description>Energy meter reporting</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Energy meter reporting interval</label>
+        <description>Energy meter reporting interval</description>
+        <default>16</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>17: Beep</label>
+        <description>Beep</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_32_2" type="integer" groupName="configuration"
+                 min="0" max="20480">
+        <label>32: Ampere alarm threshold</label>
+        <description>Ampere alarm threshold</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>33: Voltage alarm threshold</label>
+        <description>Voltage alarm threshold</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Associate with the panel</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Associate with Key “+”</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Associate with Key “-”</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

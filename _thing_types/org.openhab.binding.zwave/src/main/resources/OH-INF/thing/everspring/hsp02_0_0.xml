@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="everspring_hsp02_00_000" listed="false">
+    <label>HSP02 Motion Detector</label>
+    <description><![CDATA[
+Motion Detector<br /><h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /><h2>Inclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>Press link key 3 times within 1.5 second</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Everspring</property>
+      <property name="modelId">HSP02</property>
+      <property name="manufacturerId">0060</property>
+      <property name="manufacturerRef">0001:0001,0001:0003</property>
+      <property name="dbReference">22</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Basic Set Level</label>
+        <description>Value to be sent with a BASIC SET command</description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor Detecting Function</label>
+        <default>1</default>
+        <options>
+          <option value="1">Group 1 Enabled / Group 2 Enabled</option>
+          <option value="2">Group 1 Enabled / Group 2 Disabled</option>
+          <option value="3">Group 1 Disabled / Group 2 Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>3: Sensitivity Level</label>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>4: Re-trigger Interval Setting</label>
+        <default>180</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>5: LUX Level</label>
+        <description>Value for what LUX level will arm the detection sensor</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>6: On-Off Duration</label>
+        <default>15</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Target for reports</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Target nodes who receive BASIC_SET command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

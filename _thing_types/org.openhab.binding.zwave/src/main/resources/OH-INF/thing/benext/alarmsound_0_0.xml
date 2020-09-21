@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_alarmsound_00_000" listed="false">
+    <label>Alarm Sound Alarm sound</label>
+    <description><![CDATA[
+Alarm sound<br /><h1>Overview</h1><p>The Alarm Sound is a plug&amp;play product developed by BeNext. Depending on present situations and scenes it sets off an alarm sound warning you and your family or scaring off unwanted activities. Use the Alarm Sound for security purposes and notifications indoors.</p> <p>Use the Alarm Sound in combination with the Door Sensor or MoLite Sensor to alert you when someone undesirably enters your home or work-space. The Alarm Sound possesses six different sound- and lighting-configurations to scare off any possible intruder. You can also customize personal preferred ‘scenes’ and ‘rules’ in our free of charge online manager in order to give the Alarm Sound dual functionality. You can even choose to create a new kind of alarm clock, which in combination with the Door Sensor or MoLite Sensor gives a wake up alarm if you haven’t left your bedroom after 09:00 am.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p> <br /><h2>Exclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">Alarm Sound</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0005:0101</property>
+      <property name="dbReference">443</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>1: Set to Default</label>
+        <description><![CDATA[
+Set all configuration values to default values (factory settings)<br /><h1>Overview</h1><p>If value is set to 255 reset to default settings.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Destination routine on/off</label>
+        <description><![CDATA[
+Test connection by sending a periodic test with sound on failure<br /><h1>Overview</h1><p>Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.</p> <p>0 this is turned off. 1-255 turn it on.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>3: Desitnation routine succes time</label>
+        <description><![CDATA[
+Time it takes to send a new frame after the last frame has succesfully send<br /><h1>Overview</h1><p>t(s) = param1 * 6 *60</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="240">
+        <label>4: Destination routine failed time</label>
+        <description><![CDATA[
+Time elapsed between failing to end a frame and sending a new frame.<br /><h1>Overview</h1><p>t(s) = param1 *60</p>
+        ]]></description>
+        <default>240</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>7: Select index sound/light mode</label>
+        <description><![CDATA[
+The index of the sound mode when a switch binary/basic set frame been received<br /><h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>8: power offline sound/light mode</label>
+        <description><![CDATA[
+The sound and light mode that will be used when the device gets unplugged.<br /><h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_10_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>10: sound/light index 1</label>
+        <description><![CDATA[
+Sound/light that will be played when index 1 has been selected<br /><h1>Overview</h1><p>Params 10-27 are the values to set the sound/light (this will be set when index 1)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_28_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>28: sound/light index 2</label>
+        <description><![CDATA[
+Sound/light that will be played when index 2 has been selected<br /><h1>Overview</h1><p>Params 28-45 are the values to set the sound/light (this will be set when index 2)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_46_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>46: sound/light index 3</label>
+        <description><![CDATA[
+Sound/light that will be played when index 3 has been selected<br /><h1>Overview</h1><p>Params 45-63 are the values to set the sound/light (this will be set when index 3)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_64_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>64: sound/light index 4</label>
+        <description><![CDATA[
+Sound/light that will be played when index 4 has been selected<br /><h1>Overview</h1><p>Params 64-81 are the values to set the sound/light (this will be set when index 4)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_82_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>82: sound/light index 5</label>
+        <description><![CDATA[
+Sound/light that will be played when index 5 has been selected<br /><h1>Overview</h1><p>Params 82-99 are the values to set the sound/light (this will be set when index 5)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_100_18" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>100: sound/light index 6</label>
+        <description><![CDATA[
+Sound/light that will be played when index 6 has been selected<br /><h1>Overview</h1><p>Params 100-117 are the values to set the sound/light (this will be set when index 6)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Association group 1</label>
+        <description><![CDATA[
+Changes the LED on the device<br /><h1>Overview</h1><p>When the device receives an binary switch/ basic report, this will update the LED</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Association group 2</label>
+        <description><![CDATA[
+The alarm sound reports it status to the associated devices<br /><h1>Overview</h1><p>- In case the device gets unplugged this shall send Alarm report (code 3, Triggered).</p> <p>- When the device is connected to the power, this shall send an Alarm report (code 3, off).</p> <p>- When the device is truned of by clicking on the button, this shall send a Switch binary (off).</p> <p>- When the device gets unplugged the standard "power offline" sound is on, the device will send a Switch binary report (on).</p> <p>When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

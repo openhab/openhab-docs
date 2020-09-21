@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tze93_00_000" listed="false">
+    <label>TZE93 Weekly Programming Thermostat with LCD Touch Screen</label>
+    <description><![CDATA[
+Weekly Programming Thermostat with LCD Touch Screen<br /><h1>Overview</h1><p>TZE93.716 Plus Z-WAVE Weekly Programming Heating Thermostat with LCD Touch Screen</p> <ul><li>868.42MHz(EU), 869MHz(RU) </li> <li>Adopt Z-Wave 500 series chip </li> <li>Voltage: AC230V, 50Hz </li> <li>Current: 16A</li> <li>Setting range: 5~90℃ </li> <li>Switching differential: ±1℃ </li> <li>Ambient temperature: -5~50℃ </li> <li>Protective housing: IP20 </li> <li>Housing material: Anti-flammable PC </li> <li>Operation range: up to 130 feet line of sight</li> </ul><br /><h2>Inclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter inclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter inclusion mode. The wireless icon will start to blink.</li> <li>After the blink stop, if the wireless icon lights steady means product inclusion is completed</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter exclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter exclusion mode. The wireless icon will blink.</li> <li>After the blink stop, if the wireless icon is off that means product exclusion is completed.</li> </ul>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="tkb_tze93_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZE93</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0311:0505</property>
+      <property name="dbReference">1034</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Memory function</label>
+        <description><![CDATA[
+Recover after a power failure<br /><h1>Overview</h1><p>The memory function means the thermostat will recover the operating mode after a power failure.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Device memory function not open</option>
+          <option value="1">Open device memory function</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="tkb_tze93_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="5">Resume</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

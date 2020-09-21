@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="somfy_zrtsi_00_000" listed="false">
+    <label>ZRTSI Z-Wave to RTS Interface Controller</label>
+    <description><![CDATA[
+Z-Wave to RTS Interface Controller<br /><h1>Overview</h1><p>Somfy's new Z-Wave® to Radio Technology Somfy® Interface, or ZRTSI, is a Z-Wave certified device that receives Z-Wave signals and converts them to Radio Technology Somfy® (RTS). The ZRTSI was developed to integrate Somfy's range of RTS motors into TaHomATM. The ZRTSI can be used with up to 16 individual or groups of motorized products and plugs into any standard 120VAC 60Hz outlet. (Cat. No: 1870202)</p> <br /><h2>Inclusion Information</h2><p>On the ZRTSI, Activate the “Base Node Include” command by pressing the Select Button.</p> <br /><h2>Exclusion Information</h2><ol><li>From the ZRTSI's Home Screen, navigate to the Base Node Exclude screen. </li> <li>Activate the “Base Node Exclude” command by pressing the Select Button. </li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Somfy</property>
+      <property name="modelId">ZRTSI</property>
+      <property name="manufacturerId">0047</property>
+      <property name="manufacturerRef">5A52:5400</property>
+      <property name="dbReference">369</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

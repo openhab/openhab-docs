@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="rcs_tz43_00_000" listed="false">
+    <label>TZ43 Thermostat</label>
+    <description><![CDATA[
+Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical thermostat control of a central heating and cooling HVAC system plus has the added feature of ZWave communications for remote control.</p> <p>The thermostat has a large, backlit graphical display, control buttons, status LEDs and a temperature sensor. The thermostat can display multiple screens for different functions of the thermostat. In the default thermostat control screen, shown below, it displays the current temperature, setpoint, system mode, manual fan mode, time, outside temperature and other information.  </p> <br /><h2>Inclusion Information</h2><ol><li>Navigate to the Z-Wave Install Button screen. This screen is located in the Installer Screen. To enter this screen, go to the main menu screen and press and hold the two inner buttons for 3 seconds until the Installer Settings screen appears. Scroll down until the Z-Wave Install Btn menu item is selected, press the Select button.</li> <li>Press the YES button.  </li> </ol><br /><h2>Exclusion Information</h2><p>Not provided</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="rcs_tz43_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="rcs_tz43_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="rcs_tz43_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Residential Control Systems, Inc. (RCS)</property>
+      <property name="modelId">TZ43</property>
+      <property name="manufacturerId">0010</property>
+      <property name="manufacturerRef">0001:0002</property>
+      <property name="dbReference">380</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: System Type</label>
+        <description>System Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">Gas/Elec</option>
+          <option value="1">HeatPump</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Fan Type</label>
+        <description>Fan Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">Gas</option>
+          <option value="1">Elec</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Change Over Type</label>
+        <description>Change Over Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">w/Cool</option>
+          <option value="1">w/Heat</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: C/F Type</label>
+        <description>C/F Type</description>
+        <default>1</default>
+        <options>
+          <option value="0">C</option>
+          <option value="1">F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Display Lock</label>
+        <description>Display Lock</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlocked</option>
+          <option value="1">Locked</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="5" max="9">
+        <label>10: MOT</label>
+        <description>Minimum OFF Time</description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>11: MRT</label>
+        <description>Minimum Run Time</description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>12: H Delta Stage 1 On</label>
+        <description>H Delta Stage 1 On</description>
+        <default>1</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>13: H Delta Stage 1 Off</label>
+        <description>H Delta Stage 1 Off</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>14: H Delta Stage 2 On</label>
+        <description>H Delta Stage 2 On</description>
+        <default>4</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>15: H Delta Stage 2 Off</label>
+        <description>H Delta Stage 2 Off</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>16: H Delta Stage 3 On</label>
+        <description>H Delta Stage 3 On</description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>17: H Delta Stage 3 Off</label>
+        <description>H Delta Stage 3 Off</description>
+        <default>3</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>18: C Delta Stage 1 On</label>
+        <description>C Delta Stage 1 On</description>
+        <default>1</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>19: C Delta Stage 1 Off</label>
+        <description>C Delta Stage 1 Off</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>20: C Delta Stage 2 On</label>
+        <description>C Delta Stage 2 On</description>
+        <default>4</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>21: C Delta Stage 2 Off</label>
+        <description>C Delta Stage 2 Off</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: SB Mode</label>
+        <description>Setback mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Setback</option>
+          <option value="1">Setback</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_69_1" type="integer" groupName="configuration">
+        <label>69: Service Mode (Test)</label>
+        <description>Service Mode (Test)</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Service Mode</option>
+          <option value="1">Service Mode enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_75_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>75: Fan Cycler ON Time</label>
+        <description>Fan Cycler ON Time</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_76_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>76: Fan Cycler OFF Time</label>
+        <description>Fan Cycler OFF Time</description>
+        <default>20</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_77_1" type="integer" groupName="configuration">
+        <label>77: 2nd Stage Heat Enable</label>
+        <description>2nd Stage Heat Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">No 2nd Stage Heat</option>
+          <option value="1">2nd Stage Heat</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_78_1" type="integer" groupName="configuration">
+        <label>78: Aux Heat Enable</label>
+        <description>Aux Heat Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Aux Heat</option>
+          <option value="1">Aux Heat enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_79_1" type="integer" groupName="configuration">
+        <label>79: 2nd Stage Cool Enable</label>
+        <description>2nd Stage Cool Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">No 2nd Stage Cool</option>
+          <option value="1">2nd Stage Cool</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="rcs_tz43_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="4">Aux Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rcs_tz43_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rcs_tz43_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="1">Running</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

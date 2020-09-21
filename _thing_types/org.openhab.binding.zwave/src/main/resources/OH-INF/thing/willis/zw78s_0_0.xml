@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="willis_zw78s_00_000" listed="false">
+    <label>ZW78S In-line, in-wall 110v Z-Wave power switch</label>
+    <description><![CDATA[
+In-line, in-wall 110v Z-Wave power switch<br /><h1>Overview</h1><p>Generic Z-Wave module. Small and easy to place in box with a standard 110v light switch. Allows for both use of the standard switch as well as Z-Wave.   Sold online from zwave4less.  Identified as Willis Elect. Co, Ltd.</p> <br /><h2>Inclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Willis Electric Co., Ltd.</property>
+      <property name="modelId">ZW78S</property>
+      <property name="manufacturerId">015D</property>
+      <property name="manufacturerRef">0115:4E1C</property>
+      <property name="dbReference">918</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_39349_00_000" listed="false">
+    <label>39349 Smart Outlet</label>
+    <description><![CDATA[
+Smart Outlet<br /><h1>Overview</h1><ul><li>One Z-Wave remote controlled outlet, one always-ON outlet</li> <li>Remote ON/OFF control via the Z-Wave controller/network</li> <li>Manual ON/OFF control with the manual/program button</li> <li>Blue LED indicates outlet location in a dark room </li> </ul><br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, then press and release the program button to add it to the network. </p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, then press and release the program button to remove it from the network.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">39349</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">4952:3133</property>
+      <property name="dbReference">901</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED light</label>
+        <description>Configuration of LED light</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED ON when Load is OFF, LED OFF when ON</option>
+          <option value="1">LED ON when Load is ON, LED OFF when load is OFF</option>
+          <option value="2">LED always OFF</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set, local load</label>
+        <description>Supports Basic Set and is controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set, ON/OFF button</label>
+        <description><![CDATA[
+Supports Basic Set and is controlled by pressing the On or Off button<br /><h1>Overview</h1><p>Supports Basic Set and is controlled by pressing the On or Off button</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

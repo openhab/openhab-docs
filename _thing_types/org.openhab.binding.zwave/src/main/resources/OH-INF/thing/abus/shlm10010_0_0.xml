@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="abus_shlm10010_00_000" listed="false">
+    <label>SHLM10010 ABUS Security Center Bulb</label>
+    <description><![CDATA[
+ABUS Security Center Bulb<br /><h1>Overview</h1><p>The ABUS Z-Wave LED lamp can be an optical helper in many situations in your connected home. E.g. in case of danger, the escape routes can be perfectly illuminated by scene control. And if you are not at home, you can credibly simulate your presence by configuring scenarios. When it comes to comfort, you make no compromises compared to a 60W light bulb, with significantly lower power consumption. The LED lamp produces warm white light (2700k), is dimmable and fits into any conventional E27 socket.</p> <br /><h2>Inclusion Information</h2><p>Screw the LED bulbinto a standard E27 socket. Click the + (Add) button in your Z-Wave App and follow the further instructions. <br />Turn the light switch on.</p> <br /><h2>Exclusion Information</h2><p>Switch the Power supply of the LED bulb ON and OFF 6 times in a row (interval of 0.5 to 2 seconds)<br />When switched on for the 7th time, the LED bulb flashes twice indicating successful reset to factory settings.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ABUS Security-Center GmbH &amp; Co. KG</property>
+      <property name="modelId">SHLM10010</property>
+      <property name="manufacturerId">0403</property>
+      <property name="manufacturerRef">0003:0002</property>
+      <property name="dbReference">1120</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_0" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>1: Temperature of NTC</label>
+        <description>This parameter can only be read and not set.</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

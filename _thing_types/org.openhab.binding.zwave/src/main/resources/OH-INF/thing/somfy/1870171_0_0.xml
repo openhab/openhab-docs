@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="somfy_1870171_00_000" listed="false">
+    <label>ZDMI 1870171 ZDMI/ILT Z-Wave Interface</label>
+    <description><![CDATA[
+ZDMI/ILT Z-Wave Interface<br /><h1>Overview</h1><p>The Somfy Z-Wave Digital Motor Interface (ZDMI) is a Z-Wave routing device that resides as a node within a designated Z-Wave control network. It receives Z-Wave transmissions and converts them to motor control commands for Somfy’s Sonesse 50 ILT2 (AC) motor and Sonesse 30 RS485 (DC) motor. The interface also receives feedback information from these motors and distributes it to the Z-Wave network.</p> <br /><h2>Inclusion Information</h2><ol><li>Upon power-up, the INCLUSION LED will illuminate for five (5) seconds then turn off. When the LED turns off, press the SETUP button to verify motor movement.</li> <li>Select the inclusion command on your Z-Wave programmer or remote controller.</li> <li>Press the SETUP button to include the ZDMI in the network. Verify that the INCLUSION LED stays illuminated when the interface is included in the network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Select the exclusion command on your Z-Wave programmer or remote controller.</li> <li>Press the SETUP button to exclude the ZDMI from the network. Verify that the INCLUSION LED turns off.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Somfy</property>
+      <property name="modelId">ZDMI 1870171</property>
+      <property name="manufacturerId">0047</property>
+      <property name="manufacturerRef">4C54:0001</property>
+      <property name="dbReference">767</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

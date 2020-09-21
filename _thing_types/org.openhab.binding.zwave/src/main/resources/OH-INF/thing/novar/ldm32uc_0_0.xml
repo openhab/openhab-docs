@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="novar_ldm32uc_00_000" listed="false">
+    <label>LDM32 MK Honeywell Astral 2 Load Wall Dimmer - LDM32UC</label>
+    <description><![CDATA[
+MK Honeywell Astral 2 Load Wall Dimmer - LDM32UC<br /><h1>Overview</h1><h1>LDM32UC</h1> <p><strong>2 GANG 300W DIMMER MODULE</strong></p> <p>RF Range up to 75m (open field)<br />Can control up to 5 devices<br />Can control either a group or a scene<br />Pre programmed with HOLIDAY MODE function<br />Mains powered<br /><br />STANDARD CARTON QUANTITY: 1</p> <p>Suitable for use with the following load types and maximum load ratings only.</p> <table><tr><td>Load Type     </td> <td>2G 300W Dimmer</td> </tr><tr><td>GLS       </td> <td>25-300W per channel</td> </tr><tr><td>Tungsten filament    </td> <td>25-300W per channel</td> </tr><tr><td>Tungsten halogen     </td> <td>25-300W per channel</td> </tr><tr><td>12V ELV Tungsten halogen with wirewound or electronic transformers</td> <td>35-300W per channel</td> </tr></table><p> <br />Not suitable with any other load type.  Do not use different types of lamps on the same load current.<br /><br />BS EN 60669-2-1<br />BS EN 61000-6-1 / 3<br />ETSI EN 301489-1 / 2<br />ETSI EN 300220-1/ 2</p> <p>Mounting Boxes:  Flush 35mm<br /><br />Operating Frequency  868.4 MHz<br /><br />Select the appropriate 2 Gang  Dimmer Fascia for your Dimmer Module</p> <p>Full Data Sheet is available from here: View Full Data Sheet</p> <br /><h2>Inclusion Information</h2><p>To include device into another system press any operation button </p> <br /><h2>Exclusion Information</h2><p>To exclude device from a system quickly press Dis/Exc button twice in 1s </p> <br /><h2>Wakeup Information</h2><p>SUC/SIS updates:</p> <p>Periodic and routine update will be requested every:</p> <p> 24 operations on 1 Gang Products</p> <p> 36 operations on 2 Gang Products</p> <p> To initiate a manual wake-up and update request press Exc/Dis</p> <p>Note: Only available if SUC/SIS in network. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Novar Electrical Devices and Systems (EDS)</property>
+      <property name="modelId">LDM32</property>
+      <property name="manufacturerId">0040</property>
+      <property name="manufacturerRef">0004:0102</property>
+      <property name="dbReference">998</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

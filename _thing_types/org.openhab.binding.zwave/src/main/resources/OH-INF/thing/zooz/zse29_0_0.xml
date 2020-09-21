@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse29_00_000" listed="false">
+    <label>ZSE29 Outdoor Motion Sensor</label>
+    <description><![CDATA[
+Outdoor Motion Sensor<br /><h1>Overview</h1><p>OUTDOOR SENSOR: Introducing the first Z-Wave motion detector created for outdoor use. Monitor activity remotely through your Z-Wave hub and automate outdoor lighting based on motion. Battery or 5V USB powered.</p> <br /><h2>Inclusion Information</h2><p>Click the tamper switch 3 times quickly</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the sensor within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode.</li> <li>Press and release the tamper switch 3 times quickly.</li> <li>Your hub will confirm exclusion and the sensor will disappear from your controller's device list.</li> </ol><br /><h2>Wakeup Information</h2><p>The sensor’s wake-up interval is set to 4 hours by default to save battery life. Use the Wake Up Command Class to adjust the interval (in seconds, working in 600s intervals, with 600 as min and 86400 as max values). During wake-up, the sensor turns the Z-Wave radio on for 10 seconds to receive communication from the hub. Long wake-up interval will not affect how often the sensor reports motion to your hub.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR,event=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR,event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE29</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0001:0005</property>
+      <property name="versionMax">1.9</property>
+      <property name="dbReference">970</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Notification Reports to Controller</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Basic Set commands PIR Control<br /><h1>Overview</h1><p>The Outdoor Motion Sensor supports Group 1 with 1 Controller node for lifeline communication and Group 2 with up to 4 devices for PIR Control. This device will send a Notification Report to Group 1 and BASIC_SET command to Group 2 whenever it detects motion.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

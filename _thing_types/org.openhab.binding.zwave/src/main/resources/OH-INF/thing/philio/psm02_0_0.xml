@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_psm02_00_000" listed="false">
+    <label>PSM02 Slim Multi-Sensor</label>
+    <description><![CDATA[
+Slim Multi-Sensor<br /><h1>Overview</h1><p>The slim multi-sensor PSM02 has PIR, door/window, temperature and illumination, 4 sensors function in one, based on Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments</p> <br /><h2>Inclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds will enter exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>Remove the front cover, and press the tamper key once. The device will wake-up 10 seconds. </p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=MOTION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=TAMPER</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door/Window Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY;type=DOORWINDOW</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PSM02</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:0002</property>
+      <property name="dbReference">167</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the light</p> <p>.1 - 100    -&gt;  For dimmers 1 to 100 means the light strength</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+PIR Sensitivity<br /><h1>Overview</h1><p>parameter to set the Sensitivity for the PIR (Passive Infrared Sensor)</p> <p>0    -&gt;  0 means disable the PIR motion;</p> <p>1 - 99    -&gt;  1 means the lowest sensitivity, 99 means the highest sensitivity</p>
+        ]]></description>
+        <default>70</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+Light Threshold<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</p> <ul><li>0 means turn off illumination detected function And never turn on the light.</li> <li>1 means darkest.</li> <li>99 means brightest.</li> <li>100 means turn off illumination detected function. And always turn on the light. </li> </ul>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>5: Operation Mode</label>
+        <description><![CDATA[
+Operation Mode<br /><h1>Overview</h1><p>Operation mode. Using bit to control.</p> <ul><li>Bit0: <ul><li>1 means security mode,</li> <li>0 means home automation mode.</li> </ul></li> <li>Bit1: <ul><li>1 means enable test mode,</li> <li>0 means disable test mode</li> </ul></li> </ul><p><strong>Notice:</strong> Bit0 and bit1 will effect when the DIP Switch setting to program mode. If bit1 is enabled, the bit0 is useless.</p> <ul><li>Bit2: Disable the door/window function.</li> <li>Bit3: Setting the temperature scale. <ul><li>0: Fahrenheit,</li> <li>1:Celsius</li> </ul></li> <li>Bit4: Disable illumination report after event triggered.</li> <li>Bit5: Disable temperature report after event triggered</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>6: Multi-Sensor Function Switch</label>
+        <description><![CDATA[
+Multi-Sensor Function Switch<br /><h1>Overview</h1><ul><li>Bit 0: Disable magnetic integrate illumination.</li> <li>Bit 1: Disable PIR integrate Illumination.</li> <li>Bit 2: Disable magnetic integrate PIR (Default is Disable)</li> <li>Bit3: When Bit2 is 0 (Enable), the device is install in the same room with the light? <ul><li>0: In the same room(Default),</li> <li>1: In the different room.</li> </ul></li> <li>Bit4: Disable delay 5 seconds to turn off the light, when door/window closed.</li> <li>Bit5: Disable auto turn off the light, after door/window opened to turn on the light.</li> <li>Bit6:Enable temperature monitoring. When this bit enable, the temperature changed 3 degree Fahrenheit, it will report. And also the temperature over 1 40 degree Fahrenheit, it will report every 64 seconds.</li> </ul>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="3" max="127">
+        <label>8: PIR Re-Detect Interval Time</label>
+        <description><![CDATA[
+PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the security mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, and minimum time is 24 seconds, default tick is 3 (24 seconds).</p> <p>Setting the suitable value to prevent received the trigger signal too frequency. Also can save the battery energy.</p> <p><strong>Notice:</strong> If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not detecting.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="4" max="127">
+        <label>9: Turn Off Light Time</label>
+        <description><![CDATA[
+Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected.</p> <p>8 seconds per tick, and minimum time is 32 seconds,</p> <p>default tick is 4 (32 seconds).</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>30 minutes per tick and minimum time is 30 minutes,</p> <p>default tick is 12 (6 hours). </p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>11: Auto Report Door/Window State Time</label>
+        <description><![CDATA[
+Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time for auto report the door/window state.</p> <p>30 minutes per tick and minimum time is 30 minutes,</p> <p>default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>12: Auto Report Illumination Time</label>
+        <description><![CDATA[
+Auto Report Illumination Time<br /><h1>Overview</h1><p>The interval time for auto report the illumination.</p> <p>30 minutes per tick and minimum time is 30 minutes,</p> <p>default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>13: Auto Report Temperature Time</label>
+        <description><![CDATA[
+Auto Report Temperature Time<br /><h1>Overview</h1><p>Interval time for auto report the temperature. </p> <p>30 minutes per tick and minimum time is 30 minutes, </p> <p>default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Reports</label>
+        <multipleLimit>7</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Light Control</label>
+        <multipleLimit>7</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wa105dbz_00_000" listed="false">
+    <label>WA105DBZ Siren and Strobe</label>
+    <description>Siren and Strobe</description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WA105DBZ</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">2005:0503,2009:0903</property>
+      <property name="dbReference">365</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: Siren Strobe Mode</label>
+        <description>Defines the reaction of the siren</description>
+        <default>0</default>
+        <options>
+          <option value="0">All Enabled</option>
+          <option value="1">Siren Only</option>
+          <option value="2">Strobe Only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Alarm auto stop</label>
+        <description>Defines the auto time out of the alarm indication</description>
+        <default>0</default>
+        <options>
+          <option value="0">30 seconds</option>
+          <option value="1">60 seconds</option>
+          <option value="2">120 seconds</option>
+          <option value="3">Continuous</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

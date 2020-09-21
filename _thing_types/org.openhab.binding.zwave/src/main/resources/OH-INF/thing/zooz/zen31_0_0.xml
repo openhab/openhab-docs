@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen31_00_000" listed="false">
+    <label>ZEN31 RGBW Dimmer for LED Strips</label>
+    <description><![CDATA[
+RGBW Dimmer for LED Strips<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off, brightness, and RGBW color control</li> <li>Perfect for programming your existing RGBW LED strip</li> <li>Energy monitoring in live mode and over time</li> <li>Double tap to full brightness feature + optional scene control</li> <li>Remembers and restores on/off status a?er power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> </ul><br /><h2>Inclusion Information</h2><p>Make sure the RGBW Dimmer is powered up. <strong>Click the Z-Wave button 3 times </strong><strong>quickly</strong> to include the device. The LED will blink yellow to indicate communication with the hub. It will blink green (for non-secure, S0, or S2 unauthenticated inclusion) or magenta (for S2 authenticated) once the device is successfully included to your network. It will blink red if inclusion is not successful</p> <br /><h2>Exclusion Information</h2><p>Click the Z-Wave button 3 times quickly.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_voltage" typeId="sensor_voltage">
+        <label>Sensor (voltage)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param157" typeId="zooz_zen31_00_000_config_decimal_param157">
+        <label>Preset Program</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=157</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer (brightness)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="color_color1" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR:1;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature1" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR:1;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer (red)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer3" typeId="switch_dimmer">
+        <label>Dimmer (green)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:3,COMMAND_CLASS_BASIC:3</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer4" typeId="switch_dimmer">
+        <label>Dimmer (blue)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:4,COMMAND_CLASS_BASIC:4</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer5" typeId="switch_dimmer">
+        <label>Dimmer (white)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:5,COMMAND_CLASS_BASIC:5</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:5</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN31</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0902:2000</property>
+      <property name="dbReference">1163</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status after power failure</label>
+        <description>Status after power failure</description>
+        <default>0</default>
+        <options>
+          <option value="0">Forced to OFF</option>
+          <option value="1">Restore status</option>
+          <option value="2">Forced to ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Switch / Input type for IN1</label>
+        <description>Switch / Input type for IN1</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog sensor with no pull-up</option>
+          <option value="1">Analog sensor with pull-up</option>
+          <option value="2">Momentary switch</option>
+          <option value="3">Toggle switch (change on toggle)</option>
+          <option value="4">Toggle switch (Up = ON, Down = OFF)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Switch / Input type for IN2</label>
+        <description>Switch / Input type for IN2</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog sensor with no pull-up</option>
+          <option value="1">Analog sensor with pull-up</option>
+          <option value="2">Momentary switch</option>
+          <option value="3">Toggle switch (change on toggle)</option>
+          <option value="4">Toggle switch (Up = ON, Down = OFF)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Switch / Input type for IN3</label>
+        <description>Switch / Input type for IN3</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog sensor with no pull-up</option>
+          <option value="1">Analog sensor with pull-up</option>
+          <option value="2">Momentary switch</option>
+          <option value="3">Toggle switch (change on toggle)</option>
+          <option value="4">Toggle switch (Up = ON, Down = OFF)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Switch / Input type for IN4</label>
+        <description>Switch / Input type for IN4</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog sensor with no pull-up</option>
+          <option value="1">Analog sensor with pull-up</option>
+          <option value="2">Momentary switch</option>
+          <option value="3">Toggle switch (change on toggle)</option>
+          <option value="4">Toggle switch (Up = ON, Down = OFF)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_40_1_00000001" type="integer" groupName="configuration">
+        <label>40: Click/toggle once to trigger a scene (IN1)</label>
+        <description>Assign scene activation trigger for IN1 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1_00000002" type="integer" groupName="configuration">
+        <label>40: Click/toggle twice to trigger a scene (IN1)</label>
+        <description>Assign scene activation trigger for IN1 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1_00000004" type="integer" groupName="configuration">
+        <label>40: Click/toggle three times to trigger a scene (IN1)</label>
+        <description>Assign scene activation trigger for IN1 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1_00000008" type="integer" groupName="configuration">
+        <label>40: Hold and release to trigger a scene (IN1)</label>
+        <description>Assign scene activation trigger for IN1 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1_00000001" type="integer" groupName="configuration">
+        <label>41: Click/toggle once to trigger a scene (IN2)</label>
+        <description>Assign scene activation trigger for IN2 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1_00000002" type="integer" groupName="configuration">
+        <label>41: Click/toggle twice to trigger a scene (IN2)</label>
+        <description>Assign scene activation trigger for IN2 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1_00000004" type="integer" groupName="configuration">
+        <label>41: Click/toggle three times to trigger a scene (IN2)</label>
+        <description>Assign scene activation trigger for IN2 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1_00000008" type="integer" groupName="configuration">
+        <label>41: Hold and release to trigger a scene (IN2)</label>
+        <description>Assign scene activation trigger for IN2 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1_00000001" type="integer" groupName="configuration">
+        <label>42: Click/toggle once to trigger a scene (IN3)</label>
+        <description>Assign scene activation trigger for IN3 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1_00000002" type="integer" groupName="configuration">
+        <label>42: Click/toggle twice to trigger a scene (IN3)</label>
+        <description>Assign scene activation trigger for IN3 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1_00000004" type="integer" groupName="configuration">
+        <label>42: Click/toggle three times to trigger a scene (IN3)</label>
+        <description>Assign scene activation trigger for IN3 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1_00000008" type="integer" groupName="configuration">
+        <label>42: Hold and release to trigger a scene (IN3)</label>
+        <description>Assign scene activation trigger for IN3 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1_00000001" type="integer" groupName="configuration">
+        <label>43: Click/toggle once to trigger a scene (IN4)</label>
+        <description>Assign scene activation trigger for IN4 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1_00000002" type="integer" groupName="configuration">
+        <label>43: Click/toggle twice to trigger a scene (IN4)</label>
+        <description>Assign scene activation trigger for IN4 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1_00000004" type="integer" groupName="configuration">
+        <label>43: Click/toggle three times to trigger a scene (IN4)</label>
+        <description>Assign scene activation trigger for IN4 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1_00000008" type="integer" groupName="configuration">
+        <label>43: Hold and release to trigger a scene (IN4)</label>
+        <description>Assign scene activation trigger for IN4 terminal</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_2" type="integer" groupName="configuration"
+                 min="30" max="32400">
+        <label>62: Power report frequency</label>
+        <description><![CDATA[
+Power report frequency<br /><h1>Overview</h1><p>Allowed values: 0 (disabled) or 30 - 32400 seconds</p> <p>Default: 3600 seconds (1 hour)</p>
+        ]]></description>
+        <default>3600</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_2" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>63: Voltage Reporting / Trigger Threshold</label>
+        <description><![CDATA[
+Choose how you want your RGBW Dimmer to report voltage changes.<br /><h1>Overview</h1><p>Choose how you want your RGBW Dimmer to report voltage changes from the connected analog sensors and trigger status change on the output. The number entered as value corresponds to decimal values in voltage change. So if 5 is entered by default, the RGBW Dimmer will report any change in voltage of the connected sensor over 0.5 V. This setting is only in effect if at least one of Parameters 20 – 23 is set to value 0 or 1 (input is set to analog sensor mode).</p> <p>Allowed range: 0 -100</p> <p>Default: 5</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_64_2" type="integer" groupName="configuration"
+                 min="30" max="32400">
+        <label>64: Analog Sensor Report Frequency</label>
+        <description><![CDATA[
+Choose how often you want your RGBW Dimmer to report voltage changes.<br /><h1>Overview</h1><p>Choose how often you want your RGBW Dimmer to report voltage changes from the connected analog sensors to your hub. The number entered as value corresponds to the number of seconds. So if 3600 isentered as value, the RGBW Dimmer will report voltage from connected analog sensors every hour (independent of the threshold set in parameter 63). Voltage reports are sent in at least 30-second intervals. This setting is only in effect if at least one of Parameters 20 – 23 is set to value 0 or 1 (input is set to analog sensor mode).</p> <p>Allowed values: 0 (disabled) or 30 - 32400 seconds</p> <p>Default: 0 (disabled)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy report threshold</label>
+        <description><![CDATA[
+Energy report threshold<br /><h1>Overview</h1><p>Choose how you want your RGBW Dimmer to report energy use (kWh) to your hub. The number entered as value corresponds to decimal values in energy usage change. So if 10 is entered by default, the RGBW Dimmer will report any change in energy use over 0.1 kWh. Energy reports are sent in at least 30-second intervals.</p> <p>Allowed values: 0 (disabled) or 1 - 500 (0.01 - 5.00 kWh)</p> <p>Default: 10 (0.1 kWh)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="30" max="32400">
+        <label>66: Energy report frequency</label>
+        <description><![CDATA[
+Energy report frequency<br /><h1>Overview</h1><p>Choose how often you want your RGBW Dimmer to report energy (kWh) to your controller. The number entered as value corresponds to the number of seconds. So if 3600 is entered by default, the RGBW Dimmer will report energy use every hour(independent of the threshold set in parameter 65). Energy reports are sent in at least 30-second intervals.</p> <p>Allowed values: 0 (disabled) or 30 - 32400 seconds</p> <p>Default: 3600 seconds (1 hour)</p>
+        ]]></description>
+        <default>3600</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration">
+        <label>150: RGBW / HSB Wall Switch Mode</label>
+        <description><![CDATA[
+Choose how switches connected to the input terminals control your LED strip<br /><h1>Overview</h1><p>Choose how switches connected to the input terminals control your LED strip. In the default RGBW mode, each switch connected to each input terminal controls the RGBW channels separately (so IN1 for red, IN2 for green, etc) with a single click for ON/OFF, double click to full brightness, and press-and-hold to dim (momentary switches only). In the HSB mode, IN1 controls hue, IN2 – saturation, IN3 – brightness, IN4 – white with single click for last set value or value 0, double click to max value, and press-and-hold to set custom value.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">RGBW mode</option>
+          <option value="1">HSB mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>151: Ramp Rate</label>
+        <description><![CDATA[
+Adjust the fade-in/fade-out effect for ON/OFF operation<br /><h1>Overview</h1><p>Adjust the ramp rate for your RGBW dimmer (fade-in/fade-out effect for ON/OFF operation). Values correspond to the number of seconds it takes for the dimmer to reach full brightness or turn OFF when operated from the connected wall switch.</p> <p>You can also set the physical ramp rate in minutes instead of seconds by using a value between 128-254. For minutes, subtract 127 from the value (e.g. a value of 132 corresponds to 132 - 127 = 5 minutes).</p> <p>Allowed values: 0 (instant ON/OFF), 1 - 127 seconds, or 128 - 254 (1 - 127 minutes)</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_152_2" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>152: Ramp Rate (remote)</label>
+        <description><![CDATA[
+Adjust the ramp rate of your RGBW dimmer when operated remotely through openHAB<br /><h1>Overview</h1><p>Adjust the ramp rate for your RGBW dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated from the connected wall switch.</p> <p>You can also set the Z-Wave ramp rate in minutes instead of seconds by using a value between 128-254. For minutes, subtract 127 from the value (e.g. a value of 132 corresponds to 132 - 127 = 5 minutes).</p> <p>Allowed values: 0 instant ON/OFF), 1 - 127 seconds, or 128 - 254 (1 - 127 minutes)</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_154_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: Single Click ON Trigger (IN1)</label>
+        <description><![CDATA[
+Single Click ON Trigger (IN1)<br /><h1>Overview</h1><p>Set the status or brightness level triggering other associated devices in your network if the dimmer is turned ON with a single click. Each of the 4 available bytes refers to one channel, starting with IN1 and ending with IN4. This setting applies to basic set and switch multilevel commands sent to associated devices in the appropriate association group.</p> <p>Allow value: 0 - 99, 255 (ON)</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_154_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: Single Click ON Trigger (IN2)</label>
+        <description><![CDATA[
+Single Click ON Trigger (IN2)<br /><h1>Overview</h1><p>Set the status or brightness level triggering other associated devices in your network if the dimmer is turned ON with a single click. Each of the 4 available bytes refers to one channel, starting with IN1 and ending with IN4. This setting applies to basic set and switch multilevel commands sent to associated devices in the appropriate association group.</p> <p>Allow value: 0 - 99, 255 (ON)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_154_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: Single Click ON Trigger (IN3)</label>
+        <description><![CDATA[
+Single Click ON Trigger (IN3)<br /><h1>Overview</h1><p>Set the status or brightness level triggering other associated devices in your network if the dimmer is turned ON with a single click. Each of the 4 available bytes refers to one channel, starting with IN1 and ending with IN4. This setting applies to basic set and switch multilevel commands sent to associated devices in the appropriate association group.</p> <p>Allow value: 0 - 99, 255 (ON)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_154_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: Single Click ON Trigger (IN4)</label>
+        <description><![CDATA[
+Single Click ON Trigger (IN4)<br /><h1>Overview</h1><p>Set the status or brightness level triggering other associated devices in your network if the dimmer is turned ON with a single click. Each of the 4 available bytes refers to one channel, starting with IN1 and ending with IN4. This setting applies to basic set and switch multilevel commands sent to associated devices in the appropriate association group.</p> <p>Allow value: 0 - 99, 255 (ON)</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_157_1" type="integer" groupName="configuration">
+        <label>157: Preset Programs</label>
+        <description><![CDATA[
+Enable one of the preset animated color programs to set the mood with a click<br /><h1>Overview</h1><p>0 - Preset programs disabled</p> <p>6 - Fireplace</p> <p>7 - Storm</p> <p>8 - Rainbow</p> <p>9 - Polar lights</p> <p>10 - Police (strobing red, white and blue)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Preset programs disabled</option>
+          <option value="6">Fireplace</option>
+          <option value="7">Storm</option>
+          <option value="8">Rainbow</option>
+          <option value="9">Polar Lights</option>
+          <option value="10">Police (strobing red, white and blue)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Reserved for association and sync with other Zooz RGBW Dimmers (not for use with other devices).<br /><h1>Overview</h1><p>Reserved for association and sync with other Zooz RGBW Dimmers (not for use with other devices).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+ON/OFF operation sync from input IN1<br /><h1>Overview</h1><p>ON/OFF operation sync from input IN1</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Brightness (dimming) sync from input IN1<br /><h1>Overview</h1><p>Brightness (dimming) sync from input IN1</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+ON/OFF operation sync from input IN2<br /><h1>Overview</h1><p>ON/OFF operation sync from input IN2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Group 6</label>
+        <description><![CDATA[
+Brightness (dimming) sync from input IN2<br /><h1>Overview</h1><p>Brightness (dimming) sync from input IN2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Group 7</label>
+        <description><![CDATA[
+ON/OFF operation sync from input IN3<br /><h1>Overview</h1><p>ON/OFF operation sync from input IN3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Group 8</label>
+        <description><![CDATA[
+Brightness (dimming) sync from input IN3<br /><h1>Overview</h1><p>Brightness (dimming) sync from input IN3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Group 9</label>
+        <description><![CDATA[
+ON/OFF operation sync from input IN4<br /><h1>Overview</h1><p>ON/OFF operation sync from input IN4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Group 10</label>
+        <description><![CDATA[
+Brightness (dimming) sync from input IN4<br /><h1>Overview</h1><p>Brightness (dimming) sync from input IN4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="zooz_zen31_00_000_config_decimal_param157">
+    <item-type>Number</item-type>
+    <label>Preset Programs</label>
+    <description>Enable one of the preset animated color programs to set the mood with a click</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Preset programs disabled</option>
+        <option value="6">Fireplace</option>
+        <option value="7">Storm</option>
+        <option value="8">Rainbow</option>
+        <option value="9">Polar Lights</option>
+        <option value="10">Police (strobing red, white and blue)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

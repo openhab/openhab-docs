@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wd500z_00_000" listed="false">
+    <label>WD500Z-1 Wall Dimmer Switch</label>
+    <description><![CDATA[
+Wall Dimmer Switch<br /><h1>Overview</h1><p>500W, 120 VAC Wall Mounted Dimmer</p> <br /><h2>Inclusion Information</h2><p>Pushing the top or bottom of the switch, the WD500Z-1 allows the user to include or exclude the module from the Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Pushing the top or bottom of the switch, the WD500Z-1 allows the user to include or exclude the module from the Z-Wave network.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WD500Z-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4457:3034</property>
+      <property name="dbReference">6</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dim Start Level</label>
+        <description><![CDATA[
+Start dimming from that start level or current level<br /><h1>Overview</h1><p>A dimmer receiving this command will start dimming from that start level if this bit is set to 0. If the bit is set to 1, the dimmer will ignore the start level and instead start dimming from its current level.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Use Start Level</option>
+          <option value="1">Ignore Start Level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Indication</label>
+        <description>The WD500Z-1 will flicker its LED when it is transmitting to any of its groups.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON - Switch ON</option>
+          <option value="1">LED ON - Switch OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Reverse switch direction<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom to ON change parameter to 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Top-ON, Bottom-OFF</option>
+          <option value="1">Bottom-ON, Top-OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable Shade Control Group 2</label>
+        <description>The switch can control shade control devices if this parameter is set to 1</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Enable Shade Control Group 3</label>
+        <description>The switch can control shade control devices if this parameter is set to 1.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: LED Transmission Indication</label>
+        <description><![CDATA[
+LED mode while transmitting<br /><h1>Overview</h1><p>The WD500Z-1 will flicker its LED when it is transmitting to any of its groups.</p> <p>Parameter set to 0 = not flicker</p> <p>Parameter set to 1 = flicker the entire time of transmitting</p> <p>Parameter set to 2 = flicker for only 1 second.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Disable Flicker</option>
+          <option value="1">Flicker while transmitting</option>
+          <option value="2">Flicker for 1 second</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Controller</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Double Tap</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Triple Tap</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

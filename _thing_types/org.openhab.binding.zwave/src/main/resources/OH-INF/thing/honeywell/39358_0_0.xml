@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_39358_00_000" listed="false">
+    <label>39358 Z-Wave In-Wall Smart Fan Control</label>
+    <description><![CDATA[
+Z-Wave In-Wall Smart Fan Control<br /><h1>Overview</h1><h2>Smart solutions</h2> <p>Stay connected to your home with a Honeywell In-Wall Smart Fan Control Switch. Compatible with all Z‑Wave certified gateways, the smart fan switch gives you wireless control of your ceiling fans from any mobile device, computer or Z-Wave enabled remote. Installation is easy – simply replace a standard in-wall switch with the smart fan switch. Whether you’re at home or away, access the switch to choose among 3 different speed settings, or to turn your fan on and off. The rocker-style switch includes white and light almond switch covers to match any decor and features a blue LED indicator light to locate the switch in a dark room. Your smart home just got smarter with the Honeywell In-Wall Smart Fan Control Switch.</p> <p>Model Number: 39358</p> <h2>Product Features</h2> <ul><li>Wirelessly control schedule from anywhere</li> <li>3 speed fan control (High, Medium, Low)</li> <li>Rocker-style switch</li> <li>White and light almond switch covers</li> <li>Add-on compatible (3-way, 4-way, 5-way) </li> </ul><h2>Product Specifications</h2> <ul><li>Brand: Honeywell</li> <li>Model Number: 39358</li> <li>Z-Wave Cert Number: ZC10-17125903</li> </ul><h2>References</h2> <ul><li>http://www.z-wave.com/shop-z-wave-smart-home-products/smart-fan-control-honeywell-honeywell-z-wave-in-wall-3-speed-fan-control-paddle</li> <li>https://byjasco.com/products/honeywell-z-wave-plus-wall-smart-fan-control</li> <li>https://www.amazon.com/dp/B07B3Y7YK5/</li> </ul><br /><h2>Inclusion Information</h2><h3>CONNECTING YOUR DEVICE TO A Z-WAVE NETWORK</h3> <ol><li> <p>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</p> </li> <li> <p>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart fan control (rocker) to add it in the network.</p> </li> </ol><p>Now you have complete control to turn your fixture ON/OFF according to groups, scenes, schedules and interactive automations programmed by your controller. If your Z-Wave certified controller features remote access, you can now control your fixture from your mobile devices. </p> <br /><h2>Exclusion Information</h2><h3>REMOVING AND RESETTING THE DEVICE</h3> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart fan control (rocker) to remove it from the network.</li> </ol><h3>RETURNING SWITCH TO FACTORY DEFAULTS</h3> <p>Quickly press ON (Top) button three (3) times then immediately press the OFF (Bottom) button three (3) times. The LED will flash ON/OFF 5 times when completed successfully.</p> <p><strong>Note:</strong> This should only be used in the event your network’s primary controller is missing or otherwise inoperable.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">39358</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">4944:3131</property>
+      <property name="dbReference">861</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Invert Switch</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="1">Invert</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline, Multilevel Switch Support</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

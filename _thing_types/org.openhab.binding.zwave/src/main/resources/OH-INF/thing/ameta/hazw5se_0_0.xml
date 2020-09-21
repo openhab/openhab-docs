@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ameta_hazw5se_00_000" listed="false">
+    <label>HA-ZW-5SE Door/Window Sensor</label>
+    <description><![CDATA[
+Door/Window Sensor<br /><h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor contains a sensor body and a magnet.</li> <li>The AIBASE Door/Window Sensor detects through the separation and combination of the main body and the magnet.</li> <li>Recommend installation distance between the sensor body and the magnet is 10mm.</li> <li>The Sensor also anti‐tamper functionality. Once the sensor is moved, it will notify the gateway.</li> <li>The AIBASE Door/Window Sensor is powered by CR2 battery with 2 years battery life.</li> <li>The AIBASE Door/Window Sensor is designed to be mounted on the door or windows.</li> <li>The AIBASE Door/Window Sensor supports low battery alarm function.</li> <li>The AIBASE Door/Window Sensor supports firmware OTA.</li> </ul><br /><h2>Inclusion Information</h2><p>Add for inclusion: </p> <ol><li>Insert the battery.</li> <li>Set the Z-Wave network main controller into learning mode.</li> <li>Short press the action button one time.</li> <li>If the add for inclusion is successful, the LED will blink fast and then keep on 3 seconds. Otherwise, the LED will blink 25 seconds and then turn off, in which case you need to repeat the process from step </li> </ol><br /><h2>Exclusion Information</h2><p>Remove for exclusion;</p> <ol><li>Insert the CR battery.</li> <li>Set the Z-Wave network main controller into exclusion mode.</li> <li>Short press the action button one time.</li> </ol><p>If the remove for exclusion is successful, the LED will blink fast and turn off. Otherwise, the LED will keep solid for 2 seconds and then turn off, in which case you need to repeat the process from step 2.</p> <br /><h2>Wakeup Information</h2><ol><li>Short press 3 time.</li> <li>LED will blink one time; sending wake up notification cc</li> </ol>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Sensor Door</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ameta International</property>
+      <property name="modelId">HA-ZW-5SE</property>
+      <property name="manufacturerId">0384</property>
+      <property name="manufacturerRef">0200:0008</property>
+      <property name="dbReference">1216</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>10: Level of low battery</label>
+        <description><![CDATA[
+This parameter defines a battery level as the “low battery”<br /><h1>Overview</h1><p>Available settings: 0‐50 (0% ‐ 50%) </p> <p>Default setting: 10 (10%)</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable/Disable BASIC SET command</label>
+        <description><![CDATA[
+Door/Window Sensor can send BASIC SET command to nodes associated with group 2.<br /><h1>Overview</h1><p>0 – Disable.<br />1 – Enable.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Value of the BASIC SET</label>
+        <description><![CDATA[
+Reverse value of BASIC SET when the magnet is triggered.<br /><h1>Overview</h1><p>0 –Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is closed.</p> <p>1 –Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is closed.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Send BASIC SET VALUE = 255 when Opened</option>
+          <option value="1">Send BASIC SET VALUE = 255 when Closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_254_1" type="integer" groupName="configuration">
+        <label>254: Enable/disable the configuration command</label>
+        <description><![CDATA[
+Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>0 – Unlock.<br />1 – Lock.<br />Default setting: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock</option>
+          <option value="1">Lock</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ol><li>Notification Report.<br />Sensor will send Notification Report when the supported event is triggered.</li> <li>Battery Report.<br />Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Basic Set, Sensor will send Basic Set when the sensor body and magnet removed or combined.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

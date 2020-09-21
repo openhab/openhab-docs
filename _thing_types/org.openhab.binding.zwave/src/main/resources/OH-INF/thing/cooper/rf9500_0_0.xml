@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="cooper_rf9500_00_000" listed="false">
+    <label>RF9500 Battery Switch</label>
+    <description><![CDATA[
+Battery Switch<br /><h1>Overview</h1><p>The RF9500 is a battery operated device that allows you to install a switch/dimmer almost anywhere you desire and control (On/Off/Dim/Brighten) loads/lights wired to ASPIRE RF devices using the Associations.</p> <br /><h2>Inclusion Information</h2><p>Press the switch one time to include it in the network. The LED will stop blinking after the device is successfully included</p> <br /><h2>Exclusion Information</h2><p>Press the switch one time to exclude it from the network.</p> <br /><h2>Wakeup Information</h2><p>Press the switch one time</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_dimmer" typeId="switch_dimmer">
+        <label>Brightness</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Cooper Wiring Devices</property>
+      <property name="modelId">RF9500</property>
+      <property name="manufacturerId">001A</property>
+      <property name="manufacturerRef">5342:0000</property>
+      <property name="dbReference">14</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

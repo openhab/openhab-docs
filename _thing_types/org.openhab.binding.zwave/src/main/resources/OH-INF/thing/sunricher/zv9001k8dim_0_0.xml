@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9001k8dim_00_000" listed="false">
+    <label>ZV9001K8-DIM 4 group single color wall mounted remote</label>
+    <description><![CDATA[
+4 group single color wall mounted remote<br /><h1>Overview</h1><p>The SR-ZV9001K8-DIM is a new single color wall mounted push button z-wave secondary controller light switch which adopts latest z-wave RF Plus and Mesh network technology to switch and dim single color LED lighting. It is a universal z-wave slave and can be added to z-wave network or removed from z-wave network by z-wave primary (master) or gateway.</p> <p>The wall controller is powered by a cell lithium battery. The wireless dimmer is compatible with single color z wave device SR-ZV9101FA-DIM and different frequencies are available for different countries or areas. The signal transmit distance can be up to 30m.</p> <p>It supports 5 groups for associations, a lifeline group association to primary (master) controller and 4 groups association to devices, the groups association to devices support maximum 20 Z-wave devices per group. Compatible with existing frames from Berker, Gira, Jung and Merten, the z-wave secondary controller is easy to be mounted on the wall.</p> <p><strong>Key Features</strong></p> <ul><li>Z-wave secondary controller light switch</li> <li>Source-routed Mesh Network Architecture</li> <li>Each device works as a node</li> <li>All Nodes Are Transceivers</li> <li>Each Z-wave Network Allows Up to 243 Devices</li> <li>Actively route around and circumvent obstacles or radio dead spots</li> <li>Wireless Synchronization to Drastically Increase Control Distance</li> <li>Devices can communicate to one another by using intermediate nodes</li> <li>Added to z-wave network by z-wave masters or gateway</li> <li>Removed from z-wave network by z-wave masters or gateway</li> <li>Compatible with universal z-wave masters/gateway</li> <li>Supports 1 lifeline group association to master controller</li> <li>Supports 4 groups association to z-wave devices, maximum 20 devices per group</li> </ul><br /><h2>Inclusion Information</h2><p>Please make sure the battery of the wall mounted controller has enough power (press any key and if the blue LED indicator turns on, which means the remote works well) -&gt; set the master controller or gateway into network inclusion or add device mode (please refer to the user manual to learn how) -&gt; press and hold down both keys I and O at the top row (group 2) simultaneously on the wall controller until LED indicator turns on and flashes 6 times quickly to indicate successful adding -&gt; there shall be an indication on the master controller or gateway.</p> <br /><h2>Exclusion Information</h2><p>When the wall mounted controller has already been added to z-wave network, set z-wave master (primary) controller or z-wave gateway into network inclusion or remove device mode (please refer to the user manual to learn how) -&gt; press and hold down both keys I and O at the top row (group 2) simultaneously on the wall controller until LED indicator turns on and shows 3 short blinks and 1 long blink to indicate successful removing -&gt; there shall be an indication on the master controller or gateway.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>switch_binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>switch_dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="basic_switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="basic_switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="basic_switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9001K8-DIM</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0003:A305</property>
+      <property name="dbReference">824</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Mode: Single Cast</p> <p>Send Commands:</p> <ul><li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> <li>BATTERY_REPORT</li> </ul>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Launch 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Mode: Multicast</p> <p>Send Commands:</p> <ul><li>the Basic Set</li> <li>Switch Multilevel Start Level Change</li> <li>Switch Multilevel Stop Level Change</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Launch 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Mode: Multicast</p> <p>Send Commands:</p> <ul><li>the Basic Set</li> <li>Switch Multilevel Start Level Change</li> <li>Switch Multilevel Stop Level Change</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Launch 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Mode: Multicast</p> <p>Send Commands:</p> <ul><li>the Basic Set</li> <li>Switch Multilevel Start Level Change</li> <li>Switch Multilevel Stop Level Change</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Launch 4</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Mode: Multicast</p> <p>Send Commands:</p> <ul><li>the Basic Set</li> <li>Switch Multilevel Start Level Change</li> <li>Switch Multilevel Stop Level Change</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

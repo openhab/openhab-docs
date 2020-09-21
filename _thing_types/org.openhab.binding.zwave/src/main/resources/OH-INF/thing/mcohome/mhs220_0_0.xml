@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhs220_00_000" listed="false">
+    <label>MH-S220 Micro Switch</label>
+    <description><![CDATA[
+Micro Switch<br /><h1>Overview</h1><p>MCOHome Micro Switch MH-S220-EU is a Z-Wave enabled module that can be set in existing in-wall switches. It supports basic command class, and also can act as a repeater in Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <ul><li>Power supply: 220V 50Hz</li> <li>Max output: 10A (Zero-crossing switch)</li> <li>Dimension：44 *38 *17mm (L *W *H)</li> <li>Load Type: Incandescent</li> </ul><br /><h2>Inclusion Information</h2><p>INCLUDING the Micro Switch into your network:</p> <ol><li>Set the controller into INCLUSION mode. Follow the instructions provided by the controller manufacturer.</li> <li>Press the ON/OFF/PROGRAM button on the Micro Switch.</li> </ol><p>Note: If the inclusion is successful, the Micro Switch INDICATION LED will be solid on or off depending on switch’s state. If not, INDICATION LED will blink slowly.</p> <br /><h2>Exclusion Information</h2><p>EXCLUDING the Micro Switch from your network:</p> <ol><li>Set the controller into EXCLUSION mode. Follow the instructions provided by the controller manufacturer.</li> <li>Press the ON/OFF/PROGRAM button on the Micro Switch.</li> </ol><p>Note: If the exclusion is successful, the Micro Switch INDICATION LED will blink slowly. If not, INDICATION LED will be solid on or off depending on switch’s state.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-S220</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">2201:1252</property>
+      <property name="dbReference">1153</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Switch state saved or not when power down</label>
+        <description><![CDATA[
+Switch state saved or not when power down<br /><h1>Overview</h1><p>0x00 not saved，switch will be off when powered again</p> <p>0x01 saved，switch will keep the same state when powered again</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: External switch type</label>
+        <description><![CDATA[
+External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</p> <p>0x01 Toggle (2-state switches )</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: 2-state switches</label>
+        <description><![CDATA[
+2-state switches<br /><h1>Overview</h1><p>0x00 for the toggle switch without specified on/off position</p> <p>0x01 for the toggle switch with specified on/off position</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>4: Report from Switch 1 to Association Group 1</label>
+        <description>Report from Switch 1 to Association Group 1</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: OFF timer</label>
+        <description>OFF timer</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Timing function</label>
+        <description>Timing function</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Operation mode of Switch 1</label>
+        <description>Operation mode of Switch 1</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: Operation report from Sw 2 to Assoc Group 2</label>
+        <description>Operation report from Switch 2 to Association Group 2</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration"
+                 min="0" max="55">
+        <label>255: Factory setting</label>
+        <description><![CDATA[
+Factory setting<br /><h1>Overview</h1><p>Set parameter ID 0xFF as 0x55 will restore Factory Settings.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: SW 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Used for switching associated devices（switch 1 controlling group 1)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: SW 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Used for switching associated devices（switch 2 controlling group 2)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Controller</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

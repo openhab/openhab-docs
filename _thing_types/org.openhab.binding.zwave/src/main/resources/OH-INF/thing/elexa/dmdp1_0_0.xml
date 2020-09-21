@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="elexa_dmdp1_00_000" listed="false">
+    <label>DMDP1 Dome Window and Door Sensor Pro</label>
+    <description><![CDATA[
+Dome Window and Door Sensor Pro<br /><h1>Overview</h1><p>From Dome Home Automation, monitor every door in your house with the window / door sensor PRO, including your mailbox door! The Door/Window PRO magnet is 1/4” wide, and the magnet can be placed up to one inch away from the sensor which means you can place it nearly anywhere to keep track of openings in places you may have never thought possible. Use the Dome Home Automation Z-Wave Door/Window Sensor PRO to secure cabinets, windows, doors and other fixtures you want to keep closed or monitor activity around. Did we mention the PRO’s battery life is 10 years and it has a range of 260 feet? And just when you thought it couldn't get any better, the new Door/Window Sensor Pro also monitors the ambient temperature! Use the temperature information to monitor for extreme temperature fluctuation and keep your house safe from frozen pipes or damaged flooring.</p> <br /><h2>Inclusion Information</h2><p><strong>Inclusion - New Installation</strong></p> <ol><li>For proper inclusion, bring the Door/Window Sensor to the final location where it will be used*.</li> <li>Follow the instructions for your Z-Wave controller to enter inclusion mode.</li> <li>Remove the Battery Tab protruding from the Battery Tab Slit.</li> <li>The device will automatically enter inclusion mode for two minutes and the LED Indicator will alternate between green and red.</li> </ol><p>Upon successful inclusion the LED Indicator will flash green three times then stop blinking.</p> <p><strong>Inclusion - Re-Installation</strong></p> <ol><li>For proper inclusion, bring the Door/Window Sensorto the final location where it will be used*.</li> <li>Follow the instructions for your Z-Wave controller to enter inclusion mode.</li> <li>Remove the Sensor Cover and the LED Indicator will start blinking yellow.</li> <li>Press the Button quickly 3 times in a row.</li> <li>The device will enter inclusion mode for two minutes and the LED Indicator will alternate between green and red.</li> </ol><p>After successful inclusion, the LED Indicator will flash green three times then blink red until the cover is replaced.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclusion</strong></p> <p>Follow the instructions for your Z-Wave Certified Controller to enter exclusion mode. When prompted by the controller:</p> <ol><li>Remove the SENSOR COVER and the LED Indicator will start blinking red.</li> <li>Press the Button quickly 3 times in a row.</li> </ol><p>The LED Indicator will flash green three times indicating exclusion/disconnection and will then continue flashing red (indicating tamper) until the cover is replaced.</p> <br /><h2>Wakeup Information</h2><p><strong>Waking Up the Door/Window Sensor Pro</strong></p> <p>Because the Mouser is a battery powered device, it wakes up on regular intervals to give battery and other status updates to the controller, as well as to accept configuration settings from the controller. This helps to extend the battery life. The device can be forced to wake up to submit these reports or accept new settings immediately by simply pressing and holding the BUTTON for half a second. The LED INDICATOR will flash once indicating successful wake up.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Elexa Consumer Products Inc.</property>
+      <property name="modelId">DMDP1</property>
+      <property name="manufacturerId">021F</property>
+      <property name="manufacturerRef">0003:0201</property>
+      <property name="dbReference">884</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Enable/Disable LED Indicator</label>
+        <description><![CDATA[
+Enable/Disable LED Indicator<br /><h1>Overview</h1><p>This parameter enables or disables the LED Indicator flashing to indicate opening and closing events. The Door/Window Sensor will always flash the LED Indicator for inclusion, exclusion, tamper, and other system events.</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Enable/Disable LED Indicator</td> <td>00 (Open/Close LED Indicator Disabled)<br />01 (Open/Close LED Indicator Enabled)</td> <td>01 <br /> (Open/Close LED Indicator Enabled)</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Open/Close LED Indicator Disabled</option>
+          <option value="1">Open/Close LED Indicator Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Configure Open/Close Reports Sent</label>
+        <description><![CDATA[
+Configure Open/Close Reports Sent<br /><h1>Overview</h1><p>This parameter switches the Notification or Binary Sensor report sent when the door opens or closes. If this parameter is set to 01, the Door/Window Sensor will report “closed” instead of “open”when the Magnet and Sensor are pulled apart.</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Configure Open/Close Reports Sent</td> <td>00 (Reports Closed when Magnet is close)<br />01 (Reports Open when Magnet is close)</td> <td>00 <br /> (Reports Closed when Magnet is close)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Reports Closed when Magnet is close</option>
+          <option value="1">Reports Open when Magnet is close</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Switch Between Notification and Binary Sensor</label>
+        <description><![CDATA[
+Switch Between Notification and Binary Sensor Command Classes<br /><h1>Overview</h1><p>By default, the Door/Window Sensor uses the Notification command class to communicate open/close and tamper events. If this Parameter is set to 1, the device will instead use the Binary Sensor command class.</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Switch Between Notification and Binary Sensor Command Classes</td> <td>00 (Notification Command Class is Used)<br />01 (Binary Sensor Command Class is Used)</td> <td>00 <br /> (Notification Command Class is Used)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Notification Command Class is Used</option>
+          <option value="1">Binary Sensor Command Class is Used</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Enable/Disable Temperature Sensor</label>
+        <description><![CDATA[
+Enable/Disable Temperature Sensor<br /><h1>Overview</h1><p>The Door/Window Sensor can also monitor and report ambient temperature conditions. However, temperature sensing functionality is disabled by default to save battery life, and this configuration parameter is used to enable or disable this feature.</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Enable/Disable Temperature Sensor</td> <td>00 (Temperature Sensor Disabled)<br />01 (Temperature Sensor Enabled)</td> <td>00 <br /> (Temperature Sensor Disabled) </td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Temperature Sensor Disabled</option>
+          <option value="1">Temperature Sensor Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Temperature offset</label>
+        <description><![CDATA[
+Temperature offset<br /><h1>Overview</h1><p>This Configuration Parameter can offset the temperature value reported by ± 125 degrees to compensate for temperature variances in a room - for example, the temperature near the ceiling in a room is significantly higher than the average temperature of the same room. This Parameter accepts a signed 8-bit value with an absolute value of up to 125, and its units are Dependant on Configuration Parameter 07</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Temperature offset</td> <td>00 ~ 7D (0°~125°)<br />83 ~ FF (-125° ~ -1°)</td> <td>00 <br /> (0° Offset) </td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Temperature Units</label>
+        <description><![CDATA[
+Temperature Units<br /><h1>Overview</h1><p>The Door/Window Sensor can report temperature values in either Celsius or Fahrenheit, and this parameter allows the user to decide which unit is used.</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Temperature Units</td> <td>00 (Temperature Reported in Fahrenheit)<br />01 (Temperature Reported in Celsius)</td> <td>00 <br /> (Temperature Reported in Fahrenheit) </td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Temperature Reported in Fahrenheit</option>
+          <option value="1">Temperature Reported in Celsius</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Basic Set Value (Group 2)</label>
+        <description><![CDATA[
+Basic Set Value (Group 2)<br /><h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 2 (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 2)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (255/Turn On Device)</td> <td>FF <br /> (255/Turn On Device) </td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Basic Set Value (Group 3)</label>
+        <description><![CDATA[
+Basic Set Value (Group 3)<br /><h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 3. The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Value</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 2)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (255/Turn On Device)</td> <td>FF <br /> (255/Turn On Device)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Basic Set Value (Group 4)</label>
+        <description><![CDATA[
+Basic Set Value (Group 4)<br /><h1>Overview</h1><p>This parameter sets the value sent by the Basic Set command to Association Group 4.The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)</p> <table><tr><td>Size</td> <td>Name</td> <td>Available Values</td> <td>Default Values</td> </tr><tr><td>01</td> <td>Basic Set Value (Group 4)</td> <td>00 (0/Turn Off Device)<br />01 ~ 63 (0-99)<br />FF (-1/Turn On Device)</td> <td>FF <br /> (-1/Turn On Device) </td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Group 1 (Lifeline Group)<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report or a Binary Sensor Report when it is opened or closed (see Configuration Parameter 3.) It also sends this group a multilevel sensor report to report the temperature and a Battery Report in response to Battery Get commands.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Group 2<br /><h1>Overview</h1><p>Group 2 supports up to 5 members and the Door/Window Sensor sends a Basic Set command to this group (or the Control Group) to directly trigger devices (like a light, chime, etc.) when the tamper switch either opens or closes. The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 07.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Group 3<br /><h1>Overview</h1><p>Group 3 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION_REPORT or SENSOR_BINARY_REPORT when the tamper switch either opens or closes.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Group 4<br /><h1>Overview</h1><p>Group 4 supports up to 5 members and the Door/Window Sensor sends a Basic Set command to this group to directly trigger devices (like a light, chime, etc.) when the sensor detects the door/window opening. The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 08 and 09.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+Group 5<br /><h1>Overview</h1><p>Group 5 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION_REPORT or SENSOR_BINARY_REPORT when the sensor detects the door/window opening.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

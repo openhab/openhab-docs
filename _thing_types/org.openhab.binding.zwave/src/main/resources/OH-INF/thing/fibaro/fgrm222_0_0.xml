@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgrm222_00_000" listed="false">
+    <label>FGRM222 Roller Shutter</label>
+    <description><![CDATA[
+Roller Shutter<br /><h1>Overview</h1><p>Fibaro Roller Shutter is a universal, Z-Wave compatible, electric motor controller. The device allows for controlling motors of roller blinds, awnings, venetian blinds, gates and others, which are single phase AC powered. Fibaro Roller Shutter allows for precise positioning of a roller blind or  venetian blind lamellas. Precise positioning is available for the motors equipped with mechanic and electronic end switches.</p> <p>The module may be controlled wirelessly, through the Z-Wave network main controller, or through the switch keys connected to it. It’s also possible to combine few devices into groups of devices, which then can be controlled simultaneously. In addition, Fibaro Roller Shutter is equipped with Power Metering.</p> <p><strong>ROLLER SHUTTER RESET</strong></p> <p>Reset procedure clears the modules’ EPROM memory, including all information about the Z-Wave network controller, calibration and power consumption data.</p> <ol><li>Make sure the module is connected to the power supply.</li> <li>Press and hold the B-button for ca. 14 seconds.</li> <li>LED indicator will glow yellow.</li> <li>Release the B-button and press it again, briefly.</li> <li>The Roller Shutter memory is now empty.</li> <li>The module goes into the auto inclusion mode, until any button is pushed.</li> </ol><br /><h2>Inclusion Information</h2><p>Fibaro Roller Shutter may be included into the Z-Wave network via the B-button or a push button connected to the S1 terminal. In addition, the module may be included in auto inclusion mode, by simply connecting the power supply.</p> <p><strong>Automatic Z-Wave network inclusion:</strong></p> <ol><li>Make sure the power supply is disconnected and a Roller Shutter is located within a direct Z-Wave network’s main controller communication range.</li> <li>Set the main controller into the learn mode (see main controllers operating manual).</li> <li>Connect the power supply to include the Roller Shutter in auto inclusion mode.</li> <li>Fibaro Roller Shutter will be automatically detected and included into the Z-Wave network.</li> </ol><p>To disable the auto inclusion mode, press the B-button briefly, after connecting the module to the power supply.</p> <p><strong>Manual Z-Wave network inclusion:</strong></p> <ol><li>Connect the power supply.</li> <li>Set the main controller into the learn mode (see main controllers operating manual).</li> <li>Triple click the B-button or a push button connected to the S1 terminal.</li> <li>Fibaro Roller Shutter will be detected and included into the Z-Wave network</li> </ol><br /><h2>Exclusion Information</h2><p>Excluding Fibaro Roller Shutter from the Z-Wave network:</p> <ol><li>Make sure the module is connected to the power supply.</li> <li>Set the main controller into the learn mode (see main controllers operating manual).</li> <li>Triple click the B-button or a push button connected to the S1 terminal.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWH</property>
+        </properties>
+      </channel>
+      <channel id="blinds_lamella" typeId="blinds_lamella">
+        <label>Lamella position</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_MANUFACTURER_PROPRIETARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_shutter" typeId="blinds_shutter">
+        <label>Shutter position [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_MANUFACTURER_PROPRIETARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGRM222</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0301:1001,0301:3001,0301:4001,0302:1000</property>
+      <property name="versionMax">22.22</property>
+      <property name="dbReference">116</property>
+      <property name="commandClass:COMMAND_CLASS_SWITCH_MULTILEVEL">ccAdd</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Local protection</label>
+        <description><![CDATA[
+Enables/disables local protection<br /><h1>Overview</h1><p>Enables/disables local entry. If activated module stops responding to S1 and S2 push buttons, SCENE ID and association commands will not be sent. Only exception is the B-button.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">No protection.</option>
+          <option value="2">Local protection active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Radio protection</label>
+        <description><![CDATA[
+Enables/disables RF protection<br /><h1>Overview</h1><p>Enables/disables RF protection. If activated device stops responding to command frames. Configuration and polling still possible.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No protection.</option>
+          <option value="1">RF Protection active.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Reports type</label>
+        <description><![CDATA[
+Enable Venetian Blind mode<br /><h1>Overview</h1><p>Parameters value shoud be set to 1 if the module operates in Venetian Blind mode.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Blind position reports sent using Z-Wave Commands</option>
+          <option value="1">Blind position reports sent using Fibaro Commands.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Roller Shutter operating modes</label>
+        <default>1</default>
+        <options>
+          <option value="0">Roller Blind Mode, without positioning</option>
+          <option value="1">Roller Blind Mode, with positioning</option>
+          <option value="2">Venetian Blind Mode, with positioning</option>
+          <option value="3">Gate Mode, without positioning</option>
+          <option value="4">Gate Mode, with positioning</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>12: Turning time/delay time</label>
+        <description><![CDATA[
+Time of full turn of the lamellas.<br /><h1>Overview</h1><p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas. In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.</p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lamellas positioning mode</label>
+        <description><![CDATA[
+Lamellas positioning in venetian blind mode<br /><h1>Overview</h1><p>Parameter influences the lamellas positioning in venetian blind mode (parameter 10 set to 2)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Only in case of the main controller operation</option>
+          <option value="1">Controller, switch or limit switch operation</option>
+          <option value="2">Controller, switch, limit sw operation/STOP frame</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Switch type</label>
+        <description><![CDATA[
+Parameter settings for Roller and Venetian Blind Mode<br /><h1>Overview</h1><p>Parameter settings are relevant for Roller Blind Mode and Venetian Blind Mode (parameter 10 set to 0, 1, 2).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Momentary switches</option>
+          <option value="1">Toggle switches</option>
+          <option value="2">Single, momentary switch.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>17: Delay time after S2</label>
+        <description><![CDATA[
+Relays turn off time after reaching a limit switch.<br /><h1>Overview</h1><p>In roller blind mode or venetian blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Motor operation detection</label>
+        <description>Power threshold to be interpreted as reaching a limit switch.</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>22: Motor operation time</label>
+        <description>Time period for the motor to continue operation.</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Forced Roller Shutter calibration</label>
+        <description><![CDATA[
+Roller Shutter enters the calibration mode.<br /><h1>Overview</h1><p>Seting the parameter to 1 Roller Shutter enters the calibration mode. Parameter is only only relevant if a Roller Shutter is set to work in positioning mode (parameter 10 set to 1, 2 or 4).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivated</option>
+          <option value="1">Start calibration process</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Response to General Alarm</label>
+        <default>2</default>
+        <options>
+          <option value="0">No response to alarm frames</option>
+          <option value="1">Open Blind</option>
+          <option value="2">Close Blind</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Response to Water Flood Alarm</label>
+        <default>0</default>
+        <options>
+          <option value="0">No response to alarm frames</option>
+          <option value="1">Open Blind</option>
+          <option value="2">Close Blind</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Response to Smoke, CO, CO2 Alarm</label>
+        <default>3</default>
+        <options>
+          <option value="0">No response to alarm frames</option>
+          <option value="1">Open Blind</option>
+          <option value="2">Close Blind</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Response to Temperature Alarm</label>
+        <default>1</default>
+        <options>
+          <option value="0">No response to alarm frames</option>
+          <option value="1">Open Blind</option>
+          <option value="2">Close Blind</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Managing lamellas in response to alarm</label>
+        <description><![CDATA[
+Lamellas reaction upon alarm detection.<br /><h1>Overview</h1><p>In Venetian Blind Mode (parameter 10 set to 2), the parameter determines how the lamellas will react upon alarm detection.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not change lamellas position</option>
+          <option value="1">Set lamellas to their extreme position</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power reports</label>
+        <description><![CDATA[
+Power level change resulting in new power value report<br /><h1>Overview</h1><p>Power level change that will result in new power value report being sent. Value is a percentage of the previous report.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="-32767" max="32767">
+        <label>42: Periodic power or energy reports</label>
+        <description>Time to the next report. Value of 0 means the reports are turned off.</description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="-126" max="127">
+        <label>43: Energy reports</label>
+        <description><![CDATA[
+Energy level change resulting in new energy value report<br /><h1>Overview</h1><p>Energy level change which will result in new energy value report being sent. Value of 0 means the reports are turned off.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Self-measurement</label>
+        <description><![CDATA[
+Enables/disables power and energy report used by itself<br /><h1>Overview</h1><p>Enables/disables to include the power and energy used by itself in reports to main controller.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Activated</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: Scenes/Associations activation</label>
+        <description><![CDATA[
+Determine whether scenes or associations are activated<br /><h1>Overview</h1><p>Parameter determines whether scenes or associations are activated by the switch keys.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Associations Active</option>
+          <option value="1">Scenes Active</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Momentary click</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p><strong>Roller Shutter or other Z-Wave devices</strong></p> <p>Clicking "up" button, connected to S1 terminal will initiate up movement in associated Roller Shutters, or send Turn On command frame to the devices associated in I-st association group.</p> <p>Clicking "down" button, connected to S2 terminal will initiate down movement in associated Roller Shutters, or send Turn Off command frame to the devices associated in I-st association group.</p> <p><strong>Venetian Blinds</strong></p> <p>Clicking "up" button, connected to S1 terminal will initiate up movement of the connected venetian blind and other devices associated in I-st association group.</p> <p>Clicking "down" button, connected to S2 terminal will initiate down movement of the connected venetian blind and other devices associated in I-st association group.</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Momentary hold</label>
+        <description><![CDATA[
+Only applies to momentary switches<br /><h1>Overview</h1><p><strong>Roller Shutter or other Z-Wave devices</strong></p> <p>Holding "up" button, connected to S1 terminal will move the connected roller blind up, and after 1 second delay initiate up movement in associated Roller Shutters, or send Turn On command frame to the devices associated in II-nd association group.</p> <p>Holding "down" button, connected to S2 terminal will move the connected rolled blind down, and after 1 second delay initiate down movement in associated Roller Shutters, or send Turn Off command frame to the devices associated in II-nd association group.</p> <p><strong>Venetian Blinds</strong></p> <p>Holding "up" button, connected to S1 terminal will initiate lamellas rotation up, of the connected venetian blind as well as the other devices associated in II-nd association group.</p> <p>Holding "down" button, connected to S2 terminal will initiate lamellas rotation down, of the connected venetian blind as well as the other devices  associated in II-nd association group.</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Updates</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

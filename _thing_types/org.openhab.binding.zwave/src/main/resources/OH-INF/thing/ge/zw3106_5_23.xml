@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zw3106_05_023" listed="false">
+    <label>GE 28175 (ZW3106) Plug-In Dual Smart Dimmer</label>
+    <description><![CDATA[
+Plug-In Dual Smart Dimmer<br /><h1>Overview</h1><p>• Remote Control - Turn ON/OFF and control the brightness level of the connected lighting manually or remotely</p> <p>• Multi-Purpose - 2 USB ports (3.4A total) on each side of the device</p> <p>• Dual Outlets -  Wirelessly control both outlets independently </p> <p>• Built-in Z-Wave range extender</p> <p>• OTA (Over-the-Air) Updateable - Utilizes the Z-Wave Firmware Update Meta Data command class </p> <p>Maximum load (Total): 120VAC, 300W (2.5A) Tungsten, 300W Incandescent, 100W Dimmable CFL/LED</p> <p>For Indoor Use Only</p> <br /><h2>Inclusion Information</h2><p>Quickly press and release the button on the top of the device to enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Quickly press and release the button on the top of the device to enter exclusion mode.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer (Both Outlets)</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Left Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Right Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE 28175 (ZW3106)</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5044:3132</property>
+      <property name="versionMin">5.23</property>
+      <property name="versionMax">5.23</property>
+      <property name="dbReference">796</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description><![CDATA[
+Adjust Button LED Light<br /><h1>Overview</h1><p>OR to invert LED: Change to LED ON when Device Off Press button 10 times quickly</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED ON / Device OFF</option>
+          <option value="1">LED ON / Device ON (Default)</option>
+          <option value="2">Disable LED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: command steps</label>
+        <description><![CDATA[
+number of steps or levels per dim command<br /><h1>Overview</h1><p>When Receiving a Z-Wave Dim Command - Dim Rate Adjustments</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. </p> <p>Parameter 7 (number of steps or levels)</p> <p>Parameter 8 (timing of the steps)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: command timing</label>
+        <description><![CDATA[
+timing of the command steps<br /><h1>Overview</h1><p>When Receiving a Z-Wave Dim Command - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps can be modified. The timing of the steps is in 10 millisecond intervals. The default setting “1” means the level will change every 10 milliseconds when the Dim Command is received, dimming will occur 3 times by default for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: manual steps</label>
+        <description><![CDATA[
+number of steps or levels per dimmer button press<br /><h1>Overview</h1><p>Manual Control Dimming (pressing the Dimmer’s button) - Dim Rate Adjustments</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. </p> <p>Parameter 9 (number of steps or levels)</p> <p>Parameter 10 (timing of the steps)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: manual timing</label>
+        <description><![CDATA[
+timing of the manual steps<br /><h1>Overview</h1><p>Manual Control Dimming (pressing the Dimmer’s button) - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps can be modified. The timing of the steps is in 10 millisecond intervals. The default setting “1” means the level will change every 10 milliseconds when the Dimmer button is pressed, by default, dimming will occur 3 times per press for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: All on/off steps</label>
+        <description><![CDATA[
+number of steps or levels per all on/off command<br /><h1>Overview</h1><p>When Receiving an All-On or All-Off Command - Dim Rate Adjustments</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. </p> <p>Parameter 9 (number of steps or levels)</p> <p>Parameter 10 (timing of the steps)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: All on/off timing</label>
+        <description><![CDATA[
+timing of the all on/off command<br /><h1>Overview</h1><p>When Receiving an All-On or All-Off Command - Dim Rate Adjustments</p> <p>The number of steps that the dimmer will change and the timing of the steps. The timing of the steps is in 10 millisecond intervals.  The default setting “1” means the level will change every 10 milliseconds when the Command is received, dimming will occur 3 times by default for a total of 30 ms. 255 would be every 2.55 seconds. Combined, the two parameters allow dim rates from 10 milliseconds to 4.2 minutes from maximum-to-minimum or minimum-to-maximum levels.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: load sensing</label>
+        <description><![CDATA[
+turn ON when new bulb is sensed<br /><h1>Overview</h1><p>Load sensing is disabled when shipped from the factory. Setting parameter 29 to a value of 1 will enable the Load Sense function.</p> <p>When replacing a burned-out light bulb, the load sensing feature (if enabled) will automatically turn the light ON when the new bulb is installed even if the Z-wave module was previously turned OFF.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable (default)</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Lifeline, Switch Multilevel Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Basic Set, controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Basic Set, controlled by double pressing the On or Off button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

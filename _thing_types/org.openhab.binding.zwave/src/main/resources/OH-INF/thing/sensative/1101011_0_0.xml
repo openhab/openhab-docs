@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sensative_1101011_00_000" listed="false">
+    <label>11-01-011 Strips-MaZw</label>
+    <description><![CDATA[
+Strips-MaZw<br /><h1>Overview</h1><p>Strips is a Z-Wave magnet sensor that can be added to any certified Z-Wave system and operate with any brand Z-Wave device.</p> <br /><h2>Inclusion Information</h2><ul><li>Set your controller in inclusion mode (see your controller’s manual).</li> <li>Follow the instruction for Wake up.</li> <li>A long LED blink indicates that the inclusion was successful.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Set your controller in exclusion mode (see your controller’s manual).</li> <li>Follow the instruction for Wake up.</li> <li>A long LED blink indicates that the exclusion was successful.</li> </ul><br /><h2>Wakeup Information</h2><p>Wake up Strips manually for Z-Wave communication.</p> <ul><li>Place the round magnet at the rounded edge.</li> <li>When the LED blinks, move the magnet away.</li> <li>Repeat 3 times in total within 10 seconds.</li> </ul><p>It may be necessary to repeat this process several times to make changes take affect.</p> <p>Note that wakeup period can only be set to a minimum period of 30 minutes.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sensative AB</property>
+      <property name="modelId">11-01-011</property>
+      <property name="manufacturerId">019A</property>
+      <property name="manufacturerRef">0003:0003</property>
+      <property name="dbReference">251</property>
+      <property name="commandClass:COMMAND_CLASS_SENSOR_BINARY">getSupported=false</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Notification type</label>
+        <description>Define the notification type.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Binary Sensor report</option>
+          <option value="1">Notification report</option>
+          <option value="2">Basic report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED indication</label>
+        <description>Specify if LED should indicate special event.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

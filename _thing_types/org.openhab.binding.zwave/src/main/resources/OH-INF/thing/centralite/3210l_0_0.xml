@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="centralite_3210l_00_000" listed="false">
+    <label>3210-L Smart Plug</label>
+    <description><![CDATA[
+Smart Plug<br /><h1>Overview</h1><p>The Lowe's IRIS Smart Plug acts as a repeater for other Z-Wave devices. </p> <br /><h2>Inclusion Information</h2><p>Unplug device from the wall.  While holding the front button, re-insert device into the receptacle. Once the blue light illuminates, release button to factory reset.  Use this procedure only in the event that the network primary controller is missing or otherwise inoperable.  </p> <br /><h2>Exclusion Information</h2><p>Power off device by unplugging it from its receptacle. </p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">CentraLite Systems, Inc</property>
+      <property name="modelId">3210-L</property>
+      <property name="manufacturerId">0246</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">1022</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

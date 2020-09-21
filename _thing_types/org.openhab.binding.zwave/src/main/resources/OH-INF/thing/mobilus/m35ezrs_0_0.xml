@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mobilus_m35ezrs_00_000" listed="false">
+    <label>EZRS Mobilus Tubular Motor</label>
+    <description><![CDATA[
+Mobilus Tubular Motor<br /><h1>Overview</h1><p>Tubular motor mob.iq EZRS M35 10/14 by Mobilus Motor Company is a modern radio controllable drive, designed to drive rolling shields. This device has a number of innovative solutions, including:</p> <h2>SENSO technology</h2> <ul><li>programming of endpoints automatically or using the remote control, </li> <li>operation regardless of the used hangers type, </li> <li>bidirectional obstacles detection which eliminates failures due to obstacles (each failure will be reported to controller as an alarm)</li> <li>saving your time due to lack of supervision of your shutters - obstacle detection system, insensitive to minor disruption during work.</li> </ul><h2>Communication standard</h2> <p>But the most important feature of our motor is the usage of Z-Wave technology as the communication standard. It provides inter alia</p> <ul><li>easy procedure of connection the device to the network,</li> <li>bidirectional communication between the motor operator and control device - therefore the user has the opportunity to receive a variety of information about the motor operator (location, work errors, obstacles encountered in the blinds way of work), </li> <li>automatic creation of network of devices, so there is no need for additional radio signal repeaters, </li> <li>compatibility with third party control devices - Z-Wave is a mature standard for radio communication, chosen by over two hundred manufacturers of devices intended to create an intelligent home control systems.</li> </ul><h2>Technical parameters</h2> <ul><li>fi roller tube diameter of 35 mm,</li> <li>torque: 10 Nm, </li> <li>revolutions per minute: 14 rpm, </li> <li>supply voltage 230 V.</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug mob.iq [ M35 EZRS ] motor to the power supply according to schema at the end of instruction. Green diode in PROGRAMMING BUTTON is on. In the other case you need to exclude motor from Z-Wave network according to point 4 of this instruction.</li> <li>Turn your controller into INCLUDE mode (see instruction of your controller).</li> <li>Press the PROGRAMMING BUTTON on mob.iq [ M35 EZRS ] motor.</li> <li>Motor is detected by controller and included into Z-Wave network - the led diode is off.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Turn your controller into exclude mode (see instruction of your controller).</li> <li>Press the PROGRAMMING BUTTON on mob.iq [ M35 EZRS ] motor.</li> <li>Motor is detected by controller and excluded from Z-Wave network - the led diode is on.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">MOBILUS MOTOR Spólka z o.o.</property>
+      <property name="modelId">EZRS</property>
+      <property name="manufacturerId">019D</property>
+      <property name="manufacturerRef">0002:0001,0003:0010</property>
+      <property name="dbReference">1029</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Motor state mode</label>
+        <description>Allows to change motor state (normal/calibration/discalibration mode)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal mode (default)</option>
+          <option value="1">Calibration mode</option>
+          <option value="2">Discalibration mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: BASIC SET Respone</label>
+        <description>Allows to change motor behavior after receiving BASIC_SET with value 0xFF</description>
+        <default>0</default>
+        <options>
+          <option value="0">last known non-zero position (default)</option>
+          <option value="1">max open</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: I ASSOCIATION GROUP</label>
+        <description>Allows to send information about failures, errors and alarms directly to the controller (max. 5 devices).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: II ASSOCIATION GROUP</label>
+        <description>Allows to send direct steering commands between SLAVE devices without participation of PRIMARY controller (max. 5 devices).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: III ASSOCIATION GROUP</label>
+        <description>Allows to send direct steering commands (BASIC_SET with value 0xFF) to other devices if error is detected (max. 5 devices).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

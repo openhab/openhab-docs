@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_adt8021_00_000" listed="false">
+    <label>ZDM-80 Wall plug dimmer switch</label>
+    <description><![CDATA[
+Wall plug dimmer switch<br /><h1>Overview</h1><p>Dimming Module</p> <br /><h2>Inclusion Information</h2><p>Triple click the PROG button within 1 second.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZDM-80</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">8201:8021</property>
+      <property name="dbReference">693</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: All On/All Off</label>
+        <description>All On/All Off</description>
+        <default>-1</default>
+        <options>
+          <option value="-1">All On active, All Off active</option>
+          <option value="0">All On is not active, All Off is not active</option>
+          <option value="1">All On is not active, All Off active</option>
+          <option value="2">All On active, All Off is not active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Switch state after power failure</label>
+        <description>Switch state after power failure</description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch is OFF</option>
+          <option value="1">Switch saves its state before power failure.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Double click option</label>
+        <description>Double click option</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>17: Dimming time frame</label>
+        <description><![CDATA[
+Dimming time frame<br /><h1>Overview</h1><p>Sets the time of moving the Dimmer from 0% to max. dimming values.</p> <p>(The ZDM-80 will implement the dimming duration if received this parameter value from controller/gateway. Otherwise, the ZDM-80 will implement the local parameter value)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>18: Maximum Dimmer level control</label>
+        <description><![CDATA[
+Maximum Dimmer level control<br /><h1>Overview</h1><p>Define the upper dimming level. Higher percentages lead to higher brightness level.</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>19: Minimum Dimmer level control</label>
+        <description><![CDATA[
+Minimum Dimmer level control<br /><h1>Overview</h1><p>Define the lower dimming level. Lower percentages lead to lower brightness level.</p>
+        ]]></description>
+        <default>13</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Association group_1 is used to report status change such as AUTO report to gateway.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><h1>Dimmer mode: </h1> <p>ZDM-80 will send out related dimming level e.g. 50% by basic set command to its association group automatically when ZDM-80 received the dimming command by local switch or wireless command e.g. 50%. </p> <h1>Switch mode: </h1> <p>ZDM-80 will send out related basic set command On (0xFF) or Off (0x00) to its association group automatically when ZDM-80 received On (0xFF) or Off (0x00) command by local switch or wireless command respectively. (Max. 4 nodes ID can be assigned to this association group)</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

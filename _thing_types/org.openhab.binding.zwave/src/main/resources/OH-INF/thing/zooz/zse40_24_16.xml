@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse40_24_016" listed="false">
+    <label>ZSE40 v2 4-in-1 Sensor</label>
+    <description><![CDATA[
+4-in-1 Sensor<br /><h1>Overview</h1><ul><li>4 smart sensors in 1 compact device</li> <li>7 levels of motion sensitivity to choose from</li> <li>3 modes for motion / temp led indicator notifications</li> <li>Built-in tamper protection</li> <li>Low battery alerts</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Security enabled Z-Wave device with AES signal encryption</li> </ul><p><strong>Factory Reset</strong></p> <p>If your primary controller is missing or inoperable, you may need to reset the device to factory settings. To complete the reset process manually, remove the back cover to trigger tamper switch. Press and release the Z-Wave button 10 TIMES quickly (within 10 seconds).</p> <p>NOTE: All previously recorded activity and custom settings will be erased from the device’s memory.</p> <br /><h2>Inclusion Information</h2><ol><li>Install the batteries and bring the 4-in-1 sensor as close to your Z-Wave gateway controller as possible</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the Z-Wave button TWICE quickly. The sensor will enter secure inclusion mode.</li> <li>A new 4-in-1 sensor should appear on your controller’s device list</li> </ol><p>Q: I have not been able to add the device to my network after several attempts, what do I do now?</p> <p>A: If you are unable to include the Z-Wave sensor to your controller, please try one of the following:</p> <ul><li>Bring the 4-in-1 sensor closer to your Z-Wave controller</li> <li>Press and release the Z-Wave button quickly several times once you put the controller in the inclusion mode to ensure the command has gone through</li> <li>Put your controller in the EXCLUSION mode and press and release the Z-Wave button, then try adding it to your network again</li> </ul><p><strong>Initialization/Inclusion Issues</strong></p> <p>If the unit does not initialize on initial inclusion (i.e., appears to be an unknown device), ask openHAB 2 to reinitialize the device (e.g., in PaperUI, via Configuration &gt; Things &gt; [Name] &gt; Edit) and immediately press the Z-Wave button on the unit (e.g., right after saving your changes in PaperUI).</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the 4-in-1 sensor as close to your Z-Wave gateway controller as possible</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button TWICE quickly</li> <li>The device should disappear from your controller’s device list.</li> </ol><p>The led indicator will flash 3 times when you take the batteries out and put them back in to indicate the device has been successfully excluded. Please repeat the process following all steps carefully if the led indicator blinks only once when you re-insert the batteries</p> <br /><h2>Wakeup Information</h2><p>Use the Wake Up command to set wake-up interval for the sensor (from 10 minutes to 1 week) to report back to the controller. You can also press and release the Z-Wave button once to wake the device up manually.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE40 v2</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">2021:2101</property>
+      <property name="versionMin">24.16</property>
+      <property name="versionMax">32.1</property>
+      <property name="dbReference">1268</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Scale</label>
+        <description>Set the temperature scale</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="50">
+        <label>2: Temperature Sensitivity</label>
+        <description><![CDATA[
+Amount the temperature must change before a report is sent<br /><h1>Overview</h1><p>Use this setting to set a range for how much the temperature needs to change for it to be reported by the sensor</p> <p>Values: 1 - 50. Values are in 1/10 of a degree C, so 1 is 0.1 degree and 50 is 5 degrees.</p> <p>Default: 10 (1 degree). The sensor will report the new temperature value to the controller whenever the temperature goes up or down by 1 degree.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="50">
+        <label>3: Humidity</label>
+        <description><![CDATA[
+Configure Relative Humidity<br /><h1>Overview</h1><p>Use it to set humidity percentage change to be reported by the sensor. Values: 1 - 50 where 1 stands for 1% and 50 stands for 50%. Default set to 10%.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="50">
+        <label>4: Light Sensor</label>
+        <description><![CDATA[
+Configure Light Sensor<br /><h1>Overview</h1><p>Reports light level in percentage (1-100). Use it to choose light percentage change to be reported by the sensor. Values: 5 - 50 where 5 stands for 5% and 50 stands for 50%. Default set to 10%. </p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="15" max="255">
+        <label>5: Trigger Interval</label>
+        <description><![CDATA[
+Set the trigger interval for motion sensor re-activation.<br /><h1>Overview</h1><p>Use it to set trigger interval - the time when motion is reported again after initial trigger. Values: 15 - 255 where 1 stands for 1 second and 255 stands for 255 seconds. Default set to 15 seconds. NOTE: Small interval will increase activity and decrease battery life. </p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Motion Sensor Sensitivity</label>
+        <description>Adjust sensitivity of the motion sensor.</description>
+        <default>3</default>
+        <options>
+          <option value="1">highest</option>
+          <option value="2">higher</option>
+          <option value="3">high</option>
+          <option value="4">normal</option>
+          <option value="5">low</option>
+          <option value="6">lower</option>
+          <option value="7">lowest</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED indicator mode</label>
+        <description><![CDATA[
+Select the LED indicator mode<br /><h1>Overview</h1><p>LED indicator will flash every 3 minutes or whenever you press the Z-Wave button to indicate temperature level.</p> <p>Green = under 60°F</p> <p>Blue = 60°-75°F</p> <p>Yellow = 75°-83°F</p> <p>Purple = 83°-97°F</p> <p>Red = over 97°F / motion detected / tamper switch triggered </p> <p>NOTE: Mode 2 will increase activity and decrease battery life</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="1">Off</option>
+          <option value="2">Pulsing Temperature, Flashing Motion</option>
+          <option value="3">Flashing Temperature and Motion</option>
+          <option value="4">No Temperature, Flashing Motion</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Receive sensor updates</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

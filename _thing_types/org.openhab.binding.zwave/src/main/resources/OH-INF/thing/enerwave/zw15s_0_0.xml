@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zw15s_00_000" listed="false">
+    <label>ZW15S Binary Switch</label>
+    <description><![CDATA[
+Binary Switch<br /><h1>Overview</h1><ul><li>Perfect Replacement for regular wall switch, 120VAC, 15Amp</li> <li>Wireless Z-Wave technology creates a mesh network for command and Manual and Remote ON/OFF control of any connected lighting and interoperability with other Z-Wave compliant controller and devices</li> <li>Manual and Remote ON/OFF control of any connected lighting and other electrical load </li> <li>Can be used for signal pole or 3- Way (Multi-location) with ZW3K Auxiliary Air-Gap Switch</li> <li>Air-Gap Switch feature meets UL requirement and disconnect power from load locally</li> <li>A blue LED illuminates when the load is off</li> </ul><br /><h2>Inclusion Information</h2><p>Once switch paddle (top/button) is pressed, the device will enter into learn mode to accomplish inclusion or exclusion by controller.  </p> <br /><h2>Exclusion Information</h2><p>Once switch paddle (top/button) is pressed, the device will enter into learn mode to accomplish inclusion or exclusion by controller.  </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZW15S</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0101:0102</property>
+      <property name="dbReference">507</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED State</label>
+        <description>LED State</description>
+        <default>0</default>
+        <options>
+          <option value="0">Power on, LED off</option>
+          <option value="1">Power on, LED on</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

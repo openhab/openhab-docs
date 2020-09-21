@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw090_00_000" listed="false">
+    <label>ZW090 Z‐Stick Gen5 USB Controller</label>
+    <description><![CDATA[
+Z‐Stick Gen5 USB Controller<br /><h1>Overview</h1><p>Aeon Labs Z‐Stick Gen5 is a self‐powered Z‐Wave USB adapter with remote network creation capabilities <br />(independent from external power and host microprocessor).  By being able to remotely include/remove Z‐<br />Wave devices, this greatly simplifies Z‐Wave network installation.  When connected to a host controller (via <br />USB), it enables the host controller to take part in the Z‐Wave Network. <br />It can be included and operated in any Z‐wave network with other Z‐wave certified devices from other <br />manufacturers and/or other applications. All non‐battery operated nodes within the network will act as <br />repeaters regardless of vendor to increase reliability of the network. </p> <br /><h2>Inclusion Information</h2><p>Push the include button.  Controller will blink slowly.  It is in include mode.  Press again to cancel.</p> <br /><h2>Exclusion Information</h2><p>1. Unplug the Z‐Stick from the USB connector. Then press and hold the Action Button for <br />approximately 2 seconds. (The orange LED will blinking fast.) <br />2. To remove a Z‐Wave device from the network, simply go to the device with the Z‐Stick <br />and press the Action Button on the device you wish to remove. (The LED on the Z‐Stick will <br />become blue and Immediately stay solid for 2 seconds to indicate successful removal from <br />the network.) <br />3.   The orange LED will then return to blinking fast, indicating readiness for further device <br />exclusions. Repeat step 1 for each device as you wish to exclude</p> <br /><h2>Wakeup Information</h2><p>N/A</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW090</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0001:005A,0101:005A,0201:005A</property>
+      <property name="dbReference">265</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: Enable/disable the LED indicator</label>
+        <description><![CDATA[
+This parameter is used to enable/disable the LED indicator.<br /><h1>Overview</h1><p>When the USB power supply, the LED indicator light configuration</p> <p>(0 =disable, 1 = enable)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_220_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>220: RF power level</label>
+        <description><![CDATA[
+RF power level<br /><h1>Overview</h1><p>Configuration of the RF power level</p> <p>1~10, other= ignore. A total of 10 levels, level 1 <br />as the weak output power, and so on, 10 for <br />most output power level.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_242_1" type="integer" groupName="configuration">
+        <label>242: Security network enabled</label>
+        <description><![CDATA[
+Security network enabled<br /><h1>Overview</h1><p>Security network enabled <br />(0 =disable, 1 = enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_243_16" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>243: Security Network Key</label>
+        <description>Security Network Key</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Lock Configuration</label>
+        <description><![CDATA[
+Configuration lock. 1=enable, 0=disable<br /><h1>Overview</h1><p>Enable/disable Lock Configuration (0 =disable, 1= enable, other= ignore)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

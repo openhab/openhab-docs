@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="habhome_iblindsib20_00_000" listed="false">
+    <label>IB2.0 Window Blind Controller</label>
+    <description><![CDATA[
+Window Blind Controller<br /><h1>Overview</h1><p>An intelligent Z-Wave blind motor that installs out of sight in existing Horizontal (2" and 2 1/2" slatted-style) blind headrails. Use iBlinds to tilt the slats open, closed or use the value slider for precise positioning of the slat tilt angle.</p> <br /><h2>Inclusion Information</h2><ol><li>Follow the directions for your Z-Wave hub/controller to place it in the add for inclusion mode.</li> <li>Press the inclusion button (IN/EX) once and wait for the device to be discovered and joined to the Z-Wave network.  Follow the directions of your Z-Wave controller to uniquely identify your iblinds device.   (Ex: Bedroom iblinds).</li> </ol><p><strong><em>Note: If the device is not joined to the network.  Press the CLBR button, wait 1 second and repeat steps 1 and 2 again.  If you continue to have trouble joining the iblinds motor to the Z-Wave network, follow the Z-Wave network exclusion process. </em></strong></p> <br /><h2>Exclusion Information</h2><ol><li>Follow the directions for your Z-Wave hub/controller to place it in the exclusion mode.</li> <li>Press the exclude button (IN/EX) once and wait for the iblinds device to be removed from the Z-Wave network.</li> </ol><p>If you are having issues with exclusion, please check our troubleshooting page here.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HAB Home Intelligence, LLC</property>
+      <property name="modelId">IB2.0</property>
+      <property name="manufacturerId">0287</property>
+      <property name="manufacturerRef">0003:000D</property>
+      <property name="dbReference">1073</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Auto Calibration Torque</label>
+        <description><![CDATA[
+Adjust Torque Value for Auto Calibration<br /><h1>Overview</h1><p>Changing the Auto Calibration torque will allow you to change the initial calibration torque.  Reducing the torque helps improve calibration for small blinds and increasing the torque helps improve calibration for large blinds. </p> <p>Calibration will automatically begin when the parameter value is received by iblinds.  After calibration is completed the parameter value will be set back to the default value of 1. </p> <p><strong>*** INCREASE TORQUE AT YOUR OWN RISK ***</strong>  Increasing torque can cause damage to lightweight and/or small blinds.  Only increase torque if the endpoints need adjusting. </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Calibrate using default torque</option>
+          <option value="2">Reduce calibration torque by 1 factor</option>
+          <option value="3">Reduce calibration torque by 2 factors</option>
+          <option value="4">Increase calibration torque by .5 factor</option>
+          <option value="5">Increase calibration torque by 1 factor</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

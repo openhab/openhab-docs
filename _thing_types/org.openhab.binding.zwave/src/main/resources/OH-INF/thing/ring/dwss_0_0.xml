@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ring_dwss_00_000" listed="false">
+    <label>DW-SS Door/Window Contact</label>
+    <description><![CDATA[
+Door/Window Contact<br /><h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand your Ring Alarm system to secure each door and window in your home, and get alerts as soon as they open.</p> <br /><h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Open contact sensor’s cover</li> <li>Press and hold the reset button on sensor circuitry</li> <li>Remove and replace battery quickly – Blue LED will start to blink rapidly</li> <li>Wait for the blue LED to stop blinking</li> </ol><br /><h2>Wakeup Information</h2><p>By opening the top cover, the sensor will get to tamper state and stay awake.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ring</property>
+      <property name="modelId">DW-SS</property>
+      <property name="manufacturerId">0346</property>
+      <property name="manufacturerRef">0201:0201</property>
+      <property name="dbReference">893</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="255" max="4200">
+        <label>1: Wait time</label>
+        <description><![CDATA[
+Time between sending unsolicited battery reports<br /><h1>Overview</h1><p>255 to 4200 seconds <strong>in 255 second increments</strong> that the sensor should wait between sending unsolicited battery reports.  <br />The default configuration value for parameter 1 is defaulted to 4200 seconds on exclusion.</p>
+        ]]></description>
+        <default>4200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Controller Updates</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Basic Report</label>
+        <description><![CDATA[
+Basic report of either 0x00 for CLOSED or 0xFF for OPEN<br /><h1>Overview</h1><p>When a node is associated with Group 2, the sensor will send a basic report of either 0x00 for “Closed” or 0xFF for “Open.” </p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9001t4rgbw_00_000" listed="false">
+    <label>ZV9001T4-RGBW Touch Panel RGBW Z Wave Wall Controller</label>
+    <description><![CDATA[
+Touch Panel RGBW Z Wave Wall Controller<br /><h1>Overview</h1><p>SR-ZV9001T4-RGBW-EU is a touch panel Z-Wave Plus certified wall controller for RGBW LED lighting. As a z-wave secondary controller, it can be added to z-wave network and removed from z-wave network by z-wave primary (master) controllers or gateway and control z-wave devices that are added to the network.</p> <p>It supports 5 groups for associations, a lifeline group association to primary (master) controller and 4 groups association to devices, the groups association to devices support maximum 5 Z-wave devices per group. 20 built-in color changing effects are available with changing speed adjustable.</p> <p>It is a universal z-wave slave which can be compatible with universal z-wave primary controller or gateway. The wireless controller is compatible with RGBW z wave device SR-ZV9103FA-RGBW and different frequencies are available for different countries or areas. The signal transmit distance can be up to 30m. The controller is easy to install on the wall and available in standard EU size.</p> <p><strong>Key Features</strong></p> <ul><li>Z-Wave Plus certified</li> <li>Touch Panel RGBW Z-Wave Wall Controller</li> <li>Source-routed Mesh Network Architecture</li> <li>Each device works as a node</li> <li>All Nodes Are Transceivers</li> <li>Each Z-wave Network Allows Up to 232 Devices</li> <li>Actively route around and circumvent obstacles or radio dead spots</li> <li>Wireless Synchronization to Drastically Increase Control Distance</li> <li>Devices can communicate to one another by using intermediate nodes</li> <li>Added or removed by primary controllers or gateway</li> <li>Supports 1 lifeline group association to master controller</li> <li>Supports 4 groups association to z-wave devices, maximum 5 devices per group</li> <li>20 built-in color changing effects are available with changing speed adjustable</li> <li>Compatible with universal z-wave primary controller or gateway</li> </ul><br /><h2>Inclusion Information</h2><p>Inclusion:</p> <ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion).</li> <li>Make sure the wall controller does not belong to any Z-Wave network (please refer to the part “How to check whether the wall controller included to a network” of this manual).</li> <li>Short press the “inclusion/exclusion” button, or press and hold down “ALL ON/OFF” button for over 3 seconds, the wall controller will be set to inclusion mode, and waiting to be included, then LED indicator turns on and blinks 6 times quickly to indicate successful inclusion. Once the wall controller quits “inclusion mode”, the LED indicator will turns off.</li> </ol><p>There are 3 methods for the wall controller to quit “inclusion mode”:</p> <ol><li>Automatically quits after successful inclusion.</li> <li>Quits after 25 seconds timeout.</li> <li>Press and hold down “ALL ON/OFF” button for over 3 seconds, or short press the “inclusion/exclusion” button to quit.</li> </ol><br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p><strong>Method 1: Exclusion from the primary controller/gateway as follows:</strong></p> <ol><li>Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).</li> <li>Short press the “inclusion/exclusion” button, or press and hold down “ALL ON/OFF” button for over 3 seconds, the wall controller will be set to exclusion mode, and waiting to be excluded, then LED indicator turns on and shows 3 short blinks and 1 long blink to indicate successful exclusion.</li> </ol><p>Once the wall controller quits “exclusion mode”, the LED indicator will turns off.</p> <p>There are 3 methods for the wall controller to quit “exclusion mode”:</p> <ol><li>Automatically quits after successful exclusion.</li> <li>Quits after 25 seconds timeout.</li> <li>Press and hold down “ALL ON/OFF” button for over 3 seconds, or short press the “inclusion/exclusion” button to quit.</li> </ol><p><strong>Method 2: Factory reset</strong> the wall controller will force the wall controller to be excluded from a network. Please refer to the part “Factory Reset” of the manual.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9001T4-RGBW</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0300:A107</property>
+      <property name="dbReference">981</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ol><li>Send “Command Class Device Reset Locally” to associated devices of this group to report factory reset information when factory reset the wall controller.</li> <li>Double click a group number of the wall controller to send command to associated devices of this group using “Command Class Central Scene”.</li> </ol>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Launch 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Press button "1" to activate group.</p> <ol><li>Press and hold down button "1" to switch the associated devices with a Basic Set commands.</li> <li>Press PWM1-PWM4 buttons, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down PWM1-PWM4 buttons, direct control of associated devices using Color Switch Start Level Change commands.</li> <li>Short touch or slide touch the “Color Wheel”, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down brightness button, direct control of associated devices using Multilevel Switch Start Level Change commands.</li> <li>Short press "play/pause" button, direct control of associated devices using Configuration Set commands with Parameter Number = 5, Size = 1, toggling through values (1-0-2-0-3-0-4-0-5-0-6-0-1-...). Press and hold down "play/pause" button direct control of associated devices using Configuration Set commands with Parameter Number = 6, Size = 1 with varying values .</li> </ol>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Launch 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Press button "2" to activate group.</p> <ol><li>Press and hold down button "2" to switch the associated devices with a Basic Set commands. </li> <li>Press PWM1-PWM4 buttons, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down PWM1-PWM4 buttons, direct control of associated devices using Color Switch Start Level Change commands.</li> <li>Short touch or slide touch the “Color Wheel”, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down brightness button, direct control of associated devices using Multilevel Switch Start Level Change commands.</li> <li>Short press "play/pause" button, direct control of associated devices using Configuration Set commands with Parameter Number = 5, Size = 1, toggling through values (1-0-2-0-3-0-4-0-5-0-6-0-1-...). Press and hold down "play/pause" button direct control of associated devices using Configuration Set commands with Parameter Number = 6, Size = 1 with varying values .</li> </ol>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Launch 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Press button "3" to activate group.</p> <ol><li>Press and hold down button "3" to switch the associated devices with a Basic Set commands.</li> <li>Press PWM1-PWM4 buttons, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down PWM1-PWM4 buttons, direct control of associated devices using Color Switch Start Level Change commands.</li> <li>Short touch or slide touch the “Color Wheel”, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down brightness button, direct control of associated devices using Multilevel Switch Start Level Change commands.</li> <li>Short press "play/pause" button, direct control of associated devices using Configuration Set commands with Parameter Number = 5, Size = 1, toggling through values (1-0-2-0-3-0-4-0-5-0-6-0-1-...). Press and hold down "play/pause" button direct control of associated devices using Configuration Set commands with Parameter Number = 6, Size = 1 with varying values .</li> </ol>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Launch 4</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Press button "4" to activate group.</p> <ol><li>Press and hold down button "4" to switch the associated devices with a Basic Set commands.</li> <li>Press PWM1-PWM4 buttons, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down PWM1-PWM4 buttons, direct control of associated devices using Color Switch Start Level Change commands.</li> <li>Short touch or slide touch the “Color Wheel”, direct control of associated devices using Color Switch Set commands.</li> <li>Press and hold down brightness button, direct control of associated devices using Multilevel Switch Start Level Change commands.</li> </ol>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_123610_00_000" listed="false">
+    <label>123610 Wall Plug Switch</label>
+    <description><![CDATA[
+Wall Plug Switch<br /><h1>Overview</h1><p>This is a switch plug that can be placed between a standard Schuko (Type F) wall outlet and electric devices, plugged in by cord. It can switch all electrical loads up to 3500 W. The device is IP 20 rated and can therefore only be used on dry environments. Switching is controlled wirelessly using Z-Wave or locally using a toggleing button. A blue LED indicates the switching status. An automatic 'Off' function and programmable switching behavior make the device a very flexible tool for the inhouse lighting</p> <br /><h2>Inclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p> <br /><h2>Exclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">123610</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">1100:0001</property>
+      <property name="dbReference">231</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Set LED indication mode</label>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">On when switch on</option>
+          <option value="2">On when switch off</option>
+          <option value="3">Operated by command</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Automatic switch off time</label>
+        <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: RF Off command</label>
+        <description><![CDATA[
+RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:</p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics;</li> <li>Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch OFF</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch ON</option>
+          <option value="3">Switch on if load is off else switch off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Restore switch state after power cycle</label>
+        <description><![CDATA[
+Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No - turn OFF</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Switch State</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

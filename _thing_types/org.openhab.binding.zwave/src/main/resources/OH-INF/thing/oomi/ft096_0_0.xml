@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft096_00_000" listed="false">
+    <label>FT096 Plug-in Switch</label>
+    <description><![CDATA[
+Plug-in Switch<br /><h1>Overview</h1><p>Oomi Plug is a low-cost Z-Wave Switch plug-in module specifically used to enable Z-Wave command and control (on/off) of any plug-in tool.</p> <br /><h2>Inclusion Information</h2><p>Press the Action Button on your Plug.</p> <p>If Plug has been successfully added to your Z-Wave network, its RGB LED will be solid. If the adding was unsuccessful, the red LED will be on for 2 seconds and then remain colourful gradient status, repeat the inclusion</p> <br /><h2>Exclusion Information</h2><p>If at some stage, your primary controller is missing or inoperable, you may wish to reset all of your Oomi Plug’s settings to their factory defaults. To do this, press and hold the Action Button for 20 seconds and then release it. Your Oomi Plug will now be reset to its original settings, and the green LED will be solid for 2 seconds and then remain the colourful gradient status as a confirmation.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT096</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0003:0060,0103:0060,0203:0060</property>
+      <property name="dbReference">730</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Current overload protection enable</label>
+        <description><![CDATA[
+Current overload protection enable<br /><h1>Overview</h1><p>Current Overload Protection. Load will be closed when the Current overrun (US: 15.5A, other country: 16.2A) and the time more than 2 minutes (0=disabled, 1=enabled).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Output load after re-power</label>
+        <description><![CDATA[
+Configure the output load status after re‐power<br /><h1>Overview</h1><p>Configure the output load status after re-power on<br />(0=last status, 1=always on, 2=always off)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">last status</option>
+          <option value="1">always on</option>
+          <option value="2">always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>33: RGB LED color testing</label>
+        <description><![CDATA[
+Set the RGB LED color value for testing.<br /><h1>Overview</h1><p>Value1: Reserved</p> <p>Value2: Red value</p> <p>Value3: Green value</p> <p>Value4: Blue value</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Enable send to associated devices</label>
+        <description><![CDATA[
+Enable to send notifications to Group 1<br /><h1>Overview</h1><p>Enable to send notifications to associated devices (Group 1) when the state of Micro Switch’s load changed (0=nothing, 1=hail CC, 2=basic CC report).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">nothing</option>
+          <option value="1">hail CC</option>
+          <option value="2">basic CC report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: Configure LED state</label>
+        <description><![CDATA[
+Configure the state of the LED<br /><h1>Overview</h1><p>Configure the state of LED when it is in 3 modes below:</p> <ul><li>0= The LED will follow the status (on/off) of its load (Energy mode).</li> <li>1= When the state of Switch’s load changed, The LED will follow the status (on/off) of its load, but the red LED will turn off after 5 seconds if there is no any switch action (momentary indicate mode).</li> <li>2= Night light mode.</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED follows load</option>
+          <option value="1">LED follows load for 5 seconds</option>
+          <option value="2">Night light mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_83_3" type="integer" groupName="configuration"
+                 min="0" max="8388607">
+        <label>83: Color in night light mode</label>
+        <description><![CDATA[
+Color in night light mode<br /><h1>Overview</h1><p>Configure the RGB value when it is in Night light mode.<br />Value1: Red color value<br />Value2: Green color value<br />Value3: Blue color value</p> <p>defaults:</p> <p>Value1=0x1B<br />Value2=0x14<br />Value3=0x1B</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_83_3_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>83: Blue night light color value</label>
+        <description><![CDATA[
+Blue night light color value<br /><h1>Overview</h1><p>Value for parameter 83, night light blue color</p>
+        ]]></description>
+        <default>27</default>
+      </parameter>
+
+      <parameter name="config_83_3_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>83: Green night light color value</label>
+        <description><![CDATA[
+Green night light color value<br /><h1>Overview</h1><p>Green color value for parameter 83, night light mode.</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_83_3_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>83: Red night light color value</label>
+        <description>Configure the RGB value when it is in Night light mode</description>
+        <default>27</default>
+      </parameter>
+
+      <parameter name="config_84_3" type="integer" groupName="configuration"
+                 min="0" max="8388607">
+        <label>84: Color in energy mode</label>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_84_3_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>84: Green brightness in energy mode (%)</label>
+        <description><![CDATA[
+Green brightness in energy mode (%)<br /><h1>Overview</h1><p>Configure the brightness level of RGB LED (0%-100%) when<br />it is in Energy Mode/momentary indicate mode.<br />Value1: green color value.<br />Value2: yellow color value.<br />Value3: red color value.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_84_3_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>84: Yellow brightness in energy mode (%)</label>
+        <description>Yellow brightness in energy mode (%)</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_84_3_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>84: Red brightness in energy mode (%)</label>
+        <description>Red brightness in energy mode (%)</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration">
+        <label>90: Enable items 91 and 92</label>
+        <description><![CDATA[
+Enables/disables parameter 91 and 92<br /><h1>Overview</h1><p>Enables/disables parameter 91 and 92 below (1=enabled, 0=disabled).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>91: Wattage Threshold</label>
+        <description><![CDATA[
+minimum change in wattage to trigger<br /><h1>Overview</h1><p>The value here represents minimum change in wattage (in<br />terms of wattage) for a REPORT to be sent (Valid values 0-<br />60000).</p>
+        ]]></description>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_92_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>92: Wattage Percent Change</label>
+        <description><![CDATA[
+minimum change in wattage percent<br /><h1>Overview</h1><p>The value here represents minimum change in wattage<br />percent (in terms of percentage) for a REPORT to be sent<br />(Valid values 0-100).</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_100_1_wo" type="integer" groupName="configuration">
+        <label>100: Set 101‐103 to default.</label>
+        <description>Set 101‐103 to default.</description>
+        <default>0</default>
+        <options>
+          <option value="0">False</option>
+          <option value="1">True</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>101: Values to send to group 1</label>
+        <description>Which reports need to send in Report group 1</description>
+        <default>4</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Voltage</option>
+          <option value="2">Current</option>
+          <option value="4">Wattage</option>
+          <option value="8">kWh</option>
+          <option value="15">All Values</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_102_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>102: Values to send to group 2</label>
+        <description>Which reports need to send in Report group 2</description>
+        <default>8</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Voltage</option>
+          <option value="2">Current</option>
+          <option value="4">Wattage</option>
+          <option value="8">kWh</option>
+          <option value="15">All Values</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_103_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>103: Values to send to group 3</label>
+        <description>Which reports need to send in Report group 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Voltage</option>
+          <option value="2">Current</option>
+          <option value="4">Wattage</option>
+          <option value="8">kWh</option>
+          <option value="15">All Values</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_110_1_wo" type="integer" groupName="configuration">
+        <label>110: Set 111‐113 to default.</label>
+        <description>Set 111‐113 to default.</description>
+        <default>0</default>
+        <options>
+          <option value="0">False</option>
+          <option value="1">True</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>111: Time interval for sending to group 1</label>
+        <description><![CDATA[
+Group 1 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 3</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>112: Time interval for sending to group 2</label>
+        <description><![CDATA[
+Group 2 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>113: Time interval for sending to group 3</label>
+        <description><![CDATA[
+Group 3 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Configuration Locked</label>
+        <description><![CDATA[
+Enable/disable Configuration Locked (0 =disable, 1 = enable).<br /><h1>Overview</h1><p>Enable/disable Configuration Locked (0 =disable, 1 =enable).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: RESET</label>
+        <description><![CDATA[
+Reset the device to defaults<br /><h1>Overview</h1><p>Reset configuration set up to default setting.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+load notification type (lifeline)<br /><h1>Overview</h1><p>When the state of Smart Switch (turn on/off the load ) is changed:</p> <ol><li>Set Configuration parameter 80 to 0 Reserved (Default).</li> <li>Set Configuration parameter 80 to 1 Send Hail CC.</li> <li>Set Configuration parameter 80 to 2: Send the Basic Report.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+forwarding basic set (retransmit)<br /><h1>Overview</h1><p>Forward the Basic Set, Switch Binary Set to associated nodes in Group 2 when the Smart Switch receives the Basic Set, Switch Binary Set commands from main controller.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fortrezz_wv01_00_000" listed="false">
+    <label>WV-01 Wireless Z-Wave Water Valve</label>
+    <description><![CDATA[
+Wireless Z-Wave Water Valve<br /><h1>Overview</h1><p>Fortrezz WV-01 Wireless Z-Wave Water Valve is a patented, wireless water detection and automatic water shut-off system that works as an automatic valve for your home's main water supply line and can easily be installed by a certified professional plumber.</p> <p>When used in a Z-Wave home automation network, the smart valve can be used along with Z-Wave water alarm sensors to reduce or eliminate water damage caused by leaky pipes or faulty appliances. It can also be used in conjunction with remotely installed flood sensors to shut off the main water supply in case of water leakage.</p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, then press the Program button once.</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, then press the Program button once.</p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">FortrezZ LLC</property>
+      <property name="modelId">WV-01</property>
+      <property name="manufacturerId">0084</property>
+      <property name="manufacturerRef">0213:0214,0213:0215,0233:AA06,0243:0300</property>
+      <property name="dbReference">368</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: Mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Alarm Mode</option>
+          <option value="255">Level Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: WaterLevel Timeout</label>
+        <default>60</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

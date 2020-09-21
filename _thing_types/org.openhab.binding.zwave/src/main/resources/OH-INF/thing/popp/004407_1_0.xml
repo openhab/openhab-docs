@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_004407_01_000" listed="false">
+    <label>004407 CO Detector</label>
+    <description><![CDATA[
+CO Detector<br /><h1>Overview</h1><p>This product combines a certified carbon monoxide detector with a plug-in Z-Wave module to form a wirelessly reporting carbon monoxide sensor. The carbon monoxide detector is certified according to EN 50270:1999, EN 60335-1:1994 as well as EN 50291:2001 and satisfies all contemporary legal requirements.</p> <p>There is no defined level of carbon monoxide that will result in an alarm. The danger of CO is a result of the total level of CO in the air plus the duration of exposure. A Z-Wave alarm will be sent out when one of the following conditions were met:</p> <ul><li>CO level above 43 ppm for a duration of 60 minutes</li> <li>CO level above 80 ppm for a duration of 10 minutes</li> <li>CO level above 150 ppm for a duration of 2 minutes</li> </ul><br /><h2>Inclusion Information</h2><p>Pressing the Z-Wave button for one second includes the device. If the button is pressed for at least 2 seconds, the inclusion will be done without the Security Command Class.</p> <br /><h2>Exclusion Information</h2><p>A single click on the Z-Wave button will exclude the device.</p> <br /><h2>Wakeup Information</h2><p>Wakeup is done by single push of the Z-Wave button.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_co" typeId="sensor_co">
+        <label>Sensor (CARBON_MONOXIDE)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">004407</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0004:0003</property>
+      <property name="versionMin">1.0</property>
+      <property name="dbReference">456</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Value of ON-Command</label>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>2: Value of OFF-Command</label>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switching Command when Alarm</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

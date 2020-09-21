@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="erone_hmlm001_00_000" listed="false">
+    <label>HM-LM001 Lighting Module</label>
+    <description><![CDATA[
+Lighting Module<br /><h1>Overview</h1><ul><li>Use with incandescent light bulbs up to 200W</li> <li>Control on/off for attached lamp</li> <li>Dim the attached lamp</li> <li>LED shows that module is working</li> <li>Manual override button</li> </ul><br /><h2>Inclusion Information</h2><ul><li>Start the inclusion process on the hub</li> <li>Single click the button on the device</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Start the exclusion process on the hub</li> <li>Triple click the button on the device</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Erone</property>
+      <property name="modelId">HM-LM001</property>
+      <property name="manufacturerId">006F</property>
+      <property name="manufacturerRef">0103:0001</property>
+      <property name="dbReference">1027</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_009402_01_014" listed="false">
+    <label>009402 10 Year Smoke Detector with Siren Function</label>
+    <description><![CDATA[
+10 Year Smoke Detector with Siren Function<br /><h1>Overview</h1><p>This product combines a certified '10 year' stand-alone smoke detector with a plug-in Z-Wave module to form a wirelessly reporting automatically meshing smoke sensor plus wirelessly controllable indoor siren. The smoke detector’s sensor head is certified with the Q quality label, conforms DIN EN 14604 and satisfies all contemporary legal requirements.</p> <p>The High-End 10-years smoke detector offers a large test button conveniently accessible even with a broomstick when mounted on the sealing. The smoke chamber is monitored electronically to avoid any malfunction and wrong alerts. The device will also report its end of life to make sure it is getting replaced on time.</p> <p>Furthermore, the device can be used as an independent indoor siren within the Z-Wave network, which can alarm in case of detected flood or burglary. Please consider that the additional siren function will influence battery lifetime!</p> <p>The smoke sensor and the Z-Wave controller communicate via a secure protocol to prevent manipulation.</p> <br /><h2>Inclusion Information</h2><ul><li>Pressing the Z-Wave button includes the device.</li> <li>If the button is pressed for at least 3 seconds, the inclusion will be done without the Security Command Class.</li> </ul><br /><h2>Exclusion Information</h2><p> A single click on the  Z-Wave button will exclude the device. </p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">009402</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0004:0004</property>
+      <property name="versionMin">1.14</property>
+      <property name="dbReference">532</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="3" max="129">
+        <label>1: Siren alarm sequence interval</label>
+        <description><![CDATA[
+Siren alarm sequence interval<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total length of the interval in seconds.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>2: Siren alarm tone length</label>
+        <description><![CDATA[
+Siren alarm tone length<br /><h1>Overview</h1><p>The  additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total  length of the sound versus silence within this interval.</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: Value of On-Command</label>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>4: Value of Off-Command</label>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p>
+        ]]></description>
+        <default>127</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Alarm Reports</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switching Command when Alarm</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

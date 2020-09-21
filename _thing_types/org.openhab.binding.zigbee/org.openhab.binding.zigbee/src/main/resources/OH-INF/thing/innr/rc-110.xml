@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+                          bindingId="zigbee"
+                          xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="innr-rc-110" listed="false">
+      <label>Innr RC 110 Remote Control</label>
+      <channels>
+         <channel id="scenesOn" typeId="system.button">
+            <label>Button On</label>
+            <description>Button 'On/Off' turning On (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x01</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenesOff" typeId="system.button">
+            <label>Button On</label>
+            <description>Button 'On/Off' turning Off (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x00</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenesMinus" typeId="system.button">
+            <label>Button -</label>
+            <description>Button '-' (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x02</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">1</property>
+               <property name="zigbee_longpress_cluster_id">0x0008</property>
+               <property name="zigbee_longpress_command_id">0x01</property>
+               <property name="zigbee_longpress_parameter_name">moveMode</property>
+               <property name="zigbee_longpress_parameter_value">1</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenesPlus" typeId="system.button">
+            <label>Button +</label>
+            <description>Button '+' (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x02</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">0</property>
+               <property name="zigbee_longpress_cluster_id">0x0008</property>
+               <property name="zigbee_longpress_command_id">0x01</property>
+               <property name="zigbee_longpress_parameter_name">moveMode</property>
+               <property name="zigbee_longpress_parameter_value">0</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenesMinusPlusRelease" typeId="system.button">
+            <label>Button +/- released</label>
+            <description>Button '+' or '-' when being released (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x03</property>
+            </properties>
+         </channel>
+      
+         <channel id="scenes1" typeId="system.button">
+            <label>Button 1</label>
+            <description>Button 1 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">2</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenes2" typeId="system.button">
+            <label>Button 2</label>
+            <description>Button 2 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">52</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenes3" typeId="system.button">
+            <label>Button 3</label>
+            <description>Button 3 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">102</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenes4" typeId="system.button">
+            <label>Button 4</label>
+            <description>Button 4 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">153</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenes5" typeId="system.button">
+            <label>Button 5</label>
+            <description>Button 5 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">194</property>
+            </properties>
+         </channel>
+         
+         <channel id="scenes6" typeId="system.button">
+            <label>Button 6</label>
+            <description>Button 6 (with Scenes selected)</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x04</property>
+               <property name="zigbee_shortpress_parameter_name">level</property>
+               <property name="zigbee_shortpress_parameter_value">254</property>
+            </properties>
+         </channel>
+         
+      </channels>
+      <config-description>
+         <parameter name="zigbee_macaddress"
+                    type="text"
+                    readOnly="true"
+                    required="true">
+            <label>MAC Address</label>
+         </parameter>
+      </config-description>
+   </thing-type>
+</thing:thing-descriptions>

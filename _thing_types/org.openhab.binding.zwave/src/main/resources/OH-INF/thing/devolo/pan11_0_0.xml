@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="devolo_pan11_00_000" listed="false">
+    <label>PAN11 Smart Energy Plug-in Switch</label>
+    <description><![CDATA[
+Smart Energy Plug-in Switch<br /><h1>Overview</h1><p>This plug-in ON/OFF switch PAN11 is a security enabled wireless switch, based on Z-Wave Plus technology.</p> <p>Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because PAN11 supports Security Command Class, it can learn with Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.</p> <br /><h2>Inclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter exclusion mode.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Devolo</property>
+      <property name="modelId">PAN11</property>
+      <property name="manufacturerId">0175</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">509</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: Wall Meter Report Period</label>
+        <description><![CDATA[
+Wall Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 5 seconds</strong></p> <p>Default value is 720 * 5 s = 3600 s = 1 hour</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>2: KWH Meter Report Period</label>
+        <description><![CDATA[
+KWH Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 10 minutes</strong></p> <p>Default is 6 * 10 min = 1 hour</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="10" max="1300">
+        <label>3: Threshold of current for Load caution</label>
+        <description><![CDATA[
+Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0.01 Ampere</strong></p> <p>Default is 1300 * .01 A = 13 A</p>
+        ]]></description>
+        <default>1300</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="10000">
+        <label>4: Threshold of KWH for Load caution</label>
+        <description>Threshold of KWH for Load caution</description>
+        <default>10000</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Restore switch state mode</label>
+        <description>Restore switch state mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Last switch state (default)</option>
+          <option value="2">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Mode of Switch Off function</label>
+        <description>Mode of Switch Off function</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED indication mode</label>
+        <description>LED indication mode</description>
+        <default>1</default>
+        <options>
+          <option value="1">Show switch state</option>
+          <option value="2">Show night mode</option>
+          <option value="3">Flash mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>8: Auto off timer</label>
+        <description>Auto off timer</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable auto off function</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: RF off command mode</label>
+        <description>RF off command mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch off (default)</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch toggle</option>
+          <option value="3">Switch on</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description>Switch will report its latest status to Z-Wave Controller.</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

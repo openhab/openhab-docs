@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zw6302_00_000" listed="false">
+    <label>ZW6302 Portable Smart Motion Sensor</label>
+    <description><![CDATA[
+Portable Smart Motion Sensor<br /><h1>Overview</h1><p>Make the move toward convenience with the Z-Wave Portable Smart Motion Sensor for your home.  This Z-Wave compatible device boosts the safety of your home by working with your home’s gateway  to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is detected. <br />Use the included batteries for easy placement anywhere, plug into the wall using a AC adapter and  USB cable – never replace batteries again. </p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your motion sensor, press and release the button on the sensor to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your motion sensor, press and release the button on the sensor to exclude it from the network. </p> <br /><h2>Wakeup Information</h2><p>Press and release the button on the sensor</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZW6302</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4953:3133</property>
+      <property name="dbReference">447</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Motion Sensor</label>
+        <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">Low Sensitivity</option>
+          <option value="2">Medium Sensitivity</option>
+          <option value="3">High Sensitivity</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>18: PIR Timeout Duration</label>
+        <description>PIR Timeout Duration in Minutes</description>
+        <default>60</default>
+        <options>
+          <option value="1">One Minute</option>
+          <option value="2">Two Minutes</option>
+          <option value="5">Five Minutes</option>
+          <option value="10">Ten Minutes</option>
+          <option value="255">Test Mode [5 seconds]</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Basic Set, Notification and Basic Report</label>
+        <description>Basic Set, Notification and Basic Report</description>
+        <default>1</default>
+        <options>
+          <option value="1">Motion Sensor will send out Notification</option>
+          <option value="2">Motion Sensor will send out Basic Set</option>
+          <option value="3">Motion Sensor will sendout Basic Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Enable &amp; Disable the LED indication</label>
+        <description><![CDATA[
+Enable &amp; Disable the LED indication<br /><h1>Overview</h1><p>Enable &amp; Disable the LED indication when PIR is triggered</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: ZW6302</label>
+        <description><![CDATA[
+Portable Smart Motion Sensor<br /><h1>Overview</h1><p>Group 1 supports Z-Wave Plus lifeline communication and notification. lifeline association only supports the "manual reset" event and notification report, however it can be changed to send basic set with notification and basic report with notification. See programming instructions.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

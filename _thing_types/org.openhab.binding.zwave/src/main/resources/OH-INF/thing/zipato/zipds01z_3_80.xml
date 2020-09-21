@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_zipds01z_03_080" listed="false">
+    <label>0131 Door/Window Sensor</label>
+    <description><![CDATA[
+Door/Window Sensor<br /><h1>Overview</h1><p>Door sensor is an intelligent security equipment that can transmit through Z-Wave network and radio waves. In the Z-Wave network communications, door sensor can be connected to any Z-Wave gateway. Door sensor can send messages to Z-Wave gateway, then realize association with other devices. Different countries or areas, the radio frequency is different.</p> <p>Each door sensor has a unique ID code. When we add or remove door sensor from gateway, just place it in the Z-Wave network range of gateway. Then we can easily find the door sensor through device ID code. In the communication with Z-Wave gateway, door sensor can only send messages to Z-Wave gateway, but can not receive messages. When alarm is triggered, door sensor would send messages to gateway, then Z-Wave gateway would display the current status of door sensor. At the same time, door sensor can realize association with other devices through Z-Wave gateway. Door sensor is powered by batteries, with small body, and can be installed on the window or door easily. When door or window is open, door sensor would be triggered, then associates with other devices to work, to realize the goal of safety protection.</p> <br /><h2>Inclusion Information</h2><p>ADD DOOR SENSOR TO Z-WAVE NETWORK</p> <ol><li>Disassemble the main body of door sensor by pressing the disassemble button, then install battery. After making it powered on, please do not operate it within 20 s.</li> <li>Place door sensor within Z-Wave network range of gateway.</li> <li>Set Z-Wave gateway into inclusion mode (Refer to gateway user manual).</li> <li>Press the code button in door sensor three times continuously, then door sensor will enter inclusion mode. Meanwhile, LED light would flash red color five times on and off alternately.</li> <li>Door sensor will be detected and included in the Z</li> </ol><br /><h2>Exclusion Information</h2><p>REMOVE DOOR SENSOR FROM Z-WAVE NETWORK</p> <ol><li>Make sure doorsensoris powered on.</li> <li>Set Z-Wave gateway into exclusion mode (Refer to gateway user manual).</li> <li>Press the code button in door sensor three times continuously, then door sensor will enter exclusion mode. Meanwhile, LED light would flash red color five times on and off alternately.</li> <li>Wait for gateway to remove the sensor.</li> </ol><br /><h2>Wakeup Information</h2><p>Door sensor stays in dormant state for the majority of time in orderto conserve battery life.</p> <p>The minimum wakeup interval is 300s (5 minutes).</p> <p>The maximum wakeup interval is 16,777,200s (about 194 days)</p> <p>Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s...</p> <p>NOTE: The default value is 12 hours. The larger the value is, the greater the battery life is.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">0131</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">0003:1082</property>
+      <property name="versionMin">3.80</property>
+      <property name="versionMax">3.80</property>
+      <property name="dbReference">844</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

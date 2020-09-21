@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_gctbz48_00_000" listed="false">
+    <label>GoControl GC-TBZ48 Z-Wave Plus Thermostat</label>
+    <description><![CDATA[
+Z-Wave Plus Thermostat<br /><h1>Overview</h1><p>The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&amp;”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming settings, as well as to display current conditions in the home or office.</p> <br /><h2>Inclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should flash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line.</li> <li>If thermostat fails to connect, repeat Steps three (3) through (7) to re-try connecting.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should fl ash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line. </li> </ol>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="linear_gctbz48_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="linear_gctbz48_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="linear_gctbz48_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">GoControl GC-TBZ48</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5442:5431,5442:5436,5442:5437</property>
+      <property name="dbReference">622</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: System Type</label>
+        <description>System Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">Standard</option>
+          <option value="1">Heat Pump</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Fan Type</label>
+        <description><![CDATA[
+Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Electric (Fan w/Heat)</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Gas</option>
+          <option value="1">Electric</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Change Over Type</label>
+        <description>Change Over Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">w/Cool</option>
+          <option value="1">w/Heat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: 2nd Stage Heat Enable</label>
+        <description>2nd Stage Heat Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Aux Heat Enable</label>
+        <description>Aux Heat Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: 2nd Stage Cool Enable</label>
+        <description>2nd Stage Cool Enable</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Temperature Unit</label>
+        <description>Temperature Unit</description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="5" max="9">
+        <label>8: Minimum Off Time</label>
+        <description><![CDATA[
+Minimum Off Time<br /><h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay before another heating/cooling cycle can begin</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="3" max="9">
+        <label>9: Minimum Run Time</label>
+        <description><![CDATA[
+Minimum Run Time<br /><h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay before a heating/cooling cycle can turn off</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="3" max="15">
+        <label>10: Setpoint H/C Delta</label>
+        <description><![CDATA[
+Setpoint H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between heating and cooling setpoints</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>11: H Delta Stage 1 ON</label>
+        <description><![CDATA[
+H Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>12: H Delta Stage 1 OFF</label>
+        <description><![CDATA[
+H Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="2" max="7">
+        <label>13: H Delta Stage 2 ON</label>
+        <description><![CDATA[
+H Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating starts</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>14: H Delta Stage 2 OFF</label>
+        <description><![CDATA[
+H Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating stops</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="3" max="8">
+        <label>15: H Delta Aux ON</label>
+        <description><![CDATA[
+H Delta Aux ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating starts</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>16: H Delta Stage 3 OFF</label>
+        <description><![CDATA[
+H Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating stops</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>17: C Delta Stage 1 ON</label>
+        <description><![CDATA[
+C Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling starts</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>18: C Delta Stage 1 OFF</label>
+        <description><![CDATA[
+C Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling stops</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="2" max="7">
+        <label>19: C Delta Stage 2 ON</label>
+        <description><![CDATA[
+C Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling starts</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>20: C Delta Stage 2 OFF</label>
+        <description><![CDATA[
+C Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_23_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>23: Lifeline Association Group Report To Send</label>
+        <description><![CDATA[
+Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to send to the Lifeline Association Group upon change in thermostat state. </p> <p>Bitmask values:</p> <ul><li>1 = Temperature</li> <li>2 = Heat Setpoint</li> <li>4 = Cool Setpoint</li> <li>8 = Thermostat Heat/Cooling Mode</li> <li>16 = Fan Mode</li> <li>32 = Fan State</li> <li>64 = Operating State</li> <li>128 = Schedule (send CC parameter 38)</li> <li>256 = Setback (send CC parameter 40)</li> <li>512 = Run Hold (send CC parameter 39)</li> <li>1024 = Display Lock (send CC parameter 24)</li> <li>8192 = Battery Level</li> <li>16834 = Mechanical Relay State (send CC parameter 21)</li> <li>32768 = Thermostat State Config (send CC parameter 22)    </li> </ul>
+        ]]></description>
+        <default>8319</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Display Lock</label>
+        <description>Display Lock</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlocked</option>
+          <option value="1">Locked</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration"
+                 min="10" max="30">
+        <label>26: Backlight Timer</label>
+        <description><![CDATA[
+Backlight Timer<br /><h1>Overview</h1><p>Sets the time from last button press that the backlight will turn OFF</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="30" max="109">
+        <label>33: Max Heat Setpoint</label>
+        <description><![CDATA[
+Max Heat Setpoint<br /><h1>Overview</h1><p>Sets the maximum heating setpoint value</p>
+        ]]></description>
+        <default>90</default>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration"
+                 min="33" max="112">
+        <label>34: Min Cool Setpoint</label>
+        <description><![CDATA[
+Min Cool Setpoint<br /><h1>Overview</h1><p>Sets the minimum cooling setpoint value</p>
+        ]]></description>
+        <default>61</default>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Schedule Enable</label>
+        <description><![CDATA[
+Schedule Enable<br /><h1>Overview</h1><p>Enable or disable thermostat's local scheduler</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Run/Hold Mode</label>
+        <description><![CDATA[
+Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Hold</option>
+          <option value="1">Run</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Setback Mode</label>
+        <description>Setback Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Setback</option>
+          <option value="2">Unoccupied Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="30" max="109">
+        <label>41: Un-Occupied HSP</label>
+        <description><![CDATA[
+Un-Occupied HSP<br /><h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
+        ]]></description>
+        <default>62</default>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="33" max="112">
+        <label>42: Un-Occupied CSP</label>
+        <description><![CDATA[
+Un-Occupied CSP<br /><h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
+        ]]></description>
+        <default>80</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="0" max="252">
+        <label>43: Remote Sensor 1 Node Number</label>
+        <description><![CDATA[
+Remote Sensor 1 Node Number<br /><h1>Overview</h1><p>Node number for Remote Sensor 1</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_46_1" type="integer" groupName="configuration"
+                 min="0" max="112">
+        <label>46: Remote Sensor 1 Temperature</label>
+        <description><![CDATA[
+Remote Sensor 1 Temperature<br /><h1>Overview</h1><p>Temperature of Remote Sensor 1</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_48_1" type="integer" groupName="configuration"
+                 min="-7" max="7">
+        <label>48: Internal Sensor Temp Offset</label>
+        <description><![CDATA[
+Internal Sensor Temp Offset<br /><h1>Overview</h1><p>Internal Sensor Temperature Offset</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_49_1" type="integer" groupName="configuration"
+                 min="-7" max="7">
+        <label>49: R1 Sensor Temp Offset</label>
+        <description><![CDATA[
+R1 Sensor Temp Offset<br /><h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_54_2" type="integer" groupName="configuration"
+                 min="0" max="4000">
+        <label>54: Heat Timer</label>
+        <description><![CDATA[
+Heat Timer<br /><h1>Overview</h1><p>Heat Timer in hours</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_55_2" type="integer" groupName="configuration"
+                 min="0" max="4000">
+        <label>55: Cool Timer</label>
+        <description><![CDATA[
+Cool Timer<br /><h1>Overview</h1><p>Cool Timer in hours</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration"
+                 min="0" max="90">
+        <label>61: Fan Purge Heat</label>
+        <description><![CDATA[
+Fan Purge Heat<br /><h1>Overview</h1><p>Fan purge period for Heat mode</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration"
+                 min="0" max="90">
+        <label>62: Fan Purge Cool</label>
+        <description><![CDATA[
+Fan Purge Cool<br /><h1>Overview</h1><p>Fan purge period for Cool mode</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="linear_gctbz48_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="4">Aux Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="linear_gctbz48_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="linear_gctbz48_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

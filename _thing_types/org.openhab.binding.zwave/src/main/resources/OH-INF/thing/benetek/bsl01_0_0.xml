@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benetek_bsl01_00_000" listed="false">
+    <label>BSL01</label>
+    <description><![CDATA[
+<br /><h1>Overview</h1><p>BENETEK smart lock is night lock style with dead bolt, remote, key, RF card, keypad, Z-Wave.</p> <p>Material: The lock was made of zinc alloy. The lock shell is 4mm thick. And the inside structure was made of metal. 304 stainless steel panel, the thickness of 1.5mm</p> <p>Weight: 1800g,</p> <p>Power supply method: Four AA alkaline batteries and one 18650 rechargeable backup battery.</p> <p>Batteries lifetime: 2 groups of batteries, Rechargeable battery, Alkaline Batteries: Approximate 1 Year battery life (depend on the usage of the lock)</p> <p>Features of the Latch: Lock Latch length &gt; 25mm, Comply with GA/T73-94 5.16B standard. Latch size: 25x30x15mm, it is even stronger! Low battery indicator: Prompt indicator in low pressure and It will unlock automatically when no electricity(optional) Urgent method: Mechanical damage to unlock(It has mounting hole on the lock for mechanical lock) Working environment: -30~70℃ Humidity&lt;90% Working current (MAX): &lt;500mA Static current of battery: &lt;95μA Wireless remote distance: 10m (Depend on environment) Z-Wave distance(to Z-Wave server): 30m indoor Appearance size: Lock body 152x80x40(mm) Panel: 125x50x25(mm) Voltage of entrance guard: DC 6V~30V Voltage of urgent power supply: DC 5V~6.5V (Optional) Capacity of remote: 25pcs Can expand Capacity of password: 13 sets capacity of card: 104pcs can expand Z-Wave frequency: 868.4 MHz - China/Europe, 908.4 MHz - USA, 921.4 MHz – Australia/New Zealand, 869.2 MHz - Russia</p> <p>Smart Hidden Door Lock restores factory default automatically when the device is excluded. Please use this procedure only when the network primary controller is missing or otherwise inoperable.</p> <br /><h2>Inclusion Information</h2><ol><li>Ensure the SHDL is powered and the battery is fully charged.</li> <li>Set the main controller into the Add device mode (see a main controller’s operating manual).</li> <li>Triple click Z-Wave button on the Z-Wave module(inside lock body) within 1.5 seconds, the LED will flicker rapidly while inclusion process implement and light on 2 second after processing complete.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Ensure the SHDL is powered and the battery is fully charged.</li> <li>Set the main controller into the Remove device mode (see a main controller’s operating manual).</li> <li>Triple click Z-Wave button on the Z-Wave module(inside lock body) within 1.5 seconds, the LED will flicker rapidly while exclusion process implement and light on 2 second after processing complete.</li> </ol>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Benetek</property>
+      <property name="modelId">BSL01</property>
+      <property name="manufacturerId">032D</property>
+      <property name="manufacturerRef">3002:0006</property>
+      <property name="dbReference">828</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Association Group 2 is assigned to sending the Basic Set Off frame to associated device (e.g. another SHDL) while the SHDL is unlocked and sending the Basic Set On frame to associated device while the SHDL is locked with security transport if SHDL was added to network as security node or with non-security transport if SHDL was added to network as non-security node</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Association Group 3 is assigned to sending the Basic Set On frame to associated devices with non-security transport while the SHDL is unlocked. </p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Association Group 3 is assigned to sending the Basic Set On frame to associated devices with non-security transport while the SHDL is unlocked. </p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

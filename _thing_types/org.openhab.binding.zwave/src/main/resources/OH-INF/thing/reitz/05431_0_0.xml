@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="reitz_05431_00_000" listed="false">
+    <label>Reitz 05431 Duewi ZW BJ ES 1000 / Reitz 05431 / ZWave.me 05457 Single button wall switch</label>
+    <description><![CDATA[
+Duewi ZW BJ ES 1000 / Reitz 05431 / ZWave.me 05457 Single button wall switch<br /><h1>Overview</h1><p>For wireless switching of: light bulbs, HV and LV halogen lamps or electrical equipment (e.g. fans). Combinable with all Z-Wave transmitters and remote controls, with installation in splash-proof junction box IP 44, can be selectively installed in flush-mounted power points and canopies or triggered directly via wireless rockers.</p> <br /><h2>Inclusion Information</h2><p>Press 3x within 1.5 seconds the "UP" or "DOWN" button for the group on the remote control in which the device is to be included.</p> <br /><h2>Exclusion Information</h2><p>In the case of a flush mounted module press 3x within 1.5 seconds either the "UP" 1 or the "DOWN" 2 button.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Reitz-Group.de</property>
+      <property name="modelId">Reitz 05431</property>
+      <property name="manufacturerId">0064</property>
+      <property name="manufacturerRef">2001:0000</property>
+      <property name="dbReference">55</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Set LED indication mode</label>
+        <default>3</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Show switch state</option>
+          <option value="2">Night mode</option>
+          <option value="3">Remote by indicator command class</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Automatic switch off</label>
+        <description>If not zero, automatically switch off after a user defined time</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Function of RF off command</label>
+        <description><![CDATA[
+Function of RF off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function: Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch OFF</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch ON</option>
+          <option value="3">Switch on if load is off else switch off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Switch on dimming by buttons</label>
+        <description><![CDATA[
+Switch on dimming by buttons<br /><h1>Overview</h1><p>Defines if the switch should change it state to on/off if it is dimmed by buttons</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: restore switch state</label>
+        <description><![CDATA[
+restore switch state<br /><h1>Overview</h1><p>Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No, turn off</option>
+          <option value="1">Yes (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>10: Typical click timeout</label>
+        <description><![CDATA[
+Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks</p> <p>Defined in 10ms ticks.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Invert buttons</label>
+        <description>Invert buttons</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Switch by buttons</label>
+        <description><![CDATA[
+Switch by buttons<br /><h1>Overview</h1><p>If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch w</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">By single press and hold</option>
+          <option value="2">By double press and hold</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Action on button single press or hold</label>
+        <description><![CDATA[
+Action on button single press or hold<br /><h1>Overview</h1><p>Defines which command should be sent on button single press or hold. Basic commands are sent to Association group. Switch All commands are sent broadcast.</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On, Off and dim using Basic Set</option>
+          <option value="2">Switch All</option>
+          <option value="3">Send Scenes</option>
+          <option value="4">Switch On/Off and Dim</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Action on button double press or hold</label>
+        <description><![CDATA[
+Action on button double press or hold<br /><h1>Overview</h1><p>Defines which command should be sent on button double press or press-hold. Basic commands are sent to Association group. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled (Default)</option>
+          <option value="1">Switch On, Off and dim using Basic Set</option>
+          <option value="2">Switch All</option>
+          <option value="3">Send Scenes</option>
+          <option value="4">Switch On/Off and Dim</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Send the following switch all commands</label>
+        <description>Send the following switch all commands</description>
+        <default>1</default>
+        <options>
+          <option value="-1">Switch all on and off</option>
+          <option value="0">Switch off only</option>
+          <option value="1">Switch on only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: What to do on button Down press</label>
+        <default>1</default>
+        <options>
+          <option value="0">Switch off (Default)</option>
+          <option value="1">Switch On if load is Off, else switch Off</option>
+          <option value="3">Switch on</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

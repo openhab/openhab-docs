@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsc10_00_000" listed="false">
+    <label>DSC10 Heavy Duty Smart Switch</label>
+    <description><![CDATA[
+Heavy Duty Smart Switch<br /><h1>Overview</h1><p><strong>Aeotec by Aeon Labs Heavy Duty Smart Switch Gen5.</strong></p> <p>Heavy Duty Smart Switch Gen5 has been crafted to power connected lighting using Z-Wave Plus. It is powered by Aeotec’s Gen5 technology. </p> <p><br />To see whether Heavy Duty Smart Switch Gen5 is known to be compatible with your Z-Wave system or not, please reference our Z-Wave gateway comparison listing. The technical specifications of Heavy Duty Smart Switch Gen5can be viewed at that link.</p> <p><strong>Familiarize</strong><strong> yourself with your Heavy Duty Smart Switch Gen5.</strong></p> <p><strong>Action button:</strong> Used for Heavy Duty Smart Switch Z-Wave network inclusion and exclusion and to manually turn on or off.</p> <p><strong>Status LED:</strong> Indicates your Heavy Duty Smart Switch's status. (While unpaired, this LED will blink slowly constantly).</p> <p><strong>Terminals: </strong>There are two groups of terminals. As marked, mains power is to be connected to AC Power and the electric load to Load.</p> <p>Heavy Duty Smart Switch Gen5 current can not exceed 40 amps.</p> <br /><h2>Inclusion Information</h2><p>Your Heavy Duty Smart Switch must be paired with a Z-Wave network  before it can receive wireless commands or report the energy consumption of the attached electronics.</p> <p><strong> <br /></strong></p> <p><strong>Note: </strong>The LED on your Heavy Duty Smart Switch will blink if it is not currently paired with a Z-Wave network. </p> <p><strong>Tip:</strong> Turn off any devices connected to your Heavy Duty Smart Switch before adding or removing it to/from a Z-Wave network. This will help to prevent load damage. </p> <p><strong>Adding your Heavy Duty Smart Switch Gen5 to a Z-Wave network.</strong></p> <p><strong>Pairing your <strong>Heavy Duty Smart Switch Gen5</strong> into your existing Z-Wave network.</strong></p> <p>1. Place your gateway or controller into Z-Wave pair or inclusion mode. (Please refer to your controller/gateway manual on how to do this)</p> <p>2. Press the Action Button on your Switch.</p> <p>3. If your switch has been successfully linked to your network, its LED will no longer blink. If linking was unsuccessful, the LED will continue to blink.</p> <br /><h2>Exclusion Information</h2><p><strong>Unpairing your Heavy Duty Smart Switch Gen5 from your existing Z-Wave network</strong></p> <p>1. Place your gateway or controller into Z-Wave unpair or exclusion mode. (Please refer to your controller/gateway manual on how to do this)</p> <p>2. Press the Action Button on your Switch.</p> <p>3. If your switch has been successfully unlinked to your network, its LED will begin to blink. If linking was unsuccessful, the LED will return to its last LED state.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSC10</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0003:000A</property>
+      <property name="dbReference">285</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Current Overload Protection</label>
+        <description><![CDATA[
+See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more than 39.5A and the time more than 5 seconds.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Activate Overload Protection</option>
+          <option value="1">Deactivate Overload Protection</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>20: Output Load Status</label>
+        <description>Configure the output load status after re‐power on.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Last Status</option>
+          <option value="1">Always ON</option>
+          <option value="2">Always OFF</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Notification on Status Change</label>
+        <description>The type of report to send when the device status changes</description>
+        <default>0</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Hail</option>
+          <option value="2">Basic CC Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>90: Enables/disables parameter 91/92</label>
+        <default>0</default>
+        <options>
+          <option value="0">Enable parameters 91 and 92</option>
+          <option value="1">Disable parameters 91 and 92</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>91: Minimum Change to send Report (Watt)</label>
+        <description>The value represents the minimum change in wattage for a Report to be sent.</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_92_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>92: Minimum Change to send Report (%)</label>
+        <description>The minimum change in wattage Percent for a report to be sent</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_200_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>200: Partner ID</label>
+        <default>0</default>
+        <options>
+          <option value="0">Aeon Labs</option>
+          <option value="1">Other</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>252: Lock/unlock Configuration Changes</label>
+        <default>0</default>
+        <options>
+          <option value="0">Unlocked</option>
+          <option value="1">Locked</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

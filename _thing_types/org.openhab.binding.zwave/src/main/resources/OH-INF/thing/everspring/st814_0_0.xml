@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="everspring_st814_00_000" listed="false">
+    <label>ST814 Temperature and Humidity Sensor</label>
+    <description><![CDATA[
+Temperature and Humidity Sensor<br /><h1>Overview</h1><p>The Temperature/Humidity Detector is a Z-WaveTM enabled device which is fully compatible with any Z-WaveTM enabled network. Z-WaveTM enabled devices displaying the Z-WaveTM logo can also be used with it regardless of the manufacturer, and ours can also be used in other manufacturer’s Z-WaveTM enabled networks. Inclusion of this detector on other manufacturer’s Wireless Controller menu allows remote operation of connected modules when the detector is triggered.</p> <p>The Temperature/Humidity Detector is designed to monitor the current temperature and humidity of ambient environment. The reading of temperature/humidity can be reported to you on a regular base at your disposal. If temperature/humidity reaches set points, the detector will send alerts to associated devices for further execution. Since sudden temperature/humidity change may cause health problems to people such as elderly or very young children, Temp./Humid. Detector provides you most up-to-date temperature and humidity reading for you to watch your family’s health. </p> <br /><h2>Inclusion Information</h2><p>One of function key (C/F/L) is used to carry out inclusion, exclusion, association and reset. When the detector is first powered up, the reading in RF mode is 00 which implies that it hasn’t been allocated a node ID and cannot work with Z-WaveTM enabled devices. The Temp./Humid. Detector will stay “awake” for 10 minutes when power is first applied to allow time for configuration.</p> <ul><li>Pressing key 3 times within 1.5 seconds will enter inclusion mode</li> </ul><br /><h2>Exclusion Information</h2><p>One of function key (C/F/L) is used to carry out inclusion, exclusion, association and reset. When the detector is first powered up, the reading in RF mode is 00 which implies that it hasn’t been allocated a node ID and cannot work with Z-WaveTM enabled devices. The Temp./Humid. Detector will stay “awake” for 10 minutes when power is first applied to allow time for configuration.</p> <ul><li>Pressing key 3 times within 1.5 seconds will enter exclusion mode</li> </ul><br /><h2>Wakeup Information</h2><ul><li>Pressing key 3 times within 1.5 seconds will wake the device</li> </ul>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Binary Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="everspring_st814_00_000_config_decimal_param2">
+        <label>Temperature trigger ON value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="everspring_st814_00_000_config_decimal_param3">
+        <label>Temperature trigger OFF value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param6" typeId="everspring_st814_00_000_config_decimal_param6">
+        <label>Humidity trigger ON value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=6</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="everspring_st814_00_000_config_decimal_param5">
+        <label>Humidity trigger OFF value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co2" typeId="alarm_co2">
+        <label>Alarm (CO2) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Sensor (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1,COMMAND_CLASS_BASIC:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity2" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Everspring</property>
+      <property name="modelId">ST814</property>
+      <property name="manufacturerId">0060</property>
+      <property name="manufacturerRef">0006:0001</property>
+      <property name="dbReference">31</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Basic Set Level</label>
+        <description><![CDATA[
+Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-99=Use Value</p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-20" max="50">
+        <label>2: Temperature Trigger ON value</label>
+        <description>Temperature level when a ON command is sent out. Set to 99 to disable.</description>
+        <default>99</default>
+        <options>
+          <option value="99">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="-20" max="50">
+        <label>3: Temperature Trigger OFF value</label>
+        <description>Temperature level when a OFF command is sent out. Set to 99 to disable.</description>
+        <default>99</default>
+        <options>
+          <option value="99">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="20" max="90">
+        <label>4: Humidity Trigger ON value</label>
+        <description>Humidity level when a ON command is sent out. Set to 99 to disable.</description>
+        <default>99</default>
+        <options>
+          <option value="99">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="20" max="99">
+        <label>5: Humidity Trigger OFF value</label>
+        <description>Humidity level when a OFF command is sent out. Set to 99 to disable.</description>
+        <default>99</default>
+        <options>
+          <option value="99">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="1439">
+        <label>6: Auto report time</label>
+        <description><![CDATA[
+Sets the time interval when a sensor report is sent<br /><h1>Overview</h1><p>0 = Disable</p> <p>1 min - 1439 min = Auto report periodically</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="70">
+        <label>7: Auto report temperature</label>
+        <description><![CDATA[
+Sets the temperature change causing a sensor report.<br /><h1>Overview</h1><p>0 = Disable</p> <p>1 - 70 = Auto report on temperature change</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="5" max="70">
+        <label>8: Auto report humidity</label>
+        <description><![CDATA[
+Sets the humidity change causing a sensor report.<br /><h1>Overview</h1><p>0 = Disable</p> <p>5 - 70 = Auto report on humidity change</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Reports</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control</label>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="everspring_st814_00_000_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>Temperature Trigger ON value</label>
+    <description>Temperature level when a ON command is sent out. Set to 99 to disable.</description>
+    <state pattern="%s">
+      <options>
+        <option value="99">Disable</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="everspring_st814_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Temperature Trigger OFF value</label>
+    <description>Temperature level when a OFF command is sent out. Set to 99 to disable.</description>
+    <state pattern="%s">
+      <options>
+        <option value="99">Disable</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="everspring_st814_00_000_config_decimal_param6">
+    <item-type>Number</item-type>
+    <label>Auto report time</label>
+    <description>Sets the time interval when a sensor report is sent</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Disable</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="everspring_st814_00_000_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>Humidity Trigger OFF value</label>
+    <description>Humidity level when a OFF command is sent out. Set to 99 to disable.</description>
+    <state pattern="%s">
+      <options>
+        <option value="99">Disable</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

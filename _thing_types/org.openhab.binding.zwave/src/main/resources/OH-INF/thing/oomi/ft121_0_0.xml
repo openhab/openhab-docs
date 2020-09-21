@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft121_00_000" listed="false">
+    <label>FT121 LED RGBWW Strip</label>
+    <description><![CDATA[
+LED RGBWW Strip<br /><h1>Overview</h1><p>The LED Strip is a multi-colored LED Strip which allows control of color temperature (warm/cold white), RGB, and dimming via Z-Wave commands.</p> <br /><h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode. Press the Action Button located on the back of the LED Strip's white controller box once (The network LED will blink green as an indication it is pairing insecurely, please refer to section "Enabling Security Encryption" in the Advanced Function section of the manual to pair it securely). If the LED Strip has been successfully added to your Z-Wave network, its Network LED will become solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colorful gradient, repeat the instructions above from step 1.</p> <br /><h2>Exclusion Information</h2><p>Set your Z-Wave controller into device removal mode. Press the Action Button located on the back of the LED Strip's white controller box once. If the LED Strip has been successfully removed from your Z-Wave network, its Network LED will remain colorful gradient. If the removal was unsuccessful, the Network LED will still be solid, repeat the instructions above from step 1.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT121</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0003:0079</property>
+      <property name="dbReference">843</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: LED Strip state at Power ON</label>
+        <description>LED Strip state at Power ON</description>
+        <default>0</default>
+        <options>
+          <option value="0">Last State (default)</option>
+          <option value="0">Remove Me</option>
+          <option value="1">Always On</option>
+          <option value="2">Always Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Enable/Disable Report on color change.</label>
+        <description>Enable/Disable Report on color change.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable (default)</option>
+          <option value="1">Hail CC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Brightness Level Control</label>
+        <description><![CDATA[
+Brightness Level Control<br /><h1>Overview</h1><p>Enable/disable to turn on the last brightness level of the LED Strip when using the Color Switch Set CC to change its color.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable (default)</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Display mode of Cold/warm white</label>
+        <description>Display mode of Cold/warm white</description>
+        <default>0</default>
+        <options>
+          <option value="0">Arbitrary combination (default)</option>
+          <option value="1">Complementary combination</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration"
+                 min="0" max="31">
+        <label>37: Colour Change Speed Level</label>
+        <description><![CDATA[
+Colour Change Speed Level<br /><h1>Overview</h1><ul><li>0 = Constant speed</li> <li>1 - 30 = Accelerate/decelerate speed from level 1 to 30</li> <li>31 = Inactive (keep the current configuration values)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_37_4_000000E0" type="integer" groupName="configuration">
+        <label>37: Time Base of Colour Change Speed</label>
+        <description><![CDATA[
+Time Base of Colour Change Speed<br /><h1>Overview</h1><p>Time Base of Colour Change Speed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Time base is 1s.</option>
+          <option value="1">Time base is 10ms.</option>
+          <option value="2">Time base is 100ms.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>37: Cycle Count</label>
+        <description><![CDATA[
+Cycle Count<br /><h1>Overview</h1><ul><li>0 = Unlimited</li> <li>1 - 254 = Total number of cycles before stopping</li> <li>255 = Inactive (keep the current configuration values)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>37: Brightness</label>
+        <description><![CDATA[
+Brightness<br /><h1>Overview</h1><ul><li> 1 = Min level.</li> <li>99 = Max level</li> </ul>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_37_4_07000000" type="integer" groupName="configuration">
+        <label>37: Colour Display Cycle</label>
+        <description>Colour Display Cycle</description>
+        <default>0</default>
+        <options>
+          <option value="0">Inactive</option>
+          <option value="1">Rainbow Mode</option>
+          <option value="2">Multi Colour Mode</option>
+          <option value="3">Random Mode</option>
+          <option value="4">Single Colour Mode.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_38000000" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>37: Colour Change Speed Option</label>
+        <description><![CDATA[
+Colour Change Speed Option<br /><h1>Overview</h1><p>Colour Change Speed Option</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_37_4_40000000" type="integer" groupName="configuration">
+        <label>37: Colour Transition Style</label>
+        <description>Colour Transition Style</description>
+        <default>0</default>
+        <options>
+          <option value="0">Smooth Colour Transition</option>
+          <option value="1">Fade Out Fade In Transition</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1_wo" type="integer" groupName="configuration">
+        <label>40: Colorful mode configuration</label>
+        <description><![CDATA[
+Colorful mode configuration<br /><h1>Overview</h1><p>Set-only parameter</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="1">Rainbow mode</option>
+          <option value="2">Multi color mode</option>
+          <option value="3">Fade out and fade in (Red)</option>
+          <option value="4">Fade out and fade in (Green)</option>
+          <option value="5">Fade out and fade in (Blue)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Notification (Group 1) when state changes</label>
+        <description>Notification (Group 1) when state changes</description>
+        <default>1</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Hail CC (default)</option>
+          <option value="2">Basic CC report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_112_1" type="integer" groupName="configuration">
+        <label>112: Dimmer mode</label>
+        <description>Dimmer mode</description>
+        <default>2</default>
+        <options>
+          <option value="0">Parabolic curve</option>
+          <option value="1">Index curve</option>
+          <option value="2">(Parabolic * Index)/2</option>
+          <option value="3">Linear</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Configuration lock</label>
+        <description>Configuration lock</description>
+        <default>0</default>
+        <options>
+          <option value="0">Configuration allowed (default)</option>
+          <option value="1">Configuration locked</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_255_0" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>255: Reset to defaults</label>
+        <description>Reset to defaults</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

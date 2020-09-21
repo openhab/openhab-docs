@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="goodway_36511_00_000" listed="false">
+    <label>36511 RGBW Dimmer Module</label>
+    <description><![CDATA[
+RGBW Dimmer Module<br /><h1>Overview</h1><p>This RGBW Dimmer Module enables remote control of your LED light strips, dimmable bulbs, and halogen bulbs. When included in your Z-Wave® mesh network, you can easily adjust the brightness and intensity of the lights. The dimmer is small and lightweight, making it easier to fit into junction boxes and tight spaces.</p> <br /><h2>Inclusion Information</h2><p>Press the include button three times within 2 seconds or use the auto inclusion feature after powering up.</p> <br /><h2>Exclusion Information</h2><p>Press the exclude button three times within 2 seconds.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Good Way Technology Co., Ltd</property>
+      <property name="modelId">36511</property>
+      <property name="manufacturerId">0068</property>
+      <property name="manufacturerRef">0003:000B</property>
+      <property name="dbReference">1095</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>1: Input IN1</label>
+        <description>Input IN1</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>2: Input IN2</label>
+        <description>Input IN2</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>3: Input IN3</label>
+        <description>Input IN3</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>4: Input IN4</label>
+        <description>Input IN4</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>5: Auto Scene Mode Set</label>
+        <description>Auto Scene Mode Set</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="1" max="1127">
+        <label>6: Auto Scene Mode Duration</label>
+        <description><![CDATA[
+Auto Scene Mode Duration<br /><h1>Overview</h1><p>1-127=1-127 seconds</p> <p>1001-1127=1-127 minutes</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Memeory Device Status</label>
+        <description>Memeory Device Status at Power Cut</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>10: Max Dimming Value</label>
+        <description>Max Dimming Value</description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>11: Min Dimming Value</label>
+        <description>Min Dimming Value</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="5" max="25">
+        <label>12: Dimming Time Soft ON/OFF</label>
+        <description>Dimming Time Soft ON/OFF</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>13: Dimming Time when key pressed</label>
+        <description>Dimming Time when key pressed</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>14: Dimmer Mode</label>
+        <description>Dimmer Mode</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

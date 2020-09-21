@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_pid11995_00_000" listed="false">
+    <label>PID11995 Monoprice ZWave On/Off Plugin</label>
+    <description><![CDATA[
+Monoprice ZWave On/Off Plugin<br /><h1>Overview</h1><p>Lamp and Appliance Switch Module</p> <br /><h2>Inclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">PID11995</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2007:0703</property>
+      <property name="dbReference">454</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

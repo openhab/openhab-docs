@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="schlage_be468_00_000" listed="false">
+    <label>BE468 Touchscreen Deadbolt</label>
+    <description><![CDATA[
+Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-throw deadbolt</p> <br /><h2>Inclusion Information</h2><p>Extend the bolt on the lock and then perform the following:</p> <p>Enter 6 Digit Programming Code, then press 0. There will be a green check mark if enrolled or a red X if not enrolled</p> <p>To verify enrollment:</p> <p>1. Remove the battery cover. See Replacing the Batteries on page 4 of the User Guide.</p> <p>2. Disconnect the battery connector.</p> <p>3. While watching the inside Schlage button, reconnect the battery connector.</p> <p>4. The inside Schlage button will blink if the lock is enrolled.</p> <br /><h2>Exclusion Information</h2><p>Same as inclusion</p> <br /><h2>Wakeup Information</h2><p>N/A</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Allegion</property>
+      <property name="modelId">BE468</property>
+      <property name="manufacturerId">003B</property>
+      <property name="manufacturerRef">6349:5044</property>
+      <property name="dbReference">240</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Beeper</label>
+        <description>Audio feedback when keypad pressed during normal operation</description>
+        <default>255</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="255">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Vacation Mode</label>
+        <description>Prevents all user codes from unlocking the deadbolt</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="255">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Lock &amp; Leave</label>
+        <description>Press the Schlage button to lock the deadbolt</description>
+        <default>255</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="255">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Auto Lock</label>
+        <description>Automatically locks 30 seconds after unlocking</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="255">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="4" max="8">
+        <label>16: User Code PIN Length</label>
+        <description>User codes can be 4-8 digits. Changing length will delete all existing codes.</description>
+        <default>4</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

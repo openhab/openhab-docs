@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen16_00_000" listed="false">
+    <label>ZEN16 Multirelay</label>
+    <description><![CDATA[
+Multirelay<br /><h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact relays to control loads up to 15 A and 20 A</li> <li>Perfect for outdoor lighting, pool pumps, garage door, or gas fireplace</li> <li>Control up to 3 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li> <li>Built-in timers for each relay to simplify automation</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>S2 security protocol and the latest 500 Z-Wave chip</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN16</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C</li> <li>Maximum Load: Relay 1: 15A (HP), R2: 15A (HP), R3: 20A (HP)</li> <li>Range: Up to 100 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the Multirelay close to the Z-Wave controller and then supply power to it.</li> <li>Put the Z-Wave binding into exclusion mode.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN16</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">A000:A00A</property>
+      <property name="dbReference">1176</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: On Off Status After Power Failure</label>
+        <description>Set the on off status for the relays after power failure</description>
+        <default>1</default>
+        <options>
+          <option value="0">ALL relays forced to OFF</option>
+          <option value="1">ALL relays restore on/off status (default)</option>
+          <option value="2">ALL relays forced to ON</option>
+          <option value="3">Relay 1 and 2 restore on/off status, Relay 3 OFF</option>
+          <option value="4">Relay 1 and 2 restore on/off status, Relay 3 ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Switch Type for Relay 1 (Sw1)</label>
+        <description><![CDATA[
+Choose the wall switch type you want to connect to the Sw1 terminal<br /><h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change mode manually</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Momentary switch</option>
+          <option value="1">Normal</option>
+          <option value="2">Toggle switch (default)</option>
+          <option value="3">garage door</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Switch Type for Relay 2 (Sw2)</label>
+        <description><![CDATA[
+Choose the wall switch type you want to connect to the Sw2 terminal<br /><h1>Overview</h1><p>Click-click’n’hold the Z-Wave button for 5 seconds to change mode manually.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Momentary switch</option>
+          <option value="1">Normal</option>
+          <option value="2">Toggle switch (default)</option>
+          <option value="3">garage door</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Switch Type for Relay 3 (Sw3)</label>
+        <description><![CDATA[
+Choose the wall switch type you want to connect to the Sw3 terminal.<br /><h1>Overview</h1><p>Click-click-click’n’hold the Z-Wave button for 5 seconds to change mode manually</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Momentary switch</option>
+          <option value="1">Normal</option>
+          <option value="2">Toggle switch (default)</option>
+          <option value="3">garage door</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: LED Indicator Control</label>
+        <description><![CDATA[
+LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indicator to turn on when any of the relays are on or if all of them are off, or if you want it to remain on or off at all times.</p> <p>Click the Z-Wave button 5 times quickly to change mode manually</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">ON when all relays OFF (default)</option>
+          <option value="1">ON when any relay ON</option>
+          <option value="2">LED indicator is always OFF</option>
+          <option value="3">LED indicator is always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Auto Turn-Off Timer for Relay 1</label>
+        <description><![CDATA[
+Auto Turn-Off Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>7: Auto Turn-On Timer for Relay 1</label>
+        <description><![CDATA[
+Auto Turn-On Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>8: Auto Turn-Off Timer for Relay 2</label>
+        <description><![CDATA[
+Auto Turn-Off Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>9: Auto Turn-On Timer for Relay 2</label>
+        <description><![CDATA[
+Auto Turn-On Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>10: Auto Turn-Off Timer for Relay 3</label>
+        <description><![CDATA[
+Auto Turn-Off Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>11: Auto Turn-On Timer for Relay 3</label>
+        <description><![CDATA[
+Auto Turn-On Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Enable/Disable Manual Control for Sw1</label>
+        <description><![CDATA[
+Enable/Disable Manual Control for Sw1<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 1 from the wall switch connected to Sw1 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Enable/Disable Manual Control for Sw2</label>
+        <description><![CDATA[
+Enable/Disable Manual Control for Sw2<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 2 from the wall switch connected to Sw2 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable/Disable Manual Control for Sw3</label>
+        <description><![CDATA[
+Enable/Disable Manual Control for Sw3<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 3 from the wall switch connected to Sw3 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable (default)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Relay 1</label>
+        <description>Send BASIC_SET reports when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Relay 2</label>
+        <description>Send BASIC_SET reports when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Relay 3</label>
+        <description>Send BASIC_SET reports when operated manually</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

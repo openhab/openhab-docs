@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="devolo_pst021b_00_000" listed="false">
+    <label>PST02-1B Multisensor</label>
+    <description><![CDATA[
+Multisensor<br /><h1>Overview</h1><p>The Home Control Motion Sensor measures brightness and temperature. Detects movements in an angle of 80 degrees horizontally and in a distance of up to 8 metres. The integrated light sensor can also be an impulse transmitter for the light controls.</p> <br /><h2>Inclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>Remove the front cover and press the tamper key once. The device will wake-up 10 seconds.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Devolo</property>
+      <property name="modelId">PST02-1B</property>
+      <property name="manufacturerId">0175</property>
+      <property name="manufacturerRef">0002:0018</property>
+      <property name="dbReference">534</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the light.</p> <p>1 - 100    -&gt;  For dimmers 1 to 100 means the light strength</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+Parameter to set the Sensitivity<br /><h1>Overview</h1><p>Parameter to set the Sensitivity for the PIR (Passiv Infrared Sensor)</p> <p>0-&gt; means disable the PIR motion;</p> <p>1 - 99-&gt; means the lowest sensitivity, 99 means the highest sensitivity</p>
+        ]]></description>
+        <default>70</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+Setting the illumination threshold to turn on the light<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</p> <p>0 -&gt;  means turn off illumination detected function and never turn on the light</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>5: Operation Mode</label>
+        <description><![CDATA[
+Operation Mode<br /><h1>Overview</h1><p>Bit 0: 1 means security mode; 0 means home automation mode. </p> <p>Bit 1: 1 means enable test mode; 0 means disable test mode. Notice: Bit0 and Bit1 will effect when the DIP Switch setting to program mode. If Bit1 is enabled, the Bit0 is useless.</p> <p> Bit 2: Disable </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>6: Multi-Sensor Function Switch</label>
+        <description><![CDATA[
+Configure Multi-Sensor Function Switch<br /><h1>Overview</h1><p>Bit 0: Disable magnetic integrate illumination. </p> <p>Bit 1: Disable PIR integrate Illumination. </p> <p>Bit 2: Disable magnetic integrate PIR (Default is Disable) </p> <p>Bit 3: When Bit2 is 0 (Enable), the device is install in the same room with the light? 0: In the same room</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter to set the Customer Function. </p> <p>Bit 0: Reserved. </p> <p>Bit 1: Enable sending motion OFF report. 0: Disable, 1: Enable. Note: Depends on the Bit4, 0: Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report,</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="22">Super Sensitivity/Binary Report/Motion Off Report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="3" max="127">
+        <label>8: PIR Re-Detect Interval Time</label>
+        <description><![CDATA[
+Re-detect time after motion detected<br /><h1>Overview</h1><p>In the security mode, after the PIR motion detected, setting the re-detect time </p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="4" max="127">
+        <label>9: Turn Off Light Time</label>
+        <description><![CDATA[
+Delay time to turn light off after no motion detected<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description>Interval time for auto report the battery level</description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>12: Auto Report Illumination Time</label>
+        <description>Interval time for auto report the illumination state</description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>13: Auto Report Temperature Time</label>
+        <description>Interval time for auto report the temperature state</description>
+        <default>12</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Reports</label>
+        <multipleLimit>7</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Light Control</label>
+        <multipleLimit>7</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_39357_00_000" listed="false">
+    <label>39357 (ZW3004) Z-Wave in-wall Smart Dimmer</label>
+    <description><![CDATA[
+Z-Wave in-wall Smart Dimmer<br /><h1>Overview</h1><p>Stay connected to your home with a Honeywell In-Wall Smart Dimmer. Compatible with all Z‑Wave certified gateways, the smart dimmer gives you wireless control of your hardwired, dimmable lights from any mobile device, computer or Z-Wave enabled remote. Installation is easy – simply replace a standard in-wall switch with the smart dimmer. Whether you’re at home or away, access the dimmer to turn your lights on and off, or to adjust the brightness levels of the room.</p> <p>The smart dimmer incorporates reliable, dynamic illumination to your home, giving you a fully lit workspace or letting you settle down for the evening with effective, stylish accent lighting. Not only does the smart dimmer help cut energy costs, but it boosts the safety of your home by keeping rooms looking bright and lived‑in. The toggle-style switch comes in white and features a blue LED indicator light to locate the dimmer in a dark room. Give your space the perfect amount of light with a Honeywell In-Wall Smart Dimmer. This product is ALEXA COMPATIBLE however it REQUIRES AN ALEXA SUPPORTED HUB for voice control with Echo Products (Alexa device and hub sold separately).</p> <p><strong>Features</strong></p> <ul><li>ALEXA COMPATIBLE (HUB REQUIRED) - Requires an Alexa supported hub for voice control with Amazon Echo Products (Alexa device and hub are sold separately).Cannot connect directly with ECHO PLUS (Only ZigBee products can connect directly to Echo Plus)</li> <li>REQUIRES A Z-WAVE CERTIFIED HUB - Compatible with the following Z-Wave Hubs: Honeywell, SmartThings, Pulse, Trane, Wink, Nexia, Honeywell, HomeSeer, Smart Security, Harmony Home Hub Extender, Vera, and Fibaro</li> <li>WIRELESSLY CONTROL &amp; SCHEDULE LIGHTS AND OTHER DEVICES– Schedule timed events for connected devices. Customize scenes for day or night, home or away. Wirelessly control switch from anywhere through your smartphone, tablet, PC or Z-Wave remote. Switch can</li> <li>FULL RANGE DIMMING – Give your space the perfect amount of light with the ability to customize the brightness levels from 0 to 100%. Works ONLY with dimmable bulbs and lamps</li> <li>IN-WALL INSTALLATION WITH HARD WIRED CONNECTIONS (NEUTRAL WIRE REQUIRED) – replace your existing in-wall switch in as little as 15 minutes. Wall plate is NOT included</li> </ul><br /><h2>Inclusion Information</h2><p>Press the toggle up and release. </p> <br /><h2>Exclusion Information</h2><p>Press the toggle down and release.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">39357 (ZW3004)</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">4944:3130</property>
+      <property name="dbReference">977</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Invert Switch</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Z-Wave: Number of Steps or Levels</label>
+        <description><![CDATA[
+Number of steps when set by controller<br /><h1>Overview</h1><p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Z-Wave: Timing of Steps or Levels</label>
+        <description><![CDATA[
+Timing when set by controller<br /><h1>Overview</h1><p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Manual: Number of Steps or Levels</label>
+        <description>Number of steps when using the switch</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Manual: Timing of Steps</label>
+        <description>Timing of steps when using the switch</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: All-On/All-Off: Number of Steps or Levels</label>
+        <description>Number of steps when receiving all-on or all-off command</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: All-On/All-Off: Timing of Steps or Levels</label>
+        <description>Timing of steps when receiving all-on or all-off command</description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association Group 1</label>
+        <description>Z-Wave Plus Lifeline, Multilevel Switch Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Local Load - Basic Set</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press: Basic Set</label>
+        <description>Supports Basic Set and is controlled by double pressing the On or Off button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

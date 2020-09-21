@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa003_00_000" listed="false">
+    <label>ZWA003 NanoMote Quad</label>
+    <description><![CDATA[
+NanoMote Quad<br /><h1>Overview</h1><p>Aeotec NanoMote Quad has been crafted to control connected lighting using Z-Wave Plus as a Z-Wave S2 device. It is powered by Aeotec’s Gen5 technology. You can find out more about NanoMote Quad by following that link.</p> <p><br />To see whether NanoMote Quad is known to be compatible with your Z-Wave system or not, please reference our Z-Wave gateway comparison listing. The technical specifications of NanoMote Quad can be viewed at that link.</p> <ol><li>Z-Wave Plus certified for good compatibility (500 serials chipset)</li> <li>Z-Wave S2 system</li> <li>Support remote control anywhere and anytime</li> <li>Program up to 4 customized scenes</li> <li>The battery is rechargeable and replacable, will run for three months per charge</li> <li>Support low battery alarm with buzzer</li> <li>Support Child Lock function</li> <li>Supports OTA firmware update</li> </ol><p>Note: You need to send a wakeup notification to the controller to add the device as a Thing. Follow the "Adding Your NanoMote Quad to your Network" instructions.</p> <br /><h2>Inclusion Information</h2><p><strong>Adding your NanoMote Quad to your Z-Wave network.</strong></p> <p>With your  NanoMote Quad now powered, it’s time to add it to your Z-Wave network.</p> <ol><li>Place your Z-Wave primary controller/gateway enter into pairing/inclusion mode. </li> <li>Take your NanoMote near to your primary controller.  </li> <li>Double click the NanoMote button (can be any button), the LED will blink rapidly with a white color. </li> <li>If your NanoMote has been successfully added to your Z-Wave  network, its white LED will be solid for about 10 seconds, then flash green to indicate it is awake. If the adding was unsuccessful and the red LED will be solid for 2 seconds and then off, repeat the above steps.</li> <li>If your NanoMote does not go to sleep on its own, press and hold for 2 seconds (or until LED turns orange) then release its button to put your NanoMote to sleep.</li> </ol><br /><h2>Exclusion Information</h2><p>Your NanoMote can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller/gateway. To do this, please refer to the part of their respective manuals that tell you how to remove devices from your network.</p> <ol><li>Put your primary controller into device removal mode.</li> <li>Take your NanoMote near to your primary controller.</li> <li>Double click the NanoMote button (can be any button), the LED will become a solid green color.</li> <li>If your NanoMote has been removed from your Z-Wave  network, its LED will begin cycling through rainbow colors. </li> </ol><br /><h2>Wakeup Information</h2><p><strong>Send a wake up notification.</strong></p> <p>In order to send your NanoMote Quad new configuration commands, OTA, or receive other commands from your Z-Wave controller or gateway, it will need to be woken up.</p> <p>Enable Wakeup:</p> <ol><li>Press and hold button (any button) for 5 seconds or until LED turns to a green color<br /><br />LED will change from:<br /><br />Orange<br />Green //at 5 seconds.<br /><br /></li> <li>Release the button and the LED will flash green rapidly to indicate it is in an awake state.</li> </ol><p>Disable Wakeup:</p> <ol><li>Press and hold button (any button) for 2 seconds or until LED turns to a orange/red color</li> <li>Release the button and the LED should be deactivated</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA003</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0002:0003,0102:0003</property>
+      <property name="dbReference">1006</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Level for low battery</label>
+        <description>Set the level for "low battery" alert</description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: Low battery buzzer</label>
+        <description>Enable/disable low battery buzzer</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Central scene notification</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Button 1 basic</label>
+        <description>On/off control via button 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Button 1 multilevel</label>
+        <description>Dim control via button 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Button 2 basic</label>
+        <description>On/off control via button 2</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Button 2 multilevel</label>
+        <description>Dim control via button 2</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Button 3 basic</label>
+        <description>On/off control via button 3</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Button 3 multilevel</label>
+        <description>Dim control via button 3</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Button 4 basic</label>
+        <description>On/off control via button 4</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Button 4 multilevel</label>
+        <description>Dim control via button 4</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

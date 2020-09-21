@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_hkzwms02_00_000" listed="false">
+    <label>HKZW_MS02 Motion Sensor</label>
+    <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Sensor. It can detect motion and communicate with other associated Z-Wave devices, such as Gateway, Siren, Smart Switch, etc.</p> <p>Motion sensor can be included and operated in any Z-Wave network with other Z-Wave certified devices.</p> <p>The features list:</p> <ol><li>Z-Wave Plus certified for wide compatibility (500 serials product).</li> <li>Supports security 0 and security 2 protected mode with AES-128 encryption.</li> <li>Motion sensor.</li> <li>Product shock alarm.</li> <li>The battery life is up to 1 year.</li> <li>Low battery alarm.</li> <li>Support firmware OTA</li> </ol><br /><h2>Inclusion Information</h2><p>Adding the device:</p> <ol><li>Open the cover.</li> <li>Place the device within the direct range of your Z-Wave controller.</li> <li>Set the main controller’s adding mode (see the controller’s manual).</li> <li>Click the Z-button once or triple click the Z-button quickly, the LED indicator should blink fast.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Exclusion Information</h2><p>Removing the device:</p> <ol><li>Open the cover.</li> <li>Place the device within the direct range of your Z-Wave controller.</li> <li>Set the main controller remove mode (see the controller’s manual).</li> <li>Triple click the Z-button quickly, the LED indicator should blink fast.Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Wakeup Information</h2><p>Click the Z-button once</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">HKZW_MS02</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0200:0012,0201:0012,0300:0012</property>
+      <property name="dbReference">676</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION">14</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>12: Motion Sensor`s Sensitivity</label>
+        <description>The higher the value,the more sensitive the PIR sensor</description>
+        <default>8</default>
+        <options>
+          <option value="1">Sensitivity 1 (min)</option>
+          <option value="2">Sensitivity 2</option>
+          <option value="3">Sensitivity 3</option>
+          <option value="4">Sensitivity 4</option>
+          <option value="5">Sensitivity 5</option>
+          <option value="6">Sensitivity 6</option>
+          <option value="7">Sensitivity 7</option>
+          <option value="8">Sensitivity 8 (max)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable/Disable Basic Set Command</label>
+        <description>The motion Sensor can reverse its value of BASIC SET when motion is triggered</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: value of basic set command</label>
+        <description>assigned to send Basic Set Command</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: enable/disable shock alarm</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>18: Motion Alarm Cancellation Delay</label>
+        <description><![CDATA[
+Period of time after which Motion alarm will be cancelled.<br /><h1>Overview</h1><p>The Motion alarm will be cancelled in the main controller and the associated devices after 3 seconds, the alarm cancellation can be delay by this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Level of low battery</label>
+        <description>Define a battery level ad the "low battery"</description>
+        <default>20</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Report the motion detection and battery level</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: assigned to send BASIC SET command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

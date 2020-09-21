@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_rgbbulb_00_000" listed="false">
+    <label>RGB bulb HKZW-RGB01-V1.0</label>
+    <description><![CDATA[
+HKZW-RGB01-V1.0<br /><h1>Overview</h1><p>A smart bulb with over 16 million colors</p> <br /><h2>Inclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p> <br /><h2>Exclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">RGB bulb</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0100:0004,0101:0004</property>
+      <property name="dbReference">598</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Status after power failure</label>
+        <description>Define how the RGB BULB will react after the power supply is back on.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Memorizes its state</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Notification when Load status change</label>
+        <description><![CDATA[
+RGB BULB can send notifications to associated device<br /><h1>Overview</h1><p>RGB BULB can send notifications to associated device (Group Lifeline) when the status of the RGB BULB is changed.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Notifications Disabled</option>
+          <option value="1">Send BASIC REPORT</option>
+          <option value="2">Send BASIC REPORT only without status change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Enable/disable the function of using wall switch</label>
+        <description>Enable/disable the function of using wall switch to turn on/off RGB BULB</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_61_4" type="integer" groupName="configuration">
+        <label>61: Advance mode</label>
+        <description><![CDATA[
+RGB BULB can blink or cyclic/random change color automatically at set intervals.<br /><h1>Overview</h1><p>RGB BULB can blink or cyclic/random change color automatically at set intervals. It will stop blink or change color when receiving any control command like Basic Set</p>
+        ]]></description>
+        <default>3072</default>
+        <options>
+          <option value="3072">Stop changing</option>
+          <option value="16826368">Color gradual change randomly</option>
+          <option value="33603584">Color change randomly with a breathing blink</option>
+          <option value="50380800">Blink with random color</option>
+          <option value="67158016">Color change randomly</option>
+          <option value="285261824">Color gradual change</option>
+          <option value="302039040">Breathing blink with a specific color</option>
+          <option value="318816256">Blink with a specific color</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration"
+                 min="1" max="1431655765">
+        <label>255: Resetting to factory default</label>
+        <description>RGB BULB will exclude from the Z-Wave network with this particular command</description>
+        <default>1</default>
+        <options>
+          <option value="1431655765">Resetting to the factory default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

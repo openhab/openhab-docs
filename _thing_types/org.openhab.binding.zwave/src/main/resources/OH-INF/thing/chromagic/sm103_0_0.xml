@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="chromagic_sm103_00_000" listed="false">
+    <label>SM103 Door/Window Contact</label>
+    <description><![CDATA[
+Door/Window Contact<br /><h1>Overview</h1><p>The Door/Window Detector is a Z-WaveTM enabled device and is fully compatiblewith any Z-WaveTM enabled network. Z-WaveTM enabled  devices displaying the Z-WaveTM logo can also be used with it regardless of the manufacturer, and ours can also be used in other manufacturer’s Z-WaveTM enabled networks. Inclusion of this Door/Window Detector on other manufacturer’s Wireless Controller menu allows remote turn-on of connected modules and their connected lighting when the Detector is triggered.</p> <br /><h2>Inclusion Information</h2><p>Pressing tamper switch three times within 1.5 second will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper switch three times within 1.5 second will enter exclusion mode.</p> <br /><h2>Wakeup Information</h2><ol><li>The unit will stay “awake” for ten minutes when power is first supplied to allow time for configuration.</li> <li>After the unit stays in sleep status, it can be woken up by pressing the tamper switch continuously until the LED lights up once. The unit will enter sleep status again after 10 seconds. If longer awake is desired, press tamper switch three times within 1.5 seconds will prolong its awake period to 10 minutes.</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Chromagic Technologies Corporation</property>
+      <property name="modelId">SM103</property>
+      <property name="manufacturerId">0116</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">428</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Basic Set Level</label>
+        <description>Value to be sent with a BASIC SET command</description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>2: Configuring the OFF Delay</label>
+        <description>OFF Delay in seconds</description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Tamper Event Report (Alarm Report)</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control other Z-Wave Devices</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

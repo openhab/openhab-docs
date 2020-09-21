@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa002a_00_000" listed="false">
+    <label>ZWA002 Bulb 6 Multi-Color</label>
+    <description><![CDATA[
+Bulb 6 Multi-Color<br /><h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wave Plus RGBW Dimmable &amp; Multi-Color Changing, 9W, 60 watt Incandescent Equivalent, Smart Light Bulb,A19,E</p> <ul><li>9.5 watts of power use max; Long lifespan of 25,000 hours.</li> <li>800 lumens; 80 CRI; Dim range: 5% to 100%.</li> <li>16 million shades of colors with 240º beam angle.</li> <li>Compatible with certified Z-Wave gateways including Samsung SmartThings, Mios Vera, Zipabox, Homeseer HS3, and Open Z-Wave.</li> <li>Z-Wave Plus certified for quicker response time, better wireless range up to 490 feet in open space, and additional wireless security encryption. Z-Wave certification number: ZC10-18036069.               </li> </ul><br /><h2>Inclusion Information</h2><p>Getting your LED Bulb up and running is as simple as inserting it into a lamp holder and adding it to your existing Z-Wave network. You’ll need to set your Z-Wave hub to accept new products; to do this, please refer to its user manual.</p> <ol><li>Toggle off the wall switch into the OFF position.</li> <li>Remove any existing light bulb and replace it with LED Bulb.</li> <li>Set your Z-Wave gateway to accept or pair new products.  (If you are unsure, please refer to your Z-Wave Gateway/Controller instruction manual on how to set your gateway to pair or inclusion mode).</li> <li>With LED Bulb in its fitting, toggle your wall switch ON. LED Bulb’s LED will turn into a solid yellow color to indicate that it is in pair mode up to 10 seconds.</li> <li>5. After successfully connecting to your network, LED Bulb will flash green -&gt; white color for 3 seconds. If a network connection has failed, LED Bulb 6 Multi-Color will flash red -&gt; white for 3 seconds.</li> </ol><br /><h2>Exclusion Information</h2><p>Your LED Bulb can be removed from your Z-Wave network at any time using your Z-Wave gateway. To set your gateway into removal mode, please refer to the respective section of its user manual.</p> <ol><li>Set your Z-Wave gateway into device removal mode. (If you are unsure, please refer to your Z-Wave Gateway/Controller instruction manual on how to set your gateway to pair or inclusion mode).</li> <li>Turn LED Bulb’s wall switch on and wait 1 second.</li> <li>3. Toggle LED Bulb’s wall switch <br /> off -&gt; on, <br /> off -&gt; on, <br /> off -&gt; on <br /> (between 0.5 - 2 seconds per re-power).</li> <li>LED Bulb 6 has been unpaired successfully, the LED will flash blue -&gt; white for 3 seconds.</li> </ol><p>Removing LED Bulb from your Z-Wave network will reset LED Bulb to default factory settings.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA002</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0003:0002,0103:0002</property>
+      <property name="dbReference">949</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Use custom mode for LED animations</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Blink Colors in order mode</option>
+          <option value="2">Randomized blink color mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Enable/Disable Strobe over Custom Color</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="5" max="8640000">
+        <label>3: Rate of change to next color in Custom Mode</label>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_4_1_wo" type="integer" groupName="configuration">
+        <label>4: Set color that LED Bulb blinks in (Blink Mode)</label>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>16: Ramp rate when dimming using Multilevel Switch</label>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Enable notifications</label>
+        <description>Enable notifications to associated devices (Group 1) when the state is changed</description>
+        <default>1</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Basic CC report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_81_2" type="integer" groupName="configuration"
+                 min="2700" max="4999">
+        <label>81: Adjust color component of Warm White</label>
+        <default>2700</default>
+      </parameter>
+
+      <parameter name="config_82_2" type="integer" groupName="configuration"
+                 min="5000" max="6500">
+        <label>82: Adjust color component of Cold White</label>
+        <default>6500</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ruixiang_dm0027mini_00_000" listed="false">
+    <label>DM0027 Mini Smart-Touch Electronic Drapery Drive</label>
+    <description><![CDATA[
+Smart-Touch Electronic Drapery Drive<br /><h1>Overview</h1><p>Smart-Touch Motorized Drapery System<br />Sleek belt driven motorized drapery track can be easily curved to meet your installation requirements.<br />Spans up to 19' unspliced and pulls up to 133lbs of fabric. </p> <br /><h2>Inclusion Information</h2><p>Not provided</p> <br /><h2>Exclusion Information</h2><p>Not provided</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Guangzhou Ruixiang M&amp;E Co., Ltd</property>
+      <property name="modelId">DM0027 Mini</property>
+      <property name="manufacturerId">016D</property>
+      <property name="manufacturerRef">3007:0001</property>
+      <property name="dbReference">1102</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

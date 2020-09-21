@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_1402756_00_000" listed="false">
+    <label>1402756 LED Dimmer</label>
+    <description><![CDATA[
+LED Dimmer<br /><h1>Overview</h1><p>This is a switch multilevel device based on Z-wave enhanced 232 slave library of V6.81.03, and it can be easy configuration, operate and can make traditional LED dimmable lighting to be intelligent control.</p> <br /><h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer top your primary controllers manual on how to set your controller into inclusion).</li> <li>Power on the in-wall dimmer.</li> <li>Tripple Press the reset button on the dimmer, it will set the dimmer into inclusion mode.<br />The purple indicator light will stay solid on for 10 seconds to indicate successful incusion.</li> </ol><br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <ul><li>Method 1: <ol><li>Set the primary controller/gateway int exclusion mode (Please refer top your primary controllers manual on how to set your controller into exclusion).</li> <li>Triple press the reset button, the dimmer will be set to exclusion mode, and wait to be excluded, then the dimmer will be excluded form the network.</li> </ol></li> <li>Method 2: Factory reset the dimmer will force the it to be excluded form a network. (Please refer to the part "Factory Reset" of the manual</li> </ul><p>Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">1402756</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0202:0002</property>
+      <property name="dbReference">1251</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: State After Power Restore</label>
+        <description><![CDATA[
+State After Power Restore<br /><h1>Overview</h1><p>State After Power Restore: The state the switch should return to once power is restored after power failure</p> <p>0 - off</p> <p>1 - on</p> <p>2 - Returns to level before Power Outage</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Notification when load status change</label>
+        <description><![CDATA[
+Notification when load status change<br /><h1>Overview</h1><p>Notification when load status change: The Dimmer will send notification to associated device(Group Lifeline) when status of DImmer load is changed:</p> <p>0 - The function is disabled</p> <p>1 - Send Switch Multilevel Report</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: Default dimming speed</label>
+        <description><![CDATA[
+Default dimming speed<br /><h1>Overview</h1><p>Default dimming speed. Valid Value: 0-100</p> <p>0 - Instantly</p> <p>1 - Fast</p> <p>...</p> <p>100 - Slow</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Enable or Disable external switch to pair network</label>
+        <description><![CDATA[
+Enable or Disable external switch to pair network<br /><h1>Overview</h1><p>Enable or Disable external switch to pair network.</p> <p>0 - Disable</p> <p>1 - Enable</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Setting dimming way</label>
+        <description><![CDATA[
+Setting dimming way<br /><h1>Overview</h1><p>Setting dimming way.</p> <p>0 - Linear dimming</p> <p>1 - Logarithmic dimming</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>7: Setting default brightness when turn on</label>
+        <description><![CDATA[
+Setting default brightness when turn on the dimmer from off status<br /><h1>Overview</h1><p>Setting default brightness when turn on the dimmer from off status</p> <p>Setting 0 means that the dimmer will use parameter 1.</p> <p>Valid value: 0 - 99</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>8: Setting delay time when turn off the load</label>
+        <description><![CDATA[
+Setting delay time when turn off the load<br /><h1>Overview</h1><p>Setting delay time when turn off the load, unit is second.</p> <p>Valid value: 0 - 60</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ASSIC of Lifeline:4C 69 66 65 6C 69 6E 65</p> <ol><li>when press and hold down "Reset" button over 5s to reset the dimmer send "Device Reset Locally Notification CC" to associated devices of this group to report factory reset information.</li> <li>When load state chages send "Switch Multilevel Report CC" to associated devices of this group.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Basic Set: 42 61 73 69 63 20 53 65 74</p> <ol><li>Short press "Knob" turn on the dimmer Sends Basic Set(0XFF) to associeated devices.</li> <li>Short press "Knob" turn off the dimmer Sends Basic Set (0X00) to associated devices.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch Multilevel</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Switch Multilevel: 53 77 69 74 63 68 20 4D 75 6C 74 69 6C 65 76 65 6C</p> <ol><li>"Turn knob to the left" sends Switch Multilevel Set(to keep associated devices in sync with this device) to associated devices.</li> <li>"Turn knob to the right" Sends Switch Multilevel Set(to keep associated devices in sync with this device) to associated devices.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: External Button</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>External Button: 45 78 74 65 72 6E 61 6C 20 42 75 74 74 6F 6E</p> <ol><li>External Button hold send Switch Multilevel Start Level Change(Switchover dimmer Up/Down)</li> <li>External Button release send Switch Multilevel Stop Level Change.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

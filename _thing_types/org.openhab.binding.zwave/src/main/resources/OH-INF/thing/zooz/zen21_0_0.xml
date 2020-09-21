@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen21_00_000" listed="false">
+    <label>ZEN21 Paddle Switch</label>
+    <description><![CDATA[
+Paddle Switch<br /><h1>Overview</h1><p>Z-WAVE ON/OFF SWITCH</p> <br /><h2>Inclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller into inclusion mode</li> <li>Tap the upper paddle of the switch 3 times very quickly to finalize the inclusion process</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller into exclusion mode</li> <li>Tap the lower paddle of the switch 3 times very quickly to finalize the exclusion process</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN21</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">B111:1E1C</property>
+      <property name="versionMax">2.9</property>
+      <property name="dbReference">718</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Paddle Control</label>
+        <description><![CDATA[
+Reverse switch direction<br /><h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Top-ON, Bottom-OFF</option>
+          <option value="1">Top-OFF, Bottom-ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator Control</label>
+        <description><![CDATA[
+LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON - Switch OFF</option>
+          <option value="1">LED ON - Switch ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Indicator</label>
+        <description><![CDATA[
+Enable / Disable LED Indicator<br /><h1>Overview</h1><p>Enable / Disable LED Indicator</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED Enabled</option>
+          <option value="1">LED Disabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Status</label>
+        <description><![CDATA[
+This device will send SWITCH BINARY REPORT to Group 1 when operated manually.<br /><h1>Overview</h1><p>Depending on your Z-Wave gateway's home automation software capabilities, you may be able to associate your Z-Wave switch in groups with other Z-Wave devices to schedule scenes and create events. This on off switch supports Group 1 with up to five devices for lifeline communication. This device will send SWITCH BINARY REPORT to Group 1 when operated manually. Please refer to your controller's user guide for advanced programming instructions as they are a little different for every software.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_thermiqtemp_00_000" listed="false">
+    <label>ThermIQ Temperature Sensor Ambient Temperature Sensor</label>
+    <description><![CDATA[
+Ambient Temperature Sensor<br /><h1>Overview</h1><p>Simple ambient temperature sensor that comes with ThermIQ infrared panels</p> <br /><h2>Inclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable inclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable exclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul><br /><h2>Wakeup Information</h2><p>Device can be set to wake up on a set time interval</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">ThermIQ Temperature Sensor</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">003B:0101</property>
+      <property name="dbReference">1172</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

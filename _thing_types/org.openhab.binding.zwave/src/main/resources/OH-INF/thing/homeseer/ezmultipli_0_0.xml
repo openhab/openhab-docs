@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_ezmultipli_00_000" listed="false">
+    <label>EZMultiPli Multi Sensor</label>
+    <description><![CDATA[
+Multi Sensor<br /><h1>Overview</h1><p>EZMultiPli™ enables fully automated lighting that turns on the lights when you enter a room and turns them off shortly after you leave. Sophisticated lighting, Audio, Video and heating/cooling are enabled with the EZMultiPli™ threesensors-in-one Z-Wave® device.</p> <p>EZMultiPli is primarily intended as a motion sensor that will detect motion and send a command to up to 4 associated ZWave devices as well as the system controller. The other ZWave devices can directly control lights in a room or the motion indication can be sent to a computer for complex scene control of lighting, audio, video and heating/cooling. When motion is not detected within a pre-set amount of time, EZMultiPli will send an “off” command to the Z-Wave nodes to turn the lights off.</p> <p>In addition to the motion sensor, EZMultiPli also senses the amount of light in the room as well as the current temperature. The color LED light within EZMultiPli is a convenient night light or can be used as an indicator light to let you know if the weather forecast is predicting rain, your garage doors are open or any other indicator supported by your home control application.</p> <p>EZMultiPli is wall powered and needs no wires or batteries. Simply plug EZMultiPli into the wall, join the Z-Wave network and you’re ready to go.</p> <br /><h2>Inclusion Information</h2><p>Before attempting to include (pair) EZMultiPli to a Z-Wave network, be sure the LED is blinking an aqua color. If it is not blinking aqua, follow the exclusion instructions above.</p> <p>Follow the procedure of the Z-Wave primary controller to begin the inclusion process. Then press and release the push button on the side of EZMultiPli. Once EZMultiPli has been added to the Z-Wave network, the LED will stop blinking blue and instead will blink white each time it detects motion. EZMultiPli remains in this mode for 5 minutes. Once the 5 minutes has expired, EZMultiPli will enter normal operating mode and the LED will remain off. Pressing the push button will restart the 5 minute motion detector test mode. The primary controller should provide a Z-Wave NodeID which has been assigned to EZMultiPli. The NodeID is a unique identifier and is used by many home control applications to identify this particular EZMultiPli. Write down the NodeID and location for later entry into your home control application.</p> <br /><h2>Exclusion Information</h2><p>When EZMultiPli is first plugged into the wall outlet, the LED should blink an aqua color. This indicates that it is not currently joined (or paired) to a Z-Wave network. If the LED is blinking white each time motion is detected, then it is already joined to a Z-Wave network. If the LED is blinking white you will need to exclude it from the other Z-Wave network before attempting to join a new one.</p> <p>Follow the procedure of the Z-Wave primary controller to begin the exclusion process. Once the primary controller is ready to receive the exclusion command, press and release the push button on the side of EZMultiPli. The primary controller should give an indication that the reset process has completed. EZMultiPlis LED will blink aqua when it is ready to be added to a Z-Wave network.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Express Controls</property>
+      <property name="modelId">EZMultiPli</property>
+      <property name="manufacturerId">001E</property>
+      <property name="manufacturerRef">0004:0001</property>
+      <property name="dbReference">268</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: OnTime</label>
+        <description><![CDATA[
+OnTime<br /><h1>Overview</h1><p>OnTime sets the number of minutes that the lights stay on when motion has not been detected.</p> <p>A value of 0 is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMultiPli will NOT turn the lights off in this mode.</p> <p>Recommended values:</p> <ul><li>5 min for hallways</li> <li>20 min for an office environment</li> <li>60 min for a library, office or other room where someone may be sitting still for a long time</li> </ul>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>2: OnLevel</label>
+        <description><![CDATA[
+OnLevel<br /><h1>Overview</h1><p>OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.</p> <p>A value of 0 will turn the lights off (not recommended). A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).</p> <p>A value of -1 will turn the light “on” which depends on the device but most will set the dim level to the last dim setting.</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: LiteMin</label>
+        <description><![CDATA[
+LiteMin<br /><h1>Overview</h1><p>A Luminance report is sent to the system controller every LiteMin minutes.</p> <p>A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>4: TempMin</label>
+        <description><![CDATA[
+A Temperature report is sent to the controller every TempMin minutes.<br /><h1>Overview</h1><p>A Temperature report is sent to the controller every TempMin minutes.</p> <p>A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="-127" max="128">
+        <label>5: TempAdj</label>
+        <description><![CDATA[
+TempAdj<br /><h1>Overview</h1><p>TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network.<br /><h1>Overview</h1><p>This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network. All Notification command class reports (motion detection) are sent to the node assigned to this group. Advanced lighting control should be handled by a home control application based on these reports.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic</label>
+        <description><![CDATA[
+This group is used to directly turn lights on or off when motion is detected.<br /><h1>Overview</h1><p>This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. EZMultiPli will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30’) of EZMultiPli. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation. Note that including the NodeID of EZMultiPli in this group will control the LED which will come on when motion is detected and goes off when no motion has been detected for OnTime minutes.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

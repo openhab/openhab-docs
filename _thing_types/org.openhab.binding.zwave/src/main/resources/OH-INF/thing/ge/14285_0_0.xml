@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_14285_00_000" listed="false">
+    <label>GE/Jasco 14285 Direct Wire Indoor/Outdoor Smart Switch</label>
+    <description><![CDATA[
+Direct Wire Indoor/Outdoor Smart Switch<br /><h1>Overview</h1><p><strong>SPECIFICATIONS ZW4007</strong></p> <ul><li>Power: 120-277 VAC, 60Hz, Single Phase</li> <li>Range: Up to 150 feet line of sight between the Wireless Controller and the closest Z-Wave receiver module.</li> <li>Operating Temperature Range: -22 to 104° F (-30 to 40° C)</li> <li>For outdoor use in dry, damp or wet locations.</li> <li>Contact Ratings: 120-277 VAC, 40A Resistive Single Phase 120-277 VAC, 20A Ballast load (Inductive) Single phase 125 VAC, 15 A Tungsten 250 VAC, 5 A Tungsten 1HP@120VAC, 2HP @ 240VAC</li> </ul><p><strong>Features</strong></p> <ul><li>Operation mode switch allows operation without requiring Z-Wave network</li> <li>Remote ON/OFF control via the Z-Wave controller, on mobile devices</li> <li>Manual override ON/OFF control with the exterior-mounted pushbutton</li> <li>Weather-resistant, rainproof housing; suitable for use outdoors in damp or wet conditions</li> <li>Lockable tamper-resistant metal case ensures secure connection and keeps dirt &amp; debris out</li> <li>Energy monitoring capability allows remote monitoring of watts and kilowatt hours with compatible systems </li> </ul><p>Device Reset</p> <p>To return your device to factory defaults</p> <ol><li>Place device into ON mode (upper position of Operating Mode Switch)</li> <li>Press and hold the programming button.</li> <li>While holding programming button, place device into OFF mode (middle position of Operating Mode Switch).</li> <li>While holding programming button, place device back into ON mode (upper position of Operating Mode Switch).</li> <li>After three (3) seconds, release programming button. Green LED will flash 5 times when completed successfully.</li> </ol><br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the programming button to add it to the network. </p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to remove your device press and release the programming button to remove it from the network.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE/Jasco 14285</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4F44:3032,5042:4004</property>
+      <property name="dbReference">897</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Product State after Power Reset</label>
+        <description>Product State after Power Reset</description>
+        <default>0</default>
+        <options>
+          <option value="0">Return to last state</option>
+          <option value="1">Return to off</option>
+          <option value="2">Return to on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Energy Report Mode</label>
+        <description>Energy Report Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Once monthly</option>
+          <option value="1">Reports based on Parameter 3 setting</option>
+          <option value="2">Once daily</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="5" max="60">
+        <label>3: Energy Report Frequency</label>
+        <description>Energy Report Frequency</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description>Alternate Exclusion</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="1">Alternate Exclusion (3 button presses)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set, controlled by local load</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set,</label>
+        <description><![CDATA[
+controlled by pressing the On or Off button<br /><h1>Overview</h1><p>Basic Set, controlled by pressing the On or Off button</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

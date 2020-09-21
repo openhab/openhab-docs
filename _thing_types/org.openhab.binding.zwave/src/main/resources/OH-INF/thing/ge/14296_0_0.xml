@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_14296_00_000" listed="false">
+    <label>ZW3011/14296 GE Enbrighten Z-Wave Wall Dimmer, Toggle, 14296, Light Almond</label>
+    <description><![CDATA[
+GE Enbrighten Z-Wave Wall Dimmer, Toggle, 14296, Light Almond<br /><h1>Overview</h1><p>In-Wall Smart Toggle Dimmer with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press up and release the toggle.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press up and release the toggle.</p> <p><strong>NOTE: If  Advanced configuration parameter 19 is changed, the above process is incorrect.</strong></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZW3011/14296</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3132</property>
+      <property name="dbReference">1270</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Mode</label>
+        <description><![CDATA[
+LED Indication Configuration<br /><h1>Overview</h1><p>Adjust the LED status to default, invert, always OFF or always ON</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Device is ON, LED is OFF; device is OFF, LED is ON</option>
+          <option value="1">Device is ON, LED is ON; device is OFF, LED is OFF</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dim up/down rate</label>
+        <description><![CDATA[
+Adjust the speed at which the ramps to a specific value other than 0 and FF<br /><h1>Overview</h1><p>0 means "Dim up/down the light to the specified level quickly by command except value 0 and FF"<br />1 means "Dim up/down the light to the specified level slowly by command except value 0 and ff"</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fast</option>
+          <option value="1">Slow</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Switch Mode</label>
+        <description><![CDATA[
+Turn your dimmer into an On/Off switch with switch mode<br /><h1>Overview</h1><p>0 for normal dimmer operation, 1 enables switch mode</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Dimmer Mode</option>
+          <option value="1">Switch Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description><![CDATA[
+Never accidentally remove a device during with alternate exclusion<br /><h1>Overview</h1><p>0: Normal operation, press any button on the device</p> <p>1: Press two times ON button and two times OFF button, LED will flash 5 times if exclusion is successful</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal exclusion</option>
+          <option value="1">Alternate Exclusion</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>30: Minimum Dim Threshold</label>
+        <description><![CDATA[
+Set the minimum dimmer threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>31: Maximum Brightness Threshold</label>
+        <description><![CDATA[
+Set the brightness threshold<br /><h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>32: Default Brightness Level</label>
+        <description><![CDATA[
+Set the default brightness level for manual turn on<br /><h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <p>Ex. 1= 1% and 99 = 99%</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <description>Supports Basic Set and is controlled by pressing the ON or OFF button with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press</label>
+        <description>Supports Basic Set and is controlled by double pressing the ON or OFF button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_keypad_00_000" listed="false">
+    <label>MINI KEYPAD RFID Keypad with alarm activation rfid tag</label>
+    <description><![CDATA[
+Keypad with alarm activation rfid tag<br /><h1>Overview</h1><p>Place the Tag Reader close to the main exit of your office or home to enjoy it’s full potential.</p> <p>With the Tag Reader you can activate or de-activate your security by simply passing the RFID Tag in front of the reader. It is called a Tag Reader because it uses RFID Tags to identify people and their personal preferences around leaving the house or coming home.</p> <p>Separately from working with RFID Tags, the Tag Reader also has a numerical keypad. Within the free of charge online manager you can configure a numerical code. This way you prevent being locked out of the system in case you may have lost the RFID Tag.</p> <p>By using the Tag Reader intelligently you can secure your house and save money on your energy bill at the same time. You can actually let your house ‘fall asleep’ when enabling the ‘Away Scene’. This is especially noted when u are using energy saving products of BeNext such as Radiator Control and of course a Energy Switch.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /><h2>Wakeup Information</h2><p>Tap a button. The always awake mode can be activated by: CONFIGURATION_SET / Parameter: 0x05 / Size: 0x01 (can’t be different from 1) / Value: 0x03 (mode 3)</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">MINI KEYPAD RFID</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">4501:6131,6131:4101,6131:4501,6131:5501</property>
+      <property name="dbReference">410</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>1: Set to default</label>
+        <description>Set all configuration to factory settings</description>
+        <default>0</default>
+        <options>
+          <option value="-1">Reset to default factory</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Feedback time</label>
+        <description>To configure the time the beep is automatically turned off in seconds.</description>
+        <default>15</default>
+        <options>
+          <option value="-1">Endless</option>
+          <option value="0">Disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>3: Feedback timeout</label>
+        <description><![CDATA[
+Timeout beep<br /><h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beep are fixed 8 beeps shortly after each other.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>4: Feedback beeps per second</label>
+        <description>To configure the number of beeps per second. Every beep is fixed about 10ms.</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: The mode</label>
+        <description><![CDATA[
+Operating mode<br /><h1>Overview</h1><p>1   -&gt;   Normal operating mode 3   -&gt;   Z‐Wave chip is always on to request e.g. version or manufacturer id. 2   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. 4 - 127   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Normal operating mode</option>
+          <option value="2">Normal operating mode (like 1)</option>
+          <option value="3">Z‐Wave chip is always on to request</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association</label>
+        <description>The Association Command Class is used to associate the TagReader to other devices. When a tag or code is read, the TagReader will send a notification to the Z‐Wave devices in its association group. It will also report the state of the tamper alarm to the</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

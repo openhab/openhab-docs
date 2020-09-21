@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fireangle_zst630_00_000" listed="false">
+    <label>ZST-630 Thermoptek Smoke Alarm/Smoke Detector</label>
+    <description><![CDATA[
+Thermoptek Smoke Alarm/Smoke Detector<br /><h1>Overview</h1><p>The ST-630 W2 thermoptek smoke alarm from FireAngel provides quick detection of slow-smouldering fires, making it ideal for areas where electrical equipment and upholstery furniture may become a fire hazard. Wirelessly interconnect up to 50 other W2 Module interlink devices within 35m.</p> <br /><h2>Inclusion Information</h2><p>Triple-press the add button once the Z-Wave Module is on the device. The LED will show a quick blink once per second while the module is being added. This process may take as long as 30 seconds, but typically is much quicker. If you triple-press too quickly or too slowly, inclusion will not start. In this case wait a few seconds and then try again.</p> <br /><h2>Exclusion Information</h2><p>Triple-press the button on the Z-Wave Module. The LED will show a quick double-blink once per second while the module is being removed. This process may take up to 30 seconds. If you triple-press too quickly or too slowly the removing function will not start. In this case you must wait a few seconds and then try again.</p> <br /><h2>Wakeup Information</h2><p>If the module has been successfully included, when pressing the button, the LED will flash three times. In addition, the module will communicate with the Z-Wave Controller, accepting any pending commands.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Smoke Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=SYSTEM, event=6</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fireangle</property>
+      <property name="modelId">ZST-630</property>
+      <property name="manufacturerId">026F</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">733</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Report</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Report</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="building36_adcs2000tra_00_000" listed="false">
+    <label>ADC-S2000-T-RA Temperature Sensor</label>
+    <description><![CDATA[
+Temperature Sensor<br /><h1>Overview</h1><p>Provides temperature reading from another location so Smart Thermostat can take smarter actions to maximize comfort and energy saving.</p> <br /><h2>Inclusion Information</h2><p>Press the Pairing button on the Temperature Sensor to add it to the Z-Wave network.You will see the light on the Temperature Sensor turn solid white when it has been successfully added.</p> <br /><h2>Exclusion Information</h2><p>Press the Pairing button on the Temperature Sensor to delete it from the Z-Wave network. The light on the Temperature Sensor will start flashing to indicate it has been successfully deleted.</p> <br /><h2>Wakeup Information</h2><p>Every 4 hours.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Building 36 Technologies</property>
+      <property name="modelId">ADC-S2000-T-RA</property>
+      <property name="manufacturerId">0190</property>
+      <property name="manufacturerRef">0003:0001</property>
+      <property name="dbReference">931</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="10" max="32768">
+        <label>1: Wake Up Period</label>
+        <description>Seconds to stay awake following button press</description>
+        <default>32768</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1000" max="2500">
+        <label>2: Low Battery Level</label>
+        <description>Battery level</description>
+        <default>2500</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: Temperature Reporting Threshold</label>
+        <description>Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.</description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Configuration Bitmask</label>
+        <description>Configuration Bitmask</description>
+        <default>2</default>
+        <options>
+          <option value="0">Will not send temperature reports</option>
+          <option value="2">Send reports when the temperature changes.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Battery Reporting Interval</label>
+        <description><![CDATA[
+Battery Reporting Interval<br /><h1>Overview</h1><p>Number of wake up intervals between autonomous battery reports. The wake up interval is set in the Wake Up Command Class.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Temperature Reporting Interval</label>
+        <description><![CDATA[
+Temperature Reporting Interval<br /><h1>Overview</h1><p>The number of wake up intervals between autonomous temperature reports. </p> <p>If this value is zero, autonomous temperature reporting based on wake up interval is disabled.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="-100" max="100">
+        <label>8: Temperature Calibration Offset</label>
+        <description><![CDATA[
+Temperature Calibration Offset<br /><h1>Overview</h1><p>Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="60" max="64800">
+        <label>9: Mandatory Temperature Reporting Interval</label>
+        <description><![CDATA[
+Mandatory Temperature Reporting Interval<br /><h1>Overview</h1><p>The number of seconds between temperature reports.</p>
+        ]]></description>
+        <default>64800</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor Multilevel Temperature Report.</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

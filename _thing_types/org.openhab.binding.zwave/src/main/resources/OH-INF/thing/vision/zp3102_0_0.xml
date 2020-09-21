@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zp3102_00_000" listed="false">
+    <label>ZP3102 Motion Sensor</label>
+    <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>The ZP3102 is a Z-Wave enabled motion detector and temperature sensor. The motion detector has 120 degrees of horizontal visibility and 60 degrees of vertical visibility. The temperature sensor that is built in to the ZP3102 is capable of reporting in both Celsius and Fahrenheit scales, and may be queried for the temperature and it will report it automatically when it detects changes. The sensor is battery operated and includes the ability to report the battery level and will transmit an alert signal if the battery assumes a critically low level. The ZP3102 is future-proofed by also supporting the ability to have its firmware updated over the Z-Wave network.</p> <br /><h2>Inclusion Information</h2><p>Press the program switch of ZP3102 once. The LED on the ZP3102 should stop flashing, if not, please try again.</p> <br /><h2>Exclusion Information</h2><p>Press the program switch of ZP3102 once to be excluded. The LED on the ZP3102 should start to flash</p> <br /><h2>Wakeup Information</h2><p>Note: ”<strong>Awake</strong>” mode: it is to leave the “Sleep” mode by removing the cover of ZP3102, to allow the Z-Wave TM Interface Controller to do “Association”.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZP3102</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2002:0201,2002:0202,2002:0203,2002:0204,2002:0205</property>
+      <property name="versionMax">7.99</property>
+      <property name="dbReference">104</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>1: On time in minutes</label>
+        <description>Delay before sending OFF</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Celsius / Fahrenheit</label>
+        <description>0 = Celsius, 1 = Fahrenheit</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>3: Infrared sensor sensitivity adjustment</label>
+        <description><![CDATA[
+1 is most sensitive, 7 is least<br /><h1>Overview</h1><p>(Parameter 3) Infrared sensor sensitivity adjustment, 7 levels sensitivity, 1 = most<br />sensitive, 7 = most insensitive, default values= 4</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Control Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

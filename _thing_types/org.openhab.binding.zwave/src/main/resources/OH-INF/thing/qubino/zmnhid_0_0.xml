@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhid_00_000" listed="false">
+    <label>ZMNHID Flush on/off thermostat</label>
+    <description><![CDATA[
+Flush on/off thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. The module can be controlled either  through Z-wave network  or  through  the wall switch.<br />The module is designed to be mounted inside a “flush  mounting box” and  is  hidden  behind a traditional wall switch.<br />Module measures power consumption of connected heating device</p> <br /><h2>Inclusion Information</h2><p><strong>Module Inclusion (Adding to Z-Wave network)</strong></p> <ul><li>Connect module to power supply</li> <li>Enable add/remove mode on main controller</li> <li>Auto inclusion   (works   for   about   5   seconds   after connected to power supply) <em><strong>or</strong></em></li> <li>Press service button S for more than 2 second <em><strong>or</strong></em></li> <li>Press  push  button  I1  three  times  within  3s  (3  times change switch state within 3 seconds).</li> </ul><p><strong>NOTE1</strong></p> <p>For   auto inclusion   procedure,   first   set   main controller into inclusion mode and then connect module to power supply.</p> <p><strong>NOTE2</strong></p> <p>When  connecting  temperature  sensor  to  module that  has  already  been  included,  you  have  to  exclude module  first.<br />Switch  off  power supply,connect  the  sensor and re include the module.</p> <br /><h2>Exclusion Information</h2><p><strong>Module    Exclusion/Reset    (Removing from Z-Wave network)</strong></p> <ul><li>Connect module to power supply</li> <li>Bring module within maximum 1 meter (3 feet) of  the main controller,</li> <li>Enable add/remove mode on main controller press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or</li> <li>Press  service  button S (only  applicable  for  24V SELV supply voltage) for more than 6 second.</li> </ul><p><br /><strong>By this function all parameters of the module are set to default values and own ID is deleted.</strong><br /><strong>If push button I1 is pressed three times within 3s (or service button S is  pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values. </strong><br /><br /><strong>NOTE</strong></p> <p>If the module is included with parameters 100,101 or  102  with  values <br />different to default and module reset is done, wait at least 30s before next inclusion.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="qubino_zmnhid_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHID</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0005:0051</property>
+      <property name="dbReference">358</property>
+      <property name="defaultAssociations">5,6</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Input 1 switch type</label>
+        <description>Input 1 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Input 2 switch type</label>
+        <description>Input 2 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Input 3 switch type</label>
+        <description>Input 3 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Input 1 contact type</label>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Input 2 contact type</label>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Parameter no. 6</label>
+        <description><![CDATA[
+Input 3 contact type<br /><h1>Overview</h1><p>See parameter 4 (valid for I3 instead of I1)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Parameter no. 10</label>
+        <description><![CDATA[
+Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Module responds to commands ALL ON / ALL OFF                 that may be sent by the main controller or by other controller belonging to the system.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALL ON is not active ALL OFF is not active</option>
+          <option value="1">ALL ON is not active ALL OFF active</option>
+          <option value="2">ALL ON active ALL OFF is not active</option>
+          <option value="255">ALL ON active, ALL OFF active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>11: Parameter no. 11</label>
+        <description><![CDATA[
+I1 Functionality selection<br /><h1>Overview</h1><p>Available config. parameters (data type is 2 Byte DEC):</p> <ul><li>Default value 1</li> <li>32767 – input  I1 doesn’t influence  on  the Heat/Cool process</li> <li>1 - input I1 changes the mode of the thermostat between Off  and Heat/Cool.In  this  case  function  on window sensor is disabled</li> <li>2 -input   I1   influences   on   heating/cooling valves according  to  status of window sensor. In  this  case function of Off and Heat/Cool selection by I1 is disabled.</li> </ul>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>12: Parameter no. 12</label>
+        <description><![CDATA[
+I2 Functionality selection<br /><h1>Overview</h1><p>Available config. parameters (data type is 2 Byte DEC):</p> <ul><li>Default value 32767</li> <li>32767 - input  I2 does  not  influence  on  the Heat/Cool process</li> <li>From  0  to  990 - Temperature  set  point  from  0.0°C  to 99.0°C. When   I2   is   pressed,   it   automatically   set temperature setpoint according to value defined here. In this case function of condense sensor is disabled</li> <li>From 1001 to 1150 - Temperature set point from -0.1°C to -15.0°C.<br />When  I2  is  pressed,  it  automatically  set temperature setpoint according to value defined here. In this case function of condense sensor is disabled</li> <li>2000 - Input  I2  influences  on  the heating/cooling valve according  to status  of  condense  sensor,  In  this  case function of setpoint selection with I2 is disabled.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>13: Parameter no. 13</label>
+        <description><![CDATA[
+I3 Functionality selection<br /><h1>Overview</h1><p>Available config. parameters (data type is 2 Byte DEC):</p> <ul><li>Default value 32767</li> <li>32767 - input  I3 does not influence on the Heat/Cool process</li> <li>1 - input I3 changes the mode of the thermostat between Heat and Cool and override  parameter  59.  In this case function on flood sensor is disabled</li> <li>2 - input  I3  influences  on  cooling and heating  valves according to status of flood sensor. In this case function of Heat and Cool selection by I3 is disabled.</li> </ul>
+        ]]></description>
+        <default>32767</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>40: Parameter no. 40</label>
+        <description><![CDATA[
+Power reporting in Watts on Power change<br /><h1>Overview</h1><p>0 = Reporting Disabled</p> <p>1–100 = 1% - 100% Reporting Enabled</p> <p>Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>42: Parameter no. 42</label>
+        <description><![CDATA[
+Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Set value means time interval (0 - 32767) in seconds when power is sent.</p> <p>Available config. parameters:</p> <p>default value is 0 (power report is disabled).</p> <p>0 = Reporting Disabled</p> <p>1–32767 = 1 second – 32767 seconds. Reporting enabled.</p> <p>Power report is sent with time interval set by entered value.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_43_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>43: Parameter no. 43</label>
+        <description><![CDATA[
+Hysteresis On<br /><h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on.</p> <p>Available config. parameters (data type is 2 Byte DEC): <br />default value 1005 (-0.5 °C)<br />0 -127  =  0.0°C ~ 12.7 °C  <br />1001 -1127  =  -0.1°C ~ -12.7 °C</p>
+        ]]></description>
+        <default>1005</default>
+      </parameter>
+
+      <parameter name="config_44_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>44: Parameter no. 44</label>
+        <description><![CDATA[
+Hysteresis Off<br /><h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device off.</p> <p>Available config. parameters (data type is 2 Byte DEC): <br />default value 5 (0.5 °C)<br />0 -127  =  0.0°C ~ 12.7 °C  <br />1001 -1127  =  -0.1°C ~ -12.7 °C</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_45_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>45: Parameter no. 45</label>
+        <description><![CDATA[
+Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off.</p> <p>Available config. parameters (data type is 2 Byte DEC): </p> <ul><li>default value 50(5.0 °C)</li> <li>0 -127  =  0.0°C ... 12.7 °C </li> <li>1001 -1127  =  -0.1°C ~ -12.7 °C</li> <li>255 - Antifreeze functionality disabled</li> </ul>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_59_1" type="integer" groupName="configuration">
+        <label>59: Parameter no. 59</label>
+        <description><![CDATA[
+Thermostat Mode<br /><h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC):<br />default value 0<br />0  - Heat mode<br />1 - Cool mode<br /><br />NOTE: <br />After parameter change, first exclude module (without  setting  parameters to default value) and then re include the module!</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Heat Mode</option>
+          <option value="1">Cool Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_60_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>60: Parameter no. 60</label>
+        <description><![CDATA[
+Too low temperature limit<br /><h1>Overview</h1><p>Available config. parameters (data type is 2 Byte DEC): <br />default value 50 (Too low temperature limit is 5.0 °C)<br />1 -1000  =  0.1°C ~ 100.0 °C step is  0.1°C. <br />1001 -1150  =  -0.1°C ~ -15.0 °C</p> <p><strong>NOTE</strong></p> <p>Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>61: Parameter no. 61</label>
+        <description><![CDATA[
+Too high temperature limit<br /><h1>Overview</h1><p>Available config. parameters (data type is 2 Byte DEC): <br />default value 700 (Too high temperature limit is 70.0 °C)<br />1 -1000  =  0.1°C ~ 100.0 °C step is  0.1°C. </p> <p><strong>NOTE</strong></p> <p>Too high temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
+        ]]></description>
+        <default>700</default>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Parameter no. 63</label>
+        <description><![CDATA[
+Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the device that is connected to the on/off output. The  device  type  can  be  normally  open (NO) or normally close (NC). </p> <p>Available config. parameters (data type is 1 Byte DEC):</p> <ul><li>default value 0</li> <li>0 - When system is turned off the output is 0 V.</li> <li>1 - When system is turned off the output is 230 V.</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">When system is turned off the output is 0 V.</option>
+          <option value="1">When system is turned off the output is 230 V.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_70_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>70: Input 1 status on delay</label>
+        <description><![CDATA[
+Switching reaction time on delay for I1<br /><h1>Overview</h1><p>If  the  value  of  parameter  is  different  to  0,  means  that the <br />Influence  of  this input  to  heating  or  cooling will  react  after inserted  time. This  parameter  has influence only when  the window sensor functionality is selected by the parameter no 11.</p> <p><strong>NOTE</strong>: Device status on UI change immediately</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_71_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>71: Input 1 status off delay</label>
+        <description><![CDATA[
+Switching reaction time off delay for I1<br /><h1>Overview</h1><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no 11.</p> <p><strong>NOTE</strong></p> <p>Device status on UI change immediately</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>72: Input 2 status on delay</label>
+        <description><![CDATA[
+Switching reaction time on delay for I2<br /><h1>Overview</h1><p><strong>See parameter 70 (valid for I2 instead of I1)</strong><br />This parameter has influence  only  when  the  condense sensor functionality is selected by the parameter no12.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_73_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>73: Input 2 status off delay</label>
+        <description><![CDATA[
+Switching reaction time off delay for I2<br /><h1>Overview</h1><p><strong>See parameter 71 (valid for I2 instead of I1)</strong><br />This  parameter  has  influence  only  when  the  condense sensor functionality is selected by the parameter no12.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_74_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>74: Input 3 status on delay</label>
+        <description><![CDATA[
+Switching reaction time on delay for I3<br /><h1>Overview</h1><p><strong>See parameter 70 (valid for I2 instead of I1)</strong><br />This parameter has influence  only  when  the  condense sensor functionality is selected by the parameter no13.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_75_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>75: Input 3 status off delay</label>
+        <description><![CDATA[
+Switching reaction time off delay for I3<br /><h1>Overview</h1><p><strong>See parameter 71 (valid for I2 instead of I1)</strong><br />This  parameter  has  influence  only  when  the  condense sensor functionality is selected by the parameter no13.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>100: Parameter no. 100</label>
+        <description><![CDATA[
+Enable / Disable Endpoint I1 or select Notification Type and Event<br /><h1>Overview</h1><p>Enabling I1 means that Endpoint (I1) will be present on UI. <br />Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Available configuration parameters (data type is 1 Byte DEC):<br />Endpoint device type selection:<br />notification sensor (1 -6): <br />GENERIC_TYPE_SENSOR_NOTIFICATION, <br />SPECIFIC_TYPE_NOTIFICATION_SENSOR<br />default value 0<br />1 - Home Security; Motion Detection,unknown location.<br />2 - CO; Carbon Monoxide detected, unknown location.<br />3 - CO2; Carbon Dioxide detected, unknown location.<br />4 - W ater Alarm; Water Leak detected, unknown location.<br />5 - Heat Alarm; Overheat detected, unknown location.<br />6 - Smoke Alarm; Smoke detected, unknown location.<br />0 - Endpoint, I1 disabled<br />- sensor binary (9): <br />GENERIC_TYPE_SENSOR_BINARY, <br />SPECIFIC_TYPE_NOT_USED <br />9 - Sensor binary <br />NOTE1: <br />After   parameter  change,   first   exclude  module (without  setting parameters  to default  value)  and  then  re include the module!<br />NOTE2:   <br />When the parameter is set to value 9 the notifications are send for Home Security.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_101_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>101: Parameter no. 101</label>
+        <description><![CDATA[
+Enable / Disable Endpoint I2 or select Notification Type and Event<br /><h1>Overview</h1><p>See parameter 100 (valid for I2 instead of I1)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_102_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>102: Parameter no. 102</label>
+        <description><![CDATA[
+Enable / Disable Endpoint I3 or select Notification Type and Event<br /><h1>Overview</h1><p>See parameter 100 (valid for I3 instead of I1)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_110_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>110: Parameter no. 110</label>
+        <description><![CDATA[
+Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value result in adding or subtracting that value to actual measured value by sensor.</p> <p>Available config. parameters (data type is 2 Byte DEC):<br /><br /></p> <ul><li>default value 32536</li> <li>32536 – offset is 0.0°C</li> <li>From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From  1001  to  1100 –value  from -0.1  °C  to -10.0  °C  is subtracted to actual measured temperature.</li> </ul>
+        ]]></description>
+        <default>32536</default>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>120: Parameter no. 120</label>
+        <description><![CDATA[
+Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured  temperature on temperature change defined by this parameter.</p> <p>Available config. parameters (data type is 1 Byte DEC):</p> <ul><li>default value 5</li> <li>0 –Reporting disabled</li> <li>1 -127 = 0.1°C – 12.7°C, step is 0.1°C</li> </ul>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_121_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>121: Parameter no. 121</label>
+        <description><![CDATA[
+Digital temperature sensor / setpoint selector<br /><h1>Overview</h1><p>If  digital  temperature  sensor is not connected, module can grab measured   temperature from   external   secondary module.<br /><br />Available config. parameters (data type is 1 Byte DEC):<br />Default value 0<br /><br />0 - Internal   digital   temperature   sensor   is   mounted, setpoint is set by controller<br /><br />1 - (bit  0) temperature  is  grabbed  from  external  always on sensor with sensor_multilevel_get sent by association 3<br /><br />2 - (bit  1) temperature  is  grabbed  from  external  battery powered room sensor declared in parameter 122<br /><br />4 - (bit  2) setpoint  is  gragged  from  external  always  on module with thermostat_setpoint_get sent by association 5  <br /><br />8 - (bit  3) setpoint  is  grabbed  from  external  battery powered room sensor declared in parameter 122. <br /><br />10 – (bit  1  and  bit  3) temperature  AND  setpoint  are grabbed  from external  battery  powered  room  sensor declared in parameter 122</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_122_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>122: Parameter no. 122</label>
+        <description><![CDATA[
+Node ID of external battery powered room sensor<br /><h1>Overview</h1><p>If  digital  temperature  sensor is not connected, module can grab measured temperature from external battery powered room sensor defined by this parameter.<br /><br />Available config. parameters (data type is 1 Byte DEC):<br /><br />Default value 0<br /><br />0 – external battery powered room sensor not in function<br /><br />1 -254 = Node  ID  of  external  battery  powered  room sensor<br /><br /><strong>NOTE</strong>:  </p> <p>Get sensor Node ID from controller and set parameter 122 immediately  after  sensor  weak  up  (after button press on it etc.)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Basic on/off Q1</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic on/off I2</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic on/off I3</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: High Temperature</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Low Temperature</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association">
+        <label>6: Default Reporting Group</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="qubino_zmnhid_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">On</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

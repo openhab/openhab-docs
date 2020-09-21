@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen23_03_000" listed="false">
+    <label>ZEN23 Toggle Switch v3</label>
+    <description><![CDATA[
+Toggle Switch v3<br /><h1>Overview</h1><p>FEATURES</p> <ul><li>Manual or remote on/off control from your mobile device or computer (when included to a Z-Wave gateway controller) </li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Works with LED, CFL, and incandescent bulbs (minimum 15Watts on load required) </li> <li>Based on simple and universal binary switch command class - supported by most Z-Wave controllers </li> <li>May be associated and grouped with other Z-Wave devices for advanced home automation </li> <li>Built-in Z-Wave signal repeater for a stronger and more reliable network </li> </ul><br /><h2>Inclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Toggle the switch up quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller within direct range of the switch</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Toggle the switch down quickly 3 times to complete the exclusion process</li> <li>The device should disappear from your controller's device list</li> </ol><p>Please repeat the process following all steps carefully if the first attempt is unsuccessful</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN23</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">1111:1E1C,B111:251C</property>
+      <property name="versionMin">3.0</property>
+      <property name="dbReference">1072</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Toggle Control</label>
+        <description><![CDATA[
+Determines whether up is on and down is off; or up is off, down is on<br /><h1>Overview</h1><p>Toggle Control</p> <p>Parameter 1: Choose if you want the to turn the light on by clicking the toggle up or down<br />Values:<br />0 – Toggle up turns the light on, toggle down turns the light off (default);<br />1 – Toggle up turns the light off, toggle down turns the light on</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">UP=On, DOWN=Off</option>
+          <option value="1">UP=Off, DOWN=On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Use this parameter to enable or disable the auto turn-off timer<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer</p> <p>Values:</p> <p>0 – timer disabled (default)<br />1 – timer enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto Turn-Off Timer Disabled</option>
+          <option value="1">Auto Turn-Off Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>4: Auto Turn-Off Timer Time</label>
+        <description><![CDATA[
+Time after which the switch automatically turns off<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). <br />60 – default.<br /><br /></p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Use this parameter to enable or disable the auto turn-on timer<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer</p> <p>Values:</p> <p>0 – timer disabled (default)<br />1 – timer enabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto Turn-On Timer Disabled</option>
+          <option value="1">Auto Turn-On Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>6: Auto Turn-On Timer Time</label>
+        <description><![CDATA[
+Set the time after which the switch automatically turns on<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values:</p> <p>1 – 65535 (minutes). Default set to 60</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: On Off Status After Power Failure</label>
+        <description><![CDATA[
+Set the on off status for the switch after power failure<br /><h1>Overview</h1><p>Parameter 8: Set the on off status for the switch after power failure.</p> <p>Values:</p> <p>0 – forced to OFF (regardless of state prior to power outage);<br />1 – forced to ON (regardless of state prior to power outage);<br />2 – remembers and restores on/off status after power failure (default)</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">forced to OFF</option>
+          <option value="1">forced to ON</option>
+          <option value="2">Restore Previous Status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Enable/Disable Scene Control</label>
+        <description><![CDATA[
+Enable or disable scene control functionality for quick 2-tap.<br /><h1>Overview</h1><p>Enable or disable scene control functionality for quick 2-tap.</p> <p>Values:</p> <p>0 – scene control disabled (default).<br />1 – scene control enabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable Scene Control</option>
+          <option value="1">Enable Scene Control</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>BASIC Command Set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

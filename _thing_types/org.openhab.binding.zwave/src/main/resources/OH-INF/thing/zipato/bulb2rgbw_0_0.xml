@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_bulb2rgbw_00_000" listed="false">
+    <label>RGBWE2 RGBW Bulb V2</label>
+    <description><![CDATA[
+RGBW Bulb V2<br /><h1>Overview</h1><p>Zipato Bulb 2 has 5 color channels available for you to adjust: RED, GREEN, BLUE, WARM WHITE and COLD WHITE. Zipato Bulb 2 can be used to add color to your home or just to lighten it up in any white color tone you desire. By using Zipatile or Zipabox (or other Z-Wave) home controller, you can control the bulb from anywhere in the world, by using any smartphone (iOS or Android). Also, you can automatically set colors of your Zipato Bulb 2 to indicate events using the Zipato rule creator.</p> <br /><h2>Inclusion Information</h2><ol><li>Screw the Zipato Bulb 2 into the socket.</li> <li>Turn on the bulb with your wall switch to apply power to the bulb.- If you’re not using a wall switch, then use your alternate method to apply power to the bulb.</li> <li>Activate inclusion mode on your Z-wave controller- This may also be done through your associated application,if your ecosystem has that capability.</li> <li>Toggle the wall-switch, from OFF, then to ON.- Or use your alternate method to toggle power to the bulb from OFF, then to ON.</li> <li>The bulb will flash once if it has been successfully included into your Z-Wave network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Screw the Zipato Bulb 2 into the socket.</li> <li>Turn on the bulb with your wall switch to apply power to the bulb.- If you’re not using a wall switch, then use your alternate method to apply power to the bulb.</li> <li>Activate exclusion mode on your Z-wave controller- This may also be done through your associated application,if your ecosystem has that capability.</li> <li>Toggle the wall-switch, from OFF, then to ON.- Or use your alternate method to toggle power to the bulb from OFF, then to ON.</li> <li>The bulb will flash once if it has been successfully excluded from your Z-Wave network.</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">RGBWE2</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">0002:0003</property>
+      <property name="dbReference">619</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>1: Internal bulb temperature</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="25">
+        <label>2: Strobe light interval</label>
+        <description><![CDATA[
+Strobe light interval<br /><h1>Overview</h1><p>Values range from 0 to 25 in intervals of 100 ms</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: Strobe light pulse count</label>
+        <description><![CDATA[
+Strobe light pulse count<br /><h1>Overview</h1><p>Values range from 0 to 120 and </p> <p>a special value 127 (0x7F) which sets infinite flashing</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="127">Infinite flashing</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Random strobe pulse colors</label>
+        <description><![CDATA[
+Random strobe pulse colors<br /><h1>Overview</h1><p>Values range are 0(turn off) or 1(turn on).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Random strobe pulse colors OFF</option>
+          <option value="1">Random strobe pulse colors ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4_wo" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>255: Reset bulb to factory settings</label>
+        <description>Reset bulb to factory settings</description>
+        <default>1</default>
+        <options>
+          <option value="255">Reset bulb to factory settings</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

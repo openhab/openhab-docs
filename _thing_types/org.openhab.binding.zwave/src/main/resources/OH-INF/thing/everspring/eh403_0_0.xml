@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="everspring_eh403_00_000" listed="false">
+    <label>EH403-3 Outdoor Flood Light Z-Wave Plus</label>
+    <description><![CDATA[
+Outdoor Flood Light Z-Wave Plus<br /><h1>Overview</h1><p>Small yet powerful, this slim design floodlight with PIR detector is a compact fully automatic security floodlight. Its aesthetic design makes it suitable for installation in front areas of the house typically occupied by spotlight and lanterns.<br /> When connected to the Z-Wave controller, the user is able to remotely turn on/off the floodlight and receive notification when the PIR detects motion.</p> <br /><h2>Inclusion Information</h2><p>The unit supports Auto Inclusion feature where it will automatically enter Inclusion mode when first powered up after a factory reset.</p> <ol><li>Prepare the Z-Wave controller.</li> <li>Plug the cable plug to the wall socket to power up the unit. WARNING: be careful not to touch any exposed wire/contacts to prevent electrical shock!</li> <li>The Link LED will start to blink slowly with 2-second on, 2-second off (for 2 minutes) which shows the unit does not be paired.</li> <li>Within 30 seconds, put the Z-Wave Controller into inclusion mode.</li> <li>The Inclusion process should be completed when the Link LED stops blinking. Note: If you are connecting this unit to a Z-Wave Controller that utilizes the S2 security protocol, you may be asked by your controller to enter a 5-digit Device Specific Key (DSK) that is unique to each unit. This can be found in one of two places: - on the QR code label on the back of the unit - on the insert card inside the packaging.</li> <li>Turn on the floodlight using the controller to check if the auto inclusion is working properly.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put the Z-Wave Controller into exclusion mode.</li> <li>Press the tamper switch 3 times within 1.5 seconds to put the unit into exclusion mode</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Everspring</property>
+      <property name="modelId">EH403-3</property>
+      <property name="manufacturerId">0060</property>
+      <property name="manufacturerRef">0012:0001</property>
+      <property name="dbReference">1161</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="8" max="720">
+        <label>1: PIR Trigger Off period</label>
+        <description>PIR Trigger Off period</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="30" max="200">
+        <label>2: Lux sensor threshold</label>
+        <description>Lux sensor threshold</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="1440">
+        <label>3: Lux auto report</label>
+        <description>Lux auto report</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>4: Reads back the lux level measured</label>
+        <description>Reads back the lux level measured</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

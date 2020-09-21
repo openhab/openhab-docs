@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zm1602_00_000" listed="false">
+    <label>ZM1602 AC/DC Siren</label>
+    <description><![CDATA[
+AC/DC Siren<br /><h1>Overview</h1><p>Thanks for choosing the Vision’s wireless siren &amp; strobe alarm of the home security device. This sensor is a Z-Wave™ enabled device (interoperable, two-way RF mesh networking technology) and is fully compatible with any Z-Wave™ enabled network and it’s security framework. Every mains powered Z-Wave™ enabled device acts as a signal repeater and multiple devices result in more possible transmission routes which helps eliminate “RF dead-sports”.</p> <p>Z-Wave™ enabled devices displaying the Z-Wave™ logo can also be used with it regardless of the manufacturer, and ours can also be used in other manufacturer’s Z-Wave™ enabled networks. This product will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave™ enabled network. When the ZM 1602 main power has dropped out, the backup batteries will automatically install. When the device is secure included into Z-Wave network, above communication will be encrypted</p> <br /><h2>Inclusion Information</h2><p>For “Inclusion” in (adding to) a network: Put the Z-Wave™ Interface Controller into “inclusion” mode, and following its instruction to add the ZM 1602 to your controller. To get in the “inclusion” mode, the distance between siren and controller is suggested to be in one meter. Open the bracket and press the program switch of ZM 1602 for 1 second at least &amp; release to be included. After setting, the LED Setting Lighting should go off, if not, please try again. (After sending one time’s Z-Wave NIF and not be included then it will send 4 times NWI in every 4 ~ 6 seconds for auto inclusion. The LED Setting Light will flash again if the siren has not been included or the LED Setting Light will go off after inclusion.)</p> <br /><h2>Exclusion Information</h2><p>For “Exclusion” from (removing from) a network: Set up the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the ZM 1602 from your controller. Press the Tamper Switch of ZM 1602 for 1 second at least &amp; release to be excluded. 9. Note: a. LED setting light will flash continuously in Exclusion condition. b. All user and network settings will be cleared and the device reset to factory defaults when the device is excluded. c. ZM 1602 can only connect to DC 12~39V, AC 9~28V Power adaptor d. ZM 1602 is extremely LOUD, please don’t near your ear when you test!</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZM1602</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2005:0503,2009:0903,2009:0908</property>
+      <property name="versionMax">14.0</property>
+      <property name="dbReference">109</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration">
+        <label>0: Siren Strobe Mode</label>
+        <description>Defines the reaction of the siren</description>
+        <default>0</default>
+        <options>
+          <option value="0">Strobe and Siren</option>
+          <option value="1">Siren</option>
+          <option value="2">Strobe</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Alarm auto stop</label>
+        <description>Defines the auto time out of the alarm indication</description>
+        <default>0</default>
+        <options>
+          <option value="0">30 seconds</option>
+          <option value="1">60 seconds</option>
+          <option value="2">120 seconds</option>
+          <option value="3">Continuous</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

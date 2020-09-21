@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nodon_msp31x1_00_000" listed="false">
+    <label>MSP-3-1-X1 Z-Wave Plus Micro Smart Plug ON/OFF</label>
+    <description><![CDATA[
+Z-Wave Plus Micro Smart Plug ON/OFF<br /><h1>Overview</h1><p>The NodOn Micro Smart Plug can be controlled by any kind of Z-Wave® (or Z-Wave Plus®) gateway or other Z-Wave® controller (standalone mode) such as the NodOn® Soft Remote or Octan Remote. <br />It existed in both standard, Type E (French) or Schuko (German). Its very small design and volume allow easy integration, without obstructing nearby power holes on a power strip. Furthermore, it can perform Power and Energy Metering. <br />The NodOn Smart Plug is based on brand new 500 series Z-Wave® module from Sigma Designs®, and support all the new features of Z-Wave Plus® standard: <br />Longer range (up to 40m), lower power consumption, higher data rate transmission, and many more new features.</p> <br /><h2>Inclusion Information</h2><p>To include/add to the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p> <br /><h2>Exclusion Information</h2><p>To exclude/remove from the Z-Wave network, long press during 2 seconds to send several NIF during 30 seconds or a triple press to send a single NIF </p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ID-RF</property>
+      <property name="modelId">MSP-3-1-X1</property>
+      <property name="manufacturerId">0165</property>
+      <property name="manufacturerRef">0001:0003</property>
+      <property name="dbReference">435</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Default State</label>
+        <description><![CDATA[
+Status after a power outage or after being plugged<br /><h1>Overview</h1><p>This parameter defines the status of the Micro Smart Plug after a power outage or after being plugged</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Status before power outage</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Follow State</label>
+        <description><![CDATA[
+Allows to enable or disable Group 2 &amp; Group 3<br /><h1>Overview</h1><p>This parameter allows to enable or disable Group 2 &amp; Group 3</p> <p>The value may be the sum of available values. For example, if you want to enable Group 2 &amp; 3, the parameter value is 1+2=3</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Group 2 &amp; Group 3 disable</option>
+          <option value="1">Group 2 enable</option>
+          <option value="2">Group 3 enable</option>
+          <option value="3">Group 2 &amp; Group 3 enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Always On</label>
+        <description><![CDATA[
+Forces the Micro Smart Plug status to be ON<br /><h1>Overview</h1><p>This parameter forces the Micro Smart Plug status to be ON. While enable it is not possible to switch OFF the plug (local or wireless).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Always ON disable</option>
+          <option value="1">Always ON enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>21: Power Auto-Sending Report</label>
+        <description><![CDATA[
+Power report for changes of x % W<br /><h1>Overview</h1><p>This parameter will send a power report automatically if  the power value  changes of x % W (Watt) compared to the last report.</p>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="0">Power Auto-Polling Report Disable</option>
+          <option value="10">Power Auto-Polling Report Enable if 10%</option>
+          <option value="20">Power Auto-Polling Report Enable if 20 %</option>
+          <option value="30">Power Auto-Polling Report Enable if 30 %</option>
+          <option value="40">Power Auto-Polling Report Enable if 40 %</option>
+          <option value="50">Power Auto-Polling Report Enable if 50 %</option>
+          <option value="60">Power Auto-Polling Report Enable if 60 %</option>
+          <option value="70">Power Auto-Polling Report Enable if 70 %</option>
+          <option value="80">Power Auto-Polling Report Enable if 80 %</option>
+          <option value="90">Power Auto-Polling Report Enable if 90 %</option>
+          <option value="100">Power Auto-Polling Report Enable if 100%</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="0" max="2000">
+        <label>22: Overload Report</label>
+        <description><![CDATA[
+Switch off Micro Smart Plug in case the power is above x W<br /><h1>Overview</h1><p>This parameter will switch off the Micro Smart Plug in case the power is above  x W (Watt) and send an alarm to the primary controller. This parameter has the highest execution priority between all the metering configurations for security reason.</p>
+        ]]></description>
+        <default>2000</default>
+        <options>
+          <option value="0">Overload Report Disable (Not Recommended)</option>
+          <option value="50">Overload Report enable with a upper limit of 50 W</option>
+          <option value="100">Overload Report enable with a upper limit of 100 W</option>
+          <option value="150">Overload Report enable with a upper limit of 150 W</option>
+          <option value="200">Overload Report enable with a upper limit of 200 W</option>
+          <option value="250">Overload Report enable with a upper limit of 250 W</option>
+          <option value="500">Overload Report enable with a upper limit of 500 W</option>
+          <option value="1000">Upper limit of 1000 W</option>
+          <option value="1500">Upper limit of 1500 W</option>
+          <option value="2000">Upper limit of 2000 W</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>23: Energy Auto-Sending Report</label>
+        <description><![CDATA[
+Auto energy report if value changes of x Wh<br /><h1>Overview</h1><p>This parameter will send a new energy report automatically if the energy value changes of x Wh (Watt-hour) compared to the last report.</p>
+        ]]></description>
+        <default>1000</default>
+        <options>
+          <option value="0">Energy Auto-Polling Report Disable</option>
+          <option value="1000">Enable if 1000 Wh variation</option>
+          <option value="2000">Enable if 2000 Wh variation</option>
+          <option value="3000">Enable if 3000 Wh variation</option>
+          <option value="4000">Enable if 4000 Wh variation</option>
+          <option value="5000">Enable if 5000 Wh variation</option>
+          <option value="10000">Enable if 10.000 Wh variation</option>
+          <option value="20000">Enable if 20.000 Wh variation</option>
+          <option value="30000">Enable if 30.000 Wh variation</option>
+          <option value="40000">Enable if 40.000 Wh variation</option>
+          <option value="50000">Enable if 50.000 Wh variation</option>
+          <option value="60000">Enable if 60.000 Wh variation</option>
+          <option value="65535">Enable if 65.535 Wh variation</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>24: Metering Heartbeat</label>
+        <description><![CDATA[
+Reporting intervall for power and energy to lifeline.<br /><h1>Overview</h1><p>Whatever other metering reports, this parameter will send one power and one energy report to the lifeline every x s (Seconds).</p>
+        ]]></description>
+        <default>3600</default>
+        <options>
+          <option value="0">Metering Pulse disable</option>
+          <option value="3600">Metering Pulse enable and send report every hour</option>
+          <option value="21600">Enable and send report every 6 hours</option>
+          <option value="43200">Enable and send report every 12 hours</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>25: Power High Threshold</label>
+        <description><![CDATA[
+Defines the High Threshold value in W.<br /><h1>Overview</h1><p>This parameter defines the High Threshold power value.</p>
+        ]]></description>
+        <default>20</default>
+        <options>
+          <option value="0">Power High Threshold disable</option>
+          <option value="10">Power High Threshold enable 10 W</option>
+          <option value="20">Power High Threshold enable 20 W</option>
+          <option value="30">Power High Threshold enable 30 W</option>
+          <option value="40">Power High Threshold enable 40 W</option>
+          <option value="50">Power High Threshold enable 50 W</option>
+          <option value="100">Power High Threshold enable 100 W</option>
+          <option value="200">Power High Threshold enable 200 W</option>
+          <option value="300">Power High Threshold enable 300 W</option>
+          <option value="400">Power High Threshold enable 400 W</option>
+          <option value="500">Power High Threshold enable 500 W</option>
+          <option value="1000">Power High Threshold enable 1000 W</option>
+          <option value="1500">Power High Threshold enable 1500 W</option>
+          <option value="2000">Power High Threshold enable 2000 W</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>26: Power Low Threshold</label>
+        <description><![CDATA[
+Defines the Low Threshold value in W.<br /><h1>Overview</h1><p>This parameter defines the Low Threshold power value.</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">Power Low Threshold disable</option>
+          <option value="5">Power Low Threshold enable 5 W</option>
+          <option value="10">Power Low Threshold enable 10 W</option>
+          <option value="20">Power Low Threshold enable 20 W</option>
+          <option value="30">Power Low Threshold enable 30 W</option>
+          <option value="40">Power Low Threshold enable 40 W</option>
+          <option value="50">Power Low Threshold enable 50 W</option>
+          <option value="100">Power Low Threshold enable 100 W</option>
+          <option value="200">Power Low Threshold enable 200 W</option>
+          <option value="300">Power Low Threshold enable 300 W</option>
+          <option value="400">Power Low Threshold enable 400 W</option>
+          <option value="500">Power Low Threshold enable 500 W</option>
+          <option value="1000">Power Low Threshold enable 1000 W</option>
+          <option value="1500">Power Low Threshold enable 1500 W</option>
+          <option value="2000">Power Low Threshold enable 2000 W</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Power Threshold Action</label>
+        <description><![CDATA[
+Defines actions if the power Low/High Threshold are reached.<br /><h1>Overview</h1><p>This parameter will define the Micro Smart Plug actions if the power Low and High Threshold are reached.</p> <p>The value may be the sum of available values. For example, if you want:</p> <ul><li>Power High Threshold Action is enable and sent ON to Group 4 (3)</li> <li>Power Low Threshold Action is enable and sent OFF to Group 5 (4)</li> </ul><p>the parameter value must be 3+4=7.</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">Power Threshold Action is disable.</option>
+          <option value="1">Power High Group 4 OFF</option>
+          <option value="3">Power High Group 4 ON</option>
+          <option value="4">Power Low Group 5 OFF</option>
+          <option value="5">Power High Group 4 OFF &amp; Power Low Group 5 OFF</option>
+          <option value="7">Power High Group 4 ON &amp; Power Low Group 5 OFF</option>
+          <option value="12">Power High Group 5 ON</option>
+          <option value="13">Power High Group 4 OFF &amp; Power Low Gourp 5 ON</option>
+          <option value="15">Power High Group 4 ON &amp; Power Low Group 5 ON</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifetime</label>
+        <description><![CDATA[
+Report Information to Main Controller.<br /><h1>Overview</h1><p>This group is generally used to report information of the Micro Smart Plug to the Main Controller of the network.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Follow State</label>
+        <description><![CDATA[
+Send status if local button is used to associated devices.<br /><h1>Overview</h1><p>When the Micro Smart Plug is switched ON (respectively OFF) using the local button, it will send ON (respectively OFF) command to the associated devices. No command is sent if the Micro Smart Plug is switched ON or OFF wirelessly.</p> <p>This group is configurable through the parameter 3.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Follow Comp State</label>
+        <description><![CDATA[
+Send status if local button is used to associated devices.<br /><h1>Overview</h1><p>When the Micro Smart Plug is switched ON (respectively OFF) using the local button, it will send OFF (respectively ON) command to the associated devices. No command is sent if the Micro Smart Plug is switched ON or OFF wirelessly.</p> <p>This group is configurable through the parameter 3.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Metering High Threshold</label>
+        <description><![CDATA[
+Send ON/OFF command to associated devices if threshold reached<br /><h1>Overview</h1><p>When the Micro Smart Plug reaches over the high threshold of power defined by the configuration parameter, it will send OFF or ON command to the associated devices.</p> <p>This group is configurable through the parameter 25 and 27.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Metering Low Threshold</label>
+        <description><![CDATA[
+Send ON/OFF command to associated devices if threshold reached<br /><h1>Overview</h1><p>When the Micro Smart Plug reaches below the low threshold of power defined by the configuration parameter, it will send OFF or ON command to the associated devices.</p> <p>This group is configurable through the parameters 26 and 27.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Metering - Report</label>
+        <description><![CDATA[
+Report metering to devices in this group.<br /><h1>Overview</h1><p>All the meter reports and notifications triggered by Metering parameters will be reported to the devices present in this group.</p> <p>This group is configurable through the parameters 21, 22, 23 and 24.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

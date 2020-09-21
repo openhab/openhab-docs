@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="essence_es800zwe_00_000" listed="false">
+    <label>ES800ZWE Z-Wave extender</label>
+    <description><![CDATA[
+Z-Wave extender<br /><h1>Overview</h1><p>The Z-Wave Plus Extender incorporates third party Z-Wave devices into WeR@Home™, integrating home automation and control functions with the core WeR@Home™ system.</p> <p>Features include:</p> <ul><li>Single-element, compact Z-Wave Plus controller</li> <li>Allows Z-Wave devices to be added as seamlessly integrated elements in WeR@Home™.</li> <li>Enables support for Smart Devices such as: <ul><li>Light switches (on/off and dimmer)</li> <li>Thermostats</li> <li>Door locks</li> <li>Power strips</li> <li>Multi-colored (RGBW) LED bulbs</li> </ul></li> <li>Powered by the WeR@Home™ hub</li> <li>Simple and fast pairing process</li> </ul><br /><h2>Inclusion Information</h2><p>If you have an existing third-party Z-Wave network, WeR@Home™ can join the network. WeR@Home™ enters "learn" mode on the existing network to automatically copy the existing network's Smart Home network structure. When you join a Z-Wave network, you have access to the Z-Wave devices supported by WeR@Home™. The Z-Wave Plus Extender is assigned one of the following roles depending on the third-party controller capabilities:</p> <ul><li><strong>Secondary (inclusion)</strong> - allowed to add or delete additional Z-Wave devices</li> <li><strong>Secondary</strong> –not allowed to add or delete additional Z-Wave devices</li> </ul><p>To join an existing third-party Z-Wave network:</p> <ol><li>Remove all Z-Wave devices from your WeR@Home™, except for your Z-Wave Plus Extender. Refer to 5.5 Removing a Z-Wave Device on page 14.</li> <li>In the WeR@Home™ app, tap "menu" The main menu appears.</li> <li>Tap "Devices". The Devicesscreen appears.</li> <li>Tap the gear icon for your Z-Wave Plus Extender. The Z-Wave Controller configuration screen appears.</li> <li>Put the primary controller of the existing network into Add mode, according to the controller’s user manual.</li> <li>Tap Join Existing Network. All Z-Wave devices are removed from WeR@Home™. WeR@Home™ copies the topology of the existing network and prompts you to enter the name for the existing network controller.</li> <li>Enter the name for the existing network controller and tap OK.</li> </ol><br /><h2>Exclusion Information</h2><p>If your Z-Wave Plus Extender role is Secondary or Secondary (inclusion), you can remove your Z-Wave Plus Extender from the existing third-party network.</p> <p><em><strong>Caution:</strong> Removing the Z-Wave Plus Extender from the existing network, removes connection to all Z-Wave devices from the Z-Wave Plus Extender.</em></p> <p>To remove your Z-Wave Plus Extender from the existing network:</p> <ol><li>In the WeR@Home™ app, tap . The main menu appears.</li> <li>Tap Devices. The Devicesscreen appears.</li> <li>Tap the gear icon for your Z-Wave Plus Extender. The Z-Wave Controller configuration screen appears.</li> <li>Tap Role. The Role screen appears.</li> <li>Put the primary controller of the existing network into Remove mode, according to the controller’s user manual.</li> <li>Tap Exclude Network. A confirmation window appears.</li> <li>Tap OK. The third-party controller and its devices are removed.</li> </ol>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Essence Security</property>
+      <property name="modelId">ES800ZWE</property>
+      <property name="manufacturerId">0160</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">936</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

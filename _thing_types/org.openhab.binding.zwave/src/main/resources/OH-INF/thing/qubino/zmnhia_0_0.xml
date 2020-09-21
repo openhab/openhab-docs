@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhia_00_000" listed="false">
+    <label>ZMNHIA Flush on/off thermostat</label>
+    <description><![CDATA[
+Flush on/off thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. The module can be controlled either through Z-wave network or through the wall switch</p> <br /><h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds</li> </ul><br /><h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds).</li> </ul>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="qubino_zmnhia_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary1" typeId="sensor_binary">
+        <label>Binary Sensor 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary2" typeId="sensor_binary">
+        <label>Binary Sensor 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHIA</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0005:0001</property>
+      <property name="dbReference">211</property>
+      <property name="defaultAssociations">5,6</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Input 1 switch type</label>
+        <description>Input 1 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Input 2 switch type</label>
+        <description>Input 2 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Input 3 switch type</label>
+        <description>Input 3 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Input 2 contact type</label>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Input 3 contact type</label>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Activate / deactivate functions ALL ON/ALL OFF</label>
+        <description><![CDATA[
+Module responds to commands ALL ON / ALL OFF<br /><h1>Overview</h1><p>Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALL ON is not active ALL OFF is not active</option>
+          <option value="1">ALL ON is not active ALL OFF active</option>
+          <option value="2">ALL ON active ALL OFF is not active</option>
+          <option value="255">ALL ON active, ALL OFF active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>11: Set point set by I2</label>
+        <description><![CDATA[
+Set point set by I2<br /><h1>Overview</h1><p>When I2 is pressed set point will be set according to the value of this parameter. Available config. parameters:</p> <p>default value 65535</p> <p>65535 – input I2 does not influence on the set point</p> <p>From 0 to 990 – set point from 0.0 °C to 99.0 °C</p> <p>From 1001 to 1150 – set point from -0.1 °C to -15.0 °C</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>12: Set point set by I3</label>
+        <description><![CDATA[
+Set point set by I3<br /><h1>Overview</h1><p>When I3 is pressed set point will be set according to the value of this parameter. Available config. parameters</p> <p>default value 65535</p> <p>65535 – input I3 does not influence on the set point</p> <p>From 0 to 990 – set point from 0.0 °C to 99.0 °C</p> <p>From 1001 to 1150 – set point from -0.1 °C to -15.0 °C</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Saving the state after a power failure</label>
+        <description>Saving the state after a power failure</description>
+        <default>0</default>
+        <options>
+          <option value="0">Module saves its state</option>
+          <option value="1">Module does not save state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>40: Power reporting in Watts on power change for Q1</label>
+        <description><![CDATA[
+Power reporting in Watts on power change<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 - 100=0% - 100%. Available configuration parameters</p> <p>default value 3</p> <p>0 – Reporting Disabled</p> <p>1–100 = 1%-100% Reporting enabled. Power report is sent (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <p>NOTE: If power changed is less than 1W, the report is not sent (pushed), independent of percentage set.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>42: Power reporting in Watts by time interval for Q1</label>
+        <description><![CDATA[
+Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value means time interval (0 – 65535) in seconds, when power report is send. Available config. parameters</p> <p>default value 300 (power report in Watts is send each 300s)</p> <p>0 – Reporting Disabled</p> <p>1 – 65535 = 1second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value.</p>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>43: Hysteresis On</label>
+        <description><![CDATA[
+Hysteresis On<br /><h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.</p> <p>Available configuration parameters</p> <p>default value 132 (-0.5 °C)</p>
+        ]]></description>
+        <default>132</default>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>44: Hysteresis Off</label>
+        <description><![CDATA[
+Hysteresis Off<br /><h1>Overview</h1><p>This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.</p> <p>Available configuration parameters</p> <p>default value 5 (+0.5 °C)</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>45: Antifreeze</label>
+        <description><![CDATA[
+Antifreeze function Temperature<br /><h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.</p> <p>Available configuration parameters</p> <p>default value 50 (5,0 °C)</p> <p>255 – Antifreeze functionality disabled</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_60_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>60: Too low temperature limit</label>
+        <description><![CDATA[
+Too low temperature limit<br /><h1>Overview</h1><p>Available configuration parameters</p> <p>Default value 50 (Too low temperature limit is 5.0°C)</p> <p>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>61: Too high temperature limit</label>
+        <description><![CDATA[
+Too high temperature limit<br /><h1>Overview</h1><p>Available configuration parameters:</p> <p>Default value 50 (Too low temperature limit is 5.0°C)</p> <p>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.</p>
+        ]]></description>
+        <default>700</default>
+      </parameter>
+
+      <parameter name="config_63_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>63: Switch selection</label>
+        <description><![CDATA[
+Connected device type can be (NO) or (NC)<br /><h1>Overview</h1><p>Set value means the type of the device that is connected to the relay output. The device type can be normally open (NO) or normally close (NC). Available configuration parameters</p> <p>default value 0</p> <p>0 - When system is turned off the output is 0 V.</p> <p>1 - When system is turned off the output is 230 V.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Basic on/off Q1</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic on/off I2</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic on/off I3</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: High Temperature</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Low Temperature</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association">
+        <label>6: Default Reporting Group</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="qubino_zmnhia_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="3">Auto</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="act_ztm230_00_000" listed="false">
+    <label>ZTM230 Dual paddle wall mounted transmitter</label>
+    <description><![CDATA[
+Dual paddle wall mounted transmitter<br /><h1>Overview</h1><p>The ZTM230 Wall Mounted Transmitter is a component of the HomePro lighting control system. Wire the Transmitter anywhere power is available according to the diagram above and program from the Wireless Controller to operate loads. Inclusion of the ZTM230 Wall Mounted Transmitter on the ZTH200 Wireless Controller menu allows remote ON/OFF control and dimming of lights controlled by associated modules, as it does not control any electrical load directly.</p> <p>This Wall Mounted Transmitter is designed to work with other Z-Wave enabled devices. Z-Wave nodes of other types can be Included in the network and will also act as repeaters to increase the range of the network.  </p> <br /><h2>Inclusion Information</h2><p>Including to the Network (Must be installed in its permanent location, not on test bench)</p> <ol><li>Setup the controller you are using to include the device into the network.</li> <li>Tap the top or bottom of the left switch once  <br /><br /></li> </ol><br /><h2>Exclusion Information</h2><ol><li>Setup the controller you are using to exclude a device from the network.</li> <li>Tap the top or the bottom of the left switch once.  </li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ACT - Advanced Control Technologies</property>
+      <property name="modelId">ZTM230</property>
+      <property name="manufacturerId">0001</property>
+      <property name="manufacturerRef">544D:3330</property>
+      <property name="dbReference">524</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Ignore Transmitting Start Level Bit</label>
+        <description><![CDATA[
+Set Ignore Start Level Bit When Transmitting Dim Commands<br /><h1>Overview</h1><p>The ZTM230 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command can be sent so that the dimmer ignores the start level and instead start dimming from its current level. By default, the ZTM230 sends the command so that the dimmer will start dimming from its current dim level rather then the start level embedded in the command. To change this, simply set the configuration parameter above to 0.  </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not ignore start level</option>
+          <option value="1">Ignore start level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Suspend Group 4</label>
+        <description><![CDATA[
+Disable transmitting commands to group 4 devices.<br /><h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “disassociating” those devices from the group.<br />Setting parameter 2 to the value of 1 will stop the ZTM230 from transmitting to devices that are “associated” into Group 4  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+LED behaviour of the ZTM230.<br /><h1>Overview</h1><p>The LED on the ZTM230, will by default, turn ON when the status of the devices in Group 1 is ON. To make the LED turn ON when the status of Group 1 is OFF set this parameter to a value of 1.  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Switch paddle behaviour<br /><h1>Overview</h1><p>To change the top of the transmitter to OFF and the bottom of the transmitter to ON, set parameter 4 to 1. To change back to original settings, set this parameter to the value of 0.  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Ignore Receiving Start Level Bit</label>
+        <description><![CDATA[
+Ignore Start Level When Receiving Dim Commands<br /><h1>Overview</h1><p>The ZTM230 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command can be sent so that the dimmer ignores the start level and instead start dimming from its current level. By default, the ZTM230 sends the command so that the dimmer will start dimming from its current dim level rather then the start level embedded in the command. To change this, simply set the configuration parameter above to 0</p> <p><strong>Note that this only affects a level that is reported or possibly sent by the ZTM230 since the ZTM230 does not control a load.</strong></p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: On/Off Command dim step</label>
+        <description><![CDATA[
+Dim step parameter<br /><h1>Overview</h1><p>Dim step (dim rate) parameter. It can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change when the timer (discussed below) expires.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: On/Off Command dim timer</label>
+        <description><![CDATA[
+Dim timer parameter<br /><h1>Overview</h1><p>Dim timer parameter (how fast the dim rate) parameter. It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then the dim level will change every 10mS. If you set it to 255, then the dim level will change every 2.55 seconds.  </p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Local Control dim rate</label>
+        <description><![CDATA[
+Dim step Parameter<br /><h1>Overview</h1><p>Local Control dim rate. </p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Dim timer Parameter</label>
+        <description><![CDATA[
+Dim timer Parameter<br /><h1>Overview</h1><p>Dim timer Parameter. </p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: ALL ON/ALL OFF dim step</label>
+        <description><![CDATA[
+ALL ON/ALL OFF dim step<br /><h1>Overview</h1><p>ALL ON/ALL OFF dim rate step parameter. </p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: ALL ON/ALL OFF dim rate</label>
+        <description><![CDATA[
+Dim timer Parameter<br /><h1>Overview</h1><p>ALL ON/ALL OFF dim rate timer Parameter.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Disable group 4 during dim command</label>
+        <description><![CDATA[
+Disable group 4 during dim command<br /><h1>Overview</h1><p>Note that this only affects a level that is reported or possibly sent by the ZTM230 since the ZTM230 does not control a load.<br /><br />After the ZTM230 is commanded to stop dimming when it has been dimming because of the DIM START command, it will then command the Z-Wave devices that are in Group 4 to its new level. To prevent the ZTM230 from commanding the Z-Wave devices in Group 4 during this particular occurrence, set Parameter 13 to the value of 1.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>14: Enable shade control group 2</label>
+        <description><![CDATA[
+Enable shade control group 2<br /><h1>Overview</h1><p>The ZTM230 can control shade control devices via its group 2 if this configuration parameter is set to 1. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Enable shade control group 3</label>
+        <description><![CDATA[
+Enable shade control group 3<br /><h1>Overview</h1><p>The ZTM230 can control shade control devices via its group 3 if this configuration parameter is set to 1. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>16: Enable shade control group 1</label>
+        <description><![CDATA[
+Enable shade control group 1<br /><h1>Overview</h1><p>The ZTM230 can control shade control devices via its group 1 if this configuration parameter is set to 1. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>19: Transmission LED</label>
+        <description><![CDATA[
+Transmission LED behaviour<br /><h1>Overview</h1><p>The ZTM230 will flicker its LED when it is transmitting to any of its 4 groups. This flickering can be set to not flicker at all (set to 0), to flicker the entire time it is transmitting (set to 1), or to flicker for only 1 second when it begins transmitting (set to 2). By default, the ZTM230 is set to flicker for only 1 second.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>20: Poll group 1 interval</label>
+        <description><![CDATA[
+Group 1 poll interval<br /><h1>Overview</h1><p>How often it will poll Group 1 is configured using this parameter 20. The default poll rate is 2. Note that the poll interval starts timing again upon successful transmission of the poll request. Also note that the polling interval is not “exact” and that you may see some slight drift occur. Also the poll interval is reset upon switch being pressed. In addition, on power up, the ZTM230 will randomly poll based upon it’s node ID within 2 minutes of power being applied.  </p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>21: Poll group 1</label>
+        <description><![CDATA[
+Poll group 1<br /><h1>Overview</h1><p>The ZTM230 will poll the first node in Group 1 in order to keep itself synchronized with the group if this configuration parameter is set to 1. How often it will poll is configured using parameter 20.  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>22: Poll Group 2</label>
+        <description><![CDATA[
+Poll Group 2 interval (minutes).<br /><h1>Overview</h1><p>The ZTM230 will poll the first node in Group 2 in order to keep itself synchronized with the group if this configuration parameter is set to 1. How often it will poll is configured using parameter 20.  </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Group 1 left paddle<br /><h1>Overview</h1><p>Nodes in this group are turned ON and OFF by tapping the top or bottom of the left switch.<br />Nodes associated into this group are dimmed by pressing and holding the bottom of the left switch until the desired dim level is reached.  </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Group 2 right paddle<br /><h1>Overview</h1><p>Nodes in this group are turned ON and OFF by tapping the right switch.<br />Nodes associated into this group are dimmed by pressing and holding the bottom of the right switch until the desired dim level is reached. The LED on the right switch will indicate the status of group 2. Group 2 will be polled at a specific interval and the status of group 2 will be indicated via the LED. The polling interval can be configured.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Group 3 double tap right paddle<br /><h1>Overview</h1><p>Nodes in this group are turned ON and OFF by tapping the right switch twice. Nodes associated into this group are dimmed by tapping the bottom of the switch once and then pressing and holding the bottom of the switch until the desired dim level is reached.<br /></p> <p>note that associating nodes into group 3 will cause a very slight delay before the command is transmitted to group 2.  </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Group 4<br /><h1>Overview</h1><p>Nodes in this group are turned ON or OFF or set to a specific dim level when the ZTM230 is controlled remotely. You can place up to 5 nodes in each group.<br />If controlling dimmers, for best results, associate the dimmers into the group first.  </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

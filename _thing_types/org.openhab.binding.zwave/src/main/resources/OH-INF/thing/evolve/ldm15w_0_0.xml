@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="evolve_ldm15w_00_000" listed="false">
+    <label>LDM-15W Lamp Module</label>
+    <description><![CDATA[
+Lamp Module<br /><h1>Overview</h1><p>Plug the Lamp Module into a wall outlet and plug a lamp into the controlled outlet of the Lamp Module. Inclusion of the LDM-15 Lamp Module allows remote ON/OFF control and dimming of lamps connected.</p> <br /><h2>Inclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p> <br /><h2>Exclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Evolve</property>
+      <property name="modelId">LDM-15W</property>
+      <property name="manufacturerId">0113</property>
+      <property name="manufacturerRef">4450:3030</property>
+      <property name="dbReference">472</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

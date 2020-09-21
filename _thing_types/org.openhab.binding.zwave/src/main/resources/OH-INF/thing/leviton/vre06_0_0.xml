@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vre06_00_000" listed="false">
+    <label>VRE06 Electronic Low Voltage Scene Capable Dimmer</label>
+    <description><![CDATA[
+Electronic Low Voltage Scene Capable Dimmer<br /><h1>Overview</h1><p>Leviton’s Vizia RF +TM components are designed to communicate with each other via Radio Frequency (RF) to provide remote control of your lighting. Using RF technology allows Leviton to provide the greatest signal integrity possible. Each module in Leviton’s Vizia RF +TM component line is a Z-Wave® enabled device. In a Z-Wave® network, each device is designed to act as a router. These routers will re-transmit the RF signal from one device to another until the intended device is reached. This ensures that the signal is received by its intended device by routing the signal around obstacles and radio dead spots. The Electronic Low Voltage Dimmer is compatible with any Z-Wave® enabled network, regardless of the manufacturer and can also be used with other devices displaying the Z-Wave® logo.</p> <ul><li>This is a Z-Wave® controller</li> <li>Controls dimming of load</li> <li>ON/OFF LED and Brightness LED</li> <li>Two way communication</li> <li>RF reliability</li> <li>Ease of installation - No new wiring</li> <li>Compatible with other Z-Wave® enabled devices</li> </ul><br /><h2>Inclusion Information</h2><p>)While the Programmer/Controller is in the Inclusion mode and the Locator LED is ON on the dimmer, push the push pad to turn ON the dimmer. The Programmer/Controller will verify inclusion and the locator LED will turn OFF on the dimmer.<br />If the dimmer is flashing Amber while in the Inclusion mode, the Programmer/Controller is still trying to communicate with the dimmer. Wait until the device stops flashing,then press push pad.</p> <p><strong>NOTE:</strong> If the locator LED on the dimmer turns solid Red while including, there has been a communication error. Refer to Troubleshooting section</p> <br /><h2>Exclusion Information</h2><p>While the Programmer/Controller is in the Exclusion mode and the locator LED is ON on the dimmer, press the push pad on the dimmer. The Programmer/Controller will verify Exclusion and the locator LED will turn OFF on the dimmer. If the dimmer is flashing Amber while in the Exclusion mode, the Programmer/Controller is still trying to communicate with the dimmer. Wait until the device stops flashing, then press the push pad.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRE06</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0E01:0209,0E01:0334</property>
+      <property name="dbReference">192</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

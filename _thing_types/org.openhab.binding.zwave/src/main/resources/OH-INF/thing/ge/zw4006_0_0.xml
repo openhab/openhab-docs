@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zw4006_00_000" listed="false">
+    <label>26931/ZW4006 In-Wall Smart Motion Switch</label>
+    <description><![CDATA[
+In-Wall Smart Motion Switch<br /><h1>Overview</h1><p>The switch enables wireless control of On/OFF functions of incandescent, LED, xenon, halogen and fluorescent lighting. Not only does it act as a switch but the GE In-Wall Smart Motion Switch has a built in PIR sensor which can control the local and be set in occupancy or vacancy mode.</p> <br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include the smart switch to the Z-Wave network.</li> <li>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network. </li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param6" typeId="ge_zw4006_00_000_config_decimal_param6">
+        <label>Motion Sensor Enable</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=6</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="ge_zw4006_00_000_config_decimal_param3">
+        <label>Operation Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion2" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2,COMMAND_CLASS_BASIC:2;type=BURGLAR</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">26931/ZW4006</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">494D:3032</property>
+      <property name="dbReference">658</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Timeout Duration</label>
+        <description>Amount of time the light stays on after motion stops</description>
+        <default>5</default>
+        <options>
+          <option value="0">Test (5s)</option>
+          <option value="1">One minute</option>
+          <option value="5">Five minutes</option>
+          <option value="15">Fifteen minutes</option>
+          <option value="30">Thirty minutes</option>
+          <option value="255">Disable timeout</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Dim level</label>
+        <description>Change brightness of associated light bulb(s)</description>
+        <default>255</default>
+        <options>
+          <option value="255">Default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Operation Mode</label>
+        <default>3</default>
+        <options>
+          <option value="1">Manual</option>
+          <option value="2">Vacancy</option>
+          <option value="3">Occupancy</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Association Mode</label>
+        <description>Enable/Disable Association Mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Invert Switch</label>
+        <description>In a 3-way configuration, invert the connected Add-On Switch buttons</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Motion Sensor</label>
+        <description>Enable/Disable Motion Sensor</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Motion Sensor Sensitivity</label>
+        <description>Amount of motion required to turn on the light</description>
+        <default>2</default>
+        <options>
+          <option value="1">High</option>
+          <option value="2">Medium</option>
+          <option value="3">Low</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Light Sensing</label>
+        <description>Enable/Disable whether motion sensor only turns light on if room is dark</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Reset Cycle</label>
+        <default>2</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">10 secs</option>
+          <option value="2">20 secs</option>
+          <option value="3">30 secs</option>
+          <option value="4">45 secs</option>
+          <option value="110">27 mins</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Exclusion Mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Alternate</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Local Load</label>
+        <description>Supports Basic Set and is controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set Buttons</label>
+        <description>Supports Basic Set and is controlled by pressing the On or Off buttons</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="ge_zw4006_00_000_config_decimal_param6">
+    <item-type>Number</item-type>
+    <label>Motion Sensor</label>
+    <description>Enable/Disable Motion Sensor</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Disabled</option>
+        <option value="1">Enabled</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="ge_zw4006_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Operation Mode</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">Manual</option>
+        <option value="2">Vacancy</option>
+        <option value="3">Occupancy</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

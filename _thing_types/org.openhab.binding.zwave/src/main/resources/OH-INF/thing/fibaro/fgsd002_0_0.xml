@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgsd002_00_000" listed="false">
+    <label>FGSD002 Smoke Detector</label>
+    <description><![CDATA[
+Smoke Detector<br /><h1>Overview</h1><p>The Fibaro Smoke Sensor is a universal, optical Z-Wave smoke detector. Fire alarm is signaled by sound, visual indicator blinking and by sending Z-Wave alarm and control commands</p> <br /><h2>Inclusion Information</h2><ol><li>Install the battery. Visual indicator will signal the Z-Wave network inclusion status (red - device ready for inclusion, green - device included, remove firstly - see p. II).</li> <li>Make sure the device is located within direct range of the Z-Wave controller.</li> <li>Set the main controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s casing.</li> <li>Fibaro Smoke Sensor will be detected and included in the Z-Wave network</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the sensor is connected to battery.</li> <li>Set the main controller into the learning mode (see main controller’s operating manual)</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s casing.</li> </ol><br /><h2>Wakeup Information</h2><p>Click the B-button once.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Temperature Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Smoke Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_battery" typeId="alarm_battery">
+        <label>Low Battery Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Hardware Failure Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Heat Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGSD002</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0C02:1002,0C02:1003</property>
+      <property name="versionMax">3.1</property>
+      <property name="dbReference">129</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Smoke Sensor sensitivity</label>
+        <description><![CDATA[
+There are 3 levels of sensitivity to smoke presence.<br /><h1>Overview</h1><p>Level 1 means the highest sensitivity. Rising the parameter value lowers the sensitivity to smoke presence.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">HIGH Sensitivity</option>
+          <option value="2">MEDIUM Sensitivity</option>
+          <option value="3">LOW Sensitivity</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Z-Wave notifications status</label>
+        <description><![CDATA[
+This parameter allows to activate excess temperature ...<br /><h1>Overview</h1><p>...  and/or enclosure opening notifications sent to the main controller</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">All notifications disabled</option>
+          <option value="1">Enclosure opening notification enabled</option>
+          <option value="2">Exceeding temp threshold notification enabled</option>
+          <option value="3">All notifications enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Z-Wave notifications status</label>
+        <description><![CDATA[
+This parameter allows to activate excess temperature ...<br /><h1>Overview</h1><p>...  and/or enclosure opening notifications sent to the main controller</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Visual indicator notifications status</label>
+        <description><![CDATA[
+This parameter allows to activate visual indications<br /><h1>Overview</h1><p> but does not apply to major alarms, such as FIRE, TROUBLE and LOW BATTERY ALARM.</p> <p>Available settings: 0 - 7 </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">All notifications disabled</option>
+          <option value="1">Enclosure opening notification enabled</option>
+          <option value="2">Exceeding temp threshold notification enabled</option>
+          <option value="3">Enclosure opening notification enabled +</option>
+          <option value="4">Lack of Z-Wave range notification</option>
+          <option value="5">Enclosure opening notification enabled and</option>
+          <option value="6">Exceeding temp threshold notification enabled +</option>
+          <option value="7">Enclosure opening notification enabled +</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Sound notifications status</label>
+        <description><![CDATA[
+This parameter allows to activate sound signals...<br /><h1>Overview</h1><p> but does not apply to major alarms, such as FIRE, TROUBLE and LOW BATTERY ALARM.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">All notifications disabled</option>
+          <option value="1">Enclosure opening notification enabled</option>
+          <option value="2">Exceeding temp threshold notification enabled</option>
+          <option value="3">Enclosure opening notification enabled +</option>
+          <option value="4">Lack of Z-Wave range notification</option>
+          <option value="5">Enclosure opening notification enabled +</option>
+          <option value="6">Exceeding temp threshold notification enabled +</option>
+          <option value="7">Enclosure opening notification enabled and</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Config of control frames in BASIC command class</label>
+        <description><![CDATA[
+This parameter defines which frames will be sent ...<br /><h1>Overview</h1><p>in the 2-nd Association Group (SMOKE ALARM). The values of BASIC ON and BASIC OFF frames may be defined as described in further parameters.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">BASIC ON and BASIC OFF enabled</option>
+          <option value="1">BASIC ON enabled</option>
+          <option value="2">BASIC OFF enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>11: BASIC ON frame value</label>
+        <description><![CDATA[
+BASIC ON frame is sent in case of smoke presence detection ...<br /><h1>Overview</h1><p>and FIRE ALARM triggering. Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: BASIC OFF frame value</label>
+        <description><![CDATA[
+BASIC OFF frame is sent in case of FIRE ALARM cancellation.<br /><h1>Overview</h1><p>Its value is defined by the parameter. Available settings: 0-99, 255. 0 - turn off the device. 1-99 - set the device to 1-99%. 255 - set the last status</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Alarm broadcast</label>
+        <description><![CDATA[
+A value other than 0 means that alarms are being ...<br /><h1>Overview</h1><p> ... sent in broadcast mode, i.e. to all devices within a Fibaro Smoke Sensor’s range</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">broadcast inactive</option>
+          <option value="1">FIRE ALARM broadcast 2nd/4th Association Group...</option>
+          <option value="2">FIRE ALARM broadcast 2nd/4th Association Group ...</option>
+          <option value="3">FIRE ALARM broadcast 2nd/4th Association Group...</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>20: Temperature report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>Report is sent when new temperature value is different from the one previously reported - according to the set hysteresis (parameter 21). Temperature reports can be also sent as a result of polling.<br /></p> <p>Available settings: 0, 1-8640 (multiply by 10 seconds) [10s-24h]<br /></p> <p>0 – reports inactive<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 1 (10 seconds)<br />Parameter size: 2 [bytes] </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>21: Temperature report hysteresis</label>
+        <description><![CDATA[
+The temperature report will only be sent if there is a difference ...<br /><h1>Overview</h1><p>in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can be also sent as a result of polling.<br /></p> <p>Available settings: 1 – 100 (in 0,1oC steps)<br />1-100 - (multiply by 0,1) [0,1oC - 10oC]<br /></p> <p>Default setting: 10 (1oC)<br />Parameter size: 1 [byte] </p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>30: Temperature threshold</label>
+        <description><![CDATA[
+Temperature threshold for activating alarms<br /><h1>Overview</h1><p>This is the temperature threshold, measured by the internal sensor above which the excess temperature notification is sent (visual indication/sound/Z-Wave report).</p> <p>Note that the alarm will not be deactivated again until the temperature drops by at least 2 degrees below this threshold.</p>
+        ]]></description>
+        <default>55</default>
+      </parameter>
+
+      <parameter name="config_31_2" type="integer" groupName="configuration"
+                 min="1" max="8640">
+        <label>31: Excess temperature signaling interval</label>
+        <description><![CDATA[
+Time interval of signaling (visual indication/sound) excess ...<br /><h1>Overview</h1><p> temperature level</p> <p><br />Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 1 (10 seconds)<br />Parameter size: 2 [bytes] </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_32_2" type="integer" groupName="configuration"
+                 min="1" max="8640">
+        <label>32: Lack of Z-Wave range indication interval</label>
+        <description><![CDATA[
+Time interval of signaling (visual indication/sound) lack of ...<br /><h1>Overview</h1><p>Z-Wave range.</p> <p><br />Available settings: 1-8640 (multiply by 10 seconds) [10s-24h]<br />1-8640 - [10s-24h]<br /></p> <p>Default setting: 180 (30min)<br />Parameter size: 2 [bytes] </p>
+        ]]></description>
+        <default>180</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Smoke Alarm</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sending the BASIC SET control command once smoke is detected. Its value may be modified in advanced parameters (see section XVI in manual). Group may control up to five on/off devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Tamper Alarm TYPE =BURGLAR, EVENT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sending the notification NOTIFICATION REPORT (TYPE =BURGLAR, EVENT = PRODUCT COVERING REMOVED) to associated devices once casing opening is detected. Up to five devices supporting casing opening command (NOTIFICATION REPORT) may be included in this group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Fire Alarm</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sending the notification SENSOR ALARM REPORT (TYPE= SMOKE ALARM) to associated devices once smoke is detected. Up to five devices supporting SMOKE ALARM command may be included in this group</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Tamper Alarm TYPE =GENERAL</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sending SENSOR ALARM REPORT notification (TYPE =GENERAL) to associated devices once casing opening is detected. Up to five devices supporting SENSOR ALARM REPORT command may be included in this group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

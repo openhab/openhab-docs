@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nexia_nx1000_00_000" listed="false">
+    <label>NX1000 Wall Controller</label>
+    <description><![CDATA[
+Wall Controller<br /><h1>Overview</h1><h3>Product Description</h3> <p>The Nexia One Touch is a wall controller device that can act as a central scene controller or a traditional stand-alone scene controller. The Nexia One Touch contains up to 15 different scenes organized in 3 pages of screen where each page contains 5 scenes. The Nexia One Touch conveniently runs up to 15 modes and automations with the tap of a button.</p> <h4>Safety Warning for Mains Powered Devices</h4> <p>ATTENTION: only authorized technicians under consideration of the country-specific installation guidelines/norms may do works with mains power. Prior to the assembly of the product, the voltage network has to be switched off and ensured against re-switching.</p> <br /><h2>Inclusion Information</h2><ol><li>Put primary controller into inclusion mode</li> <li>Press any button to wake the One Touch</li> <li>Press and hold the middle page button (round button) until the Installer Setup menu appears</li> <li>Select the 'Z-Wave' button</li> <li>Select the 'Include' button</li> <li>Include will fast flash and then SUCCESS will display briefly</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put primary controller into exclusion mode</li> <li>Press any button to wake the One Touch</li> <li>Press and hold the middle page button (round button) until the Installer Setup menu appears</li> <li>Select the 'Z-Wave' button5.Select the 'Exclude' button6.Exclude will fast flash and then SUCCESS will display briefly</li> </ol><br /><h2>Wakeup Information</h2><p>This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller <b>C</b> is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.</p> <p>This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device. To wakeup the device please perform the following action: When the backlight and/or screen is off, the first page (round)button press will wake the One Touch causing it to send a Wakeup Notification report.</p> <p>The One Touch has a 6 hour default wakeup interval and will send the Wakeup Notification once that interval expires.</p> <p>WAKEUP_INTERVAL_CAPABILITIES_REPORT</p> <ul><li>Min Wake Up Interval : 4200 seconds</li> <li>Max Wake Up Interval: 86400 seconds</li> <li>Default Wake Up Interval: 21600 seconds</li> <li>Wake Up Interval Step: 10</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Nexia Home Intelligence</property>
+      <property name="modelId">NX1000</property>
+      <property name="manufacturerId">0178</property>
+      <property name="manufacturerRef">5343:4735</property>
+      <property name="dbReference">1286</property>
+      <property name="defaultAssociations">1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Button 1</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Button 2</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Button 3</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Button 4</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Button 5</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Button 6</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Button 7</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Button 8</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Button 9</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Button 10</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Button 11</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Button 12</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Button 13</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Button 14</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Button 15</label>
+        <description>Config for the type of button and which commands it will send when pressed.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene</option>
+          <option value="1">Scene Control Momentary</option>
+          <option value="2">BASICSET Toggle</option>
+          <option value="3">Scene Control/BASICSET toggle</option>
+          <option value="4">Thermostat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Touch Calibration</label>
+        <description>Button touch calibration sensitivity level</description>
+        <default>10</default>
+        <options>
+          <option value="1">Least Sensitive</option>
+          <option value="10">Most Sensitive</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Screen Contrast</label>
+        <description>Screen contrast level</description>
+        <default>7</default>
+        <options>
+          <option value="1">Less contrast</option>
+          <option value="10">More contrast</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Button LED Level</label>
+        <description>Button LED Brightness Level</description>
+        <default>5</default>
+        <options>
+          <option value="1">10%</option>
+          <option value="10">100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Backlight Level</label>
+        <description>Backlight Brightness Level</description>
+        <default>5</default>
+        <options>
+          <option value="1">10%</option>
+          <option value="10">100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="10" max="15">
+        <label>25: Scene Button Press Backlight Timeout</label>
+        <description>Backlight timeout after a scene (rectangular) button press</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration"
+                 min="5" max="15">
+        <label>26: Page Button Press Backlight Timeout</label>
+        <description>Backlight timeout after a page (round) button press</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Screen Timeout</label>
+        <description>Screen timeout-num of mins after the last button press for screen goes blank</description>
+        <default>60</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Minutes</option>
+          <option value="240">Max Mins</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Screen Timeout Primary Page</label>
+        <description>Page to default to after a screen timeout</description>
+        <default>0</default>
+        <options>
+          <option value="0">no change</option>
+          <option value="1">page1</option>
+          <option value="2">page2</option>
+          <option value="3">page3</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="20">
+        <label>30: Battery Stat Shutdown Threshold</label>
+        <description>Battery status shutdown threshold</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="0" max="40">
+        <label>31: Battery Radio Cutoff Threshold</label>
+        <description>Battery % Radio Cutoff Threshold</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="5" max="50">
+        <label>32: Battery LOWBATT Indicator Threshold</label>
+        <description>Low Battery % Indicator Threshold</description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="30" max="80">
+        <label>33: Battery Threshold Value for Midlevel</label>
+        <description>Battery % threshold for midlevel indicator</description>
+        <default>50</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic1</label>
+        <description>Button 1 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic2</label>
+        <description>Button 2 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Basic3</label>
+        <description>Button 3 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Basic4</label>
+        <description>Button 4 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Basic5</label>
+        <description>Button 5 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Basic6</label>
+        <description>Button 6 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Basic7</label>
+        <description>Button 7 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Basic8</label>
+        <description>Button 8 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Basic9</label>
+        <description>Button 9 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Basic10</label>
+        <description>Button 10 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Basic11</label>
+        <description>Button 11 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Basic12</label>
+        <description>Button 12 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: Basic13</label>
+        <description>Button 13 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: Basic14</label>
+        <description>Button 14 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: Basic15</label>
+        <description>Button 15 Basic Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_17" type="text" groupName="association" multiple="true">
+        <label>17: Scene1</label>
+        <description>Button 1 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_18" type="text" groupName="association" multiple="true">
+        <label>18: Scene2</label>
+        <description>Button 2 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_19" type="text" groupName="association" multiple="true">
+        <label>19: Scene3</label>
+        <description>Button 3 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_20" type="text" groupName="association" multiple="true">
+        <label>20: Scene4</label>
+        <description>Button 4 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_21" type="text" groupName="association" multiple="true">
+        <label>21: Scene5</label>
+        <description>Button 5 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_22" type="text" groupName="association" multiple="true">
+        <label>22: Scene6</label>
+        <description>Button 6 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_23" type="text" groupName="association" multiple="true">
+        <label>23: Scene7</label>
+        <description>Button 7 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_24" type="text" groupName="association" multiple="true">
+        <label>24: Scene8</label>
+        <description>Button 8 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_25" type="text" groupName="association" multiple="true">
+        <label>25: Scene9</label>
+        <description>Button 9 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_26" type="text" groupName="association" multiple="true">
+        <label>26: Scene10</label>
+        <description>Button 10 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_27" type="text" groupName="association" multiple="true">
+        <label>27: Scene11</label>
+        <description>Button 11 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_28" type="text" groupName="association" multiple="true">
+        <label>28: Scene12</label>
+        <description>Button 12 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_29" type="text" groupName="association" multiple="true">
+        <label>29: Scene13</label>
+        <description>Button 13 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_30" type="text" groupName="association" multiple="true">
+        <label>30: Scene14</label>
+        <description>Button 14 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_31" type="text" groupName="association" multiple="true">
+        <label>31: Scene15</label>
+        <description>Button 15 Scene Activation Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_32" type="text" groupName="association" multiple="true">
+        <label>32: Thermostat1</label>
+        <description>Button 1 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_33" type="text" groupName="association" multiple="true">
+        <label>33: Thermostat2</label>
+        <description>Button 2 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_34" type="text" groupName="association" multiple="true">
+        <label>34: Thermostat3</label>
+        <description>Button 3 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_35" type="text" groupName="association" multiple="true">
+        <label>35: Thermostat4</label>
+        <description>Button 4 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_36" type="text" groupName="association" multiple="true">
+        <label>36: Thermostat5</label>
+        <description>Button 5 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_37" type="text" groupName="association" multiple="true">
+        <label>37: Thermostat6</label>
+        <description>Button 6 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_38" type="text" groupName="association" multiple="true">
+        <label>38: Thermostat7</label>
+        <description>Button 7 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_39" type="text" groupName="association" multiple="true">
+        <label>39: Thermostat8</label>
+        <description>Button 8 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_40" type="text" groupName="association" multiple="true">
+        <label>40: Thermostat9</label>
+        <description>Button 9 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_41" type="text" groupName="association" multiple="true">
+        <label>41: Thermostat10</label>
+        <description>Button 10 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_42" type="text" groupName="association" multiple="true">
+        <label>42: Thermostat11</label>
+        <description>Button 11 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_43" type="text" groupName="association" multiple="true">
+        <label>43: Thermostat12</label>
+        <description>Button 12 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_44" type="text" groupName="association" multiple="true">
+        <label>44: Thermostat13</label>
+        <description>Button 13 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_45" type="text" groupName="association" multiple="true">
+        <label>45: Thermostat14</label>
+        <description>Button 14 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_46" type="text" groupName="association" multiple="true">
+        <label>46: Thermostat15</label>
+        <description>Button 15 Thermostat Setpoint Set</description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

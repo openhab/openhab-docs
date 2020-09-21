@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zf5201eu_00_000" listed="false">
+    <label>ZF5201EU-5 Vision Flood Sensor</label>
+    <description><![CDATA[
+Vision Flood Sensor<br /><h1>Overview</h1><p>This sensor is a Z-Wave™ enabled device (interoperable, two-way RF mesh networking technology) and is fully compatible with any Z-Wave™ enabled network and it’s security framework. Every main powered Z-Wave enabled devices act as a signal repeater and multiple devices result in more possible transmission routes which helps eliminate “RF dead-sports”</p> <br /><h2>Inclusion Information</h2><p>For “Inclusion” in (adding to) a network: Put the Z-Wave™ Interface Controller into “inclusion” mode, and following its instruction to add the ZF5201 to the controller. To get in the “inclusion” mode, the distance between sensor and controller is suggested to be in one meter. Press the program switch of ZF5201 for 1 second at least. The LED on the ZF5201 should go solid, if not, please try again.</p> <br /><h2>Exclusion Information</h2><p>For “Exclusion” from (removing from) a network: Put the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the ZF5201 from your controller. Press the program switch of ZF5201 for 1 second at least to be excluded.</p> <br /><h2>Wakeup Information</h2><p>”Awake” mode: it is to leave the “Sleep” mode by removing the cover of ZF5201, to allow the Z-Wave™ Interface Controller to do “Inclusion”, “Exclusion”, “Association” and to reply and receive the commands from controller</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZF5201EU-5</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">201C:1C03</property>
+      <property name="dbReference">849</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhs511_00_000" listed="false">
+    <label>MH-S511 Touch Panel Switch (Single)</label>
+    <description><![CDATA[
+Touch Panel Switch (Single)<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class，multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network.</p> <p>This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /><h2>Inclusion Information</h2><p>INCLUDING the device into Z-Wave network:</p> <ol><li>Set controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</li> </ol><p>Note: If inclusion is successful, the INDICATION LED on the panel will flash 4 times. </p> <br /><h2>Exclusion Information</h2><p>EXCLUDING the device from Z-Wave network:</p> <ol><li>Set controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</li> </ol><p>Note: If the exclusion is successful, the INDICATION LED on the panel will flash 4 times. The exclusion will delete all association data</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-S511</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">5111:5103</property>
+      <property name="dbReference">1250</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsb29_00_000" listed="false">
+    <label>DSB29 Door/Window sensor Gen2</label>
+    <description><![CDATA[
+Door/Window sensor Gen2<br /><h1>Overview</h1><p>The Door &amp; Window Sensor finds out something very simple – whether a door or a window, or in fact any object in your home, is open or closed. But there’s power in simplicity. Power that allows you to inform the rest of your Z-Wave network about your selected doors and windows. Like a thermostat lets your heating and cooling systems know what they should do next, Aeotec’s Z-Wave Door &amp; Window Sensor does the same. Perhaps an open door means that your lights should turn on and welcome you home. Perhaps an open window means that an alarm should be triggered. Whatever it means to your home, with door and window sensors installed, your Z-Wave network will have both the power and the intelligence to do it.</p> <br /><h2>Inclusion Information</h2><ol><li>Let your Z-Wave primary controller/gateway enter into adding/inclusion mode. </li> <li>Take your Sensor near to your primary controller. </li> <li>Press the Action Button once on your Sensor. </li> <li>If your Door Window Sensor has been successfully added to your Z-Wave network, its Status LED will fast blink for 2 seconds and then be solid for 2 seconds when you press the Action Button again. If the adding was unsuccessful and the Status LED continues to fast blink for 8 seconds and then slow blink for 3 seconds, repeat the above steps.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put your primary controller into device removal mode. </li> <li>Unlock your Sensor from the Back Mount plate and take the Sensor unit near to your primary controller.  </li> <li>Press the Action Button on your Sensor. </li> <li>If your Door Window Sensor has been successfully removed from your Z-Wave network, its Status LED will fast blink for 8 seconds and then slow blink for 3 seconds when you press the Action Button again. If the removing was unsuccessful, the Status LED will fast blink for 2 seconds and then be solid for 2 seconds when you press the Action Button, repeat the above steps.</li> </ol><br /><h2>Wakeup Information</h2><ol><li>Remove your Sensor unit from its Back Mounting Plate, press  the Action Button on the back of the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway. </li> <li>If you want your Sensor to keep awake for a longer time, press and hold the Action Button on the back of the Sensor unit for 3 seconds, then your Sensor will wake up for 10 minutes and the Status LED will fast blink while it is awake.</li> </ol> 
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSB29</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0004,0002:001D</property>
+      <property name="dbReference">70</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send Sensor binary report on open/close events</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Enable wake up 10 minutes when power on</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Send Basic Set on open/close event</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_121_4_000000FF" type="integer" groupName="configuration">
+        <label>121: command class to use for open/close</label>
+        <description><![CDATA[
+parameter 4 (LSB)<br /><h1>Overview</h1><p>Set to 0 for no report</p> <p>Set to 1 for BATTERY report</p> <p>Set to 16 for SENSOR_BINARY report</p> <p>Set to 17 for SENSOR_BINARY and BATTERY</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">not set</option>
+          <option value="1">BATTERY report</option>
+          <option value="16">SENSOR BINARY report</option>
+          <option value="17">SENSOR BINARY and BATTERY report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_121_4_0000FF00" type="integer" groupName="configuration">
+        <label>121: command class to use for open/close</label>
+        <description><![CDATA[
+see overview (parameter 3)<br /><h1>Overview</h1><p>set to 0 for no report</p> <p>set to 1 for BASIC report (default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">not set</option>
+          <option value="1">BASIC report</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

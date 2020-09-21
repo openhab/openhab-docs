@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="act_zir010_00_000" listed="false">
+    <label>ZIR010 PIR Motion Sensor</label>
+    <description><![CDATA[
+PIR Motion Sensor<br /><h1>Overview</h1><p>The ZIR010 Wall Mounted Sensor is a component of the HomePro lighting control system. Inclusion of this Wall Mounted Sensor on the ZTH200 Wireless Controller menu allows remote turn-on of HomePro receivers and their connected lighting when the ZIR010 is triggered. Z-Wave nodes of other types can be added to the system and will also act as repeaters if they support this function of repeating the signal received to other modules in the system.</p> <br /><h2>Inclusion Information</h2><p>ZIR010 must be installed in its permanent location. To include or exclude the ZIR010 from the Z-Wave network, press the brown button marked “button” (inside) when prompted by a Z-Wave controller. For ZIR010 to work properly over longer distances (i.e. communicate via more nodes), add it to the network after you have added all other non-battery operated devices. Now replace the cover and screw. The ZIR010 will stay “awake” for ten minutes when power is first applied to allow time for configuration.</p> <br /><h2>Exclusion Information</h2><p>To exclude the ZIR010 from the Z-Wave network, press the brown button marked “button” (inside) when prompted by a Z-Wave controller. </p> <br /><h2>Wakeup Information</h2><p>The ZIR010 will send a Wakeup Notification Command approximately 3 minutes after power up IF and only IF it has been included into a Z-Wave network. From that point on, the ZIR010 will wake up every 4 hours and re-send the Wakeup Notification Command unless configured for another time interval. The ZIR010 will stay awake by default for 30 seconds and then go back to sleep to conserve battery life.</p> <p>The time interval between Wakeup Notification Commands can be adjusted if you have a device that supports this. Refer to that device’s instructions.</p> <p>The time the ZIR010 stays awake can be adjusted from 15 seconds to 45 seconds by sending a value of 15 to 45 to the ZIR010 using Configuration Parameter # 22 (when asked for the number of bytes, select 1). This awake time period starts over every time the ZIR010 receives a command or request.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ACT - Advanced Control Technologies</property>
+      <property name="modelId">ZIR010</property>
+      <property name="manufacturerId">0001</property>
+      <property name="manufacturerRef">4952:3030,4952:3130</property>
+      <property name="dbReference">189</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Mode</label>
+        <description><![CDATA[
+Notification modes: 0=light, 1=alarm, 2=sensor<br /><h1>Overview</h1><p>The ZIR010 can be configured to operate in 1 of 3 modes. Those modes are: </p> <p>• Lighting Mode (factory default)<br />• Alarm Mode<br />• Sensor Mode</p> <p>To change the mode of operation:<br />For Lighting Mode: Send a value of 0 to Configuration Parameter #17.<br />For Alarm Mode: Send a value of 1 to Configuration Parameter #17.<br />For Sensor Mode: Send a value of 2 to Configuration Parameter # 17.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Lightning</option>
+          <option value="1">Alarm</option>
+          <option value="2">Sensor</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Off/Idle delay</label>
+        <description><![CDATA[
+Configuring the off/idle delay<br /><h1>Overview</h1><p>OFF/IDLE (Applicable only when the ZIR010 is configured for Lighting or Binary Sensor Mode).</p> <p>The ZIR010 will consider there to be “No Activity” after 2 minutes passes during which the ZIR010 detected no motion. At that point, the ZIR010 can be configured to immediately send the OFF or IDLE command or it can be configured to send it from 1 minute to 255 minutes later. (+/- 1 minute).</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Unsolicited Commands</label>
+        <description><![CDATA[
+Disabling the zir010 trom sending commands unsolicited<br /><h1>Overview</h1><p>The ZIR010 can be disabled from sending commands unsolicited without removing associated devices by setting Configuration Parameter # 19 to 0 (when asked for number of bytes, select 1). Setting it back to 1 will re-enable the ZIR010. </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="15" max="45">
+        <label>22: Awake Time</label>
+        <description><![CDATA[
+Duration ranges from 15 to 45 seconds. Valid values range from 15 to 45.<br /><h1>Overview</h1><p>The ZIR010 will send a Wakeup Notification Command approximately 3 minutes after power up IF and only IF it has been included into a Z-Wave network. From that point on, the ZIR010 will wake up every 4 hours and re-send the Wakeup Notification Command unless configured for another time interval. The ZIR010 will stay awake by default for 30 seconds and then go back to sleep to conserve battery life. </p> <p>The time interval between Wakeup Notification Commands can be adjusted if you have a device that supports this. Refer to that device’s instructions. </p> <p>The time the ZIR010 stays awake can be adjusted from 15 seconds to 45 seconds by sending a value of 15 to 45 to the ZIR010 using Configuration Parameter # 22 (when asked for the number of bytes, select 1). This awake time period starts over every time the ZIR010 receives a command or request. </p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Motion</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>If the ZIR010 is configured to operate in Lighting Mode, any device that is associated into Group 1 will be sent ON and OFF commands. See OFF/IDLE command section below for how to configure the length of a delay before an OFF command is sent*.</p> <p>If the ZIR010 is configured to operate in Alarm Mode, any device that is associated into Group 1 will be sent an ALARM command when the ZIR010 detects motion.</p> <p>If the ZIR010 is configured to operate in Binary Sensor Mode, any device that is associated into Group 1 will be sent an update whenever the ZIR010 detects motion or stops detecting motion.</p> <p>* See OFF/IDLE command section below to configure the length of a delay before an OFF command is sent.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Tamper</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>If the ZIR010 is configured to operate in Lighting Mode, any device that is associated into Group 2 will be sent ON commands when the housing of the ZIR010 is opened.</p> <p>If the ZIR010 is configured to operating in Alarm Mode, any device that is associated into Group 2 will be sent an Alarm command when the housing of the ZIR010 is opened.</p> <p>If the ZIR010 is configured to operate in Binary Sensor Mode, any device that is associated into Group 2 will be sent an update when the housing of the ZIR010 is opened.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Battery</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Any device that is associated into Group 3 will be sent battery level indications at specific intervals. There can be up to 5 devices associated into each group. <br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

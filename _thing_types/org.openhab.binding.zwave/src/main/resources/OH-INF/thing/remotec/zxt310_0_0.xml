@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_zxt310_00_000" listed="false">
+    <label>ZXT-310 AV IR Extender</label>
+    <description><![CDATA[
+AV IR Extender<br /><h1>Overview</h1><p>ZXT‐310 is a Z‐Wave‐to‐AV IR Extender (Figure 1) and it works with any Z‐Wave compliant controller or gateway by translating Z‐Wave Simple AV command </p> <br /><h2>Inclusion Information</h2><p>Press the PROG button</p> <br /><h2>Exclusion Information</h2><p>Press the PROG button</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZXT-310</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">0102:8371</property>
+      <property name="dbReference">876</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>1: UIRD</label>
+        <description><![CDATA[
+parameter 1 - 20 (0x01 - 0x14)<br /><h1>Overview</h1><p>UIRD formatted raw data for the Simple AV command number or key being downloaded or uploaded </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>21: The Simple AV command</label>
+        <description><![CDATA[
+The Simple AV command number or key going to be downloaded to the ZXT‐310<br /><h1>Overview</h1><p>Referred to Simple AV command class key ID</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4">
+        <label>22: Download status register</label>
+        <description><![CDATA[
+Download status register<br /><h1>Overview</h1><p><strong>The status value 1, 3, 4 will be reset to 0 when ZXT‐310 receive a get command to this parameter </strong></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

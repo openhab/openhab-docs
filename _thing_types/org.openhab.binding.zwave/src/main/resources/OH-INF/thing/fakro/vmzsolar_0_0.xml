@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_vmzsolar_00_000" listed="false">
+    <label>VMZ Solar Awning Blind</label>
+    <description><![CDATA[
+Awning Blind<br /><h1>Overview</h1><p>The VMZ Solar awning blind is intended for installation on facade windows. The device is equippedin the wireless module of the ZWave control system</p> <br /><h2>Inclusion Information</h2><p>Within 10s press the programming button P on the awning blind until the network status LED flashes once 0.5s</p> <br /><h2>Exclusion Information</h2><p>Within 10s press P on the awning and hold until the network status LED will light up for 5s</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">VMZ Solar</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0006:0002</property>
+      <property name="dbReference">670</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: mode</label>
+        <description><![CDATA[
+operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p>0 - manual</p> <p>1 - semiauto</p> <p>2 - auto</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">manual</option>
+          <option value="1">semiauto</option>
+          <option value="2">auto</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: winter mode</label>
+        <description><![CDATA[
+Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Auto (summer / winter mode)</p> <p>0 - summer mode only</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">summer mode only</option>
+          <option value="50">Auto (summer / winter mode)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="30">
+        <label>3: Measurement frequency</label>
+        <description>Measurement frequency</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>4: Level of sensitivity for day</label>
+        <description>Level of sensitivity for day</description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>5: Temperature</label>
+        <description>Temperature</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>6: Level of sensitivity for night</label>
+        <description>Level of sensitivity for night</description>
+        <default>3</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

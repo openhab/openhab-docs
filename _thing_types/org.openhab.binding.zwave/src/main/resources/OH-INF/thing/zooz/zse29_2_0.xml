@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse29_02_000" listed="false">
+    <label>ZSE29 Outdoor Motion Sensor v2</label>
+    <description><![CDATA[
+Outdoor Motion Sensor v2<br /><h1>Overview</h1><p>OUTDOOR SENSOR: Introducing the first Z-Wave motion detector created for outdoor use. Monitor activity remotely through your Z-Wave hub and automate outdoor lighting based on motion. Battery or 5V USB powered.</p> <br /><h2>Inclusion Information</h2><p>Click the tamper switch 3 times quickly</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the sensor within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode.</li> <li>Press and release the tamper switch 3 times quickly.</li> <li>Your hub will confirm exclusion and the sensor will disappear from your controller's device list.</li> </ol><br /><h2>Wakeup Information</h2><p>To manually wake up the device, press and release the tamper switch 3 times quickly. (The manual says one press but appears to be incorrect.)</p> <p>The sensor’s wake-up interval is set to 4 hours by default to save battery life. Use the Wake Up Command Class to adjust the interval (in seconds, working in 600s intervals, with 600 as min and 86400 as max values). During wake-up, the sensor turns the Z-Wave radio on for 10 seconds to receive communication from the hub. Long wake-up interval will not affect how often the sensor reports motion to your hub.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (motion)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR,event=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR,event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE29</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0001:0005</property>
+      <property name="versionMin">2.0</property>
+      <property name="dbReference">1195</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Basic Set Report Value Sent to Associated Devices</label>
+        <description><![CDATA[
+Basic Set Report Value Sent to Associated Devices<br /><h1>Overview</h1><p>Set the value of basic set report sent to the light associated with the sensor in Group 2 (so the light turns on to the selected brightness level). 99 is the equivalent of full brightness in Z-Wave terms.</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Enable / Disable Motion Reports</label>
+        <description><![CDATA[
+Enable / Disable Motion Reports<br /><h1>Overview</h1><p>Enable or disable motion reports completely. If motion sensor is disabled, the device will not report motion at all to your hub.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Motion reports disabled</option>
+          <option value="1">Motion reports enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>3: Motion sensitivity</label>
+        <description><![CDATA[
+Motion sensitivity<br /><h1>Overview</h1><p>Adjust motion sensitivity where 10 is the most sensitive setting. The default sensitivity is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="10" max="900">
+        <label>4: Lux level trigger</label>
+        <description><![CDATA[
+Lux level trigger<br /><h1>Overview</h1><p>Set lux level trigger with 10 being the lowest reported value and 900 being the highest reported value. The sensor will report motion to the hub and associated devices only if the brightness (lux) level is below the set trigger value.</p> <p>0 - set manually by lux knob (default)</p> <p>1 - ignore lux readings and always report motion</p> <p>10-900 - set custom trigger</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Set manually by lux knob</option>
+          <option value="1">Ignore lux readings and always report motion</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="720">
+        <label>5: Motion re-trigger time</label>
+        <description><![CDATA[
+Motion re-trigger time<br /><h1>Overview</h1><p>Set motion re-trigger time for the delay before the sensor reports no motion to the hub and associated devices after detecting the last motion activity.</p> <p>0 - set manually by timer knob (default)</p> <p>5-720 (seconds) - set custom re-trigger time</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Set manually by timer knob</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="1" max="1440">
+        <label>6: Lux reporting frequency</label>
+        <description><![CDATA[
+Lux reporting frequency<br /><h1>Overview</h1><p>Set lux reporting frequency to decide how often in minutes the sensor will measure and send brightness level data to the hub and associated devices. The default is 30 minutes and the range is 1-1440. Note: Frequent reports will affect battery life.</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration" readOnly="true"
+                 min="5" max="720">
+        <label>7: Reading from physical motion clear knob</label>
+        <description><![CDATA[
+Reading from physical motion clear knob<br /><h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the timer (motion clear) knob set physically at the sensor.</p> <p><strong>Values: </strong>5 (at T position / test mode); 30; 60; 300; 600; 720 (seconds).</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration" readOnly="true"
+                 min="10" max="900">
+        <label>8: Reading from physical low lux trigger knob</label>
+        <description><![CDATA[
+Reading from physical low lux trigger knob<br /><h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the lux trigger knob set physically at the sensor.</p> <p><strong>Values: </strong>10; 50; 100; 200; 300; 900 lux (at T position / test mode).</p>
+        ]]></description>
+        <default>900</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Notification Reports to Controller</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Basic Set commands PIR Control<br /><h1>Overview</h1><p>The Outdoor Motion Sensor supports Group 1 with 1 Controller node for lifeline communication and Group 2 with up to 4 devices for PIR Control. This device will send a Notification Report to Group 1 and BASIC_SET command to Group 2 whenever it detects motion.</p>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

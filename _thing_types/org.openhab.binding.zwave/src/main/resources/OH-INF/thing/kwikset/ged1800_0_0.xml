@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kwikset_ged1800_00_000" listed="false">
+    <label>GED1800 SmartCode 10 Touchpad Electronic Deadbolt</label>
+    <description><![CDATA[
+SmartCode 10 Touchpad Electronic Deadbolt<br /><h1>Overview</h1><ul><li>Dramatically reduced interior size and sleek metal design.</li> <li>Featuring SmartKey<sup>®</sup> re-key technology; re-key the lock yourself in seconds in 3 easy steps.</li> <li>Deadbolt operated by electronic keypad or key; backlit for increased visibility at night.</li> <li>Keypad stays lit for 30 seconds after inactivity.</li> <li>Customized automatic door locking after 30 seconds for peace of mind.</li> <li>One touch motorized locking. Lock your door with a single touch. No additional turning/twisting needed.</li> <li>Features 30 user access codes and 1 master code option.</li> <li>ANSI/BHMA grade 2 certified/20 minute fire rating - UL certified.</li> <li>Fits most standard residential door preparations - installs in minutes with just a screw driver.</li> <li>Lifetime mechanical and finish warranty, One year electronics warranty.</li> <li>4 AA, purchased separately.</li> <li>Full 128-bit encryption security.</li> </ul><br /><h2>Inclusion Information</h2><p>Press button “A” on the lock one time to include it in your system.</p> <br /><h2>Exclusion Information</h2><p>Press button “A” on the lock one time to exclude it in your system.</p> <br /><h2>Wakeup Information</h2><p>Even though the lock is sleeping, all buttons are active and can be used to initiate any lock activity.  For the RF side, it will wake up every 1 second to check if there are any requests from your smart home controller.</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm Raw</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Black &amp; Decker</property>
+      <property name="modelId">GED1800</property>
+      <property name="manufacturerId">0090</property>
+      <property name="manufacturerRef">0006:0440</property>
+      <property name="dbReference">1131</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true">
+        <label>31: Buzzer</label>
+        <description><![CDATA[
+Internal Buzzer<br /><h1>Overview</h1><p>Internal buzzer enabled.  Factory default is ON.  It is recommended that the buzzer is left ON during programming.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_01000000" type="integer" groupName="configuration" readOnly="true">
+        <label>31: Auto Lock</label>
+        <description><![CDATA[
+Automatically re-locks door 30 seconds after unlocking.<br /><h1>Overview</h1><p>Lock automatically re-locks door 30 seconds after unlocking. OFF position is factory default. If this switch is turned on, it will be disabled if all codes are deleted from the lock.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_10000000" type="integer" groupName="configuration" readOnly="true">
+        <label>31: Status LED</label>
+        <description><![CDATA[
+Door lock status LED blinks every 6 seconds<br /><h1>Overview</h1><p>Door lock status LED blinks every 6 seconds.  Factory default is ON.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>33: SKU (1st half)</label>
+        <description><![CDATA[
+First 4 byes of SKU<br /><h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>34: SKU (2nd half)</label>
+        <description><![CDATA[
+Last 4 bytes of SKU<br /><h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1_wo" type="integer" groupName="configuration">
+        <label>40: Factory Default</label>
+        <description><![CDATA[
+Reset to factory default settings<br /><h1>Overview</h1><p>The configuration parameter 40 is a one byte field, used to set the lock to its default setting, known as a factory reset command.</p> <p>Reading this parameter will always return a value of 0.</p> <p>Writing a value of 1 to this parameter will cause both the lock and Z-Wave card to reset back to their default settings and will remove itself from the network. All network information, including associations will be cleared.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Don't Reset</option>
+          <option value="1">Reset to Factory Defaults</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Per Z-Wave Plus requirements, group 1 is assigned to the Lifeline group and can only support 1 node.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Doorlock Notify Report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Association group 2 is identified as the “Doorlock notify report” group.  It allows at most 5 other nodes to be associated with the lock and will provide all Notification Reports, via the Command Class Notification, generated by the lock.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

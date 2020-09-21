@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw129_00_000" listed="false">
+    <label>ZW129 Dual Wallmote</label>
+    <description><![CDATA[
+Dual Wallmote<br /><h1>Overview</h1><p>Aeotec WallMote is an intelligent Z-Wave remote controller that mounted on a wall.</p> <p>It has 2 touch buttons that you can easily control the Z-Wave devices in your home network via touching, long pressing or sliding the button areas. Its surface has a RGB LED to indicate the button actions also accompanied by touch beep and vibration.</p> <p>The WallMote is also a security Z-Wave device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /><h2>Inclusion Information</h2><p><strong>Including WallMote as a non-secure device:</strong></p> <p>If you want your WallMote as a non-security device in your Z-wave network, you just need to press the Action Button once on WallMote when you use a controller/gateway to add/include it. The green LED will be on for 2 seconds and then the orange LED will fast blink for 10 minutes (if the WallMote does not receive the Wake Up No More Info command from primary Controller) to indicate the inclusion is successful</p> <p><strong>Including WallMote as a secure device:</strong></p> <p>In order to take full advantage of all functionality the WallMote, you may want your WallMote is a security device that uses secure/encrypted message to communicate in Z-wave network, so a security enabled controller/gateway is needed for the WallMote to be used as a security device. You need to press the WallMote's Action Button 2 times within 1 second when your security controller/gateway starts the network inclusion. The blue LED will be on for 2 seconds and then the orange LED will fast blink for 10 minutes (if the WallMote does not receive the Wake Up No More Info command from primary Controller) to indicate the inclusion is successful.</p> <br /><h2>Exclusion Information</h2><p>Your WallMote can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller/ gateway. To do this, please refer to the part of their respective manuals that tell you how to remove devices from your network.</p> <ol><li>Put your primary controller into device removal mode.</li> <li>Unlock your WallMote from the Back Mount plate and take the WallMote unit near to your primary controller.</li> <li>Press the Action Button on your WallMote.</li> </ol><p>If your WallMote is successfully removed from the Z-Wave network, the LED will become a colourful gradient for a few seconds and then turn off. If the removing was unsuccessful, the red LED will be solid for 2 seconds and then turn off, repeat the above steps.</p> <br /><h2>Wakeup Information</h2><p>In order to send your WallMote new configuration commands from your Z-Wave controller or gateway, it will need to be woken up.</p> <p>Remove your WallMote unit from its Back Mounting Plate, press and hold the Action Button for 3 seconds(the buzzer chirp once and the orange LED will be ON) on the back of the WallMote unit and then release it. This will trigger and send a wake up notification command to your controller/gateway, then your WallMote will wake up for 10 minutes and the orange LED will fast blink while it is awake (if the WallMote does not receive the Wake Up No More Info from the primary Controller).</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="switch_startstop1" typeId="switch_startstop">
+        <label>Swipe Switch 1 [Deprecated]</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1 [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_startstop2" typeId="switch_startstop">
+        <label>Swipe Switch 2 [Deprecated]</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="scene_number2" typeId="scene_number">
+        <label>Scene Number 2 [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW129</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0081,0102:0081,0202:0081</property>
+      <property name="dbReference">390</property>
+      <property name="commandClass:COMMAND_CLASS_CENTRAL_SCENE">scene_number</property>
+      <property name="commandClass:COMMAND_CLASS_CENTRAL_SCENE:1">scene_number</property>
+      <property name="commandClass:COMMAND_CLASS_CENTRAL_SCENE:2">scene_number</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Touch sound</label>
+        <description>Enable/disable the touch sound.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Touch vibration</label>
+        <description>Enable/disable the touch vibration.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Button slide</label>
+        <description>Enable/disable the function of button slide.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Notification report</label>
+        <description><![CDATA[
+Which notification to be sent to the associated devices.<br /><h1>Overview</h1><p>To set which notification would be sent to the associated devices (Group 1) when pressing the buttons. When the parameter is set to 3, slide functionality on the buttons is activated.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Central scene</option>
+          <option value="3">Central scene and config</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>5: Color</label>
+        <description><![CDATA[
+Configure which color will be displayed when a button is pressed<br /><h1>Overview</h1><p>Each color component occupies a single byte. To calculate the color value do:</p> <p>color = ((((Red * 256) + Green) * 256) + Blue) * 256</p> <p>Value 1 = Red</p> <p>Value 2 = Green</p> <p>Value 3 = Blue</p> <p>Value 4 = Reserved</p>
+        ]]></description>
+        <default>65280</default>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>39: Low battery value</label>
+        <description>Set the low battery value</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_255_4_wo" type="integer" groupName="configuration">
+        <label>255: Reset the WallMote Quad</label>
+        <description>Reset the WallMote Quad to factory default.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Reset to factory default</option>
+          <option value="1431655765">Reset and remove</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>When touching the Button 1 to 4, the Central Scene Notificcation command will be sent to the associated node (1) in Association group 1.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Button 1 basic</label>
+        <description><![CDATA[
+On/off control via button 1<br /><h1>Overview</h1><p>When touching the Button 1, the Basic Set command will be sent to the associated nodes in Association group 2.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Button 1 multilevel</label>
+        <description><![CDATA[
+Dim control via button 1<br /><h1>Overview</h1><p>When touching the Button 1, the Multilevel Switch Set command will be sent to the associated nodes in Association group 3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Button 2 basic</label>
+        <description><![CDATA[
+On/off control via button 2<br /><h1>Overview</h1><p>When touching the Button 2, the Basic Set command will be sent to the associated nodes in Association group 4.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Button 2 multilevel</label>
+        <description><![CDATA[
+Dim control via button 2<br /><h1>Overview</h1><p>When touching the Button 2, the Multilevel Switch Set command will be sent to the associated nodes in Association group 5.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pst02a_00_000" listed="false">
+    <label>PST02A Slim Multi-Sensor (PIR/Door/Temperature/Illumination)</label>
+    <description><![CDATA[
+Slim Multi-Sensor (PIR/Door/Temperature/Illumination)<br /><h1>Overview</h1><p>The slim multisensor PST02 has PIR, door/window, temperature and illumination, 4 sensors function in one, based on Z-WaveTM technology.</p> <p>It is the Z-WaveTM plus product, it support the security, OTA... Those newest features of the Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances.</p> <p>This product can be included and operated in any Z-WaveTM network with other Z-WaveTM certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>The device adopt the Z-WaveTM 500 series chip, when your Z-WaveTM network system is all made by Z-WaveTM 500 series devices. The network system will have the advantages as below.</p> <ul><li>Concurrent multi-channel support reduces external interference.</li> <li>Better RF range, improve about 10 meters in indoor.</li> <li>Support 100 Kbps transmit speed, speed up communication.</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Have Z-Wawe Controller entered I<strong>nclusion</strong> mode.</li> <li>Press <strong>Tamper</strong> key <strong>3</strong> times in 1.5 seconds to enter the inclusion mode.</li> <li>After add success, the device will wake ti receive the setting command from Z-Wawe controller about 20 seconds</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Wawe Controller entered <strong>Exclusion</strong> mode.</li> <li>Press <strong>Tamper</strong> key <strong>3</strong> times in 1.5 seconds to enter the exclusion mode.</li> <li>Node ID has been excluded</li> </ol><br /><h2>Wakeup Information</h2><p>After the device adding to the network, it will wake-up once per day in default. When it wake-up it will broadcast the “Wake Up Notification” message to the network, and wake-up 10 seconds for receive the setting commands.</p> <p>The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. And the interval step is 30 minutes. If the user want to wake-up the device immediately, please remove the front cover, and press the tamper key once. The device will wake-up 10 seconds.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door/Window Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY;type=DOORWINDOW</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=MOTION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=TAMPER</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (Access Control)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (Burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PST02A</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:000C</property>
+      <property name="dbReference">168</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Setting the BASIC command value to turn on the light.<br /><h1>Overview</h1><ul><li>0 = Turn off the light.</li> <li>1 - 100 = For dimmers 1 to 100 means the light strength.</li> <li>255 = turns on the light. (Default)</li> </ul>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Turn light OFF</option>
+          <option value="255">Turn light ON</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+PIR Sensitivity setting.<br /><h1>Overview</h1><p>Sensitivity for the PIR (Passive Infrared) sensor</p> <ul><li>0: Disable PIR motion detection.</li> <li>1–99: Motion detection sensitivity, where 1 is the lowest and 99 is the highest.</li> </ul>
+        ]]></description>
+        <default>70</default>
+        <options>
+          <option value="0">Disable Motion Detection</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+Illumination threshold for turning on associated lights.<br /><h1>Overview</h1><p>When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the associated lights.</p> <ul><li>0: turn off the illumination detection function and <em>never</em> turn on the lights</li> <li>1: darkest threshold level</li> <li>99 brightest threshold level</li> <li>100: turn off the illumination detection function and <em>always</em> turn on the lights.</li> </ul><p>Note: when not in test mode, only values in the range 1–99 will enable the illumination detection function and update the illumination value.</p>
+        ]]></description>
+        <default>100</default>
+        <options>
+          <option value="0">Disable Illumination Detection</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>5: Operation Mode</label>
+        <description><![CDATA[
+Mode of operation and enabled multisensor functions<br /><h1>Overview</h1><p>Bitfield for setting the device in certain modes and enabling or disabling specific functions of the multisensor device.</p> <p><strong>PST02A only:</strong></p> <ul><li>Bit 0: reserved. (0)</li> <li>Bit 1: device mode. 0 = normal mode; 1 = test mode.</li> <li>Bit 2: disable the door/window function. 0 = enabled; 1 = disabled.</li> <li>Bit 3: temperature unit. 0 = Fahrenheit; 1 = Celcius.</li> <li>Bit 4: disable the illumination report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 5: disable the temperature report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 6: reserved. (0)</li> <li>Bit 7: disable the back key release into test mode. 0 = enabled; 1 = disabled.</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="8">Set Celsius</option>
+          <option value="10">Preset: Celsius and LED on = Bits: 00001010 = 10</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>6: Multi-Sensor Function Switch</label>
+        <description><![CDATA[
+Enable or disable functions of the multisensor.<br /><h1>Overview</h1><p>Bitfield for enabling or disabling functions of the multisensor.</p> <ul><li>Bit 0: Disable magnetic integrate illumination to turn ON the lighting nodes in the association group 2. 1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 1: Disable PIR integrate Illumination to turn ON lighting nodes in the association group 1.</li> <li>1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 2: Disable magnetic integrate PIR  to turn ON the lighting nodes in the association group 2. (<strong>1:Disable</strong>), 0:Enable</li> <li>Bit 3: When bit 2 is 0 (enabled), are the device installed in the same room as the light? <ul><li><strong>(0 = In the same room)</strong>;</li> <li>1 = In another room.</li> <li>Note: If this bit is 1, it is recommended to also set bit 1 to 1, because when the PIR triggered, it doesn't mean that a person is in the room where the lights are.</li> </ul></li> <li>Bit 4: Disable the 5 seconds delay to turn off the light, when door/window is closed. 1:Disable, (<strong>0:Enable</strong>)</li> <li>Bit 5: Disable auto turn off the light, after door/window opened to turn on the light. <ul><li><em>Note: If bit 2 is 0, this setting has no effect.</em></li> <li><em>Note: If configuration parameter is 0, </em><em>this setting has no effect.</em></li> </ul></li> <li>Bit 6: Reserved.(0)</li> <li>Bit 7: Reserved (0)</li> </ul>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Enable or disable functions of the multisensor.<br /><h1>Overview</h1><ul><li>Bit 0: Reserved.</li> <li>Bit 1: Enable sending motion OFF report.<strong> 0=Disable</strong>; 1=Enable. <em>Note: Depends on the value of bit 4, see below:</em> <ul><li>Bit 4 is 0: Report Notification CC, Type: 0x07, Event: 0xFE.</li> <li>Bit 4 is 1: Sensor Binary Report, Type: 0x0C, Value: 0x00.</li> </ul></li> <li>Bit 2: Enable PIR super sensitivity mode. 0=Disable; <strong>1=Enable.</strong></li> <li>Bit 3: Disable sending BASIC OFF after door/window is closed. 1=Disable,<strong> 0=Enable.</strong></li> <li>Bit 4: Notification type. <strong>0=Using Notification Report</strong>; 1=Using Sensor Binary Report.</li> <li>Bit 5: Disable Multi CC in auto report. 1=Disable; <strong>0=Enable</strong>.</li> <li>Bit 6: Disable reporting battery state when the device is triggered. 1=Disable; <strong>0=Enable</strong>.</li> <li>Bit 7: Reserved.</li> </ul><p>The default value has to be 20. With 20 the contact sensor throws a correct value.</p>
+        ]]></description>
+        <default>20</default>
+        <options>
+          <option value="20">Setting: 0010100</option>
+          <option value="22">Setting: 00010110</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>8: PIR Re-Detect Interval Time</label>
+        <description><![CDATA[
+Time period to wait until reporting motion detected again.<br /><h1>Overview</h1><p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default tick is 3 (24 seconds).</p> <p>Setting the suitable value to prevent received the trigger signal too frequently. Also can save the battery energy.</p> <p>Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not start detecting.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>9: Turn Off Light Time</label>
+        <description><![CDATA[
+Time to wait before sending command to turn off lights<br /><h1>Overview</h1><p>When a BASIC SET command has been sent to turn on lights and motion is no longer detected by the PIR sensor, wait the configured time before sending a "turn off light" command.</p> <p>The timeout is the configured value multiplied with 8 seconds, i.e. value 4 (the default) means 32 seconds timeout.</p> <p>0 means "never turn off the lights".</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>0 means turn off auto report battery.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>11: Auto Report Door/Window State Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the door/window state<br /><h1>Overview</h1><p>The interval time for auto report the door/window state.</p> <p>0 means turn off auto report door/window state.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>12: Auto Report Illumination Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the illumination state<br /><h1>Overview</h1><p>The interval time for auto report the illumination.</p> <p>0 means turn off auto report illumination.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>13: Auto Report Temperature Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the temperature state<br /><h1>Overview</h1><p>The interval time for auto report the temperature.</p> <p>0 means turn off auto report temperature.</p> <p>The default value is 12. The tick time can setting by the configuration No.20.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: Auto Report Tick Interval</label>
+        <description><![CDATA[
+The interval time for each auto report tick.<br /><h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.</p> <p>Caution: Setting to 0 means turn off all auto report function.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>21: Temperature Differential Report</label>
+        <description><![CDATA[
+The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report.</p> <p>0 means turn off this function.</p> <p>The unit is Fahrenheit.</p> <p>Enable this function the device will detect every minutes.</p> <p>And when the temperature is over 140</p> <p>degree Fahrenheit, it will continue</p> <p>report.</p> <p>Enable this functionality will cause some issue please see the detail in the</p> <p>“Temperature Report” section.</p> <p><strong>Temperature Report:</strong></p> <p>When the PIR motion detected or the door/window state changed, the device will unsolicited to send the “Sensor Multilevel Report” to the nodes in the group 1.</p> <p>Sensor Type: Temperature (0x01)</p> <p>Note: To disable this functionality by setting the configuration N0.5 bit5</p> <p>to 1.</p> <p>*** Temperature differential report ***</p> <p>This function default is enabled, to disable this function by setting the configuration NO.21 to 0.</p> <p>In the default, when the temperature is changed to plus or minus one degree Fahrenheit (0.56 degree Celsius), the device will report temperature information to the nodes in the group 1.</p> <p>The device will measure the temperature in every one minute. And if the temperature is over 140 degree Fahrenheit (60 degree Celsius), the device will always report in each measurement.</p> <p>Caution 1: Enable this functionality, it will cause the PIR Motion to disable detection when the temperature measurement. In other words,</p> <p>The PIR motion will blind one second in every one minute.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>22: Illumination Differential Report</label>
+        <description><![CDATA[
+The illumination differential to report.<br /><h1>Overview</h1><p>The illumination differential to report.</p> <p>0 means turn off this function.</p> <p>The unit is percentage.</p> <p>Enable this function the device will detect every minutes.</p> <p>Enable this functionality will cause some issue please see the detail in the</p> <p>“Illumination Report” section.</p> <p><strong>Illumination Report:</strong></p> <p>When the PIR motion detected or the door/window state changed, the device will unsolicited to send the “Sensor Multilevel Report” to the nodes in the group 1.</p> <p>Sensor Type: Luminance (0x03)</p> <p>Note: To disable this functionality by setting the configuration N0.5 bit4 to 1.</p> <p>*** Illumination differential report ***</p> <p>This function default is disabled, to enable this function by setting the configuration NO.22 not to zero.</p> <p>Enable this functionality, the device will measure the illumination in every one minute. And if the illumination is changed to plus or minus the value (setting by the configuration NO.22), the device will report illumination information to the nodes in the group 1.</p> <p>Caution 1: Enable this function will reduce the battery life about 15% ~ 20%. And another issue is setting the differential value too small, it will cause report too frequency, shorter the battery life more.</p> <p>Propose the setting differential value should not small than 10.</p> <p>Caution 2: If the configuration No.4 is setting to 0 or 100, this functionality is useless.</p> <p>Caution 3: Enable this functionality, it will cause the PIR Motion to disable detection when the illumination measurement. In other words,</p> <p>The PIR motion will blind one second in every one minute.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Reports</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Light Control</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="telldus_tzdw100_00_000" listed="false">
+    <label>TZDW-100 Door/window sensor</label>
+    <description><![CDATA[
+Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the latest Z-Wave technology with the ability to remotely control other Z-Wave units available in your network. The fact that it is battery operated and so small you can virtually place it anywhere you want – on doors, windows or drawers, without the need of wiring. Screw or tape up the holder and then click the sensor in place. Done! The sensor is designed to be seen as little as possible and we have made it significantly smaller than other sensors. It consists of two parts that will merge into a stylish unit when the sensor is closed</p> <br /><h2>Inclusion Information</h2><p>Press the button on the device three times fast.</p> <br /><h2>Exclusion Information</h2><p>Press the button on the device three times fast.</p> <br /><h2>Wakeup Information</h2><p>Press the button on the sensor one time short to wake up the device. </p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Telldus Technologies AB</property>
+      <property name="modelId">TZDW-100</property>
+      <property name="manufacturerId">0176</property>
+      <property name="manufacturerRef">0005:0001</property>
+      <property name="dbReference">312</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Group 2 Command Type</label>
+        <description>Select what type of command to be sent to nodes in association group 2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Basic</option>
+          <option value="1">Switch Binary</option>
+          <option value="2">Switch All</option>
+          <option value="3">Switch Multilevel</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>2: Group 2 Value</label>
+        <description>Select what value that should be sent to association group 2</description>
+        <default>255</default>
+        <options>
+          <option value="255">Last value</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Group 2 Signal Type</label>
+        <description>Type of commands to association group 2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Inverted</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Group 3 Command Type</label>
+        <description>Select what type of command to be sent to nodes in association group 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Basic</option>
+          <option value="1">Switch Binary</option>
+          <option value="2">Switch All</option>
+          <option value="3">Switch Multilevel</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>5: Group 3 Value</label>
+        <description>Select what value that should be sent to association group 3</description>
+        <default>255</default>
+        <options>
+          <option value="255">Last value</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Group 3 Signal Type</label>
+        <description>Type of commands to association group 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Inverted</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED-Indicator</label>
+        <description>LED-Indicator</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Lifeline command Type</label>
+        <description>Select the type of command to be sent in the Lifeline</description>
+        <default>0</default>
+        <options>
+          <option value="0">Notification</option>
+          <option value="1">Sensor binary</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Lifeline - Sensor status</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Sensor open and closed</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Sensor Open Only</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

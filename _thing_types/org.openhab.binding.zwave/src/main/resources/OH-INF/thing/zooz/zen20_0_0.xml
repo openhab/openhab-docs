@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen20_00_000" listed="false">
+    <label>ZEN20 Power Strip</label>
+    <description><![CDATA[
+Power Strip<br /><h1>Overview</h1><p><strong>FEATURES </strong></p> <ul><li>Wireless control of up to 5 electrical devices</li> <li>Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication\</li> <li>Signal repeater for a stronger, more reliable network</li> <li>2 USB charging ports for your smart phone or tablet (no Z-Wave functionality)</li> <li>Built-in overload protection</li> </ul><p><strong>SPECIFICATIONS</strong></p> <ul><li>Model Number: ZEN20</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 110V</li> <li>Maximum Load: 15Amps TOTAL between 5 outlets</li> <li>USB Charging Port Power: 5V 1A each</li> <li>Cord Length: 9 feet</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> </ul><p><strong>Z-WAVE COMMAND CLASSES</strong></p> <ul><li>This device requires the following command classes to be supported and recognized by your Z-Wave controller:</li> <li>COMMAND_CLASS_ASSOCIATION</li> <li>COMMAND_CLASS_ASSOCIATION_GROUP_INFORMATION</li> <li>COMMAND_CLASS_BASIC</li> <li>COMMAND_CLASS_DEVICE_RESET_LOCAL</li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC</li> <li>COMMAND_CLASS_MULTI_CHANNEL</li> <li>COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION</li> <li>COMMAND_CLASS_POWERLEVEL</li> <li>COMMAND_CLASS_SWITCH_BINARY</li> <li>COMMAND_CLASS_VERSION</li> <li>COMMAND_CLASS_ZWAVEPLUS_INFO</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug the power strip into a grounded receptacle located within direct range from your ZWave gateway controller</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the CH1 power button on the strip 3 times quickly</li> <li>A new on / off device should appear on your controller's device list</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug the power strip into a grounded receptacle located within direct range from your ZWave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the CH1 power button on the strip 3 times quickly</li> <li>The device should disappear from your controller's device list</li> </ol><p>Please repeat the process following all steps carefully if the first attempt is unsuccessful</p> <p><strong>FACTORY RESET</strong></p> <p>When your network’s primary controller is missing or otherwise inoperable, you may need to reset the device to factory settings manually. In order to complete the process, unplug the power strip, PRESS AND HOLD the CH5 power button, plug the strip back in while still holding the CH5 power button down for AT LEAST 5 SECONDS, then release the button. NOTE: All previously recorded activity and custom settings will be erased from the device’s memory.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset2" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset3" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts4" typeId="meter_watts">
+        <label>Electric meter (watts) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh4" typeId="meter_kwh">
+        <label>Electric meter (kWh) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset4" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts5" typeId="meter_watts">
+        <label>Electric meter (watts) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh5" typeId="meter_kwh">
+        <label>Electric meter (kWh) 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:5;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset5" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN20</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">A000:A004</property>
+      <property name="dbReference">913</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: On/Off Status Recovery After Power Failure</label>
+        <default>0</default>
+        <options>
+          <option value="0">Remember Previous State After Power Failure</option>
+          <option value="1">Power Strip Automatically ON After Power Failure</option>
+          <option value="2">Power Strip Automatically OFF After Power Failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Power Wattage Report Value Threshold</label>
+        <description><![CDATA[
+Choose how you want your Power Strip to report power consumption to your hub<br /><h1>Overview</h1><p>Choose how you want your Power Strip to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the smart plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report).</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>3: Power Wattage Report Frequency</label>
+        <description><![CDATA[
+The number entered as value corresponds to the number of seconds<br /><h1>Overview</h1><p>If 30 is entered, by default, the Strip will report power consumption (Wattage) every 30 seconds.  Default set to 30.</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>4: Energy (kWh) Report Frequency</label>
+        <description><![CDATA[
+Report interval of power consumption (W) to your controller (hub)<br /><h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the power strip will report energy usage every 300 seconds (5 minutes).  Default set to 300.</p>
+        ]]></description>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="1500">
+        <label>5: Overload Protection</label>
+        <description><![CDATA[
+Set the Watt level for overload protection to kick in<br /><h1>Overview</h1><p>The number entered as the value corresponds to the total number of Watts the Strip needs to detect across all 5 outlets to turn off automatically and send a notification to the hub.  0 = overload protection disabled (we DON’T recommend changing to this setting). Default set to 1500 Watts. </p>
+        ]]></description>
+        <default>1500</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: CH1 Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Enable or disable the auto turn-off timer for CH1 outlet<br /><h1>Overview</h1><p>If this feature is enabled, the device connected to CH1 outlet will automatically turn off after a fixed period of time from being turned on (set in parameter 7).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>7: CH1 Auto Turn-Off Setting</label>
+        <description>Time in minutes to turn off the device connected to CH1 after being turned on</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: CH1 Auto Turn-On Timer</label>
+        <description>Enable or disable the auto turn-on timer for CH1 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>9: CH1 Auto Turn-On Setting</label>
+        <description>Time in minutes to turn on the device connected to CH1 after being turned off.</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: CH2 Auto Turn-Off Timer</label>
+        <description>Enable or disable the auto turn-off timer for CH2 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>11: CH2 Auto Turn-Off Setting</label>
+        <description>Time in minutes to turn off the device connected to CH2 after being turned on</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: CH2 Auto Turn-On Timer</label>
+        <description>Enable or disable the auto turn-on timer for CH2 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>13: CH2 Auto Turn-On Setting</label>
+        <description>Time in minutes to turn on the device connected to CH2 after being turned off</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: CH3 Auto Turn-Off Timer</label>
+        <description>Enable or disable the auto turn-off timer for CH3 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>15: CH3 Auto Turn-Off Setting</label>
+        <description>Time in minutes to turn off the device connected to CH3 after being turned on</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: CH3 Auto Turn-On Timer</label>
+        <description>Enable or disable the auto turn-on timer for CH3 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>17: CH3 Auto Turn-On Setting</label>
+        <description>Time in minutes to turn on the device connected to CH3 after being turned off</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: CH4 Auto Turn-Off Timer</label>
+        <description>Enable or disable the auto turn-off timer for CH4 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>19: CH4 Auto Turn-Off Setting</label>
+        <description>Time in minutes to turn off the device connected to CH4 after being turned on.</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: CH4 Auto Turn-On Timer</label>
+        <description>Enable or disable the auto turn-on timer for CH4 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>21: CH4 Auto Turn-On Setting</label>
+        <description>Time in minutes to turn on the device connected to CH4 after being turned off</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: CH5 Auto Turn-Off Timer</label>
+        <description>Enable or disable the auto turn-off timer for CH5 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>23: CH5 Auto Turn-Off Setting</label>
+        <description>Time in minutes to turn off the device connected to CH5 after being turned on.</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: CH5 Auto Turn-On Timer</label>
+        <description>Enable or disable the auto turn-on timer for CH5 outlet</description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled (Default)</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>25: CH5 Auto Turn-On Setting</label>
+        <description>Time in minutes to turn on the device connected to CH5 after being turned off</description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Manual Control</label>
+        <description><![CDATA[
+Enable / Disable Physical Button Functionality<br /><h1>Overview</h1><p>Choose if you want to use the physical buttons on Strip to turn the outlets on or off manually or if you want to disable this function. If this parameter is set to 0 (disabled), you will only be able to turn any of the outlets on or off remotely using your Z-Wave gateway controller.</p> <p>Value 0 – manual control disabled for all outlets;</p> <p>Value 1 – manual control enabled for all outlets (default)</p> <p>You can also disable/enable manual control from all outlets by performing the following sequence on any of the channel buttons: click-click-click-click’n-hold for at least 10 seconds. All LED indicators will flash to confirm the setting change.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Manual control disabled for all outlets</option>
+          <option value="1">Manual control enabled for all outlets (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: LED Indicator Mode</label>
+        <description><![CDATA[
+LED Outlet Indicator Behavior<br /><h1>Overview</h1><p>Choose if you want the LED indicators next to each outlet to come on when power is on or off, or if you want to disable the LED lights.</p> <p>Values:</p> <p>0 – LED indicator is on when power is of and off when power is on; </p> <p>1 – LED indicator is on when power is on and off when power is off (default);</p> <p>2 – LED indicator is always off, regardless of power status. </p> <p>You can also switch between the LED indicator modes by clicking the CH1 button 6 times quickly. All LED indicators will flash to confirm the setting change</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED on when power is off and off when power is on</option>
+          <option value="1">LED on when power is on and off when power is off</option>
+          <option value="2">LED is always off, regardless of power status</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

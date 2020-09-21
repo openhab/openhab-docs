@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wt00z51_00_000" listed="false">
+    <label>WT00Z5-1 3-Way Wall Accessory Switch</label>
+    <description><![CDATA[
+3-Way Wall Accessory Switch<br /><h1>Overview</h1><p><strong>3-WAY WALL MOUNT ACCESSORY DIMMER SWITCH</strong></p> <p>The GoControl™ family of Z-Wave® certified wireless Lighting Products (smart LED fixtures, bulbs, switches, dimmers, outlets and plug-in modules) Control Products (thermostats, irrigation controller and garage door controller) and Sensors (flood, leak, alert sounder, motion sensor and door/window sensor) bring a new level of intelligent wireless Home Automation capability to commercial and residential environments.</p> <p>The Z-Wave wireless protocol is an international wireless standard for remote home automation, security and other applications. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>The WT00Z5-1 Wall Mount Accessory Dimmer Switch allows remote ON/OFF control and dimming of lights controlled by associated Z-Wave modules, creating virtual 3-way switches. The WT00Z5-1 controls no load directly, so it can be wired anywhere power is available, without the need for a traveler wire. GoControl Z-Wave products are easy to install, are Z-Wave certified, and allow dealers to create an integrated wireless network with nearly limitless expansion and interoperability with security, energy management, home entertainment, appliances, and more.</p> <p><strong>DANGER! SHOCK HAZARD.</strong> Read and understand these instructions before installing. This device is intended for installation in accordance with the National Electric code and local regulations in the United States, or the Canadian Electrical Code and local regulations in Canada. It is recommended that a qualified electrician perform this installation. For indoor use only. Retain instructions for future use.</p> <p><strong>Z-WAVE PLUS FEATURES</strong></p> <p>The WT00Z5-1 contains a Z-Wave 500 Series Module that supports Z-Wave Plus® features. A Z-Wave certified portable or stationary Controller can communicate with the Z-Wave 500 Series Module.</p> <p>Depending on the capability of the Controller or gateway software, the following operations can be performed with the WT00Z5-1. Refer to the Controller or gateway manual for details.</p> <ul><li>Turn the Associated device ON and OFF.</li> <li>Dim the Associated device.</li> <li>Add or Remove the WT00Z5-1.</li> <li>Over-the-air firmware update by the gateway or static Controller.</li> <li>Assign the WT00Z5-1 to a specific Group/Scene and/or to include the Associated device as part of ALL ON or ALL OFF system commands.</li> <li>Lifeline function which automatically notifies the Associated modules and the network that a manually reset device is no longer in the network, thus, the corresponding Association becomes invalid.</li> </ul><br /><h2>Inclusion Information</h2><p>Refer to your Controller operating instructions to add this switch under the command of the Wireless Controller.</p> <ol><li>With your Controller in Discovery or Add Mode, tap the switch. The LED will blink slowly when in ADD Mode.</li> <li>You should see an indication on your Controller that the “device was added” to the network and the LED will stop blinking.</li> <li>The device will appear in the list of Switches. It should display as a switch.</li> </ol><p>If the Controller/Gateway shows the addition failed, repeat Steps 1-3.</p> <p>✓ <strong>NOTE</strong>: If you have trouble adding the WT00Z5-1 to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must first “RESET UNIT” to remove it from the network. Although adding it to a group includes it in the network, removing it from a group does not remove it from the network. If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network.</p> <p><strong>To Reset Unit (If Required): </strong>In the event that your primary Controller is lost or otherwise inoperable, to reset the WT00Z5-1 and clear all network information, follow these steps:</p> <ol><li>Tap the top of the switch five (5) times.</li> <li>Press and hold the bottom of the switch for 15 seconds. The LED will increasingly blink faster to indicate that a Reset is taking place.</li> </ol><br /><h2>Exclusion Information</h2><p>The WT00Z5-1 can be removed from the network by the Controller/Gateway. Refer to the Controller operating instructions for details.</p> <ol><li>Set the Controller into Removal Mode and follow its instruction to delete the WT00Z5-1 from the Controller.</li> <li>Remove the switch by tapping the paddle 2 times. The LED will begin blinking slowly for 10 seconds indicating that it has been removed.</li> <li>You should see an indication on your Controller that the “device was removed” from the network.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WT00Z5-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5754:3530</property>
+      <property name="dbReference">1236</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+LED mode for attached load<br /><h1>Overview</h1><p>The Z-Wave BASIC Command Class can control or report the state of LED. The state of the LED depends on the value in Parameter 3.</p> <p>By default, the LED on the WT00Z5-1 will turn OFF when the Associated device is turned ON. To make the LED turn ON when the Associated device is turned ON, set Parameter 3 to a value of 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off when load is on</option>
+          <option value="1">On when load is on</option>
+          <option value="2">Always on</option>
+          <option value="3">Always off</option>
+          <option value="4">Blink when transmitting</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Allows making the top be "off"<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set Parameter 4 to a value of 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Inverted</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group and must be assigned the Node ID of the Z-Wave Controller to which unsolicited notifications from the WT00Z5-1 will be sent. Group 1 supports a single Node ID. The Z-Wave Controller should set the Lifeline Association automatically after inclusion. For instructions on how to set Associations, please refer to your Z-Wave Controller instructions. </p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Switches</label>
+        <description><![CDATA[
+For control of on/off type switches<br /><h1>Overview</h1><p>Group 2 nodes will be sent BASIC On/Off commands and is intended to control switches like the GoControl WS15Z5.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Dimmable Switches</label>
+        <description><![CDATA[
+For control of dimmable type switches<br /><h1>Overview</h1><p> Group 3 nodes will be sent Multilevel Switch commands and is intended to control dimmers like the GoControl WD500Z5.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_35931_00_000" listed="false">
+    <label>35931 Enbrighten 60W Dimmable Light Bulb</label>
+    <description><![CDATA[
+Enbrighten 60W Dimmable Light Bulb<br /><h1>Overview</h1><p>Breathe new life into your home’s Z-Wave network when you upgrade to an Enbrighten Smart LED Bulb. This 60-watt equivalent bulb works with all standard light fixtures and lamps, allowing you to update to smart control without compromising the design of your home. No wiring is required — simply replace your existing E26 light bulb with the smart bulb (E26 base, A19 style) and begin enjoying the long life of your new light. This Enbrighten Dimmable LED Bulb has full-range dimmability, saving you energy costs year-round. From the convenience of your smartphone or tablet, turn the lights on and off, dim or brighten your room and set lights according to your schedule. At 750 lumens, this LED bulb consumes only 9 watts of power while burning brightly for up to 25,000 hours. Experience the bright side of life with the Enbrighten Smart LED Bulb.</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your LED Smart Bulb, turn on power to the socket. The Enbrighten LED Smart Bulb will be automatically included into your network within 30 seconds, and the smart bulb will flash 2 times to signify successful inclusion into your network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your LED Smart Bulb, turn on power to the socket. Tthe smart bulb will flash 2 times to signify successful exclusion from your network.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">35931</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4C42:3031</property>
+      <property name="dbReference">536</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dim level when light is turned ON</label>
+        <description>Dim level when light is turned ON</description>
+        <default>0</default>
+        <options>
+          <option value="0">Full brightness</option>
+          <option value="1">Last brightness setting</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dimming/Brightening Step Level</label>
+        <description><![CDATA[
+Dimming/Brightening Step Level<br /><h1>Overview</h1><p>You may change the dimming step level when you adjust the brightness by your controller/gateway.</p> <p>When the value is low, dimming/brightening is gradual.</p> <p>When the value is high, dimming/brightening is rapid.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>10: Dimming/Brightening Step Timing</label>
+        <description><![CDATA[
+Dimming/Brightening Step Timing<br /><h1>Overview</h1><p>You may change the dimming speed quicker or slower.</p> <p>When the value is low, the step timing is quick.</p> <p>When the value is high, the step timing is slow.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="abus_shhm10000_00_000" listed="false">
+    <label>SHHA10000 Smart Plug, Power Switch</label>
+    <description><![CDATA[
+Smart Plug, Power Switch<br /><h1>Overview</h1><p>The SHHA10000 was developed for use in home automation systems that use the Z-Wave wireless standard. The power outlet enables you to switch a large number of your electronic devices - conveniently and directly via the gateway's app or automatically according to an individual schedule. In conjunction with configurable scenes, a large number of smart functions can be initiated, e.g. a presence simulation or you can preheat the coffee machine before getting up.</p> <p>The ABUS Z-Wave SHHA10000...:</p> <ul><li>is a wireless socket</li> <li>is Z-Wave PLUS compatible &amp; certified</li> <li>supports the Z-Wave S2 Standard (Security 2)</li> <li>measures your (current) consumption values reliably over any period of time</li> <li>detects applied mains voltage, wattage consumption, kWh and ampere</li> <li>can be switched on and off via app or manually</li> <li>was developed for indoor installation</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug the Wireless-Socket into an outlet. The StatusLED is flashing.</li> <li>Click the + (Add) button in your Z-Wave App and follow the further instructions</li> <li>Press the Network-Button on the Socket once The App will show if the Add device process was successful The Status LED does not flash anymore but indicates if device is switched on or off Repeat the inclusion process if it was not successful.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Click the - (Remove) button in your Z-Wave App and follow the further instructions</li> <li>Press the Button on the socket 3 times The App will show if the Remove Device process was successful. The Status-LED will now flash continuously Repeat the exclusion process if it was not successful.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ABUS Security-Center GmbH &amp; Co. KG</property>
+      <property name="modelId">SHHA10000</property>
+      <property name="manufacturerId">0403</property>
+      <property name="manufacturerRef">0003:0003</property>
+      <property name="dbReference">1187</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Overvoltage protection</label>
+        <description><![CDATA[
+Enable / Disable overvoltage protection.<br /><h1>Overview</h1><p>Enable / Disable overvoltage protection.</p> <ul><li>0 = Disabled</li> <li>1 = Enabled</li> </ul><p>(Hexadecimal: 0x00 – 0x01)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Device status after power failure</label>
+        <description><![CDATA[
+Set which device status should be present after a power failure.<br /><h1>Overview</h1><p>Set which device status should be present after a power failure.</p> <ul><li>0 = Status before power failure</li> <li>1 = Status “on”</li> <li>2 = Status “off”</li> </ul><p>(Hexadezimal: 0x00 – 0x02)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Status before power failure</option>
+          <option value="1">Status “on”</option>
+          <option value="2">Status “off”</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Device status report</label>
+        <description><![CDATA[
+Device status report when device status changes.<br /><h1>Overview</h1><p>Device status report when device status changes.</p> <ul><li>0 = Disabled</li> <li>1 = Send report</li> <li>2 = Send report only with manual change</li> </ul><p>(Hexadezimal: 0x00 – 0x02)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Send report</option>
+          <option value="2">Send report only with manual change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED indicator</label>
+        <description><![CDATA[
+Behaviour of the LED display with device status "On".<br /><h1>Overview</h1><p>Behaviour of the LED display with device status "On".</p> <ul><li>0 = LED is permanently active with device status "On</li> <li>1 = LED is active for 5 seconds when changing to device status "On" and then extinguishes</li> </ul><p>(Hexadezimal: 0x00 – 0x01)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED is permanently active with device status "On"</option>
+          <option value="1">LED is active for 5 seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>16: Power report (Threshold)</label>
+        <description><![CDATA[
+The threshold value serves as an additional condition for the time-based report.<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.<br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 65535 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0xFFFF)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>17: Power report (Threshold value in percent)</label>
+        <description><![CDATA[
+The threshold value serves as an additional condition for the time-based report.<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report. <br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 127 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0x7F)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration"
+                 min="84" max="84">
+        <label>100: Reset 101 – 104</label>
+        <description><![CDATA[
+Resets parameter 101 - 104 to factory setting.<br /><h1>Overview</h1><p>84 = Resets parameter 101 - 104 to factory setting.</p>
+        ]]></description>
+        <default>84</default>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>101: Power report (Time)</label>
+        <description><![CDATA[
+The interval time of the power report (W).<br /><h1>Overview</h1><p>The interval time of the power report (W). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>102: Consumption report (Time)</label>
+        <description><![CDATA[
+The interval time of the consumption report (kWh).<br /><h1>Overview</h1><p>The interval time of the consumption report (kWh). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>103: Voltage report (Time)</label>
+        <description><![CDATA[
+The interval time of the voltage report (V).<br /><h1>Overview</h1><p>The interval time of the voltage report (V). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_104_4" type="integer" groupName="configuration"
+                 min="5" max="2678400">
+        <label>104: Current report (Time)</label>
+        <description><![CDATA[
+The interval time of the current report (A).<br /><h1>Overview</h1><p>The interval time of the current report (A). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_254_1" type="integer" groupName="configuration">
+        <label>254: Enable / Disable Configuration</label>
+        <description><![CDATA[
+Enables / Disables the configuration.<br /><h1>Overview</h1><p>Enables / Disables the configuration.</p> <ul><li>0 = Configuration is enabled</li> <li>1 = Configuration is disabled</li> </ul><p>(Hexadecimal: 0x00 - 0x01)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Configuration enabled</option>
+          <option value="1">Configuration disabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Sending Meter Report<br /><h1>Overview</h1><p>When the state of Smart Plug (turn on or off the load) is changed:</p> <ol><li>Set Configuration parameter 3 to 0 (0x00): Do not send Basic Report</li> <li>Set Configuration parameter 3 to 1 (0x00): Send Basic Report</li> <li>Set Configuration parameter 3 to 2 (0x00): Send Basic Report only when Load condition is changed not by Z-WAVE Command, such as short pressing.</li> </ol><p>Sending Meter Report.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

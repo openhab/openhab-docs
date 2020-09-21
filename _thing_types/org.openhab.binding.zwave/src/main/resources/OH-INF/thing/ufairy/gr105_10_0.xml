@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ufairy_gr105_10_000" listed="false">
+    <label>GR-105 Water Shutoff Valve</label>
+    <description><![CDATA[
+Water Shutoff Valve<br /><h1>Overview</h1><p>Heavy-duty automated Valve Controller, that can fit variety of ﬂuid management purposes.</p><p>This valve clamps onto your existing valve, allowing you to open/close the valve via Z-Wave as soon as you notice a problem.</p> <br /><h2>Inclusion Information</h2><p>Add/Delete button: the red button on the upper-front side. <br /></p><p>Press hold 1 second and release it is sending NIF signal, make sure the Z-Wave controller in the rang for inclusion or exclusion. <br /></p><p>Notice: it is recommended to keep the device within 1 meter to the controller during Add/Delete operation. If the controller has not received the signal, please repeat again.</p> <br /><h2>Exclusion Information</h2><p>Add/Delete button: the red button on the upper-front side. <br /></p><p>Press hold 1 second and release it is sending NIF signal, make sure the Z-Wave controller in the rang for inclusion or exclusion. <br /></p><p>Notice: it is recommended to keep the device within 1 meter to the controller during Add/Delete operation. If the controller has not received the signal, please repeat again.</p><p><br /></p><p>Reset to default:</p><p>Press and hold the button 10 seconds and release the button. The device will send the reset notication to the list node in the group 1 and erases the device memory, when the light ash it is resetting success.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">UFairy G.R. Tech</property>
+      <property name="modelId">GR-105</property>
+      <property name="manufacturerId">0152</property>
+      <property name="manufacturerRef">0004:0002</property>
+      <property name="versionMin">10.0</property>
+      <property name="dbReference">1291</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

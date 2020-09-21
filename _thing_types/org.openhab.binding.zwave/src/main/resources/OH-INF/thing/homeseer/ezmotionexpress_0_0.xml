@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_ezmotionexpress_00_000" listed="false">
+    <label>EZMotion Express Wireless 3-in-1 Sensor</label>
+    <description><![CDATA[
+Wireless 3-in-1 Sensor<br /><h1>Overview</h1><p>EZMotion™ enables fully automated lighting that turns on the lights when you enter a room and turns them off shortly after you leave. Sophisticated lighting, Audio, Video and heating/cooling are enabled with the EZMotion™ three-sensors-in-one Z-Wave® device.  </p> <br /><h2>Inclusion Information</h2><p>Press and release the Join Button.</p> <br /><h2>Exclusion Information</h2><p>Press and release the Join Button.</p> <br /><h2>Wakeup Information</h2><p> If you need additional time to complete the configuration, just press the join button again to wake EZ-Motion up for another 10 minutes.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance2" typeId="sensor_luminance">
+        <label>Illumination Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Temperature Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Express Controls</property>
+      <property name="modelId">EZMotion Express</property>
+      <property name="manufacturerId">001E</property>
+      <property name="manufacturerRef">0002:0001,0002:0002</property>
+      <property name="dbReference">140</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_CONFIGURATION:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_SPECIFIC:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_NODE_NAMING:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_BATTERY:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_WAKE_UP:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_VERSION:1">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_CONFIGURATION:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_SPECIFIC:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_NODE_NAMING:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_BATTERY:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_WAKE_UP:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_VERSION:2">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_CONFIGURATION:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_SPECIFIC:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_NODE_NAMING:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_BATTERY:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_WAKE_UP:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION:3">ccRemove</property>
+      <property name="commandClass:COMMAND_CLASS_VERSION:3">ccRemove</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Sensitivity</label>
+        <description><![CDATA[
+Sensitivity sets the amount of motion required for EZMotion to detect motion.<br /><h1>Overview</h1><p>Sensitivity sets the amount of motion required for EZMotion to detect motion. A higher value makes it more sensitive and a lower value makes it less sensitive. Note that values above 200 are not recommended when EZMotion is battery operated. </p> <p>Recommended values: </p> <p>10 = Pet Immune<br /> 100 = Medium sensitivity for hallways<br /> 200 = Highly sensitive for rooms where people are sitting still </p>
+        ]]></description>
+        <default>200</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: On Time</label>
+        <description><![CDATA[
+Sets the number of minutes the lights stay on when motion has not been detected.<br /><h1>Overview</h1><p>On Time sets the number of minutes that the lights stay on when motion has not been detected.<br /> A value of 0 On Time is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMotion will NOT turn the lights off in this mode. Note that this mode will significantly shorten battery life.</p> <p>Recommended values:</p> <p>5 min for hallways<br /> 20 min for an office environment<br /> 60 min for a library or other room where someone may be sitting still for a long time </p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED On/Off</label>
+        <description><![CDATA[
+LED ON/OFF turns the LED on or off.<br /><h1>Overview</h1><p>LED ON/OFF turns the LED on or off. A slight improvement in battery life is obtained by turning the LED off. Setting LED ON/OFF to zero will turn the LED off and 255 turns it on. </p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+Light Threshold is the % of light above which the lights will not be turned on.<br /><h1>Overview</h1><p>Light Threshold is the percentage of light in the room above which the lights will not be turned on. Light Threshold is often used in room with a lot of natural daylight. Setting Light Threshold to a value of 50% will cause EZMotion to not turn the lights on when the natural light in the room is already at the 50% value. This feature only prevents the lights from coming on when motion is first detected and the light level in the room is already above Light Threshold. It will not turn the lights off when the amount of natural light in the room increases. It will automatically turn on the lights in a room that has motion in it and that the amount of natural light has dropped below Light Threshold.</p> <p>A value of 100% turns off this feature.</p> <p>Recommended values:</p> <p>Usually a value between 40% and 60% will prevent the lights from coming on in a reasonably well light room and will turn them on as it is getting dark. Some experimentation is required with each room to determine the proper setting. </p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Stay Awake</label>
+        <description><![CDATA[
+Setting Stay Awake value<br /><h1>Overview</h1><p>Setting Stay Awake to a non-zero value will cause EZMotion to always be awake. NOTE: this mode should NOT be used when EZMotion is battery powered! Batteries will only last a few days in this mode. </p> <p>Stay Awake is NOT set to the factory default (0) when EZMotion is Excluded (reset) from the Z-Wave network.<br /> Setting Stay Awake to a non-zero value will cause the Z-Wave Listening Bit to be set. EZMotion will become a routing node in the Z-Wave Mesh-Network when the Listening Bit is set. </p> <p>To properly have EZMotion included in the routing tables, set Stay Awake to a non-zero value, then reset EZMotion (Exclude from the network), then add it back to the network. The new routing information will be used now that the listening bit is set. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: On Value</label>
+        <description><![CDATA[
+The value sent by the Z-Wave BASIC_SET command when motion is detected.<br /><h1>Overview</h1><p>On Value is the value sent by the Z-Wave BASIC_SET command when motion is detected.<br /> A value of 0 will turn the lights off (not recommended).<br /> A value between 1 and 100 will set the dim level to between 1% and 100%.</p> <p>A value of 255 will turn the light on. </p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association Group</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

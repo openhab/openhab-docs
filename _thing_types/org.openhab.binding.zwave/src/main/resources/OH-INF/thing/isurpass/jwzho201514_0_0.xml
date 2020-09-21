@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="isurpass_jwzho201514_00_000" listed="false">
+    <label>JWZH-O-2015-14 Gas Water Valve Controller</label>
+    <description><![CDATA[
+Gas Water Valve Controller<br /><h1>Overview</h1><p>Valve controller with on/off operation. Can be mounted on various valve handles (water, gas or other) for remote control. <br />Specifications:</p> <ul><li>Power Voltage : DC12V/1A</li> <li>Communication Technology : Z-WAVE PLUS  EU868.42MHz</li> <li>Wireless Distance(Outdoor) : 30 Meters</li> <li>Valve Pressure : 1.6MPa</li> <li>Time Off Valve Auto : 5~10 sencod</li> <li>Time Off Valve Electric : 5~10 sencod</li> <li>Torque : 30~60 Kg.cm</li> </ul><br /><h2>Inclusion Information</h2><p>With controller in inclusion mode, triple click the button within 1 second on the valve.</p> <br /><h2>Exclusion Information</h2><p>With controller in exclusion mode, triple click the button within 1 second on the valve.</p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen iSurpass Technology Co. ,Ltd</property>
+      <property name="modelId">JWZH-O-2015-14</property>
+      <property name="manufacturerId">021C</property>
+      <property name="manufacturerRef">1011:1311</property>
+      <property name="dbReference">1207</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

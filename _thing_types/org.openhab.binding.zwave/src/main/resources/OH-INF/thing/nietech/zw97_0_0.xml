@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_zw97_00_000" listed="false">
+    <label>ZW97 Eva Logik - Outdoor Smart Plug (2 channel)</label>
+    <description><![CDATA[
+Eva Logik - Outdoor Smart Plug (2 channel)<br /><h1>Overview</h1><p><strong>Specifications</strong></p> <p>Model: ZW97 <br />Power: 120VAC, 60Hz <br />Loading : 15 Amp Smart Outlet*2 <br />Total(Both Outlets): 15 Amp <br />Max Frequency: 908.42 MHz <br />Operating Temperature: -4° F~122° F</p> <p><strong>Introduction</strong></p> <p>The EVA LOGIK ZW97 is a Z-Wave enabled 15A receptacle designed for using of most residential lighting and motor applications. It's compatible with LED, halogen, incandescent, xenon, fluorescent and compact fluorescent bulbs.The ZW97 fully works with the Fibaro, Smartthings, Wink hub as well as all other certified Z-Wave controllers.</p> <p>One Z-Wave controlled AC outlet for standard incandescent lighting, CFL/LED. Total load capacity for both outlets is 15A(1800W) Resistive.</p> <br /><h2>Inclusion Information</h2><p><strong>Add to Z-Wave Network</strong></p> <p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network. (Once your controller confirmed, refresh the Z-Wave network to optimize performance. )</p> <br /><h2>Exclusion Information</h2><p><strong>Remove from Z-Wave Network</strong></p> <p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">ZW97</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">C000:C007</property>
+      <property name="dbReference">1256</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_sosremote_00_000" listed="false">
+    <label>SOS/Remote Control Z-Wave Remote for Scene selection and SOS button</label>
+    <description><![CDATA[
+Z-Wave Remote for Scene selection and SOS button<br /><h1>Overview</h1><p>Remote control/SOS is a smart security device that can communication with other devices via z-wave. It is compatible with z-wave plus devices, battery powered , compact to carry .SOS is used for emergency.<br />With 4 buttons, you can use Remote control for emergency call and set 6 different scenes.</p> <br /><h2>Inclusion Information</h2><ol><li>Ensure remote control is in z-wave range.</li> <li>Set the controller in learning mode.(refer to the controller user manual)</li> <li>Quickly pressing the red button three times,Led will blink.</li> <li>The controller will recognize remote control and add it into z-wave network.</li> <li>Wait for the controller to configure.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Ensure the device is connected to power supply. </li> <li>Set the controller in remove mode(refer to controller’s user manual)</li> <li>Quick pressing the red button for three times.</li> <li>Wait for removing SOS from the controller .</li> </ol><br /><h2>Wakeup Information</h2><p>Press the red button once.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_emergency" typeId="alarm_emergency">
+        <label>Alarm (emergency)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=EMERGENCY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">SOS/Remote Control</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0003:108A</property>
+      <property name="dbReference">799</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>1: Basic Set Level</label>
+        <description><![CDATA[
+Basic Set Level<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren, the receiver will take it for consideration; for instance, if associated siren is received the Basic Set Command (0xFF), the siren will take alarm on.</p> <p>0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="30" max="32767">
+        <label>2: SOS Event Clear Time</label>
+        <description><![CDATA[
+SOS Event Clear Time<br /><h1>Overview</h1><p>This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’.</p> <p>This parameter is set to ‘0’, the clearing emergency event will not occurred always.</p> <p>The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: SOS Configuration</label>
+        <description><![CDATA[
+SOS Configuration<br /><h1>Overview</h1><p>This parameter defines the SOS key function, the SOS key can be configured as emergency event key or central scene notification key.</p> <p>If this parameter is set to ‘1’, the SOS key will be configured as central scene notification key.</p> <p>If this parameter is set to ‘2’, the SOS key will be configured as emergency event notification key. The default settings is ‘2’, the SOS key is </p> <p>configured as emergency event notification key.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">Enable Scene Mode</option>
+          <option value="2">SOS Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Able to control z-wave main controller setting or alarm host status.<br /><h1>Overview</h1><p>* COMMAND_CLASS_ZWAVEPLUS_INFO (V2)</p> <p>* COMMAND_CLASS_VERSION (V2)</p> <p>* COMMAND_CLASS_MANUFACTURER_SPECIFIC (V2)</p> <p>* COMMAND_CLASS_DEVICE_RESET_LOCALLY (V1)</p> <p>* COMMAND_CLASS_POWERLEVEL (V1)</p> <p>* COMMAND_CLASS_BATTERY (V1)</p> <p>* COMMAND_CLASS_ASSOCIATION (V2)</p> <p>* COMMAND_CLASS_ASSOCIATION_GRP_INFO (V1)</p> <p>* COMMAND_CLASS_WAKE_UP (V2)</p> <p>* COMMAND_CLASS_NOTIFICATION (V8)</p> <p>* COMMAND_CLASS_SENSOR_BINARY (V2)</p> <p>* COMMAND_CLASS_CONFIGURATION (V1)</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .<br /><h1>Overview</h1><p>Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="innovus_00110001_01_000" listed="false">
+    <label>SmartDimmer RAone SmartDimmer</label>
+    <description><![CDATA[
+RAone SmartDimmer<br /><h1>Overview</h1><p>The "RAone Smart Dimmer" offers extensive application possibilities. Equipped with a fingertip panel, many lighting scenarios can be covered and also reduce the energy consumption caused by the lamps. Some application examples are the time-controlled, gradual reduction of the light intensity, eg in the children's bedroom or hallways etc. </p> <p>The Smart Dimmer can be controlled via various remote controls, such as Bang &amp; Olufsen, Logitech 895 or the INNOVUS "SmoothRemote". The dimmers are also equipped with an integrated "power meter", which determines the energy consumption of the lamps. Connected to the House Control system, the power consumption of all devices connected to the dimmer can be measured.</p> <br /><h2>Inclusion Information</h2><p> The device is put into learn mode by touching the touchplate. </p> <br /><h2>Exclusion Information</h2><p> The device is put into learn mode by touching the touchplate.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (Power in watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">INNOVUS</property>
+      <property name="modelId">SmartDimmer</property>
+      <property name="manufacturerId">0077</property>
+      <property name="manufacturerRef">0001:0001,0011:0001</property>
+      <property name="versionMin">1.0</property>
+      <property name="dbReference">62</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>0: Maximum dim level</label>
+        <description><![CDATA[
+Maximum dim level<br /><h1>Overview</h1><p>Maximum Level, a limit on the maximum level the dimmer can reach. Levels larger than 99 will simply be interpreted as 99 ie. no limit.</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Report node</label>
+        <description>Report Node, reports changes in level to this node id. Disabled if 0.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: B&amp;O IR support</label>
+        <description>B&amp;O IR support is disabled if 0 otherwise enabled.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Dimming type</label>
+        <description>Dimming Type, trailing edge enabled if 0 otherwise leading edge enabled.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Trailing edge</option>
+          <option value="1">Leading edge</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>4: Dimming level duration</label>
+        <description><![CDATA[
+Dimming level duration<br /><h1>Overview</h1><p>Default Dimming Level Duration, how long time it takes to dim one level in 0.01s.</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>5: Set level duration</label>
+        <description>Default Set Level Duration, how long time it takes to set one level in 0.01s.</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Long dim duration</label>
+        <description><![CDATA[
+Long dim duration<br /><h1>Overview</h1><p>Long Dim Duration, time to use dimming to level 0 when double clicking. Format is the same as multilevel switch duration.</p>
+        ]]></description>
+        <default>158</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>7: Touch press time</label>
+        <description><![CDATA[
+Touch press time<br /><h1>Overview</h1><p>Touch Press Time, time for presses to register as separate and not part of a sequence, measured in 0.01s. 0 is interpreted as a 1.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Touch Multiple Press Time</label>
+        <description><![CDATA[
+No specific usage in this product<br /><h1>Overview</h1><p>Touch Multiple Press Time, has no specific usage is this product, shouldn't be changed.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Touch Hold Time</label>
+        <description><![CDATA[
+Touch Hold Time<br /><h1>Overview</h1><p>Touch Hold Time, time for presses to register as being held down in 0.01s. 0 is interpreted as a 1.</p>
+        ]]></description>
+        <default>40</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>10: Network Update Interval</label>
+        <description><![CDATA[
+Network Update Interval<br /><h1>Overview</h1><p>Network Update Interval, time between network updates in 256 seconds. Disabled if 0.</p>
+        ]]></description>
+        <default>168</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>11: Rediscover Interval</label>
+        <description>Rediscover Interval, time between rediscoveries in 256 seconds. Disabled if 0.</description>
+        <default>2362</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Dimmer</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

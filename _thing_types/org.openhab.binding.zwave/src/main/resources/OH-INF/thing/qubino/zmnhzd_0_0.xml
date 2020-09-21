@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhzd_00_000" listed="false">
+    <label>ZMNHZD Multifunctional Weather Station</label>
+    <description><![CDATA[
+Multifunctional Weather Station<br /><h1>Overview</h1><p>Weather Station is used for measuring temperature, humidity, wind &amp; rain properties and sending the measurement values to your Z-Wave network.The Weather Station can measure 10 different values: two sets of temperature/humidity sensors, wing gauge with 5 sensors (direction, velocity, wind gust, temperature and wind chill) and a rain sensor. With the use of the included Weather Station USB KEY all 10 values (end points) are sent and rendered in your home Z-Wave network. Qubino Weather Station Key is used for receiving Wireless data packages (from Thermo/ Hygro Sensor Ch1, Thermo/ Hygro Sensor Ch2, Rain Gauge, Wind Gauge) and sends it to the Z-Wave Controller. The Key is designed to be plugged into the USB Power Adapter. Module receives data for Temperature, Wind Chill, Velocity, Wind Gust, Wind Direction, Humidity, Rain Rate and Battery Level for each Sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <p>Remote Weather Sensors The remote weather sensors include a thermo-hygrometer, anemometer (wind sensor) and rain sensor. All data collected by the sensors are transmitted to the Weather Station Key by wireless RF, with a range up to 100 meters (open area). The Weather station Key supports a maximum of 2 thermo-hygrometers, allowing 2 channels of temperature/humidity display (Ch1 and Ch2)</p> <br /><h2>Inclusion Information</h2><p>Connect module to USB Power Supply auto-inclusion (works for about 5 seconds after connected to power supply) or enable add/remove mode on main controller hold service button S between 1.5 and 4 seconds</p> <p>NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to USB power supply.</p> <br /><h2>Exclusion Information</h2><p>Connect module to power supply enable add/remove mode on main controller, hold service button S between 4 seconds and 8 seconds By this function, all parameters of the module are set to default values and own ID is deleted.</p> <p>If service button S hold more than 1.5 and less than 4 seconds module is excluded, but configuration parameters are not set to default values.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_velocity" typeId="sensor_velocity">
+        <label>Sensor (velocity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=VELOCITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_direction" typeId="sensor_direction">
+        <label>Sensor (direction)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=DIRECTION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_rainrate" typeId="sensor_rainrate">
+        <label>Sensor (rain rate)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=RAIN_RATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Thermo/ Hygro Sensor Ch1 – Temperature</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1,COMMAND_CLASS_BASIC:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level1" typeId="system.battery-level">
+        <label>Battery Level 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_direction2" typeId="sensor_direction">
+        <label>Wind Gauge – Direction</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=DIRECTION</property>
+        </properties>
+      </channel>
+      <channel id="battery-level2" typeId="system.battery-level">
+        <label>Battery Level 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_velocity3" typeId="sensor_velocity">
+        <label>Wind Gauge – Velocity</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:3,COMMAND_CLASS_BASIC:3;type=VELOCITY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level3" typeId="system.battery-level">
+        <label>Battery Level 3</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_velocity4" typeId="sensor_velocity">
+        <label>Wind Gauge – Wind gust</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:4,COMMAND_CLASS_BASIC:4;type=VELOCITY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level4" typeId="system.battery-level">
+        <label>Battery Level 4</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature5" typeId="sensor_temperature">
+        <label>Wind Gauge – Temperature</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:5,COMMAND_CLASS_BASIC:5;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level5" typeId="system.battery-level">
+        <label>Battery Level 5</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature6" typeId="sensor_temperature">
+        <label>Wind Gauge – Wind Chill</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:6,COMMAND_CLASS_BASIC:6;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level6" typeId="system.battery-level">
+        <label>Battery Level 6</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_rainrate7" typeId="sensor_rainrate">
+        <label>Rain Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:7,COMMAND_CLASS_BASIC:7;type=RAIN_RATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level7" typeId="system.battery-level">
+        <label>Battery Level 7</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity8" typeId="sensor_relhumidity">
+        <label>Thermo/ Hygro Sensor Ch1 – Humidity</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:8,COMMAND_CLASS_BASIC:8;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level8" typeId="system.battery-level">
+        <label>Battery Level 8</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature9" typeId="sensor_temperature">
+        <label>Thermo/ Hygro Sensor Ch2 – Temperature</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:9,COMMAND_CLASS_BASIC:9;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level9" typeId="system.battery-level">
+        <label>Battery Level 9</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity10" typeId="sensor_relhumidity">
+        <label>Thermo/ Hygro Sensor Ch2 – Humidity</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:10,COMMAND_CLASS_BASIC:10;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level10" typeId="system.battery-level">
+        <label>Battery Level 10</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHZD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0007:0053</property>
+      <property name="dbReference">364</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="8800">
+        <label>1: Wind Gauge - Gust Top Value</label>
+        <description><![CDATA[
+Wind Gauge, Wind Gust Top Value<br /><h1>Overview</h1><p>Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association</p>
+        ]]></description>
+        <default>1000</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="30000">
+        <label>2: Rain Gauge - Rate top value</label>
+        <description><![CDATA[
+Rain Rate top value<br /><h1>Overview</h1><p>If the sensor Rain Rate is higher than the parameter value, a device triggers a association.</p>
+        ]]></description>
+        <default>200</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Wind Gauge</label>
+        <description><![CDATA[
+Wind Gust<br /><h1>Overview</h1><p>0 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set = 0x00</p> <p>1 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set =0xff</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Rain Gauge</label>
+        <description><![CDATA[
+Rain Rate<br /><h1>Overview</h1><p>0 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set = 0x00</p> <p>1 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set =0xff</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: End Point 1</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: End Point 2</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: End Point 3</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: End Point 4</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: End Point 5</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>10: End Point 6</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>11: End Point 7</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>12: End Point 8</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: End Point 9</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>14: End Point 10</label>
+        <description><![CDATA[
+Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Random ID enable</label>
+        <description><![CDATA[
+enables/disables random ID<br /><h1>Overview</h1><p>If Random ID is disabled, the Weather Station USB Key can receive data from multiple 433 MHz Sensors on the same Channel. If the Random ID is enabled, the USB Key can receive data from only one sensor on the same channel. If the USB Key does not receive a data from a sensor on a specific channel for more than 2.5 hours, it clears the Random ID of the device and waits for a new ID. If you replace the batteries in the modules, the Random ID will change. If you want that the USB Key accept a module immediately, set the Parameter No. 15 to “0” and in the next step again to “1”.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_250_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>250: Unsecure / Secure Inclusion</label>
+        <description><![CDATA[
+Unsecure / Secure Inclusion<br /><h1>Overview</h1><ul><li>default Value 0</li> <li>0 – Unsecure Inclusion</li> <li>1 – Secure Inclusion</li> </ul><p>The Weather Station Key supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, the Key could be included as unsecure and keep all the functionality. By default, the Key includes as unsecure. To include the Key as secure follow the procedure:</p> <ol><li>Include the Key into the controller</li> <li>Set the parameter 250 to the value “1”</li> <li>Enable add/remove mode on main controller,</li> <li>Hold service button S between 1.5 and 4 seconds to exclude the module</li> <li>If the exclusion of the module was successful, the LED on the module starts blinking</li> <li>Unplug the module out of the power supply</li> <li>enable add/remove mode on main controller</li> <li>Plug the module into the power supply to star autoinclusion</li> <li>Now the module should be included as secure</li> </ol><p>The same procedure is to include the module as unsecure</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Reserved for the communication with the main controller</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic on/off - wind</label>
+        <description>triggered when the wind gust of the wind gauge exceed the configuration parameter 1 value</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic on/off - rain</label>
+        <description>triggered when the rain rate exceed the configuration parameter 2 value</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

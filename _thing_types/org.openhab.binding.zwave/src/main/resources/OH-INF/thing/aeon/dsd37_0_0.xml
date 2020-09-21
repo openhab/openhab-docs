@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsd37_00_000" listed="false">
+    <label>DSD37 Range Extender</label>
+    <description><![CDATA[
+Range Extender<br /><h1>Overview</h1><p>Aeon Labs Range Extender is a Z-Wave repeater device based on Z-Wave enhanced 232 slave library V6.51.08.</p> <p>It can extend the range of the communication between Z-Wave products and assist other devices to reach each other in your Z-Wave network.</p> <p>It can be included and operated in any Z-wave network with other Z-wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>It is also a security Z-Wave device and supports the Over The Air (OTA) feature for the product’s firmware upgrade.  </p> <br /><h2>Inclusion Information</h2><p>For Non-Security Inclusion, Press the button one time.</p> <p>For Security Inclusion, Press the button two times</p> <p>If the inclusion is successful, its Network LED will be solid when you press the Action Button again.</p> <br /><h2>Exclusion Information</h2><p>Press the button one or two times.</p> <p>If the exclusion is successful, its Network LED will be colorful gradient status</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSD37</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0004:0025,0019:0004</property>
+      <property name="dbReference">66</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_200_1" type="integer" groupName="configuration">
+        <label>200: Partner ID</label>
+        <description>Partner ID</description>
+        <default>0</default>
+        <options>
+          <option value="0">Aeon Labs’s Standard Product</option>
+          <option value="1">AT&amp;T</option>
+          <option value="2">Jean</option>
+          <option value="3">Telefonica</option>
+          <option value="4">Reserved for other Partner</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_254_2" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>254: Device Tag</label>
+        <description>When Repeater removed from z-wave network, Device Tag will not change</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>255: Reset configuration settings to default values</label>
+        <description>Reset configuration settings to default values, except parameter is 254</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Retransmit</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

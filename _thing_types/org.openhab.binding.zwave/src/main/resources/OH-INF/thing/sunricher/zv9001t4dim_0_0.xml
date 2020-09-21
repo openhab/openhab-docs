@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9001t4dim_00_000" listed="false">
+    <label>ZV9001T4-DIM 4 group single colour touch panel secondary controller</label>
+    <description><![CDATA[
+4 group single colour touch panel secondary controller<br /><h1>Overview</h1><p>SR-ZV9001T4-DIM-EU is a touch control z-wave secondary controller (z wave dimmer switch) with z-wave Plus enabled for single color LED lighting.</p> <p>As a z-wave secondary controller, it is a z wave dimmer switch which can be added to z-wave network and removed from z-wave network by z-wave primary (master) controllers or gateway and control z-wave devices that are added to the network. It supports 5 groups for associations, a lifeline group association to primary (master) controller and 4 groups association to devices, the group association to devices supports maximum 12 Z-wave devices per group.</p> <p>It is a universal z-wave slave which can be compatible with universal z-wave primary controller or gateway. The wireless controller is compatible with single color z wave device SR-ZV9101FA-DIM and different frequencies are available for different countries or areas. The signal transmit distance can be up to 30m. The controller supports group and scene storage and recall functions. It is easy to install on the wall and available in standard EU size.</p> <p><strong>Key Features</strong></p> <ul><li>Single color touch Z-wave secondary controller</li> <li>Source-routed Mesh Network Architecture</li> <li>Each device works as a node</li> <li>All Nodes Are Transceivers</li> <li>Each Z-wave Network Allows Up to 243 Devices</li> <li>Actively route around and circumvent obstacles or radio dead spots</li> <li>Wireless Synchronization to Drastically Increase Control Distance</li> <li>Devices can communicate to one another by using intermediate nodes</li> <li>Added or removed by primary controllers or gateway</li> <li>Supports 1 lifeline group association to master controller</li> <li>Supports 4 groups association to z-wave devices, maximum 12 devices per group</li> <li>Compatible with universal z-wave primary controller or gateway</li> <li>Supports group, scene storage and recall functions</li> </ul><br /><h2>Inclusion Information</h2><p>Set z-wave master (primary) controller into network inclusion mode (please refer to their manual to learn how)   Click the “Inclusion/Exclusion” key on the back of the slave controller (or press and hold down the switch key ) -&gt; LED indicator on the salve controller turns on and flashes 6 times quickly to indicate successful adding -&gt; there shall be an indication on master controller or z-wave gateway</p> <br /><h2>Exclusion Information</h2><p>When the slave controller has already been added to z-wave network, set the z-wave master controller or z-wave gateway into network exclusion mode (please refer to their user manual to learn how)</p> <p>Click the “Inclusion/Exclusion” key on the back of the slave controller (or press and hold down the switch key )</p> <p>-&gt; LED indicator on the slave controller turns on and shows 3 short blinks and 1 long blink to indicate successful removing</p> <p>-&gt; there shall be an indication on the master controller</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer group 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer Group 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer group 3</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer3" typeId="switch_dimmer">
+        <label>Dimmer Group 4</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:3,COMMAND_CLASS_BASIC:3</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9001T4-DIM</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0003:A10B,0003:A10D,0300:A10B</property>
+      <property name="dbReference">792</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Scene_type</label>
+        <description><![CDATA[
+Scene type<br /><h1>Overview</h1><p>Parameter 3 can be configured via “COMMAND_CLASS_CONFIGURATION” to decide which scene command to use “CENTRAL SCENE” or “SCENE ACTIVATION”, factory default is “CENTRAL SCENE”.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Scene_send_to_where</label>
+        <description><![CDATA[
+Scene send to where<br /><h1>Overview</h1><p>Parameter 4 can be configured via “COMMAND_CLASS_CONFIGURATION” to decide which object shall the remote send scene packet to, the gateway or the association group. Factory default is the association group.   By factory default this remote uses “CENTRAL SCENE” to send packet to the association group devices, this method requires that the controlled devices support “CENTRAL SCENE”</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Launch 1<br /><h1>Overview</h1><p>Send mode:</p> <p>Singlecast/Multicast (The touch color wheel uses multicast to send packets)</p> <p>Send commands:</p> <p>The Basic Set, <br />Switch Multilevel Start Level Change, <br />Switch Multilevel Stop Level Change, <br />Switch Multilevel Set, <br />Scene Activation,<br />Scene Actuator Conf Set,<br />Central Scene Notification</p>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Launch 2<br /><h1>Overview</h1><p>Send mode:<br /><br />Singlecast/Multicast (The touch color wheel uses multicast to send packets)<br /><br />Send commands:<br /><br />The Basic Set,<br />Switch Multilevel Start Level Change,<br />Switch Multilevel Stop Level Change,<br />Switch Multilevel Set,<br />Scene Activation,<br />Scene Actuator Conf Set,<br />Central Scene Notification</p>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Launch 3<br /><h1>Overview</h1><p>Send mode:<br /><br />Singlecast/Multicast (The touch color wheel uses multicast to send packets)<br /><br />Send commands:<br /><br />The Basic Set,<br />Switch Multilevel Start Level Change,<br />Switch Multilevel Stop Level Change,<br />Switch Multilevel Set,<br />Scene Activation,<br />Scene Actuator Conf Set,<br />Central Scene Notification</p>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+Launch 4<br /><h1>Overview</h1><p>Send mode:<br /><br />Singlecast/Multicast (The touch color wheel uses multicast to send packets)<br /><br />Send commands:<br /><br />The Basic Set,<br />Switch Multilevel Start Level Change,<br />Switch Multilevel Stop Level Change,<br />Switch Multilevel Set,<br />Scene Activation,<br />Scene Actuator Conf Set,<br />Central Scene Notification</p>
+        ]]></description>
+        <multipleLimit>12</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

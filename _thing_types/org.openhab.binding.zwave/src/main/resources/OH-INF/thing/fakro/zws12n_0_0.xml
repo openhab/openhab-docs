@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_zws12n_00_000" listed="false">
+    <label>ZWS12n Chain actuator - window opener</label>
+    <description><![CDATA[
+Chain actuator - window opener<br /><h1>Overview</h1><p>FAKRO ZWS12 chain motor thanks to their small dimensions and suitable force output are ideal for roof window operating, being fully compatible with the Z-Wave Plus system. The motors can be applied in both centre pivot and top hung and pivot roof windows as well as windows of non-standard dimensions. </p> <p>The chain has <strong>2 output speed </strong>and reach 24cm. </p> <p>The ZWS12 motor is equipped with <strong>encoder and two limit switches</strong>:</p> <p>limit switch at maximum chain travel position, overload limit in both directions (used mainly when closing the window).</p> <p>This product can be operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers.</p> <p>ZWS12 also can be <strong>controlled manually </strong>by button and <strong>closed by rain sensor and timer</strong>.</p> <p>Z-Wave Plus Secure Enabled Product</p> <p>This device is a security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products.</p> <p><strong>Technical Parameters:</strong> </p> <ul><li>Chain reach: 240 mm</li> <li>Output power : 9 W</li> <li>Rated current: 0.72 A</li> <li>Standby current: 0.03 A</li> <li>Chain pushing force: 200 N</li> <li>Closing force: 200 N</li> <li>Current limit: YES</li> <li>Power voltage: 15V DC</li> <li>Power cable: 2 x 0.75 mm2 (0,4 m)</li> </ul><p><strong>Reset:</strong></p> <p>Device Reset Locally – This function allows you to reset the Z-Wave network without the use of Z-Wave controller. Press 5 times the programming button P fast, the actuator was removed from the Z-Wave network, restore the default parameters, name and locations.</p> <p>Please use this procedure only when the network primary controller is missing or otherwise inoperable.</p> <br /><h2>Inclusion Information</h2><p><strong>Autoinclusion</strong> - This feature allow you to add hard to reach devices to Z-Wave network. 3-times ON and OFF the power actuator (OFF-ON-OFFON-OFF-ON) causes the introduction of actuator to Autoinclusion mode.</p> <p>Please note that the procedure has been started the time between on and off can not exceed 20s. Autoinclusion mode is activated for a maximum of 10 minutes. During this time, we can add an actuator to any Z-Wave controller running in the Include procedure.</p> <p><strong>Include</strong> - This function allow you to add actuator to the network Z-Wave.</p> <p>Follow the procedure adding device to the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the actuator for 1 second.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclude</strong> - This function allow you to remove actuator from the network Z-Wave. Follow the procedure removing device from the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the actuator for 1 second. Function removes information only about network Z-Wave.</p>
+    ]]></description>
+    <category>Window</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">ZWS12n</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0002:0011,0002:0111</property>
+      <property name="dbReference">777</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>7: Motor speed I</label>
+        <description><![CDATA[
+Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>7: Motor speed I</label>
+        <description><![CDATA[
+Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="4">
+        <label>8: 1 Motor speed II (rain sensor)</label>
+        <description><![CDATA[
+1 Motor speed II (rain sensor)<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>12: Callibrate</label>
+        <description><![CDATA[
+This parameter on/off callibration function<br /><h1>Overview</h1><p>Value 1 – calibrated</p> <p>Value 2 – discalibrated</p> <p>to enter the calibration mode must first time discalibrate and then calibrate.</p> <p>Calibration possible after prior recalibration of the device. It is possible via gate (Gateway Z-Wave), remote control with a display, e.g. ZRS24 remote control (FAKRO). </p> <p>See manual.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>13: Last saved position</label>
+        <description><![CDATA[
+Set servomotor in previous position<br /><h1>Overview</h1><p>This parameter set servomotor in previous position after using Basic Mode operation.</p> <p>1 – FF go to Max</p> <p>2 – FF go to previous position</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>15: Close after time</label>
+        <description><![CDATA[
+Close after time min<br /><h1>Overview</h1><p>0-120 minutes</p>
+        ]]></description>
+        <default>120</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Position reporting<br /><h1>Overview</h1><p>Life Line – group for position reporting actuator after each a stoppage and alarm reporting (overcurrent, damage encoders). This group can be a maximum 1 device.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Repeat</label>
+        <description><![CDATA[
+Basic commands<br /><h1>Overview</h1><p>Basic Repeat – group used to transfer the received basic commands to the devices included in this group. This group can be a maximum 5 devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Multilevel Repeat</label>
+        <description><![CDATA[
+Transfer the received multilevel commands<br /><h1>Overview</h1><p>Multilevel Repeat – group used to transfer the received multilevel commands to the devices included in this group. This group can be a maximum 5 devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Basic Rain</label>
+        <description><![CDATA[
+Transfer the received commands from actuator &amp; rain detector to the devices<br /><h1>Overview</h1><p>Basic Rain – group used to transfer the received commands from actuator &amp; rain detector to the devices included in this group. This group can be a maximum 5 devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

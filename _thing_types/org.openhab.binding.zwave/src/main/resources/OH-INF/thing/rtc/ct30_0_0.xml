@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="rtc_ct30_00_000" listed="false">
+    <label>CT30 Z-Wave Thermostat</label>
+    <description><![CDATA[
+Z-Wave Thermostat<br /><h1>Overview</h1><p>This thermostat was made by Radio Thermostat Company of America or 2Gig.  It can use either WiFi or Z-Wave or both depending on <br />which USNAP modules are installed.</p> <br /><h2>Inclusion Information</h2><ul><li>Put your primary controller in include mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to include.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Put your primary controller in exclude mode.</li> <li>Press the MENU button</li> <li>Tap the MATE button under the radio tower icon.  A large "r1" or "r2" wil be displayed indicating which slot the USNAP module is in.</li> <li>Tap the MATE button under the radio tower icon again to exclude.</li> </ul>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="rtc_ct30_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="rtc_ct30_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Radio Thermostat Company of America (RTC)</property>
+      <property name="modelId">CT30</property>
+      <property name="manufacturerId">0098</property>
+      <property name="manufacturerRef">0000:0000,0001:001E,0001:00F0,0001:00FF,1E10:0158,1E10:015C,1E12:015C,1E12:015E,3200:015E</property>
+      <property name="dbReference">94</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Reporting Threshold</label>
+        <description><![CDATA[
+Temperature Reporting Threshold<br /><h1>Overview</h1><p>Sets the reporting threshold for changes in the ambient temperature as detected by the thermostat.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">0.5°</option>
+          <option value="2">1.0°</option>
+          <option value="3">1.5°</option>
+          <option value="4">2.0°</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Utility Lock Enable/Disable</label>
+        <description><![CDATA[
+Utility Lock Enable/Disable<br /><h1>Overview</h1><p>The Utility Lock Configuration Set command enables or disables the utility lock. If the utility lock is enabled, the setpoint cannot be modified directly via the thermostat screen.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Utility lock disable</option>
+          <option value="1">Utility lock enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Humidity Reporting Threshold</label>
+        <description><![CDATA[
+Humidity Reporting Threshold<br /><h1>Overview</h1><p>The Humidity Threshold Configuration Set Command sets the reporting threshold for changes in the relative humidity as detected by the thermostat.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">3% RH</option>
+          <option value="2">5% RH</option>
+          <option value="3">10%RH</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Auxiliary/Emergency</label>
+        <description><![CDATA[
+Auxiliary/Emergency<br /><h1>Overview</h1><p>The Auxiliary/Emergency configuration command enables or disables auxiliary / emergency heating in the thermostat. Auxiliary / emergency heating is only available if the thermostat is configured in heat pump mode and with at least one stage of auxiliary heat.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auxiliary/Emergency heat disabled</option>
+          <option value="1">Auxiliary/Emergency heat enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Thermostat Swing Temperature</label>
+        <description><![CDATA[
+Thermostat Swing Temperature<br /><h1>Overview</h1><p>The Thermostat Swing Temperature configuration command sets swing temperature on the thermostat. The swing temperature is applied to the setpoint to determine when the thermostat will turn on the HVAC system. If the thermostat is heating, the swing temper</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">0.05F</option>
+          <option value="2">0.1F</option>
+          <option value="8">4F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Thermostat Diff Temperature</label>
+        <description><![CDATA[
+Thermostat Diff Temperature<br /><h1>Overview</h1><p>The Thermostat Differential Temperature configuration command sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. There are two differential tempera</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="4">2.0 F</option>
+          <option value="8">4.0 F</option>
+          <option value="12">6.0 F</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="rtc_ct30_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="rtc_ct30_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

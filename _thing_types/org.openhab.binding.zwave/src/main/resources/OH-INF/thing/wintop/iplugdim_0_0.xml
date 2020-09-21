@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wintop_iplugdim_00_000" listed="false">
+    <label>iPlugDim Wall Plug with dimming function</label>
+    <description><![CDATA[
+Wall Plug with dimming function<br /><h1>Overview</h1><ul><li>The iPlugDim can be remotely controlled.</li> <li>The iPlugDim can be controlled by the push button on the front of the device.</li> <li>The iPlugDim ’s indicator light will indicate the status of the switch (ON or OFF).</li> <li>The iPlugDim can make a dimming function of the load.</li> </ul><p>Press and release the push button of the iPlugDim to switch on/off the load of socket, press and hold the push button to dim the load of the socket.</p> <p><strong>Indication modes <br /></strong></p> <p>The indicator gives various statuses of the device as follows:</p> <ol><li>Ready for learn mode: Indicator light blinks every second.</li> <li>Learn in progress (add): Indicator light blinks 2 times every second.</li> <li>Learn in progress (remove): Indicator light blinks 3 times every second.</li> <li>Learn mode success: Indicator light is on for second.</li> <li>Learn mode failed: Indicator light blinks 8 times fast.</li> </ol><br /><h2>Inclusion Information</h2><ol><li> <p>Make sure your Z‐Wave controller is in the right operation mode (include or exclude).</p> </li> <li> <p>Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process</p> <p>(indication mode: Ready for learn mode).</p> </li> <li> <p>(The product will start NWI automatically after unsuccessful normal inclusion) </p> </li> </ol><br /><h2>Exclusion Information</h2><p>Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wintop</property>
+      <property name="modelId">iPlugDim</property>
+      <property name="manufacturerId">0097</property>
+      <property name="manufacturerRef">6942:4503</property>
+      <property name="dbReference">698</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Set to Default</label>
+        <description>Set to Default</description>
+        <default>85</default>
+        <options>
+          <option value="1">Set all config values to default values</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

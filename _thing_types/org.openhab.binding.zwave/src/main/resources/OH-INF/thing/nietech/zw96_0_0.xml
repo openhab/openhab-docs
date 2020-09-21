@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_zw96_00_000" listed="false">
+    <label>ZW96 Smart Plug Outdoor</label>
+    <description><![CDATA[
+Smart Plug Outdoor<br /><h1>Overview</h1><p>Outdoor Z-Wave Plus On/Off Light and Appliance Plug, 1 On/Off Outlet + 1 Alway On Outlet</p> <ul><li>AC plug</li> <li>Always-On outlet</li> <li>Z-Wave controlled outlet</li> <li>ON/OFF/PROG Push button</li> <li>Status LED   Supported max 15 Amp, 120V AC.</li> <li>IP65 Waterproof Design (don't immerse), ideal outdoor use for garden, washing machine, patio, Christmas tree, landscape lighting, fountains, pumps and other indoor and outdoor plug-in appliances, etc.</li> <li>Operating Temp of -4F to 120F</li> </ul><br /><h2>Inclusion Information</h2><p>Include ZW96 to/from a Z-Wave Gateway with supporting Security.The ZW96 can support the Primary Controller that implemented the security S2.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by</p> <p>Z-WaveTM Controller means “Remove” or “Exclusion”.</p> <br /><h2>Exclusion Information</h2><p>Include ZW96 to/from a Z-Wave Gateway with supporting Security.The ZW96 can support the Primary Controller that implemented the security S2.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by</p> <p>Z-WaveTM Controller means “Remove” or “Exclusion”.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">ZW96</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">C000:C003</property>
+      <property name="dbReference">1244</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status LED</label>
+        <description><![CDATA[
+Status LED Configuration<br /><h1>Overview</h1><p>Status LED Configuration</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Outlet on, LED On</option>
+          <option value="1">Outlet on, Led Off</option>
+          <option value="2">LED Off, LED No Work</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Count Down</label>
+        <description>Count Down Configuration</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Z-Wave Plus Lifeline<br /><h1>Overview</h1><ol><li>ZW96 will trigger AUTO report function if the Switch status had been changed.</li> <li>Device Reset Locally Notification(Only report when the ZW96 Switch Module has been triggered the RESET TO DEFAULT)</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

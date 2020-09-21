@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse09_00_000" listed="false">
+    <label>ZSE09 Motion &amp; Light Mini Sensor</label>
+    <description><![CDATA[
+Motion &amp; Light Mini Sensor<br /><h1>Overview</h1><p>WELL DONE!</p> <p>You have picked the finest solution for your smart home, congratulations!</p> <p>Now it's time to enjoy these great features of your new Mini Sensor:</p> <ul><li>Accurate motion and light level detection</li> <li>Wireless notifications and low battery alerts (when included to a Z-Wave gateway controller) - Custom automation scenarios based on both light and motion triggers (advanced configuration required)</li> <li>Adjustable sensitivity levels for motion detection to fit your needs</li> <li>Ultra small and simple design</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Flexible and quick installation</li> </ul><p><strong>SPECIFICATIONS</strong></p> <ul><li>Model Number: ZSE09</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 1 CR123A battery (included)</li> <li>Power Consumption: 0.15W</li> <li>Operating Temperature: 32 – 104 F</li> <li>Motion detection: Up to 20 feet</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> <li>Dimensions: 1.9” x 1.8”</li> </ul><p>Weight: 1⁄2 oz</p> <p>Z-WAVE COMMAND CLASSES</p> <p>This device requires the following command classes to be supported and recognized by your Z-Wave controller:</p> <p>ZSE09</p> <p> Z-Wave Plus Certified Device</p> <p>COMMAND_CLASS_ZWAVEPLUS_INFO (V2) COMMAND_CLASS_VERSION (V2) COMMAND_CLASS_MANUFACTURER_SPECIFIC (V2) COMMAND_CLASS_DEVICE_RESET_LOCALLY (V1) COMMAND_CLASS_POWERLEVEL (V1) COMMAND_CLASS_BATTERY (V1) COMMAND_CLASS_ASSOCIATION (V2) COMMAND_CLASS_ASSOCIATION_GRP_INFO (V1) COMMAND_CLASS_WAKE_UP (V2) COMMAND_CLASS_NOTIFICATION (V4)</p> <p>NOTIFICATION_REPORT</p> <p>NOTIFICATION_TYPE_HOME_SECURITY NOTIFICATION_EVENT_HOME_SECURITY_MOTION_DETECTION_UNKNOWN_LOCATION NOTIFICATION_EVENT_HOME_SECURITY_NO_EVENT</p> <p>COMMAND_CLASS_SENSOR_BINARY (V2) SENSOR_BINARY_REPORT SENSOR_MOTION</p> <p>COMMAND_CLASS_CONFIGURATION (V1) COMMAND_CLASS_SENSOR_MULTILEVEL (V7)</p> <br /><h2>Inclusion Information</h2><ol><li>Bring the Mini Sensor within direct range of your controller</li> <li>Carefully turn and lift the cover of your Mini Sensor to access the battery</li> <li>Remove the plastic pull-tab from the battery slot. The LED indicator will blink slowly</li> <li>Put your Z-Wave controller into inclusion mode</li> <li>Press and release the Z-Wave button on the Mini Sensor 3 TIMES quickly. The LED indicator will flash quickly</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the Mini Sensor is powered on and located within direct range of your Z-Wave gateway controller</li> <li>Put your Z-Wave controller into exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash quickly</li> <li>The Mini Sensor should disappear from your controller's device list</li> </ol><br /><h2>Wakeup Information</h2><p>WAKE-UP MODE</p> <p>If you change settings and parameters for the sensor, you may need to wake it up manually for the changes to be recorded. Press and release the Z-Wave button ONCE to wake the device up. The LED indicator will flash ONCE.</p> <p>The sensor’s wake-up interval is set to 12 hours by default to save battery life. Though not recommended, you can change the wake-up interval using your controller’s advanced settings if available. Minimum value: 300s (5 minutes), maximum value: 16,777,200s (around 194 days). Accepted values need to match minute intervals, so 300, 360, 420, etc.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>sensor_binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>alarm_motion</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>sensor_luminance</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE09</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0003:0083</property>
+      <property name="dbReference">584</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="8" max="255">
+        <label>1: Motion Sensitivity</label>
+        <description><![CDATA[
+8 = high; 255 = low<br /><h1>Overview</h1><p>Adjust detection by choosing a value from 8 to 255, where 8 stands for high sensitivity level (detection of the smallest movement) and 255 stands for very low sensitivity level</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="5" max="600">
+        <label>2: Trigger ON Duration</label>
+        <description><![CDATA[
+delay after motion before turning OFF<br /><h1>Overview</h1><p>Set the duration (in seconds) you want the associated device to stay ON for after being triggered by the sensor before it automatically turns OFF. Must be greater than value set in parameter 6.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Trigger Action</label>
+        <description><![CDATA[
+Brightness to turn on the associated device 1-99, 255=ON<br /><h1>Overview</h1><p>You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. </p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Motion Detection</label>
+        <description>255=Motion Detection Enabled</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="1000">
+        <label>5: Light Trigger Level</label>
+        <description><![CDATA[
+Max Light level which enables motion trigger<br /><h1>Overview</h1><p>Set your light sensor as a secondary trigger for associated devices. If light level in a room falls beyond the set point and motion is detected, the Mini Sensor will send BASIC_SET command to associated devices to turn ON. The number entered as the value corresponds to the number of LUX. By default, if motion has been detected by your Mini Sensor, the associated device will turn ON if light level last reported by the sensor is under 100 LUX. </p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>6: Motion Trigger Interval</label>
+        <description><![CDATA[
+Minimum time between motion triggers.<br /><h1>Overview</h1><p>Adjust the time (in seconds) when motion is reported again after initial trigger. By default, with continued motion, the Mini Sensor will report motion again 8 seconds after it's last detection. The value set for this parameter can NOT be greater than value set in parameter 2. NOTE: Small interval will increase activity and decrease battery life.</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="60" max="36000">
+        <label>7: Light Polling Interval</label>
+        <description><![CDATA[
+Interval between light level reporting<br /><h1>Overview</h1><p>Decide how often (in seconds) you want the Mini Sensor to report light level to the controller and associated devices. By default, the Mini Sensor will report light level values every 3 minutes. The value set for this parameter can NOT be greater than the wake-up interval. NOTE: Small interval will increase activity and decrease battery life.</p>
+        ]]></description>
+        <default>180</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Light Trigger</label>
+        <description><![CDATA[
+255=enable Light sensor<br /><h1>Overview</h1><p>Use this parameter to enable and disable the light sensor as secondary trigger. If this feature is enabled, the Mini Sensor will activate associated devices based on motion AND light level set in parameter 5</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Light Report</label>
+        <description><![CDATA[
+Light level change to be reported.<br /><h1>Overview</h1><p>Choose light level (in LUX) change to be reported by the Mini Sensor to the controller. By default, the sensor will report any change of 100 LUX or more.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>10: LED Notifications</label>
+        <description><![CDATA[
+0=disable, 1=enable<br /><h1>Overview</h1><p>Use this parameter to turn LED notifications on or off for motion detection.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>lifeline communication of motion / no motion and light level status to Z-Wave controller. Supported command classes: NOTIFICATION_REPORT_V4 SENSOR_BINARY_REPORT_V2 SENSOR_MULTILEVEL_REPORT_V7 BATTERY_REPORT DEVICE_RESET_LOCALLY_NOTIFICATION</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BASIC</label>
+        <description><![CDATA[
+BASIC_SET Trigger associated devices<br /><h1>Overview</h1><p>control command communication to associated Z-Wave devices in the network. Use parameters 2, 3, 5, and 8 to configure this group’s settings. Supported command classes: BASIC_SET </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Reports</label>
+        <description><![CDATA[
+NOTIFICATION_REPORT_V4<br /><h1>Overview</h1><p>notifications to Z-Wave devices associated in this group. Supported command classes: NOTIFICATION_REPORT_V4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: SENSOR BINARY</label>
+        <description><![CDATA[
+SENSOR_BINARY_REPORT_V2<br /><h1>Overview</h1><p>notifications to Z-Wave devices associated in this group. Supported command classes: SENSOR_BINARY_REPORT_V2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

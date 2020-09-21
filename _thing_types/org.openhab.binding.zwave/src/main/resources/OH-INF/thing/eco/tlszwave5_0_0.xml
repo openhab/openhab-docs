@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eco_tlszwave5_00_000" listed="false">
+    <label>TLS-ZWAVE5 Automated Light Switch</label>
+    <description><![CDATA[
+Automated Light Switch<br /><h1>Overview</h1><p>Automates wall switch without replacing existing switches.  Battery-powered</p> <br /><h2>Inclusion Information</h2><p>Network Inclusion</p> <p>The Z-Wave Plus Toggle Light Switch must be added to a Z-Wave Plus network prior to use. To include the device in a network both the device and the network controller must be in inclusion mode at the same time. Refer to the instructions provided by the manufacturer of your specific controller for details on initiating the controller’s inclusion mode.</p> <ol><li>Verify that the Z-Wave Plus controller you are using is compatible with the Z-Wave Plus Toggle Light Switch.</li> <li>Locate the light switch desired to be used with the Z-Wave Plus Toggle Light Switch.</li> <li>Put your Z-Wave Plus Controller into add (inclusion) mode.</li> <li>Press the inclusion / exclusion button on the Z-Wave Plus Toggle Light Switch. (Figure 1)</li> <li>The LED on the front of the unit will turn off if successful included into a network.</li> </ol><br /><h2>Exclusion Information</h2><p>Network Exclusion</p> <ol><li>Any Z-Wave Plus Device can be removed from any Z-Wave Plus controller. Follow the directions to put your Z-Wave Plus Controller into exclusion mode.</li> <li>Press the inclusion / exclusion button on the Z-Wave Plus Toggle Light Switch.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ecolink</property>
+      <property name="modelId">TLS-ZWAVE5</property>
+      <property name="manufacturerId">014A</property>
+      <property name="manufacturerRef">0006:0002</property>
+      <property name="dbReference">915</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Reports</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The light switch will send basic reports with a value of 0x00 if the light is turned off and 0xFF if the light is turned on to all nodes in group 2. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

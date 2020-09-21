@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz36d_02_001" listed="false">
+    <label>TZ36D Dual Paddle Wall Switch</label>
+    <description><![CDATA[
+Dual Paddle Wall Switch<br /><h1>Overview</h1><p>The TKB Z-Wave dual wall switch is switching attached loads and is controlled either by the local switching paddle or remotely via the Z-Wave wireless protocol<br />It is included and controlled in a Z-Wave network by a remote control, a wireless control centre or any other kind of Z-Wave controller including a PC-software.</p> <br /><h2>Inclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p> <br /><h2>Exclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ36D</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0003:0003,0311:0202</property>
+      <property name="versionMin">2.1</property>
+      <property name="dbReference">605</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Night light</label>
+        <description><![CDATA[
+LED behaviour control.<br /><h1>Overview</h1><p>From the manual: The LED on the switch will by default, turn ON when the load attached is turned OFF. To make the LED turn ON when the attached load is turned ON, set the parameter 1 to a value of 1.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch off = LED off</option>
+          <option value="1">Switch off = LED on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Memory function</label>
+        <description><![CDATA[
+Memory function behaviour control.<br /><h1>Overview</h1><p>From the manual: Default value is 1, when the value is 0, switch memory function not open; when the value is 1, open switch memory function.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Memory function off</option>
+          <option value="1">Memory function on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Invert switch</label>
+        <description><![CDATA[
+Swap top and bottom switch/button.<br /><h1>Overview</h1><p>To switch top and bottom switch, set this parameter to 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal behaviour.</option>
+          <option value="1">Switch top and buttom button.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: LED transmission indication</label>
+        <description><![CDATA[
+LED transmission indication<br /><h1>Overview</h1><p>Tranmission indication behaviour control.</p> <p>This parameter controls the LED behaviour when transmitting data to any of the group members.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not flicker.</option>
+          <option value="1">Flicker for 1 second at the beginning</option>
+          <option value="2">Flicker entire time when transmitting.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Suspend group 4</label>
+        <description><![CDATA[
+Group 4 command sending behaviour control.<br /><h1>Overview</h1><p>Disable transmitting commands to Group 4.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Sending commands to Group 4 is enabled.</option>
+          <option value="1">Do not sen commands to Group 4.</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off Dimmer 1</label>
+        <description>Use the Left Switch to control a group</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: On/Off Dimmer 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: wireless</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

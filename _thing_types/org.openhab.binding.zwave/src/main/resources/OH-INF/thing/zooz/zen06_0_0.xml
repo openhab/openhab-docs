@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen06_00_000" listed="false">
+    <label>ZEN06 Smart Plug with 2 USB ports</label>
+    <description><![CDATA[
+Smart Plug with 2 USB ports<br /><h1>Overview</h1><h2>Product features: </h2> <ul><li>Manual and remote on / off control </li> <li>Energy monitoring </li> <li>Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller </li> <li>LED indicator displaying Z-Wave signal strength and power usage </li> <li>Security enabled Z-Wave device with AES signal encryption (requires a security enabled gateway controller for full functionality) </li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication </li> <li>Built-in range extender for a stronger, more reliable network </li> <li>2 USB charging ports for your smart phone or tablet (no Z-Wave functionality) </li> <li>Built-in overload protection in Z-Wave outlet and USB ports </li> </ul><h2>How to read LED indicator colors?</h2> <ul><li>Burgundy = Smart Plug is off</li> <li>Blue = 0 – 300 W</li> <li>Cyan = 300 – 600 W</li> <li>Green = 600 – 900 W</li> <li>Yellow = 900 – 1200 W</li> <li>Red = 1200 – 1500 W</li> <li>Purple = 1500 – 1800 W</li> <li>Purple blink = over 1800 W</li> </ul><h2>How to test Z-Wave network range for my Smart Plug?</h2> <p>You can easily check if the Smart Plug is within your Z-Wave controller’s range.</p> <h3>Here is how:</h3> <p>Press and hold the Z-Wave button for 6 to 9 seconds until the LED indicator turns violet.</p> <p>The LED indicator will then report signal strength.</p> <ul><li>Flashing green = direct communication with the primary controller is established and still being diagnosed</li> <li>Solid green for 2 seconds = direct communication with the primary controller is stable</li> <li>Flashing orange = direct communication with the primary controller is intermittent and being diagnosed</li> <li>Solid orange = communication quality is fair</li> <li>Solid red = communication with the primary controller has failed</li> <li>Press and release the Z-Wave button to exit testing mode.</li> </ul><p>NOTE: This function may only be activated once the Smart Plug has been included to a ZWave network.</p> <br /><h2>Inclusion Information</h2><p>Press and release the Z-Wave button 3 TIMES QUICKLY</p> <br /><h2>Exclusion Information</h2><p>Press and release the Z-Wave button 3 TIMES QUICKLY</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN06</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0101:000A</property>
+      <property name="dbReference">511</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Overload Protection</label>
+        <description><![CDATA[
+turns relay off once voltage exceeds 16.5A for over 5 secs if enabled<br /><h1>Overview</h1><p>We <strong>DO NOT</strong> recommend changing this parameter’s value as it may result in device damage and malfunction.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: On/Off Status Recovery After Power Failure</label>
+        <description>Recovery state for power failure</description>
+        <default>0</default>
+        <options>
+          <option value="0">Previous setting</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: On/Off Status Change Notifications</label>
+        <description><![CDATA[
+Send notifications to associated devices<br /><h1>Overview</h1><p>Your Smart Plug will automatically send a notification to the controller and other associated devices if its status changes from on to off or the other way round. Choose when you want it to send the report.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Send any change</option>
+          <option value="2">Send manual changes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: LED Indicator Control</label>
+        <description>LED Indicator Control</description>
+        <default>0</default>
+        <options>
+          <option value="0">Display power consumption always</option>
+          <option value="1">Display power consumption at state change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>151: Power Report Value Threshold</label>
+        <description><![CDATA[
+Minimum change in watts to report<br /><h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices.</p> <p>The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported.</p> <p>So if 50 Watts are entered by default, the smart plug will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report).</p> <p>Values: 0 – 65535;</p> <p>0 – disabled (it will not report power consumption based on value change);</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>152: Power Report Percentage Threshold</label>
+        <description><![CDATA[
+Minimum percentage change to report<br /><h1>Overview</h1><p>Choose how you want your Smart Plug to report power consumption to your controller and associated devices by percentage rate.</p> <p>The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported.</p> <p>So if 10% is entered by default, the Smart Plug will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report).</p> <p>Values: 0 – 255;</p> <p>0 – disabled (it will not report power consumption based on percentage change);</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>171: Power Report Frequency</label>
+        <description><![CDATA[
+How often to report power consumption (W) in secs<br /><h1>Overview</h1><p>Choose how often you want your Smart Plug to report power consumption (W) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>So if 30 is entered by default, the Smart Plug will report power consumption every 30 seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled (it will not report power consumption);</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>172: Energy Report Frequency</label>
+        <description><![CDATA[
+How often to report energy usage (KWH) in secs<br /><h1>Overview</h1><p>Choose how often you want your Smart Plug to report energy usage (KWH) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>So if 300 is entered by default, the smart plug will report energy usage every 300 seconds (5 minutes).</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled (it will not report energy usage);</p>
+        ]]></description>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_173_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>173: Voltage Report Frequency</label>
+        <description><![CDATA[
+How often to report voltage (V) in secs<br /><h1>Overview</h1><p>Choose how often you want your Smart Plug to report voltage (V) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_174_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>174: Electricity Report Frequency</label>
+        <description><![CDATA[
+How often to report electrical current (A) in secs<br /><h1>Overview</h1><p>Choose how often you want your Smart Plug to report levels of electrical current (A) to your controller and associated device.</p> <p>The number entered as value corresponds to the number of seconds.</p> <p>Values: 5 – 2678400;</p> <p>0 – disabled</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

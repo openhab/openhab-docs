@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_hmhs1cgz_00_000" listed="false">
+    <label>HM-HS1CG-Z Combustible Gas Sensor</label>
+    <description><![CDATA[
+Combustible Gas Sensor<br /><h1>Overview</h1><p>This Smart Combustible Gas Sensor adopts super low power consumption Z-Wave Wireless module. Used for detecting combusting gas leakage and preventing danger caused by gas leakage it also can be used as Z-Wave repealer to extend wireless transmission distance. It adopts high stability semi-conductor gas sensor. Sensor alarms if gas density in air exceeds set alarm level. It is applicable for kitchen or possible gas leakage in in-door area.</p> <br /><h2>Inclusion Information</h2><ul><li>Click [Add] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.</li> <li>If add Process is successful, Green LED will turn on</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Click [Remove] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s</li> <li>If remove Process is successful, Green LED is Blinking 6 times, then turn on</li> </ul>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">HM-HS1CG-Z</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">8003:1000</property>
+      <property name="dbReference">963</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ul><li>Lifeline between controller and the device.</li> <li>Supported command classes: Notification report, and Device Reset Locally notification.</li> <li>Association Group description: Association group 1: Lifeline association group</li> <li>Maximum supported node is 1.</li> </ul><p>Include command classes: Notification Report and Device Reset Locally notification.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Root Device group(Notification)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Maximum supported nodes are 5.<br /><br />1-Notification reports status of gas detected or no gas <br /><br />    Association group 1: Lifeline association group<br /><br />2-When the sensor detects status change of gas detected and no gas detected, the device will be triggered.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

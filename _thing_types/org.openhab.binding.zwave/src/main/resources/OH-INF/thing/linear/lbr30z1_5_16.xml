@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_lbr30z1_05_016" listed="false">
+    <label>LBR30Z-1 Dimmable LED Light Bulb</label>
+    <description><![CDATA[
+Dimmable LED Light Bulb<br /><h1>Overview</h1><p>Zwave Controlled Smart LED PAR38 Light Bulb, 650 Lumens, equivalentto a 65 Watt incandescent light bulb.</p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, turn the power to the light bulb socket ON.</p> <br /><h2>Exclusion Information</h2><p>Set the Controller into “exclusion” mode. Reset the bulb by using the wall switch to turn the power to the bulb ON. The Smart LED Light Bulb will flash twice to confirm the exclusion</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">LBR30Z-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4754:4252</property>
+      <property name="versionMin">5.16</property>
+      <property name="versionMax">5.16</property>
+      <property name="dbReference">928</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dim Level Memory</label>
+        <description><![CDATA[
+Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>By default, the LBR30Z-1 bulb will go to full brightness when turned on. To have the bulb turn on to the last dim level setting, set parameter 1 to 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable dim level memory</option>
+          <option value="1">Enable dim level memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim / Bright Step Level</label>
+        <description><![CDATA[
+How much the brightness will change with each dimming step<br /><h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how much the bulb brightness will change is set by the programmed dimming step level. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>10: Dim / Bright Speed</label>
+        <description><![CDATA[
+How fast the brightness will change with each dimming step<br /><h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how fast the bulb brightness will change is set by the programmed dimming step speed</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

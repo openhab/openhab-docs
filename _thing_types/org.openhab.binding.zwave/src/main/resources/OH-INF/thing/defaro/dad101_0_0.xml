@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="defaro_dad101_00_000" listed="false">
+    <label>DAD-101 Dimmer with sensors support</label>
+    <description><![CDATA[
+Dimmer with sensors support<br /><h1>Overview</h1><p>One channel dimmer with ability to add different sensors to it.</p> <br /><h2>Inclusion Information</h2><ol><li>Put controller in inclusion mode.</li> <li>Power on device. It should be added automatically (using NWI).</li> <li>If not fast press add/remove button three times.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put controller in exclusion mode.</li> <li>Fast press add/remove button three times.</li> </ol><br /><h2>Wakeup Information</h2><p>Always listening</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Defaro</property>
+      <property name="modelId">DAD-101</property>
+      <property name="manufacturerId">032E</property>
+      <property name="manufacturerRef">0060:0031</property>
+      <property name="dbReference">833</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Load type</label>
+        <description>Dimmer load type</description>
+        <default>3</default>
+        <options>
+          <option value="0">Normal lamps</option>
+          <option value="1">Induction low volt halogen lamps</option>
+          <option value="2">Electronic low volt halogen lamps</option>
+          <option value="3">LED 220V lamps</option>
+          <option value="4">Non-dimmable lamps</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="94">
+        <label>2: Min dimming level</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="6" max="99">
+        <label>3: Max dimming level</label>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>4: Dimming speed</label>
+        <description><![CDATA[
+Dimming speed<br /><h1>Overview</h1><p>Dimming speed in seconds (0 - instantly) <strong>WARNING</strong> - 0 does not work correctly, it leaves 11-15V AC on the terminals. Use 1 instead!</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Fastest</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="650">
+        <label>5: Auto Off delay</label>
+        <description><![CDATA[
+Delay to turn device OFF after ON command received<br /><h1>Overview</h1><p>Sets time after which dimmer will turn off after receiving ON command in 1 sec. (0 - disable feature)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>6: All ON/OFF behaviour</label>
+        <description><![CDATA[
+All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Powerfail recovery</label>
+        <description>Powerfail recovery mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Restore previous state</option>
+          <option value="1">Always set to OFF state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Lighting autolevel</label>
+        <description>Autolevel behavior</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Use with motion sensor</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="4000">
+        <label>9: Light level</label>
+        <description><![CDATA[
+Light level to maintain<br /><h1>Overview</h1><p>In lumens</p>
+        ]]></description>
+        <default>150</default>
+        <options>
+          <option value="150">Default</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="300">
+        <label>10: Lighting change trigger threshold</label>
+        <description><![CDATA[
+Lighting change trigger threshold<br /><h1>Overview</h1><p>In lumens</p>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="1">Min</option>
+          <option value="10">Default</option>
+          <option value="300">Max</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="1800">
+        <label>12: Turn on delay</label>
+        <description><![CDATA[
+Sets turn on delay<br /><h1>Overview</h1><p>In seconds</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="1800">
+        <label>13: Smart delay for dimmer</label>
+        <description><![CDATA[
+Smart delay for dimmer<br /><h1>Overview</h1><p>In seconds (see Parameter 14)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>14: Smart delay mode</label>
+        <description><![CDATA[
+Smart delay mode<br /><h1>Overview</h1><p>DAD-101</p> <p>0 - implicit smart delay</p> <p>1 - use smart delay for all devices NOT in Group 1. Also smart delay ignored for controller and button issued commands</p> <p>2 - use smart delay for all devices IN Group 1. Also smart delay will be used for controller and button issued commands</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration"
+                 min="0" max="5000">
+        <label>15: Load in Watts</label>
+        <description>Lamps load in Watts</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: S1 button mode</label>
+        <description><![CDATA[
+S1 button operation mode<br /><h1>Overview</h1><p>Type of button connected to switch</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Monostable (push button)</option>
+          <option value="1">Bistable (switch)</option>
+          <option value="2">Bistable (fixed switch)</option>
+          <option value="3">Bistable (reversed fixed switch)</option>
+          <option value="4">Two monostable switches</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: S2 button mode</label>
+        <description><![CDATA[
+S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2 switch</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Monostable (push button)</option>
+          <option value="1">Bistable (switch button)</option>
+          <option value="2">Bistable (fixed switch button)</option>
+          <option value="3">Bistable (reversed fixed switch)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Double click to max</label>
+        <description>Level up to max on double click</description>
+        <default>1</default>
+        <options>
+          <option value="0">Ignore double click</option>
+          <option value="1">Double click sets 100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Sensor driven dimmer</label>
+        <description><![CDATA[
+Sets sensor for dimmer control<br /><h1>Overview</h1><p>0 - off</p> <p>1 - sensor 1</p> <p>2 - sensor 2</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Sensor 1</option>
+          <option value="2">Sensor 2</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="-60" max="1000">
+        <label>22: Sensor 1 ON command value</label>
+        <description><![CDATA[
+Sensor 1 ON command value<br /><h1>Overview</h1><p>Commands send to AG 6</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1000">Max</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration"
+                 min="-60" max="1000">
+        <label>23: Sensor 1 command OFF value</label>
+        <description><![CDATA[
+Value to activate OFF command for Sensor 1<br /><h1>Overview</h1><p>For AG 6</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>24: Sensor 1 ON/OFF command behavior</label>
+        <description><![CDATA[
+Behavior for ON/OFF command<br /><h1>Overview</h1><p>Please see docs</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>State changes</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch 1</label>
+        <description>Switch 1 ON/OFF associations</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch1 dimmer</label>
+        <description>Dimmer status group for S1</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Switch 2</label>
+        <description>Switch 2 ON/OFF associations</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Switch 2 dimmer</label>
+        <description>Dimmer status group for S2</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Sensor 1</label>
+        <description>Group for Sensor 1 states</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Sensor 2</label>
+        <description>Group for Sensor 2 states</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

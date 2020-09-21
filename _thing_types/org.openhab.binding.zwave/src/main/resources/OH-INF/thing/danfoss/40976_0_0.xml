@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="danfoss_40976_00_000" listed="false">
+    <label>Keemple smart radiator Electronic radiator thermostat, intended for use with water based room radiators.</label>
+    <description><![CDATA[
+Electronic radiator thermostat, intended for use with water based room radiators.<br /><h1>Overview</h1><p>It is battery powered, compact and very easy to operate with only three buttons on the front.</p> <p>Technical Features</p> <ul><li>Easy to operate - only three buttons</li> <li>Open window function</li> <li>Valve exercise function</li> <li>PID control (precise control)</li> <li>Battery lifetime 2 years</li> </ul><p>To reset the device, you have to take the batteries out, hold the button, put the batteries back in and continue holding the button for &gt; 5 s for the device to reset.</p> <br /><h2>Inclusion Information</h2><p>Device must reset the device and than short push middle button.</p> <br /><h2>Exclusion Information</h2><p>You have to take the batteries out, hold the button, put the batteries back in and continue holding the button for &gt; 5 s for the device to reset.</p> <br /><h2>Wakeup Information</h2><p>Short push middle button.</p>
+    ]]></description>
+    <category>RadiatorControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Water temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=WATER_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Danfoss</property>
+      <property name="modelId">Keemple smart radiator</property>
+      <property name="manufacturerId">0002</property>
+      <property name="manufacturerRef">6FFF:A010</property>
+      <property name="dbReference">1054</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

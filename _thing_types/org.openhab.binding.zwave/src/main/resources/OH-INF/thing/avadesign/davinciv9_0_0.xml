@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="avadesign_davinciv9_00_000" listed="false">
+    <label>Da Vinci v9</label>
+    <description><![CDATA[
+<br /><h1>Overview</h1><p>The Da Vinci wall controller is a Multi Chanel Z-Wave device that contains up to 6 relays and up to 9 touch buttons that can be set to control either the relays (On/Off switches and shutters) or any other on/off (SWITCH_BINARY) , shutter (MULTILEVEL_SWITCH) Z-Wave device.</p> <p>Double Press the following buttons in the following order 8,1,3. Use the reset procedure only when the primary controller is missing or inoperable.</p> <br /><h2>Inclusion Information</h2><p>Press the #1 button 3 times.</p> <br /><h2>Exclusion Information</h2><p>Press the #1 button 3 times.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary1" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Avadesign Technology Co.</property>
+      <property name="modelId">Da Vinci v9</property>
+      <property name="manufacturerId">025D</property>
+      <property name="manufacturerRef">0100:0100</property>
+      <property name="dbReference">910</property>
+      <property name="defaultAssociations">1,24</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Button 1 Type</label>
+        <description><![CDATA[
+button 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Null</option>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Button 1 Partner-Id</label>
+        <description><![CDATA[
+Button 1 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Partner-Id 0</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Button 1 Blind Duration</label>
+        <description>Button 1 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="10">Duration 10 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Button 1 Output</label>
+        <description><![CDATA[
+Button 1 Output<br /><h1>Overview</h1><p>Output = Relay</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Button 1 attributes</label>
+        <description><![CDATA[
+Button 1 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Button 2 Type</label>
+        <description><![CDATA[
+Button 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Button 2 Partner-Id</label>
+        <description><![CDATA[
+Button 2 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Partner-Id 0</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Button 2 Blind Duration</label>
+        <description><![CDATA[
+Button 2 Blind Duration<br /><h1>Overview</h1><p>Possible values</p> <p>3-127</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="10">Duration10 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Button 2 Output</label>
+        <description>Button 2 Output</description>
+        <default>2</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Button 2 attributes</label>
+        <description><![CDATA[
+Button 2 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Button 3 Type</label>
+        <description><![CDATA[
+Button 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Button 3 Partner-Id</label>
+        <description><![CDATA[
+Button 3 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Partner-Id 0</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Button 3 Blind Duration</label>
+        <description>Button 3 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Button 3 Output</label>
+        <description>Button 3 Output</description>
+        <default>3</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Button 3 attributes</label>
+        <description><![CDATA[
+Button 3 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Button 4 Type</label>
+        <description><![CDATA[
+Button 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Button 4 Partner-Id</label>
+        <description><![CDATA[
+Button 4 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Button 4 Blind Duration</label>
+        <description>Button 4 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Button 4 Output</label>
+        <description>Button 4 Output</description>
+        <default>4</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Button 4 attributes</label>
+        <description><![CDATA[
+Button 4 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Button 5 Type</label>
+        <description><![CDATA[
+Button 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Button 5 Partner-Id</label>
+        <description><![CDATA[
+Button 5 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Button 5 Blind Duration</label>
+        <description>Button 5 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Button 5 Output</label>
+        <description>Button 5 Output</description>
+        <default>6</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Button 5 attributes</label>
+        <description><![CDATA[
+Button 5 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Button 6 Type</label>
+        <description><![CDATA[
+Button 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Button 6 Partner-Id</label>
+        <description><![CDATA[
+Button 6 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: Button 6 Blind Duration</label>
+        <description>Button 6 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Button 6 Output</label>
+        <description>Button 6 Output</description>
+        <default>6</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Button 6 attributes</label>
+        <description><![CDATA[
+Button 6 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Button 7 Type</label>
+        <description><![CDATA[
+Button 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">On/Off Switch</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Button 7 Partner-Id</label>
+        <description><![CDATA[
+Button 7 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Button 7 Blind Duration</label>
+        <description>Button 7 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Button 7 Output</label>
+        <description>Button 7 Output</description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Button 7 attribute</label>
+        <description><![CDATA[
+Button 7 attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Button 8 Type</label>
+        <description><![CDATA[
+Button 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration">
+        <label>37: Button 8 Partner-Id</label>
+        <description><![CDATA[
+Button 8 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration">
+        <label>38: Button 8 Blind Duration</label>
+        <description>Button 8 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration">
+        <label>39: Button 8 Output</label>
+        <description>Button 8 Output</description>
+        <default>0</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+          <option value="255">BLANK</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Button 8 attribute</label>
+        <description><![CDATA[
+Button 8 attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Button 9 Type</label>
+        <description><![CDATA[
+Button 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Switch On/Off</option>
+          <option value="2">Blind up</option>
+          <option value="3">Blind down</option>
+          <option value="4">Switch multiway</option>
+          <option value="5">Blind-up multiway</option>
+          <option value="6">Blind-down multiway</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration">
+        <label>42: Button 9 Partner-Id</label>
+        <description><![CDATA[
+Button 9 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to blind, Partner Id EP also change to blind (opposite direction).</li> <li>Blind must contain Partner Id which is different than 0 and it must be unique. </li> <li>When setting blind to switch, Partner Id also change to switch</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Partner-Id 1</option>
+          <option value="2">Partner-Id 2</option>
+          <option value="3">Partner-Id 3</option>
+          <option value="4">Partner-Id 4</option>
+          <option value="5">Partner-Id 5</option>
+          <option value="6">Partner-Id 6</option>
+          <option value="7">Partner-Id 7</option>
+          <option value="8">Partner-Id 8</option>
+          <option value="9">Partner-Id 9</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration">
+        <label>43: Button 9 Blind Duration</label>
+        <description>Button 9 Blind Duration</description>
+        <default>0</default>
+        <options>
+          <option value="3">Duration 3 Seconds</option>
+          <option value="30">Duration 30 Seconds</option>
+          <option value="60">Duration 60 Seconds</option>
+          <option value="90">Duration 90 Seconds</option>
+          <option value="120">Duration 120 Seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Button 9 Output</label>
+        <description>Button 9 Output</description>
+        <default>0</default>
+        <options>
+          <option value="0">No output</option>
+          <option value="1">Output number 1</option>
+          <option value="2">Output number 2</option>
+          <option value="3">Output number 3</option>
+          <option value="4">Output number 4</option>
+          <option value="5">Output number 5</option>
+          <option value="6">Output number 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration">
+        <label>45: Button 9 attributes</label>
+        <description><![CDATA[
+Button 9 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] = Sound enable</p> <p>Bit [2] = Dry contact enable</p> <p>Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">None</option>
+          <option value="1">Only Led</option>
+          <option value="2">Only Sound</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_46_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>46: Device Led on intensity</label>
+        <description>Device Led on intensity</description>
+        <default>7</default>
+      </parameter>
+
+      <parameter name="config_47_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>47: Device Led off intensity</label>
+        <description>Device Led off intensity</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_48_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>48: Device Toggle or Pulse the output</label>
+        <description><![CDATA[
+Device Toggle or Pulse the output<br /><h1>Overview</h1><p><strong>Device Toggle or Pulse the output:</strong></p> <p>0 = Toggle</p> <p>1 = Pulse</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_49_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>49: Device Background LEDs Timeout</label>
+        <description><![CDATA[
+Device Background LEDs Timeout<br /><h1>Overview</h1><p><strong>Device Background LEDs Timeout:</strong></p> <p>0 = always Off</p> <p>10 - 40 = Timeout in seconds</p> <p>255 = always On!!!!!!!</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>50: Device touch sensitivity</label>
+        <description><![CDATA[
+Device touch sensitivity<br /><h1>Overview</h1><p><strong>You can choose value between 0 – 7</strong></p> <p>0 = most sensitive</p> <p>7 = least sensitive</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration">
+        <label>51: Save and Reset</label>
+        <description><![CDATA[
+Save and Reset<br /><h1>Overview</h1><p>255 = save and reset</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do NOT Save and Reset</option>
+          <option value="255">Save and Reset</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: EP1_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p> <p>EP1_SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: EP1_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT </p> <p>EP1_SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: EP1_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p> <p>EP1_SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: EP1_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p> <p>EP1_SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: EP2_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: EP2_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: EP2_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: EP2_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: EP3_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: EP3_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: EP3_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: EP3_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: EP4_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: EP4_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: EP4_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_17" type="text" groupName="association" multiple="true">
+        <label>17: EP4_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_18" type="text" groupName="association" multiple="true">
+        <label>18: EP5_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_19" type="text" groupName="association" multiple="true">
+        <label>19: EP5_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_20" type="text" groupName="association" multiple="true">
+        <label>20: EP5_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_21" type="text" groupName="association" multiple="true">
+        <label>21: EP5_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_22" type="text" groupName="association" multiple="true">
+        <label>22: EP6_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_23" type="text" groupName="association" multiple="true">
+        <label>23: EP6_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_24" type="text" groupName="association" multiple="true">
+        <label>24: EP6_SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_25" type="text" groupName="association" multiple="true">
+        <label>25: EP6_SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_26" type="text" groupName="association" multiple="true">
+        <label>26: EP7_ SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_27" type="text" groupName="association" multiple="true">
+        <label>27: EP7_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_28" type="text" groupName="association" multiple="true">
+        <label>28: EP7_ SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_29" type="text" groupName="association" multiple="true">
+        <label>29: EP7_ SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_30" type="text" groupName="association" multiple="true">
+        <label>30: EP8_SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_31" type="text" groupName="association" multiple="true">
+        <label>31: EP8_ SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_32" type="text" groupName="association" multiple="true">
+        <label>32: EP8_ SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_33" type="text" groupName="association" multiple="true">
+        <label>33: EP8_ SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_34" type="text" groupName="association" multiple="true">
+        <label>34: EP9_ SWITCH_BINARY_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_35" type="text" groupName="association" multiple="true">
+        <label>35: EP9_SWITCH_BINARY_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_36" type="text" groupName="association" multiple="true">
+        <label>36: EP9_ SWITCH_MULTILEVEL_SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_37" type="text" groupName="association" multiple="true">
+        <label>37: EP9_ SWITCH_MULTILEVEL_REPORT</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>SWITCH_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

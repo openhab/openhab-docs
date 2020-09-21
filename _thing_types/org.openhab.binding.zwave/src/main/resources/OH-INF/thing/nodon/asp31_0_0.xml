@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nodon_asp31_00_000" listed="false">
+    <label>ASP-3-1 Smart Plug</label>
+    <description><![CDATA[
+Smart Plug<br /><h1>Overview</h1><h1>"Learning Mode"</h1> <p>Press on the Smart Plug button during 2 seconds until the LED becomes red. Release the button, the LED will then glow in red. The Smart Plug is in “Learning mode”. To add or to remove the Smart Plug from a Z-Wave® network, follow “INCLUSION” or “EXCLUSION” procedures below.</p> <p>If the Smart Plug is not added or removed from a network within 30 seconds (or if the button is pushed during learning mode), the Smart Plug will automatically exit learning mode.</p> <h1>“Factory Reset”</h1> <p>To perform a factory reset, press on the Smart Plug button during 5 seconds until the LED becomes orange. Release the button, the LED will blink red/green. Factory Reset clears the Smart Plug’s memory and set parameters to default value.</p> <p>Please use this procedure only when the primary controller is missing or otherwise inoperable. Resetting the Smart Plug does not mean it has been removed from Z-Wave network controller’s memory. Use the primary controller to remove the Smart Plug from its Z-Wave network (follow “EXCLUSION” procedures below), before doing a Factory Reset.</p> <br /><h2>Inclusion Information</h2><p>To add the Smart Plug into a Z-Wave network:</p> <ol><li>Plug the Smart Plug.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Inclusion procedure).</li> <li>The Smart Plug will confirm the Inclusion procedure by blinking its LED in Green.</li> </ol><br /><h2>Exclusion Information</h2><p>To remove the Smart Plug from a Z-Wave network:</p> <ol><li>Make sure the Smart Plug is plugged.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Exclusion procedure).</li> <li>The Smart Plug will confirm the Exclusion procedure by blinking its LED in Red.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ID-RF</property>
+      <property name="modelId">ASP-3-1</property>
+      <property name="manufacturerId">0165</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">425</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>1: Default State</label>
+        <description><![CDATA[
+Default State<br /><h1>Overview</h1><p>Status of the Smart Plug after a Power Failure or after being plugged</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Status before Power Failure</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>2: Power Failure</label>
+        <description><![CDATA[
+Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Failure / Recover notification and the associated group (Groups 4, 5, 6, 7, 8).</p> <p>The value may be a sum of available values. For example, if you want to activate Power Failure and enable group 4 &amp; 5, the parameter value should be 1+2+4=7.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Power Failure detection disable</option>
+          <option value="1">Power Failure enable (report to Lifeline only)</option>
+          <option value="2">Enable group 4</option>
+          <option value="4">Enable group 5</option>
+          <option value="8">Enable group 6</option>
+          <option value="16">Enable group 7</option>
+          <option value="32">Enable group 8</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Follow State</label>
+        <default>3</default>
+        <options>
+          <option value="0">Disable group 2 &amp; 3</option>
+          <option value="1">Enable group 2</option>
+          <option value="2">Enable group 3</option>
+          <option value="3">Enable group 2 &amp; 3</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Always On</label>
+        <default>0</default>
+        <options>
+          <option value="0">Always ON disabled</option>
+          <option value="1">Always ON enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This group is generally used to report information of the Smart Plug to the Main Controller of the network.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Follow State</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send ON (respectively OFF) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Follow Complementary State</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send OFF (respectively ON) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Power Failure Notification</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug detects a power failure or recovers from a power failure, it sends the notification report to the associated devices.</p> <p>The notification sent is “Notification Report: Power Management – AC Disconnected / Re-connected”.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Power Failure Set ON</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch ON the associated devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Power Failure Set OFF</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch OFF the associated devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Power Recover Set ON</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch ON the associated devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Power Recover Set OFF</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch OFF the associated devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

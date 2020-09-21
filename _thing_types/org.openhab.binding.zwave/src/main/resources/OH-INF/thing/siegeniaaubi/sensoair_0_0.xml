@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="siegeniaaubi_sensoair_00_000" listed="false">
+    <label>Sensoair Air quality sensor for indoor use</label>
+    <description><![CDATA[
+Air quality sensor for indoor use<br /><h1>Overview</h1><p>This device measures levels og carbon dioxide &amp; VOCs.</p> <br /><h2>Inclusion Information</h2><p>Press the push-button on the bottom of the unit once.</p> <br /><h2>Exclusion Information</h2><p>Press the push-button on the bottom of the unit once.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_co2" typeId="sensor_co2">
+        <label>Sensor (CO2)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=CO2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">SIEGENIA-AUBI KG</property>
+      <property name="modelId">Sensoair</property>
+      <property name="manufacturerId">0081</property>
+      <property name="manufacturerRef">00A0:0001</property>
+      <property name="dbReference">451</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="143">
+        <label>1: Device Configuration Value 1</label>
+        <description><![CDATA[
+Configuration of the device operating mode<br /><h1>Overview</h1><ul><li>bit 0    Unsolicited Multilevel Report Mode A    0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 1    Unsolicited Multilevel Report Mode B    0 = <strong>disabled</strong>, 1 = enabled</li> <li>bit 2    Basic Set                                         0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 3    Broadcast Multilevel Report                 0 = disabled, 1 = <strong>enabled</strong></li> <li>bit 7    SENSOAIR LEDs                               0 = disabled, 1 = <strong>enabled</strong></li> </ul><p><strong>Unsolicited Multilevel Report Mode A</strong></p> <p>SENSOAIR sends an usolicited multilevel report when the CO<sub>2</sub> value<br />exceeds one of the following threshold values:<br />600 ppm, 800 ppm, 1000 ppm, 1500 ppm, 2000 ppm, 2500 ppm</p> <p><strong>Unsolicited Multilevel Report Mode B<br /></strong></p> <p>SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an interval of<br />5 - 65000 seconds. The interval can be configured with parameter 2.</p>
+        ]]></description>
+        <default>141</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="5" max="65000">
+        <label>2: Interval for unsolicited Sensor Report Mode B</label>
+        <description><![CDATA[
+defines how often a Sensor report is sent<br /><h1>Overview</h1><p>When enabled by parameter 1, SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an interval of 5 - 65000 seconds. The interval (default setting = 30s) is configured as follows:</p> <p>Device Configuration Value 1 = MSB (default 0x00)</p> <p>Device Configuration Value 2 = LSB (default 0x1e)</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

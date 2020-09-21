@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zwaveme_zmerc2_00_000" listed="false">
+    <label>ZME_RC2 Z-Wave Remote Control+</label>
+    <description><![CDATA[
+Z-Wave Remote Control+<br /><h1>Overview</h1><p>The Z-Wave.Me Remote controls Z-Wave actuators such as dimmers, switches, thermostats or motor controls for blinds or jalousies and it can activate scenes in central gateways or any other Z-Wave devices. Devices can be turned on and off but dimmers and motor controls can also be turned into a desired dimming level to motor position by keeping a button pushed and releasing it. Although it is controlling other devices, the device can not act as ZWave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network.</p> <p>The device can be used in different modes that are selected by configuration parameters 11-21:</p> <ol><li>Direct control of associated devices</li> <li>Control of all devices in the Z-Wave network</li> <li>Simple and enhanced scene activation</li> </ol><p>10 pair of buttons - illuminated by blue light when operated - allow to control up to 10 control groups (either association groups or scenes)</p> <br /><h2>Inclusion Information</h2><p>Bring your primary controller into inclusion mode</p> <p>For Inclusion press the "Inclusion" button 3 times. The LED will flash green for a moment for confirmation. </p> <br /><h2>Exclusion Information</h2><p>Bring your primary controller into inclusion mode</p> <p>For Exclusion press the "Exclusion" button for 5 secs. The LED will flash green for a moment for confirmation.</p> <br /><h2>Wakeup Information</h2><p>This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.</p> <p>This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device.</p> <p>Pressing the "INCL." button for three times will wake up the device.</p> <p>It is possible to set the node ID to 255 to send wakeup notifications as broadcast. In this mode device takes more time to go to sleep and drains battery faster, but can notify all it's direct neighbors about a wakeup.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Z-Wave.Me</property>
+      <property name="modelId">ZME_RC2</property>
+      <property name="manufacturerId">0115</property>
+      <property name="manufacturerRef">1000:0300</property>
+      <property name="dbReference">149</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Command to Control Group No1 (Assoc. Group 2)</label>
+        <description><![CDATA[
+Defines the command sent to group 1 when the button is pressed (Assoc. Group 2)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group №1 when the related button is pressed (association group 2).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Command to Control Group No2 (association group 3)</label>
+        <description><![CDATA[
+Command to Control Group No2 (association group 3)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No2 when the related button is pressed (association group 3)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Command to Control Group No3 (association group 4)</label>
+        <description><![CDATA[
+Command to Control Group No3 (association group 4)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No3 when the related button is pressed (association group 4)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Command to Control Group No4 (association group 5)</label>
+        <description><![CDATA[
+Command to Control Group No4 (association group 5)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No4 when the related button is pressed (association group 5)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Command to Control Group No5 (association group 6)</label>
+        <description><![CDATA[
+Command to Control Group No5 (association group 6)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No5 when the related button is pressed (association group 6)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Command to Control Group No6 (association group 7)</label>
+        <description><![CDATA[
+Command to Control Group No6 (association group 7)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No6 when the related button is pressed (association group 7)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Command to Control Group No7 (association group 8)</label>
+        <description><![CDATA[
+Command to Control Group No7 (association group 8)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group No7 when the related button is pressed (association group 8)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Command to Control Scene No1 (association group 9)</label>
+        <description><![CDATA[
+Command to Control Scene No1 (association group 9)<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control scene group No1 when the related button is pressed (association group 9)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Command to Control Scene No2</label>
+        <description><![CDATA[
+Command to Control Scene No2<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control scene group No2 when the related button is pressed (association group 10)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Command to Control Scene No3</label>
+        <description><![CDATA[
+Command to Control Scene No3<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control scene group No3 when the related button is pressed (association group 11)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Command to Control group All On/Off</label>
+        <description><![CDATA[
+Command to Control group All On/Off<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group All On/Off when the related button is pressed (association group 12)</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off and Dim</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch All</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Send the following Switch All commands</label>
+        <description>Send the following Switch All commands</description>
+        <default>255</default>
+        <options>
+          <option value="1">Switch off only</option>
+          <option value="2">Switch on only</option>
+          <option value="255">Switch all on and off</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Send to controller battery level and WakeUp Notification</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: The buttons of group No1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: The buttons of group No2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: The buttons of group No3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: The buttons of group No4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: The buttons of group No5</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: The buttons of group No6</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: The buttons of group No7</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: The buttons of scene No1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: The buttons of scene No2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: The buttons of scene No3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: The buttons of All On/Off</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

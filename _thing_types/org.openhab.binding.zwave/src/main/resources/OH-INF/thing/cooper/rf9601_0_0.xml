@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="cooper_rf9601_00_000" listed="false">
+    <label>RF9601 Z-Wave Plus wireless switch</label>
+    <description><![CDATA[
+Z-Wave Plus wireless switch<br /><h1>Overview</h1><p>The Z-Wave Plus wireless switch replaces regular switches or dimmers (where a neutral is present) to provide local and remote ON/OFF control for LED, CFL, incandescent, magnetic low-voltage, electronic low-voltage, and fluorescent lighting loads. The Z-Wave Plus wireless switch provides other programmable functions (scenes, events, association, child lockout, etc.) when used with Z-Wave compliant controllers. Each switch can be manually and remotely controlled by commands sent from an Z-Wave controller or other Z-Wave compatible controllers. The switch could be also controlled by wired 3-way switch. Eaton’s Z-Wave switches are Z-Wave Plus certified. Eaton’s Z-Wave accessory switches are Z-Wave Plus certified and comply with latest S2 security standards for advanced cyber security.</p> <br /><h2>Inclusion Information</h2><ol><li>This product may be added to a new or existing Z-Wave network. An Eaton Wiring Devices Z-Wave device has a blue LED, which will blink when the device is not included in a ZWave network. The LED stops blinking when the device is in a network.</li> <li>To include this device in a Z-Wave network, select the command on your Z Wave controller for inclusion (Install, Add Device, Add Node, Include Device, etc.). Then press the device switch one time to include it in the network.</li> <li>Based on the controller, the controller may ask to scan the QR code or manually enter 5 digit code under the QR code to install the device as a secured device</li> <li>After the device is added to the network, the LED will stop blinking</li> </ol><br /><h2>Exclusion Information</h2><p>To exclude this device from a Z-Wave network, select the command on your Z-Wave controller for exclusion (Uninstall, Remove Device, Remove Node, Exclude Device, etc.). Then press the device switch one time to exclude it from the network. The LED will start blinking. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Cooper Wiring Devices</property>
+      <property name="modelId">RF9601</property>
+      <property name="manufacturerId">001A</property>
+      <property name="manufacturerRef">534C:0503</property>
+      <property name="versionMax">255.0</property>
+      <property name="dbReference">1099</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: Delayed OFF Time</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>2: Panic ON Time</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: Panic OFF Time</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Power up state</label>
+        <default>3</default>
+        <options>
+          <option value="1">Off</option>
+          <option value="2">On</option>
+          <option value="3">Last State</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Panic mode enable</label>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>13: Blue LED brightness level when switch is ON</label>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>14: Blue LED brightness level when switch is OFF</label>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Set</label>
+        <description>On/Off</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pat05_00_000" listed="false">
+    <label>PAT05 AIR QUALITY MULTI SENSOR</label>
+    <description><![CDATA[
+AIR QUALITY MULTI SENSOR<br /><h1>Overview</h1><p>The PAT05 multi-sensor is a device that allows you to check the air quality in your home, as well as detect temperature and humidity.</p> <p>The PAT05 Multi-sensor is easy to use and very convenient for your home. Just set the sensor on the wall of the rooms you would like to control, and you are ready to go.</p> <br /><h2>Inclusion Information</h2><p>1. Have Z-WaveTM Controller entered inclusion mode.</p> <p>2. Pressing tamper key three times within 2 seconds to enter the inclusion mode.</p> <p>3. After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</p> <br /><h2>Exclusion Information</h2><p>1. Have Z-WaveTM Controller entered exclusion mode.</p> <p>2. Pressing tamper key three times within 2 seconds to enter the exclusion mode.</p> <p>Node ID has been excluded.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_voc" typeId="sensor_voc">
+        <label>Sensor (VOLATILE_ORGANIC_COMPOUND)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=VOLATILE_ORGANIC_COMPOUND</property>
+        </properties>
+      </channel>
+      <channel id="sensor_co2" typeId="sensor_co2">
+        <label>Sensor (CO2)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=CO2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAT05</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:0052</property>
+      <property name="dbReference">1222</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: CO2 Threshold line 1</label>
+        <description><![CDATA[
+eCO2 difference return<br /><h1>Overview</h1><p>The Unit is 100ppm.</p> <p>0 means turn off eCO2 detected function.</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: CO2 Threshold line 2</label>
+        <description><![CDATA[
+eCO2 difference return<br /><h1>Overview</h1><p>The Unit is 100ppm.</p> <p>0 means turn off eCO2 detected function.</p>  
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>5: eCO2 Threshold line 3</label>
+        <description><![CDATA[
+eCO2 difference return<br /><h1>Overview</h1><p>The Unit is 100ppm.</p> <p>0 means turn off eCO2 detected function.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>6: eCO2 Threshold line 4</label>
+        <description><![CDATA[
+eCO2 difference return<br /><h1>Overview</h1><p>The Unit is 100ppm.</p> <p>0 means turn off eCO2 detected function.</p>
+        ]]></description>
+        <default>16</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>7: eCO2 Threshold line 5</label>
+        <description><![CDATA[
+eCO2 difference return<br /><h1>Overview</h1><p>The Unit is 100ppm.</p> <p>0 means turn off eCO2 detected function.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>8: TVOC Threshold line 1</label>
+        <description><![CDATA[
+TVOC difference return<br /><h1>Overview</h1><p>The Unit is 100ppb.</p> <p>0 means turn off TVOC detected function.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>9: TVOC Threshold line 2</label>
+        <description><![CDATA[
+TVOC difference return<br /><h1>Overview</h1><p>The Unit is 100ppb.</p> <p>0 means turn off TVOC detected function.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: TVOC Threshold line 3</label>
+        <description><![CDATA[
+TVOC difference return<br /><h1>Overview</h1><p>The Unit is 100ppb.</p> <p>0 means turn off TVOC detected function.</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>11: TVOC Threshold line 4</label>
+        <description><![CDATA[
+TVOC difference return<br /><h1>Overview</h1><p>The Unit is 100ppb.</p> <p>0 means turn off TVOC detected function.</p>
+        ]]></description>
+        <default>22</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>12: TVOC Threshold line 5</label>
+        <description><![CDATA[
+TVOC difference return<br /><h1>Overview</h1><p>The Unit is 100ppb.</p> <p>0 means turn off TVOC detected function.</p>
+        ]]></description>
+        <default>55</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Customer Function</label>
+        <description>Customer function switch, using bit control.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Tamper OFF</option>
+          <option value="1">Tamper ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>14: ECO2 Auto Report Time</label>
+        <description><![CDATA[
+The interval time for auto report the eCO2.<br /><h1>Overview</h1><p>0 means turn off auto report eCO2.</p> <p>The default value is 1.</p> <p>The tick time can setting by the configuration No.16</p>  
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>15: TVOC Auto Report Time</label>
+        <description><![CDATA[
+The interval time for auto report the TVOC.<br /><h1>Overview</h1><p>0 means turn off auto report TVOC.</p> <p>The default value is 1.</p> <p>The tick time can setting by the configuration No.16.</p>  
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Auto Report Tick Interval</label>
+        <description><![CDATA[
+The interval time for auto report each tick.<br /><h1>Overview</h1><p>Setting this configuration will effect configuration No.14 and No.15.</p> <p>The unit is 1 minute.</p> <p>Caution1: Setting to 0 means turn off all auto report function. <br />Caution2: The value is unsigned byte, the range is from 0x00 ~ 0xFF.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>17: CO2 Differential percent Report</label>
+        <description><![CDATA[
+The eCO2 Differential to report.<br /><h1>Overview</h1><p>0 means turn off this function.</p> <p>The unit is percentage.<br />Enable this function the device will detect every percentage.<br />And when the CO2 Sensor is over 10 percentage, it will continue report.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>18: TVOC Differential percent Report</label>
+        <description><![CDATA[
+The TVOC Differential to report<br /><h1>Overview</h1><p>0 means turn off this function.</p> <p>The unit is percentage.</p> <p>Enable this function the device will detect every percentage.</p> <p>And when the TVOC Sensor is over 10 percentage, it will continue report.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

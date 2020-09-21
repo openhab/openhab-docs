@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_srt323_00_000" listed="false">
+    <label>SRT323 Secure Z-Wave Room Thermostat</label>
+    <description><![CDATA[
+Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been developed to control central heating systems where the demand temperature can be set locally or remotely by a third party device. The SRT323 also has the capability to act as a temperature sensor</p> <br /><h2>Inclusion Information</h2><p>Set DIL switch 1 to ’ON’ position on the back of the unit, scroll through the function menu by rotating the dial until<strong> L</strong> is displayed</p> <p>Once the character starts flashing the installer has 60 sec to activate the 3rd party unit. Once the 3rd party unit has been activated the process must be completed within 240 sec or SRT323 will timeout. Preferably, start the process to add a node from the controller then press the dial of the SRT323</p> <br /><h2>Exclusion Information</h2><p>Not Provided</p> <br /><h2>Wakeup Information</h2><p>Not Provided</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="horstmann_srt323_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SRT323</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0001:0004</property>
+      <property name="dbReference">466</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Temperature Sensor</label>
+        <description>Disable or enable temperature sensor</description>
+        <default>255</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="255">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temperature Scale</label>
+        <description>Temperature Scale</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="255">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: Delta T</label>
+        <description><![CDATA[
+Define the temperature steps<br /><h1>Overview</h1><p>Change between temperatures to trigger a temperature report (step 0.1) (Default 10 = 1C)</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Thermostat Operating State reports</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Low Battery Warnings</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Thermostat Set Point Reports</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Multilevel Sensor Reports</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="horstmann_srt323_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_zw3104_00_000" listed="false">
+    <label>39336 / ZW3104 Plug-In Smart Dimmer</label>
+    <description><![CDATA[
+Plug-In Smart Dimmer<br /><h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Plug-In Smart Dimmer. The Smart Dimmer enables wireless control of on/off and dim functions for standard incandescent table and floor lamps, as well as dimmable fluorescent, LED and CFL fixtures and more! Use the dimmer control to customize the lighting output and create the perfect ambiance for any room.</p> <p>The space-saving horizontal module plugs into a standard wall receptacle without blocking the second outlet or obstructing placement of furniture. The Dimmer provides one Z-Wave enabled outlet for the lamp you would like to control.</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your smart dimmer, single press and release the manual/program button on the smart dimmer to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the manual/program button on the smart dimmer to remove it from the network</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">39336 / ZW3104</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">5044:3038</property>
+      <property name="dbReference">1228</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description>LED Light</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED On when light is turned Off</option>
+          <option value="1">LED On when light is turned On</option>
+          <option value="2">LED always Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Dim Steps (From Z-Wave Controller)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Number of steps or levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Dim Timing (From Z-Wave Controller)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Timing of steps</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim Steps (When Manually Controlled)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Number of steps or levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Dim Timing (When Manually Controlled)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Timing of steps</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Dim Steps (All-On/Off Commands)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (All-On/Off Commands)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Commands)</p> <p>Number of steps or levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: Dim Rate Adjustments (All-On/Off Command)</label>
+        <description><![CDATA[
+Dim Rate Adjustments (All-On/Off Command)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Command)</p> <p>Timing of steps</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Association Group 2</label>
+        <description>supports Basic Set and is controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Association Group 3</label>
+        <description>supports Basic Set and is controlled by double pressing the button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="northq_nq9121_03_000" listed="false">
+    <label>NQ-9121 Q-Gas 9121 (Firmware v3, 2016)</label>
+    <description><![CDATA[
+Q-Gas 9121 (Firmware v3, 2016)<br /><h1>Overview</h1><p>The Power Reader is a metering device capable of counting pulses from any electricity or gas meters. The device stores timestamped consumption in its internal memory every 15 minutes. Note: The Power Reader for electricity metering has different firmware than the Power Reader for gas metering. Please make sure you have the appropriate firmware on your device before you start integrating / installing it. </p> <br /><h2>Inclusion Information</h2><p>In order to include the Power/Gas Reader in a Z-Wave network, the device must first have its network settings cleared. New devices fulfil this requirement be default. Power Readers with firmware version up to 3.24 and Gas Readers with firmware version up to 3.30 can have their network settings cleared by pressing 7 times on the button, however it is not recommended to do so because the Z-Wave controller will not be informed that the device has been reset. Power Readers with firmware version equal or larger than 3.29 and Gas Readers with firmware version equal or larger than 3.34 do not reset their network settings if the button has been pressed 7 times. To clear them, any Z-Wave controller must be placed in Exclusion mode first and the button on the device must be pressed 3 times.</p> <br /><h2>Exclusion Information</h2><p>In order to exclude the Power/Gas Reader from a Z-Wave network, place the controller in remove mode first and then press the button on the device 3 times.</p> <br /><h2>Wakeup Information</h2><p>The Power Reader has two functioning modes:</p> <ul><li>Real-time mode: the device will be awake and keep the antenna on. It will stay in real-time a predefined number of seconds (900).</li> <li>Normal mode: the device will be in sleep and only wake up according to the interval defined by the WAKE UP SET command.</li> </ul>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_gas_cubic_meters" typeId="meter_gas_cubic_meters">
+        <label>Gas meter (cubic meters)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=G_Cubic_Meters</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NorthQ</property>
+      <property name="modelId">NQ-9121</property>
+      <property name="manufacturerId">0096</property>
+      <property name="manufacturerRef">0010:0001</property>
+      <property name="versionMin">3.0</property>
+      <property name="dbReference">561</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_4" type="integer" groupName="configuration"
+                 min="0" max="1000000">
+        <label>1: Pulse factor</label>
+        <description><![CDATA[
+Impulse or Rotation factor (see NorthQ docs for Gas meters)<br /><h1>Overview</h1><p>Register 1 - Pulse factor (4 byte register) - In this register the controlling node must set the meter's impulse or rotation factor x 10.</p> <p>Example: For a gas meter read using the silver spot on one of the digits, the value written in this register is calculated with the following formula: Pulse factor = 10^?, where X is the index of the digit that has the silver spot.</p> <p>For a gas meter read through magnetic contact, the impulse factor is usually expressed as 1 imp = 0.01 m3, which correlates to 100 impulses for 1 m3. The value written in this register will therefore be 1000 (100*10).</p>
+        ]]></description>
+        <default>1000</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor type</label>
+        <description><![CDATA[
+Defines the type of sensor<br /><h1>Overview</h1><p>Register 2 - sensor type (1 byte register) - In this register, the controlling node has to set the meter type on which the Power Reader is placed.</p> <p>For gas firmware: set 0x01 to this register for magnetic contact meters, or 0x02 for silver spot meters.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">magnetic contact</option>
+          <option value="2">silver spot meter</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>9: Pulse count</label>
+        <description><![CDATA[
+This register holds the total number of pulses.<br /><h1>Overview</h1><p>Register 9 - pulse count (4 byte register) - This register holds the total number of pulses. Use this register to set the total meter consumption. In order for the Power/Gas Reader to report the proper total meter consumption, the value for this registered has to be initialized with meter value * impulse factor.</p> <p>Ex: For a mechanical meter with a rotation factor of 150 and the total meter consumption 100.3, the value written in this register must be: 15045 (150 x 100.3). The total meter consumption written on the meter can be a user input variable at installation.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>10: Keep alive period</label>
+        <description><![CDATA[
+How many ticks before going back to sleep in normal wakeup mode.<br /><h1>Overview</h1><p>Register 10 - keep alive period (2 byte register) - At every wake up notification, the Power Reader stays alive for 3 seconds. If the controlling node can't guarantee a response for the Power Reader within 3 seconds, then this register should be set to the number of seconds that it will take the controlling node to send a response / request to the wake up notification.</p>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="32767">
+        <label>11: Real-time mode</label>
+        <description><![CDATA[
+Set this to enter real-time mode from remote.<br /><h1>Overview</h1><p>Register 11 - real-time register (2 bytes) - This register notifies the controlling mode when the real-time mode has started and when it ended. The configuration report contains the number of seconds * 20 left until the real-time mode is over. A configuration report with value 0 notifies the controlling node that the Power Reader is going to normal mode.</p> <p>NOTE: The wake up no more information has no effect in real-time mode. In order to tell the Power Reader to go to sleep from real-time mode, the controlling node has to set this register to value 0.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>12: Serial number</label>
+        <description><![CDATA[
+Read-only serial number in decimal<br /><h1>Overview</h1><p>Register 12 - serial number (4 bytes) - This register contains the serial number of the Power Reader. </p> <p>NOTE: The serial numbers written on the Power Reader are in HEX, not decimal.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>15: Calibration status</label>
+        <description><![CDATA[
+Aplies to devices with firmware version 3.30 or higher<br /><h1>Overview</h1><p>Register 15 - calibration status (4 byte) - A configuration report with this register will inform the controlling node of its current calibration status on the meter.</p> <p><strong>Only applies to gas readers with firmware version 3.30 or higher configured for SILVER SPOT!</strong></p> <p>Setting the value 0 on this register will restart the calibration process will restart the calibration process that occurs normally at power-up. The calibration process lasts approx. 2 minutes. Interrogating this register will return the current calibration percentage, from 0 to 100, value 100 indicating that the calibration has ended.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

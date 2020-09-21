@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pan03_00_000" listed="false">
+    <label>PAN03 In Wall Micromodule Single Switch</label>
+    <description><![CDATA[
+In Wall Micromodule Single Switch<br /><h1>Overview</h1><p>This plug-in ON/OFF switch PAN03 is a security enabled wireless switch, based on Z-Wave Plus technology. Z-Wave PlusTM enabled devices displaying the Z-Wave PlusTM logo can also be used with it regardless of the manufacturer, and can also be used in other manufacturer’s Z-WaveTM enabled networks. Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because PAN03 supports Security Command Class, it can learn with Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.</p> <br /><h2>Inclusion Information</h2><p>1. Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer.</p> <p>2. Pressing On/Off button three times within 2 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>1. Put your Z-Wave controller into exclusion mode by following the instructions provided by the controller manufacturer.</p> <p>2. Pressing On/Off button three times within 2 seconds will enter exclusion mode.</p> <p>Node ID has been excluded.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAN03</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0001:000F</property>
+      <property name="dbReference">529</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: Watt Meter Report Period</label>
+        <description><![CDATA[
+Watt Meter Report Period<br /><h1>Overview</h1><p>WATT METER REPORT PERIOD:</p> <p>If the setting is configured for 1hour (set value =720), the Micromodule Single Switch Max.Load: 11A will report its instant power consumption every 1 hour to Group1 node. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).</p>
+        ]]></description>
+        <default>720</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>2: KWH Meter Report Period</label>
+        <description><![CDATA[
+KWH Meter Report Period (6*10min=1 hour)<br /><h1>Overview</h1><p>KWH METER REPORT PERIOD:</p> <p>If the setting is configured for 1hour (set value =6), the Micromodule Single Switch Max.Load: 11A will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="10" max="1100">
+        <label>3: Threshold of current for Load caution</label>
+        <description><![CDATA[
+Threshold of current for Load caution (1100*0.01A = 11A)<br /><h1>Overview</h1><p>THRESHOLD OF CURRENT FOR LOAD CAUTION:</p> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 1100, when the load current of Relay1 over this value, Micromodule Single Switch Max.Load: 11A will send current meter report to warn the Group1 node, the Range of the setting value is from 10 to 1100, and the default value is 1100.</p>
+        ]]></description>
+        <default>1100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="10" max="10000">
+        <label>4: Threshold of KWh for Load caution</label>
+        <description><![CDATA[
+Threshold of KWh for Load caution<br /><h1>Overview</h1><p>THRESHOLD OF KWH FOR LOAD CAUTION</p> <p>This is a warning when the KWh of load over the preset threshold value, if the setting value is 10000, when the Accumulated Power Consumption of Relay1 over this value, Micromodule Single Switch Max.Load: 11A will send KWH meter report to warn the Group1 node, minimum value is 1KWh and default value is 10000 kWh</p>
+        ]]></description>
+        <default>10000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Restore switch state mode</label>
+        <description><![CDATA[
+Restore switch state mode<br /><h1>Overview</h1><p>RESTORE SWITCH STATE MODE:</p> <p>Whenever the AC power return from lost, Micromodule Single Switch Max.Load: 11A will restore the switch state which could be SWITCH OFF, LAST SWITCH STATE, SWITCH ON. The default setting is LAST SWITCH STATE.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch off</option>
+          <option value="1">Last switch state</option>
+          <option value="2">Switch on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Manual On/Off mode</label>
+        <description><![CDATA[
+Manual On/Off mode<br /><h1>Overview</h1><p>MANUAL ON/OFF MODE:</p> <p>The On/Off function of S1, S2 and learn switch can be disabled or enabled by this parameter, default value is Enable. But the learning operation won’t be affected. When manual On/Off function is disabled, the RF command can only switch On but not Off. This is useful function for keeping the device in switch on state</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable manual On/Off</option>
+          <option value="1">Enable manual On/Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED indication mode</label>
+        <description>LED indication mode</description>
+        <default>1</default>
+        <options>
+          <option value="1">Show switch state</option>
+          <option value="2">Show night mode</option>
+          <option value="2">One flash mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>8: Auto off timer</label>
+        <description><![CDATA[
+Auto off timer<br /><h1>Overview</h1><p>AUTO OFF TIMER:</p> <p>Whenever Micromodule Single Switch Max.Load: 11A switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: RF off command mode</label>
+        <description><![CDATA[
+RF off command mode<br /><h1>Overview</h1><p>RF OFF COMMAND MODE:</p> <p>Whenever a switch off command, BASIC_SET, BINARY_SWITCH_SET, SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch off</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch toggle</option>
+          <option value="3">Switch on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Switch mode</label>
+        <description>Edge or Pulse mode or Edge-Toggle mode</description>
+        <default>1</default>
+        <options>
+          <option value="1">Edge mode</option>
+          <option value="2">Pulse mode</option>
+          <option value="3">Edge-Toggle mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Manual Switch Report mode</label>
+        <description><![CDATA[
+Manual Switch Report mode<br /><h1>Overview</h1><p>Whenever PAN03 is manually switch on or off, it will send BINARY_SWITCH_ REPORT to the node of group1. The default setting is Enable the function.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+the Switch will report its latest status to Z-Wave Controller<br /><h1>Overview</h1><p>Grouping 1 includes, SWITCH_BINARY_REPORT, METER_REPORT, ALARM_REPORT.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

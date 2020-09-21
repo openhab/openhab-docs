@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="xiaomi_lumisensorwaterleak">
+        <label>Xiaomi Water Leak Sensor</label>
+        <description>Xiaomi Water Leak Sensor</description>
+
+        <channels>
+            <channel id="alarm_water" typeId="ias_water">
+                <properties>
+                    <property name="zigbee_endpoint">1</property>
+                    <property name="zigbee_inputclusters">1280</property>
+                </properties>
+            </channel>
+        </channels>
+
+        <properties>
+            <property name="vendor">Xiaomi</property>
+            <property name="modelId">lumi.sensor_wleak.aq1</property>
+            <property name="zigbee_logicaltype">END_DEVICE</property>
+        </properties>
+
+        <representation-property>zigbee_macaddress</representation-property>
+
+        <config-description>
+            <parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+                <label>MAC Address</label>
+            </parameter>
+        </config-description>
+    </thing-type>
+</thing:thing-descriptions>

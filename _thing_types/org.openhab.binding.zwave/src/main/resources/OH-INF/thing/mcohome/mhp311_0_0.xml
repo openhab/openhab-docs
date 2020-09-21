@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhp311_00_000" listed="false">
+    <label>MH-P311 MCO Home Dimmer Switch</label>
+    <description><![CDATA[
+MCO Home Dimmer Switch<br /><h1>Overview</h1><p>Wall Dimmer Switch </p> <br /><h2>Inclusion Information</h2><p>INCLUDING the device into Z-Wave network:</p> <ol><li>Set the controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press the key on the panel 3 times in quick succession (within approx 1.5sec).</li> </ol><p>Note: Check the controller or gateway to see whether inclusion is successful. </p> <br /><h2>Exclusion Information</h2><p>EXCLUDING the device from Z-Wave network:</p> <ol><li>Set the controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press the key on the panel 3 times in quick succession (within approx 1.5sec).</li> </ol><p>Note: Check the controller or gateway to see whether exclusion is successful. The exclusion will delete all association data. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-P311</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">511A:1452</property>
+      <property name="dbReference">929</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: State Saved?</label>
+        <description><![CDATA[
+Dimmer state saved or not when power down<br /><h1>Overview</h1><p>0x00 not saved，Dimmer will be off</p> <p>when powered again</p> <p>0x01 saved，Dimmer will keep the same</p> <p>state when powered again</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Beep</label>
+        <description><![CDATA[
+Beep<br /><h1>Overview</h1><p>0x00 Beep disabled</p> <p>0x01 Beep enabled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>3: LED Backlit Brightness Level</label>
+        <description><![CDATA[
+LED Backlit Brightness Level<br /><h1>Overview</h1><p>0x00 LED disabled</p> <p>0x01~0x0A Min level-Max level</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: ALL ON/ALL OFF</label>
+        <description><![CDATA[
+ALL ON/ALL OFF<br /><h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>5: Minimum brightness level</label>
+        <description><![CDATA[
+Minimum brightness level<br /><h1>Overview</h1><p>1~98 percentage brightness level</p> <p>The max level should always higher than min level</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>6: Maximum brightness level</label>
+        <description><![CDATA[
+Maximum brightness level<br /><h1>Overview</h1><p>2~99 percentage brightness level</p> <p>The max level should always higher than min level</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="1" max="2550">
+        <label>7: Single dimming step time(Manual)</label>
+        <description><![CDATA[
+Single dimming step time(Manual)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms steps</p> <p>Manual control realized by holding external 8 button</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>8: Single dimming step size(Manual)</label>
+        <description><![CDATA[
+Single dimming step time(Manual)<br /><h1>Overview</h1><p>Single dimming step size(Manual)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="1" max="2550">
+        <label>9: Single dimming step time (Auto)</label>
+        <description><![CDATA[
+Single dimming step time (Auto)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms steps</p> <p>Auto control</p> <p>realized by:</p> <p>- one click;</p> <p>- double click of</p> <p>external button;</p> <p>- send Z-Wave CC</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>10: Single dimming step size (Auto)</label>
+        <description><![CDATA[
+Single dimming step size (Auto)<br /><h1>Overview</h1><p>Auto control</p> <p>realized by:</p> <p>- one click;</p> <p>- double click of</p> <p>external button;</p> <p>- send Z-Wave CC</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Timer function (Auto-off)</label>
+        <description><![CDATA[
+Timer function (Auto-off)<br /><h1>Overview</h1><p>0x00 function disabled</p> <p>0x0001~0x00FF 1s~255s</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>13: One click of S1</label>
+        <description><![CDATA[
+One click of S1<br /><h1>Overview</h1><p>0x00 switch between Off and last saved</p> <p>brightness level</p> <p>1~99 percentage value</p> <p>switch between Off and the set value</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>14: Double click of S1</label>
+        <description><![CDATA[
+Double click of S1<br /><h1>Overview</h1><p>0x00 function disabled</p> <p>0x01 reach max brightness level</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Switch1 to Association Group 2 &amp; 3</label>
+        <description><![CDATA[
+Operation report from Switch1 to Association Group 2 &amp; 3<br /><h1>Overview</h1><p>bit 6:0</p> <p>0x00 report all operation to AG2&amp;3</p> <p>0x01 only report when switching OFF</p> <p>0x02 only report when switching ON</p> <p>bit7 (valid for AG3 during dimming only)</p> <p>0 not report during dimming</p> <p>1 report during dimming</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Switch1 to Association Group 2</label>
+        <description><![CDATA[
+Operation report from Switch1 to Association Group 2<br /><h1>Overview</h1><p>0x00 When sent Basic Set On,</p> <p>carried Value is 0xFF</p> <p>0x01 When sent Basic Set On, carried</p> <p>Value is Current Dimmer Value</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>19: Scene ID sent to AG1 when one click of S1</label>
+        <description><![CDATA[
+Scene ID sent to AG1 when one click of S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: Scene ID sent to AG1 when double click of S1</label>
+        <description><![CDATA[
+Scene ID sent to AG1 when double click of S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>21: Scene ID sent to AG1 when hold S1</label>
+        <description><![CDATA[
+Scene ID sent to AG1 when hold S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Factory setting</label>
+        <description><![CDATA[
+Factory setting<br /><h1>Overview</h1><p>0x55 restore factory setting</p>
+        ]]></description>
+        <default>85</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>1st AG: reports device’s dimming state. It supports only one Node ID. A controller/gateway SHOULD be associated to this AG.</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Command</label>
+        <description><![CDATA[
+Basic Set Command<br /><h1>Overview</h1><p>2nd AG: to control the associated devices synchronously. When S1’s state changes, it will send “Basic Set Command” to these devices. It supports upto 5 Node IDs.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Multi-level Set Command</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>AG: to control the associated devices synchronously. When S1’s state changes, it will send</p> <p>“Multi-level Set Command” to these devices. It supports upto 5 Node IDs.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

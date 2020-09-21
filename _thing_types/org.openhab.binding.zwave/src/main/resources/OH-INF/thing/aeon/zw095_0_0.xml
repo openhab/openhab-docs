@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw095_00_000" listed="false">
+    <label>ZW095 Home Energy Meter - Gen 5</label>
+    <description><![CDATA[
+Home Energy Meter - Gen 5<br /><h1>Overview</h1><p>Aeon Labs Home Energy Meter is energy meter for the entire home. It can wirelessly report instantaneous Power, KWH, Voltage and Amperage measurements to Z‐Wave gateway/controller. It can send Z‐Wave REPORTS (Meter v3 Command Class) at any time when it receives Z‐Wave Get Commands.</p> <p>The HEM can be setup to send automatic reports to any associated nodes in association group 1 at an interval time</p> <p>The HEM can independently report the measurements from the Clamps via the Multi Channel Command Class encapsulation.</p> <p>It can be included and operated in any Z‐wave network with other Z‐wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>It also supports Security Command Class and has the AES‐128 bit security encryption built right in. While a Security enabled Controller is needed in order to fully use the security feature.</p> <br /><h2>Inclusion Information</h2><p>The electrical installation of your Home Energy Meter (HEM) is now complete. You must now wirelessly add it to your Z-Wave network.</p> <ol><li>Put your primary Z-Wave controller, usually a gateway or hub, into inclusion mode. If you are not sure how to do this, please refer to your controller’s user manual.</li> <li>Press the Action Button on your HEM. If it has been successfully added to your network, its LED will remain illuminated. If the adding was unsuccessful, your HEM’s LED will continue to blink.</li> </ol><p>The installation of your Home Energy Meter is now complete. The next step is to set up your Home Energy Meter within the interface of your primary Z-Wave controller. This will allow you to visualize and utilize the energy consumption data that your meter collects. Your Home Energy Meter can report wattage energy usage or KWH energy usage to your primary controller. As each controller is different, please refer to your controller’s user manual for further information on monitoring and visualizing this data. The Z-Wave commands supporting energy monitoring are the Meter Command Classes.</p> <br /><h2>Exclusion Information</h2><p>Resetting your Home Energy Meter.</p> <p>At some stage or your primary controller is missing or inoperable, you may also wish to reset all of your Home Energy Monitor’s settings to their factory defaults. To do this, press and hold the action button for 10 seconds and then release it. Your HEM will now be</p> <p>Removing:</p> <p>Removing your meter from a Z-Wave network. Your Home Energy Meter (HEM) can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network’s primary to do this</p> <ol><li>Put your main controller into its device removal mode. If you are unsure how to do this, please refer to your controller’s user manual.</li> <li>Press the Action Button on your HEM. If it has been successfully removed from your network, its LED will blink. If the removal was unsuccessful, its LED will be solid and it will be then repeated again.</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current3" typeId="meter_current">
+        <label>Electric meter (amps) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage3" typeId="meter_voltage">
+        <label>Electric meter (volts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_V</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW095</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:005F,0102:005F</property>
+      <property name="dbReference">375</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Energy detection mode</label>
+        <description><![CDATA[
+This parameter is used to configure the energy detection mode.<br /><h1>Overview</h1><p>This parameter is used to configure the energy detection mode when the parameter 101~103 have been configured:<br />0 = Report power, energy absolute value (default);<br />1 = Report positive/negative power, report the algebraic sum energy;<br />2 = Report positive/negative power, only report energy positive part (consuming electricity);<br />3 = Report positive/negative power, only report energy negative part (generating electricity).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Energy absolute value</option>
+          <option value="1">Algebraic sum energy</option>
+          <option value="2">Consuming electricity</option>
+          <option value="3">Generating electricity</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Selective Reporting</label>
+        <description><![CDATA[
+Enable selective reporting.<br /><h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4‐10 below. This is used to reduce network traffic. (0 == disable, 1 == enable)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>4: Current Threshold - Whole HEM</label>
+        <description>Threshold change in wattage to induce an automatic report (Whole HEM).</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>5: Current Threshold - Clamp 1</label>
+        <description>Threshold change in wattage to induce an automatic report (Clamp 1).</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>6: Current Threshold - Clamp 2</label>
+        <description>Threshold change in wattage to induce an automatic report (Clamp 2).</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>7: Current Threshold - Clamp 3</label>
+        <description>Threshold change in wattage to induce an automatic report (Clamp 3).</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>8: Percent Change - Whole HEM</label>
+        <description>Percentage change in wattage (Whole HEM).</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>9: Percent Change - Clamp 1</label>
+        <description>Percentage change in wattage (Clamp 1).</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: Percent Change - Clamp 2</label>
+        <description>Percentage change in wattage (Clamp 2).</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>11: Percent Change - Clamp 3</label>
+        <description>Percentage change in wattage (Clamp3)</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Enable /Disable CRC-16 Encapsulation</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>101: Report Group 1</label>
+        <description><![CDATA[
+Which reports need to send in Report group 1<br /><h1>Overview</h1><p>This page provides examples for setting the type of reports you want from the clamps and total readings using Parameter 101-103 for Home Energy Meter Gen5 and form part of the larger Home Energy Meter Gen5 user guide.</p> <p>To set specific reports for your HEM Gen5, refer to the decimal table below if you do not know how to read a binary table. All you will need to do is add the decimal values together of all the settings you want, and then utilize the sum as the parameter setting value.</p> <p>You may download an easy excel sheet by clicking here, or clicking on the attachment below.</p> <p>ie. Parameter 101 [4 byte dec]: 6927 [This reports kwh and watt for total HEM, clamp 1, and clamp 2 + Voltage and Amperage for Total HEM readings]</p> <p>ie2. Parameter 101 [4 btye dec]: 3 (from 1 + 2)  (reports kWh and Watt on Total Readings) </p> <p>Byte # Decimal Value Output Clamp # HEM Restriction</p> <p>byte 4 1 kWh Total Readings   <br />byte 4 2 Watt Total Readings   <br />byte 4 4 Voltage Total Readings   <br />byte 4 8 Amperage Total Readings   <br />byte 4 16 kVarh Total Readings Gen5 only <br />byte 4 32 kVar Total Readings Gen5 only <br />byte 4 64 Reserved     <br />byte 4 128 Reserved     <br />byte 3 256 Watt Clamp 1  <br /> byte 3 512 Watt Clamp 2   <br />byte 3 1024 Watt Clamp 3   <br />byte 3 2048 kWh Clamp 1   <br />byte 3 4096 kWh Clamp 2   <br />byte 3 8192 kWh Clamp 3   <br />byte 3 16384 Reserved     <br />byte 3 32768 Reserved     <br />byte 2 65536 Voltage Clamp 1   <br />byte 2 131072 Voltage Clamp 2   <br />byte 2 262144 Voltage Clamp 3   <br />byte 2 524288 Amperage Clamp 1   <br />byte 2 1048576 Amperage Clamp 2   <br />byte 2 2097152 Amperage Clamp 3   <br />byte 2 4194304 Reserved     <br />byte 2 8388608 Reserved     <br />byte 1 16777216 kVah Clamp 1 Gen5 only <br />byte 1 33554432 kVah Clamp 2 Gen5 only <br />byte 1 67108864 kVah Clamp 3 Gen5 only <br />byte 1 134217728 kVar Clamp 1 Gen5 only <br />byte 1 268435456 kVar Clamp 2 Gen5 only <br />byte 1 536870912 kVar Clamp 3 Gen5 only <br />byte 1 1073741824 Reserved     <br />byte 1 2147483648 Reserved    </p> <p>The table above shows a decimal representation of all flags that can be set on  parameter 101-103 to report specific data.</p> <p><strong>Example use of the Report Table.</strong></p> <p>For example, if you want to report only the total KWH consumption, and the  Wattage for clamp 3, you would add 1 + 1024 and set the sum (1025) to parameter 101, 102, or 103. </p> <p>As another example, if you want to report Wattage and KWH power consumption  for all clamps, you would add 256 + 512 + 1024 + 2048 + 4096 + 8192, then set the sum (16128) to parameter 101, 102, or 103. </p> <p>And if you want to report everything, you would add the whole table together and set it to 101, and set 102 and 103 to 0 values. </p> <p><strong>Setting an automatic report interval.</strong></p> <p>Parameter 111-113 [4 byte dec] can be configured through your gateway in case  the default settings of your HEM is not what you desire. </p> <p>Parameter 111 will set the interval for Group 1 (parameter 101), parameter 112 will set the interval for Group 2 (parameter 102), and parameter 113 will set the interval for Group 3 (parameter 103). </p> <p>As an example, you have set parameter 101 to report the total KWH consumption  and the wattage for clamp 3, and you want to report it every 500 seconds. Set Parameter 111 [4 byte dec] to 500.</p> <p><strong>Utilizing different groups.</strong></p> <p>Your Home Energy Meter has 3 different groups that you may setup, from the  settings and examples above, you may configure each group to report different clamps and total reports to report at different interval. Group 1 uses Parameter 101 and 111, group 2 uses parameter 102 and 112, and group 3 uses parameter 103 and 113.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>102: Report Group 2</label>
+        <description><![CDATA[
+Which reports need to send in Report group 2<br /><h1>Overview</h1><p>See Report Group 1</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>103: Report Group 3</label>
+        <description><![CDATA[
+Which reports need to send in Report group 3<br /><h1>Overview</h1><p>See Report Group 1</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>111: Interval to send out reports of group 1</label>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>112: Interval to send out reports of group 2</label>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>113: Interval to send out reports of group 3</label>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Lock Configuration</label>
+        <description><![CDATA[
+Enable/Disable Lock Configuration<br /><h1>Overview</h1><p>Enable/Disable Lock Configuration</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">All configuration parameters are configurable.</option>
+          <option value="1">All conf parame are not configurable (Locked).</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_255_4_wo" type="integer" groupName="configuration">
+        <label>255: Reset to Default Factory Setting</label>
+        <description><![CDATA[
+Reset all settings to factory defaults<br /><h1>Overview</h1><p>Will reset the configuration to factory defaults.  If you upgrade firmware and are getting crazy readings back, reset the unit and reconfigure it.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do nothing</option>
+          <option value="1">Reset to Factory Defaults</option>
+          <option value="1431655765">Reset product to def factory setting and exclude</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_hmhs1wlz_00_000" listed="false">
+    <label>HM-HS1WL-Z Smart Water Leakage Sensor</label>
+    <description><![CDATA[
+Smart Water Leakage Sensor<br /><h1>Overview</h1><p>Smart Water Leakage sensor adopts Z-Wave wireless module. Super low power consumption circuit design ensures the long battery lifespan. Separate design of body and sensor efficiently prevents the influence resulted from high humidity. High precision and sensitivity applicable for basement, machine room, hotel, water tower, pool, swimming pool, solar, kitchen, bathroom and other places may have water leakage or water overflow.</p> <p>SPECIFICATION</p> <p>Working voltage: DC3V (2 x AAA battery) <br />Static current: 5uA <br />Alarm current: 35mA <br />Networking: Z-Wave<br /> Wireless networking distance: 70 (open area) <br />Working temperature: -10°C~+50°C<br /> Working humidity: max 95%RH<br /> Body dimensions: 76 x 36.6 x 16.5 mm <br />Sensor dimensions: 28.3 x 26.5 x 12.2 mm</p> <br /><h2>Inclusion Information</h2><ul><li>Click [Add] icon in Z-Wave PC Controller Program.</li> <li>Press the networking button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.</li> <li>If Inclusion Process is successful, Green led will turn off.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Click [Remove] icon in Z-Wave PC Controller Program</li> <li>Press the networking button 3 times within 1.5s</li> <li>If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.</li> </ul><br /><h2>Wakeup Information</h2><p>The manual doesn't say, but I've found that tapping the tamper sensor once makes the device blink and that seems to wake it up.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">HM-HS1WL-Z</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">8004:1000</property>
+      <property name="dbReference">800</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline association group<br /><h1>Overview</h1><p>1. Include command classes: </p> <p>Battery report, <br />Notification report, <br />Device Reset Locally notification, <br />Binary report. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Root Device group (Binary Sensor)<br /><h1>Overview</h1><p>1-Binary Sensor Command Class: Compatible with 300 series <br />2-Binary Sensor reports status of water or no water via Lifeline. <br />3-When the sensor detects status change between water and no water, the device will be triggered.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Root Device group (Binary Sensor)<br /><h1>Overview</h1><p>- Binary Sensor Command Class:Compatible with 300 series <br />1-Binary Sensor reports the removed status of water sensor. <br />2-When the sensor detects status change of tamper, the device will be triggered. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Root Device group (Notification)<br /><h1>Overview</h1><p>1-Notification reports reports status of detect water or no water via Lifeline. <br />2-When the sensor detects status change between water and no water, the device will be triggered. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+Root Device group (Notification)<br /><h1>Overview</h1><p>1-Binary Sensor reports the removed status of water sensor <br />1-When the sensor detects status change of tamper, the device will be triggered.</p> <p>4-Association &amp; Association Group Information <br />- Lifeline between controller and the product <br />- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

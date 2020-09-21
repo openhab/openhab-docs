@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="diehl_sesfszw_00_000" listed="false">
+    <label>SES FS-ZW Plug Actuator</label>
+    <description><![CDATA[
+Plug Actuator<br /><h1>Overview</h1><p>Smart outlet with energy monitoring.</p> <br /><h2>Inclusion Information</h2><p>The inclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).</li> <li>Start “Inclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>During the next 5 seconds, the wireless connection is established and the inclusion process for linking the plug actuator to the central unit is performed.</p> <br /><h2>Exclusion Information</h2><p>The exclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Make sure that no device is plugged into the plug actuator.</li> <li>Start “Exclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>The exclusion process for disconnecting the plug actuator from the central unit runs for the next 5 seconds. The Status LED flashes white 3x once the exclusion process has been successfully completed.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Diehl AKO</property>
+      <property name="modelId">SES FS-ZW</property>
+      <property name="manufacturerId">0103</property>
+      <property name="manufacturerRef">0001:0002</property>
+      <property name="dbReference">671</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Default switch state</label>
+        <description>Behaviour after mains failure</description>
+        <default>2</default>
+        <options>
+          <option value="0">Plug actuator OFF</option>
+          <option value="1">Plug actuator ON</option>
+          <option value="2">Last status is restored</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>2: Energy minimum report time</label>
+        <description>Minimum time between two (non-requested) energy values</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>3: Energy maximum report time</label>
+        <description>Maximum time between two energy values, independently of changes in the value</description>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>4: Power minimum report time</label>
+        <description>Minimum time between two (non-requested) power values</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>5: Power maximum report time</label>
+        <description>Maximum time between two power values, independently of changes in the value</description>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>6: Energy delta value</label>
+        <description><![CDATA[
+Minimum change required for a new energy value to be transmitted.<br /><h1>Overview</h1><p>The transmission must take place in the time window between parameter 2 and 3.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>7: Power delta value</label>
+        <description><![CDATA[
+Minimum change required for a new power value to be transmitted.<br /><h1>Overview</h1><p>The transmission must take place in the time window between parameter 4 and 5</p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Safety shutdown configuration</label>
+        <description><![CDATA[
+Behaviour in the event of a safety shutdown<br /><h1>Overview</h1><p>The plug actuator remains OFF after 3x safety shutdowns.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Plug actuator remains OFF</option>
+          <option value="1">Automatic restart</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1_wo" type="integer" groupName="configuration">
+        <label>9: Reset of overcurrent shutdown</label>
+        <description><![CDATA[
+Activation despite 3x safety shutdown<br /><h1>Overview</h1><p> Activation despite 3x safety shutdown (parameter 8 = 1)</p> <p> A reset request (“Set” command) is normally executed very quickly, as a result of which a query (“Get” command) for this parameter usually returns the response “0” (no reset) for this parameter. In some cases, this can be interpreted incorrectly. Consequently, this parameter should be treated only as “write only”. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No reset</option>
+          <option value="1">Reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Night mode</label>
+        <description>Set Night mode of the Status LED</description>
+        <default>0</default>
+        <options>
+          <option value="0">Night mode OFF</option>
+          <option value="1">Night mode ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Info LED colour</label>
+        <description>Set color of the Info LED</description>
+        <default>0</default>
+        <options>
+          <option value="0">Info LED OFF</option>
+          <option value="1">Info LED green</option>
+          <option value="2">Info LED yellow</option>
+          <option value="3">Info LED red</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

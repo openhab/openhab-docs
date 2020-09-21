@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="reitz_05443_00_000" listed="false">
+    <label>Duwi ZW WS - 05443 Battery powered One paddle wall controller</label>
+    <description><![CDATA[
+Battery powered One paddle wall controller<br /><h1>Overview</h1><p>For wireless switching, resp. control of: all Z-Wave wireless switch inserts and wireless intermediate plugs, existing installations can also be expanded without flush-mounted power point, high flexibility with installation due to extremely flat design, to stick or screw on to various substrates, for installation in existing switch box or clipping-in in multiple combinations.</p> <br /><h2>Inclusion Information</h2><p>Press inclusion button for 2 seconds</p> <br /><h2>Exclusion Information</h2><p>Press Exclude button for 2 seconds</p> <br /><h2>Wakeup Information</h2><p>Button triple press on on/off</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Reitz-Group.de</property>
+      <property name="modelId">Duwi ZW WS - 05443</property>
+      <property name="manufacturerId">0064</property>
+      <property name="manufacturerRef">5002:0000</property>
+      <property name="dbReference">54</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Basic On/Off Group</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

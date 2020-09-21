@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_ssr302_00_000" listed="false">
+    <label>SSR-302 Two Channel Boiler Actuator</label>
+    <description><![CDATA[
+Two Channel Boiler Actuator<br /><h1>Overview</h1><p>SSR302 is a three-ampere Z-Wave relay switch designed to fit on an industry standard 6-pin wall plate, and is an ideal replacement for traditional wired heating controls.  It is a two-channel switching unit that is well matched for use with systems that require separate channels for heating and hot water.</p> <p>SSR302 is easy to integrate with other devices using the interoperable Z-Wave standard, and is suitable for applications that require low-power remote switching for two channels. A tri-colour LED gives clear indication of the switch and network status. Switches on the front fascia provide local control, with tactile feedback.</p> <p>Fully integrated with our own products and running on the interoperable Z-wave standard this is an ideal candidate for applications where 2 channel low power remote switching is required. The tri-colour LED gives clear indication of switch states, while four tactile buttons, concealed behind a flap on the front fascia, provide local control.</p>  https://www.securemeters.com/index.php/products/residential/home-heating-hot-water-controls/actuators/ssr/    Application <ul><li> <p><strong>Boiler and hot water control     </strong></p> <p>SSR302 is ideal for boiler control for heating and hot water when used together with a <strong><em>SRT321 </em></strong>room thermostat. Manual on and off buttons on the front panel provide local override functionality.</p> </li> </ul><h3>Key Feature</h3> <ul><li> <ul><li>Mains-powered boiler switch</li> <li>2 channels, 3-ampere rated</li> <li>Acts a Z-Wave<sup>® </sup>repeater, to extend range and signal coverage</li> <li>Switched live or switched circuit operation</li> <li>Switch status indication</li> <li>Manual on/off operation</li> </ul></li> </ul><br /><h2>Inclusion Information</h2><p>To connect the unit to a 3rd party controller follow these steps, also known as ‘inclusion’ in Z-Wave terminology.<br />- Ensure the LED is flashing RED on the SSR302, if not follow the steps in ‘Disconnecting from a network’ first.<br />- Put the 3rd party controller into inclusion mode.<br />- Press and hold both white buttons on the SSR302 until the LED starts flashing green.<br />- The SSR302 has been included onto the network and the LED will go solid amber.</p> <p><br />NOTE: If the LED does not flash green, the include process has been unsuccessful.</p> <br /><h2>Exclusion Information</h2><p>To disconnect from a Z-wave network, follow the steps below, also known as ‘exclusion’ in Z-Wave terminology.<br />- Put the 3rd party controller into exclusion mode.<br />- Press and hold the two white buttons on the SSR302.<br />- The SSR302 has been excluded from the network when the LED starts flashing red.</p> <p>NOTE: If the Network LED does not flash the exclude.</p> <br /><h2>Wakeup Information</h2><p>Pressing and holding the two white buttons for 1 second will trigger the SSR302 to issue a Node Information Frame and enter learn mode for 1 second. This is useful when to associate / disassociate the SSR302 with a control group or just to determine the device and command classes supported. This can be done at any time but will not provide any indication to the operator.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="horstmann_ssr302_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="horstmann_ssr302_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode2" typeId="horstmann_ssr302_00_000_thermostat_mode">
+        <label>Thermostat mode 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SSR-302</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0003:0002,0003:0005,0003:0006</property>
+      <property name="dbReference">262</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="horstmann_ssr302_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="horstmann_ssr302_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="horstmann_ssr302_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

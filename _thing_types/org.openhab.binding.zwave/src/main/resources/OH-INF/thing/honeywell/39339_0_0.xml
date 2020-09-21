@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_39339_00_000" listed="false">
+    <label>39339 (ZW3107) Z-Wave Plug-in Smart Dimmer</label>
+    <description><![CDATA[
+Z-Wave Plug-in Smart Dimmer<br /><h1>Overview</h1><p>Stay connected to your home with a Honeywell Z-Wave Smart Dimmer. Compatible with all Z‑Wave certified gateways, the smart dimmer gives you wireless control of your dimmable lights from any mobile device, computer or Z-Wave enabled remote. Setup is easy – simply plug the dimmer into any in-wall outlet, then connect your light to one of the two dual smart outlets located on either side of the dimmer. Whether you’re at home or away, access the dimmer to turn your lights on and off, or to adjust the brightness levels of the room.</p> <p>The smart dimmer incorporates reliable, dynamic illumination to your home, giving you a fully lit workspace or letting you settle down for the evening with effective, stylish accent lighting. Not only does the smart dimmer help cut energy costs, but it boosts the safety of your home by keeping rooms looking bright and lived‑in. Give your space the perfect amount of light with a Honeywell Z-Wave Smart Dimmer.</p> <h4>Features</h4> <ul><li>ALEXA COMPATIBLE (HUB REQUIRED) - Requires an Alexa supported hub for voice control with Amazon Echo Products (Alexa device and hub are sold separately).Cannot connect directly with ECHO PLUS (Only ZigBee products can connect directly to Echo Plus)</li> <li>REQUIRES A Z-WAVE CERTIFIED HUB - Compatible with the following Z-Wave Hubs: Honeywell, SmartThings, Pulse, Trane, Wink, Nexia, Honeywell, HomeSeer, Smart Security, Harmony Home Hub Extender, Vera, and Fibaro</li> <li>WIRELESSLY CONTROL &amp; SCHEDULE LIGHTS - Schedule timed events for connected lighting. Customize scenes for day or night, home or away. Wirelessly control from anywhere through your smartphone, tablet, PC or Z-Wave remote</li> <li>FULL RANGE DIMMING – Give your space the perfect amount of light with the ability to customize the brightness levels from 0 to 100%. Works ONLY with dimmable bulbs and lamps</li> <li>2 SIMULTANEOUSLY CONTROLLED POLARIZED OUTLET - features 2 polarized outlets that can be controlled at the same time (NOT SEPERATLEY) and a manual ON/OFF, dim &amp; program physical button. To setup simply plug the module into any in-wall outlet, then connect</li> </ul><br /><h2>Inclusion Information</h2><p>Press and release the manual/program button. (Tested to work with Network Wide Inclusion.)</p> <br /><h2>Exclusion Information</h2><p>Press and release the manual/program button.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">39339 (ZW3107)</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">5044:3033</property>
+      <property name="dbReference">976</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description><![CDATA[
+LED Light Control<br /><h1>Overview</h1><p>When shipped from the factory, the LED is set to turn ON when the connected light is turned On. This is the default setting and can be changed if your primary controller supports the node configuration function or by a manual method. To make the LED turn ON when the light is turned ON, change parameter 3s value to 1. To turn the LED OFF at all times, change parameter 3s value to 2.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Set parameter to factory default</option>
+          <option value="1">LED On when light is turned On</option>
+          <option value="2">LED always Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Dim Rate Adjustments (Z-Wave Controller)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Dim Rate Adjustments (Z-Wave Controller, Timing)</label>
+        <description>Timing of steps</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim Rate Adjustments (manually controlled)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Dim Rate Adjustments (manually controlled, timing)</label>
+        <description>Timing of steps</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Dim Rate Adjustments (All-On/Off Commands)</label>
+        <description>Number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: Dim Rate Adjustments (All-On/Off Command, Timing)</label>
+        <description>Timing of steps</description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Basic Set local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Basic Set double click</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

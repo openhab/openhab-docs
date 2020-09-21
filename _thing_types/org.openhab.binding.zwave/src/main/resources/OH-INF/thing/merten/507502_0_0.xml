@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_507502_00_000" listed="false">
+    <label>507502 Flush-mounted switch</label>
+    <description><![CDATA[
+Flush-mounted switch<br /><h1>Overview</h1><p>The flush-mounted receiver can be used to switch loads on and off via radio (for information about permitted loads, see the technical data). When it receives the radio signal, the flush-mounted receiver switches the corresponding contact.</p> <br /><h2>Inclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Exclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Wakeup Information</h2><p>Triple click on the switch button</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">507502</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">8001:8002,8001:8004</property>
+      <property name="dbReference">547</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

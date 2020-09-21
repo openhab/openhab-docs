@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_ums2_00_000" listed="false">
+    <label>UMS2 WiDom Smart Roller Shutter</label>
+    <description><![CDATA[
+WiDom Smart Roller Shutter<br /><h1>Overview</h1><p>WiDom Smart Roller Shutter is an "in wall device", for the multilevel control of roller shutter motors. It can accurately control the opening and closing of blinds, curtains, shutters, venetian blinds as requested by the user through local commands or remotely using computers, smartphones, tablets. At the same time, it is completely configurable so that it can adapt to the most varied customers’ needs, while being ready for use without needing additional configurations in order to operate.  After an initial calibration procedure, thanks to a proprietary algorithm, WiDom Smart Roller Shutter is able to identify the exact position of the roller shutter without using external sensors. During the operation, a continuous and automatic control of the limit switches allows maintaining the calibration. In the absence of a power source, the system runs a self-repositioning procedure that restores calibration. The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Roller Shutter will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. </p> <br /><h2>Exclusion Information</h2><p>The procedure of exclusion can be activated by Removing a node from the Z-Wave network and any click sequence on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Meter (KWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">UMS2</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0800</property>
+      <property name="dbReference">1004</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Numbers of clicks to control the local load</label>
+        <description>Define which sequences of click control the local load</description>
+        <default>3</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">ONE_CLICK</option>
+          <option value="2">TWO_CLICKS</option>
+          <option value="3">ONE_CLICK and TWO_CLICKS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="50" max="100">
+        <label>2: Favorite level for ON position</label>
+        <description>Favorite level for ON position</description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="49">
+        <label>3: Favorite level for OFF position</label>
+        <description>Favorite level for OFF position</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>4: Value for Group 2 with 1 click on UP button</label>
+        <description><![CDATA[
+Value for Group 2 with 1 click on UP button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 2 when UP button receive 1 Click</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>5: Value for Group 2 with 1 click on DOWN button</label>
+        <description><![CDATA[
+Value for Group 2 with 1 click on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 2 when DOWN button receive 1 Click </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>6: Value for Group 3 with 2 clicks on UP button</label>
+        <description><![CDATA[
+Value for Group 3 with 2 clicks on UP button<br /><h1>Overview</h1><p> Value used for devices belonging to Group 3 when UP button receive 2 Clicks</p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>7: Value for Group 3 with 2 clicks on DOWN button</label>
+        <description><![CDATA[
+Value for Group 3 with 2 clicks on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 3 when DOWN button receive 2 Clicks </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>8: Value for Group 4 with 3 clicks on UP button</label>
+        <description><![CDATA[
+Value for Group 4 with 3 clicks on UP button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 4 when UP button receive 3 Clicks </p>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>9: Value for Group 4 with 3 clicks on DOWN button</label>
+        <description><![CDATA[
+Value for Group 4 with 3 clicks on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 4 when DOWN button receive 3 Clicks</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>20: Calibration</label>
+        <description><![CDATA[
+Defines the status of the calibration procedure<br /><h1>Overview</h1><p>Defines the status of the calibration procedure. By default, as soon as the device has been included, the calibration starts in automatic mode. At the end of the calibration, this parameter is set to 1. Afterwards the calibration can be done again by setting this parameter to 0 (AUTO) or 2 (MANUAL) and clicking on any external button.  If the calibration is set in AUTO mode, it will be completed automatically.  If the calibration is set in MANUAL mode, a click on any external button is necessary to carry on the next step.  During the calibration, the LED indicator blinks repeatedly in BLUE. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration"
+                 min="0" max="3000">
+        <label>21: Motor idle state definition</label>
+        <description><![CDATA[
+Motor idle state definition<br /><h1>Overview</h1><p>Defines the level of power consumption under which the motor is considered steady (stationary) </p>
+        ]]></description>
+        <default>1000</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>22: Limit switch recognition</label>
+        <description><![CDATA[
+Limit switch recognition<br /><h1>Overview</h1><p>The motor has reached the limit switch when its power consumption is lower than PLIMIT (the power defined in parameter No. 21) for an amount of time defined by this parameter. </p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 1 Click</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 2 Clicks</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: 3 Clicks</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

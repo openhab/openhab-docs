@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_ssp302_00_000" listed="false">
+    <label>SSP302 Switch Meter Plugin</label>
+    <description><![CDATA[
+Switch Meter Plugin<br /><h1>Overview</h1><p>ON/OFF module with energy metering</p> <br /><h2>Inclusion Information</h2><p>To include the SSP 302 onto a network, put the controller into inclusion mode. Now, press and hold the button on SSP 302 for 4 to 7 seconds then release. The network status LED will start flashing (twice per second) on successful start of inclusion process.</p> <p>Note: Refer to the controller's manual for controller relevant actions.</p> <p>On successful inclusion the LED will turn off.</p> <p>Note: Inclusion means add and exclusion means delete.<br /><br />The total process can take up to 20 seconds (Refer to the “Technical specifications – Radio” section for details). If the device fails to join the network it will go back to factory default state and the Network status LED will start flashing once per second. If there is an issue with RF Communication, then re-locate the device and repeat the inclusion process again.</p> <br /><h2>Exclusion Information</h2><p>To exclude the SSP 302 from a network, put the controller into exclusion mode (refer to controller instructions) and follow the same sequence as per the inclusion process for include node. After successful exclusion the network status LED will start flashing once per second, and the device will reset to factory default.</p> <p>If exclusion fails, SSP 302 network status LED will turn off after about 5 seconds.</p> <p>Note: Exclusion only works when the device is in direct range of the controller (no repeater allowed).</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SSP302</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0011:0001</property>
+      <property name="dbReference">1121</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Switch Status</label>
+        <description>Switch Status delta based configuration</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>2: Voltage delta</label>
+        <description><![CDATA[
+Voltage delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base voltage reporting.</i></p> <p><i> Resolution of this parameter is 100 mV.if user wants to set 10V delta then it should be 10/0.1 = 100. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>3: Current delta</label>
+        <description><![CDATA[
+Current delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base curenrt reporting.</i></p> <p><i> Resolution of this parameter is 10 mA.if user wants to set 1A delta then it should be 1/0.01 = 100. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Power Factor</label>
+        <description><![CDATA[
+Power Factor delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Power Factor reporting in 0.1% resolution.</i></p> <p><i> if user wants to set Power Factor 10% = 10/0.1 = 100 </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="4000">
+        <label>5: Active Power</label>
+        <description><![CDATA[
+Active Power delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Active Power reporting in 1 W resolution.</i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>6: Active Energy</label>
+        <description><![CDATA[
+Active Energy delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Active Energyreporting in 1 Wh resolution. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>7: Apparent Energy</label>
+        <description><![CDATA[
+Apparent Energy delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Apparent Energy reporting in 1 VAh resolution. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>8: Switch Status time</label>
+        <description><![CDATA[
+Switch Status time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of switch status in 1 second resolution</i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>9: Voltage time</label>
+        <description><![CDATA[
+Voltage time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of voltagein 1 second resolution.</i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>10: Current time</label>
+        <description><![CDATA[
+Current time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of currentin 1 second resolution.</i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>11: Power Factor time</label>
+        <description><![CDATA[
+Power Factor time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Power Factor in 1 second resolution</i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>12: Active Power time</label>
+        <description><![CDATA[
+Active Power time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Power in 1 second resolution. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>13: Active Energy time</label>
+        <description><![CDATA[
+Active Energy time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Energy in 1 second resolution. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="65520">
+        <label>14: Apparent Energy time</label>
+        <description><![CDATA[
+Apparent Energy time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Apparent Energy in 1 second resolution. </i></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>15: Relay and LED configuration</label>
+        <description><![CDATA[
+Relay and LED configuration<br /><h1>Overview</h1><p><i>This configuration is used to change the relay LED status when relay is open/close and also enable to whether to retain the last relay status over power cycle. </i></p> <table><tr><td>0</td> <td>Relay status will not be retain over power cycle, and Relay status LED will lit when relay ON and relay status LED will off when relay OFF.</td> </tr><tr><td>1</td> <td>Relay status will be retain over power cycle, and Relay status LED will lit when relay ON and relay status LED will off when relay OFF.</td> </tr><tr><td>2</td> <td>Relay status will not be retain over power cycle, and Relay status LED will off when relay ON and relay status LED will lit when relay OFF.</td> </tr><tr><td>3</td> <td>Relay status will be retain over power cycle, and Relay status LED will off when relay ON and relay status LED will lit when relay OFF.</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>16: Sleep Current Config</label>
+        <description><![CDATA[
+Sleep Current Config<br /><h1>Overview</h1><p><i>This configuration is used to disconnect the load if the device current is less the configured sleep current for more than 30 seconds, this configuration has the resolution of 0.001 A . </i></p> <p>Common attributes:</p> <p>-Min Value = 0</p> <p>-Zero configurations means that the corresponding functionality is disabled.Value set more than maximum allowable limit will be rejected silently, and SSP 302 will retain it last configuration value.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Power</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Electrical Parameter</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Relay Status</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association">
+        <label>5: Time</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

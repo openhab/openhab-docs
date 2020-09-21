@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft100_00_000" listed="false">
+    <label>FT100 Oomi Multisensor</label>
+    <description><![CDATA[
+Oomi Multisensor<br /><h1>Overview</h1><p>Oomi by Fantem’ MultiSensor looks like nothing that has come before. It’s a motion sensor and it’s also so much more. Installing this 1 piece of Z-Wave®technology is the same as installing 6 pieces of Z-Wave technology. Your home control network will immediately understand motion, temperature, humidity,light, Ultraviolet and Vibration readings wherever MultiSensor is installed. Those intelligent readings will equate to intelligent automation. And intelligent automation will give you the perfect smart home.<br />MultiSensor can be powered by battery or by USB with an appropriate adaptor.</p> <p>Technical Specifications:</p> <ul><li>Power Input: 5V 1A</li> <li>Battery Type: 2x CR123A (not included)</li> <li>Temperature Sensor Range: 32ºf -104ºf (0ºc -40ºc)</li> <li>Motion Sensor Field of View: 100º</li> <li>Motion Sensor Range: 16 feet</li> <li>Humidity Sensor Range: 20-80%</li> <li>Light Sensor Range: 0-30000 Lux</li> <li>UV Sensor Range: 1-11 Index level</li> <li>Dimensions: 1.8 x 1.8 x 1.5 inches</li> </ul><p><br /><br /><br /><br /></p> <br /><h2>Inclusion Information</h2><ol><li>Set your Z-Wave gateway to accept new products.</li> <li>Press the Action Button on your MultiSensor.</li> <li>Test that your sensor has been successfully added your Z-Wave gateway by pressing its Action Button. If you press the button and its LED is solid green for a few seconds, then inclusion has been successful. If the LED blinks green when the button is pressed, the inclusion has been unsuccessful and you should repeat the above steps.</li> </ol><br /><h2>Exclusion Information</h2><p>Your MultiSensor can be removed from your Z-Wave network at any time.You’ll need to use your Z-Wave network’s main controller to do this and the following instructions tell you how to do this using Aeotec by Aeon Labs’ Z-Stick and Minimote controllers. If you are using other products as your main Z-Wave controller, please refer to the part of their respective manuals that tells you how remove devices from your network.<br /><br /></p> <p>If you’re using a Z-Stick:</p> <ol><li>If your Z-Stick is plugged into a gateway or a computer, unplug it.</li> <li>Take your Z-Stick to your MultiSensor.</li> <li>Press and hold the Action Button on your Z-Stick for 3 seconds and then release.</li> <li>Press the Action Button on your MultiSensor.</li> <li>If your MultiSensor has been successfully removed from your network, the RGB LED will be active with a colourful gradient for 3 seconds. When you press the Action Button on the MultiSensor, its green LED will blink. If the removal was unsuccessful, the green LED will stay solid for a few seconds when you press the Action Button. Press the Action Button on the Z-Stick to take it out of removal mode.<br /><br /></li> </ol><p>If you’re using a Minimote:</p> <ol><li>Take your Minimote to your MultiSensor.</li> <li>Press the Remove Button on your Minimote.</li> <li>Press the Action Button on your MultiSensor.</li> <li>If your MultiSensor has been successfully removed from your network, the RGB LED will be active with a colourful gradient for 3 seconds. When you press the Action Button on the MultiSensor, its green LED will blink. If the removal was unsuccessful, the green LED will stay solid for a few seconds when you press the Action Button.</li> <li>Press any button on your Minimote to take it out of removal mode.</li> </ol><br /><h2>Wakeup Information</h2><p>If your MultiSensor is battery powered, you will need to ensure that it is active when configuring it. To do this, press the Action Button once, which will trigger to send out a wake up notification command. <br />If you want it to wake up for 10 minutes, to do this, press and hold its Action Button for 3 seconds and then release it. Your MultiSensor’s orange LED will fast blink for 10 minutes to indicate that it is active. <br />When you are done configuring or communicating with your MultiSensor, you can put it back into sleep mode to conserve battery power. To do this, press and hold its Action button for 3 seconds and then release it. Your MultiSensor’s LED should now be off to indicate that it is asleep.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT100</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0002:0064</property>
+      <property name="dbReference">975</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Stay Awake in Battery Mode</label>
+        <description><![CDATA[
+Stay awake for 10 minutes at power on<br /><h1>Overview</h1><p>Enable/Disable waking up for 10 minutes when re-power on (battery mode) the Multi Sensor, value=0=disable, value=1=enable</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="10" max="3600">
+        <label>3: Default PIR time</label>
+        <description><![CDATA[
+The default PIR time<br /><h1>Overview</h1><p>The default PIR time is 4 minutes. The Multisensor will send BASIC SET CC (0x00) to the associated nodes if no motion is triggered again in 4 minutes.</p> <p>Range: 10 - 3600</p> <p>Note:<br />The time unit is second if the value range is in 10 to 255. If the value range is in 256 to 3600, the time unit will be minute and its value should follow the below rules:<br />a) Interval time = Value/60, if the interval time can be divided by 60 and withoud remainder.<br />b) Interval time = (Value/60)+1, if the interval time can be divided by 60 and has remainder.<br />Other values will be ignored.</p>
+        ]]></description>
+        <default>240</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Motion sensor sensitivity</label>
+        <description><![CDATA[
+Sensitivity level of PIR sensor (1=minimum, 5=maximum)<br /><h1>Overview</h1><p>Enable/disable the function of motion sensor.</p> <p>Value = 0, disable<br />Value = 1, enable, sensitivity level = 1 (minimum level)<br />Value = 2, enable, sensitivity level = 2<br />Value = 3, enable, sensitivity level = 3<br />Value = 4, enable, sensitivity level = 4<br />Value = 5, enable, sensitivity level = 5 (maximum level)</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">sensitivity level 1</option>
+          <option value="2">sensitivity level 2</option>
+          <option value="3">sensitivity level 3</option>
+          <option value="4">sensitivity level 4</option>
+          <option value="5">sensitivity level 5</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Motion sensor command when triggered</label>
+        <default>1</default>
+        <options>
+          <option value="1">Basic Set CC</option>
+          <option value="2">Sensor Binary Report CC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>39: Low battery value</label>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Selective Reporting</label>
+        <description><![CDATA[
+Select to report on thresholds<br /><h1>Overview</h1><p>Enable/disable the selective reporting only when measurements reach a certain threshold or percentage set in 41-44 below. This is used to reduce network traffic.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 is assigned to the Lifeline association group and every device has 5 nodes to associate.The Motion sensor, Humidity sensor, thermometer, light sensor and Ultraviolet sensor reports will be sent to the associated nodes in Group 1.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

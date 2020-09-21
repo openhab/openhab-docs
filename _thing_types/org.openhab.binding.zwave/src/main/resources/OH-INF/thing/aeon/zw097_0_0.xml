@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw097_00_000" listed="false">
+    <label>ZW097 Dry Contact Sensor</label>
+    <description><![CDATA[
+Dry Contact Sensor<br /><h1>Overview</h1><p>A fully functional Z-Wave sensor that can detect a variety of dry contact signals. You just need to connect the matched external sensor on it such as a water level sensor, dry contact switch, dry contact relay, or other possible dry contact sensors. The Dry Contact Sensor can be used if the external sensor is a dry contact device. </p> <br /><h2>Inclusion Information</h2><ol><li>Remove the spacing tab to connect the batteries on your Dry Contact Sensor. Its Network LED will begin to blink when you short press the Action Button on the back of Sensor.</li> <li>Put your controller into inclusion mode. </li> <li>Press the Action Button on your Dry Contact Sensor.</li> <li>If your Dry Contact Sensor has been successfully added to your Z-Wave network, its Network LED will fast blink for 2 seconds and then be solid for 2 seconds when you press the Action Button again. If the adding was unsuccessful and the Network LED continues to fast blink for 8 seconds and then slow blink for 3 seconds, repeat the above steps.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put your controller into exclusion mode.</li> <li>Press the Action Button on your Dry Contact Sensor. If your Dry Contact Sensor has been successfully removed from your Z-Wave network, its Network LED will fast blink for 8 seconds and then slow blink for 3 seconds when you press the Action Button again. <br />If the removing was unsuccessful, the Network LED will fast blink for 2 seconds and then be solid for 2 seconds when you press the Action Button, repeat the above steps.</li> </ol><br /><h2>Wakeup Information</h2><ol><li>Remove your Sensor unit from its Back Mounting Plate, press the Action Button on the back of the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.</li> <li>If you want your Sensor to keep awake for a longer time, press and hold the Action Button on the back of the Sensor unit for 3 seconds, then your Sensor will wake up for 10 minutes and the Network LED will fast blink while it is awake.</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co2" typeId="alarm_co2">
+        <label>Alarm (CO2)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_DIOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (water)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access control)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_emergency" typeId="alarm_emergency">
+        <label>Alarm (emergency)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=EMERGENCY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_clock" typeId="alarm_clock">
+        <label>Alarm (clock)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW097</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0061,0102:0061,0202:0061</property>
+      <property name="dbReference">267</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send Sensor binary report on open/close events</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Enable wake up 10 minutes when power on</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Send Basic Set on open/close event</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>39: Send battery report when less than percentage</label>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>111: Set the interval time of battery report</label>
+        <description><![CDATA[
+Value is specified in number of seconds.<br /><h1>Overview</h1><p>Values greater than 10 will be rounded up to the nearest 4 minutes (10 through 240 = 4 minutes, 241 through 480 = 8 minutes, etc.)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_121_4_00000010" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>121: Send Sensor Binary report to associated devices</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_121_4_00000100" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>121: Send Basic report to associated devices</label>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_122_1_wo" type="integer" groupName="configuration">
+        <label>122: Notification type to send</label>
+        <default>6</default>
+        <options>
+          <option value="1">Smoke alarm</option>
+          <option value="2">CO alarm</option>
+          <option value="3">CO2 alarm</option>
+          <option value="4">Heat alarm</option>
+          <option value="5">Water alarm</option>
+          <option value="6">Access control</option>
+          <option value="7">Home security</option>
+          <option value="8">Power management</option>
+          <option value="9">System</option>
+          <option value="10">Emergency alarm</option>
+          <option value="11">Timer ended</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

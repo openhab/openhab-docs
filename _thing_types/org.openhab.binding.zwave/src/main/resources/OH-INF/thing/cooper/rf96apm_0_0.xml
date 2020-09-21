@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="cooper_rf96apm_00_000" listed="false">
+    <label>RF96APM ON/OFF Plug-In Module</label>
+    <description><![CDATA[
+ON/OFF Plug-In Module<br /><h1>Overview</h1><p>The ON/OFF Plug-In Module is a Z-Wave Plus enabled device and is fully compatible with any Z-Wave enabled network. The device can be set up in a Z-Wave network to communicate directly with other end devices such as PIR motion detector, or to report directly to a Z-Wave controller.</p> <p>This product supports the S2 security protocol that uses encrypted Z-Wave Plus messages to communicate to other security-enabled Z-Wave Plus products. A security-enabled Z-Wave Plus Controller must be used in order to fully utilize the security features of this product.</p> <p>This ON/OFF Plugin module is designed to control the on/off status of lighting and appliances in the home. Control the connected load by associating it with another end device such as a sensor or switch, or through automations, schedules, and mobile apps by pairing with a compatible Z-Wave controller. Each module is also designed to act as a repeater to re-transmit the Z-Wave signal to ensure that it is received at its intended destination by routing the signal around obstacles and signal dead spots.</p> <br /><h2>Inclusion Information</h2><p>Auto Inclusion This ON/OFF plug supports Auto Inclusion feature where it will automatically enter Inclusion mode when first powered up after a factory reset.</p> <ol><li>There is an ON/OFF button on the front of the device which is used to carry out inclusion, exclusion or association.</li> <li>Put your Z-Wave Controller into inclusion/exclusion mode.</li> <li>Plug this ON/OFF Plug-in module into a wall outlet near the load to be controlled.</li> <li>he Inclusion process should be completed when the LED stops blinking.</li> </ol><p>Note: If Auto Inclusion fails, refer to the Troubleshooting section regarding Manual Inclusion</p> <p>Manual Inclusion</p> <p>If auto inclusion fails:</p> <ol><li>Put the Z-Wave Controller into Inclusion mode</li> <li>Press the ON/OFF button 3 times within 1.5 seconds to put the unit into Inclusion mode</li> </ol><br /><h2>Exclusion Information</h2><p>Exclusion</p> <ol><li>Put the Z-Wave Controller into Exclusion mode</li> <li>Press the ON/OFF button 3 times within 1.5 seconds to put the unit into Exclusion mode</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Cooper Wiring Devices</property>
+      <property name="modelId">RF96APM</property>
+      <property name="manufacturerId">001A</property>
+      <property name="manufacturerRef">0053:0050</property>
+      <property name="dbReference">1272</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Remember last status</label>
+        <description><![CDATA[
+Remember last status<br /><h1>Overview</h1><p>Remember the last status:</p> <p>In the event of a power outage, this parameter determined if the plug should revert to the last status on power restore.</p> <p>0: Do not remember</p> <p>1: Remember</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do not remember</option>
+          <option value="1">Remember</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 commands:</p> <ul><li>When the unit is powered for the first time, the unit will send a Notification Report to the node of Group 1</li> <li>When setting the unit or changing the unit’s status, the unit will send a Binary Switch Report to the node of Group 1. When the unit is OFF, Switch Binary Report Value = 0x00. When the unit is ON, Switch Binary Report Value = 0xFF.</li> <li>Device Reset: When performing Factory Reset the unit will send Device Reset Locally Notification to the node of Group1</li> </ul>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2: Association with 4 nodes (i.e. end devices such as detectors or other lighting switches).This allows the ON/OFF module to receive commands directly from these end devices without the participation of the controller.</p> <p>Group 2 commands:</p> <ul><li>When the button on the unit is pressed, the unit will send a Basic Set command to the nodes of Group 2. When the unit is OFF, Basic Set Value = 0x00. When the unit is ON, Basic Set Value = 0xFF</li> </ul>
+        ]]></description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

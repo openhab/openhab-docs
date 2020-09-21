@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_dry_00_000" listed="false">
+    <label>DRY Widom Smart Dry contact</label>
+    <description><![CDATA[
+Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch can turn ON and OFF equipments with an independent power supply, such as solenoid valves (e.g. gas, water and irrigation), power operated valves etc. </p> <p>WiDom Smart Dry Contact Switch is very easy to install and works with both momentary and toggle switches. </p> <p>The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Double Switch will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>WiDom Smart Dry Contact Switch is compatible with all Z-Wave/Z-Wave Plus certified controllers. The device supports both the Network Wide Inclusion mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and Normal Inclusion. By default, the inclusion procedure starts in Normal Inclusion mode and after a short time out the procedure continues in Network Wide Inclusion mode that lasts for about 20 Seconds.</p> <p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed. </p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in Learning Mode. As soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED and the App_status in the interface is OK. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">DRY</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0900</property>
+      <property name="dbReference">996</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>1: Numbers of clicks to control the load</label>
+        <description>Defines which sequences of clicks control the load</description>
+        <default>7</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>4: Value used for devices belonging to Group 2</label>
+        <description>Value sent when the external switch receives 1 Click</description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>5: Value used for devices belonging to Group 3</label>
+        <description><![CDATA[
+Value sent wen the external switch receives 2 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 3 when the external switch receives 2 Clicks</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>6: Value used for devices belonging to Group 4</label>
+        <description><![CDATA[
+Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 4 when external switch receives 3 Clicks</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>10: Timer to switch OFF the Relay</label>
+        <description>Defines the time after which the relay is switched OFF</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>11: Timer to switch ON the Relay</label>
+        <description>Defines the time after which the relay is switched ON</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_2_wo" type="integer" groupName="configuration">
+        <label>15: Timer scale</label>
+        <description>Defines the time unit used for parameters No.10 and No.11.</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: One Click Scene Activation Set</label>
+        <description><![CDATA[
+Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 1 Click on the external switch</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>21: Two Clicks Scene Activation Set</label>
+        <description><![CDATA[
+Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks on the external switch</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>22: Three Clicks Scene Activation Set</label>
+        <description><![CDATA[
+Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks on the external switch</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: Start-up Status</label>
+        <description>Defines the status of the device following a restart</description>
+        <default>3</default>
+        <options>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+          <option value="3">PREVIOUS STATUS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Type of external switch</label>
+        <description>Defines the type of external switch connected to the device</description>
+        <default>1</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 1 Click</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 2 Clicks</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: 3 Clicks</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

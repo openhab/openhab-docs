@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_2gigzbrdg433_00_000" listed="false">
+    <label>Z-BRDG-433 Plug in Z-Wave to 433Mhz bridge plus lamp dimmer</label>
+    <description><![CDATA[
+Plug in Z-Wave to 433Mhz bridge plus lamp dimmer<br /><h1>Overview</h1><p>This GoControl (formerly 2GIG) Plug-in Lamp Module is integrates with other Z-Wave products. It can also act as a wireless repeater to ensure that commands intended for another device in the network are received (useful when a device would otherwise be out of radio range).</p> <ul><li>One-controlled outlet for control and dimming of lamps (Z-Wave hub required)</li> <li>Works with many Z-Wave controllers, including SmartThings, WINK, FIBARO Home Center, Vera, and many more!</li> <li>For indoor use only</li> <li>May be packaged referencing 2GIG Energy Bridge; device sold as a Z-Wave lamp dimmer only</li> </ul><p><strong>SPECIFICATIONS</strong></p> <ul><li>Signal (Frequency): 908.42 MHz</li> <li>Maximum Load (Incandescent): 300W maximum, 120 VAC</li> <li>Range: Up to 100 feet between the wireless controller and/or the closest Z-Wave device</li> <li>120 VAC, 60 H</li> </ul><br /><h2>Inclusion Information</h2><p>When the device is unpaired, press the button on the front till the relay inside clicks to put it into Zwave pairing mode.</p> <br /><h2>Exclusion Information</h2><p>At this time I have no idea how to exclude this device, If I figure it out I will update this.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">Z-BRDG-433</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2014:1401</property>
+      <property name="dbReference">978</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

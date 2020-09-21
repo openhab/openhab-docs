@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_rgbgeniezw4001_00_000" listed="false">
+    <label>ZW4001 In-Wall Dimmer</label>
+    <description><![CDATA[
+In-Wall Dimmer<br /><h1>Overview</h1><p>In Wall Dimmer switch module.  Requires momentary switch input to change states.</p> <br /><h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode</li> <li>Power on the in-wall dimmer, and set it into inclusion mode. </li> </ol><p>There are two methods to set inclusion mode:</p> <ol><li>Repower the dimmer, it will be set into nclusion mode automatically, and waiting to be included</li> <li>Triple press theaction button on the dimmer, it will set the dimmer into inclusion mode</li> </ol><p>The connected light will stay solid on for 3 seconds to indicate successful inclusion</p> <br /><h2>Exclusion Information</h2><ol><li>Triple press the action button, the dimmer will be set to inclusion/exclusion mode, then send out Node Information Frame</li> <li>When the dimmer is under inclusion mode.</li> </ol><p>there are 2 kinds of operation:</p> <ol><li>Triple press inclusion/exclusion button, the dimmer will be set to inclusion mode again, and send out Node Information Frame</li> <li>Power off and power on the dimmer, it will be set to inclusion mode automatically, and send out Node Information Frame</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZW4001</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0201:D005</property>
+      <property name="dbReference">1152</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: LoadStatePowerLoss</label>
+        <description>Saving load state before power failure</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: EnableDisableBasicReport</label>
+        <description><![CDATA[
+Enable/Disable Send basic report on load change<br /><h1>Overview</h1><p>0 -- Disable to send Basic report</p> <p>1 -- Enable to sent Basic report</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>4: DefaultFadeTime</label>
+        <description><![CDATA[
+Time to fade to new value (Units depend on value)<br /><h1>Overview</h1><p>0x00 -- Instantaneous Change</p> <p>0x01 .. 0x7F -- 1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</p> <p>0x80 .. 0xFE -- 1 minute (0x80) to 127 minutes (0xFE) in 1 minute resolution</p> <p>0xFF -- Factory Default duration (1 second)</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>5: MinBrightness</label>
+        <description><![CDATA[
+Minimum Brightness Value<br /><h1>Overview</h1><p>Valid Value: 0-50, the bigger the value is, the higher the load's minimum brightness is</p> <p>Note: when configuring this value, the value of Multilevel will be configured as 1 automatically so that users can preview the corresponding effect of minimum brightness value.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: MOSFETDriveType</label>
+        <description><![CDATA[
+Choose MOSFET driving type<br /><h1>Overview</h1><p>0 -- trailing edge</p> <p>1 -- leading edge</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: EnableInclExcl</label>
+        <description><![CDATA[
+Enable Inclusion and Exclusion<br /><h1>Overview</h1><p>0 -- disable</p> <p>1 -- enable</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

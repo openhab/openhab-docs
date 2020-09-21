@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="smartthings_motionv4" listed="false">
+        <label>SmartThings Motion Sensor V4</label>
+        <description>SmartThings Motion and Temperature Sensor</description>
+
+        <channels>
+            <channel id="illuminance" typeId="measurement_illuminance">
+                <properties>
+                    <property name="zigbee_endpoint">1</property>
+                </properties>
+            </channel>
+
+            <channel id="motion" typeId="ias_motionintrusion">
+                <properties>
+                    <property name="zigbee_endpoint">1</property>
+                </properties>
+            </channel>
+        </channels>
+
+        <config-description>
+            <parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+                <label>MAC Address</label>
+            </parameter>
+
+            <parameter name="attribute_02_0000_0033_18" type="integer">
+                <label>LED Indication</label>
+                <options>
+                    <option value="0">Disabled</option>
+                    <option value="1">Enabled</option>
+                </options>
+            </parameter>
+
+            <parameter name="attribute_02_0406_0030_18" type="integer">
+                <label>Sensitivity</label>
+                <options>
+                    <option value="0">Low</option>
+                    <option value="1">High</option>
+                </options>
+            </parameter>
+        </config-description>
+
+    </thing-type>
+</thing:thing-descriptions>

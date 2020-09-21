@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_507900_00_000" listed="false">
+    <label>507900 Wall Dimmer Module - Flush Mounted</label>
+    <description><![CDATA[
+Wall Dimmer Module - Flush Mounted<br /><h1>Overview</h1><p>The flush-mounted CONNECT radio receiver, 1-gang universal dimmer, will be referred to below as "dimmer".</p> <p>The dimmer is used to switch and dim luminaires (see technical data) via radio signal and via an extension push-button connected directly to the dimmer.</p> <p>The dimmer automatically recognises the connected load, is overload-proof, short-circuit-proof and hum-free, and has a soft start function which slowly dims up a connected load.</p> <br /><h2>Inclusion Information</h2><p>Teaching (transmits Node info frame), see CONNECT radio system description</p> <br /><h2>Exclusion Information</h2><p>Reset to the factory settings; de- lete everything taught</p> <br /><h2>Wakeup Information</h2><p>Triple click on the switch button</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">507900</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">4003:0002</property>
+      <property name="dbReference">446</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_196_1" type="integer" groupName="configuration"
+                 min="0" max="240">
+        <label>196: Dimmer speed</label>
+        <description>Set dimming speed. fast=0 ... 240=slow.</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

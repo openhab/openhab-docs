@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz75_00_000" listed="false">
+    <label>TZ75 Rollershutter Controller</label>
+    <description><![CDATA[
+Rollershutter Controller<br /><h1>Overview</h1><p>This in-wall Roller Shutter Controller is able to detect the position of the shutter by using the patterned power measuring method, so it can not only be positioned fully up or down, but can also be adjusted to any position between 0 and 100%.</p> <p>Installation hint: lt is important to carry out a shutter calibration process. Press the On/Off button over 3 seconds and release it before the 6th second, the roller shutter controller will start the shutter calibration process. The process is composed of three continue stages. The shutter move to the BOTTOM in first stage, and move to the TOP in second stage, and move to the BOTTOM again in 1-second intervals third stage. Then the TZ75 will know the total range of UP and DOWN.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave controller entered inclusion mode.</li> <li>Pressing On/Off button three times within 1.5 seconds will enter inclusion mode.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Wave controller entered exclusion mode.</li> <li>Pressing On/Off button three times within 1.5 seconds will enter exclusion mode.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ75</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0311:0303</property>
+      <property name="dbReference">801</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: Watt meter report period</label>
+        <description><![CDATA[
+Watt meter report period<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value =720), the TZ75 will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45h).</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>2: KWH Meter Report period</label>
+        <description><![CDATA[
+KWH Meter Report period<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value =6), the TZ75 will report its accumulated power consumption (KW/h) every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated power consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="10" max="1100">
+        <label>3: Treshold of watt for load caution</label>
+        <description><![CDATA[
+Treshold of watt for load caution<br /><h1>Overview</h1><p>This is the maximum power consuption which is allowed during acivation of the Roller Shutter relays up or down. Set the threshold high enough to prevent from overloads in winter etc. when the motor needs slightly more power.</p> <p>When an overload state occurs, the TZ75 gets disabled and the LED flashes in 0.5 second intervals. The overload state can be cleared by disconnecting and reconnecting the TZ75 main power.</p>
+        ]]></description>
+        <default>1100</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>4: Treshold of KWH for load caution</label>
+        <description><![CDATA[
+Treshold of KWH for load caution<br /><h1>Overview</h1><p>The default value 0 will disable the KWh warning.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

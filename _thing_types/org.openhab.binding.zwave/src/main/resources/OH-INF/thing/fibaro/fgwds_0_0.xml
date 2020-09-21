@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgwds_00_000" listed="false">
+    <label>FGWDS WALLI SWITCH FIBARO SINGLE SWITCH</label>
+    <description><![CDATA[
+WALLI SWITCH FIBARO SINGLE SWITCH<br /><h1>Overview</h1><p>FIBARO Walli Single Switch is a smart wall switch designed to control one light sources via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate or other compatible. <br />Main features of FIBARO Walli Single Switch: </p> <ul><li> Can be used with:  <ul><li>Conventional incandescent and halogen light sources, </li> <li> LED lamps, </li> <li>Fluorescent lamps, </li> <li>Electronic transformers (for ELV halogen lamps and LED bulbs), </li> <li>Ferromagnetic transformers (for MLV halogen lamps). </li> </ul></li> <li>Can be used with provided cover plate or one of the following:  <ul><li>GIRA – System 55 (Standard 55, E2, Event, Event Clear), </li> <li>Legrand – Céliane, </li> <li>Schneider – Odace. </li> </ul></li> <li>Active power and energy consumption metering. </li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 Authenticated with PRNG-based encryption. </li> <li>Works as Z-Wave signal repeater (all non-battery operated devices within the network will act as repeaters to increase reliability of the network). </li> <li>May be used with all devices certified with the Z-Wave Plus certificate and should be compatible with such devices produced by other manufacturers. </li> </ul><br /><h2>Inclusion Information</h2><h1>To add the device to the Z-Wave network manually:</h1> <ol><li>Power the device.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>If you are adding in Security S2 Authenticated, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li>Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul><h1>To add the device to the Z-Wave network using SmartStart:</h1> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual). </li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).</li> <li>Power the device.</li> <li>Wait for the adding process to start (up to few minutes), which is signaled with yellow LED blinking.</li> </ol><p>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame:</p> <ul><li> Green - successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta - successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul><br /><h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol><br /><h2>Wakeup Information</h2><p>FIBARO Walli Double Switch is powered using DC power supply unit so it is always awake.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch Binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGWDS</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">1A01:1000</property>
+      <property name="dbReference">1094</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Remember device state</label>
+        <description>Remember device state</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>2: First channel – overload safety switch</label>
+        <description><![CDATA[
+First channel – overload safety switch<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>function disabled</td> </tr><tr><td>10 to 36200</td> <td>(1.0-3620.0W, step 0.1W) – power threshold</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration"
+                 min="0" max="36200">
+        <label>3: Second channel – overload safety switch</label>
+        <description><![CDATA[
+Second channel – overload safety switch<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>function disabled</td> </tr><tr><td>10 to 36200</td> <td>(1.0-3620.0W, step 0.1W) – power threshold</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration"
+                 min="500" max="36800">
+        <label>10: LED frame – power limit</label>
+        <description><![CDATA[
+LED frame – power limit<br /><h1>Overview</h1><p>(50.0-3680.0W, step 0.1W) – power threshold</p>
+        ]]></description>
+        <default>36800</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>11: LED frame – colour when ON</label>
+        <description><![CDATA[
+LED frame – colour when ON<br /><h1>Overview</h1><table><tr><td>0</td> <td>LED disabled</td> </tr><tr><td>1 (Default)</td> <td>White</td> </tr><tr><td>2</td> <td>Red</td> </tr><tr><td>3</td> <td>Green</td> </tr><tr><td>4</td> <td>Blue</td> </tr><tr><td>5</td> <td>Yellow</td> </tr><tr><td>6</td> <td>Cyan</td> </tr><tr><td>7</td> <td>Magenta</td> </tr><tr><td>8</td> <td>colour changes smoothly depending on measured power</td> </tr><tr><td>9</td> <td>colour changes in steps depending on measured power</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>12: LED frame – colour when OFF</label>
+        <description><![CDATA[
+LED frame – colour when OFF<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>LED disabled</td> </tr><tr><td>1</td> <td>White</td> </tr><tr><td>2</td> <td>Red</td> </tr><tr><td>3</td> <td>Green</td> </tr><tr><td>4</td> <td>Blue</td> </tr><tr><td>5</td> <td>Yellow</td> </tr><tr><td>6</td> <td>Cyan</td> </tr><tr><td>7</td> <td>Magenta</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="102">
+        <label>13: LED frame – brightness</label>
+        <description><![CDATA[
+LED frame – brightness<br /><h1>Overview</h1><table><tr><td>0</td> <td>LED disable</td> </tr><tr><td>1 to 100<br />(Default)</td> <td>(1-100% brightness)</td> </tr><tr><td>101</td> <td>brightness directly proportional to measured power</td> </tr><tr><td>102</td> <td>brightness inversely proportional to measured power</td> </tr></table>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>20: Buttons operation</label>
+        <description><![CDATA[
+Buttons operation<br /><h1>Overview</h1><table><tr><td>1 (default)</td> <td>1 st and 2nd button toggle the load</td> </tr><tr><td>2</td> <td>1st button turns the load ON, 2nd button turns the load OFF</td> </tr><tr><td>3</td> <td> device works in 2-way/3-way switch configuration</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>24: Buttons orientation</label>
+        <description><![CDATA[
+Buttons orientation<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>default (1st button controls 1st channel, 2nd button controls 2nd channel)</td> </tr><tr><td>1</td> <td>reversed (1st button controls 2nd channel, 2nd button controls 1st channel)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>25: Outputs orientation</label>
+        <description><![CDATA[
+Outputs orientation<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>default (Q1 - 1st channel, Q2 - 2nd channel)</td> </tr><tr><td>1</td> <td>reversed (Q1 - 2nd channel, Q2 - 1st channel)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>30: Alarm configuration - 1st slot</label>
+        <description><![CDATA[
+Alarm configuration - 1st slot<br /><h1>Overview</h1><table><tr><td> </td> <td>1 to 0</td> <td>[MSB] – Notification Type</td> </tr><tr><td> </td> <td>2</td> <td>Notification Value</td> </tr><tr><td> </td> <td>3</td> <td>Event/State Parameters</td> </tr><tr><td> </td> <td>4</td> <td>[LSB] – action</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description><![CDATA[
+Alarm configuration - 2nd slot<br /><h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Value</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description><![CDATA[
+Alarm configuration - 3rd slot<br /><h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Value</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>33: Alarm configuration - 4th slot</label>
+        <description><![CDATA[
+Alarm configuration - 4th slot<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>Notification Type</td> </tr><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Status</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] – action</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description><![CDATA[
+Alarm configuration - 5th slot<br /><h1>Overview</h1><table><tr><td>1</td> <td>[MSB] – Notification Type</td> </tr><tr><td>2</td> <td>Notification Status</td> </tr><tr><td>3</td> <td>Event/State Parameters</td> </tr><tr><td>4</td> <td>[LSB] - action</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>35: Alarm configuration – duration</label>
+        <description><![CDATA[
+Alarm configuration – duration<br /><h1>Overview</h1><table><tr><td>0</td> <td>infinite</td> </tr><tr><td>1 to 32400<br />(Default)</td> <td>(1s-9h, 1s step) – duration</td> </tr></table>
+        ]]></description>
+        <default>32400</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>40: First button – scenes sent</label>
+        <description><![CDATA[
+First button – scenes sent<br /><h1>Overview</h1><table><tr><td>1</td> <td>Key pressed 1 time</td> </tr><tr><td>2</td> <td>Key pressed 2 time</td> </tr><tr><td>4</td> <td>Key pressed 3 time</td> </tr><tr><td>8</td> <td>Key hold down and key released</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>41: Second button – scenes sent</label>
+        <description><![CDATA[
+Second button – scenes sent<br /><h1>Overview</h1><table><tr><td>1</td> <td>Key pressed 1 time</td> </tr><tr><td>2</td> <td>Key pressed 2 time</td> </tr><tr><td>4</td> <td>Key pressed 3 time</td> </tr><tr><td>8</td> <td>Key hold down and key released</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>60: Power reports – include self-consumption</label>
+        <description><![CDATA[
+Power reports – include self-consumption<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>Self-consumption not included</td> </tr><tr><td>1</td> <td>Self-consumption included</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>61: Power reports for first channel – on change</label>
+        <description><![CDATA[
+Power reports for first channel – on change<br /><h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(1-500%, 1% step) – minimal change</td> </tr></table>
+        ]]></description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_62_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>62: Power reports for first channel – periodic</label>
+        <description><![CDATA[
+Power reports for first channel – periodic<br /><h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
+        ]]></description>
+        <default>32400</default>
+      </parameter>
+
+      <parameter name="config_63_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>63: Power reports for second channel – on change</label>
+        <description><![CDATA[
+Power reports for second channel – on change<br /><h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(1-500%, 1% step) – minimal change</td> </tr></table>
+        ]]></description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_64_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>64: Power reports for second channel – periodic</label>
+        <description><![CDATA[
+Power reports for second channel – periodic<br /><h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
+        ]]></description>
+        <default>32400</default>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy reports for first channel – on change</label>
+        <description><![CDATA[
+Energy reports for first channel – on change<br /><h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(0.01-5kWh, 0.01kWh step) – minimal change</td> </tr></table>
+        ]]></description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>66: Energy reports for first channel – periodic</label>
+        <description><![CDATA[
+Energy reports for first channel – periodic<br /><h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
+        ]]></description>
+        <default>32400</default>
+      </parameter>
+
+      <parameter name="config_67_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>67: Energy reports for second channel – on change</label>
+        <description><![CDATA[
+Energy reports for second channel – on change<br /><h1>Overview</h1><table><tr><td>0</td> <td>reporting on change disabled</td> </tr><tr><td>1 to 500<br />(Default)</td> <td>(0.01-5kWh, 0.01kWh step) – minimal change</td> </tr></table>
+        ]]></description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_68_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>68: Energy reports for second channel – periodic</label>
+        <description><![CDATA[
+Energy reports for second channel – periodic<br /><h1>Overview</h1><table><tr><td>0</td> <td>periodic reports disabled</td> </tr><tr><td>30 to 32400<br />(Default)</td> <td>(30s-9h, 1s step) – time interval</td> </tr></table>
+        ]]></description>
+        <default>32400</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>150: First channel – operating mode</label>
+        <description><![CDATA[
+First channel – operating mode<br /><h1>Overview</h1><table><tr><td>0 (default)</td> <td>standard operation</td> </tr><tr><td>1</td> <td>delayed OFF</td> </tr><tr><td>2</td> <td>single pulse</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_151_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>151: Second channel – operating mode</label>
+        <description><![CDATA[
+Second channel – operating mode<br /><h1>Overview</h1><table><tr><td>0 (defaut)</td> <td>standard operation</td> </tr><tr><td>1</td> <td>delayed OFF</td> </tr><tr><td>2</td> <td>single pulse</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>152: chan1reactdelayedoff</label>
+        <description><![CDATA[
+First channel - reaction to switch for delayed OFF / pulse modes<br /><h1>Overview</h1><table><tr><td>0(default)</td> <td>cancel mode and set default state</td> </tr><tr><td>1</td> <td>no reaction - mode runs until it ends</td> </tr><tr><td>2</td> <td>reset timer - start counting from the beginning</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_153_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>153: chan2reactdelayedoff</label>
+        <description><![CDATA[
+Second channel - reaction to switch for delayed OFF / pulse modes<br /><h1>Overview</h1><table><tr><td>0(default)</td> <td>cancel mode and set default state</td> </tr><tr><td>1</td> <td>no reaction - mode runs until it ends</td> </tr><tr><td>2</td> <td>reset timer - start counting from the beginning</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_154_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>154: chan1timedelayedoff</label>
+        <description><![CDATA[
+First channel - time parameter for delayed OFF / pulse modes<br /><h1>Overview</h1><table><tr><td>0</td> <td>0.1 second</td> </tr><tr><td>1 to 32000<br />(Default)</td> <td>(1-32000s, 1s step) – time parameter</td> </tr></table>
+        ]]></description>
+        <default>32000</default>
+      </parameter>
+
+      <parameter name="config_155_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>155: chan2timedelayedoff</label>
+        <description><![CDATA[
+Second channel - time parameter for delayed OFF / pulse modes<br /><h1>Overview</h1><table><tr><td>0</td> <td>0.1 second</td> </tr><tr><td>1 to 32000<br />(Default)</td> <td>(1-32000s, 1s step) – time parameter</td> </tr></table>
+        ]]></description>
+        <default>32000</default>
+      </parameter>
+
+      <parameter name="config_156_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: chan1onsent23assgp</label>
+        <description><![CDATA[
+First channel – Switch ON value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><table><tr><td>0 to 99</td> <td>2nd association group</td> </tr><tr><td>255 (default)</td> <td>3rd association group</td> </tr></table>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_157_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>157: chan1offsent23assgp</label>
+        <description><![CDATA[
+First channel – Switch OFF value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>2nd association group</td> </tr><tr><td>255</td> <td>3rd association group</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_158_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>158: chan1doclicsent23assgp</label>
+        <description><![CDATA[
+First channel – Double Click value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>2nd association group</td> </tr><tr><td>255</td> <td>3rd association group</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_159_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>159: chan2onsent45assgp</label>
+        <description><![CDATA[
+Second channel – Switch ON value sent to 4th and 5th association groups<br /><h1>Overview</h1><table><tr><td>0 to 99</td> <td>4th association group</td> </tr><tr><td>255<br />(Default)</td> <td>5th association group</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_160_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>160: chan2offsent45assgp</label>
+        <description><![CDATA[
+Second channel – Switch OFF value sent to 4th and 5th association groups<br /><h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>4th association group</td> </tr><tr><td>255</td> <td>5th association group</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_161_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>161: chan2doclicsent23assgp</label>
+        <description><![CDATA[
+Second channel – Double Click value sent to 4th and 5th association groups<br /><h1>Overview</h1><table><tr><td>0 to 99 (default)</td> <td>4th association group</td> </tr><tr><td>255</td> <td>5th association group</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+“Lifeline” reports the device status<br /><h1>Overview</h1><p>1st association group – “Lifeline” reports the device status and allows for assigning single device only (main controller by default).</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 1st channel On/Off</label>
+        <description><![CDATA[
+(uses Basic command class).<br /><h1>Overview</h1><p>2nd association group – “On/Off (1)” is used to turn the associated devices on/off reflecting button operation for 1st channel (uses Basic command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 1st channel dimmer</label>
+        <description><![CDATA[
+(uses Switch Multilevel command class).<br /><h1>Overview</h1><p>3rd association group – “Dimmer (1)” is used to change level of associated devices reflecting button operation for 1st channel (uses Switch Multilevel command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: 2nd channel On/Off</label>
+        <description><![CDATA[
+(uses Basic command class).<br /><h1>Overview</h1><p>4th association group* – “On/Off (2)” is used to turn the associated devices on/off reflecting button operation for 2nd channel (uses Basic command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: 2nd channel dimmer</label>
+        <description><![CDATA[
+(uses Switch Multilevel command class).<br /><h1>Overview</h1><p>5th association group* – “Dimmer (2)” is used to change level of associated devices reflecting button operation for 2nd channel (uses Switch Multilevel command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

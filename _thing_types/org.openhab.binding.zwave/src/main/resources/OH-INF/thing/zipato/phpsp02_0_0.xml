@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_phpsp02_00_000" listed="false">
+    <label>PSP02 Door/temp/illumination/motion sensor</label>
+    <description><![CDATA[
+Door/temp/illumination/motion sensor<br /><h1>Overview</h1><p>Door/Window, motion, temperature and illumination sensor in one device.</p> <p>Primarily used as Door/Window sensor, it consists of two parts: magnet and a sensor.</p> <ul><li>Very low power consumption.</li> <li>Low battery battery indication.</li> <li>Door/Window status and battery status auto-report.</li> <li>LED indicator.</li> <li>Over-the-air firmware update.</li> <li>Tamper proof protection.</li> </ul><br /><h2>Inclusion Information</h2><p>Put the Z-Wave Controller in inclusion mode.</p> <p>Pressing tamper key three times within 1.5 seconds will enter inclusion mode.</p> <p>After successful inclusion, the device will wake to receive the setting command from the Z-Wave Controller in about 20 seconds.<br /><br /></p> <br /><h2>Exclusion Information</h2><p>Put the Z-Wave Controller in exclusion mode.</p> <p>Pressing tamper key three times within 1.5 seconds will enter exclusion mode. Node ID has been excluded.</p> <br /><h2>Wakeup Information</h2><p>Any action.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door/Window sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor(temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor(luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm(general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM;type=SWITCH</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">PSP02</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">0002:000C</property>
+      <property name="dbReference">857</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Basic command to turn on the light<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 0xFF(-1) means turn on the light. For dimmer equipment 1 to 100 means the light strength.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+setting<br /><h1>Overview</h1><p>PIR sensitivity settings. 0 means disable the PIR motion. 1 means the lowest sensitivity, 99 means the highest sensitivity. High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequently.</p>
+        ]]></description>
+        <default>80</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+setting<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the light. 0 means turn off illumination detection function, and never turn on the light.</p> <ul><li>1 means darkest.</li> <li>99 means brightest.</li> <li>100 means turn off illumination detection function, and always turn on the light.</li> </ul><p>Notice: In test mode, only the value in 1 to 99 will enable the illumination detection function and update the illumination value.</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1_00000002" type="integer" groupName="configuration">
+        <label>5: Operation mode</label>
+        <description><![CDATA[
+set test mode if DIP switch in customer mode<br /><h1>Overview</h1><p>Bit1: 1 means test mode, 0 means normal mode.</p> <p>Notice: This bit only effect by the DIP Switch setting to “customer mode”, otherwise it is decided by DIP Switch setting to Test or Normal Mode.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal mode</option>
+          <option value="2">test mode</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1_00000004" type="integer" groupName="configuration">
+        <label>5: disable the door/window function</label>
+        <description><![CDATA[
+Disable/Enable the function<br /><h1>Overview</h1><p>Bit2: Disable the door/window function. (1:Disable, 0:Enable).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable the door/window function</option>
+          <option value="1">disable the door/window function</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1_00000008" type="integer" groupName="configuration">
+        <label>5: temperature unit</label>
+        <description><![CDATA[
+set the temperature unit<br /><h1>Overview</h1><p>Bit3: temperature scale. 0: Fahrenheit, 1:Celsius</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Fahrenheit</option>
+          <option value="8">Celsius</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1_00000010" type="integer" groupName="configuration">
+        <label>5: Disable illumination reports</label>
+        <description><![CDATA[
+toggle illumination reports<br /><h1>Overview</h1><p>Bit4: Disable the illumination report after event triggered. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="16">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1_00000020" type="integer" groupName="configuration">
+        <label>5: Disable temperature reports</label>
+        <description><![CDATA[
+Disable/enable temperature reports<br /><h1>Overview</h1><p>Bit5: Disable the temperature report after event triggered. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="32">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1_00000080" type="integer" groupName="configuration">
+        <label>5: back key release action</label>
+        <description><![CDATA[
+Disable/enable the back key release into test mode<br /><h1>Overview</h1><p>Bit7: Disable the back key release into test mode. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="128">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000001" type="integer" groupName="configuration">
+        <label>6: magnetic integration for lighting control</label>
+        <description><![CDATA[
+switch control<br /><h1>Overview</h1><p>Bit0: Disable magnetic integrate illumination to turn ON the lighting nodes in the association group 2.</p> <p>(1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="1">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000002" type="integer" groupName="configuration">
+        <label>6: PIR integration to control lighting</label>
+        <description><![CDATA[
+PIR integration<br /><h1>Overview</h1><p>Bit1: Disable PIR integrate Illumination to turn ON the lighting nodes in the association group 2.<br />(1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="2">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000004" type="integer" groupName="configuration">
+        <label>6: magetic/pir integration</label>
+        <description><![CDATA[
+control lighting in association group 2<br /><h1>Overview</h1><p>Bit2: Disable magnetic integrate PIR to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable, default is Disable)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="4">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000008" type="integer" groupName="configuration">
+        <label>6: device and lighting in same room</label>
+        <description><![CDATA[
+device and lighting in same room<br /><h1>Overview</h1><p>Bit3: When Bit2 is 0 (Enable), Are the device and the lighting in the same room? 0: In the same room (Default), 1: In the different room.</p> <p>Notice: If this bit is 1, it is recommended also set the Bit1 to 1, cause the PIR triggered, doesn’t mean the people in that room.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">same room</option>
+          <option value="8">different rooms</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000010" type="integer" groupName="configuration">
+        <label>6: disable delay to turn off the light</label>
+        <description><![CDATA[
+disable/enable delay<br /><h1>Overview</h1><p>Bit4: Disable delay 5 seconds to turn off the light, when door/window closed. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="16">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1_00000020" type="integer" groupName="configuration">
+        <label>6: light off control</label>
+        <description><![CDATA[
+disable/enable auto turn off the light<br /><h1>Overview</h1><p>Bit5: Disable auto turn off the light, after door/window opened to turn on the light. (1:Disable, 0:Enable)</p> <p>Notice: If bit2 is zero, this setting is useless. If the configuration No.9 is zero, this setting is useless.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="32">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000002" type="integer" groupName="configuration">
+        <label>7: motion off report</label>
+        <description><![CDATA[
+enable motion OFF report<br /><h1>Overview</h1><p>Bit1: Enable sending motion OFF report. (0:Disable, 1:Enable)</p> <p>Note: Depends on the Bit4, 0: Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report, Type: 0x0C, Value: 0x00</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="2">enable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000004" type="integer" groupName="configuration">
+        <label>7: PIR super-sensitivity</label>
+        <description><![CDATA[
+enable PIR super-sensitivity<br /><h1>Overview</h1><p>Bit2: Enable PIR super sensitivity mode. (0:Disable, 1:Enable)</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="4">enable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000008" type="integer" groupName="configuration">
+        <label>7: BASIC OFF report</label>
+        <description><![CDATA[
+Disable/enable report after door closed<br /><h1>Overview</h1><p>Bit3: Disable send out BASIC OFF after door closed. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="8">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
+        <label>7: door closed report type</label>
+        <description><![CDATA[
+notification or sensor binary report<br /><h1>Overview</h1><p>Bit4: Notification Type, 0: Using Notification Report. 1: Using Sensor Binary Report.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">notification report</option>
+          <option value="16">sensor binary report</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
+        <label>7: multi CC in auto report</label>
+        <description><![CDATA[
+disable/enable multi CC in report<br /><h1>Overview</h1><p>Bit5: Disable Multi CC in auto report. (1:Disable, 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="32">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
+        <label>7: Battery state reports</label>
+        <description><![CDATA[
+disable/enable battery state reports<br /><h1>Overview</h1><p>Bit6: Disable to report battery state when the device triggered. (1:Disable 0:Enable)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">enable</option>
+          <option value="64">disable</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_8_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>8: PIR motion re-trigger min interval</label>
+        <description><![CDATA[
+PIR motion re-trigger min interval<br /><h1>Overview</h1><p>In normal mode, after the PIR motion detection, setting the re-detect time. 8 seconds per tick, default tick is 3 (24 seconds). Setting the suitable value to prevent sending the trigger signal too frequently. Also can save the battery energy.</p> <p>Notice: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR  start detecting again.</p>
+        ]]></description>
+        <default>3</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>9: Light on time hysteresis</label>
+        <description><![CDATA[
+time to keep the light on without motion<br /><h1>Overview</h1><p>After turn on the lighting, setting the delay time to turn off the lighting when the PIR motion is not<br />detected. 8 seconds per tick, default tick is 4 (32 seconds). 0 means never send turn off light command.</p>
+        ]]></description>
+        <default>4</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: battery level auto-report interval</label>
+        <description><![CDATA[
+battery level auto-report interval<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. The default value is 12. The tick time can be set by the configuration parameter No.20.</p>
+        ]]></description>
+        <default>12</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>11: door state report interval</label>
+        <description><![CDATA[
+door state report interval<br /><h1>Overview</h1><p>The interval time for auto reporting the door/window state. 0 means turn off auto report door/window state. The default value is 12. The tick time can be set by the configuration parameter No.20.</p>
+        ]]></description>
+        <default>12</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>12: illumination auto report interval</label>
+        <description><![CDATA[
+illumination auto report interval<br /><h1>Overview</h1><p>The interval time for auto report the illumination. 0 means turn off auto report illumination. The<br />default value is 12. The tick time can be set by the configuration parameter No.20.</p>
+        ]]></description>
+        <default>12</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>13: temperature report interval</label>
+        <description><![CDATA[
+temperature report interval<br /><h1>Overview</h1><p>The interval time for a temperature auto report. default=12, 0=no auto-report. Tick duration set by parameter 20.</p>
+        ]]></description>
+        <default>12</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: tick duration</label>
+        <description><![CDATA[
+auto-reports tick duration<br /><h1>Overview</h1><p>The interval time for auto report each tick. Setting this configuration will effect configuration<br />No.10, No.11, No.12 and No.13.&lt;br/&gt; Caution: Setting to 0 means turn off all auto report function.</p>
+        ]]></description>
+        <default>30</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1_0000007F" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>21: temperature differential to report</label>
+        <description><![CDATA[
+temperature differential to report<br /><h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function. The unit is in Fahrenheit. Enable this function the device will detect every minutes. And when the temperature is over 140 degree Fahrenheit, it will continue report. Enable this functionality will cause some issue please see the detail in the “Temperature Report” section</p>
+        ]]></description>
+        <default>1</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1_0000003F" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>22: min illumination differential</label>
+        <description><![CDATA[
+min illumination differential to report<br /><h1>Overview</h1><p>The illumination differential to report. 0 means turn off this function. The unit is percentage. Enable this function the device will detect every minutes. Enable this functionality will cause some issue please see the detail in the “Illumination Report” section.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Reports target.</label>
+        <description>group to send reports to</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set target</label>
+        <description>group to send Basic Set light commands to</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

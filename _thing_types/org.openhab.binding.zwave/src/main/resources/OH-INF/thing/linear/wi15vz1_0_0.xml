@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wi15vz1_00_000" listed="false">
+    <label>GoControl Smart Irrigation Controller Sprinkler Controller Supporting Flow Sensors, Rain Sensors and Moisture Sensors</label>
+    <description><![CDATA[
+Sprinkler Controller Supporting Flow Sensors, Rain Sensors and Moisture Sensors<br /><h1>Overview</h1><p>The WI15Z5-1 Smart Irrigation Controller supports up to 15 valves using the Irrigation Command Class. A Z-Wave hub can use local weather conditions and connected rain and moisture sensors to optimizes the use of the scheduled watering cycles. As a connected device, sprinklers can be turned on or off from anywhere there is internet connectivity. <br />Integrated diagnostics and flow sensor support help determine breaks or improper operation of the irrigation system. </p> <br /><h2>Inclusion Information</h2><p>Adding to a Network</p> <p>NOTE: If you have trouble adding the GoControl Irrigation Controller to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must fi rst “RESET UNIT” to remove it from the network.</p> <p>When the WI15VZ-1 is first powered up, the Status LED should be Red. If the Status LED is Green, the WI15VZ-1 needs to be reset (see below). To add it to your network refer to your controller operating instructions.</p> <ol><li>With your controller in Discovery or Add Mode, tap the button (See Figure8).</li> <li>You should see an indication on your controller that the “device was added” to the network and the Green LED will blink. The device will appear in the list of switches. It should display as a switch. If the controller shows the addition failed, repeat Steps 1-3.</li> </ol><br /><h2>Exclusion Information</h2><p>Removing from a Network:</p> <p>The GoControl Irrigation Controller can be removed from the network by the controller. Refer to the controller operating instructions for details.</p> <ol><li>Set the controller into Removal Mode and follow its instructions to delete it from the controller.</li> <li>Remove the Irrigation Controller by tapping the button 2 times.</li> <li>You should see an indication on your controller that the “device was removed” from the network and the Green LED will blink then turn Red.</li> </ol>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">GoControl Smart Irrigation Controller</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5749:3135</property>
+      <property name="dbReference">1001</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Master Valve Delay</label>
+        <description>Delay in seconds</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>12: Flow Sensor K value</label>
+        <description>Unique to flow sensor</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>13: Flow Sensor Offset value</label>
+        <description>Unique to the flow sensor</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

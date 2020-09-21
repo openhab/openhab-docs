@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="stelpro_stzw402_00_000" listed="false">
+    <label>STZW402 4000W Thermostat</label>
+    <description><![CDATA[
+4000W Thermostat<br /><h1>Overview</h1><p>Ki, the smart home line-voltage thermostat by Stelpro - STZW402+</p> <ul><li>The very first Z-Wave Plus line voltage thermostat in North America</li> <li> Supports 120Vac - 240Vac (50/60 Hz) voltages</li> <li> Controls baseboard heaters and convectors up to 4000W</li> <li> Easy to use 2 button interface</li> <li> Made in Canada</li> <li> High precision temperature control +/- 0.1 °C</li> <li> Z-Wave Plus certified, works with thousands of other Z-Wave devices</li> <li> Brings optimal comfort into your smart home</li> <li> Can be integrated into smart home automated scenes</li> <li> Local keypad lock</li> <li> Displays external temperature</li> <li> Adjustable backlight intensity</li> <li> Comfort and Eco modes</li> <li> Celsius or Fahrenheit display</li> <li> Quiet TRIAC operation</li> <li> Frost-free warning</li> <li> Sleek design to harmonize with any decor</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Enter the Menu 1 (Z-Wave menu) and select “On”.</li> <li>Press the UP and DOWN buttons to start the inclusion process.</li> </ol><p>During inclusion, “On” will be blinking and the connectivity icon  will be animated in an increasing pattern. When the inclusion process has been completed, On will be displayed solid. If an error occurs, “Err” will be displayed for 3 seconds then the screen will revert to “Off” selection.</p> <br /><h2>Exclusion Information</h2><ol><li>Enter the Menu1 (Z-Wave menu) and select “Off”.</li> <li>Press the UP and DOWN buttons to start the exclusion process.</li> </ol><p>During exclusion, “Off” will be blinking and the connectivity icon  will be animated in an decreasing pattern. When the exclusion process has been completed, Off will be displayed solid. If an error occurs, “Err” will be displayed for 3 seconds then the screen will revert to “On” selection.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="stelpro_stzw402_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Stelpro</property>
+      <property name="modelId">STZW402</property>
+      <property name="manufacturerId">0239</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">315</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Reports state to the main controller</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="stelpro_stzw402_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

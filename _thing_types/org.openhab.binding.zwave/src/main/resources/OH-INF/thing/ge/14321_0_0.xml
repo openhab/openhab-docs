@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_14321_00_000" listed="false">
+    <label>GE/Jasco 14321 In-Wall Dimmer</label>
+    <description><![CDATA[
+In-Wall Dimmer<br /><h1>Overview</h1><p><strong>Basic operation </strong></p> <p>Note: Before starting, fan must be set to ‘HIGH’ position using pull chain. The connected fan can then be turned ON/OFF and adjust speed levels in two ways:</p> <ol><li>Manually from the front panel rocker of the In-Wall Fan Control.</li> <li>Remotely with a Z-Wave controller.</li> </ol><p><strong>Manual control</strong></p> <ol><li>To turn the connected fan ON: Press and release the top of the rocker. NOTE: Fan will return to last speed setting of Fan Control. Default setting – HIGH.</li> <li>To turn the fan OFF: Press and release the bottom of the rocker.</li> </ol><p><strong>Adjust fan speed </strong></p> <p>The LED indicator confirms fan speed settings by flashing patterns LOW – LED will blink every 2 seconds for 10 seconds MEDIUM – LED will blink every second for 10 seconds HIGH – LED will blink every half second for 10 seconds</p> <ol><li>To decrease fan speed: Press and hold lower rocker.</li> <li>To increase fan speed: Press and hold upper rocker. </li> </ol><p><strong>This device supports Association Command Class (3 Groups) </strong></p> <ul><li>Association Group 1 supports Lifeline, Switch Multilevel Report</li> <li>Association Group 2 supports Basic Set and is controlled by pressing the On or Off button with the local load</li> <li>Association Group 3 supports Basic Set and is controlled by double pressing the On or Off button</li> <li>Each Association Group supports 5 total nodes</li> </ul><br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart switch (rocker) to remove it from the network.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE/Jasco 14321</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3135</property>
+      <property name="dbReference">583</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night Light mode where LED is on when switch is off.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED is always OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Defines the behavior of the blue LED<br /><h1>Overview</h1><p>This configuration parameter defines the behavior of the blue LED "night light".</p> <p>The default behavior is "ON_WHEN_OFF" - the LED is on when the switch is set to off.</p> <p>The other two options are "ON_WHEN_ON" - the LED is on when the switch is set to on, and</p> <p>"ALWAYS_OFF" - the LED is always off.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Invert the ON/OFF Switch State</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

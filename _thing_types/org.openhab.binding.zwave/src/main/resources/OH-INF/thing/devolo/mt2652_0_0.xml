@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="devolo_mt2652_00_000" listed="false">
+    <label>MT2652 Scene Switch</label>
+    <description><![CDATA[
+Scene Switch<br /><h1>Overview</h1><p>The Home Control Wall Switch lets you control your Home Control devices at the press of a button. It has two<br />different rocker switches.</p> <br /><h2>Inclusion Information</h2><p>Activate inclusion on the device by pressing any one of the four buttons for one second.</p> <br /><h2>Exclusion Information</h2><p>Activate exclusion on the device by pressing any one of the four buttons for one second.</p> <br /><h2>Wakeup Information</h2><p>Click button 2 in management mode.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Devolo</property>
+      <property name="modelId">MT2652</property>
+      <property name="manufacturerId">0175</property>
+      <property name="manufacturerRef">0100:0101</property>
+      <property name="dbReference">3</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Button 1 and 3 pair mode</label>
+        <description><![CDATA[
+Button 1 and 3 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group 1, double click with group 3.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Separately</option>
+          <option value="1">In pair without double clicks</option>
+          <option value="2">In pair with double clicks</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Button 2 and 4 pair mode</label>
+        <description><![CDATA[
+Button 2 and 4 pair mode<br /><h1>Overview</h1><p>In separate mode button 2 works with group 2, button 4 with groups 4. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group 2, double click with group 4.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Separately</option>
+          <option value="1">In pair without double clicks</option>
+          <option value="2">In pair with double clicks</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Command to control Group A</label>
+        <description><![CDATA[
+Command sent to devices of control group A<br /><h1>Overview</h1><p>Defines the command to be sent to devices of control group A when the related button is pressed.</p> <p>In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off/Dim (Basic Set/Switch Multilevel)</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch all</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="6">Control devices in proximity</option>
+          <option value="7">Control door lock</option>
+          <option value="8">Central scene to gateway (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Command to control Group B</label>
+        <description><![CDATA[
+Command sent to devices of control group B<br /><h1>Overview</h1><p>Defines the command to be sent to devices of control group B when the related button is pressed.</p> <p>In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off/Dim (Basic/Switch Multilevel)</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch all</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="6">Control devices in proximity</option>
+          <option value="7">Control door lock</option>
+          <option value="8">Central scene to gateway (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Command to control Group C</label>
+        <description><![CDATA[
+Command sent to devices of control group C<br /><h1>Overview</h1><p>Defines the command to be sent to devices of control group C when the related button is pressed.</p> <p>In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off/Dim (Basic/Switch Multilevel)</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch all</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="6">Control devices in proximity</option>
+          <option value="7">Control door lock</option>
+          <option value="8">Central scene to gateway (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Command to control Group D</label>
+        <description><![CDATA[
+Command sent to devices of control group D<br /><h1>Overview</h1><p>Defines the command to be sent to devices of control group D when the related button is pressed.</p> <p>In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop</p>
+        ]]></description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On/Off/Dim (Basic/Switch Multilevel)</option>
+          <option value="2">Switch On/Off only (send Basic Set)</option>
+          <option value="3">Switch all</option>
+          <option value="4">Send Scenes</option>
+          <option value="5">Send Preconfigured Scenes</option>
+          <option value="6">Control devices in proximity</option>
+          <option value="7">Control door lock</option>
+          <option value="8">Central scene to gateway (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Send the following Switch All commands</label>
+        <default>1</default>
+        <options>
+          <option value="1">Switch off only (default)</option>
+          <option value="2">Switch on only</option>
+          <option value="255">Switch all on and off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Invert buttons</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Block wake up even when Wake Up Interval is set</label>
+        <default>1</default>
+        <options>
+          <option value="0">Wake up is blocked</option>
+          <option value="1">Wakeup is not blocked (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Send unsolicited Battery Report on Wake Up</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">To same node as wake up notification</option>
+          <option value="2">Broadcast to neighbours</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control Group A</label>
+        <description><![CDATA[
+Control Group A, controlled by button 1 or single clicks of buttons 1 and 3<br /><h1>Overview</h1><p>Control Group A, controlled by button 1 or single clicks of buttons 1</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Control Group B</label>
+        <description>Control Group B, controlled by button 2 or single clicks of buttons 2 and 4</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Control Group C</label>
+        <description>Control Group C, controlled by button 3 or double clicks of buttons 1 and 3</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control Group D</label>
+        <description>Control Group D, controlled by button 4 or double clicks of buttons 2 and 4</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

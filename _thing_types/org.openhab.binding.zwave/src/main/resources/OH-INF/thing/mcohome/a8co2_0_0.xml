@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_a8co2_00_000" listed="false">
+    <label>A8-9 Multi-purpose sensor</label>
+    <description><![CDATA[
+Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled multiple environmental monitoring sensors, with 3.5 inch TFT<br />clear display and compliant to Z-Wave Plus standard. It is built in with <strong>Temperature, Humidity,</strong><br /><strong>PM2.5, CO2, VOC, PIR, illumination, Noise, Smoke</strong> sensors. Device can be added into any Z-Wave<br />network, and is compatible with any other Z-Wave certified devices.</p> <ul><li>Temperature: 0 °C ~ 50 °C</li> <li>Humidity: 0% RH ~ 99% RH</li> <li>PM2.5: 0 µg / m<sup>3 </sup>~ 500 µg / m<sup>3</sup></li> <li>CO<sub>2</sub>: 0 ppm ~ 5000 ppm</li> <li>VOC: 0 ppb - 64000 ppb</li> <li>Illumination: 0 Lux ~ 40000 Lux</li> <li>Noise: 30 dB ~ 100 dB</li> <li>PIR: 0 or 1 detection angle up to 120°</li> <li>Smoke: 0 or 1</li> </ul><p><strong>Specification</strong></p> <ul><li>Dimension: 110 * 110 * 32 mm</li> <li>Self-dissipation: &lt; 3 Watt</li> <li>Hole Pitch: 60 mm or 82 mm</li> <li>Work environment: -20 °C ~ + 60 °C &lt; 99% RH (non-condensation)</li> <li>Housing: Tempered glass + PC Alloy</li> <li>Installation: Wall-mounted (vertical)</li> </ul><p><strong>Command Class supported by the device: (Supports S2 unauthenticated level)</strong></p> <ul><li>COMMAND_CLASS_VERSION</li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC</li> <li>COMMAND_CLASS_DEVICE_RESET_LOCALLY</li> <li>COMMAND_CLASS_POWERLEVEL</li> <li>COMMAND_CLASS_ASSOCIATION</li> <li>COMMAND_CLASS_ASSOCIATION_GRP_INFO</li> <li>COMMAND_CLASS_CONFIGURATION</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL</li> <li>COMMAND_CLASS_FIRMWARE_UPDATE_MD</li> </ul><p><strong>Command Class supported by the device: (Not supporting S2)</strong></p> <ul><li>COMMAND_CLASS_ZWAVEPLUS_INFO</li> <li>COMMAND_CLASS_TRANSPORT_SERVICE_V2</li> <li>COMMAND_CLASS_SECURITY_2</li> <li>COMMAND_CLASS_SUPERVISION</li> </ul><p><strong>Note: A Security Enabled Z-Wave Controller must be used in order to fully utilise the product</strong></p> <br /><h2>Inclusion Information</h2><p><strong>Add to Z-Wave network</strong></p> <ul><li>Activate inclusion mode in the gateway. When device is powered on, hold F1 to select the interface for Z-Wave network inclusion.</li> <li>Click F2 five times until <em>&lt;refresh icon&gt;</em> turns blue.</li> <li>Hold F2 and the device enters into learning mode, then <em>&lt;network icon&gt;</em> turns blue and the device is added into Z-Wave network.</li> </ul><br /><h2>Exclusion Information</h2><p><strong>Remove from Z-Wave network</strong></p> <ul><li>Activate exclusion mode in the gateway. When device is powered on, hold F1 to select the interface for Z-Wave network exclusion.</li> <li>Click F2 five times until <em>&lt;refresh icon&gt;</em> turns blue.</li> <li>Hold F2 and the device enters into learning mode, then <em>&lt;network icon&gt;</em> turns blue and the device is added into Z-Wave network.</li> </ul>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Smoke Alarm Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=SMOKE_DENSITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Relative Humidity Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Luminance Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Temperature Sensor</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_co2" typeId="sensor_co2">
+        <label>Carbon Dioxide (CO2) Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=CO2</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voc" typeId="sensor_voc">
+        <label>Volatile Organic Compound (VOC) Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=VOLATILE_ORGANIC_COMPOUND</property>
+        </properties>
+      </channel>
+      <channel id="sensor_loudness" typeId="sensor_loudness">
+        <label>Loudness Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=LOUDNESS</property>
+        </properties>
+      </channel>
+      <channel id="sensor_particulate" typeId="sensor_particulate">
+        <label>Particulate Matter (PM2.5) Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=PARTICULATE_MATTER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>PIR Motion Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=GENERAL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">A8-9</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">A803:1352</property>
+      <property name="dbReference">1198</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: PM25 Delta Level</label>
+        <description>=0 Turn off report | &gt;=2 Report when change &gt; n * 1 µg / m3</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>2: CO2 Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 5 ppm</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: Temperature Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 0.5 °C</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>4: Humidity Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n %</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>5: VOC Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 5 ppb</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>6: Lux Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 1 Lux</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: dB Delta Level</label>
+        <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 1 dB</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: PIR Motion Sensor Reporting</label>
+        <description>=0 Turn off report | =1 Report change</description>
+        <default>0</default>
+        <options>
+          <option value="0">Turn off report</option>
+          <option value="1">Report change</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Smoke Sensor Reporting</label>
+        <description>=0 Turn off report | =1 Report change</description>
+        <default>1</default>
+        <options>
+          <option value="0">Turn off report</option>
+          <option value="1">Report change</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>10: Smoke Timer</label>
+        <description>=0 Turn off report | &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>11: PIR Timer</label>
+        <description>=0 Turn off report | &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>12: PM2.5 Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>13: CO2 Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>14: Temperature Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>15: Humidity Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>16: VOC Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>17: Lux Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>18: dB Timer</label>
+        <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_47_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>47: Temperature Unit</label>
+        <description>Select Celsius or Fahrenheit</description>
+        <default>0</default>
+        <options>
+          <option value="0">°C</option>
+          <option value="1">°F</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>50: T_Offset</label>
+        <description>-10.0 °C ~ 10.0 °C</description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration"
+                 min="0" max="40">
+        <label>51: RH_OffSet</label>
+        <description>-20% ~ 20%</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_52_2" type="integer" groupName="configuration"
+                 min="0" max="1000">
+        <label>52: CO2_OffSet</label>
+        <description>-500 ~ 500 ppm</description>
+        <default>500</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>53: PM2.5_OffSet</label>
+        <description>-100 ~ 100 µg/m3</description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_54_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>54: Lux_OffSet</label>
+        <description>-5000 ~ 5000 lux</description>
+        <default>5000</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_55_1" type="integer" groupName="configuration"
+                 min="-128" max="127">
+        <label>55: VOC_Correct</label>
+        <description>-100 ~ 100</description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_56_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>56: dB_Correct</label>
+        <description>-50 ~ 50</description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Restore</label>
+        <description>Restore factory settings (0x55/85) or default parameters (0xAA/170)</description>
+        <default>0</default>
+        <options>
+          <option value="85">Restore factory settings</option>
+          <option value="170">Restore default parameters</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_ses302_00_000" listed="false">
+    <label>SES 302 Temperature sensor</label>
+    <description><![CDATA[
+Temperature sensor<br /><h1>Overview</h1><p> The SES 302 measures temperature whilst the SES 303 measures temperature and humidity. The sensors are battery-operated devices which transmit information to an associated device in a network.</p> <br /><h2>Inclusion Information</h2><p>Press and hold SES 302/ SES 303 button for more than 1 second and then release.</p> <br /><h2>Exclusion Information</h2><p>Not Provided</p> <br /><h2>Wakeup Information</h2><p>Sending Node Information</p> <p>Press and hold SES 302/303 button for more than 1 second and then release.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature1" typeId="sensor_temperature">
+        <label>Sensor (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level1" typeId="system.battery-level">
+        <label>Battery Level 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Sensor (temperature) 3</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SES 302</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">000D:0002</property>
+      <property name="dbReference">505</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Delta Temp</label>
+        <description><![CDATA[
+Precision of measured temperature (delta)<br /><h1>Overview</h1><p>Configuration value : Desired value / Resolution. (Resolution = 0.1)</p> <p>Example: To configure Delta temperature to 2 °C,  the value needed to be configured in device is 2/0.1 = 20.</p> <p>IMPORTANT: Controllers may only allow configuring signed values. In order to set values in the range 128...255, the value sent in the application shall be equal to desired value minus 256. For example, to set Delta Temperature to 130, it may be needed to set a value 130−256=−126.</p> <p>Zero configuration means that the corresponding functionality is disabled.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Temp Reporting Interval</label>
+        <description><![CDATA[
+Reporting interval in minutes<br /><h1>Overview</h1><p>IMPORTANT: Controllers may only allow configuring signed values. In order to set values in the range 128...255, the value sent in the application shall be equal to desired value minus 256. For example, to set Delta Temperature to 130, it may be needed to set a value 130−256=−126.<br /><br /></p> <p>Zero configuration means that the corresponding functionality is disabled.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline, in which multilevel sensor report, Battery low alarm are reported. Each endpoint supports 1 association group.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

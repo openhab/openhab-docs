@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mh9co2wa_00_000" listed="false">
+    <label>MH9-CO2-WA CO2 Monitor Air quality detector</label>
+    <description><![CDATA[
+CO2 Monitor Air quality detector<br /><h1>Overview</h1><p>MCOHome CO2 Monitor is an air quality detector which compatible with Z-Wave technology.</p> <p>It is mainly used to monitor CO2 concentration in industrial, agricultural, and residence environment, while monitoring the indoor temperature, humidity and VOC (optional) air quality.</p> <p>Device can be included into any Z-Wave network, and is compatible with any other Z-Wave certified devices.</p> <p><strong>Specification</strong></p> <ul><li>Power Supply：85~260VAC</li> <li>CO2 display range: 0-2000ppm</li> <li>Default threshold:1000ppm (adjustable)</li> <li>Temperature range：-9.0～50 ℃</li> <li>Humidity range: 0%～99%RH</li> <li>Installation: Wall-mounted (Vertical)</li> <li>Work environment:-10~+8℃ 0-90%RH (Non-condensation)</li> <li>Dimension：90* 130*28mm</li> <li>Hole Pitch：60mm or 82m</li> <li>Housing: Tempered glass+ PC Alloy</li> </ul><p><strong>Command Class supported by the device</strong></p> <ul><li>COMMAND_CLASS_BASIC</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V5</li> <li>COMMAND_CLASS_CONFIGURATION</li> <li>COMMAND_CLASS_NOTIFICATION</li> <li>COMMAND_CLASS_ASSOCIATION</li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC</li> <li>COMMAND_CLASS_VERSION</li> </ul><br /><h2>Inclusion Information</h2><p>Activate Inclusion/Exclusion mode in the gateway.</p> <p>When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.</p> <p>If device has not been included into any Z-Wave network before, “- - -”will display on the screen.</p> <p>Then press K2 once, “- - -” flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, “- - -” will stop flashing in 20 sec.</p> <br /><h2>Exclusion Information</h2><p>Activate Inclusion/Exclusion mode in the gateway.</p> <p>When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.</p> <p>If a node ID displays, it means the device is already in a Z-Wave network.</p> <p>To press K2 once can remove it from the network. “- - -” displays and press K1 once can return to normal work.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_co2" typeId="sensor_co2">
+        <label>Sensor (CO2)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=CO2</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co2" typeId="alarm_co2">
+        <label>Alarm (CO2)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_DIOXIDE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH9-CO2-WA</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">0901:5102</property>
+      <property name="dbReference">1078</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="2000">
+        <label>1: Notification Threshold</label>
+        <description><![CDATA[
+CO2 Notification Threshold<br /><h1>Overview</h1><p>Sets the CO2 notification threshold for association group 1.</p> <p>When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.</p>
+        ]]></description>
+        <default>1000</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Notification</label>
+        <description><![CDATA[
+sends report ever 30s when CO2 value above threshold<br /><h1>Overview</h1><p>Group 1 is for “Notification” purpose, which can add up to 5 Node ID. Device works in “Push” mode in “Notification Command Class”.</p> <p>When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.</p> <p>Use “Notification Set” can set this unsolicited report; this function is default as “OFF”.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Gateway report</label>
+        <description><![CDATA[
+CO2, Temperature and Humidity is reported when changed<br /><h1>Overview</h1><p>A gateway is suggested to associate with Group 2, which can support only one Node ID. The<br />gateway can ask for detected data any time. And the device will report to this associated device<br />(gateway) when detected data changes:<br />CO2: report when any change ≥50ppm“Multilevel sensor Report (CO2=0x11)”<br />Temperature: report when any change≥ 0.5 “Multilevel ℃ sensor Report (Temp=0x01)”<br />Humidity: report when any change≥ 2%“Multilevel sensor Report (Humidity=0x05)’</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

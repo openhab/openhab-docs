@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_minoston_00_000" listed="false">
+    <label>Minoston Toggle Dimmer Switch</label>
+    <description><![CDATA[
+Toggle Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart home with the Z-Wave Smart Switch. The switch enables you to wirelessly control to turn lights on and off, schedule a timed event or create a custom scene from anywhere in the world, at any time of the day. Take control of your home lighting with Z-Wave Smart Lighting Controls</p> <br /><h2>Inclusion Information</h2><p>Make your controller/hub into the "inclusion" mode, triple press the Up/Down push button quickly to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Make your controller/hub into the "exclusion" mode, triple press the Up/Down push button quickly to exclude it from the network.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">Minoston</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF00:FF02</property>
+      <property name="dbReference">1229</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: Locally Button Function</label>
+        <description><![CDATA[
+LED flashes 2 times when the configuration parameter changed.<br /><h1>Overview</h1><p>Locally Button function(quickly press 7x)</p> <p>Value=0 Up Button: On/Down Button: Off(Default)<br />Value=1 Up Button: Off/Down Button: On<br />Value=2 Up Button: On/Off/Down Button: On/Off</p> <p>---Parameter 1: Choose if you want the upper paddle to turn the light on or turn the light off when tapped, or if you'd like any paddle to change the state of the light.</p> <p>Values: 0 – Upper paddle turns the light on, lower paddle turns the light off (default);</p> <p>Values: 1 – Upper paddle turns the light off, lower paddle turns the light on;</p> <p>Values: 2 – any paddle changes the state of the light.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: LED Indicator</label>
+        <description><![CDATA[
+LED flashes 2 times<br /><h1>Overview</h1><p>LED Indicator(quickly press 6x)</p> <p>Value=0 On when output Off and Off when output On (default)</p> <p>Value=1 On when output On and Off when output Off</p> <p>Value=2 Always Off</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>4: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+Auto Turn-Off Timer<br /><h1>Overview</h1><p>Values: 0 – 65535 (minutes); 0 (minutes) – default setting</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Auto Turn-On Timer</label>
+        <description><![CDATA[
+Auto Turn-On Timer<br /><h1>Overview</h1><p>Values: 0 – 65535 (minutes); 0 (minutes) – default setting</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>7: Association Setting Parameter</label>
+        <description><![CDATA[
+Association Setting Parameter<br /><h1>Overview</h1><ul><li>Value=00 – none</li> <li>Value=01 - local</li> <li>Value=02 - 3way</li> <li>Value=03 - 3way &amp; local</li> <li>Value=04 - z-wave hub</li> <li>Value= Value=05 - z-wave hub &amp; local</li> <li>Value=06 - z-wave hub &amp; 3-way</li> <li>Value=07 - z-wave hub &amp; local &amp; 3way</li> <li>Value=08 - timer</li> <li>Value=09 - timer &amp; local</li> <li>Value=10 - timer &amp; 3-way</li> <li>Value=11 - timer &amp; 3-way &amp; local</li> <li>Value=12 - timer &amp; z-wave hub</li> <li>Value=13 - timer &amp; z-wave hub &amp; local</li> <li>Value=14 - timer &amp; z-wave hub &amp; 3-way</li> <li>Value=15 - all</li> </ul>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: Restores state after power failure</label>
+        <description><![CDATA[
+Restores state after power failure<br /><h1>Overview</h1><p>Value=0 output off<br />Value=1 output on<br />Value=2 output the state after power</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send Basic Set ON / Off</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

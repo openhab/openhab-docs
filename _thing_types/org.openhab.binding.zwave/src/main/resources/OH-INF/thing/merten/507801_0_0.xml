@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_507801_00_000" listed="false">
+    <label>507801 CONNECT radio flush-mounted receiver, Roller shutter</label>
+    <description><![CDATA[
+CONNECT radio flush-mounted receiver, Roller shutter<br /><h2>Inclusion Information</h2><p><strong>Learn mode (for integration into Z-wave systems from other manufacturers):</strong></p> <p>Triple click on the switch button within 1.5s</p> <p>see also http://www.merten.de/uploads/tx_seqdownload/V5078_581_00_web.pdf</p> <br /><h2>Exclusion Information</h2><p>1)</p> <p>Press the switch button three times in quick succession (within approx 1.5 seconds) (Figure ! B; using an insulated tool such as an insulated phase tester. </p> <p><strong>The LED (Figure !A) flashes at intervals of one second.</strong></p> <p>2)</p> <p>Then press and hold the switch button until the LED stops flashing (approx. 5 seconds).</p> <p><strong>The device has now been reset to its factory settings</strong></p> <p>see also http://www.merten.de/uploads/tx_seqdownload/V5078_581_00_web.pdf</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control1" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">507801</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">8003:0001</property>
+      <property name="dbReference">617</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

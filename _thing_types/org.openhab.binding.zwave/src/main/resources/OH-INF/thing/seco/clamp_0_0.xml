@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="seco_clamp_00_000" listed="false">
+    <label>Zwave Clamp Clamp Energy Meter</label>
+    <description><![CDATA[
+Clamp Energy Meter<br /><h1>Overview</h1><p>The Wireless Energy Meter performs real-time measurement of power, energy, voltage, and current, and transmits them wirelessly to a central controller.</p> <br /><h2>Inclusion Information</h2><p>Press the WEM button for about 1 second.</p> <p>WEM enters the “Learning” state and the LED changes blinking pattern.</p> <p>When the learning phase ends successfully, WEM enters the “Synchronizing” state, and then the “Joined, Comm. Ok” state.</p> <br /><h2>Exclusion Information</h2><p>Press the WEM button for about 3 seconds.</p> <p>WEM enters the “Leaving” state, and waits for the controller to acknowledge its exclusion.</p> <p>When the exclusion process is complete, WEM goes into the “Idle” state.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Seco</property>
+      <property name="modelId">Zwave Clamp</property>
+      <property name="manufacturerId">0301</property>
+      <property name="manufacturerRef">0048:010F</property>
+      <property name="dbReference">569</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="30" max="120">
+        <label>2: MEAS_PERIOD</label>
+        <description><![CDATA[
+MEAS_PERIOD<br /><h1>Overview</h1><p>MEAS_PERIOD represents the minimum reporting interval, i.e. 1/MEAS_PERIOD is the maximum reporting frequency. WEM checks for changes in the line measures every MEAS_PERIOD. If there are meaningful changes, a report is sent to the controller.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="3" max="60">
+        <label>3: MAX_REP_INTERVAL</label>
+        <description><![CDATA[
+MAX_REP_INTERVAL<br /><h1>Overview</h1><p><strong>Units of 10 sec</strong></p> <p>MAX_REP_INTERVAL is the maximum time that can elapse without sending a report. If no meaningful events occur, WEM sends one measurement every MAX_REP_INTERVAL seconds. Notice that, since the check is performed every MEAS_PERIOD, the reporting interval is rounded to the smallest multiple integer of MEAS_PERIOD (e.g. MEAS_PERIOD = 45, MAX_REP_INTERVAL = 12, reports are sent every 135 s).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>4: RES_ACTIVE_POWER</label>
+        <description><![CDATA[
+RES_ACTIVE_POWER<br /><h1>Overview</h1><p>The minimum quantity (resolution) that triggers a report</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>5: RES_RMS_VOLTAGE</label>
+        <description><![CDATA[
+RES_RMS_VOLTAGE<br /><h1>Overview</h1><p><strong>Units of 100 mV</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>6: RES_RMS_CURRENT</label>
+        <description><![CDATA[
+RES_RMS_CURRENT<br /><h1>Overview</h1><p><strong>Units of 10 mA</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration" readOnly="true">
+        <label>8: CLAMP_REVERSED</label>
+        <description><![CDATA[
+CLAMP_REVERSED<br /><h1>Overview</h1><p>CLAMP_REVERSED is a read-only parameter that the controller can query to learn about the current placement of the clamp. During the measurement phase, WEM checks whether the clamp has been placed correctly or reversed (with regard to phase rotation). In the latter case, WEM notifies the user with a different blink pattern and stores this information into the CLAMP_REVERSED parameter.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Clamp placed Correctly</option>
+          <option value="1">Clamp is REVERSED</option>
+          <option value="255">Could not detect position</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: ENABLE_CRC16</label>
+        <description><![CDATA[
+ENABLE_CRC16<br /><h1>Overview</h1><p>ENABLE_CRC16 parameter provides for an extra layer of redundancy in order to protect low bit rate transmissions against radio channel errors. This applies to the reports and frames sent spontaneous by WEM. Requests from the controller are always answered as asked. WEM will send CRC16 encapsulated frames to the associated node if this has proved to support it and the ENABLE_CRC16 parameter is set to 1. Otherwise, reports will be sent with no extra CRC16 encapsulation.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">False</option>
+          <option value="1">True</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>10: AVG_PERIOD</label>
+        <description><![CDATA[
+AVG_PERIOD<br /><h1>Overview</h1><p><strong>Units of 5 seconds</strong></p> <p>AVG_PERIOD determines the time window used to compute an average over the line readings. Each unit of AVG_PERIOD is worth 5 seconds. If AVG_PERIOD = 0 no average is computed and the last sample is returned. Note that the maximum average window coincides with the minimum value of MAX_REP_INTERVAL. Also note that a delay of up to the average window can be introduced in returning the measurements (each measurement is returned only when ready).</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

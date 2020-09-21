@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vrcs4_00_000" listed="false">
+    <label>VRCS4 4-Scene Controller</label>
+    <description><![CDATA[
+4-Scene Controller<br /><h1>Overview</h1><p>Vizia RF + 4-Button Remote Scene Controller, rated @ 120/240 VAC, 50/60HZ;<br />The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.</p> <br /><h2>Inclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode. When the 4-Scene controller is included in your system the LEDs will turn off. If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.</p> <p>The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.</p> <p>If the 4-Scene controller has been successfully included in the network and the user tries to include it again without first excluding it from the network, the controller will retain the first node ID it had received and ignore the second.</p> <br /><h2>Exclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode. When the 4-Scene controller is excluded from your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRCS4</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0802:0209,0802:0261</property>
+      <property name="dbReference">197</property>
+      <property name="commandClass:COMMAND_CLASS_NO_OPERATION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_BASIC">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_ACTIVATION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_ACTUATOR_CONF">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_CONTROLLER_CONF">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_MANUFACTURER_SPECIFIC">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_NODE_NAMING">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_HAIL">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_ASSOCIATION">setVersion=1</property>
+      <property name="commandClass:COMMAND_CLASS_VERSION">setVersion=1</property>
+      <property name="defaultAssociations">1,2,3,4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Button 1<br /><h1>Overview</h1><p>First (top) button on controller. Can be associated with up to 32 devices.</p>
+        ]]></description>
+        <multipleLimit>32</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Button 2<br /><h1>Overview</h1><p>Second button on controller. Can be associated with up to 32 devices.</p>
+        ]]></description>
+        <multipleLimit>32</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Button 3<br /><h1>Overview</h1><p>Third button on controller. Can be associated with up to 32 devices.</p>
+        ]]></description>
+        <multipleLimit>32</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Button 4<br /><h1>Overview</h1><p>Fourth button on controller. Can be associated with up to 32 devices.</p>
+        ]]></description>
+        <multipleLimit>32</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

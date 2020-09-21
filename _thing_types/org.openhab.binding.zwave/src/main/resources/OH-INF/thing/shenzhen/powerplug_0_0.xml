@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_powerplug_00_000" listed="false">
+    <label>NAS-WR01ZE Wall Plug Switch</label>
+    <description><![CDATA[
+Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, current load, power consumption and energy consumption measuring. </p> <ul><li><strong>Voltage</strong> – The Supply Power Voltage For Plug.</li> <li><strong>Current</strong> – The Current for the Electric Device Connect to Plug Consumption.</li> <li><strong>Power</strong> – Power Consumed by an Electric Device in an instant, unit: Watt (W).</li> <li><strong>Energy</strong> – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off with green alternately five times within 2 seconds.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode. And the LED will flash on and off with yellow alternately five times within 2 seconds.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Clear Accumulated Energy</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">NAS-WR01ZE</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0003:0087,0003:1087,0003:1483,0003:2087</property>
+      <property name="dbReference">397</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Meter Report Enable</label>
+        <description>This parameter defines Disable/Enable meter report measure data to controller.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Report</option>
+          <option value="1">Enable Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>2: Meter Report Interval</label>
+        <description><![CDATA[
+Interval time reporting data to controller<br /><h1>Overview</h1><p>This parameter defines interval time (in seconds) that Meter report data to main controller.</p>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="16">
+        <label>3: Maxium over-load current</label>
+        <description><![CDATA[
+maximum current the plug can provide to load<br /><h1>Overview</h1><p>This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power and send alarm.<br />Send Alarm NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED to associated devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter #3). You must remove the loader and turn on the Plug (press the button once) to enable current monitor and clear NOTIFICATION ALARM. This parameter value must be great than #4. If user set this parameter to default by Configure CC, the parameter #4 will be set to default value.</p>
+        ]]></description>
+        <default>13</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="15">
+        <label>4: Maximum alarm current</label>
+        <description><![CDATA[
+Max current for over-current notification<br /><h1>Overview</h1><p>Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: LED enable</label>
+        <description>This parameter defines the LED indication Function ON/OFF.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable LED indication Function</option>
+          <option value="1">Enable LED indication Function</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>6: Power Report Threshold</label>
+        <description><![CDATA[
+Power consumed change to be reported<br /><h1>Overview</h1><p>How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Remember Relay ON/OFF status after power failure.</label>
+        <description><![CDATA[
+Plug state after power-on<br /><h1>Overview</h1><p>Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Don’t remember relay state</option>
+          <option value="1">Remember the Relay Status.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Plug Time switch Function</label>
+        <description><![CDATA[
+Timer plug OFF after time period<br /><h1>Overview</h1><p>Defines if the timer function is enabled/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Time switch Disable</option>
+          <option value="1">Time switch Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>9: Time switch Period</label>
+        <description><![CDATA[
+Delay time after the plug is switched off (in minutes)<br /><h1>Overview</h1><p>This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.</p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Button On/Off Enable</label>
+        <description><![CDATA[
+Enable/Disable top button function<br /><h1>Overview</h1><p>If this parameter is set to ‘1’, users can turn on and off the wall plug by pressing the button on the top of the wall plug. If this parameter is set to ‘0’, the wall plug cannot be turned on and off by pressing the button.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Button</option>
+          <option value="1">Enable Button</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.<br /><h1>Overview</h1><ul><li>NOTIFICATION_REPORT_V4</li> <li>METER_REPORT_V4</li> <li>SWITCH_BINARY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC_SET (0x00).<br /><h1>Overview</h1><p>BASIC_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Send Notification to associated devices.<br /><h1>Overview</h1><p>NOTIFICATION_REPORT_V4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

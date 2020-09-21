@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pst02b_00_000" listed="false">
+    <label>PST02B Slim Multi-Sensor (PIR/Temperature/Illumination)</label>
+    <description><![CDATA[
+Slim Multi-Sensor (PIR/Temperature/Illumination)<br /><h1>Overview</h1><p>The slim multisensor PST02 has PIR, temperature and illumination, 3 sensors function in one, based on Z-WaveTM technology.</p> <br /><h2>Inclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>If the user want to wake-up the device immediately, please remove the front cover, and press the tamper key once. The device will wake-up 10 seconds. </p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PST02B</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:000D</property>
+      <property name="dbReference">169</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+BASIC command value sent when turning on lights<br /><h1>Overview</h1><p>BASIC command value to send when turning on the light.</p> <ul><li>-1 (0xFF): turn on the light</li> <li>0: turn off the light</li> <li>1–100: send this dimmer value</li> </ul>
+        ]]></description>
+        <default>-1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: PIR Sensitivity</label>
+        <description><![CDATA[
+PIR Sensitivity setting.<br /><h1>Overview</h1><p>Sensitivity for the PIR (Passive Infrared) sensor</p> <ul><li>0: Disable PIR motion detection.</li> <li>1–99: Motion detection sensitivity, where 1 is the lowest and 99 is the highest.</li> </ul>
+        ]]></description>
+        <default>70</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Light Threshold</label>
+        <description><![CDATA[
+Illumination threshold for turning on associated lights.<br /><h1>Overview</h1><p>When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the associated lights.</p> <ul><li>0: turn off the illumination detection function and <em>never</em> turn on the lights</li> <li>1: darkest threshold level</li> <li>99 brightest threshold level</li> <li>100: turn off the illumination detection function and <em>always</em> turn on the lights.</li> </ul><p>Note: when not in test mode, only values in the range 1–99 will enable the illumination detection function and update the illumination value.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>5: Operation Mode</label>
+        <description><![CDATA[
+Mode of operation and enabled multisensor functions<br /><h1>Overview</h1><p>Bitfield for setting the device in certain modes and enabling or disabling specific functions of the multisensor device.</p> <p><strong>PST02B only:</strong></p> <ul><li>Bit 0: reserved.</li> <li>Bit 1: device mode. 0 = normal mode; 1 = test mode.</li> <li>Bit 2: disable the door/window function. 0 = enabled; 1 = disabled.</li> <li>Bit 3: temperature unit. 0 = Fahrenheit; 1 = Celcius.</li> <li>Bit 4: disable the illumination report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 5: disable the temperature report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 6: reserved.</li> <li>Bit 7: disable the back key release into test mode. 0 = enabled; 1 = disabled.</li> </ul><p><strong>TSP01 only:</strong></p> <ul><li>Bit 0: operation mode. 0 = home automation mode; 1 = security mode</li> <li>Bit 1: device mode. 0 = normal mode; 1 = test mode.</li> <li>Bit 2: Reserved, always 1.</li> <li>Bit 3: temperature unit. 0 = Fahrenheit; 1 = Celcius.</li> <li>Bit 4: disable the illumination report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 5: disable the temperature report after event triggered. 0 = enabled; 1 = disabled.</li> <li>Bit 6: reserved.</li> <li>Bit 7: reserved.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>6: Multisensor Function Switch</label>
+        <description><![CDATA[
+Enable or disable functions of the multisensor.<br /><h1>Overview</h1><p>Bitfield for enabling or disabling functions of the multisensor.</p> <p><strong>PST02B only:</strong></p> <ul><li>Bit 0: Disable magnetic integrate illumination.</li> <li>Bit 1: Disable PIR integrate Illumination.</li> <li>Bit 2: Disable magnetic integrate PIR (Default is 1 = disabled).</li> <li>Bit 3: When bit 2 is 0 (enabled), is the device is installed in the same room as the light? 0 = In the same room; 1 = In another room. <ul><li>Note: If this bit is 1, it is recommended to also set bit 1 to 1, because when the PIR triggered, it doesn't mean that a person is in the room where the lights are.</li> </ul></li> <li>Bit 4: Disable the 5 seconds delay to turn off the light, when door/window is closed.</li> <li>Bit 5: Disable auto turn off the light, after door/window opened to turn on the light. <ul><li><em>Note: If bit 2 is 0, this setting has no effect.</em></li> <li><em>Note: If configuration parameter is 0, </em><em>this setting has no effect.</em></li> </ul></li> <li>Bit 6: Reserved.</li> <li>Bit 7: Reserved</li> </ul><p><strong>TSP01 only:</strong></p> <ul><li>Bit 0: Reserved, always 1.</li> <li>Bit 1: Disable PIR integrate Illumination.</li> <li>Bit 2: Reserved, always 1.</li> <li>Bit 3: Reserved.</li> <li>Bit 4: Reserved.</li> <li>Bit 5: Reserved.</li> <li>Bit 6: Enable temperature monitoring.<br /><ul><li>When this bit is enabled, a temperature change of 3 degrees Fahrenheit will be reported immediately. Additionally, if the temperature is greater than 140 degrees Fahrenheit the temperature will be reported every 64 seconds. </li> </ul></li> <li>Bit 7: Reserved</li> </ul>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Enable or disable functions of the multisensor. Not applicable for TSP01.<br /><h1>Overview</h1><p>Bitfield for enabling or disabling certain customer functions of the multisensor device.</p> <p><strong>PST02B only:</strong></p> <ul><li>Bit 0: Reserved.</li> <li>Bit 1: Enable sending motion OFF report. 0=Disable; 1=Enable. <em>Note: Depends on the value of bit 4, see below:</em> <ul><li>Bit 4 is 0: Report Notification CC, Type: 0x07, Event: 0xFE.</li> <li>Bit 4 is 1: Sensor Binary Report, Type: 0x0C, Value: 0x00.</li> </ul></li> <li>Bit 2: Enable PIR super sensitivity mode. 0=Disable; 1=Enable.</li> <li>Bit 3: Disable sending BASIC OFF after door/window is closed. 1=Disable, 0=Enable.</li> <li>Bit 4: Notification type. 0=Using Notification Report; 1=Using Sensor Binary Report.</li> <li>Bit 5: Disable Multi CC in auto report. 1=Disable; 0=Enable.</li> <li>Bit 6: Disable reporting battery state when the device is triggered. 1=Disable; 0=Enable.</li> <li>Bit 7: Reserved.</li> </ul><p><strong>TSP01 only:</strong></p> <ul><li>All bits reserved.</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Preset option for TSP01.</option>
+          <option value="22">Preset for PST02B motion detection settings.</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>8: PIR Re-Detect Interval Time</label>
+        <description><![CDATA[
+Time period to wait until reporting motion detected again.<br /><h1>Overview</h1><p>After sending a "motion detected" report, wait at least the configured number of seconds before sending a new "motion detected" report.</p> <p>The timeout is the configured value multiplied with 8 seconds, i.e. value 3 (the default) means 24 seconds timeout.</p> <p><em>Note:</em> <strong>For PST02B</strong> this setting applies to normal mode only.</p> <p><em>Note:</em> <strong>For TSP01</strong> this setting applies to security mode only. If this value is bigger than the configuration setting No. 9 there is a period after the light is turned off when the PIR will not be detecting.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>9: Turn Off Light Time</label>
+        <description><![CDATA[
+Time to wait before sending command to turn off lights<br /><h1>Overview</h1><p>When a BASIC SET command has been sent to turn on lights and motion is no longer detected by the PIR sensor, wait the configured time before sending a "turn off light" command.</p> <p>The timeout is the configured value multiplied with 8 seconds, i.e. value 4 (the default) means 32 seconds timeout.</p> <p>0 means "never turn off the lights".</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The interval time for auto reporting the battery level. The value is multiplied with the value of configuration parameter 20 and the unit is minutes. If the value is 0, auto reporting of battery level is turned off.</p> <p>If this parameter has its default value (12) and parameter 20 has its default value (30), the interval time is 6 hours.</p> <p><strong>TSP01 only:</strong></p> <p>The interval time for auto report the battery level. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>12: Auto Report Illumination Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the illumination state<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The interval time for auto reporting the battery level. The value is multiplied with the value of configuration parameter 20 and the unit is minutes. If the value is 0, auto reporting of illumination is turned off.</p> <p>If this parameter has its default value (12) and parameter 20 has its default value (30), the interval time is 6 hours.</p> <p><strong>TSP01 only:</strong></p> <p>The interval time for auto report the illumination. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>13: Auto Report Temperature Time</label>
+        <description><![CDATA[
+The interval time for auto reporting the temperature.<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The interval time for auto reporting the temperature. The value is multiplied with the value of configuration parameter 20 and the unit is minutes. If the value is 0, auto reporting of temperature is turned off.</p> <p>If this parameter has its default value (12) and parameter 20 has its default value (30), the interval time is 6 hours.</p> <p><strong>TSP01 only:</strong></p> <p>The tick interval time for auto report the temperature. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: Auto Report Tick interval</label>
+        <description><![CDATA[
+The interval time for auto report each tick.<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The interval time for auto report each tick. Setting this configuration will effect configuration No. 10, No. 11, No. 12 and No. 13</p> <p>The unit is 1 minute</p> <p>Caution1: Setting to 0 means turn off all auto report function.</p> <p>Caution 2: Thing value is unsigned byte. the range is from 0x00 (0) to 0xff (255)</p> <p><strong>TSP01 only:</strong></p> <p>Despite TSP01 instructions, this parameter has same effect as PST02B (tick time).</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>21: Temperature differential report.</label>
+        <description><![CDATA[
+The temperature differential to report. Not applicable to TSP01.<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The temperature differential to report.</p> <p>0 means turn off.</p> <p>The unit is fahrenheit.</p> <p>Enable this function the device will detect every minute. And when the temperature is over 140 degree fahrenheit, it will continue report.</p> <p>Enable this functionallity will cause some issue please see the detail in the "Temperature Report" section.</p> <p><strong>TSP01 only:</strong></p> <p>All bits reserved, set to 0.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>22: Illumination differential report.</label>
+        <description><![CDATA[
+The illumination differential to report. Not applicable to TSP01.<br /><h1>Overview</h1><p><strong>PST02B only:</strong></p> <p>The illumination differential to report.</p> <p>0 means turn off this function. The unit is percentage.</p> <p>Enable this function the device will detect every minute.</p> <p>Enable this functionality will cause some issue please see the detail in the "Illumination Report" section.</p> <p><strong>TSP01 only:</strong></p> <p>All bits reserved, set to 0.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Light Control</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

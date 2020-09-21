@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="permundo_psc152zw_00_000" listed="false">
+    <label>PSC152ZW Shutter Controller</label>
+    <description><![CDATA[
+Shutter Controller<br /><h1>Overview</h1><p>The wireless flush-mount switching actuator PSC152ZW allows you to remotely control electrical appliances.</p> <p>It features a metering function to measure the power consumption and the accumulated energy usage of connected equipment. The built-in metering unit is of high quality: it calculates the true-power and also works for small loads from 1W upwards. This feature is important to have a correct measurement value also for electronic loads like led lamps.</p> <p>The PSC152ZW has a built-in safety features that will switch-off the output in case of too high temperature or overload. <br />Additionally the PSC152 has a feature to switch the load on at zero voltage and switch the load off at zero current. This leads to a very high number of possible switching cycles also for difficult loads like led-lamps or motors, e.g. pumps. </p> <br /><h2>Inclusion Information</h2><p>When a PSC152ZW that is not associated to a Z-Wave network is inserted into the mains outlet, it will flash once red followed by 2 green flashes followed by steady red flashing. ThePSC152ZW can now be added to (=inclusion) or removed from (=exclusion) a Z-Wave network:</p> <ol><li>hold the touch button until the led shows green light</li> <li>release the touch button</li> </ol><p>The PSC152 will confirm successful addition to the network by 5 green flashes. </p> <br /><h2>Exclusion Information</h2><p>When a PSC152ZW that is not associated to a Z-Wave network is inserted into the mains outlet, it will flash once red followed by 2 green flashes followed by steady red flashing. ThePSC152ZW can now be added to (=inclusion) or removed from (=exclusion) a Z-Wave network:</p> <ol><li>hold the touch button until the led shows green light</li> <li>release the touch button</li> </ol><p>The PSC152 will confirm successful removal/exclusion by steady red flashing. At the time of exclusion the device is factory reset.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">permundo GmbH</property>
+      <property name="modelId">PSC152ZW</property>
+      <property name="manufacturerId">0245</property>
+      <property name="manufacturerRef">0003:0004</property>
+      <property name="dbReference">826</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

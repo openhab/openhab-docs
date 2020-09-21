@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="reitz_064394_00_000" listed="false">
+    <label>064394 Schuko Plug Dimmer</label>
+    <description><![CDATA[
+Schuko Plug Dimmer<br /><h1>Overview</h1><p>For wireless dimming of: light bulbs, HV and LV halogen lamps with conventional transformer, combinable with all Z-Wave transmitters and remote controls.</p> <br /><h2>Inclusion Information</h2><p>In the case of a plug adaptor press 3x within 1.5 seconds the function button;</p> <p>during this process the device retains its last switching status ("on" or "off").</p> <br /><h2>Exclusion Information</h2><p>In the case of a plug adaptor press 3x within 1.5 seconds the function button,</p> <p>during this process the device retains its last switching status ("on" or "off").</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Reitz-Group.de</property>
+      <property name="modelId">064394</property>
+      <property name="manufacturerId">0064</property>
+      <property name="manufacturerRef">1001:0000</property>
+      <property name="dbReference">53</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

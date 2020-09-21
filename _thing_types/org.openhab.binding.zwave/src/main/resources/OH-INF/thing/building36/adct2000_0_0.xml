@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="building36_adct2000_00_000" listed="false">
+    <label>ADC-T 2000 Alarm.com Smart Thermostat</label>
+    <description><![CDATA[
+Alarm.com Smart Thermostat<br /><h1>Overview</h1><ul><li> Intelligently Connected with Alarm.com (Alarm.com account required) </li> <li> Remote Access and Control </li> <li> Custom Schedules </li> <li> Critical Temperature Alerts and Geo-Services Automation </li> <li> Can be paired with Alarm.com Temperature Sensor ADC-S2000-T-RA for enhanced climate control and improved energy savings (sold separately) </li> </ul><br /><h2>Inclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin inclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon becomes solid, the thermostat has been included.</p> <br /><h2>Exclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin exclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon flashes red, the thermostat has been excluded.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="building36_adct2000_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="building36_adct2000_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="building36_adct2000_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Building 36 Technologies</property>
+      <property name="modelId">ADC-T 2000</property>
+      <property name="manufacturerId">0190</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">926</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: HVAC System Type</label>
+        <description><![CDATA[
+Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal (Default)</p> <p>1 - Heat Pump</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Heat Pump</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Number of Heat Stages</label>
+        <description>Heat Stages 0-3 Default is 2.</description>
+        <default>2</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>3: Number of Cool Stages</label>
+        <description>Cool Stages 0-2 Default is 2.</description>
+        <default>2</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Heat Fuel Type</label>
+        <description><![CDATA[
+Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Overview</h1><p>0 - Fossil Fuel</p> <p>1 - Electric (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Fossil Fuel</option>
+          <option value="1">Electric</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="-100" max="100">
+        <label>5: Calibration Temperature</label>
+        <description>Calibration Temperature Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="0" max="30">
+        <label>6: Overshoot</label>
+        <description>Overshoot Range (in deg. F) Precision is tenths of a degree. Default is 5.</description>
+        <default>5</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_4" type="integer" groupName="configuration"
+                 min="0" max="30">
+        <label>7: Swing</label>
+        <description>Swing Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>8: Heat Staging Delay</label>
+        <description>Heat Staging Delay (in min)</description>
+        <default>10</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>9: Cool Staging Delay</label>
+        <description>Cool Staging Delay (in min)</description>
+        <default>10</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration"
+                 min="0" max="950">
+        <label>10: Balance Setpoint</label>
+        <description>Balance Setpont Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>350</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Recovery Settings</label>
+        <description><![CDATA[
+Whether thermostat uses intelligence to try and make the best of energy usage.<br /><h1>Overview</h1><p>0 - Comfort</p> <p>1 - Efficient (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Comfort</option>
+          <option value="1">Efficient</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="10" max="240">
+        <label>12: Fan Circulation Period</label>
+        <description>Fan Circulation Period (in min)</description>
+        <default>20</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>13: Fan Circulation Duty Cycle</label>
+        <description>Duty Cycle (percentage)</description>
+        <default>25</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="1" max="3600">
+        <label>14: Fan Purge Time</label>
+        <description>Purge Time (in s)</description>
+        <default>60</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_4" type="integer" groupName="configuration"
+                 min="350" max="950">
+        <label>15: Maximum Heat Setpoint</label>
+        <description>Max Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>950</default>
+      </parameter>
+
+      <parameter name="config_16_4" type="integer" groupName="configuration"
+                 min="350" max="950">
+        <label>16: Minimum Heat Setpoint</label>
+        <description>Min Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>350</default>
+      </parameter>
+
+      <parameter name="config_17_4" type="integer" groupName="configuration"
+                 min="500" max="950">
+        <label>17: Maximum Cool Setpoint</label>
+        <description>Max Cool Setpoint Range(in deg. F) Precision is tenths of a degree.</description>
+        <default>950</default>
+      </parameter>
+
+      <parameter name="config_18_4" type="integer" groupName="configuration"
+                 min="500" max="950">
+        <label>18: Minimum Cool Setpoint</label>
+        <description>Min Cool Setpoint (in deg. F) Precision is tenths of a degree.</description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Thermostat Lock</label>
+        <description><![CDATA[
+Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>20: Compressor Delay</label>
+        <description>Compressor Delay (in min)</description>
+        <default>5</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="10" max="240">
+        <label>21: Demand Response Period</label>
+        <description>Demand Response Period (in min)</description>
+        <default>10</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>22: Demand Response Duty Cycle</label>
+        <description>Demand Response Duty Cycle (percentage)</description>
+        <default>25</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Temperature Display Units</label>
+        <description><![CDATA[
+Celsius or Farenheit for temperature display.<br /><h1>Overview</h1><p>0 - Celsius</p> <p>1 - Farenheit (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Farenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: HVAC Modes Enabled</label>
+        <description><![CDATA[
+Which heating/cooling modes are available.<br /><h1>Overview</h1><p>3 - Off, Heat<br />5 - Off, Cool<br />7 - Off, Heat, Cool<br />15 - Off, Heat, Cool, Auto (Default)<br />19 - Off, Heat, Emergency Heat<br />23 - Off, Heat, Cool, Emergency Heat<br />31 - Off, Heat, Cool, Auto, Emergency Heat</p>
+        ]]></description>
+        <default>15</default>
+        <options>
+          <option value="3">Off, Heat</option>
+          <option value="5">Off, Cool</option>
+          <option value="7">Off, Heat, Cool</option>
+          <option value="15">Off, Heat, Cool, Auto (Default)</option>
+          <option value="19">Off, Heat, Emergency Heat</option>
+          <option value="23">Off, Heat, Cool, Emergency Heat</option>
+          <option value="31">Off, Heat, Cool, Auto, Emergency Heat</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Configurable Terminal Setting</label>
+        <description><![CDATA[
+Changes control of configurable terminal<br /><h1>Overview</h1><p>0 - Disabled (Default)<br />1 - W3 - Third Stage HEAT or 2nd Stage of 2-Stage Auxiliary / Backup heat<br />2 - H - External Dehumidifier Control<br />3 - DH - External Dehumidifier Operation</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">W3</option>
+          <option value="2">H</option>
+          <option value="3">DH</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Power Source</label>
+        <description><![CDATA[
+Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default)</p> <p>1 - C-Wire</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Battery</option>
+          <option value="1">C-Wire</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>27: Battery Alert Threshold Low</label>
+        <description>Battery Alert Range (percentage)</description>
+        <default>30</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>28: Battery Alert Threshold Very Low</label>
+        <description>Very Low Battery Alert Range (percentage)</description>
+        <default>15</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Remote Temperature Enable</label>
+        <description><![CDATA[
+Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_31_4" type="integer" groupName="configuration"
+                 min="10" max="100">
+        <label>31: Heat Differential</label>
+        <description>Heat Differential (in deg. F) Precision is tenths of a degree.</description>
+        <default>30</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_32_4" type="integer" groupName="configuration"
+                 min="10" max="100">
+        <label>32: Cool Differential</label>
+        <description>Cool Differential (in deg. F) Precision is tenths of a degree.</description>
+        <default>30</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="5" max="20">
+        <label>33: Temperature Reporting Threshold</label>
+        <description>Temperature Reporting Range (in deg. F) Precision is tenths of a degree.</description>
+        <default>10</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: O/B Select</label>
+        <description><![CDATA[
+Configuration of O/B terminal.<br /><h1>Overview</h1><p>0 - O/B Terminal acts as B terminal, closed when cooling<br />1 - O/B Terminal acts as O terminal, closed when heating (Default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">O/B as B</option>
+          <option value="1">O/B as O</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Z-Wave Echo Association Reports</label>
+        <description><![CDATA[
+Enable/Disabled Echo Assoc. Reports.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="building36_adct2000_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="building36_adct2000_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="6">Circulate</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="building36_adct2000_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ingersollecolink_rs200_00_000" listed="false">
+    <label>RS200 Schlage PIR Motion Sensor</label>
+    <description><![CDATA[
+Schlage PIR Motion Sensor<br /><h1>Overview</h1><ul><li>Wireless Z-Wave™ enabled motion sensor</li> <li>Detection area is approximately 30 x 39’ area (9 x 12 meters)</li> </ul><br /><h2>Inclusion Information</h2><ul><li>Use a pin or paper clip to press the program button on the back of the Sensor case.</li> <li>During enrollment, the Bridge’s LED will change from slow to rapid blinking.</li> <li>When enrollment is successful, the Bridge’s orange LED will light solid, and the Sensor’s LED will turn off.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Use a pin or paper clip to press the program button on the back of the Sensor case.</li> <li>Observe lights on the Bridge. The orange light will blink while exclusion is taking place. Exclusion is complete when the orange light becomes solid.</li> <li>Remove the battery from the Sensor after exclusion is complete.</li> </ul><br /><h2>Wakeup Information</h2><p>Not provided</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ingersoll Rand (was Ecolink)</property>
+      <property name="modelId">RS200</property>
+      <property name="manufacturerId">011F</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">695</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

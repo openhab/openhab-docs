@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgrgbw442_00_000" listed="false">
+    <label>FGRGBW-442 RGBW CONTROLLER 2</label>
+    <description><![CDATA[
+RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM output signal, allowing it to control LED, RGB, RGBW strips, halogen lights and other resistive loads. It can also measure active power and energy consumed by the load. Controlled devices may be powered by 12 or 24V DC.</p> <p>Inputs support momentary/toggle switches and 0-10V analog sensors, like temperature sensors, humidity sensors, light sensors etc</p> <br /><h2>Inclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Exclusion Information</h2><p>Quickly, three times click the service button.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage" typeId="sensor_voltage">
+        <label>Sensor (voltage)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+,COMMAND_CLASS_BASIC        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+,COMMAND_CLASS_BASIC        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param157" typeId="fibaro_fgrgbw442_00_000_config_decimal_param157">
+        <label>Start programmed sequence</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=157</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="color_color1" typeId="color_color">
+        <label>Color Control 1</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR:1;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature1" typeId="color_temperature">
+        <label>Color Temperature 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR:1;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer3" typeId="switch_dimmer">
+        <label>Dimmer 3</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:3,COMMAND_CLASS_BASIC:3</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer4" typeId="switch_dimmer">
+        <label>Dimmer 4</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:4,COMMAND_CLASS_BASIC:4</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer5" typeId="switch_dimmer">
+        <label>Dimmer 5</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:5,COMMAND_CLASS_BASIC:5</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:5</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage6" typeId="sensor_voltage">
+        <label>Sensor (voltage) 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:6,COMMAND_CLASS_BASIC:6;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage7" typeId="sensor_voltage">
+        <label>Sensor (voltage) 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:7,COMMAND_CLASS_BASIC:7;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage8" typeId="sensor_voltage">
+        <label>Sensor (voltage) 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:8,COMMAND_CLASS_BASIC:8;type=VOLTAGE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_voltage9" typeId="sensor_voltage">
+        <label>Sensor (voltage) 9</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:9,COMMAND_CLASS_BASIC:9;type=VOLTAGE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGRGBW-442</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0902:1000,0902:2000</property>
+      <property name="dbReference">1127</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Remember device status before the power failure</label>
+        <default>0</default>
+        <options>
+          <option value="0">device remains switched off</option>
+          <option value="1">restore the state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Input 1 - operating mode</label>
+        <description>Input 1 - operating mode</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog input without internal pull-up</option>
+          <option value="1">Analog input with internal pull-up</option>
+          <option value="2">Momentary switch (Central Scene)</option>
+          <option value="3">Toggle switch: switch state on every input change</option>
+          <option value="4">Toggle switch: closed – ON, opened – OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Input 2 - operating mode</label>
+        <description>Input 2 - operating mode</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog input without internal pull-up</option>
+          <option value="1">Analog input with internal pull-up</option>
+          <option value="2">Momentary switch (Central Scene)</option>
+          <option value="3">Toggle switch: switch state on every input change</option>
+          <option value="4">Toggle switch: closed – ON, opened – OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Input 3 - operating mode</label>
+        <description>Input 3 - operating mode</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog input without internal pull-up</option>
+          <option value="1">Analog input with internal pull-up</option>
+          <option value="2">Momentary switch (Central Scene)</option>
+          <option value="3">Toggle switch: switch state on every input change</option>
+          <option value="4">Toggle switch: closed – ON, opened – OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Input 4 - operating mode</label>
+        <description>Input 4 - operating mode</description>
+        <default>2</default>
+        <options>
+          <option value="0">Analog input without internal pull-up</option>
+          <option value="1">Analog input with internal pull-up</option>
+          <option value="2">Momentary switch (Central Scene)</option>
+          <option value="3">Toggle switch: switch state on every input change</option>
+          <option value="4">Toggle switch:closed – ON, opened – OF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot</label>
+        <description>Alarm configuration - 1st slot</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description>Alarm configuration - 2nd slot</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description>Alarm configuration - 3rd slot</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot</label>
+        <description>Alarm configuration - 4th slot</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description>Alarm configuration - 5th slot</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_35_2_0000FFFF" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>35: Duration of alarm signalization</label>
+        <description>Duration of alarm signalization</description>
+        <default>600</default>
+        <options>
+          <option value="0">infinite signalization</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>40: Input 1 - sent scenes</label>
+        <description>Input 1 - sent scenes</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>41: Input 2 - sent scenes</label>
+        <description>Input 2 - sent scenes</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>42: Input 3 - sent scenes</label>
+        <description>Input 3 - sent scenes</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>43: Input 4 - sent scenes</label>
+        <description>Input 4 - sent scenes</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_62_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>62: Power reports - periodic</label>
+        <description><![CDATA[
+Power reports - periodic<br /><h1>Overview</h1><p>This parameter determines in what time intervals the periodic power reports are sent to the main controller. Periodic reports do not depend of power change (parameter 61).</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> <li>Default - 3600 (1h)</li> </ul>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_63_2" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>63: Analog inputs output change on input change</label>
+        <description><![CDATA[
+Analog inputs output change on input change<br /><h1>Overview</h1><h1>Analog inputs reports and output change on input change</h1> <p>This parameter defines minimal change (from the last reported) of analog input voltage that results in sending new report and change in the output value. Parameter is relevant only for analog inpu ts (parameter 20, 21, 22 or 23 set to 0 or 1).</p> <ul><li>0 - reporting on change disabled</li> <li>1-100 (0.1-10V, 0.1V step)</li> <li>Default - 5 (0.5V)</li> </ul>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_64_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>64: Analog inputs reports - periodic</label>
+        <description><![CDATA[
+Analog inputs reports - periodic<br /><h1>Overview</h1><p>This parameter defines reporting period of analog inputs value.</p> <p>Periodical reports are independent from changes in value (parameter 63).</p> <p>Parameter is relevant only for analog inputs (parameter 20, 21, 22 or 23 set to 0 or 1)</p> <ul><li>0 – periodical reports disabled</li> <li>30-32400 (30-32400s, 1s step)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy reports - on change</label>
+        <description><![CDATA[
+Energy reports - on change<br /><h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller. Energy reports are sent no often than every 30 seconds.</p> <ul><li>0 - reports are disabled</li> <li>1-500 (0.01 - 5 kWh) - change in energy</li> </ul>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>66: Energy reports - periodic</label>
+        <description><![CDATA[
+Energy reports - periodic<br /><h1>Overview</h1><p>This parameter determines in what time intervals the periodic energy reports are sent to the main controller. Periodic reports do not depend of energy change (parameter 65)</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> </ul>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration">
+        <label>150: Inputs - LED colour control mode</label>
+        <description>Inputs - LED colour control mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">RGBW mode</option>
+          <option value="1">HSB and White mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>151: Local control - transition time</label>
+        <description><![CDATA[
+Local control - transition time<br /><h1>Overview</h1><p>This parameter determines time of smooth transition between 0% and 100% when controlling with connected switches.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_152_2" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>152: Remote control - transition time</label>
+        <description><![CDATA[
+Remote control - transition time<br /><h1>Overview</h1><p>This parameter determines time needed to change the state between current and target values when controlling via Z-Wave network.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_154_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>154: ON frame value for single click</label>
+        <description>ON frame value for single click</description>
+        <default>4294967295</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_154_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: ON frame value for single click IN1</label>
+        <description>ON frame value for single click IN1</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_154_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: ON frame value for single click IN2</label>
+        <description>ON frame value for single click IN2</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_154_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: ON frame value for single click IN3</label>
+        <description>ON frame value for single click IN3</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_154_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: ON frame value for single click IN4</label>
+        <description>ON frame value for single click IN4</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_155_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>155: OFF frame value for single click</label>
+        <description>OFF frame value for single click</description>
+        <default>4294967295</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_155_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: OFF frame value for single click IN1</label>
+        <description>OFF frame value for single click IN1</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_155_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: OFF frame value for single click IN2</label>
+        <description>OFF frame value for single click IN2</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_155_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: OFF frame value for single click IN3</label>
+        <description>OFF frame value for single click IN3</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_155_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: OFF frame value for single click IN4</label>
+        <description>OFF frame value for single click IN4</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_156_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>156: ON frame value for double click</label>
+        <description>ON frame value for double click</description>
+        <default>4294967295</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_156_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: ON frame value for double click IN1</label>
+        <description>ON frame value for double click IN1</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_156_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: ON frame value for double click IN2</label>
+        <description>ON frame value for double click IN2</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_156_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: ON frame value for double click IN3</label>
+        <description>ON frame value for double click IN3</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_156_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>156: ON frame value for double click IN4</label>
+        <description>ON frame value for double click IN4</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_157_1" type="integer" groupName="configuration">
+        <label>157: Start programmed sequence</label>
+        <description><![CDATA[
+Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will start programmed sequence with selected number. User can define own sequences via controller. While the sequence is active, the menu is unavailable.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">sequence inactive</option>
+          <option value="1">user-defined sequence 1</option>
+          <option value="2">user-defined sequence 2</option>
+          <option value="3">user-defined sequence 3</option>
+          <option value="4">user-defined sequence 4</option>
+          <option value="5">user-defined sequence 5</option>
+          <option value="6">Fireplace sequence</option>
+          <option value="7">Storm sequence</option>
+          <option value="8">Rainbow sequence</option>
+          <option value="9">Aurora sequence</option>
+          <option value="10">Police (red-white-blue) sequence</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: RGBW Sync</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>allows to synchronize state of other FIBARO RGBW Controller devices (FGRGBW-442 and FGRGBWM- 441)</p> <p>- do not use with other devices.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: On/Off (IN1)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN1 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Dimmer (IN1)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN1 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: On/Off (IN2)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN2 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Dimmer (IN2)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN2 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: On/Off (IN3)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN3 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Dimmer (IN3)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN3 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: On/Off (IN4)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN4 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Dimmer (IN4)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN4 operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="fibaro_fgrgbw442_00_000_config_decimal_param157">
+    <item-type>Number</item-type>
+    <label>Start programmed sequence</label>
+    <description>Start programmed sequence</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">sequence inactive</option>
+        <option value="1">user-defined sequence 1</option>
+        <option value="2">user-defined sequence 2</option>
+        <option value="3">user-defined sequence 3</option>
+        <option value="4">user-defined sequence 4</option>
+        <option value="5">user-defined sequence 5</option>
+        <option value="6">Fireplace sequence</option>
+        <option value="7">Storm sequence</option>
+        <option value="8">Rainbow sequence</option>
+        <option value="9">Aurora sequence</option>
+        <option value="10">Police (red-white-blue) sequence</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

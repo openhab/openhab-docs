@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="danfoss_hrvccm_00_000" listed="false">
+    <label>HRVCCM Air CCM</label>
+    <description><![CDATA[
+Air CCM<br /><h1>Overview</h1><p>Manages the HRV unit based on algorithms and input from the HRV AirDial and the optional HRV PC Tool</p> <p><strong>For use only with Danfoss Air Dial controllers.</strong></p> <br /><h2>Inclusion Information</h2><p><strong>For use only with Danfoss Air Dial controllers.</strong></p> <br /><h2>Exclusion Information</h2><p><strong>For use only with Danfoss Air Dial controllers.</strong></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Danfoss</property>
+      <property name="modelId">HRVCCM</property>
+      <property name="manufacturerId">0002</property>
+      <property name="manufacturerRef">8007:0200,8007:0202</property>
+      <property name="dbReference">166</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

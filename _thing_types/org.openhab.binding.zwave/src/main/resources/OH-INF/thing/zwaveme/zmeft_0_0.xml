@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zwaveme_zmeft_00_000" listed="false">
+    <label>ZME_FT Floor Thermostat</label>
+    <description><![CDATA[
+Floor Thermostat<br /><h1>Overview</h1><p>Underfloor heating thermostat allows you to control the heating mat or other load in the on / off mode to maintain the set temperature. The device can operate in two control circuits:</p> <ul><li>autonomous maintenance of the set floor temperature<br /></li> <li>controlled by Z-Wave to maintain the set room temperature (requires an external Z-Wave thermostat,installed indoors)</li> </ul><p>The kit includes a temperature sensor. In all modes, the thermostat protects the floor structure from overheating, turning off load when the temperature threshold is reached</p> <br /><h2>Inclusion Information</h2><p>press and hold the central round mode change button for 5 seconds</p> <br /><h2>Exclusion Information</h2><p>press and hold the central round mode change button for 5 seconds</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="zwaveme_zmeft_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_furnace" typeId="thermostat_setpoint">
+        <label>Setpoint (furnace)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=FURNACE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Z-Wave.Me</property>
+      <property name="modelId">ZME_FT</property>
+      <property name="manufacturerId">0115</property>
+      <property name="manufacturerRef">0024:0001</property>
+      <property name="dbReference">151</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="1800">
+        <label>1: Boost Dry mode duration</label>
+        <default>1800</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Button mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle Normal Heating / Off</option>
+          <option value="1">Toggle Normal Heating / Energy Save</option>
+          <option value="2">Toggle Boost Dry</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Basic mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle Normal Heating / Off</option>
+          <option value="1">Toggle Normal Heating / Energy Save</option>
+          <option value="2">Toggle Boost Dry</option>
+          <option value="3">Set Normal Heating set point temperature</option>
+          <option value="4">Switch on/off relay directly</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>4: Temperature control interval</label>
+        <default>18</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>5: Maximum allowed temperature deviation</label>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="20" max="55">
+        <label>6: Maximal allowed temperature</label>
+        <description><![CDATA[
+Maximal allowed temperature<br /><h1>Overview</h1><p>In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree.</p>
+        ]]></description>
+        <default>27</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>10: Typical click timeout</label>
+        <description>Typical time used to differenciate click from hold</description>
+        <default>50</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Unsolicited notifications about thermostat mode and setpoint temperature changes</description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="zwaveme_zmeft_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="11">Economy Heat</option>
+        <option value="7">Furnace</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

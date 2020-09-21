@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leak_lgzw_00_000" listed="false">
+    <label>LGZW Water Valve Control</label>
+    <description><![CDATA[
+Water Valve Control<br /><h1>Overview</h1><p>The Leak Gopher Z-Wave Valve Controller is a professionall grade Z-Wave Device that allows the water to your home or business to be automatically turned off when water is detected by water sensors connected to any Z-Wave capable controller. The Leak Gopher Z-Wave Valve Controller is Z-Wave Plus compliant allowing you to use all of the functionality and programmability built into the new, Z-Wave Plus Controllers. It comes with a Stainless Steel Electronic Ball Valve.</p> <p>Design and Operation of </p> <p>The Leak Gopher Valve Controller</p> <p>Simply install the stainless steel Electronic Ball Valve on the ½” or ¾” water line where water enters your home or business, attach it to the Leak Gopher by plugging in the RJ-11 telephone jack, and tell your Z-Wave controller about the Leak Gopher and your home or business is protected. </p> <p>Standard telephone wires and connectors can be used to extend the Ball Valve’s wire so it is easy to locate the Electronic Ball Valve where you need it to be, and still have easy access to the Leak Gopher Z-Wave Valve Controller. </p> <p>When any of your water sensors get wet, your Z-Wave Controller will tell the Leak Gopher to turn the water off and Voilà! No Flood!</p> <p>A fully capable Z-Wave device, you can also program scenes that allow your Leak Gopher to turn the water off when you leave home and arm your security system and back on when you get home. No more worries about your house flooding while you are away.</p> <p>Also, for your convenience and piece of mind, there are two buttons on the Leak Gopher that allow you to instantly turn your water off and on. No more looking for that water key and digging in the yard looking for your water meter!</p> <br /><h2>Inclusion Information</h2><p>How to Add the Leak Gopher Z-Wave Valve Control to your Z-Wave Controller</p> <ul><li>Plug the wall cube power adapter (included) into the receptacle on the bottom of the Leak Gopher Z-Wave Valve Control marked “3.6 VDC”. Plug the wall cube into a 110 VAC outlet. This provides power to the Leak Gopher Z-Wave Valve Control.</li> <li>Configure the Z-Wave Controller to Add a device. </li> <li>When the Z-Wave Controller is ready to add a device, it will display a message like “waiting to add device. Press Add button on the device”</li> <li>The Add/Remove button is located on the side of the Leak Gopher Z-Wave Valve Control. Press the Add/Remove button.</li> <li>The Z-Wave Controller will acknowledge that the Leak Gopher Z-Wave Valve Control had been added to the Z-Wave network.</li> <li>Your Leak Gopher Z-Wave Valve Control is ready to use.</li> </ul><br /><h2>Exclusion Information</h2><p>How to Remove the Leak Gopher Z-Wave Valve Control to your Z-Wave Controller</p> <ul><li>Plug the wall cube power adapter (included) into the receptacle on the bottom of the Leak Gopher Z-Wave Valve Control marked “3.6 VDC”. Plug the wall cube into a 110 VAC outlet. This provides power to the Leak Gopher Z-Wave Valve Control.</li> <li>Configure the Z-Wave Controller to Remove a device. </li> <li>When the Z-Wave Controller is ready to Remove a device, it will display a message like “waiting to remove device. Press remove button on the device”</li> <li>The Add/Remove button is located on the side of the Leak Gopher Z-Wave Valve Control. Press the Add/Remove button. </li> <li>The Z-Wave Controller will acknowledge that the Leak Gopher Z-Wave Valve Control had been removed from the Z-Wave network.</li> <li>Your Leak Gopher Z-Wave Valve Control is removed form this controller.</li> </ul>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leak Intelligence, LLC</property>
+      <property name="modelId">LGZW</property>
+      <property name="manufacturerId">0173</property>
+      <property name="manufacturerRef">0003:0002</property>
+      <property name="dbReference">1063</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

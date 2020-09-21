@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_14299_00_000" listed="false">
+    <label>GE/Jasco 14299 GE/Jasco In-Wall 1000W Incandescent Smart Dimmer</label>
+    <description><![CDATA[
+GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><strong>Basic operation </strong></p> <p>The connected light can be turned ON/OFF and adjust dim levels in two ways:</p> <ol><li>Manually from the front panel of the In-Wall Dimmer.</li> <li>Remotely with a Z-Wave Controller .</li> </ol><p><strong>Manual control </strong></p> <p>The Front Panel Rocker Dimmer allows the user to turn ON/OFF the connected fixture.</p> <ol><li>To turn the connected fixture ON: press and release the top of the rocker.</li> <li>To turn the connected fixture OFF: press and release the bottom of the rocker.</li> </ol><p><strong>Adjust dim level </strong></p> <ol><li>To increase brightness: press and hold the top of the rocker.</li> <li>To decrease brightness: press and hold the bottom of the rocker.</li> </ol><p><strong>Disable / Enable LED </strong></p> <ol><li>Press UP three (3) times then quickly press and release DOWN one (1) time.</li> <li>Repeat to disable/enable LED.</li> </ol><p><strong>This device supports Association Command Class (3 Groups)</strong></p> <ol><li>Association Group 1 supports Lifeline, Switch Multilevel Report</li> <li>Association Group 2 supports Basic Set and is controlled by pressing the On or Off button with the local load</li> <li>Association Group 3 supports Basic Set and is controlled by double pressing the On or Off button</li> <li>Each Association Group supports 5 total nodes</li> </ol><br /><h2>Inclusion Information</h2><p><strong>Adding your device to a Z-Wave network </strong></p> <ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker) to add it in the network.</li> </ol><p>Please reference the controller's manual for instructions.</p> <br /><h2>Exclusion Information</h2><p><strong>To remove and reset the device </strong></p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top or bottom of the wireless smart dimmer (rocker) to remove it from the network.</li> </ol><p><strong>To return your switch to factory defaults: </strong></p> <p>Quickly press ON (Top) button three (3) times then immediately press the OFF (Bottom) button three (3) times. The LED will flash ON/OFF 5 times when completed successfully. Note: This should only be used in the event your network’s primary controller is missing or otherwise inoperable.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE/Jasco 14299</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3039</property>
+      <property name="dbReference">862</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description>LED Light</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON when load is OFF</option>
+          <option value="1">LED ON when load is ON</option>
+          <option value="2">LED always OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Invert Switch</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="1">Invert Switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Dim Steps</label>
+        <description>number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Dim Timing</label>
+        <description>timing of steps</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim 2 Steps</label>
+        <description>number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Dim 2 Timing</label>
+        <description>timing of steps</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Dim 3 Steps</label>
+        <description>number of steps or levels</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: Dim 3 Timing</label>
+        <description>timing of steps</description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: controlled with the local load</label>
+        <description><![CDATA[
+controlled with the local load<br /><h1>Overview</h1><p>Support Basic Set and is controlled with the local load</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: controlled by double pressing the On or Off button</label>
+        <description><![CDATA[
+controlled by double pressing the On or Off button<br /><h1>Overview</h1><p>Supports Basic Set and is controlled by double pressing the On or Off button</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

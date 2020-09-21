@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw121_00_000" listed="false">
+    <label>ZW121 Aeotec LED Strip</label>
+    <description><![CDATA[
+Aeotec LED Strip<br /><h1>Overview</h1><p>Aeotec LED Strip has been crafted to power connected lighting using Z-Wave Plus. It is powered by Aeotec’s Gen5 technology. The LED Strip is a multi-colored LED Strip which allows control (on/off/dim/color change) via Z-Wave commands.</p> <p>Note that configuration parameters 37 and 39 only apply when the strip is in color transition mode. Color transition mode is entered when a change to parameter 37 or 39 is submitted. Color transition mode is exited when a change to any of the channels is submitted. </p> <br /><h2>Inclusion Information</h2><ol><li>Set your Z-Wave controller into pairing mode.</li> <li>Press the Action Button located on the back of the LED Strip's white controller box once (The network LED will blink green as an indication it is pairing insecurely, please refer to section "Enabling Security Encryption" in the Advanced Function section of the manual to pair it securely).</li> <li>If the LED Strip has been successfully added to your Z-Wave network, its Network LED will become solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colorful gradient, repeat the instructions above from step 1. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set your Z-Wave controller into device removal mode.</li> <li>Press the Action Button located on the back of the LED Strip's white controller box once.</li> <li>If the LED Strip has been successfully removed from your  Z-Wave network, its Network LED will remain colorful gradient. If the removal was unsuccessful, the Network LED will still be solid, repeat the instructions above from step 1.</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_current_param37" typeId="aeon_zw121_00_000_meter_current_param37">
+        <label>Configuration Parameter 37</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=37</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW121</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0003:0079,0103:0079,0203:0079</property>
+      <property name="dbReference">639</property>
+      <property name="commandClass:COMMAND_CLASS_SECURITY">setVersion=1</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Enable/disable last brightness level</label>
+        <description><![CDATA[
+Enable/disable last brightness level when using the Color Switch Set CC<br /><h1>Overview</h1><p>Enable/disable to turn on the last brightness level of the LED Strip when using the Color Switch Set CC to change its color.</p> <p>0=disable.</p> <p>1=enable.</p> <p>Others=ignore. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Reboot/save/exit Colorful mode.</label>
+        <description><![CDATA[
+Reboot/save/exit Colorful mode.<br /><h1>Overview</h1><p>Reboot/save/exit Colorful mode.</p> <p>0=Un-reboot Colorful mode.</p> <p>1=Reboot Colorful mode.</p> <p>2=Exit Colorful mode.</p> <p>3=Save the current Colorful mode value and then to be exited. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Un-reboot Colorful mode</option>
+          <option value="1">Reboot Colorful mode</option>
+          <option value="2">Exit Colorful mode</option>
+          <option value="3">Save the current Colorful mode value</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_0000001F" type="integer" groupName="configuration"
+                 min="0" max="30">
+        <label>37: Color Change Speed Level</label>
+        <description><![CDATA[
+Applies only when the Color Transition Style is set to Fade Out/In<br /><h1>Overview</h1><p>Value 0 means constant speed. Value 1-30 sets the speed to accelerate/decelerate. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Constant Speed</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_37_4_000000E0" type="integer" groupName="configuration">
+        <label>37: Time Base of Color Change Speed</label>
+        <description><![CDATA[
+Applies only when the Color Transition Style is set to Fade Out/In<br /><h1>Overview</h1><p>Amount of time spent to transition between colors.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Time base is 1s</option>
+          <option value="1">Time base is 10ms</option>
+          <option value="2">Time base is 100ms</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>37: Cycle Count</label>
+        <description><![CDATA[
+Defines the number of repetitions of the color transition cycle<br /><h1>Overview</h1><p>When the end is reached the strip turns off.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>37: Brightness</label>
+        <description><![CDATA[
+Brightness when in color transition mode<br /><h1>Overview</h1><p>Note that this setting only affects the brightness when in color transition mode. Use the "Brightness" channel to set the brightness outside of color transition mode.</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_37_4_07000000" type="integer" groupName="configuration">
+        <label>37: Color Display Cycle</label>
+        <description><![CDATA[
+Defines the mode for determining colors used in color transitions<br /><h1>Overview</h1><p>Note that "Single Color Mode" does not select a constant single color (as the "Color Control" channel does), but instead cycles through a single color. </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Inactive (keep the current configuration value)</option>
+          <option value="1">Rainbow mode</option>
+          <option value="2">Multi color mode</option>
+          <option value="3">Random mode</option>
+          <option value="4">Single color mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_38000000" type="integer" groupName="configuration">
+        <label>37: Color Change Speed Option</label>
+        <description>Applies only when the Color Transition Style is set to Fade Out/In</description>
+        <default>0</default>
+        <options>
+          <option value="0">Fade in for 1/2 second and fade out for 1/2 second</option>
+          <option value="1">Fade in for 5ms and fade out for 5ms</option>
+          <option value="2">Fade in for 50ms and fade out for 50ms</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4_40000000" type="integer" groupName="configuration">
+        <label>37: Color Transition Style</label>
+        <description><![CDATA[
+Defines how the strip transitions between colors<br /><h1>Overview</h1><p>Note that "Smooth Color Transition" will lead to invisible transitions when "Color Display Cycle" is set to "Single Color Mode".</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Smooth color transition</option>
+          <option value="1">Fade out fade in transition</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_38_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>38: Change speed</label>
+        <description><![CDATA[
+Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed from OFF to ON.</p> <p>Value 2: The speed from ON to OFF.</p> <p>Value 3: Pause time of ON.</p> <p>Value 4: Pause time of OFF.  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_39_4_000000FF" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>39: Multi Color, Single Color or Random Mode - Byte 4</label>
+        <description>todo</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_39_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>39: Multi Color, Single Color, or Random Mode - Byte 3</label>
+        <description>todo</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_39_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>39: Multi Color, Single Color, or Random Mode - Byte 2</label>
+        <description>todo</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_39_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>39: Multi Color, Single Color, or Random Mode - Byte 1</label>
+        <description>todo</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Colorful mode configuration</label>
+        <description><![CDATA[
+Colorful mode configuration<br /><h1>Overview</h1><p>Colorful mode configuration.</p> <p>1 = Rainbow mode.</p> <p>2 = Multi color mode.</p> <p>3 = Fade out and fade in (Red).</p> <p>4 = Fade out and fade in (Green).</p> <p>5 = Fade out and fade in (Blue).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Rainbow mode</option>
+          <option value="2">Multi color mode</option>
+          <option value="3">Fade out and fade in (Red)</option>
+          <option value="4">Fade out and fade in (Green)</option>
+          <option value="5">Fade out and fade in (Blue)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Notifications for Association Group 1</label>
+        <description>Send notifications about strip state changes to association group 1</description>
+        <default>1</default>
+        <options>
+          <option value="0">No notifications</option>
+          <option value="1">Hail CC</option>
+          <option value="2">Basic CC report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_112_1" type="integer" groupName="configuration">
+        <label>112: Dimmer mode</label>
+        <description><![CDATA[
+Dimmer mode:<br /><h1>Overview</h1><p>Dimmer mode:</p> <p>0 = Parabolic curve.</p> <p>1 = Index curve.</p> <p>2 = (Parabolic + Index)/2.</p> <p>3 = Linear. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Parabolic curve</option>
+          <option value="1">Index curve</option>
+          <option value="2">(Parabolic + Index)/2</option>
+          <option value="3">Linear</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Notification group for strip state changes<br /><h1>Overview</h1><p> Use configuration parameter 80 to define what notifications this group receives.</p>  
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Retransmit</label>
+        <description><![CDATA[
+Retransmit commands to associated nodes<br /><h1>Overview</h1><p>Forward the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Scene Activation Set to associated nodes in this group when the LED Strip receives the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Scene Activation Set commands from the main controller. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="aeon_zw121_00_000_meter_current_param37">
+    <item-type>Number</item-type>
+    <label>Color Transition Style</label>
+    <description>Defines how the strip transitions between colors</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Smooth color transition</option>
+        <option value="1">Fade out fade in transition</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

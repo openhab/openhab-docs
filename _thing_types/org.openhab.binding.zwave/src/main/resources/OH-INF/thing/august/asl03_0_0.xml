@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="august_asl03_00_000" listed="false">
+    <label>ASL-03 August Smart Lock Pro 3rd Gen</label>
+    <description><![CDATA[
+August Smart Lock Pro 3rd Gen<br /><h1>Overview</h1><p>Give your customer total control over their front door, from anywhere. The August Smart Lock Pro is the leading Z-Wave Plus retrofit smart lock. You can lock and unlock your door, create virtual keys for guests, and keep track of who comes and goes with a 24/7 activity log, all from your iOS or Android smartphone.</p> <p>The August Smart Lock Pro features Z-Wave Plus and BLE and it is the only lock to support the three leading voice-assistants, Siri, Google Assistant, and Amazon Alexa. The lock quickly installs on the inside of your door with just a screwdriver. Keep your exterior door hardware exactly as it is and use your traditional key any time.</p> <br /><h2>Inclusion Information</h2><p>In order to include the August Smart Lock on to a Z-Wave network the user will have to do the following:</p> <ol><li>Open the August app</li> <li>Go to the Lock Settings screen</li> <li>Select Z-Wave Settings</li> <li>Select Add To A Z-Wave Network</li> <li>Put the controller into inclusion mode and select My Hub is in Inclusion Mode on the August app</li> </ol><br /><h2>Exclusion Information</h2><p>In order to exclude the August Smart Lock from a Z-Wave network the user will have to do the following:</p> <ol><li>Open the August app</li> <li>Go to the Lock Settings screen</li> <li>Select Z-Wave Settings</li> <li>Select Remove Z-Wave Device</li> <li>Put the controller into exclusion mode and select My Hub is in Exlusion Mode on the August app</li> </ol><br /><h2>Wakeup Information</h2><p>Any operation (manual, RF, etc.) will wake up the lock.</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door State Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">August Smart Locks</property>
+      <property name="modelId">ASL-03</property>
+      <property name="manufacturerId">033F</property>
+      <property name="manufacturerRef">0000:0594,0000:DF29,0001:0001</property>
+      <property name="dbReference">743</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+battery status, door lock operation status, and device reset locally<br /><h1>Overview</h1><p>The Lifeline group on this lock is used to report battery status, door lock operation status, and device reset locally notifications to nodes on the group list.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Report 2</label>
+        <description><![CDATA[
+Door lock operation status<br /><h1>Overview</h1><p>The Doorlock Op group on this lock is used to report door lock operation status to nodes on the group list.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

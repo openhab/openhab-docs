@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9102facct_00_000" listed="false">
+    <label>ZV9102FA-CCT Z-wave CCT LED controller</label>
+    <description><![CDATA[
+Z-wave CCT LED controller<br /><h1>Overview</h1><p>The SR-ZV9102FA-CCT is a dual color zwave lighting device and z wave slave that adopts z-wave RF Plus and z-wave mesh network technology with 4 channel, 5A per channel output for dual color LED lights. As a z-wave slave, the device can be added to z-wave network or removed from z-wave network by z-wave primary (master) controllers or gateway. The z wave devices are transceivers that enable to receive and transmit RF signal from the z wave remote while both of them are added to the network. The transceiver is a universal z wave slave which is compatible with universal z wave primary (master) controllers/gateway.</p> <br /><h2>Inclusion Information</h2><p>Power on the receiver. By factory default setting, the connected LED lights will be under a slow rhythm breath status which means the receiver is waiting to be searched by the master (primary) controller or z-wave gateway -&gt; set the z-wave master (primary) controller or gateway into network inclusion mode (please refer to the user manual to learn how)</p> <p>There shall be an indication on the master (primary) controller or gateway -&gt; LED light connected with the receiver flashes 5 times quickly to indicate successful and automatic adding to z-wave network</p> <br /><h2>Exclusion Information</h2><p>When the receiver has already been added to z-wave network and connected LED light is switched on, set the z-wave master (primary) controller or gateway into network exclusion mode (please refer to the user manual to learn how).</p> <p>Click the “prog” key on the receiver -&gt; there shall be an indication on the master (primary) controller -&gt; the connected LED light with the receiver flashes twice to indicate successful removal from z-wave network</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9102FA-CCT</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0200:D002</property>
+      <property name="dbReference">793</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: Save state on power failure</label>
+        <description><![CDATA[
+Shut off load (default), turn on load or restore saved state after power failure<br /><h1>Overview</h1><p>Load state after power failure</p> <p>0 - (default) shut off load</p> <p>1 - turn on load</p> <p>2 - restore saved state after power failure</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Enable/disable BASIC report</label>
+        <description><![CDATA[
+Enable/disable sending of BASIC reports<br /><h1>Overview</h1><p>Enable or disable sending of BASIC reports</p> <p>0 - Disable sending of BASIC reports</p> <p>1 - (default) Enable sending of BASIC reports</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>4: Colour channels</label>
+        <description><![CDATA[
+Set number of channels of LED load - single colour, CCT or RGBW<br /><h1>Overview</h1><p>Set number of channels of LED load</p> <p>0 - single colour - 4 channel PWM output to drive 4 channels of single colour LEDs</p> <p>1 - CCT - 2 channel PWM output to drive CCT LEDs R/B control warm white, G/W control cool white</p> <p>2 - (default) RGBW - single channel PWM output to control RGBW LEDs</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>5: Stage mode</label>
+        <description><![CDATA[
+Set stage mode for lighting changes<br /><h1>Overview</h1><p>Set lighting stage mode</p> <p>0 - (Default) - no stage mode</p> <p>1 - flash mode, colors set by parameter 8</p> <p>2 - rainbow mode, system fixed changing effect</p> <p>4 - fade in and fade out mode, color changes randomly</p> <p>5 - flash mode, color changes randomly</p> <p>6 - rainbow mode, color changes randomly</p> <p>7 - random mode, the colors switch randomly</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Stage mode speed</label>
+        <description><![CDATA[
+Set speed of changes in stage mode<br /><h1>Overview</h1><p>Set speed of stage mode 0-255</p> <p>0 is slowest 255 is fastest</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Stage mode execution time</label>
+        <description><![CDATA[
+Set execution time for stage mode<br /><h1>Overview</h1><p>Set execution time for stage mode</p> <p>0 (default) - unlimited time</p> <p>1 - 255 set execution time</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Stage mode hue</label>
+        <description><![CDATA[
+Set stage mode hue 0-255<br /><h1>Overview</h1><p>Set hue for stage mode</p> <p>0 - 255 (default)</p> <p>Only valid for fade in, fade out and flash mode.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Set external switch function</label>
+        <description><![CDATA[
+Enable / disable external switch for inclusion / exclusion<br /><h1>Overview</h1><p>Enable / disable external switch for inclusion / excluison of the device to / from the network</p> <p>0 - (default) disable switch</p> <p>1 - enable switch</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Single Cast DEVICE_RESET_LOCALLY_NOTIFICATION (sent when factory reset the device)</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

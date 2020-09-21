@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_46203_00_000" listed="false">
+    <label>46203 GE Enbrighten Z-Wave Plus Smart Dimmer</label>
+    <description><![CDATA[
+GE Enbrighten Z-Wave Plus Smart Dimmer<br /><h1>Overview</h1><p>Set the scene with the GE Enbrighten Z-Wave In-Wall Smart Dimmer with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart dimmer operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, Nexia and more.</p> <h4>Features</h4> <ul><li>ALEXA COMPATIBLE - REQUIRES AN ALEXA SUPPORTED HUB for voice control with Echo Products (Alexa device and hub sold separately). CANNOT connect directly with ECHO PLUS (Only ZigBee products can connect directly to Echo Plus).</li> <li>Wirelessly schedule, control and adjust the brightness of any dimmable wall or ceiling light - control from anywhere, at any time with any mobile device. Supported voltage - 120 VAC. Wireless Range: Up to 150 feet</li> <li>SPACE-SAVING HOUSING DESIGN –Improved components reduced the housing depth by up to 20 percent compared to previous Z-Wave models and eliminated the need for heat tabs.</li> <li>Quick Fit enhancements are the ideal smart solution for older-style switch boxes, multi-gang configurations or any other application with limited space.</li> <li>EASY INSTALLATION WITH SIMPLE WIRE – Auto line-load sensing terminals support fast and easy installation by detecting line and load wires and configuring the dimmer accordingly.</li> <li>Dual ground ports, which are offset to avoid switch box mounting screws, support daisy-chaining in multi-switch setups.</li> <li>REQUIRES A Z-WAVE CERTIFIED GATEWAY - Compatible with the following Z-Wave certified Hubs: SmartThings, Wink, ADT Pulse, Trane, Vivint, Nexia, Honeywell, HomeSeer, Harmony Home Hub Extender, Vera, Connect and Iris.</li> <li>INSTALLATION &amp; USAGE - Requires in-wall installation with hard-wired connections - Neutral wire REQUIRED. Includes white and light almond paddles (wall plate not included).</li> <li>For use with dimmable LED, CFL, incandescent and halogen bulbs. Supported wattage - 600W Incandescent, 150W CFL/LED. It must be connected to a supported hub in order to interact with the Amazon Alexa.</li> </ul><br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.</p> <p><strong>NOTE: See Parameter 19 to set alternate exclusion mode.</strong></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">46203</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3235</property>
+      <property name="dbReference">1080</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Status</label>
+        <description>LED Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Device is ON, LED is OFF; device is OFF, LED is ON</option>
+          <option value="1">Device is ON, LED is ON; device is OFF, LED is OFF</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Invert</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dim up/down rate</label>
+        <description><![CDATA[
+Dim up/down rate<br /><h1>Overview</h1><p>Adjust the speed at which the ramps to a specific value other than 0 and FF</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Quickly</option>
+          <option value="1">Slowly</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Switch Mode</label>
+        <description><![CDATA[
+Switch Mode<br /><h1>Overview</h1><p>Turn your dimmer into an On/Off switch with switch mode</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Dimmer Mode</option>
+          <option value="1">Switch Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description><![CDATA[
+Alternate Exclusion<br /><h1>Overview</h1><p>Never accidentally remove a device with alternate exclusion.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal, Press Any Button on the device</option>
+          <option value="1">Alternate</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>30: Minimum Dim Threshold</label>
+        <description><![CDATA[
+Minimum Dim Threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>31: Maximum Brightness Threshold</label>
+        <description><![CDATA[
+Maximum Brightness Threshold<br /><h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>32: Default Brightness Level</label>
+        <description><![CDATA[
+Default Brightness Level<br /><h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <ul><li>0 = Default</li> <li>1 - 99 = percentage</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline, Multilevel Switch Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Local Load</label>
+        <description><![CDATA[
+Support Basic Set and is controlled with the local load<br /><h1>Overview</h1><p>Supports Basic Set and is controlled with local load</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set Double Press</label>
+        <description><![CDATA[
+Supports Basic Set and is controlled by double pressing the On or Off button<br /><h1>Overview</h1><p>Basic Set and is controlled by double pressing the ON or OFF button</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

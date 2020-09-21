@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_sdm1100_00_000" listed="false">
+    <label>SD-M1100 Yale Smart Door Lock Z-Wave Module 2</label>
+    <description><![CDATA[
+Yale Smart Door Lock Z-Wave Module 2<br /><h1>Overview</h1><p>Smart Door Lock Z-Wave Module</p> <br /><h2>Inclusion Information</h2><p>Based on Remote Controller Add on user manual each Yale product.</p> <p>This in steps for Yale Conexis L1</p> <ol><li>Put the Z-Wave controller into add or learn mode</li> <li>Enter the master code on the lock, followed by #</li> <li>Press the 4 button, followed by #</li> <li>Press the 1 button followed by #</li> <li>Refer to the operation manual of the Z-Wave controller to complete the learn in proccess.</li> </ol><br /><h2>Exclusion Information</h2><p> Based on Remote Controller Remove on user manual each Yale product.</p> <p>This in steps for Yale Conexis L1</p> <ol><li>Put the Z-Wave controller into add or learn mode</li> <li>Enter the master code on the lock, followed by #</li> <li>Press the 4 button, followed by #</li> <li>Press the 3 button followed by #</li> <li>Refer to the operation manual of the Z-Wave controller to complete the learn in proccess.</li> </ol>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">SD-M1100</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">C600:0002</property>
+      <property name="dbReference">1141</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen24_01_000" listed="false">
+    <label>ZEN24 Toggle Dimmer v2</label>
+    <description><![CDATA[
+Toggle Dimmer v2<br /><h1>Overview</h1><ul><li>Manual or remote on/off and dimming control from your mobile device or computer (when included to a Z-Wave gateway controller)</li> <li>Universal 3-way capability – works with existing 3-way switches as long as neutral is present</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Works with LED, CFL, and incandescent bulbs</li> <li>Remembers and restores on/off / brightness status after power failure</li> <li>Based on universal multilevel switch command class - supported by most Z-Wave controllers</li> <li>May be associated and grouped with other Z-Wave devices for advanced home automation</li> <li>Air-gap switch for added safety</li> <li>Classic toggle design</li> <li>Built-in Z-Wave signal repeater for a stronger, more reliable network</li> <li>Configurable Ramp-Rate (Two options)</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller into inclusion mode</li> <li>Toggle the switch UP 3 times very quickly to finalize the inclusion process</li> <li>A new dimming device will appear on your controller's device list</li> </ol><p><strong>TROUBLESHOOTING TIPS: </strong></p> <p>If you are unable to include the Z-Wave switch to your controller, please try one of the following:</p> <ul><li>Bring the controller closer to your ZWave switch or use a hand-held secondary controller for inclusion</li> <li>Toggle your Z-Wave switch UP even quicker at least 5 or 7 times once you put the controller into inclusion mode to ensure the command has gone through</li> <li>Put your controller into EXCLUSION mode and toggle the switch DOWN 3 times quickly, then try adding it to your network again</li> </ul><br /><h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller into exclusion mode 3. Toggle the switch DOWN</li> <li>times very quickly to complete the exclusion process</li> <li>The device will disappear from your controller's device list</li> </ol><p>Please repeat the process following all steps carefully if the first attempt is unsuccessful.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN24</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">B112:261C</property>
+      <property name="versionMin">1.0</property>
+      <property name="versionMax">1.255</property>
+      <property name="dbReference">1011</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Toggle Control</label>
+        <description><![CDATA[
+Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you want the to turn the light on by clicking the toggle up or down Values:</p> <p>0 – Toggle up turns the light on, toggle down turns the light off (default);</p> <p>1 – Toggle up turns the light off, toggle down turns the light on</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Ramp Rate Control</label>
+        <description><![CDATA[
+Choose from 2 ramp rate options (fade-in / fade-out effect)<br /><h1>Overview</h1><p>Choose from 2 ramp rate options (fade-in / fade-out effect for on / off operation)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Slow Ramp Rate</option>
+          <option value="1">Fast Ramp Rate</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Once the Z-Wave switch is added to your network, you are able to turn the device on or off and adjust brightness remotely from your mobile device, computer, or Z-Wave remote control. Depending on your Z-Wave gateway's home automation software capabilities, you may be able to associate your ZWave switch in groups with other ZWave devices to schedule scenes and create events. This toggle dimmer switch supports Group 1 with up to 5 devices for lifeline communication. This device will send MULTILEVEL REPORT to Group 1 when operated manually. Please refer to your controller's user guide for advanced programming instructions as they are a little different for each software.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

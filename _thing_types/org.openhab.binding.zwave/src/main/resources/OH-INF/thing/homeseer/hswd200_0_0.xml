@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_hswd200_00_000" listed="false">
+    <label>HS-WD200+ Scene Capable Wall Dimmer Switch</label>
+    <description><![CDATA[
+Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave wall dimmer that’s designed for wireless on-oﬀ-dim control of connected dimmable lighting loads.</p> <br /><h2>Inclusion Information</h2><p>Put your Z-Wave controller into inclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="homeseer_hswd200_00_000_config_decimal_param13">
+        <label>Mode of Operation</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param14" typeId="homeseer_hswd200_00_000_config_decimal_param14">
+        <label>Normal mode LED colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=14</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param21" typeId="homeseer_hswd200_00_000_config_decimal_param21">
+        <label>Status mode LED 1 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=21</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param22" typeId="homeseer_hswd200_00_000_config_decimal_param22">
+        <label>Status mode LED 2 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=22</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param23" typeId="homeseer_hswd200_00_000_config_decimal_param23">
+        <label>Status mode LED 3 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=23</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param24" typeId="homeseer_hswd200_00_000_config_decimal_param24">
+        <label>Status mode LED 4 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=24</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param25" typeId="homeseer_hswd200_00_000_config_decimal_param25">
+        <label>Status mode LED 5 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=25</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param26" typeId="homeseer_hswd200_00_000_config_decimal_param26">
+        <label>Status mode LED 6 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=26</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param27" typeId="homeseer_hswd200_00_000_config_decimal_param27">
+        <label>Status mode LED 7 Colour</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=27</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param30" typeId="homeseer_hswd200_00_000_config_decimal_param30">
+        <label>Status mode LEDs Blink frequency</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=30</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param31" typeId="homeseer_hswd200_00_000_config_decimal_param31">
+        <label>Status mode LEDs Blink status (Bitmask)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=31</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-WD200+</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">4447:3036</property>
+      <property name="versionMax">5.9</property>
+      <property name="dbReference">806</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Bottom LED Operation</label>
+        <description>Sets the operation of the bottom LED</description>
+        <default>1</default>
+        <options>
+          <option value="0">Bottom LED ON if load is OFF</option>
+          <option value="1">Bottom LED OFF if load is OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Orientation</label>
+        <description>Set paddle's load orientation</description>
+        <default>0</default>
+        <options>
+          <option value="0">Top of Paddle turns load ON</option>
+          <option value="1">Bottom of Paddle turns load ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="90">
+        <label>11: Remote Ramp Rate</label>
+        <description>Set dimmer ramp rate for remote control</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="90">
+        <label>12: Local Ramp Rate</label>
+        <description>Set dimmer ramp rate for local control</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Status Mode</label>
+        <description>Set dimmer display mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Load Status</option>
+          <option value="1">Custom Status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Load Status LED Color</label>
+        <description>Set the LED color when displaying load status</description>
+        <default>0</default>
+        <options>
+          <option value="0">White</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Status LED 1 Color</label>
+        <description>Status LED 1 Color (bottom)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Status LED 2 Color</label>
+        <description>Status LED 2 Color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Status LED 3 Color</label>
+        <description>Status LED 3 Color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Status LED 4 Color</label>
+        <description>Status LED 4 Color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Status LED 5 Color</label>
+        <description>Status LED 5 Color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration">
+        <label>26: Status LED 6 Color</label>
+        <description>Status LED 6 Color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Status LED 7 Color</label>
+        <description>Status LED 7 Color (top)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Blink Frequency</label>
+        <description>Set blink frequency when displaying custom status</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Blink</option>
+          <option value="1">Blink 100ms ON, 100ms OFF</option>
+          <option value="2">Blink 200ms ON, 200ms OFF</option>
+          <option value="3">Blink 300ms ON, 300ms OFF</option>
+          <option value="4">Blink 400ms ON, 400ms OFF</option>
+          <option value="5">Blink 500ms ON, 500ms OFF</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
+        <label>31: LED 1 Blink Status</label>
+        <description>LED 1 Blink Status (bottom)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000002" type="integer" groupName="configuration">
+        <label>31: LED 2 Blink Status</label>
+        <description>LED 2 Blink Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000004" type="integer" groupName="configuration">
+        <label>31: LED 3 Blink Status</label>
+        <description>LED 3 Blink Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000008" type="integer" groupName="configuration">
+        <label>31: LED 4 Blink Status</label>
+        <description>LED 4 Blink Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000010" type="integer" groupName="configuration">
+        <label>31: LED 5 Blink Status</label>
+        <description>LED 5 Blink Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000020" type="integer" groupName="configuration">
+        <label>31: LED 6 Blink Status</label>
+        <description>LED 6 Blink Status</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1_00000040" type="integer" groupName="configuration">
+        <label>31: LED 7 Blink Status</label>
+        <description>LED 7 Blink Status (top)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Solid</option>
+          <option value="1">Blink</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline association only supports the "manual reset" event.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>Status Mode</label>
+    <description>Set dimmer display mode</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Load Status</option>
+        <option value="1">Custom Status</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param14">
+    <item-type>Number</item-type>
+    <label>Load Status LED Color</label>
+    <description>Set the LED color when displaying load status</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">White</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param21">
+    <item-type>Number</item-type>
+    <label>Status LED 1 Color</label>
+    <description>Status LED 1 Color (bottom)</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param22">
+    <item-type>Number</item-type>
+    <label>Status LED 2 Color</label>
+    <description>Status LED 2 Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param23">
+    <item-type>Number</item-type>
+    <label>Status LED 3 Color</label>
+    <description>Status LED 3 Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param24">
+    <item-type>Number</item-type>
+    <label>Status LED 4 Color</label>
+    <description>Status LED 4 Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param25">
+    <item-type>Number</item-type>
+    <label>Status LED 5 Color</label>
+    <description>Status LED 5 Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param26">
+    <item-type>Number</item-type>
+    <label>Status LED 6 Color</label>
+    <description>Status LED 6 Color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param27">
+    <item-type>Number</item-type>
+    <label>Status LED 7 Color</label>
+    <description>Status LED 7 Color (top)</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param30">
+    <item-type>Number</item-type>
+    <label>Blink Frequency</label>
+    <description>Set blink frequency when displaying custom status</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">No Blink</option>
+        <option value="1">Blink 100ms ON, 100ms OFF</option>
+        <option value="2">Blink 200ms ON, 200ms OFF</option>
+        <option value="3">Blink 300ms ON, 300ms OFF</option>
+        <option value="4">Blink 400ms ON, 400ms OFF</option>
+        <option value="5">Blink 500ms ON, 500ms OFF</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hswd200_00_000_config_decimal_param31">
+    <item-type>Number</item-type>
+    <label>LED 7 Blink Status</label>
+    <description>LED 7 Blink Status (top)</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Solid</option>
+        <option value="1">Blink</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

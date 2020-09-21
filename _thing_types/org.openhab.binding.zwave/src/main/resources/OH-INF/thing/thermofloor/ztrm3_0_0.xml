@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_ztrm3_00_000" listed="false">
+    <label>HEATIT Z-TRM3 Floor thermostat</label>
+    <description><![CDATA[
+Floor thermostat<br /><h1>Overview</h1><h3>FEATURES</h3> <ul><li>Floor sensor</li> <li>Internal room sensor</li> <li>External room sensor (connected by cable)</li> <li>Temperature limiter</li> <li>SmartStart</li> <li>Weekly program/setback via gateway</li> <li>Temperature read out in gateway</li> <li>Firmware update (OTA)</li> <li>Power metering</li> <li>Relay status LED</li> <li>Single pole switch</li> <li>Lock mode/child lock</li> <li>Calibration</li> <li>5 associations</li> <li>Supports encryption mode: S0, S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><br /><h2>Inclusion Information</h2><p>1. Press Center (confirm) for 10 seconds. The display will show OFF. 2. Press Right (down) 5 times until you see Con on the display.3. Start the add/remove device process in your primary controller.4. Start the add/remove mode in the Heatit Z-TRM3 by pressing Center (confirm) for approximately 2 seconds. Adding/removing mode is indicated on the display by rotating LED segments on the display. This lasts until the timeout occurs after 90 seconds, or until the module has been added/removed in the network. Confirmation will show Inc/EcL on the display. Exit programming mode by choosing ESC in the menu. Your thermostat is now ready for use with default settings</p> <br /><h2>Exclusion Information</h2><p>1. Press Center (confirm) for 10 seconds. The display will show OFF. 2. Press Right (down) 5 times until you see Con on the display.3. Start the add/remove device process in your primary controller.4. Start the add/remove mode in the Heatit Z-TRM3 by pressing Center (confirm) for approximately 2 seconds. Adding/removing mode is indicated on the display by rotating LED segments on the display. This lasts until the timeout occurs after 90 seconds, or until the module has been added/removed in the network. Confirmation will show Inc/EcL on the display. Exit programming mode by choosing ESC in the menu. Your thermostat is now ready for use with default settings.NB! When the thermostat is removed from the gateway, the parameters are not reset. To reset the parameters, see Chapter 7: ”Factory reset”. If adding/removing fails, Err (error) will appear. Please perform a ”remove device” process and try again. If Err displays again, please see Chapter 7: “Factory reset”.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="thermofloor_ztrm3_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="thermofloor_ztrm3_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state1" typeId="thermostat_state">
+        <label>Thermostat Operating State 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating1" typeId="thermostat_setpoint">
+        <label>Setpoint (heating) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Sensor (temperature) 3</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature4" typeId="sensor_temperature">
+        <label>Sensor (temperature) 4</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:4;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">HEATIT Z-TRM3</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0003:0203</property>
+      <property name="dbReference">1238</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Operation mode</label>
+        <description><![CDATA[
+Operation mode<br /><h1>Overview</h1><p>Value = 0, Off <br />Value = 1, Heating mode, (default)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Heating mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor Mode</label>
+        <description>Sensor Mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">F-mode, floor sensor mode</option>
+          <option value="1">A-mode, internal room sensor mode</option>
+          <option value="2">AF-mode, internal roomsensor with floor limitation</option>
+          <option value="3">A2-mode, external room sensor mode</option>
+          <option value="4">A2F-mode, external sensor with floor limitation</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Floor Sensor Type</label>
+        <description>Floor Sensor Type</description>
+        <default>0</default>
+        <options>
+          <option value="0">10K NTC</option>
+          <option value="1">12K NTC</option>
+          <option value="2">15K NTC</option>
+          <option value="3">22K NTC</option>
+          <option value="4">33K NTC</option>
+          <option value="5">47K NTC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="3" max="30">
+        <label>4: Temperature Control Hysteresis</label>
+        <description><![CDATA[
+Temperature Control Hysteresis<br /><h1>Overview</h1><p>0.3°C to 3.0°C. Default is 5 (0.5°C)</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>5: Floor Minimum Temperature Limit</label>
+        <description><![CDATA[
+Floor Minimum Temperature Limit<br /><h1>Overview</h1><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>6: Floor MaximumTemperature Limit</label>
+        <description><![CDATA[
+Floor MaximumTemperature Limit<br /><h1>Overview</h1><p>5.0°C to 40.0°C. Default is 400 (40.0°C)</p>
+        ]]></description>
+        <default>400</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>7: Air Minimum Temp Limit (ALo)</label>
+        <description><![CDATA[
+Air Minimum Temp Limit (ALo)<br /><h1>Overview</h1><p>5.0°C to 40.0°C. Default is 50 (5.0°C)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>8: Air Maximum Temp Limit (AHi)</label>
+        <description><![CDATA[
+Air Maximum Temp Limit (AHi)<br /><h1>Overview</h1><p>5.0°C to 40.0°C. Default is 400 (40.0°C)</p>
+        ]]></description>
+        <default>400</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>9: Heating Mode Setpoint</label>
+        <description><![CDATA[
+Heating Mode Setpoint<br /><h1>Overview</h1><p>5.0°C to 40.0°C. Default is 210 (21.0°C)</p>
+        ]]></description>
+        <default>210</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="-60" max="60">
+        <label>10: Room Sensor Calibration</label>
+        <description><![CDATA[
+Room Sensor Calibration<br /><h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="-60" max="60">
+        <label>11: Floor Sensor Calibration</label>
+        <description><![CDATA[
+Floor Sensor Calibration<br /><h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="-60" max="60">
+        <label>12: External Sensor Calibration</label>
+        <description><![CDATA[
+External Sensor Calibration<br /><h1>Overview</h1><p>-6.0°C to 6.0°C. Default is 0 (0.0°C)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Temperature Display</label>
+        <description><![CDATA[
+Temperature Display<br /><h1>Overview</h1><p>Selects which temperature is shown on the display. Refer to Chapter 11 ”Standby and main screen”.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Display setpoint temperature (Default)</option>
+          <option value="1">Display measured temperature</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>14: Button brighness dimmed state</label>
+        <description><![CDATA[
+Button brighness dimmed state<br /><h1>Overview</h1><p>Configure the brightness of the buttons in dimmed state.</p> <p>0 to 100% (Default 50%)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>15: Button brighness active state</label>
+        <description><![CDATA[
+Button brighness active state<br /><h1>Overview</h1><p>Configure the brightness of the buttons in active state.</p> <p>0 to 100% (Default 100%)</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>16: Display brighness dimmed state</label>
+        <description><![CDATA[
+Display brighness dimmed state<br /><h1>Overview</h1><p>Configure the brightness of the display in dimmed state.</p> <p>0 to 100% (Default 100%)</p>  
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>17: Display brighness active state</label>
+        <description><![CDATA[
+Display brighness active state<br /><h1>Overview</h1><p>Configure the brightness of the display, in active state.</p> <p>0 to 100% (Default 100%)</p>  
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="30" max="32767">
+        <label>18: Temperature report interval</label>
+        <description><![CDATA[
+Temperature report interval<br /><h1>Overview</h1><p>Time interval between consecutive temperature reports.</p> <p>Temperature reports can also be sent as a result of polling.</p> <p>30 seconds to 32767 seconds. Default is 60 seconds</p>  
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>19: Temperature report hysteresis</label>
+        <description><![CDATA[
+Temperature report hysteresis<br /><h1>Overview</h1><p>The temperature report will be sent if there is a difference in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can also be sent as a result of polling.</p> <p>0.1°C to 10.0°C. Default is 10 (1.0°C)</p>  
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="30" max="32767">
+        <label>20: Meter report interval</label>
+        <description><![CDATA[
+Meter report interval<br /><h1>Overview</h1><p>Time interval between consecutive meter reports.</p> <p>Meter reports can also be sent as a result of polling.</p> <p>30 seconds to 32767 seconds. Default is 90 seconds</p>  
+        ]]></description>
+        <default>90</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Meter report delta value</label>
+        <description><![CDATA[
+Meter report delta value<br /><h1>Overview</h1><p>Delta value in kWh between consecutive meter reports. Meter reports can also be sent as a result of polling.</p>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="0">Reporting meter based on change is disabled</option>
+          <option value="10">A delta value of 0 to 25.5 kWh</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Relay State ON/OFF</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Internal Sensor</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: External Sensor</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Floor Senosr</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="thermofloor_ztrm3_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="thermofloor_ztrm3_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

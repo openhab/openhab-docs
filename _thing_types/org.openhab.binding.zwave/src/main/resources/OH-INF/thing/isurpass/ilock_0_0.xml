@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="isurpass_ilock_00_000" listed="false">
+    <label>iLock Smart lock</label>
+    <description><![CDATA[
+Smart lock<br /><h1>Overview</h1><p>The door lock can work independently as a electronic lock, without any controller. And also work with mobile APP and other home automation devices through a Z-wave gateway.</p> <p>With the gateway, users can always know who is visiting, track all the open log, check device status,make association, authorization, issue temporary password to visitors/cleaners,etc.</p> <p>The door lock is standard Z-wave device, it is compatible with all Z-wave gateway, please refer to each gateway manual for details.</p> <p><strong>Notes:</strong></p> <ol><li>In default station, any password can unlock the doorlock, please register admin password immediately after installation, do not close the door before everything check ok.</li> <li>Unlock with 4 ways: Password, Mechanical key, App, Card(option).</li> <li>Power supply by 2 ways: 4*AA Battery for normal use &amp; External 9V Battery for emergency.</li> <li>Available for door thickness 38-90mm.</li> <li>Take care of the password, suggest to change it for a certain period for safe.</li> <li>Do not operate it with wet hand, keep doorlock away from liquid.</li> <li>Lock the door when leaving home.</li> <li>Please replace all new battery at the same time when low-voltage battery alarm, do not mix the battery with new and old.</li> <li>Please keep a mechanical key in a suitable place for emergency situation.</li> </ol><br /><h2>Inclusion Information</h2><p>Inclusion： add a device into a zwave network.</p> <p>1）Set gateway in Inclusion mode or add mode【 pleae refer to gateway guide】</p> <p>2）Set door lock in learn mode 【see page 7 ,about 10 Inclusion/Exclusion】</p> <p>3）Wait until success【 pleae refer to gateway guide】</p> <br /><h2>Exclusion Information</h2><p>Exclusion：Delet a device for zwave network.</p> <p>1）Set gateway in Exclusion mode or delete mode【 pleae refer to gateway guide】</p> <p>2）Set door lock in learn mode 【see page 7 ,about 10 Inclusion/Exclusion】</p> <p>3）Wait until success【 pleae refer to gateway guide】</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen iSurpass Technology Co. ,Ltd</property>
+      <property name="modelId">iLock</property>
+      <property name="manufacturerId">021C</property>
+      <property name="manufacturerRef">634B:504C</property>
+      <property name="dbReference">964</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Our product supports an association group, and this group only support one node(one device) to receive unlock/lock message, battery report, alarm report. Please refer to your gateway guide to know how to set an association.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Notify</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>COMMAND_CLASS_ALARM</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

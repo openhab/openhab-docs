@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw075_00_000" listed="false">
+    <label>ZW075 Smart Energy Switch 3rd Edition</label>
+    <description><![CDATA[
+Smart Energy Switch 3rd Edition<br /><h1>Overview</h1><p>Smart Energy Switch 3rd Edition</p> <ul><li>Remotely turn connected device on/off to save electricity</li> <li>Reports wattage consumption or kwh energy usage</li> <li>Small size to help minimize blocking of other AC outlets</li> </ul><br /><h2>Inclusion Information</h2><p>Put your controller into inclusion mode. Press the Action Button on your switch. If your switch has been successfully linked to your network, its LED will no longer blink. If the linking was unsuccessful the LED will continue to blink.</p> <br /><h2>Exclusion Information</h2><p>Put your controller into exclusion mode. Press the Action Button on your switch. If your switch has been successfully removed from your network, its LED will blink. If the removal was unsuccessful its LED will not blink.</p> <br /><h2>Wakeup Information</h2><p>N/A</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW075</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0003:004B,0103:004B,0203:004B</property>
+      <property name="versionMax">3.255</property>
+      <property name="dbReference">83</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Blinking Behaviour</label>
+        <description><![CDATA[
+The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. 1 - 255 The MSB defines the on/off interval of the blinking. The unit is 0.1 s. This is a double byte value.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Current Overload Protection</label>
+        <description><![CDATA[
+Load will be closed when the Current over runs<br /><h1>Overview</h1><p> Load will be closed when the Current over runs (US: 15.5A, other country: 16.2A) for more than 2 minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Output Load Status</label>
+        <description>Configure the output load status after re‐power on.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Last Status</option>
+          <option value="1">Always On</option>
+          <option value="2">Always Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Notification on Status Change</label>
+        <description><![CDATA[
+Enable device to send notification to associated devices<br /><h1>Overview</h1><p>Enable device to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed. DEFAULT is Disable</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Hail CC Sent</option>
+          <option value="2">Basic CC Report Sent</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: Configure the state of red LED</label>
+        <description><![CDATA[
+Enable the device to send notification to associated devices (Group 1)<br /><h1>Overview</h1><p>Enable the device to send notification to associated devices (Group 1) when the state of the Micro Smart Switch's load changed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">The LED will follow the status of its load</option>
+          <option value="1">Switch off after 5 seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration">
+        <label>90: Enables/disables parameter 91/92</label>
+        <description><![CDATA[
+Enable/Disable automated sending of report triggered by minimal change of value.<br /><h1>Overview</h1><p>Users, who want a more constant monitoring of power consumption should set this value to 1. The reporting period is by default quite long ( approx. 35minutes)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>91: Minimum Change to send Report (Watt)</label>
+        <description><![CDATA[
+The value represents the minimum change in Wattage for a Report to be sent.<br /><h1>Overview</h1><p> Range is 0 - 32000</p>
+        ]]></description>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_92_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>92: Minimum Change to send Report (%)</label>
+        <description><![CDATA[
+Minimum change in Wattage Percent for a report to be sent.<br /><h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent. Range is 0 to 100%</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Set 101‐103 to default</label>
+        <description><![CDATA[
+ Enable/Disable automated report triggered by min. change of value.<br /><h1>Overview</h1><p> Enable/Disable automated sending of report triggered by minimal change of value.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Set to Default</option>
+          <option value="1">Nothing</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>101: Report type to send to Group 1</label>
+        <description><![CDATA[
+The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p>Therefore if you want all parameters sending regular r</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>102: Report type to send to Group 2</label>
+        <description><![CDATA[
+The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p> Therefore if you want all parameters sending regular re</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>103: Report type to send to Group 3</label>
+        <description><![CDATA[
+The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number &lt;br&gt; made up of the sum of the values for the individual parameters. &lt;br&gt; The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. &lt;br&gt; Therefore if you want all parameters sending regular re</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>111: Interval to send out reports to Group 1</label>
+        <description><![CDATA[
+Time Interval to send reports to Group 1<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 1 is sent out.</p> <p>0 s - 65535 s - Interval</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>112: Interval to send out reports of group 2</label>
+        <description><![CDATA[
+Time interval to send reports of group 2<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 2 is sent out.</p> <p>0 s - 65535 s - Interval</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>113: Interval to send out reports of group 3</label>
+        <description><![CDATA[
+Time interval when report of Reporting Group 3 is sent.<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 3 is sent out.</p> <p>0 s - 65535 s - Interval</p>
+        ]]></description>
+        <default>65535</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Enable/disable Configuration Lock</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

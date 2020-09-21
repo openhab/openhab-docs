@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zw189_00_000" listed="false">
+    <label>ZW189 Range Extender 7</label>
+    <description><![CDATA[
+Range Extender 7<br /><h1>Overview</h1><p>Aeotec Range Extender 7 was developed to amplify Z-Wave Z-Wave Plus signals. It is powered by Aeotec’s Gen7  technology. You can find out more about Range Extender 7 by following this link: https://aeotec.com/z-wave-repeater/.</p> <p><strong>Important safety information. </strong><br /></p> <p>Please read this and other device guides carefully. Failure to follow the recommendations set forth by Aeotec Limited may be dangerous or cause a violation of the law. The manufacturer, importer, distributor, and/or reseller will not be held responsible for any loss or damage resulting from not following any instructions in this guide or in other materials. </p> <p>Keep product away from open flames and extreme heat. Avoid direct sunlight or heat exposure.</p> <p>Range Extender 7 is intended for indoor use in dry locations only. Do not use in damp, moist, and/or wet locations. </p> <br /><h2>Inclusion Information</h2><p><strong>Adding your Range Extender into a Z-Wave network.</strong></p> <p>Getting your Range Extender up and running is as simple as plugging it into a wall outlet and adding it to your Z-Wave network. There are 2 methods to pairing your Range Extender depending on the capabilities of your Z-Wave gateway/controller/hub.</p> <p><strong>SmartStart Inclusion.</strong></p> <p>You can use this method of inclusion only if your Z-Wave gateway/controller/hub supports SmartStart.</p> <ol><li>Open up your Z-Wave gateway/controller/app.</li> <li>Select SmartStart inclusion.</li> <li>Scan the QR code located on the Range Extender 7.</li> <li>Within 10 minutes after powering your Range Extender 7, it will automatically get included into your Z-Wave gateway/controller/hub.<br /><br />LED will flash for 1 second after Repeater is powered, if successful, the LED will become a solid bright light for 2 seconds.</li> </ol><p><strong>Classic Inclusion.</strong></p> <ol><li>Decide on where you want your Range Extender to be placed and then plug it into a wall outlet.   Make sure that the LED is breathing its white LED.</li> <li>Set your Z-Wave Controller into pairing mode.</li> <li>Press the Z-Wave Button on your Range Extender and quickly release the button (should only be a quick tap action on the button).<br /><br />Range Extender 7 will quickly flash its white LED up to 30 seconds or until it is paired successfully. If successfully paired, the LEDs light will become brighter.<br /><br />If your repeater failed to pair, the LED will return to slow breathing LED. If it is this case, please return to step 2. <br /><br />If you pairing with S2 encryption/security, enter the first 5 digits of the DSK into your controller/gateway/hub interface when requested.</li> </ol><p>The DSK is printed on the Range Extender 7 itself located right under the QR code. </p> <br /><h2>Exclusion Information</h2><p><strong>Removing your Range Extender from a  Z-Wave network.</strong></p> <p>Your Range Extender can be removed from your  Z-Wave network at any time. You’ll need to use your Z-Wave network’s main controller. To set your Z-Wave controller/gateway into removal mode, please refer to the respective section within your controller instruction manual.</p> <ol><li>Set your Z-Wave Controller into device removal mode.</li> <li>Press the Z-Wave Button on your Range  Extender. </li> <li>If Range Extender has been successfully removed from your network, its  LED will return to a slow breathing light.</li> </ol><br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZW189</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0004:00BD,0104:00BD</property>
+      <property name="dbReference">1274</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Issue Device Reset Locally Notification when Factory Reset is performed.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

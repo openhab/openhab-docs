@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="devolo_09813_00_000" listed="false">
+    <label>09813 Home Control Smoke Detector</label>
+    <description><![CDATA[
+Home Control Smoke Detector<br /><h1>Overview</h1><p>The Home Control Smoke Detector alarms you acoustically via an unmistakable signal sound, visually via an LED light and, if used with the devolo Home Control Central Unit, via text, e-mail or app. Thanks to the mobile and simultaneous notification sent to multiple mobile phone numbers and e-mail addresses that you select, you can respond immediately even when on the go. When combined with other Home Control devices, the Home Control Smoke Detector can, for example, additionally turn on the lights and open the shades via the Z-Wave® controller</p> <br /><h2>Inclusion Information</h2><p>Press the program switch for 1 second at least to be included.</p> <br /><h2>Exclusion Information</h2><p>Press the program switch for 1 second at least to be excluded.</p> <br /><h2>Wakeup Information</h2><p>Press program switch once, the detector will send NIF signal first and will also send “Wake Up Notification” after 3 seconds</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Devolo</property>
+      <property name="modelId">09813</property>
+      <property name="manufacturerId">0175</property>
+      <property name="manufacturerRef">0502:1000,2004:04A4</property>
+      <property name="dbReference">615</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Battery capacity low</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The Home Control Smoke Detector continuously checks the battery capacity. If the battery capacity falls below a defined value of approx. 2.7V +-0.1V, a low battery alarm will be sent via Z-Wave®. If the capacity continues falling, the visual and acoustic battery capacity warning will be activated additionally.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsb54_00_000" listed="false">
+    <label>DSB54 Recessed Door/Window Sensor</label>
+    <description><![CDATA[
+Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor Gen5 has been crafted to power connected lighting using Z-Wave Plus. </p> <br /><h2>Inclusion Information</h2><ol><li>Place your gateway or controller into Z-Wave pair or inclusion mode.</li> <li>Press the Action Button on your Sensor.</li> <li>If your Sensor has been successfully linked to your network, its LED will become solid for 2 seconds then disappear. If linking was unsuccessful, the LED will continue to blink if you tap its button.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place your gateway or controller into Z-Wave unpair or exclusion mode</li> <li>Press the Action Button on your Sensor.</li> <li>If your switch has been successfully unlinked to your network, its LED will begin to blink for a short time. If linking was unsuccessful, the LED will return to its last state. Tap the button to confirm if it has been unpaired, if unpaired successfully, the LED will blink when tapped.</li> </ol><br /><h2>Wakeup Information</h2><p>Press and hold the Z-Wave button for 6 seconds</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSB54</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0036</property>
+      <property name="dbReference">68</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send Sensor binary report on open/close events</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Send Basic Set on open/close event</label>
+        <default>0</default>
+        <options>
+          <option value="0">On for opened, Off for closed</option>
+          <option value="1">Off for opened, On for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_1" type="integer" groupName="configuration">
+        <label>101: Low battery voltage check</label>
+        <description>Enable battery check</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>111: Low battery voltage check time</label>
+        <description>Minimum battery low check Interval time is 4 minutes (240 seconds)</description>
+        <default>112</default>
+      </parameter>
+
+      <parameter name="config_121_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>121: Flag values for triggered magnet switch</label>
+        <description>Flag values for which reports to send when the magnet switch is triggered</description>
+        <default>256</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Permit other configurations</label>
+        <description>Lock or Unlock other configuration set function</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock</option>
+          <option value="1">Lock</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_2_wo" type="integer" groupName="configuration">
+        <label>255: Reset to default</label>
+        <description><![CDATA[
+Reset to the default configuration<br /><h1>Overview</h1><p>1, Value=0x55555555、Default=1、Size=4<br />2, Value=0、Default=1、Size=1 Reset all configuration<br />parameters (except the parameter 254) to default settings.<br />3, Other values will be reserved.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: State Updates</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Battery Warnings</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

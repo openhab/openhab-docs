@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_psr031c_00_000" listed="false">
+    <label>PSR03-1C Panic Button</label>
+    <description><![CDATA[
+Panic Button<br /><h1>Overview</h1><p><br /></p> <br /><h2>Inclusion Information</h2><p>1. Put the Z-Wave Controller in inclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter inclusion mode.</p><p>3. After successful inclusion, the device will wake to receive the</p><p>setting command from Z-Wave Controller in about 20 seconds.</p> <br /><h2>Exclusion Information</h2><p>1. Put the Z-Wave Controller in exclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter exclusion mode.</p><p>3. Node ID has been excluded.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_emergency" typeId="alarm_emergency">
+        <label>Alarm (emergency)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=EMERGENCY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PSR03-1C</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0008:0027</property>
+      <property name="dbReference">1290</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes. The default value is 12(6 hours).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Emergency Alarm</label>
+        <description>Emergency Alarm</description>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

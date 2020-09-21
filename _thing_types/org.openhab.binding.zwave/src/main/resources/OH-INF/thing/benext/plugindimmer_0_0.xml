@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_plugindimmer_00_000" listed="false">
+    <label>plugInDimmer Plug-in Dimmer</label>
+    <description><![CDATA[
+Plug-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Plug-in Dimmer can be operated both manually as with Z-Wave.</li> <li>The Plug-in Dimmer can dim up to 125Watt.</li> <li>The Plug-in Dimmer is easy to install and configured.</li> <li>The Plug-in Dimmer can measure and report energy.</li> </ul><p>How it operates</p> <p>A lamp can be switched on and off, manually by pressing the button or by Z-Wave using the basic command class. A (dimmable) lamp can be dimmed to a level, manually by pressing and holding the button or by Z-Wave using the switch multilevel command class.</p> <br /><h2>Inclusion Information</h2><p>When the lamp and indicator light are off (!) press and hold the button. After circa 2 seconds, when the indicator light starts blinking, release the button to start the inclusion process.</p> <br /><h2>Exclusion Information</h2><p>When the lamp and indicator light are off (!) press and hold the button. After circa 2 seconds, when the indicator led starts blinking, release the button to start the exclusion process.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">plugInDimmer</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0018:0100</property>
+      <property name="dbReference">226</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Reset to factory settings</label>
+        <description>Set all configuration values to default values (factory settings).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Enable dimming</label>
+        <description><![CDATA[
+Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dimming option of the product.</p> <p>When disabled the dimming and fading routine are disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="25" max="150">
+        <label>6: Maximum powerload</label>
+        <description><![CDATA[
+Maximum powerload<br /><h1>Overview</h1><p>The maximum powerload in watts when light is turned on, when measured higher then this value the Plugin Dimmer is automatically stops with dimming or is turned off.</p>
+        ]]></description>
+        <default>125</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Dimming speed</label>
+        <description><![CDATA[
+Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Fading up speed</label>
+        <description><![CDATA[
+Fading up speed<br /><h1>Overview</h1><p>The speed of fading up when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Auto meter report: percentage</label>
+        <description><![CDATA[
+Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 1%  Maximum value = 100%</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Auto meter report: watt</label>
+        <description><![CDATA[
+Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 5 watt  Maximum value = 255 watt</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Auto meter report: time</label>
+        <description><![CDATA[
+Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent.</p> <p>Minimum value = 10 seconds  Maximum value = 255 seconds</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Last known status</label>
+        <description><![CDATA[
+Last known status<br /><h1>Overview</h1><p>What to do with lamp status when power applied. </p> <p>If 0x00: Always switch light off when power applied. </p> <p>If &gt; 0x00: Switch lamp on/off depending on last known lampstatus before power was disconnected.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Fading down speed</label>
+        <description><![CDATA[
+Fading down speed<br /><h1>Overview</h1><p>The speed of fading down when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Receives BASIC SET commands</description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Group 2</label>
+        <description>Receives METER and MULTILEVEL_SWITCH commands</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

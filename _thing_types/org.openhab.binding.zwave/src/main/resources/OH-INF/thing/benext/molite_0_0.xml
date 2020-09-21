@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_molite_00_000" listed="false">
+    <label>Molite Movement sensor with temperature and light sensor</label>
+    <description><![CDATA[
+Movement sensor with temperature and light sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The MoLiTe can detect movement,</li> <li>The MoLiTe can measure light intensity</li> <li>The MoLiTe can measure the temperature</li> <li>The MoLiTe can trigger a security system</li> </ul><br /><h2>Inclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /><h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for four seconds (mount the device).</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">Molite</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0003:0100,0003:0101</property>
+      <property name="dbReference">374</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Reset to factory settings</label>
+        <description>Set all configuration values to default values (factory settings).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="900">
+        <label>2: Mode timeout</label>
+        <description><![CDATA[
+Mode timeout<br /><h1>Overview</h1><p>The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.</p>
+        ]]></description>
+        <default>900</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="2700">
+        <label>3: Switch off time</label>
+        <description><![CDATA[
+Switch off time<br /><h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done.</p> <p>The Motion sensor is turned on and when movement is detected again.</p> <p>The mode timeout (cfg param 1) will start running all over again.</p> <p>When switch off time is done a basic off message is sent to the associated node</p>
+        ]]></description>
+        <default>2700</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>4: sensitivity</label>
+        <description>the sensitivity of the motion circuit</description>
+        <default>80</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: The mode</label>
+        <description>The mode that is entered after detection</description>
+        <default>2</default>
+        <options>
+          <option value="1">Mode 1: no detection possible. Battery save mode.</option>
+          <option value="2">Mode 2: normal operation mode:</option>
+          <option value="3">Z-Wave chip is always on to request</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: The temperature offset</label>
+        <description>An offset for the temperature.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="17">
+        <label>7: Light table 100 %</label>
+        <description><![CDATA[
+Light table 100 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 100%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>17</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="38">
+        <label>8: Light table 90 %</label>
+        <description><![CDATA[
+Light table 90 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 90%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>38</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="85">
+        <label>9: Light table 80 %</label>
+        <description><![CDATA[
+Light table 80 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 80%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>85</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="186">
+        <label>10: Light table 70 %</label>
+        <description><![CDATA[
+Light table 70 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 70%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>186</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="407">
+        <label>11: Light table 60 %</label>
+        <description><![CDATA[
+Light table 60 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 60%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>407</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="891">
+        <label>12: Light table 50 %</label>
+        <description><![CDATA[
+Light table 50 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 50%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>891</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="1949">
+        <label>13: Light table 40 %</label>
+        <description><![CDATA[
+Light table 40 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 40%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>1949</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="4265">
+        <label>14: Light table 30 %</label>
+        <description><![CDATA[
+Light table 30 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 30%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>4265</default>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration"
+                 min="0" max="9332">
+        <label>15: Light table 20 %</label>
+        <description><![CDATA[
+Light table 20 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 20%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>9332</default>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="0" max="20417">
+        <label>16: Light table 10 %</label>
+        <description><![CDATA[
+Light table 10 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 10%.</p> <p>See chapter light table for more information.</p>
+        ]]></description>
+        <default>20417</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Devices to be switched on when motion detected</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices to be switched on when motion detected and off after on time</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

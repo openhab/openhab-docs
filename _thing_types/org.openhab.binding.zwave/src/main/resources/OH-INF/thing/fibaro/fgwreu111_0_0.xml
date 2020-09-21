@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgwreu111_00_000" listed="false">
+    <label>FGWREU-111 Fibaro Walli Roller Shutter</label>
+    <description><![CDATA[
+Fibaro Walli Roller Shutter<br /><h1>Overview</h1><p>Smart wall switch designed to control motors of roller blinds, awnings, venetian blinds and other single phase, AC powered devices via Z-Wave network.</p> <p>It measures active power and energy consumed by the controlled load.</p> <p>You can install it with provided cover plate and switch button or other compatible.</p> <br /><h2>Inclusion Information</h2><p>Z-Wave device learning mode, allowing to add the device to existing Z-Wave network:</p> <ol><li>Power the device.</li> <li>Set the main controller into the adding mode (OH2: search for new things, select Z-Wave binding).</li> <li>Quickly, three times click one of the buttons.</li> <li>If you are adding in Security S2 Authenticated, input the underlined part of the DSK (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame: <ul><li><strong>Green</strong> – successful (non-secure, S0, S2 non-authenticated),</li> <li><strong>Magenta</strong> – successful (Security S2 Authenticated),</li> <li><strong>Red</strong> – not successful.</li> </ul></li> </ol><br /><h2>Exclusion Information</h2><p>Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing also results in resetting the device to factory defaults:</p> <ol><li>Power the device.</li> <li>Set the main controller in remove mode (see the controller's manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control1" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control2" typeId="blinds_control">
+        <label>Slats Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGWREU-111</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">1D01:1000</property>
+      <property name="dbReference">1083</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>11: LED frame colour when moving</label>
+        <description><![CDATA[
+This parameter defines the LED colour when the motor is running.<br /><h1>Overview</h1><p>0 – LED disabled</p> <p>1 – White</p> <p>2 – Red</p> <p>3 – Green</p> <p>4 – Blue</p> <p>5 – Yellow</p> <p>6 – Cyan</p> <p>7 – Magenta</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>12: LED frame – colour when not moving</label>
+        <description><![CDATA[
+This parameter defines the LED colour when the device motor is not running.<br /><h1>Overview</h1><p>0 – LED disabled</p> <p>1 – White</p> <p>2 – Red</p> <p>3 – Green</p> <p>4 – Blue</p> <p>5 – Yellow</p> <p>6 – Cyan</p> <p>7 – Magenta</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>13: LED frame – brightness</label>
+        <description><![CDATA[
+This parameter allows to adjust the LED frame brightness.<br /><h1>Overview</h1><p>0 – LED disabled</p> <p>1-100 (1-100% brightness)</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>24: Buttons orientation</label>
+        <description><![CDATA[
+This parameter allows reversing the operation of the buttons.<br /><h1>Overview</h1><p>0 – default (1st button UP, 2nd button DOWN)</p> <p>1 – reversed (1st button DOWN, 2nd button UP)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>25: Outputs orientation</label>
+        <description><![CDATA[
+reversing the operation of Q1 and Q2<br /><h1>Overview</h1><p>This parameter allows reversing the operation of Q1 and Q2 without changing the wiring (e.g. in case of invalid motor connection).</p> <p>0 - default (Q1 – UP, Q2 – DOWN)</p> <p>1 - reversed (Q1 – DOWN, Q2 – UP)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot</label>
+        <description><![CDATA[
+Which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most sig-nificant bytes are set according to the official Z-Wave protocol specification.</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <ul><li>0x00 – no action,</li> <li>0xX1 – open,</li> <li>0xX2 – close,</li> <li>0x0X – no action on LED frame,</li> <li>0x1X – LED frame blinks red,</li> <li>0x2X – LED frame blinks green,</li> <li>0x4X – LED frame blinks blue,</li> <li>0x8X – dis-able LED frame,</li> <li>0xFX – LED frame LAPD signal (red-white-blue)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description><![CDATA[
+which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most sig-nificant bytes are set according to the official Z-Wave protocol specification.</p> <p>default: [0x05, 0xFF, 0x00, 0x00](Water Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <ul><li>0x00 – no action,</li> <li>0xX1 – open,</li> <li>0xX2 – close,</li> <li>0x0X – no action on LED frame,</li> <li>0x1X – LED frame blinks red,</li> <li>0x2X – LED frame blinks green,</li> <li>0x4X – LED frame blinks blue,</li> <li>0x8X – dis-able LED frame,</li> <li>0xFX – LED frame LAPD signal (red-white-blue)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4_0000000F" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description><![CDATA[
+which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most sig-nificant bytes are set according to the official Z-Wave protocol specification.</p> <p>Default: [0x01, 0xFF, 0x00, 0x00](Smoke Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <ul><li>0x00 – no action,</li> <li>0xX1 – open,</li> <li>0xX2 – close,</li> <li>0x0X – no action on LED frame,</li> <li>0x1X – LED frame blinks red,</li> <li>0x2X – LED frame blinks green,</li> <li>0x4X – LED frame blinks blue,</li> <li>0x8X – dis-able LED frame,</li> <li>0xFX – LED frame LAPD signal (red-white-blue)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot</label>
+        <description><![CDATA[
+which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most sig-nificant bytes are set according to the official Z-Wave protocol specification.</p> <p>default: [0x02, 0xFF, 0x00, 0x00](CO Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <ul><li>0x00 – no action,</li> <li>0xX1 – open,</li> <li>0xX2 – close,</li> <li>0x0X – no action on LED frame,</li> <li>0x1X – LED frame blinks red,</li> <li>0x2X – LED frame blinks green,</li> <li>0x4X – LED frame blinks blue,</li> <li>0x8X – dis-able LED frame,</li> <li>0xFX – LED frame LAPD signal (red-white-blue)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description><![CDATA[
+which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most sig-nificant bytes are set according to the official Z-Wave protocol specification.</p> <p>default: 0x04, 0xFF, 0x00, 0x00](Heat Alarm, any notification, no action)</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <ul><li>0x00 – no action,</li> <li>0xX1 – open,</li> <li>0xX2 – close,</li> <li>0x0X – no action on LED frame,</li> <li>0x1X – LED frame blinks red,</li> <li>0x2X – LED frame blinks green,</li> <li>0x4X – LED frame blinks blue,</li> <li>0x8X – dis-able LED frame,</li> <li>0xFX – LED frame LAPD signal (red-white-blue)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>35: Alarm configuration – duration</label>
+        <description><![CDATA[
+duration of alarm sequence<br /><h1>Overview</h1><p>This parameter defines duration of alarm se-quence. When time set in this parameter elaps-es, alarm is cancelled, LED frame and relay re-store normal operation, but do not recover state from before the alarm.</p> <p>0 – infinite</p> <p>1-32400 (1s-9h, 1s step) – duration</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>40: First button – scenes sent</label>
+        <description><![CDATA[
+which actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).Enabling scenes for triple click disables entering the device in learn mode by triple clicking</p> <p>0 (no scenes)</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>41: Second button – scenes sent</label>
+        <description><![CDATA[
+which actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).Enabling scenes for triple click disables entering the device in learn mode by triple clicking.</p> <p>0 (no scenes)</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>60: Power reports – include self-consumption</label>
+        <description><![CDATA[
+power measurements include device itself<br /><h1>Overview</h1><p>whether the power measurements should include power consumed by the device itself</p> <p>0 – self-consumption not included</p> <p>1 – self-consumption included</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>61: Power reports – on change</label>
+        <description><![CDATA[
+minimal change in measured power to report<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured power that re-sults in sending new report. For loads under 50W the parameter is irrelevant, report are sent every 5W change.</p> <p>0 - reporting on change disabled</p> <p>1-500 (1-500%, 1% step) – minimal change</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_62_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>62: Power reports – periodic</label>
+        <description><![CDATA[
+reporting interval for measured power<br /><h1>Overview</h1><p>This parameter defines reporting interval for measured power. Periodic reports are indepen-dent from changes in value (parameter 61).</p> <p>0 – periodic reports disabled</p> <p>30-32400 (30s-9h, 1s step) – time interval</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy reports – on change</label>
+        <description><![CDATA[
+minimal change in measured energy to report<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured energy that re-sults in sending new report.</p> <p>0 - reporting on change disabled</p> <p>1-500 (0.01-5kWh, 0.01kWh step) – minimal change</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>66: Energy reports – periodic</label>
+        <description><![CDATA[
+This reporting interval for measured energy<br /><h1>Overview</h1><p>This parameter defines reporting interval for measured energy. Periodic reports are indepen-dent from changes in value (parameter 65).</p> <p>0 – periodic reports disabled</p> <p>30-32400 (30s-9h, 1s step) – time interval</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>150: Force calibration</label>
+        <description><![CDATA[
+Set 2 to force device into calibration mode<br /><h1>Overview</h1><p>By setting this parameter to 2 the device enters the calibration mode. The parameter relevant only if the device is set to work in positioning mode (parameter 151 set to 1 or 2).</p> <p>0 - device is not calibrated</p> <p>1 - device is calibrated</p> <p>2 - force device calibration</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_151_1" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>151: Operating mode</label>
+        <description><![CDATA[
+This parameter allows adjusting operation ac-cording to the connected device.<br /><h1>Overview</h1><p>1 – roller blind (with positioning)</p> <p>2 – Venetian blind (with positioning)</p> <p>5 – roller blind with built-in driver</p> <p>6 – roller blind with built-in driver (impulse)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_152_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>152: Venetian blind – time of full turn of the slats</label>
+        <description><![CDATA[
+time of full turn cycle of the slats<br /><h1>Overview</h1><p>For Venetian blinds (parameter 151 set to 2) the parameter determines time of full turn cycle of the slats. The parameter is irrelevant for other modes.</p> <p>0-65535 (0 - 655.35s, every 0.01s) - time of turn</p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_153_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>153: Set slats back to previous position</label>
+        <description><![CDATA[
+slats positioning in various situations<br /><h1>Overview</h1><p>For Venetian blinds (parameter 151 set to 2) the parameter determines slats positioning in various situations. The parameter is irrelevant for other modes.</p> <p>0 – slats return to previously set position only in case of the main controller operation</p> <p>1 – slats return to previously set position in case of the main controller operation, momentary switch operation, or when the limit switch is reached</p> <p>2 – slats return to previously set position in case of the main controller operation, momen-tary switch operation, when the limit switch is reached or after receiving the Switch Multilevel Stop control frame</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_154_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>154: Delay motor stop after reaching end switch</label>
+        <description><![CDATA[
+time after which the motor will be stopped after contacts closed<br /><h1>Overview</h1><p>The parameter determines the time after which the motor will be stopped after end switch contacts are closed.</p> <p>1-255 (0.1s - 25.5 seconds)</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_155_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: Motor operation detection</label>
+        <description><![CDATA[
+Power threshold interpreted as reaching a limit switch.<br /><h1>Overview</h1><p>1-255 (1-255W) - report interval</p> <p>0 - no detection</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_156_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>156: Time of up movement</label>
+        <description><![CDATA[
+time needed for roller blinds to reach the top<br /><h1>Overview</h1><p>This parameter determines the time needed for roller blinds to reach the top. For modes with positioning value is set automatically during calibration, otherwise, it must be set manually.</p> <p>1-65535 (0.01 - 655.35 seconds)</p>
+        ]]></description>
+        <default>6000</default>
+      </parameter>
+
+      <parameter name="config_157_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>157: Time of down movement</label>
+        <description><![CDATA[
+time needed for roller blinds to reach the bottom<br /><h1>Overview</h1><p>This parameter determines the time needed for roller blinds to reach the bottom.For modes with positioning value is set automatically during calibration, otherwise, it must be set manually.</p> <p>1-65535 (0.01 - 655.35 seconds)</p>
+        ]]></description>
+        <default>6000</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Roller Shutter</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Slats</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

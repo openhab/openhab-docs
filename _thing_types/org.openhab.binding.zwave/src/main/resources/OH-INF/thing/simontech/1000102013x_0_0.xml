@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="simontech_1000102013x_00_000" listed="false">
+    <label>10001020-13X Dimmer IO: Phase cut dimmer</label>
+    <description><![CDATA[
+Dimmer IO: Phase cut dimmer<br /><h1>Overview</h1><p>The electronic dimmer switch 230V ~ with 2/3 wire phase cut is a switch from Simon 100 serie. These types of dimmer switches have a power of 50W to 240W for traditional loads and 9W to 100W for LED loads. This is highly recommended for all types of uses (domestic, hotels, hospitals ...). The dimmer switch is only compatible with Simon 100 frames.</p> <br /><h2>Inclusion Information</h2><ol><li>Put controller into inclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put controller into exclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">SimonTech S.L.U</property>
+      <property name="modelId">10001020-13X</property>
+      <property name="manufacturerId">0267</property>
+      <property name="manufacturerRef">0007:012D</property>
+      <property name="dbReference">1265</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Association LED</label>
+        <description>Association LED</description>
+        <default>0</default>
+        <options>
+          <option value="0">Turns the main LED ON</option>
+          <option value="255">Turns the main LED OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Set time</label>
+        <description><![CDATA[
+Set time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Fade time</label>
+        <description><![CDATA[
+Fade time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>6: Minimum dimming value</label>
+        <description><![CDATA[
+Minimum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Maximum dimming value</label>
+        <description><![CDATA[
+Maximum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>8: Last on value</label>
+        <description><![CDATA[
+Last on value<br /><h1>Overview</h1><p>Returns or sets the last non zero dimming value. In case of Set the device turns ON the load.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Calibration</label>
+        <description>Calibration</description>
+        <default>1</default>
+        <options>
+          <option value="1">Smart Calibrate</option>
+          <option value="2">Device is calibrated using Trailing Edge</option>
+          <option value="3">Device is calibrated using Leading Edge</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Delay ON</label>
+        <description><![CDATA[
+Delay ON<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Activation time</label>
+        <description><![CDATA[
+Activation time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Behavior of LED in repose</label>
+        <description>Behavior of LED in repose</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED OFF</option>
+          <option value="255">Central LED on at 20% of maximum level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lock input</label>
+        <description>Lock input</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock the direct control of load</option>
+          <option value="255">Lock the direct control of load</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_2_wo" type="integer" groupName="configuration">
+        <label>15: Reset default</label>
+        <description>Reset default</description>
+        <default>17170</default>
+        <options>
+          <option value="17170">Soft reset</option>
+          <option value="39015">Hard reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Delay OFF</label>
+        <description><![CDATA[
+Delay OFF<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Press action</label>
+        <description>Press action</description>
+        <default>5</default>
+        <options>
+          <option value="0">Device toggles the load</option>
+          <option value="1">Device turns ON the load</option>
+          <option value="2">Device turns OFF the load</option>
+          <option value="4">Device turns the load ON and then OFF</option>
+          <option value="5">Device toggles the load and dims</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1_wo" type="integer" groupName="configuration">
+        <label>20: Identify</label>
+        <description><![CDATA[
+Identify<br /><h1>Overview</h1><p>The central LED blinks for 5 seconds in order to identify the device.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="255">The dimmer blinks</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65379">
+        <label>21: State of charge</label>
+        <description><![CDATA[
+State of charge<br /><h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x00 Load is OFF</p> <p>0x01 Load is ON</p> </td> </tr><tr><td>Second byte</td> <td>0x00 - 0x063 Last active dimming value</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration" readOnly="true">
+        <label>23: Calibration required</label>
+        <description>Calibration required</description>
+        <default>0</default>
+        <options>
+          <option value="0">Calibration not required</option>
+          <option value="255">Calibration required</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Lock long press</label>
+        <description>Lock long press</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default long press</option>
+          <option value="255">Options</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul><li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul><p>Instant Power Consumption vary over 10% and is stable almost 2sec:</p> <ul><li>CC Meter, Meter Report, “Electric meter”, “Consumed”, “Watts”, Size 4, Precision 1, Value (W)</li> </ul><p>Calibration requirement change. (If device needs to be calibrated and is Added into a Z-Wave network, it will report after receive an Association Set of life line).</p> <ul><li>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xFF</li> <li>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</li> </ul><p>After reset the Z-Wave module, a DEVICE-RESET-LOCALLY-NOTIFICATION is sent.</p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: CTRL</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul><li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

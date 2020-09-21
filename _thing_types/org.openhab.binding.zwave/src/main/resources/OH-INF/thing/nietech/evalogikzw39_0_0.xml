@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_evalogikzw39_00_000" listed="false">
+    <label>ZW39 Dimmable Smart Plug</label>
+    <description><![CDATA[
+Dimmable Smart Plug<br /><h1>Overview</h1><p>EVA LOGIK ZW39 Plug is a Z-Wave PLUS On/Off + Dimmer Smart Plug-In Module + Z-Wave Range Extender which has one dimming smart plug.</p> <ul><li>Maximum load for the Z-Wave controlled outlet: 2.5A; 300W Incandescent or 100W Dimmable CFL/LED</li> <li>One Z-Wave controlled AC outlet for standard incandescent lighting or dimmable CFL/LEDs</li> <li>Remote ON/OFF and brightness control via the Z-Wave controller</li> <li>Manual ON/OFF and brightness control with the front panel push button</li> <li>Load-sensing turns the light ON if the switch on the connected light is used instead of the remote or push button on the Z-Wave smart switch (default setting is disabled)</li> <li>Space efficient design</li> <li>Does not block the lower outlet when plugged in to the upper outlet of a duplex wall receptacle. (This assumes that the duplex receptacle is mounted with the ground pin down).</li> <li>Plugs and cords for connected devices route to the side allowing close placement</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to include your device, quick triple press the button to include it in the network.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance.</li> <li>The device is associated in the same group when it included in setting process.</li> </ol><p>Now you can control your Z-Wave device according to groups, scenes, schedules and automation programmed. If your controller features remote access, you can now control all devices in Z-Wave network from mobile devices</p> <br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, quick triple press the button to exclude it from the network.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">ZW39</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">C000:C002</property>
+      <property name="dbReference">1123</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

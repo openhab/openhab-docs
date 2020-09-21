@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse30_00_000" listed="false">
+    <label>ZSE30 Water Sensor</label>
+    <description><![CDATA[
+Water Sensor<br /><h1>Overview</h1><p>Zooz Water Sensor ZSE30</p> <ul><li>Reliable water and leak detection</li> <li>Wireless notifications and event triggers (when included to a Z-Wave gateway controller) -</li> <li>Built-in audio and visual alarms</li> <li>Low battery alerts</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Flexible installation with 2 mounting options </li> <li>Model Number: ZSE30</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 1 CR2 battery (included)</li> <li>Power Consumption: 0.13W</li> <li>Operating Temperature: 32 – 104 F</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> <li>Dimensions: 2.5” x 0.9”</li> <li>Weight: 2 oz </li> </ul><br /><h2>Inclusion Information</h2><ol><li>Bring the Water Sensor within direct range of your controller</li> <li>Carefully remove the cover from the sensor</li> <li>Remove the plastic pull-tab from the battery slot. The LED indicator will blink slowly 5 times</li> <li>Put your Z-Wave controller into inclusion mode</li> <li>Press and release the Z-Wave button on the Water Sensor 3 TIMES quickly. The LED indicator will flash quickly</li> <li>A new water (leak) sensor will appear on your controller's device list</li> </ol><p>Troubleshooting Tips If you are unable to include the Z-Wave Water Sensor to your controller, try one of the following:</p> <ul><li>Bring the sensor closer to your hub or use a hand-held secondary controller to perform inclusion</li> <li>Once in inclusion mode, press and release the Z-Wave button quickly 6-7 TIMES to ensure the command has gone through</li> <li>Put your controller in EXCLUSION mode. Press and release the Z-Wave button quickly 3 TIMES, and then try adding the sensor to your network again</li> <li>You may need to change the device type manually if the sensor is not recognized correctly (email us for more info: ask@getzooz.com)</li> </ul><br /><h2>Exclusion Information</h2><ol><li>Make sure the Water Sensor is powered on and located within direct range of your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash quickly</li> <li>The Water Sensor should disappear from your controller's device list</li> </ol><p>If the first attempt is unsuccessful, please repeat the process following all steps carefully</p> <br /><h2>Wakeup Information</h2><p>If you change settings and parameters for the sensor, you may need to wake it up manually for the changes to be recorded. Press and release the Z-Wave button THREE TIMES to wake the device up. The LED indicator will flash ONCE. The sensor’s wake-up interval is set to 12 hours by default to save battery life. Though not recommended, you can change the wake-up interval using your controller’s advanced settings if available. Minimum value: 300s (5 minutes), maximum value: 16,777,200s (around 194 days). Accepted values need to match minute intervals, so 300, 360, 420, etc</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE30</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0003:0000,0003:0085</property>
+      <property name="dbReference">568</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Total Alarm Duration</label>
+        <description><![CDATA[
+Total duration of audio and visual alarm when water is detected.<br /><h1>Overview</h1><p>Use this parameter to set the total duration of audio and visual alarm each time water is detected. If the value is set to 0, the alarm will continue until water is no longer detected. Use parameters 2 – 4 to customize the alarm.</p>
+        ]]></description>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Audio Alarm: Beep Interval</label>
+        <description><![CDATA[
+Interval length between beeps<br /><h1>Overview</h1><p>Set the beeping frequency for the sensor’s audio alarm. The interval between beeps can be as low as 1 minute.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="10" max="255">
+        <label>3: Audio Alarm: First Beep Duration</label>
+        <description><![CDATA[
+Duration of First Beep<br /><h1>Overview</h1><p>Adjust the duration of the initial sound the alarm will produce after a leak is detected.</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>4: Audio Alarm: Beep Duration</label>
+        <description><![CDATA[
+Beep Duration after first Beep<br /><h1>Overview</h1><p>Adjust the duration of the beeps the alarm will sound after a leak is detected and the first “long” beep is produced.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Enable/Disable Audio Alarm</label>
+        <description><![CDATA[
+Visual alarm will NOT be disabled<br /><h1>Overview</h1><p>Enable or disable the audio alarm by adjusting these parameter settings. The visual alarm will NOT be disabled and the LED indicator will always light up each time water is detected.</p> <p>Values: 0 – alarm disabled; 1 – alarm enabled (default setting).</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Enable/Disable Water Detection</label>
+        <description><![CDATA[
+Enable/Disable Water Detection<br /><h1>Overview</h1><p>Enable or disable water detection for the sensor by adjusting these parameter settings. Values: 0 – sensor disabled; 1 – sensor enabled (default setting). </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Trigger Action</label>
+        <description><![CDATA[
+Send command to associated device.<br /><h1>Overview</h1><p>You can choose if your Water Sensor turns an associated device on or off when sending the basic set command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. Values: 0 – OFF; 1 – 99 (% of light); 255 – ON (default).</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 for lifeline communication of water leak detection to Z-Wave controller. Supported command classes:</p> <ul><li>NOTIFICATION_REPORT_V4</li> <li>BATTERY_REPORT</li> <li>SENSOR_BINARY_REPORT_V2</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control Command</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 for control command communication to associated Z-Wave devices in the network. Use parameter 7 to configure this group’s settings. Supported command classes: BASIC_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 3 for notifications to Z-Wave devices associated in this group. Supported command classes: NOTIFICATION_REPORT_V4 </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor Binary Report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 4 for notifications to Z-Wave devices associated in this group. Supported command classes: SENSOR_BINARY_REPORT_V2 </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

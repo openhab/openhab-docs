@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pan11_00_000" listed="false">
+    <label>PAN11 Smart Energy Plug In Switch</label>
+    <description><![CDATA[
+Smart Energy Plug In Switch<br /><h1>Overview</h1><p>This smart energy plug-in switch is able to detect voltage, current, power factor, Instant power wattage (5~3150W) and overload wattage (3010~3300W) of connected light or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly for 30 seconds. However, unplug and re-connect the Module will reset its overload condition to normal status.</p> <p>This plug-in switch can active sent out instant power wattage when variation over 5% or active sent out state change when manually push the ON/OFF button , this allows the controller to avoid polling the reading wattage value and state of the switch and can increase the efficiency of controlle</p> <br /><h2>Inclusion Information</h2><p>Tripple Click the button on the device confirms inclusion and exclusion.</p> <br /><h2>Exclusion Information</h2><p>Tripple Click the button on the device confirms inclusion and exclusion.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset the total power consumption</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAN11</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0001:0001,0001:0011,0001:0030</property>
+      <property name="dbReference">177</property>
+      <property name="commandClass:COMMAND_CLASS_SWITCH_BINARY">getSupported=false</property>
+      <property name="commandClass:COMMAND_CLASS_METER">ccAdd</property>
+      <property name="commandClass:COMMAND_CLASS_ALARM">getSupported=false</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>1: W meter report period</label>
+        <description><![CDATA[
+Set automatic W meter reporting interval<br /><h1>Overview</h1><p>If the setting is configured for 1hour (set value =720), the PAN11 will report its instant power consumption every 1 hour to Group1 node. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).</p>
+        ]]></description>
+        <default>720</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>2: kWh meter report period</label>
+        <description><![CDATA[
+Set automatic kWh meter reporting interval.<br /><h1>Overview</h1><p>If the setting is configured for 1hour (set value =6), the PAN11 will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days).</p>
+        ]]></description>
+        <default>6</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="10" max="1300">
+        <label>3: Threshold of Watt for load caution</label>
+        <description><![CDATA[
+Set threshold of wattage meter value for load caution .<br /><h1>Overview</h1><p>This is a warning when the current of load over the preset threshold value, if the setting value is 1300, when the load current of Relay1 over this value, PAN11 will send current meter report to warn the Group1 node, the Range of the setting value is from 10 to 1300,and the default value is 1300. </p>
+        ]]></description>
+        <default>1300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="10000">
+        <label>4: Threshold of kWh for Load Caution</label>
+        <description><![CDATA[
+If threshold of kWh is reached, a Meter Report will be generated<br /><h1>Overview</h1><p>Enable automatic warning when the accumulated kWh power consumption exceeds the setting value from 1KWh ~ 10000KWh.. Set to 0 will disable kWh load caution reporting.</p>
+        ]]></description>
+        <default>10000</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Restore switch state mode</label>
+        <default>1</default>
+        <options>
+          <option value="0">Switch Off</option>
+          <option value="1">Last State</option>
+          <option value="2">Switch On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Mode of switch Off function</label>
+        <default>1</default>
+        <options>
+          <option value="0">SWITCH OFF commands received are ignored.</option>
+          <option value="1">SWITCH OFF commands received are honored.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: LED indication mode</label>
+        <default>1</default>
+        <options>
+          <option value="1">The LED follows the state of the switch.</option>
+          <option value="2">LED off with load ON</option>
+          <option value="3">One flash mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Auto Off Timer</label>
+        <description>Auto off timer. 0 will disable the auto off function.</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: RF Off command mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Switch Off</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch Toggle</option>
+          <option value="3">Switch On</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Reports</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

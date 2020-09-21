@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zd2105_00_000" listed="false">
+    <label>ZD2105 Recessed Door Window Sensor</label>
+    <description><![CDATA[
+Recessed Door Window Sensor<br /><h1>Overview</h1><p>https://fccid.io/KFR-ZD2105US-5</p> <p>or </p> <p>http://www.monoprice.com/product?p_id=15268</p> <br /><h2>Inclusion Information</h2><p>For “Inclusion” in (adding to) a network: Put the Z-WaveTM Interface Controller into “inclusion” mode, and following its instruction to add the ZD2105 to your controller. To get in the “inclusion” mode, please press the Program Switch of ZD2105 for sending the NIF. After sending NIF, Z-Wave will send the auto inclusion; otherwise, ZD2105 will go to sleep after 20 seconds</p> <br /><h2>Exclusion Information</h2><p>For “Exclusion” from (removing from) a network: Put the Z-WaveTM Interface Controller into “exclusion” mode, and following its instruction to delete the ZD2105 from your controller. Press the Program Switch of ZD2105 for 1 second at least to be excluded.</p> <p>Note: All user and network settings will be cleared and the device reset to factory</p> <br /><h2>Wakeup Information</h2><p>Awake Mode:</p> <p>It will be triggering after opening the cover, also the red LED will keep on lasting 10 seconds and ZD2105 will send “Wake Up Notification” after 10 seconds. If ZD2105 received “Wake Up No More Information” command then the red LED will go off or it will wait 10 seconds then go off. It will proceed all the commands after sending the “Wake Up Notification”</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door status</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZD2105</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2022:2201</property>
+      <property name="dbReference">420</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Control Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

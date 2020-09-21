@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_gb00z_00_000" listed="false">
+    <label>GB00Z Glass Break Detector</label>
+    <description><![CDATA[
+Glass Break Detector<br /><h1>Overview</h1><p>The GB00Z is a Glass break sensor/transmitter with built-in Z-Wave® technology.</p> <ul><li>The sensor mounts on a wall or ceiling within 15 feet of the protected glass window(s).</li> <li>The detector is powered from two 3-Volt CR123A lithium batteries (included).</li> <li>Three screws and screw anchors are provided for mounting the detector.</li> </ul><br /><h2>Inclusion Information</h2><p>Before adding the device to any Z-Wave network, or after removing it from any Z-Wave network, it is recommended that the GB00Z be reset. Reset the GB00Z by pressing the detector’s button 5 times. The detector’s green indicator will light for 3 seconds to show proper reset.</p> <p>A simple press and release of the front button is used to include (green indicator blinks 3 times when complete), and the same to exclude (green indicator lights for 3 seconds when complete). The detector must be asleep for this action to take place.</p> <br /><h2>Exclusion Information</h2><p>Before adding the device to any Z-Wave network, or after removing it from any Z-Wave network, it is recommended that the GB00Z be reset. Reset the GB00Z by pressing the detector’s button 5 times. The detector’s green indicator will light for 3 seconds to show proper reset.</p> <p>A simple press and release of the front button is used to include (green indicator blinks 3 times when complete), and the same to exclude (green indicator lights for 3 seconds when complete). The detector must be asleep for this action to take place.</p> <br /><h2>Wakeup Information</h2><p>Three presses will wake the device for five minutes so that you can begin any required network testing. You will see the green indicator blink three times to indicate it is awake for testing.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM,COMMAND_CLASS_BASIC;type=GENERAL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">GB00Z</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4742:3030</property>
+      <property name="dbReference">565</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Alarms are reported to this group<br /><h1>Overview</h1><p>Group 1 must be assigned the Node ID of the controller to which unsolicited notifications from the GB00Z-1 will be sent.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

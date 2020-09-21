@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_ycl1_00_000" listed="false">
+    <label>SD-L1000-CH Yale Conexis L1</label>
+    <description><![CDATA[
+Yale Conexis L1<br /><h1>Overview</h1><h1>The future of Door Locks is here</h1> <p>Open the door to your world with the Conexis(R) L1 Smart Door Lock. The Smart Door Lock that puts you fully in control giving you the freedom to secure your home without the need for a key.</p> <h2>Send &amp; Receive Virtual Keys</h2> <p>Control access from your smartphone</p> <h2>Keyless</h2> <p>Say goodbye to your keys</p> <h2>In-App Control</h2> <p>Control access from your smartphone</p> <br /><h2>Inclusion Information</h2><ol><li>Ensure the Z-Wave controller is close to the lock, around 1.5m.</li> <li>Remove the upper plastic cover from the lock, on the interior side.</li> <li>Set the controller into inclusion mode.</li> <li>Press the reset 'R' button 3 times in 1.5s (3 quick presses), the lock will beep twice.</li> <li>Upon connection, the lock will play 3 notes.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the upper plastic cover from the lock, on the interior side.</li> <li>Set the controller into exclusion mode.</li> <li>Press the reset 'R' button 3 times in 1.5s (3 quick presses), the lock will beep twice.</li> <li>Upon successful exclusion, the lock will play 3 notes.</li> </ol>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">SD-L1000-CH</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">0066:0000,6600:0002</property>
+      <property name="dbReference">838</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Volume</label>
+        <description><![CDATA[
+Beep volume<br /><h1>Overview</h1><p>1 = Silent mode</p> <p>2 = Low volume</p> <p>3 = High volume (default)</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">Silent</option>
+          <option value="2">Low</option>
+          <option value="3">High</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Auto Re-lock</label>
+        <description><![CDATA[
+The lock will re-lock automatically if untouched for the timeout<br /><h1>Overview</h1><p>0 = No auto re-lock (default)</p> <p>255 = auto re-lock</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="7" max="60">
+        <label>3: Re-lock time</label>
+        <description><![CDATA[
+The amount of time which the lock will wait before re-locking<br /><h1>Overview</h1><p>Re-lock time in seconds</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="20">
+        <label>4: Wrong tag limit</label>
+        <description><![CDATA[
+Number of wrong tags that can be tried before stand-down<br /><h1>Overview</h1><p>Number of wrong tags that can be tried before stand-down</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="250">
+        <label>7: Wrong tag timeout</label>
+        <description><![CDATA[
+Time after the wrong tag limit being exceeded before re-trying<br /><h1>Overview</h1><p>Amount of time after the wrong tag limit being exceeded that the lock will stand-down for</p>
+        ]]></description>
+        <default>250</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

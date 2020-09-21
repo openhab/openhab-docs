@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eco_tiltzwave25_00_000" listed="false">
+    <label>TILT-ZWAVE2.5-ECO Z-wave Plus Gold Plated Reliability Garage Door Tilt Sensor</label>
+    <description><![CDATA[
+Z-wave Plus Gold Plated Reliability Garage Door Tilt Sensor<br /><h1>Overview</h1><ul><li>Z-Wave PlusTM enabled device which transmits when a garage door is opened or closed</li> <li>Uses a tilt sensor to detect the angle of a door and transmits open/closed status</li> <li>Reports tamper condition if cover is removed </li> </ul><br /><h2>Inclusion Information</h2><p>1. Start by placing the controller into inclusion mode.</p> <p>2. Activate inclusion mode for the sensor by inserting the battery. When the inclusion process is complete the red LED will turn on for approximately 10 seconds and then it will go out. If the LED continues to flash, repeat the inclusion process.</p> <p>3. Test the garage door sensor before mounting it. Hold the sensor in your hand. Flip the sensor upside-down and watch the LED while doing so. The LED will flash each time the position of the sensor is changed. If your Z- Wave network has a software interface you may verify that the messages from the sensor are being received each time the sensor is flipped.</p> <p>If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 5 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Exclusion mode on the sensor is activated on the sensor by the exact same procedure as inclusion.</p> <br /><h2>Wakeup Information</h2><p>To save power, this sensor sleeps most of the time and is therefore not awake to receive messages from a gateway for testing. Removing the top case from the sensor will put in device into a tampered mode in which the sensor will stay awake and able to receive messages. Most of the time an end user would not do this, but if the sensor needs to be configured after inclusion, an end user can follow the instructions below for sending Wake-Up notifications.</p> <p>The sensor will wake up every so often and when the case is closed, it will send a Wake-Up Notification to allow the life line master node controller that the sensor is now available for any queued messages that the controller may have for the sensor. <strong>The time between Wake-Up Notifications can be configured with the Wake-Up Notification command class to be between 1 hour and 1 week with interval steps of 200 seconds.</strong></p>
+    ]]></description>
+    <category>GarageDoor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door State</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ecolink</property>
+      <property name="modelId">TILT-ZWAVE2.5-ECO</property>
+      <property name="manufacturerId">014A</property>
+      <property name="manufacturerRef">0004:0003</property>
+      <property name="dbReference">581</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Basic Sets for Association Group 2</label>
+        <description><![CDATA[
+Send or not send Basic Set commands<br /><h1>Overview</h1><p>Send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state i.e. the door is closed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do Not Send Basic Sets</option>
+          <option value="255">Send Basic Sets</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Send Reports</label>
+        <description><![CDATA[
+Send Reports<br /><h1>Overview</h1><p>Send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Send Sensor Binary and Notification Reports</option>
+          <option value="255">Send Only Notification Reports</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Sends low-battery, tamper, open/close, and sensor binary reports<br /><h1>Overview</h1><p>Group one is a lifeline group who will receive unsolicited messages relating to door/window open/close notifications (because there is no association group for tilt switches), case tampering notifications, low-battery notifications, and sensor binary reports.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set</label>
+        <description><![CDATA[
+Sends ON/OFF commands to other devices based on state<br /><h1>Overview</h1><p>Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

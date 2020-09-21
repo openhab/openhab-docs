@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_zdi5200_00_000" listed="false">
+    <label>Dimmy ZDI5200 Universal light dimmer</label>
+    <description><![CDATA[
+Universal light dimmer<br /><h1>Overview</h1><p>DIMMY type ZDI5200 is a Z-Wave light dimmer with power metering, the module is designed to be installed in, for example, lamp outlets and thereby making the connected lamp dimmable through the Z-Wave network.</p> <p>The DIMMY module can dim all kind of dimmable light sources from 0 - 250W.</p> <p>The built-in power metering can measure the power consumption of the connected load as low as 2W and the metering data, both Watt and kWh, are reported to the Z-Wave Controller.</p> <p>DIMMY is controlled via Z-Wave commands, for example by Logic Group MATRIX wall switches, and is able to send status-reports back to the switches and thereby be a part of a multi-way switching configuration, where several switches can control the DIMMY module and the switches receives reports about the actual status of the module.</p> <p>DIMMY is also working as a repeater in the Z-Wave network and therefore expands the Z-Wave network coverage.</p> <p>DIMMY is a single channel device, which means that all associations to DIMMY must be made as single channel associations.</p> <br /><h2>Inclusion Information</h2><p>Add DIMMY to a network with Classic Inclusion by triple-pressing on the switch shaped as a power symbol (I) (Figure 4). The LED inside the module will start blinking.</p> <p>If DIMMY already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.</p> <br /><h2>Exclusion Information</h2><p>Remove DIMMY from a network by triple-pressing on the switch shaped as a power symbol (I) (Figure 4). The LED inside the module will start blinking.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">Dimmy ZDI5200</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0003:0123</property>
+      <property name="dbReference">1217</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Duration of dimming</label>
+        <description><![CDATA[
+Duration of dimming<br /><h1>Overview</h1><p>This parameter specifies the duration of a full regulation of the light from 0% to 100%. A regulation of the light with 1% will take 1/100 of the specified duration. This is used when the dimming is fulfilled from other Z-Wave devices with a factory default duration.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Immediately</td> </tr><tr><td>1 - 127</td> <td>Duration in seconds. (Default is 5 seconds).</td> </tr><tr><td>128 - 255</td> <td>Duration in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Dimmer mode</label>
+        <description><![CDATA[
+Dimmer mode<br /><h1>Overview</h1><p>The dimmer can work in three different modes: on/off, leading edge or trailing edge.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No dimming, only on/off (0%/100%)</option>
+          <option value="1">Trailing edge dimming. (Default)</option>
+          <option value="2">Leading edge dimming.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: Dimmer minimum leve</label>
+        <description><![CDATA[
+Dimmer minimum leve<br /><h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 0%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 - 99</td> <td>Corresponds to 0 – 99% (Default is 0)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>4: Dimmer maximum level.</label>
+        <description><![CDATA[
+Dimmer maximum level.<br /><h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 99%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>1-99</td> <td>Corresponds to 1 – 99% (Default is 99)</td> </tr></table>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Meter report time.</label>
+        <description><![CDATA[
+Meter report time.<br /><h1>Overview</h1><p>This parameter specifies how often meter reports are sent via association group 1.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Meter reports are never sent</td> </tr><tr><td>1-127</td> <td>Report time in seconds. (Default is 60 seconds).</td> </tr><tr><td>128-255</td> <td>Report time in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>Sends Device Reset notifications, Meter reports and Multilevel Switch reports.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Report</label>
+        <description><![CDATA[
+Basic Report<br /><h1>Overview</h1><p>Nodes in this group receives Basic Report with the actual state of the multilevel switch (dimmer). It can be used by MATRIX devices to update their internal pushbutton states and can be used in multi-way switching configurations for ensuring that all controlling devices has an updated status</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

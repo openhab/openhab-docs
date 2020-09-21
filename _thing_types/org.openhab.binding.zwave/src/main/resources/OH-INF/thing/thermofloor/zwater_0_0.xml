@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_zwater_00_000" listed="false">
+    <label>Heatit Z Water Relay control</label>
+    <description><![CDATA[
+Relay control<br /><h1>Overview</h1><ul><li>The relay outputs may be used for controlling actuators/valves in a hydronic heating system</li> <li>May be used to control both 24V actuators and 230V actuators</li> <li>Can be used together with a Heatit Z-Temp sensor in each zone</li> <li>DIN rail mounting</li> <li>Works as a Z-Wave repeater</li> <li>Firmware updates (OTA)</li> <li>Available firmware versions (analog/digital inputs)</li> <li>Supports encryption mode: S0, S2 Access Control Class, S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><br /><h2>Inclusion Information</h2><p>Place your primary controller in Adding Mode by following the manufacturer’s instructions, then activate the add mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Adding Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been added to the Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Place your primary controller in Remov Mode by following the manufacturer’s instructions, then activate the remove mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Remove Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been removed from the Z-Wave network.</p> <br /><h2>Wakeup Information</h2><p>NA</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8,COMMAND_CLASS_BASIC:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9,COMMAND_CLASS_BASIC:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 10</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10,COMMAND_CLASS_BASIC:10</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature11" typeId="sensor_temperature">
+        <label>Sensor (temperature) 11</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:11,COMMAND_CLASS_BASIC:11;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature12" typeId="sensor_temperature">
+        <label>Sensor (temperature) 12</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:12,COMMAND_CLASS_BASIC:12;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature13" typeId="sensor_temperature">
+        <label>Sensor (temperature) 13</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:13,COMMAND_CLASS_BASIC:13;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature14" typeId="sensor_temperature">
+        <label>Sensor (temperature) 14</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:14,COMMAND_CLASS_BASIC:14;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Heatit Z Water</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0003:020A</property>
+      <property name="dbReference">886</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status LED</label>
+        <description><![CDATA[
+Configuration of the status LED<br /><h1>Overview</h1><p>0 LED turned off.</p> <p>1 LED turned on. (Default)</p> <p>2 LED flashing at 1 second intervals (½ Hz).</p> <p>3 LED flashing at ½ second interval (1 Hz).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED turned off.</option>
+          <option value="1">LED turned on. (Default)</option>
+          <option value="2">LED flashing at 1 second intervals (½ Hz)</option>
+          <option value="3">LED flashing at ½ second interval (1 Hz)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>2: LED brightness</label>
+        <description><![CDATA[
+Configure the percentage of light in the status LED, when the LED is turned on<br /><h1>Overview</h1><p>Specifies the brightness level of the LED when it is on. Default is 50.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Thermistor type input 1</label>
+        <description><![CDATA[
+This parameter decides which kind of thermistor that is connected to the input..<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled. (Default)</option>
+          <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Thermistor type input 2</label>
+        <description><![CDATA[
+This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled. (Default)</option>
+          <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Thermistor type input 3</label>
+        <description><![CDATA[
+This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled. (Default)</option>
+          <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Thermistor type input 4</label>
+        <description><![CDATA[
+This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled. (Default)</option>
+          <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>7: Input 1 calibration</label>
+        <description><![CDATA[
+Input 1 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>8: Input 2 calibration</label>
+        <description><![CDATA[
+Input 1 calibratio2<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>9: Input 3 calibration</label>
+        <description><![CDATA[
+Input 3 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>10: Input 4 calibration</label>
+        <description><![CDATA[
+Input 4 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration">
+        <label>11: Input 1 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds)</p>
+        ]]></description>
+        <default>6</default>
+        <options>
+          <option value="0">Reporting of temperatures disabled.</option>
+          <option value="1">Multiply with 10 seconds, 10 seconds – 24 hours.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>12: Input 2 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>13: Input 3 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>14: Input 4 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Device Reset notifications, Central Scene notifications and Basic Report On / Off to the controller</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Input 1 Basic Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 1 is activated.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Input 1 Switch Binary Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 1 is activated.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Input 1 Multilevel Switch Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 1 is activated. Is typically used for controlling light dimmers, curtain controllers, etc</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Input 2 Basic Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Input 2 Switch Binary Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Input 2 Multilevel Switch Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 2 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Input 3 Basic Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Input 3 Switch Binary Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Input 3 Multilevel Switch Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 3 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Input 4 Basic Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Input 4 Switch Binary Set On / Off</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Input 4 Multilevel Switch Set</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 4 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

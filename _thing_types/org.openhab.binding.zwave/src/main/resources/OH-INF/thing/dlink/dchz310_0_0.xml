@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="dlink_dchz310_00_000" listed="false">
+    <label>DCH-Z310 Smoke Detector</label>
+    <description><![CDATA[
+Smoke Detector<br /><h1>Overview</h1><p>The DCH-Z310 mydlink™ Z-Wave Smoke Alarm is a wireless early warning detection system that warns you of developing fires by broadcasting audible alarms via its built-in horn. Based on Z-Wave Plus™ technology, it offers longer battery life, faster operation, better RF coverage, and easier installation while keeping compatibility with classic Z-Wave™ products. You can set an alarm via the mydlink™ Home app so when you’re away, the DCH-Z310 will be enabled and ready to send signals to a hub such as the mydlink™ Home Connected Home Hub. When the alarm is triggered, it will generate an 85 dB (max) audio alarm while pushing instant notifications to your mobile device, so you can stay informed from wherever you are.</p> <br /><h2>Inclusion Information</h2><p>Put your hub/controller in Add mode. Press the button on the front of the smoke sensor three times quickly.</p> <br /><h2>Exclusion Information</h2><p>Put your hub/controller in Exclusion mode. Press the button on the front of the smoke sensor three times quickly.</p> <br /><h2>Wakeup Information</h2><p>After the device is added to the network, it will wake-up once per day in default. When it wake-up it will broadcast the "Wake Up Notification" message to the network, and wake-up for 10 seconds to receive the setting commands. The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. And the interval step is 30 minutes. If the user wants to wake-up the device immediately, please press the button once. The device will wake-up 10 seconds.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">D-Link</property>
+      <property name="modelId">DCH-Z310</property>
+      <property name="manufacturerId">0108</property>
+      <property name="manufacturerRef">0002:001E</property>
+      <property name="dbReference">689</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Customer function switch, using bit control<br /><h1>Overview</h1><p>Bit0 : Reserve.<br />Bit1 : Reserve.<br />Bit2 : Reserve.<br />Bit3 : Reserve.<br />Bit4 : Notification Type<br />0: Using Notification Report<br />1: Using Sensor Binary Report<br />Bit5 : Reserve.<br />Bit6 : Reserve.<br />Bit7 : Reserve.</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="4">Notification Report</option>
+          <option value="20">Sensor Binary Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+The interval time for auto report the battery level<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Reports</label>
+        <description><![CDATA[
+Receiving the report message, like triggered event etc<br /><h1>Overview</h1><p>1. Have Z-WaveTM Controller entered association mode.<br />2. Press the button three times within 1.5 seconds to enter the association mode.<br />Note: The device supports 1 group. This group is for receiving the report message, like triggered event etc. This group supports 8 nodes maximum. </p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eco_firefighter5_00_000" listed="false">
+    <label>FF-ZWAVE5-ECO Firefighter Audio Detector</label>
+    <description><![CDATA[
+Firefighter Audio Detector<br /><h1>Overview</h1><p><strong>Overview:</strong></p> <p>The Ecolink Audio detector sensor listens to existing smoke or CO detectors in the home and sends signal to your Z-Wave network. In most homes, with hardwired interconnected smoke detectors, only one sensor is needed for whole home coverage.</p> <ul><li>provides fire and CO (carbon monoxide) status</li> <li>Transmits Fire and CO alarm status</li> <li>Reports tamper condition when cover is open</li> </ul><p>This device implements Z-Wave Plus functionality, Network Wide Inclusion, and Explorer frames.  This device is asleep most of the time but can respond to queries on a Wake Up Notification; however for test purposes, the device will stay awake while tampered for testing Z-Wave Plus command class functionality.</p> <p><strong>LED Status:</strong></p> <p>The FireFighter sensor is equipped with a multi-color LED.  The state of the LED will change based on the state of the device.</p> <table><tr><td>Insert Battery</td> <td>One (or two, if in CO mode) RED blink, then one GREEN blink</td> </tr><tr><td>Device not included </td> <td>Green light breathing (slow blink)</td> </tr><tr><td>Learn button pressed</td> <td>Solid Yellow (red+green) while in learn mode</td> </tr><tr><td>Sound detected</td> <td>Flash YELLOW for the duration of the sound</td> </tr><tr><td>Fire Alarm Detected</td> <td>Solid RED for 3 seconds, then blink red while tone detected</td> </tr><tr><td>Case Opened</td> <td>Red/Green breathing until case closed (while added to a network)</td> </tr></table><p><br /><strong>CO Alarm Detection:</strong></p> <p>In addition to smoke alarm detection, the FireFighter sensor can detect the presence of a carbon monoxide alarm. By default, the sensor is not guaranteed to detect a CO alarm.  The device can be configured to more reliably detect a CO alarm in exchange for a reduced battery life. This mode can be changed by holding down the tamper switch and the learn button for 10 seconds. The device should then be reset (remove battery and replace) in order to determine the current device setting.</p> <p>RED + GREEN           = Device will not reliably detect CO, but standard battery life</p> <p>RED + RED + GREEN = Device will more reliably detect CO, but with reduced battery life</p> <p><strong>Factory Default:</strong></p> <p>The FireFighter sensor can be restored back to factory default settings which will remove its Z-Wave Plus node ID from the sensor (but not the controller) with the following steps.  Please use this procedure only when the network primary controller is missing or otherwise inoperable.</p> <ol><li>Put the battery into the sensor</li> <li>Do no press the tamper switch</li> <li>Hold the learn button down for 10 seconds until the LED turns RED</li> <li>Release the learn button and wait for the sensor's green LED to "breath" on and off continuously. The sensor is now ready to be added to a Z-Wave Plus network, and all settings have been restored.</li> </ol><p><strong>Testing:</strong></p> <p>To test the RF transmission from the mounted position you can generate a tamper by removing the cover. This will send a signal to the controller. To test the audio detection, press and hold the smoke detector's test button. Ensure the FireFighter cover is on and that you wear hearing protection.</p> <br /><h2>Inclusion Information</h2><p>Open the FireFighter case and press the learn button on the device for one second.  If the LED starts blinking continually, the sensor has not been added and you need to repeat the process after putting the controller into inclusion mode again.</p> <br /><h2>Exclusion Information</h2><p>Open the FireFighter case and press the learn button on the device for one second.  If successfully removed from the Z-Wave Plus network, the device's Green LED should blink slowly and continuously.</p> <br /><h2>Wakeup Information</h2><p>The sensor will wake up every so often to send a Wake-Up Notification to allow the life line master node controller that the sensor is now available for any queued messages that the controller may have for the sensor.  The time between Wake-Up Notifications can be configured with the Wake-Up Notification command class to be between 1 hour and 1 week with interval steps of 200 seconds.  The sensor will also send a wakeup notification whenever the case is closed.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Temperature</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TARGET_TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_general" typeId="sensor_general">
+        <label>Sensor (general)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ecolink</property>
+      <property name="modelId">FF-ZWAVE5-ECO</property>
+      <property name="manufacturerId">014A</property>
+      <property name="manufacturerRef">0005:000F</property>
+      <property name="dbReference">1221</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="165" max="255">
+        <label>1: Mode: Smoke Alarm/Combo Smoke CO alarm</label>
+        <description><![CDATA[
+Sensor Mode<br /><h1>Overview</h1><p>Enables the sensor to detect smoke alarm signals from a smoke detector or alarm signals from a smoke alarm and carbon monoxide alarm combo device. Allowed parameter values:</p> <p>0xA5  = Smoke alarm detection only</p> <p>0xFF   = Smoke and carbon monoxide alarm detection</p>
+        ]]></description>
+        <default>165</default>
+        <options>
+          <option value="165">Smoke alarm detection only</option>
+          <option value="255">Smoke and carbon monoxide alarm detection</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Will receive unsolicited messages relating to Fire notifications, CO notifications, case tampering notifications, low-battery notifications, and temperature notifications.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

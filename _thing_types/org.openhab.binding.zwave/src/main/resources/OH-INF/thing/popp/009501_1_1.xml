@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_009501_01_001" listed="false">
+    <label>009501 Popp 09501 Flow Stop</label>
+    <description><![CDATA[
+Popp 09501 Flow Stop<br /><h1>Overview</h1><p>The Flow Stop moves the operating handle of a ball valve allowing to stopping the flow of gas or water. It can be mounted non-intrusive on any pipe size between 0.5 and 1.5 inch. This means the original water or gas pipe will not be opened or manipulated and it is possible to remove the Flow stop again without any damage to the water or gas pipe. Installing the Flow stop will not tamper or change any security measure applied or your gas or water installation.</p> <p>The device is equipped with a powerful 12 V motor providing sufficient torque to open or close any ball valve within 10 seconds. A complete manual operation of the valve remains possible due to the clutch release bearing.</p> <br /><h2>Inclusion Information</h2><p>For inclusion press the red button on the top of the enclosure 3 times</p> <br /><h2>Exclusion Information</h2><p>For exclusion press the red button on the top of the enclosure 3 times</p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">009501</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0005:0001,0005:0003</property>
+      <property name="versionMin">1.1</property>
+      <property name="versionMax">1.2</property>
+      <property name="dbReference">620</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>0: LED Status</label>
+        <description><![CDATA[
+No help available, self explanatory....<br /><h1>Overview</h1><p>0: LED always ON (Only on operation OFF)<br />1: LED always OFF (Only on operation ON)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>1: Shut-off controller behavior</label>
+        <description><![CDATA[
+The parameter defines how to control the shut-off controller.<br /><h1>Overview</h1><p>0: Remote and manually open/close<br />1: Remote open/close only<br />2: Only remote open; only manually closing<br />3: Only manually open; only remote closing<br />4: Manually open/close only</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Local Valve Operation</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="graber_rsz1_00_000" listed="false">
+    <label>RSZ1 Somfy Motorized Shade</label>
+    <description><![CDATA[
+Somfy Motorized Shade<br /><h1>Overview</h1><p>The Graber/Bali two-button remote allows up/down/stop control over a single shade or group of shades and acts as a secondary controller/remote.</p> <br /><h2>Inclusion Information</h2><p>To operate as a secondary controller on a Z-Wave network, the following steps must be performed in order:</p> <ol><li> Reset the remote (unassociate it from the blind/shade)</li> <li> Include the blind/shade to the Z-Wave network</li> <li> Include the remote in the Z-Wave network</li> <li>Associate the remote to the blind/shade</li> </ol><p><strong>Reset the remote</strong></p> <p>Press and hold the programming button on the back of the remote until the LEDs stop flashing.  LEDs will flash green, amber, red, and then finally turn off (about 15 seconds).</p> <p><strong>Include the blind/shade in the Z-Wave network</strong></p> <p>Follow the manufacturer's directions for inclusion of the blind/shade.</p> <p><strong>Include the remote in the Z-Wave network</strong></p> <p>Put the primary controller in inclusion mode.  Press and hold the programming button on the back of the remote until the LEDs start flashing green (3-4 seconds).</p> <p><strong>Associate the remote to the blind/shade</strong></p> <p>Press and release the programming button on the back of the remote once.  The LEDs will flash green. Set the headrail of the blind/shade to associate a remote (typically holding the programming button on the headrail for 3 seconds until the LEDs flash green).  The remote should be associated with the blind/shade and the primary controller will allow the remote to act as secondary controller for the blind/shade.</p> <br /><h2>Exclusion Information</h2><p>For exclusion, the remote must be reset and the remote node must be deleted manually from the primary controller.  To reset the remote, press and hold the programming button on the back of the remote until the LEDs stop flashing.  LEDs will flash green, amber, red, and then finally turn off (about 15 seconds).</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Rollershutter</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Graber</property>
+      <property name="modelId">RSZ1</property>
+      <property name="manufacturerId">026E</property>
+      <property name="manufacturerRef">5253:5A31</property>
+      <property name="dbReference">585</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline (primary controller)<br /><h1>Overview</h1><p>SWITCH MULTILEVEL REPORT after movement<br />BATTERY STATUS after movement or critical status<br />DEVICE RESET LOCALLY</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zwa005_00_000" listed="false">
+    <label>ZWA005 Motion, light, and temperature sensor</label>
+    <description><![CDATA[
+Motion, light, and temperature sensor<br /><h1>Overview</h1><p>Aeotec TriSensor is a universal Z-Wave Plus compatible product, consists of temperature, lighting and motion sensors, powered by a CR123A battery. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. By the built-in motion sensor, an alarm will be sent to the gateway when the motion sensor is triggered.</p> <br /><h2>Inclusion Information</h2><p>Press once TriSensor’s Action Button. If it is the first installation, the yellow LED will keep solid until whole network processing is complete. If successful, the LED will flash white -&gt; green -&gt; white -&gt; green, after 2 seconds finished. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once. If it is the S2 encryption network, please enter the first 5 digits of DSK.</p> <br /><h2>Exclusion Information</h2><p>Press once TriSensor’s Action Button, the Purple LED will keep solid until whole network processing is complete. If the exclusion is successful, the LED will flash white -&gt; green - &gt;white -&gt; green and then LED will pulse a blue. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once.</p> <br /><h2>Wakeup Information</h2><p>Press and hold the button at least 2s until Red Led is on and then release the button,device will send wakeup notification to controller if device is in a Z-Wave network.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZWA005</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0002:0005,0102:0005,0202:0005</property>
+      <property name="dbReference">921</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>1: Motion Retrigger Time</label>
+        <description><![CDATA[
+Delay before the motion event can be re-triggered<br /><h1>Overview</h1><p>This parameter is configured the delay time before PIR sensor can be triggered again to reset motion timeout counter.</p>
+        ]]></description>
+        <default>30</default>
+        <options>
+          <option value="0">Disable re-triggering until motion timeout</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>2: Motion Clear Time</label>
+        <description><![CDATA[
+Time until the motion event is cleared<br /><h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller and send BASIC_SET= 0x00 to nodes associated in group 2.</p>
+        ]]></description>
+        <default>240</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="11">
+        <label>3: Motion Sensitivity</label>
+        <description><![CDATA[
+Motion sensor sensitivity on a scale from 1-11<br /><h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect.</p>
+        ]]></description>
+        <default>11</default>
+        <options>
+          <option value="0">Motion sensor disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Motion Sensor Report Mode</label>
+        <description>Sets the report to send when motion is detected</description>
+        <default>0</default>
+        <options>
+          <option value="0">Notification Reports</option>
+          <option value="1">Binary Sensor</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Send BASIC_SET to Associated nodes</label>
+        <description><![CDATA[
+Send BASIC_SET when events are triggered<br /><h1>Overview</h1><p>This parameter enables sending BASIC_SET command to nodes that associated in group 2 and group 3.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Group 2</option>
+          <option value="2">Group 3</option>
+          <option value="3">Group 2 and 3</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Basic Set Value Settings for Group 2</label>
+        <description>Values to send to Group 2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Set 0xFF on triggered, 0x00 on cleared</option>
+          <option value="1">Set 0x00 on triggered, 0xFF on cleared</option>
+          <option value="2">Set 0xFF on motion triggered</option>
+          <option value="3">Set 0x00 on motion triggered</option>
+          <option value="4">Set 0x00 on motion cleared</option>
+          <option value="5">Set 0xFF on motion cleared</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="-400" max="1185">
+        <label>7: Temperature Alarm Value</label>
+        <description><![CDATA[
+Alert nodes when temperature is above this value<br /><h1>Overview</h1><p>This parameter is configured the threshold value that alarm level for temperature. When the current ambient temperature value is larger than this configuration value, device will send a BASIC_SET = 0xFF to nodes associated in group 3. If current temperature value is less than this value, device will send a BASIC_SET = 0x00 to nodes associated in group 3.</p>
+        ]]></description>
+        <default>239</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: LED Indicate Disable</label>
+        <description><![CDATA[
+Whether to blink the LED when motion is detected<br /><h1>Overview</h1><p>This parameter is configured the Led light on disable or enable.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Led Blink</option>
+          <option value="1">Enable Led Blink</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: LED Color For Motion Event Report</label>
+        <description>LED color when sending a motion event report</description>
+        <default>2</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Yellow</option>
+          <option value="5">Pink</option>
+          <option value="6">Cyan</option>
+          <option value="7">Purple</option>
+          <option value="8">Orange</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Led Color For Temperature Sensor Report</label>
+        <description>LED color when sending a temperature sensor report</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Yellow</option>
+          <option value="5">Pink</option>
+          <option value="6">Cyan</option>
+          <option value="7">Purple</option>
+          <option value="8">Orange</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Led Color For Light Sensor Report</label>
+        <description>LED color when sending a light sensor report</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Yellow</option>
+          <option value="5">Pink</option>
+          <option value="6">Cyan</option>
+          <option value="7">Purple</option>
+          <option value="8">Orange</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Led Color For Wakeup Notification Report</label>
+        <description>LED color when sending a wakeup report</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Yellow</option>
+          <option value="5">Pink</option>
+          <option value="6">Cyan</option>
+          <option value="7">Purple</option>
+          <option value="8">Orange</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Temperature Scale</label>
+        <description>Report temperature in Celsius or Fahrenheit</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration"
+                 min="0" max="250">
+        <label>21: Temperature Threshold Value to Report</label>
+        <description><![CDATA[
+Minimum temperature change to report<br /><h1>Overview</h1><p>Change threshold value for change in temperature to induce an automatic report for temperature sensor. Setting of value 20 can be a change of -2.0 or +2.0 (C or F depending on Parameter No.20) to induce automatic report or setting a value of 2 will be a change of 0.2(C or F).</p>
+        ]]></description>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>22: Light intensity Threshold Value to Report</label>
+        <description><![CDATA[
+Minimum light intensity change to report<br /><h1>Overview</h1><p>Change threshold value for change in light sensor to induce an automatic report for temperature sensor.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_23_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>23: Temperature Sensor Report Interval</label>
+        <description><![CDATA[
+Interval for timed temperature reports<br /><h1>Overview</h1><p>This parameter is configured the time interval for temperature sensor report. This value is larger, the battery life is longer. And the temperature value changed is not obvious.</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_24_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>24: Light Sensor Report Interval</label>
+        <description><![CDATA[
+Interval for timed light level reports<br /><h1>Overview</h1><p>This parameter is configured the time interval for light sensor report. This value is larger, the battery life is longer. And the light intensity changed is not obvious.</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_30_2" type="integer" groupName="configuration"
+                 min="-200" max="200">
+        <label>30: Temperature Offset Value</label>
+        <description><![CDATA[
+Adjustment for temperature measurements<br /><h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_2" type="integer" groupName="configuration"
+                 min="-1000" max="1000">
+        <label>31: Light Intensity Offset Value</label>
+        <description><![CDATA[
+Adjustment for light intensity measurements<br /><h1>Overview</h1><p>The current measuring light intensity value can be add and minus a value by this setting.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_100_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>100: Light Sensor Calibrated Coefficient</label>
+        <description><![CDATA[
+Calibration coefficient for light measurements<br /><h1>Overview</h1><p>This configuration defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating:</p> <ol><li>Set this parameter value to default (Assumes the sensor has been added in a Z- Wave Network).</li> <li>Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of luxmeter.</li> <li>The scale calibration formula: k = Vm / Vs.</li> <li>The value of k is then multiplied by 1024 and rounded to the nearest whole number.</li> <li>Set the value getting in 5) to this parameter, calibrate finished.</li> </ol><p>For example, Vm = 300, Vs = 2600, then k = 2600 / 300 = 8.6667,<br />k = 8.6667 * 1024 = 8874.7 ≈ 8875. In this case, the parameter should be set to 8875.</p>
+        ]]></description>
+        <default>1024</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Motion Alarm</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Temperature Alarm</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 3 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

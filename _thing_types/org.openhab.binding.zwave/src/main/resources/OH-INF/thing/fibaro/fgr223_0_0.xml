@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgr223_00_000" listed="false">
+    <label>FGR223 Roller Shutter 3</label>
+    <description><![CDATA[
+Roller Shutter 3<br /><h1>Overview</h1><p>FIBARO Roller Shutter 3 is a device designed to control roller blinds, awnings, venetian blinds, gates and other single phase, AC powered devices.</p> <p>Roller Shutter 3 allows precise positioning of roller blinds or venetian blind lamellas. The device is equipped with power and energy monitoring. It allows to control connected devices either via the Z-Wave network or via a switch connected directly to it.</p> <br /><h2>Inclusion Information</h2><p>Adding (Inclusion) – Z-Wave device learning mode, allowing to add the device to existing Z-Wave network.</p> <p>To add the device to the Z-Wave network using Smart Start:</p> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual).</li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).<br />(on the device label).</li> <li>Power the device (turn on the mains voltage).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>To add the device to the Z-Wave network manually:</p> <ol><li>Power the device.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>If you are adding in Security S2, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box)</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with adding using the S1 switch, use B-button instead (located on the housing).<br />SmartStart enabled products can be added to SmartStart enabled Z-Wave controller by scanning the Z-Wave QR Code present on the product. SmartStart product will be added automatically within 10 minutes of being switched on in the network range.</p> <br /><h2>Exclusion Information</h2><p>Removing (Exclusion) – Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing the device restores all the default parameters of the device, but does not reset power metering data.</p> <p>To remove the device from the Z-Wave network:</p> <ol><li>Make sure the device is powered.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in remove mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with removing using the S1 switch, use B-button instead (located on the housing).</p> <p>If parameter 40 enables scenes for triple S1 click, disable it or use B-button instead to remove the device.</p> <p>If parameter 24 is set to 1, use S2 switch instead to remove the device.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control [Deprecated]</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control1" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control2" typeId="blinds_control">
+        <label>Lamella Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGR223</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0303:1000,0303:3000</property>
+      <property name="dbReference">983</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Switch type</label>
+        <description><![CDATA[
+Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the device should treat the switch connected to the S1 and S2 terminals.</p> <p>This parameter is not relevant in gate operating modes (parameter 151 set to 3 or 4). In this case switch always works as a momentary and has to be connected to S1 terminal.</p> <p>If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">momentary switches</option>
+          <option value="1">toggle switches</option>
+          <option value="2">single</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Inputs orientation</label>
+        <description><![CDATA[
+Inputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the operation of switches connected to S1 and S2 without changing the wiring.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default</option>
+          <option value="1">reversed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration">
+        <label>25: Outputs orientation</label>
+        <description><![CDATA[
+Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the operation of Q1 and Q2 without changing the wiring (in case of invalid motor connection) to ensure proper operation.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default</option>
+          <option value="1">reversed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_000000FF" type="integer" groupName="configuration">
+        <label>30: Action for Blinds</label>
+        <description>Action for Blinds</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="1">Open blinds</option>
+          <option value="2">Close blinds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Event/State Parameters - Blinda</label>
+        <description>Event/State Parameters for blinds</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Notification Status for Blinds</label>
+        <description>Notification Status for Blinds</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Notification Type for Blinds</label>
+        <description>Notification Type for Blinds</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_000000FF" type="integer" groupName="configuration">
+        <label>31: Action for Water</label>
+        <description>Action for Water</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="1">Open blinds</option>
+          <option value="2">Close blinds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Event/State Parameters for Water</label>
+        <description>Event/State Parameters for Water</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Notification Status for Water</label>
+        <description>Notification Status for Water</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Notification Type for Water</label>
+        <description>Notification Type for Water</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_32_4_000000FF" type="integer" groupName="configuration">
+        <label>32: Action for Smoke</label>
+        <description>Action for Smoke</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="1">Open blinds</option>
+          <option value="2">Close blinds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Event/State Parameters for Smoke</label>
+        <description>Event/State Parameters for Smoke</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Notification Status for Smoke</label>
+        <description>Notification Status for Smoke</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_32_4_7F000000" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>32: Notification Type for Smoke</label>
+        <description>Notification Type for Smoke</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_33_4_000000FF" type="integer" groupName="configuration">
+        <label>33: Action for CO</label>
+        <description>Action for CO</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="1">Open blinds</option>
+          <option value="2">Close blinds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>33: Event/State Parameters for CO</label>
+        <description>Event/State Parameters for CO</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Notification Status for CO</label>
+        <description>Notification Status for CO</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_33_4_7F000000_wo" type="integer" groupName="configuration">
+        <label>33: Notification Type for CO</label>
+        <description>Notification Type for CO</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_34_4_000000FF" type="integer" groupName="configuration">
+        <label>34: Action for Heat</label>
+        <description>Action for Heat</description>
+        <default>0</default>
+        <options>
+          <option value="0">No action</option>
+          <option value="1">Open blinds</option>
+          <option value="2">Close blinds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Event/State Parameters for Heat</label>
+        <description>Event/State Parameters for Heat</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Notification Status for Heat</label>
+        <description>Notification Status for Heat</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Notification Status for Heat</label>
+        <description>Notification Status for Heat</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>40: S1 Switch Scenes sent</label>
+        <description>Parameter values may be combined</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>41: S2 Switch Scenes sent</label>
+        <description>Parameter values may be combined</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: Measuring power consumed by the device itself</label>
+        <description>Measuring power consumed by the device itself</description>
+        <default>0</default>
+        <options>
+          <option value="0">Function inactive</option>
+          <option value="1">Function active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>61: Power reports - on change</label>
+        <description>Power reports - on change</description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_62_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>62: Power reports - periodic</label>
+        <description>Power reports - periodic</description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy reports - on change</label>
+        <description>Energy reports - on change</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>66: Energy reports - periodic</label>
+        <description>Energy reports - periodic</description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration">
+        <label>150: Force calibration</label>
+        <description><![CDATA[
+Force calibration<br /><h1>Overview</h1><p>By setting this parameter to 2 the device enters the calibration mode. The parameter relevant only if the device is set to work in positioning mode (parameter 151 set to 1, 2 or 4).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">device is not calibrated</option>
+          <option value="1">device is calibrated</option>
+          <option value="2">force device calibration</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_151_1" type="integer" groupName="configuration">
+        <label>151: Operating mode</label>
+        <description><![CDATA[
+Operating mode<br /><h1>Overview</h1><p>This parameter allows adjusting operation according to the connect- ed device.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">roller blind</option>
+          <option value="2">Venetian blind</option>
+          <option value="3">gate w/o positioning</option>
+          <option value="4">gate with positioning</option>
+          <option value="5">roller blind with built-in driver</option>
+          <option value="6">roller blind with built-in driver (impulse)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_152_4" type="integer" groupName="configuration"
+                 min="0" max="90000">
+        <label>152: Venetian blind - time of full turn of the slats</label>
+        <description>Venetian blind - time of full turn of the slats</description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_153_1" type="integer" groupName="configuration">
+        <label>153: Set slats back to previous position</label>
+        <description><![CDATA[
+Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds (parameter 151 set to 2) the parameter determines slats positioning in various situations.<br />The parameter is irrelevant for other modes.<br />If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">slats return #1</option>
+          <option value="1">slats return #2</option>
+          <option value="2">slats return #3</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_154_2" type="integer" groupName="configuration"
+                 min="0" max="600">
+        <label>154: Delay motor stop</label>
+        <description>Delay motor stop after reaching end switch</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_155_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: Motor operation detection</label>
+        <description>Motor operation detection</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_156_4" type="integer" groupName="configuration"
+                 min="0" max="90000">
+        <label>156: Time of up movement</label>
+        <description>Time of up movement</description>
+        <default>6000</default>
+      </parameter>
+
+      <parameter name="config_157_4" type="integer" groupName="configuration"
+                 min="0" max="90000">
+        <label>157: Time of down movement</label>
+        <description>Time of down movement</description>
+        <default>6000</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Roller Shutter</label>
+        <description><![CDATA[
+Shutter position control<br /><h1>Overview</h1><p>"Roller Shutter" is assigned to shutter position control – UP/DOWN (uses Switch Multilevel command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Slats</label>
+        <description><![CDATA[
+Slats position control<br /><h1>Overview</h1><p>"Slats" is assigned to slats position control – UP/DOWN (uses Switch Multilevel command class).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

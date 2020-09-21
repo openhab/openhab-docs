@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_wps104_00_000" listed="false">
+    <label>WPS104 Energy Driven Switch</label>
+    <description><![CDATA[
+Energy Driven Switch<br /><h1>Overview</h1><p>WiDom Energy Driven Switch is a device designed to monitor all <b>parameters</b>, <b>usage</b>, <b>faults</b> and <b>overloads </b>of your electrical system. Unlike an ordinary energy meter, WiDom Energy Driven Switch can be installed to monitor an entire electricity network or a section of the latter.</p> <p>·         <b>Active Energy-saving management</b></p> <p>Automatically connects and disconnects a specific load if the established threshold limit is exceeded, or supplies the required power, momentarily excluding non-priority loads.</p> <p>·         <b>Management and prevention of electrical faults </b></p> <p>Identifies malfunctions based on irregular consumptions and to the maximum time of activity.</p> <p>·         <b>Electrical overload management </b></p> <p>Notifies or disconnects non-priority loads in the eventuality of system overloads.</p> <br /><h2>Inclusion Information</h2><p>If the device is not included into a Z-Wave network, a single click on the (B) button or on the external switch will launch the process of traditional inclusion. If the device inclusion procedure does not start within 2 seconds, the Network Wide Inclusion network will be launched lasting a variable amount of time between 15-30 seconds</p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove a device from the network. WiDom Energy Driven Switch is compatible with all Z-Wave certified controllers. After the exclusion procedure has been activated by the controller, the device can be removed, putting it in <i>Exclusion</i> <i>Mode</i> by three consecutive clicks on the (B) button or on the external switch, when available.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WPS104</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0304</property>
+      <property name="dbReference">246</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Device Status</label>
+        <description><![CDATA[
+How to control the relay<br /><h1>Overview</h1><p>Controlling the relay by means of a single click on the external switch or on the integrated button.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">TOGGLE:ON/OFF</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Device status upon receipt of a Basic Set command</label>
+        <description><![CDATA[
+Device status upon receipt of a Basic Set command<br /><h1>Overview</h1><p>The final status achieved by the device when it receives a <b><i>Basic Set</i></b> command through the Z-Wave network.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">AS_RECEIVED</option>
+          <option value="2">IGNORE_IF_ON</option>
+          <option value="3">IGNORE_IF_OFF</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_2" type="integer" groupName="configuration"
+                 min="0" max="4500">
+        <label>30: Overcurrent Level</label>
+        <description><![CDATA[
+Sets the overcurrent level<br /><h1>Overview</h1><p>Sets the current level above which the time spent above that level is measured.</p> <p>Version C: From 0 to 4500[1] hundredths of Amperes – Default Value: <b>4500 Hundredths of Amperes</b></p> <p>Version S: From 0 to 1250 hundredths of Amperes – Default Value: <b>1250 Hundredths of Amperes</b></p>
+        ]]></description>
+        <default>4500</default>
+      </parameter>
+
+      <parameter name="config_31_2" type="integer" groupName="configuration"
+                 min="0" max="10800">
+        <label>31: Overcurrent Time</label>
+        <description><![CDATA[
+Sets the time to recognize an overcurrent event.<br /><h1>Overview</h1><p>Sets the time beyond which, in the case of overcurrent at a level higher than that established in parameter 30, an OverCurrent event occurs.</p> <p>From 0 to 10800 Seconds (3 Hours) – Default Value: <b>10 Seconds</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Next State</label>
+        <description><![CDATA[
+Defines the next state if an overcurrent event occurr<br /><h1>Overview</h1><p>Defines the next state of the device if an overcurrent event has occurred</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+          <option value="3">TOGGLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration">
+        <label>33: Meter Reset</label>
+        <description><![CDATA[
+Provides total operating time from last meter reset<br /><h1>Overview</h1><p>Provides total operating time from last meter reset. When set to 0 it resets the cumulative values of energy and total operating time.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Reset Meter and time</option>
+          <option value="1">Greater than 0 – IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Energy flow</label>
+        <description><![CDATA[
+Determines whether if energy consumed or energy produced.<br /><h1>Overview</h1><p>Determines whether energy events are related to energy consumed or energy produced.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">CONSUMED</option>
+          <option value="2">PRODUCED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="11250">
+        <label>35: UP Power Level</label>
+        <description><![CDATA[
+Sets the level of instantaneous power in Watts<br /><h1>Overview</h1><p>The upper limit power threshold detector determines when instantaneous power remains above the threshold point (UP Power Level) beyond a specified duration (UP Power Time). When this happens, a <i>UP Power Event</i> occurs.</p> <p>Sets the level of instantaneous power in Watts beyond which time of permanence above this level is calculated. </p> <p>Version C: From 0 to 11250[1] – Default value: <b>11250 </b></p> <p>Version S: From 0 to 3000 – Default value: <b>3000 </b></p>
+        ]]></description>
+        <default>11250</default>
+      </parameter>
+
+      <parameter name="config_36_2" type="integer" groupName="configuration"
+                 min="0" max="10800">
+        <label>36: UP Power Time</label>
+        <description><![CDATA[
+Sets the time in seconds<br /><h1>Overview</h1><p>Sets the time in seconds beyond which, if instantaneous power remains at levels exceeding threshold defined by parameter 35, a UP Power event occurs.</p> <p>From 0 to 10800 seconds (3 Hours) – Default value: <b>10 Seconds</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration">
+        <label>37: UP Power State</label>
+        <description><![CDATA[
+Defines the next status case of a UP Power event<br /><h1>Overview</h1><p>Defines the next status of the device in the case of a UP Power event occurring.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+          <option value="3">TOGGLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>38: UP Power Associated</label>
+        <description><![CDATA[
+Defines the status of Group 2 devices<br /><h1>Overview</h1><p>Defines the status of associated devices in the presence of a UP Power event.</p> <p>From: 1 to 99 for dimming purpose</p> <p>0 (OFF) and -1(ON) for switching ON/OFF.</p> <p>Default: <b>0 – OFF</b></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_39_2" type="integer" groupName="configuration"
+                 min="0" max="11250">
+        <label>39: DOWN Power Level</label>
+        <description><![CDATA[
+Sets the level of instantaneous power in Watts<br /><h1>Overview</h1><p>Sets the level of instantaneous power beyond which the time of permanence below this level is calculated.</p> <p>From 0 to 11250 Watt – Default value: <b>0 W</b></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_40_2" type="integer" groupName="configuration"
+                 min="0" max="10800">
+        <label>40: DOWN Power Time</label>
+        <description><![CDATA[
+Sets the time in seconds<br /><h1>Overview</h1><p>Sets the time beyond which, if instantaneous power remains at levels below threshold defined by parameter 39, a DOWN Power event occurs.      From 0 to 10800 Seconds (3 Hours) – Default value: <b>10 Seconds</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: DOWN Power State</label>
+        <description><![CDATA[
+Defines the next state case of a DOWN Power event<br /><h1>Overview</h1><p>Defines the next state of the device in the case of a DOWN Power event occurring.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+          <option value="3">TOGGLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>42: DOWN Power Associated</label>
+        <description><![CDATA[
+Defines the status of Group 3 devices<br /><h1>Overview</h1><p>Defines the status of associated devices in the presence of a DOWN Power event.</p> <p>From: 1 to 99 for dimming purpose</p> <p>– 0 (OFF) and -1(ON) for switching ON/OFF.</p> <p>Default: <b>0 – OFF</b></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_43_4" type="integer" groupName="configuration"
+                 min="0" max="2000000">
+        <label>43: Energy Level</label>
+        <description><![CDATA[
+Sets the energy level in KWh<br /><h1>Overview</h1><p>Sets the energy level that once exceeded an Energy Limit event occurs<b>.</b></p> <p>From 0 to 2.000.000 KWh – Default value: <b>2.000.000 KWh</b></p>
+        ]]></description>
+        <default>2000000</default>
+      </parameter>
+
+      <parameter name="config_44_1" type="integer" groupName="configuration">
+        <label>44: Energy Limit State</label>
+        <description><![CDATA[
+Defines the next state in case of Energy Limit event<br /><h1>Overview</h1><p>Defines the next state of the device in the case of an Energy Limit event occurring.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+          <option value="3">TOGGLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>45: Variation Instantaneous Power</label>
+        <description><![CDATA[
+Defines the percentage variation of instantaneous power<br /><h1>Overview</h1><p>Defines the percentage variation of instantaneous power determining the sending of the report<b>. </b></p> <p>From: 1 (1%) to 100 (100%) Default value: <b>10 – 10%</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_46_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>46: Report Time Frequency</label>
+        <description><![CDATA[
+Defines the time in minutes<br /><h1>Overview</h1><p>Defines the maximum time in minutes since the previous report beyond which an Instantaneous Power Report will still be sent.</p> <p>From: 1 to 100 minutes. Default value: <b>10 minutes</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_47_1" type="integer" groupName="configuration">
+        <label>47: Variation Total Energy</label>
+        <description><![CDATA[
+Defines the increase energy to generate a report<br /><h1>Overview</h1><p>Defines the increase of total energy required to generate a report listing the level of total energy to the devices associated to the Energy Notification Group</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">IGNORE: No report provided.</option>
+          <option value="1">No report provided.</option>
+          <option value="2">Report at 1 hundredth of KWh.</option>
+          <option value="3">Report at 1 tenth of KWh</option>
+          <option value="4">Report at 1 KWh</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_48_2" type="integer" groupName="configuration"
+                 min="1100" max="2500">
+        <label>48: Nominal Voltage</label>
+        <description><![CDATA[
+Defines the nominal voltage value in tenths of volts<br /><h1>Overview</h1><p>Defines the nominal voltage value in tenths of volts. Together with parameter No. 49 this is used by the automatic notification system to send reports on variations of voltage.</p> <p>Default value: <b>2300</b></p> <p>From: 1100 to 2500</p>
+        ]]></description>
+        <default>2300</default>
+      </parameter>
+
+      <parameter name="config_49_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>49: Fall In Maximum Voltage</label>
+        <description><![CDATA[
+Defines, the nominal value for max voltage fall permitted<br /><h1>Overview</h1><p>Defines, as a percentage, the nominal value for permitted fall in maximum voltage.</p> <p>From: 1 (1%) to 100 (100%) Default value: <b>10 – 10%</b></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_50_2" type="integer" groupName="configuration"
+                 min="0" max="62">
+        <label>50: Electric parameters</label>
+        <description><![CDATA[
+Defines which parameters will be subjected to notification<br /><h1>Overview</h1><p>Defines which electric parameters, other than power, will be subjected to automatic notification.</p> <p>The value to be set for this parameter must be calculated as the sum of values associated to the individual electric parameter indicated in the table of Manual.</p> <p>To send report only for Power please set the value to 0.</p> <p>To send report only for Power and Energy please set the value to 2 (0+2).</p> <p>To send report for Power, Energy, Voltage, Current, Power Factor please set the value to 30 (0+2+4+8+16).</p> <p>By default the report are sent for (Power, Energy, Voltage, Current, Power Factor) 0+2+4+8+16à30</p> <p>Default value: <b>30</b></p> <p>Permitted values: From 0 to 62</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_51_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>51: Voltage RMS value</label>
+        <description><![CDATA[
+Reading of this parameter returns the value of voltage RMS<br /><h1>Overview</h1><p>Reading of this parameter returns the value of voltage RMS at the time of the reading expressed in tenths of Volts.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_52_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>52: Current RMS value</label>
+        <description>Returns the value of current RMS expressed in hundredths of Amperes.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_53_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>53: Power Factor</label>
+        <description>Returns the value of power factor as a percentage</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_54_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>54: Total energy consumed</label>
+        <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_55_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>55: Total energy produced</label>
+        <description>Returns the value of total energy consumed expressed in Wh (thousandths of KWh).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: Start-up status</label>
+        <description>Defines the status of the device following a restart.</description>
+        <default>3</default>
+        <options>
+          <option value="1">ON: Device on</option>
+          <option value="2">OFF: Device off</option>
+          <option value="3">PREVIOUS STATUS: Status prior to restart</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration">
+        <label>61: Configuration reset</label>
+        <description>Defines which parameters should be reset to default values.</description>
+        <default>4</default>
+        <options>
+          <option value="0">FACTORY RESET</option>
+          <option value="1">ASSOCIATIONS RESET</option>
+          <option value="2">CONFIGURATIONS RESET</option>
+          <option value="4">IGNORE: No action is performed.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Type of external switch</label>
+        <description>Defines the type of external switch connected to the device.</description>
+        <default>4</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+          <option value="4">AUTOMATIC RECOGNITION</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Load Control</label>
+        <description>Defines the load control mode</description>
+        <default>1</default>
+        <options>
+          <option value="1">DIRECT CONTROL</option>
+          <option value="2">CONTROL_BY_NORMALLY_OPEN_CONTACTOR</option>
+          <option value="3">CONTROL_BY_NORMALLY_CLOSED_CONTACTOR</option>
+          <option value="4">AS_AN_EXTERNAL_INDICATOR:</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices who will receive notification on: status changes; energy level and power;  local reset of the device</p> <p>Received commands: Basic Report, Device Reset Locally Notification, Meter Report, Multilevel Sensor: Power Report</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Up Power Level Group</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled from Up Power Event</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Down Power Level Group</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled from Down Power Event</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

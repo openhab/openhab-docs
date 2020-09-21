@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_45605_00_000" listed="false">
+    <label>45605 Duplex receptacle</label>
+    <description><![CDATA[
+Duplex receptacle<br /><h1>Overview</h1><p>Transform any home into a smart home with the Jasco Z-Wave Wireless Lighting Control Duplex Receptacle. The Jasco Z-Wave duplex receptacle enables wireless control of on/off functions from the Z-Wave controlled outlet, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The duplex receptacle includes a blue LED indicator light to easily locate the receptacle in a dark room. The receptacle replaces your current electrical outlet, uses your existing wiring and provides a Z-Wave enabled outlet for the lamp or appliance that you would like to control and a standard pass-through AC outlet for other electrical appliances. The receptacle requires in-wall installation with hardwired connections. Take control of your home lighting with Jasco Z-Wave Wireless Lighting Controls! </p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the Program Button to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Press and release the Program Button</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="ge_45605_00_000_config_decimal_param3">
+        <label>Night Light</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">45605</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5252:3530</property>
+      <property name="dbReference">45</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night Light mode where LED is on when switch is off.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Change the top of the switch to OFF<br /><h1>Overview</h1><p>Change the top of the switch to OFF and the bottom of the switch to ON.</p> <p>Note: If you invert the switches and also install the product upside down remember the load will now be controlled by the right, not the left switch.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="ge_45605_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Night Light</label>
+    <description>Defines the behavior of the blue LED.</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">LED on when switch is OFF</option>
+        <option value="1">LED on when switch is ON</option>
+        <option value="2">LED always off</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

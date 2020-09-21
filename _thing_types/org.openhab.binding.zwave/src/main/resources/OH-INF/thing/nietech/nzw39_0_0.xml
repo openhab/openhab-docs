@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_nzw39_00_000" listed="false">
+    <label>NZW39 Dimmable Smart Plug</label>
+    <description><![CDATA[
+Dimmable Smart Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repeater, combines a Z-Wave Outlet &amp; Range Extender in 1 Module</p> <br /><h2>Inclusion Information</h2><p>Put the controller into inclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /><h2>Exclusion Information</h2><p>Put the controller into exclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /><h2>Wakeup Information</h2><p>N/A</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">NZW39</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">2700:2700,B212:271C</property>
+      <property name="dbReference">662</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Dimming Step</label>
+        <description>Percentage of step when switch is dimming up or down (0 = instant)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>2: Minimum Level</label>
+        <description>Minimum dimming level for attached light</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Indicator</label>
+        <description>Turn LED indicator ON when light is ON (paddle switch only)</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Disabled</option>
+          <option value="3">Always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Invert on &amp; off on the physical switch</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>5: Auto OFF</label>
+        <description>Automatically turn switch off after this number of seconds</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1_00000001" type="integer" groupName="configuration">
+        <label>6: Send command on local action</label>
+        <description>When should the switch send commands to Group 3 devices?</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1_00000002" type="integer" groupName="configuration">
+        <label>6: Send command on 3-way action</label>
+        <description>When should the switch send commands to Group 3 devices?</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1_00000004" type="integer" groupName="configuration">
+        <label>6: Send command on z-wave action</label>
+        <description>When should the switch send commands to Group 3 devices?</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1_00000008" type="integer" groupName="configuration">
+        <label>6: Send command on auto off timer</label>
+        <description>When should the switch send commands to Group 3 devices?</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="8">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Association Group 3 setting</label>
+        <description>Change how devices respond when associated in group 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Dim up/down</option>
+          <option value="1">Keep in sync</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>8: Default Level (local)</label>
+        <description>Default level when light is turned on at the switch (0 = previous level)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>9: Default Level (Z-Wave)</label>
+        <description>Default level when light is turned on via Z-Wave command (0 = previous level)</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Sends on/off commands to associated devices when switch is pressed (BASIC_SET)</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>Sends dim/brighten commands to associated devices when switch is pressed (SWITCH_MULTILEVEL_SET)</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

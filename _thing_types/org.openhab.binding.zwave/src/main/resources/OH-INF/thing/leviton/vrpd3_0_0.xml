@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vrpd3_00_000" listed="false">
+    <label>VRPD3 Scene Capable Plug-in Dimmer</label>
+    <description><![CDATA[
+Scene Capable Plug-in Dimmer<br /><h1>Overview</h1><ul><li>Smart plug-in module for use with table and floor lamps</li> <li>ON/OFF/DIM/BRIGHT switching of CFL/LED loads up to 100W and incandescent loads up to 300W </li> <li>ON/OFF scene and zone compatibility</li> <li>2-way status updates</li> <li>Supports Z-Wave Beaming</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug in Leviton VRPD3</li> <li>Place controller in inclusion mode</li> <li>Press button on front of VRPD3</li> </ol><p>If successful, the VRPD3 LED will turn orange during inclusion and then green. The LED will flash red if it fails.</p> <br /><h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press button on front of VRPD3</li> </ol><p>If successful, the VRPD3 LED will turn orange during exclusion and then green. The LED will flash red if it fails.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRPD3</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">1705:0334,1706:0334,5893:0820</property>
+      <property name="dbReference">199</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

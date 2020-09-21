@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhxd_00_000" listed="false">
+    <label>ZMNHXD Qubino 3-Phase Smart Meter</label>
+    <description><![CDATA[
+Qubino 3-Phase Smart Meter<br /><h1>Overview</h1><p>Qubino 3-Phase Smart Meter is used for energy measurements in three-phase electrical power network. It reduces energy consumption, lowers your utility</p> <p><strong>FACTORY RESET</strong></p> <ol><li>Connect the device to the power supply</li> <li>Press and hold the S service button between 6 seconds and 20 seconds</li> <li>Device will be removed from you network</li> </ol><p><strong>LED1 (Green)</strong></p> <ul><li>LED is ON = Power ON, module is included</li> <li>LED is 1s OFF, 1s ON = Power ON, module is excluded</li> </ul><p><strong>LED2 (Yellow)</strong></p> <ol><li>External IR relay enabled only <ul><li>LED is ON = External IR relay is turned ON</li> <li>LED is OFF = External IR relay is turned OFF</li> <li>LED is 0.5s OFF, 0.5s ON = IR communication error</li> </ul></li> <li>External TRIAC relay enabled only <ul><li>LED is ON = External IR relay is turned ON</li> <li>LED is OFF = External IR relay is turned OFF</li> </ul></li> <li>Both TRIAC an IR enabled <ul><li>LED is ON = External IR relay is turned ON</li> <li>LED is OFF = External IR relay is turned OFF</li> <li>LED is 0.5s OFF, 0.5s ON = IR communication error</li> </ul></li> <li>External IR relay disabled <ul><li>LED is ON = modbus packet is sent</li> <li>LED is OFF = modbus packet is received</li> </ul></li> </ol><br /><h2>Inclusion Information</h2><p><strong>AUTOMATICALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (AUTO INCLUSION)</strong></p> <ol><li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Automatic selection of secure/insecure inclusion</li> <li>The device can be automatically added to a Z-Wave network during the first 2 minutes</li> <li>Connect the device to the power supply</li> <li>Auto-inclusion will be initiated within 5 seconds of connection to the power supply and the device will automatically enroll in your network</li> </ol><p>NOTE: For S2 inclusion please check chapter – »16. Z-Wave Security«.</p> <p><strong>MANUALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (MANUAL INCLUSION)</strong></p> <ol><li>Connect the device to the power supply</li> <li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Toggle the Service button S between 0.2 and 6 seconds</li> <li>A new multi-channel device will appear on your dashboard</li> </ol><br /><h2>Exclusion Information</h2><p><strong>REMOVAL FROM A ZWAVE NETWORK (Z-WAVE EXCLUSION)</strong></p> <ol><li>Connect the device to the power supply</li> <li>Make sure the device is within direct range of your Z-Wave gateway (hub) or use a hand-held Z-Wave remote to perform exclusion</li> <li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Press and hold the S service button between 0.2 and 6 seconds</li> <li>The device will be removed from your network but custom configuration parameters will not be erased</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Electric meter (kVAh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor1" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah1" typeId="meter_kvah">
+        <label>Electric meter (kVAh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor2" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor3" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current3" typeId="meter_current">
+        <label>Electric meter (amps) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage3" typeId="meter_voltage">
+        <label>Electric meter (volts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor4" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4,COMMAND_CLASS_BASIC:4;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current4" typeId="meter_current">
+        <label>Electric meter (amps) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4,COMMAND_CLASS_BASIC:4;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts4" typeId="meter_watts">
+        <label>Electric meter (watts) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4,COMMAND_CLASS_BASIC:4;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage4" typeId="meter_voltage">
+        <label>Electric meter (volts) 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:4,COMMAND_CLASS_BASIC:4;type=E_V</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHXD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0007:0054</property>
+      <property name="dbReference">900</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>7: Input switch (i1) function selection</label>
+        <description><![CDATA[
+Available configuration parameters for input switch I1<br /><h1>Overview</h1><ul><li>0 – disabled</li> <li>2 – IR external relay control – mono stable push button</li> <li>3 – IR external relay control – bi-stable switch</li> <li>4 – External relay control – mono stable push button</li> <li>5 – External relay control – bi-stable switch</li> </ul><p><strong>Note!</strong></p> <ul><li>By setting the parameter 7 to value 4 or 5 the external Relay (IKA) is working with input switch without enabling parameter no. 101</li> <li>To make the IR Relay (BICOM) responsive to the digital input, in addition to the setting of the configuration parameter 7, parameter 100 must also be set to value 1 or 2.</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="2">IR ext relay ctrl – mono stable push btn</option>
+          <option value="3">IR external relay control – bi-stable switch</option>
+          <option value="4">External relay control – mono stable push button</option>
+          <option value="5">External relay control – bi-stable switch</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Reporting on power change</label>
+        <description><![CDATA[
+This parameter is valid for Active Powers Total, Phase1, Phase2 and Phase3.<br /><h1>Overview</h1><p>Available configuration parameters (data type is 1 Byte DEC)</p> <ul><li>Default value 50</li> <li>0 – reporting disabled</li> <li>1-100 = 1% - 100% reporting enabled. Power report is send only when actual power in Watts (in real time changes for more than set percentage comparing to previous Active Power, step is 1%.</li> </ul><p><strong>NOTE:</strong> if power change is less than 5 W, the report is not send (pushed).<br /><strong>NOTE:</strong> Device is measuring also some disturbances even if on the output is no load. To avoid disturbances:</p> <ul><li>If measured Active Power (W) is below e.g. 5W-&gt; the reported value in this case is 0W</li> </ul>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">reporting disabled</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="600" max="65535">
+        <label>42: Reporting on time interval</label>
+        <description><![CDATA[
+Energy report time intervals<br /><h1>Overview</h1><p>This parameter is currently valid only for Active Energy Total Import/Export (kWh), Reactive<br />Energy Total (kvarh), Total Energy (kVAh)</p> <p><strong>Available configuration parameters (data type is 2 Byte DEC)</strong></p> <ul><li>Default value 600 (600 seconds - 10 minutes)</li> <li>0 – reporting disabled</li> <li>600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is send with the time interval set by entered value.</li> </ul><p><strong>Note:</strong> Device is reporting only if there was a change of 0.1 in Energy</p> <p><strong>Note:</strong> In the future will be possible to measure and report also Active Energy on PH1, PH2 and PH3.</p>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">reporting disabled</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_2" type="integer" groupName="configuration"
+                 min="600" max="65535">
+        <label>43: Other Values - Reporting on time interval</label>
+        <description><![CDATA[
+Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power<br /><h1>Overview</h1><p><strong>Available configuration parameters (data type is 2 Byte DEC)</strong></p> <ul><li>Default value 600 (600 seconds - 10 minutes)</li> <li>0 – reporting disabled</li> <li>600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is sent with the time interval set by entered value.</li> <li>Note: Device is reporting only if there was a change</li> </ul>
+        ]]></description>
+        <default>600</default>
+        <options>
+          <option value="0">reporting disabled</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Enable / Disable External IR relay (BICOM)</label>
+        <description><![CDATA[
+Enable / Disable External IR relay (BICOM)<br /><h1>Overview</h1><p>Available configuration parameters (data type is 1 Byte DEC):</p> <ul><li>default value 0</li> <li>0 – External IR relay disabled</li> <li>1 – External IR relay enabled and connected to all 3 Phases</li> <li>2 – External IR relay enabled and connected to a Phase 1</li> </ul><p><strong>NOTE1:</strong> After parameter change, first exclude module (without setting parameters to default value) and then re include the module.</p> <p><strong>NOTE 2:</strong> If you don't have IR BICOM relay module mounted and you enable IR communication (parameter 100 is 1 or 2) there will be no valid IR relay state reported. It will be reported IR COMMUNICATION ERROR and LED2 will BLINK.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">External IR relay disabled</option>
+          <option value="1">IR relay enabled for all 3 phases</option>
+          <option value="2">IR relay enabled for Phase 1</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_101_1" type="integer" groupName="configuration">
+        <label>101: Enable / Disable External relay (IKA)</label>
+        <description><![CDATA[
+Enable / Disable External relay (IKA)<br /><h1>Overview</h1><p>Available configuration parameters (data type is 1 Byte DEC):</p> <ul><li>default value 0</li> <li>0 – External relay disabled</li> <li>1 – External relay enabled and connected to Phase 2</li> </ul><p><strong>NOTE:</strong> After parameter change, first exclude module (without setting parameters to default value) and then re include the module.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">External relay disabled</option>
+          <option value="1">External relay enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_106_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>106: maximum power threshold of all phases together</label>
+        <description><![CDATA[
+maximum power threshold of all phases together<br /><h1>Overview</h1><p>External IR relay (BICOM) power threshold settings – maximum power of all phases together</p> <p>This parameter defines a threshold when External IR relay is being turned off. (If Parameter no. 100 is set to the value 1 or 2)</p> <p>Available configuration parameters (data type is 2 Byte<br />DEC)</p> <ul><li>Default value 0</li> <li>0 – no function</li> <li>10-60000 – 10W-60000W</li> </ul><p><strong>NOTE:</strong> Meter is capable of measuring max 3x65A!</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_112_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>112: Power threshold – Delay before power on</label>
+        <description><![CDATA[
+Power threshold – Delay before power on<br /><h1>Overview</h1><p>External IR relay/ External relay is turned off due to detected overload (as set by parameter 106&amp;107) and remains off for a time, defined in this parameter. After that time, the output turns on to check, if the overload is still present.</p> <p>Available configuration parameters (data type is 2 Byte DEC)</p> <ul><li>Default value 0 (disabled)</li> <li>0 – External IR relay/ External relay will not turn back on</li> <li>30 – 32535 = 30 s – 32535 s</li> </ul><p><strong>NOTE:</strong> the delay time may be prolonged for more then 10s of the time set by the parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">External relay will not turn back on</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Lifeline group (reserved for communication with the gateway (hub))</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

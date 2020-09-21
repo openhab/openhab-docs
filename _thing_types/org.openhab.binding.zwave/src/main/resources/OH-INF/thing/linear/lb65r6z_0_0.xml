@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_lb65r6z_00_000" listed="false">
+    <label>Smart Retrofit Lighting Kit LB65R6Z-1</label>
+    <description><![CDATA[
+LB65R6Z-1<br /><h1>Overview</h1><p>Smart Retrofit Lighting Kit with Z-Wave radio.</p> <ul><li>Control lights remotely and save energy</li> <li>Compatible with smart home systems supporting Z-Wave</li> <li>65 Watt equivalent light (650 lumens)</li> <li>Consumes only 8.5 watts of power</li> <li>2700K Soft White with frosted glass</li> <li>Instant ON and fully dimmable</li> <li>Functions as a Z-Wave signal repeater</li> <li>Very simple to include in your network</li> <li>Z-Wave Plus certified</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Turn Off power to the light bulb socket</li> <li>Screw in the light bulb</li> <li>Place your network controller into inclusion mode by following the controller manufacturer's instructions</li> <li>Turn On power to the light bulb.  If successful, the LED light bulb will flash twice to indicate successful inclusion.</li> <li>If the controller/gateway shows it was a fail, repeat the procedure.</li> </ol><p>Note: If Inclusion still fails after the 2nd attempt, you need to first RESET the dt Smart Bulb before repeating the above steps.</p> <br /><h2>Exclusion Information</h2><ol><li>Turn off power to the light bulb socket</li> <li>Follow the network controller instruction to place your network controller into exclusion mode to remove the dt light bulb from the network.</li> <li>After being prompted by the network controller, turn On power to the light bulb.  If successful, the LED light bulb will flash twice to indicate successful inclusion.</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">Smart Retrofit Lighting Kit</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4C42:3133</property>
+      <property name="dbReference">1020</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Dim level when the light bulb is turned On</label>
+        <description><![CDATA[
+Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>The brightness level will be resume to full brightness when the dt Smart Bulb is turned ON every time.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable dim level memory</option>
+          <option value="1">Enable dim level memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim / Bright Step Level</label>
+        <description><![CDATA[
+Dimming/Brightening Step Level<br /><h1>Overview</h1><p>A low value provides gradual dimming and brightening, a high values makes it change rapidly.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>10: Dim / Bright Speed</label>
+        <description>How fast the brightness will change with each dimming step</description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>LB65R6Z-1 supports Group 1 with up to ﬁve devices for lifeline communication. Group 1 must be assigned the Node ID of the controller to which unsolicited notiﬁcations will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “manual reset” event. Please refer to the instructions manual of your remote controller or gateway for detail procedures on how these function can be set.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

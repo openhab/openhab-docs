@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="intermatic_pe653_03_004" listed="false">
+    <label>PE653 Pool Control</label>
+    <description><![CDATA[
+Pool Control<br /><h1>Overview</h1><p>A wireless electronic controller for pool or spa automation. Retrofit existing mechanical timers or install with new construction. Integrates with home automation software that utilizes Z-Wave wireless technology.</p> <p>The unit itself is the PE653, which is a control box that directly controls the pump(s) and heater as well as connects to a temperature probe.</p> <p>The unit also typically comes with a hand held wireless remote (the PE953). In standard mode, this controller is a primary controller that only has the PE653 in a local Z-Wave network. To use this controller in another z-wave network, the PE653 is included in that network and then the PE953 is set as a secondary controller.</p> <p>This unit has support for 1 and 2 speed pumps as well as variable speed pumps. </p> <br /><h2>Inclusion Information</h2><p>Including the PE653 alone is very easy. Put your controller into include mode and the click the include button on the PE 653. </p> <p>When you want to continue to use the PE953 as a secondary controller, the process is more involved. You must follow these steps exactly. Also, these steps are for version 3.4 of the firmware only. 3.1-3.3 can still be included (although the controller locks up on Step 9 and must have the batteries pulled to reset), but the command classes are not the same and won't work with this entry.</p> <p>1. 953 choose Reset Device {clears the 653}</p> <p>2. 653 push Include button {wipes programming, Include light starts blinking}</p> <p>3. 953 choose Reset Controller, choose ‘reset net &amp; config’</p> <p>4. Put your master ZWave controller into include mode </p> <p>5. 653 push Include button</p> <p>6. App should pair and prompt to select name, handler, app, etc</p> <p>7. 953 choose Controller Copy {another non-intuitive step, this adds the remote to the master Zwave controller}</p> <p>8. 953 choose Receive Net Only</p> <p>9. 953 should report ‘Successful’</p> <p>10.    Put your master zWave controller back into operating mode. For me, this meant plugging it back into openhab and restarting. Do not leave your controller in include mode for the next step, or it won't include</p> <p>10. 953 choose Include device</p> <p>11. 653 push Include button {one more time!}</p> <p>12. 953 should report ‘successful’</p> <p>PE653 should not show up in Inbox. </p> <p>Also, please note that the PE653 will reboot a few times while OpenHab discovers it. This is normal and will stop after a few reboots.</p> <br /><h2>Exclusion Information</h2><p>Excluding the PE653 alone is very easy. Put a controller into exclude mode and then click the include button.</p> <p>When paired with the PE953, simply go to the PE953 and choose Reset Device. Then go to the PE653 and click include.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Intermatic</property>
+      <property name="modelId">PE653</property>
+      <property name="manufacturerId">0005</property>
+      <property name="manufacturerRef">5045:0653</property>
+      <property name="versionMin">3.4</property>
+      <property name="versionMax">3.4</property>
+      <property name="dbReference">1015</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2_000000FF" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>1: Booster/Cleaner Pump Operation Mode</label>
+        <description><![CDATA[
+Which circuit the booster/cleaner pump resides on<br /><h1>Overview</h1><p>1: No</p> <p>2: Uses Circuit-1</p> <p>3: Variable Speed pump Speed-1</p> <p>4: Variable Speed pump Speed-2</p> <p>5: Variable Speed pump Speed-3</p> <p>6: Variable Speed pump Speed-4</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_1_2_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>1: Pump Type Operation Mode</label>
+        <description><![CDATA[
+Which type of pump is being used<br /><h1>Overview</h1><p>0: 1 Speed Pump without Booster/Cleaner</p> <p>1: 1 Speed Pump with Booster/Cleaner</p> <p>2: 2 Speed Pump without Booster/Cleaner</p> <p>3: 2 Speed Pump with Booster/Cleaner</p> <p>4: Variable Speed Pump without Booster/Cleaner</p> <p>5: Variable Speed Pump with Booster/Cleaner</p> <p>6: Reserved 6</p> <p>7: Reserved 7</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Fireman Timeout</label>
+        <description><![CDATA[
+Minutes that pump will continue to run after heater shutoff<br /><h1>Overview</h1><p>255: No heater installed</p> <p>0-15: Number of minutes for cooldown</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>22: Pool - Spa Mode</label>
+        <description><![CDATA[
+Controller Mode<br /><h1>Overview</h1><p>0: Pool</p> <p>1: Spa</p> <p>2: Both</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

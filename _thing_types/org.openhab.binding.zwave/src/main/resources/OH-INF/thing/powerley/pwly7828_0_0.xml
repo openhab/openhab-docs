@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="powerley_pwly7828_00_000" listed="false">
+    <label>PWLY-7828-A1 Thermostat - HVAC</label>
+    <description><![CDATA[
+Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by the home's heating and cooling system, and Powerley provides the connectivity to understand usage of the home's HVAC and control remotely or automatically with the Powerley Thermostat. The Powerley Thermostat uses the Z-Wave protocol and can be seamlessly integrated into the connected home via the Powerley Energy Bridge to facilitate communication and control between the devices. The thermostat provides the user with the ability to remotely control home temperature and also allows Powerley to optimize the HVAC system's use balancing energy usage and comfort. The device also provides for the ability to facilitate Demand Response events, including allowing the consumer to choose whether or not to participate in the event via push notifications.</p> <br /><h2>Inclusion Information</h2><p>To put your thermostat into inclusion mode, press and hold Mode for 5 seconds. Hold for 5 seconds:   • CONNECT will scroll across the thermostat display once in inclusion mode. • SUCCESS will scroll across the thermostat display once included. • FAIL will scroll across the thermostat display if inclusion is unsuccessful, or if process takes longer than 1 minute.</p> <br /><h2>Exclusion Information</h2><p>To exclude your Thermostat, press and hold Mode for 5 seconds to initiate Z-Wave exclusion process:   • DELETE will scroll across the thermostat display once in exclusion mode. • To cancel the exclusion process, press Mode. • To complete exclusion press either of the up/down arrows. • SUCCESS will scroll across the thermostat display once excluded. NOTE: Excluding the thermostat will restore it to the default state for Z-Wave and temperature set points.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="powerley_pwly7828_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="powerley_pwly7828_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="powerley_pwly7828_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Powerley</property>
+      <property name="modelId">PWLY-7828-A1</property>
+      <property name="manufacturerId">028C</property>
+      <property name="manufacturerRef">A55A:0001</property>
+      <property name="dbReference">1149</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Display Units</label>
+        <description>Display Units</description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: HVAC Setting</label>
+        <description>HVAC Setting</description>
+        <default>1</default>
+        <options>
+          <option value="0">1 Stage Conventional</option>
+          <option value="1">2 Stage Conventional</option>
+          <option value="2">Heat Pump w/ O-Wire</option>
+          <option value="3">Heat Pump w/ B-Wire</option>
+          <option value="4">Heat Pump w/ O-Wire &amp; aux heating</option>
+          <option value="5">Heat Pump w/ B-Wire &amp; aux heating</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: ECO Mode</label>
+        <description>ECO Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Thermostat Default Settings</label>
+        <description>Thermostat Default Settings</description>
+        <default>0</default>
+        <options>
+          <option value="0">No Change</option>
+          <option value="1">Restore Thermostat Factory Settings (minus z-wave)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Temperature Calibration</label>
+        <description><![CDATA[
+Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) - (-2.8) C</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">+0F</option>
+          <option value="1">+1F</option>
+          <option value="2">+2F</option>
+          <option value="3">+3F</option>
+          <option value="4">+4F</option>
+          <option value="5">+5F</option>
+          <option value="251">-1F</option>
+          <option value="252">-2F</option>
+          <option value="253">-3F</option>
+          <option value="254">-4F</option>
+          <option value="255">-5F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: LED Dimming (If applicable)</label>
+        <description>LED Dimming (If applicable)</description>
+        <default>3</default>
+        <options>
+          <option value="0">Low</option>
+          <option value="1">Medium</option>
+          <option value="2">High</option>
+          <option value="3">Auto</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Demand Response Mode</label>
+        <description>Demand Response Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Swing Setting</label>
+        <description><![CDATA[
+Swing Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0F</option>
+          <option value="1">1F</option>
+          <option value="2">2F</option>
+          <option value="3">3F</option>
+          <option value="4">4F</option>
+          <option value="5">5F</option>
+          <option value="6">6F</option>
+          <option value="7">7F</option>
+          <option value="8">8F</option>
+          <option value="9">9F</option>
+          <option value="10">10F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Differential Setting</label>
+        <description><![CDATA[
+Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">0F</option>
+          <option value="1">1F</option>
+          <option value="2">2F</option>
+          <option value="3">3F</option>
+          <option value="4">4F</option>
+          <option value="5">5F</option>
+          <option value="6">6F</option>
+          <option value="7">7F</option>
+          <option value="8">8F</option>
+          <option value="9">9F</option>
+          <option value="10">10F</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: OTA</label>
+        <description>OTA (Over The Air) programming error code</description>
+        <default>0</default>
+        <options>
+          <option value="0">(Default) No error</option>
+          <option value="1">Battery low, reflashing not possible</option>
+          <option value="2">OTA cancelled before completion</option>
+          <option value="3">Fragment CRC error</option>
+          <option value="4">Total image CRC error</option>
+          <option value="5">External flash error</option>
+          <option value="6">Fragment received out of order</option>
+          <option value="7">Invalid firmware or manufacture ID</option>
+          <option value="8">OTA session not properly initialized</option>
+          <option value="9">Same image currently running</option>
+          <option value="10">Time out during OTA download between fragments</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Display</label>
+        <description>Display always on</description>
+        <default>1</default>
+        <options>
+          <option value="0">Display off in C-Wire powered mode</option>
+          <option value="1">Display on in C-Wire powered mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This thermostat supports a single Z-Wave Association Group (Group 1) called the "lifeline.” All thermostat related commands are sent to the NodeID programmed in Group 1. Z-Wave commands that are sent to Group 1 include: Battery Level Thermostat heat set point Thermostat cool set point Device local reset notification Temperature Humidity Fan mode Fan mode current state of operation Thermostat mode Thermostat current state of operation.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="powerley_pwly7828_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="powerley_pwly7828_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="powerley_pwly7828_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Idle</option>
+        <option value="1">Running</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

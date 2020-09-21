@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0" bindingId="zigbee"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+	<thing-type id="osram-switch-4x-eu" listed="false">
+		<label>Osram Smart+ Switch</label>
+		<channels>
+			<channel id="buttonBottomRight" typeId="system.button">
+				<label>Button bottom right</label>
+				<description>The button in the bottom right corner (LED pointing down wards).</description>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_shortpress_cluster_id">0x0006</property>
+					<property name="zigbee_shortpress_command_id">0x01</property>
+					<property name="zigbee_longpress_cluster_id">0x0008</property>
+					<property name="zigbee_longpress_command_id">0x05</property>
+				</properties>
+			</channel>
+			<channel id="buttonBottomRightLongpressRelease" typeId="system.button">
+				<label>Button bottom right long press release</label>
+				<description>This channel gets an event when a long press on the bottom right button is released.</description>
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_shortpress_cluster_id">0x0008</property>
+					<property name="zigbee_shortpress_command_id">0x03</property>
+				</properties>
+			</channel>
+			<channel id="buttonBottomLeft" typeId="system.button">
+				<label>Button bottom left</label>
+				<description>The button in the bottom left corner (LED pointing down wards).</description>
+				<properties>
+					<property name="zigbee_endpoint">2</property>
+					<!-- short press is not working yet -->
+					<!-- <property name="zigbee_shortpress_cluster_id">0x0300</property> -->
+					<!-- <property name="zigbee_shortpress_command_id">0x4C</property> -->
+					<property name="zigbee_longpress_cluster_id">0x0300</property>
+					<property name="zigbee_longpress_command_id">0x03</property>
+				</properties>
+			</channel>
+			<channel id="buttonBottomLeftLongpressRelease" typeId="system.button">
+				<label>Button bottom left long press release</label>
+				<description>This channel gets an event when a long press on the bottom left button is released.</description>
+				<properties>
+					<property name="zigbee_endpoint">2</property>
+					<property name="zigbee_shortpress_cluster_id">0x0300</property>
+					<property name="zigbee_shortpress_command_id">0x01</property>
+                    <property name="zigbee_shortpress_parameter_name">moveMode</property>
+                    <property name="zigbee_shortpress_parameter_value">0</property>
+				</properties>
+			</channel>
+			<channel id="buttonTopRight" typeId="system.button">
+				<label>Button top right</label>
+				<description>The button in the top right corner (LED pointing down wards).</description>
+				<properties>
+					<property name="zigbee_endpoint">3</property>
+					<property name="zigbee_shortpress_cluster_id">0x0006</property>
+					<property name="zigbee_shortpress_command_id">0x00</property>
+					<property name="zigbee_longpress_cluster_id">0x0008</property>
+					<property name="zigbee_longpress_command_id">0x01</property>
+				</properties>
+			</channel>
+			<channel id="buttonTopRightLongpressRelease" typeId="system.button">
+				<label>Button top right long press release</label>
+				<description>This channel gets an event when a long press on the top right button is released.</description>
+				<properties>
+					<property name="zigbee_endpoint">3</property>
+					<property name="zigbee_shortpress_cluster_id">0x0008</property>
+					<property name="zigbee_shortpress_command_id">0x03</property>
+				</properties>
+			</channel>
+			<channel id="buttonTopLeft" typeId="system.button">
+				<label>Button top left</label>
+				<description>The button in the top left corner (LED pointing down wards).</description>
+				<properties>
+					<property name="zigbee_endpoint">4</property>
+					<!-- short press is not working yet -->
+					<!-- <property name="zigbee_shortpress_cluster_id">0x0300</property> -->
+					<!-- <property name="zigbee_shortpress_command_id">0x4C</property> -->
+					<property name="zigbee_longpress_cluster_id">0x0300</property>
+					<property name="zigbee_longpress_command_id">0x03</property>
+				</properties>
+			</channel>
+			<channel id="buttonTopLeftLongpressRelease" typeId="system.button">
+				<label>Button top left long press release</label>
+				<description>This channel gets an event when a long press on the top left button is released.</description>
+				<properties>
+					<property name="zigbee_endpoint">4</property>
+					<property name="zigbee_shortpress_cluster_id">0x0300</property>
+					<property name="zigbee_shortpress_command_id">0x01</property>
+					<property name="zigbee_shortpress_parameter_name">moveMode</property>
+					<property name="zigbee_shortpress_parameter_value">0</property>
+				</properties>
+			</channel>
+			<channel id="batteryVoltage" typeId="battery_voltage">
+				<properties>
+					<property name="zigbee_endpoint">2</property>
+				</properties>
+			</channel>
+		</channels>
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+		</config-description>
+	</thing-type>
+</thing:thing-descriptions>

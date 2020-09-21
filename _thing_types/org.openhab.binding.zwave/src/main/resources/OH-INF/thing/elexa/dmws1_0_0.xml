@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="elexa_dmws1_00_000" listed="false">
+    <label>DMWS1 Dome Leak Sensor</label>
+    <description><![CDATA[
+Dome Leak Sensor<br /><h1>Overview</h1><p>The Dome Leak Sensor is a battery powered Z-Wave Plus device that can detect wetness and send a notification when it does so. The Leak Sensor consists of two parts—the “SENSOR ASSEMBLY,” and the optional “REMOTE SENSOR PROBE.” They both detect water similarly, using three visible “LEAD.” The moment water touches any of the LEAD, the device will beep and send a notification with its moisture status to its Z-Wave controller.</p> <br /><h2>Inclusion Information</h2><p>Put controller in inclusion mode.</p> <p>Remove cover from device, remove tab from battery (if present), and press button 3 times rapidly.</p> <br /><h2>Exclusion Information</h2><p>Put controller in exclusion mode.</p> <p>Remove cover from device and press button 3 times rapidly.</p> <br /><h2>Wakeup Information</h2><p>Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up. If this doesn't wake up the device, try triple-clicking the button. This causes the device to emit a NIF frame, which the binding treats as a wake up.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Elexa Consumer Products Inc.</property>
+      <property name="modelId">DMWS1</property>
+      <property name="manufacturerId">021F</property>
+      <property name="manufacturerRef">0003:0085</property>
+      <property name="dbReference">651</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Total Alarm Duration</label>
+        <description><![CDATA[
+Total time the Leak Sensor will beep and light its LED in the event of a leak<br /><h1>Overview</h1><p>0: Leak Sensor beeps until water is removed</p> <p>1-255: 1-255 minutes</p>
+        ]]></description>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Mute Time</label>
+        <description>Quiet time between each Reminder Alarm</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="10" max="255">
+        <label>3: Initial Alarm</label>
+        <description>Time the Leak Sensor beeps before it is muted</description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>4: Reminder Alarm</label>
+        <description>Length of each beep after the Initial Alarm</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Enable/Disable Audible Alarm</label>
+        <description>Enables or disables the audible alarm (“beeping”)</description>
+        <default>1</default>
+        <options>
+          <option value="0">Audible Alarm Disabled</option>
+          <option value="1">Audible Alarm Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Enable/Disable Water Detection</label>
+        <description>If disabled, the device will not respond in any way to detected leaks.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Water Detection Disabled</option>
+          <option value="1">Water Detection Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Basic Set Level</label>
+        <description><![CDATA[
+The value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview</h1><p>Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller.  The Leak Sensor sends this group a Notification Report and a Binary Sensor Report when water is detected or removed.  It also sends this group a Battery Report in reponse to Battery Get commands and a Locally Reset Notification upon local reset.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control</label>
+        <description><![CDATA[
+Group to receive BASIC_SET on leak change<br /><h1>Overview</h1><p>The Leak Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to a detected leak. Then, after the leak is no longer detected, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 7. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 3 supports up to 5 members and the Leak Sensor sends it a NOTIFICATION_REPORT when water is detected or removed</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor Binary</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 4 supports up to 5 members and the Leak Sensor sends it a SENSOR_BINARY_REPORT when water is detected or removed.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

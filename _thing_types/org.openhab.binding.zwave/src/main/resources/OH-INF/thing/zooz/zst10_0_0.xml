@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zst10_00_000" listed="false">
+    <label>ZST10 S2 USB Stick Controller</label>
+    <description><![CDATA[
+S2 USB Stick Controller<br /><h1>Overview</h1><ul><li>Z-Wave Plus Static USB Controller</li> <li>Latest S2 security protocol for a truly private network</li> <li>Works with Smart Start Z-Wave devices</li> <li>Extended range up to 130 feet indoors and up to 500 feet in open space</li> <li>Z-Wave Plus chip for faster command processing</li> <li>LED indicator signals wireless communication in progress for efficient troubleshooting</li> <li>No drivers needed: works out of the box on Windows, Linux, and MAC OS</li> </ul><h3><strong>NOTE:</strong> Windows 7 &amp; 8 require drivers available free from Zooz support. Windows 8.1 and later do not require drivers.</h3> <br /><h2>Inclusion Information</h2><p>N/A - controller</p> <br /><h2>Exclusion Information</h2><p>N/A - controller</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZST10</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0401:0002</property>
+      <property name="dbReference">1128</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

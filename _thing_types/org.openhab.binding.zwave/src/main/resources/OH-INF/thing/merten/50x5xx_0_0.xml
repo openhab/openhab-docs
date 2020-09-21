@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_50x5xx_00_000" listed="false">
+    <label>50x5xx Roller shutter push-button</label>
+    <description><![CDATA[
+Roller shutter push-button<br /><h1>Overview</h1><p>The roller shutter push-button contains a radio receiver for the Merten CONNECT radio system. If you use the blind control inserts 580699 or 580698, you can operate the connected roller shutter drive remotely using a Merten CONNECT radio transmitter. You can also operate the roller shutters using the rocker on the roller shutter push-button.</p> <p>You can use the Merten CONNECT radio button, the Merten CONNECT radio remote control or the Merten CONNECT radio central unit as the transmitter.</p> <br /><h2>Inclusion Information</h2><p>Program (transmits Node info frame)</p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p> <br /><h2>Exclusion Information</h2><p>Reset to the factory settings; exclude  </p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance1" typeId="sensor_luminance">
+        <label>Sensor (luminance) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">50x5xx</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">4004:0001</property>
+      <property name="dbReference">57</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_176_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>176: Changeover delay (motor protection)</label>
+        <description><![CDATA[
+Changeover delay (motor protection)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Changeover delay =  Input * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_177_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>177: Raising time (Input 1)</label>
+        <description><![CDATA[
+Raising time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_178_1_wo" type="integer" groupName="configuration">
+        <label>178: Raising time (Input 2)</label>
+        <description><![CDATA[
+Raising time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s  </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_179_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>179: Lowering time (input 1)</label>
+        <description><![CDATA[
+Lowering time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_180_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>180: Lowering time (Input 2)</label>
+        <description><![CDATA[
+Lowering time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_181_1" type="integer" groupName="configuration">
+        <label>181: Inclusion of light sensor</label>
+        <description>Inclusion of light sensor</description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto</option>
+          <option value="1">Enable</option>
+          <option value="2">Disable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_182_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>182: Brightness threshold</label>
+        <description><![CDATA[
+Brightness threshold<br /><h1>Overview</h1><p>Allowed values: 0-255</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_183_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>183: Reaction threshold for raising shutter (Input 1)</label>
+        <description><![CDATA[
+Reaction threshold for raising shutter (Inpuit 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_184_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>184: Reaction threshold for raising shutter (Input 2)</label>
+        <description><![CDATA[
+Reaction threshold for raising shutter (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_185_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>185: Reaction threshold for lowering shutter (Input 1)</label>
+        <description><![CDATA[
+Reaction threshold for lowering shutter (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_186_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>186: Reaction threshold for lowering shutter (Input 2)</label>
+        <description><![CDATA[
+Reaction threshold for lowering shutter (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Other device to be switched</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz06_00_000" listed="false">
+    <label>TZ06 In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW</label>
+    <description><![CDATA[
+In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW<br /><h1>Overview</h1><p>This in-wall switch module is a transceiver which is a Z-Wave Plus™ enabled device and is fully compatible with any Z-Wave enabled network.</p> <p>Mini size design let the module can easily hide itself into the wall box and that will be good for the house decoration.</p> <p>There are many kind of application by using the module to switch Load On and Off, one main application is the light control.</p> <br /><h2>Inclusion Information</h2><p>In the front casing, there is an on/off button with LED indicator below which is to toggle switch on and off or carries out inclusion, exclusion, reset or association.  When first power is applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals.  It implies that it has not been assigned a node ID and start auto inclusion.</p> <p>Pressing the Include button of TZ06 three times within 2 seconds will enter inclusion mode</p> <br /><h2>Exclusion Information</h2><p>Pressing the Include button of TZ06 three times within 2 seconds will enter exclusion mode</p> <br /><h2>Wakeup Information</h2><p>Mains Powered Device. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ06</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0001:0004</property>
+      <property name="dbReference">156</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Selected Relay</label>
+        <description><![CDATA[
+Selected Relay (Endpoint)<br /><h1>Overview</h1><p>If Controller not using Multi_Channel command class to access the endpoint of PAN06, you may configure the endpoint value to react the Basic Command Class</p> <p>Relay 1: Only Relay 1 can be controlled and configured<br />Relay 2: Only Relay 2 can be controlled and configured<br />Relay 1 &amp; 2: Both Relays can be controlled and configured</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">Relay 1</option>
+          <option value="2">Relay 2</option>
+          <option value="3">Relay 1&amp;2</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: External Switch Mode</label>
+        <description><![CDATA[
+Change the External Switch (S1 &amp; S2) Mode<br /><h1>Overview</h1><p>Manual Switch S1 and S2 can be set to Edge mode or Pulse mode or Edge-Toggle mode, default value is Edge mode.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Edge mode</option>
+          <option value="2">Pulse mode</option>
+          <option value="3">Edge-Toggle mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Restore Switch State</label>
+        <description><![CDATA[
+Restore Switch State after AC power loss<br /><h1>Overview</h1><p>Whenever the AC Power return from lost, TZ06 will restore the Switch state which could be SWITCH OFF, LAST SWITCH STATE, SWITCH ON.  The default setting is LAST SWITCH STATE.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch OFF</option>
+          <option value="1">Last Switch State</option>
+          <option value="2">Switch ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>4: Auto OFF Timer</label>
+        <description><![CDATA[
+Auto OFF Timer Countdown<br /><h1>Overview</h1><p>Whenever TZ06 switches to ON, the auto OFF timer will begin to count down.  After the time decreases to zero, it will switch to OFF automatically.  However, if auto OFF timer is set to 0, the auto OFF function will be disabled.  The default setting is 0.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: RF Command Mode</label>
+        <description><![CDATA[
+RF Command Mode<br /><h1>Overview</h1><p>Whenever a Switch OFF command, BASIC_SET, BINARY_SWITCH_SET, SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.</p> <p>5-0: Switch OFF: It switches to OFF State. The default setting is Switch OFF<br />5-1: Ignore: The Switch OFF command will be ignored<br />5-2: Switch Toggle: It switches to the inverse of current State<br />5-3: Switch ON: It switches to ON state</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch OFF</option>
+          <option value="1">Switch Ingore</option>
+          <option value="2">Switch Toggle</option>
+          <option value="3">Switch ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Existence of Endpoint 3</label>
+        <description><![CDATA[
+Existence of Endpoint 3<br /><h1>Overview</h1><p>The Endpoint 3 of Multi-Channel Command Class is related to Relay 1 and Relay 2.</p> <p>It may be redundant for the need to control Relay 1 or Relay 2 individually.  When the existence of Endpoint 3 is set as 2, the endpoint 3 of Multi-Channel Command Class will be disabled.  The default value is 1.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Endpoint 3 exists</option>
+          <option value="2">No Endpoint 3</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Relay 1 + 2</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Relay 1</label>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Relay 2</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

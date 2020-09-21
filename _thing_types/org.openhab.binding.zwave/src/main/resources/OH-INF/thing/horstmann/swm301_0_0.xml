@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_swm301_00_000" listed="false">
+    <label>SWM301 Z-Wave Module for Water Meter</label>
+    <description><![CDATA[
+Z-Wave Module for Water Meter<br /><h1>Overview</h1><p>SWM 301 is a battery-powered RF module using Z-Wave® technology for reporting secondary water metering readings in domestic dwellings.</p> <p>The RF module records the meter reading by backlash-free pick-up on the litre wheel of the meter register and transmits the data over the Zwave network either on a time or delta change.</p> <br /><h2>Inclusion Information</h2><ol><li>Put network controller in Inclusion / Exclusion mode.</li> <li>Hold a small magnet near to reed switch until the LED is turned on. Remove magnet right away when LED turned on. LED will remain on for next 4 seconds and then it will flash once to indicate NIF is sent.</li> <li>Repeat the step 2 if LED is not flashed once.</li> <li>The controller will indicate the successful inclusion/ exclusion operation.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put network controller in Inclusion / Exclusion mode.</li> <li>Hold a small magnet near to reed switch until the LED is turned on. Remove magnet right away when LED turned on. LED will remain on for next 4 seconds and then it will flash once to indicate NIF is sent.</li> <li>Repeat the step 2 if LED is not flashed once.</li> <li>The controller will indicate the successful inclusion/ exclusion operation.</li> </ol><br /><h2>Wakeup Information</h2><p>Hold a small magnet near to reed switch until the LED is turned on. Remove magnet right away when LED turned on. LED will remain on for next 4 seconds and then it will flash once to indicate NIF is sent.</p> <p>SWM301 will wake up for 10 seconds after sending NIF</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_water_cubic_meters" typeId="meter_water_cubic_meters">
+        <label>Water meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=W_Cubic_Meters</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SWM301</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">000F:0001</property>
+      <property name="dbReference">459</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_4" type="integer" groupName="configuration"
+                 min="0" max="99999999">
+        <label>1: Meter register offset</label>
+        <description><![CDATA[
+current meter reading<br /><h1>Overview</h1><p>Offset to adjust the reported to the actual meter reading.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="10000">
+        <label>2: Meter reading reporting intervals</label>
+        <description><![CDATA[
+how often meter reading is sent<br /><h1>Overview</h1><p>Defines how often the meter reading is sent.</p>
+        ]]></description>
+        <default>1440</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>3: Delta config for meter reading</label>
+        <description><![CDATA[
+min. delta for automatic report<br /><h1>Overview</h1><p>Defines the minimum change of the meter reading that results in an unsolicited meter report.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>4: Mechanical meter serial number</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Temperature monitor on / off</label>
+        <description><![CDATA[
+enable temperature monitor<br /><h1>Overview</h1><p>Enables or disables the temperature monitor.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="30">
+        <label>6: Temperature delta</label>
+        <description><![CDATA[
+change in temperature for report<br /><h1>Overview</h1><p>Defines how much the temperature has to change for an unsolicited temperature report.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="40">
+        <label>7: Temperature Alarm Threshold</label>
+        <description><![CDATA[
+temperature triggering alarm<br /><h1>Overview</h1><p>Defines below what temperature a low temperature alarm is reported.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Meter reading</label>
+        <description><![CDATA[
+Group receiving meter readings<br /><h1>Overview</h1><p>Group 1 - Nodes to receive unsolicited water meter reading.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: low battery</label>
+        <description><![CDATA[
+Group receiving battery warnings<br /><h1>Overview</h1><p>Group 2 - Nodes to receive unsolicited low battery warnings report.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Temperature and low temp alarm</label>
+        <description><![CDATA[
+Group receiving temperature<br /><h1>Overview</h1><p>Group 3 - Nodes to receive unsolicited temperature report and low temperature alarm.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

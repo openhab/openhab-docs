@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pse02_00_000" listed="false">
+    <label>PSE02 Siren</label>
+    <description><![CDATA[
+Siren<br /><h1>Overview</h1><p>The PSE02 is a wireless siren with multiple sound capabilities.</p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode. Press tamper key three times within 1.5 seconds. After device was added successfully, the LED will turn on for 1 second.</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode. Press tamper key three times within 1.5 seconds. </p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="notification_send" typeId="notification_send">
+        <label>Start sound</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM;event1=SMOKE:1,event2=ACCESS_CONTROL:22,event3=BURGLAR:1,event4=EMERGENCY:1,event5=EMERGENCY:2,event6=EMERGENCY:3</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PSE02</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0004:000A</property>
+      <property name="dbReference">320</property>
+      <property name="commandClass:COMMAND_CLASS_ALARM">ccAdd</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>7: Costumer Function</label>
+        <description><![CDATA[
+NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Customer function switch, using bit control. 0       Bit4: Notification Type,       0: Using Notification Report.   1: Using Sensor Binary Report.</p>
+        ]]></description>
+        <default>4</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_29_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>29: Disable Alarm</label>
+        <description><![CDATA[
+Disable the alarm function.<br /><h1>Overview</h1><p>Disable the alarm  function. 1: Disable  Alarm, 0: Enable Alarm.  Caution: After the power  up, this configuration is  always 0.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_0000000C" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>31: Alarm Duration</label>
+        <default>6</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft130_00_000" listed="false">
+    <label>FT130 Wall-mount four Button</label>
+    <description><![CDATA[
+Wall-mount four Button<br /><h1>Overview</h1><p>Fantem WallMote Quad is an intelligent Z-Wave remote controller that mounted on a wall. It has 4 touch buttons that you can easily control the Z-Wave devices in your home network via touching, long pressing or sliding the button areas. Its surface has a RGB LED to indicate the button actions also accompanied by touch beep and vibration. The WallMote Quad is also a security Z-Wave device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /><h2>Inclusion Information</h2><p><strong>Including Fantem</strong>  <strong>WallMote Quad as a non-secure device:</strong></p> <p>If you want your WallMote Quad as a non-security device in your Z-wave network, you just need to press the Action Button once on WallMote Quad when you use a controller/gateway to add/include it. The green LED will be on for 2 seconds and then the orange LED will fast blink for 10 minutes (if the WallMote Quad does not receive the Wake Up No More Info command from primary Controller) to indicate the inclusion is successful</p> <p><strong>Including Fantem</strong>  <strong>WallMote Quad as a secure device:</strong></p> <p>In order to take full advantage of all functionality the WallMote Quad, you may want your WallMote Quad is a security device that uses secure/encrypted message to communicate in Z-wave network, so a security enabled controller/gateway is needed for the WallMote Quad to be used as a security device. You need to press the WallMote Quad’s Action Button 2 times within 1 second when your security controller/gateway starts the network inclusion. The blue LED will be on for 2 seconds and then the orange LED will fast blink for 10 minutes (if the WallMote Quad does not receive the Wake Up No More Info command from primary Controller) to indicate the inclusion is successful.</p> <br /><h2>Exclusion Information</h2><p>Your WallMote Quad can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller/ gateway. To do this, please refer to the part of their respective manuals that tell you how to remove devices from your network.</p> <p>Put your primary controller into device removal mode.</p> <p>Unlock your WallMote Quad from the Back Mount plate and take the WallMote Quad unit near to your primary controller.</p> <p>Press the Action Button on your WallMote Quad.</p> <p>If your WallMote Quad is successfully removed from the Z-Wave network, the LED will become a colourful gradient for a few seconds and then turn off. If the removing was unsuccessful, the red LED will be solid for 2 seconds and then turn off, repeat the above steps.</p> <br /><h2>Wakeup Information</h2><p>In order to send your WallMote Quad new configuration commands from your Z-Wave controller or gateway, it will need to be woken up.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT130</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0002:0082</property>
+      <property name="dbReference">860</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Touch sound</label>
+        <description>Enable/disable the touch sound.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Touch vibration</label>
+        <description>Enable/disable the touch vibration.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Button slide</label>
+        <description>Enable/disable the function of button slide.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Notification report</label>
+        <description><![CDATA[
+Which notification to be sent to the associated devices.<br /><h1>Overview</h1><p>To set which notification would be sent to the associated devices 3, slide functionality on the buttons is activated.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Central scene</option>
+          <option value="3">Central scene and config</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>39: Low battery value</label>
+        <description>Set the low battery value</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration">
+        <label>255: Reset the WallMote Quad</label>
+        <description>Reset the WallMote Quad to factory default.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Reset to factory default</option>
+          <option value="1431655765">Reset and remove</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Central Scene Notification<br /><h1>Overview</h1><p>When touching the Button 1 to 4, the Central Scene Notificcation c group 1.</p>
+        ]]></description>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Button 1 basic</label>
+        <description><![CDATA[
+On/off control via button 1<br /><h1>Overview</h1><p>When touching the Button 1, the Basic Set command will be sent.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Button 1 multilevel</label>
+        <description><![CDATA[
+Dim control via button 1<br /><h1>Overview</h1><p>When touching the Button 1, the Multilevel Switch Set command</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Button 2 basic</label>
+        <description><![CDATA[
+On/off control via button 2<br /><h1>Overview</h1><p>When touching the Button 2, the Basic Set command will be sent</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Button 2 multilevel</label>
+        <description><![CDATA[
+Dim control via button 2<br /><h1>Overview</h1><p>When touching the Button 2, the Multilevel Switch Set command will be sent </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Button 3 basic</label>
+        <description><![CDATA[
+On/off control via button 3<br /><h1>Overview</h1><p>On/off control via button 3</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Button 3 multilevel</label>
+        <description><![CDATA[
+Dim control via button 3<br /><h1>Overview</h1><p>When touching the Button 3, the Multilevel Switch Set command will be sent to the ass</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Button 4 basic</label>
+        <description><![CDATA[
+On/off control via button 4<br /><h1>Overview</h1><p>When touching the Button 4, the Basic Set command will be sent to the associated node</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Button 4 multilevel</label>
+        <description><![CDATA[
+Dim control via button 4<br /><h1>Overview</h1><p>When touching the Button 4, the Multilevel Switch Set command will be sent to the ass</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

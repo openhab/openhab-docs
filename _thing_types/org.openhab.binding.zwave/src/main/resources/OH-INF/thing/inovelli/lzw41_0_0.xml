@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="inovelli_lzw41_00_000" listed="false">
+    <label>LZW41 White Tunable Smart Bulb</label>
+    <description><![CDATA[
+White Tunable Smart Bulb<br /><h1>Overview</h1><p>Full range of cool or warm white, 806 lumens, and only 9.5W, this bulb will definitely add some brightness to your life.</p> <br /><h2>Inclusion Information</h2><ul><li>With the bulb powered off, start the inclusion process and turn on the bulb (ie: power it on) and the bulb will flash twice (2x) indicating it’s in the inclusion mode</li> <li>If the bulb was included successfully, it will blink one more time. If it was not included successfully, you may have to run an exclusion. If there’s still issues, please ensure your bulb is within range</li> </ul><br /><h2>Exclusion Information</h2><ul><li>With the power off to the bulb, start the exclusion process on your HUB/Gateway</li> <li>Then, turn the power on to the bulb and it will flash 2x, followed by a single flash if successful</li> </ul>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Inovelli</property>
+      <property name="modelId">LZW41</property>
+      <property name="manufacturerId">031E</property>
+      <property name="manufacturerRef">0006:0001</property>
+      <property name="dbReference">1220</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Memory Function</label>
+        <description><![CDATA[
+0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /><h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

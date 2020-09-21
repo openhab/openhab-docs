@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zwnrsm1plus_00_000" listed="false">
+    <label>ZWN-RSM1-PLUS Smart Relay Switch Module</label>
+    <description><![CDATA[
+Smart Relay Switch Module<br /><h1>Overview</h1><p>Transform any home into a connected home with the Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Control Module. The lighting control enables wireless control of on/off functions for standard table and floor lamps, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The Z-Wave Plus Module provides ultimate flexibility for your home lighting by creating custom scenes and scheduling timed events when you’re either home or away. Compared to Z-Wave Classic models, the Enerwave Z-Wave Plus Smart Meter Module offers 50% more wireless range and energy efficiency a 250% faster processor and 400% more memory</p> <p>Take charge of your home’s appliances power outlet by installed directly behind your wall sockets.  The Z-Wave Plus Smart Relay Module offers all the power of intelligent automation and remote control.  Discrete and smart, the Smart Module Switch work invisibly behind your existing switches without the need to replace them.</p> <p>Easily controlled by your mobile device or computer using any Z-Wave certified gateway, Take control of your home lighting with Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Controls! Z-Wave is the world’s largest ecosystem of interoperable smart home products. Z-Wave lighting controls provide an easy-to-install and affordable system to control lighting and small appliances in your home. Add an Enerwave Z-Wave lighting controls to a Z-Wave certified gateway to access and control your home from anywhere in the world using your smartphone, tablet or computer as a home automation command center.</p> <p>Never worry if you accidentally left the lights on because you can turn them off remotely or program your lights to go on/off at specific times. Create customized lighting scenes for any occasion such as a “go to sleep” scene or a “movie night” scene. Give the illusion that someone is home by programming the lights to turn on/off while you are away—perfect for deterring crime and adding additional security!</p> <br /><h2>Inclusion Information</h2><p>The process of "Inclusion/ Exclusion" is to Add or Remove the device from the Hub. All Z-Wave devices must be "Included" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the "Inclusion" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. Download the App or log onto the website associated with the Hub you are using and follow their Inclusion/ Exclusion instructions as each Hub's programming and features are different.</p> <ul><li>During the Inclusion/ Exclusion process, the Program Button on the relay or the ON/OFF toggle on the switch can be used for including/ excluding the device.</li> <li>When using the ON/OFF toggle, the toggle must be toggled ON and OFF 3 times.</li> <li>It is best to perform an Exclusion of the device prior to performing an Inclusion.</li> </ul><p>Step 1. From the Control Panel, go the the device Exclusion page.</p> <ul><li>Select "Exclude Device".</li> <li>When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.</li> </ul><p>Step 2. Go to the "Add Device" page.</p> <ul><li>Select "Include Device".</li> <li>When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.</li> <li>The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat from Step 1. Once the relay is part of the network, the same basic procedure is used to add the relay to groups &amp; scenes or change advanced functions. Refer to the Hub’s instructions for details.</li> </ul><p>Step 3. Follow the On-Screen instructions in the Control Panel on adding or removing rooms, scenes, other devices, and other functions and features.</p> <br /><h2>Exclusion Information</h2><p> press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZWN-RSM1-PLUS</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0101:5605</property>
+      <property name="dbReference">575</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Unsolicited Report Configuration</label>
+        <description><![CDATA[
+Unsolicited Report Configuration<br /><h1>Overview</h1><p>ZWN-RSM1-PLUS can send unsolicited status reports to the primary controller (Node ID 0x1) when the switch is toggled if the controller is designed as a gateway. If your controller is not a gateway or does not need the status reported or you think it could confuse your Z-Wave network, you can use Command_Class_Configuration to disable this function. By default this function is disabled.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Send device reset locally notification</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: StatusReport_ EP</label>
+        <description>Switch Binary Report</description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pad02_00_000" listed="false">
+    <label>PAD02 Dimmer Socket</label>
+    <description><![CDATA[
+Dimmer Socket<br /><h1>Overview</h1><p>PAD02 is an E27(EU)/ E26(US) Edison screw based lamp socket, which provides electrical connection to the E14(EU)/ E12(US) Edison screw based lamps and  support it in the lighting fixture. The use of socket allows lamps to be safely and  conveniently replaced. You can On/Off the light by pressing the button briefly,  or a long pressing to control the brightness of dimmable lightbulb. This dimmer is a transceiver which is a security enabled device which based on  Z-Wave Plus technology, and it is fully compatible with any Z-WaveTM enabled  network. Since PAD02 supports Security Command Class, it can learn with  Secured controller. Its functionality and supported command classes is identical when included as a secure and non-secure device.</p> <p><strong>LED Indication</strong></p> <p>To distinguish what mode the switch is in, view from the LED for identification. </p> <p>Normal -  Whenever we switch On and off of the PAD02 by On/Off button or RF command, the LED will lights up when switch on; whereas LED off when switch off.</p> <p>No node ID - Under normal operation, when the Switch has not been allocated a node ID, the LED flashes on and off alternately at 2-second intervals. By pressing On/Off button, it will stop flashing temporarily.</p> <p>Learning - When PAD02 is in learning mode, LED flashes on and off alternately and repeatedly at 0.5 second intervals. </p> <br /><h2>Inclusion Information</h2><p>In the front casing, there is an on/off button with LED indicator below which is used to switch on and off or carries out inclusion, exclusion, reset or association. When first power applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it has not been assigned a node ID and start auto inclusion. </p> <p><strong>Auto Inclusion</strong></p> <p>The function of auto inclusion will be executed as long as the dimmer does not have Node ID and just connect the switch to main power. Note: Auto inclusion timeout is 2 minute during which the node information of explorer frame will be emitted once every several seconds. Unlike “inclusion” function as shown in the table below, the execution of auto inclusion is free from pressing the On/Off button on the dimmer. </p> <p><strong>Inclusion procedure</strong></p> <p>1. Put your Z-Wave controller into inclusion mode by following the instructions provided by the controller manufacturer. </p> <p>2.  Pressing Include button of PAD02 three times within 2 seconds will enter inclusion mode. </p> <p>Note: One press one flash LED </p> <br /><h2>Exclusion Information</h2><p>1. Put your Z-Wave controller into exclusion mode by following the instructions provided by the controller manufacturer. </p> <p>2. Pressing Include button of PAD02 three times within 2 seconds will enter exclusion mode. </p> <p>Note: One press one flash LED.</p> <p>Result: Node ID has been excluded. 0.5s On, 0.5s Off (Enter auto inclusion).</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAD02</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0005:0031</property>
+      <property name="dbReference">579</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Mode of Switch Off function</label>
+        <description><![CDATA[
+Switch button mode (enabled/disabled).<br /><h1>Overview</h1><p>When the mode of switch On/Off is set to 0, any command of switch off will be disabled and the On/Off function of include button will be disabled.</p> <p>The default setting is enable mode.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED indication mode</label>
+        <description><![CDATA[
+LED mode: 1 is show switch state. 2 is night mode (opposite).<br /><h1>Overview</h1><p>LED indication mode :</p> <p>1 Show Switch State:When switch is on, LED is on. When switch is off, LED is off. This is default setting.</p> <p>2 Show Night mode:When switch is on, LED is off. When switch is off, LED is on.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Show current switch state</option>
+          <option value="2">Night mode (opposite)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>3: Auto off timer</label>
+        <description><![CDATA[
+Automatic OFF after given time.<br /><h1>Overview</h1><p>Whenever DEVICE switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0 (function disabled).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: RF off command mode</label>
+        <description><![CDATA[
+How to interpret OFF command.<br /><h1>Overview</h1><p>Whenever a switch off command, BASIC_SET 、BINARY_SWITCH_SET 、SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands:</p> <p>0: Switch Off:It switches to OFF state. This is default setting.</p> <p>1: Ignore:The switch off command will be ignored.</p> <p>2: Switch Toggle:It switches to the inverse of current state.</p> <p>3: Switch On:It switches to ON state.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch off</option>
+          <option value="1">Ignore</option>
+          <option value="2">Toggle Switch</option>
+          <option value="3">Switch On</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Where to send ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION<br /><h1>Overview</h1><p>The dimmer can be set to send reports to associated Z-Wave devices. It supports one association group with one node support for Grouping 1. For group 1, the dimmer will report ALARM_REPORT and DEVICE_RESET_LOCALLY_NOTIFICATION.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

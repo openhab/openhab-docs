@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_019b_00_000" listed="false">
+    <label>HeatIt ZDim Knob Smart Dimmer</label>
+    <description><![CDATA[
+Knob Smart Dimmer<br /><h1>Overview</h1><p>Z-Wave rotary dimmer for different light sources. The LED dimmer dims at low load without the light flickering. Dimmer LED from 1-200VA, 230V halogen and incandescent bulbs, dimmable LED drivers and electronic transformers. Not affected by additional starting currents. Need L + N conductor connected.</p> <p>The dimmer has end-turn function. This allows you to turn on the light and dimming with one dimmer, and then turn off the light with another dimmer. Convenient for example in stairs and corridors.</p> <p>The dimmer fits into standard Elko, Schneider Exxact and Gira System 55 frame systems.</p> <br /><h2>Inclusion Information</h2><p>When the primary controller is set to add/remove modus press the main button on the dimmer 6 times in a rapid sequence.</p> <br /><h2>Exclusion Information</h2><p>When the primary controller is set to add/remove modus press the main button on the dimmer 6 times in a rapid sequence.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">HeatIt ZDim</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0003:2200</property>
+      <property name="dbReference">1124</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="200">
+        <label>1: Connected Load</label>
+        <description><![CDATA[
+Defines the value of connected load<br /><h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Not configured (Default)</td> </tr><tr><td>1-200</td> <td>1-200 Watts connected load</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>2: Minimum Dim level</label>
+        <description><![CDATA[
+Defines the lowest dimming level<br /><h1>Overview</h1><p>This parameter defines the lowest dimming level of the dimmer.</p> <p>The value must be lower than parameter 3 ”Maximum Dim Level”. </p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>1-98</td> <td>1% - 98% Default is 20 (20%)</td> </tr></table>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>3: Maximum Dim level</label>
+        <description><![CDATA[
+Defines the highest dimming level of the dimmer<br /><h1>Overview</h1><p>This parameter defines the highest dimming level of the dimmer.</p> <p>The value must be higher than parameter 2 ”Minimum Dim Level”.</p>
+        ]]></description>
+        <default>85</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>4: Total steps</label>
+        <description><![CDATA[
+How many steps it should take to dim from min to max<br /><h1>Overview</h1><p>This parameter defines how many steps it should take to dim from minimum to maximum dim level (One round = 20 steps)</p> <p>Default is 15 (3/4 round)</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true">
+        <label>5: Double press function</label>
+        <description>Defines the double press functionality</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Dim to highest level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Scene controller</label>
+        <description>Enables scene controller</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Active (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>7: Switch ON level</label>
+        <description><![CDATA[
+Defines the dim level when restored from OFF state by push button<br /><h1>Overview</h1><p>This parameter defines the dimming level when restored from OFF state by push button</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Restores last dim level (Default)</td> </tr><tr><td>1-99</td> <td>1% - 99%</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Dimming Duration</label>
+        <description><![CDATA[
+Defines how long it takes to dim to desired level.<br /><h1>Overview</h1><p>This parameter defines how long it takes to dim to desired level.</p> <p>Note! Only Multilevel Switch Command Class is affected by this parameter.</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Disabled</td> </tr><tr><td>1-127</td> <td>Duration in seconds (1 - 127 seconds. Default is 1)</td> </tr><tr><td>128-255</td> <td>Duration in minutes (1 - 127 minutes)</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>9: Meter Report Interval</label>
+        <description><![CDATA[
+Defines report interval for Power Metering<br /><h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>Disabled</td> </tr><tr><td>30-32767</td> <td>Duration in seconds (30 - 32 767. Default is 60)</td> </tr></table>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>10: Power restore level</label>
+        <description>Defines initial dimming level after power loss.</description>
+        <default>50</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Lifeline. (Normally used by the Z-Wave Controller)</p> <p>Sends:</p> <ul><li>Multilevel Switch Report</li> <li>Meter Report</li> <li>Device Reset Locally</li> <li>Central Scene Notification</li> </ul>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Dimming level</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Basic Set: is usually used to controll other dimmer devices.</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: State of Device ON/OFF</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Binary Switch Set: is usually used to control other ON/OFF devices. </p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

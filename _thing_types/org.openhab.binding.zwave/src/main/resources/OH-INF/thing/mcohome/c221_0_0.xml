@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_c221_00_000" listed="false">
+    <label>MH-C221 MCO HOME Micro Shutter</label>
+    <description><![CDATA[
+MCO HOME Micro Shutter<br /><h1>Overview</h1><p>MCO HOME Micro Shutter for windows roller shutter</p> <p>The device allows for controlling motors of roller blinds, awnings, venetian blinds, gates and others, which are single phase AC powered. This Roller Shutter allows for precise positioning of a roller blind or  venetian blind lamellas. Precise positioning is available for the motors equipped with mechanic and electronic end switches.</p> <p>The module may be controlled wirelessly, through the Z-Wave network main controller, or through the switch keys connected to it. It’s also possible to combine few devices into groups of devices, which then can be controlled simultaneously. In addition, this Roller Shutter is equipped with Power Metering.</p> <br /><h2>Inclusion Information</h2><ol><li>Connect the power supply.</li> <li>Set the main controller into the learn mode (see main controllers operating manual).</li> <li>Triple click the B-button or a push button connected to the S1 terminal.</li> <li>MCO Home Roller Shutter will be detected and included into the Z-Wave network</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the module is connected to the power supply.</li> <li>Set the main controller into the learn mode (see main controllers operating manual).</li> <li>Triple click the B-button or a push button connected to the S1 terminal.</li> </ol><br /><h2>Wakeup Information</h2><p>Press B button</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>switch_binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric Meter (Watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;meterScale=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric Meter (Volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric Meter (amp)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric Meter (Kwh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-C221</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">0301:1001,0301:3001,0302:1000,C221:5102</property>
+      <property name="dbReference">1038</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: Watt meter report period</label>
+        <description>Watt meter report period</description>
+        <default>720</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Group 2</label>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Group 3</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

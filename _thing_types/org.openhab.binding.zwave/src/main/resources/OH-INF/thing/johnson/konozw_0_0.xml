@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="johnson_konozw_00_000" listed="false">
+    <label>KONOzw LUX KONOzw Smart Hub Thermostat</label>
+    <description><![CDATA[
+LUX KONOzw Smart Hub Thermostat<br /><h1>Overview</h1><p>KONOzw is the smart hub thermostat made with you in mind. It seamlessly connects to many smart hubs and blends in or stands out with its interchangeable Décorsnap covers™. KONOzw makes it easier than ever to personalize your comfort, décor, and savings.</p> <br /><h2>Inclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select ADD and press the knob to confirm</p> <p>- The device will begin the adding process</p> <br /><h2>Exclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select RST and press the knob to confirm</p> <p>- The device will begin the removal process</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="johnson_konozw_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_auto_changeover" typeId="thermostat_setpoint">
+        <label>Setpoint (auto changeover)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=AUTO_CHANGEOVER</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_moist_air" typeId="thermostat_setpoint">
+        <label>Setpoint (moist air)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=MOIST_AIR</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="johnson_konozw_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanstate" typeId="johnson_konozw_00_000_thermostat_fanstate">
+        <label>Thermostat fan state</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_STATE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Johnson Controls</property>
+      <property name="modelId">KONOzw</property>
+      <property name="manufacturerId">0411</property>
+      <property name="manufacturerRef">0001:2111</property>
+      <property name="dbReference">1154</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="-250" max="250">
+        <label>1: User Temperature Calibration</label>
+        <description><![CDATA[
+Step-size = 10<br /><h1>Overview</h1><p>Adjusts room temperature display to match a calibrated value.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temperature Unit (C/F)</label>
+        <description>0=C, 1=F</description>
+        <default>1</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit (Default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Available Control mode</label>
+        <description>0=Auto Heat &amp; Cool, 1=Heat Only, 2=Cool Only, 3=No Auto Heat &amp; Cool, 4=Reserved</description>
+        <default>0</default>
+        <options>
+          <option value="0">Heat and Cool, Auto (Default)</option>
+          <option value="1">Heat Only</option>
+          <option value="2">Cool Only</option>
+          <option value="3">Heat and Cool, no Auto</option>
+          <option value="4">Reserved</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: System Type</label>
+        <description>0=Furnace Gas, 1=Furnace Electric, 2=Heat Pump, 3=Boiler no fan, 4=Reserved</description>
+        <default>0</default>
+        <options>
+          <option value="0">Furnace Gas (Default)</option>
+          <option value="1">Furnace Electric</option>
+          <option value="2">Heat Pump</option>
+          <option value="3">Boiler no fan</option>
+          <option value="4">Reserved</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Reversal valve Type in Heat Pump</label>
+        <description>0=O-valve, 1=B-valve</description>
+        <default>0</default>
+        <options>
+          <option value="0">O-valve (Default)</option>
+          <option value="1">B-valve</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="60" max="90">
+        <label>8: Temperature Limit - Heat Max</label>
+        <description><![CDATA[
+Increment by 1F<br /><h1>Overview</h1><p>60.00F-90.00F (16C-32C)</p>
+        ]]></description>
+        <default>90</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="45" max="60">
+        <label>9: Temperature Limit - Heat Min</label>
+        <description><![CDATA[
+Increment by 1F<br /><h1>Overview</h1><p>45.00F-60.00F (7C-16C)</p>
+        ]]></description>
+        <default>45</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="60" max="95">
+        <label>10: Temperature Limit - Cool Max</label>
+        <description><![CDATA[
+Increment by 1F. Actual allowable range depends on the heat set point limit<br /><h1>Overview</h1><p>60F-95F (16C-35C)</p>
+        ]]></description>
+        <default>95</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="50" max="75">
+        <label>11: Temperature Limit - Cool Min</label>
+        <description><![CDATA[
+Increment by 1F. Actual allowable range depends on the heat set point limit<br /><h1>Overview</h1><p>50F-75F (10C-24C)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="100" max="250">
+        <label>12: Temperature Minimum Setpoint Deadband</label>
+        <description><![CDATA[
+100 to 250, stepsize = 10<br /><h1>Overview</h1><p>The Dead Band is a temperature range in which neither COOL or HEAT turns on when in AUTO mode.</p>
+        ]]></description>
+        <default>200</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration">
+        <label>14: Ambient Temperature Change Stepsize</label>
+        <description>0.5F – 4F range with a step-size of 0.5F (0.25C)</description>
+        <default>50</default>
+        <options>
+          <option value="50">0.5F (0.25C)</option>
+          <option value="100">1.0F (0.50C)</option>
+          <option value="150">1.5F (0.75C)</option>
+          <option value="200">2.0F (1.00C)</option>
+          <option value="250">2.5F (1.25C)</option>
+          <option value="300">3.0F (1.50C)</option>
+          <option value="350">3.5F (1.75C)</option>
+          <option value="400">4.0F (2.00C)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>15: Regular Ambient Temperature Reporting Interval</label>
+        <description>1-24 hours</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>16: Regular Operating State Reporting Interval</label>
+        <description>1-24 hours</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>17: Command Echo Enable</label>
+        <description>0=Disable, 1=Enable</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="johnson_konozw_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="13">Away</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="4">Aux Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="johnson_konozw_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="johnson_konozw_00_000_thermostat_fanstate">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan State</label>
+    <description>Sets the thermostat fan state</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="1">Running</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="monster_mlld300_00_000" listed="false">
+    <label>ML LD300 Scene Capable Plug-in Dimmer</label>
+    <description><![CDATA[
+Scene Capable Plug-in Dimmer<br /><h1>Overview</h1><p>300 Watt Scene Capable Plug-In Lamp Dimming Module with Z-Wave Technology for CFL/LED/Incandescent. Turn any standard receptacle into the essence of ‘smart’ lighting with the scene capable plug in lamp dimming module. The low-power radio waves travel easily throughout the walls and floors of your home. Features: On/Off/Dim/Bright incandescent load scene and zone control switching capabilities. </p> <p>Unit made by Leviton, similar to VRPD3 model</p> <br /><h2>Inclusion Information</h2><ol><li>Plug in Leviton VRPD3</li> <li>Place controller in inclusion mode</li> <li>Press button on front of VRPD3</li> </ol><p>If successful, the VRPD3 LED will turn orange during inclusion and then green. The LED will flash red if it fails.</p> <br /><h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press button on front of VRPD3</li> </ol><p>If successful, the VRPD3 LED will turn orange during exclusion and then green. The LED will flash red if it fails.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Monster Cable</property>
+      <property name="modelId">ML LD300</property>
+      <property name="manufacturerId">007E</property>
+      <property name="manufacturerRef">0200:014E</property>
+      <property name="dbReference">1021</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

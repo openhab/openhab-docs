@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_dimmer_00_000" listed="false">
+    <label>NZW31 In-wall Dimming Switch</label>
+    <description><![CDATA[
+In-wall Dimming Switch<br /><h1>Overview</h1><p>Inovelli's In-Wall Smart Dimmer not only has the ability to control lights from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network. </p> <br /><h2>Inclusion Information</h2><p><strong>Including Steps:</strong></p> <ul><li>This will vary based on the HUB/Gateway you’re using, but you need to go one (1) step before putting your HUB/Gateway in inclusion process — once you are one (1) step away from physically starting the inclusion/pairing process — <strong>THEN STOP!</strong></li> <li>Walk down to your circuit breaker and flip on the power (you will now have 30 seconds to physically start the inclusion process on your HUB/Gateway)</li> <li>While next to the breaker, start the inclusion process and your HUB/Gateway will automatically start looking for devices</li> <li>Wait for auto-inclusion to do its thing. Your switch will automatically include/pair to your HUB/Gateway <ul><li>If successful, your device will flash twice (<strong>NOTE:</strong> Auto-Inclusion will time out after 30 seconds)</li> <li>If the switch does not flash within 30 seconds, please use the alternate method of pairing which is pressing the top (UP) button 6x within 2 seconds</li> </ul></li> <li>Confirm that your HUB/Gateway shows the switch</li> </ul><p>Congratulations, you now have a remote controlled switch!</p> <p><strong>**If you are having issues pairing your device, please ensure your switch is within range of your HUB. 95% of the pairing/including failures stem from this issue. Best practice is to start with Z-Wave products near your HUB and build your network out. The more Z-Wave devices, the more efficient your network.**</strong></p> <br /><h2>Exclusion Information</h2><ul><li>Press the Top (UP) Button on your NZW31 six (6) times within 2 seconds</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">NZW31</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">1F01:1F01</property>
+      <property name="dbReference">807</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>1: Dimmer Step configuration</label>
+        <description><![CDATA[
+Dimmer Speed Setting (On/Off)<br /><h1>Overview</h1><p>Control the speed with which the dimmer turns on and off.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>2: Dimmer Minimum Configuration</label>
+        <description><![CDATA[
+Lowest dim setting before turning off<br /><h1>Overview</h1><p>Lowest dim setting before turning off</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Switch Orientation</label>
+        <description><![CDATA[
+Invert On/Off from Top/Bottom<br /><h1>Overview</h1><p>Invert the switch on/off position.</p> <p>00 - Up = On, Down = Off</p> <p>01 - Up = Off, Down = On</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Up=ON, Down=OFF</option>
+          <option value="1">Up=OFF, Down=ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="32768">
+        <label>5: Countdown Timer</label>
+        <description><![CDATA[
+Shutoff Timer<br /><h1>Overview</h1><p>Countdown timer.</p> <p>0x00 - x8000 - 0-32768 Seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

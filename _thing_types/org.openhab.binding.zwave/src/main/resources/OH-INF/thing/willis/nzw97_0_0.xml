@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="willis_nzw97_00_000" listed="false">
+    <label>NZW97 Inovelli Outdoor Smart Plug (2 Channel)</label>
+    <description><![CDATA[
+Inovelli Outdoor Smart Plug (2 Channel)<br /><h1>Overview</h1><ul><li>2 Controllable Outlets</li> <li>Outdoor IP65</li> <li>20 cm Cord</li> <li>High Temp Protection (OFF at 105°C)</li> <li>Last Power State (Possible DEFAULT)</li> <li>120 VAC, 60 Hz</li> <li>908.42 MHz</li> <li>Max Load Outlet #1 1800W (15A) Resistive</li> <li>Max Load Outlet #2 1800W (15A) Resistive</li> <li>Max Simultaneous Load 15A</li> <li>Max Range LoS 100 m</li> <li>Operating Temperature Range -20°C to 50°C</li> <li>UL E464831</li> <li>FCC ID OXGZW97 </li> </ul><br /><h2>Inclusion Information</h2><ul><li>Auto-Inclusion 30 sec from power on</li> <li>Backup-Inclusion Press button 5 times within 1 sec</li> <li>(Tested to work with Network Wide Inclusion)</li> </ul><br /><h2>Exclusion Information</h2><p>Press the Middle Button on the front of your NZW97 five (5) times rapidly (within 1-2 seconds)</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Willis Electric Co., Ltd.</property>
+      <property name="modelId">NZW97</property>
+      <property name="manufacturerId">015D</property>
+      <property name="manufacturerRef">6100:6100</property>
+      <property name="dbReference">791</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_wo" type="integer" groupName="configuration">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+LED Indicator ON/OFF/Disabled<br /><h1>Overview</h1><p>LED Indicator ON/OFF/Disabled<br />00==Plug On / LED On<br />01==Plug On / LED Off<br />02==LED Disabled</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft116_00_000" listed="false">
+    <label>FT116 In-Wall Smart Switch</label>
+    <description><![CDATA[
+In-Wall Smart Switch<br /><h1>Overview</h1><p>The In-Wall Switch is a Z-Wave Smart Switch specifically used to enable Z-Wave command and control (on/off) of any wall switches. It can report immediate wattage consumption or kWh energy usage over a period of time. In the event of power failure, non-volatile memory retains all programmed information relating to the units operating status.It can connect to 2 external manual switches to control the load ON/OFF independently. Its surface has a pin socket, which can be used for connecting to the touch panel, so you can also use the touch panel to control the In-Wall Switch.The In-Wall Switch is also a security Z-Wave device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /><h2>Inclusion Information</h2><p>Turn the primary controller of Z-Wave network into inclusion mode, short press the products Action button that you can find on the product's housing.</p> <br /><h2>Exclusion Information</h2><p>Turn the primary controller of Z-Wave network into exclusion mode, short press the products Action button that you can find on the product's housing.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT116</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0003:0074</property>
+      <property name="dbReference">890</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Current Overload Protection</label>
+        <description>Current Overload Protection</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">(Default) Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Overheat protection</label>
+        <description>Overheat protection</description>
+        <default>0</default>
+        <options>
+          <option value="0">(Default) Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Instant Energy Autosend Interval</label>
+        <description><![CDATA[
+Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Output status after re-power</label>
+        <description>Configure the output status after re-power on it</description>
+        <default>0</default>
+        <options>
+          <option value="0">Last status</option>
+          <option value="1">Always on</option>
+          <option value="2">Always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Group 1 notifications</label>
+        <description><![CDATA[
+Group 1 notifications when the state of Nano Switch's load is changed<br /><h1>Overview</h1><p>To set which notification would be sent to the associated devices (Group 1) when the state of Nano Switch's load is changed.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Send Nothing</option>
+          <option value="1">Send Hail CC</option>
+          <option value="2">Send Basic CC</option>
+          <option value="3">Send Hail CC (External Switch)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: Group 3 notifications</label>
+        <description><![CDATA[
+Notification to sent for Group 3 when using the external switch 1<br /><h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association Group 3 when using the external switch 1 to switch the loads.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Send Nothing</option>
+          <option value="1">Send Basic Set CC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_82_1" type="integer" groupName="configuration">
+        <label>82: Group 4 notifications</label>
+        <description><![CDATA[
+Notification to sent for Group 4 when using the external switch 2<br /><h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association Group 4 when using the external switch 2 to switch the loads.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Send Nothing</option>
+          <option value="1">Send Basic Set CC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_83_1" type="integer" groupName="configuration">
+        <label>83: Configure the state of LED</label>
+        <description><![CDATA[
+Configure the state of LED when it is in 3 modes<br /><h1>Overview</h1><p>Configure the state of LED when it is in 3 modes (Energy mode, Momentary indicate mode, Night light mode)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED Follows Switch Status</option>
+          <option value="1">Momentary indicate mode</option>
+          <option value="2">Night light mode. The LED will remain ON state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_84_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>84: Night light mode LED state</label>
+        <description><![CDATA[
+Set the ON/OFF time of the LED when it is in Night light mode<br /><h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
+        ]]></description>
+        <default>301991936</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_86_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>86: Set appointment 1</label>
+        <description><![CDATA[
+Set the ON time of output load.<br /><h1>Overview</h1><p>65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting. 256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time</p>
+        ]]></description>
+        <default>8327680</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_87_4" type="integer" groupName="configuration"
+                 min="0" max="8327680">
+        <label>87: Set appointment 2</label>
+        <description><![CDATA[
+Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>
+        ]]></description>
+        <default>8327680</default>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration">
+        <label>90: Enables/disables parameter 91 and 92</label>
+        <description>Enables/disables parameter 91 and 92</description>
+        <default>0</default>
+        <options>
+          <option value="0">(Default) Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>91: Set the threshold value of wattage</label>
+        <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_92_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>92: Set the threshold value of percent power</label>
+        <description>Threshold percentage change in wattage for an automatic report</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_100_1_wo" type="integer" groupName="configuration">
+        <label>100: Set parameter 101-103 to default value</label>
+        <description>Reset the parameter 101-103</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_100_1_wo" type="integer" groupName="configuration">
+        <label>100: Set parameter 101-103 to default value</label>
+        <description>Reset the parameter 101-103</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration">
+        <label>101: Set group 1 reports</label>
+        <description>To set which reports need to be sent in Report group 1.</description>
+        <default>0</default>
+        <options>
+          <option value="1">Send Meter Report of energy (kWh)</option>
+          <option value="2">Send Meter Report of wattage (W)</option>
+          <option value="4">Send Meter Report of voltage (V)</option>
+          <option value="8">Send Meter Report of current (A)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration">
+        <label>102: Set group 2 reports</label>
+        <description>To set which reports need to be sent in Report group 2.</description>
+        <default>0</default>
+        <options>
+          <option value="1">Send Meter Report of energy (kWh)</option>
+          <option value="2">Send Meter Report of wattage (W)</option>
+          <option value="4">Send Meter Report of voltage (V)</option>
+          <option value="8">Send Meter Report of current (A)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration">
+        <label>103: Set group 3 reports</label>
+        <description>To set which reports need to be sent in Report group 3.</description>
+        <default>0</default>
+        <options>
+          <option value="1">Send Meter Report of voltage (V)</option>
+          <option value="2">Send Meter Report of current (A)</option>
+          <option value="4">Send Meter Report of wattage (W)</option>
+          <option value="8">Send Meter Report of energy (kWh)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_110_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>110: Reset the parameter 111-113</label>
+        <description>Set parameter 111-113 to default value.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>111: Interval for automatic report group 1.</label>
+        <description>Set the interval of automatic report for Report group 1.</description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>112: Interval for automatic report group 2</label>
+        <description>Set the interval of automatic report for Report group 2.</description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2147483647">
+        <label>113: Interval for automatic group 3 report</label>
+        <description>Set the interval of automatic report for Report group 3</description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: External switch mode for S1</label>
+        <description>Configure the external switch mode for S1</description>
+        <default>0</default>
+        <options>
+          <option value="0">Enter automatic identification mode</option>
+          <option value="1">2-state switch mode</option>
+          <option value="2">3 way switch mode</option>
+          <option value="3">Momentary push button mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_121_1" type="integer" groupName="configuration">
+        <label>121: External switch mode for S2</label>
+        <description>Configure the external switch mode for S2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Enter automatic identification mode</option>
+          <option value="1">2-state switch mode</option>
+          <option value="2">3 way switch mode</option>
+          <option value="3">Momentary push button mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_122_1" type="integer" groupName="configuration">
+        <label>122: Control destination of external switch</label>
+        <description>Set the control destination for external switch</description>
+        <default>3</default>
+        <options>
+          <option value="1">control the output loads of itself</option>
+          <option value="2">control the other nodes</option>
+          <option value="3">control the output loads of itself and other nodes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Lock/unlock configuration parameters</label>
+        <description>Lock/unlock configuration parameters</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock</option>
+          <option value="1">Lock</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration">
+        <label>255: Reset the Nano Switch</label>
+        <default>0</default>
+        <options>
+          <option value="0">(Default) Reset all configuration parameters</option>
+          <option value="1431655765">Reset and remove from network</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>When the load state of Nano Switch (turn on/off the load) is changed, the Hail CC and Basic Report (configured by parameter 80) can be sent to the associated nodes in this group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Forward Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Forward the Basic Set, Switch All, Scene Activation Set to associated nodes in Group 2 when the Dual Nano Switch receives the Basic Set, Switch All, Scene Activation Set commands from main controller. <br />(E.g. Send/forward Basic Set to control the other nodes in association Group 2)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Send Basic Set to Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Basic Set (configured by parameter 0x51 ) to the associated nodes in Group 3 when the external switch S1 is operated.<br />Note: The Switch Mode of external switch S1 should be identified successfully, which means that the value of Configuration parameter 0x78 should be non-zero, then the Basic Set can be sent to the associated nodes in Group 3 via triggering the S1 switch.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

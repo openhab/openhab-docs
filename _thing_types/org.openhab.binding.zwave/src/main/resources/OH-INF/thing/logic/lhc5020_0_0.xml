@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_lhc5020_00_000" listed="false">
+    <label>LHC5020 DIN-rail module with 10 digital ouputs and 4 digital inputs</label>
+    <description><![CDATA[
+DIN-rail module with 10 digital ouputs and 4 digital inputs<br /><h1>Overview</h1><p>This device can be used for controlling standard floor heating valves</p> <br /><h2>Inclusion Information</h2><p>1.) Set your ZWave controller in inclusion mode</p> <p>2.) Press the inclusion button on the LHC5020 device three times quickly</p> <p>3.) The diode will blink to confirm the inclusion is done</p> <br /><h2>Exclusion Information</h2><p>1.) Set your ZWave controller in exclusion mode</p> <p>2.) Press the inclusion button on the LHC5020 device three times quickly</p> <p>3.) The diode will blink to confirm the exclusion is done</p> <p><strong>Reset the device</strong></p> <p>The device can be reset by holding down the inclusion button for 10 sec. </p>
+    ]]></description>
+    <category>RadiatorControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8,COMMAND_CLASS_BASIC:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9,COMMAND_CLASS_BASIC:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 10</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10,COMMAND_CLASS_BASIC:10</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary11" typeId="switch_binary">
+        <label>Switch 11</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:11,COMMAND_CLASS_BASIC:11</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary12" typeId="switch_binary">
+        <label>Switch 12</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:12,COMMAND_CLASS_BASIC:12</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary13" typeId="switch_binary">
+        <label>Switch 13</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:13,COMMAND_CLASS_BASIC:13</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary14" typeId="switch_binary">
+        <label>Switch 14</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:14,COMMAND_CLASS_BASIC:14</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">LHC5020</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0003:010D</property>
+      <property name="dbReference">832</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Diode control</label>
+        <description><![CDATA[
+Diode control<br /><h1>Overview</h1><p>0 Turned off</p> <p>1 Turned on (Default)</p> <p>2 Blinking 1 sec. interval</p> <p>3 Blinking 0.5 sec. interval</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Turned off</option>
+          <option value="1">Turned on</option>
+          <option value="2">Blinking 1 sec. interval</option>
+          <option value="3">Blinking 0.5 sec. interval</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Turn on/off voltage on input terminal 1</label>
+        <description><![CDATA[
+Turn on/off voltage on input terminal 1<br /><h1>Overview</h1><p>If trigger devices on the input terminal needs external power supply, then turn of the voltage on the input terminal. </p> <p>0 = Voltage off (use external power supply up to 10V)</p> <p>1 = Voltage on (7.5V)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Turn on/off voltage on input terminal 2</label>
+        <description><![CDATA[
+Turn on/off voltage on input terminal 2<br /><h1>Overview</h1><p>If trigger devices on the input terminal needs external power supply, then turn of the voltage on the input terminal. </p> <p>0 = Voltage off (use external power supply up to 10V)</p> <p>1 = Voltage on (7.5V)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Turn on/off voltage on input terminal 3</label>
+        <description><![CDATA[
+Turn on/off voltage on input terminal 3<br /><h1>Overview</h1><p>If trigger devices on the input terminal needs external power supply, then turn of the voltage on the input terminal. </p> <p>0 = Voltage off (use external power supply up to 10V)</p> <p>1 = Voltage on (7.5V)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Turn on/off voltage on input terminal 4</label>
+        <description><![CDATA[
+Turn on/off voltage on input terminal 4<br /><h1>Overview</h1><p>If trigger devices on the input terminal needs external power supply, then turn of the voltage on the input terminal. </p> <p>0 = Voltage off (use external power supply up to 10V)</p> <p>1 = Voltage on (7.5V)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: Prel. filter time on input terminals</label>
+        <description><![CDATA[
+Preliminary filter time on input terminals<br /><h1>Overview</h1><p>Time in 10x milliseconds. E.g. 5 = 50 ms. </p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Threshold for triggering input</label>
+        <description><![CDATA[
+Threshold for triggering input<br /><h1>Overview</h1><p>In 10x milliseconds, e.g. 5 = 50 ms, meaning that the voltage on the input terminals need to be stable for more than 50 ms behold the input is counted as activated. </p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Threshold time for triggering input</label>
+        <description><![CDATA[
+Threshold time for triggering input<br /><h1>Overview</h1><p>Time in 10x miliseconds that an input need to be activated before it is counted as activated. E.g. 50 = 500 ms. </p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>9: Function for input terminal 1</label>
+        <description><![CDATA[
+Function for input terminal 1<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>10: Function for input terminal 2</label>
+        <description><![CDATA[
+Function for input terminal 2<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>11: Function for input terminal 3</label>
+        <description><![CDATA[
+Function for input terminal 3<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>12: Function for input terminal 4</label>
+        <description><![CDATA[
+Function for input terminal 4<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Central Scene notification</label>
+        <description><![CDATA[
+Central Scene notification<br /><h1>Overview</h1><p>Send Central Scene notification when the 4 input terminals gets activated. </p> <p>0 = Notification off</p> <p>1 = Notification on</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1<br /><h1>Overview</h1><p>Gruppe 1 / 1</p> <p>Lifeline. Gælder for hele modulet.</p> <p>Maks. antal enheder i gruppen: 1</p> <p>Gruppe 2 / 2</p> <p>Sender Basic Report On / Off når udgang 1 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Group 2<br /><h1>Overview</h1><p>Enhed 2 (End Point 2)</p> <p>Udgang 2</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 3</p> <p>Sender Basic Report On / Off når udgang 2 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Group 3<br /><h1>Overview</h1><p>Enhed 3 (End Point 3)</p> <p>Udgang 3</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 4</p> <p>Sender Basic Report On / Off når udgang 3 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Group 4<br /><h1>Overview</h1><p>Enhed 4 (End Point 4)</p> <p>Udgang 4</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 5</p> <p>Sender Basic Report On / Off når udgang 4 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <description><![CDATA[
+Group 5<br /><h1>Overview</h1><p>Enhed 5 (End Point 5)</p> <p>Udgang 5</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 6</p> <p>Sender Basic Report On / Off når udgang 5 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Group 6</label>
+        <description><![CDATA[
+Group 6<br /><h1>Overview</h1><p>Enhed 6 (End Point 6)</p> <p>Udgang 6</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 7</p> <p>Sender Basic Report On / Off når udgang 6 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Group 7</label>
+        <description><![CDATA[
+Group 7<br /><h1>Overview</h1><p>Enhed 7 (End Point 7)</p> <p>Udgang 7</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 8</p> <p>Sender Basic Report On / Off når udgang 7 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Group 8</label>
+        <description><![CDATA[
+Group 8<br /><h1>Overview</h1><p>Enhed 8 (End Point 8)</p> <p>Udgang 8</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 9</p> <p>Sender Basic Report On / Off når udgang 8 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Group 9</label>
+        <description><![CDATA[
+Group 9<br /><h1>Overview</h1><p>Enhed 9 (End Point 9)</p> <p>Udgang 9</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 10</p> <p>Sender Basic Report On / Off når udgang 9 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Group 10</label>
+        <description><![CDATA[
+Group 10<br /><h1>Overview</h1><p>Enhed 10 (End Point 10)</p> <p>Udgang 10</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 11</p> <p>Sender Basic Report On / Off når udgang 10 bliver aktiveret.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for udgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Group 11</label>
+        <description><![CDATA[
+Group 11<br /><h1>Overview</h1><p>Enhed 11 (End Point 11)</p> <p>Indgang 1</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 12</p> <p>Sender Basic Report On / Off når indgang 1 aktiveres.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for indgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 3 / 13</p> <p>Sender Basic Set On / Off når indgang 1 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler, eller til visualisering i den centrale kontroller enhed (f.eks. Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 4 / 14</p> <p>Sender Binary Switch Set On / Off når indgang 1 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler.</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 5 / 15</p> <p>Sender Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change når indgang 1 bliver aktiveret.</p> <p>Kan typisk benyttes til at styre lysdæmpere, gardin styringer, m.m.</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Group 12</label>
+        <description><![CDATA[
+Group 12<br /><h1>Overview</h1><p>Enhed 12 (End Point 12)</p> <p>Indgang 2</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 16</p> <p>Sender Basic Report On / Off når indgang 2 aktiveres.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for indgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 3 / 17</p> <p>Sender Basic Set On / Off når indgang 2 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler, eller til visualisering i den centrale kontroller enhed (f.eks. Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 4 / 18</p> <p>Sender Binary Switch Set On / Off når indgang 2 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler.</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 5 / 19</p> <p>Sender Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change når indgang 2 bliver aktiveret.</p> <p>Kan typisk benyttes til at styre lysdæmpere, gardin styringer, m.m.</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Group 13</label>
+        <description><![CDATA[
+Group 13<br /><h1>Overview</h1><p>Enhed 13 (End Point 13)</p> <p>Indgang 3</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 20</p> <p>Sender Basic Report On / Off når indgang 3 aktiveres.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for indgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 3 / 21</p> <p>Sender Basic Set On / Off når indgang 3 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler, eller til visualisering i den centrale kontroller enhed (f.eks. Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 4 / 22</p> <p>Sender Binary Switch Set On / Off når indgang 3 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler.</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 5 / 23</p> <p>Sender Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change når indgang 3 bliver aktiveret.</p> <p>Kan typisk benyttes til at styre lysdæmpere, gardin styringer, m.m.</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: Group 14</label>
+        <description><![CDATA[
+Group 14<br /><h1>Overview</h1><p>Enhed 14 (End Point 14)</p> <p>Indgang 4</p> <p>Gruppe 1 / -</p> <p>Lifeline.</p> <p>Maks. antal enheder i gruppen: 0</p> <p>Gruppe 2 / 24</p> <p>Sender Basic Report On / Off når indgang 4 aktiveres.</p> <p>Denne gruppe benyttes typisk til at sende status information til den centrale kontroller enhed, for visualisering af status for indgangen (f.eks. til VERA eller Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 3 / 25</p> <p>Sender Basic Set On / Off når indgang 4 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler, eller til visualisering i den centrale kontroller enhed (f.eks. Fibaro Home Center).</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 4 / 26</p> <p>Sender Binary Switch Set On / Off når indgang 4 bliver aktiveret.</p> <p>Kan f.eks. bruges til at styre relæmoduler.</p> <p>Maks. antal enheder i gruppen: 5</p> <p>Gruppe 5 / 27</p> <p>Sender Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change når indgang 4 bliver aktiveret.</p> <p>Kan typisk benyttes til at styre lysdæmpere, gardin styringer, m.m.</p> <p>Maks. antal enheder i gruppen: 5</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

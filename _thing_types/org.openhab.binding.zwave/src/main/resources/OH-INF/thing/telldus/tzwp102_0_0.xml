@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="telldus_tzwp102_00_000" listed="false">
+    <label>TZWP-102 Telldus socket and energy meter</label>
+    <description><![CDATA[
+Telldus socket and energy meter<br /><h1>Overview</h1><p>Telldus Z-Wave Plug-in Switch Mini, small size, clean design with energy metering and overcurrent protection. With its small size and clean design, it fits into your home interior design very well also it is possible to use two devices side by side in most electrical outlets. LED indicator can be turned off to not disturb in dark rooms. Control lighting, chargers and other electronic equipment up to 2300 W (resistive load).</p> <p>With energy consumption measuring you don’t only see the actual consumption, it can also help to find out if your connected device is ok or not or turn off the mobile charger when the mobile phone is fully charged for safe operation.</p> <p>The device acts as a repeater for the Z-Wave network. </p> <br /><h2>Inclusion Information</h2><p><strong>Automatically add device to network</strong></p> <p>When the device is inserted into an electrical outlet it’s in automatic add mode (Network Wide Inclusion, NWI). This means that the device is added automatically when the Z-Wave controller enters add mode.</p> <p><strong>Manually add device to network</strong></p> <p>Start the add mode on the Z-Wave controller. Press the button on the device three times fast. The device will now be added into the Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Start the exclusion mode on the Z-Wave controller. Press the button on the device three times fast. The device will now be removed from the Z-Wave network. </p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Telldus Technologies AB</property>
+      <property name="modelId">TZWP-102</property>
+      <property name="manufacturerId">0176</property>
+      <property name="manufacturerRef">0003:0003</property>
+      <property name="dbReference">863</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Overcurrent protection</label>
+        <description><![CDATA[
+If current exceeds 16A load will be switched off<br /><h1>Overview</h1><p>If the current exceeds 16A for more than 5 sec, the load will be switched off </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: device status after power failure</label>
+        <description>Remember device status after power failure</description>
+        <default>0</default>
+        <options>
+          <option value="0">Remember Status</option>
+          <option value="1">Always ON</option>
+          <option value="2">Always OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Status send when load changes</label>
+        <description><![CDATA[
+Send status in Lifeline when Load status change<br /><h1>Overview</h1><p>Smart Plug can send notifications to associated devices in Lifeline when the status of the<br />plug is changed </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Send Basic Report</option>
+          <option value="2">Basic Report when Load status not changed by ZWave</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Configure LED mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">The LED follows the load status</option>
+          <option value="1">When operating plug, the LED is lit for 5 seconds</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="1" max="2500">
+        <label>16: Report on change of power consumption</label>
+        <description><![CDATA[
+Send report on change of power consumption (W)<br /><h1>Overview</h1><p>This parameter will send a power report automatically if the power value changes of x W (Watts) compared to the last report</p>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>17: Send report on change of pwr consumption</label>
+        <description>Send report on change of power consumption (%)</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>101: Power (W) report interval</label>
+        <description>Power (W) report interval</description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>102: Energy (kWh) report interval</label>
+        <description>Energy (kWh) report interval</description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>103: Voltage (V) report interval</label>
+        <description>Voltage (V) report interval</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_104_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>104: Current (A) report interval</label>
+        <description>Current (A) report interval</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

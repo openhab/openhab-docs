@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_wsp1_00_000" listed="false">
+    <label>WSP1 Widom Smart Plug</label>
+    <description><![CDATA[
+Widom Smart Plug<br /><h1>Overview</h1><p>WiDom Smart Plug is able to detect overvoltage and/or overcurrent events and indicate them through a multicolor LED. Furthermore, it protects appliances from eventual overload. A very innovative design, which integrates a complex system that allows a precise energy consumption monitoring. The integration of these features in its very small size product, make it unique on the market.</p> <p>The device is equipped with contact protection technology (<i>Zero Crossing</i>) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0.</p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Plug will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>If the device is not included into a Z-Wave network, <b>three consecutive clicks</b> on the Push Button will launch the process of traditional inclusion. If the device inclusion procedure does not start within 2 seconds, the Network Wide Inclusion network will be launched and will last between 15-30 seconds.</p> <br /><h2>Exclusion Information</h2><p>After activating the exclusion function by the controller, the device can be removed by setting it in <i>Exclusion</i> <i>Mode</i> by <b>three consecutive clicks</b> on the Push Button.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WSP1</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0700</property>
+      <property name="dbReference">1008</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Local load control</label>
+        <description>Defines which sequences of click control the local load.</description>
+        <default>3</default>
+        <options>
+          <option value="1">ONE_CLICK</option>
+          <option value="2">TWO_CLICKS</option>
+          <option value="3">ONE_CLICK or TWO_CLICKS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>2: Level used to control group 4</label>
+        <description><![CDATA[
+Level used to control group 4<br /><h1>Overview</h1><p>Defines how to control the devices associated to 1 click event.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="-1" max="100">
+        <label>3: Level used to control group 5</label>
+        <description><![CDATA[
+Level used to control group 5<br /><h1>Overview</h1><p>Defines how to control the devices associated to 2 clicks event.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="110" max="260">
+        <label>4: Overvoltage level</label>
+        <description><![CDATA[
+Overvoltage level<br /><h1>Overview</h1><p>Defines the voltage level (in Volts) beyond which an overvoltage event is identified and the overvoltage timer is activated. The timer is reset when the event ceases, i.e. when the voltage returns below the overvoltage level. As soon as an overvoltage event occurs, the LED starts a <i>BLUE</i> blinking. If the overvoltage event ceases before the overvoltage timer expires, the blue blinking is stopped, otherwise the alarm is generated and the blinking reset is established by parameter 6.</p>
+        ]]></description>
+        <default>253</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="1" max="3600">
+        <label>5: Overvoltage Timer</label>
+        <description><![CDATA[
+Overvoltage Timer<br /><h1>Overview</h1><p>Define the time (seconds) in which the voltage must persist above the overvoltage level so that an alarm is generated.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Overvoltage Alarm Reset</label>
+        <description><![CDATA[
+Overvoltage Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the overvoltage alarm and breaks off the blue blinking.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">MANUAL</option>
+          <option value="1">OVER_VOLTAGE_END</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>7: Level used to control group 3</label>
+        <description><![CDATA[
+Level used to control the devices associated to group 3<br /><h1>Overview</h1><p>Define how to control the devices associated to the overvoltage alarm</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="12">
+        <label>8: Overcurrent level</label>
+        <description><![CDATA[
+Overcurrent level<br /><h1>Overview</h1><p>Defines the current level (in Amps) beyond which an overcurrent event is identified and the overcurrent timer is activated. The timer is reset when the event ceases, i.e. when the current returns below the overcurrent level. As soon as an overcurrent event occurs, the led starts a red blinking. If the overcurrent event ceases before the overcurrent timer expires, the red blinking is stopped, otherwise the alarm is generated and the blinking reset is established by parameter 10.</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="1" max="3600">
+        <label>9: Overcurrent Timer</label>
+        <description><![CDATA[
+Overcurrent Timer<br /><h1>Overview</h1><p>Define the time (seconds) in which the current must persist above the overcurrent level so that an alarm is generated and the relay is opened.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Overcurrent Alarm Reset</label>
+        <description><![CDATA[
+Overcurrent Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the over-current alarm and breaks off the red blinking.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">MANUAL</option>
+          <option value="1">OVER_CURRENT_END</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="-1" max="99">
+        <label>11: Level used to control group 2</label>
+        <description><![CDATA[
+Level used to control the devices associated to group 2<br /><h1>Overview</h1><p>Define how to control the devices associated to the overcurrent alarm.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Lifeline: Nodes belonging to this groups will receive changes related to the relay status and power consumption</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Over Current</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Over Current: Nodes belonging to this groups will be controlled by a basic set if over current event occurs</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Over Voltage</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Over Voltage: Nodes belonging to this groups will be controlled by a basic set if over voltage event occurs</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Control 1 Click</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Control 1 Click: Nodes belonging to this groups will be controlled by a basic set if the button receives one click</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control 2 Clicks</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Control 2 Clicks: Nodes belonging to this groups will be controlled by a basic set if the button receives two clicks</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

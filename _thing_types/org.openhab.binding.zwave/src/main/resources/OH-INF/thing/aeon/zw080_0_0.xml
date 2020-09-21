@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw080_00_000" listed="false">
+    <label>ZW080 Siren Gen5</label>
+    <description><![CDATA[
+Siren Gen5<br /><h1>Overview</h1><p>Indoor Siren Gen5</p> <br /><h2>Inclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Press the Action Button.</li> <li>If the Learning is failed, please repeat the process from step 2.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into exclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Action Button.</li> <li>If the remove is failed, please repeat the process from step 2.</li> </ol><p>Note: If Siren is removed from Z‐wave network, it will be reset to factory default.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param37" typeId="aeon_zw080_00_000_config_decimal_param37">
+        <label>Sound and Volume</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=37</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW080</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0104:0050,0204:0050</property>
+      <property name="dbReference">90</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_37_2_000000FF" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>37: Siren Sound</label>
+        <default>1</default>
+        <options>
+          <option value="0">Do not change the current Siren sound</option>
+          <option value="1">Siren sound 1 is selected</option>
+          <option value="2">Siren sound 2 is selected</option>
+          <option value="3">Siren sound 3 is selected</option>
+          <option value="4">Siren sound 4 is selected</option>
+          <option value="5">Siren sound 5 is selected</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_37_2_0000FF00" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>37: Siren Volume</label>
+        <default>3</default>
+        <options>
+          <option value="0">Do not change the current volume</option>
+          <option value="1">Set the volume to 88 dB</option>
+          <option value="2">Set the volume to 100 dB</option>
+          <option value="3">Set the volume to 105 dB</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>80: Enable Notifications to Group 1</label>
+        <description><![CDATA[
+what type of notification to send to Group 1<br /><h1>Overview</h1><p>Enable to send notifications to associated devices (Group1) when the state of Siren changed (0=nothing,1=hailCC,2=basic CC report).</p>
+        ]]></description>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_200_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>200: Partner ID</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>252: Enable/disable Configuration Updates</label>
+        <default>0</default>
+        <options>
+          <option value="0">Enabled</option>
+          <option value="1">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="aeon_zw080_00_000_config_decimal_param37">
+    <item-type>Number</item-type>
+    <label>Siren Volume</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">Do not change the current volume</option>
+        <option value="1">Set the volume to 88 dB</option>
+        <option value="2">Set the volume to 100 dB</option>
+        <option value="3">Set the volume to 105 dB</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

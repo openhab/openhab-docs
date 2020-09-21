@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_14294_00_000" listed="false">
+    <label>GE 14294 (ZW3005) In-Wall Dimmer Switch</label>
+    <description><![CDATA[
+In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart home with the GE In-Wall Smart Dimmer. The In-Wall Smart Dimmer can easily replace any standard in-wall switch and remotely controls a light in your home. Your home will be equipped with ultimate flexibility with the GE Z-Wave Smart Dimmer, capable of being used by itself or with up to four add-on switches.</p> <p>Screw terminal installation provides improved space efficiency when replacing existing switches and the integrated LED indicator light allows you to easily locate the switch in a dark room.</p> <p>The GE Z-Wave In-Wall Smart Dimmer is compatible with any Z-Wave certified gateway, providing access to many popular home automation systems.</p> <p>Take control of your home lighting with GE Z-Wave Smart Lighting Controls! </p> <br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press and release the top or bottom of the wireless smart switch (rocker) to add it in the network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, press and release the top or bottom of the wireless smart dimmer (rocker) to remove it from the network.</li> </ol><p><strong>Factory Reset</strong></p> <p>Quickly press ON (Top) button three (3) times then immediately press the OFF (Bottom) button three (3) times. The LED will flash ON/OFF 5 times when completed successfully.</p> <p>NOTE: This should only be used in the event your network’s primary controller is missing or otherwise inoperable. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE 14294 (ZW3005)</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3038</property>
+      <property name="dbReference">543</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description>Defines the behavior of the blue LED. Default is on when switch is off.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>Invert the ON/OFF Switch State.</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Ignore Start-Level (Receiving)</label>
+        <description>This dimmer will start dimming from its current level.</description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: On/Off Command Dim Step</label>
+        <description>Indicates how many levels the dimmer will change per step.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: On/Off Command Dim Rate</label>
+        <description>This sets how often the dim level will change.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Local Control Dim Step</label>
+        <description>How many levels the dimmer will change for each step.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Local Control Dim Rate</label>
+        <description>This sets how often the dim level will change.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: ALL ON/ALL OFF Dim Step</label>
+        <description>How many levels the dimmer will change per step.</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: ALL ON/ALL OFF Dim Rate</label>
+        <description>This sets how often the dim level will change.</description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Multilevel Switch Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Group</label>
+        <description>Support Basic Set and is controlled with the local load</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Scene Group</label>
+        <description>This group gets notifications of double taps via basic set</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

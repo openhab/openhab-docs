@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_zwp10_00_000" listed="false">
+    <label>ZWP10 Z-Wave Controller</label>
+    <description><![CDATA[
+Z-Wave Controller<br /><h1>Overview</h1><p>The<strong> ZWP10</strong> multi-channel remote control enables radio control of FAKRO electrical accessories and of other manufacturers which are compatible with the Z-Wave communication module. The ZWP10 remote control can be used to operate up to 10 devices individually on five channels (two devices per channel). It also allows the creation of 10 independent groups. Each group can contain several devices operated simultaneously.</p> <p>The controller's memory can contain up to 231 devices.</p> <p>The ZWP10 remote control can serve as the basic controller (PRIMARY) and additional controller (SECONDARY). The PRIMARY controller allows to integrate numerous devices into one radio network, while the SECONDARY controller acts as additional controller in an already existing network.</p> <p>In addition to Basic control mode, i.e.: ?, ⏹️, ?, the ZWP10 remote control also features Multilevel mode which allows e.g. for smooth dimming of light or smooth operation of roller shutters and blinds (by keeping the ? or ? button pressed). For convenience the ZWP10 remote can be magnetically attached to a wall mounted holder.</p>     <br /><h2>Inclusion Information</h2><p>By default the ZWP10 is the primary controller. Inclusion mode is enabled by pressing once the IN/EX button at the back of the remote control. LEDs 1 and 4 will turn on. Follow the instructions on the device to be included (within 10 seconds). Upon successful inclusion, LEDs 2 &amp; 3 will briefly turn on.</p> <p>In case the ZWP10 is added to an existing network: set the primary controller in INCLUDE mode. Press three times the IN/EX button at the back of the ZWP10 remote control to be included until LEDs 1 and 3 turn on. Upon completion, LEDs 2 &amp; 4 will briefly turn on to confirm successful inclusion as SECONDARY controller.</p>     <br /><h2>Exclusion Information</h2><p>When the ZWP10 is the primary controller: press twice the IN/EX button at the back of the remote control until LEDs 1 and 3 turn on. Follow the instructions on the device to be excluded (within 10 seconds). Upon successful inclusion, LEDs 1 &amp; 4 will briefly turn on.</p> <p><strong>Remark:</strong> you can exclude any included device this way, even if the ZWP10 remote controller has been reset to factory defaults.   </p>     <br /><h2>Wakeup Information</h2><p>The user manual doesn't provide information about waking up the ZWP10 portable remote. However, communication with the primary controller can be initiated by pressing the SELECT button (↔️) for <strong>at least 3 seconds</strong> until LEDs 1, 2, 3 and 4 start blinking. Communication starts when releasing the SELECT button (↔️). LEDs 1, 2, 3 and 4 will keep blink simultaneously until the communication is finished.</p>    
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">ZWP10</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">1035</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Channel "1234" left</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Channel "1234" right</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Channel "1" left</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Channel "1" right</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Channel "2" left</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Channel "2" right</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Channel "3" left</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Channel "3" right</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Channel "4" left</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Channel "4" right</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The ZWP10 portable remote controller features 5 channels ("1", "2", "3", "4", "1234") and each channels features 2 sets of controls (left set and right set). Press repeatedly the SELECT button (↔️) until the desired channel is selected.</p>
+        ]]></description>
+        <multipleLimit>232</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

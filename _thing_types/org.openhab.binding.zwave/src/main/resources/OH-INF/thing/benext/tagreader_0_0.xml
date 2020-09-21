@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_tagreader_00_000" listed="false">
+    <label>Tag Reader Tag Reader</label>
+    <description><![CDATA[
+Tag Reader<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Tag Reader 500 is a security enabled Z-Wave Plus product.</li> <li>The Tag Reader 500 can arm/disarm a security system.</li> <li>The Tag Reader 500 can read RFID-tags.</li> <li>The Tag Reader 500 has the possibility for the user to manually insert codes.</li> <li>The Tag Reader 500’s indicator light will react differently on each action.</li> <li>The Tag Reader 500 has a buzzer, which can be used as walk-in/walk-out notification (alarm is being disabled/activated).</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Press and hold the enter button for two seconds (indication LED blinks shortly) and release to start the add routine.</li> <li>The indication LED will start blinking twice when the Tag Reader 500 starts the add routine.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press and hold the enter button for two seconds (indication LED blinks shortly) and release to start the remove routine.</li> <li>The indication LED will blink 3 times when the Tag Reader 500 starts the remove routine</li> </ol><br /><h2>Wakeup Information</h2><p>The enter button is pressed for 4 seconds. (led will go on for 1 second to confirm).</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="notification_access_control" typeId="notification_access_control">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">Tag Reader</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0007:0101</property>
+      <property name="dbReference">444</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Set to Default</label>
+        <description><![CDATA[
+Set all configuration values to default values (factory settings)<br /><h1>Overview</h1><p>If the Value is set to 0xFF (255) this device will return to factory settings.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Feedback time</label>
+        <description><![CDATA[
+the time the beep goes to off<br /><h1>Overview</h1><p>0x00 = Off, 0xFF = endless</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Feedback time-out</label>
+        <description><![CDATA[
+waiting for the wake-up-no-more command<br /><h1>Overview</h1><p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.</p> <p>0x00 = off</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>4: feedback beeps per second</label>
+        <description><![CDATA[
+Amount of beeps a second<br /><h1>Overview</h1><p>To set the amount of beeps per second, every beep is around 10ms.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Mode</label>
+        <description><![CDATA[
+To configure mode<br /><h1>Overview</h1><p>Mode 1 =  normal working mode</p> <p>Mode 3 = z-wave chip is always on to be asked for information, for example version or manufacturer ID.</p> <p>Any other value will be reported after a GET, but will be seen as a mode 1.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: RFID circuit start-up time</label>
+        <description><![CDATA[
+The time the RFID will be started after pressing "home" or "away"<br /><h1>Overview</h1><p>0x64 (100 * 10 ms = 1 s)</p> <p>The time (*10 ms) the RFID circuit waits to start after "home" or "away" has been pressed.</p> <p>the time *10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Association group 1</label>
+        <description><![CDATA[
+Link devices to the tag reader<br /><h1>Overview</h1><p>This class can be used to link other devices to the tag reader. These devices also get the burglar frame send to them.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

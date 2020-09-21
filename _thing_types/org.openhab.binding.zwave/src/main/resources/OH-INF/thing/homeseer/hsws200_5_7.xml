@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_hsws200_05_007" listed="false">
+    <label>HS-WS200+ Scene Capable Wall Switch</label>
+    <description><![CDATA[
+Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus relay (on-off) wall switch for use with most lighting and appliance loads. The switch includes an RBG LED indicator which may be controlled wirelessly to suit color preferences or to reflect the changing status of other devices in your home. HS-WS200+ is also designed to trigger automation events with a multi-tap operation (up to 5 taps).</p> <br /><h2>Inclusion Information</h2><p>Tap the paddle of your HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode. Tap the paddle of your HomeSeer switch.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param13" typeId="homeseer_hsws200_05_007_config_decimal_param13">
+        <label>Mode of Operation</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=13</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param21" typeId="homeseer_hsws200_05_007_config_decimal_param21">
+        <label>Status LED Color</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=21</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param31" typeId="homeseer_hsws200_05_007_config_decimal_param31">
+        <label>Switch LED Blink Frequency</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=31</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-WS200+</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">4447:3035</property>
+      <property name="versionMin">5.7</property>
+      <property name="versionMax">5.7</property>
+      <property name="dbReference">818</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Bottom LED Operation</label>
+        <description>Sets LED operation (in normal mode)</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED ON if load is OFF</option>
+          <option value="1">LED OFF if load is OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Orientation</label>
+        <description>Sets paddle’s load orientation</description>
+        <default>0</default>
+        <options>
+          <option value="0">Top of Paddle turns load ON</option>
+          <option value="1">Bottom of Paddle turns load ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Status Mode</label>
+        <description>Sets switch mode of operation</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal mode (load status)</option>
+          <option value="1">Status mode (custom status)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Load Status LED Color</label>
+        <description>Sets the Normal mode LED color</description>
+        <default>0</default>
+        <options>
+          <option value="0">White</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Status LED Color</label>
+        <description>Sets the Status mode LED color</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+          <option value="3">Blue</option>
+          <option value="4">Magenta</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">White</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Blink Frequency</label>
+        <description>Sets the switch LED Blink frequency</description>
+        <default>0</default>
+        <options>
+          <option value="0">No blink</option>
+          <option value="1">100ms ON then 100ms OFF</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline association only supports the "manual reset" event.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="homeseer_hsws200_05_007_config_decimal_param13">
+    <item-type>Number</item-type>
+    <label>Status Mode</label>
+    <description>Sets switch mode of operation</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Normal mode (load status)</option>
+        <option value="1">Status mode (custom status)</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hsws200_05_007_config_decimal_param21">
+    <item-type>Number</item-type>
+    <label>Status LED Color</label>
+    <description>Sets the Status mode LED color</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Red</option>
+        <option value="2">Green</option>
+        <option value="3">Blue</option>
+        <option value="4">Magenta</option>
+        <option value="5">Yellow</option>
+        <option value="6">Cyan</option>
+        <option value="7">White</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="homeseer_hsws200_05_007_config_decimal_param31">
+    <item-type>Number</item-type>
+    <label>Blink Frequency</label>
+    <description>Sets the switch LED Blink frequency</description>
+    <state pattern="%s">
+      <options>
+        <option value="0">No blink</option>
+        <option value="1">100ms ON then 100ms OFF</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

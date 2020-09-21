@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_dzr15_00_000" listed="false">
+    <label>DZR15 Scene Capable Receptacle</label>
+    <description><![CDATA[
+Scene Capable Receptacle<br /><h1>Overview</h1><p>Z-Wave Enabled 15 Amp Scene Capable Receptacle with LED Locator - White/Light Almond</p> <p>The wireless Leviton DZR15 is a Z-Wave enabled 15A tamper resistant receptacle designed for use for most residential lighting and motor applications. A large range of load types are supported including incandescent, halogen and magnetic low voltage, electronic low voltage, fluorescent, and motor loads up to ½ horse power.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the button on the outlet for 7 seconds until the light starts blinking amber.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">DZR15</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">1D04:0334</property>
+      <property name="dbReference">200</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

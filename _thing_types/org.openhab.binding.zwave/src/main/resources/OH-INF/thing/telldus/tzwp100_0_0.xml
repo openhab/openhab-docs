@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="telldus_tzwp100_00_000" listed="false">
+    <label>TZWP-100 Wall Plug Switch</label>
+    <description><![CDATA[
+Wall Plug Switch<br /><h1>Overview</h1><p>Plug­in switch, controls lighting and other electronic equipment up to 2000 W (resistive load). </p> <br /><h2>Inclusion Information</h2><p>Press the button on the device three times fast.</p> <br /><h2>Exclusion Information</h2><p>Press the button on the device three times fast.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Telldus Technologies AB</property>
+      <property name="modelId">TZWP-100</property>
+      <property name="manufacturerId">0176</property>
+      <property name="manufacturerRef">0003:0001,0003:0002</property>
+      <property name="dbReference">409</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>1: Countdown timer</label>
+        <description>Automatic turning off in minutes, 0 to disable</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Device status after power failure</label>
+        <description>Define how the plug will react after the power supply is back on</description>
+        <default>1</default>
+        <options>
+          <option value="0">Always off</option>
+          <option value="1">Remember status</option>
+          <option value="2">Always on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: LED indicator</label>
+        <description>Set the intensity of the LED indicator</description>
+        <default>100</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The plug will send it's status to the node in this group whenever the status of the plug changes.<br />Lifeline is normally used to send the plug status to the main controller / gateway.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control other devices</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The plug will send Basic Set control signals to the nodes in this group whenever the status of the<br />plug changes. This will work like a master/slave solution.</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

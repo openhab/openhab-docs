@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsa02203_00_000" listed="false">
+    <label>DSA02203 Z-Stick S2 USB Controller</label>
+    <description><![CDATA[
+Z-Stick S2 USB Controller<br /><h1>Overview</h1><p>USB stick controller</p> <br /><h2>Inclusion Information</h2><p>use OpenHAB</p> <br /><h2>Exclusion Information</h2><p>use OpenHAB</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSA02203</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0001</property>
+      <property name="dbReference">67</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

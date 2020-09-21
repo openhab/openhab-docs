@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_pd300emz5_00_000" listed="false">
+    <label>PD300EMZ5-1 300 Watt, Plug-In Dimmer Series 500</label>
+    <description><![CDATA[
+300 Watt, Plug-In Dimmer Series 500<br /><h1>Overview</h1><p>The GoControl PD300EMZ5-1 Plug-in Lamp Module is designed to provide Z-Wave control to a connected dimmable lamp. The PD300EMZ5-1 module is plugged into any standard grounded AC wall outlet, and the lamp is then plugged into the module. Once connected, the lamp can be dimmed or turned on or off remotely via the Z-Wave controller. The module contains two power receptacles - one controlled, and one pass-through (powered at all times).</p> <p>This Plug-in Lamp Module integrates with other Nortek Security &amp; Control Z-Wave enabled products, and can also act as a wireless repeater to ensure that commands intended for another device in the network are received (useful when a device would otherwise be out of radio range).</p> <h4>Auto-Sense</h4> <p>Unique to Nortek Security &amp; Control, the Auto-Sense feature allows for local lamp activation independent of the Z-Wave controller status. With AutoSense, one can simply switch the connected lamp's manual switch off, then on, and AutoSense will instruct the PD300EMZ5-1 to turn the lamp on.</p> <h4>Specifications</h4> <ul><li>Signal (Frequency): 908.42 MHz</li> <li>Maximum Load: <br />Incandescent: 300W maximum, 120 VAC</li> <li>Range: Up to 100 feet line of sight between the wireless controller and/or the closest Z-Wave device</li> <li>Network wide inclusion</li> <li>One controlled and one pass-through outlet</li> <li>Security beaming</li> </ul><br /><h2>Inclusion Information</h2><p>Refer to your Controller operating instructions to add this switch under the command of the Wireless Controller.</p> <ol><li>With your Controller in Discovery or Add Mode, tap the button on the face of the outlet. The LED will blink slowly when in ADD Mode.</li> <li>You should see an indication on your Controller that the "device was added" to the network and the LED will stop blinking.</li> <li>The device will appear in the list of Switches. It should display as a switch.<br />If the Controller/Gateway shows the addition failed, repeat Steps 1-3.</li> </ol><p><em>NOTE</em>: If you have trouble adding the PD300EMZ5-1 to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must first "RESET UNIT" to remove it from the network. Although adding it to a group includes it in the network, removing it from a group does not remove it from the network. If removed from a group, it functions as a repeater (only). "RESET UNIT" removes it completely from the network.</p> <br /><h2>Exclusion Information</h2><p><strong>To Reset Unit (If Required):</strong><br />In the event that your primary Controller is lost or otherwise inoperable, to reset the PD300EMZ5-1 and clear all network information, follow these steps:</p> <ol><li>Tap the button on the face of the outlet five (5) times.</li> <li>Press and hold the button for 15 seconds. The LED will increasingly blink faster to indicate that a Reset is taking place.</li> </ol><p><strong>Removing from a network:</strong><br />The PD300EMZ5-1 can be removed from the network by the Controller / Gateway. Refer to the Controller operating instructions for details.</p> <ol><li>Set the Controller into Removal Mode and follow its instruction to delete the PD300EMZ5-1 from the Controller.</li> <li>Remove the switch by tapping the button on the face of the outlet 2 times. The LED will begin blinking slowly for 10 seconds indicating that it has been removed.</li> <li>You should see an indication on your Controller that the "device was removed" from the network.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">PD300EMZ5-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5044:3533</property>
+      <property name="dbReference">872</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>2: LED Intensity</label>
+        <description><![CDATA[
+How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very Dim, 100 = Full Brightness (default)</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description>LED "Night Light" behavior</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED on when load is on, off when load is off</option>
+          <option value="1">LED off when load is on, on when load is off</option>
+          <option value="2">LED is always on</option>
+          <option value="3">LED is always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Remote Dim Step</label>
+        <description>How many levels the dimmer will change each time the Dim Timer expires</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Remote Dim Time</label>
+        <description>How often the dim level will change (in 10 ms resolution)</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Local Dim Step</label>
+        <description>How many levels the dimmer will change each time the Dim Timer expires</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Power Monitoring</label>
+        <description><![CDATA[
+Provide a visual display of the ammount of energy being consumed<br /><h1>Overview</h1><p>The PD300EMZ5-1 provides a visual display of the amount of energy being consumed when the switch is turned on by illuminating the LEDs in one of 5 different colors.</p> <table><tr><td>Energy</td> <td> </td> </tr><tr><td>0 to 2 Watts</td> <td>White</td> </tr><tr><td>3 to 60 Watts</td> <td>Green</td> </tr><tr><td>60 to 100 Watts</td> <td>Blue</td> </tr><tr><td>101 to 200 Watts</td> <td>Yellow</td> </tr><tr><td>201 to 300 Watts</td> <td>Red</td> </tr></table><p><br />The Power Monitoring can be turned off utilizing Parameter 11. When turned off, the PD300EMZ5-1 will no longer illuminate the LED to indicate any energy use and periodic reports to the hub on energy use will also be turned off.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Power Monitoring Off</option>
+          <option value="1">Power Monitoring On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: Energy display duration</label>
+        <description><![CDATA[
+Number of seconds LED displays power level usage<br /><h1>Overview</h1><p>The duration the LED will change color to indicate the amount of energy being used can be set using Parameter 12. After displaying the "energy used" color, the LED will revert to OFF or ON (white) as determined by configuration parameter #3.</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Engery report frequency</label>
+        <description><![CDATA[
+Number of minutes between automatic reporting<br /><h1>Overview</h1><p>0: Automatic reporting OFF</p> <p>1-255: Number of minutes between automatic reporting</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>16: Local Dim Time</label>
+        <description>How often the dim level will change (in 10 ms resolution)</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>17: AllSwitch Dim Step</label>
+        <description>How many levels the dimmer will change each time the Dim Timer expires</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>18: AllSwitch Dim Time</label>
+        <description>How often the dim level will change (in 10 ms resolution)</description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="technisat_shutter_00_000" listed="false">
+    <label>TechniSat Shutter Shutter wall switch</label>
+    <description><![CDATA[
+Shutter wall switch<br /><h1>Overview</h1><p>TechniSat roller shutter is a wall switch to control window roller shutters via Z-Wave. At the same time, the roller shutters can still be operated manually via the switch. Furthermore, the power consumption can be determined.</p> <p>The roller shutter switch is installed in standard flush-mounted boxes</p> <br /><h2>Inclusion Information</h2><p>Press the upper position of the left button (T1) 3x within a second.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Technisat</property>
+      <property name="modelId">TechniSat Shutter</property>
+      <property name="manufacturerId">0299</property>
+      <property name="manufacturerRef">0005:1A93</property>
+      <property name="dbReference">1242</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Central scene notification</label>
+        <description><![CDATA[
+Enable/Disable Central scene notifcations for 2x-5x press<br /><h1>Overview</h1><p>0 - disable, 1 - enable</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>2: Wattage meter</label>
+        <description><![CDATA[
+Interval Current wattage meter report in 10s<br /><h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="30240">
+        <label>3: Energy meter report</label>
+        <description><![CDATA[
+Interval of active energy meter report in minutes<br /><h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Manual shutter calibration</label>
+        <description><![CDATA[
+Manual shutter calibration<br /><h1>Overview</h1><p>Manual shutter calibration (shutter will move up, down and up again)<br />0 - idle, 1 - start a manual shutter calibration</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ul><li>Device Reset Locally Notification</li> <li>Central Scene notification</li> <li>Meter Report</li> <li>Multilevel Switch Report</li> <li>Notification Report</li> </ul>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch State</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Basic Set</p>
+        ]]></description>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

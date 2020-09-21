@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wintop_itemp_00_000" listed="false">
+    <label>ITEMP Contact and temperature sensor</label>
+    <description><![CDATA[
+Contact and temperature sensor<br /><h1>Overview</h1><p>Binary &amp; Temperature sensor</p> <br /><h2>Inclusion Information</h2><p>Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.</p> <br /><h2>Exclusion Information</h2><p>Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.</p> <br /><h2>Wakeup Information</h2><p>Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co2" typeId="alarm_co2">
+        <label>Alarm (CO2)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_DIOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wintop</property>
+      <property name="modelId">ITEMP</property>
+      <property name="manufacturerId">0097</property>
+      <property name="manufacturerRef">1182:4501,1188:4501,1188:5101</property>
+      <property name="dbReference">216</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Reset to factory default</label>
+        <description>Delete configuration but keeps inclusion</description>
+        <default>0</default>
+        <options>
+          <option value="0">No (default)</option>
+          <option value="1">Execute reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Command sent on external dry contact</label>
+        <description>Configure what te external contact sends when trigger</description>
+        <default>0</default>
+        <options>
+          <option value="0">Alarm Resport Type 2 (default)</option>
+          <option value="1">Basic On or Basic Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Operating Mode</label>
+        <description><![CDATA[
+Operating Mode<br /><h1>Overview</h1><p>Defines if the sensor is in normal wakeup mode or always on (drains battery fast)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Normal Wakeup (default)</option>
+          <option value="3">Always awake</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="15300">
+        <label>6: Temperature Offset</label>
+        <description><![CDATA[
+Temperature Offset<br /><h1>Overview</h1><p>Can be used to calibrate the temperature sensors function. Calibrated as factory default.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Binary input Group</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Alarm Group</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

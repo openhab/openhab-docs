@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="intermatic_ca600_00_000" listed="false">
+    <label>CA600 Dimmer Switch</label>
+    <description><![CDATA[
+Dimmer Switch<br /><h1>Overview</h1><p>CA 600 is a 600 watt wall-mounted dimmer switch.</p> <br /><h2>Inclusion Information</h2><p>If you’re using a Z-Stick:</p> <ol><li>Follow installation instructions for the light switch</li> <li>If light switch is ready for pairing the LED will pulse red &amp; blue</li> <li>If your Z-Stick is plugged into a gateway or a computer, unplug it.</li> <li>Take your Z-Stick to your light Switch.</li> <li>Press the Action Button on your Z-Stick.</li> <li>Press press the toggle on your light Switch.</li> <li>If your switch has been successfully linked to your Z-Wave network, its Status LED will no longer blink. If the linking was unsuccessful, the Status LED continues to blink. Repeat the above steps.</li> <li>Press the Action Button on your Z-Stick to take it out of installation mode</li> </ol><br /><h2>Exclusion Information</h2><p>If you’re using a Z-Stick:</p> <ol><li>Unplug the Z-Stick from your gateway or computer.</li> <li>Take your Z-Stick to your light switch.</li> <li>Press the Action Button on your Z-Stick.</li> <li>Press the toggle on your light switch.</li> <li>If your light switch has been successfully removed from your network, its Status LED will blink. If the removal was unsuccessful, its Status LED will not blink.</li> <li>Press the Action Button on your Z-Stick to take it out of removal mode.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Intermatic</property>
+      <property name="modelId">CA600</property>
+      <property name="manufacturerId">0005</property>
+      <property name="manufacturerRef">4341:0600</property>
+      <property name="dbReference">656</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

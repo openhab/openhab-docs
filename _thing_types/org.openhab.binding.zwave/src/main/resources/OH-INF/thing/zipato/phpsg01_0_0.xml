@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_phpsg01_00_000" listed="false">
+    <label>PH-PSG01 Smoke Sensor</label>
+    <description><![CDATA[
+Smoke Sensor<br /><h1>Overview</h1><p>Zipato Smoke Sensor (Z-Wave) is designed to give early warning of developing fires by giving off the alarm sounds from its build-in alarm horn, based on Z-Wave technology. Zipato Smoke Sensor is Z-Wave Plus product, it supports security, OTA and all other new features of 500 Series Z-Wave chipset.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Press test button three times within 1.5 seconds to enter the inclusion mode.</li> <li>After the adding was successful, the device will wake to receive the setting from Z-Wave Controller about 20 seconds. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing test button three times within 1.5 seconds to enter the exclusion mode. Node ID has been removed. </li> </ol><br /><h2>Wakeup Information</h2><p>After device is added to the network, it will wake-up once per day by default.When it wakes-up it will broadcast the “Wake  Up Notification” message to the network, and wake-up 10 seconds to receive the setting commands. The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. Interval step is 30 minutes. If you want to wake-up device immediately, please press the button once. The device will wake-up for 10 seconds. </p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm temperature</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm smoke</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">PH-PSG01</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">0002:001E</property>
+      <property name="dbReference">950</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>7: Customer Function</label>
+        <description><![CDATA[
+Customer Function<br /><h1>Overview</h1><p>Notification type 0: Using Notification Report 1: Using Sensor Binary Report</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Auto Report Battery Time</label>
+        <description><![CDATA[
+Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p>
+        ]]></description>
+        <default>127</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

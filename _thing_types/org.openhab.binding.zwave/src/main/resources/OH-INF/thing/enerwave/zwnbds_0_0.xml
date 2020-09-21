@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zwnbds_00_000" listed="false">
+    <label>ZWN-BDS Magnetic Door/Window Sensor</label>
+    <description><![CDATA[
+Magnetic Door/Window Sensor<br /><h1>Overview</h1><p>The ZWN-BDS is a battery-powered, magnetic contact sensor that wirelessly controls lights and appliances throughout your house. When the magnetic contact is broken, such as happens when a door or window is opened, the ZWN-BDS transmits Open/Close status to the gateway.</p> <br /><h2>Inclusion Information</h2><p><em>At the back of the door/window sensor, there is a program button which is used to do adding/deleting and association. Also it can be userd as a tamper alarm button, and wake up the door/window sensor manually.</em></p> <p><strong>Inclusion</strong></p> <ol><li>Set a Z-Wave controller into inclusion mode</li> <li>Press and release the program button located at the back of the door/window sensor to add it into your Z-Wave network and send a Node Information Frame.</li> <li>The status LED will stay solid for 10 seconds and turn off once inclusion is successful.</li> <li>If the LED never turns on and the inclusion mode times out, then repeat the inclusion process again, and exclude if necessary.</li> </ol><br /><h2>Exclusion Information</h2><p><em>At the back of the door/window sensor, there is a program button which is used to do adding/deleting and association. Also it can be userd as a tamper alarm button, and wake up the door/window sensor manually.</em></p> <p><strong>Exclusion</strong></p> <ol><li>Set the Z-Wave controller into exclusion mode.</li> <li>Press and release the program button located at the back of the door/window sensor to exclude it from your Z-Wave network and remove the Node Information Frame.</li> <li>The status LED will blink 3 times after releasing the program button, which means it's no longer associated with any Z-Wave network.</li> </ol><br /><h2>Wakeup Information</h2><p>To complete Z-Wave association, please refer to your controller's manual. Each controller has its own association method. <strong>If your controller needs the sensor to wake up, press and hold the program button for 2 seconds, release the button when the status LED turns off, and the ZWN-BDS will wake up manually.</strong></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZWN-BDS</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0601:0903</property>
+      <property name="dbReference">834</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zipato_zp3102_00_000" listed="false">
+    <label>ZP3102 Multi Sensor Dual: motion and temperature sensor</label>
+    <description><![CDATA[
+Multi Sensor Dual: motion and temperature sensor<br /><h1>Overview</h1><p>Presence detector and temperature meter in one device. Zipato Multisensor Duo offers elaborate security and ambient sensing options. The multifunctional nature of this product allows you to detect motion, and measure the room’s temperature. It can be used to automatically trigger other Z-Wave devices when activated.</p> <br /><h2>Inclusion Information</h2><p>Put  your  Z-Wave Controller into  “inclusion”  mode,  and  follow  the  instructions  to  add Multisensor  Duo  to  your  controller.  To  get  in  the  “inclusion”  mode, the distance between sensor and controller should be up to 1 meter. Press the program switch of Multisensor Duo once. The LED on the sensor should stop flashing, if not, please try again.</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave Controller into “exclusion” mode, and follow the instructions to remove the Multisensor Duo from you controller network. Press the  program  switch  of  Multisensor  Duo  once  to be excluded. The LED on the Multisensor Duo should start to flash.</p> <br /><h2>Wakeup Information</h2><p>Remove the rear cover to wake up the device, or set the wake up interval time from 10 minutes to 1 week.  The battery will be drained quickly if you fail to replace the cover after using that method to wake up the device.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zipato</property>
+      <property name="modelId">ZP3102</property>
+      <property name="manufacturerId">0131</property>
+      <property name="manufacturerRef">2002:0205</property>
+      <property name="dbReference">661</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>1: On time in minutes</label>
+        <description>Delay before sending OFF</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Celsius / Fahrenheit</label>
+        <description>0 = Celsius, 1 = Fahrenheit</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>3: Infrared sensor sensitivity adjustment</label>
+        <description><![CDATA[
+1 is most sensitive, 7 is least<br /><h1>Overview</h1><p>(Parameter 3) Infrared sensor sensitivity adjustment, 7 levels sensitivity, 1 = most sensitive, 7 = most insensitive, default value= 4</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Control Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

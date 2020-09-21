@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen07_00_000" listed="false">
+    <label>ZEN07 Mini Plug</label>
+    <description><![CDATA[
+Mini Plug<br /><h1>Overview</h1><p>You have picked the finest solution for your smart home, congratulations! Now it's time to enjoy these great features of your new Mini Plug:</p> <ul><li>Wireless and manual on / off control of floor lamps and small appliances</li> <li>Energy monitoring in live mode or over time (your Z-Wave gateway needs to support this feature)</li> <li>Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller</li> <li>Advanced configuration to customize LED indicator display and Z-Wave button functionality</li> <li>Automatic status recovery after power outage</li> <li>Timer option to turn off the device automatically (your Z-Wave gateway needs to support this feature)</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Built-in range extender for a stronger, more reliable network</li> <li>Super small size – easily fits two in a standard double receptacle</li> </ul><br /><h2>Inclusion Information</h2><p>Press and release the Z-Wave button on the Mini Plug 3 TIMES quickly.</p> <p>The LED indicator will flash green. It will turn solid green once the process has been completed</p> <br /><h2>Exclusion Information</h2><p>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash pink</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN07</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0003:0087</property>
+      <property name="dbReference">495</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Metering Report</label>
+        <description><![CDATA[
+send metering reports<br /><h1>Overview</h1><p>Choose if you want the Mini Plug to send metering reports to the controller. Values: 0 – Disabled; 1 – Enabled (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled (default).</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>2: Metering Report Frequency</label>
+        <description><![CDATA[
+Frecuency metering reports to the controller.<br /><h1>Overview</h1><p>Choose how often you want the Mini Plug to send metering reports to the controller. The number entered as the value corresponds to the number of seconds. So if 300 is entered by default, the Mini Plug will report power consumption every 300 seconds (5 minutes).</p>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="16">
+        <label>3: Overload Protection</label>
+        <description><![CDATA[
+Maximum amount of electricity Mini Plug to handle.<br /><h1>Overview</h1><p>Use this parameter to adjust the maximum amount of electricity you want your Mini Plug to handle. The number entered as the value corresponds to the number of Amperes. Overload protection will turn the Mini Plug’s relay off once load exceeds 13A by default. It will also send a notification (NOTIFICATION_EVENT_POWER_MANAGEMENT_OVER_LOAD_DETECTED) to the controller and all associated devices. LED indicator on the device will blink red until the load is disconnected. Press the Z-Wave button ONCE to switch the alarm off. The value set in this parameter needs to be greater than the value in parameter 4. </p>
+        ]]></description>
+        <default>13</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="13">
+        <label>4: Overload Protection Notification</label>
+        <description><![CDATA[
+LED notifications of heavy load.<br /><h1>Overview</h1><p>Use this parameter to adjust electricity value for LED notifications of heavy load. The LED indicator on the Mini Plug will light up yellow once electricity from the load is greater than the value set in this parameter. The relay will NOT turn off. The value set in this parameter can NOT be greater than the value in parameter 3. Values: 1 – 13 (Amperes) or whatever the value set in parameter 3. 12 (Amperes) – default setting. </p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: LED Notifications</label>
+        <description><![CDATA[
+Use this parameter to turn LED notifications on or off<br /><h1>Overview</h1><p>Use this parameter to turn LED notifications on or off. Values: 0 – LED disabled; 1 – LED enabled (default).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED disabled</option>
+          <option value="1">LED enabled (default)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>6: Power Report Percentage Threshold</label>
+        <description><![CDATA[
+Mini Plug to report energy usage percentage rate.<br /><h1>Overview</h1><p>Choose how you want your Mini Plug to report power consumption, electricity, voltage, and energy usage to your controller and associated devices by percentage rate. The number entered as the value corresponds to the change in percentage the appliance needs to go over for the event to be reported. So if 5% is entered by default, the Mini Plug will report any change in power consumption (W), voltage (V), electricity (A), or energy usage (kWH) over 5% (whether it’s at least 5% more or 5% less compared to previous report). Values: 1 – 100 (%); 5 (%) – default setting</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: On/Off Status Recovery After Power Failure</label>
+        <description><![CDATA[
+Choose the recovery state for your Mini Plug if power outage occurs<br /><h1>Overview</h1><p>Choose the recovery state for your Mini Plug if power outage occurs. Values: 0 – Mini Plug automatically turns OFF once power is restored (it does not remember the status prior to power outage); 1 – Mini Plug remembers the status prior to power outage and turns back to it (default); </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">OFF once power is restored</option>
+          <option value="1">Remembers the status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Auto Turn-Off Timer Enable</label>
+        <description><![CDATA[
+: Use this parameter to enable or disable the auto turn-off timer function<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function. If this feature is enabled, the Mini Plug will automatically turn off after a fixed period of time (set in parameter 9). Values: 0 – timer disabled (default); 1 – timer enabled </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">timer disabled (default)</option>
+          <option value="1">timer enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>9: Auto Turn-Off Timer Interval</label>
+        <description><![CDATA[
+Set the time to automatically turn off<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the Mini Plug to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes. Values: 1 – 65535 (minutes); 150 (minutes) – default setting. </p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Manual Control</label>
+        <description><![CDATA[
+Turn the Mini Plug with button<br /><h1>Overview</h1><p>Choose if you want to use the Z-Wave button to turn the Mini Plug on or off manually or if you want to disable this function. If this parameter is set to 0 (disabled), you will only be able to turn the Mini Plug on or off remotely using your Z-Wave gateway controller. Values: 0 – manual control disabled; 1 – manual control enabled (default) </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">manual control disabled</option>
+          <option value="1">manual control enabled (default)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 for status and overload communication to other Z-Wave devices in the network. </p> <p>Supported command classes: BASIC_SET</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 3 for notifications to Z-Wave devices associated in this group. </p> <p>Supported command classes: NOTIFICATION_REPORT_V4</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

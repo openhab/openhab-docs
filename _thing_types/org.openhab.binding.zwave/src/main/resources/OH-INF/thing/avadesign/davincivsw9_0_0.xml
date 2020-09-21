@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="avadesign_davincivsw9_00_000" listed="false">
+    <label>Da Vinci Switch Default</label>
+    <description><![CDATA[
+<br /><h1>Overview</h1><p>The Da Vinci wall controller is a Multi Chanel Z-Wave device that contains up to 6 relays and up to 9 touch buttons that can be set to control either the relays (On/Off switches and shutters) or any other on/off (SWITCH_BINARY)  , shutter (MULTILEVEL_SWITCH) Z-Wave device.</p> <br /><h2>Inclusion Information</h2><p>Press the #1 button 3 times.</p> <br /><h2>Exclusion Information</h2><p>Press the #1 button 3 times.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="scene_number2" typeId="scene_number">
+        <label>Scene Number 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="scene_number3" typeId="scene_number">
+        <label>Scene Number 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="scene_number4" typeId="scene_number">
+        <label>Scene Number 4</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="scene_number5" typeId="scene_number">
+        <label>Scene Number 5</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="scene_number6" typeId="scene_number">
+        <label>Scene Number 6</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+      <channel id="scene_number7" typeId="scene_number">
+        <label>Scene Number 7</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8,COMMAND_CLASS_BASIC:8</property>
+        </properties>
+      </channel>
+      <channel id="scene_number8" typeId="scene_number">
+        <label>Scene Number 8</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9,COMMAND_CLASS_BASIC:9</property>
+        </properties>
+      </channel>
+      <channel id="scene_number9" typeId="scene_number">
+        <label>Scene Number 9</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE:9</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Avadesign Technology Co.</property>
+      <property name="modelId">Da Vinci Switch Default</property>
+      <property name="manufacturerId">025D</property>
+      <property name="manufacturerRef">0200:0100</property>
+      <property name="dbReference">911</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>1: EP 1 Type</label>
+        <description><![CDATA[
+EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>2: EP 1 Partner Id</label>
+        <description>EP 1 Partner Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: EP 1 Blind Duration</label>
+        <description>EP 1 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="6">
+        <label>4: EP 1 Output</label>
+        <description><![CDATA[
+EP 1 Output<br /><h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>5: EP 1 Button attribute</label>
+        <description><![CDATA[
+EP 1 Button attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1] = Sound enable<br />Bit [2] = Dry contact enable<br />Bit [3] = Motor enable</p>
+        ]]></description>
+        <default>7</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>6: EP 2 Type</label>
+        <description><![CDATA[
+EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>7: EP 2 Partner Id</label>
+        <description>EP 2 Partner Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>8: EP 2 Blind Duration</label>
+        <description>EP 2 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>11: EP 3 Type</label>
+        <description><![CDATA[
+EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>12: EP 3 Partner-Id</label>
+        <description>EP 3 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>13: EP 3 Blind Duration</label>
+        <description>EP 3 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>16: EP 4 Type</label>
+        <description><![CDATA[
+EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>17: EP 4 Partner-Id</label>
+        <description>EP 4 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>18: EP 4 Blind Duration</label>
+        <description>EP 4 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>21: EP 5 Type</label>
+        <description><![CDATA[
+EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>22: EP 5 Partner-Id</label>
+        <description>EP 5 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>23: EP 5 Blind Duration</label>
+        <description>EP 5 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>26: EP 6 Type</label>
+        <description><![CDATA[
+EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>27: EP 6 Partner-Id</label>
+        <description>EP 6 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>28: EP 6 Blind Duration</label>
+        <description>EP 6 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>31: EP 7 Type</label>
+        <description><![CDATA[
+EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>32: EP 7 Partner-Id</label>
+        <description>EP 7 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>33: EP 7 Blind Duration</label>
+        <description>EP 7 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>36: EP 8 Type</label>
+        <description><![CDATA[
+EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>37: EP 8 Partner-Id</label>
+        <description>EP 8 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_38_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>38: EP 8 Blind Duration</label>
+        <description>EP 8 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="6">
+        <label>41: EP 9 Type</label>
+        <description><![CDATA[
+EP 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="0" max="9">
+        <label>42: EP 9 Partner-Id</label>
+        <description>EP 9 Partner-Id</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_43_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>43: EP 9 Blind Duration</label>
+        <description>EP 9 Blind Duration</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

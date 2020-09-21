@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="idlock_idl150_00_000" listed="false">
+    <label>ID-150 Z wave module for ID Lock 150 and 101</label>
+    <description><![CDATA[
+Z wave module for ID Lock 150 and 101<br /><h1>Overview</h1><p>The ID Lock Z-wave module is a security enabled Z-wave Plus product that is able to use encrypted Z-wave Plus messages in order to communicate to other Z-wave Plus products enabled security.</p> <p>The module is proprietary for the ID Lock 150 and also backwards compatible with the ID Lock 101. The ID Lock Z-wave module must be used in conjunction with a Security Enabled Z-wave Controller in order to fully utilize their full capability.</p> <p>The ID Lock Z-wave module can be included and operated in any Z-wave network containing certified other Z-wave products regardless of manufacturer. The ID Lock Z-wave module does not support the Basic Set Command Class.</p> <br /><h2>Inclusion Information</h2><ol><li>Bring the controller as close as possible to the lock unit</li> <li>Set the controller to inclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Enter your Master PIN and press * </li> <li>Click 2 and then *</li> <li>Click 5, don't press *</li> <li>The LED flashes blue when inclusion is in progress</li> <li>The inclusion may take some time as security is required</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the controller to Exclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Enter your Master PIN and press * </li> <li>Click 2 and then *</li> <li>Click 5, don't press *</li> <li>The LED flashes blue when exclusion is in progress</li> </ol>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door State</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Entry Notification</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_emergency" typeId="alarm_emergency">
+        <label>Alarm (emergency)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=EMERGENCY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ID Lock AS</property>
+      <property name="modelId">ID-150</property>
+      <property name="manufacturerId">0373</property>
+      <property name="manufacturerRef">0003:0001</property>
+      <property name="versionMax">1.5</property>
+      <property name="dbReference">887</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Door lock mode</label>
+        <description><![CDATA[
+Set if the lock is in away mode and if automatic locking should be enabled<br /><h1>Overview</h1><p>Auto lock Mode, Manual lock mode, Activate Away Mode, Deactivate Away Mode.</p> <p>If value is 0x02 (Enable Away, Manual lock) and the door is unlocked value will be set to 0x00.</p> <p>If value is 0x03 (Enable Away, Auto lock) and the door is unlocked value will be set to 0x01.</p> <p> Default Value: 1 (Disable Away/Auto Lock Mode)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Away Manual Lock</option>
+          <option value="1">Disable Away Auto Lock</option>
+          <option value="2">Enable Away Manual Lock</option>
+          <option value="3">Enable Away Auto Lock</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Door Hinge Position Mode</label>
+        <description>Tell the lock which side your hinges are on</description>
+        <default>0</default>
+        <options>
+          <option value="0">Right handle</option>
+          <option value="1">Left handle</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Door Audio Volume Level</label>
+        <description>Set the Audio Volume Level of the Lock</description>
+        <default>5</default>
+        <options>
+          <option value="0">No sound</option>
+          <option value="1">Level 1</option>
+          <option value="2">Level 2</option>
+          <option value="3">Level 3</option>
+          <option value="4">Level 4</option>
+          <option value="5">Level 5</option>
+          <option value="6">Max. sound level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Door ReLock Mode</label>
+        <description><![CDATA[
+Sets if the door should relock or not<br /><h1>Overview</h1><p>With this configuration ID Lock can automatically relock the door if an already locked door gets unlocked, but remains unopened. This is avoided by deactivating relocking.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Service PIN Mode</label>
+        <description><![CDATA[
+Sets the validity of the service PIN<br /><h1>Overview</h1><p>A configuration get command on this parameter returns the latest set parameter value (set by Z-wave).</p> <p>This is a set only value, if changed locally on keypad these values are not changed on Z-wave module. Value 5, 6 and 7 are for future use on door lock.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivated</option>
+          <option value="1">Valid 1 time</option>
+          <option value="2">Valid 2 times</option>
+          <option value="3">Valid 5 times</option>
+          <option value="4">Valid 10 times</option>
+          <option value="8">Valid for 12h</option>
+          <option value="9">Valid for 24h</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>7: Door Lock Model Type</label>
+        <description><![CDATA[
+Sends information if the model of the lock is 101 or 150<br /><h1>Overview</h1><p>This configuration is only accepted by configuration get command</p> <p>It is a read only parameter. Default value depends on the door lock model type.</p> <p>101 = ID Lock 101</p> <p>150 = ID Lock 150</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Notification Reports are sent out unsolicated to device included in the association group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

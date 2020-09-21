@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="elexa_dms01_00_000" listed="false">
+    <label>DMS01 Dome Wireless Siren</label>
+    <description><![CDATA[
+Dome Wireless Siren<br /><h1>Overview</h1><p>Alert you with sounds and built-in LED’s to security threats and problems such as leaks and fires. It can also sound a mild chime when doors or windows open to let you know when people come and go.</p> <br /><h2>Inclusion Information</h2><p>Follow the instructions for your Z-Wave certified Controller to enter inclusion mode. When prompted by the Controller:</p> <ol><li>For proper inclusion, bring the Siren to within 10 feet of your Controller. After inclusion, the device can be moved to any desired location.</li> <li>Remove the Back Plate of the Siren.</li> <li>Remove the Battery Tabs.</li> <li>Press the Connect Button quickly 3 times in a row. The LED Ring will flash five times indicating inclusion.</li> </ol><br /><h2>Exclusion Information</h2><p>Follow the instructions for your Z-Wave certified Controller to enter exclusion mode. When prompted by the Controller:</p> <ol><li>Remove the Back Plate of the Siren.</li> <li>Press the Connect Button quickly 3 times in a row. The LED Ring will flash five times indicating exclusion/disconnection.</li> </ol><br /><h2>Wakeup Information</h2><p>The device can be forced to wake up to submit these reports or accept new settings immediately by simply pressing and holding the CONNECT BUTTON for two seconds. The LED RING will flash once indicating successful wake up.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param7" typeId="elexa_dms01_00_000_config_decimal_param7">
+        <label>Notification Sound</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=7</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param1" typeId="elexa_dms01_00_000_config_decimal_param1">
+        <label>Primary Notification Volume</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=1</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param4" typeId="elexa_dms01_00_000_config_decimal_param4">
+        <label>Secondary Notification Volume</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=4</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param5" typeId="elexa_dms01_00_000_config_decimal_param5">
+        <label>Primary Notification Sound</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=5</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param6" typeId="elexa_dms01_00_000_config_decimal_param6">
+        <label>Secondary Notification Sound</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=6</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="elexa_dms01_00_000_config_decimal_param2">
+        <label>Primary Notification Length</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="elexa_dms01_00_000_config_decimal_param3">
+        <label>Secondary Notification Length</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Elexa Consumer Products Inc.</property>
+      <property name="modelId">DMS01</property>
+      <property name="manufacturerId">021F</property>
+      <property name="manufacturerRef">0003:0088</property>
+      <property name="dbReference">589</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration">
+        <label>1: Primary Notification Volume Level</label>
+        <default>2</default>
+        <options>
+          <option value="1">Low Volume</option>
+          <option value="2">Medium Volume</option>
+          <option value="3">High Volume</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Primary Notification Length</label>
+        <default>2</default>
+        <options>
+          <option value="1">30 Seconds</option>
+          <option value="2">1 Minute</option>
+          <option value="3">5 Minutes</option>
+          <option value="255">Plays Until Battery Is Depleted</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration">
+        <label>3: Secondary Notification Length</label>
+        <default>1</default>
+        <options>
+          <option value="0">Does Not Stop</option>
+          <option value="1">One Minute</option>
+          <option value="5">Five Minutes</option>
+          <option value="255">Chime Will Not Play</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration">
+        <label>4: Secondary Notification Volume Level</label>
+        <default>2</default>
+        <options>
+          <option value="1">Low Volume</option>
+          <option value="2">Medium Volume</option>
+          <option value="3">High Volume</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration">
+        <label>5: Primary Notification Sound</label>
+        <description><![CDATA[
+Set the siren primary notification sound.<br /><h1>Overview</h1><p>The siren offers ten different sounds to use as the Siren (primary) notification. This parameter sets the Siren (primary) notification sound.</p>
+        ]]></description>
+        <default>9</default>
+        <options>
+          <option value="1">Ding dong</option>
+          <option value="2">Fur Elise</option>
+          <option value="3">Westminster Chime</option>
+          <option value="4">Dingdongdingdongdingdong</option>
+          <option value="5">William Tell Overture</option>
+          <option value="6">Classical</option>
+          <option value="7">Weeooeeooeeooeeoo</option>
+          <option value="8">Err-err-err-err-err</option>
+          <option value="9">Beepbeepbeepbeep (Default)</option>
+          <option value="10">beeeep-beeeep-beeeep</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Secondary Notification Sound</label>
+        <default>9</default>
+        <options>
+          <option value="1">Ding dong</option>
+          <option value="2">Fur Elise</option>
+          <option value="3">Westminster Chime</option>
+          <option value="4">Dingdongdingdongdingdong</option>
+          <option value="5">William Tell Overture</option>
+          <option value="6">Classical</option>
+          <option value="7">Weeooeeooeeooeeoo</option>
+          <option value="8">Err-err-err-err-err</option>
+          <option value="9">Beepbeepbeepbeep (Default)</option>
+          <option value="10">beeeep-beeeep-beeeep</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration">
+        <label>7: Toggle secondary chime</label>
+        <description>Toggles between primary and secondary chime for binary switch</description>
+        <default>1</default>
+        <options>
+          <option value="1">Primary notification will play</option>
+          <option value="2">Secondary notification will play</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Binary Switch Reports</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Reports</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param7">
+    <item-type>Number</item-type>
+    <label>Toggle secondary chime</label>
+    <description>Toggles between primary and secondary chime for binary switch</description>
+    <state pattern="%s">
+      <options>
+        <option value="1">Primary notification will play</option>
+        <option value="2">Secondary notification will play</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param1">
+    <item-type>Number</item-type>
+    <label>Primary Notification Volume Level</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">Low Volume</option>
+        <option value="2">Medium Volume</option>
+        <option value="3">High Volume</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param4">
+    <item-type>Number</item-type>
+    <label>Secondary Notification Volume Level</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">Low Volume</option>
+        <option value="2">Medium Volume</option>
+        <option value="3">High Volume</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param5">
+    <item-type>Number</item-type>
+    <label>Primary Notification Sound</label>
+    <description>Set the siren primary notification sound.</description>
+    <state pattern="%s">
+      <options>
+        <option value="1">Ding dong</option>
+        <option value="2">Fur Elise</option>
+        <option value="3">Westminster Chime</option>
+        <option value="4">Dingdongdingdongdingdong</option>
+        <option value="5">William Tell Overture</option>
+        <option value="6">Classical</option>
+        <option value="7">Weeooeeooeeooeeoo</option>
+        <option value="8">Err-err-err-err-err</option>
+        <option value="9">Beepbeepbeepbeep (Default)</option>
+        <option value="10">beeeep-beeeep-beeeep</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param6">
+    <item-type>Number</item-type>
+    <label>Secondary Notification Sound</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">Ding dong</option>
+        <option value="2">Fur Elise</option>
+        <option value="3">Westminster Chime</option>
+        <option value="4">Dingdongdingdongdingdong</option>
+        <option value="5">William Tell Overture</option>
+        <option value="6">Classical</option>
+        <option value="7">Weeooeeooeeooeeoo</option>
+        <option value="8">Err-err-err-err-err</option>
+        <option value="9">Beepbeepbeepbeep (Default)</option>
+        <option value="10">beeeep-beeeep-beeeep</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>Primary Notification Length</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">30 Seconds</option>
+        <option value="2">1 Minute</option>
+        <option value="3">5 Minutes</option>
+        <option value="255">Plays Until Battery Is Depleted</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="elexa_dms01_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Secondary Notification Length</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">Does Not Stop</option>
+        <option value="1">One Minute</option>
+        <option value="5">Five Minutes</option>
+        <option value="255">Chime Will Not Play</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

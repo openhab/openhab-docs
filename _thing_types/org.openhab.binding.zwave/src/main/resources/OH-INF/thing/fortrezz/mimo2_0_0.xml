@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fortrezz_mimo2_00_000" listed="false">
+    <label>MIMO2+ Dual Digital or Analog Voltage input and Dual Contact Relay</label>
+    <description><![CDATA[
+Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h1><p>The MIMO2+ module provides two analog or digital input and two relay output (isolated dry contacts, NO-COM-NC) and can be controlled by ZWaveTM.  The system includes a program switch for Z-WaveTM inclusion/exclusion and a status light (LED) for various indications. </p> <p>Input SIG1 and SIG2 is an analog input, internally pulled-up to the MIMO2+ supply voltage. The system allows trigger conditions to be set based on the input voltage being inside or outside a user-defined range (configured via Z-Wave).  This provides great flexibility for capturing events in a wide variety of applications. The trigger status of the input can be read via Z-WaveTM and/or can be automatically sent to a configured node, typically the Controller.  In addition, a count of the trigger events that have occurred for the input channel is internally recorded (and stored in the ‘pulse count’) and is available to be requested or automatically sent via Z-Wave.  The current triggered/un-triggered status can also be read via ZWave.  The SIG1 and SIG2 input can be associated with up to two other Z-WaveTM devices, such that an associated device will automatically turn on (or off) based on the occurrence of a trigger event.  Finally, the analog input channel can be configured so that the analog input level (not just binary trigger status) is periodically sent to up to two other associated nodes. </p> <p>The output relay is typically commanded via Z-WaveTM commands. In addition, the user can configure the input SIG1 or SIG2 trigger condition to be mapped to the output relay.  For example, Relay 1 or 2 can be automatically turned on based on Input SIG1 being triggered.  The relay activation can be set via a jumper or via Z-WaveTM for either momentary or latched operation.</p> <br /><h2>Inclusion Information</h2><ol><li>Set up the inclusion mode at the controller (for detailed directions, please refer to your controller user manual)</li> <li>If the LED has a periodic single blink, the unit will be automatically included.  Otherwise, the button has been previously pressed and automatic inclusion mode is no longer active.  In this case, briefly press the button once and the controller will indicate that the unit has been included in the network.  Also, the Status LED will blink when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode.  </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set up the exclusion mode at the controller (for detailed directions, please refer to your controller user manual)</li> <li>Press the button and the controller will indicate the unit has been removed from the network. The Status LED will blink when the exclusion completes. </li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_general" typeId="sensor_general">
+        <label>Sensor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="sensor_general1" typeId="sensor_general">
+        <label>Sensor 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1,COMMAND_CLASS_BASIC:1;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_general2" typeId="sensor_general">
+        <label>Sensor 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Relay 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Relay 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">FortrezZ LLC</property>
+      <property name="modelId">MIMO2+</property>
+      <property name="manufacturerId">0084</property>
+      <property name="manufacturerRef">0463:0207,0463:0208</property>
+      <property name="dbReference">700</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_0000001F" type="integer" groupName="configuration"
+                 min="0" max="31">
+        <label>1: Relay 1 Trigger Interval</label>
+        <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_1_1_000000E0" type="integer" groupName="configuration">
+        <label>1: Relay 1 Trigger Configuration</label>
+        <description>Relay 1 Trigger on Sensor Input</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="32">Trigger on Sensor 1</option>
+          <option value="64">Trigger on Sensor 2</option>
+          <option value="96">Trigger on Sensor 1 or Sensor 2</option>
+          <option value="128">Trigger on Sensor 1 and Sensor 2</option>
+          <option value="224">Trigger on Sensor 1 and/or Sensor 2</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1_0000001F" type="integer" groupName="configuration"
+                 min="0" max="31">
+        <label>2: Relay 2 Trigger Interval</label>
+        <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1_000000E0" type="integer" groupName="configuration">
+        <label>2: Relay 2 Trigger Configuration</label>
+        <description>Relay 2 Trigger on Sensor Input</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="32">Trigger on Sensor 1</option>
+          <option value="64">Trigger on Sensor 2</option>
+          <option value="96">Trigger on Sensor 1 or Sensor 2</option>
+          <option value="128">Trigger on Sensor 1 and Sensor 2</option>
+          <option value="224">Trigger on Sensor 1 and/or Sensor 2</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1_0000003F" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>3: Sensor 1 Report Interval</label>
+        <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1_00000040" type="integer" groupName="configuration">
+        <label>3: Sensor 1 Report Mode</label>
+        <description>Report state periodically or on change</description>
+        <default>1</default>
+        <options>
+          <option value="0">Periodically</option>
+          <option value="1">On Change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1_00000080" type="integer" groupName="configuration">
+        <label>3: Sensor 1 Trigger Mode</label>
+        <description>Trigger Inside or Outside Low/High Thresholds</description>
+        <default>1</default>
+        <options>
+          <option value="0">Outside</option>
+          <option value="1">Inside</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>4: Sensor 1 Lower Threshold High</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>5: Sensor 1 Lower Threshold Low</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>6: Sensor 1 Upper Threshold High</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>7: Sensor 1 Upper Threshold Low</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1_0000003F" type="integer" groupName="configuration"
+                 min="0" max="63">
+        <label>9: Sensor 2 Report Interval</label>
+        <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1_00000040" type="integer" groupName="configuration">
+        <label>9: Sensor 2 Report Mode</label>
+        <description>Report state periodically or on change</description>
+        <default>1</default>
+        <options>
+          <option value="0">Periodically</option>
+          <option value="1">On Change</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1_00000080" type="integer" groupName="configuration">
+        <label>9: Sensor 2 Trigger Mode</label>
+        <description>Trigger Inside or Outside Low/High Thresholds</description>
+        <default>1</default>
+        <options>
+          <option value="0">Outside</option>
+          <option value="1">Inside</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>10: Sensor 2 Lower Threshold High</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>11: Sensor 2 Lower Threshold Low</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>12: Sensor 2 Upper Threshold High</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="4095">
+        <label>13: Sensor 2 Upper Threshold Low</label>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor 1 On Change</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Sensor 2 On Change</label>
+        <multipleLimit>2</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="eco_pirv25_00_000" listed="false">
+    <label>PIR Motion Sensor v2.5 Z-Wave Motion Sensor</label>
+    <description><![CDATA[
+Z-Wave Motion Sensor<br /><h1>Overview</h1><p><strong>Overview:</strong></p> <p>This is a hardware revision update to EcoLink's prior PIR sensor.  It provides the same general capabilities as the prior detector--motion detection, battery state messages, and "burgler" alarm for the case being opened.  On motion detection a green LED will flash and the notification will be sent to Group 1.</p> <p><strong>Association Groups:</strong></p> <p>The device has two association groups of up to 5 nodes each.</p> <p><strong>Configuration Parameters:</strong></p> <p>The device has two configuration parameters. Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected).  By default the sensor does NOT send Basic Set commands of 0x00.  Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored.  If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller  can disable the Sensor Binary Report Commands completely.</p> <br /><h2>Inclusion Information</h2><p>Initial device inclusion is started by removing the pull tab from the back of the unit.  This connects the battery and the device will immediately be eligible for inclusion.  Place your controller in inclusion mode prior to pulling the tab from the back.</p> <p>The manual indicates network-wide inclusion is supported, but also indicates that the device should be within 15 feet of the controller during the inclusion process.</p> <br /><h2>Exclusion Information</h2><ol><li>Remove the battery for at least 5 seconds</li> <li>Reinstall the battery</li> <li>Replace the sensor cover.</li> </ol><br /><h2>Wakeup Information</h2><p>Open, then close the sensor case.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ecolink</property>
+      <property name="modelId">PIR Motion Sensor v2.5</property>
+      <property name="manufacturerId">014A</property>
+      <property name="manufacturerRef">0004:0001</property>
+      <property name="dbReference">525</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send Basic Sets</label>
+        <description><![CDATA[
+Send or do not send Basic Set commands to AG2<br /><h1>Overview</h1><p>Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected).  By default the sensor does NOT send Basic Set commands of 0x00.</p> <p>Configuration Value: 0x00:</p> <p>(Default) Sensor does NOT send Basic Sets to Node IDs in Association Group 2 when the sensor is restored (i.e. Motion Not Detected)</p> <p>Configuration Value: 0xFF:</p> <p>Sensor sends Basic Sets of 0x00 to nodes in Association Group2 when sensor is restored</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do not send</option>
+          <option value="255">Send Basic Sets</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Send Binary Reports</label>
+        <description><![CDATA[
+Send Sensor Binary Reports for backward compatibility<br /><h1>Overview</h1><p>Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored.  If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller  can disable the Sensor Binary Report Commands completely.</p> <p>Configuration Value: 0x00:</p> <p>(Default) Sensor sends Sensor Binary Reports when sensor is faulted and restored for backwards compatibility in addition to Notification Reports.</p> <p>Configuration Value: 0xFF:</p> <p>Sensor will send only Notification Reports and NOT Sensor Binary Reports when the sensor is faulted and restored.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Send Sensor Binary Reports</option>
+          <option value="255">Send only Notification Reports</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 is a lifeline group who will receive unsolicited messages relating to motion detection notifications, case tampering notifications, low-battery notifications, and snsor binary reports.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set.  On inclusion the controller should put its node ID in group 1 but not in group 2.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

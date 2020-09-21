@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_zxt600_01_003" listed="false">
+    <label>ZXT-600 AC Master</label>
+    <description><![CDATA[
+AC Master<br /><h1>Overview</h1><p>ZXT-600 AC Master is a Z-Wave plus certified IR Bridge for split air conditioner control by receiving Z-Wave command and translating to Infrared command and flawlessly work with any Z-Wave compliant gateway.</p> <p>With its over 250 brands built-in code library and ever-green up to date cloud IR database supporting advanced code learning search, ZXT-600 can easily set up and smart control most of AC brands and models actively worldwide by Z-Wave gateway.</p> <p>The battery powered device will allow you to mount it anywhere you want such as wall, ceiling or put it on table and never compromise on the form factor. By supporting OTA function, gateway can enable ZXT-600 to update firmware if newest available. </p> <br /><h2>Inclusion Information</h2><p>Please consult your Gateway supplier for more detail. Normally, User can ignore this step during the setup. ZXT-600 supports 1 association group Association Group #1 Association Group #1 (max. 1 node) is default to associate with the primary controller (Gateway/Hub/Controller) for AC Master Status change report, refer to below for report details:</p> <ul><li>Current Room Temperature (report in precision of 0.5°C or 1°F) (It will be according to Configuration Parameter 39 setting to decide the trigger level)</li> <li>Current Battery Level (Only apply in Low Battery Warning happened)</li> <li>Device Reset Locally Notification (Only report when the AC Master has been triggered the RESET TO DEFAULT)</li> </ul><p><strong>Step 1</strong> Apply Power to ZXT-600</p> <ul><li>2x AA batteries or micro USB</li> <li>ZXT-600 will detect the first applied power source to decide what Z-Wave device role it will be in after included into the Z-Wave gateway: battery= sleeping device (FLiRS mode). USB power = always awake device (Always Listening mode), refer to Z-Wave Glossary for more information.</li> <li>Once the ZXT-600 is included into a Z-Wave network, the working mode (sleeping or awake) cannot be changed, unless it is excluded and re-apply the power.</li> <li>ZXT-600 can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of Vendor to increase reliability of the network.</li> </ul><p><strong>Step 2</strong> Include ZXT-600 to a Z-Wave Gateway</p> <p>Step Procedure / Description Status Indicator 1 Refer to your primary controller to enter into the Inclusion Mode or Exclusion Mode 2 When it is prompted to enter it, please triple click the “PROG” button within 1 second. Green Indicator flashes TWICE then stay off.</p> <br /><h2>Exclusion Information</h2><p>Red Indicator flashes TWICE then stay off to represent the Add / Remove process failed, please repeat the above step again. If the Add (Include) process fails, try Remove (Exclude) and /or resetting the AC Master to Factory Default and repeat the above step</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="remotec_zxt600_01_003_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="remotec_zxt600_01_003_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZXT-600</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">0101:8490,0102:8490,0100:8490</property>
+      <property name="versionMin">1.3</property>
+      <property name="dbReference">875</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="32">
+        <label>25: Learn IR Code</label>
+        <description>Learn IR Code</description>
+        <default>32</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4">
+        <label>26: Check IR Code Learning Status</label>
+        <description>Check IR Code Learning Status</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_27_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>27: Set IR Code Number from built-in code library</label>
+        <description>Set IR Code Number from built-in code library</description>
+        <default>1</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="8">
+        <label>30: Auto Report condi Trig by Room Temp change</label>
+        <description>Set Auto Report condition Trigger by Room Temperature change</description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Set built-in IR Emitter Control</label>
+        <description><![CDATA[
+Set built-in IR Emitter Control<br /><h1>Overview</h1><p>0 - disable</p> <p>255 enable (default)</p>
+        ]]></description>
+        <default>255</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>33: Control AC SWING function</label>
+        <description><![CDATA[
+Control AC &amp;amp;quot;SWING&amp;amp;quot; function<br /><h1>Overview</h1><p>0 - swing off</p> <p>1 - swing on (default)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>34: Set Auto Report Cond by Time Interv</label>
+        <description>Set Auto Report Condition by Time Interval</description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>37: Calibrate Temperature reading</label>
+        <description><![CDATA[
+Calibrate Temperature reading<br /><h1>Overview</h1><p>0 to 5 - positive value</p> <p>251 to 255 - negatice value</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="remotec_zxt600_01_003_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="5">Resume</option>
+        <option value="6">Fan Only</option>
+        <option value="8">Dry Air</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt600_01_003_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="">UNKNOWN_5</option>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="3">On (high)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 org.openhab.core.thing-description.xsd">
+
+	<bridge-type id="coordinator_xbee">
+		<label>XBee Coordinator</label>
+		<description>XBee USB Stick</description>
+
+        <config-description>
+            <parameter-group name="network">
+                <context></context>
+                <label>ZigBee Network Configuration</label>
+                <description></description>
+            </parameter-group>
+
+            <parameter name="zigbee_port" type="text" required="true">
+                <label>Port</label>
+                <context>serial-port</context>
+                <default></default>
+                <description>Serial Port</description>
+                <limitToOptions>false</limitToOptions>
+            </parameter>
+
+            <parameter name="zigbee_baud" type="integer" required="true">
+                <label>Baud Rate</label>
+                <description>Serial Port Baud Rate</description>
+                <default>9600</default>
+                <options>
+                    <option value="9600">9600</option>
+                    <option value="57600">57600</option>
+                    <option value="115200">115200</option>
+                </options>
+            </parameter>
+
+            <parameter name="zigbee_flowcontrol" type="integer" required="false">
+                <label>Flow Control</label>
+                <description>Serial Port Flow Control</description>
+                <default>1</default>
+                <options>
+                    <option value="0">None</option>
+                    <option value="1">Hardware (CTS/RTS)</option>
+                    <option value="2">Software (XOn/XOff)</option>
+                </options>
+            </parameter>
+
+            <parameter name="zigbee_initialise" type="boolean" groupName="network">
+                <label>Reset Controller</label>
+                <description>Resets the Controller and sets the configuration to the configured values.</description>
+                <default>false</default>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_channel" type="integer" groupName="network" required="false" min="11" max="25">
+                <label>Channel</label>
+                <description>Channel number</description>
+                <default>0</default>
+                <options>
+                    <option value="0">Auto</option>
+                    <option value="11">Channel 11</option>
+                    <option value="12">Channel 12</option>
+                    <option value="13">Channel 13</option>
+                    <option value="14">Channel 14</option>
+                    <option value="15">Channel 15</option>
+                    <option value="16">Channel 16</option>
+                    <option value="17">Channel 17</option>
+                    <option value="18">Channel 18</option>
+                    <option value="19">Channel 19</option>
+                    <option value="20">Channel 20</option>
+                    <option value="21">Channel 21</option>
+                    <option value="22">Channel 22</option>
+                    <option value="23">Channel 23</option>
+                    <option value="24">Channel 24</option>
+                    <option value="25">Channel 25</option>
+                </options>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_panid" type="Integer" groupName="network" required="false">
+                <label>PAN ID</label>
+                <description>PAN Network ID</description>
+                <default>0</default>
+                <options>
+                    <option value="0">Auto</option>
+                </options>
+                <limitToOptions>false</limitToOptions>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_extendedpanid" type="text" groupName="network" required="false">
+                <label>Extended PAN ID</label>
+                <description>Extended PAN Network ID: 16 byte hexadecimal value</description>
+                <default>0000000000000000</default>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_networkkey" type="text" groupName="network">
+                <label>Network Security Key</label>
+                <description>Set the network security key</description>
+                <default>00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00</default>
+                <advanced>true</advanced>
+            </parameter>
+
+            <parameter name="zigbee_meshupdateperiod" type="integer" groupName="network">
+                <label>Mesh Update Period</label>
+                <description>The period between subsequent updates of the mesh topology</description>
+                <advanced>true</advanced>
+                <default>86400</default>
+                <options>
+                    <option value="0">Never</option>
+                    <option value="300">5 Minutes</option>
+                    <option value="1800">30 Minutes</option>
+                    <option value="3600">1 Hour</option>
+                    <option value="21600">6 Hours</option>
+                    <option value="86400">1 Day</option>
+                    <option value="604800">1 Week</option>
+                </options>
+            </parameter>
+		</config-description>
+
+	</bridge-type>
+</thing:thing-descriptions>

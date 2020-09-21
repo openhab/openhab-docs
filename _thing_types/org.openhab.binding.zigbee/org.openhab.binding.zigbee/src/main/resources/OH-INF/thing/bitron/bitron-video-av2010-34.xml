@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+                          bindingId="zigbee"
+                          xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="bitron-video-av2010-34" listed="false">
+      <label>Bitron Video Wall Switch AV2010/34</label>
+      <channels>
+         <channel id="button1" typeId="system.button">
+            <label>Button 1</label>
+            <description>Button marked with one dot</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0005</property>
+               <property name="zigbee_shortpress_command_id">0x05</property>
+               <property name="zigbee_shortpress_parameter_name">sceneId</property>
+               <property name="zigbee_shortpress_parameter_value">1</property>
+            </properties>
+         </channel>
+         <channel id="button2" typeId="system.button">
+            <label>Button 2</label>
+            <description>Button marked with two dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0005</property>
+               <property name="zigbee_shortpress_command_id">0x05</property>
+               <property name="zigbee_shortpress_parameter_name">sceneId</property>
+               <property name="zigbee_shortpress_parameter_value">2</property>
+            </properties>
+         </channel>
+         <channel id="button3" typeId="system.button">
+            <label>Button 3</label>
+            <description>Button marked with three dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0005</property>
+               <property name="zigbee_shortpress_command_id">0x05</property>
+               <property name="zigbee_shortpress_parameter_name">sceneId</property>
+               <property name="zigbee_shortpress_parameter_value">3</property>
+            </properties>
+         </channel>
+         <channel id="button4" typeId="system.button">
+            <label>Button 4</label>
+            <description>Button marked with four dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0005</property>
+               <property name="zigbee_shortpress_command_id">0x05</property>
+               <property name="zigbee_shortpress_parameter_name">sceneId</property>
+               <property name="zigbee_shortpress_parameter_value">4</property>
+            </properties>
+         </channel>
+      </channels>
+      <config-description>
+         <parameter name="zigbee_macaddress"
+                    type="text"
+                    readOnly="true"
+                    required="true">
+            <label>MAC Address</label>
+         </parameter>
+      </config-description>
+   </thing-type>
+</thing:thing-descriptions>

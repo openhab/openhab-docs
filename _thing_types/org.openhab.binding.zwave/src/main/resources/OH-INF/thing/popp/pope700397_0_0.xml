@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_pope700397_00_000" listed="false">
+    <label>POPE700397 Popp Smart Outdoor Plug - IP44 rated</label>
+    <description><![CDATA[
+Popp Smart Outdoor Plug - IP44 rated<br /><h1>Overview</h1><p>The Wall Plug Switch Outdoor can be placed between a wall outlet for plugs type F and electric devices, plugged in by a cord. It can switch all loads up to 3500 W. The plug switch is IP 44 rated and can, therefore, be used both in dry as well as humid environments in- and outdoor.</p> <p>Switching is controlled by the local button or wirelessly. The use of the local button and the behavior on wireless commands can be configured using configuration parameters. When detached from the control of local leads the button on the device can be used to trigger scenes in a central gateway. A single click and double click are distinguished.</p> <p>The device is also measuring the mains voltage supply reporting mains voltage and mains frequency. Additionally, the power consumption of the attached load is monitored as well.</p> <p>All metering values can be requested from the central controller and will be reported unsolicited if configured. </p> <br /><h2>Inclusion Information</h2><p>Tripple Click the button for inclusion. </p> <br /><h2>Exclusion Information</h2><p>Tripple Click the button for exclusion.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_frequency" typeId="sensor_frequency">
+        <label>Frequency</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Clear Accumulated Energy</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">POPE700397</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0003:000A</property>
+      <property name="dbReference">969</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Operation Mode</label>
+        <description>Defines when the LED shall shine and how</description>
+        <default>1</default>
+        <options>
+          <option value="0">LED off, only blinks on traffic</option>
+          <option value="1">Defined by Parameter 21 and 22</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Auto Off</label>
+        <description><![CDATA[
+Defines if and after which time the device shall turn off<br /><h1>Overview</h1><p>Defines if and after which time the device shall turn off without any user interaction (in seconds) 0 = No auto off</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Switching behavior</label>
+        <description>Switching behavior when receiving wireless OFF</description>
+        <default>0</default>
+        <options>
+          <option value="0">Switches off</option>
+          <option value="1">Ignores Off command</option>
+          <option value="2">Switches on</option>
+          <option value="3">Switches on, when receiving off and state is off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Button Mode</label>
+        <description><![CDATA[
+This parameter defines if the local button ...<br /><h1>Overview</h1><p>This parameter defines if the local button shall control (switch) the load or it is only used to send out scene control commands to the central controller.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Controls Load + Scenes</option>
+          <option value="1">Scene Control Only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Status after Power Failure</label>
+        <description><![CDATA[
+Status after Power Failure<br /><h1>Overview</h1><p>Defines the switching status after a power failure or unplugging</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Always off</option>
+          <option value="1">Return to last switching state</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: LED Color on OFF state</label>
+        <description><![CDATA[
+LED Color on OFF state<br /><h1>Overview</h1><p>Defines the behavior of the LED when the load is switched off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: LED Color on ON state</label>
+        <description><![CDATA[
+LED Color on ON state<br /><h1>Overview</h1><p>Defines the behavior of the LED when the load is switched on</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Red</option>
+          <option value="2">Green</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration"
+                 min="0" max="250">
+        <label>23: Voltage Report Threshold</label>
+        <description><![CDATA[
+Voltage Report Threshold<br /><h1>Overview</h1><p>Report the voltage when the voltage has changed by more then X  * 1 V. When disabled (Value 0) the device will report every 10 minutes regardless of current voltage.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>24: Current Reporting Threshold</label>
+        <description><![CDATA[
+Current Reporting Threshold<br /><h1>Overview</h1><p>Report the current when the current has changed by more then X *0,01 A. When disabled the device will report every 10 minutes regardless of current change.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>25: Power Reporting Threshold</label>
+        <description><![CDATA[
+Power Reporting Threshold<br /><h1>Overview</h1><p>Report the power when the power  has changed by more then X Watt. When disabled (Value 0) the device will report every 10 minutes regardless of power consumption change.</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_26_2" type="integer" groupName="configuration"
+                 min="0" max="3600">
+        <label>26: Soft Circuit Breaker Threshold</label>
+        <description><![CDATA[
+Soft Circuit Breaker Threshold<br /><h1>Overview</h1><p>When the power draw exceeds the value set in this parameter (x W) for a time set in parameter 28 the soft ciruit breaker will disconnect the load.</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>27: Soft Circuit Breaker Recovery Time</label>
+        <description><![CDATA[
+Soft Circuit Breaker Recovery Time<br /><h1>Overview</h1><p>Once the soft circuit breaker tipps and the load is disconnected the load will be automatically reconneced after X seconds. When disabled (value 0) the load must be repowered manually or with wireless command.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>28: Soft Circuit Breaker Delay Time</label>
+        <description><![CDATA[
+Soft Circuit Breaker Delay Time<br /><h1>Overview</h1><p>This delay time (x * 0,1s) defines how fast the soft circuit breaker wil react when the threshold power is exceeded. The power is cut off only if the power draw remains over the threshold level for the defines time.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control other devices</label>
+        <description>Control other devices on single click of the button. BASIC command (on/off) is sent according to switching state of the load.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

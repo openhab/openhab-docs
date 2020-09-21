@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vrcs1_00_000" listed="false">
+    <label>VRCS1 1-Scene Controller</label>
+    <description><![CDATA[
+1-Scene Controller<br /><h1>Overview</h1><p>Leviton VRCS1 Vizia RF+ 1-Button Scene Controller Switch for Multi-Location Scene Control - no local load control</p> <br /><h2>Inclusion Information</h2><ol><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard (refer to figure). Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber. Release the push pad and the LED should blink Amber. You are now in Programming mode. <strong>NOTE:</strong> If the LED on the 1-scene controller turns solid Red while including, there has been a communication error.</li> <li>While standing close to the 1-scene controller (approximately 2-5 ft.), press the center button on the Programmer/Remote to device in the network. NOTE: Only one device may be included at any time</li> </ol><br /><h2>Exclusion Information</h2><ol><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard (refer to figure). Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber. Release the push pad and the LED should blink Amber. You are now in Programming mode. <strong>NOTE:</strong> If the LED on the 1-scene controller turns solid Red while excluding, there has been a communication error.</li> <li>While standing close to the 1-scene controller (approximately 2-5 ft.), press the center button to device from the network.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRCS1</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0902:0215</property>
+      <property name="dbReference">1092</property>
+      <property name="commandClass:COMMAND_CLASS_SCENE_ACTIVATION">Scene Number</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group1</label>
+        <multipleLimit>32</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

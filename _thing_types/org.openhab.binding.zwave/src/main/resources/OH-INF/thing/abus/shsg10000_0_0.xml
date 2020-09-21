@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="abus_shsg10000_00_000" listed="false">
+    <label>SHSG10000 High-volume siren (95 dB) and LED strobe light</label>
+    <description><![CDATA[
+High-volume siren (95 dB) and LED strobe light<br /><h1>Overview</h1><p>This is a <b>secure Siren </b>for <b>CEPT (Europe)</b>. </p> <p>Once the device is added to a Z-Wave gateway, the alarm can be released and terminated. In Event of an Alarm the high-volume siren (95dB) will sound and LED strobe lights up.</p> <br /><h2>Inclusion Information</h2><ol><li>Plug the SHSG10000 into a socket</li> <li>Set the Gateway/Controller into inclusion mode</li> <li>Press the Network-button 3 times within 1.5 seconds and the Status-LED will flash 3 times</li> <li>If the Add device process is successful, the Status-LED will turn off.</li> <li>Repeat the inclusion process from step 2 if it was not successful.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug the SHSG10000 into a socket</li> <li>Set the Gateway/Controller into exclusion mode</li> <li>Press the Network-button 3 times within 1.5 seconds and the Status-LED will flash 3 times</li> <li>If the Remove device process is successful, the Status-LED flash 6 times.</li> <li>Repeat the exlusion process from step 2 if it was not successful.</li> </ol>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ABUS Security-Center GmbH &amp; Co. KG</property>
+      <property name="modelId">SHSG10000</property>
+      <property name="manufacturerId">0403</property>
+      <property name="manufacturerRef">0003:0000</property>
+      <property name="dbReference">1084</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Lifeline association group includes command classes: Switch Binary report, Battery and Device Reset Locally notification.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pan04_00_000" listed="false">
+    <label>PAN04 In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW with power meter</label>
+    <description><![CDATA[
+In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW with power meter<br /><h1>Overview</h1><p>This in-wall dual relay switch module is a transceiver which is a Z-Wave<sup>TM</sup> enabled device and is fully compatible with any Z-Wave<sup>TM</sup> enabled network. Mini size design let the module can easily hide itself into the wall box and that will be good for the house decoration.</p> <p>There are many kind of application by using the module to switch AC power On and Off, one main application is the light control. The new smart relay calibration technology can reduce the inrush current caused by the load and let the module work perfectly with many kind of light like incandescent, fluorescent and LED light. </p> <p>This in-wall switch module is able to detect Instant power wattage (5~1500W) and overload wattage (1600~1700W) of connected light or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, disconnect and re-connect the Module will reset its overload condition to normal status.</p> <br /><h2>Inclusion Information</h2><p><strong>Adding to Z-Wave<sup>TM</sup> Network</strong></p> <p>In the front casing, there is an on/off button with LED indicator below which is used to toggle switch on and off or carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashes on and off alternately and repeatedly at 2-second intervals. It implies that it has not been assigned a node ID and cannot work with Z-Wave enabled devices.</p> <p><strong>Auto Inclusion</strong></p> <p>The function of auto inclusion will be executed as long as the in wall switch does not have Node ID and just connect the switch to main power.</p> <p><strong>Note:</strong> Auto inclusion timeout is 4 minute during which the node information of explorer frame will be emitted once every 5 seconds. Unlike "inclusion" function as shown in the table below, the execution of auto inclusion is free from pressing the On/Off button on the Switch.</p> <p>The table below lists an operation summary of basic Z-Wave functions. Please refer to the instructions for your Z-Wave<sup>TM</sup> Certificated Primary Controller to access the Setup function, and to include/exclude/associate devices.</p> <ul><li>No node ID <ul><li>The Z-Wave Controller does not allocate a node ID to the Switch</li> <li>LED Indication: 2-second on, 2-second off</li> </ul></li> <li>Inclusion <ul><li>Description <ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter inclusion mode</li> </ol></li> <li>LED Indication: One press one flash</li> </ul></li> </ul><br /><h2>Exclusion Information</h2><p>The table below lists an operation summary of basic Z-Wave functions. Please refer to the instructions for your Z-Wave<sup>TM</sup> Certificated Primary Controller to access the Setup function, and to include/exclude/associate devices.</p> <ul><li>Exclusion <ul><li>Description <ol><li>Have Z-Wave Controller entered exclusion mode.</li> <li>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter exclusion mode.</li> </ol></li> <li>LED Indication: One press one flash</li> </ul></li> <li>Node ID has been excluded <ul><li>2-second on, 2-second off</li> </ul></li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter EP 0</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor1" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Reset Meter EP1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor2" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset2" typeId="meter_reset">
+        <label>Reset Meter EP2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor3" typeId="meter_powerfactor">
+        <label>Electric meter (power factor) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_current3" typeId="meter_current">
+        <label>Electric meter (amps) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage3" typeId="meter_voltage">
+        <label>Electric meter (volts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAN04</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0001:0003,0001:0012,0001:0014,0001:0061</property>
+      <property name="dbReference">172</property>
+      <property name="defaultAssociations">2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>1: W meter report period</label>
+        <description><![CDATA[
+Period for reporting W meter<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: kWh meter report period</label>
+        <description><![CDATA[
+Period for reporting kWh meter<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (value = 6), the device will report its total power consumption every 1 hour to Z-Wave Controller. </p> <p>Unit: 10 minutes</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Selected endpoint</label>
+        <description><![CDATA[
+Which endpoint is addressed by the BASIC command class<br /><h1>Overview</h1><p>If the Controller is not using Multi_Channel command class to access the endpoint of PAN04, you may configure the endpoint value to react the Basic Command Class</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Relay 1</option>
+          <option value="2">Relay 2</option>
+          <option value="3">Relay 1 + 2</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Switch mode</label>
+        <description>Change the external switch mode</description>
+        <default>1</default>
+        <options>
+          <option value="1">Edge mode</option>
+          <option value="2">Pulse mode</option>
+          <option value="3">Edge-Toggle mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>5: Threshold of Watt for Load Caution</label>
+        <description>If threshold of wattage is reached, a meter report will be generated</description>
+        <default>750</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Threshold of kWh for Load Caution</label>
+        <description>If threshold of kWh is reached, a Meter Report will be generated</description>
+        <default>10000</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Restore switch state mode</label>
+        <description><![CDATA[
+Restore switch state mode<br /><h1>Overview</h1><p>Restores the switch state setting in case the device was disconnected from the power source.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch Off</option>
+          <option value="1">Last State</option>
+          <option value="2">Switch On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>8: Auto Off Timer</label>
+        <description><![CDATA[
+Auto Off Timer<br /><h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: RF off command mode</label>
+        <description><![CDATA[
+RF off command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASIC_SET, BINARY_SWITCH_SET, SWITCH_ALL_OFF, is received, it could be interpreted as 4 kinds of commands.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch Off</option>
+          <option value="1">Ignore</option>
+          <option value="2">Switch Toggle</option>
+          <option value="3">Switch On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Endpoint 3</label>
+        <description><![CDATA[
+Endpoint 3<br /><h1>Overview</h1><p>Multi-Channel Command is a good way to control relay1 and relay2 of PAN04 individually. The endpoint3 of PAN04 is related to both relay1 and relay2. In some condition it becomes redundant in Multi-Channel Command Class.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Exists</option>
+          <option value="2">Doesn't Exist</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Relay 1 + 2</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Relay 1</label>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Relay 2</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

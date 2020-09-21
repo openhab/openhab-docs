@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="permundo_psc132zw_00_000" listed="false">
+    <label>PSC132ZW Metering Relay Switch, 16A</label>
+    <description><![CDATA[
+Metering Relay Switch, 16A<br /><h1>Overview</h1><p>The wireless flush-mount switching actuator PSC132ZW allows you to remotely control electrical appliances. It features a metering function to measure the power consumption and the accumulated energy usage of connected equipment. The built-in metering unit is of high quality: it calculates the true-power and also works for small loads from 1W upwards. This feature is important to have a correct measurement value also for electronic loads like led lamps.</p> <p>The PSC132ZW has a built-in safety features that will switch-off the output in case of too high temperature or overload.</p> <p>Additionally the PSC132 has a feature to switch the load on at zero voltage and switch the load off at zero current. This leads to a very high number of possible switching cycles also for difficult loads like led-lamps or motors, e.g. pumps.</p> <br /><h2>Inclusion Information</h2><p>When a PS132ZW that is not associated to a Z-Wave network is inserted into the mains outlet, it will flash once red followed by 2 green flashes followed by steady red flashing. The PSC132ZW can now be added to (=inclusion) or removed from (=exclusion) a Z-Wave network:</p> <ol><li>start inclusion/exclusion on the primary controller</li> <li>hold the touch button until the led shows green light</li> <li>release the touch button</li> </ol><p>The PSC132ZW will confirm successful addition to the network by 5 green flashes.</p> <br /><h2>Exclusion Information</h2><p>When a PS132ZW that is not associated to a Z-Wave network is inserted into the mains outlet, it will flash once red followed by 2 green flashes followed by steady red flashing. The PSC132ZW can now be added to (=inclusion) or removed from (=exclusion) a Z-Wave network:</p> <ol><li>start inclusion/exclusion on the primary controller</li> <li>hold the touch button until the led shows green light</li> <li>release the touch button</li> </ol><p>The PSC132ZW will confirm successful removal/exclusion by steady red flashing. At the time of exclusion the device is factory reset.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">permundo GmbH</property>
+      <property name="modelId">PSC132ZW</property>
+      <property name="manufacturerId">0245</property>
+      <property name="manufacturerRef">0003:0002</property>
+      <property name="dbReference">820</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
+        <label>31: Local Control Off</label>
+        <description><![CDATA[
+Separates pushbutton and S1 input from relay<br /><h1>Overview</h1><p>If "LocalControlOn" is set (factory default state) the PSC132ZWs output can be switched manually by a mechanical rocker-switch or a pushbutton that is connected to the S1 input of the device. If "LocalControlOff" is set, the PSC132ZWs output can only be switched through Z-Wave telegrams. In both modes the operational state of the mechanical switch is reported to association group 2. LocalControlOff is ment for using the switch-input functionality and the relay functionality separately.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LocalControlOn</option>
+          <option value="1">LocalControlOff</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Output</label>
+        <description><![CDATA[
+Output State and Power Meter<br /><h1>Overview</h1><p>Events/Notifications:</p> <ol><li>Sends COMMAND_CLASS_BASIC, BASIC_REPORT after every change of the output state (on/off).</li> <li>Sends COMMAND_CLASS_METER_V2, METER_REPORT_V2 after every change of the measured energy or power value or after a timeout if the values stay unchanged. during If the energy or power value didn't change for a certain time.</li> </ol><p>Min. time between 2 reports if the energy or power value changes: 1s<br />Timeout for sending a report if the value stays unchanged: 15min.<br />Min. change in value to trigger a report:<br />4% power (mind. 2W) oder 1Wh energy</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Input</label>
+        <description><![CDATA[
+Reports S1 Input State<br /><h1>Overview</h1><p>Events/Notifications:</p> <p>Sends COMMAND_CLASS_BASIC, BASIC_REPORT every time the mechanical switch at the input S1 is operated.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

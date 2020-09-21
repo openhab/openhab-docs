@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz79_00_000" listed="false">
+    <label>TZ79 Insert switch module</label>
+    <description><![CDATA[
+Insert switch module<br /><h1>Overview</h1><p>The zwave power switch module TZ79 by TKB is designed to be placed into a pattress box behind a normal switch . This switch is no longer controlling the electrical load directly but acts as input device for the micro module. It has an internal relay to control the electrical load attached. With this micro module an existing installation can be turned into a Z-Wave enabled smart system keeping the original switches in place. This is particularly useful if you are using switches of a particular pattern and don't what to change them.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter inclusion mode.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Zwave controller entered exclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter exclusion mode.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ79</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0311:0305</property>
+      <property name="dbReference">657</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Change the state of indicator light</label>
+        <default>1</default>
+        <options>
+          <option value="0">LED off</option>
+          <option value="1">LED on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Memory Function</label>
+        <default>1</default>
+        <options>
+          <option value="0">Memory function off</option>
+          <option value="1">Memory function on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>3: Watt Meter Report Period</label>
+        <description><![CDATA[
+5s x 720 (default) = 3600s = 1 hour<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the TZ79 will report its instant power consumption every 1 hour to Z-Wave controller. The maximum interval to report its instant power consumption is 45 hours (5s*36767/3600 = 45 hours)</p>
+        ]]></description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>4: kWH Meter Report Period</label>
+        <description>6x10min = 1 hour</description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="10" max="3000">
+        <label>5: Threshold of Watt for load caution</label>
+        <default>3000</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="10000">
+        <label>6: Threshold of kWH for load caution</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>7: Edge or Pulse mode or Edge-Toggle mode</label>
+        <description>1 - Edge mode 2 - Pulse mode 3 - Edge toggle mode</description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

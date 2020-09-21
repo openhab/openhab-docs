@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_smartdoorsensor_00_000" listed="false">
+    <label>32563 Smart Door Sensor</label>
+    <description><![CDATA[
+Smart Door Sensor<br /><h1>Overview</h1><h4>Description</h4> <p>Whether you’re coming or going, your home is ready when you are with the Z-Wave Smart Door Sensor. Not only does the Smart Door Sensor efficiently eliminate household tasks as you go about your day, but remote monitoring allows you to feel secure once you’ve left home. By simply opening or closing your door, the sensor uses Z-Wave technology to wirelessly trigger scenes throughout your home. From your mobile device, you’re able to schedule lights to turn on as soon as you walk in and be notified of activity while you’re away. Simple installation uses your door’s existing hinge and pin, making setup a breeze. The sensor is discreetly designed to blend subtly into the frame of the door, adding the convenience of the Smart Door Sensor to your home without distracting from your household decor. Color-matching kits are also available, with options including white, dark brown and a paintable finish.</p> <h4>Features</h4> <ul><li>Works on all standard doors using your existing hinge</li> <li>Reversible for right and left door openings</li> <li>Adjusts to fit door trim</li> <li>Compatible with hinge pins up to 5/16" in diameter</li> <li>CR2 battery included (battery lasts up to 2 years)</li> <li>Color matching kits available</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include the device to the Z-Wave network.</li> <li>Once the controller is ready to include your Hinge Pin Smart Door Sensor press and release the manual/program button on the smart switch to include it in the network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network. </li> <li>Once the controller is ready to exclude your device, press and release the manual/program button on the Hinge Pin Smart Door Sensor to exclude it from the network.</li> </ol><p>You may wish to reset all of your Hinge Pin Smart Door Sensor's settings to their factory defaults. To do this, press the program button 10 times within 6 seconds. If your Door Sensor has been successfully reset, its LED light will blink for 3 seconds. This should only be used in the event your network’s primary controller is missing or otherwise inoperable.</p> <br /><h2>Wakeup Information</h2><ol><li>Press and hold the Z-wave Button for 6 seconds. It will be wake up and send “Wake Up Notification CC “ to HUB. </li> <li>It will sleep after timeout for 10 seconds, or sleep right away when received the “Wake Up No More Information CC”. </li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">32563</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4953:3032</property>
+      <property name="dbReference">504</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>20: Report Method</label>
+        <description><![CDATA[
+Change Open/Close Report Method<br /><h1>Overview</h1><ol><li>Notification (Default)</li> <li>Basic Set</li> <li>Basic Report</li> </ol>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

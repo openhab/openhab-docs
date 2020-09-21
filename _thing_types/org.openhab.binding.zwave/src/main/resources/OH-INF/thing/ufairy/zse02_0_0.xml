@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ufairy_zse02_00_000" listed="false">
+    <label>ZSE02 Zooz Z‑Wave Plus Motion Sensor</label>
+    <description><![CDATA[
+Zooz Z‑Wave Plus Motion Sensor<br /><h1>Overview</h1><p>Detects motion and sends wireless notifications, Z-Wave Plus with improved 500 chip for faster and safer wireless communication, two alternative power sources: 4 AAA batteries or mini USB cable (DC 5V / 1A), may be associated and grouped with other Z-Wave devices for advanced home automation.</p> <ul><li>Detection Radius: 110° / 16-23 feet</li> <li>Power Consumption: &lt; 15mA when idle / &lt; 38mA when active</li> <li>Range: Up to 100 feet line of sight</li> <li>Operating Temperature: 14 °F to 122 °F</li> <li>Operating Humidity: ≤ 80%</li> <li>Indoor only</li> </ul><br /><h2>Inclusion Information</h2><p>Put your Z-Wave hub in inclusion/pairing mode, press the Z-Wave button on the motion sensor TWICE quickly (to unlock and lock it, make sure the button is pushed in when you finish the process).</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave controller in exclusion/unpairing mode, press the Z-Wave button on the motion sensor TWICE quickly (to unlock and lock it)</p> <br /><h2>Wakeup Information</h2><p>Press the Z-Wave button on the motion sensor TWICE quickly (to unlock and lock it) to put the sensor in a wake-up mode when changing configuration or association settings.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">UFairy G.R. Tech</property>
+      <property name="modelId">ZSE02</property>
+      <property name="manufacturerId">0152</property>
+      <property name="manufacturerRef">0500:0003</property>
+      <property name="dbReference">571</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

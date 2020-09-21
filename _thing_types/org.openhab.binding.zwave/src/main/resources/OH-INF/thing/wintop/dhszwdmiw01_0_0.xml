@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wintop_dhszwdmiw01_00_000" listed="false">
+    <label>DHSZWDMIW01 DHS Z-Wave Micro Dimmer</label>
+    <description><![CDATA[
+DHS Z-Wave Micro Dimmer<br /><h1>Overview</h1><p>The DHS In-Wall Dimmer DHS-ZW-DMIW-01 is eff ective Z-Wave dimming device specifi cally designed for use in smart homes and offi ces. The product allows to dim and switch on/off attached lighting wirelessly using a Z-wave enabled (AUS/NZ version 921.42 MHz) controllers (compatible universal remote controllers, control panels, gateways, PC with Z-Wave USB dongle) or manually via connected manual switch.</p> <p>The dimmer can act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful to eliminate “RF deadspots” when the radio range of the Z-Wave network is infl uenced. This function is part of the Z-Wave network functionality and is set up via Z-Wave controller.</p> <br /><h2>Inclusion Information</h2><p>press and release the round button on the product’s enclosure</p> <br /><h2>Exclusion Information</h2><p>press and release the round button on the product’s enclosure</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wintop</property>
+      <property name="modelId">DHSZWDMIW01</property>
+      <property name="manufacturerId">0097</property>
+      <property name="manufacturerRef">1200:5502</property>
+      <property name="dbReference">398</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

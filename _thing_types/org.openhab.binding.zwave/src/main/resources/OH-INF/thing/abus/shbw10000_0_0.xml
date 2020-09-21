@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="abus_shbw10000_00_000" listed="false">
+    <label>SHBW10000 PIR Multisensor</label>
+    <description><![CDATA[
+PIR Multisensor<br /><h1>Overview</h1><p>The SHBW10000 was developed for use in home automation systems that use the Z-Wave wireless standard.</p> <p>The multisensor has the following sensors:</p> <ul><li>PIR</li> <li>temperature</li> <li>atmospheric humidity</li> <li>lights</li> </ul><p>The motion sensor lets you know when something moves within a certain range and can then trigger various scenes/actions.</p> <p>The device also reports the current room temperature, humidity and illuminance.</p> <p>In conjunction with configurable scenes, smart functions can also be initiated in addition to monitoring, e.g. if temperature &lt;20 degrees, heating on.</p> <br /><h2>Inclusion Information</h2><p>Click the + (Add) button in your Z-Wave App and follow the further instructions.</p> <p>Press the Button on the device once.</p> <p>The App will show if the Add device process was successful. The Status LED will light up for 2 seconds.</p> <p>Repeat the inclusion process if it was not successful.</p> <br /><h2>Exclusion Information</h2><p>Click the - (Remove) button in your Z-Wave App and follow the further instructions.</p> <p>Press the Button on the device once.</p> <p>The App will show if the Remove device process was successful.</p> <p>Repeat the exclusion process if it was not successful.</p> <br /><h2>Wakeup Information</h2><p>If included:</p> <p>The device sends a wake up notification command to the node devices which are connected by a wake up command.</p> <p>The LED will light up when information is received, and will go out when there is no exchange for 10 seconds.</p> <p>If not included: nothing</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ABUS Security-Center GmbH &amp; Co. KG</property>
+      <property name="modelId">SHBW10000</property>
+      <property name="manufacturerId">0403</property>
+      <property name="manufacturerRef">0002:0001</property>
+      <property name="dbReference">1103</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>10: Low Battery Alarm Level</label>
+        <description><![CDATA[
+Low Battery Alarm Level<br /><h1>Overview</h1><p>Low Battery Power Level Alarm Level</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>12: PIR sensitivity</label>
+        <description><![CDATA[
+PIR sensitivity<br /><h1>Overview</h1><ul><li>The value 10 is the highest sensitivity.</li> <li>The value 0 disables the PIR sensor. </li> </ul>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="5" max="15300">
+        <label>13: Waiting time between two PIR triggers</label>
+        <description><![CDATA[
+Waiting time between two PIR triggers<br /><h1>Overview</h1><p>Waiting time from one PIR trigger to the next trigger.</p> <ul><li>Adjustable from 5 - 15300 in seconds</li> </ul>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: BASIC SET Command after PIR triggering</label>
+        <description><![CDATA[
+BASIC SET Command after PIR triggering<br /><h1>Overview</h1><p>BASIC SET should be sent after triggering the PIR</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Exchange of BASIC SET value and PIR status</label>
+        <description>Exchange of BASIC SET value and PIR status</description>
+        <default>0</default>
+        <options>
+          <option value="0">PIR trip = BASIC SET 256</option>
+          <option value="1">PIR trip = BASIC SET 0</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>100: Reset parameters 101-104 to factory defaults</label>
+        <description><![CDATA[
+Reset parameters 101-104 to factory defaults<br /><h1>Overview</h1><p>Resets parameter 101 - 104 to factory setting.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="1">Reset parametera 101 - 104</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>101: Temperature report Time</label>
+        <description><![CDATA[
+Temperature report Time<br /><h1>Overview</h1><p>The interval time of the temperature report.</p> <p>The value 0 disables the report.</p> <p><strong>NOTE:</strong> The value is always rounded up to the full minute. (e.g. 62 seconds -&gt; value is rounded up to 120 seconds)</p>
+        ]]></description>
+        <default>7200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>102: Humidity report Time</label>
+        <description><![CDATA[
+Humidity report Time<br /><h1>Overview</h1><p>The interval time of the humidity report.</p> <p>The value 0 disables the report. </p> <p><strong>NOTE: </strong>The value is always rounded up to the full minute. (e.g. 62 seconds -&gt; value is rounded up to 120 seconds)</p>
+        ]]></description>
+        <default>7200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>103: Brightness report Time</label>
+        <description><![CDATA[
+Brightness report Time<br /><h1>Overview</h1><p>The interval time of the brightness report.</p> <p>The value 0 disables the report. </p> <p><strong>NOTE:</strong> The value is always rounded up to the full minute. (e.g. 62 seconds -&gt; value is rounded up to 120 seconds)</p>
+        ]]></description>
+        <default>7200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_104_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>104: Battery report Time</label>
+        <description><![CDATA[
+Battery report Time<br /><h1>Overview</h1><p>The interval time of the battery report.</p> <p>The value 0 disables the report. </p> <p><strong>NOTE:</strong> The value is always rounded up to the full minute. (e.g. 62 seconds -&gt; value is rounded up to 120 seconds)</p>
+        ]]></description>
+        <default>7200</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_110_1" type="integer" groupName="configuration">
+        <label>110: Enable/Disable Report 111-114</label>
+        <description><![CDATA[
+Enable/Disable Report 111-114<br /><h1>Overview</h1><p>Enable or disable reports 111-114</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Reports are disabled</option>
+          <option value="1">Reports are enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_2" type="integer" groupName="configuration"
+                 min="1" max="500">
+        <label>111: Temperature report Threshold</label>
+        <description><![CDATA[
+Temperature report Threshold<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.</p> <p>If the threshold value was not exceeded, the time-based report is not sent.</p> <ul><li>Adjustable from 1 - 500 in 0,1°. (e.g. 25 = 2.5°)</li> </ul>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_112_1" type="integer" groupName="configuration"
+                 min="1" max="32">
+        <label>112: Humidity report Threshold</label>
+        <description><![CDATA[
+Humidity report Threshold<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.</p> <p>If the threshold value was not exceeded, the time-based report is not sent.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_113_2" type="integer" groupName="configuration"
+                 min="1" max="65528">
+        <label>113: Brightness report Threshold</label>
+        <description><![CDATA[
+Brightness report Threshold<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.</p> <p>If the threshold value was not exceeded, the time-based report is not sent.</p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_114_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>114: Battery report Threshold</label>
+        <description><![CDATA[
+Battery report Threshold<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.</p> <p>If the threshold value was not exceeded, the time-based report is not sent.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ul><li>Z-Wave Plus Lifeline Notification Report: Sensor will send Notification Report when Motion Detection Unknown Location and (Event inactive). </li> <li>Multilevel Sensor Report: Sensor will send Multilevel Sensor Report (Temperature, humidity, luminance) interval of 2 hours.</li> <li>Battery Report. Sensor will send Battery Report when the battery level is low and the battery report’s value is 255 (0xFF). </li> <li>Device Reset Locally.</li> </ul>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send Basic Set when PIR trigger</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send Basic Set when PIR trigger</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

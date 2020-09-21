@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_s123a00r_00_000" listed="false">
+    <label>S123A00R Z-Wave home energy meter</label>
+    <description><![CDATA[
+Z-Wave home energy meter<br /><h1>Overview</h1><p>The S123A00R is a single element Z-Wave electricity meter that can provide residential customers with detailed energy data for electricity usage.</p> <br /><h2>Inclusion Information</h2><p>With the meter in installer mode the following procedure needs to be carried out with the third party controller in network include mode to add the meter to its network.</p> <ol><li>Press and hold the blue button for 2 seconds (enters Installer Displays).</li> <li>Cycle through each menu display item with single presses until the display shows “LEArn”. Do not press the blue button again unless repeating the process.</li> <li>Wait 10s and the display will show “oooo” for one second.</li> <li>Display will now show either “SENT” or “FAIL” (if “FAIL” wait for 30s and retry from point 2). Note if it is still not possible to obtain the “SENT” message then the meter should be powered down briefly and powered up again.</li> </ol><p>On entering this mode there is a 2 minute window to do the include or exclude process. The success of the action is indicated by a brief “PASS” or “FAIL” message on the meter’s display. A timeout will be indicated by a brief “FAIL” message. </p> <br /><h2>Exclusion Information</h2><p>With the meter in installer mode the following procedure needs to be carried out with the third party controller in network exclude mode to remove the meter from its network. </p> <ol><li>Press and hold the blue button for 2 seconds (enters Installer Displays). </li> <li>Cycle through each menu display item with single presses until the display shows “LEArn”. Do not press the blue button again unless repeating the process. </li> <li>Wait 10s and the display will show “oooo” for one second. </li> <li>Display will now show either “SENT” or “FAIL” (if “FAIL” wait for 30s and retry from point 2). Note if it is still not possible to obtain the “SENT” message then the meter should be powered down briefly and powered up again.</li> </ol><p>On entering this mode there is a 2 minute window to do the include or exclude process. The success of the action is indicated by a brief “PASS” or “FAIL” message on the meter’s display. A timeout will be indicated by a brief “FAIL” message.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">S123A00R</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0005:0001</property>
+      <property name="dbReference">1013</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

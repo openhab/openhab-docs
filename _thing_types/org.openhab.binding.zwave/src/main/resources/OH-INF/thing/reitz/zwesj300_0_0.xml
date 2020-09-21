@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="reitz_zwesj300_00_000" listed="false">
+    <label>ZW ESJ 300 Duwi ZW ESJ 300 Blind Control</label>
+    <description><![CDATA[
+Duwi ZW ESJ 300 Blind Control<br /><h1>Overview</h1><p>Z-Wave Built-in Shade Controller.lush-mount Z-Wave shutter switch<br />For wireless control of: Shutters, awnings, sun blinds, garage door drives or stairwell light, combinable with all Z-Wave transmitters and remote controls.</p> <br /><h2>Inclusion Information</h2><p>In the case of a flush mounted module press 3x within 1.5 seconds either the "UP" or "DOWN" button.</p> <p>During this process you can choose whether the device and any connected neighbouring devices switch on (by pressing the "UP" button) or switch off (by pressing the "DOWN" button).</p> <br /><h2>Exclusion Information</h2><p>In the case of a flush mounted module press 3x within 1.5 seconds either the "UP" or the "DOWN" button.</p> <p>During this process you can choose whether the device and any connected neighbouring devices switch on (by pressing the "UP" button) or switch off (by pressing the "DOWN" button).</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Reitz-Group.de</property>
+      <property name="modelId">ZW ESJ 300</property>
+      <property name="manufacturerId">0064</property>
+      <property name="manufacturerRef">4001:0000</property>
+      <property name="dbReference">563</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_0_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>0: Running time</label>
+        <description><![CDATA[
+Adjustment of the operating times of the sun blind control<br /><h1>Overview</h1><p><strong>NOTE</strong>: The set values remain stored even after a power failure. The adjustment process of the operating times can be repeated anytime.<br /><strong>NOTE</strong>: Should the adjustment of the operating times take place with the help of the configuration tool of a third-party manufacturer, you can consider the following values as the basis: Please note that the adjustments should be undertaken only by well-versed technicians.</p> <p>0x00 = nointerruption/permanent operation</p> <p>0x01-0x7F = 1 second to 127 seconds in 1-second steps</p> <p>0x80-0xFE = 130 seconds (0x80) to 1390 seconds (0xFE) in 10 second-steps</p> <p>0xFF = factory settings 120 seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Stop-functionality</label>
+        <description><![CDATA[
+Adjusting the Stop-Functionality<br /><h1>Overview</h1><p>5.2.2 ADJUSTING THE STOP-FUNCTIONALITY:</p> <p>You can also programm the shutter actuator in a way, that in case of a press in the apposite direction, the shutter won‘t stop, but continue directly in the opposite way (Z-Wave conform). Please proceed as follows:</p> <ul><li> <p>Hold the “UP” and “DOWN” button of the shutter actuator simulaneausly for 5 seconds. Please note, that the devise nust not be included in the network!</p> </li> <li> <p>Alternatively by configuration command (only for adviced users): Set the configuration value “1” to the value “0” in or- der to disable the stop-functionality.</p> <p>In order to enable the stop-functionality, please proceed as follows:</p> </li> <li> <p>Hold the “UP” and “DOWN” button of the shutter actuator simulaneausly for 5 seconds. Please note, that the devise</p> <p>nust not be included in the network!</p> </li> <li> <p>Alternatively by configuration command (only for adviced users): Set the configuration value “1” to the value “1” in order</p> <p>to enable the stop-functionality. </p> </li> </ul>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled (default)</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

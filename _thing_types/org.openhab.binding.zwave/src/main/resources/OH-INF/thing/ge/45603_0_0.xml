@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_45603_00_000" listed="false">
+    <label>45603 Fluorescent Light &amp; Appliance Module</label>
+    <description><![CDATA[
+Fluorescent Light &amp; Appliance Module<br /><h1>Overview</h1><p>Jasco's Z-Wave Plug-In Lamp and Appliance Module allows you the option to adjust mood lighting for all occasions within your home. Z-Wave is a radio frequency, mesh network technology specifically designed for use in residential lighting control. Every Z-Wave enabled wall switch is capable of relaying commands and utilizes two-way communications to ensure reliable operation throughout the entire home. The open-air, line-of-sight transmission distance is up to 100-Feet between devices.</p> <ul><li>One Z-wave controlled AC outlet</li> <li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel pushbutton • One Always-ON pass-through AC outlet</li> <li>Space efficient design</li> <li>Does not block the lower outlet when plugged in to the upper outlet of a duplex wall receptacle. (This assumes that the duplex receptacle is mounted with the ground pin down.)</li> <li>Plugs and cords for connected devices route to the side allowing close placement of furniture</li> <li>Z-Wave certified</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug ZW4101 into outlet</li> <li>Place controller in inclusion mode</li> <li>Press button on front of ZW4101</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug ZW4101 into outlet</li> <li>Place controller in exclusion mode</li> <li>Press button on front of ZW4101</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">45603</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5052:3031,5250:3030</property>
+      <property name="dbReference">42</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description>Defines the behavior of the blue LED; default has LED on when switch is off.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1>Overview</h1><p>Note: If you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

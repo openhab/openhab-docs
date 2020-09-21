@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_energyswitch_00_000" listed="false">
+    <label>Energy Switch + Energy Switch +</label>
+    <description><![CDATA[
+Energy Switch +<br /><h1>Overview</h1><p>Control and monitor your lightning or any other appliance.</p> <p>During operation mode it will measure the instance and accumulated energy consumption of the applied appliance.</p> <p>Easy plug and play.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button</p> <br /><h2>Exclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">Energy Switch +</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0020:0001</property>
+      <property name="dbReference">445</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Set to Default</label>
+        <description>If value is set to 0XFF (255), device set to default</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Amount of decimals</label>
+        <description><![CDATA[
+If value is set to 1 the info shall be presented with 1 decimal<br /><h1>Overview</h1><p>0,1,2,3 amount of decimals. Every Amount higher then 3 shall be printed as 3 decimals.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="4500">
+        <label>3: Power Limit</label>
+        <description><![CDATA[
+The device will shut down when it reaches an amount higher then defined (W)<br /><h1>Overview</h1><p>0 = no power limit.</p> <p>1-4500 are acceptable values and can be used, everything above the 4500 shall be changed to 4500.</p>
+        ]]></description>
+        <default>4500</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Start up with last known socket status</label>
+        <description><![CDATA[
+Start up with last known socket status<br /><h1>Overview</h1><ul><li>If 0 then the device will always be off, when</li> <li>If 1-255 hen the device will remain the last known state</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="10" max="100">
+        <label>6: Auto report %</label>
+        <description>The value will change when the % is changed.</description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>7: Auto report Watt</label>
+        <description>The value will change when the Watt is changed.</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="10" max="255">
+        <label>8: Auto report time</label>
+        <description>The time between 2 of the meter rerport</description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Relais delay time</label>
+        <description><![CDATA[
+The time that needs to pass before the next state change<br /><h1>Overview</h1><p>Value * 10 miliseconds</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>10: Led indicator</label>
+        <description><![CDATA[
+The state of the Led compared to the relais state<br /><h1>Overview</h1><p>0 = Indication Led never off</p> <p>1 = led ON when relais ON</p> <p>2 = led On when relais OFF</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Report</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

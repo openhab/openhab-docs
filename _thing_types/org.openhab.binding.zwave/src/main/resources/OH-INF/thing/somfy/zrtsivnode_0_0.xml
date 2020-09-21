@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="somfy_zrtsivnode_00_000" listed="false">
+    <label>ZRTSI-VNODE Z-Wave to RTS Interface Virtual Node</label>
+    <description><![CDATA[
+Z-Wave to RTS Interface Virtual Node<br /><h1>Overview</h1><p>The Somfy Z-Wave to Radio Technology Somfy Interface (ZRTSI) is a Z-Wave bridge controller that receives Z-Wave transmissions and translates them to motor control commands for Somfy's range of Radio Technology Somfy (RTS) motors. The ZRTSI resides as a bridge controller node within a Z-Wave Network and becomes a repeating node in the mesh network. The ZRTSI also features Network Wide Inclusion (NWI) which allows inclusion and exclusion to take advantage of the mesh topology of Z-Wave networks. Z-wave devices from all manufacturers can be used in the same network togethe</p> <br /><h2>Inclusion Information</h2><ol><li>From the ZRTSI's Home Screen, navigate to the Base Node Include screen.</li> <li>Enable Inclusion Mode on the Primary Z-Wave Controller.</li> <li>On the ZRTSI, Activate the “Base Node Include” command by pressing the Select Button.</li> <li>The LCD Screen will display “BASE NODE INCLUDING” then either “BASE INCLUDE SUCCESS!” or “BASE INCLUDE FAIL” and return to the Base Node Sub Menu.  </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Enable the Exclusion Mode on the Primary Z-Wave Controller.</li> <li>From the ZRTSI's Home Screen, navigate to the Base Node Exclude screen</li> <li>Activate the “Base Node Exclude” command by pressing the Select Button.</li> <li>The LCD Screen will display “BASE NODE EXCLUDING” and then either “BASE EXCLUDE SUCCESS!” or “BASE EXCLUDE FAIL” and return to the Base Node Sub Menu. </li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Somfy</property>
+      <property name="modelId">ZRTSI-VNODE</property>
+      <property name="manufacturerId">0047</property>
+      <property name="manufacturerRef">5A52:5401,5A52:5402,5A52:5403,5A52:5404,5A52:5405,5A52:5406,5A52:5407,5A52:5408,5A52:5409,5A52:540A,5A52:540B,5A52:540C,5A52:540D,5A52:540E,5A52:540F,5A52:5410</property>
+      <property name="dbReference">370</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

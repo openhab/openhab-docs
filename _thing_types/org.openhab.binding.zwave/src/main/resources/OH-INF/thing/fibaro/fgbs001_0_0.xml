@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgbs001_00_000" listed="false">
+    <label>FGBS001 Universal Binary Sensor</label>
+    <description><![CDATA[
+Universal Binary Sensor<br /><h1>Overview</h1><p>The Universal Binary Sensor is a wireless module that makes it possible to improve the functionality of any sensor with a binary output by allowing it to communicate with Z-WAVE.<br />The module allows for wireless communication between the system and the DS18B20 temperature sensors. The device can service up to two binary sensors and up to four DS18B20 temperature sensors.</p> <br /><h2>Inclusion Information</h2><p>The Fibaro Sensor is added to the network by quickly pressing the B button three times (the button is located in the center of the device).</p> <p><strong>Note:</strong> Every time when any changes are made to the configuration of TP and TD lines (1-wire), e.g. when DS18B20 sensor(s) is (are) included/excluded, it is necessary to execute the procedure of exclusion and repeated inclusion of the sensor module to the central hub. It should be remembered that the system shall enter into the programming mode only once all the connected sensors have been detected (about 10 s).</p> <br /><h2>Exclusion Information</h2><p>The Fibaro Sensor is removed from the network by quickly pressing the B button three times (the button is located in the center of the device).</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary1" typeId="sensor_binary">
+        <label>Binary Sensor 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general1" typeId="alarm_general">
+        <label>Alarm 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary2" typeId="sensor_binary">
+        <label>Binary Sensor 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general2" typeId="alarm_general">
+        <label>Alarm 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM:2</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Temperature 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature4" typeId="sensor_temperature">
+        <label>Temperature 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:4;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature5" typeId="sensor_temperature">
+        <label>Temperature 3</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:5;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature6" typeId="sensor_temperature">
+        <label>Temperature 4</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:6;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGBS001</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0501:0102,0501:0109,0501:1002,0501:2002,0501:3002,0501:4002</property>
+      <property name="dbReference">126</property>
+      <property name="commandClass:COMMAND_CLASS_MULTI_CHANNEL">ccAdd</property>
+      <property name="commandClass:COMMAND_CLASS_SENSOR_ALARM:1">supportedGetSupported=false</property>
+      <property name="commandClass:COMMAND_CLASS_SENSOR_ALARM:2">supportedGetSupported=false</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>1: IN1 Alarm Cancellation Delay</label>
+        <description><![CDATA[
+Input I alarm cancellation delay.<br /><h1>Overview</h1><p>Additional delay after an alarm from input IN1 has ceased. The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: IN2 Alarm Cancellation Delay</label>
+        <description><![CDATA[
+Input 2 alarm cancellation delay.<br /><h1>Overview</h1><p>Additional delay after an alarm from input IN2 has ceased. The parameter allows you to specify additional time, after which the input no. 2 alarm is cancelled once its violation has ceased.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Type of input no. 1</label>
+        <description>Type of input no. 1, what the input 1 will report if no contact is made</description>
+        <default>1</default>
+        <options>
+          <option value="0">NO (Normal Open)</option>
+          <option value="1">NC (Normal Close)</option>
+          <option value="2">MONOSTABLE</option>
+          <option value="3">BISTABLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Type of input no. 2</label>
+        <description>Type of input no. 2, what the input 2 will report if no contact is made</description>
+        <default>1</default>
+        <options>
+          <option value="0">NO (Normal Open)</option>
+          <option value="1">NC (Normal Close)</option>
+          <option value="2">MONOSTABLE</option>
+          <option value="3">BISTABLE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Type of control frame for association group 1</label>
+        <description><![CDATA[
+Type of transmitted control frame for association group 1.<br /><h1>Overview</h1><p>Activated via input IN1. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALARM GENERIC</option>
+          <option value="1">ALARM SMOKE</option>
+          <option value="2">ALARM CO</option>
+          <option value="3">ALARM CO2</option>
+          <option value="4">ALARM HEAT</option>
+          <option value="5">ALARM WATER</option>
+          <option value="255">BASIC_SET</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Type of control frame for association group 2</label>
+        <description><![CDATA[
+Type of transmitted control frame for association group 2<br /><h1>Overview</h1><p>Activated via input IN2. The parameter allows to specify the type of alarm frame or to force transmission of control commands (BASIC_SET)</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALARM GENERIC</option>
+          <option value="1">ALARM SMOKE</option>
+          <option value="2">ALARM CO</option>
+          <option value="3">ALARM CO2</option>
+          <option value="4">ALARM HEAT</option>
+          <option value="5">ALARM WATER</option>
+          <option value="255">BASIC_SET</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>7: Forced Level of Dimming group 1</label>
+        <description><![CDATA[
+Value of the parameter specifying the forced levels.<br /><h1>Overview</h1><p>Value of the parameter specifying the forced levels of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1.&lt;BR/&gt;In the case of alarm frames the alarm priority is specified.</p> <p>Possible parameter settings: (1 – 99) and 255<br />Value of 255 makes it possible to activate the device when using<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Forced Level of Dimming group 2</label>
+        <description><![CDATA[
+Value of the parameter specifying forced levels.<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming /<br />opening sun blinds when comes “switch on” / ”open” command to<br />devices from association group no. 2.<br />In the case of alarm frames the alarm priority is specified.<br />Default value: 255<br />Possible parameter settings:<br />(1 – 99) and 255<br />Value of 255 makes it possible to activate the device; when using of<br />the Dimmer module it means activating the device and setting it to<br />the previous stored condition, e.g. when Dimmer is set to 30%, then<br />deactivated, and then reactivated using command 255, it will<br />automatically be set to the previous condition, i.e. 30%. </p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Deactivate transmission of frame canceling alarm</label>
+        <description><![CDATA[
+Deactivating transmission of the frame cancelling the alarm<br /><h1>Overview</h1><p>or the<br />control frame deactivating the device (Basic). It allows for disabling<br />the deactivation function or the alarm cancellation function for<br />devices associated with the appropriate input of the Fibaro Sensor.<br />Default value: 0, in the case of association group no. 1 and 2 the<br />information is sent<br />Possible parameter settings:<br />0 – in the case of association group no. 1 and 2 the information is<br />sent<br />1 – in the case of association group no. 1 the information is sent. In<br />the case of association group no. 2 the information is not sent.<br />2 – in the case of association group no. 1 the information is not<br />sent. In the case of association group no. 2 the information is sent.<br />NOTE: Information concerning alarm violation or activation<br />commands for devices from association groups are always<br />sent. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Groups 1 and 2 sent</option>
+          <option value="1">Group 1 sent, Group 2 not sent.</option>
+          <option value="2">Group 1 not sent, Group 2 sent.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Interval between readings of temperature sensors</label>
+        <description><![CDATA[
+Interval between successive readings of temperature sensors<br /><h1>Overview</h1><p> from all sensors connected to the device in seconds. Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>11: Interval betw. forcing to send report for temp.</label>
+        <description><![CDATA[
+The forced report is sent immediately after ...<br /><h1>Overview</h1><p>... the next reading of temperature from the sensor, irrespective of the settings<br />of parameter no. 12.<br />Default value: 200 s<br />Possible parameter settings:<br />0 – 255 s<br />0 – deactivating the function<br />Note: Frequent sending of temperature condition reports is<br />reasonable when the sensor is located somewhere where can<br />occure rapid changes of ambient temperature. In other cases<br />it is recommended to leave the parameter set to the default<br />value.</p>
+        ]]></description>
+        <default>200</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Insensitiveness to temperature changes.</label>
+        <description><![CDATA[
+This is the maximum acceptable difference between<br /><h1>Overview</h1><p> the last reported temperature and the current temperature taken from the sensor. If the temperatures differ by the set value or more, then a report with the current temperature value is sent to the device</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Transmitting alarm/control frame broadcast mode</label>
+        <description><![CDATA[
+Transmitting the alarm or control frame in 'broadcast' mode<br /><h1>Overview</h1><p> (i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.&lt;BR/&gt;&lt;B&gt;NOTE:&lt;/B&gt; If the broadcast mode of information transmission is activated for a given channel, then transmission of<br />information in “singlecast” mode to devices assigned to the<br />association group of this channel is deactivated.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">IN1 and IN2 Broadcast inactive</option>
+          <option value="1">IN1 mode active, Sensor 2 mode inactive</option>
+          <option value="2">IN1 mode inactive, Sensor 2 mode active</option>
+          <option value="3">INI and IN2 broadcast mode active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Scene activation</label>
+        <description><![CDATA[
+Enable/Disable scene functionality.<br /><h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scenes disabled</option>
+          <option value="1">Scenes enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Input 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Input 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Updates</label>
+        <description>Reports on the condition of the device</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

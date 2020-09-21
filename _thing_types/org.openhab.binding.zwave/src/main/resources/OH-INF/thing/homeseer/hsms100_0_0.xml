@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_hsms100_00_000" listed="false">
+    <label>HS-MS100+ HomeSeer Z-Wave Plus Motion Sensor</label>
+    <description><![CDATA[
+HomeSeer Z-Wave Plus Motion Sensor<br /><h1>Overview</h1><p>Motion sensor can be included and operated in any Z-Wave network with other Z-Wave certified devices. <br />The features list:</p> <ol><li>Z-Wave Plus certified for wide compatibility (500 serials product)</li> <li>Supports security 0 and security 2 protected mode with AES-128 encryption.</li> <li>Motion sensor.</li> <li>Tamper alarm by shock sensor.</li> <li>The battery life is up to 1 year.</li> <li>Low battery alarm.</li> <li>Support firmware OTA.</li> </ol><br /><h2>Inclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into inclusion mode <ol><li>"Secure Inclusion". Hold Z-button for 5 sec and then release. The LED indicator should blink fast.</li> <li>"Non-secure Inclusion". Press Z-button once. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the adding process to end</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into exclusion mode <ol><li>Triple click Z-button quickly. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the removing process to end</li> </ol><br /><h2>Wakeup Information</h2><p>Press and hold Z button for more than 5 seconds and release</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=MOTION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY;type=TAMPER</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-MS100+</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">0201:0009</property>
+      <property name="dbReference">802</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>12: Motion sensor sensitivity</label>
+        <description><![CDATA[
+Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the more sensitive the PIR sensor.</p>
+        ]]></description>
+        <default>8</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable/Disable BASIC SET command</label>
+        <description>Enable/Disable BASIC SET command</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Value of the BASIC SET</label>
+        <description>Value of the BASIC SET</description>
+        <default>0</default>
+        <options>
+          <option value="0">Triggered value 255</option>
+          <option value="1">Triggered value 0</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Enable/ Disable shock alarm</label>
+        <description>Enable/ Disable shock alarm</description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not send a vibration alarm</option>
+          <option value="1">Send a vibration alarm</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>18: Motion timeout interval</label>
+        <description><![CDATA[
+Motion timeout interval<br /><h1>Overview</h1><p>Set 0 to disable report.</p> <p>Value 1 to 65535 set timeout of transmitting command when motion has not been sensed for a period of time</p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Level of low battery</label>
+        <description><![CDATA[
+Level of low battery<br /><h1>Overview</h1><p>The low level from 10% to 50%</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline:</p> <ol><li>Notification Report. Sensor will send Notification Report to the associated nodes when Motion Sensor is removed or/and PIR is triggered.</li> <li>Battery Report. Motion Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally Notification.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>1. Basic Set. Motion Sensor will send Basic Set to associated nodes when the PIR is triggered.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

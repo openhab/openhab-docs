@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="northq_nq9021_00_000" listed="false">
+    <label>NQ-9021 Electrical Meter</label>
+    <description><![CDATA[
+Electrical Meter<br /><h1>Overview</h1><p>The Z-Wave Smart Meter Sensor is a compact sensor designed to read meter values from traditional electromechanical and electronic meters with optical port. The sensor is easy to install and ideal for precise meter reading down to 0,1kwh. Its compact size and external wireless transmitter makes it easy to install in any distribution board. The device is battery powered (will last about 1 year) and reports the meter value once in 15 minutes. If there won't be a Z-Wave network, the device will store values up to 3 month. This ensures, that the system can even be used in a minimal configuration with a simple Z-Wave USB Stick (Not part of delivery!) connected to a PC.</p> <br /><h2>Inclusion Information</h2><p>Press the sensor button 3 times</p> <br /><h2>Exclusion Information</h2><p>Press the sensor button 3 times</p> <br /><h2>Wakeup Information</h2><p>A single click on the Z-Wave button will wake up the device</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NorthQ</property>
+      <property name="modelId">NQ-9021</property>
+      <property name="manufacturerId">0096</property>
+      <property name="manufacturerRef">0001:0001</property>
+      <property name="dbReference">180</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>1: Pulse factor</label>
+        <description>Impulse or Rotation factor per KWh * 10</description>
+        <default>1024</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor type</label>
+        <default>2</default>
+        <options>
+          <option value="1">Pulse meter</option>
+          <option value="2">Mechanical meter</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: IR Listen period</label>
+        <description>Additional time for feedback measurement. Should always be 0.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: IR Pulse Width</label>
+        <description><![CDATA[
+IR Pulse Width<br /><h1>Overview</h1><p>Adjusts transmit signal so received signal will in average be equal to this values.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="50">
+        <label>5: Poll / Wake up frequency</label>
+        <description><![CDATA[
+Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times per second. This value also controls number of measurements per second on mechanical meters</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="143">
+        <label>6: Pulse Threshold Low</label>
+        <description>Low detection threshold for wheel meters</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="143">
+        <label>7: Pulse Threshold High</label>
+        <description>High detection threshold for wheel meters</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>8: Wakeup Interval</label>
+        <description>like WAKEUP command class</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>9: Pulse count</label>
+        <description>Total pulse count (Meter reading / impulse factor)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>10: Keep alive period</label>
+        <description>How many seconds before going back to sleep in normal wakeup mode.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>11: Real-time mode</label>
+        <description><![CDATA[
+Real-time mode<br /><h1>Overview</h1><p>Set this to enter real-time mode from remote. Contains seconds * poll frequency before going back to sleep.</p> <p>If you press the button once this value will be set.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>12: Serial number</label>
+        <description>Read-only serial number in decimal</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Debug mode</label>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">LED blinks at pulse counting</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>15: Calibration status</label>
+        <description><![CDATA[
+Calibration status<br /><h1>Overview</h1><p>The calibration progress is calculated as (value[1] - 65 + value[2] / value[3]) * 25.</p> <p>The calibration is finished successfully when value[0]  =  2 and value[2] = value[3].</p> <p>The calibration has failed if value[0] != 1 OR (value[0] = 2 AND value[2] != value[</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

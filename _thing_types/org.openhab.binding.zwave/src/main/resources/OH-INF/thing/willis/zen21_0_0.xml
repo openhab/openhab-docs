@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="willis_zen21_00_000" listed="false">
+    <label>ZEN21 Zooz Z-Wave On / Off Light Switch</label>
+    <description><![CDATA[
+Zooz Z-Wave On / Off Light Switch<br /><h1>Overview</h1><p>PRODUCT FEATURES: <br />- Manual or remote on/off control from your mobile device or computer (when included to a Z-Wave gateway controller) <br />- Z-Wave Plus with improved 500 chip for faster and safer wireless communication <br />- Works with LED, CFL, and incandescent bulbs <br />- Based on universal binary switch command class - supported by most Z-Wave controllers <br />- May be associated and grouped with other Z-Wave devices for advanced home automation <br />- Simple elegant design with screwless snap-on wall plate included <br />- Built-in Z-Wave signal repeater for a stronger and more reliable network <br />- Single pole installation only, neutral wire required <br /><br />SPECIFICATIONS: <br />Model Number: ZEN21 <br />Z-Wave Signal Frequency: 908.42 MHz <br />Power: 120 VAC, 60 Hz <br />Maximum Loads: 960W Incandescent, 1800W (15A) Resistive, ½ HP Motor <br />Range: Up to 100 feet line of sight between the Wireless Controller and the closest Z-Wave receiver module <br />Operating Temperature: 32-104° F (0-40° C) <br />Installation and Use: Indoor only</p> <br /><h2>Inclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Tap the switch on and off quickly 3 times to finalize the inclusion process</li> <li>A new on/off device should appear on your controller's device list</li> </ol><p>Troubleshooting Tips:</p> <p>If you are unable to include the Z-Wave switch to your controller, please try one of the following:</p> <ul><li>Bring the controller closer to your Z-Wave switch or use a hand-held secondary controller for inclusion</li> <li>ap your Z-Wave switch quicker 4 or 5 times once you put the controller in the inclusion mode to ensure the command has gone through</li> <li>Put your controller in the EXCLUSION mode and tap the switch quickly 3 times, then try adding it to your network again </li> </ul><br /><h2>Exclusion Information</h2><ol><li>Bring your Z-Wave gateway hub or controller as close to the switch as possible</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Tap the switch on and off quickly 3 times to complete the exclusion process</li> <li>The device should disappear from your controller's device list</li> </ol><p>Please repeat the process following all steps carefully if the first attempt is unsuccessful </p> <br /><h2>Wakeup Information</h2><p>The switch will be reset to factory defaults only by exclusion using a Z-Wave controller. You may use any certified Z-Wave controller to exclude and reset the switch. This device may not be reset manually when the network’s primary controller is missing or otherwise inoperable. NOTE: All previously recorded activity and custom settings will be erased from the device’s memory. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Willis Electric Co., Ltd.</property>
+      <property name="modelId">ZEN21</property>
+      <property name="manufacturerId">015D</property>
+      <property name="manufacturerRef">0111:231C,B111:1E1C</property>
+      <property name="dbReference">544</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Status</label>
+        <description><![CDATA[
+This device will send SWITCH BINARY REPORT to Group 1 when operated manually.<br /><h1>Overview</h1><p>Depending on your Z-Wave gateway's home automation software capabilities, you may be able to associate your Z-Wave switch in groups with other Z-Wave devices to schedule scenes and create events. This on off switch supports Group 1 with up to five devices for lifeline communication. This device will send SWITCH BINARY REPORT to Group 1 when operated manually. Please refer to your controller's user guide for advanced programming instructions as they are a little different for every software.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_ngd00z4_00_000" listed="false">
+    <label>NGD00Z-4 Garage Door Controller</label>
+    <description><![CDATA[
+Garage Door Controller<br /><h1>Overview</h1><p><strong>GARAGE DOOR OPENER REMOTE COMMAND TRANSCEIVER with TILT SENSOR</strong></p> <br /><h2>Inclusion Information</h2><p><strong>TO INCLUDE THE GD00Z-4 INTO YOUR CONTROLLER</strong></p> <ol><li>Place your Z-Wave Controller into Discovery or Include mode.</li> <li>Press and release the link button on the GD00Z-4.</li> <li>Confirm that the GD00Z-4 was recognized by your Z-Wave Controller.</li> </ol><br /><h2>Exclusion Information</h2><p><strong>TO EXCLUDE THE GD00Z-4 FROM YOUR CONTROLLER</strong></p> <ol><li>Place your Z-Wave Controller into Exclude mode.</li> <li>Press and release the link button on the GD00Z-4.</li> <li>Confirm that the GD00Z-4 was excluded by your Z-Wave Controller.</li> </ol>
+    ]]></description>
+    <category>GarageDoor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="barrier_state" typeId="barrier_state">
+        <label>Barrier State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BARRIER_OPERATOR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">NGD00Z-4</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4744:3030,4744:3032,4744:3530</property>
+      <property name="dbReference">11</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

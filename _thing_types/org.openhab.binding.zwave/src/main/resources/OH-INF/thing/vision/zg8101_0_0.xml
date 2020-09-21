@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zg8101_00_000" listed="false">
+    <label>ZG8101 Garage Door Tilt Sensor</label>
+    <description><![CDATA[
+Garage Door Tilt Sensor<br /><h1>Overview</h1><p>This sensor offers information whether a garage door is open or closed. It detect the horizontally or vertical position of the door. It is therefore required to mount it to the door in a way that it will also change the position from vertically to horizontally and back. The installation can be done with screws or double-sided tape. The device is battery-operated and therefore in sleeping mode unless an action is detected. After a programmable sleeping time the device wakes up and sends a status information. After this the unit goes back to sleeping modus. Batteries can be changed without unscrewing the device from the door or frame. The unit will give a visual warning on the device and sends a warning to the Z-Wave controller, when batteries need to be replaced. The units send information to a controller or any other associated Z-Wave device. Up to 5 devices can be controlled from this device. Two terminals allows the connection of an external dry contact in parallel to the position sensor. The powerful CR123 Lithium battery lasts 3 ... 5 years in normal operation conditions. The device supports normal Z-Wave inclusion, auto inclusion and network wide inclusion for convenient handling.</p> <br /><h2>Inclusion Information</h2><p>On factory default the device does not belong to any Z-Wave network. The device needs to join an existing wireless network to communicate with the devices of this network. This process is called Inclusion. </p> <p>A single click for one second on the tampering switch inside the enclosure will confirm Inclusion and Exclusion.</p> <br /><h2>Exclusion Information</h2><p>Devices can also leave a network. This process is called Exclusion. Both processes are initiated by the primary controller of the Z-Wave network. This controller will be turned into exclusion respective inclusion mode. Please refer to your primary controllers manual on how to turn your controller into inclusion or exclusion mode. Only if the primary controller is in inclusion or exclusion mode, this device can join or leave the network. Leaving the network - i.e. being excluded - sets the device back to factory default. If the device already belongs to a network, follow the exclusion process before including it in your network. Otherwise inclusion of this device will fail. If the controller being included was a primary controller, it has to be reset first.</p> <br /><h2>Wakeup Information</h2><p>This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased. (c) 2016 Z-Wave Europe GmbH, Antonstr. 3, 09337 Hohenstein-Ernstthal, Germany, All rights reserved, www.zwaveeurope.com - pp 3 This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device. Releasing the tampering switch will wake up the device and keep it awake   </p>
+    ]]></description>
+    <category>GarageDoor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (door)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=2</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Alarm (tamper)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZG8101</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">200A:0A02</property>
+      <property name="dbReference">103</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Control Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ufairy_curtainmotor_00_000" listed="false">
+    <label>JTB-1007 Curtain motor</label>
+    <description><![CDATA[
+Curtain motor<br /><h1>Overview</h1><p>JTB-1007 is a Z-Wave enabled curtain motor.</p> <br /><h2>Inclusion Information</h2><p>Click the PB-button once, located near by motor power socket.</p> <br /><h2>Exclusion Information</h2><p>Click the PB-button once, located near by motor power socket.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">UFairy G.R. Tech</property>
+      <property name="modelId">JTB-1007</property>
+      <property name="manufacturerId">0152</property>
+      <property name="manufacturerRef">0B00:0001</property>
+      <property name="dbReference">1247</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_17_4_wo" type="integer" groupName="configuration">
+        <label>17: Motor Open, Go to Direction B</label>
+        <description><![CDATA[
+Motor Open, Go to Direction B<br /><h1>Overview</h1><p>Set only, any value possible</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_18_4_wo" type="integer" groupName="configuration">
+        <label>18: Motor Stop</label>
+        <description>Motor Stop</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_19_4_wo" type="integer" groupName="configuration">
+        <label>19: Motor Close, Go to Direction A</label>
+        <description>Motor Close, Go to Direction A</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="99">
+        <label>20: Motor Position</label>
+        <description>Return motor current position</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_4_wo" type="integer" groupName="configuration">
+        <label>22: Motor revert direction</label>
+        <description>Motor revert direction</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_23_1_wo" type="integer" groupName="configuration">
+        <label>23: Clear motor lead tail endpoint setting</label>
+        <description>Clear motor lead tail endpoint setting</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="255">
+        <label>32: Return motor status flag</label>
+        <description><![CDATA[
+Return motor status flag<br /><h1>Overview</h1><table><tr><td>0</td> <td>  -&gt;  </td> <td>motor is closing, go to direction A</td> </tr><tr><td>1</td> <td>  -&gt;  </td> <td>motor is opening, go to direction B</td> </tr><tr><td>2</td> <td>  -&gt;  </td> <td>motor endpoint A has setting</td> </tr><tr><td>3</td> <td>  -&gt;  </td> <td>motor endpoint B has setting</td> </tr><tr><td>4</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>5</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>6</td> <td>  -&gt;  </td> <td>(Reserved)</td> </tr><tr><td>7</td> <td>  -&gt;  </td> <td>direction revert</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_33_4_wo" type="integer" groupName="configuration">
+        <label>33: Enable manual pulling function</label>
+        <description>Enable manual pulling function</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_wo" type="integer" groupName="configuration">
+        <label>34: Disable manual pulling function</label>
+        <description>Disable manual pulling function</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>lifeline group</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

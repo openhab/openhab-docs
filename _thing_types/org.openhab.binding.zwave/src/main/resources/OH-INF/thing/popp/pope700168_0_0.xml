@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_pope700168_00_000" listed="false">
+    <label>POPE700168 POPP Rain-Sensor</label>
+    <description><![CDATA[
+POPP Rain-Sensor<br /><h1>Overview</h1><p>The POPP Rain-Sensor is a Rain Measuring Sensor Device for Europe</p> <br /><h2>Inclusion Information</h2><p>Put controller in inclusion mode, push the Z-Wave button once</p> <br /><h2>Exclusion Information</h2><p>Put controller in exclusion mode, push the Z-Wave button once</p> <br /><h2>Wakeup Information</h2><p>Push the Z-Wave button once</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_basic_number" typeId="basic_number">
+        <label>Basic value</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_general" typeId="sensor_general">
+        <label>Sensor (general)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_rainrate" typeId="sensor_rainrate">
+        <label>Sensor (rain rate)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RAIN_RATE</property>
+        </properties>
+      </channel>
+      <channel id="meter_water_cubic_meters" typeId="meter_water_cubic_meters">
+        <label>Water meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=W_Cubic_Meters</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">POPE700168</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0004:0011</property>
+      <property name="dbReference">588</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>1: Rain Counter</label>
+        <description><![CDATA[
+total count of rain<br /><h1>Overview</h1><p>Ths values shows the total count of rain from the moment of inclusion in mm waterlevel. By writing this value this counter can be reset. Size: 2 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>2: Rain Start Command</label>
+        <description><![CDATA[
+Send rain start command to group 2<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects start of rain Size: 1 Byte, Default Value: 99</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: Rain Stop Command</label>
+        <description><![CDATA[
+Send rain stop to group 2<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects stop of rain Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>4: Meter Multiplier</label>
+        <description><![CDATA[
+Adapt the display<br /><h1>Overview</h1><p>This multiplier allows to adapt the display to certain controllers not being able to handle very low numbers. Size: 2 Byte, Default Value: 1 only 1/10/100/1000</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>5: Heavy Rain</label>
+        <description><![CDATA[
+Threshold defines heavy rain condition<br /><h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>6: Heavy Rain Start Command</label>
+        <description><![CDATA[
+Send heavy rain start to group 3<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects start of heavy rain Size: 1 Byte, Default Value: 99</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>7: Heavy Rain Stop Command</label>
+        <description><![CDATA[
+Send heavy rain stop to group 3<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects stop of heavy rain Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switching Command when Rain (&gt; 0 mm/h)</label>
+        <description>Switching Command when Rain (&gt; 0 mm/h). Basic Set Comand is sent.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Heavy Rain detected. Basic Set Comand is sent.</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

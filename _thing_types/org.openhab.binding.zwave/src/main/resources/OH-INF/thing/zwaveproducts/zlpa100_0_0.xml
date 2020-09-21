@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zwaveproducts_zlpa100_00_000" listed="false">
+    <label>ZL-PA-100 ZL-PA-100</label>
+    <description><![CDATA[
+ZL-PA-100<br /><h1>Overview</h1><p>Overview<br />ZL-PA-100 is designed to provide easy Z-Wave control for plug-in appliances and lighting that require On/Off operation. Simply plug the ZL-PA-100 into any standard outlet and the appliance or lamp you wish to control, up to 1800W, into the ZA-PA-100. Add to your Z-Wave network and enjoy custom scenes and scheduled timed events when you're either home or away.</p> <br /><h2>Inclusion Information</h2><p>Normally, the sequence is as follows:</p> <ol><li>Place your network controller into inclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was added successfully.</li> <li>Once the has been successfully added to your home network, you can move it to the preferred location in the home. If the controller shows it failed, repeat the procedure.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place your network controller into exclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was removed successfully.</li> </ol><br /><h2>Wakeup Information</h2><p>Mains powered, acts as a repeater also</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Z Wave Products Inc.</property>
+      <property name="modelId">ZL-PA-100</property>
+      <property name="manufacturerId">0315</property>
+      <property name="manufacturerRef">4447:3031</property>
+      <property name="dbReference">961</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Nightlight</label>
+        <description><![CDATA[
+Nightlight Operation<br /><h1>Overview</h1><p>When value = 0, the LED indicator will be OFF when the connected appliance is ON, and the LED indicator will be ON when the connected appliance is OFF. If value = 1, the LED indicator will be OFF when the connected appliance is OFF, and the LED indicator will be ON when the connected appliance is ON. If value = 2, the LED indicator will be always OFF regardless of the load status.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED opposite to Load</option>
+          <option value="1">LED same as Load</option>
+          <option value="2">LED always OFF</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Device status<br /><h1>Overview</h1><ol><li>PA-100 supports group one for lifeline communication.</li> <li>You can only associate one Z-Wave device to group one.</li> <li>Lifeline association only supports the "manual reset" event.</li> </ol>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

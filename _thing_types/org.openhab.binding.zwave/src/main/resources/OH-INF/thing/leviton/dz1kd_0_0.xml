@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_dz1kd_00_000" listed="false">
+    <label>DZ1KD 1000W Dimmer</label>
+    <description><![CDATA[
+1000W Dimmer<br /><h1>Overview</h1><p>Universal Incandescent, LED, CFL, Magnetic Low Voltage or Fluorescent Dimmer</p> <br /><h2>Inclusion Information</h2><ul><li>Enter Programming Mode by holding the top of the paddle for 7 seconds, the Locator LED will blink amber.</li> <li>Tap the top of the paddle one time.</li> <li>The Locator LED will quickly ﬂash green.</li> <li>The Decora SmartTM Z-Wave® device is ready to learn into the Z-Wave network.</li> <li>Follow directions in the Z-Wave® controller to complete the adding process.</li> <li>Upon successful addition to network the LED will turn off and then blink green 3 times.</li> <li>If the adding process is not successful the LED will ﬂash red 3 times.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Enter Programming Mode by holding the top of the paddle for 7 seconds, the Locator LED will blink amber.</li> <li>Follow directions in the Z-Wave® controller to enter exclusion mode</li> <li>Tap the top of the paddle one time. The Locator LED will quickly ﬂash green.</li> <li>The Z-Wave® controller will exclude the Decora SmartTM device</li> <li>The Z-Wave® controller will confirm successful exclusion from the network.</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">DZ1KD</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">3301:0001</property>
+      <property name="dbReference">664</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="253">
+        <label>1: Fade On Time</label>
+        <description><![CDATA[
+Fade on time<br /><h1>Overview</h1><ul><li>0: Instant on</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="253">
+        <label>2: Fade Off Time</label>
+        <description><![CDATA[
+Fade off time<br /><h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>3: Minimum Light Level</label>
+        <description>Minimum light level</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>4: Maximum Light Level</label>
+        <description>Maximum light level</description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>5: Preset Light Level</label>
+        <description><![CDATA[
+Preset light level<br /><h1>Overview</h1><ul><li>0: Last dim level</li> <li>1 to 100: Level</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>6: LED Dim Level Indicator Timeout</label>
+        <description><![CDATA[
+LED dim level indicator timeout<br /><h1>Overview</h1><ul><li>0: LED indicators off</li> <li>1 to 254: Timeout in seconds</li> <li>255: Always on</li> </ul>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Locator LED Status</label>
+        <description><![CDATA[
+Locator LED status<br /><h1>Overview</h1><ul><li>0: LED off</li> <li>254: Status mode</li> <li>255: Locator mode</li> </ul>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: Load Type</label>
+        <description><![CDATA[
+Load type<br /><h1>Overview</h1><ul><li>0: Incandescent</li> <li>1: LED</li> <li>2: CFL</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>A NOTIFICATION frame is sent to the nodes in this association group when a Lifeline event occurs.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

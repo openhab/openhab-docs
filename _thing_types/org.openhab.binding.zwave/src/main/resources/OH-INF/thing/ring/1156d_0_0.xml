@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ring_1156d_00_000" listed="false">
+    <label>PIR Motion Sensor Motion Sensor</label>
+    <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Ring Alarm system to secure each room in your home, and get alerts as soon as they detect motion.</p> <br /><h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Press and hold the reset button found under the pinhole on the back of the device.</li> <li>The LED of the sensor should begin blinking. Hold the  button down until the blinking stops</li> <li>Remove the cover from your motion sensor.</li> <li>Remove the battery.</li> <li>Place the battery back in the device.</li> <li>Put the cover back on the device. </li> </ol><br /><h2>Wakeup Information</h2><p>By opening the cover, the sensor will get to tamper state and stay awake.</p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Ring</property>
+      <property name="modelId">PIR Motion Sensor</property>
+      <property name="manufacturerId">0346</property>
+      <property name="manufacturerRef">0301:0201</property>
+      <property name="dbReference">943</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="9">
+        <label>2: Dwell Time</label>
+        <description><![CDATA[
+Dwell Time<br /><h1>Overview</h1><p>Configures the “dwell” window or how long the sensor should not be detecting motion before sending the “no motion detected” message. </p> <p>1 to 9 minutes.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Pet Immunity</label>
+        <description><![CDATA[
+Pet Immunity<br /><h1>Overview</h1><p>Configures the “Pet Immunity,” or sensitivity of the motion detection used mostly so only human motion is detected.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">No pet immunity</option>
+          <option value="1">15kg (33lb)</option>
+          <option value="2">25kg (55lb)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Walk Test</label>
+        <description><![CDATA[
+Walk Test<br /><h1>Overview</h1><p>Parameter 4 is used to activate a “walk test” mode to test the PIR motion detection coverage after being installed.</p> <p>This mode is active for 15 minutes only after which the sensor returns to normal operation.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal operation</option>
+          <option value="255">Activate Walk Test for 15 minutes</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Controller Updates</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Basic Report</label>
+        <description><![CDATA[
+Basic Report<br /><h1>Overview</h1><p>Basic Report</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

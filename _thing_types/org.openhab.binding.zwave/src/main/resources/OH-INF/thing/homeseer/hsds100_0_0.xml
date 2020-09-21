@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_hsds100_00_000" listed="false">
+    <label>HS-DS100+ Homeseer Z-Wave Door/Window Sensor</label>
+    <description><![CDATA[
+Homeseer Z-Wave Door/Window Sensor<br /><h1>Overview</h1><p>HS-DS100+ is a battery operated sensor that is designed to issue Z-Wave commands when doors or windows are opened or closed. HSDS100+ may be associated directly with other Z-Wave devices or it may be used with a wide variety of Z-Wave hubs and controllers to trigger events, scenes and other automations.</p> <br /><h2>Inclusion Information</h2><ol><li>Ensure AAA batteries are installed. Pull plastic tab from battery compartment (if necessary)</li> <li>Put your home automation controller into ‘inclusion’ mode. Consult your system’s manual for details.</li> <li>HS-DS100+ may be included “securely” (option a) or “non-securely” (option b). If your automation controller does not support secure devices, or if you wish to improve battery life, add the sensor “non-securely”. Otherwise, include the sensor “securely” <ul><li>a) Secure inclusion: Press and hold the Z-Wave button inside the sensor body for 3 seconds. Wait for the process to finish.</li> <li>b) Non-Secure inclusion: Triple-click the Z-Wave button inside the sensor body. Wait for the process to finish.</li> </ul></li> <li>If successful, the sensor body LED will blink briefly and then stay on for 3 seconds. If unsuccessful, the LED with blink briefly and then turn off. Should this happen, repeat the inclusion process.</li> </ol><p>Note: If you want this Door/window sensor to function as a security device using secure/encrypted Z-Wave communications, then a security enabled Z-Wave controller is required. </p> <br /><h2>Exclusion Information</h2><ol><li>Put your home automation controller into ‘exclusion’ mode. Consult your system’s manual for details.</li> <li>Triple-click the Z-Wave button inside the sensor body. If successful, the LED will turn off within 1 second. If unsuccessful, the LED with blink for 5 seconds. Should this happen, repeat the exclusion process.</li> </ol><br /><h2>Wakeup Information</h2><p>Press the Z-Wave button inside the sensor body to wake device.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-DS100+</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">0201:0008</property>
+      <property name="dbReference">732</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable / Disable BASIC SET command</label>
+        <description><![CDATA[
+Enable / Disable BASIC SET command<br /><h1>Overview</h1><p>A setting of “0” disables the regular reporting feature and requires the sensor to be manually woken up to send updates. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Value of BASIC SET</label>
+        <default>0</default>
+        <options>
+          <option value="0">Sends 255 value for open and 0 value for closed</option>
+          <option value="1">Sends 0 value for open and 255 value for closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Defines value of LOW BATTERY</label>
+        <description>Defines value of LOW BATTERY</description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 reports the sensor’s condition, battery level and tamper state. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 sends the BASIC SET command.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_wds_00_000" listed="false">
+    <label>WDS Universal Double Switch</label>
+    <description><![CDATA[
+Universal Double Switch<br /><h1>Overview</h1><p>Universal Double Switch is an ON/OFF control device designed to independently control two separate loads, suited for use as both a local and remote switch. Similarly to the other WiDom “in wall” devices, it can be fully integrated into pre-existing systems and configured to associate configurable behaviours to a specific number of clicks, in full integration with the Z-Wave home automation ecosystem.</p> <p>Each of its two channels features an integrated consumption measurement device. The Universal Double Switch also boasts the lowest energy consumption on the market.</p> <p>At the same time, it is completely configurable so that it can adapt to the most varied needs while also being ready to be used without needing additional configurations in order to operate.</p> <p>Thanks to the framework developed by WiDom, the various types of “events” on the “External Switch” can be recognised and associated to actions to be performed on the device, on any associated devices, on all devices on the network. The events that the system recognises are the number of “clicks” or hold on the External Switch.</p> <p><br />External switch: External button or switch connected to the input I1 or I2</p> <p>Events: The actions performed on the external Switch: Clicks or Hold.</p> <p>Click: If the external switch is a button (when pressed it autonomously returns to the initial position), a click means pressing and then releasing it. If the external switch is bistable (when pressed it does not return to the initial position), a single click means one single flip of the switch.</p> <p>Technical Specifications</p> <p>Power Supply: 230 VAC±10% 50/60 Hz<br />Maximum Load on Relay Resistive Loads: 8 A for each channel; 10A for both channels<br />Limit Temperature: 105 °C<br />Work Temperature: -10 – 40 °C<br />Radio Protocol Z-Wave: 868,4 MHz<br />Radio Range: Up to 100 m outdoor, Up to 40 m indoor<br />Dimensions (WxDxH): 37x37x17 mm<br />Consumption: &lt; 260 mW in standby; &lt; 480 mW with one working load; &lt; 700 mW with both working loads<br />Electrical IP Rating: IP 20<br />Actuator element: Relay<br />Conformity: CE, RoHS</p> <br /><h2>Inclusion Information</h2><p>The device supports both the Network Wide Inclusion (which offers the opportunity of inclusion into a network even if the device is not directly connected to the controller) and the Normal Inclusion mechanisms.</p> <p>If the device is not included into a Z-Wave network, a single click on the (B) button or on one of the external switches will launch the process of traditional inclusion. If the device inclusion procedure does not start within 2 seconds, the Network Wide Inclusion network will be launched lasting a variable amount of time between 15-30 seconds.</p> <p>INFO: Through the inclusion procedure, activated with a single click on one of the external switches, the system determines the type of external switch (see parameter No. 62).</p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove a device from the network. WiDom Universal Double Switch is compatible with all Z-Wave certified controllers. After the exclusion procedure has been activated by the controller, the device can be removed, putting it in Exclusion Mode by three consecutive clicks on the (B) button or on the external switch, when available.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WDS</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0504</property>
+      <property name="dbReference">432</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status upon receipt of 1 click</label>
+        <description><![CDATA[
+Defines the status of the output O1/O2 after 1 Click<br /><h1>Overview</h1><p>Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 1 Click</p> <p>INFO:</p> <p>0 – IN_OUT configuration is available on WiDom Universal Double Switch starting from the<br />firmware version 1.40.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">IN_OUT</option>
+          <option value="1">TOGGLE</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Status upon receipt of 2 clicks</label>
+        <description><![CDATA[
+Defines the status of the output O1/O2 after 2 Clicks<br /><h1>Overview</h1><p>Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 2 Clicks</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">TOGGLE</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="39">
+        <label>3: Type of outputs</label>
+        <description><![CDATA[
+Defines how the outputs are controlled<br /><h1>Overview</h1><p>Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay</p> <p><strong>Parameter value and</strong> <strong>device reaction</strong></p> <p>0 – SINGLE CHANNELS (Default Value)</p> <p>Channel 1 and Channel 2 are controlled individually</p> <p>From 1 to 9 – SINGLE POLE DOUBLE THROW RELAY</p> <p>The two channels are in opposite status. If the Channel 1 is close the Channel 2 is open, if the Channel 1 is open the Channel 2 is close. The value of the parameter defines the closing delay of the relay in tenth of seconds</p> <p>From 10 to 19 – SEQUENCING RELAY</p> <p>Channels are toggled in this way: both channels ON, only channel 1 ON, only channel 2 ON, both channels OFF. The value of the parameter, deducted of 9, defines the closing delay of the relay in tenth of seconds.</p> <p>From 20 to 39 – SELECTOR</p> <p>Both channels can be OFF but they can never be ON simultaneously. It can be used for fan coil control, roller shutters, and in general for two-speed systems. The value of the parameter, deducted of 19, defines the closing delay of the relay in tenth of seconds.</p> <p><strong>INFO:</strong> 0 – configuration is available on WiDom Universal Double Switch starting from the firmware version 1.40.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Number of clicks that control the device</label>
+        <description><![CDATA[
+Defines the Clicks on the Switches that control associated devices<br /><h1>Overview</h1><p>Defines the number of clicks on the Switch 1 or Switch 2 that enable the control of the correspondent associated devices</p> <p><strong>TIP</strong>:</p> <p>Through this parameter, together the setting of the parameters 1 and 2, it is possible to control simultaneously the local load and the associated devices (e.g. 1 click control both local load and associated devices) or in totally independent way (e.g. 1 click control only the local load, 2 clicks control only the associated devices).</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">Controlled by 1 Click</option>
+          <option value="2">Controlled by 2 Clicks</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="-1" max="106">
+        <label>5: Level used to control association group 2 and 3</label>
+        <description><![CDATA[
+Defines how to control the devices associated to group 2 and 3.<br /><h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="-1" max="106">
+        <label>6: Level used to control association group 4 and 5.</label>
+        <description><![CDATA[
+Defines how to control the devices associated to group 4 and 5.<br /><h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>10: Timer to switch OFF the Channel 1</label>
+        <description><![CDATA[
+Defines the time after which the Channel 1 is switched OFF<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 1 is OFF</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>11: Timer to switch OFF the Channel 2</label>
+        <description><![CDATA[
+Defines the time after which the Channel 2 is switched OFF<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 2 is OFF</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>12: Timer to switch ON the Channel 1</label>
+        <description><![CDATA[
+Defines the time after which the Channel 1 is switched ON<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 1 is ON</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="32000">
+        <label>13: Timer to switch ON the Channel 2</label>
+        <description><![CDATA[
+Defines the time after which the Channel 2 is switched ON<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 2 is ON</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Status after Multi-Channel Basic Set command</label>
+        <description><![CDATA[
+Defines how Basic Set commands controlling outputs<br /><h1>Overview</h1><p>The two channels can be controlled individually by Z-Wave network. The status of the channels upon receipt of a Multi-Channel Basic Set command is defined by the value set on the parameter.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">As Received</option>
+          <option value="2">Ignore if ON</option>
+          <option value="3">Ignore if OFF</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration">
+        <label>21: Outputs status upon receipt of a Basic Set command</label>
+        <description><![CDATA[
+Define which channels are controlled by Basic Set command<br /><h1>Overview</h1><p>The channels of the device can be controlled individually from all other Z-Wave devices that support the multichannel feature. In order to support also the integration with no-multichannel systems, this parameter allows to define if the receipt of a no-multichannel systems, this parameter allows to define if the receipt of a no-multichannel command controls only the Channel 1 or both.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">CHANNEL 1</option>
+          <option value="3">BOTH CHANNELS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: Start-up status</label>
+        <description>Defines the status of the device following a restart.</description>
+        <default>4</default>
+        <options>
+          <option value="0">OFF_OFF</option>
+          <option value="1">ON_OFF</option>
+          <option value="2">OFF_ON</option>
+          <option value="3">ON_ON</option>
+          <option value="4">PREVIOUS STATUS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration">
+        <label>61: Configuration reset</label>
+        <description>Defines which parameters should be reset to default values</description>
+        <default>4</default>
+        <options>
+          <option value="0">FACTORY RESET</option>
+          <option value="1">ASSOCIATIONS RESET</option>
+          <option value="2">CONFIGURATIONS RESET</option>
+          <option value="3">RESTART DEVICE</option>
+          <option value="4">IGNORE</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Type of external switch</label>
+        <description>Defines the type of external switch connected to the device</description>
+        <default>1</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices to receive notifications on: status changes; instantaneous power level; device local reset </p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off control (Switch 1)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled by switch 1</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Dimming control (Switch 1)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled by switch 1</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: On/Off control (Switch 2)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled by switch 2</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Dimming control (Switch 2)</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Devices controlled by switch 2</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_scn01_00_000" listed="false">
+    <label>SCN01 One-key Scene Controller</label>
+    <description><![CDATA[
+One-key Scene Controller<br /><h1>Overview</h1><p>The Scene Controller is a slave product that is wireless, portable and rechargeable. It can control a Z-Wave device, such as smart plug, smart dimmer through a Z-Wave gateway. You can also activate a scene like sleep scene, movie scene and entertainment scene with it.</p> <br /><h2>Inclusion Information</h2><h3>Include as a non-secure device</h3> <ol><li>Set the Z-Wave controller into include mode.</li> <li>Triple click the Z-button.</li> <li>If the inclusion is successful, the LED will blink blue for 5 seconds and then remain solid for 15 seconds.</li> </ol><h3>Include as a secure device</h3> <ol><li>Set the Z-Wave controller into include mode.</li> <li>Press and hold the Z-button for 3 seconds.</li> <li>If the inclusion is successful, the LED will blink green for 5 seconds and then remain solid for 15 seconds.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the Z-Wave controller into exclude mode.</li> <li>Triple click the Z-button.</li> <li>If the exclusion is successful, the LED will blink orange for 5 seconds and then remain solid for 3 seconds.</li> </ol><br /><h2>Wakeup Information</h2><p>There are no available settings to set up the wake up time. </p> <p>Press and hold the Z-Button for 3 seconds. The led will turn to green, which means the scene controller has successfully sent the wake up notification out.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">SCN01</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0200:0009,0201:0009</property>
+      <property name="dbReference">488</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_42_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>42: Duration</label>
+        <description><![CDATA[
+Set the duration value of the sent commands<br /><h1>Overview</h1><p>Setting the duration value of the sent commands, switch multilevel Set and switch multilevel start level change.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_254_1" type="integer" groupName="configuration">
+        <label>254: Configuration Lock</label>
+        <description>Lock/unlock all configuration parameters.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Unlock</option>
+          <option value="1">Lock</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration">
+        <label>255: Reset/remove</label>
+        <description>Reset the sensor or remove from the Z-Wave network</description>
+        <default>1</default>
+        <options>
+          <option value="85">Factory Reset without Remove</option>
+          <option value="1431655765">Factory Reset &amp; Remove</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Sends associated devices central scene notification command and battery report command.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off Control</label>
+        <description>Sends basic set command to associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Dimming Control</label>
+        <description>Sends switch multilevel set, multilevel start level change and multilevel stop level change to associated devices.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

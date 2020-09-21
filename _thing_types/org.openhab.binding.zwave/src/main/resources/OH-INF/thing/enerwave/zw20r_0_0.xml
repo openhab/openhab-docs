@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zw20r_00_000" listed="false">
+    <label>ZW20R 20A Tamper Resistant Duplex Receptacle</label>
+    <description><![CDATA[
+20A Tamper Resistant Duplex Receptacle<br /><h1>Overview</h1><p>Enerwave ZW20R Z-wave TR Duplex Receptacle is a perfect wireless manual and remote on/off control replacement of regular receptacles, controlling table and floor lamps, small appliances, fan, etc. This Z-Wave TR Duplex Receptacle provides two different type outlets. One outlet with z-wave mark has programmable functions such as scenes, association, schedule event, etc. It can be added to the Mi Casa Verde Vera3 or any other Z-Wave compliant controllers, and a Blue LED on the face cover indicates the status of the controlled outlet and/or act as a night light. The other outlet with Tamper-Resistant feature provides constant power, helps you and your families prevent electrical injuries. This Z-wave TR Duplex Receptacle meets the 2011 NEC code requirement. </p> <br /><h2>Inclusion Information</h2><p>When the controller is in inclusion mode and the blue LED blinks on the ZW20R, press the program button of ZW20R, and then the controller will verify the inclusion</p> <br /><h2>Exclusion Information</h2><p>When the controller is in exclusion mode, press the program button of ZW20R, and then the controller will remove it from the current Z-Wave network, and the LED will blink on the receptacle.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZW20R</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0101:0603</property>
+      <property name="dbReference">185</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Toggle LED mode</label>
+        <description>Set to 1 for LED to be in sync with switch.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED is on when switch is off</option>
+          <option value="1">LED is on when switch is on</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="brk_zcombo_00_000" listed="false">
+    <label>ZCOMBO Smoke and Carbon Monoxide Alarm</label>
+    <description><![CDATA[
+Smoke and Carbon Monoxide Alarm<br /><h1>Overview</h1><p>Z-wave compatible smoke and carbon monoxide alarm. First Alert Z-Wave Detector - NOT WINK compatible.</p> <p>Integrated wireless alarm system is Iris compatible to send you mobile alerts and emails. The alarm is also compatible with 3rd party certified Z-Wave devices with the First Alert protocol. Note- this alarm is not compatible with Onelink.</p> <ul><li>Wireless connection to z-wave hub</li> <li>Reliable electrochemical co and photoelectric smoke sensors</li> <li>Features single button test/Silence and side-access battery drawer</li> <li>Meets UL standards and backed by 7 year limited warranty</li> <li>Certified for use with Nexia Home Intelligence or other Z-Wave systems</li> <li>Combination Smoke and Carbon Monoxide protection that alerts you whether you are home or away</li> <li>Photoelectric smoke sensor helps reduce false alarms such as from cooking or shower steam</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Slide battery door open.</li> <li>Insert batteries checking the correct orientation.</li> <li>Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.</li> </ol><ul><li>The alarm will remain awake for 30 seconds on inclusion.</li> <li>The alarm supports one association group with up to 1 node, and sends its alarms to that group.</li> <li>The alarm supports configuration parameter #1, which has a size of 1, a default value of 0, and when set to 1 causes the device to send double alarm messages.</li> </ul><br /><h2>Exclusion Information</h2><ol><li>Slide battery door open.</li> <li>Remove and re-insert batteries checking the correct orientation.</li> <li>Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.</li> </ol><br /><h2>Wakeup Information</h2><p>Slide the battery out then back in while holding the button to wake it up.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Heartbeat</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=HOME_HEALTH</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Smoke Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Carbon Monoxide Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Test Button</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=APPLIANCE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BRK Brands, Inc.</property>
+      <property name="modelId">ZCOMBO</property>
+      <property name="manufacturerId">0138</property>
+      <property name="manufacturerRef">0001:0002,000C:0001</property>
+      <property name="dbReference">238</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send double alarms</label>
+        <description>Causes the device to send double alarm messages</description>
+        <default>0</default>
+        <options>
+          <option value="0">Single Alarm</option>
+          <option value="1">Double Alarm</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

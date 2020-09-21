@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_hkzwso03_00_000" listed="false">
+    <label>HKZW_SO03 Smart Plug</label>
+    <description><![CDATA[
+Smart Plug<br /><h1>Overview</h1><p>WELL DONE!<br /> You have picked the finest solution for your smart home, congratulations!<br /> Now it's time to enjoy these great features of your new Smart Plug:</p> <ul><li>Wireless control of floor lamps and small appliances</li> <li>Energy monitoring in live mode or over time (your Z-Wave gateway needs to support this feature)</li> <li>Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller</li> <li>LED indicator displaying Z-Wave signal strength and power usage</li> <li>Security enabled Z-Wave device with AES signal encryption (requires a security enabled gateway controller for full functionality)</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Built-in range extender for a stronger, more reliable network</li> <li>2 USB charging ports for your smart phone or tablet (no Z-Wave functionality)</li> <li>Built-in overload protection in Z-Wave outlet and USB ports</li> </ul><br /><h2>Inclusion Information</h2><p>Auto Z-Wave Inclusion</p> <ol><li>Put your Z-Wave controller in inclusion mode</li> <li>Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller</li> <li>LED indicator will flash blue</li> <li>A new on / off device should be recognized by your Z-Wave controller</li> </ol><p>Manual Z-Wave Inclusion</p> <ol><li> Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES QUICKLY</li> <li>LED indicator will flash blue</li> <li>A new on / off device should be recognized by your Z-Wave controller</li> </ol><p>Secure Z-Wave Inclusion</p> <ol><li> Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in secure inclusion mode</li> <li>Press and HOLD the Z-Wave button for at least 3 seconds</li> <li>LED indicator will flash green</li> <li>LED indicator will turn solid green once the inclusion is completed. Please allow 5 minutes for configuration. DO NOT press any buttons or move the device during that time</li> <li>A new secure on / off device should be recognized by your Z-Wave controller</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES QUICKLY</li> <li>LED indicator will flash orange</li> <li>The smart plug should disappear from your controller's device list and LED indicator will remain solid orange for a few seconds to indicate exclusion</li> </ol><p>Please repeat the process following all steps carefully if the first attempt is unsuccessful</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">HKZW_SO03</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0101:000A</property>
+      <property name="dbReference">677</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Overload Protection</label>
+        <description><![CDATA[
+Overload Protection<br /><h1>Overview</h1><p>16.5A for over 5 seconds when this setting is enabled.</p> <p>We <strong>DO NOT</strong> recommend changing this parameter’s value as it may result in device damage and malfunction.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled (default)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: On/Off Status Recovery After Power Failure</label>
+        <description><![CDATA[
+On/Off Status Recovery After Power Failure<br /><h1>Overview</h1><p>Choose the recovery state for your Smart Plug if power outage occurs.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Remember Status</option>
+          <option value="1">Turn ON (default)</option>
+          <option value="2">Turn OFF</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: On/Off Status Change Notifications</label>
+        <description><![CDATA[
+On/Off Status Change Notifications<br /><h1>Overview</h1><p>Your Smart Plug will automatically send a notification to the controller and other associated devices if its status changes from on to off or the other way round.</p> <p>Choose when you want it to send the report.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Always Send (default)</option>
+          <option value="2">Only Manual Changes</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Led Indicator Control</label>
+        <description><![CDATA[
+Led Indicator Control<br /><h1>Overview</h1><p>You can choose how the LED indicator displays power consumption on the smart plug</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Always On (default)</option>
+          <option value="1">5 Seconds</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

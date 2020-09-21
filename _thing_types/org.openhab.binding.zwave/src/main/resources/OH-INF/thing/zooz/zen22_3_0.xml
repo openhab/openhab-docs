@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen22_03_000" listed="false">
+    <label>ZEN22 Paddle Dimmer</label>
+    <description><![CDATA[
+Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightness control </li> <li>Direct 3-Way: works with regular on/off switches in a 3-way (neutral wire required)</li> <li>Fully adjustable ramp rate for just the right on/off speed</li> <li>Double tap to full brightness feature</li> <li>Remembers and restores on/off status aer power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Works with LED and incandescent bulbs (don’t use with fans)</li> <li>Accepts OTA firmware updates</li> <li>Customizable LED indicator and air-gap switch for added safety</li> </ul><br /><h2>Inclusion Information</h2><p>Tap the upper paddle 4-5 times quickly</p> <br /><h2>Exclusion Information</h2><p>Tap the lower paddle 3 times quickly</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN22</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">B112:1F1C</property>
+      <property name="versionMin">3.0</property>
+      <property name="versionMax">19.0</property>
+      <property name="dbReference">1138</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Paddle Control</label>
+        <description>Choose Paddle Functionality</description>
+        <default>0</default>
+        <options>
+          <option value="0">Upper paddle turns on, lower paddle turns off</option>
+          <option value="1">Upper paddle turns off, lower paddle turns on</option>
+          <option value="2">Any paddle turns on/off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: LED Indicator Control</label>
+        <description>Choose LED Functionality</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch off, LED off when switch off</option>
+          <option value="1">LED on when switch on, LED off when switch off</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Auto Turn-off enable/disable</label>
+        <description><![CDATA[
+Auto Turn-off enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled</option>
+          <option value="1">Timer enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>4: Auto Turn-off time</label>
+        <description><![CDATA[
+Auto Turn-off time<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Default: 60 minutes</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Auto Turn-on enable/disable</label>
+        <description><![CDATA[
+Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled</option>
+          <option value="1">Timer enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>6: Auto Turn-on time</label>
+        <description><![CDATA[
+Auto Turn-on time<br /><h1>Overview</h1><p>Use this parameter to set the time aer which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes</p> <p>Default 60 minutes</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Status after Power failure</label>
+        <description>Status after Power failure</description>
+        <default>2</default>
+        <options>
+          <option value="0">forced to OFF</option>
+          <option value="1">forced to ON</option>
+          <option value="2">restore prior status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dimmer Ramp Rate</label>
+        <description><![CDATA[
+Dimmer Ramp Rate<br /><h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default 1 second</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>10: Minimum brightness level</label>
+        <description><![CDATA[
+Minimum brightness level<br /><h1>Overview</h1><p>Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value</p> <p>Default 1 percent</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Maximum brightness level</label>
+        <description><![CDATA[
+Maximum brightness level<br /><h1>Overview</h1><p>Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value.</p> <p><strong>Note</strong>: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled</p> <p>Default: 99 percent</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Double Tap function</label>
+        <description><![CDATA[
+Double Tap function<br /><h1>Overview</h1><p>Choose if you want the dimmer to turn on to full brightness or custom brightness level after you double-tap the upper paddle</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Full brightness (default)</option>
+          <option value="1">Brightness set in parameter 11</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BASIC SET</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p> This device will send BASIC SET to group 2 when operated manually.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

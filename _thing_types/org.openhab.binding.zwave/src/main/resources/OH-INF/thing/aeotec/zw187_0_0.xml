@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeotec_zw187_00_000" listed="false">
+    <label>ZW187 Recessed Door Sensor 7</label>
+    <description><![CDATA[
+Recessed Door Sensor 7<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor (Gen 7) installs within a door's frame detecting the status of a door. </p> <br /><h2>Inclusion Information</h2><p><strong>Add Recessed Door Sensor to your Z-Wave network.</strong></p> <p>Getting your Recessed Door Sensor Gen7 up and running is as simple as powering it up, and adding it to your Z-Wave network. There are 2 methods to pairing your sensor depending on the capabilities of your Z-Wave gateway/controller/hub.</p> <p><strong>SmartStart Inclusion.</strong></p> <p>You can use this method of inclusion only if your Z-Wave gateway/controller/hub supports SmartStart.</p> <ol><li>Open up your Z-Wave gateway/controller/hub app over your Smartphone.</li> <li>Select SmartStart inclusion.</li> <li>Scan the QR code located on Recessed Door Sensor Gen7.</li> <li>Once scanned, Recessed Door Sensor 7 will join your Z-Wave network automatically within 10 minutes from when it is powered up.</li> </ol><p><strong>Classic Inclusion.</strong></p> 1. Decide on where you want your Recessed Door Sensor 7 to be placed. <p>2.Set your Z-Wave Controller into pairing mode.</p> <p>3. Press the Z-Wave Button on your Recessed Door Sensor 7 and quickly release the button (should only be a quick tap action on the button).<br /><br />Recessed Door Sensor 7 will quickly flash its red LED up to 30 seconds or until it is paired successfully. If successfully paired, the red LED will become solid for 10 seconds.</p> <p>If your Recessed Door Sensor failed to pair, the LED will return to slow breathing LED. If it is this case, please return to step 2.</p> <p>4. If you pairing with S2 encryption/security, enter the first 5 digits of the DSK into your controller/gateway/hub interface when requested.</p> <p>When Recessed Door Sensor 7 successfully joins your Z-Wave network its LED will turn solid red for 10 seconds. If LED</p> <p>becomes slow fade-in fade-out Red color before turning off, it means the device is still unable to join your Z-Wave</p> <p>network; repeat the above steps and please contact us for further support if needed.</p> <p>Manual: https://aeotec.com/hidden-z-wave-door-sensor/</p> <br /><h2>Exclusion Information</h2><p><strong>Remove your sensor from your Z-Wave network (Software reset).</strong></p> <p>Your Recessed Door Sensor can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller to do this. </p> <ol><li>Set your Z-Wave Controller into its ‘Remove Device‘ mode in order to remove the product from your Z-Wave system Refer to the Controller's manual if you are unsure of how to perform this step.</li> <li>Make sure the product is powered.</li> <li>Click Action Button once; LED will become flash Red color for 5 seconds.</li> <li>If Removing fails, it will extinguish, without slow fade-in fade-out Red color.</li> <li>If Removing succeeds, it will become slow fade-in fade-out Red color for 10 seconds, and then extinguish. Now, it is Roved from Z-Wave network successfully.</li> </ol><p><b>Manually Factory Reset your sensor.</b></p> <p>If the primary controller is missing or inoperable, you may need to reset the device to factory settings. Make sure the product is powered. To complete the reset process manually, </p> <ul><li>Press and hold the Action Button for at least 20 seconds. <ul><li><strong>@2 seconds</strong>, LED will shows a slow pulsing LED</li> <li><strong>@5 seconds</strong>, LED will pulse faster</li> <li><strong>@10 seconds</strong>, LED will flash even faster.</li> <li><strong>@20 seconds</strong>, LED will become solid for 2 seconds to indicate it factory reset. <ul><li>You can release the action button here.</li> </ul></li> <li><strong>@22 seconds</strong>. LED will breathe slowly to indicate it is factory reset.</li> </ul></li> <li>Release the Action Button when LED becomes slow fade-in fade-out red color.</li> </ul><p><strong>Note:</strong></p> <p>1. This procedure should only be used when the primary controller is missing or inoperable.</p> <p>2. Factory Reset will:</p> <p>(a) Remove the product from Z-Wave network;</p> <p>(b) Delete the Association setting;</p> <p>(c) Restore the configuration settings to the default.</p> <p>Manual: https://aeotec.com/hidden-z-wave-door-sensor/</p> <br /><h2>Wakeup Information</h2><p><b>Wakeup your Recessed Door Sensor for configuration.</b></p> <p>You can wakeup Recessed Door Sensor 7 to communicate with your Z-Wave gateway or push configuration settings to your sensor.</p> <p>To wake up your sensor, follow these steps:</p> <ul><li>Press and hold the Action Button for at least 2 seconds, but before 5 seconds. <ul><li><strong>@2 seconds</strong>, LED will shows a slow pulsing LED <ul><li>Release action button here to toggle 10 minute wakeup.</li> <li>If successful, LED will remain solid until sensor goes back to sleep.</li> </ul></li> </ul></li> </ul><p>Manual: https://aeotec.com/hidden-z-wave-door-sensor/</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door State</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Aeotec Limited</property>
+      <property name="modelId">ZW187</property>
+      <property name="manufacturerId">0371</property>
+      <property name="manufacturerRef">0102:00BB</property>
+      <property name="dbReference">1226</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Binary Sensor Report</label>
+        <description><![CDATA[
+Enable/Disable Binary Sensor Report<br /><h1>Overview</h1><p>Allow for backward compatibility to report Binary if Notification Report cannot be used for status changes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor Reports</label>
+        <description>Reverse Sensor Reports</description>
+        <default>0</default>
+        <options>
+          <option value="0">Open when open</option>
+          <option value="1">Closed when open</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Association Group Settings</label>
+        <description><![CDATA[
+Configure the Basic Set value<br /><h1>Overview</h1><p>Determine the Basic Set value to control other z-wave devices directly when Magnet is away or near</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="1535">
+        <label>4: Application Layer Retry</label>
+        <description><![CDATA[
+Configure retry number and wait time<br /><h1>Overview</h1><p>The device supports an application retry mechanism when the application of the device has detected a transmission error when Basic Set, Sensor Binary Report or Notification Report (Access Control) message is sent out but fails to result in an ACK or a Supervision Report.</p> <p>High Byte: Configure the number of retries. The valid value is 0-5. 0 means disable retry.</p> <p>Low Byte: Configure the wait time between retries. The valid value is 0-255. Unit is 100ms.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>5: Supervision Report Wait Time</label>
+        <description>Configure Supervision Report Wait Time</description>
+        <default>15</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_81_1" type="integer" groupName="configuration">
+        <label>81: LED Indicator</label>
+        <description><![CDATA[
+Control LED Indicator<br /><h1>Overview</h1><p>Determine whether the LED flash or not when sending Basic Set, Sensor Binary Report or Notification Report (access Control).</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Disable LED</option>
+          <option value="1">LED Option 1</option>
+          <option value="2">LED Option 2</option>
+          <option value="3">LED Option 3</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>90: Low Battery threshold</label>
+        <description><![CDATA[
+Configure the Low Battery threshold<br /><h1>Overview</h1><p>Induce a battery report when the battery level is less than or equal to the threshold. Forward battery report. Valid 10%-50% remaining.</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_101_2" type="integer" groupName="configuration"
+                 min="1" max="14400">
+        <label>101: Timed barrery report</label>
+        <description><![CDATA[
+Enable/Disable timed battery report<br /><h1>Overview</h1><p>Enable timed battery report and sets how often battery is reported in minutes.</p>
+        ]]></description>
+        <default>70</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/Off Control</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

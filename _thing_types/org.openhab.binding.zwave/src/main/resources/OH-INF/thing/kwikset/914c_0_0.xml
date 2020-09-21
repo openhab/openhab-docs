@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kwikset_914c_00_000" listed="false">
+    <label>Kwikset 914C Convert Smart Lock Smart Lock</label>
+    <description><![CDATA[
+Smart Lock<br /><h1>Overview</h1><p>Kwikset®, the leader in residential security, introduces the Smart Lock Convert Kit with Z-Wave. <br /><br />Extend your smart home system to your current deadbolt, enabling your existing deadbolt to wirelessly communicate with your smart home or security system</p> <p>Dramatically reduced, all-metal interior</p> <p>Works with existing select single cylinder deadbolts</p> <br /><h2>Inclusion Information</h2><p>Initiate the process to add the lock to your system at your smart home controller.</p> <p><strong>Note</strong>: On some systems you may need to ensure you are using<strong> "secure inclusion"</strong>.</p> <p>When prompted by your smart home system to add the lock, press button “A” on the lock interior one time. The red LED will illuminate when the lock enters Add Mode. Please allow time for the controller to add the lock to your system.</p> <p>Note: Some controllers are required to be within close proximity to the lock (less than 12") while including for security reasons. </p> <br /><h2>Exclusion Information</h2><p>Follow your smart home system’s instructions to remove the lock from the network. When prompted by the system, press button A” on the lock interior once.  The red LED will illuminate when the lock enters Remove mode. </p> <br /><h2>Wakeup Information</h2><p>The electronic conversion kit remains asleep until an action occurs on the latch or a request is received from the RF side.<br />For the RF side, it will wake up every 1 second to check if there are any requests from your smart home controller.</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Black &amp; Decker</property>
+      <property name="modelId">Kwikset 914C Convert Smart Lock</property>
+      <property name="manufacturerId">0090</property>
+      <property name="manufacturerRef">0003:0446,0003:0642</property>
+      <property name="dbReference">992</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="15">
+        <label>31: Dipswitch Settings</label>
+        <description><![CDATA[
+Dipswitch Settings<br /><h1>Overview</h1><p>Configuration parameter is a one byte read only bit mask that returns the state of the user accessible dipswitches on the rear panel of the door lock. This is a read only parameter and cannot be used to set dipswitch settings.</p> <p>The following table shows the definition for the bits being used in the returned value: </p> <table><tr><td>Bit</td> <td>Description</td> </tr><tr><td>0 (0x01)</td> <td>Lock status LED (1:enabled)</td> </tr><tr><td>1 (0x02)</td> <td>Autolock setting (1:enabled)</td> </tr><tr><td>2 (0x04)</td> <td>Buzzer (1:enabled)</td> </tr><tr><td>3 (0x08)</td> <td>Handing Invert (1:enabled)</td> </tr></table><p><strong>Possible Values:</strong></p> <table><tr><td>0</td> <td>All features disabled</td> </tr><tr><td>1</td> <td>Lock status LED enabled</td> </tr><tr><td>2</td> <td>Autolock Enabled</td> </tr><tr><td>4</td> <td>Internal buzzer enabled</td> </tr><tr><td>8</td> <td>Handling invert enabled</td> </tr><tr><td>3</td> <td>Autolock &amp; Lock status LED enabled</td> </tr><tr><td>5</td> <td>Internal buzzer and lock status LED enabled</td> </tr><tr><td>7</td> <td>Autolock, Internal buzzer, and lock status LED enabled</td> </tr><tr><td>15</td> <td>All Features enabled</td> </tr></table>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>33: First 4 bytes of SKU</label>
+        <description><![CDATA[
+SKU (length = 8 bytes)<br /><h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter.</p> <p>Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter.</p> <p>Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU. </p>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_34_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>34: Last 4 bytes of SKU</label>
+        <description><![CDATA[
+SKU (length = 8 bytes)<br /><h1>Overview</h1><p>The configuration parameters 33 and 34 are used to set and get the SKU part numbers. The SKU is made up of 8 bytes. Each parameter consists of four bytes of data. Parameter 33 contains the first four most significant bytes of the SKU, while parameter 34 contains the four least significant bytes of the SKU.</p> <p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter.</p> <p>Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command.</p> <p>When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter.</p> <p>Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU. </p>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>35: Lock Type</label>
+        <description><![CDATA[
+Report the Unique ID of the lock type<br /><h1>Overview</h1><p>The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type.</p> <table><tr><td><strong>Released Board ID</strong></td> <td><strong>Unique ID</strong></td> </tr><tr><td>910 Z-wave (Legacy, FW 3.4)</td> <td>0x00 0x00</td> </tr><tr><td>912 Z-wave (Legacy, FW 3.2)</td> <td>0x00 0x00</td> </tr><tr><td>910 Z-wave</td> <td>0x02 0x36</td> </tr><tr><td>912 Z-wave</td> <td>0x03 0x36</td> </tr><tr><td>914 Z-wave</td> <td>0x04 0x36</td> </tr><tr><td>916 Z-wave</td> <td>0x06 0x42</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>40: Factory Reset</label>
+        <description><![CDATA[
+Reset Lock to Factory Default<br /><h1>Overview</h1><p>The configuration parameter 40 is a one byte field, used to set the lock to its default setting, known as a factory reset command.</p> <p>Reading this parameter will always return a value of 0.</p> <p>Writing a value of 1 to this parameter will cause both the lock and Z-Wave card to reset back to their default settings and will remove itself from the network. All network information, including associations will be cleared. </p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline Supports the following types of unsolicited messages:</p> <table><tr><td><strong>Command Class</strong></td> <td><strong>Command</strong></td> <td><strong>Info</strong></td> </tr><tr><td>Command Class Battery</td> <td>Battery Report</td> <td>Sends periodic battery reports containing the battery percentage.</td> </tr><tr><td>Command Class Door Lock</td> <td>Door Lock Operation Report</td> <td>Upon power up, this message will be sent to allow the controller to sync up with the current lock status.</td> </tr><tr><td>Command Class Notification</td> <td>Notification Report</td> <td>Many notification types will be sent for status and alarms. The following notification types are supported: Access Control (V2) and Power Management (V2).</td> </tr><tr><td>Command Class Device Reset Locally</td> <td>Device Reset Locally Notification</td> <td>This message will be sent to notify the smart home controller that the lock is resetting back to factory defaults and will be leaving the network.</td> </tr></table>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Doorlock notify group<br /><h1>Overview</h1><p>This group will provide all Notification reports as described for the Lifeline. This group allows other controllers, other than the lifeline, to receive these types of unsolicited messages as well.</p> <p>It allows at most 5 other nodes to be associated with the lock and will provide all Notification Reports, via the Command Class Notification, generated by the lock. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

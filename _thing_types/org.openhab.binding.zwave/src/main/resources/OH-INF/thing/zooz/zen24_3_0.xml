@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen24_03_000" listed="false">
+    <label>ZEN24 Toggle Dimmer v3</label>
+    <description><![CDATA[
+Toggle Dimmer v3<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightness control</li> <li><strong>Direct 3-way:</strong> worke with regular on/off switches in a 3-way (neutral wire required)</li> <li>Fully adjustable ramp rate for just the right on/off speed</li> <li>Double tap to full brightness feature</li> <li><strong>NEW:</strong> optional scene control</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Works with LED and incandescent bulbs (don't use with fans or tubes)</li> </ul><br /><h2>Inclusion Information</h2><p>Toggle the switch up 5 or 6 times very quickly when adding it.</p> <br /><h2>Exclusion Information</h2><p>Toggle the switch down 3 times quickly</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN24</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">B112:261C</property>
+      <property name="versionMin">3.0</property>
+      <property name="versionMax">3.255</property>
+      <property name="dbReference">1160</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Toggle Control</label>
+        <description><![CDATA[
+Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you want the to turn the light on by clicking the toggle up or down.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">UP turns light ON</option>
+          <option value="1">DOWN turns light ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer Enable</label>
+        <description><![CDATA[
+Auto Turn-Off Timer Enable<br /><h1>Overview</h1><p>Enable or disable the auto turn-off timer function.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>4: Auto Turn-Off Timer Time</label>
+        <description><![CDATA[
+Auto Turn-Off Timer Time<br /><h1>Overview</h1><p>The number is in minutes.</p> <p>Default: 60 minutes</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer Enable</label>
+        <description><![CDATA[
+Auto Turn-On Timer Enable<br /><h1>Overview</h1><p>enable or disable the auto turn-on timer function.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer Disabled</option>
+          <option value="1">Timer Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_4" type="integer" groupName="configuration"
+                 min="1" max="65535">
+        <label>6: Auto Turn-On Timer Time</label>
+        <description><![CDATA[
+Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Default: 60 minutes</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Status after Power Failure</label>
+        <description>Status after Power Failure</description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+          <option value="2">Restore Previous Status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Ramp Rate Control</label>
+        <description><![CDATA[
+Ramp Rate Control<br /><h1>Overview</h1><p>Number of seconds for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default: 1 second</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>10: Minimum Brightness</label>
+        <description><![CDATA[
+Minimum Brightness<br /><h1>Overview</h1><p>Minimum brightness level (in %) for your dimmer.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Maximum Brightness</label>
+        <description><![CDATA[
+Maximum Brightness<br /><h1>Overview</h1><p>Maximum brightness level (in %) for your dimmer.</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Double Tap Function</label>
+        <description>Double Tap Function</description>
+        <default>0</default>
+        <options>
+          <option value="0">Full Brightness</option>
+          <option value="1">Maximum Brightness Level (Parameter 11)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Scene Control Enable</label>
+        <description><![CDATA[
+Scene Control Enable<br /><h1>Overview</h1><p>Enable or disable scene control for quick double tap triggers.</p> <p>Find out how to make scene control work at www.support.getzooz.com</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene Control Disabled</option>
+          <option value="1">Scene Control Enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Double &amp; Single Tap Enable</label>
+        <description><![CDATA[
+Double &amp; Single Tap Enable<br /><h1>Overview</h1><p>Enable or disable the double-tap function and assign brightness level to single tap.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Double Tap Enabled</option>
+          <option value="1">DT Disabled, Single Tap last brightness</option>
+          <option value="2">DT Disabled, Single Tap to Full / Max Bruightness</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Local Toggle Control</label>
+        <description>Local Toggle Control</description>
+        <default>1</default>
+        <options>
+          <option value="0">Local control DISABLED</option>
+          <option value="1">Local control ENABLED</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>sends BASIC SET</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

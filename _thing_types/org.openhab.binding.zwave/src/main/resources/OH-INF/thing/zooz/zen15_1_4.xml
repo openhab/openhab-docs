@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen15_01_004" listed="false">
+    <label>ZEN15 Power Switch</label>
+    <description><![CDATA[
+Power Switch<br /><h1>Overview</h1><p>Z-Wave Power Switch</p> <br /><h2>Inclusion Information</h2><p><strong>Please include the Power Switch to your network BEFORE connecting it to the appliance you wish to control.</strong></p> <h2>Auto Z-Wave Inclusion</h2> <ol><li>Put your Z-Wave controller into inclusion mode</li> <li>Plug the Power Switch into a grounded receptacle located within direct range from your Z-Wave gateway controller</li> <li>The LED indicator will start flashing blue, then turn blue (on) or pink (off) once included</li> <li>A new on / off device will be recognized by your Z-Wave controller.</li> </ol><h2>Manual Z-Wave Inclusion</h2> <ol><li>Plug the Power Switch into a grounded receptacle located within direct range from your Z-Wave gateway controller</li> <li>Put your Z-Wave controller into inclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES QUICKLY</li> <li>The LED indicator will start flashing blue, then turn blue (on) or pink (off) once included</li> <li>A new on / off device will be recognized by your Z-Wave controller.</li> </ol><h2>Secure Z-Wave Inclusion</h2> <ol><li>Plug the Power Switch into a grounded receptacle located within direct range from your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in secure inclusion mode</li> <li>Press and HOLD the Z-Wave button for at least 3 seconds</li> <li>The LED indicator will start flashing green, then turn blue (on) or pink (off) once included 5. A new secure on / off device will be recognized by your Z-Wave controller.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug the Power Switch into a grounded receptacle located within direct range of your Z-Wave gateway controller.</li> <li>Put your Z-Wave controller into exclusion mode.</li> <li>Press and release the Z-Wave button 3 TIMES QUICKLY.</li> <li>The LED indicator will start flashing orange, then turn blue (on) or pink (off) once excluded.</li> <li>The Power Switch will disappear from your controller's device list. The LED indicator will remain solid orange for a few seconds to indicate exclusion.</li> </ol><p>If the first attempt is unsuccessful, please repeat the process following all steps carefully.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN15</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0101:000D</property>
+      <property name="versionMin">1.4</property>
+      <property name="dbReference">1167</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Overload Protection</label>
+        <description><![CDATA[
+Overload protection.<br /><h1>Overview</h1><p>Overload protection will turn the Power Switch relay off once power exceeds 16.5A for over 5 seconds when this setting is enabled.</p> <p>We DO NOT recommend changing this parameter’s value as it may result in device damage and malfunction.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: On/Off Status Recovery After Power Failure</label>
+        <description>Choose the recovery state for your Power Switch if power outage occurs.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Previous state</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: On/Off Status Change Notifications</label>
+        <description><![CDATA[
+Send On/Off Status Change Notifications<br /><h1>Overview</h1><p>Your Power Switch will automatically send a notification to the controller and other associated devices if its status changes from on to off or the other way round. Choose when you want it to send the report.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Sends notification if changed manually or remotely</option>
+          <option value="2">Sends notification ONLY if changed manually</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: LED Indicator</label>
+        <description><![CDATA[
+How the LED indicator displays power consumption.<br /><h1>Overview</h1><p>You can choose how the LED indicator displays power consumption on the Power Switch Values: 0 – LED indicator will display power consumption whenever the device is plugged in (LED stays on at all times – default setting); 1 – LED indicator will display the level of power consumption for 5 seconds only whenever the device is turned on or off (LED indicator will stay off for most of the time). Size: 1 byte dec.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Always On</option>
+          <option value="1">Momentary (at status change)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Manual Control</label>
+        <description><![CDATA[
+Local manual control<br /><h1>Overview</h1><p>Choose if you want to use the physical button on the Power Switch to turn the outlet on or off manually or if you want to disable this function.</p> <p>If this parameter is set to 0 (disabled), you will <strong>only</strong> be able to turn the outlet on or off remotely using your Z-Wave gateway controller.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Manual control DISABLED</option>
+          <option value="1">Manual control ENABLED</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_151_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>151: Power Report Value Threshold</label>
+        <description><![CDATA[
+When to report power consumption to your controller<br /><h1>Overview</h1><p>Power Report Value Threshold Parameter 151: Choose how you want your Power Switch to report power consumption to your controller and associated devices. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 50 Watts are entered by default, the Power Switch will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report). Values: 0 – 65535; 0 – disabled (it will not report power consumption based on value change); 50 – default setting Size: 2 byte dec.</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>152: Power Report Percentage Threshold</label>
+        <description><![CDATA[
+How to report power consumption to your controller by percentage rate<br /><h1>Overview</h1><p>Power Report Percentage Threshold Parameter 152: Choose how you want your Power Switch to report power consumption to your controller and associated devices by percentage rate. The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported. So if 10% is entered by default, the Power Switch will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report). Values: 0 – 255; 0 – disabled (it will not report power consumption based on percentage change); 10 – default setting Size: 1 byte dec.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_171_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>171: Power Report Frequency</label>
+        <description><![CDATA[
+How often to report power consumption (W) to your controller<br /><h1>Overview</h1><p>Power Report Frequency Parameter 171: Choose how often you want your Power Switch to report power consumption (W) to your controller and associated device. The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Power Switch will report power consumption every 30 seconds. Values: 5 – 2678400; 0 – disabled (it will not report power consumption); 30 – default setting Size: 4 byte dec</p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_172_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>172: Energy Report Frequency</label>
+        <description><![CDATA[
+How often to report energy usage (KWH) to your controller<br /><h1>Overview</h1><p>Energy Report Frequency Parameter 172: Choose how often you want your Power Switch to report energy usage (KWH) to your controller and associated device. The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Power Switch will report energy usage every 300 seconds (5 minutes). Values: 5 – 2678400; 0 – disabled (it will not report energy usage); 300 – default setting Size: 4 byte dec.</p>
+        ]]></description>
+        <default>300</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_173_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>173: Voltage Report Frequency</label>
+        <description><![CDATA[
+How often to report voltage (V) to your controller<br /><h1>Overview</h1><p>Voltage Report Frequency Parameter 173: Choose how often you want your Power Switch to report voltage (V) to your controller and associated device. The number entered as value corresponds to the number of seconds. Values: 5 – 2678400; 0 – disabled (default – it will not report voltage levels) Size: 4 byte dec.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_174_4" type="integer" groupName="configuration"
+                 min="0" max="2678400">
+        <label>174: Electricity Report Frequency</label>
+        <description><![CDATA[
+How often to report levels of electrical current (A) to your controller<br /><h1>Overview</h1><p>Electricity Report Frequency Parameter 174: Choose how often you want your Power Switch to report levels of electrical current (A) to your controller and associated device. The number entered as value corresponds to the number of seconds. Values: 5 – 2678400; 0 – disabled (default – it will not report electrical current levels) Size: 4 byte dec.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_motorcontroller_00_000" listed="false">
+    <label>Forest Shuttle Curtain rail motor controller</label>
+    <description><![CDATA[
+Curtain rail motor controller<br /><h1>Overview</h1><ul><li>Touch lmpulse Technology, gently pulling the curtain by hand will activate the motor (standard feature);</li> <li>Integrated Emergency Control with automatic de­clutch in case of power failure, to ensure a manual operation of the curtains (standard feature);</li> <li>Modular motor, different modules can be attached for various control options: Radio Frequency, Wall Switch, lnfrared, Domotics, Building/Hotel Automa­tion, Serial Communication, Z-wave, etc.;</li> <li>Ultra Silent motor;</li> <li>Slow start and slow stop;</li> <li>Full automatic setting of the limits;</li> <li>Programming of intermediate positions possible;</li> <li>Touch lmpulse Sensitivity adjustable; high sensitivity, low sensitivity, and off;</li> <li>Stack-back position programmable to every desired setting;</li> <li>FMS tracks and components available in white and black;</li> <li>Clickable off-set carriers for a straight heading of the curtain; rolling carriers and FES Easyfold carriers also available;</li> <li>Kevlar based drive belt;</li> <li>All KS brackets applicable;</li> <li>Motors can also be used on MRS Motorized Rod System;</li> <li>Tandem motor application possible as well.</li> </ul><br /><h2>Inclusion Information</h2><p>Set your main Z-Wave controller (see manual controller) into inclusion mode. Press configuration button 3 times. LED3 is ON. Press and hold once more for 4 seconds, LED will start blinking for 10 seconds. The Shuttle S/L Z-Wave motor will be detected and included into the Z-Wave network of your main Z-Wave controller.</p> <br /><h2>Exclusion Information</h2><p>Press the configuration button 25 times and confirm by pressing the button once more for 4 seconds until the led blinks 3 times and goes OFF. This way of excluding is less preferred. Please use this procedure only when the network primary controller is missing or otherwise inoperable. </p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch Binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">Forest Shuttle</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0027:0100</property>
+      <property name="dbReference">1215</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

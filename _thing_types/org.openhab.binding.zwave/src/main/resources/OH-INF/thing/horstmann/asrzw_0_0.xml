@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_asrzw_00_000" listed="false">
+    <label>ASR-ZW Thermostat Receiver</label>
+    <description><![CDATA[
+Thermostat Receiver<br /><h1>Overview</h1><p>The ASR–ZW receiver unit receives the Z-Wave radio signals from the HRT4–ZW room thermostat. In the unlikely event of a communication failure it is possible to override the system and switch On and Off using the On/Off buttons on the ASR-ZW receiver as a local override.</p> <p>If the override is used to override the HRT4-ZW thermostat when it is functioning correctly then the override will be cancelled by the next switching operation of the thermostat and normal operation will be resumed. In any case, with no further intervention, normal operation will be restored within one hour of the override being operated.</p> <br /><h2>Inclusion Information</h2><h1>Stage 1</h1> <ol><li>Set the number 1 DIL switch on the back of the HRT4-ZW thermostat to the On (Up) position and the display on the HRT4-ZW will change to show the letter ‘I’. If the letter ‘L’ appears, carry out stage 1A opposite.</li> <li>Power up the ASR-ZW receiver unit</li> <li>The network LED on the ASR-ZW receiver should be flashing.</li> <li>Press the dial on the front of the HRT4-ZW thermostat once so that the ‘I’ in the display flashes.</li> <li> <p>Press and hold the network button on the ASR-ZW receiver until the On indicator flashes (green) before the Off indicator becomes solid red.</p> </li> <li>After a few seconds the radio mast symbol will appear in the display along with the letters IP.</li> <li>Reset the number 1 DIL switch on the back of the HRT4-ZW to the Off position and the temperature should return in the display.</li> <li>Now check the receiver responds to the thermostat on and off commands by increasing and decreasing the temperature settings until it switches accordingly.<strong> N.B.</strong> There is a half second delay in switching On and Off on receipt of the command.</li> <li>The Z-Wave communication link is now successfully established</li> </ol><h1>Stage 1A – Only used if ‘L’ is displayed instead of ‘I’</h1> <ol><li> Turn the dial of the HRT4-ZW until the letter P appears in the display.</li> <li> Press the dial twice.</li> <li> A second P should appear in the display which now shows `PP’.</li> <li> Turn the dial until the letter ‘I’ appears in the display and return to Stage 1 instruction.</li> </ol><h1>Stage 2 – Only used if the above procedure does not establish a successful communication link</h1> <ol><li>Turn the dial until the letter P appears in the display.</li> <li>Press the dial twice and PP should appear in the display.</li> <li>Now turn the dial until letter E appears in the display.</li> <li>Press the dial once and the display should flash.</li> <li>Press and hold the network button on the ASR-ZW receiver until it starts to flash. 6</li> <li>Turn the dial until the letter `I’ appears in the display and return to the main instruction.</li> </ol><br /><h2>Exclusion Information</h2><p>Not Provided</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="horstmann_asrzw_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">ASR-ZW</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0003:0001</property>
+      <property name="dbReference">310</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="horstmann_asrzw_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

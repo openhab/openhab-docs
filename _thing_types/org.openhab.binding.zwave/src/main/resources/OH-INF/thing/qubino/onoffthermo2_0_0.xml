@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_onoffthermo2_00_000" listed="false">
+    <label>ZMNKID Flush OnOff Thermostat 2</label>
+    <description><![CDATA[
+Flush OnOff Thermostat 2<br /><h1>Overview</h1><p>The Qubino Flush On/Off Thermostat 2 is ideal for remotely controlling electric or water-based underfloor heating systems, electric water heaters, hot water pumps, electric radiators and similar.</p> <br /><h2>Inclusion Information</h2><p>Classic Inclusion</p> <p>AUTOMATICALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (SMARTSTART INCLUSION)</p> <ol><li>Scan QR code on device label and add S2 DSK to Provisioning List in gateway (hub)</li> <li>Connect the device to the power supply (with the temperature sensor already connected).</li> <li>Inclusion will be initiated automatically within few seconds of connection to the power supply and the device will automatically enrol in your network (when the device is excluded and connected to the power supply it automatically enters the LEARN MODE state).</li> </ol><p><strong>NOTE: LEARN MODE state allows the device to receive network information from the controller.</strong></p> <p>ⓘ SmartStart inclusion is a part of S2 security level, so if you want to use SmartStart, you need to include it as S2 Authenticated. </p> <p>MANUALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (MANUAL INCLUSION)</p> <ol><li>Enable add/remove mode on your Z-Wave gateway (hub) </li> <li>Connect the device to the power supply (with the temperature sensor already connected*) </li> <li>Toggle the switch connected to the I1 terminal 3 times within 3 seconds (The device has to get On/Off signal 3 times, meaning 3 times click on the push button or with the normal button 3 times On/Off.) (this procedure puts the device in LEARN MODE) in the first minute after power cycle.</li> </ol><p>OR</p> <p>If the device is powered by 24 V SELV supply, press and hold the S (Service) button between 3 and 6 seconds (this procedure puts the device in LEARN MODE)</p> <ol><li>A new device will appear on your dashboard</li> <li>Inclusion with the switch connected to I1 terminal is not limited by time</li> </ol><p>*If connecting the temperature sensor, switch off the power supply.</p> <p><strong>NOTE1: LEARN MODE state allows the device to receive network information from the controller.</strong></p> <br /><h2>Exclusion Information</h2><p>Classic Exclusion</p> <p>REMOVAL FROM A ZWAVE NETWORK (Z-WAVE EXCLUSION)</p> <ol><li>Connect the device to the power supply</li> <li>Make sure the device is within direct range of your Z-Wave gateway (hub) or use a hand-held Z-Wave remote to perform exclusion </li> <li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Toggle the switch connected to the I1 terminal 3 times within 3 seconds in the first minute after power cycle (The device has to get On/Off signal 3 times, meaning 3 times click on the push button or with the normal button 3 times On/Off). </li> </ol><p>OR</p> <p>If the device is powered by 24 V SELV supply, press and hold the S (Service) button between 3 and 6 seconds</p> <ol><li>Exclusion with the switch connected to I1 terminal is not limited by time </li> <li>The device will be removed from your network, but any custom configuration parameters will not be erased</li> </ol><p><strong>NOTE1: LEARN MODE state allows the device to receive network information from the controller.</strong></p> <p><strong>NOTE2: After device is excluded you should wait 30 seconds before performing re-inclusion.</strong></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="qubino_onoffthermo2_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNKID</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0005:0054</property>
+      <property name="dbReference">1101</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Input I1 switch type</label>
+        <description><![CDATA[
+Input I1 switch type<br /><h1>Overview</h1><p>With this parameter, you can select between push-button (momentary) and on/off toggle switch types.</p> <p><br />Values:<br />• default value 1<br />• 0 - push-button (momentary)<br />• 1 - on/off toggle switch </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">push-button (momentary)</option>
+          <option value="1">on/off toggle switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Input 1 contact type</label>
+        <description><![CDATA[
+Input 1 contact type<br /><h1>Overview</h1><p>This parameter determines how the switch or push-button is connected.</p> <p><br />Values:<br />• default value 0<br />• 0 - NO (normally open) input type<br />• 1 - NC (normally close) input type </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) input type</option>
+          <option value="1">NC (normally close) input type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power Consumption Reporting Threshold</label>
+        <description><![CDATA[
+Power Consumption Reporting Threshold<br /><h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading.</p> <p><br />Values:<br />• default value 10<br />• 0 - Power consumption reporting<br />disabled<br />• 1 - 100 = 1% - 100% </p> <p>Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).<br /></p> <p><strong>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter. </strong> </p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>42: Power Consumption Reporting(Time)</label>
+        <description><![CDATA[
+Power Consumption Reporting(Time)<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (30 – 32767 seconds) starting from time of last Watts reported. If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).<br /></p> <p>Values:<br />• default value 600 (600 seconds = 10 minutes)<br />• 0 - Power consumption reporting disabled<br />• 30 - 32767 = 30 - 32767 seconds.</p> <p> Power consumption reporting enabled. Report is sent according to time interval (value) set here. EXAMPLE: If we set value to 30 seconds and the device reports Watts because of percent change of power (parameter 40 - Watt Power Consumption Reporting Threshold) at time = 5 seconds,<br />then the device will send next meter report at time = 35 seconds (assuming the device has not sent report within interval 5 to 35 seconds). </p>
+        ]]></description>
+        <default>600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_43_2" type="integer" groupName="configuration"
+                 min="0" max="450">
+        <label>43: Hysteresis Upper temperature offset</label>
+        <description><![CDATA[
+Hysteresis Upper temperature offset<br /><h1>Overview</h1><p>This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device on in heat mode or turn device off in cool mode. </p> <p>Values:<br />• default value 5 (0.5 °C)<br />• 0 – 450</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 250 (0.0 °C – 25.0 °C, resolution 0.1 °C)<br /></strong></p> <p><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 – 450 (0.0 °F – 45.0 °F, resolution 0.1 °F)<br /></strong></p> <p><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_44_2" type="integer" groupName="configuration"
+                 min="0" max="450">
+        <label>44: Hysteresis Lower temperature offset</label>
+        <description><![CDATA[
+Hysteresis Lower temperature offset<br /><h1>Overview</h1><p>This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device off in heat mode or turn device on in cool mode. </p> <p>Values:<br />• default value 5 (0.5 °C)<br />• 0 - 450</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 250 (0.0 °C – 25.0 °C, resolution 0.1 °C)<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 – 450 (0.0 °F – 45.0 °F, resolution 0.1 °F)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_45_2" type="integer" groupName="configuration"
+                 min="-125" max="1000">
+        <label>45: Antifreeze</label>
+        <description><![CDATA[
+Antifreeze<br /><h1>Overview</h1><p>Set value determines at which temperature the device will be turned on even (if the thermostat was manually set to off).<br /></p> <p>Values:<br />• default value 50 (5.0 °C)<br />• -125 - 545<br />• 1000 - Antifreeze functionality disabled</p> <p><strong>NOTE1: Antifreeze is activated only in heating mode and it uses hysteresis of ±0.5°C.<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -125 – 125 (-12.5 °C – 12.5 °C, resolution 0.1 °C)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 95 – 545 (9.5 °F – 54.5 °F, resolution 0.1 °F)<br />NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth. </strong> </p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_59_1" type="integer" groupName="configuration">
+        <label>59: Thermostat mode</label>
+        <description><![CDATA[
+Thermostat mode<br /><h1>Overview</h1><p>This parameter determines how the device will operate if it will operate in the heating mode or in the cooling mode. The range of the hysteresis will remain the same, only operation will change from heating to cooling and vice versa<br /></p> <p>Values:<br />• default value 0<br />• 0 - Heat mode<br />• 1 - Cool mode</p> <p><br /><strong>NOTE1: After parameter change, first exclude device (without setting parameters to default value) and then re include the device!</strong> </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Heat mode</option>
+          <option value="1">Cool mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_60_2" type="integer" groupName="configuration"
+                 min="-150" max="2120">
+        <label>60: Too low temperature limit</label>
+        <description><![CDATA[
+Too low temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.</p> <p>Values:<br />• Default value 50 (Too low temperature limit is 5.0 °C)<br />• -150 - 2120</p> <p><br /><strong>NOTE1: Too low temperature limit is used with Association Group 3.</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -150 – 1000 (-15.0 °C – 100.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 50 – 2120 (5.0 °F – 212.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth.</strong> </p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="1" max="2120">
+        <label>61: Too high temperature limit</label>
+        <description><![CDATA[
+Too high temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device. </p> <p>Values:<br />• default value 700 (too high temperature limit is 70.0 °C)<br />• 1 - 2120</p> <p><br /><strong>NOTE1: Too high temperature limit is used with Association Group 3.</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 1 – 1000 (0.1 °C – 100.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 322 – 2120 (32.2 °F – 212.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE4: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth.</strong> </p>
+        ]]></description>
+        <default>700</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Output switch selection</label>
+        <description><![CDATA[
+Output switch selection<br /><h1>Overview</h1><p>Set value determines the type of the device connected to the on/off output. The output type can be normally open (NO) or normally closed (NC).<br /></p> <p>Value:<br />• default value 0<br />• 0 - When switch/device is off the output is 0V (NC).<br />• 1 - When switch/device is off the output is 240V or 24V (NO) </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">NC</option>
+          <option value="1">NO</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_78_1" type="integer" groupName="configuration">
+        <label>78: Scale Selection</label>
+        <description><![CDATA[
+Scale Selection<br /><h1>Overview</h1><p>This parameter determines in which measurement unit the device will report temperature (Fahrenheit or Celsius) and determines the scale the configuration parameters (43, 44, 44, 45, 60, 61, 110, 120) are interpreted as.<br /></p> <p>Values:<br />• Default value 0 = degrees Celsius<br />• 0 = degrees Celsius<br />• 1 = degrees Fahrenheit</p> <p><br /><strong>NOTE1: This scale has influence on Temperature reporting. The device is capable of receiving a Setpoint in all supported scales.</strong><br /><strong>NOTE2: This configuration parameter has impact on configuration parameters 43, 44, 44, 45, 60, 61, 110, 120. If scale is set to degrees Fahrenheit configuration values at parameters 43, 44, 44, 45, 60, 61, 110, 120 will be converted to degrees Celsius. Please note that converted values could drift when converting values back and forth.</strong> </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">degrees Celsius</option>
+          <option value="1">degrees Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_110_2" type="integer" groupName="configuration"
+                 min="-270" max="270">
+        <label>110: Temperature Sensor Offset Settings</label>
+        <description><![CDATA[
+Temperature Sensor Offset Settings<br /><h1>Overview</h1><p>Set value is added to or subtracted from the actually measured value to adjust the temperature report sent by an external sensor.<br /></p> <p>Values: </p> <p>• default value 0<br />• -270 - 270</p> <p><br /><strong>NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is -150 – 150 (-15.0 °C – 15.0 °C, resolution 0.1 °C)</strong><br /><strong>NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is -270 - 270 (-27.0 °F – 27.0 °F, resolution 0.1 °F)</strong><br /><strong>NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth</strong> </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_120_2" type="integer" groupName="configuration"
+                 min="0" max="270">
+        <label>120: Temperature Sensor Reporting Threshold</label>
+        <description><![CDATA[
+Temperature Sensor Reporting Threshold<br /><h1>Overview</h1><p>This configuration parameters sets reporting threshold between reported temperature and actual temperature for reporting temperature at association group 4. </p> <p>Values:<br />• Default value 5 = 0.5°C<br />• 0 – Reporting disabled<br />• 0 - 270</p> <p><strong><br />NOTE1: If configuration parameter 78 (Scale selection) is set to Celsius, then valid interval is 0 – 150 (0 °C – 15.0 °C, resolution 0.1 °C)<br />NOTE2: If configuration parameter 78 (Scale selection) is set to Fahrenheit, then valid interval is 0 - 270 (0 °F – 27.0 °F, resolution 0.1 °F)<br />NOTE3: If configuration parameter 78 (Scale selection) is set to Fahrenheit, note that Fahrenheit values will be converted to Celsius degrees. Due to conversion algorithm please be advised that configuration value could drift when converting values back and forth </strong> </p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Supports the following commands:</p> <p>• Device Reset Locally: triggered upon request,</p> <p>• Sensor multilevel report: triggered upon temperature change,</p> <p>• Meter report: triggered upon energy consumption change according to configuration parameters 40, 42,</p> <p>• Notification report: triggered upon current overload detection,</p> <p>• Thermostat mode: triggered upon thermostat mode change</p> <p>• Thermostat operating state: triggered upon thermostat operating state (Idle, Heating, Cooling)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Change of output Q</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Supports the following command:</p> <p>• Basic set: triggered by change of output Q</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic on/off too high too low T</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Supports the following command:</p> <p>• Basic set: triggered when actual temperature reaches Too High or Too Low temperature limit;</p> <p>Heat mode: when temperature reaches Too High Temperature Limit reports OFF (0x00), when temperature reaches Too Low Temperature Limit reports ON (0xFF).</p> <p>Cool mode: when temperature reaches Too High Temperature Limit reports ON (0xFF), when temperature reaches Too Low Temperature Limit reports OFF (0x00).</p> <p>Thermostat off mode reports OFF (0x00) on both limits reached.</p> <p>Hysteresis is 1°C.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor multilevel report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Supports the following command:</p> <p>• Sensor multilevel report: triggered by change of temperature for threshold defined in configuration parameter 120</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="qubino_onoffthermo2_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

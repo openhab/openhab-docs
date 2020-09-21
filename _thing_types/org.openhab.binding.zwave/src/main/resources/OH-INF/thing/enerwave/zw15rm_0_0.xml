@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zw15rm_00_000" listed="false">
+    <label>ZW15RM-PLUS In-Wall Smart Meter Duplex Receptacle (15A)</label>
+    <description><![CDATA[
+In-Wall Smart Meter Duplex Receptacle (15A)<br /><h1>Overview</h1><p>Z-Wave Tamper Resistant Duplex Receptacle that monitors power and allows for Z-Wave control of the "bottom" outlet. The outlet is rated for 120VAC, 15A.</p> <br /><h2>Inclusion Information</h2><ol><li>Active "Inclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button on the receptacle for around 3 seconds.</li> <li>The primary controller will indicate the inclusion is successful.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Active "Exclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button for 3 seconds.</li> <li>The blue LED indicator will blink, indicating exclusion was successful.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZW15RM-PLUS</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0111:0105</property>
+      <property name="dbReference">919</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: ON/OFF</label>
+        <description><![CDATA[
+Synchronization of outlet power and LED indicator<br /><h1>Overview</h1><p> This value only controls the bottom outlet, the top outlet is always on.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Power on, LED off</option>
+          <option value="1">Power on, LED on</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Send device reset local notification</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: StatusReport</label>
+        <description>Send basic report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: PowerReport</label>
+        <description>Send meter power report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

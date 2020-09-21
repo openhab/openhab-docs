@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsa38_00_000" listed="false">
+    <label>DSA38 Panic Button Key Fob</label>
+    <description><![CDATA[
+Panic Button Key Fob<br /><h1>Overview</h1><p>The Aeon Labs Panic Button is a fully functional Z-Wave remote control capable of adding, removing, and controlling other Z-Wave devices. it can also become a secondary or inclusion controller to a SIS gateway in the Z-Wave network.</p> <br /><h2>Inclusion Information</h2><ol><li>Press the Learn button on your Panic Button with the pin or press the bottom- right action button. Your Panic Button’s green light will begin to pulse.</li> <li>When Panic Button successfully joins your Z-Wave network, its LED will flash green slowly 3 times and then quickly flash green for 2 seconds before turning solid green for 2 seconds.</li> <li>Should the LED continue to flash green for 30 seconds before turning off, it has been unable to join your Z-Wave network; repeat the above steps and please contact us for further support if needed.</li> </ol><br /><h2>Exclusion Information</h2><p>Reset:</p> <p>Your Panic Button can be reset to default factory settings with ease.</p> <ol><li>Press and hold the Learn button for 20 seconds with a pin.</li> <li>The green and red light will alternate for 20 seconds, then the green light will stay solid for 2 seconds to indicate a successful reset</li> </ol><br /><h2>Wakeup Information</h2><p>Not Provided</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSA38</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0001:0026</property>
+      <property name="dbReference">88</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_250_1" type="integer" groupName="configuration">
+        <label>250: Mode of Button 1</label>
+        <description>Defines the switching mode of Button 1</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Scene 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

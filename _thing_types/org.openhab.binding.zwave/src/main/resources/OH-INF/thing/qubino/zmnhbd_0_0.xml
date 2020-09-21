@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhbd_00_000" listed="false">
+    <label>ZMNHBD Flush 2 relays</label>
+    <description><![CDATA[
+Flush 2 relays<br /><h1>Overview</h1><p>This Z-Wave module is used for switching on or off two electrical devices (e.g. lights or fans,..). The module can be controlled either through Z-Wave network or through the wallswitches. The module is designed to be mounted inside a "flush mountingbox", hidden behind a traditional wall switch. Module measures power consumption of two electrical devices and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <br /><h2>Inclusion Information</h2><p><b>Module Inclusion (Adding to Z-Wave network)</b></p> <ul><li>Connect module to power supply (with temperature sensor connected -if purchased)</li> <li>Enable add/remove mode on main controller</li> <li>Auto-inclusion (works for about 5 seconds after connected to power supply) or</li> <li>Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or</li> <li>Press service button <b>S</b> (only applicable for 24 V SELV supply voltage) for more than 2 seconds.</li> </ul><p><strong>NOTE1:</strong> For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.</p> <p><strong>NOTE2:</strong> When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.</p> <br /><h2>Exclusion Information</h2><p><b>Module Exclusion/Reset (Removing from Z-Wave network)</b></p> <ul><li>Connect module to power supply</li> <li>Bring module within maximum 1 meter (3 feet) of the main controller,</li> <li>Enable add/remove mode on main controller,</li> <li>Press push button <b>I1 </b>five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or</li> <li>Press service button <b>S </b>(only applicable for 24 V SELV supply voltage) for more than 6 seconds.</li> </ul><p>By this function all parameters of the module are set to default values and own ID is deleted.</p> <p>If push button I1 is pressed three times within 3s (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature3" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:3,COMMAND_CLASS_BASIC:3;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHBD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0002:0051</property>
+      <property name="dbReference">215</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Input 1 switch type</label>
+        <description>Input 1 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Input 2 switch type</label>
+        <description>Input 2 switch type</description>
+        <default>1</default>
+        <options>
+          <option value="0">mono-stable switch type (push button)</option>
+          <option value="1">bi-stable switch type</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Functions ALL ON/ALL OFF</label>
+        <description><![CDATA[
+Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALL ON is not active ALL OFF is not active</option>
+          <option value="1">ALL ON is not active ALL OFF active</option>
+          <option value="2">ALL ON active ALL OFF is not active</option>
+          <option value="255">ALL ON active, ALL OFF active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>11: Automatic turning off output Q1 after set time</label>
+        <description><![CDATA[
+When relay Q1 is ON it goes automatically OFF after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive ON command regardless from where it comes  (push button, associated module, controller,..).</p> <ul><li>0 - Auto OFF disabled</li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>12: Automatic turning on output Q1 after set time</label>
+        <description><![CDATA[
+When relay Q1 is OFF it goes automatically ON after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 - Auto ON disabled</li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>13: Automatic turning off relay Q2 after set time</label>
+        <description><![CDATA[
+When relay Q2 is ON it goes automatically OFF after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 -Auto OFF disabled</li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>14: Automatic turning on output Q2 after set time</label>
+        <description><![CDATA[
+When relay Q2 is OFF it goes automatically ON after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 -Auto ON disabled</li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Seconds or milliseconds selection</label>
+        <description><![CDATA[
+Automatic turning off / on seconds or milliseconds selection<br /><h1>Overview</h1><p>Available configuration parameters:</p> <ul><li>0 – seconds selected</li> <li>1 – milliseconds selected</li> </ul><p><strong>NOTE:</strong> Parameter is valid for both outputs Q1, Q2 and is the same for turning off or on.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Saving the state after a power failure</label>
+        <description>Saving the state of the relays Q1 and Q2 after a power failure</description>
+        <default>0</default>
+        <options>
+          <option value="0">Saves its state before power failure</option>
+          <option value="1">Does not save the state after a power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power reporting in Watts for Q1</label>
+        <description><![CDATA[
+Power reporting in Watts on power change for Q1<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 –100 = 0% -100%.</p> <p>Available configuration parameters:</p> <ul><li>0 - reporting disabled</li> <li>1 -100 = 1% -100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE:</strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>41: Power reporting in Watts for Q2</label>
+        <description><![CDATA[
+Power reporting in Watts on power change for Q2<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 –100 = 0% -100%. Available configuration parameters:</p> <ul><li>0 - reporting disabled</li> <li>1 - 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE:</strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>42: Power reporting time interval for Q1</label>
+        <description><![CDATA[
+Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Set value means time interval (0 – 32535) in seconds, when power report is send. Available configuration parameters:</p> <ul><li>Default value 300 (power report in Watts is send each 300s)</li> <li>0 - reporting disabled</li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.</li> </ul>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_43_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>43: Power reporting time interval for Q2</label>
+        <description><![CDATA[
+Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Set value means time interval (0 –32535) in seconds, when power report is send. Available configuration parameters:</p> <ul><li>Default value 300 (power report in Watts is send each 300s)</li> <li>0 - reporting disabled</li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.</li> </ul>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Output Q1 Switch selection</label>
+        <default>0</default>
+        <options>
+          <option value="0">System turned off, output 0V (NC)</option>
+          <option value="1">System turned off, output is 230V or 24V (NO)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_64_1" type="integer" groupName="configuration">
+        <label>64: Output Q2 Switch selection</label>
+        <default>0</default>
+        <options>
+          <option value="0">System is turned off, output is 0V (NC)</option>
+          <option value="1">System turned off, output is 230V or 24V (NO)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_110_2" type="integer" groupName="configuration"
+                 min="0" max="32536">
+        <label>110: Temperature sensor offset</label>
+        <description><![CDATA[
+Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:</p> <ul><li>Default value 32536</li> <li>32536 - offset is 0.0C</li> <li>From 1 to 100 - value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.</li> </ul>
+        ]]></description>
+        <default>32536</default>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>120: Digital temperature sensor reporting</label>
+        <description><![CDATA[
+Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:</p> <ul><li>Default value 5 = 0,5°C</li> <li>0 – Reporting disabled</li> <li>1 - 127 = 0,1°C – 12,7°C, step is 0,1°C</li> </ul>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Default Reporting Group</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Q1 basic on/off</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Q1 switch binary</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Q1 power meter</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Q2 basic on/off</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Q2 switch binary</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Q2 power meter</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Multilevel sensor</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

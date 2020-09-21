@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_zxt120_00_000" listed="false">
+    <label>ZXT-120 AC IR Remote</label>
+    <description><![CDATA[
+AC IR Remote<br /><h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditioner (AC) IR Extender and it works with any Z-Wave compliant gateway which supports the same command classes (check with your gateway support for compatibility) or portable controller by translating Z-Wave’s Thermostat commands to AC IR control code. User can set the IR code from the built-in code library of ZXT-120 through the configuration commands, or use the learning function of ZXT-120 through the UI on gateway. ZXT-120 also built in a temperature sensor that allow to report your room temperature to home gateway. </p> <br /><h2>Inclusion Information</h2><p>Click once on the PROG button</p> <br /><h2>Exclusion Information</h2><p>Click once on the PROG button</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="remotec_zxt120_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_cooling" typeId="thermostat_setpoint">
+        <label>Setpoint (cooling)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=COOLING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="remotec_zxt120_00_000_thermostat_fanmode">
+        <label>Thermostat fan mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZXT-120</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">0100:8377,0101:8377,0102:8377</property>
+      <property name="dbReference">202</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="22">
+        <label>25: Location</label>
+        <description><![CDATA[
+Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and start learning</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4">
+        <label>26: Learning status register (Read Only)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_27_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>27: IR code number for built-in code library</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_28_1" type="integer" groupName="configuration">
+        <label>28: External IR Emitter power level</label>
+        <default>255</default>
+        <options>
+          <option value="0">Normal power mode</option>
+          <option value="255">High power mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Surround IR control</label>
+        <default>-1</default>
+        <options>
+          <option value="-1">Enable Surround IR Emitters</option>
+          <option value="0">Disable Surround IR Emitters</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: AC function Swing control</label>
+        <default>1</default>
+        <options>
+          <option value="0">Swing Off</option>
+          <option value="1">Swing Auto</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>35: Learn location status. Bitmask. (Read Only)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_37_1" type="integer" groupName="configuration"
+                 min="-5" max="5">
+        <label>37: Sensor temperature compensation</label>
+        <default>0</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="remotec_zxt120_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+        <option value="2">Cool</option>
+        <option value="3">Auto</option>
+        <option value="5">Resume</option>
+        <option value="8">Dry Air</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="remotec_zxt120_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="">Resume</option>
+        <option value="">UNKNOWN_4</option>
+        <option value="0">Auto (Low)</option>
+        <option value="1">On (Low)</option>
+        <option value="2">Auto (High)</option>
+        <option value="3">On (high)</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

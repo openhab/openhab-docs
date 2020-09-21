@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_builtindimmer_00_000" listed="false">
+    <label>builtInDimmer Built-in Dimmer</label>
+    <description><![CDATA[
+Built-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Built-in Dimmer can trigger any rule or lifestyle.</li> <li>The Built-in Dimmer can dim up to 125Watt.</li> <li>The Built-in Dimmer can be placed behind your wall switch (41*41*13mm).</li> <li>The Built-in Dimmer is easy to install and configured.</li> <li>The Built-in Dimmer will power itself through halogen or incandescent light. (no blue wire or neutral line is needed)</li> <li>Indoor use only. </li> </ul><br /><h2>Inclusion Information</h2><p>When the light is off (!) press/flip the wall switch once, after circa two seconds release/flip back the wall switch to start the inclusion process. </p> <br /><h2>Exclusion Information</h2><p>When the light is off (!) press/flip the wall switch once, after circa two seconds release/flip back the wall switch to start the exclusion process.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">builtInDimmer</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">000D:0100</property>
+      <property name="dbReference">225</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Reset to factory settings</label>
+        <description>Set all configuration values to default values (factory settings).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: The way how the button reacts when press/released</label>
+        <description>The way how the button reacts when press/released</description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle light when button is pressed only</option>
+          <option value="1">Toggle light on release, dimming on press</option>
+          <option value="2">Toggle on press &amp; Dim with quick press &amp; release</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Control Type</label>
+        <description>The way the Built-in Dimmer reacts when light is turned on/off with button</description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch own light on and send message to all nodes</option>
+          <option value="1">Don't switch own light. only send to extern node</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Enable dimming</label>
+        <description><![CDATA[
+Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dimming option of the product.</p> <p>When disabled the dimming and fading routine are disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Maximum load</label>
+        <description><![CDATA[
+Maximum load<br /><h1>Overview</h1><p>The maximum power load in watts when light is turned on, when measured higher then this value the Inline Dimmer is automatically turned off.</p>
+        ]]></description>
+        <default>200</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Dimming speed</label>
+        <description><![CDATA[
+Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Fading up speed</label>
+        <description><![CDATA[
+Fading up speed<br /><h1>Overview</h1><p>The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Toggle time</label>
+        <description><![CDATA[
+Toggle time<br /><h1>Overview</h1><p>The time window to re-press button to start dimming. Toggle time is value (* 10ms)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Auto meter report: percentage</label>
+        <description><![CDATA[
+Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 10%  Maximum value = 100%</p>
+        ]]></description>
+        <default>20</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Auto meter report: watt</label>
+        <description><![CDATA[
+Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 5 watt  Maximum value = 255 watt</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Auto meter report: time</label>
+        <description><![CDATA[
+Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent.</p> <p>Minimum value = 10 seconds  Maximum value = 255 seconds</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Last known status</label>
+        <description><![CDATA[
+Last known status<br /><h1>Overview</h1><p>What to do with lamp status when power applied.</p> <p>If 0x00: Always switch light off when power applied.</p> <p>If &gt; 0x00: Switch lamp on/off depending on last known lamp status before power was disconnected.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>15: Fading down speed</label>
+        <description><![CDATA[
+Fading down speed<br /><h1>Overview</h1><p>The speed of fading when activated (manual and RF).</p> <p>Fade speed is 1% per value (* 10 ms)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+All nodes in this group will receive a BASIC_SET frame<br /><h1>Overview</h1><p>All nodes in this group will receive a BASIC_SET frame when light is set to a certain state with the button of the Built-in Dimmer (manual switching).</p> <p>When light is switched off with button: BASIC_SET frame with value 0 is sent to associated nodes.</p> <p>When light is set to a dim level with button: BASIC_SET frame with value 0 – 99 is sent to associated nodes.</p> <p>When light is switched on with button: BASIC_SET frame with value 255 is sent to associated nodes.</p> <p>It is most likely that switch_binary/switch_multilevel devices are associated in this group so that you can switch multiple nodes on/off with 1 button pres</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The node associated in this group will receive a SWITCH_MULTILEVEL_REPORT frame every time the level of light is changed, where the value represents the (changed) dim level. The status is reported after every change that means manual but also if changed by Z-Wave.</p> <p>The node in this group will also received the (auto) METER_REPORT (see § COMMAND_CLASS_METER à unsolicited METER_REPORT for more information about this feature).</p> <p>It is most likely that a controller or screen is associated in this group to report (unsolicited) any changes to the light.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>If configured that the control mode is extern only (configuration param3 à value 1) then a BASIC_SET frame is sent to the node in this group when the button is changed. Note that the light of the Built-in Dimmer is not switched on/off but instead the BASIC_SET frame is sent, because the Built-in Dimmer doesn’t know what the extern status is the value of the BASIC_SET frame toggles between the values 0 and 255.</p> <p>It is most likely that a Gateway (controller) is associated in this group. A Gateway can handle upon the received frame. With a Gateway controlled network it possible to add multiple functionalities to the button of the Builtin Dimmer.</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="systemair_29990_00_000" listed="false">
+    <label>29990 Remotely Controlled Ventilation</label>
+    <description><![CDATA[
+Remotely Controlled Ventilation<br /><h1>Overview</h1><p>The Systemair Z-Wave Ventilation is a residential heat recovery ventilation system, which consists of the following main modules:</p> <ul><li>Ventilation Unit, which is controlled by a module called PCU-ECx, where ‘x’ is a digit representing the module generation.</li> <li>One or more local User Interface/s called CDx, where ‘x’ is a digit representing the module generation. The CDx is connected to the PCU-ECx. Via CDx the user can control locally the Ventilation Unit.</li> <li>Z-Wave to Systemair HVAC Interface Adapter, which connects the Z-Wave network with the Ventilation Unit.</li> </ul><p><strong>Application status </strong></p> <p>Some of the implemented CCs need to be translated to the Ventilation Unit via the Modbus interface. Due to some reasons that communication couldn’t be available, for example – disconnected/damaged communication cable. In order to cover such situations, the Application Status Command Class has been implemented. So, In case of no communication between Z-Wave Adapter and the Ventilation Unit Module, the Device will send “Application Reject Request” for all Z-Wave commands required communication with the Ventilation Unit. If the Modbus communication is up and running, the device is always available to respond in the specified time, i.e. the device will never report “Application Busy” command.</p> <p><strong>Associations</strong></p> <p>The Device supports one, the Lifeline Association Group only. Maximum 5 nodes can be added to that group. The device uses the Lifeline group to send the following unsolicited reports:</p> <ul><li>Thermostat Mode Report – when thermostat mode changes</li> <li>Thermostat Setpoint Report – when the temperature setpoint changes</li> <li>Thermostat Fan Mode Report – when the fan level changes</li> <li>Notification Report – when an alarm occurs</li> <li>Switch Binary Report – when the device enter/exit the Boost mode</li> <li>Device Reset Locally – at factory reset</li> </ul><p><strong>Temperature setpoint</strong></p> <p>The device supports “Thermostat Auto changeover” setpoint type only. The setpoint range varies in depend of the ventilation system type and some other ventilation unit configurations. All of these dependencies must be fixed at inclusion time, so the system will be fully defined. The Host shall retrieve the setpoint range using the Thermostat Setpoint Capabilities Get V3 command. In additional to the reported Min and Max Values, 0°C is supported as well. The device accepts the setpoints in a predefined step in the reported range. It is available via the Configuration CC, parameter 5.</p> <p><strong>Fan mode</strong></p> <p>The device will support Fan Auto Mode, if both RH and CO2 sensors are present. This must be done at inclusion time. The Z-Wave Systemair Ventilation supports following Thermostat Fan Modes:</p> <p><strong>Boost Mode </strong></p> <p>The Systemair Z-Wave Ventilation has implemented a Boost Mode. That mode overrides the selected fan speed, setting it to a predefined level (usually high) for a predefined time period. To set the Boost Mode remotely via Z-Wave, the Binary Switch CC is used. But that binary switch is a bit special – Once it is turned ON, it locks itself in ON position for the predefined time period, and it can’t be turned off until that time period expires. The Host can use the Ventilation System Boost mode in case of smoke or fire alarm for example.</p> <p><strong>Alarms</strong></p> <p>The implemented Notification CC V3 is used to report the device malfunctions:</p> <ul><li>Notification Type 0x09 – “System”</li> <li>Event Type 0x03 – “System Hardware Failure with manufacture proprietary code”</li> </ul><p>The failures are reported in a two bytes value, where each bit represents a certain alarm. If the bit is set (1) the alarm is active, and if the bit is cleared (0) the alarm is not active.</p> <p>Any bit’s transition from 0 to 1 will trigger an unsolicited Notification Report. The system maintains a repeat timeout counter for each alarm, which is hard coded to 24 hours. So, an alarm occurrence runs its counter. When the repeat time expires and the alarm still exists (its bit is set) a new unsolicited Notification Report will be send. A bit’s transition from 1 to 0 clears its repeat counter. The alarms are generated in the Ventilation Unit.</p> <br /><h2>Inclusion Information</h2><p>When the device is not added to a Z-Wave network, then triple short clicks of the inclusion button will start the inclusion. The device begins a classic inclusion. If after 3 attempts the inclusion doesn’t succeed, then the Network Wide Inclusion will be started.</p> <br /><h2>Exclusion Information</h2><p>When the device is already included in a Z-Wave network, then triple short clicks of the inclusion button will exclude it from that Z-Wave network.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Boost mode</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="systemair_29990_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint" typeId="thermostat_setpoint">
+        <label>Thermostat Setpoint</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_fanmode" typeId="systemair_29990_00_000_thermostat_fanmode">
+        <label>Fan speed setting</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_FAN_MODE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Systemair Sverige AS</property>
+      <property name="modelId">29990</property>
+      <property name="manufacturerId">0276</property>
+      <property name="manufacturerRef">0139:0001</property>
+      <property name="dbReference">430</property>
+      <property name="commandClass:COMMAND_CLASS_THERMOSTAT_FAN_MODE">getSupported=false</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>1: System Type (read-only)</label>
+        <description>Ventilation System Type.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="12">
+        <label>2: Filter - Period (read-only)</label>
+        <description>In step of 30 days; 6=180days.</description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>3: Filter - Days</label>
+        <description>How many days has been used since the last change</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>4: Boost Mode Remaining Time</label>
+        <description>How many seconds are left for Boost mode.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>5: Temperature Setpoint Step (read-only)</label>
+        <description>The min change available in degree Celsius x 10; 25 = 2.5 C.</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="systemair_29990_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="10">Auto Changeover</option>
+        <option value="13">Away</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="systemair_29990_00_000_thermostat_fanmode">
+    <item-type>Number</item-type>
+    <label>Thermostat Fan Mode</label>
+    <description>Sets the thermostat fan mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

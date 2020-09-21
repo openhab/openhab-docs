@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hank_hkzwfld01_00_000" listed="false">
+    <label>HKZW_FLD01 Flood Sensor FLD01</label>
+    <description><![CDATA[
+Flood Sensor FLD01<br /><h1>Overview</h1><p>HANK Flood Sensor is a device that is capable od both detecting leaks and floods when the level of water gest too low in a pool or a tank. Flood Sensor can work with your Z-Wave network to prevent emergencies such as burst water boiler to leakingar conditioners.</p> <p>It includes:</p> <p>-Lastest Z-Wave protocol.</p> <p>-Security 0 and secutiry 2 framework implemented with AES-128 encryption.</p> <p>-Two installation ways optional.</p> <p>-Temperature sensor.</p> <p>-Vibration sensor.</p> <p>-Up to 1 year battery live.</p> <p>-Low battery alert.</p> <p>-Firmware OTA upgrade supported.</p> <br /><h2>Inclusion Information</h2><p>Add Flood Sensor into Z-Wave Network:</p> <p>1- Open the cover.</p> <p>2- Place the device within the direct range of your Z-Wave controller.</p> <p>3- Set the main controller's adding mode (see the controller's manual).</p> <p>4- Click the Z-button once or triple click the Z-button quickly, the LED indicator should blink fast in blue.</p> <p>5- Wait for the adding process to end.</p> <p>6- Successful adding will be confirmed by the Z-Wave controller's message.</p> <br /><h2>Exclusion Information</h2><p>Remove Flood Sensor into Z-Wave Network:</p> <p>1- Open the cover.</p> <p>2- Place the device within the direct range of your Z-Wave controller.</p> <p>3- Set the main controller's remove mode (see the controller's manual).</p> <p>4- Click the Z-button once or triple click the Z-button quickly, the LED indicator should blink fast in orange.</p> <p>5- Wait for the removing process to end.</p> <p>6- Successful removing will be confirmed by the Z-Wave controller's message.</p> <br /><h2>Wakeup Information</h2><p>Defining a time period by which the flood Sensor sends a wake up notification command frame to communicate with the assigned device, update parameters, update software detecs battery level. </p> <p>Wake up interval set to 0 disables the sending wake up notification command, in such configuration it is needed manually wake the device up by press the Z-button.</p> <p>Avaliable settings: 0-2678400</p> <p>Default setting: 0</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hank</property>
+      <property name="modelId">HKZW_FLD01</property>
+      <property name="manufacturerId">0208</property>
+      <property name="manufacturerRef">0200:000F,0201:000F</property>
+      <property name="dbReference">674</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable/Disable Basic Set Command</label>
+        <description>The flood sensor can send BASIC SET command to nodes associated</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: value of the Basic Set</label>
+        <description>The flood sensor can send BASIC SET command to nodes associated</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Flooding Alarm</label>
+        <description>Enable/Disable flooding alarm</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Shock Alarm</label>
+        <description>Enable/Disable shock alarm</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: High Temperature Alarm</label>
+        <description>Enable/Disable high temperature alarm</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="-670" max="2570">
+        <label>20: Set the high temperature alarm trigger value</label>
+        <description>Available setting(US):-67°c to -257°c</description>
+        <default>1040</default>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Low Temperature Alarm</label>
+        <description>Enable/Disable low temperature alarm</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="-670" max="2570">
+        <label>22: Set the low temperature alarm trigger value</label>
+        <description>Available setting(US):-67°c to -257°c</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Blinking LED</label>
+        <description>Enable/Disable blinking LED when alarm being triggerd</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Level of low battery</label>
+        <description>This parameter defines a battery level as the "low bettery"</description>
+        <default>20</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Report</label>
+        <description>report the flooding detection,shock detection and the battert level</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send Command</label>
+        <description>Group 2 is assigned to send BASIC SET command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz35s_00_000" listed="false">
+    <label>TZ35S Single Paddle Wall Dimmer</label>
+    <description><![CDATA[
+Single Paddle Wall Dimmer<br /><h1>Overview</h1><h1>TZ35S Wall Mounted Switch</h1> <p>The TZ35S Wall Mounted 3-Way Dimmer Switch is a component of the lighting control system.</p> <p>This Wall Mounted Dimmer Switch is designed to work with other Z-Wave enabled devices. Z-Wave node of other types can be added to the system and will also act as repeaters if they support this function of repeating the signal received to other modules in the system.</p> <p>As part of a Z-Wave network, the TZ35S will also act as a wireless repeater to insure the commands intended for another device in the network are received.</p> <h1>Basic Operation</h1> <h2>(Local control)</h2> <p>The switch on the TZ35S allows the user to:</p> <ul><li>Turn ON/OFF or Dimming the attached load</li> <li>Include or exclude the module from the Z-Wave system</li> <li>Control other Z-Wave enabled devices</li> </ul><p>Also, when a controller prompts you to "Send Node ID" or to "Press Button on Unit", quickly tap the switch ON or OFF once to satisfy those instructions.</p> <ul><li>Tapping top of the switch turns the load attached ON</li> <li>Tapping bottom of switch turns the load attached OFF</li> <li>Pressing and holding the switch will allow dimming and brightening of the attached load or the other Z-Wave dimmers if associated.</li> </ul><p><strong>Caution</strong>: When dimmed to the lowest setting, even though the load looks like its off it still has power. Tap bottom of switch to turn off completely. It is best to turn off the power at the circuit breaker to service the load. Returns to known ON/OFF state after power loss.</p> <p><strong>Note: </strong>Upon restoration of power after a power loss, the switch returns to previous known state. </p> <p><strong>Maximum load:</strong> 300W</p> <br /><h2>Inclusion Information</h2><h1>Including TZ35 to the network</h1> <p><strong>Including to the network (must be installed in its permanent location, not on test bench)</strong></p> <ol><li>Setup the controller you are using to include a device into network.</li> <li>Tap either the top or bottom of the switch once.</li> </ol><br /><h2>Exclusion Information</h2><h1><strong>Excluding from the network</strong></h1> <ol><li>Setup the controller you are using to exclude a device from the network.</li> <li>Tap either the top or the bottom of the switch once.</li> </ol><h1>Reset</h1> <ol><li>Pressing On/Off button three times within 1.5 seconds will enter inclusion mode.</li> <li>Within 5 second,press On/Off button again for 1 seconds until LED is off</li> <li>IDs are excluded.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ35S</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0808:0808</property>
+      <property name="dbReference">781</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Ignore start level bit</label>
+        <description><![CDATA[
+Ignore start level bit<br /><h1>Overview</h1><p>Set ignore start level bit when transmitting dim commands</p> <ul><li>Parameter No.: 1</li> <li>Length: 1 byte</li> <li>Valid values = 0 or 1 (default 1)</li> </ul><p>The TZ35S can send dim commands to Z-Wave enabled dimmers. The dim command has a start level embedded in it. A dimmer receiving this command will start dimming from the start level. However, the command also has a bit that indicates whether the dimmer should ignore the start level. If the bit is set to 1, the dimmer will ignore the start level and instead start dimming from its current level. If this bit is set to 0 the dimmer will not ignore the start level.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Don't ignore start level</option>
+          <option value="1">Ignore start level</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night light</label>
+        <description><![CDATA[
+Indicates if LED is on when load is ON<br /><h1>Overview</h1><p>The LED on the TZ35S will be by default turn ON when the load attached is turned OFF. To make the LED turn ON when the load attached is turned ON instead set parameter 3 to a value of 1</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Night LED on</option>
+          <option value="1">Night LED off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert switch</label>
+        <description><![CDATA[
+Invert switch behaviour<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set parameter to 1</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">ON command on TOP</option>
+          <option value="1">OFF command on TOP</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: LED transmission indicator</label>
+        <description><![CDATA[
+LED flickering during transmission<br /><h1>Overview</h1><p>The switch will flicker its LED when it is transmitting to any of its 2 groups. This flickering can be set to not flicker at all (set to 0), to flicker the entire time it is transmitting (set to 1), or to flicker for only 1 second when it begins transmitting (set to 2). By default, the switch is set to flicker for only 1 second. Each configuration parameter can be set to its default setting by setting the default bit in the configuration set command. see your controller’s instructions on how to do this(and if it supports it). All configuration commands will be reset to their default state when the switch is reset from the Z-Wave system.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">No flicker</option>
+          <option value="1">Flicker all time</option>
+          <option value="2">One second flicker</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Group 1 Control<br /><h1>Overview</h1><p>If you associate a Z-Wave device into Group 1, you can turn that device ON and OFF by tapping the top or bottom of the switch once. The load attached to TZ35S will also turn on and off. </p> <p>You can brighten the controlled device by pushing and holding the top of the switch , dim by pushing and holding the bottom of the switch.</p> <p>You can associate up to 5 Z-Wave devices into Group 1</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

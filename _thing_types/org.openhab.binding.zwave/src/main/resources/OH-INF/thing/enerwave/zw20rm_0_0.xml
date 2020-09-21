@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zw20rm_00_000" listed="false">
+    <label>ZW20RM In-wall Smart Meter Duplex Receptacle</label>
+    <description><![CDATA[
+In-wall Smart Meter Duplex Receptacle<br /><h1>Overview</h1><p>The ZW20RM TR Duplex Receptacle is a perfect wireless manual and remote on/off control replacement of regular receptacles, controlling table and floor lamps, small appliances, etc. This ZW20RM TR Duplex Receptacle provides two different type outlets. One outlet with Z-Wave mark has programmable functions such as scenes, association, schedule event, etc. It can be added to most Z-Wave compliant controllers, and a Blue LED on the face cover indicates the status of the controlled outlet and acts as a night light. The other outlet with Tamper-Resistant feature provides constant power, helps you and your families prevent electrical injuries.</p> <br /><h2>Inclusion Information</h2><p>press the program button of ZW20RM</p> <br /><h2>Exclusion Information</h2><p>press the program button of ZW20RM</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZW20RM</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0111:0101</property>
+      <property name="dbReference">383</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Synchronization of load power and LED indicator</label>
+        <description>Synchronization of load power and LED indicator</description>
+        <default>0</default>
+        <options>
+          <option value="0">Power on, LED off</option>
+          <option value="1">Power on, LED on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: Instant Meter Autosend Interval</label>
+        <description>Instant Energy Autosend Interval (send METER_REPORT)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Instant Sensor Autosend interval</label>
+        <description>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Accumulated Meter Autosend Interval</label>
+        <description>Accumulated Energy Autosend Interval report (send METER_REPORT)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Enable automatic notifications</label>
+        <description><![CDATA[
+Enable automatic notifications to associated device<br /><h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Not report (METER_REPORT)</option>
+          <option value="1">Send (METER_REPORT) only</option>
+          <option value="2">Send (SENSOR_MULTI_LEVEL_REPORT) only</option>
+          <option value="3">Send both</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Minimum change to report</label>
+        <description><![CDATA[
+Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Notifications</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: StatusReport</label>
+        <description>Send basic report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: PowerReport</label>
+        <description>Send meter power report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

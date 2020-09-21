@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsb28_00_000" listed="false">
+    <label>DSB28 Home Energy Meter G2</label>
+    <description><![CDATA[
+Home Energy Meter G2<br /><h1>Overview</h1><p>Aeon Labs Home Energy Meter is a kind of energy meter for the entire home electric power consumption. It can report immediate wattage and kWh and voltage and amperage usage of the AC mains to a Z-Wave gateway wirelessly.</p> <p>It can send Z-Wave REPORTS (Meter v3 Command Class) to response Z-Wave GET command at any time.</p> <p>HEM can also be configured as sending unsolicited reports periodically to the associated nodes (within an association group). The time interval of reports can also be configured HEM can also send report of each individual channel with corresponding current clamp via the command of “Multi Channel Command Class Encapsulation ”.</p> <p>To reduce the network traffic, HEM can send reports only when the loads significant change occurred(by percentage or Wattage value change, which can be configured)</p> <br /><h2>Inclusion Information</h2><ol><li>Connect HEM G2 to power and install the device properly (according to the Installation instruction, if necessary, please ask an electrician for help) , at beginning its LED blink slowly.</li> <li>Let the primary controller of existing Z-Wave network into inclusion mode (If you don’t know how to do this, refer to its manual).</li> <li>Press the Z-Wave button of HEM G2.</li> <li>If learning success, HEM G2 LED will stop slow blink, or it will still slow blink, please repeat the process from step 2. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the HEM G2 is powered, its LED be light on steadily.</li> <li>Let the primary controller of existing Z-Wave network into remove mode (If you don’t know how to do this, refer to its manual).</li> <li>Press the Z-Wave button.</li> <li>If exclusion success, HEM G2 LED will blink slowly or its LED still be on, please repeat the process from step 2.</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER,COMMAND_CLASS_BASIC;reset=true</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current1" typeId="meter_current">
+        <label>Electric meter (amps) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage1" typeId="meter_voltage">
+        <label>Electric meter (volts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1,COMMAND_CLASS_BASIC:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_current2" typeId="meter_current">
+        <label>Electric meter (amps) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage2" typeId="meter_voltage">
+        <label>Electric meter (volts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2,COMMAND_CLASS_BASIC:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage3" typeId="meter_voltage">
+        <label>Electric meter (volts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current3" typeId="meter_current">
+        <label>Electric meter (amps) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3,COMMAND_CLASS_BASIC:3;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSB28</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:001C</property>
+      <property name="dbReference">85</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Reverse clamping</label>
+        <description>If the reverse clamping pliers, negative power is detected.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="16">
+        <label>3: Selective Reporting</label>
+        <description><![CDATA[
+Report only when power change reaches a threshold set in 4-11 below.<br /><h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below.</p> <p>This is used to reduce network traffic.(Bit 0: Whole HEM ,Bit 1:Clamp 1,Bit 2:Clamp 2,Bit 3:Clamp 3)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>4: Power Threshold - Whole HEM</label>
+        <description><![CDATA[
+Threshold change in power to induce an automatic report (Whole HEM).<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Whole HEM). (Valid values 0-60000)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>5: Power Threshold - Clamp 1</label>
+        <description><![CDATA[
+Threshold change in power to induce an automatic report (Clamp 1)<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 1). (Valid values 0-60000)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>6: Power Threshold - Clamp 2</label>
+        <description><![CDATA[
+Threshold change in power to induce a automatic report (Clamp 2).<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 2). (Valid values 0-60000)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>7: Power Threshold - Clamp 3</label>
+        <description><![CDATA[
+Threshold change in power to induce an automatic report (Clamp 3).<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Clamp 3). (Valid values 0-60000)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>8: Percent Change - Whole HEM</label>
+        <description><![CDATA[
+Percentage change in power to induce an automatic report (Whole HEM).<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Whole HEM). (Valid values 0-100)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>9: Percent Change - Clamp 1</label>
+        <description><![CDATA[
+Percentage change in power to induce an automatic report (Clamp 1).<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Clamp 1). (Valid values 0-100)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: Percent Change - Clamp 2</label>
+        <description><![CDATA[
+Percentage change in power to induce a automatic report (Clamp 2).<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Clamp 2). (Valid values 0-100)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>11: Percent Change - Clamp 3</label>
+        <description><![CDATA[
+Percentage change in power to induce a automatic report (Clamp 3).<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Clamp 3). (Valid values 0-100)</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="1061109568">
+        <label>101: Reports for group 1</label>
+        <description><![CDATA[
+Reports for group 1<br /><h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="1061109568">
+        <label>102: Reports for group 2</label>
+        <description><![CDATA[
+Reports for group 2<br /><h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="1061109568">
+        <label>103: Reports for group 3</label>
+        <description><![CDATA[
+Reports for group 3<br /><h1>Overview</h1><p>1 -&gt; Battery Report<br /><br />2 -&gt; MultiSensor Report for the whole device<br /><br />4 -&gt; Meter Report for Watt for the whole device<br /><br />8 -&gt; Meter Report for kWh for the whole device<br /><br />256 -&gt; Meter Report for Watt for clamp 1<br /><br />512 -&gt; Meter Report for W</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>111: Interval to send out reports of group 1</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>112: Interval to send out reports of group 2</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>113: Interval to send out reports of group 3</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_255_1" type="integer" groupName="configuration">
+        <label>255: Factory Reset</label>
+        <description><![CDATA[
+Reset all settings to factory defaults<br /><h1>Overview</h1><p>If you upgrade firmware and are seeing crazy or impossible numbers, reset to factory then reconfigure unit.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do nothing</option>
+          <option value="1">Reset to Factory Defaults</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="wintop_wtrfid_00_000" listed="false">
+    <label>WTRFID Mini Keypad RFID</label>
+    <description><![CDATA[
+Mini Keypad RFID<br /><h1>Overview</h1><p>Zipato Mini RFID Keypad combines RFID and Z-Wave protocol for access control purposes. The user can identify themselves either by using manual code buttons on the numeric keypad, or by using a RFID key fob. The keypad fully supports Zipato automated security systems but also works with other Z-Wave enabled networks. “Home” and “Away” buttons allow the arming and disarming of security system or running any automation scenario.</p> <br /><h2>Inclusion Information</h2><p> INCLUDE IN Z-WAVE NETWORK</p> <ol><li>Make sure your Z-Wave controller is in the right operation mode (include or exclude)</li> <li>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process (indication mode: Ready for learn mode).</li> <li>The product will start NWI automatically after unsuccessful normal inclusion</li> </ol><br /><h2>Exclusion Information</h2><p> EXCLUDE from Z-WAVE NETWORK</p> <ol><li>Make sure your Z-Wave controller is in the right operation mode (include or exclude)</li> <li>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process (indication mode: Ready for learn mode).</li> <li>The product will start NWI automatically after unsuccessful normal inclusion</li> </ol><br /><h2>Wakeup Information</h2><p>The default value is 0x1C20 = 7200 sec = 2 hour</p> <p>The default node is 0xFF = 255 (broadcast)</p> <p>It is possible to send a wake up notification on user interaction. Besides sending a Wake Up Notification automatically every 2 hours (or any other time that is configured using the Wake Up Interval Set command), the Mini Keypad RFiD/Z-Wave also sends a Wake Up Notification when:</p> <ul><li>The tamper alarm state changes (Mini Keypad RFiD/Z-Wave is mounted or removed from the wall)</li> <li>A tag read</li> <li>A code is entered using the keypad</li> </ul><p>When the wake up time is set to 0 a wake up notification is never send periodically, only on user interaction</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="notification_access_control" typeId="notification_access_control">
+        <label>Alarm (access) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wintop</property>
+      <property name="modelId">WTRFID</property>
+      <property name="manufacturerId">0097</property>
+      <property name="manufacturerRef">6131:4101,6131:4501,6131:5501</property>
+      <property name="dbReference">217</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>1: Set to Default</label>
+        <description>Set all configuration values to default values (factory settings).</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Audible feedback config</label>
+        <description><![CDATA[
+To configure the time the beep is automatically turned off in seconds.<br /><h1>Overview</h1><p>The Mini Keypad RFiD/Z-Wave supports 3 types of notification sound configurations:</p> <ol><li>Notification sound disabled (configuration parameter 2 set to zero)</li> <li>Notification sound enabled (default, configuration parameter 2 set to auto-stop time).</li> </ol>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Feedback timeout</label>
+        <description><![CDATA[
+Feedback timeout<br /><h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other (0 -&gt; disabled)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>4: Feedback beeps per Second</label>
+        <description>To configure the number of beeps per second. Every beep is fixed about 10ms.</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>5: Mode</label>
+        <description><![CDATA[
+Configure the operating mode<br /><h1>Overview</h1><p>If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</p> <ul><li>MODE 1: Normal operating mode.</li> <li>MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</li> </ul>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

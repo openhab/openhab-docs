@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zw1001_00_000" listed="false">
+    <label>ZW1001 Smart Outlet</label>
+    <description><![CDATA[
+Smart Outlet<br /><h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Smart Lighting Control Duplex Receptacle. The GE Z-Wave duplex receptacle enables wireless control of on/off functions from the Z-Wave controlled outlet, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The duplex receptacle includes a blue LED indicator light to easily locate the receptacle in a dark room. The receptacle replaces your current electrical outlet, uses your existing wiring and provides a Z-Wave enabled outlet for the lamp or appliance that you would like to control and a standard pass-through AC outlet for other electrical appliances. The receptacle requires in-wall installation with hardwired connections. Take control of your home lighting with GE Z-Wave Smart Lighting Controls! </p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your device, press and release the Program Button to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Press and release the Program Button to exlude it from the network.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZW1001</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4952:3031</property>
+      <property name="dbReference">46</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED light</label>
+        <description><![CDATA[
+Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is LED on when switch is off.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED is always off</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

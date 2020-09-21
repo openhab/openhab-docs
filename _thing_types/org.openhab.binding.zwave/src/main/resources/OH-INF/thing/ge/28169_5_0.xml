@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_28169_05_000" listed="false">
+    <label>GE 28169 / Jasco 28168 Plug in Smart Switch</label>
+    <description><![CDATA[
+Plug in Smart Switch<br /><h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor </p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE 28169 / Jasco 28168</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">5052:3037,5052:3038</property>
+      <property name="versionMin">5.0</property>
+      <property name="dbReference">1045</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>3: LED Light</label>
+        <description>Set the state of the LED Light</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED Light on when Z-Wave turned OFF (Default)</option>
+          <option value="1">LED Light on when Z-Wave turned On</option>
+          <option value="2">LED Light Always Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Supports Lifeline, Binary Switch Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press Button</label>
+        <description><![CDATA[
+Sends message directly to configured node on single press of button.<br /><h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you single press the on/off button. For example, if you map this setting to a wall switch and then single press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press button</label>
+        <description><![CDATA[
+Sends message directly to configured node on double press of button.<br /><h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you double press the on/off button. For example, if you map this setting to a wall switch and then double press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

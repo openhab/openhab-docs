@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="benext_doorsensor_00_000" listed="false">
+    <label>doorSensor Door Sensor</label>
+    <description><![CDATA[
+Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Sensor can be placed on any door or window.</li> <li>The Door Sensor can report the status of the door (OPEN/CLOSED).</li> <li>The Door Sensor can measure the temperature.</li> <li>The Door Sensor also has a screw connector for an external (dry) contact.</li> <li>Indoor use only.</li> </ul><p>How it operates</p> <p>After a successful inclusion the Door Sensor can be mounted on the wall or door/window. When opening the door the indicator light will blink shortly, this indicates that a z-wave message has been send successfully.</p> <p>With a controller you can request the temperature and battery level.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /><h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for 4 seconds.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BeNext</property>
+      <property name="modelId">doorSensor</property>
+      <property name="manufacturerId">008A</property>
+      <property name="manufacturerRef">0004:0100,0004:0101</property>
+      <property name="dbReference">223</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Reset to factory settings</label>
+        <description>Set all configuration values to default values (factory settings).</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: External contact behavior</label>
+        <description>Configure what the external contact sends when triggered.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Send alarm</option>
+          <option value="1">Send basic frame</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Operating mode.</label>
+        <description>The main operating mode for the device.</description>
+        <default>1</default>
+        <options>
+          <option value="1">Normal</option>
+          <option value="2">Mode 1 report</option>
+          <option value="3">Always-on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="-32768" max="32767">
+        <label>6: Temperature offset</label>
+        <description>An offset for the temperature.</description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Send frame to (internal contact) nodes</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send frame to every node in this group (internal contact)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Send frame to external contact nodes</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Send frame to every node in this group (external contact)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsc12_00_000" listed="false">
+    <label>DSC12 Micro Smart Energy Switch</label>
+    <description><![CDATA[
+Micro Smart Energy Switch<br /><h1>Overview</h1><p>The Aeon Labs Micro SES is a binary power switch device based on Zwave enhanced slave library V5.02P3.</p> <br /><h2>Inclusion Information</h2><p>Click the button once.</p> <br /><h2>Exclusion Information</h2><p>Click the button once.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSC12</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0003:000C</property>
+      <property name="dbReference">277</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>2: Make Micro Smart Switch Blink</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Current Overload Protection</label>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivate</option>
+          <option value="1">Activate</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Notification on Status Change</label>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivate</option>
+          <option value="1">Hail CC Sent</option>
+          <option value="2">Basic CC Report Sent</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration">
+        <label>90: Enable Automated sending of a Report</label>
+        <description><![CDATA[
+Automated sending of a Report triggered by minimal change of value.<br /><h1>Overview</h1><p>Automated sending of a Report triggered by minimal change of value.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivate</option>
+          <option value="1">Activate</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_91_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>91: Minimum Change to send Report (Watt)</label>
+        <default>25</default>
+      </parameter>
+
+      <parameter name="config_92_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>92: Minimum Change to send Report (%)</label>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_101_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>101: Automatic reports for group 1</label>
+        <description><![CDATA[
+Which reports need to send automatically in timing intervals for group 1<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 1</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_102_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>102: Automatic reports for group 2</label>
+        <description><![CDATA[
+Which reports need to send automatically in timing intervals for group 2<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 2</p>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_103_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>103: Automatic reports for group 3</label>
+        <description><![CDATA[
+Which reports need to send automatically in timing intervals for group 3<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 3</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>111: Interval to send out reports of group 1</label>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>112: Interval to send out reports of group 2</label>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>113: Interval to send out reports of group 3</label>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration">
+        <label>120: Turn External Button Mode</label>
+        <default>255</default>
+        <options>
+          <option value="0">Momentary Button Mode</option>
+          <option value="1">2 State Switch Mode</option>
+          <option value="2">3 Way Switch Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Target for automatic meter reports</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Target for automatic reports</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

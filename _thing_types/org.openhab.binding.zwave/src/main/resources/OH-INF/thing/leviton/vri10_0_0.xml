@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_vri10_00_000" listed="false">
+    <label>VRI10 Scene Capable Push On/Off Dimmer</label>
+    <description><![CDATA[
+Scene Capable Push On/Off Dimmer<br /><h1>Overview</h1><p>The Scene Capable Incandescent Dimmer is compatible with any Z-Wave® enabled network, regardless of the manufacturer and can also be used with other devices displaying the Z-Wave® logo.</p> <br /><h2>Inclusion Information</h2><p>Put the controller into inclusion mode, press the center button to include device in the network.</p> <br /><h2>Exclusion Information</h2><p>Put the controller into exclusion mode, press the center button to exclude device from the network.<br /><br /><em>Factory Default:</em><br /><br />If your dimmer is not responding, or you are unable to control it after you have tried to Include/Exclude it multiple times, it may be necessary to reset the dimmer to its original factory settings. To accomplish this, proceed as follows:<br /><br />On the dimmer, engage he air-gap switch (refer to Operation section) and wait 5 seconds. Press push pad back into frame and hold push pad until the locator LED turns Amber and then turns Red. The dimmer is now reset. Once the dimmer is reset, it will be necessary to Re-Include it to a network before it can be used.<br /><br />CAUTION: SETTING A DEVICE TO A FACTORY DEFAULT DOES NOT EXCLUDE THAT DEVICE FROM A NETWORK. THE EXCLUSION PROCEDURE MUST STILL BE FOLLOWED TO REMOVE THE DEVICE FROM THE PRIMARY CONTROLLER’S INFORMATION TABLE. FAILURE TO DO SO MAY RESULT IN A SYSTEM THAT IS SLOW TO RESPOND, OR MAY FAIL TO RESPOND TO SOME DEVICES.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">VRI10</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0501:0209,0501:0334</property>
+      <property name="dbReference">873</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Group 1</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

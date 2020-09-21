@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_700045_00_000" listed="false">
+    <label>700045 Battery driven IP44 keypad for access control.</label>
+    <description><![CDATA[
+Battery driven IP44 keypad for access control.<br /><h1>Overview</h1><p>This keypad is a security enabled Z-Wave Plus product. An security enabled Z-Wave controller must be used to fully utilize this product. The keypad allows securely controlling devices  - such as door locks   - and trigger actions in a gateway – such as arm/disarm alarm system– based on the entry of certain key codes. Additionally a bell key allows emulating a doorbell by operating e.g. a door bell or a light or both.      The device can operate in two different modes. The mode is chosen the way the device is included into a Z-Wave network:</p> <ol><li><strong>Stand Alone Mode.</strong> In this case the keypad acts as the primary network controller and will include other devices such as e.g. a strike lock control or a door bell. No other central controller is needed. The management of user codes is done using the keypad itself.</li> <li><strong>Network Mode.</strong> The keypad is included as additional device into an exiting network. In Z-Wave terms it will then act as inclusion (secondary) controller. It will send commands to a central controller and is managed by this controller. In this mode the device can still directly control door locks but it can also be used to trigger scenes in a central controller. </li> </ol><p>The device is protected by a tamper switch sending out an alarm message when the enclosure is opened.</p> <br /><h2>Inclusion Information</h2><p>Turn the device into management mode by removing the back cover or typing the master code if set. Hit button 4 and confirm with * (Star Key)</p> <br /><h2>Exclusion Information</h2><p>Turn the device into management mode by removing the back cover or typing the master code if set. Hit button 4 and confirm with * (Star Key)</p> <br /><h2>Wakeup Information</h2><p>Wakeup: Ring Key.</p> <p>To issue a NIF: 0 plus * (Star Key) in Management Mode</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">700045</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0005:0002</property>
+      <property name="dbReference">892</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: Automatic Secure Timeout</label>
+        <description>After this time a CLOSE is sent to the door lock.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="3" max="127">
+        <label>2: Ring Button OFF Timeout</label>
+        <description><![CDATA[
+After this time the Door Bell will receive an OFF.<br /><h1>Overview</h1><p>After this time the Door Bell will receive an OFF command regardless of the actuall button is pressed or not</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Ring Button ON Command</label>
+        <description>Value to send on ring button press.</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Ring Button OFF Command</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Central Scene ID</label>
+        <description>Defines if different user codes shall cause individual or similar scene ID.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Constant Scene ID 20 for all User Codes</option>
+          <option value="1">Individual User Codes 1 ... 20</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Buzzer Confirmation</label>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Door Lock Control</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Ring Button Control</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

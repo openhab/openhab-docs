@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_dzs15_00_000" listed="false">
+    <label>DZS15 Scene Capable Push On/Off</label>
+    <description><![CDATA[
+Scene Capable Push On/Off<br /><h1>Overview</h1><p>Leviton’s Decora® Z-Wave® control components are designed to communicate with each other via Radio Frequency (RF) to provide remote control of your lighting. In a Z-Wave® network, each device is designed to act as a router. These routers will re-transmit the RF signal from one device to another until the intended device is reached. This ensures that the signal is received by its intended device by routing the signal around obstacles and radio dead spots. The Scene Capable Electronic Switch is compatible with any Z-Wave® enabled network, regardless of the manufacturer and can also be used with other devices displaying the Z-Wave® logo.</p> <br /><h2>Inclusion Information</h2><p>To put the device into inlusion mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard (refer to figure). Wait 5 seconds and then press the push pad back into the frame and hold push pad until the locator LED turns Amber. If you do not let go after the LED turns amber, the LED will turn red and the device will hard reset.<br /></p> <br /><h2>Exclusion Information</h2><p>Exclusion steps are the same as Inclusion.</p> <p>Hard Reset:</p> <p>If your switch is not responding, or you are unable to control it after you have tried to Include/Exclude it multiple times, it may be necessary to reset the switch to its original factory settings. To accomplish this, proceed as follows:</p> <p>On the switch, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard (refer to figure). Wait 5 seconds and then press the push pad back into the frame and hold push pad until the locator LED turns Amber and then flashes Red. The switch is now reset. Once the switch is reset, it will be necessary to Re-Include it to a network before it can be used.</p> <p>CAUTION: SETTING A DEVICE TO A FACTORY DEFAULT DOES NOT EXCLUDE THAT DEVICE FROM A NETWORK. THE EXCLUSION PROCEDURE MUST STILL BE FOLLOWED TO REMOVE THE DEVICE FROM THE PRIMARY CONTROLLER’S INFORMATION TABLE. FAILURE TO DO SO MAY RESULT IN SYSTEM THAT IS SLOW TO RESPOND, OR MAY FAIL TO RESPOND TO SOME DEVICES.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">DZS15</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">1C02:0334</property>
+      <property name="dbReference">195</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

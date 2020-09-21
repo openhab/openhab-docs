@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_yrd446_00_000" listed="false">
+    <label>YRD446 Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth</label>
+    <description><![CDATA[
+Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /><h1>Overview</h1><p>This device is a security enabled Z-Wave Plus product that is able to use encrypted ZWave Plus messages to communicate to other security enabled Z-Wave Plus products. This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions. This product can be operated in any ZWave network with other Z-Wave certified devices from other manufacturers. All nonbattery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. </p> <br /><h2>Inclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>1</strong> key followed by the <strong>Setup</strong> key.</li> </ul><br /><h2>Exclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <b>3</b> key followed by the <strong>Setup</strong> key.</li> </ul>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param2" typeId="yale_yrd446_00_000_config_decimal_param2">
+        <label>Auto Relock</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=2</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="config_decimal">
+        <label>Auto relock time</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param8" typeId="yale_yrd446_00_000_config_decimal_param8">
+        <label>Operating mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=8</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw)</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">YRD446</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">8002:1000</property>
+      <property name="dbReference">624</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Volume</label>
+        <description>Volume of voice and beeps</description>
+        <default>1</default>
+        <options>
+          <option value="1">Loud</option>
+          <option value="2">Quiet</option>
+          <option value="3">Silent</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Auto relock</label>
+        <default>0</default>
+        <options>
+          <option value="0">No auto-relock</option>
+          <option value="255">Auto relock</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>3: Auto relock time</label>
+        <description><![CDATA[
+Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="7">
+        <label>4: Incorrect PIN limit</label>
+        <description><![CDATA[
+Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Language</label>
+        <default>1</default>
+        <options>
+          <option value="1">English</option>
+          <option value="2">Spanish</option>
+          <option value="3">French</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="10" max="127">
+        <label>7: Shutdown</label>
+        <description>Shutdown time after wrong code entries</description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operating mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Vacation</option>
+          <option value="2">Privacy</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: One Touch Locking</label>
+        <default>255</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Privacy Button</label>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lock Status LED</label>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Reset To Factory Defaults</label>
+        <default>0</default>
+        <options>
+          <option value="1">Factory Reset</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="yale_yrd446_00_000_config_decimal_param2">
+    <item-type>Number</item-type>
+    <label>Auto relock</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">No auto-relock</option>
+        <option value="255">Auto relock</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="yale_yrd446_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Auto relock time</label>
+    <description>Time for auto relock</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="yale_yrd446_00_000_config_decimal_param8">
+    <item-type>Number</item-type>
+    <label>Operating mode</label>
+    <state pattern="%s">
+      <options>
+        <option value="0">Normal</option>
+        <option value="1">Vacation</option>
+        <option value="2">Privacy</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

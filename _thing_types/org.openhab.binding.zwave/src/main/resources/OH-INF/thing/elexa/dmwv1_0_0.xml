@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="elexa_dmwv1_00_000" listed="false">
+    <label>DMWV1 Dome Water Main Shut Off</label>
+    <description><![CDATA[
+Dome Water Main Shut Off<br /><h1>Overview</h1><p>The Dome Water Main Shut-Off is a Z-Wave Plus Certified device that installs over any standard 1/2” to 1-1/2” ball valve, and opens or closes the valve when given a signal. The Water Main Shut-Off consists of three main parts - the “MOTOR ASSEMBLY,” the “MOUNTING BRACKET,” and the “CONTROL ARM.” The MOUNTING BRACKET is clamped onto the pipe with HOSE CLAMPS and the CONTROL ARM secures around the VALVE HANDLE to control the valve, while the MOTOR ASSEMBLY connects to your home automation system and ties everything together.</p> <br /><h2>Inclusion Information</h2><p>Follow the instructions for your Z-Wave controller to enter inclusion mode. When prompted by the controller:</p> <ol><li>Plug the Water Main Shut-Off into an outlet 10’ from your controller. You can bring it to your desired location after the inclusion process. If successfully powered up, the LED INDICATOR will keep blinking until the device is included in a system.</li> <li>Press the OPEN/CLOSE BUTTON quickly 3 times in a row.</li> <li>The LED INDICATOR will stop blinking and stay on continuously after inclusion.</li> </ol><br /><h2>Exclusion Information</h2><p>Follow the instructions for your Z-Wave controller to enter exclusion mode. When prompted by the controller:</p> <ol><li>Press the OPEN/CLOSE BUTTON quickly 3 times in a row.</li> <li>The LED INDICATOR will start blinking after successful exclusion.</li> </ol>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Elexa Consumer Products Inc.</property>
+      <property name="modelId">DMWV1</property>
+      <property name="manufacturerId">021F</property>
+      <property name="manufacturerRef">0003:0002</property>
+      <property name="dbReference">650</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five devices.  The Water Main Shut-Off sends this group a Binary Switch Report whenever it is turned on or off.  The Water Main Shut-Off also sends this group a Device Reset Locally notification to remove itself from the Z-Wave network. </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

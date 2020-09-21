@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft149_00_000" listed="false">
+    <label>FT149 Indoor Siren</label>
+    <description><![CDATA[
+Indoor Siren<br /><h1>Overview</h1><p>With built-in alarm horn, when safety loophole is detected Siren would sound its alarm to scare away intruders and meanwhile warn the house owner and related security.</p> <p>Secure your home safety by sounding alarm to scare away criminals when the security system is triggered or any other safety loophole is detected by linked sensors. Different ringing sounds available. It can also work as a timed reminder.</p> <p>Power input 220V ～ 50Hz Operating distance 40m indoors Max rated output 100mA Wireless protocol Z-Wave Plus Max operating power 7W Product dimension 92.5 × 65 × 48mm(no pins) Max volume 105dB Operating temperature Operating temperature:0°C - 40°C /Operating humidity: 20% - 80% RH</p> <br /><h2>Inclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Press the Action Button.</li> <li>If the Learning is failed, please repeat the process from step 2.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into exclusion mode (If you don’t know how to do this, refer to its manual).</li> <li>Press the Action Button.</li> <li>If the remove is failed, please repeat the process from step 2.</li> </ol><p>Note: If Siren is removed from Z‐wave network, it will be reset to factory default.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT149</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0004:0095</property>
+      <property name="dbReference">1209</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

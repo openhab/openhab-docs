@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wapirz_00_000" listed="false">
+    <label>WAPIRZ-1 PIR Motion Detector</label>
+    <description><![CDATA[
+PIR Motion Detector<br /><h1>Overview</h1><p>Wireless Passive Infrared (PIR) Motion Detector</p> <br /><h2>Inclusion Information</h2><ol><li>Prepare the Controller to include a unit to the network by adding it to a group (method of adding a node to the network). Refer to controller instructions.</li> <li>If your Controller supports Network Wide Inclusion (NWI) locate the WAPIRZ-1 near the proposed installation location. If not skip to Step 4.</li> <li>With your Controller in Inclusion mode, you should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking. Skip to Step 10. If the LED does not stop blinking, relocate the WAPIRZ-1 to within 100 feet (line of sight) of a Z-Wave device or your hub and repeat Step 3. If the LED continues to blink, your Controller does not support NWI and continue with Step 4.</li> <li>Place the WAPIRZ-1 within 3 feet of the Controller.</li> <li>With your controller in Inclusion mode, depress the Tamper switch for 1 second then release.</li> <li>You should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking.</li> <li>The device will appear in the list of Switches.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set up the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the WAPIRZ-1 from the controller.</li> <li>Press the Tamper switch of WAPIRZ-1 for 1 second and release to be excluded. The LED light will flash continuously when the sensor is in the Exclusion condition.</li> </ol><br /><h2>Wakeup Information</h2><p>Open the motion detector case to “wake” the unit. </p>
+    ]]></description>
+    <category>MotionDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WAPIRZ-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">2002:0203</property>
+      <property name="dbReference">5</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>1: Re-trigger Wait Time</label>
+        <description><![CDATA[
+Re-trigger Wait Time<br /><h1>Overview</h1><p>By default, to conserve battery life, after the WAPIRZ-1 detects motion it cannot be re-triggered by motion again for 3 minutes. Each time motion is detected (even during this wait time) the 3 minute timer starts over.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

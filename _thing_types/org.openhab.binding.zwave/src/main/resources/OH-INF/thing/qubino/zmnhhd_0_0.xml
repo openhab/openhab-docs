@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhhd_00_000" listed="false">
+    <label>ZMNHHD Mini Dimmer</label>
+    <description><![CDATA[
+Mini Dimmer<br /><h1>Overview</h1><p>Mini Dimmer is a MOSFET-switching light device that also supports control of low-voltage halogen lamps with electronic transformers, dimmable compact fluorescent lights, and dimmable LED bulbs. It measures power consumption of the connected device. It supports push-button/momentary switches (default) and toggle switches. It can work with or without the neutral line. Qubino Mini Dimmer allows the easiest and quickest installation. It is designed to be mounted inside a “flush mounting box”, hidden behind a traditional wall switch. It acts as repeater in order to improve range and stability of Z-Wave network.</p> <br /><h2>Inclusion Information</h2><p>Inclusion</p> <p>AUTOMATICALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (AUTO INCLUSION)</p> <ol><li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Automatic selection of secure/unsecure inclusion.</li> <li>The device can be automatically added to a Z-Wave network during the first 2 minutes</li> <li>Connect the device to the power supply</li> <li>Auto-inclusion will be initiated within 5 seconds of connection to the power supply and the device will automatically enrol in your network. </li> </ol><p>(when the device is excluded and connected to the power supply it automatically eneters the LEARN MODE state.)</p> <p><strong>NOTE: LEARN MODE state allows the device to receive network infromation from the controller</strong></p> <p><strong>NOTE: Please wait at least 30 seconds between each inclusion and exclusion.</strong></p> <p>MANUALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (MANUAL INCLUSION)</p> <ol><li>Connect the device to the power supply</li> <li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Toggle the switch connected to the I1 terminal 3 times within 3 seconds (this procedure put the device in LEARN MODE)</li> </ol><p>OR</p> <p>Press and hold the S (Service) button between 2 and 6 seconds if connected to 24-30VDC (this procedure put the device in LEARN MODE)</p> <p>4. A new device will appear on your dashboard</p> <p><strong>NOTE: LEARN MODE state allows the device to receive network infromation from the conttoller </strong></p> <p><strong>NOTE: Please wait at least 30 seconds between each inclusion and exclusion.</strong></p> <p>Mini Dimmer supports the latest Security 2 feature. When adding the Mini Dimmer to a Z-Wave network with a controller supporting Security 2 (S2), the PIN code of the Z-Wave Device Specific Key (DSK) is required. The unique DSK code is printed on the product label and a copy is inserted in the packaging, which must not be lost. Do not remove the DSK from the product. As a backup measure, use the label in the packaging. The first five digits of the key are highlighted or underlined to help the user identify the PIN code portion of the DSK text.</p> <br /><h2>Exclusion Information</h2><p>Exclusion</p> <p>REMOVAL FROM A Z-WAVE NETWORK (Z-WAVE EXCLUSION)</p> <ol><li>Connect the device to the power supply</li> <li>Make sure the device is within direct range of your Z-Wave gateway (hub) or use a hand-held Z-Wave remote to perform exclusion</li> <li>Enable add/remove mode on your Z-Wave gateway (hub)</li> <li>Toggle the switch connected to the I1 terminal 3 times within 3 seconds (this procedure put the device in LEARN MODE)</li> </ol><p>OR</p> <p>Press and hold the S (Service) button between 2 and 6 seconds if connected to 24-30VDC (this procedure put the device in LEARN MODE)</p> <ol><li>The device will be removed from your network, but any custom configuration parameters will not be erased</li> </ol><p><strong>NOTE: LEARN MODE state allows the device to receive network infromation from the conttoller </strong></p> <p><strong>NOTE: Please wait at least 30 seconds between each inclusion and exclusion.</strong></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHHD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0001:0055</property>
+      <property name="dbReference">1100</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: In-wall Switch Type for Load to control I1</label>
+        <description><![CDATA[
+In-wall Switch Type for Load to control I1<br /><h1>Overview</h1><p>With this parameter, you can select between push-button (momentary) and on/off toggle switch types. </p> <p>Values: </p> <p>• default value 0<br />• 0 - push-button (momentary)<br />• 1 - on/off toggle switch</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">push-button (momentary)</option>
+          <option value="1">on/off toggle switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Working mode</label>
+        <description><![CDATA[
+Working mode<br /><h1>Overview</h1><p>With this parameter, you can change the device presentation on the user interface.</p> <p>Values:<br />• default value 0<br />• 0 - Dimmer mode<br />• 1 - Switch mode (works only in 3 way wiring-connection with neutral line)</p> <p><strong>NOTE: After parameter change, first exclude the device (without setting parameters to default value) then wait at least 30s before reinclusion.</strong></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Dimmer mode</option>
+          <option value="1">Switch mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32536">
+        <label>11: Turn Load 1 Off Automatically with Timer</label>
+        <description><![CDATA[
+Turn Load 1 Off Automatically with Timer<br /><h1>Overview</h1><p>If Load is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an ON or OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.<br /></p> <p>Values:<br />• default value 0<br />• 0 - Auto OFF Disabled<br />• 1 - 32536 = 1 - 32536 seconds - Auto OFF timer enabled for a given amount of seconds </p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32536">
+        <label>12: Turn Load 1 On Automatically with Timer</label>
+        <description><![CDATA[
+Turn Load 1 On Automatically with Timer<br /><h1>Overview</h1><p>If Load is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF or ON command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <p><br />Values:<br />• default value 0<br />• 0 - Auto ON Disabled<br />• 1 - 32536 = 1 - 32536 seconds - Auto ON timer enabled for a given amount of seconds</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration">
+        <label>21: Enable/Disable the Double click function</label>
+        <description><![CDATA[
+Enable/Disable the Double click function<br /><h1>Overview</h1><p>If the Double click function is enabled, a fast double click on the push-button will set the dimming level to the maximum dimming value.</p> <p><br />Values:<br />• default value 0<br />• 0 - double click disabled<br />• 1 - double click enabled </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Double click disabled</option>
+          <option value="1">Double click enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Restore on/off status for load after power failure</label>
+        <description><![CDATA[
+Restore on/off status for load after power failure<br /><h1>Overview</h1><p>This parameter determines if on/off status is saved and restored for the load after power failure.</p> <p><br />Values:<br />• default value 0<br />• 0 - Device saves last on/off status and restores it after a power failure.<br />• 1 - Device does not save on/off status and does not restore it after a power failure, it remains off. </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Save last on/off status</option>
+          <option value="1">Don't save last on/off status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power Consumption Threshold</label>
+        <description><![CDATA[
+Power Consumption Threshold<br /><h1>Overview</h1><p>Watt Power Consumption Reporting Threshold for Load  </p> <p>Choose by how much the power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set (by default), the device will report any power consumption changes of 10% or more compared to the last reading.</p> <p><br />Values (size is 1 byte dec):<br />• default value 10<br />• 0 - Power consumption reporting disabled<br />• 1 - 100 = 1% - 100%</p> <p>Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</p> <p><strong>NOTE: The power consumption needs to increase or decrease by at least 2 Watts to be reported, regardless of percentage set in this parameter.</strong></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>42: Power Consumption Threshold (time)</label>
+        <description><![CDATA[
+Power Consumption Threshold (time)<br /><h1>Overview</h1><p>Watt Power Consumption Reporting Time Threshold for Load  </p> <p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes) if there was a change compared from the last report.</p> <p><br />Values:<br />• default value 0<br />• 0 - Power consumption reporting on time interval disabled<br />• 30 - 32767= 30 - 32767seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</p> <p><br /><strong>NOTE: Values from 1 to 29 are ignored by device due to standard recommendation.</strong><br /><strong>NOTE: The report will be send only if there was a change compared to the last report</strong></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration"
+                 min="0" max="98">
+        <label>60: Minimum dimming value</label>
+        <description><![CDATA[
+Minimum dimming value<br /><h1>Overview</h1><p>The value set in this parameter determines the minimum dimming value (the lowest value which can be set on the device, when, for example, dimming lights with wall switch or slider in the GUI (Gateway - hub)).</p> <p>Values:<br />• default value 0 = 0% (minimum dimming value)<br />• 0- 98 = 0% - 98%, step is 1%. Minimum dimming value is set by entering a value.</p> <p><strong>NOTE: The minimum level may not be higher than the maximum level!</strong></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>61: Maximum dimming value</label>
+        <description><![CDATA[
+Maximum dimming value<br /><h1>Overview</h1><p>The value set in this parameter determines the maximum dimming value (the highest value which can be set on the device, when, for example, dimming lights with wall switch or slider in the GUI (Gateway - hub))</p> <p>Values:<br />• default value 99 = 99% (Maximum dimming value)<br />• 1- 99 = 1% - 99%, step is 1%. Maximum dimming value is set by entering a value.</p> <p><strong>NOTE: The maximum level may not be lower than the minimum level!</strong></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_65_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>65: Dimming time when key pressed</label>
+        <description><![CDATA[
+Dimming time when key pressed<br /><h1>Overview</h1><p>Choose the time during which the device will move between the min. and max. dimming values by a short press of the push-button I1.<br /></p> <p>Values:<br />• default value 1 = 1s<br />• 1 - 127 = 1 seconds- 127 seconds, step is 1 second </p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>66: Dimming time when key hold</label>
+        <description><![CDATA[
+Dimming time when key hold<br /><h1>Overview</h1><p>Choose the time during which the Dimmer will move between the min. and max. dimming values during a continuous press of the push-button I1, by an associated device or through the UI controls (BasicSet, SwitchMultilevelSet).<br /></p> <p>Values:<br />• default value 3 = 3s<br />• 1-127 = 1 second – 127 seconds<br />• 128 – 253 = 1 minute – 126 minutes </p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_67_1" type="integer" groupName="configuration">
+        <label>67: Ignore start level</label>
+        <description><![CDATA[
+Ignore start level<br /><h1>Overview</h1><p>Choose whether the device should use (or disregard) the start dimming level value. If the device is configured to use the start level, it should start the dimming process from the currently set dimming level. This parameter is used with association group 3.</p> <p>Values:<br />• default value 0<br />• 0 – use the start level value<br />• 1 - ignore the start level value</p> <p><strong>NOTE: Parameter is valid only in Dimmer mode. In Switch mode the parameter has no effect.</strong></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">use the start level value</option>
+          <option value="1">ignore the start level value</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_68_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>68: Dimming duration</label>
+        <description><![CDATA[
+Dimming duration<br /><h1>Overview</h1><p>Choose the time during which the device will transition from the current value to the new target value. This parameter applies to the association group 3.</p> <p><br />Values:<br />• default value 0 (dimming duration according to parameter 66)<br />• 1 - 127 (from 1 to 127 seconds)</p> <p><strong>NOTE: Parameter is valid only in Dimmer mode. In Switch mode the parameter has no effect.</strong></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_70_2" type="integer" groupName="configuration"
+                 min="1" max="200">
+        <label>70: Overload safety switch</label>
+        <description><![CDATA[
+Overload safety switch<br /><h1>Overview</h1><p>The function allows for turning off the controlled device in case of exceeding the defined power for more than 5s. Controlled device can be turned back on by input I1 or sending a control frame.</p> <p><br />Values:<br />• default value 200<br />• 1 – 200 = 1 W – 200W<br />• 0 = function not active</p> <p><strong>NOTE: This functionality is not an overload safety protection, please check the technical specifications chapter for more details.</strong></p> <p>In case of overload the following message will be send towards the controller:<br />• COMMAND_CLASS_NOTIFICATION_V5<br />• The Alarm V1 type field set to 0x00<br />• Notification Type 0x08 and 0x08 (Overload detected)</p>
+        ]]></description>
+        <default>200</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_71_1" type="integer" groupName="configuration">
+        <label>71: Calibration trigger</label>
+        <description><![CDATA[
+Calibration trigger<br /><h1>Overview</h1><p>Choose when will be the calibration procedure triggered.</p> <p><br />Values:<br />• default value 0 - calibration done after power cycle if module is excluded<br />• 1 – calibration done after power cycle regardless of inclusion status<br />• 2 – force calibration. Calibration will start immediately </p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">calibration after exclusion</option>
+          <option value="1">calibration after power cycle</option>
+          <option value="2">force calibration</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_72_1" type="integer" groupName="configuration" readOnly="true">
+        <label>72: Calibration status (read only)</label>
+        <description><![CDATA[
+Calibration status (read only)<br /><h1>Overview</h1><p>Whit this parameter you can check the calibration status.</p> <p><br />Values:<br />• default value 2 – calibration failed<br />• 1 – calibration was successful<br />• 2 – calibration failed </p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="1">calibration was successful</option>
+          <option value="2">calibration failed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_73_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>73: Alarm/Notification events</label>
+        <description><![CDATA[
+Alarm/Notification events<br /><h1>Overview</h1><p>This parameter defines the module behaviour in case it receives any Alarm/Notification events.</p> <p><br />Values:<br />• default value 0 – function not active<br />• 1 – turn OFF<br />• 2 – turn ON<br />• 3 – start blinking (output turns 1s ON, and 1s OFF)</p> <p><br /><strong>NOTE: When value 3 is selected the default time interval of the blinking is 10 minutes. It can be stopped with a button press or sending a control frame. To adjust the time interval please refer to parameter 74 – Alarm/Notification time interval.</strong></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_74_1" type="integer" groupName="configuration"
+                 min="1" max="125">
+        <label>74: Alarm/Notification time interval</label>
+        <description><![CDATA[
+Alarm/Notification time interval<br /><h1>Overview</h1><p>Alarm/Notification time interval (dependant on parameter 73)</p> <p><br />This parameter defines the time interval of the blinking state, once the module receives an alarm/notification event. Minimum step increase is 1 minute.</p> <p><br />Values (size is 1 byte dec):<br />• default value 10 = 10 minutes<br />• 1 – 125 = 1 -125 minutes</p> <p><br /><strong>NOTE: This parameter does not have any effect if parameter 73 is not set to value 3 </strong></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic OnOff</label>
+        <description><![CDATA[
+Basic OnOff<br /><h1>Overview</h1><p>Supports the following command classes:</p> <p>• Basic set: triggered at change of output and reflecting its state</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: StartStop level change</label>
+        <description><![CDATA[
+StartStop level change<br /><h1>Overview</h1><p>Supports the following command classes:</p> <p>• Start/Stop Level Change: triggered upon holding and releasing the switch connected to I1</p> <p><strong>NOTE: Association 3 StartStop level change is switch type dependant. The switch must be a bi-stable switch type otherwise the association can not be trigered. To know how to change the switch type connected, please refer to chapter "Configuration parameters", in the official manual, for more information.</strong></p> <p><strong>NOTE: When the device is in switch mode (parameter 5 set to 1), this association group is</strong><strong> not available. </strong><br /></p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Multilevel set</label>
+        <description><![CDATA[
+Multilevel set<br /><h1>Overview</h1><p>Supports the following command classes:</p> <p>• Switch Multilevel Set: triggered at change of output and reflecting its state</p> <p><strong>NOTE: When the device is in switch mode (parameter 5 set to 1), this association group is not available. </strong></p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

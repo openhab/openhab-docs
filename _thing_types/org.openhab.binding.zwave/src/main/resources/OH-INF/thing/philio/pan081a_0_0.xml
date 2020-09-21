@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pan081a_00_000" listed="false">
+    <label>PAN08 Roller shutter controller</label>
+    <description><![CDATA[
+Roller shutter controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to this Roller Controller.</p> <p>This in-wall Roller Shutter Controller is a transceiver which is a Z-Wave Plus enabled device and is fully compatible with any Z-Wave enabled network. Slim design let the Controller can easily hide itself into the wall box and that will be good for the house decoration.</p> <p>The new smart relay calibration technology can reduce the inrush current caused by the load and let the module work perfectly with many kind of Roller Shutter. This in-wall Roller Shutter Controller is able to detect position of the Shutter by using the patterned power measuring method, so it can be remote controlled not only fully up or down , but also can be adjusted to ex. 30% or 50%. And when manual controlled by push button, the controller also can memorize the position and send the new shutter position to its controller (ex. IP-Gateway).</p> <br /><h2>Inclusion Information</h2><p>In the front casing, there is an include button with LED indicator below which is used to carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it has not been assigned a node ID and start auto inclusion.</p> <p>The function of auto inclusion will be executed as long as the PAN08 does not have Node ID and just connect the PAN08 to main power.</p> <p>Note: Auto inclusion timeout is 2 minute during which the node information of explorer frame will be emitted once every several seconds.</p> <br /><h2>Exclusion Information</h2><p> Put your Z-Wave controller into exclusion mode by following the instructions provided by the controller manufacturer.</p> <p> Pressing Include button three times within 2 seconds will enter exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>Device is not battery operated, hence no wakeup procedure.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Electric meter (power factor)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Clear Accumulated Energy</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAN08</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0001:0015</property>
+      <property name="dbReference">609</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>1: Watt meter report interval (5s)</label>
+        <description>Interval (x5 seconds) to send out watt meter report</description>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="32767">
+        <label>2: KWH Meter Report Interval (10min)</label>
+        <description>Interval (x10 minutes) to send out KWH Meter Report</description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="1" max="1100">
+        <label>3: Threshold for Load Caution (10mA)</label>
+        <description>Threshold (x0.01A) of current for Load Caution</description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="10000">
+        <label>4: Threshold of KWh for Load Caution</label>
+        <default>10000</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>5: External SwitchType</label>
+        <description><![CDATA[
+Sets the type of an external switch<br /><h1>Overview</h1><p>1: One Push button</p> <p>2: Two push bittons</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>6: Level report mode</label>
+        <description><![CDATA[
+Sets the way the controller reports the shutter level<br /><h1>Overview</h1><p>1: Report destination level in 5s</p> <p>2: Report 10 percent level while running</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Blind Control</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

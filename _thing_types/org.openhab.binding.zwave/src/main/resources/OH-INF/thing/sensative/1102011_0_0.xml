@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sensative_1102011_00_000" listed="false">
+    <label>11 02 011 Strips Comfort/Drips Multisensor</label>
+    <description><![CDATA[
+Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin multi sensor is now available in two new sensor models, Strips Drip and Strips Comfort. Drip and Comfort join Strips Guard, the thinnest magnet sensor in the world detecting if your windows are open and closed invisibly since 2015. Strip Drip sends an alarm signal if it detects a water leak. Its unique design allows it to be easily placed almost everywhere, including most places other sensors simply can’t fit. With soaking pads integrated in the mounting plate even small amounts of water will be detected. The built-in temperature sensor gives the possibility to combine the leakage alarm with a freeze alarm. There is also a built-in ambient light sensor that may be useful in special applications. Strips Comfort is a very accurate temperature and ambient light sensor. The unique design and mounting plate makes it easy to place almost invisibly in your home to measure temperature or control heating, air conditioning and even windows blinds which are connected to your Z-Wave smart home system. All Strips products can be used both in-doors and out-doors and the integrated custom battery gives Strips an expected lifetime of up to 10 years. For you, this means no hassle needing to change or charge batteries in your Strips sensors for the lifetime of the products!</p> <p>You may need to reset Strips if your Z-Wave controller is missing or not responding. Follow the instructions for “Wake up”, but on the 3rd repetition, leave the magnet at the rounded edge for 10 seconds. A long LED signal indicates success.</p> <br /><h2>Inclusion Information</h2><p>Set your controller to add mode (see your controller’s manual). Follow the instruction for Wake up. A long LED blink indicates that the add/remove was successful.</p> <br /><h2>Exclusion Information</h2><p>Set your controller to remove mode (see your controller’s manual). Follow the instruction for Wake up. A long LED blink indicates that the add/remove was successful.</p> <br /><h2>Wakeup Information</h2><p>Wake up Strips manually for Z-Wave communication. Place the magnet at the rounded edge. When the LED blinks, move the magnet away. Repeat twice within 10 seconds.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_moisture" typeId="sensor_moisture">
+        <label>Sensor (moisture)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=MOISTURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Alarm (heat)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sensative AB</property>
+      <property name="modelId">11 02 011</property>
+      <property name="manufacturerId">019A</property>
+      <property name="manufacturerRef">0003:000A</property>
+      <property name="versionMax">0.2</property>
+      <property name="dbReference">747</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Temperature reporting mode</label>
+        <description>0:Off 1:Normal 2:High Accuracy</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Normal</option>
+          <option value="2">High Accuracy</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Temperature reporting unit</label>
+        <description>0:Celcius 1:Fahrenheit</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celcius</option>
+          <option value="1">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: High Temperature alarm</label>
+        <description>0:Off 1:On</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="-20" max="60">
+        <label>6: High Temperature alarm level</label>
+        <description>-20 to + 60 degree C</description>
+        <default>60</default>
+        <options>
+          <option value="-20">Temperature alarm level</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Low Temperature alarm</label>
+        <description>0:Off 1:On</description>
+        <default>0</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="-20" max="60">
+        <label>8: Low Temperature alarm level</label>
+        <description>-20 to + 60 degree C</description>
+        <default>-20</default>
+        <options>
+          <option value="-20">Temperature alarm level</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Ambient light reporting</label>
+        <description>0:Off 1:On</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Leakage alarm</label>
+        <description>0:Off 1:On</description>
+        <default>1</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>11: Leakage alarm level</label>
+        <description>1 to 100 (1= almost dry, 100 = soaking wet)</description>
+        <default>25</default>
+        <options>
+          <option value="1">(1= almost dry, 100= soaking wet)</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>12: Moisture reporting period</label>
+        <description>0-120: Number of hours between moisture reports</description>
+        <default>0</default>
+        <options>
+          <option value="0">Number of hours between moisture reports</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

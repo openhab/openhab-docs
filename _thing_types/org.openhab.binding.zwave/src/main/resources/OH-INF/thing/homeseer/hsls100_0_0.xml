@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="homeseer_hsls100_00_000" listed="false">
+    <label>HS-LS100+ HomeSeer Z-Wave Plus Leak Sensor</label>
+    <description><![CDATA[
+HomeSeer Z-Wave Plus Leak Sensor<br /><h1>Overview</h1><p>Homeseer HS-LS100+ is a compact, easy to install leak sensor. It designed control other ZLS100+ is a compact, easy to install leak sensor. It designed control other Z-Wave devices directly or it may be used with a variety of Z-Wave certified home controllers to launch automation events or scenes.</p> <br /><h2>Inclusion Information</h2><p>Inclusion (recommended if your home controller supports “S0” or “S2” Z-Wave encryption)<br />1. Put your home controller into Z-Wave ‘inclusion’ mode.<br />2. Quickly triple-press the Z-Wave network button, then release it. Wait for the inclusion process to finish.</p> <br /><h2>Exclusion Information</h2><p>Exclusion<br />1. Put your home automation controller into Z-Wave ‘exclusion’ mode.<br />2. Quickly triple-press the Z-Wave network button. Wait for the exclusion process to finish.</p> <br /><h2>Wakeup Information</h2><p>Press and hold the Z button for more that 5 seconds and release</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_heat" typeId="alarm_heat">
+        <label>Heat Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=HEAT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Flood Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">HomeSeer Technologies</property>
+      <property name="modelId">HS-LS100+</property>
+      <property name="manufacturerId">000C</property>
+      <property name="manufacturerRef">0201:000A</property>
+      <property name="dbReference">803</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enabe/Disable BASIC SET command</label>
+        <description>Enabe/Disable BASIC SET command</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Value of the BASIC SET</label>
+        <description>Value of the BASIC SET</description>
+        <default>0</default>
+        <options>
+          <option value="0">BASIC SET 255</option>
+          <option value="1">BASIC SET 0</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>17: Set flooding alarm interval (Minute)</label>
+        <description><![CDATA[
+Set flooding alarm interval (Minute)<br /><h1>Overview</h1><p>The higher the value, the long the report periodically - in hexadecimal values from 0x01 to 0xFF, or 1 to 255 if your controller allows unsigned decimal values.</p> <p>0 - Disable flooding alarm</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Enabe/Disable shock alarm</label>
+        <description>Enabe/Disable shock alarm</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>19: Temperature report time (minute)</label>
+        <description><![CDATA[
+Temperature report time (minute)<br /><h1>Overview</h1><p>The higher the value ,the long the report time</p> <p>0 - Disable report</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_2" type="integer" groupName="configuration"
+                 min="-670" max="2570">
+        <label>20: Set the high temperature alarm trigger value</label>
+        <description><![CDATA[
+Set the high temperature alarm trigger value<br /><h1>Overview</h1><p>The larger the value , the higher the high temperature in Fahrenheits (US)</p>
+        ]]></description>
+        <default>1040</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_2" type="integer" groupName="configuration"
+                 min="-670" max="2570">
+        <label>22: Set the low temperature alarm trigger value</label>
+        <description><![CDATA[
+Set the low temperature alarm trigger value<br /><h1>Overview</h1><p>The smaller the value , the lower the low temperature in Fahrenheits (US)</p>
+        ]]></description>
+        <default>320</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Enable/Disable blinking alarm LED</label>
+        <description>Enable/Disable blinking alarm LED</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>32: Level of low battery</label>
+        <description><![CDATA[
+Level of low battery<br /><h1>Overview</h1><p>Set the trigger value for the low battery alarm</p>
+        ]]></description>
+        <default>20</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>1. Notification Report. Sensor will send Notification Report to the associated nodes</p> <p>2. Battery Report. Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</p> <p>3. Device Reset Locally Notification. Sensor will send Device Reset Locally Notification when reset</p> <p>4.Sensor multilevel report When associated to Group 1, you can adjust the temperature reporting cycle according to the configuration settings.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>1. Basic Set. Flood Sensor will send Basic Set to associated nodes when Water leak detected.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

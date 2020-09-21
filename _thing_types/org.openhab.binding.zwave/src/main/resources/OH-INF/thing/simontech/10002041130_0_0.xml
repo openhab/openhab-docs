@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="simontech_10002041130_00_000" listed="false">
+    <label>10002041-130 iO Cover for the Simon 100 schuko plug socket</label>
+    <description><![CDATA[
+iO Cover for the Simon 100 schuko plug socket<br /><h1>Overview</h1><p>Once plugged to 10002432-039 This Front permits the direct control of a load plugged toggling it each time that the pushbutton is. It is also possible to control the load using Z- Wave devices.</p> <br /><h2>Inclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p> <br /><h2>Exclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">SimonTech S.L.U</property>
+      <property name="modelId">10002041-130</property>
+      <property name="manufacturerId">0267</property>
+      <property name="manufacturerRef">0009:0000</property>
+      <property name="dbReference">999</property>
+      <property name="defaultAssociations">2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1_wo" type="integer" groupName="configuration">
+        <label>1: Association LED</label>
+        <description>Turns ON/OFF the Association LED</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="255">Center LED ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Custom consumption limit</label>
+        <description><![CDATA[
+Custom consumption limit<br /><h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets the power in Watts that is supported. (once the load is over, it is disconnected).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="255">Power in Watts</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>3: Beacon</label>
+        <description><![CDATA[
+Beacon LEDs<br /><h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensity of the beacon LEDs.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disables the beacon function</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>10: Delay ON</label>
+        <description><![CDATA[
+Delay<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>11: Activation TIME</label>
+        <description><![CDATA[
+Activation TIME<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lock Input</label>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="255">Disables pushbutton</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_2_wo" type="integer" groupName="configuration">
+        <label>15: Reset</label>
+        <description>Reset default</description>
+        <default>0</default>
+        <options>
+          <option value="0">All parameters except Long Pulse Lock.</option>
+          <option value="39015">Restored to default</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>16: Delay OFF</label>
+        <description><![CDATA[
+Delay OFF<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Post Reset State</label>
+        <description>Load state after reset</description>
+        <default>255</default>
+        <options>
+          <option value="0">Off After Reset</option>
+          <option value="255">Activated After Reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Action When Pressing</label>
+        <description>Action when pressing</description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle</option>
+          <option value="1">On</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1_wo" type="integer" groupName="configuration">
+        <label>20: Identify</label>
+        <description>The center LED flashes</description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="65535">
+        <label>21: Charge Status</label>
+        <description>Charge status (read-only)</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_27_1" type="integer" groupName="configuration">
+        <label>27: Long Press Key</label>
+        <description>Determines function of long press</description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="255">Reset Config Parameters</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1 (Lifeline)<br /><h1>Overview</h1><p><strong>COMMAND_CLASS_BASIC_REPORT</strong></p> <p>It is sent to the associated nodes when the load changes state:</p> <ul><li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul><p><strong>COMMAND_CLASS_METER_REPORT_V4</strong></p> <p>It is sent to the associated nodes when the power consumed varies more than 10%</p> <p>Electric meter, Consumed, Watts, Size 4, Precision 1, Value (W)</p> <p><strong>COMMAND_CLASS_DEVICE_RESET_LOCALLY_ NOTIFICATION</strong></p> <p>The associated nodes are sent when the device is deleted from the Z-Wave network</p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: ctrl</label>
+        <description><![CDATA[
+Group 2 (Control)<br /><h1>Overview</h1><p>COMMAND_CLASS_BASIC_REPORT</p> <p>It is sent to the associated nodes when the load changes state:</p> <ul><li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul>
+        ]]></description>
+        <multipleLimit>20</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

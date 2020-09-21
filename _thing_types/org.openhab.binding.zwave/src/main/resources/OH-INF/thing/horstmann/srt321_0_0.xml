@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_srt321_00_000" listed="false">
+    <label>SRT321 Battery Powered Wall Thermostat</label>
+    <description><![CDATA[
+Battery Powered Wall Thermostat<br /><h1>Overview</h1><p>The SRT321 is a wireless electronic battery powered room thermostat that uses interoperable two-way RF mesh networking technology to provide optimum comfort with close control of the energy used to heat the home without the need for additional wiring or unsightly cable runs.<br />The SRT321 will only operate when 2 x AAA batteries have been fitted.</p> <br /><h2>Inclusion Information</h2><ol><li>Set the number 1 DIL switch on the back of the SRT321 thermostat to the On (Up) position and the display on the SRT321 will change to show the letter ‘I’. If the letter ‘L’ appears, carry out stage 1A opposite.</li> <li>Power up the ASR-ZW receiver unit</li> <li>The network LED on the ASR-ZW receiver should be flashing.</li> <li>Press the dial on the front of the SRT321 thermostat once so that the ‘I’ in the display flashes.</li> <li>Press and hold the network button on the ASR-ZW receiver until the On indicator flashes (green) before the Off indicator <br />becomes solid red.</li> <li>After a few seconds the radio mast symbol will appear in the display along with the letters IP.</li> <li>Reset the number 1 DIL switch on the back of the SRT321 to the Off position and the temperature should return in the display</li> </ol><br /><h2>Exclusion Information</h2><p>Not provided through installation manual.</p> <br /><h2>Wakeup Information</h2><ol><li>Turn the dial of the SRT321 until the letter P appears in the display.</li> <li>Press the dial twice.</li> <li>A second P should appear in the display which now shows `PP’.</li> <li>Turn the dial until the letter ‘I’ appears in the display and return to the main instruction.</li> </ol>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="horstmann_srt321_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">SRT321</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0001:0005</property>
+      <property name="dbReference">989</property>
+      <property name="defaultAssociations">1,6</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Enable Temperature Sensor</label>
+        <description>Controls the use of the temperature sensor on the device</description>
+        <default>255</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="255">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Temperature Scale</label>
+        <description>Controls the temperature sensor scale</description>
+        <default>0</default>
+        <options>
+          <option value="0">Celsius</option>
+          <option value="255">Fahrenheit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Delta T</label>
+        <description>Defines the temperature steps of the heating control. Steps are 0.1 K</description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Thermostat Mode Control</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Switch Control</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Battery Info</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Thermostat Set Point</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Air Temperature</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="horstmann_srt321_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

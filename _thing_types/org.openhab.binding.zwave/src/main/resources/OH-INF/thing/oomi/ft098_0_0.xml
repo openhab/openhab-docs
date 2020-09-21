@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="oomi_ft098_00_000" listed="false">
+    <label>FT098 9W Color Light Bulb</label>
+    <description><![CDATA[
+9W Color Light Bulb<br /><h1>Overview</h1><p>Oomi Bulb is a Z-Wave LED module which allows control (on/off/dim) with the use of Z-Wave. It's a bulb which has a Smart RGB LED, which can be used to add colour to your home. The bulb has 5 main colour channels available for you to adjust: Red, Green, Blue, Warm White and Cold White. You can configure its colour according to your favour. The Bulb is also a security Z-wave device and supports the Over The Air (OTA) feature for the product's firmware upgrade.  </p> <br /><h2>Inclusion Information</h2><ol><li>Toggle off the wall switch before you screw in Bulb and firmly screw in Bulb.</li> <li>Set your Z-Wave hub into pairing mode.</li> <li>Toggle off the wall switch controlling your Bulb to turn it off (keep it in the "OFF" state for 2 seconds) and then toggle on the wall switch to turn your Bulb on, the green will blink to indicate the Bulb is entering into pairing mode.</li> <li>If Bulb has been successfully added to your Z-Wave network, its RGB LED will be solid when you turn Bulb on.</li> </ol><p>Note:</p> <ol><li>If your Bulb has already been added into another Z-Wave network, you'll need to remove it from the existing network first. Refer to the Exclusion instructions.</li> <li>To check if LED Bulb is already paired to an existing network, toggle the wall switch off and on 3 times fast (the final ending position of the wall switch must be on). If LED Bulb blinks orange for 3 seconds, it is already paired into a Z-Wave network.</li> </ol><br /><h2>Exclusion Information</h2><p>Your Bulb can be removed from your Z-Wave network at any time. You'll need to use your Z-Wave network's main controller. To set your Z-Wave hub into removal mode, please refer to the respective section within your hubs instruction manual.</p> <ol><li>Set your Z-Wave hub into device removal mode.</li> <li>Toggle the wall switch off and on 3 times fast (the final ending position of the wall switch must be on). If successful, the Bulb will change to orange colour for 2 seconds before changing to white. If removal was unsuccessful, then Bulb will blink orange for 3 seconds before changing to red colour for 2 seconds.</li> </ol><br /><h2>Wakeup Information</h2><p>To check if LED Bulb is already paired to an existing network, toggle the wall switch off and on 3 times fast (the final ending position of the wall switch must be on). If LED Bulb blinks orange for 3 seconds, it is already paired into a Z-Wave network.</p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fantem</property>
+      <property name="modelId">FT098</property>
+      <property name="manufacturerId">016A</property>
+      <property name="manufacturerRef">0003:0062</property>
+      <property name="dbReference">836</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Power-on state</label>
+        <description>The bulb's state after power is applied</description>
+        <default>1</default>
+        <options>
+          <option value="0">Use previous state</option>
+          <option value="1">Always on</option>
+          <option value="2">Always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Send report when color is changed</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Hail CC</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>33: Get the bulb's color value</label>
+        <description><![CDATA[
+Byte 1: reserved, Bytes 2, 3, 4: Red, Green, Blue<br /><h1>Overview</h1><p>Value 1 = Reserved</p> <p>Value 2 = Red color value</p> <p>Value 3 = Green color value</p> <p>Value 4 = Blue color value</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration">
+        <label>34: Allow external switch to turn the bulb on/off</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration">
+        <label>35: Allow external switch to change the color</label>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration">
+        <label>36: Reboot / Save / Exit colorful mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Un-reboot colorful mode</option>
+          <option value="1">Reboot colorful mode</option>
+          <option value="2">Exit colorful mode</option>
+          <option value="3">Save current colorful mode value and then exit</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>37: Colorful mode configuration</label>
+        <description><![CDATA[
+Configure the colour cycling modes. See overview for details.<br /><h1>Overview</h1><h1>Colour Display Cycle Configuration</h1> <p>Parameter 37 [4 bytes] will cycle the colour displayed by the LED bulb into different modes:</p> <table><tr><td>Colour Transition Style</td> <td>Colour Change Speed Option</td> <td>Colour Display Cycle</td> </tr><tr><td>Brightness</td> </tr><tr><td>Cycle Count</td> </tr><tr><td>Time Base of Colour Change Speed</td> <td>Colour Change Speed Level</td> </tr></table><h1>Colour Display Cycle (4 bits)</h1> <p>The Colour Display Cycle field can have the following values, corresponding to 4 different modes:</p> <table><tr><td>Inactive (keep the current configuration values)</td> </tr><tr><td>Rainbow mode (red, orange, yellow, green, cyan, blue, violet)</td> </tr><tr><td>Multi Colour Mode (cycle between selected colours)</td> </tr><tr><td>Random mode</td> </tr><tr><td>Single colour mode</td> </tr><tr><td>Reserved</td> </tr></table><h1>Colour Transition Style (2 bits)</h1> <p>The following values correspond to 2 different transition styles between colours:</p> <table><tr><td>Smooth Colour Transition</td> </tr><tr><td>Fade Out Fade In Transition</td> </tr></table><h1>Cycle Count (8 bits)</h1> <p>The Cycle Count is used to define the number of repetitions / cycles displayed by the LED bulb in Colour Display Cycle before stopping.</p> <table><tr><td>Unlimited</td> </tr><tr><td>Total number of repetitions / cycles before stopping</td> </tr><tr><td>Inactive (keep the current configuration values)</td> </tr></table><h1>Brightness (8 bits)</h1> <table><tr><td>1 = Min level. 99 = Max level.</td> </tr><tr><td>Inactive (keep the current configuration values)</td> </tr></table><h1>Time Base of Colour Change Speed (3 bits)</h1> <p>This function would be used when the Colour Transition Style is set to Fade Out/In.</p> <table><tr><td>1 = Min level. 99 = Max level.</td> </tr><tr><td>Inactive (keep the current configuration values)</td> </tr></table><h1>Colour Change Speed Level (5 bits)</h1> <p>This function would be used when the Colour Transition Style is set to Fade Out/In.</p> <table><tr><td>Constant speed</td> </tr><tr><td>Accelerate / decelerate speed from the level 1 to 30</td> </tr><tr><td>Inactive (keep the current configuration values)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_38_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>38: Change speed</label>
+        <description><![CDATA[
+Change the speed when going from OFF to ON, ON to OFF. See overview for details.<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: the speed from OFF to ON</p> <p>Value 2: the speed from ON to OFF</p> <p>Value 3: pause time of ON</p> <p>Value 4: pause time of OFF</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_39_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>39: Multi-colour configuration</label>
+        <description><![CDATA[
+Set up to 8 colours to cycle between when the LED is in Multi Colour Mode<br /><h1>Overview</h1><h1>Colour Configuration</h1> <p>Parameter 39 [4 bytes] can be used to set up to 8 colours to cycle between when LED bulb is in Multi Colour Mode. Colours transition from Colour Index 1-8.</p> <table><tr><td>Index 1</td> <td>Index 2</td> </tr><tr><td>Index 3</td> <td>Index 4</td> </tr><tr><td>Index 5</td> <td>Index 6</td> </tr><tr><td>Index 7</td> <td>Index 8</td> </tr></table><h1>Colour Component Id</h1> <table><tr><td>Red</td> <td>Orange</td> <td>Yellow</td> <td>Green</td> <td>Cyan</td> <td>Blue</td> <td>Violet</td> <td>Pinkish</td> </tr></table><h2>Example</h2> <p>If you set the parameter 39 to 305135616 (0x12300000), the colour will be changed from Red to Orange and then Orange to Yellow circularly (Red-Orange-Yellow)</p> <p>When the bulb is in Single Colour Mode and the Fade Out Fade In transition style, the parameter 39 would be used to set the RGB value:</p> <table><tr><td>Red value</td> </tr><tr><td>Green value</td> </tr><tr><td>Blue value</td> </tr><tr><td>Reserved</td> </tr></table><p>When the bulb is in Random Mode, the parameter 39 would be used to set the random seed, then the bulb will automatically generate random colours to be displayed according to the random seed you set.</p> <table><tr><td>Random seed value</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Send notifications to associated devices (Group 1)</label>
+        <default>2</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Hail CC</option>
+          <option value="2">Basic CC Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_112_1" type="integer" groupName="configuration">
+        <label>112: Dimer mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Parabolic curve</option>
+          <option value="1">Index curve</option>
+          <option value="2">(Parabolic + Index) / 2</option>
+          <option value="3">Linear</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_200_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>200: Partner ID</label>
+        <default>0</default>
+        <options>
+          <option value="0">Aeon Labs Standard Product</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Enable/disable Lock Configuration</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_255_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>255: Reset to factory defaults</label>
+        <description><![CDATA[
+Reset the bulb, optionally also removing it from the z-wave network<br /><h1>Overview</h1><p>Value=0x55555555, Default=1, Size=4</p> <p>Reset to factory default setting and removed from the z-wave network</p> <p>Value=0, Default=1, Size=1 Reset to factory default setting</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>When the state of Smart Switch (turn on/off the load) is changed:</p> <ol><li>Set Configuration parameter 80 to 0:Reserved (Default).</li> <li>Set Configuration parameter 80 to 1:Send Hail CC.</li> <li>Set Configuration parameter 80 to 2:Send the Basic Report.</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Retransmit<br /><h1>Overview</h1><p>Forward the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Scene Activation Set to associated nodes in Group 2 when the Bulb receives the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Scene Activation Set commands from main controller.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

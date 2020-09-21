@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_dzmx1_00_000" listed="false">
+    <label>DZMX1 Scene Capable Push On/Off</label>
+    <description><![CDATA[
+Scene Capable Push On/Off<br /><h1>Overview</h1><p>The Leviton DZMX1 is a Z-Wave enabled universal dimmer designed for use for most residential lighting applications. A large range of lighting loads are supported including dimmable LED and CFL, as well incandescent, halogen and magnetic low voltage. The DZMX1 is fully compatible with Z-Wave enabled controllers, gateways, hubs, and security systems.</p> <p><strong>FEATURES AND BENEFITS</strong></p> <ul><li>Scene Capable Universal Dimmer</li> <li>Z-Wave compatible</li> <li>450W Dimmable LED/CFL</li> <li>1000W Incandescent, Halogen, MLV and Mark X</li> <li>120V 60HZ, neutral required</li> <li>White, Light Almond and Ivory faces included</li> <li>Supports Z-Wave Beaming and Network Wide Inclusion</li> <li>Scene capable</li> <li>User pre-set minimum brightness before turning off</li> <li>49 different fade rates</li> <li>Transient surge suppression built-in</li> <li>User pre-set ‘on level’</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">DZMX1</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">1B03:0334</property>
+      <property name="dbReference">196</property>
+      <property name="commandClass:COMMAND_CLASS_APPLICATION_STATUS">ccAdd</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgs211_02_001" listed="false">
+    <label>FGS211 Relay Switch 1x3kW</label>
+    <description><![CDATA[
+Relay Switch 1x3kW<br /><h1>Overview</h1><p>Remotely Controlled Relay Switch of Fibaro System is designed to operate in a wall switch box or in locations where the control of an electric device is needed.</p> <p>It is also possible to send a signal to any system that is to be integrated with Fibaro system.</p> <br /><h2>Inclusion Information</h2><p>Add Fibaro Switch to the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p> <br /><h2>Exclusion Information</h2><p>Remove Fibaro Switch from the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGS211</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0400:0102,0400:0104,0400:0105,0400:0106,0400:0107,0400:0108,0400:0109,0400:100A,0400:300A,0402:3002</property>
+      <property name="versionMin">2.1</property>
+      <property name="dbReference">920</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Enable/Disable ALL ON/OFF</label>
+        <description>Activate/Deactive ALL ON/OFF</description>
+        <default>255</default>
+        <options>
+          <option value="-1">ALL ON active / ALL OFF active</option>
+          <option value="0">ALL ON disabled / ALL OFF disabled</option>
+          <option value="1">ALL ON disabled / ALL OFF active</option>
+          <option value="2">ALL ON active / ALL OFF disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Enable/Disable OFF-delay</label>
+        <description>Activate/Deactivate Automatic turning off relay after set time</description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto OFF disabled for both relays</option>
+          <option value="1">Auto OFF active only for relay 1</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>4: Relay 1: OFF-delay time (100ms steps)</label>
+        <description><![CDATA[
+Automatic turning off relay 1 after set time<br /><h1>Overview</h1><p>Automatic turning off relay 1 after set time, in 100ms increments: 0=disabled (default), 65535=6535,5 secs</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Separation of association sending (key 1)</label>
+        <description>Activate/Deactivate association sending for group 1 - Also see param #16</description>
+        <default>0</default>
+        <options>
+          <option value="0">Map status to all devices in group 1</option>
+          <option value="1">Map OFF status to devices in group 1-last state</option>
+          <option value="2">Map OFF status to devices in group 1 - 100%</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Inputs behaviour</label>
+        <description>In case of bi-stable switches, define their behaviour (toggle or follow)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Toggle</option>
+          <option value="1">Follow switch contact (closed=ON, open=OFF)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Inputs Button/Switch configuration</label>
+        <description>Binary inputs type configuration</description>
+        <default>1</default>
+        <options>
+          <option value="0">Mono-stable input (button)</option>
+          <option value="1">Bi-stable input (switch)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Dimmer/Roller shutter control</label>
+        <description><![CDATA[
+Enable/Disable operation associated to group 1.<br /><h1>Overview</h1><p>Enable/Disable operation of dimmer or roller shutter devices associated to group 1.</p> <p>Available only when using mono-stable inputs (buttons) - Hold button 1 or double-tap for operation</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable Dimmer/Roller shutter control</option>
+          <option value="1">Enable Dimmer/Roller shutter control</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Saving state before power failure</label>
+        <description>Saving state before power failure</description>
+        <default>1</default>
+        <options>
+          <option value="0">State NOT saved at power failure</option>
+          <option value="1">State saved at power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Relay 1: Response to General Alarm</label>
+        <default>3</default>
+        <options>
+          <option value="0">DEACTIVATION - no response to alarm frames</option>
+          <option value="1">Alarm relay ON</option>
+          <option value="2">Alarm relay OFF</option>
+          <option value="3">ALARM FLASHING</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Relay 1: Response to Water Flood Alarm</label>
+        <default>2</default>
+        <options>
+          <option value="0">DEACTIVATION - no response to alarm frames</option>
+          <option value="1">Alarm relay ON</option>
+          <option value="2">Alarm relay OFF</option>
+          <option value="3">ALARM FLASHING</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Relay 1: Response to Smoke, CO, CO2 Alarm</label>
+        <default>3</default>
+        <options>
+          <option value="0">DEACTIVATION - no response to alarm frames</option>
+          <option value="1">Alarm relay ON</option>
+          <option value="2">Alarm relay OFF</option>
+          <option value="3">ALARM FLASHING</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Relay 1: Response to Temperature Alarm</label>
+        <default>1</default>
+        <options>
+          <option value="0">DEACTIVATION - no response to alarm frames</option>
+          <option value="1">Alarm relay ON</option>
+          <option value="2">Alarm relay OFF</option>
+          <option value="3">ALARM FLASHING</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>39: ALARM FLASHING alarm time</label>
+        <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
+        <default>600</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Switch 1</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch 2</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Updates</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="chromagic_em6556_00_000" listed="false">
+    <label>EM6556 In wall single switch</label>
+    <description><![CDATA[
+In wall single switch<br /><h1>Overview</h1><p>Eminent e-DOMOTICA in wall mini switch. Allows you to turn on and turn off your illumination and other electircal devices by using the e-Domotica e-Centre touchscreen or the EM6511 e-Domotica remote control. </p> <p>The switch utilizes the Z-Wave protocol and can be included into a Z-Wave network.</p> <br /><h2>Inclusion Information</h2><ul><li>Put your Z-Wave controller into inclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now included</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Put your Z-Wave controller into exclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now excluded</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Chromagic Technologies Corporation</property>
+      <property name="modelId">EM6556</property>
+      <property name="manufacturerId">0116</property>
+      <property name="manufacturerRef">0011:0001</property>
+      <property name="dbReference">902</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

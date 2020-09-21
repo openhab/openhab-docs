@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgd211_00_000" listed="false">
+    <label>FGD211 Universal Dimmer 500W</label>
+    <description><![CDATA[
+Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <p>As a Dimmer it operates under the following loads:</p> <ul><li>conventional incandescent</li> <li>Halogen 230V</li> <li>low voltage halogen 12V (with electronic transformers)</li> <li>dimmable LED</li> <li>when used with FGB001 it may operate with any dimmable load up to 500W</li> </ul><br /><h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes.</p> <br /><h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGD211</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0100:0104,0100:0106,0100:0107,0100:0109,0100:100A,0100:300A</property>
+      <property name="versionMax">1.8</property>
+      <property name="dbReference">117</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Enable/Disable ALL ON/OFF</label>
+        <description>Activate/Deactive ALL ON/OFF</description>
+        <default>255</default>
+        <options>
+          <option value="-1">ALL ON active / ALL OFF active</option>
+          <option value="0">ALL ON disabled / ALL OFF disabled</option>
+          <option value="1">ALL ON disabled / ALL OFF active</option>
+          <option value="2">ALL ON active / ALL OFF disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Separation of association sending (key 1)</label>
+        <description>Activate/Deactivate association sending for group 1 - Also see param #16</description>
+        <default>0</default>
+        <options>
+          <option value="0">Map status to all devices in group 1</option>
+          <option value="1">Map OFF status to all devices in group 1</option>
+          <option value="2">Map OFF status to all devices in group 1</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Control key #2 behaviour</label>
+        <description><![CDATA[
+Key no. 2 is not represented by any physical device<br /><h1>Overview</h1><p>Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no. 2 through polling devices from association list one by one and checking their actual states</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Device status is not checked</option>
+          <option value="1">Device status is checked</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>8: Dimming step at automatic control</label>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>9: Time of MANUALLY moving between values</label>
+        <description><![CDATA[
+Options for changing parameter 1-255 (10ms - 2,5s)<br /><h1>Overview</h1><p>Time of MANUALLY moving between the extreme dimming values</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Time of AUTOMATIC moving between values</label>
+        <description><![CDATA[
+Time of autom. moving the dimmer between min/max<br /><h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Dimming step at manual control</label>
+        <description>Options for changing parameter 1-99</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>12: Maximum dimmer level control</label>
+        <description>Options for changing parameter 2-99</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Minimum dimmer level control</label>
+        <description>Options for changing parameter 1-98</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Inputs Button/Switch configuration</label>
+        <description>Binary inputs type configuration</description>
+        <default>0</default>
+        <options>
+          <option value="0">Mono-stable input (button)</option>
+          <option value="1">Bi-stable input (switch)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Parm 15</label>
+        <description>Double-click set lighting at 100%</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable double click</option>
+          <option value="1">Enable double click</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Saving state before power failure</label>
+        <description>Saving state before power failure</description>
+        <default>1</default>
+        <options>
+          <option value="0">State NOT saved at power failure</option>
+          <option value="1">State saved at power failure</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: 3-way switch</label>
+        <description><![CDATA[
+Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch provides the option to double key no. 1. The dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons. (default value 0)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Synchronizing light level for associated devices</label>
+        <description>The dimmer communicate the level to the associated devices. (default value 0)</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Change [On-Off] bi-stable keys</label>
+        <description><![CDATA[
+Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device changes status on key status change</option>
+          <option value="1">Device status depends on key status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="100" max="170">
+        <label>20: Control impulse length</label>
+        <description><![CDATA[
+Change of control impulse length.<br /><h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170].</p> <p>By changing the minimem level, the user may completely dim LED bulbs. Not all LED bulbs available on the market have the dimming capabilty.</p>
+        ]]></description>
+        <default>110</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Relay 1: Response to General Alarm</label>
+        <default>3</default>
+        <options>
+          <option value="0">DEACTIVATION - no response to alarm frames</option>
+          <option value="1">Alarm relay ON</option>
+          <option value="2">Alarm relay OFF</option>
+          <option value="3">ALARM FLASHING</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_39_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>39: ALARM FLASHING alarm time</label>
+        <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
+        <default>600</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Switch 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Switch 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Updates</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

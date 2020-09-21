@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="steinel_l810ledihf_00_000" listed="false">
+    <label>L 810 LED iHF Sensor-switched outdoor up and downlighting</label>
+    <description><![CDATA[
+Sensor-switched outdoor up and downlighting<br /><h1>Overview</h1><p>A high-quality product is cleverly thought through and made from materials that last. Its value also extends beyond today, it has permanency and constancy. The L 810 iHF outdoor SensorLight is an LED uplight and downlight that translates intelligent technology into form and function. For the first time, we have managed to make a light's sensor completely invisible – without compromising on first-class design and technological perfection. For stunning upward and downward lighting. New: optional manual override for 4 hours.<br /><br />The optional Smart Friends box and the free Smart Friends app make it easy to set the L 810 LED iHF Z-Wave via smart phone or tablet. The light can also be switched ON or OFF via app. Other Steinel products can also be interconnected. If you wish, this also works via remote control when you are out. That completes your own light management system.</p> <br /><h2>Inclusion Information</h2><p>4) Briefly press the device's button to set the light to inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Briefly press the device's button to set the light to exclusion mode. </p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="scene_number1" typeId="scene_number">
+        <label>Scene Number 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar2" typeId="alarm_burglar">
+        <label>Alarm (burglar) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2,COMMAND_CLASS_BASIC:2;type=BURGLAR</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Steinel</property>
+      <property name="modelId">L 810 LED iHF</property>
+      <property name="manufacturerId">0271</property>
+      <property name="manufacturerRef">0001:1A75</property>
+      <property name="dbReference">705</property>
+      <property name="defaultAssociations">1,2,3,4,5</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="5" max="900">
+        <label>1: Time</label>
+        <description>Duration of light after motion detection.</description>
+        <default>180</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="2" max="2000">
+        <label>2: Light</label>
+        <description><![CDATA[
+Light threshold [lx]:<br /><h1>Overview</h1><p>0 – run Learn ambient light sequence. 2000 – is used as daylight (always night mode). Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.</p>
+        ]]></description>
+        <default>2000</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="60">
+        <label>3: Dim</label>
+        <description><![CDATA[
+Night dim mode and time [min]: (only for SLAMP with DIM ability)<br /><h1>Overview</h1><p>0 – off (dim = basic light completely disabled). 1-60 – time [minutes] (enabled in night mode, starts after lamp is switched off after motion detection). -1 – whole night (dim through the whole night when lamp is off). Dim mode is also disabled when local control is disabled as well as in Slave mode.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="100" max="500">
+        <label>4: Range</label>
+        <description><![CDATA[
+Motion Radar Range [cm]: (only for iHF sensor)<br /><h1>Overview</h1><p>Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as default value and any potentiometer movement rewrites the current setting.</p>
+        ]]></description>
+        <default>500</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="2" max="100">
+        <label>5: Sensity</label>
+        <description><![CDATA[
+Motion Radar Sensitivity [%]: (SLAMP+SPIR)<br /><h1>Overview</h1><p>Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="120">
+        <label>6: Brighntes Meas Interval</label>
+        <description><![CDATA[
+Brightness measuring interval [min]: (only SLAMP)<br /><h1>Overview</h1><p>Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Global_Light</label>
+        <description><![CDATA[
+Use external Ambient Light value:<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically. If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>9: Slave_Mode</label>
+        <description><![CDATA[
+Disable local control:<br /><h1>Overview</h1><p>Bit Field:</p> bit 7 6 5 4 3 2 1 0 Function - Don’t use button for lamp switching (STOGGLE) - - - "Stupid" mode Central unit checking in slave mode  Slave mode <h2>"Stupid" mode (bit 2 = 1):</h2> <p>- has higher priority then slave mode - lamp/relay is permanently on (for simple power wall switch controlling)</p> <h2>Slave mode (bit 0 =1):</h2> <p>- only if included in Z-Wave network <br />- useful for controlling via third-party sensor - lamp/relay is directly controlled via Z-Wave, internal sensors are not used for controlling it</p> <h2>Central unit checking (bit 1 =1):</h2> <p>(useful especially for controlling via gateway)</p> <p>When slave bit is 0:<br />- device signalises fail of lifeline connection (if this bit is zero, fail of lifeline connection is not signalised)</p> <p>When slave bit is 1:<br />- device checks presence of Z-Wave device in lifeline group (gateway). If it is not present for 2 minutes (testing repeatedly every 30 seconds) device switches to normal mode in the same way as after the end of local disabled mode (ON_BEHAVIOUR) <br />- the device checks every 1 minute for recovery of lifeline connection <br />- if no lifeline specified <br />- it works in normal mode</p> <h2>Do not use button for lamp switching (bit 6 = 1):</h2> <p>only for STOGGLE variant <br />- disables button controlling device itself along with controlling group 5. When enabled also works in stand-alone.</p> <p><strong>Be careful with this option</strong>, device stops using its own motion sensor in Slave and "Stupid" mode.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Off_Behaviour</label>
+        <description><![CDATA[
+Off behaviour (timeout):<br /><h1>Overview</h1><p>Behaviour after BASIC OFF (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 Lamp/Relay is switched off and remains so until any new motion event (local or remote) is received.</p> <p>1 - 209 Lamp/Relay is switched off and remains so until after a specified timeout once a new motion event (local or remote) is received. Timeout: 1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution 101..200 – 1 minute (101) to 100 minutes (200) 1-minute resolution 201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 Reserved</p> <p>255 Lamp/relay is switched off for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: On_Behaviour</label>
+        <description><![CDATA[
+On behaviour (timeout):<br /><h1>Overview</h1><p>Behaviour after BASIC ON (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 Lamp/relay is switched on and remains so until any new motion event (local or remote) is received. It then works normally via current motion evaluation. Notice – during the day, this mode cannot be ended remotely due to motion events not being transmitted – only via local motion sensor if enabled.</p> <p>1 - 209 Lamp/relay is switched on and remains so until after a specified timeout once a new motion event (local or remote) is received. It then works normally via current motion evaluation. Timeout: 1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution 101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution 201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution Notice – during the day, this mode cannot be ended remotely due to motion events not being transmitted – only via local motion sensor if enabled.</p> <p>210 - 254 Reserved</p> <p>255 Lamp/relay is switched on for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: On_Time_Over</label>
+        <description><![CDATA[
+On behaviour time over (timeout):<br /><h1>Overview</h1><p>Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or OFF_ON_BEHAVIOUR (0-209) to prevent staying ON forever when there is no motion.</p> <p>0 No additional waiting for motion.</p> <p>1 - 209 1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution 101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution 201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 Reserved</p> <p>255 Never stop waiting for motion.</p>
+        ]]></description>
+        <default>204</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: On_Off_Behaviour</label>
+        <description><![CDATA[
+Sequence On-Off behaviour (timeout):<br /><h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands. The intention is to use a much longer timeout value than the time after a single ON command which should then be followed by a short timeout value. The behaviour is the same as for parameter 10 (OFF_LOCAL_DISABLE) except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.</p>
+        ]]></description>
+        <default>204</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>14: Off_On_Behaviour</label>
+        <description><![CDATA[
+Sequence Off-On behaviour (timeout):<br /><h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands. The intention is to use a much longer timeout value than the time after a single OFF command which should then be followed by a short timeout value. The behaviour is the same as for parameter 11 (ON_LOCAL_DISABLE) except: 255 – device ignores OFF - ON sequence and uses ON behaviour.</p>
+        ]]></description>
+        <default>204</default>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="10" max="50">
+        <label>15: Sequence_Time</label>
+        <description><![CDATA[
+Sequence timing:<br /><h1>Overview</h1><p>Time in [100 milliseconds] of maximum delay between BASIC ON and BASIC OFF (and vice versa) to consider this as a sequence. It is typically 1 second, but can be exceptionally longer due to retransmissions and overload – in this case, a longer interval can be allowed (up to 5 seconds).</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_16_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Motion_Disable</label>
+        <description><![CDATA[
+Motion Off behaviour (timeout):<br /><h1>Overview</h1><p>Motion disable timeout after BASIC SET to motion endpoint when the internal motion sensor is not used for evaluating the behaviour of the lamp(SLAMP) relay(SPIR) and groups 2 and 3. Events are, however, still transmitted to the Lifeline, and the device can be controlled via remote motion sensors.</p> <p>0 BASIC SET to motion sensor endpoint ignored, BASIC to root is mapped to relay endpoint, (SPIR) motion sensor still enabled</p> <p>1 - 209 Internal motion sensor is disabled for specified timeout after BASIC SET 0x00 to motion endpoint. Timeout: 1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution 101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution 201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 Reserved</p> <p>255 BASIC SET to motion endpoint ignored, motion sensor still disabled.</p>
+        ]]></description>
+        <default>209</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /><h1>Overview</h1><p>Lifeline messages - Device Reset Locally (immediately) - Notifications: 0x09 (System) – Hardware failure with manufacturer proprietary code (0x03) 0x09 (System) – Software failure with manufacturer proprietary code (0x04) 0x07 (Home security) – Motion Begin event (0x08) 0x07 (Home security) – Motion End event (0x00, 0x08) - Binary Switch Report (SPIR) - Binary Switch Report (SBIN) - Multilevel Switch Report (SMUL) - Multilevel Sensor Report – value of internal ambient light sensor - Central scene notification (STOGGLE) Motion Begin and Motion End events are sent along with frames to group 3. If multichannel association is created the events are sent from motion sensor endpoint. Switch Report is sent immediately upon a change of status along with frames to group 2. If multichannel association is created the events are sent from lamp/relay endpoint. Multilevel Sensor Report is sent a maximum of once per 1 minute (if the value has changed by at least 3%) and a minimum of once per 15 minutes (if the value has not changed). If the ambient light value is old (cannot be measured because of permanent light), the value is not transmitted via lifeline. Multilevel Sensor Report can also be added to some other events to send in bulk. If multichannel association is created the events are sent from light sensor endpoint. Central scene notification is sent as reaction to user interaction. If multichannel association is created the events are sent from toggle button endpoint. All notifications to lifeline are sent as sensor states regardless of sensor settings and</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control: Key01</label>
+        <description><![CDATA[
+On/Off control<br /><h1>Overview</h1><p>Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together). This is intended for use especially with third-party devices that do not implement reactions for motion events. BASIC_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously. Only for use in master-slave system, multi-device control is not possible. Group 2 is evaluated and frames are transmitted there also in SLAVE_ MODE, regardless of LOCAL_DISABLED state and when MOTION_ENABLE is off (not using internal motion sensor, just reacting to remote motion events in this case). If multichannel association is created the events are sent from motion sensor endpoint.</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification: Motion</label>
+        <description><![CDATA[
+Motion Begin/End (PIR/radar/iHF)<br /><h1>Overview</h1><p>Group 3 sends MOTION_BEGIN and MOTION_END frames. MOTION_BEGIN frame = Notification 0x07 (Home security) – Motion detection without location (0x08) MOTION_END frame = Notification 0x07 (Home security) – Event inactive (0x00, parameter 0x08)After the first motion detection, MOTION_BEGIN is sent. If continual movement is detected, MOTION_BEGIN is sent every 1 minute repeatedly. When motion ends, MOTION_END is sent 5 seconds after the last motion detection. Notification to group 3 is sent only when NIGHT_MODE = ON and MOTION_ ENABLE = ON, regardless of LOCAL_DISABLE state. All devices in a group should have the same TIME settings in order that they switch off at the same time. If multichannel association is created the events are sent from motion sensor endpoint.</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor: Luminescence</label>
+        <description><![CDATA[
+Ambient light<br /><h1>Overview</h1><p>Ambient Light via Group 4 is intended to substitute locally measured LUX values in target devices – so that the network can have one source of ambient light value. Frames are sent a maximum of once per 2.5 minutes and a minimum of once per 15 minutes. When device already uses remote Ambient Light value, then this value is also retransmitted to group 4. All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time. If multichannel association is created the events are sent from light sensor endpoint.</p>
+        ]]></description>
+        <multipleLimit>15</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Control: Key02</label>
+        <description><![CDATA[
+On/Off button<br /><h1>Overview</h1><p>Group 5 is used for directly controlling Z-Wave devices via BASIC SET commands by button. (STOGGLE) If multichannel association is created the events are sent from toggle button endpoint.</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

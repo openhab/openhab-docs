@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgr221_00_000" listed="false">
+    <label>FGR221 Roller Shutter Controller</label>
+    <description><![CDATA[
+Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Controller is hereinafter referred to as Fibaro Roller Controller. It is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to Fibaro Roller Controller. </p> <br /><h2>Inclusion Information</h2><p>Add the Roller Shutter Controller to the network by pushing three times key no. 1 or push-button B located inside the housing of the device. </p> <h1>NOTE:</h1> <p>It should be noted that after proper adding the Roller Shutter Controller to the Fibaro System, it should be calibrated. The calibration process involves performing two complete cycles of opening/ closing the shutter. Properly completed calibration may be verified by setting required position of the shutter using the icon e.g. 30% of shutter opening - the actual opening should correspond to this value/position.</p> <p>For large Z-WAVE networks it is recommended to calibrate the module by switches connected to S1 and S2 inputs. </p> <br /><h2>Exclusion Information</h2><p>Within 5 sec. after connecting mains voltage supply, the Roller Shutter Controller allows the user to reset settings by pressing once S1 key and then holding key S2</p> <br /><h2>Wakeup Information</h2><p>None provided</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGR221</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">0300:0102,0300:0104,0300:0106,0300:0107,0300:0109,0300:100A</property>
+      <property name="dbReference">132</property>
+      <property name="defaultAssociations">3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Enable/Disable ALL ON/OFF</label>
+        <description>Activate/Deactive ALL ON/OFF</description>
+        <default>255</default>
+        <options>
+          <option value="-1">ALL ON active / ALL OFF active</option>
+          <option value="0">ALL ON disabled/ ALL OFF disabled</option>
+          <option value="1">ALL ON disabled/ ALL OFF active</option>
+          <option value="2">ALL ON active / ALL OFF disabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Control key #2 behaviour</label>
+        <description>Turning off the shutter positioning function</description>
+        <default>0</default>
+        <options>
+          <option value="0">Turn ON the shutter positioning (default)</option>
+          <option value="1">Turning off the shutter positioning function</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Inputs Button/Switch configuration</label>
+        <description>Binary inputs type configuration</description>
+        <default>0</default>
+        <options>
+          <option value="0">Mono-stable input (button)</option>
+          <option value="1">Bi-stable input (switch)</option>
+          <option value="2">Single Mono-stable switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>20: Dimmer/Roller shutter control</label>
+        <description>Options for changing parameter 1-99, default 16</description>
+        <default>16</default>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: General Alarm</label>
+        <description>set for shutter no. 1</description>
+        <default>2</default>
+        <options>
+          <option value="0">Deactivation</option>
+          <option value="1">OPEN shutter alarm</option>
+          <option value="2">CLOSED shutter alarm</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration">
+        <label>31: Alarm of flooding with water</label>
+        <description>set for relay the shutter</description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivation</option>
+          <option value="1">OPEN shutter alarm</option>
+          <option value="2">CLOSED shutter alarm</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration">
+        <label>32: Smoke, CO, CO2 Alarm.</label>
+        <description>Set for the roller shutter.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Deactivation</option>
+          <option value="1">OPEN shutter alarm</option>
+          <option value="2">CLOSED shutter alarm</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration">
+        <label>33: Temperature Alarm</label>
+        <description>set for roller shutter</description>
+        <default>1</default>
+        <options>
+          <option value="0">Deactivation</option>
+          <option value="1">OPEN shutter alarm</option>
+          <option value="2">CLOSED shutter alarm</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration">
+        <label>41: Scene activation functionality</label>
+        <description><![CDATA[
+Only valid for the 1.9 version of FGR221.<br /><h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Deactivation of functionality - Default</option>
+          <option value="1">Activation of functionality</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association">
+        <label>3: Controller Updates</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

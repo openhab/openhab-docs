@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="widom_wds2_00_000" listed="false">
+    <label>WDS2 Widom Smart Double Switch</label>
+    <description><![CDATA[
+Widom Smart Double Switch<br /><h1>Overview</h1><p>WiDom Smart Double Switch is an ON/OFF control device designed to independently control two separate loads, suited for being controlled by both remote and local switches. Similarly to the other WiDom “in wall” devices, it can be fully integrated into pre-existing systems and configured to associate configurable behaviors to a specific number of clicks, in full integration with the Z-Wave home automation ecosystem. There are two versions of WiDom Double Switch: L version controlled by Line signal; N version controlled by Neutral signal</p> <br /><h2>Inclusion Information</h2><p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed. </p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in Learning Mode. If you are using the WiDom Multi Sensor Room Controller, the procedure of exclusion can be activated by Removing a node from the Z-Wave network and any click sequence on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED and the App_status in the interface is OK. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER;reset=true</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts)1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts)2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">wiDom</property>
+      <property name="modelId">WDS2</property>
+      <property name="manufacturerId">0149</property>
+      <property name="manufacturerRef">1214:0B00,1214:0C00</property>
+      <property name="dbReference">986</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Numbers of clicks to control Channel 1</label>
+        <description><![CDATA[
+Define which sequences of clicks control the load connected to Channel 1/2.<br /><h1>Overview</h1><p>Define which sequences of clicks control the load connected to both Channel 1 and Channel 2, if parameter No. 2 is set to its default value. Otherwise parameter No.1 sets the clicks sequence only for Channel 1 and parameter No. 2 sets the clicks sequence for Channel 2</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">ONE_CLICK</option>
+          <option value="2">TWO_CLICKS</option>
+          <option value="3">ONE_CLICK or TWO_CLICKS</option>
+          <option value="4">THREE_CLICKS</option>
+          <option value="5">ONE_CLICK or THREE_CLICKS</option>
+          <option value="6">TWO_CLICKS or THREE_CLICKS</option>
+          <option value="7">ONE_CLICK, TWO_CLICKS or THREE_CLICKS</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Numbers of clicks to control Channel 2</label>
+        <description>Define which sequences of click control the load connected to Channel 2</description>
+        <default>8</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">ONE_CLICK</option>
+          <option value="2">TWO_CLICKS</option>
+          <option value="3">ONE_CLICK or TWO_CLICKS</option>
+          <option value="4">THREE_CLICKS</option>
+          <option value="5">ONE_CLICK or THREE_CLICKS</option>
+          <option value="6">TWO_CLICKS or THREE_CLICKS</option>
+          <option value="7">ONE_CLICK, TWO_CLICKS or THREE_CLICKS</option>
+          <option value="8">EQUAL_TO_CHANNEL_1</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Value used for devices belonging to Group 2</label>
+        <description>Value used for devices belonging to Group 2 when I1 button receive 1 Click</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Value used for devices belonging to Group 5</label>
+        <description>Value used for devices belonging to Group 5 when I2 button receive 1 Click</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Value used for devices belonging to Group 3</label>
+        <description>Value used for devices belonging to Group 3 when I1 button receive 2 Clicks</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Value used for devices belonging to Group 6</label>
+        <description>Value used for devices belonging to Group 6 when I2 button receive 2 Clicks</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Value used for devices belonging to Group 4</label>
+        <description>Value used for devices belonging to Group 4 when I1 button receive 3 Clicks</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Value used for devices belonging to Group 7</label>
+        <description>Value used for devices belonging to Group 7 when I2 button receive 3 Clicks</description>
+        <default>100</default>
+        <options>
+          <option value="-1">Basic Set ON</option>
+          <option value="0">Basic Set OFF</option>
+          <option value="100">Basic Set with same value of channel status</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>10: Timer to switch OFF the Channel 1</label>
+        <description>Defines the time after which the Channel 1 is switched OFF</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>11: Timer to switch OFF the Channel 2</label>
+        <description>Defines the time after which the Channel 2 is switched OFF</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>12: Timer to switch ON the Channel 1</label>
+        <description>Defines the time after which the Channel 1 is switched ON</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>13: Timer to switch ON the Channel 2</label>
+        <description>Defines the time after which the Channel 2 is switched ON</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Local Scenario</label>
+        <description><![CDATA[
+Defines the behavior of the device Channels<br /><h1>Overview</h1><p>Defines the behavior of the device Channels when the I1/I2 buttons receive a valid number of clicks (see Parameters No. 1 and No. 2).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">INDIPENDENT_CHANNELS</option>
+          <option value="1">NEVER_BOTH_ON</option>
+          <option value="2">SEQUENCING_RELAY</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration">
+        <label>60: Start-up status</label>
+        <description>Defines the status of the device following a restart.</description>
+        <default>4</default>
+        <options>
+          <option value="0">OFF_OFF - Both Channel 1 and Channel 2 OFF</option>
+          <option value="1">OFF_ON - Channel 1 OFF, Channel 2 ON</option>
+          <option value="2">ON_OFF - Channel 1 ON, Channel 2 OFF</option>
+          <option value="3">ON_ON - Both Channel 1 and Channel 2 ON</option>
+          <option value="4">PREVIOUS STATUS - Status prior to restart</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration">
+        <label>62: Type of external switch both inputs</label>
+        <description><![CDATA[
+Defines the type of external switch connected both to input 1 and input 2.<br /><h1>Overview</h1><p>Defines the type of external switch connected both to input 1 and input 2, if parameter No. 63 is set in its default value. Otherwise parameter No. 62 defines only the switch connected to the input 1 and parameter No. 63 the switch connected to the input 2.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration">
+        <label>63: Type of external switch input 2</label>
+        <description>Define the switch type connected to the input 2</description>
+        <default>3</default>
+        <options>
+          <option value="0">IGNORE</option>
+          <option value="1">BUTTON</option>
+          <option value="2">SWITCH</option>
+          <option value="3">EQUAL TO SWITCH 1</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 1 click Button S1</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 2 clicks Button S1</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: 3 clicks Button S1</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: 1 click Button S2</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: 2 clicks Button S2</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: 3 clicks Button S2</label>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_zw15sm_00_000" listed="false">
+    <label>ZW15SM Binary Switch + Meter</label>
+    <description><![CDATA[
+Binary Switch + Meter<br /><h1>Overview</h1><p>The on/off switch replaces your current light switch, uses your existing wiring, and provides in-wall control of overhead lighting and remote access.</p> <br /><h2>Inclusion Information</h2><p>The process of "Inclusion/ Exclusion" is to Add or Remove the device from the Hub. All Z-Wave devices must be "Included" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the "Inclusion" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. </p> <ol><li>Go to the "Add Device" page.</li> <li>Select "Include Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch</li> </ol><br /><h2>Exclusion Information</h2><ol><li>From the Control Panel, go the the device Exclusion page.</li> <li>Select "Exclude Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">ZW15SM</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0111:0102</property>
+      <property name="dbReference">640</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: LED Toggle</label>
+        <description>Synchronization of load power and LED indicator</description>
+        <default>0</default>
+        <options>
+          <option value="0">Power on, LED off</option>
+          <option value="1">Power on, LED on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Button Toggle</label>
+        <description>Configure button toggle</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: METER_REPORT Instant Energy Interval</label>
+        <description><![CDATA[
+METER_REPORT Instant Energy Interval<br /><h1>Overview</h1><p>Send METER_REPORT at this interval</p> <p>0 means to not send</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Instant Energy Autosend Interval</label>
+        <description><![CDATA[
+Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Accumulated Energy Autosend Interval report</label>
+        <description><![CDATA[
+Accumulated Energy Autosend Interval report (METER_REPORT)<br /><h1>Overview</h1><p>Send accumulated METER_REPORT at this interval</p> <p>0 means to not send</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>11: Power change notification</label>
+        <description><![CDATA[
+Enable automatic notifications whenever there is a wattage change<br /><h1>Overview</h1><p>Enable automatic notifications to associated device whenever there is a wattage change</p> <p>0: No report<br />1: Send METER_REPORT<br />2: Send SENSOR_MULTILEVEL_REPORT<br />3: Send both METER_REPORT and SENSOR_MULTILEVEL_REPORT</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>12: Power change notification threshold</label>
+        <description><![CDATA[
+Minimum change in wattage report<br /><h1>Overview</h1><p>When the power changes by this many watts, send an automatic power level notification</p> <p>0: 0.0W<br />....<br />255: 25.5W</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Send device reset locally notification</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: StatusReport</label>
+        <description>Send basic report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: PowerReport</label>
+        <description>Send meter power report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: AssignGroupSet</label>
+        <description>Send Basic set command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

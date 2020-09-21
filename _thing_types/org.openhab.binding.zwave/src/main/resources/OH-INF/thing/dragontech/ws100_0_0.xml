@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="dragontech_ws100_00_000" listed="false">
+    <label>WS-100 Wall On/Off Switch</label>
+    <description><![CDATA[
+Wall On/Off Switch<br /><h1>Overview</h1><p>FEATURES</p> <ul><li>Works with incandescent, florescent (CFL), or LED lighting and appliance</li> <li>ON/OFF status and location LED indicator</li> <li>Can be controlled wirelessly or manually</li> <li>Fits into standard single or multiple gang junction box and standard wall plates</li> <li>Decorative keypad can be replaced manually to match color with other wall switches</li> <li>Over-­‐The-­‐Air firmware upgrade available with compatible gateway, Z-­‐Wave® static controller, PC and software</li> <li>Z-­‐Wave 500 Series module inside</li> <li>Internal resettable fuse to protect from surge current</li> <li>manual reset capability</li> </ul><br /><h2>Inclusion Information</h2><p>Single click and release the rocker switch</p> <br /><h2>Exclusion Information</h2><p>Single click and release the rocker switch</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Dragon Tech Industrial, Ltd.</property>
+      <property name="modelId">WS-100</property>
+      <property name="manufacturerId">0184</property>
+      <property name="manufacturerRef">4447:3033</property>
+      <property name="dbReference">242</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Indicator</label>
+        <description>Controls LED behavior when switch state is on/off</description>
+        <default>0</default>
+        <options>
+          <option value="0">off/on</option>
+          <option value="1">on/off</option>
+          <option value="2">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Orientation</label>
+        <description>Controls the on/off orientation of the rocker switch</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="1">Inverted</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

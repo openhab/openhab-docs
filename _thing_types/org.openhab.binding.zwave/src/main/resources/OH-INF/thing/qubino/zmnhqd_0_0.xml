@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhqd_00_000" listed="false">
+    <label>ZMNHQD Qubino LUXY Smart Light</label>
+    <description><![CDATA[
+Qubino LUXY Smart Light<br /><h1>Overview</h1><p>The Qubino LUXY Smart Light is ideal for gentle illumination of any room and for visual and sound notifications. </p> <br /><h2>Inclusion Information</h2><p>Manual inclusion is triggered by the following procedure: </p> <ul><li>Full white needs to be active (c-button 2). The user can select it by quickly pressing the c-button2 once.</li> <li>When full white is enabled, press c-button3 and hold it for 5 seconds (while white is glowing, hold c-button3 for 5 seconds).</li> <li>After 5 seconds, the device starts flashing, with the following pattern: green 1 second on, 0.5 second off.</li> <li>Once the device receives a nodeId or after 10 seconds, it stops flashing and turns green. </li> </ul><br /><h2>Exclusion Information</h2><p>Exclusion is triggered by the following procedure:</p> <ul><li>Full white needs to be active (c-button 2).</li> <li>When full white is enabled, press c-button3 and hold it for 5 seconds (while white is glowing hold c-button3 for 5 seconds).</li> <li>After 5 seconds, the device starts flashing with the following pattern: red 1 second on, 0.5 second off. </li> <li>Once the device loses its nodeId or after 10 seconds, it stops flashing and turns red. </li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="notification_siren" typeId="notification_siren">
+        <label>Alarm (SIREN) 0</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHQD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0008:0051</property>
+      <property name="dbReference">1126</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Digital input type</label>
+        <description>Defines the type of input device connected to digital input.</description>
+        <default>1</default>
+        <options>
+          <option value="0">Push-button</option>
+          <option value="1">On/Off toggle switch</option>
+          <option value="2">Motion sensor</option>
+          <option value="3">Motion sensor with memory</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Turn off alarming</label>
+        <default>1</default>
+        <options>
+          <option value="0">Only by Z-Wave</option>
+          <option value="1">By capacitive input or Z-Wave command</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>5: Motion sensor memory timer</label>
+        <description><![CDATA[
+Time after which the output triggered by motion sensor is turned off.<br /><h1>Overview</h1><p>0 – 32534 = 0-32534 seconds after which the LED will be turned off.</p> <p>32535 – never turns off.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>10: Auto-on timer</label>
+        <description><![CDATA[
+Defines the time after which the device is turned to last known state.<br /><h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns on</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>11: Auto-off timer</label>
+        <description><![CDATA[
+Defines the time after which the device is turned to last known state.<br /><h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration">
+        <label>30: Restore state on power failure</label>
+        <description><![CDATA[
+Restore state on power failure<br /><h1>Overview</h1><p>1 – enabled (the device will restore state on power failure)</p> <p>0 – disabled (the device will not restore state on power failure and will remain off)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_50_1" type="integer" groupName="configuration">
+        <label>50: Enable/disable beeper</label>
+        <description><![CDATA[
+Enable/disable beeper<br /><h1>Overview</h1><p>0 – disabled (the beeper does not work)</p> <p>1 – enabled (beeper does work).</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Reserved for communication with the gateway (hub) </p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: LEDs on/off</label>
+        <description><![CDATA[
+BASIC SET – status change for the LEDs<br /><h1>Overview</h1>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Change of brightness</label>
+        <description>SWITCH MULTILEVEL SET – status change for the LEDs</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Change of color</label>
+        <description>SWITCH COLOR SET – status change for RGB</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

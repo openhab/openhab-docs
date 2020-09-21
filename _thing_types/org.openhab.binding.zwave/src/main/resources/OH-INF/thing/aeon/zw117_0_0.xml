@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_zw117_00_000" listed="false">
+    <label>ZW117 Range Extender 6</label>
+    <description><![CDATA[
+Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh network repeater which can extend the range of communication between Z-Wave products and assist other devices to reach each other in your Z-Wave network. The Range Extender can also communicate securely via AES 128 wireless Z-Wave commands and supports Over-The-Air (OTA) firmware upgrades.</p> <p>Aeotec Range Extender 6 has been crafted to power connected lighting using Z-Wave Plus (http://aeotec.com/z-waveplus).<br />It is powered by Aeotec’s Gen5 (http://aeotec.com/z-wave-gen5) technology. You can find out more about Range<br />Extender 6 (http://aeotec.com/z-wave-repeater) by following that link.</p> <p>To see whether Range Extender 6 is known to be compatible with your Z-Wave system or not, please reference our<br />Z-Wave gateway comparison (http://aeotec.com/z-wave-gateways) listing. The technical specifications of Range<br />Extender 6 (https://aeotec.freshdesk.com/solution/articles/6000166773-range-extender-6-technical-specifications-) can be<br />viewed at that link.</p> <h2>Important safety information.</h2> <p>Please read this and other device guides carefully. Failure to follow the recommendations set forth by Aeotec Limited<br />may be dangerous or cause a violation of the law. The manufacturer, importer, distributor, and/or reseller will not be<br />held responsible for any loss or damage resulting from not following any instructions in this guide or in other materials.</p> <p>Range Extender 6 is intended for indoor use in dry locations only. Do not use in damp, moist, and/or wet locations.</p> <br /><h2>Inclusion Information</h2><h1>Adding your Range Extender into a Z-Wave network</h1> <p><br />Getting your Range Extender up and running is as simple as plugging it into a wall outlet and adding it to your Z-Wave<br />network. To set your Z-Wave controller/gateway into pairing mode, please refer to the respective section within your<br />controller instruction manual.</p> <ol><li>Decide on where you want your Range Extender to be placed and then plug it into a wall outlet.</li> <li>Set your Z-Wave Controller into pairing mode.</li> <li>Press the Z-Wave Button on your Range Extender and quickly release the button (should only be a quick tap<br />action on the button) and its LED will blink green rapidly (green indicates insecure pairing, if you want to pair<br />securely, please refer to Enabling Security Encryption section in the Advanced Function section).</li> <li>If Range Extender has been successfully added to your Z-Wave network, its LED will be solid for 2 seconds<br />then turn off. If the adding was unsuccessful, the red LED will be on for 2 seconds and then remain colorful gradient<br />status, repeat the steps from step 1.</li> </ol><br /><h2>Exclusion Information</h2><h1>Removing your Range Extender from a Z-Wave network</h1> <p>Your Range Extender can be removed from your Z-Wave network at any time. You’ll need to use your Z-Wave<br />network’s main controller. To set your Z-Wave controller/gateway into removal mode, please refer to the respective<br />section within your controller instruction manual.</p> <ol><li>Set your Z-Wave Controller into device removal mode.</li> <li>Press the Z-Wave Button on your Range Extender.</li> <li>If Range Extender has been successfully removed from your network, its RGB LED will remain colorful gradient<br />status. If the removal was unsuccessful, the RGB LED will still be solid, repeat the steps above.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR;colorMode=RGB</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">ZW117</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0004:0075,0104:0075,0204:0075</property>
+      <property name="dbReference">527</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_33_3_00000021" type="integer" groupName="configuration">
+        <label>33: RGB value</label>
+        <description>Set the RGB value of the LED for the quality test of the LED diode.</description>
+        <default>2</default>
+        <options>
+          <option value="1">Reserved</option>
+          <option value="2">Red value</option>
+          <option value="3">Green value</option>
+          <option value="4">Blue value</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_82_1_00000052" type="integer" groupName="configuration">
+        <label>82: Default status of the LED</label>
+        <description>Set the default status of the LED when the Range Extender relays Z-Wave message.</description>
+        <default>0</default>
+        <options>
+          <option value="0">The green LED remains On for 2 seconds</option>
+          <option value="1">Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_200_1_000000C8" type="integer" groupName="configuration">
+        <label>200: Partner ID</label>
+        <default>0</default>
+        <options>
+          <option value="0">Aeon Labs Standard Product</option>
+          <option value="1">others</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_252_1_000000FC" type="integer" groupName="configuration">
+        <label>252: Enable/disable the Configuration to be locked</label>
+        <default>0</default>
+        <options>
+          <option value="0">disable</option>
+          <option value="1">enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_254_2_000000FE" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>254: Device Tag.</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_255_4_000000FF_wo" type="integer" groupName="configuration">
+        <label>255: Reset to factory default</label>
+        <description>Reset to factory default settings and removed from the z-wave network</description>
+        <default>1</default>
+        <options>
+          <option value="1">Reset to factory default settings</option>
+          <option value="1431655765">Reset to factory default &amp; remove from network</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Retransmit</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

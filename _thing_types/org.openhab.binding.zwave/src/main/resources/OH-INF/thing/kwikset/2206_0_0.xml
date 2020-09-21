@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kwikset_2206_00_000" listed="false">
+    <label>Kwikset Obsidian 954 Obsidian Touchscreen Electronic Deadbolt</label>
+    <description><![CDATA[
+Obsidian Touchscreen Electronic Deadbolt<br /><h1>Overview</h1><p>Kwikset®, the leader in residential security, introduces the Obsidian Touchscreen Electronic Deadbolt with Z-Wave Plus. Capacitive touchscreen with keyless entry SecureScreen: Additional security by preventing fingerprint code detection One touch locking Dramatically reduced, all-metal interior 30 user codes plus master code BHMA grade 2 certified 20 minute fire rating - UL certified Full 128-bit encryption security 9 Volt backup power</p> <br /><h2>Inclusion Information</h2><p>Initiate the process to add the lock to your system at your smart home controller. When prompted by your smart home system to add the lock, press button “A” on the lock interior one time. The red LED will illuminate when the lock enters Add Mode. Please allow time for the controller to add the lock to your system.</p> <br /><h2>Exclusion Information</h2><p>Follow your smart home system’s instructions to remove the lock from the network. When prompted by the system, press button A” on the lock interior once. The red LED will illuminate when the lock enters Remove mode.</p> <br /><h2>Wakeup Information</h2><p>Even though the lock is sleeping, all buttons are active and can be used to initiate any lock activity. For the RF side, it will wake up every 1 second to check if there are any requests from your smart home controller.</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Black &amp; Decker</property>
+      <property name="modelId">Kwikset Obsidian 954</property>
+      <property name="manufacturerId">0090</property>
+      <property name="manufacturerRef">0003:0742</property>
+      <property name="dbReference">1043</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: User Code 1</label>
+        <description><![CDATA[
+Configuration parameters User Code 1<br /><h1>Overview</h1><p>The door lock will only retain valid user code types (0x01, 0x03, and 0x04). All other values will be ignored. If a user code does not exist for the corresponding configuration parameter, the lock will report a value of 0xFF. Any attempts to change the user code for a non-existent user will be ignored.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Owner</option>
+          <option value="3">Guest</option>
+          <option value="4">Worker</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: User Code 10</label>
+        <description><![CDATA[
+User Code Type for User Code 10<br /><h1>Overview</h1><p>User Code Type for User Code 10</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Owner</option>
+          <option value="3">Guest</option>
+          <option value="4">Worker</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: User Code 11</label>
+        <description>User Code Type for User Code 11</description>
+        <default>1</default>
+        <options>
+          <option value="1">Owner</option>
+          <option value="3">Guest</option>
+          <option value="4">Worker</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true">
+        <label>31: Dipswitch Settings</label>
+        <description><![CDATA[
+Configuration parameter<br /><h1>Overview</h1><p>is a one byte read only bit mask that returns the state of the user accessible dipswitches on the rear panel of the door lock.The following table shows the definition for the bits being used in the returned value: Bit Description 0 (0x01) Lock status LED (1:enabled) 1 (0x02) Autolock setting (1:enabled) 2 (0x04) Buzzer (1:enabled) 3 (0x08) Secure Screen (for 916 only); reserved for all others</p>
+        ]]></description>
+        <default>5</default>
+        <options>
+          <option value="0">all disabled</option>
+          <option value="1">(Lock status LED enabled)</option>
+          <option value="2">Autolock enabled</option>
+          <option value="3">Lock Status &amp; autolock enabled</option>
+          <option value="4">Buzzer enabled</option>
+          <option value="7">Lock Status, Autolock, and Audio feature enabled</option>
+          <option value="8">Handing Invert enabled</option>
+          <option value="15">All features are enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>33: first four most significant bytes of the SKU</label>
+        <description><![CDATA[
+contains the first four most significant bytes of the SKU<br /><h1>Overview</h1><p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_8" type="integer" groupName="configuration"
+                 min="0" max="4294967295">
+        <label>34: four least significant bytes of the SKU</label>
+        <description><![CDATA[
+the four least significant bytes of the SKU<br /><h1>Overview</h1><p>When setting the SKU, it must be done in two set commands, one for each parameter. The order of programming the SKU does not matter. Setting parameter 33 will program the first four bytes of the SKU. Setting parameter 34 will program the last 4 bytes of the SKU. Most printable values are accepted for the set command. When getting the SKU, it must be done in two get commands, one for each parameter. The order of getting the SKU does not matter. Getting parameter 33 will retrieve the first four bytes of the SKU. Getting parameter 34 will retrieve the last 4 bytes of the SKU.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_40_1_wo" type="integer" groupName="configuration">
+        <label>40: Reset Lock to Factory Default</label>
+        <description><![CDATA[
+Reset Lock to Factory Default<br /><h1>Overview</h1><p>The configuration parameter 40 is a one byte field, used to set the lock to its default setting, known as a factory reset command.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Z-Wave Plus Lifeline Supports V2<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline Supports the following types of unsolicited messages: Battery Report - sends periodic battery reports containing the battery percentage. Door Lock Operation Report - upon power up, this message will be sent to allow the controller to sync up with the current lock status. Notification Report - many notification types will be sent for status and alarms. The following notification types are supported: Access Control (V2), Home Security (V2), and Power Management (V2). Device Reset Locally Notification - this message will be sent to notify the smart home controller that the lock is resetting back to factory defaults and will be leaving the network.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Doorlock notify report</label>
+        <description><![CDATA[
+provide all Notification Reports<br /><h1>Overview</h1><p>This group will provide all Notification reports as described for the Lifeline. This group allows other controllers, other than the lifeline, to receive these types of unsolicited messages as well.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

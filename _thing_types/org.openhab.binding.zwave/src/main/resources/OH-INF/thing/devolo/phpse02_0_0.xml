@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="devolo_phpse02_00_000" listed="false">
+    <label>ph-pse02 Multisound indoor siren</label>
+    <description><![CDATA[
+Multisound indoor siren<br /><h1>Overview</h1><p><strong>### NOTE ###</strong></p> <p>The XML used for adding this device to the database comes from the Devolo Home Control Alarmsiren (http://www.devolo.de/article/devolo-home-control-alarmsirene/). But it seems to be made by Zipato (https://www.zipato.com/product/multisound-indoor-siren).<br /><br /><strong>### FEATURES ###</strong><br /><br />- Indoor multichannel siren that works with a a variety of Z-Wave networks/controllers, regardless of the manufacturer<br />- The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6/40/100kbps)<br />- 110db sound level<br />- 6 sounds: Door Chime, Bi Bi Arm/Disarm, Intruder alarm, Ambulance, Police car<br />- Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)<br />- DC or Li-ion battery power (over 24 hours of battery life)<br />- Battery overcharge protection<br />- Very low power consumption<br />- Over-the-air firmware update<br />- Easy to install in EU/China/Taiwan wall sockets<br />- Tamperproof protection<br /><br /><br /><strong>### TECHNICAL SPECIFICATIONS ###</strong><br /><br />PROTOCOL: Z-Wave Plus<br /><br />POWER<br />- DC 5V, Li-Ion battery (optional)<br />- BATTERY CAPACITY 1150mAh<br /><br />OPERATING CONDITIONS:<br />- OPERATING VOLTAGE 3.7V<br />- OPERATING CURRENT 150 mA<br />- OPERATION TEMPERATURE -10°C ~ 40°C<br /><br />RANGE<br />- Minimum 30 meters indoor<br />- 70 meters outdoor (meant for indoor use only)<br /><br />DIMENSIONS<br />- DEVICE  DIMENSIONS 110 x 110 x 22 mm<br />- DEVICE WEIGHT 113g<br />- PACKAGE DIMENSIONS 117 x 50 x 117 mm<br />- PACKAGE WEIGHT 217g<br /><br />FREQUENCY<br /><br />    ph-pse02.au 921.42 MHz (AU)<br />    ph-pse02.eu 868.42 MHz (EU)<br />    ph-pse02.in 865.20 MHz (IN)<br />    ph-pse02.is 916.02 MHz (IS)<br />    ph-pse02.ru 869.02 MHz (RU)<br />    ph-pse02.us 908.42 MHz (US)<br /><br />Source: https://www.zipato.com/product/multisound-indoor-siren</p> <br /><h2>Inclusion Information</h2><p>Press the tamper key three times within 1.5 seconds to enter the inclusion mode.</p> <p>After successful inclusion, the LED will light up for 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press the tamper key three times within 1.5 seconds to enter the exclusion mode.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm (general)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=GENERAL</property>
+        </properties>
+      </channel>
+      <channel id="notification_send" typeId="notification_send">
+        <label>Start Sound</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM;event1=SMOKE:1,event2=ACCESS_CONTROL:22,event3=BURGLAR:1,event4=EMERGENCY:1,event5=EMERGENCY:2,event6=EMERGENCY:3,event7=ACCESS_CONTROL:3,event8=ACCESS_CONTROL:4,event9=EMERGENCY:254</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Devolo</property>
+      <property name="modelId">ph-pse02</property>
+      <property name="manufacturerId">0175</property>
+      <property name="manufacturerRef">0004:000A</property>
+      <property name="dbReference">453</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_4" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>7: Costumer Function</label>
+        <description><![CDATA[
+NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Notification Type,</p> <p>0: Using Notification Report.</p> <p>1: Using Sensor Binary Report.</p>
+        ]]></description>
+        <default>4</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_29_4" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>29: Disable Alarm</label>
+        <description><![CDATA[
+Disable the alarm function.<br /><h1>Overview</h1><p>Disable the alarm function.</p> <p>1: Disable Alarm,</p> <p>0: Enable Alarm.</p> <p>Caution: After the power up, this configuration is always 0.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_0000000C" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>31: Alarm Duration</label>
+        <description><![CDATA[
+Play alarm sound duration.<br /><h1>Overview</h1><p>Play alarm sound duration, 1 tick is 30 seconds.</p> <p>Default is 3 minutes, maximum is 63.5 minutes.</p> <p>0 means never auto stop.</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Report Message</label>
+        <description><![CDATA[
+Report Message, e.g. tamper alarm<br /><h1>Overview</h1><p>Notice: The device supports 1 group.</p> <p>The group 1 is for receiving the report message, like tamper event. And the group 8 nodes maximum</p>
+        ]]></description>
+        <multipleLimit>8</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_26933_00_000" listed="false">
+    <label>In-Wall Smart Motion Dimmer 26932/26933/ZW3008 In-Wall Smart Motion Dimmer</label>
+    <description><![CDATA[
+26932/26933/ZW3008 In-Wall Smart Motion Dimmer<br /><h1>Overview</h1><h4>Description</h4> <p>Set your life in motion with the Z-Wave Plus In-Wall Smart Motion Switch. This energy-efficient sensor works with your home’s gateway to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is has turned lights on or off.</p> <p>Three different modes offer the best lighting option for you: occupancy, vacancy and manual. In occupancy mode, the lights will automatically turn on when you enter the room and automatically turn off once you’ve left (customizable between 5 seconds and 30 minutes).</p> <p>In vacancy mode, the lights are turned on manually and will turn off automatically after a preset amount of time. In manual mode, the lights will function as a normal light switch and manually turn on and off. Along with conveniently saving you time and energy costs, the smart motion dimmer can replace any existing light switch in your home, and can be used in 3- and 4-way applications.</p> <p>You may also coordinate the switch with your household decor with the included white and light almond buttons. Experience the comfort of automation in your life when you come home to the Z-Wave Plus In Wall Smart Motion Switch.</p> <h4>Features</h4> <ul><li>Wirelessly trigger scenes and send alerts when motion detection has turned lights on or off</li> <li>Remotely monitor with any mobile device (Requires Z-Wave gateway or controller)</li> <li>Compatible with all certified Z-Wave devices</li> <li>Requires in-wall installation with hard-wired connections - neutral wire required</li> <li>Can be used in 3- and 4-way applications</li> <li>Works with all dimmable LED, CFL, halogen and incandescent bulbs</li> <li>Multiple operation modes: Occupancy - auto ON/auto OFF, Vacancy - manual ON/auto OFF, Manual - manual ON/OFF</li> <li>Built-in timer lets you set length of time light stays on after motion ceases - from 5 seconds to 30 minutes</li> <li>3 sensitivity levels - low, medium, high</li> <li>Includes white and light almond paddles</li> <li>Indoor use only</li> </ul><h4>Technical Specifications</h4> <ul><li>Specification Value Max Load 600W Incandescent</li> <li>150W Dimmable Power 120VAC, 60Hz</li> <li>Operating Temp. Rge 32-104°F (0-40°C)</li> <li>Signal Frequency 908.4/916MHz</li> <li>Wireless Range Up to 150 feet</li> </ul><br /><h2>Inclusion Information</h2><p>Adding your device to a Z-Wave network</p> <ol><li>Follow the instructions for your Z-Wave certified controller to add the smart dimmer to the Z-Wave network.</li> <li>Once the controller is ready to add your smart dimmer, press and release the top or bottom button on the smart dimmer to include it in the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p> <br /><h2>Exclusion Information</h2><p>To remove and reset the device</p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top button on the smart dimmer to remove it from the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param3" typeId="ge_26933_00_000_config_decimal_param3">
+        <label>Operation Mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="alarm_motion2" typeId="alarm_motion">
+        <label>Motion Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">In-Wall Smart Motion Dimmer</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">494D:3033,494D:3034</property>
+      <property name="dbReference">740</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Timeout Duration</label>
+        <description>Amount of time the light stays on after motion stops</description>
+        <default>5</default>
+        <options>
+          <option value="0">Test (5s)</option>
+          <option value="1">1 minute</option>
+          <option value="5">5 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="255">Disable timeout</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Dim Level</label>
+        <description><![CDATA[
+Brightness of associated light(s)<br /><h1>Overview</h1><p>Valid values are 0-99 or 255 for last dimming level</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Operation Mode</label>
+        <description><![CDATA[
+Sets how the light responds to motion<br /><h1>Overview</h1><p>Occupancy – Light turns on automatically with motion and off automatically without motion</p> <p>Vacancy – Light turns on manually and off automatically without motion</p> <p>Manual – Light only turns on and off manually</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="1">Manual</option>
+          <option value="2">Vacancy</option>
+          <option value="3">Occupancy</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Association Mode</label>
+        <description>Enable/Disable Association Mode</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Invert Switch</label>
+        <description>In a 3-way configuration, invert the connected Add-On Switch buttons</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Motion Sensor</label>
+        <description>Enable/Disable Motion Sensor</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Remote Control Dim Step</label>
+        <description><![CDATA[
+Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Remote Control Dim Rate</label>
+        <description><![CDATA[
+Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Local Control Dim Step</label>
+        <description><![CDATA[
+Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Local Control Dim Rate</label>
+        <description><![CDATA[
+Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: ALL ON/ALL OFF Dim Step</label>
+        <description><![CDATA[
+Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2=99=Steps/Levels</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: ALL ON/ALL OFF Dim Rate</label>
+        <description><![CDATA[
+Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Motion Sensor Sensitivity</label>
+        <description>Sets the amount of motion required to trigger the motion sensor.</description>
+        <default>2</default>
+        <options>
+          <option value="1">High</option>
+          <option value="2">Medium</option>
+          <option value="3">Low</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Light Sensing</label>
+        <description><![CDATA[
+Enable/Disable whether motion sensor only turns light on if room is dark<br /><h1>Overview</h1><p>Light Sensing does not apply in Manual or Vacancy modes</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_2" type="integer" groupName="configuration"
+                 min="0" max="110">
+        <label>15: Reset Cycle</label>
+        <description><![CDATA[
+Reset Cycle<br /><h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 seconds<br />3=30 seconds<br />4=45 seconds<br />5 to 109 = 15 second intervals, starting at 60 seconds<br />110=27 minutes 15 seconds</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Switch Mode</label>
+        <description>Enable / Disable plain switch functionality</description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>17: Switch Level</label>
+        <description><![CDATA[
+Set power level for plain switch functionality<br /><h1>Overview</h1><p>0=disabled (default)<br />1-99=Brightness Level</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Dim Up Rate</label>
+        <default>0</default>
+        <options>
+          <option value="0">Dim up the light quickly (Default)</option>
+          <option value="1">Dim up the light to the default level slowly</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Exclusion mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Press and release any button (Default)</option>
+          <option value="1">Press &amp; release “X” btn &amp; then “ON“ btn</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline, Multi-Level Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 1</label>
+        <description>Supports Basic Set and is controlled by pressing On/Off button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 2</label>
+        <description>Supports Basic Set and is controlled by pressing On/Off button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="ge_26933_00_000_config_decimal_param3">
+    <item-type>Number</item-type>
+    <label>Operation Mode</label>
+    <description>Sets how the light responds to motion</description>
+    <state pattern="%s">
+      <options>
+        <option value="1">Manual</option>
+        <option value="2">Vacancy</option>
+        <option value="3">Occupancy</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

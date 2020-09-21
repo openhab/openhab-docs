@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512710_00_000" listed="false">
+    <label>4512710 Dimmer 400W</label>
+    <description><![CDATA[
+Dimmer 400W<br /><h1>Overview</h1><p>Z-wave in-wall dimmer.  400W 1 channel.</p> <br /><h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</li> <li>Power on the In-wall dimmer and set it into inclusion mode. There are ttwo methods to set the In-wall dimmer into inclusion mode: <ol><li>Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press the action button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol></li> </ol><p>The connected light will stay on for 3 seconds to indicate successful inclusion.</p> <br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>Method 1:</p> <ol><li>Set primarry controller/gateway into exclusion mode(Please refer to your primary controllers manual on how to turn your controller into exclusion)</li> <li>Triple press the action button on the dimmer, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.</li> </ol><p>Method 2:</p> <p>Factory reset the dimmer will force the dimmer to be excluded.</p> <p>Factory reset:</p> <ul><li>Press and hold down the action button for over 10 seconds, the dimmer will be reset to factory defaults. </li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512710</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0200:D005</property>
+      <property name="dbReference">1249</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: State after Power Failure</label>
+        <description><![CDATA[
+State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stats should be after a device power failure.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Load is Off</option>
+          <option value="1">Load is On</option>
+          <option value="2">Last Power State</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>3: Enable/disable to send the basic report</label>
+        <description><![CDATA[
+Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed.(When value set as 1, re-power on the dimmer, it will send basic report automatically)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Default fade time</label>
+        <description><![CDATA[
+Default fade time<br /><h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 is 1 Minute</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>5: Setting minimum Brightness value</label>
+        <description><![CDATA[
+Setting minimum Brightness value<br /><h1>Overview</h1><p>Setting minimum Brightness value</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Choose MOSFET driving type</label>
+        <description><![CDATA[
+Choose MOSFET driving type<br /><h1>Overview</h1><p>Choose MOSFET driving type</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: Enable/disable external switch.</label>
+        <description><![CDATA[
+Enable/disable external switch.<br /><h1>Overview</h1><p>Enable/disable external switch to be added and removed from a network.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Setting dimmer curve</label>
+        <description><![CDATA[
+Setting dimmer curve<br /><h1>Overview</h1><p>Setting dimmer curve</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>9: Setting startup brightness of the load.</label>
+        <description><![CDATA[
+Setting startup brightness of the load.<br /><h1>Overview</h1><p>Setting startup brightness of the load.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ol><li>When factory reset the dimmer, send "Device Reset Locally Notification CC" to associated of this group report factory reset information.</li> <li>When load state changes, send "Basic Report CC" to associated devices of this group.</li> <li>When a load malfunction is detected, send "Emergency shutoff status" to Lifeline</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

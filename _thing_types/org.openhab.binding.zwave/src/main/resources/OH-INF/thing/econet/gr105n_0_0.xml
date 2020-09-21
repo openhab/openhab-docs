@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="econet_gr105n_00_000" listed="false">
+    <label>GR-105N Z-Wave Motor for water/gas ball valves</label>
+    <description><![CDATA[
+Z-Wave Motor for water/gas ball valves<br /><h1>Overview</h1><p>This valve clamps onto your existing valve, allowing you to open/close the valve via Z-Wave as soon as you notice a problem.</p> <br /><h2>Inclusion Information</h2><p>With controller in inclusion mode, triple-press valve button within 1 second to include.</p> <br /><h2>Exclusion Information</h2><p>With controller in exclusion mode, triple-press valve button within 1 second to exclude.</p> <p>Holding the valve button for more than 10 seconds resets to factory default settings.</p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">EcoNet Controls</property>
+      <property name="modelId">GR-105N</property>
+      <property name="manufacturerId">0157</property>
+      <property name="manufacturerRef">0003:0002</property>
+      <property name="dbReference">469</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Sends state updates when the valve is operated locally with the valve button.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

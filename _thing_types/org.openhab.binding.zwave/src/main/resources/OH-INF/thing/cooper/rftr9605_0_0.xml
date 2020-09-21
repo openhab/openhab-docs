@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="cooper_rftr9605_00_000" listed="false">
+    <label>RFTR9605-T Wireless Duplex Receptacle</label>
+    <description><![CDATA[
+Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wireless Receptacle replaces regular receptacles to provide local and remote wireless ON/OFF control of a single outlet. Each receptacle can be manually and remotely controlled by commands sent from your compatible Z-Wave certified controller. </p> <p>Features &amp;amp; Benefits:</p> <ul><li>Rated for up to ½ HP motor loads</li> <li>Provides Z-Wave control of one outlet leaving the other one for normal use</li> <li>Safety shutter system prevents insertion of foreign objects into receptacle</li> <li>Can be associated with up to 5 other devices</li> <li>Blue LED at center illuminates to indicate ON/OFF status</li> <li>Patented indicator system alerts if receptacle is not set up in the network</li> <li>Single pole and 3-Way control: Use with standard 3-Way switch or Z-Wave Plus Accessory RF9617</li> <li>Neutral is required for installation</li> <li>Supports Z-Wave Plus technology including S2 Security certification for advanced encryption &amp;amp; cybersecurity</li> <li>Voice and app based control when used with compatible Z-Wave controller</li> </ul><br /><h2>Inclusion Information</h2><p>To include this device in a Z-Wave network:</p> <ol><li>Select the command on your Z Wave controller for inclusion (Install, Add Device, Add Node, Include Device, etc.).</li> <li>Press the device ON/OFF button one time to include it in the network.</li> <li>Based on the controller, the controller may ask you to scan the QR code or manually enter 5 digit code under the QR code to install the device as a secured device. You may find this QR code on the device or included in device packaging.</li> <li>After the Device is added to the network, the blue indicator LED will stop blinking. This indicates the device is installed in the Z-Wave network</li> </ol><br /><h2>Exclusion Information</h2><p>To exclude this device from a Z-Wave network:</p> <ol><li>Select the setting on your Z-Wave controller for exclusion (Uninstall, Remove Device, Remove Node, Exclude Device, etc.).</li> <li>Once your controller is in exclusion mode, press the device ON/OFF button one time to exclude it from the network. The LED will start blinking.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Cooper Wiring Devices</property>
+      <property name="modelId">RFTR9605-T</property>
+      <property name="manufacturerId">001A</property>
+      <property name="manufacturerRef">5244:0505</property>
+      <property name="dbReference">1202</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: Delayed OFF Time</label>
+        <description>Delayed OFF Time</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>2: Panic ON Time</label>
+        <description>Panic ON Time</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>3: Panic OFF Time</label>
+        <description>Panic OFF Time</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>5: Power Up State</label>
+        <description>Power Up State</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: Panic Mode Enable</label>
+        <description>Panic Mode Enable</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>13: BLUE LED Brightness level while ON</label>
+        <description>BLUE LED Brightness level while the receptacle is ON</description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4">
+        <label>14: BLUE LED Brightness level while OFF</label>
+        <description>BLUE LED Brightness level while the receptacle is OFF</description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>ON/OFF</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

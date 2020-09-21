@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="namron_4512714_00_000" listed="false">
+    <label>4512714/ZV9001K8 Remote control switch with four channels</label>
+    <description><![CDATA[
+Remote control switch with four channels<br /><h1>Overview</h1><p><strong>Product Description</strong></p> <p>The remote control is a Z-Wave device that can both control other Z-Wave devices and activate scenes in Gateways. Although it is controlling other devices. the device Cannot act as Z-Wave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network. It also supports the Over The Air (OTA) feature for the product's firmware upgrade.</p> <p>The remote control has following functions:</p> <ol><li>Control of groups of other Z-Wave devices using 'ON'. 'OFF' and Dim commands.</li> <li>Activation of scenes in Gateway mode.</li> </ol><p>The encryption modes that the remote control supports are SO, S2 Authenticated, S2 Unauthenticated. When the remote control is being included into a Z-Wave network, you can use your primary controller/gateway to enable one encryption mode or disable encryption. (The primary controller/gateway shall support encryption mode configuration).</p> <br /><h2>Inclusion Information</h2><p>Inclusion (Adding to a Z-Wave network)</p> <p>Step 1. Make sure the remote control does not belong to any Z-Wave network. Short press any button. If LED indicator does not turn on. the remote control does not belong to any network. then continue step 2. If LED indicator turns on, it means the remote control has already been included to a network. Please first set the remote control to exclusion mode (refer to the part 'Exclusion' of this manual), then continue step 2.</p> <p>Step 2. Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion).</p> <p>Step 3. Press and hold down both buttons I and 0 of Group 2 over 3 seconds. LED indicator turns on, the remote control will be set to inclusion mode, and waiting to be included, after 10 sconds LED indicator blinks 6 times quickly to indicate successful inclusion. The remote control is a sleepy device, after inclusion it will not enter into sleepy mode immediately, and will continue activation status for 30s and wait data interaction from the gateway. the LED indicator will stay solid on, please be patient to wait LED indicator to turn off.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclusion (Removing from a Z-Wave network)</strong></p> <p>There are two exclusion methods:</p> <p><strong>Method 1:</strong> Exclusion from the primary controller/gateway as follows:</p> <p>1. Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).</p> <p>2. Press and hold down both buttons I and 0 of Group 2 over 3 seconds. LED indicator turns on, the remote control will be set to exclusion mode. and waiting to be excluded, after 7s LED indicator blinks 4 times quickly to indicate successful exclusion.</p> <p><strong>Method 2:</strong> Factory reset the remote control will force the remote control to be excluded from a network. (please refer to the part 'Factory Reset' of this manual)</p> <p>Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.</p> <p><strong>Factory Reset</strong></p> <p>Press and hold down both buttons I and 0 of Group 2 for over 10 seconds. LED indicator turns on and then blinks 4 times quickly to indicate successful factory reset.</p> <br /><h2>Wakeup Information</h2><p>Press any button to wake the controller</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Namron</property>
+      <property name="modelId">4512714/ZV9001K8</property>
+      <property name="manufacturerId">0438</property>
+      <property name="manufacturerRef">0300:A305</property>
+      <property name="dbReference">1254</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2_wo" type="integer" groupName="configuration">
+        <label>1: Factory Reset</label>
+        <description><![CDATA[
+Factory Reset<br /><h1>Overview</h1><p>21930=Factory Reset</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Group 1<br /><h1>Overview</h1><ol><li>Send Command Class "Device Reset Locally Notification V1" to associated devices of this group to report factory reset information when factory reset the control</li> <li>When remote control battery power value changes, send Command Class "Battery Report V1" to associated devices of this group to report power level information</li> <li>Short press or press and hold down any button to send scene activation command to the associated devices of this group using Command Class "Central Scene Notification V3"</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Launch 1</label>
+        <description><![CDATA[
+Group 2<br /><h1>Overview</h1><p>Short press | / O button of Group 2 to send ON/OFF command to associated devices of this group using Command Class "Baseic Set V2"</p> <p>Press and hold down | / O button of Group 2 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4".</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Launch 2</label>
+        <description><![CDATA[
+Group 3<br /><h1>Overview</h1><p>Short press | / O button of Group 3 to send ON/OFF command to associated devices of this group using Command Class "Baseic Set V2"</p> <p>Press and hold down | / O button of Group 3 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4".</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Launch 3</label>
+        <description><![CDATA[
+Group 4<br /><h1>Overview</h1><p>Short press | / O button of Group 4 to send ON/OFF command to associated devices of this group using Command Class "Baseic Set V2"</p> <p>Press and hold down | / O button of Group 4 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4".</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Launch 4</label>
+        <description><![CDATA[
+Group 5<br /><h1>Overview</h1><p>Short press | / O button of Group 4 to send ON/OFF command to associated devices of this group using Command Class "Baseic Set V2"</p> <p>Press and hold down | / O button of Group 4 to send light intensity increase / decrease command to associated devices of this group using Command Class "Multilevel V4".</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

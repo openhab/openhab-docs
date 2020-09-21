@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="popp_pope700982_00_000" listed="false">
+    <label>POPE700982 POPP Door / Window Sensor</label>
+    <description><![CDATA[
+POPP Door / Window Sensor<br /><h1>Overview</h1><p>The POPP Door/Window Sensor is a sensor, which detects, if your window is opened, closed or tilted. The sensor is easily retroﬁttable. Furthermore, the POPP Door/Window Sensor can include other sensors by being connected with other binary sensors like NTC contacts, micro switches or ﬂood sensor. Thanks to its slim design the POPP Door/Windows can be installed unﬂashy on every window. The sensor just has to be installed on the window casement. Additionally, there has to be a slim magnet installed closely to the sensor at the window frame. By using a patented method the sensor can reliably detect the exact position of the window. With the potential free input the Door/Window Sensor can also include other sensors in your Z-Wave system. For that the binary sensor is connected to the potential free input of the sensor. Besides sensors there can also be connected momentary switches, which controls scenes in your gateway.</p> <br /><h2>Inclusion Information</h2><p>Tripple click the tamper switch</p> <br /><h2>Exclusion Information</h2><p>Tripple click the tamper switch</p> <br /><h2>Wakeup Information</h2><p>Tripple click the tamper switch.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Popp &amp; Co</property>
+      <property name="modelId">POPE700982</property>
+      <property name="manufacturerId">0154</property>
+      <property name="manufacturerRef">0004:0007</property>
+      <property name="dbReference">1009</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Sensor Operation Mode</label>
+        <description><![CDATA[
+Iinternal magnet sensor or the external terminal<br /><h1>Overview</h1><p>This parameter deﬁnes if the internal magnet sensor or the external terminal input is detected and used to issue alarm notiﬁcation. There is always one input active only. The other sensor input the deactivated. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Internal Magnet Sensor Used</option>
+          <option value="1">External Terminal Inputs Used</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Sensor State Polarity</label>
+        <description><![CDATA[
+This parameter deﬁnes the polarity of the magnet sensor<br /><h1>Overview</h1><p>This parameter deﬁnes the polarity of the magnet sensor. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Closed when Magnet in proximity</option>
+          <option value="1">Opened when Magnet in proximity</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="7">
+        <label>3: Visual LED Indications</label>
+        <description><![CDATA[
+This parameter deﬁnes when the red LED will indicate events<br /><h1>Overview</h1><p>This parameter deﬁnes when the red LED will indicate events. Disabling all indications may extend battery life. Size: 1 Byte, Default Value: 7 (values 1 + 2 + 4 summarized)</p>
+        ]]></description>
+        <default>7</default>
+        <options>
+          <option value="0">No Indications</option>
+          <option value="1">Open/Close Status Change</option>
+          <option value="2">Wake Up</option>
+          <option value="4">Device Tampering</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Range Test after double click</label>
+        <description><![CDATA[
+Allows to enable the activation of a Z-Wave range test<br /><h1>Overview</h1><p>Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: 2nd Association Group Trigger</label>
+        <description><![CDATA[
+Status of the magnet switch that causes sending command<br /><h1>Overview</h1><p>This parameter deﬁnes the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 2. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch after Open and Close</option>
+          <option value="1">Switch after Open</option>
+          <option value="2">Switch after Close</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Command Sent to Devices of Association Group 2</label>
+        <description><![CDATA[
+which commands is sent to 2nd Association Group<br /><h1>Overview</h1><p>This parameter deﬁnes which commands is sent to 2nd Association Group Size: 1 Byte, Default Value: 2</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">On</option>
+          <option value="1">Off</option>
+          <option value="2">On and Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1_wo" type="integer" groupName="configuration">
+        <label>7: Value sent to 2nd Association Group on On event</label>
+        <description><![CDATA[
+value sent in case of On event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of On event. Size: 1 Byte, Default Value: 255. Only 0 to 99 are valid values</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>8: value sent to 2nd Association Group on Off event</label>
+        <description><![CDATA[
+value sent in case of Off event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>9: Time Delay of On command frame</label>
+        <description><![CDATA[
+sent after a delay<br /><h1>Overview</h1><p>On command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_10_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>10: Time Delay of Off command frame</label>
+        <description><![CDATA[
+sent after a delay<br /><h1>Overview</h1><p>Off command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>11: Delay of Tamper Alarm Cancellation</label>
+        <description><![CDATA[
+Time a tamper alarm is delayed in seconds<br /><h1>Overview</h1><p>Time a tamper alarm is delayed. Size: 2 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Reporting Tamper Alarm Cancellation</label>
+        <description><![CDATA[
+This parameter deﬁnes if the alarm cancellation event is reported<br /><h1>Overview</h1><p>This parameter deﬁnes if the alarm cancellation event is reported. Size: 1 Byte, Default Value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Do not send Report</option>
+          <option value="1">Send Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Central Scene Event Functionality</label>
+        <description><![CDATA[
+enables/disables the central scene function<br /><h1>Overview</h1><p>This parameter enables/disables the central scene function. Size: 1 Byte, Default Value: 0</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Tilt Sensor Functionality</label>
+        <description><![CDATA[
+enables/disables the tilt function<br /><h1>Overview</h1><p>This parameter enables/disables the tilt function. Size: 1 Byte, Default Value: 1</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Control devices</label>
+        <description>Control devices when magnet or external dry contacts trips</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: send alarm message</label>
+        <description>sends our alarm message when magnet controlled or external dry sensor trips</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: send tamper alarm</label>
+        <description>sends alarm messages when tamper is tripped</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

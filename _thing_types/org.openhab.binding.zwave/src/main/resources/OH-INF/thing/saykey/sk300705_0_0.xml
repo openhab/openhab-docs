@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="saykey_sk300705_00_000" listed="false">
+    <label>SK-3007-05 Curtain Motor Control external module</label>
+    <description><![CDATA[
+Curtain Motor Control external module<br /><h1>Overview</h1><p>The SK-3007-05 external module extends traditional curtain motors with zwave capability.</p> <br /><h2>Inclusion Information</h2><ol><li>Connect power supply  to motor and connect the external module to motor external connector,  and Make sure the module is located within direct range of the Z-Wave controller.</li> <li>Set the controller into the inclusion/add mode (refer to controller’s operating manual).</li> <li>Click the PB-button triple times in 1.5 second, located left side of the motor external box.</li> <li>Curtain motor will be detected and included in the Z-Wave network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Connect power supply  to motor and connect the external module to motor external connector,  and Make sure the module is located within direct range of the Z-Wave controller.</li> <li>Set the controller into the exclusion/remove mode (refer to controller’s operating manual).</li> <li>Click the PB-button triple times in 1.5 second, located left side of the motor external box.</li> <li>Curtain motor will be detected and excluded from the Z-Wave network.</li> </ol>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Saykey Technology</property>
+      <property name="modelId">SK-3007-05</property>
+      <property name="manufacturerId">032C</property>
+      <property name="manufacturerRef">3007:0005</property>
+      <property name="dbReference">1132</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
+                 min="-127" max="99">
+        <label>4: Current Motor Position</label>
+        <description><![CDATA[
+Current Motor Position<br /><h1>Overview</h1><p>Support Get only, feedback motor current position(0x00-0x63, 0xFE)</p>
+        ]]></description>
+        <default>-127</default>
+      </parameter>
+
+      <parameter name="config_6_1_wo" type="integer" groupName="configuration">
+        <label>6: Set motor direction</label>
+        <description><![CDATA[
+Toggle motor direction between reverse and default<br /><h1>Overview</h1><p>Support Set only. Toggle motor direction between reverse and default as send out set command with any value (0x00-0xFF).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1_wo" type="integer" groupName="configuration">
+        <label>7: Clear motor lead tail endpoint setting</label>
+        <description><![CDATA[
+Clear motor lead tail endpoint setting<br /><h1>Overview</h1><p>Support Set only.  Clear motor lead tail endpoint setting as send out set command with any value (0x00-0xFF).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1_wo" type="integer" groupName="configuration">
+        <label>8: Enable manual pull function</label>
+        <description><![CDATA[
+Enable manual pull function<br /><h1>Overview</h1><p>Support Set only. Enable manual pull function as send out set command with any value (0x00-0xFF).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_9_1_wo" type="integer" groupName="configuration">
+        <label>9: Disable manual pull function</label>
+        <description><![CDATA[
+Disable manual pull function<br /><h1>Overview</h1><p>Support Set only. Disable manual pull function as send out set command with any value (0x00-0xFF).</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline, is assigned to send motor lifeline status to associated devices, including send the multilevel report frame while window cover position, send device local reset frame while set factory default manually etc.</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

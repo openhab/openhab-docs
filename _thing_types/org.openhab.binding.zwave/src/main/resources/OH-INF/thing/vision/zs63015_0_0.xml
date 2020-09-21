@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zs63015_00_000" listed="false">
+    <label>ZS6301-5 Carbon monoxide detector</label>
+    <description><![CDATA[
+Carbon monoxide detector<br /><h1>Overview</h1><p>ZS6301-5 is designed to sense CO that comes into the detector chamber and sends a Z-Wave signal when the detector detects a certain density of CO. The horn of CO detector will also sound. When the device is secure included into Z-Wave network, above communication will be encrypted.</p> <br /><h2>Inclusion Information</h2><p>For “Inclusion” in (adding to) a network: Put the Z-WaveTM Interface Controller into “inclusion” mode, and following its instruction to add the ZS6301-5 to your controller. To get in the “inclusion” mode, the distance between detector and controller is suggested to be in one meter. By power on to get included for first time or press the test switch of ZS6301-5 once to be included. After be included, the red LED will go on.</p> <br /><h2>Exclusion Information</h2><p>For “Exclusion” from (removing from) a network: Put the Z-WaveTM Interface Controller into “exclusion” mode, and following its instruction to delete the ZS6301-5 from your controller. Press the test switch of ZS6301-5 once to be excluded.</p> <br /><h2>Wakeup Information</h2><p>For “Awake” mode: To leave “Sleep” mode, please press the test switch once, the device will send “Wake Up Notification” after 10 seconds.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZS6301-5</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">200F:0F04</property>
+      <property name="dbReference">1016</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

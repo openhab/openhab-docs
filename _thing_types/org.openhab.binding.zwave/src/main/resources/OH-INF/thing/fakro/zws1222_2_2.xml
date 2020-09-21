@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_zws1222_02_002" listed="false">
+    <label>ZWS12 Chain Actuator</label>
+    <description><![CDATA[
+Chain Actuator<br /><h1>Overview</h1><p>FAKRO ZWS12 chain motor thanks to their small dimensions and suitable force output are ideal for roof window operating, being fully compatible with the Z-Wave Plus system. The motors can be applied in both centre pivot and top hung and pivot roof windows as well as windows of non-standard dimensions. </p> <br /><h2>Inclusion Information</h2><p><strong>Autoinclusion</strong> - This feature allow you to add hard to reach devices to Z-Wave network. 3-times ON and OFF the power actuator (OFF-ON-OFFON-OFF-ON) causes the introduction of actuator to Autoinclusion mode.</p> <p>Please note that the procedure has been started the time between on and off can not exceed 20s. Autoinclusion mode is activated for a maximum of 10 minutes. During this time, we can add an actuator to any Z-Wave controller running in the Include procedure.</p> <p><strong>Include</strong> - This function allow you to add actuator to the network Z-Wave.</p> <p>Follow the procedure adding device to the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the actuator for 1 second.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclude</strong> - This function allow you to remove actuator from the network Z-Wave. Follow the procedure removing device from the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the actuator for 1 second. Function removes information only about network Z-Wave.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds Control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">ZWS12</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0002:0001,0011:0001</property>
+      <property name="versionMin">2.2</property>
+      <property name="dbReference">1068</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Basic</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

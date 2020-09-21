@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wo15emz5_00_000" listed="false">
+    <label>WO15EMZ5-1 Single Wall Outlet</label>
+    <description><![CDATA[
+Single Wall Outlet<br /><h1>Overview</h1><p>120 VAC 15 Amp Duplex Receptacle</p> <br /><h2>Inclusion Information</h2><p>Refer to your Controller operating instructions to add this switch under the command of the Wireless Controller.</p> <ol><li>With your Controller in Discovery or Add Mode, tap the button on the face of the outlet. The LED will blink slowly when in ADD Mode.</li> <li>You should see an indication on your Controller that the “device was added” to the network and the LED will stop blinking.</li> <li>The device will appear in the list of Switches. It should display as a switch. If the Controller/Gateway shows the addition failed, repeat Steps 1-3.</li> </ol><p><em><strong>NOTE</strong>: If you have trouble adding the WO15EMZ5-1 to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must fi rst “RESET UNIT” to remove it from the network. Although adding it to a group includes it in the network, removing it from a group does not remove it from the network. If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network</em></p> <br /><h2>Exclusion Information</h2><p>The WO15EMZ5-1 can be removed from the network by the Controller/Gateway. Refer to the Controller operating instructions for details.</p> <ol><li>Set the Controller into Removal Mode and follow its instruction to delete the WO15EMZ5-1 from the Controller.</li> <li>Remove the switch by tapping the button on the face of the outlet 2 times. The LED will begin blinking slowly for 10 seconds indicating that it has been removed.</li> <li>You should see an indication on your Controller that the “device was removed” from the network.</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WO15EMZ5-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">574F:3535</property>
+      <property name="dbReference">1186</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+LED mode for attached load<br /><h1>Overview</h1><p>By default, the LED on the WO15EMZ5-1 will turn OFF when the load attached is turned ON. To make the LED turn ON when the load attached is turned ON, set Parameter 3 to a value of 1.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Show opposite of powered state</option>
+          <option value="1">Show powered state</option>
+          <option value="2">On</option>
+          <option value="3">Off</option>
+          <option value="4">Blink on RF transmission</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Energy Monitoring</label>
+        <description><![CDATA[
+Minutes<br /><h1>Overview</h1><p>WO15EMZ5-1 reports the total accumulated Kilowatt Hours (kWh) and the instantaneous Watts being consumed by the load.</p> <p>Valid values are 0 - 255, with 0 disabling automatic reporting, and 1 - 255 being the interval in minutes for the automatic reporting interval.</p> <p>Configuration Parameter 13 configures the rate at which the energy readings are reported. If the maximum kWh value that can be reported is reached (21,474 kWh), then it will remain at the maximum level until reset to 0.</p> <p>The Watts reading provides the immediate reading of the power being consumed by the load. The Watts reading takes several seconds to settle so wait a few seconds before reading the energy value when the state of the switch (on / off) has changed.</p> <p>To reset, the total accumulated kWh used by the WO15EMZ5-1 the Z-Wave controller needs to send a reset command at the request of the user. It will also be reset if the WO15EMZ5-1 is excluded from the Z-Wave network.</p>
+        ]]></description>
+        <default>6</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="6">Default</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline Association<br /><h1>Overview</h1><p>The WO15EMZ5-1 supports one Group with five Nodes for lifeline communication. Group 1 must be assigned the Node ID of the Controller to which unsolicited notifications from the WO15EMZ5-1 will be sent. The Z-Wave Controller should set this Association automatically after inclusion. You can associate up to five Z-Wave devices to Group 1.</p> <p>For instructions on how to “set Lifeline Association” please refer to your wireless Controller instructions.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

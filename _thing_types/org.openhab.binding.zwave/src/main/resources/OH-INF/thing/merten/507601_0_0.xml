@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="merten_507601_00_000" listed="false">
+    <label>507601 Dual Pole Wall Switch</label>
+    <description><![CDATA[
+Dual Pole Wall Switch<br /><h1>Overview</h1><p>The flush-mounted CONNECT radio receiver with switch will be referred to below as flush-mounted receiver. The flush-mounted receiver can be used to switch loads on and off via radio (for information about permitted loads, see the technical data). When it receives the radio signal, the flush-mounted receiver switches the corresponding contact.CONNECT radio receiver, flush-mounted, 1-gang switch<br /><br />Switching of ohmic, inductive or capacitive loads. To install in flush-mounted sockets or on a ceiling hook in the ceiling rose.</p> <br /><h2>Inclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Exclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Wakeup Information</h2><p>Triple click on the switch button</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Merten</property>
+      <property name="modelId">507601</property>
+      <property name="manufacturerId">007A</property>
+      <property name="manufacturerRef">8001:8003</property>
+      <property name="dbReference">399</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_176_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>176: Staircase timer byte 1</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_177_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>177: Staircase timer byte 2</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_183_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>183: Additional limit duration</label>
+        <description>(after brief interruption) Unsure what this does</description>
+        <default>30</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_wd500z5_00_000" listed="false">
+    <label>WD500Z5-1 An in-wall lighting dimmer</label>
+    <description><![CDATA[
+An in-wall lighting dimmer<br /><h1>Overview</h1><p>The WD500Z5-1 is an in-wall lighting dimmer switch designed to operate with LED, halogen and incandescent lights. Not only can this switch control the connected load, with Central Scene support it can run up to 6 scenes created by the Hub it is the most versatile Home Automation light switch available. With OTA upgrading supported, this light switch may be the last one ever installed in a home.</p> <br /><h2>Inclusion Information</h2><p><strong>Adding to a Network: </strong></p> <p>Refer to your Controller operating instructions to add this switch under the command of the Wireless Controller.</p> <ol><li>With your Controller in Discovery or Add Mode, tap the switch. The LED will blink slowly when in ADD Mode.</li> <li>You should see an indication on your Controller that the “device was added” to the network and the LED will stop blinking.</li> <li>The device will appear in the list of Switches. It should display as a switch.</li> </ol><p>If the Controller/Gateway shows the addition failed, repeat Steps 1-3.</p> <br /><h2>Exclusion Information</h2><p><strong>Removing from a Network: </strong></p> <p>The GoControl Dimmer can be removed from the network by the Controller/Gateway. Refer to the Controller operating instructions for details.</p> <ol><li>Set the Controller into Removal Mode and follow its instruction to delete the GoControl Dimmer from the Controller.</li> <li>Remove the switch by tapping the paddle 2 times. The LED will begin blinking slowly for 10 seconds indicating that it has been removed.</li> <li>You should see an indication on your Controller that the “device was removed” from the network.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">WD500Z5-1</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5744:3530</property>
+      <property name="dbReference">885</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="4">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Control the LED on the device.<br /><h1>Overview</h1><p>By default, the LED on the GoControl Dimmer will turn OFF when the load attached is turned ON. To make the LED turn ON when the load attached is turned ON, set Parameter 3 to a value of 1.</p> <p><strong>0</strong> - LED OFF when the load is on, and ON when the load is off (default - night lite mode)</p> <p><strong>1</strong> - LED ON when the load is on, and OFF when the load is off</p> <p><strong>2</strong> -  LED is always on</p> <p><strong>3</strong> - LED is always off</p> <p><strong>4</strong> - LED blinks during RF transmissions from or to the device</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Invert the operation of the paddle.<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set Parameter 4 to a value of 1.</p> <p><strong>0</strong> - Top of switch is ON, bottom of switch is OFF (default)</p> <p><strong>1</strong> -  Bottom of switch is ON, top of switch is OFF</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Ignore Start Level in Dim Command</label>
+        <description><![CDATA[
+The Start Level sent in a Dim command can be ignored or not.<br /><h1>Overview</h1><p>The Start Level sent in a Dim command can be ignored or not. Typically the dim level should start from the current level and dim from there instead of suddenly changing to the Start Level and then dimming.</p> <p><strong>0</strong> - Use the Start Level in the Dim Command</p> <p><strong>1</strong> - Ignore the Start Level in the Dim Command (default)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Dim Remote On/Off Step</label>
+        <description><![CDATA[
+Dim Remote On/Off Step (default=3, 3 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Dim Remote On/Off Timer</label>
+        <description><![CDATA[
+Dim Remote On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Dim Local On/Off Step</label>
+        <description><![CDATA[
+Dim Local On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Dim Local On/Off Timer</label>
+        <description><![CDATA[
+Dim Local On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: Dim ALL On/Off Step</label>
+        <description><![CDATA[
+Dim ALL On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: Dim ALL On/Off Timer</label>
+        <description><![CDATA[
+Dim ALL On/Off Timer (default = 3, 3 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic ON/OFF</label>
+        <description>Basic ON/OFF commands</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Multilevel Switch</label>
+        <description>Multilevel Switch commands</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fakro_arz2_01_001" listed="false">
+    <label>ARZ 1.1 Roller Shutter Module</label>
+    <description><![CDATA[
+Roller Shutter Module<br /><h1>Overview</h1><p>The ARZ Z-Wave roller shutters are intended for mounting onto FAKRO roof windows.</p> <br /><h2>Inclusion Information</h2><p><strong>Autoinclusion</strong> - This feature allow you to add hard to reach devices to Z-Wave network. 3-times ON and OFF the power roller shutter (OFF-ON-OFF-ON-OFF-ON) causes the introduction of roller shutter to Autoinclusion mode. Please note that the procedure has been started the time between on and off can not exceed 20s. Autoinclusion mode is activated for a maximum of 10 minutes. During this time, we can add an awning to any Z-Wave controller running in the Include procedure.</p> <p><strong>Include</strong> - This function allow you to add roller shutter to the network Z-Wave. Follow the procedur adding device to the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the roller shutter for 1 second.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclude</strong> - This function allow you to remove roller shutter from the network Z-Wave. Follow the procedur removing device from the network Z-Wave according to user manual supplied with the product. Then, press the programming button P on the roller shutter for 1 second. Function removes information only about newtork Z-Wave.</p>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fakro</property>
+      <property name="modelId">ARZ 1.1</property>
+      <property name="manufacturerId">0085</property>
+      <property name="manufacturerRef">0003:0111</property>
+      <property name="versionMin">1.1</property>
+      <property name="dbReference">1031</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Calibration Mode</label>
+        <default>1</default>
+        <options>
+          <option value="1">Calibrated</option>
+          <option value="2">Discalibrated</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: BASIC SET Response</label>
+        <description>Allows to change motor behavior after receiving BASIC_SET with value 0xFF</description>
+        <default>1</default>
+        <options>
+          <option value="1">FF go to Max</option>
+          <option value="2">FF go to previous position</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Group for position reporting roller shutter after each a stoppage and alarm reporting (overcurrent, damage encoders).</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Repeat</label>
+        <description>Group used to transfer the received basic commands to the devices included in this group.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Multilevel Repeat</label>
+        <description>Group used to transfer the received multilevel commands to the devices included in this group.</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

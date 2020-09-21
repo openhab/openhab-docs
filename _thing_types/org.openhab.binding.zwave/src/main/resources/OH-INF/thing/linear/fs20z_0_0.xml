@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_fs20z_00_000" listed="false">
+    <label>FS20Z Isolated Contact Fixture Module</label>
+    <description><![CDATA[
+Isolated Contact Fixture Module<br /><h1>Overview</h1><p>z-Wave Radio Frequency (RF) Controlled, 120 VAC Scene Capable, Isolated Contact Fixture Module</p> <br /><h2>Inclusion Information</h2><ol><li>Prepare the Controller to include a unit to the network, by adding it to a group (method of adding a node to the network). Refer to Controller instructions.</li> <li>The FS20Z-1 must be in its permanently installed location. Press the button on the FS20Z-1 once.</li> <li>You should see an indication on your Controller that the “DEVICE WAS INCLUDED” in the network.</li> </ol><br /><h2>Exclusion Information</h2><p>Remove the module by tapping the button three times, then press and hold.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">FS20Z</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">5246:3133</property>
+      <property name="dbReference">10</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description><![CDATA[
+Nightlight: LED turns ON when the switch is turned OFF<br /><h1>Overview</h1><p>In night-light mode the LED on the switch will turn ON when the switch is turned OFF.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

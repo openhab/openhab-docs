@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="horstmann_c17zw_00_000" listed="false">
+    <label>C17-ZW Timeswitch</label>
+    <description><![CDATA[
+Timeswitch<br /><h1>Overview</h1><p>The CentaurPlus ZW is a timeswitch which is connected to its own room thermostat - the HRT4-ZW - using the latest Z-wave wireless technology. </p> <p>Where it has been used to replace your existing time control it is likely that there was no room thermostat fitted previously</p> <br /><h2>Inclusion Information</h2><p>For inclusion, put the controller in inclusion mode and press and hold the 'Boost' and 'Enter' buttons on the front of the CENTAURPLUS C17-ZW . Once included the indicator next to the radio symbol will appear (solid)</p>   <br /><h2>Exclusion Information</h2><p>For exclusion put the controller in exclusion mode and Press and hold the 'Boost' and 'Enter' buttons on the front of the CENTAURPLUS C17-ZW until an indicator disappears in its display against the radio aerial symbol</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Horstmann Controls Limited</property>
+      <property name="modelId">C17-ZW</property>
+      <property name="manufacturerId">0059</property>
+      <property name="manufacturerRef">0002:0002</property>
+      <property name="dbReference">652</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

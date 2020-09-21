@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_zif5028_00_000" listed="false">
+    <label>ZIF5028 / HeatIt Z-DIN 616 6 relay switches and 6 digital inputs module for DIN rail</label>
+    <description><![CDATA[
+6 relay switches and 6 digital inputs module for DIN rail<br /><h1>Overview</h1><h3>Features</h3> <ul><li>DIN rail module with 6 relay outputs and 6 digital inputs</li> <li>Z-Wave interface for other systems in order to control them through the Z-Wave network</li> <li>Mounted on DIN-rail in switch board</li> <li>6 x 16A potential free relays</li> <li>2-poled switch solution when using 2 x relays in combination</li> <li>Works as slave Z-Wave repeater</li> <li>Firmware Update (OTA)</li> <li>Supports encryption mode: S0, S2 Access Control Class,</li> <li>S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><h3>Technical data</h3> <ul><li><strong>Protocol</strong> Z-Wave, 868,4 MHz</li> <li><strong>SDK</strong> 6.71.00</li> <li><strong>Rated voltage</strong> 10 – 24V DC 8 – 20V AC</li> <li><strong>Power consumption</strong> 0,6W + 0,5W pr. active relay (max 4W)</li> <li><strong>Screw terminals</strong> 0,2 – 2,5 mm²</li> <li><strong>Outputs</strong> 6 x 1-pole potential free (10mm clearance)</li> <li><strong>Relay switches</strong> AC1: 16A 250V AC, AC3: 750W (engine), AC15: 360VA</li> <li><strong>Max. inrush current</strong> 80A/20ms</li> <li><strong>Contacts</strong> Common and Normally Closed</li> <li><strong>Inputs</strong> 6 x 1-pole potential free (5 mm clearance), max 10V DC</li> <li><strong>Input impedance</strong> 10 kOhm</li> <li><strong>Network range</strong> Up to 40 meters(depending on surroundings)</li> <li><strong>IP Class</strong> IP 20</li> <li><strong>Size</strong> (HxWxD) 85 x 105 x 60 mm</li> <li>M36 6-modules DIN rail</li> <li><strong>Certifications</strong> Z-Wave Plus, CE, EN 50491-3: 2009 EN 60669-2: 2004, EMC 2014/30/EU, RoHS 2011/65/EU,LVD 2014/35/EU</li> </ul><p>HeatIt Z-DIN 616 is re-branded Logic Group ZIF MODULE ZIF5028.</p> <br /><h2>Inclusion Information</h2><p>Upon delivery, the Logic Group ZIF5028/Heatit Z-DIN 616 module has not been enrolled into any Z-Wave network. In order to communicate with other devices in the Z-Wave network, Logic Group ZIF5028/Heatit Z-DIN 616 must be enrolled in the network. This process is called to include the device in the Z-Wave network. Devices can also be removed from the Z-Wave network if they are to be used in another installation. This is called to exclude the device from the Z-Wave network.</p> <p>Both processes are initiated by setting the central network controls in either inclusion or exclusion mode. Please refer to the network controller’s manual how to set the central controls in either inclusion or exclusion mode.</p> <p>Then, the inclusion mode / exclusion mode on the Logic Group ZIF5028/Heatit Z-DIN 616 device is activated by pressing the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <p>IF THE DEVICE ALREADY BELONGS TO A NETWORK, THE DEVICE MUST BE EXCLUDED BEFORE IT CAN BE INCLUDED IN THE CURRENT NETWORK, OTHERWISE THE INCLUSION PROCESS WILL FAIL.</p> <br /><h2>Exclusion Information</h2><p>The same as the inclusion. Put the Z-Wave controller into Exclusion mode and then press the small button through the hole in the front of the module, marked ”INCLUSION”, after which the status LED will start flashing.</p> <p>FACTORY RESET</p> <p>Logic Group ZIF5028/Heatit Z-DIN 616 can be reset to factory settings, i.e. all configurations and device address will be reset to default settings. The device must then be reconnected to the Z-Wave network.</p> <p>Resetting is performed by activating the small pushbutton marked ”INCLUSION” located on the front for at least 10 seconds until the LED flashes briefly. E.g. slide a needle pin or a toothpick through the small hole to activate the pushbutton.</p> <p>This procedure only applies to cases where the primary network controller is not available or not operational.</p> <br /><h2>Wakeup Information</h2><p>This device works as Z-Wave signal repeater. It's always on.</p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Input 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer7" typeId="switch_dimmer">
+        <label>Dimmer 7</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:7</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Input 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8,COMMAND_CLASS_BASIC:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer8" typeId="switch_dimmer">
+        <label>Dimmer 8</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:8</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Input 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9,COMMAND_CLASS_BASIC:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer9" typeId="switch_dimmer">
+        <label>Dimmer 9</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:9</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Input 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10,COMMAND_CLASS_BASIC:10</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer10" typeId="switch_dimmer">
+        <label>Dimmer 10</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:10</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:10</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary11" typeId="switch_binary">
+        <label>Input 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:11,COMMAND_CLASS_BASIC:11</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer11" typeId="switch_dimmer">
+        <label>Dimmer 11</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:11</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:11</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary12" typeId="switch_binary">
+        <label>Input 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:12,COMMAND_CLASS_BASIC:12</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer12" typeId="switch_dimmer">
+        <label>Dimmer 12</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:12</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:12</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">ZIF5028 / HeatIt Z-DIN 616</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0003:0112</property>
+      <property name="dbReference">1000</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status of LED</label>
+        <description><![CDATA[
+This parameter can be used to change the mode of the front-mounted status LED.<br /><h1>Overview</h1><table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>The LED is Off.</td> </tr><tr><td>1</td> <td>The LED is steadily lit-up. (Standard)</td> </tr><tr><td>2</td> <td>The LED flashes in 1 second interval (1 Hz).</td> </tr><tr><td>3</td> <td>The LED flashes in 1⁄2 second interval (1⁄2 Hz).</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">The LED is Off.</option>
+          <option value="1">The LED is steadily lit-up. (Standard)</option>
+          <option value="2">The LED flashes in 1 second interval (1 Hz).</option>
+          <option value="3">The LED flashes in 1/2 second interval (1/2 Hz).</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>2: Brightness of status LED.</label>
+        <description><![CDATA[
+Determines the brightness of the status LED.<br /><h1>Overview</h1><table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Switch off LED.</td> </tr><tr><td>1-99</td> <td>Brightness level (%). (Standard 50%)</td> </tr></table>
+        ]]></description>
+        <default>50</default>
+        <options>
+          <option value="0">Switch off LED.</option>
+          <option value="50">Standard brightness - 50% (default)</option>
+          <option value="99">Maximum brightness.</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Function setup of input 1.</label>
+        <description><![CDATA[
+Configures the function of input 1.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Function setup of input 2.</label>
+        <description><![CDATA[
+Configures the function of input 2.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Function setup of input 3.</label>
+        <description><![CDATA[
+Configures the function of input 3.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Function setup of input 4.</label>
+        <description><![CDATA[
+Configures the function of input 4.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Function setup of input 5.</label>
+        <description><![CDATA[
+Configures the function of input 5.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Function setup of input 6.</label>
+        <description><![CDATA[
+Configures the function of input 6.<br /><h1>Overview</h1><p>Select the value from the table below. Please refer to the section reg. input functions.</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Inactive.</option>
+          <option value="1">Mode 1, level-controlled input.</option>
+          <option value="2">Mode 2, falling-edge controlled input.</option>
+          <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Input Snubber-filter time constant.</label>
+        <description><![CDATA[
+The time constant of the input snubber-filter.<br /><h1>Overview</h1><p>Specifies the time used to define the time constant of the input snubber-filter. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 5, which corresponds to a snubber-filter-time constant of 50 milliseconds (0,05 seconds).</td> </tr></table>
+        ]]></description>
+        <default>5</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>10: Threshold value for activation of inputs.</label>
+        <description><![CDATA[
+The time that an entry must be stable before it is accepted as active / idle.<br /><h1>Overview</h1><p>Specifies the time that an entry must be stable before it is accepted as active / idle in 0.01 second resolution.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 20, which corresponds to 200 milliseconds (0,2 seconds).</td> </tr></table>
+        ]]></description>
+        <default>200</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: Threshold for input in latched mode.</label>
+        <description><![CDATA[
+Time that an input must be activated before it accepts the button latched mode.<br /><h1>Overview</h1><p>Indicates the time that an input must be activated before it accepts the button latched mode. (Increments in 0.01 second resolution.)</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0-255</td> <td>0 – 2,55 seconds. The standard value is 50, which corresponds to 500 milliseconds (0,5 seconds).</td> </tr></table>
+        ]]></description>
+        <default>50</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Deactivate Central Scene notifications.</label>
+        <description><![CDATA[
+Central Scene notifications when the 6 inputs are activated.<br /><h1>Overview</h1><p>It is possible to enable Central Scene notifications when the 6 inputs are activated.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Central Scene notifications enabled. (Standard)</option>
+          <option value="1">Central Scene notifications disabled.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Output function, Output 1.</label>
+        <description><![CDATA[
+Output 1 can be controlled via Z-Wave or Input 1.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 1. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 1. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Output function, Output 2.</label>
+        <description><![CDATA[
+Output 2 can be controlled via Z-Wave or Input 2.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 2. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 2. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Output function, Output 3.</label>
+        <description><![CDATA[
+Output 3 can be controlled via Z-Wave or Input 3.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 3. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 3. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Output function, Output 4.</label>
+        <description><![CDATA[
+Output 4 can be controlled via Z-Wave or Input 4.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 4. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 4. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Output function, Output 5.</label>
+        <description><![CDATA[
+Output 5 can be controlled via Z-Wave or Input 5.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 5. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 5. (Standard)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration">
+        <label>18: Output function, Output 6.</label>
+        <description><![CDATA[
+Output 6 can be controlled via Z-Wave or Input 6.<br /><h1>Overview</h1><p>Choose parameter value from the scheme below.</p> <table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Output is controlled via Z-Wave messages.</td> </tr><tr><td>1</td> <td>Output is controlled by input 6. (Standard)</td> </tr></table>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Output is controlled via Z-Wave messages.</option>
+          <option value="1">Output is controlled by input 6. (Standard)</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+RELAY OUTPUT. Basic Report On/Off when relay output is activated.<br /><h1>Overview</h1><p>Lifeline. Lifeline group for the entire module.<br />Sends <strong>Basic Report On / Off</strong> when relay output 1 is activated.<br />This group is typically used for reporting the actual status of the output to the Controller to let the Controller visualize the output in its user interface.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set On / Off Input 1</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 1 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 1 is activated.<br />For example, used to control relay modules or for visualization in the central controller unit (e.g., Fibaro Home Center)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Binary Switch Set On / Off Input 1</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 1 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 1 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Multilevel Switch Set Input 1</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 1 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 1 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Basic Set On / Off Input 2</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 2 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 2 is activated.<br /> For example, used to control relay modules or for visualization in the central controller unit (E.g. Fibaro Home Center).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Binary Switch Set On / Off Input 2</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 2 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 2 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Multilevel Switch Set Input 2</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 2 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 2 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Basic Set On / Off Input 3</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 3 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 3 is activated.<br />For example, used to control relay modules or for visualization in the central controller unit (E.g. Fibaro Home Center).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Binary Switch Set On / Off Input 3</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 3 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 3 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_10" type="text" groupName="association" multiple="true">
+        <label>10: Multilevel Switch Set Input 3</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 3 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 3 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_11" type="text" groupName="association" multiple="true">
+        <label>11: Basic Set On / Off Input 4</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 4 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 4 is activated.<br />For example, used to control relay modules or for visualization in the central controller unit (E.g. Fibaro Home Center).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_12" type="text" groupName="association" multiple="true">
+        <label>12: Binary Switch Set On / Off Input 4</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 4 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 4 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_13" type="text" groupName="association" multiple="true">
+        <label>13: Multilevel Switch Set Input 4</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 4 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 4 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_14" type="text" groupName="association" multiple="true">
+        <label>14: Basic Set On / Off Input 5</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 5 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 5 is activated.<br />For example, used to control relay modules or for visualization in the central controller unit (E.g. Fibaro Home Center).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_15" type="text" groupName="association" multiple="true">
+        <label>15: Binary Switch Set On / Off Input 5</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 5 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 5 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_16" type="text" groupName="association" multiple="true">
+        <label>16: Multilevel Switch Set Input 5</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 5 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 5 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_17" type="text" groupName="association" multiple="true">
+        <label>17: Basic Report On / Off Input 6</label>
+        <description><![CDATA[
+Sends Basic Set On / Off when input 6 is activated.<br /><h1>Overview</h1><p>Sends <strong>Basic Set On / Off</strong> when input 6 is activated.<br />For example, used to control relay modules or for visualization in the central controller unit (E.g. Fibaro Home Center).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_18" type="text" groupName="association" multiple="true">
+        <label>18: Basic Set On / Off Input 6</label>
+        <description><![CDATA[
+Sends Binary Switch Set On / Off when input 6 is activated.<br /><h1>Overview</h1><p>Sends <strong>Binary Switch Set On / Off</strong> when input 6 is activated.<br /> For example, used to control relay modules.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_19" type="text" groupName="association" multiple="true">
+        <label>19: Multilevel Switch Set Input 6</label>
+        <description><![CDATA[
+Sends Multilevel Switch Set / etc... when input 6 is activated.<br /><h1>Overview</h1><p>Sends <strong>Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change</strong> when input 6 is activated.<br /> Typically used to control dimmers, curtain controls, etc.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

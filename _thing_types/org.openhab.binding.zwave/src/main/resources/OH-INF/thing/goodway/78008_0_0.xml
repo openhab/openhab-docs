@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="goodway_78008_00_000" listed="false">
+    <label>78008 Door/Window Sensor with Magnet</label>
+    <description><![CDATA[
+Door/Window Sensor with Magnet<br /><h1>Overview</h1><p>Z-Wave Door/Window sensor with magnet</p> <p>can include 2 extern sensors</p> <br /><h2>Inclusion Information</h2><p>1. Install the battery and close the lid</p> <p>2. Set your gateway/controller to the inclusion mode</p> <p>3. Push the TMP button on the bottom side 3 times in 2 seconds</p> <p>4. if the inclusion was succesfully the software will show it</p> <br /><h2>Exclusion Information</h2><p>1. Set your gateway/controller to the exclusion mode</p> <p>2. Push the TMP button on the bottom side 3 times in 2 seconds</p> <p>3. The device is logged off</p> <br /><h2>Wakeup Information</h2><p>The Dorr/Window sensor stays in sleep mode for the majority of time. It can be woken up at specified intervals by setting WAKE_UP_INTERVAL_SET command.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Good Way Technology Co., Ltd</property>
+      <property name="modelId">78008</property>
+      <property name="manufacturerId">0068</property>
+      <property name="manufacturerRef">0000:000D</property>
+      <property name="dbReference">827</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Basic set level for nodes of group2</label>
+        <description><![CDATA[
+255: Binary switch ON, 1-99: Dimmer level<br /><h1>Overview</h1><p>255: Binary switch ON</p> <p>1-99: Dimmer level </p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>2: Basic set OFF delay time for nodes of group2</label>
+        <description><![CDATA[
+0: Disable, 0-127 Second<br /><h1>Overview</h1><p>0: Disable</p> <p>0-127 Seconds</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>3: Delay time to enter standby mode</label>
+        <description><![CDATA[
+After force to wake up, delay time to enter standby mode again<br /><h1>Overview</h1><p>After force to wake up, delay time to enter standby mode again</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>4: Delay time to enter standby after wake up</label>
+        <description><![CDATA[
+Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mode, after wake up, delay time for standby again</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>5: Set waiting exclusion time</label>
+        <description>Set waiting exclusion time</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Activate/Deactivate WUT standby mode</label>
+        <description><![CDATA[
+0: Always wake up, 1: Enter standby mode<br /><h1>Overview</h1><p>0: Always wake up</p> <p>1: Enter standby mode</p> <p>(Auto-reboot after setting completed)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Alwas wake up</option>
+          <option value="1">Enter standby mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Activate/Deactivate Tamper alarm mode</label>
+        <description><![CDATA[
+0: Disable, 1: Enable<br /><h1>Overview</h1><p>0: Disable tamper alarm mode</p> <p>1: Enable tamper alarm mode</p> <p>(Auto reboot after setting completed)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="3" max="30">
+        <label>8: Tamper alarm continuously send</label>
+        <description><![CDATA[
+In tamper alarm mode, delay time for continuously send Sensor_Binary_report<br /><h1>Overview</h1><p>In tamper alarm mode, delay time for continuously send Sensor_Binary_report</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: Interval time for sending battery report</label>
+        <description><![CDATA[
+The interval time of sending battery report<br /><h1>Overview</h1><p>The interval time of sending battery report when the battery runs out of electricity</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="3">Report every 3 minutes</option>
+          <option value="5">Report every 5 minutes</option>
+          <option value="10">Report every 10 minutes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>10: set the configuration of 2 external sensors</label>
+        <description><![CDATA[
+BIT0: sensor1 (S1), BIT1: sensor2 (S2)<br /><h1>Overview</h1><p>BIT0: sensor1 (S1)</p> <p>BIT1: sensor2 (S2)</p> <p>0 (00b): S2 NO, S1 NO</p> <p>1 (01b): S2 NO, S1 NC</p> <p>2 (10b): S2 NC, S1 NO</p> <p>3 (11b): S2 NC, S1 NC</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Reports</label>
+        <description>All autoreports send to Group 1</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Sensor</label>
+        <description>ON/OFF status (Basic_set command)</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

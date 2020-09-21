@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_yrl256_01_078" listed="false">
+    <label>US2.0 CP2-5-3 Yale Real Living™ Z-Wave Module</label>
+    <description><![CDATA[
+Yale Real Living™ Z-Wave Module<br /><h1>Overview</h1><ul><li>Adds Z-wave connectivity to compatible Yale Real Living locks. Must be paired with a Z-wave controller (sold separately) in order to add remote control and access functionality to your Yale lock.</li> <li>Compatible with these deadbolt and lever locks: YRD210, YRD220, YRD240, YRL210, YRL220</li> <li>Not compatible with Yale Assure Locks or NexTouch Locks. Also not compatible with Apple Home Kit</li> </ul><br /><h2>Inclusion Information</h2><p>To include the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 1, then #</li> </ol><p>The lock will now be in inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>To exclude the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 3, then #</li> </ol><p>The lock will now be in exclusion mode.</p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Alarm (raw) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">US2.0 CP2-5-3</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">800C:0F00</property>
+      <property name="versionMin">1.78</property>
+      <property name="dbReference">1110</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Silent Mode on/off</label>
+        <description><![CDATA[
+Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low Volume</li> <li>Silent</li> </ol>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">High</option>
+          <option value="2">Low</option>
+          <option value="3">Silent</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1_wo" type="integer" groupName="configuration">
+        <label>2: Auto Relock On/Off</label>
+        <default>0</default>
+        <options>
+          <option value="-128">Auto Relock On</option>
+          <option value="0">Auto Relock Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="10" max="127">
+        <label>3: Auto Relock Time</label>
+        <default>127</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="3" max="10">
+        <label>4: Wrong Code Entry Limit</label>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="10" max="127">
+        <label>7: Shut Down Time (after wrong code entries)</label>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Operating Mode</label>
+        <default>0</default>
+        <options>
+          <option value="0">Normal Mode (Default)</option>
+          <option value="1">Vacation Mode (Keypad Locked Out)</option>
+          <option value="2">Privacy Mode (Keypad Locked, RF Unlock Functional)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: One Touch Locking</label>
+        <default>0</default>
+        <options>
+          <option value="-128">One Touch Locking On</option>
+          <option value="0">One Touch Locking Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration">
+        <label>13: Lock Status LED</label>
+        <default>0</default>
+        <options>
+          <option value="-128">LED On</option>
+          <option value="0">LED Off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Reset to Factory Defaults</label>
+        <default>0</default>
+        <options>
+          <option value="-128">Reset to Factory On</option>
+          <option value="0">Reset to Factory Off</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

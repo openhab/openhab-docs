@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9010_00_000" listed="false">
+    <label>ZV9010 Door and window sensor</label>
+    <description><![CDATA[
+Door and window sensor<br /><h1>Overview</h1><p>The z-wave door window sensor is a wireless, battery powered contact sensor, compatible with the z-wave plus standard. Changing the device's status will automatically send a signal to the z-wave controller and associated devices. The sensor can be used to trigger scenes and wherever there is a need for information about opening or closing of doors, windows, garage doors, etc. Opening is detected by separating the sensor's body and the magnet. </p> <p>The encryption modes that the sensor supports are S0, S2 unauthenticated. When the door window sensor is being included into a z-wave network, you can use your primary controller/gateway to enable one encryption mode or disable encryption. (the primary controller/gateway shall support encryption mode configuration</p> <br /><h2>Inclusion Information</h2><ol><li>Set primary controller/gateway to inclusion mode</li> <li>Make sure the sensor does not belong to any z-wave network. Press the action button, if the LED indicator flashes 3 times slowly, it means it does not belong to any network, if the sensor has already been included into a network, it shall be removed form the network first. There are two methods to set the sensor into inclusion mode: <br /><br />remove the batteries and install them again to repower the sensor, it will be set into inclusion mode automatically<br />triple press the action button on the sensor, it will set the plug in to inclusion mode. <br /><br /></li> <li>The LED indicator will flash fast then stay solid on for 3 seconds to indicate successful inclusion. if there is no z-wave network available, the LED indicator will flash fast for 6 seconds and sensor will quit inclusion mode automatically.</li> </ol><br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>Method 1: exclusion from the primary controller/gateway as follows:</p> <ol><li>Set the primary controller/gateway into exclusion mode. </li> <li>Triple press the action button, the sensor will be set to exclusion mode, the LED indicator will flash fast and then stay solid on for 3 seconds to indicate successful exclusion. If exclusion fails, the LED indicator will flash fast for 6 seconds and the sensor will quit exclusion mode automatically</li> </ol><p>Method 2: factory reset the sensor will force it to be excluded from a network. </p> <p>NOTE: Factory reset is not he recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable</p> <br /><h2>Wakeup Information</h2><p>Once the sensor in included to a z-wave network, Press and hold down the action button for 3-5 seconds. The LED indicator will flash fast and then stay solid on</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9010</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0300:D003</property>
+      <property name="dbReference">1218</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: Send basic set</label>
+        <description><![CDATA[
+Send basic set<br /><h1>Overview</h1><p>0x00, disable to open and close the door, send basic set</p> <p>0x01, enable to open the door, send basic set, enable to close the door, do not send basic set</p> <p>0x02, enable to open the door, do not send basic set, enable to close the door, send basic set</p> <p>0x03, enable to open the door, send basic set, enable to close the door, send basic set</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Basic_set settings</label>
+        <description><![CDATA[
+Basic_set settings<br /><h1>Overview</h1><p>0x01, when the door is opened, send BASIC_SET=0xFF, when the door is close, send BASIC_SET=0x00</p> <p>0x00, when the door is opened, send BASIC_SET=0x00, when the door is close, send BASIC_SET=0xFF</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="10" max="1800">
+        <label>4: wake up interval</label>
+        <description><![CDATA[
+wake up interval<br /><h1>Overview</h1><p>10-1800(30min), unit is seconds. wake up interval (time for the device to enter to sleep mode again after press and hold down the button to wake it up)</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: wake up to send battery state</label>
+        <description><![CDATA[
+wake up to send battery state<br /><h1>Overview</h1><p>0x01, automatic waking up, send battery power state</p> <p>0x00, automatic waking up, do not send battery power state</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ol><li>when factory reset the sensor, send "device reset locally notification CC" to associated devices of this group to report factory reset information</li> <li>when the sensor state changes, send "notification CC" to associated devices of this group.</li> <li>when the battery power is low, send "battery CC" to associated devices of this group</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: On/off Control</label>
+        <description><![CDATA[
+On/off Control<br /><h1>Overview</h1><p>When the sensor is turned on/off, send "basic_set". it can be configured by configuration parameter 02 to send BASIC=0xFF(ON), BASIC=0x00(OFF) or disable this function</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

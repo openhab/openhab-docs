@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgwdeu111_00_000" listed="false">
+    <label>FGWDEU Fibaro Walli Dimmer</label>
+    <description><![CDATA[
+Fibaro Walli Dimmer<br /><h1>Overview</h1><p>FIBARO Walli Dimmer is a smart wall dimmer designed to control light source via Z-Wave network. It measures active power and energy consumed by the controlled load. You can install it with provided cover plate and switch button or other compatible.</p> <br /><h2>Inclusion Information</h2><ol><li>Set the main controller into the adding mode (see the controller’s manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>If you are adding in Security S2 Authenticated, input the underlined part of the DSK (label on the bottom of the box).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Adding result will be confirmed by the Z-Wave controller’s message and the LED frame: <ul><li>Green – successful (non-secure, S0, S2 non-authenticated),</li> <li>Magenta – successful (Security S2 Authenticated),</li> <li>Red – not successful.</li> </ul></li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the main controller in remove mode (see the controller's manual).</li> <li>Quickly, three times click one of the buttons.</li> <li>LED will start blinking yellow, wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message and red LED colour.</li> <li>The device will start calibrating the load.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGWDEU</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">010F:1C01,1C01:1000</property>
+      <property name="dbReference">1074</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Remember device state</label>
+        <description><![CDATA[
+Determines how the device will react in the event of power supply failure<br /><h1>Overview</h1><p>This parameter determines how the device will react in the event of power supply failure (e.g. power outage). </p> <p>Default value: 1 (restores the state) </p> <p>Available values: </p> <p>0 – remains switched off after restoring power </p> <p>1 – restores remembered state after restoring power</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">remains switched off after restoring power</option>
+          <option value="1">restores remembered state after restoring power</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration"
+                 min="0" max="5000">
+        <label>2: Overload safety switch</label>
+        <description><![CDATA[
+Turn off the controlled device in case of exceeding the defined power<br /><h1>Overview</h1><p>This function allows to turn off the controlled device in case of exceeding the defined power. Controlled device can be turned back on via the button or sending a control frame.</p> <p>0 – function disabled<br />10-5000 (1.0-500.0W, step 0.1W) – power  threshold</p>
+        ]]></description>
+        <default>3500</default>
+      </parameter>
+
+      <parameter name="config_10_4" type="integer" groupName="configuration"
+                 min="100" max="5000">
+        <label>10: LED frame – power limit</label>
+        <description><![CDATA[
+Determines maximum active power.<br /><h1>Overview</h1><p>This parameter determines maximum active power. Exceeding it results in the LED frame flashing violet. Function is active only when parameter 11 is set to 8 or 9.</p> <p>100-5000 (10.0-500.0W, step 0.1W) – power threshold</p>
+        ]]></description>
+        <default>3500</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: LED frame – colour when ON</label>
+        <description><![CDATA[
+This parameter defines the LED colour when the device is ON.<br /><h1>Overview</h1><p>This parameter defines the LED colour when the device is ON.</p> <p>When set to 8 or 9, LED frame colour will change depending on the measured power and parameter 10. Other colours are set permanently and do not depend on power consumption.</p> <p>Available values:</p> <p>0 – LED disabled</p> <p>1 – White</p> <p>2 – Red</p> <p>3 – Green</p> <p>4 – Blue</p> <p>5 – Yellow</p> <p>6 – Cyan</p> <p>7 – Magenta</p> <p>8 – colour changes smoothly depending on measured power</p> <p>9 – colour changes in steps depending on measured power</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED diabled</option>
+          <option value="1">White</option>
+          <option value="2">Red</option>
+          <option value="3">Green</option>
+          <option value="4">Blue</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">Magenta</option>
+          <option value="8">changes smoothly</option>
+          <option value="9">changes in steps</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: LED frame – colour when OFF</label>
+        <description><![CDATA[
+This parameter defines the LED colour when the device is OFF.<br /><h1>Overview</h1><p>Available values: 0 – LED disabled 1 – White 2 – Red 3 – Green 4 – Blue 5 – Yellow 6 – Cyan 7 – Magenta</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">White</option>
+          <option value="2">Red</option>
+          <option value="3">Green</option>
+          <option value="4">Blue</option>
+          <option value="5">Yellow</option>
+          <option value="6">Cyan</option>
+          <option value="7">Magenta</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="102">
+        <label>13: LED frame – brightness</label>
+        <description><![CDATA[
+This parameter allows to adjust the LED frame brightness.<br /><h1>Overview</h1><p>Available values:</p> <p>0 – LED disabled</p> <p>1-100 (1-100% brightness)</p> <p>101 – brightness directly proportional to set level</p> <p>102 – brightness inversely proportional to set level</p>
+        ]]></description>
+        <default>100</default>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration">
+        <label>24: Buttons orientation</label>
+        <description><![CDATA[
+This parameter allows reversing the operation of the buttons.<br /><h1>Overview</h1><p>0 – default (1st button brightens, 2nd button dims)</p> <p>1 – reversed (1st button dims, 2nd button brightens)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">default (1st button brightens, 2nd button dims)</option>
+          <option value="1">reversed (1st button dims, 2nd button brightens)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_30_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>30: Alarm configuration - 1st slot</label>
+        <description><![CDATA[
+determines to which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <p>0x00 – no action,<br />0xX1 – turn ON,<br />0xX2 – turn OFF,<br />0xX3 – turn ON/OFF continuously,<br />0x0X – no action on LED frame,<br />0x1X – LED frame blinks red,<br />0x2X – LED frame blinks green,<br />0x4X – LED frame blinks blue,<br />0x8X – disable LED frame,<br />0xFX – LED frame LAPD signal (red-white-blue)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_31_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>31: Alarm configuration - 2nd slot</label>
+        <description><![CDATA[
+determines to which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size: 4B</p> <p>Default value</p> <p>[0x05, 0xFF, 0x00, 0x00]</p> <p>(Water Alarm, any notification, no action)</p> <p>Available values:</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <p>0x00 – no action,<br />0xX1 – turn ON,<br />0xX2 – turn OFF,<br />0xX3 – turn ON/OFF continuously,<br />0x0X – no action on LED frame,<br />0x1X – LED frame blinks red,<br />0x2X – LED frame blinks green,<br />0x4X – LED frame blinks blue,<br />0x8X – disable LED frame,<br />0xFX – LED frame LAPD signal (red-white-blue)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Alarm configuration - 3rd slot</label>
+        <description><![CDATA[
+determines to which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size: 4B</p> <p>Default value</p> <p>[0x01, 0xFF, 0x00, 0x00]</p> <p>(Smoke Alarm, any notification, no action)</p> <p>Available values:</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <p>0x00 – no action,<br />0xX1 – turn ON,<br />0xX2 – turn OFF,<br />0xX3 – turn ON/OFF continuously,<br />0x0X – no action on LED frame,<br />0x1X – LED frame blinks red,<br />0x2X – LED frame blinks green,<br />0x4X – LED frame blinks blue,<br />0x8X – disable LED frame,<br />0xFX – LED frame LAPD signal (red-white-blue)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_33_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Alarm configuration - 4th slot</label>
+        <description><![CDATA[
+determines to which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size: 4B</p> <p>Default value</p> <p>[0x02, 0xFF, 0x00, 0x00]</p> <p>(CO Alarm, any notification, no action)</p> <p>Available values:</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <p>0x00 – no action,<br />0xX1 – turn ON,<br />0xX2 – turn OFF,<br />0xX3 – turn ON/OFF continuously,<br />0x0X – no action on LED frame,<br />0x1X – LED frame blinks red,<br />0x2X – LED frame blinks green,<br />0x4X – LED frame blinks blue,<br />0x8X – disable LED frame,<br />0xFX – LED frame LAPD signal (red-white-blue)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_34_4_0000000F" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Alarm configuration - 5th slot</label>
+        <description><![CDATA[
+determines to which alarm frames and how the device should react<br /><h1>Overview</h1><p>This parameter determines to which alarm frames and how the device should react. The parameters consist of 4 bytes, three most significant bytes are set according to the official Z-Wave protocol specification.</p> <p>Parameter size: 4B</p> <p>Default value</p> <p>[0x04, 0xFF, 0x00, 0x00]</p> <p>(Heat Alarm, any notification, no action)</p> <p>Available values:</p> <p>1B [MSB] – Notification Type</p> <p>2B – Notification Status</p> <p>3B – Event/State Parameters</p> <p>4B [LSB] – action:</p> <p>0x00 – no action,<br />0xX1 – turn ON,<br />0xX2 – turn OFF,<br />0xX3 – turn ON/OFF continuously,<br />0x0X – no action on LED frame,<br />0x1X – LED frame blinks red,<br />0x2X – LED frame blinks green,<br />0x4X – LED frame blinks blue,<br />0x8X – disable LED frame,<br />0xFX – LED frame LAPD signal (red-white-blue)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>35: Alarm configuration – duration</label>
+        <description><![CDATA[
+defines duration of alarm sequence<br /><h1>Overview</h1><p>0 – infinite</p> <p>1-32400 (1s-9h, 1s step) – duration</p>
+        ]]></description>
+        <default>600</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>40: First button – scenes sent</label>
+        <description><![CDATA[
+determines which actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent).</p> <p>Enabling scenes for triple click disables entering the device in learn mode by triple clicking.</p> <p>Parameter size: 1B</p> <p>Default value: 0 (no scenes)</p> <p>Available values:</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">no scenes</option>
+          <option value="1">Key pressed once</option>
+          <option value="2">Key pressed twice</option>
+          <option value="4">Key pressed 3 times</option>
+          <option value="8">Key held down and released</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_41_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>41: Second button – scenes sent</label>
+        <description>determines which actions result in sending scene IDs</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>60: Power reports – include self-consumption</label>
+        <description><![CDATA[
+determines whether the power measurements should include self-consumption<br /><h1>Overview</h1><p>This parameter determines whether the power measurements should include power consumed by the device itself.</p> <p>Parameter size: 1B</p> <p>Default value: 0 (not included)</p> <p>Available values:</p> <p>0 – Self-consumption not included</p> <p>1 – Self-consumption included</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_61_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>61: Power reports – on change</label>
+        <description><![CDATA[
+defines minimal change to be reported<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured power that results in sending new report. For loads under 50W the parameter is irrelevant, report are sent every 5W change.</p> <p>Parameter size: 2B</p> <p>Default value: 15 (15%)</p> <p>Available values:</p> <p>0 – reporting on change disabled</p> <p>1-500 (1-500%, 1% step) – minimal change</p>
+        ]]></description>
+        <default>15</default>
+      </parameter>
+
+      <parameter name="config_62_2_wo" type="integer" groupName="configuration">
+        <label>62: Power reports – periodic</label>
+        <description><![CDATA[
+defines reporting interval for measured power<br /><h1>Overview</h1><p>This parameter defines reporting interval for measured power. Periodic reports are independent from changes in value (parameter 61).</p> <p>Parameter size: 2B</p> <p>Default value: 3600 (1h)</p> <p>Available values:</p> <p>0 – periodic reports disabled</p> <p>30-32400 (30s-9h, 1s step) – time interval</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_65_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>65: Energy reports – on change</label>
+        <description><![CDATA[
+defines minimal change to be reported<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) in measured energy that results in sending new report.</p> <p>Parameter size: 2B</p> <p>Default value: 10 (0.1kWh)</p> <p>Available values:</p> <p>0 – reporting on change disabled</p> <p>1-500 (0.01-5kWh, 0.01kWh step) – minimal change</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_66_2" type="integer" groupName="configuration"
+                 min="0" max="32400">
+        <label>66: Energy reports – periodic</label>
+        <description><![CDATA[
+defines reporting interval for measured energy<br /><h1>Overview</h1><p>This parameter defines reporting interval for measured energy. Periodic reports are independent from changes in value (parameter 65).</p> <p>Parameter size: 2B</p> <p>Default value: 3600 (1h)</p> <p>Available values:</p> <p>0 – periodic reports disabled</p> <p>30-32400 (30s-9h, 1s step) – time interval</p>
+        ]]></description>
+        <default>3600</default>
+      </parameter>
+
+      <parameter name="config_150_1" type="integer" groupName="configuration"
+                 min="1" max="98">
+        <label>150: Minimum brightness level</label>
+        <description><![CDATA[
+Minimum brightness level - initialised at calibration<br /><h1>Overview</h1><p>This parameter is set automatically during the calibration process, but can be changed manually after the calibration.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>1-98 (1-98%, 1% step) – level of brightness</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_151_1" type="integer" groupName="configuration"
+                 min="2" max="99">
+        <label>151: Maximum brightness level</label>
+        <description><![CDATA[
+Maximum brightness level - initalised at calibration<br /><h1>Overview</h1><p>This parameter is set automatically during the calibration process, but can be changed manually after the calibration.</p> <p>Parameter size: 1B</p> <p>Default value: 99</p> <p>Available values:</p> <p>2-99 (2-99%, 1% step) – level of brightness</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_152_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>152: Incandescence level of compact fluorescent lamps</label>
+        <description><![CDATA[
+Incandescence level of dimmable compact fluorescent lamps<br /><h1>Overview</h1><p>The virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The device will set to this value after the first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>1-99 (1-98%, 1% step) – level of brightness</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_153_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>153: Incandescence time of compact fluorescent lamps</label>
+        <description><![CDATA[
+Incandescence time of dimmable compact fluorescent lamps<br /><h1>Overview</h1><p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality.</p> <p>Parameter size: 2B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0-255 (0-25.5s, 0.1s step) – incandescence time</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_154_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>154: Automatic control – dimming step size</label>
+        <description><![CDATA[
+defines the percentage value of dimming step<br /><h1>Overview</h1><p>This parameter defines the percentage value of dimming step during the automatic control.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>1-99 (1-99%, 1% step) – dimming step</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_155_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>155: Automatic control – time of dimming step</label>
+        <description><![CDATA[
+Automatic control – time of dimming step<br /><h1>Overview</h1><p>This parameter defines the time of performing a single dimming step set in parameter 154 during the automatic control.</p> <p>Parameter size: 2B</p> <p>Default value: 1 (10ms)</p> <p>Available values:</p> <p>0-255 (0-2.55s, 10ms step)</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_156_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>156: Manual control – dimming step size</label>
+        <description><![CDATA[
+Manual control – dimming step size<br /><h1>Overview</h1><p>This parameter defines the percentage value of the dimming step during the manual control.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>1-99 (1-99%, 1% step) – dimming step</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_157_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>157: Manual control – time of dimming step</label>
+        <description><![CDATA[
+Manual control – time of dimming step<br /><h1>Overview</h1><p>This parameter defines the time of performing a single dimming step set in parameter 156 during the manual control.</p> <p>Parameter size: 2B</p> <p>Default value: 5 (50ms)</p> <p>Available values:</p> <p>0-255 (0-2.55s, 10ms step)</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_158_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>158: Auto-off functionality</label>
+        <description><![CDATA[
+Auto-off functionality<br /><h1>Overview</h1><p>This parameter allows to automatically switch off the device after a specified time from switching the light source on. It may be useful when the device is installed in the stairway.</p> <p>Parameter size: 2B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0 – auto-off disabled</p> <p>1-32767 (1s-9.1h, 1s step) – auto-off time</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_159_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>159: Force auto-calibration</label>
+        <description><![CDATA[
+Force auto-calibration<br /><h1>Overview</h1><p>Changing value of this parameter will force the calibration process. During the calibration parameter is set to 1 or 2 and switched to 0 upon completion.</p> <p>Parameter size: 1B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0 – readout</p> <p>1 – force auto-calibration without FIBARO Bypass 2</p> <p>2 – force auto-calibration with FIBARO Bypass 2</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_160_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>160: Auto-calibration status (read-only)</label>
+        <description><![CDATA[
+Auto-calibration status (read-only parameter)<br /><h1>Overview</h1><p>This parameter determines operating mode of the device (automatic/manual settings).</p> <p>Parameter size: 1B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0 – calibration procedure not performed or the device operates on manual settings</p> <p>1 – the device operates on auto-calibration settings</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_161_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>161: Burnt out bulb detection</label>
+        <description><![CDATA[
+Burnt out bulb detection<br /><h1>Overview</h1><p>This parameter defines percentage power variation (compared to power consumption measured during the calibration) to be interpreted as load error/burnt out bulb.</p> <p>Parameter size: 1B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0 – function disabled</p> <p>1-99 (1-99%, 1% step) – power variation</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_162_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>162: Delay of a burnt out bulb and overload detection</label>
+        <description><![CDATA[
+Time delay of a burnt out bulb and overload detection<br /><h1>Overview</h1><p>This parameter defines detection delay for the burnt out bulb (parameter 161) and overload (parameter 2).</p> <p>Parameter size: 2B</p> <p>Default value: 5</p> <p>Available values:</p> <p>0 – detection of a burnt out bulb disabled</p> <p>1-255 (1-255s, 1s step) – time delay</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_163_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>163: 1st button ON value sent to association groups</label>
+        <description><![CDATA[
+First button – Switch ON value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Switch ON command to devices associated in 2nd and 3rd association group.</p> <p>Parameter size: 2B</p> <p>Default value: 255</p> <p>Available values:</p> <p>0-99, 255 – value sent</p> <p>254 – send value equal to the current level</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_164_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>164: 2nd button OFF value sent to association groups</label>
+        <description><![CDATA[
+Second button – Switch OFF value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices associated in 2nd and 3rd association group.</p> <p>Parameter size: 2B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0-99, 255 – value sent</p> <p>254 – send value equal to the current level</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_165_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>165: Double click – set level</label>
+        <description><![CDATA[
+Double click – set level<br /><h1>Overview</h1><p>This parameter defines brightness level set after double-clicking any of the buttons. The same value is also sent to devices associated with 2nd and 3rd association group.</p> <p>Parameter size: 1B</p> <p>Default value: 99</p> <p>Available values:</p> <p>0-99 (0-99%, 1% step) – set level</p>
+        ]]></description>
+        <default>99</default>
+      </parameter>
+
+      <parameter name="config_170_1" type="integer" groupName="configuration">
+        <label>170: Load control mode</label>
+        <description><![CDATA[
+Load control mode<br /><h1>Overview</h1><p>This parameter allows to set the desired load control mode. Auto-calibration sets value of this parameter to 2 (control mode recognized during auto-calibration), but the installer may force control mode using this parameter.</p> <p>After changing parameter value, turn the load OFF and ON to change control mode.</p> <p>Parameter size: 1B</p> <p>Default value: 2</p> <p>Available values:</p> <p>0 – forced leading edge</p> <p>1 – forced trailing edge</p> <p>2 – control mode selected automatically (based on auto-calibration)</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">forced leading edge</option>
+          <option value="1">forced trailing edge</option>
+          <option value="2">control mode selected automatically</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_171_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>171: Load control mode recognized</label>
+        <description><![CDATA[
+Load control mode recognized during auto-calibration<br /><h1>Overview</h1><p>This parameter allows to read load control mode that was set during auto-calibration.</p> <p>Parameter size: 1B</p> <p>Default value: –</p> <p>Available values:</p> <p>0 – leading edge</p> <p>1 – trailing edge</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_172_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>172: ON/OFF mode</label>
+        <description><![CDATA[
+ON/OFF mode<br /><h1>Overview</h1><p>This mode is necessary while connecting non-dimmable light sources. Setting this parameter to 1 automatically ignores brightening/dimming time settings. Forced auto-calibration will set this parameter’s value to 2.</p> <p>Parameter size: 1B</p> <p>Default value: 2</p> <p>Available values:</p> <p>0 – ON/OFF mode disabled (dimming is possible)</p> <p>1 – ON/OFF mode enabled (dimming is not possible)</p> <p>2 – mode selected automatically</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_173_1" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="1">
+        <label>173: Dimmability of the load (read only)</label>
+        <description><![CDATA[
+Dimmability of the load (read only)<br /><h1>Overview</h1><p>This parameter allows to read if the load detected during calibration procedure is dimmable.</p> <p>Parameter size: 1B</p> <p>Default value: —</p> <p>Available values:</p> <p>0 – load recognized as dimmable</p> <p>1 – load recognized as non-dimmable</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_174_1" type="integer" groupName="configuration">
+        <label>174: Soft-start functionality</label>
+        <description><![CDATA[
+Soft-start functionality<br /><h1>Overview</h1><p>This parameter allows to set time required to warm up the filament of halogen bulb.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>0 – no soft-start</p> <p>1 – short soft-start (0.1s)</p> <p>2 – long soft-start (0.5s)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">no soft-start</option>
+          <option value="1">short soft-start (0.1s)</option>
+          <option value="2">long soft-start (0.5s)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_175_1" type="integer" groupName="configuration">
+        <label>175: Auto-calibration after power on</label>
+        <description><![CDATA[
+Auto-calibration after power on<br /><h1>Overview</h1><p>This parameter determines the trigger of auto-calibration procedure, e.g. power on, load error, etc.</p> <p>Parameter size: 1B</p> <p>Default value: 1</p> <p>Available values:</p> <p>0 – no auto-calibration after power on</p> <p>2 – Auto-calibration after each power on</p> <p>3 – Auto-calibration after each LOAD ERROR (no load, load failure, burnt out bulb), if parameter 176 is set to 1 also after SURGE (output overvoltage) and OVERCURRENT (output overcurrent)</p> <p>4 – Auto-calibration after each power on or after each LOAD ERROR (no load, load failure, burnt out bulb), if parameter 176 is set to 1 also after SURGE (output overvoltage) and OVERCURRENT (output overcurrent)</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">no auto-calibration after power on</option>
+          <option value="1">Auto-calibration after each power on</option>
+          <option value="2">Auto-calibration after each LOAD ERROR</option>
+          <option value="4">Auto-calibratie after each power on or LOAD ERROR</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_176_1" type="integer" groupName="configuration">
+        <label>176: Behaviour after OVERCURRENT or SURGE</label>
+        <description>Behaviour after OVERCURRENT or SURGE</description>
+        <default>1</default>
+        <options>
+          <option value="0">permanently disabled</option>
+          <option value="1">three attempts to turn on the load</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_177_2" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>177: Brightness level correction flickering</label>
+        <description><![CDATA[
+Brightness level correction for flickering loads<br /><h1>Overview</h1><p>Correction reduces spontaneous flickering of some capacitive loads (e.g. dimmable LEDs) at certain brightness levels in 2-wire installation.</p> <p>In countries using ripple-control, correction may cause changes in brightness. In this case it is necessary to disable correction or adjust the time of correction for flickering loads.</p> <p>Parameter size: 2B</p> <p>Default value: 255</p> <p>Available values:</p> <p>0 – automatic correction disabled</p> <p>1-254 (1-254s, 1s step) – duration of correction</p> <p>255 – automatic correction always enabled</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <parameter name="config_178_1" type="integer" groupName="configuration">
+        <label>178: Method of calculating the active power</label>
+        <description><![CDATA[
+Method of calculating the active power<br /><h1>Overview</h1><p>This parameter defines how to calculate active power. It is useful in a case of 2-wire connection with light sources other than resistive.</p> <p>Parameter size: 1B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0 – measurement based on the standard algorithm</p> <p>1 – approximation based on the calibration data</p> <p>2 – approximation based on the control angle</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">standard algorithm</option>
+          <option value="1">approximation / calibration data</option>
+          <option value="2">approximation / control angle</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_179_2" type="integer" groupName="configuration"
+                 min="0" max="500">
+        <label>179: Approximated power at max brightness</label>
+        <description><![CDATA[
+Approximated power at the maximum brightness level<br /><h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level.</p> <p>Parameter size: 2B</p> <p>Default value: 0</p> <p>Available values:</p> <p>0-500 (0-500W, 1W step) – power consumed by the load at the maximum brightness level.</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Lifeline</description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: 2nd association group</label>
+        <description>“On/Off” is used to turn the associated devices on/off reflecting button operation (uses Basic command class).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: 3rd association group</label>
+        <description>"Dimmer” is used to change level of associated devices reflecting button operation (uses Switch Multilevel command class).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

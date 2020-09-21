@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+                          bindingId="zigbee"
+                          xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+   <thing-type id="bitron-video-902010-23" listed="false">
+      <label>BitronVideo 4-button Remote Control</label>
+      <channels>
+         <channel id="key1" typeId="system.button">
+            <label>Button 1</label>
+            <description>Button marked with one dot</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x06</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">0</property>
+            </properties>
+         </channel>
+         <channel id="key2" typeId="system.button">
+            <label>Button 2</label>
+            <description>Button marked with two dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x01</property>
+            </properties>
+         </channel>
+         <channel id="key3" typeId="system.button">
+            <label>Button 3</label>
+            <description>Button marked with three dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0006</property>
+               <property name="zigbee_shortpress_command_id">0x00</property>
+            </properties>
+         </channel>
+         <channel id="key4" typeId="system.button">
+            <label>Button 4</label>
+            <description>Button marked with four dots</description>
+            <properties>
+               <property name="zigbee_endpoint">1</property>
+               <property name="zigbee_shortpress_cluster_id">0x0008</property>
+               <property name="zigbee_shortpress_command_id">0x06</property>
+               <property name="zigbee_shortpress_parameter_name">stepMode</property>
+               <property name="zigbee_shortpress_parameter_value">1</property>
+            </properties>
+         </channel>
+      </channels>
+      <config-description>
+         <parameter name="zigbee_macaddress"
+                    type="text"
+                    readOnly="true"
+                    required="true">
+            <label>MAC Address</label>
+         </parameter>
+      </config-description>
+   </thing-type>
+</thing:thing-descriptions>

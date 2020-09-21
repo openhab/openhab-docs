@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhtd_00_000" listed="false">
+    <label>ZMNHTD Smart Meter</label>
+    <description><![CDATA[
+Smart Meter<br /><h1>Overview</h1><p>This Z-Wave module is used for energy measurements in single-phase electrical power network and can be used in residential, industrial and utility applications. Meters measure energy directly in 2-wire networks according to the principle of fast sampling of voltage and current signals. A built-in microprocessor calculates energy, power and power factor from the measured signals. The module can be controlled through Z-wave network and it acts as repeater in order to improve range and stability of Z-wave network. It is designed to be mounted on DIN rail. </p> <p>Measurements: Voltage V Current I Power – Active W Power – Active total Import kWh Power – Active total Export kWh Power – Reactive var Power – Reactive total kvarh Power – Apparent total kVAh Power Factor PF </p> <p>It is possible to connect two external relay to Smart Meter module. One controlled by built-in optical (IR) communication port on the side, second controlled by output on terminal 5. </p> <br /><h2>Inclusion Information</h2><p>Module Inclusion (Adding to Z-wave network)</p> <ul><li>Connect module to power supply</li> <li>enable add/remove mode on main controller</li> <li>auto-inclusion (works for about 5 seconds after connected to power supply) or</li> <li>press service button S for more than 2 second</li> </ul><p>NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.</p> <br /><h2>Exclusion Information</h2><p>Module Exclusion/Reset (Removing from Z-Wave network):</p> <ul><li>Connect module to power supply</li> <li>bring module within maximum 1 Meter (3 feet) of the main controller,</li> <li>enable add/remove mode on main controller</li> <li>press service button S for more than 6 seconds.</li> </ul><p>By this function all parameters of the module are set to default values and own ID is deleted. If service button S is pressed more than 2 and less than 6 seconds module is excluded, but configuration parameters are not set to default values.</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="meter_powerfactor" typeId="meter_powerfactor">
+        <label>Power factor</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Voltage</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Active Power</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Active Energy Comsumption</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_kvah" typeId="meter_kvah">
+        <label>Apparent Energy Consumption</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KVAh</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Current</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter Stats</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>switch_binary</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_powerfactor1" typeId="meter_powerfactor">
+        <label>Power factor [Deprecated]</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_Power_Factor</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch Relay</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHTD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0007:0052</property>
+      <property name="dbReference">414</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Input 1 switch function selection</label>
+        <description><![CDATA[
+IR external relay or External Relay control mode<br /><h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC</p>
+        ]]></description>
+        <default>4</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="2">IR external control – mono stable push button</option>
+          <option value="3">IR external relay control - bi stable switch</option>
+          <option value="4">External relay control – mono stable push button</option>
+          <option value="5">External relay control – bi stable switch</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>11: Timer turning off IR external relay</label>
+        <description><![CDATA[
+Automatic turning off IR external relay output after set time<br /><h1>Overview</h1><p>When External IR relay is ON it goes automatically OFF after time defined in this parameter. Timer is reset to zero each time the device receives ON command.<br />Values (size is 2 byte dec):<br />• Default value 0<br />• 0-59 = Auto OFF disabled<br />• 60-32535 = 60 seconds – 32535 seconds</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>12: Timer turning on IR external relay output</label>
+        <description><![CDATA[
+Automatic turning on IR external relay output after set time<br /><h1>Overview</h1><p>When IR external relay is OFF it goes automatically ON after time defined by this Parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>13: Timer turning off External relay output</label>
+        <description><![CDATA[
+Automatic turning off External relay output after set time<br /><h1>Overview</h1><p>When External relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>14: Timer turning on External relay after output</label>
+        <description><![CDATA[
+Automatic turning on External relay after output set time<br /><h1>Overview</h1><p>When External relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_40_2" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power reporting (Watts) on power change</label>
+        <description><![CDATA[
+Power reporting in Watts on power change<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 – 100 = 0% - 100%. Available configuration parameters (data type is 1 Byte DEC)</p> <p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%</p> <p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power). </p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32535">
+        <label>42: Power reporting (Watts) by time interval</label>
+        <description><![CDATA[
+Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value means time interval (0 – 32535) in seconds, when power report is send. Available config. parameters (data type is 2 Byte DEC).</p> <p>Power report is send with time interval set by entered value. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power)</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_45_1" type="integer" groupName="configuration">
+        <label>45: Reset Power counters</label>
+        <description><![CDATA[
+Reset Power counters<br /><h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No function</option>
+          <option value="1">reset counter 1 – KWh</option>
+          <option value="2">reset counter 2 – kVARh</option>
+          <option value="4">reset counter 3 – kVAh</option>
+          <option value="15">reset ALL counters</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_100_1" type="integer" groupName="configuration">
+        <label>100: Enable / Disable endpoints relays</label>
+        <description><![CDATA[
+Enable / Disable endpoints IR external relay and External relay<br /><h1>Overview</h1><p>Enabling IR external relay and External relay or both of them, means that endpoint (IR external relay) and endpoint (External relay) or both will be present on UI. Disabling them will result in hiding endpoints according to Parameter set value. Note that hiding endpoint has no impact on its functionality. Available configuration parameters (data type is 1 Byte DEC)</p> <p>NOTE1: After parameter change, first exclude module (without setting parameters to default value) and then re include the module. NOTE 2: If you don't have IR BiComm relay module mounted and you enable IR communication (parameter 100 is 2 or 3) there will be no valid IR relay state reported. It will be reported IR COMMUNICATION ERROR and LED2 will BLINK</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">EP IR external relay and External relay disabled</option>
+          <option value="1">EP IR external relay dsbld, External relay enbld</option>
+          <option value="2">EP IR external relay enbld, External relay dsbld</option>
+          <option value="3">EP IR external relay and External relay enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_110_2" type="integer" groupName="configuration"
+                 min="0" max="15000">
+        <label>110: Maximum Power auto off</label>
+        <description><![CDATA[
+Maximum Power auto off<br /><h1>Overview</h1><p>Set value means Maximum Power Consumption (0 - 15000) in watts (W), when relays are turned off according to parameters no. 111 and 112. Available configuration parameters (data type is 2 Bytes DEC</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No function</option>
+          <option value="15000">Maximum Power Consumption</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_111_2" type="integer" groupName="configuration"
+                 min="0" max="32525">
+        <label>111: Delay overpower off</label>
+        <description><![CDATA[
+Delay overpower off<br /><h1>Overview</h1><p>Set value means number of second to power off relay (defined by parameters no. 110 and 112) before restart (30 - 32535) in seconds (s). Available configuration parameters (data type is 2 Bytes DEC): </p>
+        ]]></description>
+        <default>30</default>
+      </parameter>
+
+      <parameter name="config_112_1" type="integer" groupName="configuration">
+        <label>112: Relay to power off</label>
+        <description><![CDATA[
+Relay to power off<br /><h1>Overview</h1><p>Set value selects relay to be powered off when threshold is reached (defined by parameters no. 110 and 111). Available config. parameters (data type is 1 Byte DEC)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">switch between the 2 relays</option>
+          <option value="1">always power off relay 1 (IR external relay)</option>
+          <option value="2">always power off relay 2 (External relay)</option>
+          <option value="3">always power off both relays (relay 1 and relay 2)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_130_32" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>130: Serial Number</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_131_16" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>131: Meter Software reference</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_132_16" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>132: Meter Hardware reference</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_140_24" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>140: Voltage U1</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_141_24" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>141: Current I1</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_142_24" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>142: Active Power Total (Pt)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_143_24" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>143: Reactive Power Total (Qt)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_144_16" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>144: Power Factor Total (PFt)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_145_32" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>145: Active power accumulated (import)</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_146_32" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>146: Reactive power accumulated</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_147_32" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>147: Apparent power accumulated</label>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_148_32" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="4294967295">
+        <label>148: Active power accumulated (export)</label>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description>Reserved for communication with the main controller</description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

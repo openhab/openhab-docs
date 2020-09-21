@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tsm10_00_000" listed="false">
+    <label>TSM10 Door/Window Sensor</label>
+    <description><![CDATA[
+Door/Window Sensor<br /><h1>Overview</h1><p>A slim door/window sensor.</p> <br /><h2>Inclusion Information</h2><p>Once the Z-Wave controller has entered inclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter inclusion mode.<br />LED will twinkle to indicate success.</p> <br /><h2>Exclusion Information</h2><p>Once the Z-Wave controller has entered exclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter exclusion mode.<br />LED will twinkle to indicate success. Once excluded  LED will flash one second on, one second off.</p> <br /><h2>Wakeup Information</h2><p>When the power on, the device will wake about 10 seconds. In this duration, the controller can communicate with the device. Normally the device is always sleeping to save the battery energy.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TSM10</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0331:0601</property>
+      <property name="dbReference">1239</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="3" max="127">
+        <label>1: Turn Off Light Time</label>
+        <description><![CDATA[
+Delay before turning light off again.<br /><h1>Overview</h1><p>After turn on light, setting the delay time to turn off the light. 10 seconds per tick, and minimum time is 30 seconds, default tick 3 (30 seconds).</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Basic Set Level</label>
+        <description><![CDATA[
+Lights on, or dimmer setting.<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
+        ]]></description>
+        <default>255</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="168">
+        <label>3: Wake up interval</label>
+        <description><![CDATA[
+Interval between wake up and auto report.<br /><h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>
+        ]]></description>
+        <default>12</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>4: Operation Mode</label>
+        <description><![CDATA[
+Security / Home Automation mode<br /><h1>Overview</h1><p>1 means security mode - only reports events to controller.</p> <p>2 means home automation mode - reports events to controller and sends commands to lighting.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Ignore Magnetic Off</label>
+        <description><![CDATA[
+Ignore door/window closing<br /><h1>Overview</h1><p>0 means light control action with the door/window close.</p> <p>1 means ignore the door/window close.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Lightcontrol</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

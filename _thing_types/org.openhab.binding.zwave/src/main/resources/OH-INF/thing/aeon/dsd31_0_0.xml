@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsd31_00_000" listed="false">
+    <label>DSD31 Outlet Plugable Siren</label>
+    <description><![CDATA[
+Outlet Plugable Siren<br /><h1>Overview</h1><p>Aeon Labs Siren is a switch binary device based on Z-wave enhanced 232 slave library of V6.51.01. </p> <br /><h2>Inclusion Information</h2><ol><li>Press and release the Action button. LED will blink for 3 seconds.</li> <li>If successfully included, LED will no longer blink after the Action button is quickly pressed.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press and release the Action button. </li> <li>If successfully removed, LED will blink for 3 seconds after the Action button is quickly pressed.</li> </ol>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param37" typeId="aeon_dsd31_00_000_config_decimal_param37">
+        <label>Siren sound and volume</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=37</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSD31</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0004:0050</property>
+      <property name="dbReference">86</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_37_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>37: Sirensound and Volume</label>
+        <description><![CDATA[
+Sets the sound type and volume<br /><h1>Overview</h1><p>The Value1(low byte) is used to select the Siren sound. The Value2(high byte) is used to adjust the volume. Other values will be ignored. 0 1  -&gt;   do not change the current sound.1 1  -&gt;   Siren sound 1 is selected.2 1  -&gt;   Siren sound 2 i</p>
+        ]]></description>
+        <default>13</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_37_2_0000000F" type="integer" groupName="configuration">
+        <label>37: Siren Sound</label>
+        <default>1</default>
+        <options>
+          <option value="1">Siren Sound 1</option>
+          <option value="2">Siren Sound 2</option>
+          <option value="3">Siren Sound 3</option>
+          <option value="4">Siren Sound 4</option>
+          <option value="5">Siren Sound 5</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_37_2_00000F00" type="integer" groupName="configuration">
+        <label>37: Siren Volume</label>
+        <default>3</default>
+        <options>
+          <option value="1">88dB</option>
+          <option value="2">100dB</option>
+          <option value="3">105dB</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_80_1" type="integer" groupName="configuration">
+        <label>80: Send Notifications</label>
+        <description><![CDATA[
+send notifications to associated devices<br /><h1>Overview</h1><p>Enable to send notifications to associated devices when the state of Siren changed.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Nothing</option>
+          <option value="1">Hail CC</option>
+          <option value="2">Basic CC Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_252_1" type="integer" groupName="configuration">
+        <label>252: Enable/Disable 'Lock' - Configuration</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="aeon_dsd31_00_000_config_decimal_param37">
+    <item-type>Number</item-type>
+    <label>Siren Volume</label>
+    <state pattern="%s">
+      <options>
+        <option value="1">88dB</option>
+        <option value="2">100dB</option>
+        <option value="3">105dB</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

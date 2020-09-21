@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="hogar_htp4s1fb_02_002" listed="false">
+    <label>HTP-4S1-FB Four Touch Panel and Power Socket</label>
+    <description><![CDATA[
+Four Touch Panel and Power Socket<br /><h1>Overview</h1><p>The HOGAR Touch Panels features a stunning glass face with advanced capacitive touch sensor engineered with smart home wireless standards Zigbee, Z-Wave Plus and Wifi variants.</p> <p>The Smart Home deserves better than an ordinary light switch. Hogar touch panels are one-of-a-kind collection of switches, dimmers, and scene controller that will transform walls from boring to absolutely breath-taking.</p> <p>Fits in existing electrical box and does not require new wires. Innovative assembly and snap-in system make it fast and simple to install.</p> <p>Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket for more information.</p> <br /><h2>Inclusion Information</h2><p>1. Tap and hold any of the touch button for few seconds (about 7 seconds).</p> <p>2. The LEDs of all the buttons will turn solid red all at the same time.</p> <p>3. At that time, release the button and tap it again only once. </p> <p>4. The LED of the button will flash pink (once) indicating that the device is ready to be included.</p> <br /><h2>Exclusion Information</h2><p>1. Tap and hold any of the touch button for few seconds (about 7 seconds).</p> <p>2. The LEDs of all the buttons will turn solid red all at the same time.</p> <p>3. At that time, release the button and tap it again only once. </p> <p>4. The LED of the button will flash pink (once) indicating that the device is ready to be included.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Hogar Controls</property>
+      <property name="modelId">HTP-4S1-FB</property>
+      <property name="manufacturerId">0293</property>
+      <property name="manufacturerRef">0003:0014</property>
+      <property name="versionMin">2.2</property>
+      <property name="dbReference">545</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

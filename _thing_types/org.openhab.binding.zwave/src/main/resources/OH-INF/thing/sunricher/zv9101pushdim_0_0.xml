@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_zv9101pushdim_00_000" listed="false">
+    <label>ZV-9101 In-Wall Dimmer Module</label>
+    <description><![CDATA[
+In-Wall Dimmer Module<br /><h1>Overview</h1><p>Z-Wave Built-in receiver with dimmer function. Control input, AC 230V / DC 12V, for Pushdim. Max 400 W resistive load, 200 W LED. Front edge / Rear dimmer, adjustable lowest level. Compatible with Nexa Bridge and other Z-Wave controllers.</p> <br /><h2>Inclusion Information</h2><ul><li>Press the "Reset" button 3 times within 3 seconds or</li> <li>press 3 times on connected switch within 3 seconds</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Set the Z-Wave controller in the exclusion mode (see controller's manual)</li> <li>Press the "Reset" button 3 times within 3 seconds</li> </ul>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV-9101</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0200:D005</property>
+      <property name="dbReference">1058</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>2: Saving load state</label>
+        <description><![CDATA[
+Saving load state before power failure<br /><h1>Overview</h1><p>Info: Saving load state before power failure 0 – shutoff load 1 – turn on load 2 – save load state before power failure</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Enable/disable to send report</label>
+        <description><![CDATA[
+basic report to the Lifeline when the load state changed<br /><h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed (When value set as 1, re-power on the dimmer, it will send Basic report automatically)</p> <p>0 – Disable to send Basic report</p> <p>1 – Enable to send Basic report</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: Default fade time</label>
+        <description><![CDATA[
+Default fade time (unit is second)<br /><h1>Overview</h1><p>Default fade time (unit is second, this value has the same function as Duration of Multilevel) Valid value: 0x00 - 0xFF</p> <table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0-127</td> <td>1 second to 127 seconds in 1 second resolution</td> </tr><tr><td>128-254</td> <td>1 minute to 127 minutes in 1 minute resolution</td> </tr><tr><td>255</td> <td>Factory default duration. (1 sec.)</td> </tr></table>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="50">
+        <label>5: brightness value</label>
+        <description><![CDATA[
+Setting minimum brightness value<br /><h1>Overview</h1><p>Setting minimum brightness value Valid value: 0 - 50, the bigger the value is, the higher the load’s minimum brightness is Note: when configure this value, the value of Multilevel will be configured as 1 automatically so that users can preview the corre-sponding effect of minimum brightness value</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>6: MOSFET</label>
+        <description><![CDATA[
+Choose MOSFET<br /><h1>Overview</h1><p>Choose MOSFET driving type 0 – trailing edge 1 – leading edge</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>7: removal from network</label>
+        <description><![CDATA[
+Enable/disable external switch to be added to and removed from a network<br /><h1>Overview</h1><p>Enable/disable external switch to be added to and removed from a network (when enables this function, triple press the external switch within 1.5 seconds to be added to or removed from a net-work) 0 – disable 1 - enable</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Emergency Shutoff<br /><h1>Overview</h1><p>The dimmer has accounted for Emergency Shutoff, when the temperature rises above 90°C, Emergency Shutoff is sent to Lifeline.</p> <p>System (0x09) Emergency Shutoff status</p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

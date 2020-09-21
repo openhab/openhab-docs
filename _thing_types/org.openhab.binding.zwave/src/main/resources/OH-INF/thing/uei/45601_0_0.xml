@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="uei_45601_00_000" listed="false">
+    <label>45601 Advanced Remote Wireless Lighting Control</label>
+    <description><![CDATA[
+Advanced Remote Wireless Lighting Control<br /><h1>Overview</h1><p>- Control your entire home from one remote</p> <ul><li>Turn on/off and adjust the brightness of Z-Wave enabled lights</li> <li>Operates the on/off functions of Z-Wave enabled small appliances</li> <li>Manage up to 18 individual lights, 18 groups, and 18 scenes</li> <li>Create custom lighting groups and scenes</li> <li>On-screen LCD menu provides easy navigation of features and command feedback</li> <li>Program up to nine timed events with advanced timer</li> <li>Controls Z-Wave enabled thermostats</li> <li>Label function allows you to name lights, groups, and scenes</li> </ul><p>Provides wireless radio frequency control of Z-Wave Plug-In/Dimming/Switching Modules and Wall Switches </p> <br /><h2>Inclusion Information</h2><p>N/A</p> <br /><h2>Exclusion Information</h2><p>N/A</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Universal Electronics Inc.</property>
+      <property name="modelId">45601</property>
+      <property name="manufacturerId">0020</property>
+      <property name="manufacturerRef">8007:1391</property>
+      <property name="dbReference">768</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

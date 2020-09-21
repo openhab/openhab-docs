@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsa03202_00_000" listed="false">
+    <label>DSA03202 Minimote 4 button remote control</label>
+    <description><![CDATA[
+Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a fully functional Z-Wave remote control capable of adding, removing and controlling other Z-Wave devices. It can also become a secondary or inclusion controller to a SIS gateway in the Z-Wave network. Form-factor, industrial design and robust functionality are the major foci. RF range is 100ft. indoors and 300ft. outdoors.</p> <p>Network setup buttons (such as adding and removing Z-Wave products to the network) are located underneath the bottom-slide door while Z-Wave scene control buttons are easily available to the user on the top of the remote controller.</p> <p>By taking advantage of the Z-Wave mesh network, commands can be routed to their destination via intermediary “listening” Z-Wave products. Products that are Z-Wave certified can be used and communicate with other Z-Wave certified devices. </p> <br /><h2>Inclusion Information</h2><p>1. Press the button labeled “Learn” – The blue LED will blink slowly.</p> <p>2. Press the button labeled “Include” on the other Z-Wave controller - The blue and red LEDs will blink quickly to indicate detection of the other Z-Wave controller.</p> <p>Consult the operation manual of other controllers for instructions on how to add the Minimote as a secondary/inclusion controller into an existing network.</p> <p>3. Consult the operation manual of other controllers for instructions on how to add the Minimote as a secondary/inclusion controller into an existing network.</p> <br /><h2>Exclusion Information</h2><p>Once added as a secondary controller, the Minimote cannot be excluded. To remove it from the network, it must be reset.</p> <p>1. Press and hold both the buttons labeled “Associate” and “Learn” for 10 seconds – The red LED will blink from slow to fast.</p> <p>2. The blue LEDs will stay solid for 2 seconds to indicate success.</p> <br /><h2>Wakeup Information</h2><p>1. Press and hold the button labeled “Learn” for 3 seconds – The Minimote will stay awake for 30 seconds.</p> <p>2. The blue LEDs will stay solid for 2 seconds to indicate success.</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSA03202</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0001:0003,0006:0002</property>
+      <property name="dbReference">74</property>
+      <property name="commandClass:COMMAND_CLASS_WAKE_UP">ccAdd,getSupported=false</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_241_1_wo" type="integer" groupName="configuration">
+        <label>241: Mode of Button 1 (upper left)</label>
+        <description>Defines the switching mode of Button 1</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_242_1_wo" type="integer" groupName="configuration">
+        <label>242: Mode of Button 2 (upper right)</label>
+        <description>Defines the switching mode of Button 2</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_243_1_wo" type="integer" groupName="configuration">
+        <label>243: Mode of Button 3 (lower left)</label>
+        <description>Defines the switching mode of Button 3</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_244_1_wo" type="integer" groupName="configuration">
+        <label>244: Mode of Button 4 (lower right)</label>
+        <description>Defines the switching mode of Button 4</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_245_1_wo" type="integer" groupName="configuration">
+        <label>245: Mode of Button 5 (Include)</label>
+        <description>Defines the switching mode of Button 5</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_246_1_wo" type="integer" groupName="configuration">
+        <label>246: Mode of Button 6 (Exclude)</label>
+        <description>Defines the switching mode of Button 6</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_247_1_wo" type="integer" groupName="configuration">
+        <label>247: Mode of Button 7 (Association)</label>
+        <description>Defines the switching mode of Button 7</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_248_1_wo" type="integer" groupName="configuration">
+        <label>248: Mode of Button 8 (Learn)</label>
+        <description>Defines the switching mode of Button 8</description>
+        <default>0</default>
+        <options>
+          <option value="0">Factory Default</option>
+          <option value="1">Scene Mode</option>
+          <option value="2">Add Mode</option>
+          <option value="3">Remove Mode</option>
+          <option value="4">Association Mode</option>
+          <option value="5">Learn Mode</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_250_1_wo" type="integer" groupName="configuration">
+        <label>250: Secondary Controller Mode</label>
+        <description><![CDATA[
+Selects Group Mode or Scene Mode<br /><h1>Overview</h1><p>When in Group Mode, the Minimote is paired directly to devices.  When in Scene Mode, Minimote button presses will send SCENE_ACTIVATION commands (NOTE: SCENE_ACTIVATION will only be received if the primary controller is NODE 1).</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Group Mode</option>
+          <option value="1">Scene Mode</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Scene 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Scene 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Scene 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Scene 4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

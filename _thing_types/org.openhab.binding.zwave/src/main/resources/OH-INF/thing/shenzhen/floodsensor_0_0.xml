@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_floodsensor_00_000" listed="false">
+    <label>Flood sensor Flood/water sensor</label>
+    <description><![CDATA[
+Flood/water sensor<br /><h1>Overview</h1><p>Flood/Water detection</p> <br /><h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the device cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode.</li> </ol><br /><h2>Wakeup Information</h2><ul><li>You can press the button once to wake up the device and send wakeup notification to controller.</li> <li>If press successfully, the LED will blink one time.</li> <li>The minimum wakeup interval is 300s</li> <li>The maximum wakeup interval is 16,777,200s (about 194 days)</li> <li>Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…</li> <li>Note: The default value is 12 hours. This value is longer, the battery life is greater.</li> </ul>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Flood Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">Flood sensor</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0003:0085,0003:1085,0003:2085</property>
+      <property name="dbReference">493</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>1: Alarm Duration Time</label>
+        <description><![CDATA[
+Alarm Duration Time<br /><h1>Overview</h1><p>This configuration parameter that can be used to adjust the time for beep and LED turned on when water leakage is detected.</p> <p>If this parameter is set to ‘0’, the beep and LED will be turn on always until water leakage is not detected</p>
+        ]]></description>
+        <default>120</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>2: Alarm Interval</label>
+        <description><![CDATA[
+Alarm Interval<br /><h1>Overview</h1><p>This Parameter defines beep on /off interval time when water leakage is detected.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="10" max="255">
+        <label>3: First Alarm On Time Duration</label>
+        <description><![CDATA[
+First Alarm On Time Duration<br /><h1>Overview</h1><p>This parameter defines beep on duration first time when water leakage is detected.</p>
+        ]]></description>
+        <default>60</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="5" max="255">
+        <label>4: Alarm on Time Duration</label>
+        <description><![CDATA[
+Alarm on Time Duration<br /><h1>Overview</h1><p>This parameter defines beep on duration after first beep on when water leakage is detected.</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Alarm Enable/Disable</label>
+        <description><![CDATA[
+Alarm Enable/Disable<br /><h1>Overview</h1><p>This parameter defines beep on is enabled or disabled when water leakage is detected.</p> <ul><li>‘0’ indicate beep on is disable, but LED will be turned on when water leakage detected.</li> <li>‘1’ indicate beep on is enabled, the BEEP and LED will be turned on when water leakage detected.</li> </ul>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Beep Disabled</option>
+          <option value="1">Beep Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Water Leakage Detection</label>
+        <description><![CDATA[
+Water Leakage Detection<br /><h1>Overview</h1><p>This parameter defines the function than water leakage detect is enabled or disabled.</p> <ul><li>‘0’ indicate disable water leakage detect,</li> <li>‘1’ indicate enable water  leakage detect.</li> </ul>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Basic Set Level</label>
+        <description><![CDATA[
+Basic Set Level<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.</p>
+        ]]></description>
+        <default>255</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: BASIC_SET</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: NOTIFICATION_REPORT_V4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: SENSOR_BINARY_REPORT_V2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

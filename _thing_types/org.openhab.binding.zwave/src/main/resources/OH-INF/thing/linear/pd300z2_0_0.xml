@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="linear_pd300z2_00_000" listed="false">
+    <label>PD300Z-2 Plug-in Wall Dimmer</label>
+    <description><![CDATA[
+Plug-in Wall Dimmer<br /><h1>Overview</h1><p>300 Watt, 120 VAC NWI and Scene Capable Plug-In Lamp Module</p> <br /><h2>Inclusion Information</h2><ol><li>Prepare the Controller to include a unit to the network. The PD300Z-2 must be in its permanently installed location.</li> <li>For NWI Inclusion, press the button on the PD300Z-2 once.</li> <li>For classic inclusion, press the button on the PD300Z-2 twice.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the Controller into Removal Mode</li> <li>Remove the switch by press the button twice</li> </ol>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Linear Corp</property>
+      <property name="modelId">PD300Z-2</property>
+      <property name="manufacturerId">014F</property>
+      <property name="manufacturerRef">4450:3030</property>
+      <property name="dbReference">7</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_29_1" type="integer" groupName="configuration">
+        <label>29: Load Sense</label>
+        <description><![CDATA[
+Turn load sense on with 1, off with 0<br /><h1>Overview</h1><p>Set parameter to 0 to disable load sense, set parameter to 1 to enable load sense.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable load sense</option>
+          <option value="1">Enable load sense</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

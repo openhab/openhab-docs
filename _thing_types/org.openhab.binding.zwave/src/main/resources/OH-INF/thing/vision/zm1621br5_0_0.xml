@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zm1621br5_00_000" listed="false">
+    <label>ZM1621 Battery Operated Siren</label>
+    <description><![CDATA[
+Battery Operated Siren<br /><h1>Overview</h1><p>The ZM1621 will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave™ enabled network. When the device is secure included into Z-Wave network, above communication will be encrypted. </p> <br /><h2>Inclusion Information</h2><p>To get the ZM1621 in the “inclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. After setting, the LED Light should go off, if not, please try again. </p> <br /><h2>Exclusion Information</h2><p>To get the ZM1621 in the “exclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. LED light will flash continuously in Exclusion condition.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZM1621</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2005:0518</property>
+      <property name="dbReference">988</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Siren Strobe Mode</label>
+        <description>Defines the reaction of the siren</description>
+        <default>0</default>
+        <options>
+          <option value="0">All Enable</option>
+          <option value="1">Siren Only</option>
+          <option value="2">Strobe Only</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Alarm Auto Stop Time</label>
+        <description>Defines the auto time out of the alarm indication</description>
+        <default>0</default>
+        <options>
+          <option value="0">30 seconds</option>
+          <option value="1">60 seconds</option>
+          <option value="2">120 seconds</option>
+          <option value="3">Continuous</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

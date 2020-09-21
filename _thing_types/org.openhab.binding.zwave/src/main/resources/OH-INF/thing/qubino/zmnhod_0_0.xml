@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhod_00_000" listed="false">
+    <label>ZMNHOD Flush Shutter DC</label>
+    <description><![CDATA[
+Flush Shutter DC<br /><h1>Overview</h1><p>This Z-Wave module is used to control the motor of blinds, rollers, shades, venetian blinds, etc.. The module can be controlled either through a Z-Wave network or through the wall switch.</p> <br /><h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds)</li> </ul><br /><h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
+    ]]></description>
+    <category>Blinds</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control" typeId="blinds_control">
+        <label>Blinds control</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="blinds_control1" typeId="blinds_control">
+        <label>Blinds control 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:StopMoveType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+          <property name="binding:Command:UpDownType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHOD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0003:0053</property>
+      <property name="dbReference">214</property>
+      <property name="defaultAssociations">1,5</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_2" type="integer" groupName="configuration">
+        <label>10: Activate/deactivate functions ALL ON / ALL OFF</label>
+        <description><![CDATA[
+Activate/deactivate functions ALL ON / ALL OFF<br /><h1>Overview</h1><p>Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controllerbelonging to the system.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">ALL ON is not active, ALL OFF is not active</option>
+          <option value="1">ALL ON is not active ALL OFF active</option>
+          <option value="2">ALL ON is not active ALL OFF is not active</option>
+          <option value="255">ALL ON active, ALL OFF active</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>40: Power report (Watts) on power change for Q1 or Q2</label>
+        <description><![CDATA[
+Power report (Watts) on power change for Q1 or Q2<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 – 100 = 0% - 100%.</p> <p>Available configuration parameters </p> <ul><li>default value 1</li> <li>0 - reporting disabled</li> <li>1 - 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE</strong>: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. </p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_42_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>42: Power report (Watts) by time interval for Q1 or Q2</label>
+        <description><![CDATA[
+Power report (Watts) by time interval for Q1 or Q2<br /><h1>Overview</h1><p>Set value means time interval (0 – 32767) in seconds, when power report is send.</p> <p>Available configuration parameters</p> <ul><li>default value 300 = 300s</li> <li>0 - Reporting Disabled</li> <li>1 - 32767 = 1 second - 32767 seconds. Reporting enabled, power report is send with time interval set by entered value. </li> </ul>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_71_1" type="integer" groupName="configuration">
+        <label>71: Operating modes</label>
+        <description><![CDATA[
+Operating modes<br /><h1>Overview</h1><p>This parameter defines selection between two available operating modes.</p> <p>Available configuration parameters </p> <ul><li>default value 0</li> <li>0 - Shutter mode</li> <li>1 - venetian mode (up/down and slate rotation)</li> </ul><p><strong>NOTE1</strong>: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Shutter mode.</option>
+          <option value="1">Venetian mode (up/down and slate rotation)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_72_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>72: Slats tilting full turn time</label>
+        <description><![CDATA[
+Slats tilting full turn time<br /><h1>Overview</h1><p>This parameter defines the time necessary for slats to make full turn (180 degrees).</p> <p>Available configuration parameters </p> <ul><li>default value 150 = 1,5 seconds</li> <li>0 - tilting time disabled</li> <li>1 - 32767 = 0,01seconds - 327,67 seconds</li> </ul><p><strong>NOTE</strong>: If time set is too high, this will result that after full turn, Shutter will start move up/down, for time remaining. </p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_73_1" type="integer" groupName="configuration">
+        <label>73: Slats position</label>
+        <description><![CDATA[
+Slats position<br /><h1>Overview</h1><p>This parameter defines slats position after up/down movement through Z-wave or push-buttons.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Return to previous position only with Z-wave</option>
+          <option value="1">Return to previous position with Z-wave or button</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_74_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>74: Motor moving up/down time</label>
+        <description><![CDATA[
+Motor moving up/down time<br /><h1>Overview</h1><p>This parameter defines Shutter motor moving time of complete opening or complete closing.</p> <p>Available configuration parameters</p> <ul><li>default value 0</li> <li>0 - moving time disabled (working with limit switches)</li> <li>1 - 32767 = 0,1seconds - 3276,7seconds. After that time motor is stopped (relay goes to off state)</li> </ul><p><strong>NOTE</strong>: Important is that the reference position to manually set moving time is always Shutter lower position!</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_76_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>76: Motor operation detection</label>
+        <description><![CDATA[
+Motor operation detection<br /><h1>Overview</h1><p>Power threshold to be interpreted when motor reach the limit switch.</p> <p>Available configuration parameters</p> <ul><li> default value 6 = 0,6W</li> <li>5 - 100 (0,5W - 10W), step is 0,1W.</li> </ul><p><strong>NOTE</strong>: Motors with power consumption less than 0,5W could not be auto calibrated. In that case set time manually (par. 74).</p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_78_1" type="integer" groupName="configuration">
+        <label>78: Forced Shutter DC calibration</label>
+        <description><![CDATA[
+Forced Shutter DC calibration<br /><h1>Overview</h1><p>By modifying the parameters setting from 0 to 1 a Shutter DC module enters the calibration mode.</p> <p>Available configuration parameters </p> <ul><li>default value 0</li> <li>1 - Start calibration process (when calibration process is finished, completing full cycle - up, down and up, set the parameter 78 (Forced Shutter calibration) value back to 0</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Default</option>
+          <option value="1">Start calibration process.</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_85_1" type="integer" groupName="configuration"
+                 min="3" max="50">
+        <label>85: Power consumption max delay time</label>
+        <description><![CDATA[
+Power consumption max delay time<br /><h1>Overview</h1><p>This parameter defines the max time before motor power consumption is read after one of the relays is switched ON. If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, motor in end position,...) the relay will switch OFF. Time is defined by entering it manually.</p> <p>Available configuration parameters</p> <ul><li>default value 8 = 800ms</li> <li>3 - 50 = 0,3seconds - 5seconds (100ms resolution)</li> </ul>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_86_1" type="integer" groupName="configuration"
+                 min="3" max="50">
+        <label>86: Power consumption at limit switch delay time</label>
+        <description><![CDATA[
+Power consumption at limit switch delay time<br /><h1>Overview</h1><p>This parameter defines the max time at limit switch, when power consumption is below power threshold. If the power consumption during this time is below power threshold (par. 76), the active output will switch off, means that limit switch is reached.</p> <p>Available configuration parameters </p> <ul><li>default value 8 = 800ms</li> <li>3 - 50 = 0,3seconds - 5seconds (100ms resolution) </li> </ul>
+        ]]></description>
+        <default>8</default>
+      </parameter>
+
+      <parameter name="config_90_1" type="integer" groupName="configuration"
+                 min="1" max="30">
+        <label>90: Time delay for next motor movement</label>
+        <description><![CDATA[
+Time delay for next motor movement<br /><h1>Overview</h1><p>This parameter defines the minimum time delay between next motor movement (minimum time between switching motor off and on again).</p> <p>Available configuration parameters </p> <ul><li>default value 5 = 500ms</li> <li>1 - 30 = 0,1seconds - 3seconds (100ms resolution)</li> </ul>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_110_2" type="integer" groupName="configuration"
+                 min="1" max="32536">
+        <label>110: Temperature sensor offset settings</label>
+        <description><![CDATA[
+Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor.</p> <p>Available configuration parameters</p> <ul><li>default value 32536  32536 - offset is 0.0C</li> <li>From 1 to 100 - value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From 1001 to 1100 - value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.</li> </ul>
+        ]]></description>
+        <default>32536</default>
+      </parameter>
+
+      <parameter name="config_120_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>120: Digital temperature sensor reporting</label>
+        <description><![CDATA[
+Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.</p> <p>Available configuration parameters (data type is 1 Byte DEC):</p> <ul><li>Default value 5 = 0,5°C</li> <li>0 - reporting disabled</li> <li>1-127 = 0,1°C - 12,7°C, step is 0,1°C</li> </ul>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Default reporting group</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic on/off - input I1</label>
+        <description>Triggered at change of the input I1 state and reflecting its state</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic on/off - input I2</label>
+        <description>Triggered at change of the input I2 state and reflecting its state</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Basic on/off - direction of roller</label>
+        <description><![CDATA[
+Triggered at sensing moving direction of roller<br /><h1>Overview</h1><p>up=FF, down=0</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Basic on/off - roller position</label>
+        <description><![CDATA[
+Triggered at reaching roller position<br /><h1>Overview</h1><p>bottom=FF, top=0</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_6" type="text" groupName="association" multiple="true">
+        <label>6: Basic on/off</label>
+        <description><![CDATA[
+Triggered at reaching roller position<br /><h1>Overview</h1><p>bottom=FF, not bottom=0</p>
+        ]]></description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_7" type="text" groupName="association" multiple="true">
+        <label>7: Multilevel set</label>
+        <description>triggered at changes of value of the Flush Shutter DC position</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Multilevel set</label>
+        <description>Triggered at changes of value of slats tilting position</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <parameter name="group_9" type="text" groupName="association" multiple="true">
+        <label>9: Multilevel sensor report</label>
+        <description>Triggered at change of temperature sensor</description>
+        <multipleLimit>16</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="aeon_dsb09_00_000" listed="false">
+    <label>DSB09 Home Energy Meter</label>
+    <description><![CDATA[
+Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset to default factory settings with ease.</p> <ol><li>Press and hold the Action Button for 10 seconds.</li> <li>If successful, the LED on the HEM should begin to blink slowly.</li> </ol><br /><h2>Inclusion Information</h2><p>The electrical installation of your Home Energy Meter (HEM) is now complete. You  must now wirelessly link it to your Z-Wave network.</p> <ol><li>Put your primary Z-Wave controller, usually a gateway or hub, into inclusion mode. If  you are not sure how to do this, please refer to your controller’s user manual.</li> <li>Press the Action Button on your HEM. If it has been successfully linked to your  network, its LED will remain illuminated. If the linking was unsuccessful, your HEM’s LED will continue to blink.</li> </ol><br /><h2>Exclusion Information</h2><p>Your Home Energy Meter (HEM) can be removed from your Z-Wave network at  any time. You'll need to use your Z-Wave network’s primary to do this.</p> <ol><li>Put your main controller into its device removal mode. If you are unsure how to do  this, please refer to your controller’s user manual.</li> <li>Press the Action Button on your HEM. If it has been successfully removed from your  network, its LED will blink. If the removal was unsuccessful, its LED will be solid and it will be then repeated again.</li> </ol>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_power" typeId="sensor_power">
+        <label>Sensor (power)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Reset Meter</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power1" typeId="sensor_power">
+        <label>Sensor (power) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1,COMMAND_CLASS_BASIC:1;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh1" typeId="meter_kwh">
+        <label>Electric meter (kWh) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts1" typeId="meter_watts">
+        <label>Electric meter (watts) 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power2" typeId="sensor_power">
+        <label>Sensor (power) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh2" typeId="meter_kwh">
+        <label>Electric meter (kWh) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts2" typeId="meter_watts">
+        <label>Electric meter (watts) 2</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:2;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="sensor_power3" typeId="sensor_power">
+        <label>Sensor (power) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:3,COMMAND_CLASS_BASIC:3;type=POWER</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh3" typeId="meter_kwh">
+        <label>Electric meter (kWh) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts3" typeId="meter_watts">
+        <label>Electric meter (watts) 3</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER:3;type=E_W</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">AEON Labs</property>
+      <property name="modelId">DSB09</property>
+      <property name="manufacturerId">0086</property>
+      <property name="manufacturerRef">0002:0009</property>
+      <property name="dbReference">84</property>
+      <property name="defaultAssociations">1,2,3</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="0" max="32000">
+        <label>1: Voltage</label>
+        <description>Voltage to calculate wattage from amperage.</description>
+        <default>240</default>
+      </parameter>
+
+      <parameter name="config_3_1_00000001" type="integer" groupName="configuration">
+        <label>3: Selective Reporting: Whole HEM</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1_00000002" type="integer" groupName="configuration">
+        <label>3: Selective Reporting: Clamp 1</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1_00000004" type="integer" groupName="configuration">
+        <label>3: Selective Reporting: Clamp 2</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1_00000008" type="integer" groupName="configuration">
+        <label>3: Selective Reporting: Clamp 3</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>4: Current Threshold - Whole HEM</label>
+        <description><![CDATA[
+Threshold change in wattage to induce an automatic report (Whole HEM).<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>5: Current Threshold - Clamp 1</label>
+        <description><![CDATA[
+Threshold change in wattage to induce an automatic report (Clamp 1)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>6: Current Threshold - Clamp 2</label>
+        <description><![CDATA[
+Threshold change in wattage to induce an automatic report (Clamp 2)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="0" max="60000">
+        <label>7: Current Threshold - Clamp 3</label>
+        <description><![CDATA[
+Threshold change in wattage to induce an automatic report (Clamp 3)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>8: Percent Change - Whole HEM</label>
+        <description><![CDATA[
+Percentage change in wattage to induce an automatic report (Whole HEM)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>9: Percent Change - Clamp 1</label>
+        <description><![CDATA[
+Percentage change in wattage to induce an automatic report (Clamp 1)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>10: Percent Change - Clamp 2</label>
+        <description><![CDATA[
+Percentage change in wattage to induce an automatic report (Clamp 2)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>11: Percent Change - Clamp 3</label>
+        <description><![CDATA[
+Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
+        ]]></description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_100_4_wo" type="integer" groupName="configuration">
+        <label>100: Set parameters 101-103 to default values</label>
+        <default>0</default>
+        <options>
+          <option value="0">No change</option>
+          <option value="1">Reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000001" type="integer" groupName="configuration">
+        <label>101: Report Group 1: Battery Report</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000002" type="integer" groupName="configuration">
+        <label>101: Group 1: MultiSensor Report for Watt (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000004" type="integer" groupName="configuration">
+        <label>101: Group 1: Meter Report for Watt (whole device)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000008" type="integer" groupName="configuration">
+        <label>101: Group 1: Meter Report for kWh (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000100" type="integer" groupName="configuration">
+        <label>101: Group 1: Meter Report for Watt (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000200" type="integer" groupName="configuration">
+        <label>101: Group 1: Meter Report for Watt (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000400" type="integer" groupName="configuration">
+        <label>101: Report Group 1: Meter Report for Watt (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00000800" type="integer" groupName="configuration">
+        <label>101: Report Group 1: Meter Report for kWh (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00001000" type="integer" groupName="configuration">
+        <label>101: Report Group 1: Meter Report for kWh (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_101_4_00002000" type="integer" groupName="configuration">
+        <label>101: Report Group 1: Meter Report for kWh (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000001" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Battery Report</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000002" type="integer" groupName="configuration">
+        <label>102: Group 2: MultiSensor Report for Watt (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000004" type="integer" groupName="configuration">
+        <label>102: Group 2: Meter Report for Watt (whole device)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000008" type="integer" groupName="configuration">
+        <label>102: Group 2: Meter Report for kWh (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000100" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for Watt (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000200" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for Watt (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000400" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for Watt (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00000800" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for kWh (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00001000" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for kWh (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_102_4_00002000" type="integer" groupName="configuration">
+        <label>102: Report Group 2: Meter Report for kWh (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000001" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Battery Report</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000002" type="integer" groupName="configuration">
+        <label>103: Group 3: MultiSensor Report for Watt (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000004" type="integer" groupName="configuration">
+        <label>103: Group 3: Meter Report for Watt (whole device)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000008" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for kWh (whole HEM)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000100" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for Watt (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000200" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for Watt (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000400" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for Watt (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00000800" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for kWh (clamp 1)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00001000" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for kWh (clamp 2)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_103_4_00002000" type="integer" groupName="configuration">
+        <label>103: Report Group 3: Meter Report for kWh (clamp 3)</label>
+        <default>0</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_110_4_wo" type="integer" groupName="configuration">
+        <label>110: Set parameters 111-113 to default values</label>
+        <default>0</default>
+        <options>
+          <option value="0">No change</option>
+          <option value="1">Reset</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_111_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>111: Interval to send Report Group 1</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_112_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>112: Interval to send Report Group 2</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_113_4" type="integer" groupName="configuration"
+                 min="1" max="2678400">
+        <label>113: Interval to send Report Group 3</label>
+        <default>720</default>
+      </parameter>
+
+      <parameter name="config_255_4_wo" type="integer" groupName="configuration">
+        <label>255: Reset to Factory</label>
+        <description><![CDATA[
+Reset all settings to factory defaults<br /><h1>Overview</h1><p>Reset all settings in unit to factory settings.  If you're getting crazy voltage readings in a unit after upgrading firmware, use this then reconfigure the unit.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do nothing</option>
+          <option value="1">Reset to factory defaults</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Report group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Report group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Report group 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

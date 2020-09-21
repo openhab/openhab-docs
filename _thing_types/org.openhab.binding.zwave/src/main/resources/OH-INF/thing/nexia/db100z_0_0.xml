@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nexia_db100z_00_000" listed="false">
+    <label>DB100Z Doorbell</label>
+    <description><![CDATA[
+Doorbell<br /><h1>Overview</h1><p>Z-Wave Doorbell Sensor</p> <br /><h2>Inclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been included into your Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been excluded from your Z-Wave network.</p> <br /><h2>Wakeup Information</h2><p>Press Install button three times rapidly.</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_raw" typeId="alarm_raw">
+        <label>Power Management Raw</label>
+        <properties>
+          <property name="binding:*:StringType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="notification_power_management" typeId="notification_power_management">
+        <label>Power Management Notification</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_ALARM,COMMAND_CLASS_BASIC;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Nexia Home Intelligence</property>
+      <property name="modelId">DB100Z</property>
+      <property name="manufacturerId">0178</property>
+      <property name="manufacturerRef">4442:3130</property>
+      <property name="dbReference">309</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Send Battery Report with Notification Report</label>
+        <description>Send Battery Report with Notification Report</description>
+        <default>0</default>
+        <options>
+          <option value="0">Do not send battery report</option>
+          <option value="1">Send Battery Report</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

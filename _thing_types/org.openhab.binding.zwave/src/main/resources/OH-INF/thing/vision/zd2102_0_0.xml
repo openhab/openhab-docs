@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="vision_zd2102_00_000" listed="false">
+    <label>ZD2102 Door Window Sensor</label>
+    <description><![CDATA[
+Door Window Sensor<br /><h1>Overview</h1><p>The ZD2102 Door and Window sensor is used in any Z-Wave network to detect the opening or closing of a door or window. Special Design can fit most of door/window frame. The primary sensing element is a magnetic reed switch, the ZD2102 is supplied with the sensor, sensor mounting bracket and the trigger magnet. An additional set of sensor inputs are provided through a 2 position screw terminal and can be used to expand the sensor capability to multiple inputs. The ZD2102 is powered by a single CR123A Lithium Battery (supplied with unit, battery life is more than 5 years) and is intended for indoor use only. The ZD2102 features tamper proof switch, low battery warning and can be firmware updated over the air.</p> <br /><h2>Inclusion Information</h2><p>Press the program switch</p> <br /><h2>Exclusion Information</h2><p>Press the program switch for at least 1 second</p> <br /><h2>Wakeup Information</h2><p>Open the rear cover</p>
+    ]]></description>
+    <category>Door</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Sensor (Binary)</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_SENSOR_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="alarm_tamper" typeId="alarm_tamper">
+        <label>Tamper Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR, event=3</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Sensor (Alarm)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL, event=2</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Vision Security</property>
+      <property name="modelId">ZD2102</property>
+      <property name="manufacturerId">0109</property>
+      <property name="manufacturerRef">2001:0101,2001:0102</property>
+      <property name="dbReference">105</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Control Command</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

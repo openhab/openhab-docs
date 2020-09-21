@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zwaveme_zme06443_00_000" listed="false">
+    <label>ZME_06443 Single Paddle Wall Controller</label>
+    <description><![CDATA[
+Single Paddle Wall Controller<br /><h1>Overview</h1><p>The battery wall controller is a Z-Wave device that can act as controller. This means that it can built its own Z-Wave network by including and managing other devices but it can also be included into a different Z-Wave controllers network and act as a secondary controller.</p> <p>The rocker can be used to control other Z-Wave devices or send scene control command to an IP gateway. The device has two independent control channels - in Z-Wave language Association groups – that can be operated by single and double click of the rocker.</p> <br /><h2>Inclusion Information</h2><p>Press the button “Inclusion” for 2 seconds. The LED will start shining green.</p> <br /><h2>Exclusion Information</h2><p>Triple click the button “Exclusion”. The LED will start blinking. </p> <br /><h2>Wakeup Information</h2><p>Triple click on either the button “Down” or the button “Up” will issue a Node Information Frame and keep the device awake for 2 sec afterwards.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Z-Wave.Me</property>
+      <property name="modelId">ZME_06443</property>
+      <property name="manufacturerId">0115</property>
+      <property name="manufacturerRef">0400:0004,1000:0004</property>
+      <property name="dbReference">148</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="100">
+        <label>10: Typical click timeout</label>
+        <description><![CDATA[
+Typical time used to differentiate click<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks</p> <p>Defined in 10ms ticks.</p>
+        ]]></description>
+        <default>50</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Invert buttons</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Action on button single press or hold</label>
+        <description><![CDATA[
+Defines which command should be sent on button single press or hold.<br /><h1>Overview</h1><p>Defines which command should be sent on button single press or hold.</p> <p>Basic and Scene commands are sent to Association group.</p> <p>Switch All commands are sent broadcast.</p> <p>Scenes have following meaning: Up = 1, Down = 2, Dim Up = 3, Dim Down = 4, Dim Up Stop = 5</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On, Off and dim using Basic Set</option>
+          <option value="2">Switch All</option>
+          <option value="3">Scenes</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Action on button double press or hold</label>
+        <description><![CDATA[
+Defines which command should be sent on button double press or press-hold.<br /><h1>Overview</h1><p>Defines which command should be sent on button double press or press-hold.</p> <p>Basic and Scene commands are sent to Association group.</p> <p>Switch All commands are sent broadcast.</p> <p>If not disabled, the device will wait for a click timeout to see if the second click</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Switch On, Off and dim using Basic Set</option>
+          <option value="2">Switch All</option>
+          <option value="3">Scenes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Send the following Switch All commands</label>
+        <default>0</default>
+        <options>
+          <option value="1">Switch OFF Only</option>
+          <option value="2">Switch ON Only</option>
+          <option value="255">Switch all on and off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Send unsolicited Battery Report on Wake Up</label>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">To same node as wake up notification</option>
+          <option value="2">Broadcast to neighbours</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Single Press</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Double Press</label>
+        <multipleLimit>10</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zse33_00_000" listed="false">
+    <label>ZSE33 Smart Chime/Alarm</label>
+    <description><![CDATA[
+Smart Chime/Alarm<br /><h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio and visual notifications triggered by other Z-Wave devices or scheduled in your routine</li> <li>Choose from 10 different sounds for chime and siren modes</li> <li>Advanced configuration available</li> <li>Powerful long-lasting batteries</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Small size and quick installation</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 2 CR123 batteries (included)</li> <li>Power Consumption: 2W</li> <li>Operating Temperature: 32 – 104 F</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> <li>Dimensions: 2.7” x 1.2”</li> <li>Weight: 3 oz</li> </ul><br /><h2>Inclusion Information</h2><p>Auto Inclusion:</p> <ol><li>Put your Z-Wave controller in inclusion mode</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot – the Chime will automatically enter inclusion mode for 20 seconds</li> <li>A new alarm siren / doorbell device will appear on your controller's device list</li> </ol><p>Manual Inclusion:</p> <ol><li>Bring the Smart Chime within direct range of your controller</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot. The LED indicator will blink slowly</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the Z-Wave button on the Smart Chime 3 TIMES quickly. The LED indicator will flash quickly</li> <li>A new alarm siren / doorbell device will appear on your controller's device list (if it connects as an on/off switch, you may need to change the device type manually. Contact us for instructions).</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the Smart Chime is powered on and located within direct range of your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash quickly</li> <li>The Smart Chime should disappear from your controller's device list</li> </ol><p>If the first attempt is unsuccessful, please repeat the process following all steps carefully.</p>
+    ]]></description>
+    <category>Siren</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZSE33</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">0003:0088</property>
+      <property name="dbReference">638</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>1: Siren Volume</label>
+        <description><![CDATA[
+3 volume levels for the alarm siren sound.<br /><h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Siren Alarm Duration</label>
+        <description><![CDATA[
+5 modes to set the duration for siren alarm<br /><h1>Overview</h1><p>0 – alarm is off</p> <p>1 – alarm goes off for 30 seconds</p> <p>2 – alarm goes off for 60 seconds</p> <p>3 – alarm goes off for 5 minutes</p> <p>255 – alarm continues until battery drains</p> <p>Values: 0, 1 – 3, 255; 1 – default setting.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>3: Chime Sound Duration</label>
+        <description><![CDATA[
+Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should repeat the doorbell sound once triggered by a BASIC_SET alarm command from a door sensor.</p> <p>Values: 0 – chime is off, 1 – 254 (cycles); 255 – chime</p> <p>sound continues until battery drains; 2 – default setting.</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>4: Chime Volume</label>
+        <description><![CDATA[
+3 volume levels for the doorbell sound. Set volume to low, medium, or high.<br /><h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>5: Siren Alarm Tone</label>
+        <description><![CDATA[
+10 different tones for alarm siren<br /><h1>Overview</h1><p>Values: 1-10; 10 – default setting.</p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>6: Chime Tone</label>
+        <description><![CDATA[
+10 different tones for doorbell<br /><h1>Overview</h1><p>Values: 1-10; 4 – default setting.</p>
+        ]]></description>
+        <default>4</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>7: Siren Alarm or Chime Mode</label>
+        <description><![CDATA[
+Siren Alarm or Chime Mode<br /><h1>Overview</h1><p>Switch between Siren Alarm (configu-red by parameters 1, 2, 5, 8) and Chime / Doorbell (parameters 3, 4, 6, 9) modes.</p> <p>Values: 1 – Siren Alarm enabled; 2 – Chime enabled (default).</p>
+        ]]></description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: LED Notifications for Siren Alarm</label>
+        <description><![CDATA[
+LED Notifications for Siren Alarm<br /><h1>Overview</h1><p>Enable or disable visual alarm for Siren mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled; 1 – LED enabled (default).</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: LED Notifications for Chime</label>
+        <description><![CDATA[
+LED Notifications for Chime<br /><h1>Overview</h1><p>Enable or disable visual alarm for Chime mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled (default); 1 – LED enabled.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 2 for status notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: SWITCH_BINARY_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Group 3 for notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: NOTIFICATION_REPORT</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

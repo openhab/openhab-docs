@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhs521_00_000" listed="false">
+    <label>MH-S521 Shutter Panel</label>
+    <description><![CDATA[
+Shutter Panel<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc.</p> <br /><h2>Inclusion Information</h2><p>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession. </p> <br /><h2>Exclusion Information</h2><p>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession. </p> <br /><h2>Wakeup Information</h2><p> The device can be manually woken with a button press on the device</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_voltage" typeId="meter_voltage">
+        <label>Electric meter (volts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_V</property>
+        </properties>
+      </channel>
+      <channel id="meter_current" typeId="meter_current">
+        <label>Electric meter (amps)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_A</property>
+        </properties>
+      </channel>
+      <channel id="alarm_general" typeId="alarm_general">
+        <label>Alarm</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-S521</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">C321:5102,C521:5101</property>
+      <property name="dbReference">722</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Power Failure State</label>
+        <description>switch will be off when powered again</description>
+        <default>1</default>
+        <options>
+          <option value="0">not saved</option>
+          <option value="1">saved</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: ALL ON/ALL OFF</label>
+        <description>ALL ON/ALL OFF</description>
+        <default>255</default>
+        <options>
+          <option value="0">forbid ALL ON, forbid ALL OFF</option>
+          <option value="1">forbid ALL ON, allow ALL OFF</option>
+          <option value="2">allow ALL ON, forbid ALL OFF</option>
+          <option value="255">allow ALL ON, allow ALL OFF</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>4: LED Backlit brightness level</label>
+        <description><![CDATA[
+LED Backlit brightness level<br /><h1>Overview</h1><ul><li>0 - LED disabled</li> <li>1 - 10 Min level - max level</li> </ul>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Key Mode</label>
+        <description><![CDATA[
+Key Mode<br /><h1>Overview</h1><p>This function works for corridor or stairwell situation.  </p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">single click to switch on/off status</option>
+          <option value="1">Key default as off state</option>
+          <option value="2">Key default as on state</option>
+          <option value="3">hold &gt;3s then key is on, and off once released</option>
+          <option value="4">single click + hold &gt;3s then key is on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Key On duration</label>
+        <description><![CDATA[
+Key On duration<br /><h1>Overview</h1><ul><li>0 - infinite</li> <li>1~65535 unit "sec"</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>8: Basic CC integration setting</label>
+        <description><![CDATA[
+Basic CC integration setting<br /><h1>Overview</h1><p><strong>This parameter works for integration with different gateways/systems. If you do not know how to use, keep as default. </strong></p> <ul><li>0x00 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will <strong>not</strong> send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> <li>0x01 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> <li>0x02 "Basic Set" received，all keys respond; "Basic Get" received，not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint） to LifeLine Association</li> <li>0x03 "Basic Set" received，all keys respond; "Basic Get" received，key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</li> </ul>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>16: Scene respond</label>
+        <description><![CDATA[
+Scene respond<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: =1 Key1 respond scene <ul><li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: =1 Key2 respond scene <ul><li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: =1 Key3 respond scene <ul><li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev </li> </ul>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Key1 Scene Activate Mode Setting</label>
+        <description>Key1 Scene Activate Mode Setting</description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">One click key1 always activate scene ID1</option>
+          <option value="2">only activate scene ID1 when key1's relay open</option>
+          <option value="3">only activate scene ID1 when key1's relay closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Key1 Activate Scene ID</label>
+        <description><![CDATA[
+Key1 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>19: Key1 Activate Scene Duration</label>
+        <description><![CDATA[
+Key1 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Key2 Scene Activate Mode Setting</label>
+        <description>Key2 Scene Activate Mode Setting</description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">always activate scene ID1</option>
+          <option value="2">,only activate scene ID1 when key2's relay open</option>
+          <option value="3">nly activate scene ID1 when key2's relay closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>21: Key2 Activate Scene ID</label>
+        <description><![CDATA[
+Key2 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>22: Key2 Activate Scene Duration</label>
+        <description><![CDATA[
+Key2 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Key3 Scene Activate Mode Setting</label>
+        <description>Key3 Scene Activate Mode Setting</description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">always activate scene ID1</option>
+          <option value="2">only activate scene ID1 when key3's relay open</option>
+          <option value="3">only activate scene ID1 when key3's relay closed</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>24: Key3 Activate Scene ID</label>
+        <description><![CDATA[
+Key3 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>25: Key3 Activate Scene Duration</label>
+        <description><![CDATA[
+Key3 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>32: Scene respond ID 1-50</label>
+        <description><![CDATA[
+Scene respond ID 1-50<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>33: Scene respond ID 51-100</label>
+        <description><![CDATA[
+Scene respond ID 51-100<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>34: Scene respond ID 101-150</label>
+        <description><![CDATA[
+Scene respond ID 101-150<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>35: Scene respond ID 151-200</label>
+        <description><![CDATA[
+Scene respond ID 151-200<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_36_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>36: Scene respond ID 201-250</label>
+        <description><![CDATA[
+Scene respond ID 201-250<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <li>Bit0: <ul><li>=1 Key1 respond scene</li> <li>=0 Key1 not respond scene</li> </ul></li> <li>Bit1: <ul><li>=1 Key2 respond scene</li> <li>=0 Key2 not respond scene</li> </ul></li> <li>Bit2: <ul><li>=1 Key3 respond scene</li> <li>=0 Key3 not respond scene</li> </ul></li> <li>Bit7:4 Rev</li> </ul><p><strong>Valid only when the default is 0X00 for parameter 0X10</strong></p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>255: Factory Reset</label>
+        <description>Factory Reset</description>
+        <default>0</default>
+        <options>
+          <option value="85">restore factory setting</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

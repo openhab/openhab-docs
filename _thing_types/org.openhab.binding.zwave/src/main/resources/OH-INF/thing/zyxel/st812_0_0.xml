@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zyxel_st812_00_000" listed="false">
+    <label>ST812 Flood sensor</label>
+    <description><![CDATA[
+Flood sensor<br /><h1>Overview</h1><p>The Flood Detector consists of a transceiver, flood sensor and 3-meter flood sensor cable. Protect your property from water damage! The Flood Detector is designed to sense the presence of water in basements, yachts and many others residential and commercial applications, providing early warning of developing floods. The Flood Detector is designed so that the transceiver is mounted on the wall and the flood sensor is placed in a location where water presence, such as a result of leakage or flooding, is probable. Upon flood detection, the Detector will beep and flash and report its status to the node ID. Once water is released, it will report to the node ID as well. </p> <br /><h2>Inclusion Information</h2><p>Pressing link key three times within 1.5 second will enter inclusion mode.</p> <p>The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /><h2>Exclusion Information</h2><p>Pressing link key three times within 1.5 second will enter exclusion mode.</p> <p>The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /><h2>Wakeup Information</h2><p>Not provided</p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_ALARM,COMMAND_CLASS_BASIC;type=FLOOD</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ZyXEL</property>
+      <property name="modelId">ST812</property>
+      <property name="manufacturerId">0135</property>
+      <property name="manufacturerRef">000B:0001</property>
+      <property name="dbReference">327</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>1: Basic Level Set</label>
+        <description><![CDATA[
+The value sent with Basic commands in case of detected flood<br /><h1>Overview</h1><p>0 = Off</p> <p>1-99 = On (Binary Switch Device),  Dim Level (Multilevel Switch Device)</p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="0">Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Power applied and Sensor Alarm</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>The Detector will send ALARM_REPORT command to the nodes of Group 1 to inform the devices that the Detector is powered up.</p> <p>ALARM_REPORT Command: [Command Class Alarm, Alarm Type = 0x02, Alarm Level = 0x01]</p> <p>The second type for Group 1 is SENSOR_ALARM_REPORT.  255 = Alarm, 00 = Event clear.</p> <p>The third type for Group 1 is ALARM_REPORT type 0x01, Low battery</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Device control</label>
+        <description><![CDATA[
+Group to send trigger value to<br /><h1>Overview</h1><p>Will send values of 0-99 to devices in Group 2.  Set the value to send in Parameter 1.</p>
+        ]]></description>
+        <multipleLimit>3</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

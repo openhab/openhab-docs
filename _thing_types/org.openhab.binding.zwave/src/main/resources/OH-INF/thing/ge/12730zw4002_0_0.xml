@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_12730zw4002_00_000" listed="false">
+    <label>GE 12730 (ZW4002) In-Wall Smart Fan Control</label>
+    <description><![CDATA[
+In-Wall Smart Fan Control<br /><h1>Overview</h1><h1>Product Features</h1> <ul><li>Includes white and light almond paddles that will match most standard wall plates (wall plate not included).</li> <li>Can be controlled in groups of multiple devices.</li> <li>Easily locate the switch in a dark room with the integrated blue LED indicator.</li> <li>Use by itself or with up to four GE add-on switches in three, four, five and six-way wiring configurations.</li> </ul><h1>Product Specifications</h1> <ul><li>Brand: GE/Jasco</li> <li>Model Number: 12730</li> <li>Z-Wave Cert Number: ZC08-14110015</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.</li> <li>Once the controller is ready to include your device, press and release the top or bottom of the smart fan control switch (rocker) to include it in the network. Note: Your controller may need to be within 10 feet of the device to be included.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.</li> </ol><p>Please reference the controller/gateway’s manual for instructions. Now you have complete control to turn your fixture ON/OFF and adjust fan speed levels according to groups, scenes, schedules and interactive automation programmed by your controller. If your Z-wave certified controller features Remote Access, you can now control your fixture from your mobile devices.</p> <p>Note: To exclude and reset the device, follow the instructions provided by your Z-Wave controller</p> <br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to exclude a device to the Z-wave network.</li> <li>Once the controller is ready to exclude your device, press and release the top or bottom of the smart fan control switch (rocker) to exclude it in the network. Note: Your controller may need to be within 10 feet of the device to be exclude.</li> <li>Once your controller has confirmed that the device has been excluded, refresh the Z-wave network to optimize performance.</li> </ol>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL,COMMAND_CLASS_BASIC</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">GE 12730 (ZW4002)</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3034</property>
+      <property name="dbReference">932</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: LED Light</label>
+        <description>Sets when the LED on the switch is lit.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when light off</option>
+          <option value="1">LED on when light on</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and the bottom of the switch to ON, if the switch was installed upside down.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>7: Z-Wave Command Dim Step</label>
+        <description><![CDATA[
+Z-Wave Command Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>8: Z-Wave Command Dim Rate</label>
+        <description><![CDATA[
+Z-Wave Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>9: Local Control Dim Step</label>
+        <description><![CDATA[
+Local Control Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p> <p>.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>10: Local Control Dim Rate</label>
+        <description><![CDATA[
+Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p> <p>.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>11: ALL ON/ALL OFF Dim Step</label>
+        <description><![CDATA[
+ALL ON/ALL OFF Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>12: ALL ON/ALL OFF Dim Rate</label>
+        <description><![CDATA[
+ALL ON/ALL OFF Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

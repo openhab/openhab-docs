@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="kwikset_912_00_000" listed="false">
+    <label>Kwikset SmartCode 912 Touch Pad Keyed Entry Lever</label>
+    <description><![CDATA[
+Touch Pad Keyed Entry Lever<br /><h1>Overview</h1><p>The SmartCode touchpad smart lock lever with Home Connect technology enables the lock to wirelessly communicate with other devices in home. The lock allows the user (through a third-party smart home controller) to remotely check the door lock status, lock or unlock the door and receive notifications. The SmartCode lever is a one-touch locking motorized lever. With your personalized code, you can enter your home with the convenience of keyless entry and the back-lit keypad provides increased visibility. SmartCode is easy to install, program and use, and operates on 4 AA batteries. It also features SmartKey Security as the back-up keyway.</p> <br /><h2>Inclusion Information</h2><ul><li>Initiate the process to add the lock to your system at your smart home controller before you enter any keycodes.</li> <li>When prompted by your smart home system to add the lock, press button “A” on the lock interior one time. The red LED will illuminate when the lock enters Add Mode.</li> <li>Please allow time for the controller to add the lock to your system.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Follow your smart home system’s instructions to remove the lock from the network.</li> <li>When prompted by the system, press button A” on the lock interior once. </li> <li>The red LED will illuminate when the lock enters Remove mode. </li> </ul>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access) [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="alarm_entry" typeId="alarm_entry">
+        <label>Entry Notification</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Black &amp; Decker</property>
+      <property name="modelId">Kwikset SmartCode 912</property>
+      <property name="manufacturerId">0090</property>
+      <property name="manufacturerRef">0003:0339</property>
+      <property name="dbReference">1041</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="0" max="15">
+        <label>31: Dipswitch Settings</label>
+        <description><![CDATA[
+Dipswitch Settings<br /><h1>Overview</h1><p>Configuration parameter is a one byte read only bit mask that returns the state of the user accessible dipswitches on the rear panel of the door lock. This is a read only parameter and cannot be used to set dipswitch settings.</p> <p>The following table shows the definition for the bits being used in the returned value: </p> <table><tr><td>Bit</td> <td>Description</td> </tr><tr><td>0 (0x01)</td> <td>Lock status LED (1:enabled)</td> </tr><tr><td>1 (0x02)</td> <td>Autolock setting (1:enabled)</td> </tr><tr><td>2 (0x04)</td> <td>Buzzer (1:enabled)</td> </tr><tr><td>3 (0x08)</td> <td> <p>Handing Invert (1:enabled)</p> </td> </tr></table><p><strong>Possible Values:</strong></p> <table><tr><td>0</td> <td>All features disabled</td> </tr><tr><td>1</td> <td>Lock status LED enabled</td> </tr><tr><td>2</td> <td>Autolock Enabled</td> </tr><tr><td>4</td> <td>Internal buzzer enabled</td> </tr><tr><td>8</td> <td>Handling invert enabled</td> </tr><tr><td>3</td> <td>Autolock &amp; Lock status LED enabled</td> </tr><tr><td>5</td> <td>Internal buzzer and lock status LED enabled</td> </tr><tr><td>7</td> <td>Autolock, Internal buzzer, and lock status LED enabled</td> </tr><tr><td>15</td> <td>All Features enabled</td> </tr></table>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_33_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>33: first four most significant bytes of the SKU</label>
+        <description><![CDATA[
+SKU (length = 8 bytes)<br /><h1>Overview</h1><h1>Configuration Parameter 33 and 34</h1> <p>The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 33 is the first four most significant bytes (MSB). Configuration parameter 34 is the least four significant bytes (LSB). Below describes how Configuration Parameter 33 and 34 are being used.</p> <ul><li>For a ZW Configuration Set, the DLM will first do a GET_SKU_ID to retrieve the full SKU from the lock, and the lock will respond with all 8 bytes. (If it’s not yet set, the DLM will consider that as all 0x30s.) The DLM changes only the appropriate 4 bytes in its local copy of the SKU, and it then sends the full 8 bytes down to the lock in a SET_SKU_ID.</li> <li>For a ZW Configuration Get, the DLM will do a GET_SKU_ID down to the lock, to which the lock will respond with all 8 bytes. The DLM will return the requested 4 bytes via ZW. If the SKU is not set, it will return all 0x30s (ASCII ‘0’s).</li> </ul>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_34_4" type="integer" groupName="configuration"
+                 min="32" max="126">
+        <label>34: four least significant bytes of the SKU.</label>
+        <description><![CDATA[
+SKU (length = 8 bytes)<br /><h1>Overview</h1><h1>Configuration Parameter 33 and 34</h1> <p>The Configuration Parameter 33 and 34 are used to set the SKU part numbers to the Kwikset locks. Configuration parameter 33 is the first four most significant bytes (MSB). Configuration parameter 34 is the least four significant bytes (LSB). Below describes how Configuration Parameter 33 and 34 are being used.</p> <ul><li>For a ZW Configuration Set, the DLM will first do a GET_SKU_ID to retrieve the full SKU from the lock, and the loc will respond with all 8 bytes. (If it’s not yet set, the DLM will consider that as all 0x30s.) The DLM changes only the appropriate 4 bytes in its local copy of the SKU, and it then sends the full 8 bytes down to the lock in a SET_SKU_ID.</li> <li>For a ZW Configuration Get, the DLM will do a GET_SKU_ID down to the lock, to which the lock will respond with all 8 bytes. The DLM will return the requested 4 bytes via ZW. If the SKU is not set, it will return all 0x30s (ASCII ‘0’s).</li> </ul>
+        ]]></description>
+        <default>32</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_35_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>35: Lock Type</label>
+        <description><![CDATA[
+Report the Unique ID of the lock type<br /><h1>Overview</h1><p>The configuration Parameter 35 is used as read-only to report the Unique ID of the lock type.</p> <p>Released Board ID Unique ID</p> <p>910 Z-Wave (Legacy, FW 3.4) 0x00 0x00</p> <p>912 Z-Wave (Legacy, FW 3.2) 0x00 0x00</p> <p>910 Z-Wave 0x02 0x36</p> <p>912 Z-Wave 0x03 0x36</p> <p>914 Z-Wave 0x04 0x36</p> <p>916 Z-Wave 0x06 0x42</p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_40_1" type="integer" groupName="configuration">
+        <label>40: Factory Reset</label>
+        <description><![CDATA[
+Reset Lock to Factory Default<br /><h1>Overview</h1><p>The configuration Parameter 40 is used to set the lock to its factory default settings, except for the anti-theft setting.</p> <p>• A Read will show a “0”.</p> <p>• A Write “1” to perform factory reset.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal Operation</option>
+          <option value="1">Have lock perform factory reset</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline Supports the following types of unsolicited messages: Battery Report - sends periodic battery reports containing the battery percentage. Door Lock Operation Report - upon power up, this message will be sent to allow the controller to sync up with the current lock status. Notification Report - many notification types will be sent for status and alarms. The following notification types are supported: Access Control (V2), Home Security (V2), and Power Management (V2). Device Reset Locally Notification - this message will be sent to notify the smart home controller that the lock is resetting back to factory defaults and will be leaving the network.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This group will provide all Notification reports as described for the Lifeline. This group allows other controllers, other than the lifeline, to receive these types of unsolicited messages as well.</p> <p>Supported Command Classes (18): Command Class Anti-theft V2 Command Class Association Group Info Command Class Association V2 Command Class Battery Command Class Configuration Command Class Device Reset Locally Command Class Door Lock Logging Command Class Door Lock V2 Command Class Firmware Update Md V3 Command Class Manufacturer Specific V2 Command Class Notification V4 Command Class Powerlevel Command Class Schedule Entry Lock V2 Command Class Security Command Class Time Parameters Command Class User Code Command Class Version V2 Command Class Z-Wave+ Info V2</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

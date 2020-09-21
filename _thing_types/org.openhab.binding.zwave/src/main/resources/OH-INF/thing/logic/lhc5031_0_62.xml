@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="logic_lhc5031_00_062" listed="false">
+    <label>LHC5031 DIN Mount Multiple Actuator Controller for Floor Heating</label>
+    <description><![CDATA[
+DIN Mount Multiple Actuator Controller for Floor Heating<br /><h1>Overview</h1><p>LHC 5031 Z-Wave DIN rail module, is a module that clips right onto a DIN rail to add a variety of functions to your wireless Z-Wave network.</p> <p>LHC5031 is equipped with 10 relay outputs and 4 analogue inputs, and a Z-Wave radio for interfacing to the wireless Z-Wave network. The module can be power supplied from a 230V AC mains connectio, and is able to deliver an output supply of 24V DC.</p> <p>LHC5031 inputs are able to be freely controlled from the Z-Wave network, and can be used for several purposes, e.g. on/off control of light, control of valve actuators for an underfloor heating system, or control of other home automation systems.</p> <p>LHC5031 inputs are analogue inputs for interfacing simple temperature sensors; NTC, PT1000, etc.</p> <p>It is possible to configure the level- and the indication of the status indicator LED in the front of the LHC5031 module.</p> <p>The device is also known as: Multireg Z-Water from Thermo-Floor.</p> <br /><h2>Inclusion Information</h2><p>Place your primary controller in Adding mode by following the manufacturers description, then activate the add mode on the deice by clicking the small button through the little hole, marked with the text "INCLUSION", in front of the LHC5031 module.</p> <br /><h2>Exclusion Information</h2><p>The device is removed in the same manner that it is included, as long as the controller is put into Removing Mode.</p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1,COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2,COMMAND_CLASS_BASIC:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary3" typeId="switch_binary">
+        <label>Switch 3</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:3,COMMAND_CLASS_BASIC:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary4" typeId="switch_binary">
+        <label>Switch 4</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:4,COMMAND_CLASS_BASIC:4</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary5" typeId="switch_binary">
+        <label>Switch 5</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:5,COMMAND_CLASS_BASIC:5</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary6" typeId="switch_binary">
+        <label>Switch 6</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:6,COMMAND_CLASS_BASIC:6</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary7" typeId="switch_binary">
+        <label>Switch 7</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:7,COMMAND_CLASS_BASIC:7</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary8" typeId="switch_binary">
+        <label>Switch 8</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:8,COMMAND_CLASS_BASIC:8</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary9" typeId="switch_binary">
+        <label>Switch 9</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:9,COMMAND_CLASS_BASIC:9</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary10" typeId="switch_binary">
+        <label>Switch 10</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:10,COMMAND_CLASS_BASIC:10</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature11" typeId="sensor_temperature">
+        <label>Input (temperature) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:11,COMMAND_CLASS_BASIC:11;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature12" typeId="sensor_temperature">
+        <label>Input (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:12,COMMAND_CLASS_BASIC:12;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature13" typeId="sensor_temperature">
+        <label>Input (temperature) 3</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:13,COMMAND_CLASS_BASIC:13;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature14" typeId="sensor_temperature">
+        <label>Input (temperature) 4</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:14,COMMAND_CLASS_BASIC:14;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Logic Group</property>
+      <property name="modelId">LHC5031</property>
+      <property name="manufacturerId">0234</property>
+      <property name="manufacturerRef">0003:0111</property>
+      <property name="versionMin">0.62</property>
+      <property name="dbReference">673</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Status LED</label>
+        <description><![CDATA[
+Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 = LED turned ON, 2 = LED flashing at 1 second intervals, 3 = LED flashing at 0.5 second intervals</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">LED turned OFF</option>
+          <option value="1">LED turned ON</option>
+          <option value="2">LED flashing at 1 sec interval</option>
+          <option value="3">LED flashing at 1/2 sec interval</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>2: Status LED brightness level</label>
+        <description>Configure the percentage of light in the status LED, when the LED is turned on.</description>
+        <default>50</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Thermistor type connected to input 1</label>
+        <description>This parameter decides which kind of thermistor is connected to the input</description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled</option>
+          <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Thermistor type connected to input 2</label>
+        <description>This parameter decides which kind of thermistor is connected to the input</description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled</option>
+          <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Thermistor type connected to input 3</label>
+        <description>This parameter decides which kind of thermistor is connected to the input</description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled</option>
+          <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Thermistor type connected to input 4</label>
+        <description>This parameter decides which kind of thermistor is connected to the input</description>
+        <default>0</default>
+        <options>
+          <option value="0">No thermistor, input is disabled</option>
+          <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>7: Input 1 calibration</label>
+        <description>-4.0 to 4.0 degree Celsius</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>8: Input 2 calibration</label>
+        <description>-4.0 to 4.0 degree Celsius</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>9: Input 3 calibration</label>
+        <description>-4.0 to 4.0 degree Celsius</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="-40" max="40">
+        <label>10: Input 4 calibration</label>
+        <description>-4.0 to 4.0 degree Celsius</description>
+        <default>0</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>11: Input 1 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>Time interval between consecutive temperature reports. Temperature reports can also be sent as a result of polling.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>12: Input 2 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>Time interval between consecutive temperature reports. Temperature reports can also be sent as a result of polling.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>13: Input 3 report intervals</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>Time interval between consecutive temperature reports. Temperature reports can also be sent as a result of polling.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_14_2" type="integer" groupName="configuration"
+                 min="0" max="8640">
+        <label>14: Input 4 report interval</label>
+        <description><![CDATA[
+Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>Time interval between consecutive temperature reports. Temperature reports can also be sent as a result of polling.</p>
+        ]]></description>
+        <default>6</default>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description>Lifeline</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>Analogue inputs</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Group 5</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

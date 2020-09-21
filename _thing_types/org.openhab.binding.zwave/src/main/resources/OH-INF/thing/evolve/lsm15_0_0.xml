@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="evolve_lsm15_00_000" listed="false">
+    <label>LSM-15 Wall Mounted Switch</label>
+    <description><![CDATA[
+Wall Mounted Switch<br /><h1>Overview</h1><p>Inclusion of this Switch on a Z-Wave network allows remote ON/OFF control of loads connected and is compatible with Z-Wave security systems. It can be used on any type of 120 VAC fixture or bulb type, with a 15A limit.</p> <br /><h2>Inclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p> <br /><h2>Exclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch [Deprecated]</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Evolve</property>
+      <property name="modelId">LSM-15</property>
+      <property name="manufacturerId">0113</property>
+      <property name="manufacturerRef">5257:3533</property>
+      <property name="dbReference">318</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description>By default, the LED will turn OFF when the lead attached is turned ON.</description>
+        <default>1</default>
+        <options>
+          <option value="0">On when load is on</option>
+          <option value="1">Off when load is on</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>To change the top of the switch to OFF and the bottom of the switch ON.</description>
+        <default>0</default>
+        <options>
+          <option value="0">Top-ON, Bottom-OFF</option>
+          <option value="1">Bottom--ON, Top-OFF</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

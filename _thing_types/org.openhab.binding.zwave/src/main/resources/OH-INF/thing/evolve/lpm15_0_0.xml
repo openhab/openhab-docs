@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="evolve_lpm15_00_000" listed="false">
+    <label>LPM-15 Appliance module</label>
+    <description><![CDATA[
+Appliance module<br /><h1>Overview</h1><p>The Evolve Plug-in Appliance Module is a component of the Evolve lighting control system and is fully scene capable. The Appliance Module is plugged into any standard grounded AC wall outlet, and the appliance or other device is then plugged into the module. Once connected, the appliance/device can be easily turned ON or OFF remotely via the Z-Wave network.</p> <p>This device is compatible with Z-Wave security systems and can handle a maximum of the following loads:</p> <ul><li>Incandescent – 600W, 120 VAC</li> <li>Resistive – 15 amps (1800 watts), 120 VAC</li> <li>Motor – ½ H.P., 120 VAC</li> </ul><p>This Plug-in Appliance Module is designed to work with other Evolve enabled devices. Evolve nodes of other types can be included in the network and will also act as repeaters to increase the range of the network.</p> <p>As part of a Z-Wave network, the LPM-15 will also act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful when the device would otherwise be out of the radio range of the wireless controller.</p> <br /><h2>Inclusion Information</h2><ol><li>Start a search for new z-wave binding items via the add things interface</li> <li>Press the button on the front of the unit to include</li> </ol><p>Note: will work with inclusion set to network-wide.</p> <p>Factory reset procedure:</p> <ol><li>Unplug device and wait 15 seconds</li> <li>Plug device in and immediately press the front button twice (the two presses must occur within 20 seconds of plugging in the unit.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place controller in exclude mode</li> <li>Press button on front of device</li> </ol>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Evolve</property>
+      <property name="modelId">LPM-15</property>
+      <property name="manufacturerId">0113</property>
+      <property name="manufacturerRef">5250:3030</property>
+      <property name="dbReference">580</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Night Light</label>
+        <description>Defines the behavior of the blue LED; default has LED on when switch is off.</description>
+        <default>0</default>
+        <options>
+          <option value="0">LED on when switch is OFF</option>
+          <option value="1">LED on when switch is ON</option>
+          <option value="2">LED always off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description><![CDATA[
+Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1>Overview</h1><p>Note: If you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </options>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

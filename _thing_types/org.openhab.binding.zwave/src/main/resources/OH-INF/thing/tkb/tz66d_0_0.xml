@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="tkb_tz66d_00_000" listed="false">
+    <label>TZ66D Dual Paddle Wall Switch</label>
+    <description><![CDATA[
+Dual Paddle Wall Switch<br /><h1>Overview</h1><p>The TKB Z-Wave dual wall switch is switching attached loads and is controlled either by the local switching paddle or remotely via the Z-Wave wireless protocol</p> <br /><h2>Inclusion Information</h2><p>Tap either the top or bottom of the switch once.</p> <br /><h2>Exclusion Information</h2><p>Tap either the top or bottom of the switch once.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">TKB Home</property>
+      <property name="modelId">TZ66D</property>
+      <property name="manufacturerId">0118</property>
+      <property name="manufacturerRef">0102:1020</property>
+      <property name="dbReference">157</property>
+      <property name="defaultAssociations">4</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: Ignore start level</label>
+        <description>Ignore start level when transmitting a dim command to the switch</description>
+        <default>1</default>
+        <options>
+          <option value="0">Ignore</option>
+          <option value="1">Don't ignore</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Suspend Group 4</label>
+        <description><![CDATA[
+Disable transmitting commands to devices in association group 4<br /><h1>Overview</h1><p>Setting this parameter will disable transmitting commands to devices in association group 4</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Transmit to group 4</option>
+          <option value="1">Disable transmitting to group 4</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Blue LED light Behavior</label>
+        <description><![CDATA[
+Blue LED light Behavior. Default is Night Light (led on when switch off)<br /><h1>Overview</h1><p>Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Led on when switch on</option>
+          <option value="1">Night light</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration">
+        <label>4: Invert Switch</label>
+        <description>To change the top of the switch to off and the botton to on</description>
+        <default>0</default>
+        <options>
+          <option value="0">ON on top</option>
+          <option value="1">OFF on top</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Enable Shade Control Group 2</label>
+        <description><![CDATA[
+Enable Shade Control Group 2<br /><h1>Overview</h1><p>Enable the control of shade devices in association group 2 when this option is activated</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Inactive</option>
+          <option value="1">Shade Control</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration">
+        <label>15: Enable Shade Control Group 3</label>
+        <description><![CDATA[
+Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shade devices in association group 3 when this option is activated</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Inactive</option>
+          <option value="1">Shade Control</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Blue LED light behavior on transmission</label>
+        <description>Defines the behavior of the blue LED when transmission of data</description>
+        <default>2</default>
+        <options>
+          <option value="0">LED does not blinks on activity</option>
+          <option value="1">LED blinks on activity all the time</option>
+          <option value="2">LED blinks on activity 1 second</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration"
+                 min="1" max="255">
+        <label>20: Poll Group 2 Interval (minutes)</label>
+        <description>Polling Interval in minutes (default 2)</description>
+        <default>2</default>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration">
+        <label>22: Poll Group 2</label>
+        <description><![CDATA[
+Poll Group 2<br /><h1>Overview</h1><p>Defines if the device will poll association Group 2 at the interval defined in parameter 20</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Enabled</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

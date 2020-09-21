@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zigbee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- These devices do not correctly report their clusters, so they need a static thing definition for the binding to inject the correct clusters into the ZigBeeNode -->
+
+	<thing-type id="xiaomi_lumisensor86sw2" listed="false">
+		<label>Xiaomi Wireless 2-Button Switch</label>
+		<description>Xiaomi Wireless 2-Button Switch</description>
+
+		<channels>
+			<channel id="switch_1" typeId="switch_onoff">
+				<properties>
+					<property name="zigbee_endpoint">1</property>
+					<property name="zigbee_inputclusters">6</property>
+				</properties>
+			</channel>
+			<channel id="switch_2" typeId="switch_onoff">
+				<properties>
+					<property name="zigbee_endpoint">2</property>
+					<property name="zigbee_inputclusters">6</property>
+				</properties>
+			</channel>
+			<channel id="switch_3" typeId="switch_onoff">
+				<properties>
+					<property name="zigbee_endpoint">3</property>
+					<property name="zigbee_inputclusters">6</property>
+				</properties>
+			</channel>
+		</channels>
+
+		<properties>
+			<property name="vendor">Xiaomi</property>
+			<property name="modelId">lumi.sensor_86sw2</property>
+			<property name="zigbee_logicaltype">END_DEVICE</property>
+		</properties>
+
+		<representation-property>zigbee_macaddress</representation-property>
+
+		<config-description>
+			<parameter name="zigbee_macaddress" type="text" readOnly="true" required="true">
+				<label>MAC Address</label>
+			</parameter>
+		</config-description>
+	</thing-type>
+</thing:thing-descriptions>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="remotec_zrc90_00_000" listed="false">
+    <label>ZRC-90 Scene master 8 button remote</label>
+    <description><![CDATA[
+Scene master 8 button remote<br /><h1>Overview</h1><p>Central Scene Controller with 8 Buttons supporting long-press capability.<br /><br />Key Features:<br />    - Controls up to 8x2 pre-set scenes and<br />    - One learn-key setup and simple operation<br />    - Report for key pressed 1 time, 2 times, released and held down<br />    - Unlimited controlling capability through gateway<br />    - Z-Wave Plus compliant<br />    - Super thin, elegant design and able to mount to the wall-bracket</p> <br /><h2>Inclusion Information</h2><p>Include device by</p> <p>- pressing button R (middle button over the battery) + L (right button over the battery)<br />- Press the keys until LED light up</p> <br /><h2>Exclusion Information</h2><p>Exclude device</p> <p>- single click to button R (middle button over the battery)</p> <p>Reset to factory default</p> <p>- Press and keep holding button R for 10 seconds, then triple click</p> <br /><h2>Wakeup Information</h2><p>Wake up</p> <p>- single click button W (left button over the battery)</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE,COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Remotec</property>
+      <property name="modelId">ZRC-90</property>
+      <property name="manufacturerId">5254</property>
+      <property name="manufacturerRef">0000:8510,0001:8510,0002:8510,000B:8510</property>
+      <property name="dbReference">361</property>
+      <property name="commandClass:COMMAND_CLASS_WAKE_UP">getSupported=false</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
