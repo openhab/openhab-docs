@@ -5,7 +5,7 @@ title: Monoprice Whole House Audio - Bindings
 type: binding
 description: "This binding can be used to control the Monoprice MPR-SG6Z (10761) or Dayton Audio DAX66 whole house multi-zone amplifier."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

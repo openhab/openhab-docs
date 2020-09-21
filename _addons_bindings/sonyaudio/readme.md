@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/)."
 since: 3x
 logo: images/addons/sonyaudio.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

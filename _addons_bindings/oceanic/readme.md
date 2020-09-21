@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the Oceanic water softener and management system (www.oceanic.be, but also distributed by Syr in Germany (www.syr.de))."
 since: 3x
 logo: images/addons/oceanic.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

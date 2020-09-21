@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Dark Sky API](https://darksky.net/dev/docs)."
 since: 3x
 logo: images/addons/darksky.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

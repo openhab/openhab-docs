@@ -5,7 +5,7 @@ title: DanfossAirUnit - Bindings
 type: binding
 description: "This binding supports controlling and monitoring [Danfoss air units](https://www.danfoss.com/en/products/energy-recovery-devices/dhs/heat-recovery-ventilation/air-units/) via Ethernet connection."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

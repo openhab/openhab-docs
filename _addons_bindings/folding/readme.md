@@ -6,7 +6,7 @@ type: binding
 description: "Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing"
 since: 3x
 logo: images/addons/folding.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

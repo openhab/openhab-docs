@@ -6,7 +6,7 @@ type: transform
 description: "Transform an input to an output using JavaScript."
 since: 3x
 logo: images/addons/javascript.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

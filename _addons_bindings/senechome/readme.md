@@ -5,7 +5,7 @@ title: Senec Home - Bindings
 type: binding
 description: "Binding to request status information from Senec Home Batteries to allow home automation decisions based on your current energy management."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

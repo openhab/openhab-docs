@@ -6,7 +6,7 @@ type: binding
 description: "The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans' Haiku family of residential fans and lights that implement the SenseME technology."
 since: 3x
 logo: images/addons/bigassfan.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

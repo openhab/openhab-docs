@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates with [Lutron](http://www.lutron.com) lighting control and home automation systems."
 since: 3x
 logo: images/addons/lutron.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

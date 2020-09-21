@@ -6,7 +6,7 @@ type: binding
 description: "This is the binding to access Modbus TCP and serial slaves."
 since: 3x
 logo: images/addons/modbus.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

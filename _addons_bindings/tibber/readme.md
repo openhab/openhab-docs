@@ -5,7 +5,7 @@ title: Tibber - Bindings
 type: binding
 description: "The Tibber Binding connects to the [Tibber API](https://developer.tibber.com), and enables users to retrieve electricity data:"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

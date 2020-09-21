@@ -6,7 +6,7 @@ type: binding
 description: "The binding integrates LG WebOS based smart TVs."
 since: 3x
 logo: images/addons/lgwebos.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

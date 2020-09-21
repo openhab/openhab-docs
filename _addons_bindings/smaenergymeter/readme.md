@@ -6,7 +6,7 @@ type: binding
 description: "This Binding is used to display the measured values of a SMA Energy Meter device."
 since: 3x
 logo: images/addons/smaenergymeter.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

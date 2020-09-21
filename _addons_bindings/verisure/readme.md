@@ -5,7 +5,7 @@ title: Verisure - Bindings
 type: binding
 description: "This is an openHAB binding for Verisure Alarm System, by Securitas Direct."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding provides support for generic Bluetooth devices."
 since: 3x
 logo: images/addons/bluetooth.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

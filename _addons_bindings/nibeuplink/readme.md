@@ -6,7 +6,7 @@ type: binding
 description: "The NibeUplink binding is used to get 'live data' from from Nibe heat pumps without plugging any custom devices into your heat pump."
 since: 3x
 logo: images/addons/nibeuplink.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

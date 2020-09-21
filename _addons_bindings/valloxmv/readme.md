@@ -5,7 +5,7 @@ title: ValloxMV - Bindings
 type: binding
 description: "This binding is designed to connect to the web interface of Vallox MV series of ventilation unit."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

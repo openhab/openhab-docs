@@ -5,7 +5,7 @@ title: UPB - Bindings
 type: binding
 description: "Universal Powerline Bus (UPB) is a protocol for communication over household electrical wiring."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

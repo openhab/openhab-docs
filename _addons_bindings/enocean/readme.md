@@ -6,7 +6,7 @@ type: binding
 description: "The EnOcean binding connects openHAB to the EnOcean ecosystem."
 since: 3x
 logo: images/addons/enocean.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

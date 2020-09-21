@@ -5,7 +5,7 @@ title: DwdUnwetter - Bindings
 type: binding
 description: "Binding to retrieve the Weather Warnings of the 'Deutscher Wetterdienstes' from the [DWD Geoserver](https://maps.dwd.de/geoserver/web/)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

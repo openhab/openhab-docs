@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the Silvercrest Wifi Socket SWS-A1 sold by Lidl and the EasyHome Wifi Socket DIS-124 sold by Aldi."
 since: 3x
 logo: images/addons/silvercrestwifisocket.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Denon HEOS - Bindings
 type: binding
 description: "This binding support the HEOS-System from Denon."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

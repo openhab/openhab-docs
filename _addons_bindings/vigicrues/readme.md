@@ -5,7 +5,7 @@ title: VigiCrues - Bindings
 type: binding
 description: "This binding allows you to get data regarding water flow and water height on major French rivers."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

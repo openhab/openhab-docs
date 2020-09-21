@@ -5,7 +5,7 @@ title: Jablotron Alarm - Bindings
 type: binding
 description: "This is the binding for Jablotron alarms."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

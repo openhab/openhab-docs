@@ -5,7 +5,7 @@ title: Feed - Bindings
 type: binding
 description: "This binding allows you to integrate feeds in the openHAB environment."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

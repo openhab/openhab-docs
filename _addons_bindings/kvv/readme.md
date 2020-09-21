@@ -5,7 +5,7 @@ title: KVV - Bindings
 type: binding
 description: "Adds support for the public API of Karlsruher Verkehrsverbund (public transport system in Karlsruhe, Germany)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

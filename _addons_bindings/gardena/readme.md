@@ -6,7 +6,7 @@ type: binding
 description: "This is the binding for [Gardena smart system](https://www.gardena.com/de/rasenpflege/smartsystem/)."
 since: 3x
 logo: images/addons/gardena.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

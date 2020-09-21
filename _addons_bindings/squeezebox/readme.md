@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Logitech Media Server](https://www.mysqueezebox.com) and compatible Squeeze players."
 since: 3x
 logo: images/addons/squeezebox.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

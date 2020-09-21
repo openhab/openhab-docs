@@ -6,7 +6,7 @@ type: binding
 description: "This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide."
 since: 3x
 logo: images/addons/airquality.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

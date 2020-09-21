@@ -5,7 +5,7 @@ title: HeliosVentilation - Bindings
 type: binding
 description: "This is the binding for Helios Ventilation Systems KWL EC 200/300/500 Pro."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,8 @@ title: FMI Weather - Bindings
 type: binding
 description: "This binding integrates to [the Finnish Meteorological Institute (FMI) Open Data API](https://en.ilmatieteenlaitos.fi/open-data)."
 since: 3x
-install: manual
+logo: images/addons/fmiweather.png
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

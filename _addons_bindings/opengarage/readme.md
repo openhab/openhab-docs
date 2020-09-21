@@ -5,7 +5,7 @@ title: OpenGarage - Bindings
 type: binding
 description: "The OpenGarage binding allows you to control an OpenGarage controller (https://opensprinkler.com/product/opengarage/) using openHAB"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

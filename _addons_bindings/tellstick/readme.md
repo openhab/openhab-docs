@@ -6,7 +6,7 @@ type: binding
 description: "This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund."
 since: 3x
 logo: images/addons/tellstick.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

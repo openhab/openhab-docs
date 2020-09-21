@@ -5,7 +5,7 @@ title: Etherrain - Bindings
 type: binding
 description: "The Etherrain binding is used to control a sprinkler controller from Quicksmart:"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

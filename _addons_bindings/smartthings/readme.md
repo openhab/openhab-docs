@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the Samsung Smartthings Hub into openHAB. This is implemented as an openHAB 2 binding."
 since: 3x
 logo: images/addons/smartthings.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

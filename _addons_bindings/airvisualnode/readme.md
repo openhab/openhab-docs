@@ -6,7 +6,7 @@ type: binding
 description: "This is an openHAB binding for the [AirVisual Node Air Quality Monitor](https://airvisual.com/node) (also known as IQAir AirVisual Pro)."
 since: 3x
 logo: images/addons/airvisualnode.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

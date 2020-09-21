@@ -5,7 +5,7 @@ title: IRtrans - Bindings
 type: binding
 description: "This binding integrates infrared receivers and blasters manufactured by IRtrans (www.irtrans.de)"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

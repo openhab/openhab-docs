@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates infrared transceivers through [LIRC](http://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net)."
 since: 3x
 logo: images/addons/lirc.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

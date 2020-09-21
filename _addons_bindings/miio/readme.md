@@ -5,7 +5,7 @@ title: Xiaomi Mi IO - Bindings
 type: binding
 description: "This binding is used to control Xiaomi products implementing the Mi IO protocol."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

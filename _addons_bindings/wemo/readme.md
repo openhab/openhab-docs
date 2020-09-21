@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/)."
 since: 3x
 logo: images/addons/wemo.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

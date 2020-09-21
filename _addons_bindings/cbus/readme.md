@@ -5,7 +5,7 @@ title: C-Bus - Bindings
 type: binding
 description: "This is the binding for the [Clipsal C-Bus System](http://www2.clipsal.com/cis/technical/product_groups/cbus)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

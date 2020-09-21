@@ -5,7 +5,7 @@ title: EnturNo - Bindings
 type: binding
 description: "This binding gets Norwegian public transport real-time (estimated) data from the [Entur.org API](https://developer.entur.org/pages-intro-overview)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

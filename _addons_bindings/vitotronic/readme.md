@@ -6,7 +6,7 @@ type: binding
 description: "Viessmann heating systems with Vitotronic has an optolink Interface for maintenance."
 since: 3x
 logo: images/addons/vitotronic.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

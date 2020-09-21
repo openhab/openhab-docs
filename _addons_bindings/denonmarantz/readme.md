@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates Denon & Marantz AV receivers by using either Telnet or a (undocumented) HTTP API."
 since: 3x
 logo: images/addons/denonmarantz.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

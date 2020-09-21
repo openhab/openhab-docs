@@ -5,7 +5,7 @@ title: Serial Button - Bindings
 type: binding
 description: "This is a binding for probably one of the simplest devices possible: A simple push button which short-cuts two pins on a serial port."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "**Upgrade notice for Niko Home Control II and openHAB 2.5.3**:"
 since: 3x
 logo: images/addons/nikohomecontrol.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

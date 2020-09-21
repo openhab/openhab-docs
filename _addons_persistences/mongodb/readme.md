@@ -6,7 +6,7 @@ type: persistence
 description: "This service allows you to persist state updates using the MongoDB database."
 since: 3x
 logo: images/addons/mongodb.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

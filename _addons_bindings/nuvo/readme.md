@@ -5,7 +5,7 @@ title: Nuvo Grand Concerto & Essentia G - Bindings
 type: binding
 description: "![Nuvo logo](doc/nuvo_logo.png)"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

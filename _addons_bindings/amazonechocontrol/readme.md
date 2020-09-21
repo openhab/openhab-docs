@@ -6,7 +6,7 @@ type: binding
 description: "This binding can control Amazon Echo devices (Alexa)."
 since: 3x
 logo: images/addons/amazonechocontrol.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

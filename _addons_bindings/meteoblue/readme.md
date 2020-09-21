@@ -5,7 +5,7 @@ title: meteoblue - Bindings
 type: binding
 description: "The meteoblue binding uses the [meteoblue weather service](https://content.meteoblue.com/en/content/view/full/4511)"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

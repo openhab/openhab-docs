@@ -6,7 +6,7 @@ type: binding
 description: "[Local Control Network (LCN)](http://www.lcn.eu) is a building automation system for small and very large installations."
 since: 3x
 logo: images/addons/lcn.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

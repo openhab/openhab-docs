@@ -5,7 +5,7 @@ title: The Weather Company - Bindings
 type: binding
 description: "Provides 5-day weather forecast and *Personal Weather Station* (PWS) current"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

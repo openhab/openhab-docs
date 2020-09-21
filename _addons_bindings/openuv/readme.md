@@ -6,7 +6,7 @@ type: binding
 description: "This binding uses the [OpenUV Index API service](https://www.openuv.io/) for providing UV Index information for any location worldwide."
 since: 3x
 logo: images/addons/openuv.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+ <path d="m9.5 15.5h15v7h-15z" fill="#282828"/>
+ <path d="m24 16v6h-14v-6h14m1-1h-16v8h16v-8z" fill="#3c3c3c"/>
+ <path d="m24.5 15.5h15v7h-15z" fill="#282828"/>
+ <path d="m39 16v6h-14v-6h14m1-1h-16v8h16v-8z" fill="#3c3c3c"/>
+ <path d="m39.5 15.5h15v7h-15z" fill="#282828"/>
+ <path d="m54 16v6h-14v-6h14m1-1h-16v8h16v-8z" fill="#3c3c3c"/>
+ <path d="m55.5 53.5v-35h-47v35h-5v-40h57v40z" fill="#f0f0f0"/>
+ <path d="m60 14v39h-4v-35h-48v35h-4v-39h56m1-1h-58v41h6v-35h46v35h6v-41z" fill="#c8c8c8"/>
+</svg>

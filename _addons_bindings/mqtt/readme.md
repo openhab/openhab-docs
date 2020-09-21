@@ -6,7 +6,7 @@ type: binding
 description: "> MQTT is a machine-to-machine (M2M)/'Internet of Things' connectivity protocol."
 since: 3x
 logo: images/addons/mqtt.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

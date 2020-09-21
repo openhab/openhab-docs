@@ -6,7 +6,7 @@ type: binding
 description: "Scrapes the web interface of the inverter for the metrics of the supported channels below."
 since: 3x
 logo: images/addons/kostalinverter.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

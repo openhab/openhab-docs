@@ -5,7 +5,7 @@ title: Feican - Bindings
 type: binding
 description: "This binding adds support for the Feican Wi-Fi version of the smart light LED Bulb, the WiFi RGBW Bulb."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

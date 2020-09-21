@@ -5,7 +5,7 @@ title: Milight/Easybulb/Limitless - Bindings
 type: binding
 description: "This binding is for using your Milight, Easybulb or LimitlessLed bulbs and the iBox."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

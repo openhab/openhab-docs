@@ -5,7 +5,7 @@ title: YIOremote - Bindings
 type: binding
 description: "This binding will control a YIO Dock/Remote combination. YIO Remote/Dock is a smart home solution that includes an IP based remote. More information can be found at [yio-remote](https://www.yio-remote.com/) or in the forums at [yio-remote](https://community.yio-remote.com/)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Systeminfo - Bindings
 type: binding
 description: "System information Binding provides operating system and hardware information including:"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

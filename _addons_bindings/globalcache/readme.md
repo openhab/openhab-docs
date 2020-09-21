@@ -6,7 +6,7 @@ type: binding
 description: "The [GlobalCache](https://www.globalcache.com) binding enables communication"
 since: 3x
 logo: images/addons/globalcache.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

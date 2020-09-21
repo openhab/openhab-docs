@@ -5,7 +5,7 @@ title: CoronaStats - Bindings
 type: binding
 description: "This binding provides the statistic about cases of COVID-19 from the website https://corona-stats.online/."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates Orvibo devices that communicate using UDP."
 since: 3x
 logo: images/addons/orvibo.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates devices compatible with [Qualcomm AllPlay](https://www.qualcomm.com/products/allplay)."
 since: 3x
 logo: images/addons/allplay.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

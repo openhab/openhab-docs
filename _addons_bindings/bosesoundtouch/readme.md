@@ -6,7 +6,7 @@ type: binding
 description: "This binding supports the Bose SoundTouch multiroom system."
 since: 3x
 logo: images/addons/bosesoundtouch.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

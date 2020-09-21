@@ -6,7 +6,7 @@ type: binding
 description: "This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder)."
 since: 3x
 logo: images/addons/zoneminder.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

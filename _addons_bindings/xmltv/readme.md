@@ -5,7 +5,7 @@ title: XmlTV - Bindings
 type: binding
 description: "XMLTV is an XML based file format for describing TV listings."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

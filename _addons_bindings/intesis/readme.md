@@ -5,7 +5,7 @@ title: Intesis - Bindings
 type: binding
 description: "This binding connects to WiFi [IntesisHome](http://www.intesishome.com/) devices using their local REST Api."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

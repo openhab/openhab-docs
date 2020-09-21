@@ -6,7 +6,7 @@ type: binding
 description: "This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite."
 since: 3x
 logo: images/addons/mihome.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

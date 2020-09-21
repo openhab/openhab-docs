@@ -6,7 +6,7 @@ type: transform
 description: "Extracts values from a JSON string using a [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression."
 since: 3x
 logo: images/addons/jsonpath.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

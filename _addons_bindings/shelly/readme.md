@@ -5,7 +5,7 @@ title: Shelly - Bindings
 type: binding
 description: "This Binding integrates [Alterco Shelly devices](https://shelly.cloud)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

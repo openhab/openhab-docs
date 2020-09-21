@@ -5,7 +5,8 @@ title: Insteon - Bindings
 type: binding
 description: "Insteon is a home area networking technology developed primarily for connecting light switches and loads."
 since: 3x
-install: manual
+logo: images/addons/insteon.png
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

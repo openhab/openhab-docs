@@ -5,7 +5,7 @@ title: Automower - Bindings
 type: binding
 description: "This binding communicates to the Husqvarna Automower Connect API in order to send commands and query the state of Husqvarna Automower robots."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

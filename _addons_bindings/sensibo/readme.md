@@ -5,7 +5,7 @@ title: Sensibo - Bindings
 type: binding
 description: "This binding integrates the Sensibo Sky aircondition remote control"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

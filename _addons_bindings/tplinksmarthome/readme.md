@@ -6,7 +6,7 @@ type: binding
 description: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
 since: 3x
 logo: images/addons/tplinksmarthome.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

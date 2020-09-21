@@ -5,7 +5,7 @@ title: Omnik Inverter - Bindings
 type: binding
 description: "This binding reads metrics from Omnik Solar Inverters."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

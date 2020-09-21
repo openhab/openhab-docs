@@ -6,7 +6,7 @@ type: io
 description: "This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol."
 since: 3x
 logo: images/addons/homekit.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

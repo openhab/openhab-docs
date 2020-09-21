@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [digitalSTROM-System](https://www.digitalstrom.de/)."
 since: 3x
 logo: images/addons/digitalstrom.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

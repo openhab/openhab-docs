@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Philips Hue Lighting system](https://www.meethue.com)."
 since: 3x
 logo: images/addons/hue.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

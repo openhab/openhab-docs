@@ -5,7 +5,7 @@ title: OneWire GPIO - Bindings
 type: binding
 description: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry Pi."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

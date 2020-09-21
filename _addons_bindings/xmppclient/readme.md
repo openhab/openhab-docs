@@ -5,7 +5,7 @@ title: XMPPClient - Bindings
 type: binding
 description: "XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

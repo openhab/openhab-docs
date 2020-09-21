@@ -6,7 +6,7 @@ type: binding
 description: "A binding for D-Link Smart Home devices."
 since: 3x
 logo: images/addons/dlinksmarthome.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

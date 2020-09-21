@@ -6,7 +6,7 @@ type: binding
 description: "The Telegram binding allows sending and receiving messages to and from Telegram clients (https://telegram.org), by using the Telegram Bot API."
 since: 3x
 logo: images/addons/telegram.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

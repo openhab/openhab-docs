@@ -6,7 +6,7 @@ type: binding
 description: "[Ecobee Inc.](https://www.ecobee.com/)  of Toronto, Canada, sells a range of Wi-Fi"
 since: 3x
 logo: images/addons/ecobee.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Dresden Elektronik deCONZ - Bindings
 type: binding
 description: "The Zigbee binding currently does not support the Dresden Elektronik Raspbee and Conbee Zigbee dongles."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

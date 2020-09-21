@@ -5,7 +5,7 @@ title: Foobot - Bindings
 type: binding
 description: "This binding fetches the Indoor Air Quality data of each of your Foobot devices from the Foobot cloud service."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

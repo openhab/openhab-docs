@@ -5,7 +5,7 @@ title: NZ Water Alerts - Bindings
 type: binding
 description: "Get Water Alert Levels for cities in New Zealand."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

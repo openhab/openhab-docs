@@ -5,7 +5,7 @@ title: Network - Bindings
 type: binding
 description: "This binding allows checking whether a device is currently available on the network."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

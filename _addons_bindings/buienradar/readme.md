@@ -6,7 +6,7 @@ type: binding
 description: "The Buienradar Binding periodically (5 minute intervals) retrieves rainfall predictions from the Dutch"
 since: 3x
 logo: images/addons/buienradar.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This extension adds support for the myStrom devices. Currently only the smart plug is implemented."
 since: 3x
 logo: images/addons/mystrom.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Exec - Transformation Services
 type: transform
 description: "Transforms an input string with an external program."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

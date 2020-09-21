@@ -5,7 +5,7 @@ title: Ism8 - Bindings
 type: binding
 description: "_This binding can receive values of the Wolf heating system._"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

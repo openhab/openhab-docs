@@ -5,7 +5,7 @@ title: Pentair Pool - Bindings
 type: binding
 description: "This is an openHAB binding for a Pentair Pool System."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

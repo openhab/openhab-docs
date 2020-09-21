@@ -5,7 +5,7 @@ title: Digiplex/EVO - Bindings
 type: binding
 description: "This binding provides integration with Digiplex/EVO alarm systems from [Paradox](http://paradox.com)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

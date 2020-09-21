@@ -5,7 +5,7 @@ title: IP Camera - Bindings
 type: binding
 description: "This binding allows you to use most IP cameras in openHAB and has many hidden features, so please take the time to read through this guide to learn different ways to work with cameras that you may not know about."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

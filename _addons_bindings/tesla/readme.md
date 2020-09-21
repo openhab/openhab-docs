@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com)."
 since: 3x
 logo: images/addons/tesla.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

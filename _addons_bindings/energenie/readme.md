@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the Gembird energenie range of power extenders by using the Energenie Data Exchange Protocol and power reading devices through HTTP interface."
 since: 3x
 logo: images/addons/energenie.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

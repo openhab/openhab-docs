@@ -5,7 +5,7 @@ title: DSMR - Bindings
 type: binding
 description: "The DSMR-binding is targeted towards Dutch, Belgium and Luxembourger users having a smart meter (Dutch: 'Slimme meter')."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

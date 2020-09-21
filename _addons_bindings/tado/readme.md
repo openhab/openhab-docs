@@ -6,7 +6,7 @@ type: binding
 description: "The tado° binding integrates devices from [tado°](https://www.tado.com)."
 since: 3x
 logo: images/addons/tado.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

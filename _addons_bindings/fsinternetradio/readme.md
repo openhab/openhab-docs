@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates internet radios based on the [Frontier Silicon chipset](https://www.frontier-silicon.com/)."
 since: 3x
 logo: images/addons/fsinternetradio.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

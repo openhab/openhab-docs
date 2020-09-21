@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the Onkyo AV receivers."
 since: 3x
 logo: images/addons/onkyo.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: evohome - Bindings
 type: binding
 description: "This binding integrates the Honeywell evohome system."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

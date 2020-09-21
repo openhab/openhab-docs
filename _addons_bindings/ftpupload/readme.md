@@ -5,7 +5,7 @@ title: FTP Upload - Bindings
 type: binding
 description: "This binding can be used to receive image files from FTP clients."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: Pixometer - Bindings
 type: binding
 description: "This binding connects to the pixometer API, which can manage your meter readings through a native smartphone app."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

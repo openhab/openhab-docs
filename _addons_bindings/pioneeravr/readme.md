@@ -6,7 +6,7 @@ type: binding
 description: "The binding can auto-discover the Pioneer AVRs present on your local network."
 since: 3x
 logo: images/addons/pioneeravr.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

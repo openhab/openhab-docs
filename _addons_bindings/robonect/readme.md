@@ -5,7 +5,7 @@ title: Robonect - Bindings
 type: binding
 description: "Robonect is a piece of hardware which has to be put into your Husqvarna, Gardena and other branded automower and makes"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

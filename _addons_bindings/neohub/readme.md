@@ -5,7 +5,7 @@ title: NeoHub - Bindings
 type: binding
 description: "This is a binding for integrating [Heatmiser](https://www.heatmiser.com) room and underfloor heating control products."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

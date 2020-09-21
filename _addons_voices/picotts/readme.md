@@ -5,7 +5,7 @@ title: Pico Text-to-Speech - Voices
 type: voice
 description: "The Pico Text-to-Speech (TTS) service uses the TTS binary from SVOX for producing spoken text."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

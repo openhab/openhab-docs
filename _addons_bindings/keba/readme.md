@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates the [Keba KeContact EV Charging Stations](https://www.keba.com)."
 since: 3x
 logo: images/addons/keba.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

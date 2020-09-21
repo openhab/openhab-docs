@@ -6,7 +6,7 @@ type: binding
 description: "This is the binding for the [Nuki Smart Lock](https://nuki.io)."
 since: 3x
 logo: images/addons/nuki.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

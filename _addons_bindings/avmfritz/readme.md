@@ -6,7 +6,7 @@ type: binding
 description: "The binding integrates AVM FRITZ!Boxes with a special focus on the AHA ( [AVM Home Automation](https://avm.de/ratgeber/smart-home/) ) features."
 since: 3x
 logo: images/addons/avmfritz.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: DMX - Bindings
 type: binding
 description: "The DMX binding integrates DMX devices. There are different output devices supported as well as Dimmers and Chasers."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

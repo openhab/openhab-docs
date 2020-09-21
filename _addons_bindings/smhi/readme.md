@@ -5,7 +5,7 @@ title: Smhi - Bindings
 type: binding
 description: "This binding gets hourly and daily forecast from SMHI - the Swedish Meteorological and Hydrological Institute."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

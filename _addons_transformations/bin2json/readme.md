@@ -5,7 +5,7 @@ title: Binary To JSON - Transformation Services
 type: transform
 description: "Transforms the input by Java Binary Block Parser syntax."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

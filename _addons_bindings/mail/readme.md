@@ -5,7 +5,7 @@ title: Mail - Bindings
 type: binding
 description: "The Mail binding provides support for sending mails from rules."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
