@@ -5,7 +5,7 @@ title: openHAB Hue Emulation - System Integrations
 type: io
 description: "Hue Emulation exposes openHAB items as Hue lights to other Hue API compatible applications like Amazon Echos, Google Homes or any Hue compatible application."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
