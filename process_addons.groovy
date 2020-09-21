@@ -101,8 +101,8 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
         if (temp_folder.list().length > 0) {
             log.warn("Folder not empty after processing.")
         }
-	println "Deleting: " + temp_folder
-        temp_folder.delete()
+        println "Deleting: " + temp_folder
+        temp_folder.deleteDir()
     }
 }
 
