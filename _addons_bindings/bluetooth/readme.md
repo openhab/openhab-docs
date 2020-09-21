@@ -4,9 +4,9 @@ label: Bluetooth
 title: Bluetooth - Bindings
 type: binding
 description: "This binding provides support for generic Bluetooth devices."
-since: 2x
+since: 3x
 logo: images/addons/bluetooth.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -36,7 +36,7 @@ Two thing types are supported by this binding:
 
 | Thing Type ID | Description                                                                                             |
 |---------------|---------------------------------------------------------------------------------------------------------|
-| beacon        | A Bluetooth device that is not connected, but only broadcasts annoucements.                             |
+| beacon        | A Bluetooth device that is not connected, but only broadcasts announcements.                             |
 | connected     | A Bluetooth device that allows a direct connection and which provides specific services when connected. |
 
 

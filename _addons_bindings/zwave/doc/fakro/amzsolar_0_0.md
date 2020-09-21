@@ -10,7 +10,7 @@ This describes the Z-Wave device *AMZ Solar*, manufactured by *Fakro* with the t
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![AMZ Solar product image](https://www.cd-jackson.com/zwave_device_uploads/1030/1030_default.png)
+![AMZ Solar product image](https://opensmarthouse.org/zwavedatabase/1030/image/)
 
 
 The AMZ Solar supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -202,11 +202,11 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/1030/AMZ-SOLAR-FAKRO-EN.pdf)
-* [Manual (DE)](https://www.cd-jackson.com/zwave_device_uploads/1030/AMZ-Solar-Z-Wave-DE.pdf)
-* [Zwave User Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/1030/MZ-SOLAR-User-Manual-Zwave.pdf)
+* [Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/AMZ-SOLAR-FAKRO-EN.pdf)
+* [Manual (DE)](https://opensmarthouse.org/zwavedatabase/1030/AMZ-Solar-Z-Wave-DE.pdf)
+* [Zwave User Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/MZ-SOLAR-User-Manual-Zwave.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1030).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1030).

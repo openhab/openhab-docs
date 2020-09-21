@@ -4,9 +4,9 @@ label: Silvercrest Wifi Plug
 title: Silvercrest Wifi Plug - Bindings
 type: binding
 description: "This binding integrates the Silvercrest Wifi Socket SWS-A1 sold by Lidl and the EasyHome Wifi Socket DIS-124 sold by Aldi."
-since: 2x
+since: 3x
 logo: images/addons/silvercrestwifisocket.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -10,7 +10,7 @@ This describes the Z-Wave device *MIMOlite*, manufactured by *FortrezZ LLC* with
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![MIMOlite product image](https://www.cd-jackson.com/zwave_device_uploads/219/219_default.jpg)
+![MIMOlite product image](https://opensmarthouse.org/zwavedatabase/219/image/)
 
 
 The MIMOlite supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -299,10 +299,10 @@ Association group 5 supports 2 nodes.
 
 ### Documentation Links
 
-* [FortrezZ MIMOlite User Manual ](https://www.cd-jackson.com/zwave_device_uploads/219/user-manual-mimolite-05may2015.pdf)
-* [FortrezZ MIMOlite Technical Appendix](https://www.cd-jackson.com/zwave_device_uploads/219/tech-appendix-mimolite-05may2015.pdf)
+* [FortrezZ MIMOlite User Manual ](https://opensmarthouse.org/zwavedatabase/219/user-manual-mimolite-05may2015.pdf)
+* [FortrezZ MIMOlite Technical Appendix](https://opensmarthouse.org/zwavedatabase/219/tech-appendix-mimolite-05may2015.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/219).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/219).

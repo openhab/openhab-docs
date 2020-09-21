@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGWDSEU*, manufactured by *[Fibargroup](http:/
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FGWDSEU product image](https://www.cd-jackson.com/zwave_device_uploads/1181/1181_default.jpg)
+![FGWDSEU product image](https://opensmarthouse.org/zwavedatabase/1181/image/)
 
 
 The FGWDSEU supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -348,7 +348,8 @@ This parameter defines how device buttons should control the channels.
 ** Default value 1 **  
 ** Available values  
 1 – 1st and 2nd button toggle the load  
-2 – 1st button turns the load ON, 2nd button turns the load OFF
+2 – 1st button turns the load ON, 2nd button turns the load OFF  
+3 – device works in 2-way/3-way switch configuration
 
 **Double Switch Mode  
 ** Default Value 3  
@@ -1003,9 +1004,9 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1181/FGWDSEU-221-T-EN-0-16.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1181/FGWDSEU-221-T-EN-0-16.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1181).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1181).

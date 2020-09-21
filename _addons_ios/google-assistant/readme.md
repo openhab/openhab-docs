@@ -27,9 +27,9 @@ In openHAB 2 items are exposed via [metadata](https://www.openhab.org/docs/confi
 Currently the following metadata values are supported (also depending on Googles API capabilities):
 
 * `Switch / Dimmer / Color { ga="Light" }`
-* `Switch { ga="Switch" }`
+* `Switch { ga="Switch" [ inverted=true ] }` (all Switch items can use the inverted option)
 * `Switch { ga="Outlet" }`
-* `Switch { ga="CoffeeMaker" }`
+* `Switch { ga="Coffee_Maker" }`
 * `Switch { ga="WaterHeater" }`
 * `Switch { ga="Fireplace" }`
 * `Switch { ga="Valve" }`
@@ -51,12 +51,14 @@ Currently the following metadata values are supported (also depending on Googles
 * `Rollershutter { ga="Pergola" }`
 * `Rollershutter { ga="Shutter" }`
 * `Rollershutter { ga="Window" }`
-* `Group { ga="Thermostat" }`
+* `Group { ga="Thermostat" [ modes="..." ] }`
 * `Number { ga="thermostatTemperatureAmbient" }` as part of Thermostat group
 * `Number { ga="thermostatHumidityAmbient" }` as part of Thermostat group
 * `Number { ga="thermostatTemperatureSetpoint" }` as part of Thermostat group
 * `Number / String { ga="thermostatMode" }` as part of Thermostat group
 * `String { ga="Camera" [ protocols="hls,dash" ] }`
+
+_\* All Rollershutter devices can also be used with a Switch item with the limitation of only supporting open and close states._
 
 Example item configuration:
   ```
@@ -105,7 +107,7 @@ NOTE: metadata is not (yet?) available via paperUI. Either you create your items
 
 #### Two-Factor-Authentication
 
-For some actions, Google recommends to use TFA (Two-Factor-Authentication) to prevent accidential or unauthorized triggers of sensitive actions. See [Two-factor authentication &nbsp;|&nbsp; Actions on Google Smart Home](https://developers.google.com/assistant/smarthome/develop/two-factor-authenticatiob).
+For some actions, Google recommends to use TFA (Two-Factor-Authentication) to prevent accidential or unauthorized triggers of sensitive actions. See [Two-factor authentication &nbsp;|&nbsp; Actions on Google Smart Home](https://developers.google.com/assistant/smarthome/develop/two-factor-authentication).
 
 The openHAB Google Assistant integration supports both _ackNeeded_ and _pinNeeded_. You can use both types on all devices types and traits.
 
@@ -125,18 +127,22 @@ Switch HouseAlarm "House Alarm" { ga="SecuritySystem" [ tfaPin="1234" ] }
 Thermostat requires a group of items to be properly configured to be used with Google Assistant. The default temperature unit is Celsius. `{ ga="Thermostat" }`
 
 To change the temperature unit to Fahrenheit, add the config option `[ useFahrenheit=true ]` to the thermostat group.
+To set the temperature range your thermostat supports, add the config option `[ thermostatTemperatureRange="10,30" ]` to the thermostat group.
 
 There must be at least three items as members of the group:
 
 * (Mandatory) Mode: Number (Zwave THERMOSTAT_MODE Format) or String (off, heat, cool, on, ...). `{ ga="thermostatMode" }`
-  * you can define the supported modes with the config option `[ modes="on,off,heat,cool" ]`
 * (Mandatory) Temperature Ambient: Number. `{ ga="thermostatTemperatureAmbient" }`
 * (Mandatory) Temperature Setpoint: Number. `{ ga="thermostatTemperatureSetpoint" }`
-* (Optional) Humidity Setpoint High: Number. `{ ga="thermostatTemperatureSetpointHigh" }`
-* (Optional) Humidity Setpoint Low: Number. `{ ga="thermostatTemperatureSetpointLow" }`
+* (Optional) Temperature Setpoint High: Number. `{ ga="thermostatTemperatureSetpointHigh" }`
+* (Optional) Temperature Setpoint Low: Number. `{ ga="thermostatTemperatureSetpointLow" }`
 * (Optional) Humidity Ambient: Number. `{ ga="thermostatHumidityAmbient" }`
 
 If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
+
+To map the [default thermostat modes of Google](https://developers.google.com/assistant/smarthome/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the _modes_ config option on the thermostat group.
+E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
+By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
 
 You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
 

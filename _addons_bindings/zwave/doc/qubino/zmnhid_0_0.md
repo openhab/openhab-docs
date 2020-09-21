@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHID*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![ZMNHID product image](https://www.cd-jackson.com/zwave_device_uploads/358/358_default.jpg)
+![ZMNHID product image](https://opensmarthouse.org/zwavedatabase/358/image/)
 
 
 The ZMNHID supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -774,9 +774,9 @@ Association group 6 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/358/Qubino-Flush-On-Off-Thermostat-PLUS-user-manual-V1-2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/358/Qubino-Flush-On-Off-Thermostat-PLUS-user-manual-V1-2.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/358).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/358).

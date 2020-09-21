@@ -10,7 +10,7 @@ This describes the Z-Wave device *RS LED D2 Z-Wave*, manufactured by *Steinel* w
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-![RS LED D2 Z-Wave product image](https://www.cd-jackson.com/zwave_device_uploads/759/759_default.png)
+![RS LED D2 Z-Wave product image](https://opensmarthouse.org/zwavedatabase/759/image/)
 
 
 The RS LED D2 Z-Wave supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -621,11 +621,11 @@ Association group 4 supports 15 nodes.
 
 ### Documentation Links
 
-* [STEINEL RS LED D2 Z-Wave - operation manual](https://www.cd-jackson.com/zwave_device_uploads/759/bedien-110043511.pdf)
-* [STEINEL RS LED D2 Z-Wave, Z-Wave Interface v 1.0.0](https://www.cd-jackson.com/zwave_device_uploads/759/bdal2-110043511.pdf)
-* [STEINEL RS LED D2 Z-Wave - Data Sheet](https://www.cd-jackson.com/zwave_device_uploads/759/Steinel-RS-LED-D2-Z-Wave---DataSheet.pdf)
+* [STEINEL RS LED D2 Z-Wave - operation manual](https://opensmarthouse.org/zwavedatabase/759/bedien-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave, Z-Wave Interface v 1.0.0](https://opensmarthouse.org/zwavedatabase/759/bdal2-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave - Data Sheet](https://opensmarthouse.org/zwavedatabase/759/Steinel-RS-LED-D2-Z-Wave---DataSheet.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/759).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/759).

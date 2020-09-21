@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHBD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZMNHBD product image](https://www.cd-jackson.com/zwave_device_uploads/215/215_default.jpg)
+![ZMNHBD product image](https://opensmarthouse.org/zwavedatabase/215/image/)
 
 
 The ZMNHBD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -523,9 +523,9 @@ Association group 8 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/215/Qubino-Flush-2-Relays-PLUS-user-manual-eng-V1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/215/Qubino-Flush-2-Relays-PLUS-user-manual-eng-V1-4.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/215).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/215).

@@ -10,12 +10,12 @@ This describes the Z-Wave device *ZWN-SC7*, manufactured by *Wenzhou MTLC Electr
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![ZWN-SC7 product image](https://www.cd-jackson.com/zwave_device_uploads/187/187_default.png)
+![ZWN-SC7 product image](https://opensmarthouse.org/zwavedatabase/187/image/)
 
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/187) to improve the documentation.
+No device information is provided in the database. Consider [updating the database](https://opensmarthouse.org/zwavedatabase/187) to improve the documentation.
 
 ## Channels
 
@@ -94,9 +94,9 @@ Association group 7 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation guide](https://www.cd-jackson.com/zwave_device_uploads/187/Enerwave-ZWN-SC7-InstallGuide.pdf)
+* [Installation guide](https://opensmarthouse.org/zwavedatabase/187/Enerwave-ZWN-SC7-InstallGuide.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/187).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/187).

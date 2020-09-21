@@ -7,15 +7,16 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 1020 things from 138 manufacturers.
+The binding supports a total of 1097 things from 145 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
 
 | Manufacturer | Model | Version | Thing Type Id | Category |
 |--------------|-------|---------|---------------|----------|
-| Z-Wave Technologia | [FXA-0404](/fxa0404_5_0.md) | 5.0 to 8.0 | ```_fxa0404_05_000``` | Wall Switch |
 | ABUS Security-Center GmbH & Co. KG  | [SHBW10000](abus/shbw10000_0_0.md) |  | ```abus_shbw10000_00_000``` | Motion Detector |
+| ABUS Security-Center GmbH & Co. KG  | [SHHA10000](abus/shhm10000_0_0.md) |  | ```abus_shhm10000_00_000``` | Power Outlet |
+| ABUS Security-Center GmbH & Co. KG  | [SHLM10000](abus/shlm10000_0_0.md) |  | ```abus_shlm10000_00_000``` | Light Bulb |
 | ABUS Security-Center GmbH & Co. KG  | [SHLM10010](abus/shlm10010_0_0.md) |  | ```abus_shlm10010_00_000``` | Light Bulb |
 | ABUS Security-Center GmbH & Co. KG  | [SHMK10000](abus/shmk10000_0_0.md) |  | ```abus_shmk10000_00_000``` | Door |
 | ABUS Security-Center GmbH & Co. KG  | [SHRM10000](abus/shrm10000_0_0.md) |  | ```abus_shrm10000_00_000``` | Smoke Detector |
@@ -60,7 +61,7 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW056](aeon/zw056_0_0.md) |  | ```aeon_zw056_00_000``` | Door |
 | AEON Labs | [ZW062](aeon/zw062_0_0.md) |  | ```aeon_zw062_00_000``` | Garage Door |
 | AEON Labs | [ZW074](aeon/zw074_0_0.md) |  | ```aeon_zw074_00_000``` | Sensor |
-| AEON Labs | [ZW075](aeon/zw075_0_0.md) | 3.999 | ```aeon_zw075_00_000``` | Power Outlet |
+| AEON Labs | [ZW075](aeon/zw075_0_0.md) | 3.255 | ```aeon_zw075_00_000``` | Power Outlet |
 | AEON Labs | [ZW075](aeon/zw075_4_0.md) | 4.0 | ```aeon_zw075_04_000``` | Power Outlet |
 | AEON Labs | [ZW078](aeon/zw078_0_0.md) |  | ```aeon_zw078_00_000``` | Wall Switch |
 | AEON Labs | [ZW080](aeon/zw080_0_0.md) |  | ```aeon_zw080_00_000``` | Siren |
@@ -79,7 +80,8 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW111](aeon/zw111_0_0.md) | 2.2 | ```aeon_zw111_00_000``` | Wall Switch |
 | AEON Labs | [ZW111](aeon/zw111_2_3.md) | 2.3 | ```aeon_zw111_02_003``` | Wall Switch |
 | AEON Labs | [ZW112](aeon/zw112_0_0.md) |  | ```aeon_zw112_00_000``` | Door |
-| AEON Labs | [ZW116](aeon/zw116_0_0.md) |  | ```aeon_zw116_00_000``` | Wall Switch |
+| AEON Labs | [ZW116](aeon/zw116_0_0.md) | 2.0 | ```aeon_zw116_00_000``` | Wall Switch |
+| AEON Labs | [ZW116](aeon/zw116_2_1.md) | 2.1 | ```aeon_zw116_02_001``` | Wall Switch |
 | AEON Labs | [ZW117](aeon/zw117_0_0.md) |  | ```aeon_zw117_00_000``` | Power Outlet |
 | AEON Labs | [ZW120](aeon/zw120_0_0.md) |  | ```aeon_zw120_00_000``` | Sensor |
 | AEON Labs | [ZW121](aeon/zw121_0_0.md) |  | ```aeon_zw121_00_000``` | Light Bulb |
@@ -92,15 +94,19 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW140](aeon/zw140_0_0.md) |  | ```aeon_zw140_00_000``` | Wall Switch |
 | AEON Labs | [ZW141](aeon/zw141_0_0.md) |  | ```aeon_zw141_00_000``` | Blinds |
 | Aeotec Limited | [Spirit](aeotec/spirit_0_0.md) |  | ```aeotec_spirit_00_000``` | Radiator Control |
-| Aeotec Limited | [ZW141](aeotec/zw141_0_0.md) |  | ```aeotec_zw141_00_000``` | Blinds |
+| Aeotec Limited | [ZW141](aeotec/zw141_3_0.md) | 3.0 | ```aeotec_zw141_03_000``` | Blinds |
 | Aeotec Limited | [ZW164](aeotec/zw164_0_0.md) |  | ```aeotec_zw164_00_000``` | Siren |
 | Aeotec Limited | [ZW175](aeotec/zw175_0_0.md) |  | ```aeotec_zw175_00_000``` | Power Outlet |
+| Aeotec Limited | [ZW187](aeotec/zw187_0_0.md) |  | ```aeotec_zw187_00_000``` | Sensor |
+| Aeotec Limited | [ZW189](aeotec/zw189_0_0.md) |  | ```aeotec_zw189_00_000``` | Power Outlet |
 | Aeotec Limited | [ZWA001](aeotec/zwa001_0_0.md) |  | ```aeotec_zwa001_00_000``` | Light Bulb |
 | Aeotec Limited | [ZWA002](aeotec/zwa002a_0_0.md) |  | ```aeotec_zwa002a_00_000``` | Light Bulb |
 | Aeotec Limited | [ZWA003](aeotec/zwa003_0_0.md) |  | ```aeotec_zwa003_00_000``` | Wall Switch |
 | Aeotec Limited | [ZWA005](aeotec/zwa005_0_0.md) |  | ```aeotec_zwa005_00_000``` | Sensor |
 | Aeotec Limited | [ZWA008](aeotec/zwa008_0_0.md) |  | ```aeotec_zwa008_00_000``` | Sensor |
 | Airline Mechanical Co., Ltd. | [ZDS-UD10](amc/zdsud10_0_0.md) |  | ```amc_zdsud10_00_000``` | Power Outlet |
+| Ameta International | [HA-ZW-5SABC](ameta/hazw5sabc_0_0.md) |  | ```ameta_hazw5sabc_00_000``` | Motion Detector |
+| Ameta International | [HA-ZW-5SE](ameta/hazw5se_0_0.md) |  | ```ameta_hazw5se_00_000``` | Door |
 | August Smart Locks | [ASL-03](august/asl03_0_0.md) |  | ```august_asl03_00_000``` | Lock |
 | Avadesign Technology Co. | [Da Vinci v9](avadesign/davinciv9_0_0.md) |  | ```avadesign_davinciv9_00_000``` | Wall Switch |
 | Avadesign Technology Co. | [Da Vinci Switch Default](avadesign/davincivsw9_0_0.md) |  | ```avadesign_davincivsw9_00_000``` | Wall Switch |
@@ -110,7 +116,9 @@ and links to more detailed information about each thing.
 | BeNext | [builtInDimmer](benext/builtindimmer_0_0.md) |  | ```benext_builtindimmer_00_000``` | Wall Switch |
 | BeNext | [doorSensor](benext/doorsensor_0_0.md) |  | ```benext_doorsensor_00_000``` | Door |
 | BeNext | [Energy Switch +](benext/energyswitch_0_0.md) |  | ```benext_energyswitch_00_000``` | Power Outlet |
+| BeNext | [Heating Control](benext/heatingcontrol_0_0.md) |  | ```benext_heatingcontrol_00_000``` | HVAC |
 | BeNext | [Molite](benext/molite_0_0.md) |  | ```benext_molite_00_000``` | Sensor |
+| BeNext | [Forest Shuttle](benext/motorcontroller_0_0.md) |  | ```benext_motorcontroller_00_000``` | Blinds |
 | BeNext | [P1-dongle](benext/p1dongle_0_0.md) |  | ```benext_p1dongle_00_000``` | Sensor |
 | BeNext | [plugInDimmer](benext/plugindimmer_0_0.md) |  | ```benext_plugindimmer_00_000``` | Power Outlet |
 | BeNext | [powerSwitch](benext/powerswitch_0_0.md) |  | ```benext_powerswitch_00_000``` | Power Outlet |
@@ -118,13 +126,16 @@ and links to more detailed information about each thing.
 | BeNext | [Tag Reader](benext/tagreader_0_0.md) |  | ```benext_tagreader_00_000``` | Remote Control |
 | BeNext | [ThermIQ Temperature Sensor](benext/thermiqtemp_0_0.md) |  | ```benext_thermiqtemp_00_000``` | Sensor |
 | Bönig und Kallenbach oHG | [POPE005206](bonig/pope005206_0_0.md) |  | ```bonig_pope005206_00_000``` | Sensor |
+| ABUS August Bremicker Söhne KG | [CFA3010](bremicker/abuscfa3010_0_0.md) |  | ```bremicker_abuscfa3010_00_000``` | Lock |
 | BRK Brands, Inc. | [ZCOMBO](brk/zcombo_0_0.md) |  | ```brk_zcombo_00_000``` | Smoke Detector |
 | BRK Brands, Inc. | [ZSMOKE](brk/zsmoke_0_0.md) |  | ```brk_zsmoke_00_000``` | Smoke Detector |
 | Building 36 Technologies | [ADC-S2000-T-RA](building36/adcs2000tra_0_0.md) |  | ```building36_adcs2000tra_00_000``` | Sensor |
 | Building 36 Technologies | [ADC-T 2000](building36/adct2000_0_0.md) |  | ```building36_adct2000_00_000``` | HVAC |
+| Building 36 Technologies | [ADC-T3000](building36/adct3000_0_0.md) |  | ```building36_adct3000_00_000``` | HVAC |
 | CBCC Domotique SAS | [SW-ZAP-1](cbcc/swzap1_0_0.md) |  | ```cbcc_swzap1_00_000``` | Power Outlet |
 | CBCC Domotique SAS | [SW-ZCS-1](cbcc/swzcs1_0_0.md) |  | ```cbcc_swzcs1_00_000``` | Wall Switch |
 | CentraLite Systems, Inc | [3210-L](centralite/3210l_0_0.md) |  | ```centralite_3210l_00_000``` | Power Outlet |
+| Chengputech | [Cooltouch](chengputech/6938843600375_0_0.md) |  | ```chengputech_6938843600375_00_000``` | Wall Switch |
 | Chromagic Technologies Corporation | [EM6556](chromagic/em6556_0_0.md) |  | ```chromagic_em6556_00_000``` | Wall Switch |
 | Chromagic Technologies Corporation | [HSM02](chromagic/hsm02_0_0.md) |  | ```chromagic_hsm02_00_000``` | Sensor |
 | Chromagic Technologies Corporation | [SM103](chromagic/sm103_0_0.md) |  | ```chromagic_sm103_00_000``` | Sensor |
@@ -145,8 +156,11 @@ and links to more detailed information about each thing.
 | Cooper Wiring Devices | [RF9617](cooper/rf9617_0_0.md) |  | ```cooper_rf9617_00_000``` | Wall Switch |
 | Cooper Wiring Devices | [RF9640](cooper/rf9640_0_0.md) | 255.0 | ```cooper_rf9640_00_000``` | Wall Switch |
 | Cooper Wiring Devices | [RF9642](cooper/rf9642_0_0.md) |  | ```cooper_rf9642_00_000``` | Wall Switch |
+| Cooper Wiring Devices | [RF96APM](cooper/rf96apm_0_0.md) |  | ```cooper_rf96apm_00_000``` | Power Outlet |
+| Cooper Wiring Devices | [RF96PIRBMS](cooper/rf96pirbms_0_0.md) |  | ```cooper_rf96pirbms_00_000``` | Motion Detector |
 | Cooper Wiring Devices | [RFLDM](cooper/rfldmdimmer_0_0.md) |  | ```cooper_rfldmdimmer_00_000``` | Power Outlet |
 | Cooper Wiring Devices | [RFTR9505](cooper/rftr9505_0_0.md) |  | ```cooper_rftr9505_00_000``` | Power Outlet |
+| Cooper Wiring Devices | [RFTR9605-T](cooper/rftr9605_0_0.md) |  | ```cooper_rftr9605_00_000``` | Power Outlet |
 | Cooper Wiring Devices | [RFWC5](cooper/rfwc5_0_0.md) |  | ```cooper_rfwc5_00_000``` | Wall Switch |
 | Coqon | [PSMZ0001](coqon/psmz0001_0_0.md) |  | ```coqon_psmz0001_00_000``` | Power Outlet |
 | Danfoss | [010101](danfoss/010101_0_0.md) |  | ```danfoss_010101_00_000``` | Radiator Control |
@@ -155,9 +169,10 @@ and links to more detailed information about each thing.
 | Danfoss | [Keemple smart radiator](danfoss/40976_0_0.md) |  | ```danfoss_40976_00_000``` | Radiator Control |
 | Danfoss | [DTHERMZ5](danfoss/dthermz5_0_0.md) |  | ```danfoss_dthermz5_00_000``` | Sensor |
 | Danfoss | [DTHERMZ6](danfoss/dthermz6_0_0.md) |  | ```danfoss_dthermz6_00_000``` | HVAC |
-| Danfoss | [HRVCCM](danfoss/hrvccm_0_0.md) |  | ```danfoss_hrvccm_00_000``` | HVAC |
+| Danfoss | [LC-13](danfoss/lc13_0_0.md) |  | ```danfoss_lc13_00_000``` | HVAC |
 | Danfoss | [LCZ251](danfoss/lcz251_0_0.md) |  | ```danfoss_lcz251_00_000``` | Radiator Control |
 | Danfoss | [MT02650](danfoss/mt02650_0_0.md) |  | ```danfoss_mt02650_00_000``` | Radiator Control |
+| Danfoss | [RXZ-2C](danfoss/rxz2c_0_0.md) |  | ```danfoss_rxz2c_00_000``` | HVAC |
 | Defaro | [DAD-101](defaro/dad101_0_0.md) |  | ```defaro_dad101_00_000``` | Wall Switch |
 | Defaro | [DAS-102](defaro/das102_0_0.md) |  | ```defaro_das102_00_000``` | Wall Switch |
 | Defaro | [DSI-101 binary switch](defaro/dsi101_0_0.md) |  | ```defaro_dsi101_00_000``` | Wall Switch |
@@ -170,6 +185,7 @@ and links to more detailed information about each thing.
 | Devolo | [MT02755](devolo/mt2755_0_0.md) |  | ```devolo_mt2755_00_000``` | Door |
 | Devolo | [MT2756](devolo/mt2756_0_0.md) |  | ```devolo_mt2756_00_000``` | Sensor |
 | Devolo | [MT2759](devolo/mt2759_0_0.md) |  | ```devolo_mt2759_00_000``` | Wall Switch |
+| Devolo | [MT2761](devolo/mt2761_0_0.md) |  | ```devolo_mt2761_00_000``` | Blinds |
 | Devolo | [MT02792](devolo/mt2792_0_0.md) |  | ```devolo_mt2792_00_000``` | Power Outlet |
 | Devolo | [PAN11](devolo/pan11_0_0.md) |  | ```devolo_pan11_00_000``` | Power Outlet |
 | Devolo | [ph-pse02](devolo/phpse02_0_0.md) |  | ```devolo_phpse02_00_000``` | Siren |
@@ -186,6 +202,7 @@ and links to more detailed information about each thing.
 | EbV | [heatapp! floor](ebv/heatappfloor_0_0.md) |  | ```ebv_heatappfloor_00_000``` | Radiator Control |
 | Ecolink | [DWZWAVE25](eco/dwzwave25_0_0.md) |  | ```eco_dwzwave25_00_000``` | Door |
 | Ecolink | [DWZWAVE2](eco/dwzwave2_0_0.md) |  | ```eco_dwzwave2_00_000``` | Door |
+| Ecolink | [FF-ZWAVE5-ECO](eco/firefighter5_0_0.md) |  | ```eco_firefighter5_00_000``` | Smoke Detector |
 | Ecolink | [FLF-ZWAVE5 R1](eco/flfzwave5r1_0_0.md) |  | ```eco_flfzwave5r1_00_000``` | Sensor |
 | Ecolink | [PIR](eco/pir1_0_0.md) |  | ```eco_pir1_00_000``` | Motion Detector |
 | Ecolink | [PIR Motion Sensor v2.5](eco/pirv25_0_0.md) |  | ```eco_pirv25_00_000``` | Motion Detector |
@@ -226,6 +243,7 @@ and links to more detailed information about each thing.
 | Eurotronics | [CometZ](eurotronic/cometz_0_0.md) |  | ```eurotronic_cometz_00_000``` | Radiator Control |
 | Eurotronics | [Spirit](eurotronic/spirit_0_0.md) |  | ```eurotronic_spirit_00_000``` | Radiator Control |
 | Eurotronics | [StellaZ](eurotronic/stellaz_0_0.md) |  | ```eurotronic_stellaz_00_000``` | Radiator Control |
+| Eurotronics | [VOC-SENSOR](eurotronic/vocsensor_0_0.md) |  | ```eurotronic_vocsensor_00_000``` | Sensor |
 | Everspring | [AD130](everspring/ad130_0_0.md) |  | ```everspring_ad130_00_000``` | Wall Switch |
 | Everspring | [AD142](everspring/ad142_0_0.md) |  | ```everspring_ad142_00_000``` | Power Outlet |
 | Everspring | [AD146](everspring/ad146_0_0.md) |  | ```everspring_ad146_00_000``` | Wall Switch |
@@ -264,7 +282,7 @@ and links to more detailed information about each thing.
 | Fakro | [AMZ](fakro/amz_0_0.md) |  | ```fakro_amz_00_000``` | Blinds |
 | Fakro | [AMZ Solar](fakro/amzsolar_0_0.md) |  | ```fakro_amzsolar_00_000``` | Blinds |
 | Fakro | [ARF](fakro/arf_0_0.md) |  | ```fakro_arf_00_000``` | Blinds |
-| Fakro | [ARZ Z-Wave](fakro/arz2013_2_1.md) | 2.1 | ```fakro_arz2013_02_001``` | Blinds |
+| Fakro | [ARZ Z-Wave](fakro/arz2013_2_1.md) | 2.1 to 3.255 | ```fakro_arz2013_02_001``` | Blinds |
 | Fakro | [ARZ 1.1](fakro/arz2_1_1.md) | 1.1 | ```fakro_arz2_01_001``` | Blinds |
 | Fakro | [ARZ](fakro/arz_0_0.md) |  | ```fakro_arz_00_000``` | Blinds |
 | Fakro | [ARZ Solar](fakro/arzsolar_0_0.md) |  | ```fakro_arzsolar_00_000``` | Blinds |
@@ -274,6 +292,7 @@ and links to more detailed information about each thing.
 | Fakro | [ZWP10](fakro/zwp10_0_0.md) |  | ```fakro_zwp10_00_000``` | Remote Control |
 | Fakro | [ZWS12](fakro/zws1222_2_2.md) | 2.2 | ```fakro_zws1222_02_002``` | Blinds |
 | Fakro | [ZWS12](fakro/zws12_0_0.md) | 2.0 | ```fakro_zws12_00_000``` | Blinds |
+| Fakro | [ZWS12](fakro/zws12_4_0.md) | 4.0 | ```fakro_zws12_04_000``` | Blinds |
 | Fakro | [ZWS12n](fakro/zws12n_0_0.md) |  | ```fakro_zws12n_00_000``` | Window |
 | Fakro | [ZWS12](fakro/zws12year2019_0_0.md) |  | ```fakro_zws12year2019_00_000``` | Window |
 | Fibargroup | [FGBS001](fibaro/fgbs001_0_0.md) |  | ```fibaro_fgbs001_00_000``` | Sensor |
@@ -282,7 +301,6 @@ and links to more detailed information about each thing.
 | Fibargroup | [FGD211](fibaro/fgd211_0_0.md) | 1.8 | ```fibaro_fgd211_00_000``` | Wall Switch |
 | Fibargroup | [FGD211](fibaro/fgd211_1_9.md) | 1.9 to 1.11 | ```fibaro_fgd211_01_009``` | Wall Switch |
 | Fibargroup | [FGD211](fibaro/fgd211_2_1.md) | 2.1 | ```fibaro_fgd211_02_001``` | Wall Switch |
-| Fibargroup | [FGD212](fibaro/fgd212_0_0.md) | 3.4 | ```fibaro_fgd212_00_000``` | Wall Switch |
 | Fibargroup | [FGD212](fibaro/fgd212_3_5.md) | 3.5 | ```fibaro_fgd212_03_005``` | Wall Switch |
 | Fibargroup | [FGDW002](fibaro/fgdw002_0_0.md) |  | ```fibaro_fgdw002_00_000``` | Sensor |
 | Fibargroup | [FGFS101](fibaro/fgfs101_0_0.md) | 3.0 | ```fibaro_fgfs101_00_000``` | Sensor |
@@ -298,7 +316,6 @@ and links to more detailed information about each thing.
 | Fibargroup | [FGPB101](fibaro/fgpb101_0_0.md) |  | ```fibaro_fgpb101_00_000``` | Remote Control |
 | Fibargroup | [FGR221](fibaro/fgr221_0_0.md) |  | ```fibaro_fgr221_00_000``` | Blinds |
 | Fibargroup | [FGR222](fibaro/fgr222_24_24.md) | 24.24 | ```fibaro_fgr222_24_024``` | Blinds |
-| Fibargroup | [FGR223](fibaro/fgr223_0_0.md) |  | ```fibaro_fgr223_00_000``` | Blinds |
 | Fibargroup | [FGRGBW-442](fibaro/fgrgbw442_0_0.md) |  | ```fibaro_fgrgbw442_00_000``` | Light Bulb |
 | Fibargroup | [FGRGBW](fibaro/fgrgbw_0_0.md) |  | ```fibaro_fgrgbw_00_000``` | Wall Switch |
 | Fibargroup | [FGRM222](fibaro/fgrm222_0_0.md) | 22.22 | ```fibaro_fgrm222_00_000``` | Blinds |
@@ -311,12 +328,13 @@ and links to more detailed information about each thing.
 | Fibargroup | [FGS221](fibaro/fgs221_2_1.md) | 2.1 to 2.3 | ```fibaro_fgs221_02_001``` | Wall Switch |
 | Fibargroup | [FGS222](fibaro/fgs222_0_0.md) |  | ```fibaro_fgs222_00_000``` | Wall Switch |
 | Fibargroup | [FGS223](fibaro/fgs223_0_0.md) |  | ```fibaro_fgs223_00_000``` | Wall Switch |
+| Fibargroup | [FGS224](fibaro/fgs224_5_0.md) | 5.0 to 5.0 | ```fibaro_fgs224_05_000``` | Wall Switch |
 | Fibargroup | [FGSD002](fibaro/fgsd002_0_0.md) | 3.1 | ```fibaro_fgsd002_00_000``` | Smoke Detector |
 | Fibargroup | [FGSD002](fibaro/fgsd002_3_2.md) | 3.2 | ```fibaro_fgsd002_03_002``` | Smoke Detector |
 | Fibargroup | [FGSS001](fibaro/fgss001_0_0.md) |  | ```fibaro_fgss001_00_000``` | Smoke Detector |
 | Fibargroup | [FGT001](fibaro/fgt001_0_0.md) |  | ```fibaro_fgt001_00_000``` | Radiator Control |
 | Fibargroup | [FGWDEU](fibaro/fgwdeu111_0_0.md) |  | ```fibaro_fgwdeu111_00_000``` | Wall Switch |
-| Fibargroup | [FGWDS](fibaro/fgwds_5_1.md) | 5.1 | ```fibaro_fgwds_05_001``` | Wall Switch |
+| Fibargroup | [FGWDS](fibaro/fgwds_0_0.md) |  | ```fibaro_fgwds_00_000``` | Wall Switch |
 | Fibargroup | [FGWDSEU](fibaro/fgwdseu_0_0.md) |  | ```fibaro_fgwdseu_00_000``` | Wall Switch |
 | Fibargroup | [FGWOE-011](fibaro/fgwoe011_0_0.md) |  | ```fibaro_fgwoe011_00_000``` | Power Outlet |
 | Fibargroup | [FGWP101](fibaro/fgwp101_0_0.md) |  | ```fibaro_fgwp101_00_000``` | Power Outlet |
@@ -338,7 +356,7 @@ and links to more detailed information about each thing.
 | Jasco Products | [GE 12725](ge/12725_0_0.md) |  | ```ge_12725_00_000``` | Wall Switch |
 | Jasco Products | [12727](ge/12727_0_0.md) |  | ```ge_12727_00_000``` | Wall Switch |
 | Jasco Products | [12729](ge/12729_0_0.md) |  | ```ge_12729_00_000``` | Wall Switch |
-| Jasco Products | [GE 12340 (ZW4002)](ge/12730zw4002_0_0.md) |  | ```ge_12730zw4002_00_000``` | Wall Switch |
+| Jasco Products | [GE 12730 (ZW4002)](ge/12730zw4002_0_0.md) |  | ```ge_12730zw4002_00_000``` | Wall Switch |
 | Jasco Products | [ZW3107 / GE 14280](ge/14280_0_0.md) |  | ```ge_14280_00_000``` | Power Outlet |
 | Jasco Products | [GE Plug in Smart Switch](ge/14282_0_0.md) |  | ```ge_14282_00_000``` | Power Outlet |
 | Jasco Products | [GE/Jasco 14285](ge/14285_0_0.md) |  | ```ge_14285_00_000``` | Remote Control |
@@ -348,7 +366,7 @@ and links to more detailed information about each thing.
 | Jasco Products | [GE 14292](ge/14292_0_0.md) |  | ```ge_14292_00_000``` | Wall Switch |
 | Jasco Products | [GE 14294 (ZW3005)](ge/14294_0_0.md) |  | ```ge_14294_00_000``` | Wall Switch |
 | Jasco Products | [GE 14295](ge/14295_0_0.md) |  | ```ge_14295_00_000``` | Wall Switch |
-| Jasco Products | [GE 14298/ZW4202](ge/14298_0_0.md) |  | ```ge_14298_00_000``` | Power Outlet |
+| Jasco Products | [ZW3011/14296](ge/14296_0_0.md) |  | ```ge_14296_00_000``` | Wall Switch |
 | Jasco Products | [GE/Jasco 14299](ge/14299_0_0.md) |  | ```ge_14299_00_000``` | Wall Switch |
 | Jasco Products | [Jasco 14318](ge/14318_0_0.md) |  | ```ge_14318_00_000``` | Wall Switch |
 | Jasco Products | [GE/Jasco 14321](ge/14321_0_0.md) |  | ```ge_14321_00_000``` | HVAC |
@@ -361,16 +379,16 @@ and links to more detailed information about each thing.
 | Jasco Products | [45603](ge/45603_0_0.md) |  | ```ge_45603_00_000``` | Power Outlet |
 | Jasco Products | [45604](ge/45604_0_0.md) |  | ```ge_45604_00_000``` | Power Outlet |
 | Jasco Products | [45605](ge/45605_0_0.md) |  | ```ge_45605_00_000``` | Power Outlet |
-| Jasco Products | [45606](ge/45606_0_0.md) |  | ```ge_45606_00_000``` | Wall Switch |
+| Jasco Products | [45606, ZW3003](ge/45606_0_0.md) |  | ```ge_45606_00_000``` | Wall Switch |
 | Jasco Products | [45607](ge/45607_0_0.md) |  | ```ge_45607_00_000``` | Wall Switch |
 | Jasco Products | [45609](ge/45609_0_0.md) |  | ```ge_45609_00_000``` | Wall Switch |
 | Jasco Products | [46201](ge/46201_0_0.md) |  | ```ge_46201_00_000``` | Wall Switch |
 | Jasco Products | [GE 46202](ge/46202_0_0.md) |  | ```ge_46202_00_000``` | Wall Switch |
 | Jasco Products | [46203](ge/46203_0_0.md) |  | ```ge_46203_00_000``` | Wall Switch |
-| Jasco Products | [GE Outdoor Switch](ge/outdoorswitch_0_0.md) |  | ```ge_outdoorswitch_00_000``` | Power Outlet |
 | Jasco Products | [32563](ge/smartdoorsensor_0_0.md) |  | ```ge_smartdoorsensor_00_000``` | Sensor |
 | Jasco Products | [ZW1001](ge/zw1001_0_0.md) |  | ```ge_zw1001_00_000``` | Power Outlet |
 | Jasco Products | [ZW3003, GE 12724](ge/zw3003_0_0.md) |  | ```ge_zw3003_00_000``` | Wall Switch |
+| Jasco Products | [ZW3011/14322/46565](ge/zw3011_0_0.md) |  | ```ge_zw3011_00_000``` | Wall Switch |
 | Jasco Products | [ZW3101](ge/zw3101_0_0.md) |  | ```ge_zw3101_00_000``` | Power Outlet |
 | Jasco Products | [ZW3102](ge/zw3102_0_0.md) |  | ```ge_zw3102_00_000``` | Power Outlet |
 | Jasco Products | [GE 28175 (ZW3106)](ge/zw3106_5_23.md) | 5.23 to 5.23 | ```ge_zw3106_05_023``` | Power Outlet |
@@ -378,7 +396,7 @@ and links to more detailed information about each thing.
 | Jasco Products | [GE ZW4004](ge/zw4004_0_0.md) |  | ```ge_zw4004_00_000``` | Power Outlet |
 | Jasco Products | [ZW4005, 12722](ge/zw4005_0_0.md) |  | ```ge_zw4005_00_000``` | Wall Switch |
 | Jasco Products | [26931/ZW4006](ge/zw4006_0_0.md) |  | ```ge_zw4006_00_000``` | Wall Switch |
-| Jasco Products | [43072/ZW4008DV](ge/zw4008_0_0.md) |  | ```ge_zw4008_00_000``` | Wall Switch |
+| Jasco Products | [ZW4009](ge/zw4009_0_0.md) |  | ```ge_zw4009_00_000``` | Wall Switch |
 | Jasco Products | [ZW4101](ge/zw4101_0_0.md) |  | ```ge_zw4101_00_000``` | Power Outlet |
 | Jasco Products | [ZW4102](ge/zw4102_0_0.md) |  | ```ge_zw4102_00_000``` | Power Outlet |
 | Jasco Products | [ZW6302](ge/zw6302_0_0.md) |  | ```ge_zw6302_00_000``` | Motion Detector |
@@ -391,6 +409,7 @@ and links to more detailed information about each thing.
 | GreenWave Reality Inc. | [GWPN1](greenwave/gwpn1_3_0.md) | 3.0 | ```greenwave_gwpn1_03_000``` | Power Outlet |
 | GreenWave Reality Inc. | [GWPN5](greenwave/gwpn5_0_0.md) |  | ```greenwave_gwpn5_00_000``` | Power Outlet |
 | GreenWave Reality Inc. | [GWPN6](greenwave/gwpn6_0_0.md) |  | ```greenwave_gwpn6_00_000``` | Power Outlet |
+| Guardtec | [KeyWe Smart lock ](guardtec/keywesmartlock_0_0.md) |  | ```guardtec_keywesmartlock_00_000``` | Lock |
 | HAB Home Intelligence, LLC | [IB2.0](habhome/iblindsib20_0_0.md) |  | ```habhome_iblindsib20_00_000``` | Blinds |
 | Hank | [ACC01](hank/acc01_0_0.md) |  | ```hank_acc01_00_000``` | Remote Control |
 | Hank | [DWS01](hank/dws01_0_0.md) |  | ```hank_dws01_00_000``` | Door |
@@ -417,6 +436,8 @@ and links to more detailed information about each thing.
 | Hogar Controls | [HTP-4S1-FB](hogar/htp4s1fb_2_2.md) | 2.2 | ```hogar_htp4s1fb_02_002``` | Wall Switch |
 | Hogar Controls | [HTP-8S0-XX](hogar/htp850xx_0_0.md) |  | ```hogar_htp850xx_00_000``` | Wall Switch |
 | Hogar Controls | [Lumi LM-S4ZW (C-L)](hogar/lmsxzwcl_0_0.md) |  | ```hogar_lmsxzwcl_00_000``` | Wall Switch |
+| Hogar Controls | [Lumi 1 button ZWave](hogar/lumi1button_0_0.md) |  | ```hogar_lumi1button_00_000``` | Wall Switch |
+| Hogar Controls | [Lumi 2 Blinds ZWave Switch](hogar/lumi2blinds_0_0.md) |  | ```hogar_lumi2blinds_00_000``` | Wall Switch |
 | Hogar Controls | [Lumi LM-SxZW (C-L)](hogar/lumilmsxzwcl_0_0.md) |  | ```hogar_lumilmsxzwcl_00_000``` | Wall Switch |
 | Express Controls | [EZMotion Express](homeseer/ezmotionexpress_0_0.md) |  | ```homeseer_ezmotionexpress_00_000``` | Sensor |
 | Express Controls | [EZMultiPli](homeseer/ezmultipli_0_0.md) |  | ```homeseer_ezmultipli_00_000``` | Sensor |
@@ -434,6 +455,7 @@ and links to more detailed information about each thing.
 | HomeSeer Technologies | [HS-WS100+](homeseer/hsws100_0_0.md) |  | ```homeseer_hsws100_00_000``` | Wall Switch |
 | HomeSeer Technologies | [HS-WS200+](homeseer/hsws200_5_7.md) | 5.7 to 5.7 | ```homeseer_hsws200_05_007``` | Wall Switch |
 | HomeSeer Technologies | [HS-WS200+](homeseer/hsws200_5_12.md) | 5.12 | ```homeseer_hsws200_05_012``` | Wall Switch |
+| HomeSeer Technologies | [HS-WV100+](homeseer/hswv100_0_0.md) |  | ```homeseer_hswv100_00_000``` | Valve |
 | Honeywell | [39339 (ZW3107) ](honeywell/39339_0_0.md) |  | ```honeywell_39339_00_000``` | Power Outlet |
 | Honeywell | [39342 / Jasco ZW4106](honeywell/39342_0_0.md) |  | ```honeywell_39342_00_000``` | Power Outlet |
 | Honeywell | [39348](honeywell/39348_0_0.md) |  | ```honeywell_39348_00_000``` | Wall Switch |
@@ -445,6 +467,8 @@ and links to more detailed information about each thing.
 | Honeywell | [TH6320ZW](honeywell/th6320zw_0_0.md) |  | ```honeywell_th6320zw_00_000``` | HVAC |
 | Honeywell | [TH8320ZW](honeywell/th8320zw_0_0.md) |  | ```honeywell_th8320zw_00_000``` | HVAC |
 | Honeywell | [Tuxedo Touch](honeywell/tuxedotouchwifi_0_0.md) |  | ```honeywell_tuxedotouchwifi_00_000``` | Remote Control |
+| Honeywell | [ZW3010](honeywell/zw3010_0_0.md) |  | ```honeywell_zw3010_00_000``` | Wall Switch |
+| Honeywell | [39336 / ZW3104 ](honeywell/zw3104_0_0.md) |  | ```honeywell_zw3104_00_000``` | Power Outlet |
 | Honeywell | [ZW4005](honeywell/zw4005_0_0.md) |  | ```honeywell_zw4005_00_000``` | Wall Switch |
 | Honeywell | [Plug-in Outdoor Smart Switch ](honeywell/zw4201_0_0.md) |  | ```honeywell_zw4201_00_000``` | Power Outlet |
 | Horstmann Controls Limited | [ASR-ZW](horstmann/asrzw_0_0.md) |  | ```horstmann_asrzw_00_000``` | HVAC |
@@ -472,7 +496,10 @@ and links to more detailed information about each thing.
 | Inovelli | [LZW30-SN](inovelli/lzw30sn_0_0.md) |  | ```inovelli_lzw30sn_00_000``` | Wall Switch |
 | Inovelli | [LZW31](inovelli/lzw31dimmer_0_0.md) |  | ```inovelli_lzw31dimmer_00_000``` | Wall Switch |
 | Inovelli | [LZW31-SN](inovelli/lzw31sn_0_0.md) |  | ```inovelli_lzw31sn_00_000``` | Wall Switch |
+| Inovelli | [LZW36](inovelli/lzw36_0_0.md) |  | ```inovelli_lzw36_00_000``` | Wall Switch |
+| Inovelli | [LZW41](inovelli/lzw41_0_0.md) |  | ```inovelli_lzw41_00_000``` | Light Bulb |
 | Inovelli | [LZW42](inovelli/lzw42_0_0.md) |  | ```inovelli_lzw42_00_000``` | Light Bulb |
+| Inovelli | [LZW60](inovelli/lzw60_0_0.md) |  | ```inovelli_lzw60_00_000``` | Motion Detector |
 | Intermatic | [CA3000](intermatic/ca3000_0_0.md) |  | ```intermatic_ca3000_00_000``` | Wall Switch |
 | Intermatic | [CA3500](intermatic/ca3500_0_0.md) |  | ```intermatic_ca3500_00_000``` | Power Outlet |
 | Intermatic | [CA3750](intermatic/ca3750_0_0.md) |  | ```intermatic_ca3750_00_000``` | Wall Switch |
@@ -492,6 +519,7 @@ and links to more detailed information about each thing.
 | Shenzhen iSurpass Technology Co. ,Ltd | [iLock](isurpass/ilock_0_0.md) |  | ```isurpass_ilock_00_000``` | Lock |
 | Shenzhen iSurpass Technology Co. ,Ltd | [J1504](isurpass/j1504_0_0.md) |  | ```isurpass_j1504_00_000``` | Sensor |
 | Shenzhen iSurpass Technology Co. ,Ltd | [J1505](isurpass/j1505_0_0.md) |  | ```isurpass_j1505_00_000``` | Motion Detector |
+| Shenzhen iSurpass Technology Co. ,Ltd | [JWZH-O-2015-14](isurpass/jwzho201514_0_0.md) |  | ```isurpass_jwzho201514_00_000``` | Valve |
 | Shenzhen iSurpass Technology Co. ,Ltd | [Smoke Detector](isurpass/smokedetector_0_0.md) |  | ```isurpass_smokedetector_00_000``` | Smoke Detector |
 | Jin Tao Bao | [Curtain Motor](jintaobao/curtainmotor_0_0.md) |  | ```jintaobao_curtainmotor_00_000``` | Blinds |
 | Johnson Controls | [KONOzw](johnson/konozw_0_0.md) |  | ```johnson_konozw_00_000``` | HVAC |
@@ -525,6 +553,7 @@ and links to more detailed information about each thing.
 | Leviton | [VRCS2](leviton/vrcs2_0_0.md) |  | ```leviton_vrcs2_00_000``` | Wall Switch |
 | Leviton | [VRCS4](leviton/vrcs4_0_0.md) |  | ```leviton_vrcs4_00_000``` | Wall Switch |
 | Leviton | [VRCS4-M0](leviton/vrcs4m0_0_0.md) |  | ```leviton_vrcs4m0_00_000``` | Wall Switch |
+| Leviton | [VRCZ1](leviton/vrcz1_0_0.md) |  | ```leviton_vrcz1_00_000``` | Wall Switch |
 | Leviton | [VRCZ4](leviton/vrcz4_0_0.md) |  | ```leviton_vrcz4_00_000``` | Wall Switch |
 | Leviton | [VRE06](leviton/vre06_0_0.md) |  | ```leviton_vre06_00_000``` | Wall Switch |
 | Leviton | [VRF01](leviton/vrf01_0_0.md) |  | ```leviton_vrf01_00_000``` | Wall Switch |
@@ -546,6 +575,7 @@ and links to more detailed information about each thing.
 | Linear Corp | [NGD00Z-4](linear/ngd00z4_0_0.md) |  | ```linear_ngd00z4_00_000``` | Garage Door |
 | Linear Corp | [PD300EMZ5-1](linear/pd300emz5_0_0.md) |  | ```linear_pd300emz5_00_000``` | Power Outlet |
 | Linear Corp | [PD300Z-2](linear/pd300z2_0_0.md) |  | ```linear_pd300z2_00_000``` | Light Bulb |
+| Linear Corp | [PIR-200](linear/pir200_0_0.md) |  | ```linear_pir200_00_000``` | Motion Detector |
 | Linear Corp | [PS15EMZ51](linear/ps15emz51_0_0.md) |  | ```linear_ps15emz51_00_000``` | Power Outlet |
 | Linear Corp | [PS15Z](linear/ps15z_0_0.md) |  | ```linear_ps15z_00_000``` | Power Outlet |
 | Linear Corp | [WA00Z-1](linear/wa00z1_0_0.md) |  | ```linear_wa00z1_00_000``` | Wall Switch |
@@ -555,27 +585,35 @@ and links to more detailed information about each thing.
 | Linear Corp | [WD500Z5-1](linear/wd500z5_0_0.md) |  | ```linear_wd500z5_00_000``` | Wall Switch |
 | Linear Corp | [WD500Z-1](linear/wd500z_0_0.md) |  | ```linear_wd500z_00_000``` | Wall Switch |
 | Linear Corp | [GoControl Smart Irrigation Controller](linear/wi15vz1_0_0.md) |  | ```linear_wi15vz1_00_000``` | Valve |
+| Linear Corp | [WO15EMZ5-1](linear/wo15emz5_0_0.md) |  | ```linear_wo15emz5_00_000``` | Power Outlet |
 | Linear Corp | [WO15Z](linear/wo15z_0_0.md) |  | ```linear_wo15z_00_000``` | Power Outlet |
 | Linear Corp | [WS15Z-1](linear/ws15z_0_0.md) |  | ```linear_ws15z_00_000``` | Wall Switch |
 | Linear Corp | [WT00Z-1](linear/wt00z1_0_0.md) |  | ```linear_wt00z1_00_000``` | Wall Switch |
+| Linear Corp | [WT00Z5-1](linear/wt00z51_0_0.md) |  | ```linear_wt00z51_00_000``` | Wall Switch |
 | Locstar Technology Co., Ltd | [LS-8015-ZW](locstar/ls8015zw_0_0.md) |  | ```locstar_ls8015zw_00_000``` | Lock |
 | Logic Group | [LHC5020](logic/lhc5020_0_0.md) |  | ```logic_lhc5020_00_000``` | Radiator Control |
 | Logic Group | [LHC5031](logic/lhc5031_0_62.md) | 0.62 | ```logic_lhc5031_00_062``` | HVAC |
+| Logic Group | [Heatit Z-Scene Controller](logic/scenecontroller_0_0.md) |  | ```logic_scenecontroller_00_000``` | Wall Switch |
 | Logic Group | [ZDB5100](logic/zdb5100_0_0.md) |  | ```logic_zdb5100_00_000``` | Wall Switch |
+| Logic Group | [Dimmy ZDI5200](logic/zdi5200_0_0.md) |  | ```logic_zdi5200_00_000``` | Power Outlet |
 | Logic Group | [ZHC5010](logic/zhc5010_0_0.md) | 1.12 | ```logic_zhc5010_00_000``` | Wall Switch |
 | Logic Group | [ZHC5010](logic/zhc5010_2_0.md) | 2.0 | ```logic_zhc5010_02_000``` | Wall Switch |
-| Logic Group | [ZIF5028 / HeatIt Z-DIN 616](logic/zif5028_0_0.md) |  | ```logic_zif5028_00_000``` | Power Outlet |
+| Logic Group | [ZIF5029](logic/zif5029_0_0.md) |  | ```logic_zif5029_00_000``` | Power Outlet |
+| McoHome Technology Co., Ltd | [A8-9](mcohome/a8co2_0_0.md) |  | ```mcohome_a8co2_00_000``` | Sensor |
 | McoHome Technology Co., Ltd | [MH-C221](mcohome/c221_0_0.md) |  | ```mcohome_c221_00_000``` | Blinds |
 | McoHome Technology Co., Ltd | [MH3900](mcohome/mcomh3900_0_0.md) |  | ```mcohome_mcomh3900_00_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH10-PM2.5-WA](mcohome/mh10pm25wa_0_0.md) |  | ```mcohome_mh10pm25wa_00_000``` | Sensor |
 | McoHome Technology Co., Ltd | [MH10-PM2.5-WA/WD](mcohome/mh10pm25wawd_0_0.md) |  | ```mcohome_mh10pm25wawd_00_000``` | Sensor |
-| McoHome Technology Co., Ltd | [MH6-HP](mcohome/mh6hp_0_0.md) |  | ```mcohome_mh6hp_00_000``` | HVAC |
+| McoHome Technology Co., Ltd | [MH6-HP](mcohome/mh6hp_0_0.md) | 1.255 | ```mcohome_mh6hp_00_000``` | HVAC |
+| McoHome Technology Co., Ltd | [MH6-HP](mcohome/mh6hp_2_0.md) | 2.0 | ```mcohome_mh6hp_02_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH7](mcohome/mh7_0_0.md) |  | ```mcohome_mh7_00_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH7H](mcohome/mh7h_0_0.md) |  | ```mcohome_mh7h_00_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH8-FC](mcohome/mh8fc_0_0.md) | 2.9 | ```mcohome_mh8fc_00_000``` | HVAC |
+| McoHome Technology Co., Ltd | [MH8-FC](mcohome/mh8fcplus2_0_0.md) |  | ```mcohome_mh8fcplus2_00_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH8-FC](mcohome/mh8fcplus_3_0.md) | 3.0 | ```mcohome_mh8fcplus_03_000``` | HVAC |
 | McoHome Technology Co., Ltd | [MH9-CO2-WA](mcohome/mh9co2wa_0_0.md) |  | ```mcohome_mh9co2wa_00_000``` | Sensor |
 | McoHome Technology Co., Ltd | [MH9-CO2-WD](mcohome/mh9co2wd_0_0.md) |  | ```mcohome_mh9co2wd_00_000``` | Sensor |
+| McoHome Technology Co., Ltd | [MH-DT311](mcohome/mhdt311_0_0.md) |  | ```mcohome_mhdt311_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-P220](mcohome/mhp220_0_0.md) |  | ```mcohome_mhp220_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-P311](mcohome/mhp311_0_0.md) |  | ```mcohome_mhp311_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S212](mcohome/mhs212_0_0.md) |  | ```mcohome_mhs212_00_000``` | Wall Switch |
@@ -586,7 +624,8 @@ and links to more detailed information about each thing.
 | McoHome Technology Co., Ltd | [MH-S411](mcohome/mhs411_0_0.md) |  | ```mcohome_mhs411_00_000``` |  |
 | McoHome Technology Co., Ltd | [MH-S412](mcohome/mhs41255_0_0.md) |  | ```mcohome_mhs41255_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S412](mcohome/mhs412_0_0.md) |  | ```mcohome_mhs412_00_000``` |  |
-| McoHome Technology Co., Ltd | [MH-S511-IL](mcohome/mhs511il_0_0.md) |  | ```mcohome_mhs511il_00_000``` |  |
+| McoHome Technology Co., Ltd | [MH-S511](mcohome/mhs511_0_0.md) |  | ```mcohome_mhs511_00_000``` | Wall Switch |
+| McoHome Technology Co., Ltd | [MH-S511-IL](mcohome/mhs511il_0_0.md) |  | ```mcohome_mhs511il_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S512](mcohome/mhs512_0_0.md) |  | ```mcohome_mhs512_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S512-IL](mcohome/mhs512il_0_0.md) |  | ```mcohome_mhs512il_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S513](mcohome/mhs513_0_0.md) |  | ```mcohome_mhs513_00_000``` | Wall Switch |
@@ -595,7 +634,9 @@ and links to more detailed information about each thing.
 | McoHome Technology Co., Ltd | [TPS411](mcohome/tps411_0_0.md) | 5.5 | ```mcohome_tps411_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [TPS412](mcohome/tps412_0_0.md) |  | ```mcohome_tps412_00_000``` | Wall Switch |
 | MegaChips | [FIBEFGS-213](megachips/fibefgs213mega_0_0.md) |  | ```megachips_fibefgs213mega_00_000``` | Wall Switch |
+| Merten | [5046xx](merten/5046xx_0_0.md) |  | ```merten_5046xx_00_000``` | Wall Switch |
 | Merten | [5071xx](merten/505160_0_0.md) |  | ```merten_505160_00_000``` | Remote Control |
+| Merten | [506004](merten/506004_0_0.md) |  | ```merten_506004_00_000``` | Wall Switch |
 | Merten | [506219](merten/506219_0_0.md) |  | ```merten_506219_00_000``` | Wall Switch |
 | Merten | [507001](merten/507001_0_0.md) |  | ```merten_507001_00_000``` | Wall Switch |
 | Merten | [507502](merten/507502_0_0.md) |  | ```merten_507502_00_000``` | Wall Switch |
@@ -611,10 +652,16 @@ and links to more detailed information about each thing.
 | Monoprice | [PID15654](monoprice/wallsocket_0_0.md) |  | ```monoprice_wallsocket_00_000``` | Power Outlet |
 | Monster Cable | [IWD600S](monster/iwd600s_0_0.md) |  | ```monster_iwd600s_00_000``` | Wall Switch |
 | Monster Cable | [ML LD300](monster/mlld300_0_0.md) |  | ```monster_mlld300_00_000``` | Power Outlet |
+| Namron | [1402756](namron/1402756_0_0.md) |  | ```namron_1402756_00_000``` | Wall Switch |
+| Namron | [4512710](namron/4512710_0_0.md) |  | ```namron_4512710_00_000``` | Wall Switch |
+| Namron | [4512714/ZV9001K8](namron/4512714_0_0.md) |  | ```namron_4512714_00_000``` | Remote Control |
 | Nexia Home Intelligence | [DB100Z](nexia/db100z_0_0.md) |  | ```nexia_db100z_00_000``` | Door |
 | NIE Technology | [NZW31](nietech/dimmer_0_0.md) |  | ```nietech_dimmer_00_000``` | Wall Switch |
 | NIE Technology | [ZW39](nietech/evalogikzw39_0_0.md) |  | ```nietech_evalogikzw39_00_000``` | Power Outlet |
+| NIE Technology | [Minoston](nietech/minoston_0_0.md) |  | ```nietech_minoston_00_000``` | Wall Switch |
 | NIE Technology | [MP20Z](nietech/mp20z_0_0.md) |  | ```nietech_mp20z_00_000``` | Power Outlet |
+| NIE Technology | [MP22Z](nietech/mp22z_0_0.md) |  | ```nietech_mp22z_00_000``` | Power Outlet |
+| NIE Technology | [MS11Z](nietech/ms11z_4_0.md) | 4.0 to 4.0 | ```nietech_ms11z_04_000``` | Wall Switch |
 | NIE Technology | [NZW30](nietech/nzw30_0_0.md) |  | ```nietech_nzw30_00_000``` | Wall Switch |
 | NIE Technology | [NZW30S](nietech/nzw30s_0_0.md) |  | ```nietech_nzw30s_00_000``` | Wall Switch |
 | NIE Technology | [NZW31S](nietech/nzw31s_0_0.md) |  | ```nietech_nzw31s_00_000``` | Wall Switch |
@@ -622,9 +669,12 @@ and links to more detailed information about each thing.
 | NIE Technology | [NZW37](nietech/nzw37_0_0.md) |  | ```nietech_nzw37_00_000``` | Power Outlet |
 | NIE Technology | [NZW39](nietech/nzw39_0_0.md) |  | ```nietech_nzw39_00_000``` | Power Outlet |
 | NIE Technology | [NZW96](nietech/nzw96_0_0.md) |  | ```nietech_nzw96_00_000``` | Power Outlet |
+| NIE Technology | [ZW36](nietech/smartplugswitch_0_0.md) |  | ```nietech_smartplugswitch_00_000``` | Power Outlet |
 | NIE Technology | [ZW31](nietech/zw31_0_0.md) |  | ```nietech_zw31_00_000``` | Wall Switch |
 | NIE Technology | [ZW37](nietech/zw37_0_0.md) |  | ```nietech_zw37_00_000``` | Power Outlet |
 | NIE Technology | [ZW681](nietech/zw681vde_2_1.md) | 2.1 | ```nietech_zw681vde_02_001``` | Power Outlet |
+| NIE Technology | [ZW96](nietech/zw96_0_0.md) |  | ```nietech_zw96_00_000``` | Power Outlet |
+| NIE Technology | [ZW97](nietech/zw97_0_0.md) |  | ```nietech_zw97_00_000``` | Power Outlet |
 | ID-RF | [ASP-3-1](nodon/asp31_0_0.md) |  | ```nodon_asp31_00_000``` | Power Outlet |
 | ID-RF | [CRC-3100](nodon/crc3100_0_0.md) |  | ```nodon_crc3100_00_000``` | Remote Control |
 | ID-RF | [CWS-3101](nodon/cws3101_0_0.md) |  | ```nodon_cws3101_00_000``` | Wall Switch |
@@ -644,6 +694,7 @@ and links to more detailed information about each thing.
 | Fantem | [FT130](oomi/ft130_0_0.md) |  | ```oomi_ft130_00_000``` | Wall Switch |
 | Fantem | [FT132](oomi/ft132_0_0.md) |  | ```oomi_ft132_00_000``` | Wall Switch |
 | Fantem | [FT141](oomi/ft141_0_0.md) |  | ```oomi_ft141_00_000``` | Blinds |
+| Fantem | [FT149](oomi/ft149_0_0.md) |  | ```oomi_ft149_00_000``` | Siren |
 | permundo GmbH | [PSC132ZW](permundo/psc132zw_0_0.md) |  | ```permundo_psc132zw_00_000``` | Wall Switch |
 | permundo GmbH | [PSC152ZW](permundo/psc152zw_0_0.md) |  | ```permundo_psc152zw_00_000``` | Blinds |
 | permundo GmbH | [PSC234ZW ](permundo/psc234zw_0_0.md) |  | ```permundo_psc234zw_00_000``` | Power Outlet |
@@ -655,22 +706,25 @@ and links to more detailed information about each thing.
 | Philio Technology Corp | [PAN06](philio/pan06_0_0.md) | 1.7 | ```philio_pan06_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAN06](philio/pan06_1_8.md) | 1.8 | ```philio_pan06_01_008``` | Wall Switch |
 | Philio Technology Corp | [Philio PAN07-1A](philio/pan071a_0_0.md) |  | ```philio_pan071a_00_000``` | Wall Switch |
-| Philio Technology Corp | [PAN08-1a](philio/pan081a_0_0.md) |  | ```philio_pan081a_00_000``` | Blinds |
+| Philio Technology Corp | [PAN08](philio/pan081a_0_0.md) |  | ```philio_pan081a_00_000``` | Blinds |
 | Philio Technology Corp | [PAN08](philio/pan08_0_0.md) |  | ```philio_pan08_00_000``` | Blinds |
 | Philio Technology Corp | [PAN11](philio/pan11_0_0.md) |  | ```philio_pan11_00_000``` | Power Outlet |
 | Philio Technology Corp | [PAN16](philio/pan16_1_2.md) | 1.2 | ```philio_pan16_01_002``` | Power Outlet |
 | Philio Technology Corp | [PAT02-A](philio/pat02a_0_0.md) |  | ```philio_pat02a_00_000``` | Sensor |
 | Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` | Sensor |
 | Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` | Sensor |
+| Philio Technology Corp | [PAT05](philio/pat05_0_0.md) |  | ```philio_pat05_00_000``` | Sensor |
 | Philio Technology Corp | [PH-PSR03](philio/phpsr03_0_0.md) |  | ```philio_phpsr03_00_000``` | Remote Control |
 | Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` | Siren |
 | Philio Technology Corp | [ZIPATO ZIP-PSG01](philio/psg01_0_0.md) |  | ```philio_psg01_00_000``` | Smoke Detector |
 | Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` | Door |
+| Philio Technology Corp | [PSM08](philio/psm08_0_0.md) |  | ```philio_psm08_00_000``` | Door |
 | Philio Technology Corp | [PSP05](philio/psp05_0_0.md) |  | ```philio_psp05_00_000``` | Sensor |
 | Philio Technology Corp | [PSR04](philio/psr04_0_0.md) |  | ```philio_psr04_00_000``` | Remote Control |
 | Philio Technology Corp | [PST02A](philio/pst02a_0_0.md) |  | ```philio_pst02a_00_000``` | Sensor |
 | Philio Technology Corp | [PST02B](philio/pst02b_0_0.md) |  | ```philio_pst02b_00_000``` | Sensor |
 | Philio Technology Corp | [PST02C](philio/pst02c_0_0.md) |  | ```philio_pst02c_00_000``` | Door |
+| Pixela Corporation | [ZHS03](pixela/schwzhs03_0_0.md) |  | ```pixela_schwzhs03_00_000``` | Wall Switch |
 | Poly-control | [Danalock V3-BTZE](polycontrol/btze_0_0.md) |  | ```polycontrol_btze_00_000``` | Lock |
 | Poly-control | [BTZEUMV1](polycontrol/btzeumv1_0_0.md) |  | ```polycontrol_btzeumv1_00_000``` | Lock |
 | Poly-control | [BTZW125](polycontrol/btzu125_0_0.md) |  | ```polycontrol_btzu125_00_000``` | Lock |
@@ -690,8 +744,9 @@ and links to more detailed information about each thing.
 | Popp & Co | [123610](popp/123610_0_0.md) |  | ```popp_123610_00_000``` | Power Outlet |
 | Popp & Co | [123665](popp/123665_0_0.md) |  | ```popp_123665_00_000``` | Power Outlet |
 | Popp & Co | [700045](popp/700045_0_0.md) |  | ```popp_700045_00_000``` | Remote Control |
+| Popp & Co | [700342](popp/700342_0_0.md) |  | ```popp_700342_00_000``` | Smoke Detector |
 | Popp & Co | [700793](popp/700793_0_0.md) |  | ```popp_700793_00_000``` | Power Outlet |
-| Popp & Co | [700854](popp/700854_2_4.md) | 2.4 to 2.5 | ```popp_700854_02_004``` | Siren |
+| Popp & Co | [700854](popp/700854_2_4.md) | 2.4 | ```popp_700854_02_004``` | Siren |
 | Popp & Co | [POPE700052](popp/pope700052_0_0.md) |  | ```popp_pope700052_00_000``` | Sensor |
 | Popp & Co | [POPE700168](popp/pope700168_0_0.md) |  | ```popp_pope700168_00_000``` | Sensor |
 | Popp & Co | [POPE700397](popp/pope700397_0_0.md) |  | ```popp_pope700397_00_000``` | Power Outlet |
@@ -702,9 +757,8 @@ and links to more detailed information about each thing.
 | Prodrive Technologies | [ED2.0](prodrive/ed20_0_0.md) |  | ```prodrive_ed20_00_000``` | Sensor |
 | Qees | [P313A](qees/p313a_0_0.md) |  | ```qees_p313a_00_000``` | Power Outlet |
 | Qees | [Wall](qees/qwall_0_0.md) |  | ```qees_qwall_00_000``` | Remote Control |
-| Goap | [ZMNHHD](qubino/minidimmer_0_0.md) |  | ```qubino_minidimmer_00_000``` | Wall Switch |
+| Goap | [ZMNKAD](qubino/luxyswitch_0_0.md) |  | ```qubino_luxyswitch_00_000``` | Wall Switch |
 | Goap | [ZMNKID](qubino/onoffthermo2_0_0.md) |  | ```qubino_onoffthermo2_00_000``` | HVAC |
-| Goap | [Smart Plug 16A](qubino/smartplug_0_0.md) |  | ```qubino_smartplug_00_000``` | Power Outlet |
 | Goap | [ZMNHAA](qubino/zmnhaa_0_0.md) |  | ```qubino_zmnhaa_00_000``` | Wall Switch |
 | Goap | [ZMNHAD](qubino/zmnhad_0_0.md) |  | ```qubino_zmnhad_00_000``` | Wall Switch |
 | Goap | [ZMNHBA](qubino/zmnhba_0_0.md) |  | ```qubino_zmnhba_00_000``` | Wall Switch |
@@ -714,6 +768,7 @@ and links to more detailed information about each thing.
 | Goap | [ZMNHCD](qubino/zmnhcd_4_1.md) | 4.1 | ```qubino_zmnhcd_04_001``` | Blinds |
 | Goap | [ZMNHDA](qubino/zmnhda_0_0.md) |  | ```qubino_zmnhda_00_000``` | Wall Switch |
 | Goap | [ZMNHDD](qubino/zmnhdd_0_0.md) |  | ```qubino_zmnhdd_00_000``` | Wall Switch |
+| Goap | [ZMNHHD](qubino/zmnhhd_0_0.md) |  | ```qubino_zmnhhd_00_000``` | Wall Switch |
 | Goap | [ZMNHIA](qubino/zmnhia_0_0.md) |  | ```qubino_zmnhia_00_000``` | HVAC |
 | Goap | [ZMNHID](qubino/zmnhid_0_0.md) |  | ```qubino_zmnhid_00_000``` | HVAC |
 | Goap | [ZMNHJA](qubino/zmnhja_0_0.md) |  | ```qubino_zmnhja_00_000``` | Wall Switch |
@@ -730,6 +785,7 @@ and links to more detailed information about each thing.
 | Goap | [ZMNHVD](qubino/zmnhvd_0_0.md) |  | ```qubino_zmnhvd_00_000``` | Wall Switch |
 | Goap | [ZMNHWD](qubino/zmnhwd_0_0.md) |  | ```qubino_zmnhwd_00_000``` | Wall Switch |
 | Goap | [ZMNHXD](qubino/zmnhxd_0_0.md) |  | ```qubino_zmnhxd_00_000``` | Sensor |
+| Goap | [ZMNHYD](qubino/zmnhyd_0_0.md) |  | ```qubino_zmnhyd_00_000``` | Power Outlet |
 | Goap | [ZMNHZD](qubino/zmnhzd_0_0.md) |  | ```qubino_zmnhzd_00_000``` | Sensor |
 | Quby | [EN00](quby/en00_0_0.md) |  | ```quby_en00_00_000``` | Sensor |
 | Residential Control Systems, Inc. (RCS) | [TBZ48](rcs/tbz48_0_0.md) |  | ```rcs_tbz48_00_000``` | HVAC |
@@ -750,7 +806,6 @@ and links to more detailed information about each thing.
 | Remotec | [ZDS-210NA](remotec/zds210na_0_0.md) |  | ```remotec_zds210na_00_000``` | Power Outlet |
 | Remotec | [ZFM-80](remotec/zfm80_0_0.md) |  | ```remotec_zfm80_00_000``` | Light Bulb |
 | Remotec | [ZRC-100](remotec/zrc100_0_0.md) |  | ```remotec_zrc100_00_000``` | Remote Control |
-| Remotec | [ZRC-90](remotec/zrc90_0_0.md) |  | ```remotec_zrc90_00_000``` | Remote Control |
 | Remotec | [ZTS-110](remotec/zts110_0_0.md) |  | ```remotec_zts110_00_000``` | HVAC |
 | Remotec | [ZTS-500](remotec/zts500_0_0.md) |  | ```remotec_zts500_00_000``` | HVAC |
 | Remotec | [ZXT-120](remotec/zxt120_0_0.md) |  | ```remotec_zxt120_00_000``` | HVAC |
@@ -772,6 +827,7 @@ and links to more detailed information about each thing.
 | Shenzhen Saykey Technology | [SK-3007-05](saykey/sk300705_0_0.md) |  | ```saykey_sk300705_00_000``` | Blinds |
 | Allegion | [BE369](schlage/be369_0_0.md) |  | ```schlage_be369_00_000``` | Lock |
 | Allegion | [BE468](schlage/be468_0_0.md) |  | ```schlage_be468_00_000``` | Lock |
+| Allegion | [BE468ZP](schlage/be468zp_0_0.md) |  | ```schlage_be468zp_00_000``` | Lock |
 | Allegion | [BE469](schlage/be469_0_0.md) |  | ```schlage_be469_00_000``` | Lock |
 | Allegion | [BE469ZP](schlage/be469zp_0_0.md) |  | ```schlage_be469zp_00_000``` | Lock |
 | Allegion | [FE599NX](schlage/fe599nx_0_0.md) |  | ```schlage_fe599nx_00_000``` | Lock |
@@ -790,7 +846,6 @@ and links to more detailed information about each thing.
 | Shenzhen Neo Electronics Co., Ltd | [NAS-DS01Z](shenzhen/nasds01z_0_0.md) |  | ```shenzhen_nasds01z_00_000``` | Door |
 | Shenzhen Neo Electronics Co., Ltd | [NAS-RC03Z    ](shenzhen/nasrc03z_0_0.md) |  | ```shenzhen_nasrc03z_00_000``` | Remote Control |
 | Shenzhen Neo Electronics Co., Ltd | [NEO Coolcam Roller Shutter](shenzhen/neors_0_0.md) |  | ```shenzhen_neors_00_000``` | Blinds |
-| Shenzhen Neo Electronics Co., Ltd | [PD03Z](shenzhen/pd03z_0_0.md) |  | ```shenzhen_pd03z_00_000``` | Motion Detector |
 | Shenzhen Neo Electronics Co., Ltd | [NAS-WR01ZE](shenzhen/powerplug_0_0.md) |  | ```shenzhen_powerplug_00_000``` | Power Outlet |
 | Shenzhen Neo Electronics Co., Ltd | [SOS/Remote Control](shenzhen/sosremote_0_0.md) |  | ```shenzhen_sosremote_00_000``` | Remote Control |
 | SIEGENIA-AUBI KG | [Sensoair](siegeniaaubi/sensoair_0_0.md) |  | ```siegeniaaubi_sensoair_00_000``` | Sensor |
@@ -800,6 +855,7 @@ and links to more detailed information about each thing.
 | Sigma Designs (Former Zensys) | [SM-PZ701U](sigma/smpz701u_0_0.md) |  | ```sigma_smpz701u_00_000``` |  |
 | Sigma Designs (Former Zensys) | [K8](sigma/zwck8_0_0.md) |  | ```sigma_zwck8_00_000``` | Wall Switch |
 | SimonTech S.L.U | [10002034-13X](simontech/10000322039_0_0.md) |  | ```simontech_10000322039_00_000``` | Wall Switch |
+| SimonTech S.L.U | [10001020-13X](simontech/1000102013x_0_0.md) |  | ```simontech_1000102013x_00_000``` | Wall Switch |
 | SimonTech S.L.U | [10002080-13x](simontech/1000203413x_0_0.md) |  | ```simontech_1000203413x_00_000``` | Blinds |
 | SimonTech S.L.U | [10002041-130](simontech/10002041130_0_0.md) |  | ```simontech_10002041130_00_000``` | Power Outlet |
 | SimonTech S.L.U | [10002041-13X](simontech/1000204113x_0_0.md) |  | ```simontech_1000204113x_00_000``` | Power Outlet |
@@ -817,32 +873,42 @@ and links to more detailed information about each thing.
 | Sunricher | [ZW4001](sunricher/rgbgeniezw4001_0_0.md) |  | ```sunricher_rgbgeniezw4001_00_000``` | Wall Switch |
 | Sunricher | [VEGGPLUG](sunricher/veggplug_0_0.md) |  | ```sunricher_veggplug_00_000``` | Power Outlet |
 | Sunricher | [ZV2400TAC-SL-A](sunricher/zv2400tacsla_0_0.md) |  | ```sunricher_zv2400tacsla_00_000``` | Wall Switch |
+| Sunricher | [ZV2835RAC](sunricher/zv2835rac_0_0.md) |  | ```sunricher_zv2835rac_00_000``` | Wall Switch |
+| Sunricher | [ ZV9001K12-DIM](sunricher/zv9001k12dim_0_0.md) |  | ```sunricher_zv9001k12dim_00_000``` | Remote Control |
+| Sunricher | [SR-ZV9001K2-Dim](sunricher/zv9001k2_0_0.md) |  | ```sunricher_zv9001k2_00_000``` | Wall Switch |
+| Sunricher | [ZV9001K4-DIM](sunricher/zv9001k4dim_0_0.md) |  | ```sunricher_zv9001k4dim_00_000``` | Wall Switch |
 | Sunricher | [ZV9001K8-DIM](sunricher/zv9001k8dim_0_0.md) |  | ```sunricher_zv9001k8dim_00_000``` | Wall Switch |
 | Sunricher | [ZV9001T3-RGBW](sunricher/zv9001t3rgbw_0_0.md) |  | ```sunricher_zv9001t3rgbw_00_000``` | Wall Switch |
 | Sunricher | [ZV9001T4-DIM](sunricher/zv9001t4dim_0_0.md) |  | ```sunricher_zv9001t4dim_00_000``` | Wall Switch |
 | Sunricher | [ZV9001T4-RGBW](sunricher/zv9001t4rgbw_0_0.md) |  | ```sunricher_zv9001t4rgbw_00_000``` | Wall Switch |
 | Sunricher | [ZV9002T4-CCT](sunricher/zv9002t4_0_0.md) |  | ```sunricher_zv9002t4_00_000``` | Wall Switch |
 | Sunricher | [ZV9003T3-RGBW](sunricher/zv9003t3_0_0.md) |  | ```sunricher_zv9003t3_00_000``` | Wall Switch |
+| Sunricher | [ZV9010](sunricher/zv9010_0_0.md) |  | ```sunricher_zv9010_00_000``` | Sensor |
 | Sunricher | [ZV9101](sunricher/zv9101_0_0.md) |  | ```sunricher_zv9101_00_000``` | Light Bulb |
 | Sunricher | [ZV-9101](sunricher/zv9101pushdim_0_0.md) |  | ```sunricher_zv9101pushdim_00_000``` | Wall Switch |
 | Sunricher | [ZV9102FA-CCT](sunricher/zv9102facct_0_0.md) |  | ```sunricher_zv9102facct_00_000``` | Light Bulb |
 | SWidget | [ZW001RWA](swidget/zw001rwa_0_0.md) |  | ```swidget_zw001rwa_00_000``` | Power Outlet |
 | Systemair Sverige AS | [29990](systemair/29990_0_0.md) |  | ```systemair_29990_00_000``` | HVAC |
+| Technisat | [0300/9499](technisat/03009498_0_0.md) |  | ```technisat_03009498_00_000``` | Wall Switch |
+| Technisat | [Series switch 0300/9498](technisat/seriesswitch_0_0.md) |  | ```technisat_seriesswitch_00_000``` | Wall Switch |
+| Technisat | [TechniSat Shutter](technisat/shutter_0_0.md) |  | ```technisat_shutter_00_000``` | Blinds |
 | Telldus Technologies AB | [TZDW-100](telldus/tzdw100_0_0.md) |  | ```telldus_tzdw100_00_000``` | Sensor |
 | Telldus Technologies AB | [TZWP-100](telldus/tzwp100_0_0.md) |  | ```telldus_tzwp100_00_000``` | Power Outlet |
 | Telldus Technologies AB | [TZWP-102](telldus/tzwp102_0_0.md) |  | ```telldus_tzwp102_00_000``` | Power Outlet |
+| Telldus Technologies AB | [ZNet Lite v2](telldus/znetlitev2_0_0.md) |  | ```telldus_znetlitev2_00_000``` | Remote Control |
+| Teptron AB | [MoveZ](teptron/movez_0_0.md) |  | ```teptron_movez_00_000``` | Blinds |
 | ThermoFloor | [HeatIt ZDim](thermofloor/019b_0_0.md) |  | ```thermofloor_019b_00_000``` | Wall Switch |
-| ThermoFloor | [Heatit Z Push Button 8](thermofloor/heatit4512581_0_0.md) |  | ```thermofloor_heatit4512581_00_000``` | Wall Switch |
 | ThermoFloor | [HEATIT Z-RELAY](thermofloor/heatitzrelay_0_0.md) |  | ```thermofloor_heatitzrelay_00_000``` | Power Outlet |
-| ThermoFloor | [Z-Push Button 4](thermofloor/pushbutton4_0_0.md) |  | ```thermofloor_pushbutton4_00_000``` | Wall Switch |
 | ThermoFloor | [TF016](thermofloor/tf016_0_0.md) | 1.7 | ```thermofloor_tf016_00_000``` | HVAC |
 | ThermoFloor | [TF016](thermofloor/tf016_1_8.md) | 1.8 to 1.91 | ```thermofloor_tf016_01_008``` | HVAC |
 | ThermoFloor | [TF016](thermofloor/tf016_1_92.md) | 1.92 | ```thermofloor_tf016_01_092``` | HVAC |
 | ThermoFloor | [Heatit Z-TRM 2](thermofloor/ztrm2_2_6.md) | 2.6 to 2.255 | ```thermofloor_ztrm2_02_006``` | HVAC |
 | ThermoFloor | [Z-TRM2fx](thermofloor/ztrm2fx_3_0.md) | 3.0 | ```thermofloor_ztrm2fx_03_000``` | HVAC |
+| ThermoFloor | [HEATIT Z-TRM3](thermofloor/ztrm3_0_0.md) |  | ```thermofloor_ztrm3_00_000``` | HVAC |
 | ThermoFloor | [Heatit Z Water](thermofloor/zwater_0_0.md) |  | ```thermofloor_zwater_00_000``` | HVAC |
 | TKB Home | [GR308](tkb/gr308_0_0.md) |  | ```tkb_gr308_00_000``` |  |
 | TKB Home | [TSM02](tkb/tsm02_0_0.md) |  | ```tkb_tsm02_00_000``` | Sensor |
+| TKB Home | [TSM10](tkb/tsm10_0_0.md) |  | ```tkb_tsm10_00_000``` | Door |
 | TKB Home | [TZ04](tkb/tz04_0_0.md) |  | ```tkb_tz04_00_000``` | Wall Switch |
 | TKB Home | [TZ06](tkb/tz06_0_0.md) |  | ```tkb_tz06_00_000``` | Wall Switch |
 | TKB Home | [TZ08](tkb/tz08_0_0.md) |  | ```tkb_tz08_00_000``` | Blinds |
@@ -850,6 +916,7 @@ and links to more detailed information about each thing.
 | TKB Home | [TZ35S](tkb/tz35s_0_0.md) |  | ```tkb_tz35s_00_000``` | Wall Switch |
 | TKB Home | [TZ36D](tkb/tz36d_2_1.md) | 2.1 | ```tkb_tz36d_02_001``` | Wall Switch |
 | TKB Home | [TZ37](tkb/tz37_0_0.md) |  | ```tkb_tz37_00_000``` | Wall Switch |
+| TKB Home | [TZ55D](tkb/tz55d_0_0.md) |  | ```tkb_tz55d_00_000``` | Wall Switch |
 | TKB Home | [TZ65D](tkb/tz65d_0_0.md) |  | ```tkb_tz65d_00_000``` | Wall Switch |
 | TKB Home | [TZ66D](tkb/tz66d_0_0.md) |  | ```tkb_tz66d_00_000``` | Wall Switch |
 | TKB Home | [TZ67](tkb/tz67_0_0.md) |  | ```tkb_tz67_00_000``` | Power Outlet |
@@ -869,6 +936,7 @@ and links to more detailed information about each thing.
 | Trane Corporation | [XL624](trane/xl624_0_0.md) |  | ```trane_xl624_00_000``` | HVAC |
 | Trane Corporation | [Trane XR524](trane/xr524_0_0.md) |  | ```trane_xr524_00_000``` | HVAC |
 | Universal Electronics Inc. | [45601](uei/45601_0_0.md) |  | ```uei_45601_00_000``` | Remote Control |
+| UFairy G.R. Tech | [JTB-1007](ufairy/curtainmotor_0_0.md) |  | ```ufairy_curtainmotor_00_000``` | Blinds |
 | UFairy G.R. Tech | [GR-105](ufairy/gr105_0_0.md) |  | ```ufairy_gr105_00_000``` | Valve |
 | UFairy G.R. Tech | [GR-B3-3](ufairy/grb33_0_0.md) |  | ```ufairy_grb33_00_000``` | Wall Switch |
 | UFairy G.R. Tech | [TP-807ZG](ufairy/tp807zg_0_0.md) |  | ```ufairy_tp807zg_00_000``` | Sensor |
@@ -880,6 +948,7 @@ and links to more detailed information about each thing.
 | VDA | [Vitrum Satellite VI](vda/satellitevi_0_0.md) |  | ```vda_satellitevi_00_000``` |  |
 | VDA | [Vitrum I EU switch](vda/vitrumieuswitch_0_0.md) |  | ```vda_vitrumieuswitch_00_000``` | Wall Switch |
 | VDA | [Vitrum Scenario](vda/vitrumscenario_0_0.md) |  | ```vda_vitrumscenario_00_000``` | Remote Control |
+| VDA | [WallZ-503](vda/wallz503_0_0.md) |  | ```vda_wallz503_00_000``` | HVAC |
 | Vemmio | [DS100](vemmio/ds100_0_0.md) |  | ```vemmio_ds100_00_000``` | Wall Switch |
 | Vemmio | [MT-100](vemmio/mt100_0_0.md) |  | ```vemmio_mt100_00_000``` | Sensor |
 | Vision Security | [Z-BRDG-433](vision/2gigzbrdg433_0_0.md) |  | ```vision_2gigzbrdg433_00_000``` | Power Outlet |
@@ -937,6 +1006,7 @@ and links to more detailed information about each thing.
 | Willis Electric Co., Ltd. | [ZW37](willis/zw37_0_0.md) |  | ```willis_zw37_00_000``` | Power Outlet |
 | Willis Electric Co., Ltd. | [ZW691](willis/zw691_0_0.md) |  | ```willis_zw691_00_000``` | Power Outlet |
 | Willis Electric Co., Ltd. | [ZW78S](willis/zw78s_0_0.md) |  | ```willis_zw78s_00_000``` | Wall Switch |
+| Wink Inc. | [Motion Sensor](wink/motionsensor_0_0.md) |  | ```wink_motionsensor_00_000``` | Motion Detector |
 | Wink Inc. | [Siren](wink/siren_0_0.md) |  | ```wink_siren_00_000``` | Siren |
 | Wintop | [iModuleDouble](wintop/1122r_1_4.md) | 1.4 | ```wintop_1122r_01_004``` | Wall Switch |
 | Wintop | [PlugInSwitch](wintop/dhsitswpdhs_0_0.md) |  | ```wintop_dhsitswpdhs_00_000``` |  |
@@ -987,6 +1057,7 @@ and links to more detailed information about each thing.
 | Zooz | [ZEN07](zooz/zen07_0_0.md) |  | ```zooz_zen07_00_000``` | Power Outlet |
 | Zooz | [ZEN15](zooz/zen15_0_0.md) | 1.3 | ```zooz_zen15_00_000``` | Power Outlet |
 | Zooz | [ZEN15](zooz/zen15_1_4.md) | 1.4 | ```zooz_zen15_01_004``` | Power Outlet |
+| Zooz | [ZEN16](zooz/zen16_0_0.md) |  | ```zooz_zen16_00_000``` | Power Outlet |
 | Zooz | [ZEN20](zooz/zen20_0_0.md) |  | ```zooz_zen20_00_000``` | Power Outlet |
 | Zooz | [ZEN21](zooz/zen21_0_0.md) | 2.9 | ```zooz_zen21_00_000``` | Wall Switch |
 | Zooz | [ZEN21](zooz/zen21_3_0.md) | 3.0 | ```zooz_zen21_03_000``` | Wall Switch |
@@ -1000,18 +1071,24 @@ and links to more detailed information about each thing.
 | Zooz | [ZEN24](zooz/zen24_20_15.md) | 20.15 to 20.15 | ```zooz_zen24_20_015``` | Wall Switch |
 | Zooz | [ZEN25](zooz/zen25_0_0.md) | 1.255 | ```zooz_zen25_00_000``` | Power Outlet |
 | Zooz | [ZEN25](zooz/zen25_2_0.md) | 2.0 | ```zooz_zen25_02_000``` | Power Outlet |
-| Zooz | [ZEN26](zooz/zen26_0_0.md) |  | ```zooz_zen26_00_000``` | Wall Switch |
+| Zooz | [ZEN26](zooz/zen26_0_0.md) | 1.9 | ```zooz_zen26_00_000``` | Wall Switch |
+| Zooz | [ZEN26](zooz/zen26v2_2_0.md) | 2.0 | ```zooz_zen26v2_02_000``` | Wall Switch |
 | Zooz | [ZEN27](zooz/zen27_0_0.md) | 1.255 | ```zooz_zen27_00_000``` | Wall Switch |
 | Zooz | [ZEN27](zooz/zen27v2_2_0.md) | 2.0 | ```zooz_zen27v2_02_000``` | Wall Switch |
+| Zooz | [ZEN30](zooz/zen30_0_0.md) |  | ```zooz_zen30_00_000``` | Wall Switch |
 | Zooz | [ZEN31](zooz/zen31_0_0.md) |  | ```zooz_zen31_00_000``` | Light Bulb |
 | Zooz | [ZSE08](zooz/zse08_0_0.md) |  | ```zooz_zse08_00_000``` | Door |
 | Zooz | [ZSE09](zooz/zse09_0_0.md) |  | ```zooz_zse09_00_000``` | Sensor |
 | Zooz | [ZSE18](zooz/zse18_0_0.md) |  | ```zooz_zse18_00_000``` | Sensor |
 | Zooz | [ZSE19 ](zooz/zse19_0_0.md) |  | ```zooz_zse19_00_000``` | Siren |
-| Zooz | [ZSE29](zooz/zse29_0_0.md) |  | ```zooz_zse29_00_000``` | Sensor |
+| Zooz | [ZSE29](zooz/zse29_0_0.md) | 1.9 | ```zooz_zse29_00_000``` | Sensor |
+| Zooz | [ZSE29](zooz/zse29v2_2_0.md) | 2.0 | ```zooz_zse29v2_02_000``` | Sensor |
 | Zooz | [ZSE30](zooz/zse30_0_0.md) |  | ```zooz_zse30_00_000``` | Sensor |
 | Zooz | [ZSE33](zooz/zse33_0_0.md) |  | ```zooz_zse33_00_000``` | Siren |
-| Zooz | [ZSE40](zooz/zse40_0_0.md) |  | ```zooz_zse40_00_000``` | Sensor |
+| Zooz | [ZSE40](zooz/zse40_0_0.md) | 17.8 | ```zooz_zse40_00_000``` | Sensor |
+| Zooz | [ZSE40 v2](zooz/zse40v2179_17_9.md) | 17.9 to 24.1 | ```zooz_zse40v2179_17_009``` | Sensor |
+| Zooz | [ZSE40 v2](zooz/zse40v2242_24_2.md) | 24.2 to 32.1 | ```zooz_zse40v2242_24_002``` | Sensor |
+| Zooz | [ZSE40 v2](zooz/zse40v2322_32_2.md) | 32.2 | ```zooz_zse40v2322_32_002``` | Sensor |
 | Zooz | [ZST10](zooz/zst10_0_0.md) |  | ```zooz_zst10_00_000``` | Remote Control |
 | Z-Wave.Me | [06436](zwaveme/06436_0_0.md) |  | ```zwaveme_06436_00_000``` | Blinds |
 | Z-Wave.Me | [FGR-316](zwaveme/fgr316_0_0.md) |  | ```zwaveme_fgr316_00_000``` | Power Outlet |

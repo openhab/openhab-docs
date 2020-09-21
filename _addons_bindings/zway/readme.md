@@ -4,8 +4,8 @@ label: Z-Way
 title: Z-Way - Bindings
 type: binding
 description: "Z-Way is a software to configure and control a Z-Wave network."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

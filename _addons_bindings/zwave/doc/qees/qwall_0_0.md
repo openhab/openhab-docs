@@ -10,7 +10,7 @@ This describes the Z-Wave device *Wall*, manufactured by *Qees* with the thing t
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![Wall product image](https://www.cd-jackson.com/zwave_device_uploads/531/531_default.png)
+![Wall product image](https://opensmarthouse.org/zwavedatabase/531/image/)
 
 
 ## Overview
@@ -60,9 +60,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual (Danish)](https://www.cd-jackson.com/zwave_device_uploads/531/QEES-Wall--brugermanual-dk-0-3.pdf)
+* [User Manual (Danish)](https://opensmarthouse.org/zwavedatabase/531/QEES-Wall--brugermanual-dk-0-3.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/531).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/531).

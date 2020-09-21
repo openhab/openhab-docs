@@ -4,9 +4,9 @@ label: Kostal Inverter
 title: Kostal Inverter - Bindings
 type: binding
 description: "Scrapes the web interface of the inverter for the metrics of the supported channels below."
-since: 2x
+since: 3x
 logo: images/addons/kostalinverter.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -46,6 +46,10 @@ Currently supported things are:
 * PLENTICORE plus 10.0 (with or without battery attached)
 
 Others may be supported (like future devices using the same SCB or offering the same Web API, branded OEM devices, ...), but they were not tested!
+
+Kostal bindings to third generation devices require Java's strong cryptography to be enabled in order to establish connections. In case you are allowed to use 
+strong cryptography in your country, you can achieve this by modifying the $JAVA_HOME/jre/lib/security/java.security file (find the line *crypto.policy=limited* and set it to *unlimited*). 
+If you're using the official openHAB docker image you may also enable Java's strong cryptography by specifying an environment variable *CRYPTO_POLICY="unlimited"*.
 
 ## Discovery
 

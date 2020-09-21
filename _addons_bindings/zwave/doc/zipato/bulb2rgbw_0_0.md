@@ -10,7 +10,7 @@ This describes the Z-Wave device *RGBWE2*, manufactured by *[Zipato](http://www.
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-![RGBWE2 product image](https://www.cd-jackson.com/zwave_device_uploads/619/619_default.jpg)
+![RGBWE2 product image](https://opensmarthouse.org/zwavedatabase/619/image/)
 
 
 The RGBWE2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -195,10 +195,10 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-2.pdf)
-* [Manual v1.3](https://www.cd-jackson.com/zwave_device_uploads/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-3.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-2.pdf)
+* [Manual v1.3](https://opensmarthouse.org/zwavedatabase/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-3.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/619).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/619).

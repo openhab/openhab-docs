@@ -4,8 +4,8 @@ label: Systeminfo
 title: Systeminfo - Bindings
 type: binding
 description: "System information Binding provides operating system and hardware information including:"
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -115,7 +115,7 @@ This makes it possible to change the tracked process at runtime.
 The binding uses this index to get information about a specific device from a list of devices (e.g on a single computer several local disks could be installed with names C:\, D:\, E:\ - the first will have deviceIndex=0, the second deviceIndex=1 etc).
 If device with this index is not existing, the binding will display an error message on the console.
 
-Unfortunately this feature can't be used at the moment without manually adding these new channel groups to the thing description (located in ESH-INF/thing/computer.xml).
+Unfortunately this feature can't be used at the moment without manually adding these new channel groups to the thing description (located in OH-INF/thing/computer.xml).
 
 The table shows more detailed information about each Channel type.
 The binding introduces the following channels:
@@ -191,7 +191,7 @@ OSHI project has a good support and regularly updates the library with fixes to 
 
 In order to update the version used in the binding, follow these easy steps:
 
--   Go to the [OSHI github repo](https://github.com/oshi/oshi) and download the newest version available of the module oshi-core or download the jar from the [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Coshi-). Check if the versions of the OSHI dependencies as well (jna and jna-platform) are changed;
+-   Go to the [OSHI GitHub repo](https://github.com/oshi/oshi) and download the newest version available of the module oshi-core or download the jar from the [Maven Central](http://search.maven.org/#search%7Cga%7C1%7Coshi-). Check if the versions of the OSHI dependencies as well (jna and jna-platform) are changed;
 -   Replace the jars in lib folder;
 -   Modify the .classpath file with the new versions of the jars;
 -   Modify the header Bundle-ClassPath in the META-INF/MANIFEST.MF.

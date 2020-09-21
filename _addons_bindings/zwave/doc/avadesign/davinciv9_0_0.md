@@ -10,7 +10,7 @@ This describes the Z-Wave device *Da Vinci v9*, manufactured by *Avadesign Techn
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Da Vinci v9 product image](https://www.cd-jackson.com/zwave_device_uploads/910/910_default.png)
+![Da Vinci v9 product image](https://opensmarthouse.org/zwavedatabase/910/image/)
 
 
 The Da Vinci v9 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -1523,9 +1523,9 @@ Association group 37 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/910/DA-VINCI-ver-9.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/910/DA-VINCI-ver-9.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/910).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/910).

@@ -4,8 +4,8 @@ label: Linux Input
 title: Linux Input - Bindings
 type: binding
 description: "This binding allows to you use a keyboard to control your openHAB instance."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

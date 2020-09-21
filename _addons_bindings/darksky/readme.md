@@ -4,8 +4,9 @@ label: Dark Sky
 title: Dark Sky - Bindings
 type: binding
 description: "This binding integrates the [Dark Sky API](https://darksky.net/dev/docs)."
-since: 2x
-install: auto
+since: 3x
+logo: images/addons/darksky.png
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -43,14 +44,14 @@ Once the system location will be changed, the background discovery updates the c
 ### Dark Sky Account
 
 | Parameter       | Description                                                                                                                                                                                                                                                                       |
-| apikey          | API key to access the Dark Sky API. **Mandatory**                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| apikey          | API key to access the Dark Sky API. **Mandatory**                                                                                                                                                                                                                                                                                                                                                   |
 | refreshInterval | Specifies the refresh interval (in minutes). Optional, the default value is 60, the minimum value is 1. Note: when using a free API key (1000 calls/day), do not use an interval less than 2.                                                                                                                                                                                                       |
 | language        | Language to be used by the Dark Sky API. Optional, valid values are: `ar`, `az`, `be`, `bg`, `bn`, `bs`, `ca`, `cs`, `da`, `de`, `el`, `en`, `eo`, `es`, `et`, `fi`, `fr`, `he`, `hi`, `hr`, `hu`, `id`, `is`, `it`, `ja`, `ka`, `ko`, `kn`, `kw`, `lv`, `mr`, `nb`, `nl`, `no`, `pa`, `pl`, `pt`, `ro`, `ru`, `sk`, `sl`, `sr`, `sv`, `ta`, `te`, `tet`, `tr`, `uk`, `x-pig-latin`, `zh`, `zh-tw`. |
 
 ### Current Weather And Forecast
 
-| Parameter      | Description                                                                                                                   |
+| Parameter      | Description                                                                                                                    |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------|
 | location       | Location of weather in geographical coordinates (latitude/longitude/altitude). **Mandatory**                                  |
 | forecastHours  | Number of hours for hourly forecast. Optional, the default value is 24 (min="0", max="48", step="1").                         |
@@ -248,11 +249,11 @@ Number:Temperature localDailyForecastDay2MinTemperature "Minimum temperature in 
 Number:Temperature localDailyForecastDay2MaxTemperature "Maximum temperature in 2 days [%.1f %unit%]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastDay2#max-temperature" }
 ...
 
-String localAlert1Title "Weather warning! [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alert1#title" }
-String localAlert1Description "Description [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alert1#description" }
-String localAlert1Severity "Severity [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alert1#severity" }
-DateTime localAlert1Issued "Issued [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM]" <time> { channel="darksky:weather-and-forecast:api:local:alert1#issued" }
-DateTime localAlert1Expires "Expires [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM]" <time> { channel="darksky:weather-and-forecast:api:local:alert1#expires" }
+String localAlert1Title "Weather warning! [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alerts1#title" }
+String localAlert1Description "Description [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alerts1#description" }
+String localAlert1Severity "Severity [%s]" <error> { channel="darksky:weather-and-forecast:api:local:alerts1#severity" }
+DateTime localAlert1Issued "Issued [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM]" <time> { channel="darksky:weather-and-forecast:api:local:alerts1#issued" }
+DateTime localAlert1Expires "Expires [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM]" <time> { channel="darksky:weather-and-forecast:api:local:alerts1#expires" }
 
 String miamiCurrentCondition "Current condition in Miami [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:miami:current#condition" }
 Image miamiCurrentConditionIcon "Icon" { channel="darksky:weather-and-forecast:api:miami:current#icon" }

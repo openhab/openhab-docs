@@ -10,7 +10,7 @@ This describes the Z-Wave device *SmartPower*, manufactured by *INNOVUS* with th
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![SmartPower product image](https://www.cd-jackson.com/zwave_device_uploads/61/61_default.png)
+![SmartPower product image](https://opensmarthouse.org/zwavedatabase/61/image/)
 
 
 The SmartPower supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -144,9 +144,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Technical documentation](https://www.cd-jackson.com/zwave_device_uploads/61/smartpower-zw-tech-doc.pdf)
+* [Technical documentation](https://opensmarthouse.org/zwavedatabase/61/smartpower-zw-tech-doc.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/61).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/61).

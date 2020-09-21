@@ -4,8 +4,8 @@ label: Spotify
 title: Spotify - Bindings
 type: binding
 description: "This binding implements a bridge to the Spotify Player Web API and makes it possible to discover Spotify Connect Devices available on your Spotify Premium account."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -141,6 +141,7 @@ __Advanced Channels:__
 | trackNumber     | String    | Read-only  | Number of the track on the album/record.                    |
 | trackDiscNumber | String    | Read-only  | Disc Number of the track on the album/record.               |
 | trackPopularity | Number    | Read-only  | Currently playing track popularity.                         |
+| trackExplicit   | Switch    | Read-only  | Whether or not the track has explicit lyrics.               |
 | albumId         | String    | Read-only  | Album Id of the currently playing track.                    |
 | albumUri        | String    | Read-only  | Album URI of the currently playing track.                   |
 | albumHref       | String    | Read-only  | Album URL of the currently playing track.                   |

@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS2WD-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Siren*, defining Siren used by Alarm systems.
 
-![HS2WD-Z product image](https://www.cd-jackson.com/zwave_device_uploads/771/771_default.png)
+![HS2WD-Z product image](https://opensmarthouse.org/zwavedatabase/771/image/)
 
 
 The HS2WD-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -89,9 +89,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Documentation](https://www.cd-jackson.com/zwave_device_uploads/771/HS2WD-Z-documentation.pdf)
+* [Documentation](https://opensmarthouse.org/zwavedatabase/771/HS2WD-Z-documentation.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/771).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/771).

@@ -4,9 +4,9 @@ label: Leap Motion
 title: Leap Motion - Bindings
 type: binding
 description: "The [Leap Motion](https://www.leapmotion.com/) controller is a gesture sensoring device that uses stereoscopic cameras and is connected through USB."
-since: 2x
+since: 3x
 logo: images/addons/leapmotion.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

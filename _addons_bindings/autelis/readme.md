@@ -4,9 +4,9 @@ label: Autelis Pool Control
 title: Autelis Pool Control - Bindings
 type: binding
 description: "Autelis manufactures a network enabled pool interface for many popular pool systems."
-since: 2x
+since: 3x
 logo: images/addons/autelis.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

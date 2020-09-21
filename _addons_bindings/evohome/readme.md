@@ -4,8 +4,8 @@ label: evohome
 title: evohome - Bindings
 type: binding
 description: "This binding integrates the Honeywell evohome system."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -52,11 +52,11 @@ Thing configuration is optional, it is easier to use discovery which will automa
 
 ### Account
 
-| Name            | Required | Description                                 |
-|-----------------|----------|---------------------------------------------|
-| username        | yes      | The username of your TCC account            |
-| password        | yes      | The password of your TCC account            |
-| refreshInterval | no       | The amount of time between updates (0-3000) |
+| Name            | Required | Description                                            |
+|-----------------|----------|--------------------------------------------------------|
+| username        | yes      | The username of your TCC account                       |
+| password        | yes      | The password of your TCC account                       |
+| refreshInterval | no       | The amount of time in seconds between updates (0-3000) |
 
 ### Display &amp; Zone
 

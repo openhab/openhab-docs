@@ -4,8 +4,8 @@ label: HABPanel
 title: HABPanel - UIs
 type: ui
 description: "HABPanel is a lightweight dashboard interface for openHAB."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

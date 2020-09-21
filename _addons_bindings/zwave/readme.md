@@ -4,9 +4,9 @@ label: ZWave
 title: ZWave - Bindings
 type: binding
 description: "The ZWave binding supports an interface to a wireless Z-Wave home automation network."
-since: 2x
+since: 3x
 logo: images/addons/zwave.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -39,6 +39,14 @@ Before the binding can be used, a serial adapter must be added. This needs to be
 
 Once the binding is authorized, and an adapter is added, it automatically reads all devices that are included into the network. This is read directly from the Z-Wave controller and new things are added to the Inbox. When the discovery process is started, the binding will put the controller into inclusion mode for a defined period of time to allow new devices to be discovered and added to the network. Device discovery occurs in two phases - first the device is added to the inbox as an *Unknown Device* to provide the user immediate feedback that the device has been discovered. Once the device type is known, the inbox entry is updated with the actual device name and manufacturer. 
 
+In particular the following properties will be automatically populated:
+| Property           | Description                                  |
+|--------------------|----------------------------------------------|
+| zwave_nodeid       | Node id of the node within the network       |
+| zwave_manufacturer | Manufacturer ID for this device (as decimal) |
+| zwave_deviceid     | Device ID for this device (as decimal)       |
+| zwave_devicetype   | Device type for this device (as decimal)     |
+| zwave_version      | Application version for this device          |
 
 ## Binding Configuration
 
@@ -120,16 +128,51 @@ There are a large number of things supported by the Z-Wave binding, so configura
 
 #### Textual Thing Configuration
 
-Things configured manually through text files require the following minimum configuration to be set. -:
+To configure things manually via a `.things` file you need to configure a Bridge for the controller and then configure devices under that bridge. 
+Follow this sample format:
+```
+Bridge zwave:serial_zstick:controller "ZWave Controller" [ port="/dev/ttyACM0", controller_softreset="false", controller_master="true", heal_enable="true", security_networkkey="XXX" ]
+{
+	aeon_zw100_01_008 sensor1 "Sensor 1" [ node_id=1 ]
+	august_asl03_00_000 frontDoor "Front Door Lock" [ node_id=2 ]	
+}
+```
+Adjust the bridge details as needed, where:
 
-| Configuration      | Description                                                                                                   |
-|--------------------|---------------------------------------------------------------------------------------------------------------|
-| zwave_nodeid       | Sets the node id of the node within the network.                                                              |
-| zwave_manufacturer | Sets the manufacturer ID for this device (as decimal). This is used to get the thing type from the database.  |
-| zwave_deviceid     | Specifies the device ID for this device (as decimal). This is used to get the thing type from the database.   |
-| zwave_devicetype   | Specifies the device type for this device (as decimal). This is used to get the thing type from the database. |
-| zwave_version      | Specifies the application version for this device. This is used to get the thing type from the database.      |
+* `serial_zstick` represents the thing type UID of the controller
+* `controller` defines the controller's thing name
+* `XXX` is a placeholder for the controller's network key
 
+Adjust the details for each device as needed as well, where:
+
+* The first value (e.g. `aeon_zw100_01_008`) specifies the device's thing type UID.
+You can find this value in the [documentation page for all supported Z-Wave devices](https://www.openhab.org/addons/bindings/zwave/doc/things.html).
+Note that the thing type UID has a firmware version appended (e.g. `01_008`).
+Some devices use different thing type UIDs for different firmware versions. 
+You need to make sure to pick the thing type UID that supports your device's firmware. 
+If you don't know your device's firmware version discover the device dynamically and find the firmware version under `Properties` - `zwave_version`.
+* The second value (e.g. `sensor1`) defines the thing name
+* `node_id` is the device's Z-Wwave node id
+
+Define items via a `.items` file leveraging the [channel details documented for your device](https://www.openhab.org/addons/bindings/zwave/doc/things.html), for example:
+```
+Switch Sensor1 "Motion Sensor" {channel="zwave:aeon_zw100_01_008:controller:sensor1:alarm_motion"}
+```
+
+##### A note on thing UIDs: 
+All things are assigned a unique id following the format `binding`:`device type`:`bridge`:`id` and Z-Wave devices are no different. 
+The above sample for example would be assigned the UID `zwave:aeon_zw100_01_008:controller:sensor1`.
+
+You might have noticed that if you don't define your device via a `.things` file and instead use dynamic discovery the device's UID will be `zwave:device:controller:node1`. 
+Why the difference? 
+During dynamic discovery the binding inquires about all existing Z-Wave nodes. 
+But all the binding receives immediately from the controller is a list of node ids. 
+Additional details about device types are retrieved only subsequently and require a significant amount of time (seconds or longer).
+To provide quick feedback to the user during dynamic discovery the binding has no choice but to create a UID that doesn't depend on any device details. 
+
+To accomplish this the binding uses a generic device type `device`, which simply represents an `Unknown Device`. 
+For the `id` the binding uses the nodeid, which is unique across all devices.
+On the other hand when you define a device via a `.things` file you are responsible for providing the exact device type and a unique id - thus the different UID format with textual configuration. 
 
 ## Channels
 
@@ -348,7 +391,7 @@ Devices are identified in the database by 4 pieces of information that are provi
 
 The primary identification is performed using the Manufacturer ID, Device Type and Device ID. Many devices use multiple deviceType and deviceId sets to identify different regions, or other minor differences, and some manufacturers will produce multiple firmware versions for the same device, so this information is also used in some instances.
 
-Further information on the database can be found [here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-database-guide).
+Further information on the database can be found [here](https://www.opensmarthouse.org/blog/zwave_device_database_guide).
 
 
 #### Unknown Devices
@@ -403,4 +446,4 @@ log4j2.appender.Zwave.strategy.type = DefaultRolloverStrategy
 log4j2.appender.Zwave.strategy.max = 10
 ```
 
-An online viewer that presents the logs in a clearer way in order to help with their understanding, is available [here](https://www.cd-jackson.com/index.php/openhab/zwave-log-viewer).
+An online viewer that presents the logs in a clearer way in order to help with their understanding, is available [here](https://opensmarthouse.org/utilities/logviewer/zwave/).

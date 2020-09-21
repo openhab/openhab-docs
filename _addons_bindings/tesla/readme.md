@@ -4,9 +4,9 @@ label: Tesla
 title: Tesla - Bindings
 type: binding
 description: "This binding integrates [Tesla Electrical Vehicles](https://www.tesla.com)."
-since: 2x
+since: 3x
 logo: images/addons/tesla.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

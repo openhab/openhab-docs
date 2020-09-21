@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHTD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![ZMNHTD product image](https://www.cd-jackson.com/zwave_device_uploads/414/414_default.jpg)
+![ZMNHTD product image](https://opensmarthouse.org/zwavedatabase/414/image/)
 
 
 The ZMNHTD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -558,11 +558,11 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual Goap Smart Meter ZMNHTD](https://www.cd-jackson.com/zwave_device_uploads/414/Qubino-Smart-Meter-PLUS-user-manual-V1-7-1.pdf)
-* [Qubino_Smart-Meter-PLUS-user-manual_V1.9_eng-1](https://www.cd-jackson.com/zwave_device_uploads/414/Qubino-Smart-Meter-PLUS-user-manual-V1-9-eng-1--1-.pdf)
-* [Qubino_Smart-Meter-PLUS-extended-manual_eng_2.3](https://www.cd-jackson.com/zwave_device_uploads/414/Qubino-Smart-Meter-PLUS-extended-manual-eng-2-3.pdf)
+* [Manual Goap Smart Meter ZMNHTD](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-user-manual-V1-7-1.pdf)
+* [Qubino_Smart-Meter-PLUS-user-manual_V1.9_eng-1](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-user-manual-V1-9-eng-1--1-.pdf)
+* [Qubino_Smart-Meter-PLUS-extended-manual_eng_2.3](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-extended-manual-eng-2-3.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/414).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/414).

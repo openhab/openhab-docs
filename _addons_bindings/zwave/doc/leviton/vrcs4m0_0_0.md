@@ -10,7 +10,7 @@ This describes the Z-Wave device *VRCS4-M0*, manufactured by *Leviton* with the 
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![VRCS4-M0 product image](https://www.cd-jackson.com/zwave_device_uploads/881/881_default.png)
+![VRCS4-M0 product image](https://opensmarthouse.org/zwavedatabase/881/image/)
 
 
 ## Overview
@@ -116,9 +116,9 @@ Association group 4 supports 32 nodes.
 
 ### Documentation Links
 
-* [Leviton VRCS4-M0 installation instructions](https://www.cd-jackson.com/zwave_device_uploads/881/Leviton-VRCS4-M0.pdf)
+* [Leviton VRCS4-M0 installation instructions](https://opensmarthouse.org/zwavedatabase/881/Leviton-VRCS4-M0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/881).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/881).

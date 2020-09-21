@@ -8,10 +8,8 @@ def collect_feature_xml = { features, xml, attrs ->
 }
 
 def collect_features = { features ->
-    collect_feature_xml(features, '.external-resources/openhab-distro/features/addons/src/main/feature/feature.xml',                  ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '.external-resources/jfrog-files/feature.xml',         ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '1x'])
-    collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons-legacy/src/main/feature/feature.xml',  ['install': 'legacy', 'since': '1x'])
+    collect_feature_xml(features, '.external-resources/openhab-distro/features/addons/src/main/feature/feature.xml', ['install': 'auto', 'since': '3x'])
+    collect_feature_xml(features, '.external-resources/jfrog-files/feature.xml', ['install': 'auto', 'since': '3x'])
 }
 
 def process_addon_type = { features, sources, type, collection, suffix, lblremoves, pkgremoves ->
@@ -36,7 +34,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     id = id.replace(pkg, '')
                 }
                 def target = new File(project.basedir, "_${collection}")
-                def simpleNameDir = new File(target.path, (source == 'oh1' && type == 'binding') ? id + '1' : id)
+                def simpleNameDir = new File(target.path, id)
                 if (simpleNameDir.exists()) {
                     log.warn("Destination folder already exists: " + simpleNameDir)
                 }
@@ -66,7 +64,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     if (! logo) log.info("No logo found.")
                     def description = ""
                     boolean firstHeadline = false
-                    for (def line : readme.readLines()) {
+                    for (line in readme.readLines()) {
                         if (line.startsWith('#')) {
                             if (! firstHeadline) {
                                 firstHeadline = true
@@ -79,12 +77,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                         }
                     }
                     def front = ['id': "${id}", 'label': "${label}", 'title': "${label}${suffix}", 'type': "${type}", description: "\"${description}\""]
-                    if (source == 'oh1') {
-                        front['source'] = "https://github.com/openhab/openhab1-addons/blob/master/bundles/${type}/org.openhab.${type}.${id}/README.md"
-                        front['since'] = '1x'
-                    } else {
-                        front['since'] = '2x'
-                    }
+                    front['since'] = '3x'
                     if (logo) {
                         front['logo'] = 'images/addons/' + id + '.png'
                     }
@@ -108,20 +101,20 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
         if (temp_folder.list().length > 0) {
             log.warn("Folder not empty after processing.")
         }
-        temp_folder.deleteDir()
+	println "Deleting: " + temp_folder
+        temp_folder.delete()
     }
 }
 
 def process_addon_files = { features ->
     //                 features, sources,               type,          collection,               suffix,                       lblremoves,                  pkgremoves
-    process_addon_type(features, ['oh1'],               'action',      'addons_actions',         ' - Actions',                 [' Actions', ' Action'],     ['org.openhab.action.']                                  )
-    process_addon_type(features, ['oh1', 'oh2'],        'binding',     'addons_bindings',        ' - Bindings',                [' Binding'],                ['org.openhab.binding.'])
-    process_addon_type(features,        ['oh2'],        'iconset',     'addons_iconsets',        ' - Icon Sets',               [:],                         ['org.openhab.ui.iconset.']                    )
-    process_addon_type(features, ['oh1', 'oh2', 'ext'], 'io',          'addons_ios',             ' - System Integrations',     [' Service'],                ['org.openhab.io.']           )
-    process_addon_type(features, ['oh1'],               'persistence', 'addons_persistences',    ' - Persistence Services',    ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
-    process_addon_type(features,        ['oh2'],        'transform',   'addons_transformations', ' - Transformation Services', [' Transformation Service'], ['org.openhab.transform.']                     )
-    process_addon_type(features,        ['oh2'],        'ui',          'addons_uis',             ' - UIs',                     [:],                         ['org.openhab.ui.']          )
-    process_addon_type(features,        ['oh2'],        'voice',       'addons_voices',          ' - Voices',                  [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
+    process_addon_type(features, ['oh3'],        'binding',     'addons_bindings',        ' - Bindings',                [' Binding'],                ['org.openhab.binding.'])
+    process_addon_type(features, ['oh3'],        'iconset',     'addons_iconsets',        ' - Icon Sets',               [:],                         ['org.openhab.ui.iconset.'])
+    process_addon_type(features, ['oh3', 'ext'], 'io',          'addons_ios',             ' - System Integrations',     [' Service'],                ['org.openhab.io.'])
+    process_addon_type(features, ['oh3'],        'persistence', 'addons_persistences',    ' - Persistence Services',    ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.'])
+    process_addon_type(features, ['oh3'],        'transform',   'addons_transformations', ' - Transformation Services', [' Transformation Service'], ['org.openhab.transform.'])
+    process_addon_type(features, ['oh3'],        'ui',          'addons_uis',             ' - UIs',                     [:],                         ['org.openhab.ui.'])
+    process_addon_type(features, ['oh3'],        'voice',       'addons_voices',          ' - Voices',                  [:],                         ['org.openhab.voice.'])
 }
 
 if (! new File(project.basedir, ".external-resources").exists()) {

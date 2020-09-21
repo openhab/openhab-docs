@@ -10,7 +10,7 @@ This describes the Z-Wave device *L 810 LED iHF*, manufactured by *Steinel* with
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-![L 810 LED iHF product image](https://www.cd-jackson.com/zwave_device_uploads/705/705_default.png)
+![L 810 LED iHF product image](https://opensmarthouse.org/zwavedatabase/705/image/)
 
 
 The L 810 LED iHF supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -495,9 +495,9 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [Specification v 1.0.0](https://www.cd-jackson.com/zwave_device_uploads/705/bdal2-110043512.pdf)
+* [Specification v 1.0.0](https://opensmarthouse.org/zwavedatabase/705/bdal2-110043512.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/705).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/705).

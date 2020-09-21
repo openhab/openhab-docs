@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZWMP*, manufactured by *Fakro* with the thing 
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![ZWMP product image](https://www.cd-jackson.com/zwave_device_uploads/636/636_default.png)
+![ZWMP product image](https://opensmarthouse.org/zwavedatabase/636/image/)
 
 
 ## Overview
@@ -106,9 +106,9 @@ Association group 6 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/636/FAKRO-Zwave-Weather-Module-ZWMP-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/636/FAKRO-Zwave-Weather-Module-ZWMP-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/636).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/636).

@@ -4,9 +4,9 @@ label: Solar-Log
 title: Solar-Log - Bindings
 type: binding
 description: "The [Solar-Log Family](https://www.solar-log.com/en/) of monitoring devices for PV installations provide a MODBUS (TCP) and JSON-based API to access a number of internal data related to power generation and consumption. This binding implements access to the data via the JSON API."
-since: 2x
+since: 3x
 logo: images/addons/solarlog.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

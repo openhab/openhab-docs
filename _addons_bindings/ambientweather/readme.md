@@ -4,8 +4,9 @@ label: Ambient Weather
 title: Ambient Weather - Bindings
 type: binding
 description: "The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service."
-since: 2x
-install: auto
+since: 3x
+logo: images/addons/ambientweather.png
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -248,7 +249,7 @@ Adding support for a new weather station type involves changes to the source cod
 
 Define a new `ThingTypeUID` for the new station and add it to the `SUPPORTED_THING_TYPES_UIDS` Collection.
 
-#### Create ESH-INF/thing/\<station-model\>.xml
+#### Create OH-INF/thing/\<station-model\>.xml
 
 Add thing type and channel group specific to the data elements supported by this weather station.
 Modeling this after an existing thing type that shares many of the channels is the easiest starting point.

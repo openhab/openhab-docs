@@ -4,9 +4,9 @@ label: Amazon Dash Button
 title: Amazon Dash Button - Bindings
 type: binding
 description: "The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?node=10667898011) is a cheap and small Wi-Fi connected device to order products from Amazon with the simple press of a button."
-since: 2x
+since: 3x
 logo: images/addons/amazondashbutton.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

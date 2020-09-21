@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHYD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![ZMNHYD product image](https://www.cd-jackson.com/zwave_device_uploads/822/822_default.png)
+![ZMNHYD product image](https://opensmarthouse.org/zwavedatabase/822/image/)
 
 
 The ZMNHYD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -109,8 +109,8 @@ Detailed information on each parameter can be found in the sections below.
 | 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
 | 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
-| 41 | Treshold time for power reporting | Treshold time for power reporting [Watt] |
-| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Watt] |
+| 41 | Threshold time for power reporting | Threshold time for power reporting [Seconds] |
+| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Seconds] |
 | 50 | Down value | Down value [watt] |
 | 51 | Up value | Upper power threshold used in parameter no. 52 |
 | 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
@@ -221,9 +221,9 @@ The manufacturer defined default value is ```20```.
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 41: Treshold time for power reporting
+### Parameter 41: Threshold time for power reporting
 
-Treshold time for power reporting [Watt]
+Threshold time for power reporting [Seconds]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
   * 0 - Power consumption reporting disabled
@@ -239,14 +239,14 @@ This parameter has the configuration ID ```config_41_2``` and is of type ```INTE
 
 ### Parameter 42: Power Consumption Reporting Time Threshold
 
-Power Consumption Reporting Time Threshold [Watt]
+Power Consumption Reporting Time Threshold [Seconds]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).
 
 If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
 Values :
 
-  * 0 : Power consumption reporting disabled 
+  * 0 : Power consumption reporting disabled
   * 30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
 Values in the range 0 to 32535 may be set.
 
@@ -406,9 +406,9 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Qubino Smart Plug 16A extended manual](https://www.cd-jackson.com/zwave_device_uploads/822/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
+* [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/822).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/822).

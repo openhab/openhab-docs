@@ -10,7 +10,7 @@ This describes the Z-Wave device *LZW31-SN*, manufactured by *Inovelli* with the
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![LZW31-SN product image](https://www.cd-jackson.com/zwave_device_uploads/1146/1146_default.jpg)
+![LZW31-SN product image](https://opensmarthouse.org/zwavedatabase/1146/image/)
 
 
 The LZW31-SN supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -44,10 +44,12 @@ The following table summarises the channels available for the LZW31-SN -:
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset Meter | meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED Strip Effect | config_decimal | config_decimal |  | Number | 
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
+| LED Indicator Intensity | config_decimal | config_decimal |  | Number | 
 | Protection Local | protection_local | protection_local |  | Number | 
 
 ### Dimmer
@@ -65,6 +67,11 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -97,6 +104,11 @@ Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
+### LED Indicator Intensity
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
 ### Protection Local
 Sets the local protection mode.
 
@@ -113,7 +125,7 @@ The following state translation is provided for this channel to the ```Number```
 
 ## Device Configuration
 
-The following table provides a summary of the 22 configuration parameters available in the LZW31-SN.
+The following table provides a summary of the 24 configuration parameters available in the LZW31-SN.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -140,6 +152,8 @@ Detailed information on each parameter can be found in the sections below.
 | 20 | Energy Reports | Energy Reports |
 | 21 | AC Power Type | AC Power Type |
 | 22 | Switch Type | Switch Type |
+| 51 | Instant On | Instant On |
+| 52 | Enable "smart bulb" mode | Enable "smart bulb" mode |
 
 ### Parameter 1: Dimming Speed (Z-Wave)
 
@@ -373,7 +387,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: AC Power Type
 
 AC Power Type
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -389,7 +403,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Switch Type
 
 Switch Type
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -401,6 +415,38 @@ The following option values may be configured -:
 The manufacturer defined default value is ```0``` (Single-Pole (One Switch)).
 
 This parameter has the configuration ID ```config_22_1``` and is of type ```INTEGER```.
+
+
+### Parameter 51: Instant On
+
+Instant On
+Enable instant on (ie: disable 700ms delay at the switch). If delay is disabled, scene control will be limited to button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | No delay |
+| 1 | 700ms delay |
+
+The manufacturer defined default value is ```1``` (700ms delay).
+
+This parameter has the configuration ID ```config_51_1``` and is of type ```INTEGER```.
+
+
+### Parameter 52: Enable "smart bulb" mode
+
+Enable "smart bulb" mode
+Smart bulb mode: If set to 1, power will output maximum % when dimmer is on to optimize performance with smart bulbs.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | normal bulb |
+| 1 | smart bulb |
+
+The manufacturer defined default value is ```0``` (normal bulb).
+
+This parameter has the configuration ID ```config_52_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -462,9 +508,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product manual](https://www.cd-jackson.com/zwave_device_uploads/1146/LZW31-SN-Manual.pdf)
+* [Product manual](https://opensmarthouse.org/zwavedatabase/1146/LZW31-SN-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1146).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1146).

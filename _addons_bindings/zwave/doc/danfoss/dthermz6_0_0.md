@@ -10,7 +10,7 @@ This describes the Z-Wave device *DTHERMZ6*, manufactured by *Danfoss* with the 
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![DTHERMZ6 product image](https://www.cd-jackson.com/zwave_device_uploads/502/502_default.jpg)
+![DTHERMZ6 product image](https://opensmarthouse.org/zwavedatabase/502/image/)
 
 
 The DTHERMZ6 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -47,7 +47,7 @@ The following table summarises the channels available for the DTHERMZ6 -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Sensor (temperature)
 Indicates the current temperature.
@@ -67,7 +67,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -110,9 +110,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Product Manual](https://www.cd-jackson.com/zwave_device_uploads/502/THERMZ6.pdf)
+* [Product Manual](https://opensmarthouse.org/zwavedatabase/502/THERMZ6.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/502).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/502).

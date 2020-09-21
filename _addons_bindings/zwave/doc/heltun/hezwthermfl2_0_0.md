@@ -10,7 +10,7 @@ This describes the Z-Wave device *HE-ZW-THERM-FL2*, manufactured by *Heltun* wit
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![HE-ZW-THERM-FL2 product image](https://www.cd-jackson.com/zwave_device_uploads/1023/1023_default.jpg)
+![HE-ZW-THERM-FL2 product image](https://opensmarthouse.org/zwavedatabase/1023/image/)
 
 
 The HE-ZW-THERM-FL2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -63,7 +63,7 @@ The following table summarises the channels available for the HE-ZW-THERM-FL2 -:
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | thermostat_state | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Sensor (luminance)
 Indicates the current light reading.
@@ -142,7 +142,7 @@ The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and s
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -1061,9 +1061,9 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [Heltun Heating Thermostat Manual](https://www.cd-jackson.com/zwave_device_uploads/1023/HELTUN-Heating-Thermostat-Manual-v1-0.pdf)
+* [Heltun Heating Thermostat Manual](https://opensmarthouse.org/zwavedatabase/1023/HELTUN-Heating-Thermostat-Manual-v1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1023).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1023).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *PH-PSR03*, manufactured by *[Philio Technology
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![PH-PSR03 product image](https://www.cd-jackson.com/zwave_device_uploads/985/985_default.jpg)
+![PH-PSR03 product image](https://opensmarthouse.org/zwavedatabase/985/image/)
 
 
 The PH-PSR03 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -243,9 +243,9 @@ Association group 9 supports 4 nodes.
 
 ### Documentation Links
 
-* [Device Manual](https://www.cd-jackson.com/zwave_device_uploads/985/ph-psr03-Zipato-Z-Wave-Remote-User-Manual-v1-0.pdf)
+* [Device Manual](https://opensmarthouse.org/zwavedatabase/985/ph-psr03-Zipato-Z-Wave-Remote-User-Manual-v1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/985).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/985).

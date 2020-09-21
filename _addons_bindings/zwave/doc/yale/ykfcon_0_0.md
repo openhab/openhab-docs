@@ -10,7 +10,7 @@ This describes the Z-Wave device *YKFCON*, manufactured by *ASSA ABLOY* with the
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![YKFCON product image](https://www.cd-jackson.com/zwave_device_uploads/292/292_default.jpg)
+![YKFCON product image](https://opensmarthouse.org/zwavedatabase/292/image/)
 
 
 The YKFCON supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -242,11 +242,11 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Data Sheet](https://www.cd-jackson.com/zwave_device_uploads/292/yale-smart-living-keyfree-connected-data-sheet.pdf)
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/292/yale-smart-living-keyfree-connected-user-manual.pdf)
-* [Technical Information](https://www.cd-jackson.com/zwave_device_uploads/292/yale-locks-info.pdf)
+* [Data Sheet](https://opensmarthouse.org/zwavedatabase/292/yale-smart-living-keyfree-connected-data-sheet.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/292/yale-smart-living-keyfree-connected-user-manual.pdf)
+* [Technical Information](https://opensmarthouse.org/zwavedatabase/292/yale-locks-info.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/292).

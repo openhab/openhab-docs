@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHXD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![ZMNHXD product image](https://www.cd-jackson.com/zwave_device_uploads/900/900_default.png)
+![ZMNHXD product image](https://opensmarthouse.org/zwavedatabase/900/image/)
 
 
 The ZMNHXD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -461,11 +461,13 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_METER_V3| Linked to BASIC|
+| COMMAND_CLASS_TRANSPORT_SERVICE_V1| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
+| COMMAND_CLASS_SUPERVISION_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
@@ -474,6 +476,7 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 | COMMAND_CLASS_SECURITY_V1| |
+| COMMAND_CLASS_SECURITY_2_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
@@ -521,9 +524,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Extended Manual](https://www.cd-jackson.com/zwave_device_uploads/900/Qubino-3-Phase-Smart-Meter-PLUS-extended-manual-eng-3-3-2.pdf)
+* [Extended Manual](https://opensmarthouse.org/zwavedatabase/900/Qubino-3-Phase-Smart-Meter-PLUS-extended-manual-eng-3-3-2.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/900).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/900).

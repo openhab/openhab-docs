@@ -4,9 +4,9 @@ label: Folding@home
 title: Folding@home - Bindings
 type: binding
 description: "Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing"
-since: 2x
+since: 3x
 logo: images/addons/folding.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

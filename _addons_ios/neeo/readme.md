@@ -4,9 +4,9 @@ label: openHAB NEEO Integration
 title: openHAB NEEO Integration - System Integrations
 type: io
 description: "This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them."
-since: 2x
+since: 3x
 logo: images/addons/neeo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -62,8 +62,8 @@ If you change the primary address option, this binding will de-register the old 
 ## Mappings
 
 For openHAB things/items to appear on the NEEO system, you must create mappings between openHAB and NEEO.
-To accomplish this, go to the main openHAB dashboard (typically http://localhost:8080/start/index) and press the NEEO Integration dashboard tile.
-This tile will open up a screen similar to the following
+To accomplish this, go to the NEEO Integration dashboard (typically http://localhost:8080/neeo/index.html).
+This will open up a screen similar to the following
 
 ![Configuration](doc/dashboardmain.png)
 

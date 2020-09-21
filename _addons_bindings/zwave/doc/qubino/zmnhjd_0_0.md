@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHJD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 
-![ZMNHJD product image](https://www.cd-jackson.com/zwave_device_uploads/273/273_default.png)
+![ZMNHJD product image](https://opensmarthouse.org/zwavedatabase/273/image/)
 
 
 The ZMNHJD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -389,9 +389,9 @@ Association group 5 supports 99 nodes.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/273).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/273).

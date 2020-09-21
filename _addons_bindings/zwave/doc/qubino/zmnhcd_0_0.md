@@ -11,7 +11,7 @@ This version of the device is limited to firmware versions below 4.0
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![ZMNHCD product image](https://www.cd-jackson.com/zwave_device_uploads/614/614_default.png)
+![ZMNHCD product image](https://opensmarthouse.org/zwavedatabase/614/image/)
 
 
 The ZMNHCD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -482,10 +482,10 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual 19.08.2015](https://www.cd-jackson.com/zwave_device_uploads/614/ZMNHCD-VER-S1-19-08-2015.pdf)
-* [User Manual v1.4](https://www.cd-jackson.com/zwave_device_uploads/614/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
+* [User Manual 19.08.2015](https://opensmarthouse.org/zwavedatabase/614/ZMNHCD-VER-S1-19-08-2015.pdf)
+* [User Manual v1.4](https://opensmarthouse.org/zwavedatabase/614/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/614).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/614).

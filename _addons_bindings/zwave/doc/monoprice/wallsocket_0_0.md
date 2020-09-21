@@ -10,7 +10,7 @@ This describes the Z-Wave device *PID15654*, manufactured by *Monoprice* with th
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![PID15654 product image](https://www.cd-jackson.com/zwave_device_uploads/628/628_default.png)
+![PID15654 product image](https://opensmarthouse.org/zwavedatabase/628/image/)
 
 
 The PID15654 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -327,9 +327,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/628/15654-Manual-161024.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/628/15654-Manual-161024.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/628).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/628).

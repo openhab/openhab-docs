@@ -4,7 +4,7 @@ label: Modbus Transport
 title: Modbus Transport - System Integrations
 type: io
 description: "This transport provides a nice abstraction for modbus."
-since: 2x
+since: 3x
 install: manual
 ---
 

@@ -10,7 +10,7 @@ This describes the Z-Wave device *DMMS1*, manufactured by *Elexa Consumer Produc
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-![DMMS1 product image](https://www.cd-jackson.com/zwave_device_uploads/797/797_default.jpg)
+![DMMS1 product image](https://opensmarthouse.org/zwavedatabase/797/image/)
 
 
 The DMMS1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -320,9 +320,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Dome Motion Detector API Manual](https://www.cd-jackson.com/zwave_device_uploads/797/DomeMotionDetectorAPIManual.pdf)
+* [Dome Motion Detector API Manual](https://opensmarthouse.org/zwavedatabase/797/DomeMotionDetectorAPIManual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/797).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/797).

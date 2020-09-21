@@ -222,4 +222,4 @@ Association group 6 supports 5 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/626).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/626).

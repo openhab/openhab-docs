@@ -4,9 +4,9 @@ label: Tellstick
 title: Tellstick - Bindings
 type: binding
 description: "This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund."
-since: 2x
+since: 3x
 logo: images/addons/tellstick.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -91,7 +91,7 @@ Depending on your Tellstick model, different bridge-types are available:
 
 #### Telldus Core Bridge
 
-> To enable communication between openhab and tellstick-core service (Telldus center) they must use same architecture, eg. 32-bit or 64-bit. The supplied version from Telldus is compiled against 32-bit architecture. Therefore, it is better to use 32-bit java for openHAB. To check which version of Java is currently in use, run: `java -d32 -version`
+> To enable communication between openHAB and tellstick-core service (Telldus center) they must use same architecture, eg. 32-bit or 64-bit. The supplied version from Telldus is compiled against 32-bit architecture. Therefore, it is better to use 32-bit java for openHAB. To check which version of Java is currently in use, run: `java -d32 -version`
 >
 > *For changing architecture in Linux check out: `dpkg --add-architecture`* 
 
@@ -138,39 +138,39 @@ Actuators (dimmer/switch) support the following channels:
 
 Sensors (sensor) support the following channels:
 
-| Channel Type ID | Item Type | Description                                                 |
-|-----------------|-----------|-------------------------------------------------------------|
-| humidity        | Number    | This channel reports the current humidity in percentage.    |
-| temperature     | Number    | This channel reports the current temperature in celsius.    |
-| timestamp       | DateTime  | This channel reports the last time this sensor was updates. |
+| Channel Type ID | Item Type           | Description                                                 |
+|-----------------|---------------------|-------------------------------------------------------------|
+| humidity        | Number:Dimensionless| This channel reports the current humidity in percentage.    |
+| temperature     | Number:Temperature  | This channel reports the current temperature.               |
+| timestamp       | DateTime            | This channel reports the last time this sensor was updates. |
 
 PowerSensors ([powersensor]) support the following channels:
 
-| Channel Type ID | Item Type | Description                                                 |
-|-----------------|-----------|-------------------------------------------------------------|
-| watt            | Number    | This channel reports the current watt.                      |
-| ampere          | Number    | This channel reports the current ampere.                    |
-| timestamp       | DateTime  | This channel reports the last time this sensor was updates. |
+| Channel Type ID | Item Type              | Description                                                 |
+|-----------------|------------------------|-------------------------------------------------------------|
+| watt            | Number:Power           | This channel reports the current watt.                      |
+| ampere          | Number:ElectricCurrent | This channel reports the current ampere.                    |
+| timestamp       | DateTime               | This channel reports the last time this sensor was updates. |
 
 WindSensors ([windsensor]) support the following channels:
 
-| Channel Type ID | Item Type | Description                  |
-|-----------------|-----------|------------------------------|
-| windgust        | Number    | This current peak wind gust. |
-| winddirection   | Number    | The current wind direction.  |
-| windaverage     | DateTime  | The current wind avarage.    |
+| Channel Type ID | Item Type    | Description                  |
+|-----------------|--------------|------------------------------|
+| windgust        | Number:Speed | The current peak wind gust.  |
+| winddirection   | Number:Angle | The current wind direction.  |
+| windaverage     | Number:Speed | The current wind average.    |
 
 RainSensors ([rainsensor]) support the following channels:
 
-| Channel Type ID | Item Type | Description                |
-|-----------------|-----------|----------------------------|
-| rainrate        | Number    | This current rate of rain. |
-| raintotal       | Number    | The total rain.            |
+| Channel Type ID | Item Type     | Description                |
+|-----------------|---------------|----------------------------|
+| rainrate        | Number:Length | This current rate of rain. |
+| raintotal       | Number:Length | The total rain.            |
 
 ### Switchbased sensor workaround
 
 All switchbased sensors are binary and the goal is to represent them as a `contact` item in openHAB. Eg. a door is open or closed and can't be altered by sending a radio signal.
-To achive that we will create a proxy item which is updated by a rule.
+To achieve that we will create a proxy item which is updated by a rule.
 
 First create another proxy item for every sensor:
 

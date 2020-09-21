@@ -10,7 +10,7 @@ This describes the Z-Wave device *DHS-WIN-BLW-DHS*, manufactured by *Wintop* wit
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![DHS-WIN-BLW-DHS product image](https://www.cd-jackson.com/zwave_device_uploads/859/859_default.png)
+![DHS-WIN-BLW-DHS product image](https://opensmarthouse.org/zwavedatabase/859/image/)
 
 
 The DHS-WIN-BLW-DHS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -320,9 +320,9 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://www.cd-jackson.com/zwave_device_uploads/859/DHS-Shutter-ACController-Manual.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/859/DHS-Shutter-ACController-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/859).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/859).

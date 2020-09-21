@@ -4,8 +4,8 @@ label: NTP
 title: NTP - Bindings
 type: binding
 description: "The NTP binding is used for displaying the local date and time based update from an NTP server."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -34,11 +34,11 @@ The thing has a few configuration options:
 
 | Option |  Description  |
 |-----------------|--------------------------------------------------- |
-| hostname | NTP host server, e.g. nl.pool.ntp.org |
-| refreshInterval | Interval that new time updates are posted to the eventbus in seconds |
-| refreshNtp | Number of updates between querying the NTP server (e.g. with refreshinterval = 60 (seconds) and refreshNtp = 30 the NTP server is queried each half hour. |
-| timeZone | Timezone, can be left blank for using the default system one |
-| locale | Locale, can be left blank for using the default system one |
+| hostname | The NTP server hostname, e.g. nl.pool.ntp.org |
+| refreshInterval | Interval that new time updates are posted to the eventbus in seconds. Default is 60s. |
+| refreshNtp | Number of updates between querying the NTP server (e.g. with refreshinterval = 60 (seconds) and refreshNtp = 30 the NTP server is queried each half hour). Default is 30. |
+| serverPort | The port that the NTP server could use. Default is 123. |
+| timeZone | The configured timezone. Can be left blank for using the timezone defined as openHAB configuration setting (or default system timezone if not defined). |
 
  
 ## Channels

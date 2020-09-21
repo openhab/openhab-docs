@@ -4,8 +4,8 @@ label: RegoHeatPump
 title: RegoHeatPump - Bindings
 type: binding
 description: "The Rego heat pump binding supports:"
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

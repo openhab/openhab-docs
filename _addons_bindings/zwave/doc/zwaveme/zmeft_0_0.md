@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZME_FT*, manufactured by *Z-Wave.Me* with the 
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![ZME_FT product image](https://www.cd-jackson.com/zwave_device_uploads/151/151_default.png)
+![ZME_FT product image](https://opensmarthouse.org/zwavedatabase/151/image/)
 
 
 The ZME_FT supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -224,9 +224,9 @@ Association group 1 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/151/ZMR-FT-1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/151/ZMR-FT-1-4.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/151).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/151).

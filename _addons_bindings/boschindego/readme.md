@@ -4,8 +4,9 @@ label: Bosch Indego
 title: Bosch Indego - Bindings
 type: binding
 description: "This is the Binding for Bosch Indego Connect lawn mowers."
-since: 2x
-install: auto
+since: 3x
+logo: images/addons/boschindego.png
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

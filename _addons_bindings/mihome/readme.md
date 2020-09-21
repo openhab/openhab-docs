@@ -4,9 +4,9 @@ label: Xiaomi Mi Smart Home
 title: Xiaomi Mi Smart Home - Bindings
 type: binding
 description: "This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite."
-since: 2x
+since: 3x
 logo: images/addons/mihome.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -59,6 +59,17 @@ After setup, you can disconnect the gateway from the internet to keep your senso
     	3.  If asked, do NOT update your gateway to the latest firmware (note that update window may pop up sequentially).  If you update, you may not be able to access the developer mode below.
 
 *   Enable developer mode of your gateway:
+
+        1.  Select your Gateway in the MiHome app
+        2.  Go to the "..." menu on the top right corner and click "About"
+        3.  You now see two options "Smart Home Kit Forum" and "Gameplay Tutorial". Tap 5 times below the "Gameplay Tutorial" in the empty space (not the button itself) until you enable developer mode
+        4.  You should now have 2 extra options listed: `wireless communication protocol` and `hub info`, it may appear in Chinese
+        5.  Choose `wireless communication protocol`
+        6.  Tap the toggle switch to enable WiFi functions. Note down the developer key (aka password), something like: 91bg8zfkf9vd6uw7
+        7.  Make sure you hit the OK button (to the right of the cancel button) to save your changes
+        8.  Now update the gateway to the latest firmware
+
+*   Enable developer mode of your gateway (legacy app):
 
         1.  Select your Gateway in the MiHome app
         2.  Go to the "..." menu on the top right corner and click "About"

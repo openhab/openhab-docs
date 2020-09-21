@@ -7,11 +7,11 @@ title: Heatit Z-TRM 2 - ZWave
 
 # Heatit Z-TRM 2 Floor thermostat
 This describes the Z-Wave device *Heatit Z-TRM 2*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_ztrm2_02_006```.
-This version of the device is limited to firmware version 2.6
+This version of the device is limited to firmware versions 2.6 to 2.255
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![Heatit Z-TRM 2 product image](https://www.cd-jackson.com/zwave_device_uploads/854/854_default.jpg)
+![Heatit Z-TRM 2 product image](https://opensmarthouse.org/zwavedatabase/854/image/)
 
 
 The Heatit Z-TRM 2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -683,11 +683,11 @@ Association group 5 supports 7 nodes.
 
 ### Documentation Links
 
-* [Product Sheet](https://www.cd-jackson.com/zwave_device_uploads/854/Heatit-ztrm2.pdf)
-* [Manual 2018-06-01](https://www.cd-jackson.com/zwave_device_uploads/854/manual-heatit-z-trm2-eng-2018-06-01.pdf)
-* [Manual FW 3.4 Ver. 2018-A](https://www.cd-jackson.com/zwave_device_uploads/854/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
+* [Product Sheet](https://opensmarthouse.org/zwavedatabase/854/Heatit-ztrm2.pdf)
+* [Manual 2018-06-01](https://opensmarthouse.org/zwavedatabase/854/manual-heatit-z-trm2-eng-2018-06-01.pdf)
+* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/854/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/854).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/854).

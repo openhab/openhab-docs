@@ -12,7 +12,7 @@ The PlugInSwitch supports routing. This allows the device to communicate using o
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/557) to improve the documentation.
+No device information is provided in the database. Consider [updating the database](https://opensmarthouse.org/zwavedatabase/557) to improve the documentation.
 
 ## Channels
 
@@ -80,4 +80,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/557).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/557).

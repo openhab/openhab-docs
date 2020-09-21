@@ -11,7 +11,7 @@ This version of the device is limited to firmware versions above 1.6
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![ID-150 product image](https://www.cd-jackson.com/zwave_device_uploads/1106/1106_default.png)
+![ID-150 product image](https://opensmarthouse.org/zwavedatabase/1106/image/)
 
 
 The ID-150 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -336,12 +336,12 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Firmware Release Notes](https://www.cd-jackson.com/zwave_device_uploads/1106/Versjonshistorikk-----ID-Lock.pdf)
-* [ID Lock 150 installation and user manual](https://www.cd-jackson.com/zwave_device_uploads/1106/ID-Lock-150-installation-and-user-manual.pdf)
-* [ID Lock 150 Z wave manual](https://www.cd-jackson.com/zwave_device_uploads/1106/IDLock150-ZWave-UserManual-v2-1.pdf)
-* [ZWave user manual v3.02 (FW 1.6)](https://www.cd-jackson.com/zwave_device_uploads/1106/IDLock150-ZWave-UserManual-v3-02.pdf)
+* [Firmware Release Notes](https://opensmarthouse.org/zwavedatabase/1106/Versjonshistorikk-----ID-Lock.pdf)
+* [ID Lock 150 installation and user manual](https://opensmarthouse.org/zwavedatabase/1106/ID-Lock-150-installation-and-user-manual.pdf)
+* [ID Lock 150 Z wave manual](https://opensmarthouse.org/zwavedatabase/1106/IDLock150-ZWave-UserManual-v2-1.pdf)
+* [ZWave user manual v3.02 (FW 1.6)](https://opensmarthouse.org/zwavedatabase/1106/IDLock150-ZWave-UserManual-v3-02.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1106).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1106).

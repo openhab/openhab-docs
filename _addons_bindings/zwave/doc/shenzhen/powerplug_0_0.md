@@ -10,7 +10,7 @@ This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo El
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![NAS-WR01ZE product image](https://www.cd-jackson.com/zwave_device_uploads/397/397_default.jpg)
+![NAS-WR01ZE product image](https://opensmarthouse.org/zwavedatabase/397/image/)
 
 
 The NAS-WR01ZE supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -319,11 +319,11 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Instruction Manual Power Plug](https://www.cd-jackson.com/zwave_device_uploads/397/Manual-for-Power-plug-Z-wave-Neo.pdf)
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
-* [User Manual 23.09.2016](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
+* [Instruction Manual Power Plug](https://opensmarthouse.org/zwavedatabase/397/Manual-for-Power-plug-Z-wave-Neo.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/397/Smart-Plug-User-Guide--EU-.pdf)
+* [User Manual 23.09.2016](https://opensmarthouse.org/zwavedatabase/397/Smart-Plug-User-Guide--EU-.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/397).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/397).

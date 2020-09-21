@@ -10,7 +10,7 @@ This describes the Z-Wave device *DZ1KD*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![DZ1KD product image](https://www.cd-jackson.com/zwave_device_uploads/664/664_default.jpg)
+![DZ1KD product image](https://opensmarthouse.org/zwavedatabase/664/image/)
 
 
 The DZ1KD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -229,9 +229,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/664/Leviton-DZ1KD.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/664/Leviton-DZ1KD.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/664).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/664).

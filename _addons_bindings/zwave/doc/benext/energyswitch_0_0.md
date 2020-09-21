@@ -10,7 +10,7 @@ This describes the Z-Wave device *Energy Switch +*, manufactured by *[BeNext](ht
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![Energy Switch + product image](https://www.cd-jackson.com/zwave_device_uploads/445/445_default.png)
+![Energy Switch + product image](https://opensmarthouse.org/zwavedatabase/445/image/)
 
 
 The Energy Switch + does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -234,9 +234,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/445/energyswitchrs.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/445/energyswitchrs.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/445).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/445).

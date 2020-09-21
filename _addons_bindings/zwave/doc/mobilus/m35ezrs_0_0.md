@@ -10,7 +10,7 @@ This describes the Z-Wave device *EZRS*, manufactured by *MOBILUS MOTOR Spólka 
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![EZRS product image](https://www.cd-jackson.com/zwave_device_uploads/1029/1029_default.jpg)
+![EZRS product image](https://opensmarthouse.org/zwavedatabase/1029/image/)
 
 
 The EZRS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -191,9 +191,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1029/mob-iq-ezrs-eng.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1029/mob-iq-ezrs-eng.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1029).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1029).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *NAS-DS01Z*, manufactured by *[Shenzhen Neo Ele
 
 The device is in the category of *Door*, defining Door sensors.
 
-![NAS-DS01Z product image](https://www.cd-jackson.com/zwave_device_uploads/400/400_default.jpg)
+![NAS-DS01Z product image](https://opensmarthouse.org/zwavedatabase/400/image/)
 
 
 The NAS-DS01Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -55,7 +55,7 @@ The NAS-DS01Z does not permanently listen for messages sent from the controller 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
+Press the button three times within 1.5 second to wake the device. If pressed successfully, the LED will blink one time.
 
   * The minimum wakeup interval is 300s (5 minutes)
   * The maximum wakeup interval is 16,777,200s (about 194 days)
@@ -240,11 +240,11 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [ Instruction Manual Door/Window Sensor](https://www.cd-jackson.com/zwave_device_uploads/400/Manual-for-Door-sensor-Z-wave-Neo.pdf)
-* [Door/Window User Guide](https://www.cd-jackson.com/zwave_device_uploads/400/Door-Window-User-Guide.pdf)
-* [Door/Window User Guide - Version from 23.09.2016](https://www.cd-jackson.com/zwave_device_uploads/400/Door-Window-User-Guide.pdf)
+* [ Instruction Manual Door/Window Sensor](https://opensmarthouse.org/zwavedatabase/400/Manual-for-Door-sensor-Z-wave-Neo.pdf)
+* [Door/Window User Guide](https://opensmarthouse.org/zwavedatabase/400/Door-Window-User-Guide.pdf)
+* [Door/Window User Guide - Version from 23.09.2016](https://opensmarthouse.org/zwavedatabase/400/Door-Window-User-Guide.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/400).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/400).
