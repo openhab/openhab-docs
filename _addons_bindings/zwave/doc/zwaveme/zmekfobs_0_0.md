@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZME_KFOB-S*, manufactured by *Z-Wave.Me* with 
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![ZME_KFOB-S product image](https://www.cd-jackson.com/zwave_device_uploads/548/548_default.png)
+![ZME_KFOB-S product image](https://opensmarthouse.org/zwavedatabase/548/image/)
 
 
 The ZME_KFOB-S supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -372,9 +372,9 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/548/ZME-KFOB-S.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/548/ZME-KFOB-S.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/548).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/548).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *NAS-AB01Z*, manufactured by *[Shenzhen Neo Ele
 
 The device is in the category of *Siren*, defining Siren used by Alarm systems.
 
-![NAS-AB01Z product image](https://www.cd-jackson.com/zwave_device_uploads/522/522_default.jpg)
+![NAS-AB01Z product image](https://opensmarthouse.org/zwavedatabase/522/image/)
 
 
 The NAS-AB01Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -84,7 +84,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 7 configuration parameters available in the NAS-AB01Z.
+The following table provides a summary of the 9 configuration parameters available in the NAS-AB01Z.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -96,6 +96,8 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Alarm music index | Alarm music index |
 | 6 | Door bell music index | Door bell music index |
 | 7 | Default Siren on mode | Default Siren on mode |
+| 8 | Alarm Led Enable | Alarm Led Enable |
+| 9 | Door Bell Led Enable | Door Bell Led Enable |
 
 ### Parameter 1: Configure Alarm music volume
 
@@ -180,6 +182,32 @@ The manufacturer defined default value is ```1```.
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
+### Parameter 8: Alarm Led Enable
+
+Alarm Led Enable
+This parameter defines the default led enable status when siren is on for ALARM SOUND MODE. If parameter is set to ‘0’, led will be disable. If parameter is set to ‘1’, led will be enable. When siren is on, the led will blink.
+Values in the range 0 to 1 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+
+### Parameter 9: Door Bell Led Enable
+
+Door Bell Led Enable
+This parameter defines the default led enable status when siren is on for DOOR BELL SOUND MODE.
+
+If parameter is set to ‘0’, led will be disable.
+
+If parameter is set t0 ‘1’, led will be enable. When siren is on, the led will blink.
+Values in the range 0 to 1 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
+
+
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
@@ -221,10 +249,10 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [NASAB01Z Manual (1)](https://www.cd-jackson.com/zwave_device_uploads/522/15-NAS-AB01Z-UserMan-pdf-3069596.pdf)
-* [NASAB01Z Manual (2)](https://www.cd-jackson.com/zwave_device_uploads/522/NAS-AB01Z.pdf)
+* [NASAB01Z Manual (1)](https://opensmarthouse.org/zwavedatabase/522/15-NAS-AB01Z-UserMan-pdf-3069596.pdf)
+* [NASAB01Z Manual (2)](https://opensmarthouse.org/zwavedatabase/522/NAS-AB01Z.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/522).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/522).

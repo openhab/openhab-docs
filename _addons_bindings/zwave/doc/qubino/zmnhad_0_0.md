@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHAD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZMNHAD product image](https://www.cd-jackson.com/zwave_device_uploads/206/206_default.png)
+![ZMNHAD product image](https://opensmarthouse.org/zwavedatabase/206/image/)
 
 
 The ZMNHAD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -369,17 +369,18 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 ### Parameter 63: Output Switch selection
 
 Set the type of the device connected to the output. (NO) / (NC)
-Set value means the type of the device that is connected to the output.
+Controls the active state of the output switch.
 
-The device type can be normally open (NO) or normally closed (NC).
+  * Normally Open (NO), load is not connected to power when inactive (“off”). 
+  * Normally Closed (NC), load is connected to power when inactive (“off”), the inverse of usual operation.
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0V (NC). |
-| 1 | 230V or 240V (NO). |
+| 0 | Normal -NO when inactive (“off") |
+| 1 | Inverse -NC when inactive (“on”) |
 
-The manufacturer defined default value is ```0``` (0V (NC).).
+The manufacturer defined default value is ```0``` (Normal -NO when inactive (“off")).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 
@@ -625,9 +626,9 @@ Association group 9 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual v1.1](https://www.cd-jackson.com/zwave_device_uploads/206/Qubino-Flush-1-relay-PLUS-user-manual-V1-1.pdf)
+* [User Manual v1.1](https://opensmarthouse.org/zwavedatabase/206/Qubino-Flush-1-relay-PLUS-user-manual-V1-1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/206).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/206).

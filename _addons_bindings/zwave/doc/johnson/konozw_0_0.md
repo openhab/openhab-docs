@@ -10,7 +10,7 @@ This describes the Z-Wave device *KONOzw*, manufactured by *Johnson Controls* wi
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![KONOzw product image](https://www.cd-jackson.com/zwave_device_uploads/1154/1154_default.gif)
+![KONOzw product image](https://opensmarthouse.org/zwavedatabase/1154/image/)
 
 
 The KONOzw supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -412,9 +412,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1154/KONOzw-Operation-Guideline-V1-7-190711.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1154/KONOzw-Operation-Guideline-V1-7-190711.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1154).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1154).

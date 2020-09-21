@@ -10,7 +10,7 @@ This describes the Z-Wave device *FLF-ZWAVE5 R1*, manufactured by *Ecolink* with
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![FLF-ZWAVE5 R1 product image](https://www.cd-jackson.com/zwave_device_uploads/744/744_default.png)
+![FLF-ZWAVE5 R1 product image](https://opensmarthouse.org/zwavedatabase/744/image/)
 
 
 The FLF-ZWAVE5 R1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -136,11 +136,11 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Conformance statement](https://www.cd-jackson.com/zwave_device_uploads/744/pics.pdf)
-* [Partial info from user guide](https://www.cd-jackson.com/zwave_device_uploads/744/ecolink-data.pdf)
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/744/Z-Wave-Plus-Wireless-Flood-Sensor-with-a-Probe-FLF-ZWAVE5-V5.pdf)
+* [Conformance statement](https://opensmarthouse.org/zwavedatabase/744/pics.pdf)
+* [Partial info from user guide](https://opensmarthouse.org/zwavedatabase/744/ecolink-data.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/744/Z-Wave-Plus-Wireless-Flood-Sensor-with-a-Probe-FLF-ZWAVE5-V5.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/744).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/744).

@@ -4,8 +4,8 @@ label: Jinja
 title: Jinja - Transformation Services
 type: transform
 description: "Transforms a value using a jinja template."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

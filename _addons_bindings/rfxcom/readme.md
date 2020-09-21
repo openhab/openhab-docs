@@ -4,9 +4,9 @@ label: RFXCOM
 title: RFXCOM - Bindings
 type: binding
 description: "This binding integrates large number of sensors and actuators from several different manufactures through [RFXCOM transceivers](http://www.rfxcom.com)."
-since: 2x
+since: 3x
 logo: images/addons/rfxcom.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -316,6 +316,7 @@ A Blinds1 device
         *   T6 - DC106/Rohrmotor24-RMF/Yooda
         *   T7 - Forest
         *   T8 - Chamberlain CS4330CN
+        *   T11 - ASP
 
 ### chime - RFXCOM Chime
 

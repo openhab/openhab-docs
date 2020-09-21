@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGRGBW-442*, manufactured by *[Fibargroup](htt
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-![FGRGBW-442 product image](https://www.cd-jackson.com/zwave_device_uploads/1127/1127_default.png)
+![FGRGBW-442 product image](https://opensmarthouse.org/zwavedatabase/1127/image/)
 
 
 The FGRGBW-442 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -1018,9 +1018,9 @@ Association group 10 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1127/FGRGBW-442-EN-T-v1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1127/FGRGBW-442-EN-T-v1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1127).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1127).

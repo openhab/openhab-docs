@@ -10,7 +10,7 @@ This describes the Z-Wave device *Danalock V3-BTZE*, manufactured by *[Poly-cont
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![Danalock V3-BTZE product image](https://www.cd-jackson.com/zwave_device_uploads/708/708_default.png)
+![Danalock V3-BTZE product image](https://opensmarthouse.org/zwavedatabase/708/image/)
 
 
 The Danalock V3-BTZE supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -255,9 +255,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Product manual](https://www.cd-jackson.com/zwave_device_uploads/708/Danalock-V3-Product-manual-Z-Wave-V-0-9-1.pdf)
+* [Product manual](https://opensmarthouse.org/zwavedatabase/708/Danalock-V3-Product-manual-Z-Wave-V-0-9-1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/708).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/708).

@@ -10,14 +10,14 @@ This describes the Z-Wave device *VMZ Solar z-wave plus*, manufactured by *Fakro
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![VMZ Solar z-wave plus product image](https://www.cd-jackson.com/zwave_device_uploads/750/750_default.jpg)
+![VMZ Solar z-wave plus product image](https://opensmarthouse.org/zwavedatabase/750/image/)
 
 
 The VMZ Solar z-wave plus supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/750) to improve the documentation.
+No device information is provided in the database. Consider [updating the database](https://opensmarthouse.org/zwavedatabase/750) to improve the documentation.
 
 ## Channels
 
@@ -361,9 +361,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/750/VMZ-SOLAR-FAKRO-EN.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/750/VMZ-SOLAR-FAKRO-EN.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/750).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/750).

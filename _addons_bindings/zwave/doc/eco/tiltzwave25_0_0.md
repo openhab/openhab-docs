@@ -10,7 +10,7 @@ This describes the Z-Wave device *TILT-ZWAVE2.5-ECO*, manufactured by *Ecolink* 
 
 The device is in the category of *Garage Door*, defining Garage Door.
 
-![TILT-ZWAVE2.5-ECO product image](https://www.cd-jackson.com/zwave_device_uploads/581/581_default.jpg)
+![TILT-ZWAVE2.5-ECO product image](https://opensmarthouse.org/zwavedatabase/581/image/)
 
 
 The TILT-ZWAVE2.5-ECO supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -54,13 +54,15 @@ The following table summarises the channels available for the TILT-ZWAVE2.5-ECO 
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Binary Sensor  [Deprecated]| sensor_binary | sensor_binary |  | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (access) | alarm_access | alarm_access | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Door State | sensor_door | sensor_door | Door | Contact | 
+| Tamper Alarm | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
-### Binary Sensor
+### Binary Sensor [Deprecated]
 Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -71,6 +73,8 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Triggered |
 | OFF | Untriggered |
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.
@@ -100,6 +104,30 @@ The following state translation is provided for this channel to the ```Switch```
 Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Door State
+Indicates if the door/window is open or closed.
+
+The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Contact``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OPEN | Open |
+| CLOSED | Closed |
+
+### Tamper Alarm
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -222,9 +250,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [ECOLINK ZWAVE PLUS 2.5 Manual](https://www.cd-jackson.com/zwave_device_uploads/581/ecolink-z-wave-plus-garage-door-tilt-sensor-tiltzwave2-5-eco-manual.pdf)
+* [ECOLINK ZWAVE PLUS 2.5 Manual](https://opensmarthouse.org/zwavedatabase/581/ecolink-z-wave-plus-garage-door-tilt-sensor-tiltzwave2-5-eco-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/581).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/581).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *LZW30-SN*, manufactured by *Inovelli* with the
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![LZW30-SN product image](https://www.cd-jackson.com/zwave_device_uploads/1113/1113_default.jpg)
+![LZW30-SN product image](https://opensmarthouse.org/zwavedatabase/1113/image/)
 
 
 The LZW30-SN supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -40,6 +40,7 @@ The following table summarises the channels available for the LZW30-SN -:
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset Meter  [Deprecated]| meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED strip effect | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
@@ -58,6 +59,13 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter [Deprecated]
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -110,7 +118,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Active Power Reports | Active Power Reports |
 | 11 | Periodic Power & Energy Reports | Periodic Power & Energy Reports |
 | 12 | Energy Reports | Energy Reports |
-| 12 | *DELETE ME*  was added to wrong device | Association Behavior |
+| 51 | Enable Instant On | Enable Instant On |
 
 ### Parameter 1: Power On State
 
@@ -217,6 +225,7 @@ The following option values may be configured, in addition to values in the rang
 | 170 | Blue |
 | 212 | Violet |
 | 234 | Pink |
+| 255 | White |
 
 The manufacturer defined default value is ```170``` (Blue).
 
@@ -344,6 +353,7 @@ The following option values may be configured, in addition to values in the rang
 | 170 | Blue |
 | 212 | Violet |
 | 234 | Pink |
+| 255 | White |
 
 The manufacturer defined default value is ```0``` (Red).
 
@@ -535,17 +545,20 @@ The manufacturer defined default value is ```10```.
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 
-### Parameter 12: *DELETE ME*  was added to wrong device
+### Parameter 51: Enable Instant On
 
-Association Behavior
-When should the switch send commands to the associated devices:
+Enable Instant On
+Enable instant on (ie: disable the 700ms delay) for physical switch. Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled. 0: No Delay 1: 700ms Delay (default)
+The following option values may be configured -:
 
-01 = Local, 02 = 3-Way, 03 = 3-Way & Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub & Local, 06 = Z-Wave Hub & 3-Way, 07 = Z-Wave Hub & Local & 3-Way, 08 = Timer, 09 = Timer & Local, 10 = Timer & 3-Way, 11 =Timer & 3-Way & Local, 12 = Timer & Z-Wave Hub, 13 = Timer & Z-Wave Hub & Local, 14 = Timer & Z-Wave Hub & 3-Way, 15 = All
-Values in the range 0 to 15 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | No delay |
+| 1 | 700ms delay |
 
-The manufacturer defined default value is ```15```.
+The manufacturer defined default value is ```1``` (700ms delay).
 
-This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_51_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -599,9 +612,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product manual](https://www.cd-jackson.com/zwave_device_uploads/1113/LZW30-SN-Manual.pdf)
+* [Product manual](https://opensmarthouse.org/zwavedatabase/1113/LZW30-SN-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1113).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1113).

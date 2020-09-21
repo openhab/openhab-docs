@@ -10,7 +10,7 @@ This describes the Z-Wave device *DMWS1*, manufactured by *Elexa Consumer Produc
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![DMWS1 product image](https://www.cd-jackson.com/zwave_device_uploads/651/651_default.jpg)
+![DMWS1 product image](https://opensmarthouse.org/zwavedatabase/651/image/)
 
 
 The DMWS1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -281,9 +281,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Guide and ZWave command reference](https://www.cd-jackson.com/zwave_device_uploads/651/DMWS1-dome-z-leak-detector-operating-guide.pdf)
+* [Operating Guide and ZWave command reference](https://opensmarthouse.org/zwavedatabase/651/DMWS1-dome-z-leak-detector-operating-guide.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/651).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/651).

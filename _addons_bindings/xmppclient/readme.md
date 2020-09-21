@@ -4,8 +4,8 @@ label: XMPPClient
 title: XMPPClient - Bindings
 type: binding
 description: "XMPPClient binding provides support for sending and receiving XMPP (Jabber) messages."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -90,7 +90,7 @@ rule "Turn off all lights with separator and reply"
 when
     Channel "xmppclient:xmppBridge:xmpp:xmpp_command" triggered
 then
-    var actionName = receivedEvent.getEvent().split("#")
+    var actionName = receivedEvent.getEvent().split("##")
     if(actionName.get(1).toLowerCase() == "turn off lights") {
         Group_Light_Home_All.sendCommand(OFF)
 

@@ -1,3 +1,10 @@
+---
+layout: documentation
+title: Amazon Alexa Smart Home Skill
+source: https://github.com/openhab/openhab-alexa/blob/master/USAGE.md
+description: "Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Dot."
+---
+
 # Amazon Alexa Smart Home Skill
 
 <img align="right" width="150px" src="https://images-na.ssl-images-amazon.com/images/I/51-cpfTnBzL._SL210_QL95_BG0,0,0,0_FMpng_.png">
@@ -38,6 +45,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Command Not Working](#command-not-working)
   * [Device Not Found](#device-not-found)
   * [Device Not Responding](#device-not-responding)
+  * [Duplicate Device Names](#duplicate-device-names)
   * [Request Not Supported](#request-not-supported)
   * [Server Authentication Issue](#server-authentication-issue)
   * [Server Not Accessible](#server-not-accessible)
@@ -67,7 +75,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
 ## Recommendations
 
 ### Item Labels
-Matching of voice commands to items happens based on the item label (e.g. "Kitchen Light"). If it is not specified, the item will be ignored. It is therefore advisable, to choose labels that can be used to form natural commands. As an example, compare "Alexa, turn on the Kitchen Light" vs. "Alexa, turn on the Ground Floor LEDs Kitchen".
+Matching of voice commands to items happens based on the item label (e.g. "Kitchen Light"). If it is not specified, the item will be ignored. It is therefore advisable, to choose labels that can be used to form natural commands. It is important to note that each of these labels needs to be unique to prevent any [duplicate issues](#duplicate-device-names). As an example, compare "Alexa, turn on the Kitchen Light" vs. "Alexa, turn on the Ground Floor LEDs Kitchen".
 
 ### Regional Settings
 In order for the skill to determine your default language and measurement system to use, during the discovery process, for some of the controllers supporting friendly language-based names and unit of measurement, it is important to set your server regional settings including the language, country/region and measurement system properties. These can either be accomplished by using Paper UI (Configuration > System > Regional Settings) or setting the `language`, `region` and `measurementSystem` properties for `org.eclipse.smarthome.i18n` or `org.eclipse.smarthome.core.i18nprovider` service (depending on release version) in `$OPENHAB_CONF/services/runtime.cfg`. If these settings aren't defined, the skill will either use the item level configuration, if available, to determine these properties, or fallback to `en` language and `SI` measurement system, as default values.
@@ -88,6 +96,8 @@ In the Alexa skill a light switch endpoint implements the "PowerController" inte
 Switch LightSwitch "Light Switch" {alexa="PowerController.powerState"}
 ```
 Setting this on a single item will create an Alexa endpoint with the spoken addressable name "Light Switch" and map the powerState property to our item. You can ask Alexa to turn "Light Switch" on or off.
+
+An example of how this works with other metadata is given in [Items Metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata)
 
 This can also be written using [metadata labels](#supported-metadata-labels), which is a shorthand version of the full Alexa namespace:
 ```
@@ -153,13 +163,13 @@ A smart bulb is another example when it supports shade of colors. Below are two 
 ```
 Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
 Color  Color       "Color"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState,ColorController.color"}
-Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperatureController.colorTemperatureInKelvin"}
 ```
 
 ```
 Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
 Dimmer White       "White"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState"}
-Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperatureController.colorTemperatureInKelvin"}
 ```
 
 A Stereo is another example of a single endpoint that needs many items to function properly.  Power, volume, input, speakers and player controllers are all typical use cases for a stereo that a user may wish to control.
@@ -192,23 +202,23 @@ Switch WaterAlarm          "Water"           (SecuritySystem) {alexa="SecurityPa
 ### Building Block APIs
 For components of a device, which isn't covered by the existing interfaces, that have more than one setting, characterized by a number within a range or just turn on and off, the [Mode](#modecontroller-mode), [Range](#rangecontroller-rangevalue) and [Toggle](#togglecontroller-togglestate) controllers can be used to highly customize how you interact with that device via Alexa. These capabilities can be used like building blocks to model the full feature set of a complex device. With the expansion of these controllers support to other languages, the skill will use your server [regional settings](#regional-settings) if available, falling back to `en`, to determine your default language setting.
 
-A washer and its settings modeled with multiple mode/toggle interface capabilities.
+A washer and its settings modeled with multiple mode interface capabilities.
 
 ```
 Group Washer       "Washer"               {alexa="Endpoint.Other"}
 String Cycle       "Cycle"       (Washer) {alexa="ModeController.mode" [supportedModes="Normal=Normal:Cottons,Delicate=@Value.Delicate:Knits",friendlyNames="Wash Cycle,Wash Setting",ordered=false]}
 Number Temperature "Temperature" (Washer) {alexa="ModeController.mode" [supportedModes="0=Cold:Cool,1=Warm,2=Hot",friendlyNames="Wash Temperature,@Setting.WaterTemperature",ordered=true]}
 String Status      "Status"      (Washer) {alexa="ModeController.mode" [supportedModes="Washing,Rinsing,Spinning",friendlyNames="Wash Status",nonControllable=true]}
-Switch Power       "Power"       (Washer) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Washer"]}
+Switch Power       "Power"       (Washer) {alexa="PowerController.powerState"}
 ```
 
-A fan and its settings modeled with multiple range/toggle interface capabilities.
+A fan and its settings modeled with a mix of range/toggle interface capabilities.
 
 ```
 Group Fan     "Fan"          {alexa="Endpoint.Fan"}
 Number Speed  "Speed"  (Fan) {alexa="RangeController.rangeValue" [supportedRange="1:10:1",presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest",friendlyNames="@Setting.FanSpeed,Speed"]}
 Switch Rotate "Rotate" (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.Oscillate,Rotate"]}
-Switch Power  "Power"  (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Fan"]}
+Switch Power  "Power"  (Fan) {alexa="PowerController.powerState"}
 ```
 
 A router and its settings modeled with multiple toggle interface capabilities.
@@ -217,7 +227,7 @@ A router and its settings modeled with multiple toggle interface capabilities.
 Group Router       "Router"                 {alexa="Endpoint.NetworkHardware"}
 Switch 2GGuestWiFi "2G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.2GGuestWiFi"]}
 Switch 5GGuestWiFi "5G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.5GGuestWiFi"]}
-Switch Power       "Power"         (Router) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Router"]}
+Switch Power       "Power"         (Router) {alexa="PowerController.powerState"}
 ```
 
 ### Semantic Extensions
@@ -449,7 +459,7 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: TV
 
 #### `InputController.input`
-* Items that represent a source input (e.g. "HDMI 1", or "TUNER" on a stereo). A list of [supported input values](https://developer.amazon.com/docs/device-apis/alexa-property-schemas.html#input-values) needs to be provided using the supportedInputs parameter. The space between the input name and number is not sent to OH (e.g. "HDMI 1" [alexa] => "HDMI1" [OH]). That space can also be omitted in the supported list as well.
+* Items that represent a source input (e.g. "HDMI 1", or "TUNER" on a stereo). A list of [supported input values](https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-inputcontroller.html#input-values) needs to be provided using the supportedInputs parameter. The space between the input name and number is not sent to OH (e.g. "HDMI 1" [alexa] => "HDMI1" [OH]). That space can also be omitted in the supported list as well.
 * Supported item type:
   * String
 * Supported metadata parameters:
@@ -1156,6 +1166,11 @@ Here are some of the most common generic errors you may encounter while using th
 * To resolve this error, make sure that all items interfacing with Alexa have a defined state. If necessary, use [item sensors](#item-sensor), or if the state is not available in openHAB, set the [item state](#item-state) to not be retrievable.
 * For group endpoints, partial properties responses will be send back to Alexa excluding items with invalid state. This will allow Alexa to acknowledge a command request assuming that the relevant item state is accurate. However, it will cause Alexa to generate this error when requesting the status of a device configured with an interface supporting that feature. For example, using a thermostat group endpoint, a request to set its mode will succeed but requesting its mode status will fail if one of its property state, such as its temperature sensor, is not defined in openHAB.
 * This is the default error.
+
+### Duplicate Device Names
+* Alexa will respond with "A few things share the name _device_, which one did you want?"
+* It indicates that more than one device on your Alexa account matches the device name requested.
+* To resolve this error, make sure that all the [item labels](#item-labels) related to your Alexa-enabled items are unique. Additionally, check your Alexa account for discovered devices from other skills or local integrations (e.g. Philips Hue bridge), that may have overlapping names.
 
 ### Request Not Supported
 * Alexa will respond with "_device_ doesn't support that"

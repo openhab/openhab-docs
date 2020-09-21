@@ -4,8 +4,9 @@ label: Cm11a (X10 controller)
 title: Cm11a (X10 controller) - Bindings
 type: binding
 description: "The cm11a is a serial computer interface that allows a computer to control attached X10 modules."
-since: 2x
-install: auto
+since: 3x
+logo: images/addons/cm11a.png
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

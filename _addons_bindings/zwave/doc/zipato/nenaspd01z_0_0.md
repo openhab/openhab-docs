@@ -10,7 +10,7 @@ This describes the Z-Wave device *NE-NAS-PD01Z*, manufactured by *[Zipato](http:
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-![NE-NAS-PD01Z product image](https://www.cd-jackson.com/zwave_device_uploads/735/735_default.jpg)
+![NE-NAS-PD01Z product image](https://opensmarthouse.org/zwavedatabase/735/image/)
 
 
 The NE-NAS-PD01Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -36,7 +36,7 @@ The NE-NAS-PD01Z does not permanently listen for messages sent from the controll
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller. LED will blink once.
+ Press the button 3 times within 1.5 seconds to wake the device. LED will blink once.
 
 ## Channels
 
@@ -374,9 +374,9 @@ Association group 4 supports 4 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/735/ne-nas-pd01z-Zipato-PIR-Motion-Sensor-User-Manual-1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/735/ne-nas-pd01z-Zipato-PIR-Motion-Sensor-User-Manual-1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/735).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/735).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *HRT4-ZW*, manufactured by *Horstmann Controls 
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![HRT4-ZW product image](https://www.cd-jackson.com/zwave_device_uploads/20/20_default.jpg)
+![HRT4-ZW product image](https://opensmarthouse.org/zwavedatabase/20/image/)
 
 
 The HRT4-ZW does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -230,9 +230,9 @@ Association group 5 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://www.cd-jackson.com/zwave_device_uploads/20/user-and-installer-guide-HRT4-ZWweb1.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/20/user-and-installer-guide-HRT4-ZWweb1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/20).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/20).

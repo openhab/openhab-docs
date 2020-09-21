@@ -4,8 +4,8 @@ label: SmartMeter
 title: SmartMeter - Bindings
 type: binding
 description: "This binding retrieves and reads SML messages (PUSH) and supports IEC 62056-21 modes A,B,C (PULL) and D (PUSH)."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

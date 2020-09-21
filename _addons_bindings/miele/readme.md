@@ -4,9 +4,9 @@ label: Miele@home
 title: Miele@home - Bindings
 type: binding
 description: "This binding integrates Miele@home appliances."
-since: 2x
+since: 3x
 logo: images/addons/miele.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -70,7 +70,7 @@ Thing coffeemachine coffeemachine [uid="001d63fffe020505#190"]
 
 ## Channels
 
-The definition of the channels in use can best be checked in the [source repository](https://github.com/openhab/openhab-addons/tree/master/bundles/org.openhab.binding.miele/src/main/resources/ESH-INF/thing).
+The definition of the channels in use can best be checked in the [source repository](https://github.com/openhab/openhab-addons/tree/master/bundles/org.openhab.binding.miele/src/main/resources/OH-INF/thing).
 
 ## Example
 

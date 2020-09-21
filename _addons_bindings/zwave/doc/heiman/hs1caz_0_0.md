@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS1CA-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HS1CA-Z product image](https://www.cd-jackson.com/zwave_device_uploads/790/790_default.png)
+![HS1CA-Z product image](https://opensmarthouse.org/zwavedatabase/790/image/)
 
 
 The HS1CA-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -176,9 +176,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/790/User-Manual-HS1CAZ.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/790/User-Manual-HS1CAZ.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/790).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/790).

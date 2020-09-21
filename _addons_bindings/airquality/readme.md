@@ -4,9 +4,9 @@ label: Air Quality
 title: Air Quality - Bindings
 type: binding
 description: "This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide."
-since: 2x
+since: 3x
 logo: images/addons/airquality.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -69,6 +69,7 @@ The AirQuality information that is retrieved is available as these channels:
 | Channel ID      | Item Type            | Description                                  |
 |-----------------|----------------------|----------------------------------------------|
 | aqiLevel        | Number               | Air Quality Index                            |
+| aqiColor        | Color                | Color associated to given AQI Index.         |
 | aqiDescription  | String               | AQI Description                              |
 | locationName    | String               | Nearest measuring station location           |
 | stationId       | Number               | Measuring station ID                         |

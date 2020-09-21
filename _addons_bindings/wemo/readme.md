@@ -4,9 +4,9 @@ label: Belkin Wemo
 title: Belkin Wemo - Bindings
 type: binding
 description: "This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/)."
-since: 2x
+since: 3x
 logo: images/addons/wemo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

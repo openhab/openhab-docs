@@ -4,8 +4,8 @@ label: Synop Analyzer
 title: Synop Analyzer - Bindings
 type: binding
 description: "This binding integrates the possibility to download and interpret Synop messages."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -23,6 +23,10 @@ The binding has no configuration options itself, all configuration is done at 'T
 ## Supported Things
 
 There is exactly one supported thing, which represents a Synop message. It has the id `synopanalyzer`.
+
+## Discovery
+
+If a system location is set, the nearest availabble Synop station be automatically discovered for this location.
 
 ## Thing Configuration
 
@@ -57,7 +61,7 @@ The weather information that is retrieved is available as these channels:
 Here is an example of thing definition :
 
 ```
-synopanalyzer:synopanalyzer:orly [ stationId="07149"]
+synopanalyzer:synopanalyzer:orly [ stationId=7149 ]
 ```
 
 ### Items

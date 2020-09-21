@@ -4,8 +4,8 @@ label: KM200
 title: KM200 - Bindings
 type: binding
 description: "The KM200 Binding is communicating with a [Buderus Logamatic web KM200 / KM100 / KM50](https://www.buderus.de/de/produkte/catalogue/alle-produkte/7719_gateway-logamatic-web-km200-km100-km50)."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

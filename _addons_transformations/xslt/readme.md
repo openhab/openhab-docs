@@ -4,8 +4,8 @@ label: XSLT
 title: XSLT - Transformation Services
 type: transform
 description: "Transform input using the XML Stylesheet Language for Transformations (XSLT)."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -137,4 +137,4 @@ Please note: This profile is a one-way transformation, i.e. only values from a d
 * Extended introduction and more [examples](https://en.wikipedia.org/wiki/XSLT#XSLT_examples) at Wikipedia.
 * A good [introduction](https://www.w3schools.com/xml/xsl_intro.asp) and [tutorial](https://www.w3schools.com/xml/xsl_transformation.asp) at W3School.
 * An informative [tutorial](https://www.ibm.com/developerworks/library/x-xsltmistakes/) of common mistakes.
-
+* Online XSL transformer tools like [this](https://www.freeformatter.com/xsl-transformer.html) to check the syntax.

@@ -10,7 +10,7 @@ This describes the Z-Wave device *Lumi 2 Blinds ZWave Switch*, manufactured by *
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Lumi 2 Blinds ZWave Switch product image](https://www.cd-jackson.com/zwave_device_uploads/1179/1179_default.png)
+![Lumi 2 Blinds ZWave Switch product image](https://opensmarthouse.org/zwavedatabase/1179/image/)
 
 
 The Lumi 2 Blinds ZWave Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -103,9 +103,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Lumi_Manual_English](https://www.cd-jackson.com/zwave_device_uploads/1179/User-Manual-Switch4-V1-0.pdf)
+* [Lumi_Manual_English](https://opensmarthouse.org/zwavedatabase/1179/User-Manual-Switch4-V1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1179).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1179).

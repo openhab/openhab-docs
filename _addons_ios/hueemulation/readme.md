@@ -4,8 +4,8 @@ label: openHAB Hue Emulation
 title: openHAB Hue Emulation - System Integrations
 type: io
 description: "Hue Emulation exposes openHAB items as Hue lights to other Hue API compatible applications like Amazon Echos, Google Homes or any Hue compatible application."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -128,7 +128,7 @@ This option allows you to override what addresses are used for the announcement.
 You can have multiple comma separated entries.
 
 ```
-org.openhab.hueemulation:discoveryIps=192.168.1.100,::FFFF:A9DB:0D85
+org.openhab.hueemulation:discoveryIp=192.168.1.100,::FFFF:A9DB:0D85
 ```
 
 The hue emulation service supports three types of emulated bulbs.

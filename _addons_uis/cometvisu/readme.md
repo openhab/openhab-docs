@@ -4,8 +4,8 @@ label: CometVisu Backend for openHAB
 title: CometVisu Backend for openHAB - UIs
 type: ui
 description: "This adds a backend for the web based visualization CometVisu <http://www.cometvisu.org>."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -87,6 +87,33 @@ The list of icons in the CometVisu is available at:
 
 ```
 http://<openhab-server>:8080/<webAlias>/icon/knx-uf-iconset/showicons.php
+```
+
+You can also customize the mounted folders in the CometVisu manager. The CometVisu manager can only access
+files/folders in the resource/config folder. In order to make other files of the CometVisu available mount points
+are used and this feature is used in order to make the demo config folder accessible.
+You can add further mount points if you need to access other resources in the cometvisu. Please keep in mind that
+only subfolders of the CometVisu installation can be mounted, you cannot access paths outside this folder.
+
+Default setting is: 
+
+```
+mount>demo=resource/demo
+```
+
+This mounts the `resource/demo` subfolder as `demo`-folder in the manager. By default these mounted folders
+are not writeable, which means that you cannot create/edit files and folders in there. You can add some flags to
+the mount entry to customize some settings, the available flags are:
+
+```
+w: mounted content is writeable
+s: show subfolders in the mounted folder
+```
+
+A complete mount entry with these flags looks like this:
+
+```
+mount>designs=resource/designs:ws
 ```
 
 ### Override CometVisu files
@@ -265,10 +292,11 @@ If you get an 403 - Access Denied error, when you try to open the CometVisu in y
 
 ### Hints for development
 
-For every change in the CometVisu XSD-schema the JAXB auto-generation job must be executed:
+Source file are automatically generated from CometVisu's visu_config.xsd and openapi.yaml files.
+For a manual update of these files copy them to the src/main/resources folder and run
+`mvn clean generated-sources`.
 
-*   Copy the new visu_config.xsd to src/main/resources/
-*   and call `mvn jaxb2:xjc`
+If the library version changes the value must be updated in `org.openhab.ui.cometvisu.internal.backend.model.config.LibVersion`.
 
 ## TODO
 

@@ -4,9 +4,9 @@ label: NEEO
 title: NEEO - Bindings
 type: binding
 description: "This binding will discovery and control a NEEO Brain/Remote combination."
-since: 2x
+since: 3x
 logo: images/addons/neeo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

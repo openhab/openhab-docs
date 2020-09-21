@@ -10,7 +10,7 @@ This describes the Z-Wave device *VRCS2*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![VRCS2 product image](https://www.cd-jackson.com/zwave_device_uploads/418/418_default.png)
+![VRCS2 product image](https://opensmarthouse.org/zwavedatabase/418/image/)
 
 
 ## Overview
@@ -82,10 +82,10 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Z-Wave Protocol Implementation Conformance Statement:](https://www.cd-jackson.com/zwave_device_uploads/418/ZC08-09060016.pdf)
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/418/VRCS2.pdf)
+* [Z-Wave Protocol Implementation Conformance Statement:](https://opensmarthouse.org/zwavedatabase/418/ZC08-09060016.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/418/VRCS2.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/418).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/418).

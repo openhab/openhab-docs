@@ -10,7 +10,7 @@ This describes the Z-Wave device *SW-ZAP-1*, manufactured by *CBCC Domotique SAS
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![SW-ZAP-1 product image](https://www.cd-jackson.com/zwave_device_uploads/1003/1003_default.jpg)
+![SW-ZAP-1 product image](https://opensmarthouse.org/zwavedatabase/1003/image/)
 
 
 The SW-ZAP-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -127,10 +127,10 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [ZAP User Manual](https://www.cd-jackson.com/zwave_device_uploads/1003/ZAP-User-s-manual-vBAT-30-11-2014.pdf)
-* [Advanced swiidplug](https://www.cd-jackson.com/zwave_device_uploads/1003/Advanced-swiidplug.pdf)
+* [ZAP User Manual](https://opensmarthouse.org/zwavedatabase/1003/ZAP-User-s-manual-vBAT-30-11-2014.pdf)
+* [Advanced swiidplug](https://opensmarthouse.org/zwavedatabase/1003/Advanced-swiidplug.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1003).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1003).

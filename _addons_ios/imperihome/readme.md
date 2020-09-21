@@ -4,8 +4,8 @@ label: ImperiHome integration service
 title: ImperiHome integration service - System Integrations
 type: io
 description: "This IO service exposes openHAB Items to the Evertygo [ImperiHome](https://imperihome.com/) dashboard app for Android and iOS."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

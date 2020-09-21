@@ -4,8 +4,8 @@ label: Home Builder
 title: Home Builder - UIs
 type: ui
 description: "> Boilerplate for the [Items](https://www.openhab.org/docs/configuration/items.html), [sitemap](https://www.openhab.org/docs/configuration/sitemaps.html) files and [HABPanel](https://www.openhab.org/docs/configuration/habpanel.html) dashboard."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

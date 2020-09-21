@@ -20,15 +20,7 @@ The app follows the basic principles of the other openHAB UIs, like Basic UI, an
   <img alt="Get it on F-Droid" src="images/get-it-on-fdroid.png" width="240px">
 </a>
 
-## Features
-
-* Control your openHAB server and/or [openHAB Cloud instance](https://github.com/openhab/openhab-cloud), e.g., an account with [myopenHAB](http://www.myopenhab.org/)
-* Receive notifications through an openHAB Cloud connection, [read more](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions)
-* Change items via NFC tags
-* Send voice commands to openHAB
-* [Send alarm clock time to openHAB](#alarm-clock)
-* [Supports wall mounted tablets](#permanent-deployment)
-* [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) action plugin included
+[[toc]]
 
 <div class="row">
   <img src="images/main-menu.png" alt="Demo Overview" width=200px> <img src="images/widget-overview.png" alt="Widget Overview" width=200px> <img src="images/maps.png" alt="Google Maps Widget" width=200px>
@@ -54,19 +46,49 @@ If your openHAB instance is reachable via a public address/domain from outside y
 Make sure to secure this connection against unauthorized access.
 There are a number of strategies available to provide [secure remote access]({{base}}/installation/security.html) to your openHAB server.
 
-## Permanent Deployment
+## Features
+
+* Control your openHAB server and/or [openHAB Cloud instance](https://github.com/openhab/openhab-cloud), e.g., an account with [myopenHAB](http://www.myopenhab.org/)
+* Receive notifications through an openHAB Cloud connection, [read more](https://www.openhab.org/docs/configuration/actions.html#cloud-notification-actions)
+* Change items via NFC tags
+* Send voice commands to openHAB
+* [Send device information to openHAB](#send-device-information-to-openhab), like next alarm clock time or call state
+* [Supports wall mounted tablets](#permanent-deployment)
+* [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) action plugin included
+
+### Permanent Deployment
 
 If you want to use openHAB Android on a wall mounted tablet, go to settings and select `Disable display timer` and `Fullscreen`.
 
-## Alarm Clock
+### Send device information to openHAB
+
+You have to enable every information you want to send in the settings.
+Every settings has a default item name which is also used for example item definitions and rules below.
+
+If you have more than one device, it's recommended to fill out the [device identifier](#device-identifier) on the main settings page.
+This prefixes every item name, e.g. with the Prefix `John` the item `AlarmClock` becomes `JohnAlarmClock`.
+This way you don't have to change every item name.
+
+There are two different types of information that can be send to the openHAB server:
+* Event based (Alarm clock and call state)
+* Schedule based (Everything else)
+
+Event based means, that the items are updated when the corresponding event happens, e.g. the phone starts ringing.
+Schedule based means, that the items are updated every 10 to 15 minutes while charging, otherwise every 2 to 6 hours.
+The latter interval can be changed in the settings.
+
+In addition devices running Android 7 or lower can also send schedule based items on specific events, e.g. a charger is plugged in.
+Beginning with Android 8 it isn't possible anymore to listen for these events unless you turn on the event listener.
+However this will show a persistent notification and may increase battery usage.
+
+#### Alarm Clock
 
 The openHAB app will send the next wake-up time from your alarm clock app to the server.
 The time is sent as a number containing the number of milliseconds since the epoch.
-The Item name's default is `AlarmClock`, but you can change it in the settings.
 
 Example item definition:
 ```java
-Number AlarmClock
+DateTime AlarmClock "Alarm Clock [%s]" <time>
 ```
 
 Example rule:
@@ -77,45 +99,40 @@ rule "Alarm Clock"
 when
     Item AlarmClock changed
 then
-    if (AlarmClock.state as Number == 0) {
+    if (newState instanceof DateTimeType) {
+        val epoch = newState.toLocaleZone.zonedDateTime.toInstant.toEpochMilli
+        logInfo("alarm", "Scheduling alarm for {} ({})", newState.toLocaleZone, epoch)
+        if (timerAlarm !== null) {
+            logInfo("alarm", "Reschedule alarm")
+            timerAlarm.reschedule(new DateTime(epoch))
+        } else {
+            logInfo("alarm", "New alarm")
+            timerAlarm = createTimer(new DateTime(epoch), [ |
+                // Turn on stuff, e.g. radio or light
+                logInfo("alarm", "Alarm expired")
+                timerAlarm = null
+            ])
+        }
+    } else {
         if (timerAlarm !== null) {
             timerAlarm.cancel
             timerAlarm = null
         }
-        logInfo("alarm", "All alarms are cancelled")
-    } else {
-        var epoch = new DateTime((AlarmClock.state as Number).longValue)
-        logInfo("alarm", "Scheduling alarm for " +  epoch.toString)
-
-        if (timerAlarm !== null) {
-            logInfo("alarm", "Reschedule alarm")
-            timerAlarm.reschedule(epoch)
-        } else {
-            logInfo("alarm", "New Alarm")
-            timerAlarm = createTimer(epoch,
-                [ k |
-                    // Turn on stuff, e.g. radio or light
-                    Light.sendCommand(ON)
-                    logInfo("alarm", "alarm is expired")
-                ]
-            )
-        }
+        logInfo("alarm", "Alarm canceled")
     }
 end
 ```
 
-## Call State
-
-The openHAB app will send the current call state to the server.
+#### Call State
 
 Example item definition:
 ```java
-String CallState
+String CallState "Call State [%s]" <soundvolume>
 ```
 
 Example rule:
 ```java
-rule "Call State Trigger"
+rule "Call State"
 when
     Item CallState changed
 then
@@ -126,11 +143,124 @@ then
     } else if (CallState.state == "OFFHOOK") {
         // At least one call exists that is dialing, active, or on hold, and no calls are ringing or waiting.
     }
-
 end
 ```
 
-## Tasker Action Plugin
+#### Battery Level
+
+Example item definition:
+```java
+Number BatteryLevel "Battery Level [%d %%]" <batterylevel>
+```
+
+Example rule:
+```java
+rule "Battery level"
+when
+    Item BatteryLevel changed
+then
+    if (BatteryLevel.state < 25) {
+        // Battery level is low
+    }
+end
+```
+
+#### Charging State
+
+The charging state can be send to a `String` Item that contains the charger type or to a `Switch` Item, which is `ON` when charging, `OFF` otherwise.
+The app determines the Item type automatically, so it's not required to configure the Item type in the app.
+
+Example item definition:
+```java
+String ChargingState "Charging State [%s]" <poweroutlet_eu>
+// or
+Switch ChargingState "Charging State [%s]" <poweroutlet_eu>
+```
+
+Example rule for the `String` Item:
+```java
+rule "Charging state"
+when
+    Item ChargingState changed
+then
+    if (ChargingState.state == "USB") {
+        // Device is charging over USB
+    } else if (ChargingState.state == "AC") {
+        // Device is charging over AC adapter
+    } else if (ChargingState.state == "WIRELESS") {
+        // Device is charging wirelessly
+    } else if (ChargingState.state == "UNKNOWN_CHARGER") {
+        // Device is charging in an unknown way (None of the three above).
+        // If you see this state, please report that.
+    } else {
+        // Device isn't charging ("UNDEF" is send)
+    }
+end
+```
+
+#### Wi-Fi Name (SSID)
+
+Example item definition:
+```java
+String WifiName "Wi-Fi Name [%s]" <network>
+```
+
+Example rule:
+```java
+rule "Wi-Fi name"
+when
+    Item WifiName changed
+then
+    if (WifiName.state == "UNDEF") {
+        // Device isn't connected to Wi-Fi
+    } else if (WifiName.state == "LOCATION_OFF") {
+        // On Android 8 and higher "Location" must be turned on, otherwise apps don't have access to the Wi-Fi SSID
+    } else if (WifiName.state == "NO_PERMISSION") {
+        // The location permission has been revoked by the user
+    } else {
+        logInfo("WIFI", "Device is connected to Wi-Fi " + WifiName.state)
+    }
+end
+```
+
+#### DND Mode
+
+Sending the DND mode requires Android 6 or higher.
+
+Example item definition:
+```java
+String DndMode "DND Mode [%s]" <soundvolume_mute>
+```
+
+Example rule:
+```java
+rule "DND mode"
+when
+    Item DndMode changed
+then
+    if (DndMode.state == "TOTAL_SILENCE") {
+        // All notifications are suppressed
+    } else if (DndMode.state == "PRIORITY") {
+        // All notifications are suppressed except those that match the priority criteria
+    } else if (DndMode.state == "ALARMS") {
+        // All notifications are suppressed except alarms
+    } else if (DndMode.state == "OFF") {
+        // No notifications are suppressed
+    } else {
+        // DND mode is unknown
+    }
+end
+```
+
+### Device identifier
+
+The device identifier can be any string and should be unique for all devices accessing your openHAB server.
+You can use it to distinguish between multiple clients:
+* Prefix the voice command with `<Device identifier>|`
+* Prefix the item names of [Send device information to openHAB](#send-device-information-to-openhab)
+* Use it as state on NFC tags
+
+### Tasker Action Plugin
 
 The Tasker Action Plugin can be used to send Item commands to the server.
 
@@ -148,6 +278,27 @@ In case of an error the plugin returns an error code.
 | 11         | The app couldn't establish a connection                                                    |
 | 1000+      | A connection was established, but an error occured. The error code is 1000 + the HTTP code |
 
+## Multi server support
+
+When adding multiple servers to the app, there's always a primary and an active one.
+The active server is used for foreground operations, e.g. display the Sitemaps, and can be changed in the side menu.
+The primary server is used for all background operations and can be changed in the settings.
+
+Features that support multiple servers:
+* Display Sitemaps and HABPanel
+* Voice commands launched from in-app (sent to active server) and from widgets (sent to primary server)
+* Show a list of recent notifications
+* Sitemap shortcuts on the home screen
+* Shortcuts for HABPanel, notifications and voice command
+
+Features that don't support multiple servers, i.e. use the primary server:
+* Item widgets on the home screen
+* Quick tiles
+* NFC tags
+* Push notifications
+* Send device information to openHAB
+* Tasker plugin
+
 ## Help and Technical Details
 
 Please refer to the [openhab-android project on GitHub](https://github.com/openhab/openhab-android) for more details.
@@ -163,6 +314,15 @@ All notifications are sent as "high priority" messages, which means that the dev
 However vendors/third parties can implement custom "cleanup", "optimization" and "battery saver" apps, which might lead to delayed notifications.
 Please have a look at [dontkillmyapp.com](https://dontkillmyapp.com/) how to make an exception for openHAB in these apps.
 
+### Notifications in FOSS version
+
+The version on Play Store uses [FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) to receive push notifications in real time.
+In the FOSS version this library has to be removed and has been replaced by a polling mechanism.
+This has a few disadvantages:
+* Notifications are only fetched every 6 hours by default. It uses the same schedule than [Send device information to openHAB](#send-device-information-to-openhab).
+* Read status aren't synced between devices.
+* The maximum number of messages that can be received during one fetch is limited to 20.
+
 ### My voice command rule isn't run
 
 Please make sure `Default Human Language Interpreter` is set to `Rule-based Interpreter` (http://openhab:8080/paperui/index.html#/configuration/system) and `Rule Voice Interpreter` => `Configure` => Select correct item (http://openhab:8080/paperui/index.html#/configuration/services?tab=voice).
@@ -171,6 +331,10 @@ Please make sure `Default Human Language Interpreter` is set to `Rule-based Inte
 
 Generating charts can be taxing to the server.
 If you experience slow chart loading times and your server isn't powerful, open `Settings` and disable `High resolution charts` to improve loading times.
+
+### Icons look pixelated
+
+For good looking icons, the best approach is using SVG icons. Bitmap icons have a fixed size that doesn't scale with screen pixel density, so depending on the device, they may be scaled up by a large factor. When using SVG icons, ideally use icons that don't have a fixed size (in other words, they shouldn't have a 'width' and 'height' attribute on the root tag), as otherwise scaling might become necessary again: the app renders SVGs at their native size scaled by screen density, but scales them to a common size; when using icons without fixed size, the app can render them at precisely the needed size.
 
 ## Trademark Disclaimer
 

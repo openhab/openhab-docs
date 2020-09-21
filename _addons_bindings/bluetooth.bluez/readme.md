@@ -4,7 +4,8 @@ label: Bluetooth BlueZ Adapter
 title: Bluetooth BlueZ Adapter - Bindings
 type: binding
 description: "This extension supports Bluetooth access via BlueZ on Linux (ARMv6hf)."
-since: 2x
+since: 3x
+logo: images/addons/bluetooth.bluez.png
 install: manual
 ---
 
@@ -66,12 +67,12 @@ If BlueZ is enabled and can be accessed, all available adapters are automaticall
 ## Bridge Configuration
 
 The bluez bridge requires the configuration parameter `address`, which corresponds to the Bluetooth address of the adapter (in format "XX:XX:XX:XX:XX:XX").
-Additionally, the parameter `discovery` can be set to true/false.When set to true, any Bluetooth device of which broadcasts are received is added to the Inbox.
+Additionally, the parameter `backgroundDiscovery` can be set to true/false.When set to true, any Bluetooth device of which broadcasts are received is added to the Inbox.
 
 ## Example
 
 This is how an BlueZ adapter can be configured textually in a *.things file:
 
 ```
-Bridge bluetooth:bluez:hci0 [ address="12:34:56:78:90:AB", discovery=false ]
+Bridge bluetooth:bluez:hci0 [ address="12:34:56:78:90:AB", backgroundDiscovery=false ]
 ```

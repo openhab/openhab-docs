@@ -4,8 +4,8 @@ label: RegEx
 title: RegEx - Transformation Services
 type: transform
 description: "Transforms a source string on basis of the regular expression (regex) search pattern to a defined result string."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -117,3 +117,4 @@ Please note: This profile is a one-way transformation, i.e. only values from a d
 * Online validator help to check the syntax of a regex and give information how to design it.
     * [Regex 101](https://regex101.com/)
     * [Regex R](https://regexr.com/)
+    * [ExtendsClass](https://extendsclass.com/regex-tester.html)

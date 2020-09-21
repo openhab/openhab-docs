@@ -4,9 +4,9 @@ label: Onkyo
 title: Onkyo - Bindings
 type: binding
 description: "This binding integrates the Onkyo AV receivers."
-since: 2x
+since: 3x
 logo: images/addons/onkyo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -54,10 +54,13 @@ At the moment only the following models are supported:
 -   TX-NR727
 -   TX-NR737
 -   TX-NR747
+-   TX-NR757
+-   TX-NR809
 -   TX-NR818
 -   TX-NR828
 -   TX-NR838
 -   TX-NR3007
+-   TX-RZ900
 
 ## Binding Configuration
 

@@ -4,9 +4,9 @@ label: UniFi
 title: UniFi - Bindings
 type: binding
 description: "This binding integrates with [Ubiquiti UniFi Networks](https://www.ubnt.com/products/#unifi) allowing for presence detection of network clients."
-since: 2x
+since: 3x
 logo: images/addons/unifi.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

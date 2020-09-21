@@ -4,8 +4,8 @@ label: Exec
 title: Exec - Transformation Services
 type: transform
 description: "Transforms an input string with an external program."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -20,6 +20,18 @@ Executes an external program and returns the output as a string.
 In the given command line the placeholder `%s` is substituted with the input value.
 
 The external program must either be in the executable search path of the server process, or an absolute path has to be used.
+
+For security reasons all commands need to be whitelisted.
+Allowed commands need to be added to the `misc/exec.whitelist` file in the configuration directory.
+Every command needs to be on a separate line.
+
+Example:
+
+```shell
+/bin/date -v1d -v+1m -v-1d -v-%s
+numfmt --to=iec-i --suffix=B --padding=7 %s
+
+```
 
 ## Examples
 
@@ -65,7 +77,7 @@ Or replace it with
 numfmt --to=iec-i --suffix=B --padding=7 %s
 ```
 
-When the input argument for `%s` is 1234567 it will return the bytes formated in a better readable form
+When the input argument for `%s` is 1234567 it will return the bytes formatted in a better readable form
 
 ```shell
 1.2MiB

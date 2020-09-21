@@ -10,7 +10,7 @@ This describes the Z-Wave device *TLS-ZWAVE5*, manufactured by *Ecolink* with th
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![TLS-ZWAVE5 product image](https://www.cd-jackson.com/zwave_device_uploads/915/915_default.jpg)
+![TLS-ZWAVE5 product image](https://opensmarthouse.org/zwavedatabase/915/image/)
 
 
 The TLS-ZWAVE5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -107,9 +107,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product Manual](https://www.cd-jackson.com/zwave_device_uploads/915/ea1265b3f76f673ca8cf54cc210044665d4dae83.pdf)
+* [Product Manual](https://opensmarthouse.org/zwavedatabase/915/ea1265b3f76f673ca8cf54cc210044665d4dae83.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/915).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/915).

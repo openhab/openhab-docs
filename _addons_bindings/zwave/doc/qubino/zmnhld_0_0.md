@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHLD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![ZMNHLD product image](https://www.cd-jackson.com/zwave_device_uploads/498/498_default.png)
+![ZMNHLD product image](https://opensmarthouse.org/zwavedatabase/498/image/)
 
 
 The ZMNHLD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -957,11 +957,11 @@ Association group 9 supports 16 nodes.
 
 ### Documentation Links
 
-* [Page 1](https://www.cd-jackson.com/zwave_device_uploads/498/qubino-zmnhld-0001.pdf)
-* [Page 2](https://www.cd-jackson.com/zwave_device_uploads/498/qubino-zmnhld-0002.pdf)
-* [ZMNHKD Quick Manual](https://www.cd-jackson.com/zwave_device_uploads/498/Qubino-Flush-Heat-Cool-Thermostat-PLUS-user-manual-V1-5-eng.pdf)
+* [Page 1](https://opensmarthouse.org/zwavedatabase/498/qubino-zmnhld-0001.pdf)
+* [Page 2](https://opensmarthouse.org/zwavedatabase/498/qubino-zmnhld-0002.pdf)
+* [ZMNHKD Quick Manual](https://opensmarthouse.org/zwavedatabase/498/Qubino-Flush-Heat-Cool-Thermostat-PLUS-user-manual-V1-5-eng.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/498).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/498).

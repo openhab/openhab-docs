@@ -4,8 +4,8 @@ label: Robonect
 title: Robonect - Bindings
 type: binding
 description: "Robonect is a piece of hardware which has to be put into your Husqvarna, Gardena and other branded automower and makes"
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -33,6 +33,7 @@ Tested mowers
 | Husqvarna Automower 315 | Robonect Hx      | 0.9e, 1.0 preview         |
 | Husqvarna Automower 320 | Robonect Hx      | 1.0 Beta7a                |
 | Husqvarna Automower 420 | Robonect Hx      | 0.9e, 1.0 Beta2           |
+| Gardena SILENO city 250 | Robonect Hx      | 1.2                       |
 
 ## Discovery
 
@@ -49,6 +50,7 @@ following configuration settings are supported for the `mower` thing.
 | offlineTimeout | no        | the maximum time, the mower can be offline before the binding triggers the offlineTrigger channel |
 | user           | no        | the username if authentication is enabled in the firmware.                                        |
 | password       | no        | the password if authenticaiton is enabled in the firmware.                                        |
+| timezone       | no        | the timezone as configured in Robonect on the robot (default: Europe/Berlin)                      |
 
 
 An example things configuration might look like

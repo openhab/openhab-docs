@@ -10,7 +10,7 @@ This describes the Z-Wave device *DW-SS *, manufactured by *Ring* with the thing
 
 The device is in the category of *Door*, defining Door sensors.
 
-![DW-SS  product image](https://www.cd-jackson.com/zwave_device_uploads/893/893_default.jpg)
+![DW-SS  product image](https://opensmarthouse.org/zwavedatabase/893/image/)
 
 
 The DW-SS  supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -160,9 +160,11 @@ Association group 2 supports 1 node.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_TRANSPORT_SERVICE_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_SUPERVISION_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V8| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
@@ -172,12 +174,13 @@ Association group 2 supports 1 node.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_SECURITY_2_V1| |
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/893/Ring-Contact-Sensor---Manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/893/Ring-Contact-Sensor---Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/893).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/893).

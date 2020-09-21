@@ -10,7 +10,7 @@ This describes the Z-Wave device *Spirit*, manufactured by *Aeotec Limited* with
 
 The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 
-![Spirit product image](https://www.cd-jackson.com/zwave_device_uploads/1150/1150_default.jpg)
+![Spirit product image](https://opensmarthouse.org/zwavedatabase/1150/image/)
 
 
 The Spirit supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -319,10 +319,10 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Installation & Operation Guide](https://www.cd-jackson.com/zwave_device_uploads/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
-* [Installation & Operation Guide](https://www.cd-jackson.com/zwave_device_uploads/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
+* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
+* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1150).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1150).

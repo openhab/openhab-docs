@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZV2400TAC-SL-A*, manufactured by *[Sunricher](
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZV2400TAC-SL-A product image](https://www.cd-jackson.com/zwave_device_uploads/1116/1116_default.jpg)
+![ZV2400TAC-SL-A product image](https://opensmarthouse.org/zwavedatabase/1116/image/)
 
 
 The ZV2400TAC-SL-A supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -451,9 +451,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation and operation manual](https://www.cd-jackson.com/zwave_device_uploads/1116/sunricher-SR-ZV2400TAC-SL-A.pdf)
+* [Installation and operation manual](https://opensmarthouse.org/zwavedatabase/1116/sunricher-SR-ZV2400TAC-SL-A.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1116).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1116).

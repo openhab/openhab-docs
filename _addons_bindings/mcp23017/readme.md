@@ -4,8 +4,8 @@ label: MCP23017
 title: MCP23017 - Bindings
 type: binding
 description: "This binding allows you to have native access for MCP23017 I/O expander on I2C bus."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -18,6 +18,10 @@ This binding allows you to have native access for MCP23017 I/O expander on I2C b
 It was tested with Raspberry Pi 2 and Raspberry Pi 3, but probably should work with other devices supported by [Pi4J](https://pi4j.com/) library.
 
 On Raspberry Pi the user on which openHAB is running (default user name is "openhab") needs to be added to groups "i2c" and  "gpio".
+As the MCP23017 has 3 address pins, you are restricted to 8 devices on a I2C bus.
+To use more devices you have to open further I2C busses.
+Therefore you can use overlays to enable bit banging I2C busses on the Raspberry Pi connector, up to I2C6.
+(https://github.com/raspberrypi/firmware/tree/master/boot/overlays)
 
 ## Dependencies
 
@@ -104,6 +108,6 @@ rule "living_room_led contact"
 when
     Item living_room_led_contact changed to OPEN
 then
-    living_room_led_switch.sendCommand(living_room_led_switch.state != ON ? ON : OFF)
+    living_room_led_switch.sendCommand(if(living_room_led_switch.state != ON) ON else OFF)
 end
 ```

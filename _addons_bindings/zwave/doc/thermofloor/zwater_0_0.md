@@ -10,7 +10,7 @@ This describes the Z-Wave device *Heatit Z Water*, manufactured by *ThermoFloor*
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![Heatit Z Water product image](https://www.cd-jackson.com/zwave_device_uploads/886/886_default.png)
+![Heatit Z Water product image](https://opensmarthouse.org/zwavedatabase/886/image/)
 
 
 The Heatit Z Water supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -490,10 +490,12 @@ Association group 13 supports 5 nodes.
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
+| COMMAND_CLASS_TRANSPORT_SERVICE_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
+| COMMAND_CLASS_SUPERVISION_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
@@ -502,6 +504,7 @@ Association group 13 supports 5 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 | COMMAND_CLASS_SECURITY_V1| |
+| COMMAND_CLASS_SECURITY_2_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
@@ -645,10 +648,10 @@ Association group 13 supports 5 nodes.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/886/Manual-Heatit-Z-Water-analog-inputs-FW-1-0.pdf)
-* [Manual 2.0](https://www.cd-jackson.com/zwave_device_uploads/886/Manual-Heatit-Z-Water-digital-inputs-FW-2-0.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/886/Manual-Heatit-Z-Water-analog-inputs-FW-1-0.pdf)
+* [Manual 2.0](https://opensmarthouse.org/zwavedatabase/886/Manual-Heatit-Z-Water-digital-inputs-FW-2-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/886).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/886).

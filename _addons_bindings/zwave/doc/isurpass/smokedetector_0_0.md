@@ -10,7 +10,7 @@ This describes the Z-Wave device *Smoke Detector*, manufactured by *Shenzhen iSu
 
 The device is in the category of *Smoke Detector*, defining Smoke detectors.
 
-![Smoke Detector product image](https://www.cd-jackson.com/zwave_device_uploads/728/728_default.jpg)
+![Smoke Detector product image](https://opensmarthouse.org/zwavedatabase/728/image/)
 
 
 The Smoke Detector supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -138,9 +138,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/728/User-Manual-HS1CAZ.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/728/User-Manual-HS1CAZ.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/728).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/728).

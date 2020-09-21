@@ -10,7 +10,7 @@ This describes the Z-Wave device *DZPA1*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![DZPA1 product image](https://www.cd-jackson.com/zwave_device_uploads/305/305_default.jpg)
+![DZPA1 product image](https://opensmarthouse.org/zwavedatabase/305/image/)
 
 
 The DZPA1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -169,9 +169,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product Data sheet](https://www.cd-jackson.com/zwave_device_uploads/305/DZP-plugin-modules-Tsht-BW-v1p1--1-.pdf)
+* [Product Data sheet](https://opensmarthouse.org/zwavedatabase/305/DZP-plugin-modules-Tsht-BW-v1p1--1-.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/305).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/305).

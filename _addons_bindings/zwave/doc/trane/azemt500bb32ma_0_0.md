@@ -10,7 +10,7 @@ This describes the Z-Wave device *AZEMT500BB32MA*, manufactured by *Trane Corpor
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![AZEMT500BB32MA product image](https://www.cd-jackson.com/zwave_device_uploads/572/572_default.png)
+![AZEMT500BB32MA product image](https://opensmarthouse.org/zwavedatabase/572/image/)
 
 
 The AZEMT500BB32MA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -18,6 +18,18 @@ The AZEMT500BB32MA supports routing. This allows the device to communicate using
 ## Overview
 
 T500B Z-Wave Thermostat. The ComfortLink™ control is an innovative product that is compatible with Trane products as well as any other brand of standard central heating and air conditioning systems. It works through the Nexia™ Home Intelligence system
+
+### Inclusion Information
+
+Press the MENU button on the thermostat.  
+Scroll down to Z Wave Install, and press the Select button.  
+Press the Yes button to enroll the thermostat.
+
+### Exclusion Information
+
+Press the MENU button on the thermostat.  
+Scroll down to Z-Wave Install and press the Select button.  
+Press the Yes button to exclude the thermostat.
 
 ## Channels
 
@@ -34,7 +46,7 @@ The following table summarises the channels available for the AZEMT500BB32MA -:
 | Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -109,7 +121,7 @@ Channel type information on this channel is not found.
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -176,9 +188,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/572/TZEMT500AB32MAA-.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/572/TZEMT500AB32MAA-.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/572).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/572).

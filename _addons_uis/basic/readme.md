@@ -4,8 +4,8 @@ label: Basic UI
 title: Basic UI - UIs
 type: ui
 description: "The Basic UI is a web interface based on Material Design Lite from Google."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

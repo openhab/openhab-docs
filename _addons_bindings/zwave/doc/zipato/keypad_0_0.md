@@ -10,7 +10,7 @@ This describes the Z-Wave device *MINI KEYPAD RFID*, manufactured by *[Zipato](h
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![MINI KEYPAD RFID product image](https://www.cd-jackson.com/zwave_device_uploads/410/410_default.png)
+![MINI KEYPAD RFID product image](https://opensmarthouse.org/zwavedatabase/410/image/)
 
 
 The MINI KEYPAD RFID supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -237,9 +237,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/410/wt-rfid-Zipato-Mini-Keypad-RFiD-Z-Wave-User-Manual-v1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/410/wt-rfid-Zipato-Mini-Keypad-RFiD-Z-Wave-User-Manual-v1-4.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/410).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/410).

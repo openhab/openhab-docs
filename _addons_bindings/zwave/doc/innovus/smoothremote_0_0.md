@@ -10,7 +10,7 @@ This describes the Z-Wave device *SmoothRemote*, manufactured by *INNOVUS* with 
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![SmoothRemote product image](https://www.cd-jackson.com/zwave_device_uploads/440/440_default.png)
+![SmoothRemote product image](https://opensmarthouse.org/zwavedatabase/440/image/)
 
 
 The SmoothRemote does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -575,9 +575,9 @@ Association group 68 supports 30 nodes.
 
 ### Documentation Links
 
-* [Technical manual](https://www.cd-jackson.com/zwave_device_uploads/440/smoothremote-00120001-tech.pdf)
+* [Technical manual](https://opensmarthouse.org/zwavedatabase/440/smoothremote-00120001-tech.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/440).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/440).

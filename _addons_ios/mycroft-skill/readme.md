@@ -43,16 +43,11 @@ If on [picroft](https://mycroft.ai/documentation/picroft/), use the skills direc
 
 ### Skill Configuration
 
-Add the block below to your `mycroft.conf` file:
+The skill is configured using the mycroft skill settings. After the skill installation, configuration will be available at https://home.mycroft.ai/skills. After it is updated there, reload configuration is needed by saying:
 
-```json
- "openHABSkill": {
-        "host": "openHAB server ip",
-        "port": "openHAB server port"
-      }
-```
+- *"Hey Mycroft, reload configuration"* 
 
-Restart mycroft for the changes to take effect.
+The new settings will downloaded to settings.json in the skill folder.
 
 ### openHAB Item Configuration
 

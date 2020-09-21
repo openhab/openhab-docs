@@ -4,9 +4,9 @@ label: iCloud
 title: iCloud - Bindings
 type: binding
 description: "The Apple [iCloud](https://www.apple.com/icloud/) is used to retrieve data such as the battery level or current location of one or multiple Apple devices connected to an iCloud account."
-since: 2x
+since: 3x
 logo: images/addons/icloud.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

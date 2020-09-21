@@ -4,8 +4,8 @@ label: Rotel
 title: Rotel - Bindings
 type: binding
 description: "This binding can be used to control a Rotel audio device like a surround processor, a surround receiver, a stereo preamplifier, an integrated amplifier, a CD player or a tuner."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -121,12 +121,13 @@ The thing requires the following configuration parameters:
 All things have the following parameters: serialPort, host and port.
 Some have additional parameters listed in the next table:
 
-| Thing Type | Parameters available in addition to serialPort, host and port |
-|------------|---------------------------------------------------------------|
-| ra1572     | protocol (ASCII_V2 by default)                                |
-| ra1592     | protocol (ASCII_V2 by default)                                |
-| rc1572     | protocol (ASCII_V2 by default)                                |
-| rcd1572    | protocol (ASCII_V2 by default)                                |
+| Thing Type | Parameters available in addition to serialPort, host and port   |
+|------------|-----------------------------------------------------------------|
+| ra1572     | protocol (ASCII_V2 by default); as of firmware V2.65, select V2 |
+| ra1592     | protocol (ASCII_V2 by default); as of firmware V1.53, select V2 |
+| rc1572     | protocol (ASCII_V2 by default); as of firmware V2.65, select V2 |
+| rc1590     | protocol (ASCII_V2 by default); as of firmware V1.40, select V2 |
+| rcd1572    | protocol (ASCII_V2 by default); as of firmware V2.33, select V2 |
 | rsp1066    | inputLabelVideo1, inputLabelVideo2, inputLabelVideo3, inputLabelVideo4, inputLabelVideo5 |
 | rsp1068    | inputLabelCd, inputLabelTuner, inputLabelTape, inputLabelVideo1, inputLabelVideo2, inputLabelVideo3, inputLabelVideo4, inputLabelVideo5 |
 | rsp1069    | inputLabelCd, inputLabelTuner, inputLabelTape, inputLabelVideo1, inputLabelVideo2, inputLabelVideo3, inputLabelVideo4, inputLabelVideo5 |

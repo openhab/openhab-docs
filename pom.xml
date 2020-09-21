@@ -4,7 +4,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>docs</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>openHAB Documentation</name>
@@ -35,9 +35,6 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>${basedir}/_addons_actions/</directory>
-            </fileset>
-            <fileset>
               <directory>${basedir}/_addons_bindings/</directory>
             </fileset>
             <fileset>
@@ -66,91 +63,33 @@
         <version>3.0.2</version>
         <executions>
           <execution>
-            <id>copy-esh-csv</id>
+            <id>copy-oh3-binding-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_data/</outputDirectory>
+              <outputDirectory>${basedir}/_addons_bindings/oh3</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/smarthome/docs/_data</directory>
+                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
                   <includes>
-                    <include>*.csv</include>
+                    <include>org.openhab.binding.*/**/README.md</include>
+		    <include>org.openhab.binding.*/**/doc/**</include>
+		    <include>org.openhab.binding.*/**/cfg/**</include>
                   </includes>
                 </resource>
               </resources>
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh1-binding-docs</id>
+            <id>copy-oh3-persistence-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_bindings/oh1</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/binding</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-oh1-action-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_actions/oh1</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/action</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-oh1-persistence-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_persistences/oh1</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/persistence</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-oh2-persistence-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_persistences/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_persistences/oh3</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
@@ -164,63 +103,14 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh2-binding-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/addons/binding</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
-                  <includes>
-                    <include>org.openhab.binding.*/**/README.md</include>
-                    <include>org.openhab.binding.*/**/doc/**</include>
-                    <include>org.openhab.binding.*/**/cfg/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-bundles/bindings</directory>
-                  <includes>
-                    <include>org.openhab.binding.zwave/README.md</include>
-                    <include>org.openhab.binding.zwave/doc/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-bundles/bindings/org.openhab.binding.zigbee</directory>
-                  <includes>
-                    <include>org.openhab.binding.zigbee/README.md</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
             <id>copy-transform-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_transformations/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_transformations/oh3</outputDirectory>
               <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/addons/transform</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
                   <includes>
@@ -239,7 +129,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_iconsets/oh2/classic</outputDirectory>
+              <outputDirectory>${basedir}/_addons_iconsets/oh3/classic</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.iconset.classic</directory>
@@ -258,7 +148,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_uis/oh3</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-webui/bundles</directory>
@@ -284,16 +174,8 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_voices/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_voices/oh3</outputDirectory>
               <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/addons/voice</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
                   <includes>
@@ -306,45 +188,14 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-oh1-io-docs</id>
+            <id>copy-oh3-io-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_ios/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_ios/oh3</outputDirectory>
               <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/io</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                  <excludes>
-                    <exclude>**/org.openhab.io.caldav/**</exclude>
-                  </excludes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-oh2-io-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_ios/oh2</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-addons/addons/io</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
                   <includes>
@@ -430,6 +281,46 @@
               </resources>
             </configuration>
           </execution>
+	  <!-- <execution>
+            <id>copy-zigbee-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_bindings/zigbee</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/org.openhab.binding.zigbee</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-zwave-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_bindings/zwave</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/org.openhab.binding.zwave</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+	  </execution> -->
         </executions>
       </plugin>
       <plugin>
@@ -437,17 +328,6 @@
         <artifactId>copy-rename-maven-plugin</artifactId>
         <version>1.0</version>
         <executions>
-          <execution>
-            <id>copy-oh-homebuilder-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab-bundles/openhab-core/bundles/org.openhab.ui.homebuilder/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/configuration/homebuilder.md</destinationFile>
-            </configuration>
-          </execution>
           <execution>
             <id>copy-oh-android-docs</id>
             <phase>process-resources</phase>

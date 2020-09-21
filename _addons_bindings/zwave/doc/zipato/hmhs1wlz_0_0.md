@@ -10,7 +10,7 @@ This describes the Z-Wave device *HM-HS1WL-Z*, manufactured by *[Zipato](http://
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HM-HS1WL-Z product image](https://www.cd-jackson.com/zwave_device_uploads/800/800_default.jpg)
+![HM-HS1WL-Z product image](https://opensmarthouse.org/zwavedatabase/800/image/)
 
 
 The HM-HS1WL-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -198,9 +198,9 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual version 1.0](https://www.cd-jackson.com/zwave_device_uploads/800/hm-hs1wl-z-Smart-Water-Leakage-Sensor-Z-Wave-User-Manual-1-0.pdf)
+* [Manual version 1.0](https://opensmarthouse.org/zwavedatabase/800/hm-hs1wl-z-Smart-Water-Leakage-Sensor-Z-Wave-User-Manual-1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/800).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/800).

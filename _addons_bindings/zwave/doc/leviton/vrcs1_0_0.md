@@ -10,7 +10,7 @@ This describes the Z-Wave device *VRCS1*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![VRCS1 product image](https://www.cd-jackson.com/zwave_device_uploads/1092/1092_default.jpg)
+![VRCS1 product image](https://opensmarthouse.org/zwavedatabase/1092/image/)
 
 
 The VRCS1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -74,10 +74,10 @@ Association group 1 supports 32 nodes.
 
 ### Documentation Links
 
-* [Product Specifications](https://www.cd-jackson.com/zwave_device_uploads/1092/Vizia-RF---Controllers-Spec-Sheet.pdf)
-* [Instruction Sheet VRCS1](https://www.cd-jackson.com/zwave_device_uploads/1092/Instruction-Sheet-VRCS1.pdf)
+* [Product Specifications](https://opensmarthouse.org/zwavedatabase/1092/Vizia-RF---Controllers-Spec-Sheet.pdf)
+* [Instruction Sheet VRCS1](https://opensmarthouse.org/zwavedatabase/1092/Instruction-Sheet-VRCS1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1092).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1092).

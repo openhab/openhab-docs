@@ -4,9 +4,9 @@ label: tado°
 title: tado° - Bindings
 type: binding
 description: "The tado° binding integrates devices from [tado°](https://www.tado.com)."
-since: 2x
+since: 3x
 logo: images/addons/tado.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

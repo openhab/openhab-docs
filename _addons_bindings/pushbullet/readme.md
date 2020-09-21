@@ -4,9 +4,9 @@ label: Pushbullet
 title: Pushbullet - Bindings
 type: binding
 description: "The Pushbullet binding allows you to notify iOS, Android & Windows 10 Phone & Desktop devices of a message using the Pushbullet API web service."
-since: 2x
+since: 3x
 logo: images/addons/pushbullet.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -4,9 +4,9 @@ label: SonyAudio
 title: SonyAudio - Bindings
 type: binding
 description: "This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/)."
-since: 2x
+since: 3x
 logo: images/addons/sonyaudio.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -78,6 +78,7 @@ The devices support the following channels:
 | radio#broadcastFreq        | Number    | R           | Current radio frequency                                                               | STR-1080                                               |
 | radio#broadcastStation     | Number    | RW          | Set or get current preset radio station                                               | STR-1080                                               |
 | radio#broadcastSeekStation | String    | W           | Seek for new broadcast station, forward search "fwdSeeking" and backward "bwdSeeking" | STR-1080                                               |
+| nightMode                  | Switch    | RW          | Set or get the Night Mode state                                                       | HT-ZF9                                                 |
 
 
 ## Full Example

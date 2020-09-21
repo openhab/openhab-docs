@@ -4,8 +4,8 @@ label: Seneye
 title: Seneye - Bindings
 type: binding
 description: "This binding integrates the [Seneye aquarium monitoring system](https://www.seneye.com)."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

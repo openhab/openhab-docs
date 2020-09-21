@@ -4,8 +4,8 @@ label: Hydrawise
 title: Hydrawise - Bindings
 type: binding
 description: "![API Key](doc/logo.png)"
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

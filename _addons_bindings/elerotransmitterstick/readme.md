@@ -4,8 +4,8 @@ label: Elero Transmitter Stick
 title: Elero Transmitter Stick - Bindings
 type: binding
 description: "Allows to control Elero rollershutters through a connected Elero Transmitter Stick."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

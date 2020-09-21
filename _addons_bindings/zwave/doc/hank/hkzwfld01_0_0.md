@@ -10,7 +10,7 @@ This describes the Z-Wave device *HKZW_FLD01*, manufactured by *[Hank](http://ww
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HKZW_FLD01 product image](https://www.cd-jackson.com/zwave_device_uploads/674/674_default.jpg)
+![HKZW_FLD01 product image](https://opensmarthouse.org/zwavedatabase/674/image/)
 
 
 The HKZW_FLD01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -372,10 +372,10 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/674/Hank-Flood-Sensor-User-Manual.pdf)
-* [Test report](https://www.cd-jackson.com/zwave_device_uploads/674/Hank-Flood-Sensor-Test-Report.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/674/Hank-Flood-Sensor-User-Manual.pdf)
+* [Test report](https://opensmarthouse.org/zwavedatabase/674/Hank-Flood-Sensor-Test-Report.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/674).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/674).

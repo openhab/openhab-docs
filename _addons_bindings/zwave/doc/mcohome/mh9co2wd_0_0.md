@@ -10,7 +10,7 @@ This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *[McoHome Technol
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![MH9-CO2-WD product image](https://www.cd-jackson.com/zwave_device_uploads/455/455_default.png)
+![MH9-CO2-WD product image](https://opensmarthouse.org/zwavedatabase/455/image/)
 
 
 The MH9-CO2-WD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -194,9 +194,9 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/455/McoHomeCO2Monitor.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/455/McoHomeCO2Monitor.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/455).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/455).

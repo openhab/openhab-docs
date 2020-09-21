@@ -4,9 +4,9 @@ label: GlobalCache
 title: GlobalCache - Bindings
 type: binding
 description: "The [GlobalCache](https://www.globalcache.com) binding enables communication"
-since: 2x
+since: 3x
 logo: images/addons/globalcache.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

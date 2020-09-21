@@ -4,8 +4,8 @@ label: Meteostick
 title: Meteostick - Bindings
 type: binding
 description: "This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

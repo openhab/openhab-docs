@@ -4,7 +4,7 @@ label: HomeAssistant MQTT Components
 title: HomeAssistant MQTT Components - Bindings
 type: binding
 description: "HomeAssistant MQTT Components are recognized as well. The base topic needs to be **homeassistant**."
-since: 2x
+since: 3x
 install: manual
 ---
 
@@ -28,5 +28,5 @@ The mapping is structured like this:
 
 * The HomeAssistant Fan Components only support ON/OFF.
 * The HomeAssistant Cover Components only support OPEN/CLOSE/STOP.
-* The HomeAssistant Light Component does not support XY color changes.
+* The HomeAssistant Light Component only supports RGB color changes.
 * The HomeAssistant Climate Components is not yet supported.

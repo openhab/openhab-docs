@@ -4,9 +4,9 @@ label: VoiceRSS Text-to-Speech
 title: VoiceRSS Text-to-Speech - Voices
 type: voice
 description: "VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>."
-since: 2x
+since: 3x
 logo: images/addons/voicerss.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -10,7 +10,7 @@ This describes the Z-Wave device *K8*, manufactured by *Sigma Designs (Former Ze
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![K8 product image](https://www.cd-jackson.com/zwave_device_uploads/431/431_default.jpg)
+![K8 product image](https://opensmarthouse.org/zwavedatabase/431/image/)
 
 
 The K8 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -129,9 +129,9 @@ Association group 5 supports 20 nodes.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/431/ZWC-K8.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/431/ZWC-K8.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/431).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/431).

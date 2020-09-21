@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGRGBW*, manufactured by *[Fibargroup](http://
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FGRGBW product image](https://www.cd-jackson.com/zwave_device_uploads/131/131_default.jpg)
+![FGRGBW product image](https://opensmarthouse.org/zwavedatabase/131/image/)
 
 
 The FGRGBW supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -520,9 +520,9 @@ Association group 5 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual (v2.1-v2.3)](https://www.cd-jackson.com/zwave_device_uploads/131/fibaro-rgbw-controller-2-1-2-3-manual.pdf)
+* [User Manual (v2.1-v2.3)](https://opensmarthouse.org/zwavedatabase/131/fibaro-rgbw-controller-2-1-2-3-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/131).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/131).

@@ -4,8 +4,8 @@ label: WiFi LED
 title: WiFi LED - Bindings
 type: binding
 description: "This binding is used to control LED strips connected by WiFi."
-since: 2x
-install: auto
+since: 3x
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

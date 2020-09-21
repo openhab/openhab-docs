@@ -10,7 +10,7 @@ This describes the Z-Wave device *FMS01*, manufactured by *Smartly AS* with the 
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FMS01 product image](https://www.cd-jackson.com/zwave_device_uploads/1032/1032_default.jpg)
+![FMS01 product image](https://opensmarthouse.org/zwavedatabase/1032/image/)
 
 
 The FMS01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -41,7 +41,7 @@ The following table summarises the channels available for the FMS01 -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (power) | sensor_power | sensor_power | Energy | Number | 
 | Sensor (current) | sensor_current | sensor_current |  |  | 
-| Sensor (voltage) | sensor_voltage | sensor_voltage |  |  | 
+| Sensor (voltage) | sensor_voltage | sensor_voltage |  | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
@@ -83,7 +83,9 @@ The ```sensor_power``` channel is of type ```sensor_power``` and supports the ``
 Channel type information on this channel is not found.
 
 ### Sensor (voltage)
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
@@ -682,9 +684,9 @@ Association group 7 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/1032/SEdevices---FMS01-Multifunction-Switch-Z-Wave-User-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/1032/SEdevices---FMS01-Multifunction-Switch-Z-Wave-User-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1032).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1032).

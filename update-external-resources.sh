@@ -43,33 +43,32 @@ pull_or_clone_repo() {
   else
     echo_process "Cloning the '$1' repo... "
     mkdir "$resourcefolder/$1"
-    git clone --branch $3 "https://github.com/$2" "$resourcefolder/$1"
+    git clone --depth 1 --branch $3 "https://github.com/$2" "$resourcefolder/$1"
   fi
 }
 
 # Pull or clone the repo with a specified branch into the given folder
-pull_or_clone_repo "smarthome" "eclipse/smarthome.git" master
-pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" 2.5.x
-pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git" master
-pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" 2.5.x
-pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git" 2.5.x
+pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" master
+pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" main
 pull_or_clone_repo "openhabian" "openhab/openhabian.git" master
 pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" master
 pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" master
 pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" master
 pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" master
-pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" 2.5.x
-
-echo_process "Updating submodules of the 'openhab-bundles' repo... "
-git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
+pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" master
+pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zigbee" "openhab/org.openhab.binding.zigbee.git" master
+pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zwave" "openhab/org.openhab.binding.zwave.git" master
+# copy zigbee readme to where the groovy script will see it
+cp $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/org.openhab.binding.zigbee/README.md $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/
+#rm -rf openhab-addons/bundles/org.openhab.binding.zwave
+#mv org.openhab.binding.zigbee openhab-addons/bundles
+#mv org.openhab.binding.zwave openhab-addons/bundles
 
 echo_process "Fetching feature.xml file from the snapshot repository..."
 # Getting all possibly relevant xml files
-wget -r -l 2 -npdH -A '*2.5.*.xml' -P "$resourcefolder/jfrog-files" "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/"
+wget -r -l 2 -npdH -A '*3.0.*.xml' -P "$resourcefolder/jfrog-files" "https://openhab.jfrog.io/openhab/libs-snapshot/org/openhab/distro/openhab-addons/"
 # Copy the latest feature file into the finally used feature.xml
-cp `ls .external-resources/jfrog-files/openhab-addons-2.5.*-*-features.xml | sort | tail -1` .external-resources/jfrog-files/feature.xml
+cp `ls .external-resources/jfrog-files/openhab-addons-3.0.*-*-features.xml | sort | tail -1` .external-resources/jfrog-files/feature.xml
 
-echo_process "Running Maven Clean Plugin... "
-mvn clean
-echo_process "Running Maven Package Plugin... "
-mvn package
+echo_process "Running Maven.... "
+mvn clean package

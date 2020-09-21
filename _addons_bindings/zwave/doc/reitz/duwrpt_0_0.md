@@ -8,12 +8,12 @@ title: DUW_RPT - ZWave
 # DUW_RPT Düwi Repeater
 This describes the Z-Wave device *DUW_RPT*, manufactured by *Reitz-Group.de* with the thing type UID of ```reitz_duwrpt_00_000```.
 
-![DUW_RPT product image](https://www.cd-jackson.com/zwave_device_uploads/586/586_default.jpg)
+![DUW_RPT product image](https://opensmarthouse.org/zwavedatabase/586/image/)
 
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/586) to improve the documentation.
+No device information is provided in the database. Consider [updating the database](https://opensmarthouse.org/zwavedatabase/586) to improve the documentation.
 
 ## Channels
 
@@ -71,4 +71,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/586).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/586).

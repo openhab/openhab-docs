@@ -10,7 +10,7 @@ This describes the Z-Wave device *LGZW*, manufactured by *Leak Intelligence, LLC
 
 The device is in the category of *Valve*, defining Valves used to control water or gas. e.g. a flow stop valve..
 
-![LGZW product image](https://www.cd-jackson.com/zwave_device_uploads/1063/1063_default.jpg)
+![LGZW product image](https://opensmarthouse.org/zwavedatabase/1063/image/)
 
 
 The LGZW supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -122,9 +122,9 @@ Association group 1 supports 4 nodes.
 
 ### Documentation Links
 
-* [Water Valve](https://www.cd-jackson.com/zwave_device_uploads/1063/50020-LGZW-2-Leak-Gopher-Z-Wave-Plus-Instructions-5VDC.pdf)
+* [Water Valve](https://opensmarthouse.org/zwavedatabase/1063/50020-LGZW-2-Leak-Gopher-Z-Wave-Plus-Instructions-5VDC.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1063).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1063).
