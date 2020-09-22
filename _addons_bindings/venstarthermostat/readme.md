@@ -5,7 +5,7 @@ title: Venstar Thermostat - Bindings
 type: binding
 description: "The Venstar Thermostat binding supports an interface to WiFi enabled ColorTouch and Explorer thermostats manufactured by [Venstar](http://www.venstar.com)."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
