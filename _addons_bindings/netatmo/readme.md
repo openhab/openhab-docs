@@ -6,7 +6,7 @@ type: binding
 description: "The Netatmo binding integrates the following Netatmo products:"
 since: 3x
 logo: images/addons/netatmo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

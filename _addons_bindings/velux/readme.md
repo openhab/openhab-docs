@@ -5,7 +5,7 @@ title: Velux - Bindings
 type: binding
 description: "This binding integrates the <B>Velux</B> devices with help of a gateway, the <B>Velux Bridge KLF200</B>, which is able to control 200 actuators."
 since: 3x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
