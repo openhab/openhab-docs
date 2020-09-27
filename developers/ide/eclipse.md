@@ -174,7 +174,7 @@ If you don't just want to run an add-on, but also want to modify and debug it yo
 1. Build Sources
 
     Add the add-on as an Eclipse project so that Eclipse will build it automatically. 
-    Import the add-on project via `File > Import... > General > Existing Projects into Workspace`. 
+    Import the add-on project via `File > Import... > Maven > Existing Maven Projects`. 
     Specify your add-on's source root folder (e.g. `git\openhab-addons\bundles\org.openhab.binding.astro` under the installation folder) as the root folder in the wizard. 
 
 1. Start a Debug Session
