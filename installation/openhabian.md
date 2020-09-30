@@ -18,7 +18,7 @@ openHABian aims to provide a **self-configuring** Linux system setup specific to
 To that end, the project provides two things:
 
 *   Complete **SD-card images pre-configured with openHAB** and many other openHAB- and Hardware-specific preparations for the Raspberry Pi
-*   The openHABian Configuration Tool to set up and configure openHAB and many related things on any Debian/Ubuntu based system
+*   The openHABian Configuration Tool to set up and configure openHAB and many related things on any Debian based system
 
 #### Table of Contents
 {::options toc_levels="2..3"/}
@@ -99,7 +99,7 @@ You will see the following welcome screen:
 
 <a id="manual-setup"></a>
 ### Other Linux Systems (add openHABian just like any other software)
-openHABian is also supposed to run on generic Debian/Ubuntu based systems on x86 and some ARM hardware platforms.
+openHABian is also supposed to run on generic Debian based systems on x86 and some ARM hardware platforms.
 Start with a fresh installation of your operating system, login and run
 
 ```shell
@@ -161,6 +161,11 @@ In `openhabian.conf`, uncomment and complete the lines reading `wifi_ssid="My Wi
 ### Fake hardware mode
 If to install openHABian fails because you have a non-supported hardware or run an unsupported OS release, you can "fake" your hardware and OS to make openHABian behave as if you did own that HW/OS.
 In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `release=` with the hw and os versions you want to attempt installation with.
+
+### Disable ZRAM
+ZRAM is activated by default on fresh installations on ARM hardware.
+You may want to disable it if you run a 8GB RPi4 as that is incompatible at the time of writing, leading to kernel crashes.
+Make sure you use the master branch right away: use `clonebranch=master` and `zraminstall=disable` in `openhabian.conf` to install without.
 
 ### Debug mode
 See [Troubleshooting](#Troubleshooting) section if you run into trouble installing. If you want to turn on debug mode,
@@ -391,7 +396,7 @@ You have been warned, if there came any warranty with openHABian to begin with, 
 <a id="faq-other-platforms"></a>
 #### Can I use openHABian on ...?
 See the [README](https://github.com/openhab/openhabian/blob/master/README.md) for a list of supported HW and OS.
-openHABian is developed for Debian/Ubuntu based systems.
+openHABian is developed for Debian based systems.
 If your operating system is based on these or if your hardware supports one, your chances are high openHABian can be used.
 Check out the [Manual Setup](#manual-setup) instructions for guidance and consult the [debug guide](openhabian-DEBUG.md) if you run into problems.
 Do not hesitate to ask for help on the [openHABian community forum](https://community.openhab.org/) !
