@@ -38,7 +38,7 @@ The following features are provided by the openHABian image out of the box:
 -   Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
 -   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
 -   Customized Bash shell experience
--   Customized settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and[nano](https://github.com/airix1/openhabnano)
+-   Customized settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and [nano](https://github.com/airix1/openhabnano)
 -   Frontail log viewer
 -   [Mosquitto](https://mosquitto.org) MQTT broker
 -   the [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
@@ -161,6 +161,11 @@ In `openhabian.conf`, uncomment and complete the lines reading `wifi_ssid="My Wi
 ### Fake hardware mode
 If to install openHABian fails because you have a non-supported hardware or run an unsupported OS release, you can "fake" your hardware and OS to make openHABian behave as if you did own that HW/OS.
 In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `release=` with the hw and os versions you want to attempt installation with.
+
+### Disable ZRAM
+ZRAM is activated by default on fresh installations on ARM hardware.
+You may want to disable it if you run a 8GB RPi4 as that is incompatible at the time of writing, leading to kernel crashes.
+Make sure you use the master branch right away: use `clonebranch=master` and `zraminstall=disable` in `openhabian.conf` to install without.
 
 ### Debug mode
 See [Troubleshooting](#Troubleshooting) section if you run into trouble installing. If you want to turn on debug mode,
