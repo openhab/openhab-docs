@@ -37,6 +37,7 @@
             It is also possible to dim values and switch the light on and off.
         </description>
         <category>ColorLight</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Door Lock Channel -->
@@ -45,6 +46,7 @@
         <label>Door Lock State</label>
         <description>Locks and unlocks the door and maintains the lock state</description>
         <category>Door</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
     
     <!-- Fan Control -->
@@ -63,6 +65,7 @@
                 <option value="5">Auto</option>
             </options>
         </state>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
     
     <!-- Electrical Measurement Active Power -->
@@ -72,6 +75,7 @@
         <description>The total power consumed by the device</description>
         <category>Energy</category>
         <state pattern="%.1f %unit%" readOnly="true" />
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- RMS Current -->
@@ -242,6 +246,7 @@
 		<label>Switch</label>
 		<description>Switches the power on and off</description>
 		<category>Light</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
 	</channel-type>
 
     <!-- Level Switch -->
@@ -250,6 +255,7 @@
         <label>Dimmer</label>
         <description>Sets the level of the light</description>
         <category>Light</category>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat Local Temperature -->
@@ -277,6 +283,7 @@
         <description>Set the heating temperature when the room is occupied</description>
         <category>HVAC</category>
         <state pattern="%.1f %unit%"/>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat Occupied Cooling -->
@@ -286,6 +293,7 @@
         <description>Set the cooling temperature when the room is occupied</description>
         <category>HVAC</category>
         <state pattern="%.1f %unit%"/>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat Unoccupied Heating -->
@@ -295,6 +303,7 @@
         <description>Set the heating temperature when the room is unoccupied</description>
         <category>HVAC</category>
         <state pattern="%.1f %unit%"/>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat Unoccupied Cooling -->
@@ -304,6 +313,7 @@
         <description>Set the cooling temperature when the room is unoccupied</description>
         <category>HVAC</category>
         <state pattern="%.1f %unit%"/>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat System Mode -->
@@ -325,6 +335,7 @@
                 <option value="9">Sleep</option>
             </options>
         </state>
+        <autoUpdatePolicy>veto</autoUpdatePolicy>
     </channel-type>
 
     <!-- Thermostat Running Mode -->
@@ -371,5 +382,15 @@
 			</parameter>
 		</config-description>
 	</channel-type>
+
+    <!-- Window Covering Lift Channel -->
+    <channel-type id="windowcovering_lift">
+        <item-type>Rollershutter</item-type>
+        <label>Window Covering Lift</label>
+        <description>Sets the window covering level - supporting open/close and up/down type commands
+        </description>
+        <category>Blinds</category>
+    </channel-type>
+
 
 </thing:thing-descriptions>

@@ -2,7 +2,7 @@
 <thing:thing-descriptions bindingId="zigbee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
-	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 org.openhab.core.thing-description.xsd">
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 org.eclipse.smarthome.thing-description.xsd">
 
 	<bridge-type id="coordinator_ember">
 		<label>Ember EM35x Coordinator</label>
@@ -41,7 +41,7 @@
 				<context>serial-port</context>
 				<default></default>
 				<description>Serial Port</description>
-                <limitToOptions>false</limitToOptions>
+				<limitToOptions>false</limitToOptions>
 			</parameter>
 
 			<parameter name="zigbee_flowcontrol" type="integer" required="true" groupName="port">
@@ -107,18 +107,29 @@
 				</options>
 			</parameter>
 
-            <parameter name="zigbee_networksize" type="integer" min="10" max="250" groupName="ember">
-                <label>Network Size</label>
-                <description>Sets the number of nodes expected in the network</description>
-                <default>25</default>
-                <options>
-                    <option value="10">Small</option>
-                    <option value="25">Medium</option>
-                    <option value="100">Large</option>
-                    <option value="250">Enormous</option>
-                </options>
-            </parameter>
+			<parameter name="zigbee_networksize" type="integer" min="10" max="250" groupName="ember">
+				<label>Network Size</label>
+				<description>Sets the number of nodes expected in the network</description>
+				<default>25</default>
+				<options>
+					<option value="10">Small (10)</option>
+					<option value="25">Medium (25)</option>
+					<option value="100">Large (100)</option>
+					<option value="250">Enormous (250)</option>
+				</options>
+			</parameter>
 
+			<parameter name="zigbee_concentrator" type="integer" groupName="ember">
+				<label>Concentrator Type</label>
+				<description>The type of concentrator used by the coordinator</description>
+				<advanced>true</advanced>
+				<default>0</default>
+				<options>
+					<option value="0">Low RAM</option>
+					<option value="1">High RAM</option>
+				</options>
+			</parameter>
+			
 			<parameter name="zigbee_initialise" type="boolean" groupName="network">
 				<label>Reset Controller</label>
 				<description>Resets the Controller and sets the configuration to the configured values</description>
@@ -218,28 +229,18 @@
 				</options>
 			</parameter>
 			
-			<parameter name="zigbee_concentrator" type="integer" groupName="network">
-			    <label>Concentrator Type</label>
-			    <description>The type of concentrator used by the coordinator</description>
-			    <advanced>true</advanced>
-			    <default>0</default>
-			    <options>
-                    <option value="0">Low RAM</option>
-                    <option value="1">High RAM</option>
-			    </options>
-			</parameter>
-			
 			<parameter name="zigbee_trustcentremode" type="text" groupName="network">
-                <label>Trust Centre Join Mode</label>
-                <description>Sets the Trust Centre join/rejoin mode</description>
-                <options>
-                    <option value="TC_JOIN_DENY">Deny all joins</option>
-                    <option value="TC_JOIN_SECURE">Allow only secure joining</option>
-                    <option value="TC_JOIN_INSECURE">Allow all joins</option>
-                </options>
-                <default>TC_JOIN_SECURE</default>
-                <advanced>true</advanced>
-            </parameter>
+				<label>Trust Centre Join Mode</label>
+				<description>Sets the Trust Centre join/rejoin mode</description>
+				<options>
+					<option value="TC_JOIN_DENY">Deny all joins</option>
+					<option value="TC_JOIN_SECURE">Allow only secure joining</option>
+					<option value="TC_JOIN_INSECURE">Allow all joins</option>
+					<option value="TC_JOIN_INSTALLCODE">Only join with install code</option>
+				</options>
+				<default>TC_JOIN_SECURE</default>
+				<advanced>true</advanced>
+			</parameter>
 			
 		</config-description>
 	</bridge-type>
