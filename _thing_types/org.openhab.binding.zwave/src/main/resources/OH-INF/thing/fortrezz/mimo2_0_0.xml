@@ -23,7 +23,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
       <channel id="sensor_general" typeId="sensor_general">
         <label>Sensor</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL,COMMAND_CLASS_BASIC;type=GENERAL</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=GENERAL</property>
         </properties>
       </channel>
       <channel id="alarm_power" typeId="alarm_power">
@@ -35,13 +35,13 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
       <channel id="sensor_general1" typeId="sensor_general">
         <label>Sensor 1</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1,COMMAND_CLASS_BASIC:1;type=GENERAL</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:1;type=GENERAL</property>
         </properties>
       </channel>
       <channel id="sensor_general2" typeId="sensor_general">
         <label>Sensor 2</label>
         <properties>
-          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2,COMMAND_CLASS_BASIC:2;type=GENERAL</property>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=GENERAL</property>
         </properties>
       </channel>
       <channel id="switch_binary3" typeId="switch_binary">

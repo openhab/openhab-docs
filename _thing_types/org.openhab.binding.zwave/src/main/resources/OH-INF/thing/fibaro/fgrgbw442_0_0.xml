@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgrgbw442_00_000" listed="false">
     <label>FGRGBW-442 RGBW CONTROLLER 2</label>
     <description><![CDATA[
-RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM output signal, allowing it to control LED, RGB, RGBW strips, halogen lights and other resistive loads. It can also measure active power and energy consumed by the load. Controlled devices may be powered by 12 or 24V DC.</p> <p>Inputs support momentary/toggle switches and 0-10V analog sensors, like temperature sensors, humidity sensors, light sensors etc</p> <br /><h2>Inclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Exclusion Information</h2><p>Quickly, three times click the service button.</p>
+RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM output signal, allowing it to control LED, RGB, RGBW strips, halogen lights and other resistive loads. It can also measure active power and energy consumed by the load. Controlled devices may be powered by 12 or 24V DC.</p> <p>Inputs support momentary/toggle switches and 0-10V analog sensors, like temperature sensors, humidity sensors, light sensors etc</p> <br /><h2>Inclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Exclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -183,7 +183,7 @@ RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM out
       <property name="vendor">Fibargroup</property>
       <property name="modelId">FGRGBW-442</property>
       <property name="manufacturerId">010F</property>
-      <property name="manufacturerRef">0902:1000,0902:2000</property>
+      <property name="manufacturerRef">0902:1000,0902:2000,0902:3000</property>
       <property name="dbReference">1127</property>
       <property name="defaultAssociations">1</property>
     </properties>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_HeatIt4512666_00_000" listed="false">
+    <label>HEATIT Z-TEMP2 Z-Wave thermostat for controlling external relay</label>
+    <description><![CDATA[
+Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit Z-Temp2 is a battery-operated thermostat designed for use</p><p>with water based heating systems. </p> <br /><h2>Inclusion Information</h2><p>1. Set the controller/gateway in add mode (security/non-security).</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>3. The thermostat will display “INC” when the thermostat is successfully included.</p><p>If adding/removing fails, Err (error) will appear</p> <br /><h2>Exclusion Information</h2><p>1. Remove device from controller/gateway.</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>If removing fails, Err (error) will appear</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>HVAC</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="basic_thermostat_mode" typeId="thermostat_mode">
+        <label>thermostat_mode</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC</property>
+        </properties>
+      </channel>
+      <channel id="sensor_relhumidity" typeId="sensor_relhumidity">
+        <label>Sensor (relative humidity)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=RELATIVE_HUMIDITY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="thermofloor_HeatIt4512666_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_state" typeId="thermostat_state">
+        <label>Thermostat Operating State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_OPERATING_STATE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">HEATIT Z-TEMP2</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0004:0204</property>
+      <property name="dbReference">1299</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="30" max="32767">
+        <label>1: Temperature/ Humidity report interval</label>
+        <description>Used to adjust the time between report interval for Temperature and humidity reports</description>
+        <default>900</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="5" max="50">
+        <label>2: Temperature delta value</label>
+        <description>Temperature delta value</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_3_2" type="integer" groupName="configuration"
+                 min="5" max="50">
+        <label>3: Humidity delta value</label>
+        <description>Humidity delta value</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="-100" max="100">
+        <label>4: Temperature offset settings</label>
+        <description>Calibrate the internal sensor. To set negative values; 65 535 – desired value + 1</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="-100" max="100">
+        <label>5: Humidity offset settings</label>
+        <description>Offsets the measured relative humidity. To set negative values; 65 535 – desired value + 1.</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="2" max="270">
+        <label>6: Proximity sensor retrigger interval</label>
+        <description>Proximity sensor retrigger interval</description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Proximity sensor Enable</label>
+        <description>Choose if proximity sensor is used or not.</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>8: LED maximum brightness</label>
+        <description>Adjust the backlight of LCD display</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_9_2" type="integer" groupName="configuration"
+                 min="3" max="300">
+        <label>9: LED turned on before timeout</label>
+        <description>Adjust the time from proximity sensor / display touched until display goes to sleep.</description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="3" max="30">
+        <label>10: Temperature Control Hysteresis</label>
+        <description>Adjust the delta values for the thermostat to turn on off heating.</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_11_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>11: Minimum Temperature Limit</label>
+        <description>Set the mimum temperature limit.</description>
+        <default>50</default>
+      </parameter>
+
+      <parameter name="config_12_2" type="integer" groupName="configuration"
+                 min="50" max="400">
+        <label>12: Maximum Temperature Limit</label>
+        <description>Maximum Temperature Limit</description>
+        <default>5</default>
+      </parameter>
+
+      <parameter name="config_13_2" type="integer" groupName="configuration"
+                 min="0" max="240">
+        <label>13: External Relay &amp; Operating State update interval</label>
+        <description>Set time on how often the devices sends Binary Switch Set and thermostat mode to gateway</description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration">
+        <label>14: Report when presence is detected</label>
+        <description><![CDATA[
+Decides if the thermostat sends temperature when presence is detected<br /><h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Do not report to gateway when presence is detected, only at interval.</option>
+          <option value="1">Send temperature report to gateway when presence is detected.</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline. (Normally used by the Z-Wave Controller)<br /><h1>Overview</h1><p>Lifeline. (Normally used by the Z-Wave Controller) Sends:</p><p>- Battery Report (sent when battery runs low).</p><p>- Notification Report (sent first time power on).</p><p>- Device Reset Locally Notification (sent if device is reset).</p><p>- Indicator Report</p><p>- Thermostat Mode Report (sent when mode changed from panel).</p><p>- Thermostat Setpoint Report (sent when setpoint changed from panel).</p><p>- Thermostat Operating State Report (sent when heating should be active).</p><p>- Sensor Multilevel Report (periodical reports).</p><p>- Protection Report (childlock activated/deactived from panel).</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Temperature Report</label>
+        <description>Multilevel Sensor Report (internal measured temperate and measured relative humidity).</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: ON/OFF Control</label>
+        <description><![CDATA[
+Binary Switch Set (normally used to control external relays).<br /><h1>Overview</h1><p>Binary Switch Set (normally used to control external relays).</p><p>Sends:</p><p>0x00 = OFF</p><p>0xFF = ON</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="thermofloor_HeatIt4512666_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

@@ -44,6 +44,12 @@ Micro Module Energy Meter<br /><h1>Overview</h1><ul><li>Slim, compact remote Z-W
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
         </properties>
       </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
       <channel id="meter_voltage1" typeId="meter_voltage">
         <label>Electric meter (volts) 1</label>
         <properties>
@@ -72,6 +78,12 @@ Micro Module Energy Meter<br /><h1>Overview</h1><ul><li>Slim, compact remote Z-W
         <label>Electric meter (watts) 1</label>
         <properties>
           <property name="binding:*:DecimalType">COMMAND_CLASS_METER:1;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset1" typeId="meter_reset">
+        <label>Meter Reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER:1</property>
         </properties>
       </channel>
       <channel id="meter_voltage2" typeId="meter_voltage">

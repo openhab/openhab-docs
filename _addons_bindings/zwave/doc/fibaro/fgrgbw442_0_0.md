@@ -29,6 +29,10 @@ Quickly, three times click the service button.
 
 Quickly, three times click the service button.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the FGRGBW-442 -:

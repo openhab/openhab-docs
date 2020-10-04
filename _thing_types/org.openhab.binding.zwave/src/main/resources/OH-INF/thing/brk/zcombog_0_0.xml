@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="brk_zcombog_00_000" listed="false">
+    <label>ZCOMBO-G Smoke and Carbon Monoxide Alarm</label>
+    <description><![CDATA[
+Smoke and Carbon Monoxide Alarm<br /><h1>Overview</h1><p>The Z-Wave Smoke/CO alarm can be implemented in residential and institutional applications. Installation settings include sleeping areas within hospitals, hotels, motels, dormitories and other multi-family dwellings that are defined in standard NFPA 101.</p><p>The First Alert ZCOMBO-G Smoke and Carbon Monoxide Detector has been fully tested and complies with UL217, UL2034, CSFM, NFPA 720, NFPA 101 and other agencies that model their codes after the above agencies. The combination alarm meets building codes that require the use of a battery operated Z-Wave wireless Smoke and CO detector. This First Alert Z-Wave Combination Alarm includes silence features and meets the model building codes published by the ICC.</p><p>The First Alert Z-Wave Combo Alarm includes: an insect screened photoelectric smoke sensing chamber, electrochemical carbon monoxide sensor, 85dB horn, supervised 3V (2 AA batteries) power supply, full function test switch and a silence feature.</p><p>The First Alert Z-Wave Enabled Battery Smoke &amp; Carbon Monoxide Combo Alarm includes a battery drawer that prevents battery removal and tamper resistant locking pins that lock the alarm to the mounting bracket. This First Alert Combination Alarm is an ideal fit for any number of applications that include apartments, dormitories, and hotels. Designed for wall or ceiling mounting, this alarm includes all of the required mounting anchors and screws needed for easy installation.</p> <br /><h2>Inclusion Information</h2><p><br /></p><ol><li>Slide battery door open.</li><li>Insert batteries checking the correct orientation.</li><li>Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.</li></ol>NOTE: Use only your finger or thumb on the test button. The use of any other instrument is strictly prohibited.<br /> <br /><h2>Exclusion Information</h2><p><br /></p><ol><li>Slide battery door open.</li><li>Remove and re-insert batteries checking the correct orientation.</li><li>Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.</li></ol><p>NOTE: Use only your finger or thumb on the test button. The use of any other instrument is strictly prohibited.</p> <br /><h2>Wakeup Information</h2><p>PROCEDURE TO MANUALLY WAKE-UP THE DEVICE</p><p>To manual wake-up the device, slide the battery door open wait for ~5 seconds and then slide the battery drawer closed. Upon power-up, the device will send the wake-up notification.</p>
+    ]]></description>
+    <category>SmokeDetector</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="alarm_co" typeId="alarm_co">
+        <label>Alarm (CO)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=CARBON_MONOXIDE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_smoke" typeId="alarm_smoke">
+        <label>Alarm (smoke)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SMOKE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">BRK Brands, Inc.</property>
+      <property name="modelId">ZCOMBO-G</property>
+      <property name="manufacturerId">0138</property>
+      <property name="manufacturerRef">0001:0003</property>
+      <property name="dbReference">1295</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_2" type="integer" groupName="configuration"
+                 min="500" max="5000">
+        <label>1: SuperVision report timeout</label>
+        <description>ZCOMBO will send the message over SuperVision Command Class and it will wait for the SuperVision report from the Controller for the SuperVision report timeout time.</description>
+        <default>1500</default>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration"
+                 min="0" max="5">
+        <label>2: SuperVision retry count</label>
+        <description>If the SuperVision report is not received within the SuperVision report timeout time, the ZCOMBO will retry sending the message again. Upon exceeding the max retry, the ZCOMBO device will send the next message available in the queue.</description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="60">
+        <label>3: SuperVision wait time</label>
+        <description><![CDATA[
+Before retrying the message, ZCOMBO will wait for the SuperVision wait time.<br /><h1>Overview</h1><p>Actual wait time is calculated using below formula,</p><p>Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds)</p><p>• The random value shall be a time between 100 and 1100 milliseconds</p>
+        ]]></description>
+        <default>5</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+The alarm supports one association group (Lifeline) and sends its alarms to that group. The Z-Wave network controller may be set in this group. It’s not recommended to modify this association group. All the critical events in the list of supported events<br /><h1>Overview</h1><p><br /></p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
