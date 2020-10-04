@@ -6,7 +6,7 @@ type: binding
 description: "The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway."
 since: 3x
 logo: images/addons/zigbee.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
