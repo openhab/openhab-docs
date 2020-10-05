@@ -38,7 +38,7 @@ The following features are provided by the openHABian image out of the box:
 -   Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
 -   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
 -   Customized Bash shell experience
--   Customized settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and[nano](https://github.com/airix1/openhabnano)
+-   Customized settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and [nano](https://github.com/airix1/openhabnano)
 -   Frontail log viewer
 -   [Mosquitto](https://mosquitto.org) MQTT broker
 -   the [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
@@ -125,7 +125,8 @@ Start `openhabian-config` to get into the openHABian configuration tool.
 ➜ Continue at the ["openHABian Configuration Tool"](#openhabian-configuration-tool) chapter below!
 
 #### Unattended Install on generic Linux
-BEWARE: this install method is only for experts that already know to handle and debug openHABian.
+BEWARE:<br>
+This install method is only for experts that already know to handle and debug openHABian.
 As a beginner, use the interactive `openhabian-config` tool !
 
 That being said, you actually _can_ install openHABian in an unattended mode.
@@ -188,6 +189,7 @@ Eventually change `storagedir=/storage` to any other name.
 The first attached disk type device is usually called `/dev/sda`.
 openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space
 to a storage partition.
+Full mirroring will take place semiannually and changes will be synced once a week, see `systemctl list-timers`.
 The unattended install routine will also setup Amanda to take daily backups and store them to that third partition.
 Use `storagecapacity=xxx` to override how much space to consume at most for Amanda backup storage (in MB).
 If you choose to skip this during system installation, you can still setup both, mirroring and Amanda, at

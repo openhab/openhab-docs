@@ -19,7 +19,9 @@ The ZCOMBO-G does not permanently listen for messages sent from the controller -
 
 ## Overview
 
-The Z-Wave Smoke/CO alarm can be implemented in residential and institutional applications. Installation settings include sleeping areas within hospitals, hotels, motels, dormitories and other multi-family dwellings that are defined in standard NFPA 101. The First Alert ZCOMBO-G Smoke and Carbon Monoxide Detector has been fully tested and complies with UL217, UL2034, CSFM, NFPA 720, NFPA 101 and other agencies that model their codes after the above agencies. The combination alarm meets building codes that require the use of a battery operated Z-Wave wireless Smoke and CO detector. This First Alert Z-Wave Combination Alarm includes silence features and meets the model building codes published by the ICC.
+The Z-Wave Smoke/CO alarm can be implemented in residential and institutional applications. Installation settings include sleeping areas within hospitals, hotels, motels, dormitories and other multi-family dwellings that are defined in standard NFPA 101.
+
+The First Alert ZCOMBO-G Smoke and Carbon Monoxide Detector has been fully tested and complies with UL217, UL2034, CSFM, NFPA 720, NFPA 101 and other agencies that model their codes after the above agencies. The combination alarm meets building codes that require the use of a battery operated Z-Wave wireless Smoke and CO detector. This First Alert Z-Wave Combination Alarm includes silence features and meets the model building codes published by the ICC.
 
 The First Alert Z-Wave Combo Alarm includes: an insect screened photoelectric smoke sensing chamber, electrochemical carbon monoxide sensor, 85dB horn, supervised 3V (2 AA batteries) power supply, full function test switch and a silence feature.
 
@@ -27,7 +29,8 @@ The First Alert Z-Wave Enabled Battery Smoke & Carbon Monoxide Combo Alarm inclu
 
 ### Inclusion Information
 
-ADD
+  
+
 
   1. Slide battery door open.
   2. Insert batteries checking the correct orientation.
@@ -35,7 +38,8 @@ ADD
 
 ### Exclusion Information
 
-REMOVE
+  
+
 
   1. Slide battery door open.
   2. Remove and re-insert batteries checking the correct orientation.
@@ -130,7 +134,7 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | SuperVision report timeout | ZCOMBO will send the message over SuperVision Command Class and it will wait for the SuperVision report from the Controller for the SuperVision report timeout time. |
 | 2 | SuperVision retry count | If the SuperVision report is not received within the SuperVision report timeout time, the ZCOMBO will retry sending the message again. Upon exceeding the max retry, the ZCOMBO device will send the next message available in the queue. |
-| 3 | SuperVision wait time | Before retrying the message, ZCOMBO will wait for the SuperVision wait time. Actual wait time is calculated using below formula, Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds) • The random value shall be a time b |
+| 3 | SuperVision wait time | Before retrying the message, ZCOMBO will wait for the SuperVision wait time. |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
@@ -158,13 +162,17 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 ### Parameter 3: SuperVision wait time
 
-Before retrying the message, ZCOMBO will wait for the SuperVision wait time. Actual wait time is calculated using below formula, Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds) • The random value shall be a time b
+Before retrying the message, ZCOMBO will wait for the SuperVision wait time.
+Actual wait time is calculated using below formula,
 
+Wait time = SuperVision wait time base-value + random-value + (attempt-count x 5 seconds)
+
+• The random value shall be a time between 100 and 1100 milliseconds
 Values in the range 1 to 60 may be set.
 
 The manufacturer defined default value is ```5```.
 
-This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
 ### Wakeup Interval
 
