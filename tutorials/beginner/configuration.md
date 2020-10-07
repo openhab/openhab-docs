@@ -163,7 +163,7 @@ After clicking ```LINK```, your item will be created and you will see it immedia
 
 Items which are linked to channels of the same thing are displayed together, represented by the thing's name.
 Here you can see the state of the "Online" and the "Time" channel.
-John's mobile is online, and the ping latency is 10ms.
+John's mobile is online, and the ping latency is 2 ms.
 
 
 ## Changing parameters of the thing
