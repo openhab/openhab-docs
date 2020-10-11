@@ -183,7 +183,7 @@ Moreover the configuration class has a utility method `as(Class<T> configuration
 
 All configuration values will be mapped to properties of the class.
 The type of the property must match the type of the configuration.
-Only the following types are supported for configuration values: `Boolean`, `String` and `BigDecimal`.
+The following types are supported for configuration values: `Boolean`, `boolean`, `String`, `BigDecimal`, `int`, `long`, `float` and `double`.
 
 For example, the Yahoo Weather binding allows configuration of the location and the refresh frequency.
 
