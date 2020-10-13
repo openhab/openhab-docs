@@ -119,17 +119,17 @@ You can find specific installation instructions for these and other platforms in
 If you have a strong preference towards a particular platform, then that platform is probably your best choice.
 
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
-If you feel serious about home automation it may be better to start with a dedicated system right away.
+If you feel serious about home automation it is better to start with a dedicated system right away.
 
 If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with 2 GB and a 16 GB SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
-A RPi 2 or 3 is fine, too, but a RPi4/8GB is overkill, as are larger SD cards.
+A RPi 2 or 3 is fine, too, but a RPi 4 with 8GB is overkill, as are larger SD cards.
 
-While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
-It is worth noting two potential limitations of Raspberry Pis, however:
-RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
-Two or more GB should be fine.
+While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB eco system in a box and easily capable of automating your entire home.
+Mind two potential limitations of Raspberry Pis:
+RPi 3 and older are limited in RAM (1 GB of memory or less) and will probably not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
+You will want to have two GB for that to work smoothly.
 Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions (infamous 'wearout').
-When you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
+When you choose to deploy openHABian, it'll use the ZRAM feature to mitigate.
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
@@ -137,13 +137,13 @@ You will quickly discover that you may want to learn more about Things, Channels
 To do so, we highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html). 
 It provides more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
 
-The amount of information provided here can be overwhelming, so please come back to these sections often as you develop your home automation system.
+The amount of information provided can be overwhelming but don't hesitate to return here to lookup infos.
 
-Along the way, you may have some questions; the openHAB community is here to help.
+When you encounter questions along the way that the docs don't answer for you, the openHAB community is there to help.
 
 ## The openHAB Community
 
-openHAB is not just software - it is also a **community** of users, contributors and maintainers, working together on an open-source, interoperable approach to home automation. 
+openHAB is not just software - it is also a **community** of users, contributors and maintainers, working together on an open-source, interoperable home automation system. 
 The center of this community is the [openHAB community forum](https://community.openhab.org). 
 It is an active and responsive community of experienced users who generally respond quite quickly to forum questions.
 [Mind the rules](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396), please.
@@ -176,7 +176,7 @@ But remember, there is always more than one way to achieve your goal in openHAB.
 
 A final word for the DIY enthusiasts. openHAB is very flexible and can support many DIY devices. 
 However, you will quickly realize that DIY often literally means that you _"do it yourself"_. 
-Working with DIY solutions often requires a deeper level of understanding, as well as more patience and perseverance than the integration of ready-to-use devices from commercial providers. 
+Working with DIY solutions often requires a deeper level of understanding, as well as more patience and perseverance than the integration of ready-to-use devices from commercial vendors. 
 The choice is yours of course, but you will need to be prepared to spend either money or time (and sometimes both) to make your home automation goals a reality.
 And quite often, the investment will be significant.
 
