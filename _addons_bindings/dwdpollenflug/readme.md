@@ -1,7 +1,7 @@
 ---
 id: dwdpollenflug
-label: DWDPollenflug
-title: DWDPollenflug - Bindings
+label: DWD Pollenflug
+title: DWD Pollenflug - Bindings
 type: binding
 description: "The 'Deutsche Wetterdienst' (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow."
 since: 3x
@@ -12,7 +12,7 @@ install: auto
 
 {% include base.html %}
 
-# DWDPollenflug Binding
+# DWD Pollenflug Binding
 
 The "Deutsche Wetterdienst" (DWD) reports the current pollen count index for Germany on a daily base and a forecast for tomorrow and the day after tomorrow. 
 This binding allows you to retrieve this data for your region or partregion. You can find a map of the data here: 
