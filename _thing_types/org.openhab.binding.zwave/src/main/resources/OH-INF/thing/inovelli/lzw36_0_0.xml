@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw36_00_000" listed="false">
     <label>LZW36 Fan &amp; Light Switch</label>
     <description><![CDATA[
-Fan &amp; Light Switch<br /><h1>Overview</h1><p>There are two different wireless protocols that are used to make this fan &amp; light switch - Z-Wave and RF.</p> <p>Z-Wave is what gives the switch remote (smart) control, whereas RF is what connects the switch to the module. In other words, your hub/gateway connects to your switch, where you can tell it to change the speed of the fan or the brightness of the lights. From there the switch sends an RF command to the module to physically make those commands happen at the fan itself.</p> <br /><h2>Inclusion Information</h2><p>Enable the inclusion process on your Hub or Gateway. Hold down button A and press button B 3x quickly and your LED Bars will pulse blue signifying the switch is in inclusion mode. If successful, the switch LED Bars will flash Green and if unsuccessful, the LED Bars will flash Red.</p> <br /><h2>Exclusion Information</h2><p>Place your hub or gateway into exclusion mode. Then: Hold button A + Press Button B 3x. If it is successful the LED will blink green.</p>
+Fan &amp; Light Switch<br /><h1>Overview</h1><p>There are two different wireless protocols that are used to make this fan &amp; light switch - Z-Wave and RF.</p> <p>Z-Wave is what gives the switch remote (smart) control, whereas RF is what connects the switch to the module. In other words, your hub/gateway connects to your switch, where you can tell it to change the speed of the fan or the brightness of the lights. From there the switch sends an RF command to the module to physically make those commands happen at the fan itself.</p> <br /><h2>Inclusion Information</h2><p>Enable the inclusion process on your Hub or Gateway. Hold down button A and press button B 3x quickly and your LED Bars will pulse blue signifying the switch is in inclusion mode. If successful, the switch LED Bars will flash Green and if unsuccessful, the LED Bars will flash Red.</p> <br /><h2>Exclusion Information</h2><p>Place your hub or gateway into exclusion mode. Then: Hold button A + Press Button B 3x. If it is successful the LED will blink green.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -503,6 +503,15 @@ Local Protection Settings<br /><h1>Overview</h1><p>Enable local protection on th
           <option value="2">Fan Button</option>
           <option value="3">Both Buttons</option>
         </options>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>51: Enable instant on</label>
+        <description><![CDATA[
+Disable the 700ms delay.<br /><h1>Overview</h1><p>Enable instant on (ie: disable the 700ms delay). Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x, held &amp; released) and button 6, 7, 8, 9 (level up / down buttons). All other scenes will be disabled.</p><p>Firmware v1.36 and above.</p>
+        ]]></description>
+        <default>0</default>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

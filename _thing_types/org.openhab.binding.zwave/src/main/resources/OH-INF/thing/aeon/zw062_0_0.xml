@@ -26,6 +26,18 @@ Aeon Labs Garage Door Controller Gen5<br /><h1>Overview</h1><p>Aeon Labs Garage 
           <property name="binding:*:DecimalType">COMMAND_CLASS_BARRIER_OPERATOR</property>
         </properties>
       </channel>
+      <channel id="config_decimal_param42" typeId="config_decimal">
+        <label>Battery State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=42</property>
+        </properties>
+      </channel>
+      <channel id="config_decimal_param45" typeId="config_decimal">
+        <label>Temperature</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CONFIGURATION;parameter=45</property>
+        </properties>
+      </channel>
     </channels>
 
     <!-- DEVICE PROPERTY DEFINITIONS -->
@@ -305,5 +317,21 @@ Forward the Basic Set<br /><h1>Overview</h1><p>Forward the Basic Set, Switch Bin
     </config-description>
 
   </thing-type>
+
+  <channel-type id="aeon_zw062_00_000_config_decimal_param42">
+    <item-type>Number</item-type>
+    <label>Battery state</label>
+    <description>Configuration report for the battery state of Sensor</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
+
+  <channel-type id="aeon_zw062_00_000_config_decimal_param45">
+    <item-type>Number</item-type>
+    <label>Temperature</label>
+    <description>Get the environment temperature</description>
+    <state pattern="%s">
+    </state>
+  </channel-type>
 
 </thing:thing-descriptions>

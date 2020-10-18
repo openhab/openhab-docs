@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="qubino_zmnhmd_00_000" listed="false">
+    <label>ZMNHMD Water meter and leakage detector with valve control</label>
+    <description><![CDATA[
+Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qubino water meter and leakage detector is very versatile. It can be used in various home applications. You can get the information about consumed water on one side or have the complete protection of your home water system with water metering, flood detection and actuator for opening and closing the valve accordingly. It is perfectly suitable for garden/lawn irrigation, where you can set the manual operation, automatic operation with timer or based on humidity sensor. In case you have two water sources, public distribution system and own water tank, you can decide when, how and which one to use to reduce water costs and water consumption. <br /></p> <br /><h2>Inclusion Information</h2><ol><li>Enable add/remove mode on your Z-Wave gateway (hub).</li><li>Connect the device to the power supply.</li><li>Make sure the device is within direct range of your Z-Wave gateway (hub).</li><li>Push the switch connected to the I1 terminal 3 times within 5 seconds.</li></ol><p>OR</p><p>Press and hold the S (Service) button between 2 and 6 seconds.</p><ol><li>A new single-channel device will appear on your dashboard.</li><li>Inclusion with the switch connected to I1 terminal is not limited by time.</li></ol><br /><h2>Exclusion Information</h2><ol><li>Connect the device to the power supply.</li><li>Make sure the device is within direct range of your Z-Wave gateway (hub) or use a hand-held Z-Wave remote to perform exclusion.</li><li>Enable add/remove mode on your Z-Wave gateway (hub).</li><li>Toggle the switch connected to the I1 terminal 3 times within 5 seconds. The device must get ON/OFF signal 3 times.</li></ol><p>OR</p><p>Press and hold the S (Service) button between 2 and 6 seconds.</p><ol><li>Exclusion with the switch connected to I1 terminal is not limited by time.</li><li>The device will be removed from your network, but any custom configuration parameters will not be erased.</li></ol><p>NOTE1: LEARN MODE state allows the device to receive network information from the controller.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="meter_water_cubic_meters" typeId="meter_water_cubic_meters">
+        <label>Water meter (water_cubic_meters)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=W_Cubic_Meters</property>
+        </properties>
+      </channel>
+      <channel id="alarm_flood" typeId="alarm_flood">
+        <label>Alarm (flood)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=FLOOD</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Goap</property>
+      <property name="modelId">ZMNHMD</property>
+      <property name="manufacturerId">0159</property>
+      <property name="manufacturerRef">0006:0051</property>
+      <property name="dbReference">1293</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: Output 1 contact type</label>
+        <description>Defines the output contact type for Q↑.</description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) contact type</option>
+          <option value="1">NC (normally closed) contact type</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Input 2 contact type</label>
+        <description>Defines how the device reacts if a signal from I2 input is registered.</description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) contact type</option>
+          <option value="1">NC (normally close) contact type</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>3: Input 3 contact type</label>
+        <description>Defines how the device reacts if a signal from I3 input is registered.</description>
+        <default>0</default>
+        <options>
+          <option value="0">NO (normally open) contact type</option>
+          <option value="1">NC (normally close) contact type</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>30: Restore state on power failure</label>
+        <description>Determines the behaviour of the device after a power cycle/outage has occurred.</description>
+        <default>0</default>
+        <options>
+          <option value="0">enabled (the device will restore state on power failure)</option>
+          <option value="1">disabled (the device will not restore state on power failure and will</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_48_4" type="integer" groupName="configuration"
+                 min="-2147483648" max="2147483647">
+        <label>48: Water total consumption value in Liters</label>
+        <description><![CDATA[
+Allows the user to set a custom meter value.<br /><h1>Overview</h1><p>With this parameter we can set the current water consumption value in liters. The value is represented with two's complement notation so that it can represent negative values also. Span of the input value is from (-2147483648) to (+2147483647). Its main usage is to set the same value on our device as on physical water meter. If we get the PARAMETER_48 value with PARAMETER_GET command we get the last value that was set with this parameter and not the current water consumption value! To get the current consumption value we must send the METER_GET command.<br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <parameter name="config_50_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>50: number of liters per pulse</label>
+        <description><![CDATA[
+This number defines how many liters represent 1 received pulse from the water meter connected to I2.<br /><h1>Overview</h1><p>This number defines how many liters represent 1 received pulse from the water meter connected to I2.<br /></p>
+        ]]></description>
+        <default>10</default>
+      </parameter>
+
+      <parameter name="config_51_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>51: Number of liters for Slow Leak</label>
+        <description><![CDATA[
+This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 52 to cause the leak alarm. (depends on meter resolution).<br /></p>
+        ]]></description>
+        <default>1</default>
+      </parameter>
+
+      <parameter name="config_52_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>52: Water consumption time interval for Slow Leak</label>
+        <description><![CDATA[
+Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 51 was consumed to cause the leak alarm.<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 51 was consumed to cause the leak alarm.<br /></p>
+        ]]></description>
+        <default>24</default>
+      </parameter>
+
+      <parameter name="config_53_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>53: Number of liters for Medium Leak</label>
+        <description><![CDATA[
+This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 54 to cause the leak alarm.<br /></p>
+        ]]></description>
+        <default>150</default>
+      </parameter>
+
+      <parameter name="config_54_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>54: Water consumption time interval for Medium Leak</label>
+        <description><![CDATA[
+Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 53 was consumed to cause the leak alarm.<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 53 was consumed to cause the leak alarm.<br /></p>
+        ]]></description>
+        <default>6</default>
+      </parameter>
+
+      <parameter name="config_55_2" type="integer" groupName="configuration"
+                 min="1" max="1000">
+        <label>55: Number of liters for Fast Leak</label>
+        <description><![CDATA[
+This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 56 to cause the leak alarm.<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 56 to cause the leak alarm.<br /></p>
+        ]]></description>
+        <default>300</default>
+      </parameter>
+
+      <parameter name="config_56_1" type="integer" groupName="configuration"
+                 min="1" max="24">
+        <label>56: Water consumption time interval for Fast Leak</label>
+        <description><![CDATA[
+Set value means time interval (0 – 24) in hours<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours<br /></p>
+        ]]></description>
+        <default>3</default>
+      </parameter>
+
+      <parameter name="config_60_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>60: Enable closing valve according to Slow Leak</label>
+        <description><![CDATA[
+This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_61_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>61: Enable closing valve according to Medium Leak</label>
+        <description><![CDATA[
+This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_62_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>62: Enable closing valve according to Fast Leak</label>
+        <description><![CDATA[
+This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_63_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>63: Enable closing valve according to Hardware Leak</label>
+        <description><![CDATA[
+This parameter defines what happens with the valve if the leak alarm is triggered.<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+The lifeline group to which all supported unsolicited messages are sent.<br /><h1>Overview</h1><p>Supports the following command classes:</p><p>• Device Reset Locally: triggered upon request</p><p>• Meter Report: triggered on every 100L change</p><p>• Notification Report: triggered on Alarm and when clearing Alarm</p><p>• Switch Binary Report: triggered upon request or after valve position is changed.</p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic OnOff</label>
+        <description><![CDATA[
+Used for on/off control of other devices.<br /><h1>Overview</h1><p>Supports the following command classes:</p><p>• Basic set: triggered on valve position change and it is reflecting valve's state.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

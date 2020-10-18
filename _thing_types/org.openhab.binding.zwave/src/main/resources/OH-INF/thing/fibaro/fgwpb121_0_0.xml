@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgwpb121_00_000" listed="false">
     <label>FGWPB-121 Fibaro Wall Plug</label>
     <description><![CDATA[
-Fibaro Wall Plug<br /><h1>Overview</h1><p>FIBARO Wall Plug is a universal, Z-Wave Plus compatible, remotely controlled outlet adapter.</p> <br /><h2>Inclusion Information</h2><p>To add the device to the Z-Wave network:</p> <ul><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED ring will glow red signalling not being added (reset or remove the device otherwise).</li> <li>Set the main controller in (security/non-security) add mode (see the controller’s manual).</li> <li>Quickly, triple click the B-button located on the casing.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ul><br /><h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ul><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED ring will glow green signalling being added (removing is not necessary otherwise).</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, triple click the B-button located on the casing.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ul>
+Fibaro Wall Plug<br /><h1>Overview</h1><p>FIBARO Wall Plug is a universal, Z-Wave Plus compatible, remotely controlled outlet adapter.</p> <br /><h2>Inclusion Information</h2><p>To add the device to the Z-Wave network:</p> <ul><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED ring will glow red signalling not being added (reset or remove the device otherwise).</li> <li>Set the main controller in (security/non-security) add mode (see the controller’s manual).</li> <li>Quickly, triple click the B-button located on the casing.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ul><br /><h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ul><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED ring will glow green signalling being added (removing is not necessary otherwise).</li> <li>Set the main controller into remove mode (see the controller’s manual).</li> <li>Quickly, triple click the B-button located on the casing.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ul><br /><h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -117,7 +117,7 @@ Fibaro Wall Plug<br /><h1>Overview</h1><p>FIBARO Wall Plug is a universal, Z-Wav
       <property name="vendor">Fibargroup</property>
       <property name="modelId">FGWPB-121</property>
       <property name="manufacturerId">010F</property>
-      <property name="manufacturerRef">1401:2000,1801:1000</property>
+      <property name="manufacturerRef">1401:2000,1501:1000,1801:1000</property>
       <property name="dbReference">808</property>
       <property name="defaultAssociations">1</property>
     </properties>
