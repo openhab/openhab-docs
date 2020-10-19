@@ -185,7 +185,7 @@ Player Player   "Player"  (Stereo)  {alexa="PlaybackController.playback"}
 Number Bass     "Bass"    (Stereo)  {alexa="EqualizerController.bands:bass" [range="-10:10"]}
 Number Midrange "Mid"     (Stereo)  {alexa="EqualizerController.bands:midrange" [range="-10:10"]}
 Number Treble   "Treble"  (Stereo)  {alexa="EqualizerController.bands:treble" [range="-10:10"]}
-String Mode     "Mode"    (Stereo)  {alexa="EqualizerController.modes" [supportedModes="MOVIE,MUSIC,TV"]}
+String Mode     "Mode"    (Stereo)  {alexa="EqualizerController.mode" [supportedModes="MOVIE,MUSIC,TV"]}
 ```
 
 A security system is another example including alarm mode and different alarm states.
@@ -518,7 +518,7 @@ The following are a list of supported metadata. It is important to note that not
     * defaults to increment=INCREASE/DECREASE (Dimmer) or increment=1 (Number) if omitted
 * Default category: SPEAKER
 
-#### `EqualizerController.modes`
+#### `EqualizerController.mode`
 * Items that represent a list of equalizer modes supported by an audio system. Set supported modes using `supportedModes="MOVIE,MUSIC,TV"` parameter. The mode listed in additional properties (MOVIE, MUSIC, NIGHT, SPORT, TV) are the only ones supported by the Alexa API currently. For the mapping, default item type mapping (listed below) can be used or if necessary, add each state to the parameters similar to how it is done with other interfaces.
 * Supported item type:
   * Number [MOVIE=1, MUSIC=2, NIGHT=3, SPORT=4, TV=5]
@@ -844,7 +844,7 @@ Number EqualizerTreble "Equalizer Treble" {alexa="EqualizerController.bands:treb
 ```
 String EqualizerMode "Equalizer Mode" {alexa="EqualizerMode"}
 
-String EqualizerMode "Equalizer Mode" {alexa="EqualizerController.modes"}
+String EqualizerMode "Equalizer Mode" {alexa="EqualizerController.mode"}
 ```
 #### MediaPlayer
 ```
