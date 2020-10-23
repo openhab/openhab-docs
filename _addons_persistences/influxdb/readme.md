@@ -3,7 +3,7 @@ id: influxdb
 label: InfluxDB (0.9 and newer)
 title: InfluxDB (0.9 and newer) - Persistence Services
 type: persistence
-description: "This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as [Grafana](http://grafana.org/)."
+description: "This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB."
 since: 3x
 logo: images/addons/influxdb.png
 install: auto
@@ -15,15 +15,20 @@ install: auto
 
 # InfluxDB (0.9 and newer) Persistence
 
-This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as [Grafana](http://grafana.org/).
+This service allows you to persist and query states using the [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) and [InfluxDB 2.0](https://v2.docs.influxdata.com/v2.0/) time series database. The persisted values can be queried from within openHAB. 
+There also are nice tools on the web for visualizing InfluxDB time series, such as [Grafana](http://grafana.org/) and new Influx DB 2.0 version introduces [powerful data processing features.](https://docs.influxdata.com/influxdb/v2.0/process-data/get-started/)
 
 ## Database Structure
 
 
 - This service allows you to persist and query states using the time series database.
 - The states of an item are persisted in *measurements* points with names equal to the name of the item, or the alias, if one is provided. In both variants, a *tag* named "item" is added, containing the item name.
- All values are stored in a *field* called "value" using integers or doubles if possible,`OnOffType` and `OpenClosedType` values are stored using 0 or 1.
-- If configured extra tags for item category, label or type can be added fore each point.
+ All values are stored in a *field* called "value" using the following types:
+    - **float** for DecimalType and QuantityType
+    - **integer** for `OnOffType` and `OpenClosedType`  (values are stored using 0 or 1) and `DateTimeType` (milliseconds since 1970-01-01T00:00:00Z)
+    - **string** for the rest of types
+    
+- If configured, extra tags for item category, label or type can be added fore each point.
 
 Some example entries for an item with the name "speedtest" without any further configuration would look like this:
 
