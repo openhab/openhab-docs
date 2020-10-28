@@ -5,7 +5,7 @@ title: Remote openHAB - Bindings
 type: binding
 description: "The Remote openHAB binding allows to communicate with remote openHAB servers."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
