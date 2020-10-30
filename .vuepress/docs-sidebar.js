@@ -100,6 +100,7 @@ module.exports = [
       'administration/bundles',
       'administration/logging',
       'administration/jsondb',
+      'administration/serial'
     ]
   },
   {
