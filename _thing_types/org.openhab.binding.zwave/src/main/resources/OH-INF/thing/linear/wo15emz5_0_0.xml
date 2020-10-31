@@ -78,6 +78,7 @@ LED mode for attached load<br /><h1>Overview</h1><p>By default, the LED on the W
           <option value="3">Off</option>
           <option value="4">Blink on RF transmission</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -91,7 +92,6 @@ Minutes<br /><h1>Overview</h1><p>WO15EMZ5-1 reports the total accumulated Kilowa
           <option value="0">Disabled</option>
           <option value="6">Default</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

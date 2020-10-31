@@ -59,6 +59,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -68,6 +69,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration">
@@ -78,6 +80,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -85,6 +88,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
         <label>111: Low battery voltage check time</label>
         <description>Minimum battery low check Interval time is 4 minutes (240 seconds)</description>
         <default>112</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4" type="integer" groupName="configuration"
@@ -92,6 +96,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
         <label>121: Flag values for triggered magnet switch</label>
         <description>Flag values for which reports to send when the magnet switch is triggered</description>
         <default>256</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -102,6 +107,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_2_wo" type="integer" groupName="configuration">
@@ -110,6 +116,7 @@ Recessed Door/Window Sensor<br /><h1>Overview</h1><p>Aeotec Recessed Door Sensor
 Reset to the default configuration<br /><h1>Overview</h1><p>1, Value=0x55555555、Default=1、Size=4<br />2, Value=0、Default=1、Size=1 Reset all configuration<br />parameters (except the parameter 254) to default settings.<br />3, Other values will be reserved.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

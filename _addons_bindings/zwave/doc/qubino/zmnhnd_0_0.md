@@ -448,12 +448,12 @@ Association group 6 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/207/Qubino-Flush-1D-relay-PLUS-user-manual-V1-4.pdf)
-* [Qubino Flush 1D relay PLUS User Manual V1.5](https://opensmarthouse.org/zwavedatabase/207/Qubino-Flush-1D-relay-PLUS-user-manual-V1-5-1.pdf)
-* [Qubino Flush 1D Relay PLUS Extended Manual Eng 2.2](https://opensmarthouse.org/zwavedatabase/207/Qubino-Flush-1D-Relay-PLUS-extended-manual-eng-2-2-2.pdf)
-* [Declaration of Conformity Flush 1D Relay 09062017](https://opensmarthouse.org/zwavedatabase/207/Declaration-of-conformity-FLUSH-1D-RELAY--09062017.pdf)
-* [Qubino Relays CB Test Certificate SI-5074-B1](https://opensmarthouse.org/zwavedatabase/207/Qubino-Relays-CB-TEST-CERTIFICATE-SI-5074-B1-1.pdf)
-* [Qubino Relays Certificate of Conformity C251-0007 16](https://opensmarthouse.org/zwavedatabase/207/Qubino-Relays-Certificate-of-Conformity-C251-0007-16-2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/207/reference/Qubino-Flush-1D-relay-PLUS-user-manual-V1-4.pdf)
+* [Qubino Flush 1D relay PLUS User Manual V1.5](https://opensmarthouse.org/zwavedatabase/207/reference/Qubino-Flush-1D-relay-PLUS-user-manual-V1-5-1.pdf)
+* [Qubino Flush 1D Relay PLUS Extended Manual Eng 2.2](https://opensmarthouse.org/zwavedatabase/207/reference/Qubino-Flush-1D-Relay-PLUS-extended-manual-eng-2-2-2.pdf)
+* [Declaration of Conformity Flush 1D Relay 09062017](https://opensmarthouse.org/zwavedatabase/207/reference/Declaration-of-conformity-FLUSH-1D-RELAY--09062017.pdf)
+* [Qubino Relays CB Test Certificate SI-5074-B1](https://opensmarthouse.org/zwavedatabase/207/reference/Qubino-Relays-CB-TEST-CERTIFICATE-SI-5074-B1-1.pdf)
+* [Qubino Relays Certificate of Conformity C251-0007 16](https://opensmarthouse.org/zwavedatabase/207/reference/Qubino-Relays-Certificate-of-Conformity-C251-0007-16-2.pdf)
 
 ---
 

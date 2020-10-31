@@ -80,6 +80,7 @@ Widom Smart Plug<br /><h1>Overview</h1><p>WiDom Smart Plug is able to detect ove
           <option value="2">TWO_CLICKS</option>
           <option value="3">ONE_CLICK or TWO_CLICKS</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -89,6 +90,7 @@ Widom Smart Plug<br /><h1>Overview</h1><p>WiDom Smart Plug is able to detect ove
 Level used to control group 4<br /><h1>Overview</h1><p>Defines how to control the devices associated to 1 click event.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@ Level used to control group 4<br /><h1>Overview</h1><p>Defines how to control th
 Level used to control group 5<br /><h1>Overview</h1><p>Defines how to control the devices associated to 2 clicks event.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -107,6 +110,7 @@ Level used to control group 5<br /><h1>Overview</h1><p>Defines how to control th
 Overvoltage level<br /><h1>Overview</h1><p>Defines the voltage level (in Volts) beyond which an overvoltage event is identified and the overvoltage timer is activated. The timer is reset when the event ceases, i.e. when the voltage returns below the overvoltage level. As soon as an overvoltage event occurs, the LED starts a <i>BLUE</i> blinking. If the overvoltage event ceases before the overvoltage timer expires, the blue blinking is stopped, otherwise the alarm is generated and the blinking reset is established by parameter 6.</p>
         ]]></description>
         <default>253</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -116,6 +120,7 @@ Overvoltage level<br /><h1>Overview</h1><p>Defines the voltage level (in Volts) 
 Overvoltage Timer<br /><h1>Overview</h1><p>Define the time (seconds) in which the voltage must persist above the overvoltage level so that an alarm is generated.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -128,6 +133,7 @@ Overvoltage Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the overvol
           <option value="0">MANUAL</option>
           <option value="1">OVER_VOLTAGE_END</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -137,6 +143,7 @@ Overvoltage Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the overvol
 Level used to control the devices associated to group 3<br /><h1>Overview</h1><p>Define how to control the devices associated to the overvoltage alarm</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -146,6 +153,7 @@ Level used to control the devices associated to group 3<br /><h1>Overview</h1><p
 Overcurrent level<br /><h1>Overview</h1><p>Defines the current level (in Amps) beyond which an overcurrent event is identified and the overcurrent timer is activated. The timer is reset when the event ceases, i.e. when the current returns below the overcurrent level. As soon as an overcurrent event occurs, the led starts a red blinking. If the overcurrent event ceases before the overcurrent timer expires, the red blinking is stopped, otherwise the alarm is generated and the blinking reset is established by parameter 10.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -155,6 +163,7 @@ Overcurrent level<br /><h1>Overview</h1><p>Defines the current level (in Amps) b
 Overcurrent Timer<br /><h1>Overview</h1><p>Define the time (seconds) in which the current must persist above the overcurrent level so that an alarm is generated and the relay is opened.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -167,6 +176,7 @@ Overcurrent Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the over-cu
           <option value="0">MANUAL</option>
           <option value="1">OVER_CURRENT_END</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -176,6 +186,7 @@ Overcurrent Alarm Reset<br /><h1>Overview</h1><p>Define how to reset the over-cu
 Level used to control the devices associated to group 2<br /><h1>Overview</h1><p>Define how to control the devices associated to the overcurrent alarm.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

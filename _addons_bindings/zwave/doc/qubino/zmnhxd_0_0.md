@@ -524,7 +524,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Extended Manual](https://opensmarthouse.org/zwavedatabase/900/Qubino-3-Phase-Smart-Meter-PLUS-extended-manual-eng-3-3-2.pdf)
+* [Extended Manual](https://opensmarthouse.org/zwavedatabase/900/reference/Qubino-3-Phase-Smart-Meter-PLUS-extended-manual-eng-3-3-2.pdf)
 
 ---
 

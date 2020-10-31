@@ -62,12 +62,14 @@ Wireless Water and Temperature Alarm<br /><h1>Overview</h1><p> This product wil
                  min="0" max="255">
         <label>1: Low Temperature Trigger Point</label>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>2: High Temperature Trigger Point</label>
         <default>70</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

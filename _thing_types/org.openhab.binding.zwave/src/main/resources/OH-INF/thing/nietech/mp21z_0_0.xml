@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="nietech_mp21z_00_000" listed="false">
+    <label>MP21Z Z-Wave Mini Plug</label>
+    <description><![CDATA[
+Z-Wave Mini Plug<br /><h1>Overview</h1><p>Outdoor AC Plug</p><p>Key Features:</p><ul><li>Remote ON/OFF control via the Z-Wave controller<br /></li><li>Manual ON/OFF control with the front panel push button<br /></li><li>Support Association Group and Auto Report switch status<br /></li><li>Over temperature protection<br /></li><li>Support firmware upgrades via Over-the-air (need Gateways support)<br /></li></ul><p>Outdoor AC Plug</p> <p>Key Features:</p> <ul><li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support Association Group and Auto Report switch status</li> <li>Over temperature protection</li> <li>Support firmware upgrades via Over-the-air (need Gateways support)</li> </ul><br /><h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /><h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">NIE Technology</property>
+      <property name="modelId">MP21Z</property>
+      <property name="manufacturerId">0312</property>
+      <property name="manufacturerRef">FF00:FF0C</property>
+      <property name="dbReference">1304</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: LED Indicator</label>
+        <description><![CDATA[
+Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">outlet on,led on</option>
+          <option value="1">outlet on,led off</option>
+          <option value="2">led off, led no work</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_2" type="integer" groupName="configuration">
+        <label>2: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">No timer</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Association group 1<br /><h1>Overview</h1><p>Association group_1 is default to associate with the primary controller (Gateway/Hub/Controller) for MP21Z Status change report</p><p>1. MP21Z will trigger AUTO report function if the Switch status had been changed.</p><p>2. Device Reset Locally Notification(Only report when the MP21Z Switch Module has been triggered the RESET TO DEFAULT)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic set command</label>
+        <description><![CDATA[
+Association Group 2<br /><h1>Overview</h1><p>When the output of the MP21Z socket is changed, On (0xFF) or Off (0x00). The MP21Z will automatically send out a related On (0xFF) or Off (0x00) to its associated group.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

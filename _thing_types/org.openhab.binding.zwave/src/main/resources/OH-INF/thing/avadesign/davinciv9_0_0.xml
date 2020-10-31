@@ -62,6 +62,7 @@ button 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration">
@@ -82,6 +83,7 @@ Button 1 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -96,6 +98,7 @@ Button 1 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -113,6 +116,7 @@ Button 1 Output<br /><h1>Overview</h1><p>Output = Relay</p>
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -126,6 +130,7 @@ Button 1 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -142,6 +147,7 @@ Button 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -162,6 +168,7 @@ Button 2 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -178,6 +185,7 @@ Button 2 Blind Duration<br /><h1>Overview</h1><p>Possible values</p> <p>3-127</p
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -193,6 +201,7 @@ Button 2 Blind Duration<br /><h1>Overview</h1><p>Possible values</p> <p>3-127</p
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -206,6 +215,7 @@ Button 2 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -222,6 +232,7 @@ Button 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -242,6 +253,7 @@ Button 3 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -255,6 +267,7 @@ Button 3 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -270,6 +283,7 @@ Button 3 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -283,6 +297,7 @@ Button 3 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -299,6 +314,7 @@ Button 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -319,6 +335,7 @@ Button 4 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -332,6 +349,7 @@ Button 4 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -347,6 +365,7 @@ Button 4 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -360,6 +379,7 @@ Button 4 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -376,6 +396,7 @@ Button 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -396,6 +417,7 @@ Button 5 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -409,6 +431,7 @@ Button 5 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -424,6 +447,7 @@ Button 5 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -437,6 +461,7 @@ Button 5 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -453,6 +478,7 @@ Button 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -473,6 +499,7 @@ Button 6 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
@@ -486,6 +513,7 @@ Button 6 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -501,6 +529,7 @@ Button 6 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -514,6 +543,7 @@ Button 6 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -530,6 +560,7 @@ Button 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -550,6 +581,7 @@ Button 7 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -563,6 +595,7 @@ Button 7 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration">
@@ -578,6 +611,7 @@ Button 7 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -591,6 +625,7 @@ Button 7 attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] 
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration">
@@ -607,6 +642,7 @@ Button 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration">
@@ -627,6 +663,7 @@ Button 8 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_1" type="integer" groupName="configuration">
@@ -640,6 +677,7 @@ Button 8 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration">
@@ -656,6 +694,7 @@ Button 8 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="6">Output number 6</option>
           <option value="255">BLANK</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -669,6 +708,7 @@ Button 8 attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1] 
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -685,6 +725,7 @@ Button 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p>
           <option value="5">Blind-up multiway</option>
           <option value="6">Blind-down multiway</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -705,6 +746,7 @@ Button 9 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="8">Partner-Id 8</option>
           <option value="9">Partner-Id 9</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -718,6 +760,7 @@ Button 9 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="90">Duration 90 Seconds</option>
           <option value="120">Duration 120 Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_1" type="integer" groupName="configuration">
@@ -733,6 +776,7 @@ Button 9 Partner-Id<br /><h1>Overview</h1><ul><li>When setting Button (EP) to bl
           <option value="5">Output number 5</option>
           <option value="6">Output number 6</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration">
@@ -746,6 +790,7 @@ Button 9 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
           <option value="1">Only Led</option>
           <option value="2">Only Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_46_1" type="integer" groupName="configuration"
@@ -753,6 +798,7 @@ Button 9 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
         <label>46: Device Led on intensity</label>
         <description>Device Led on intensity</description>
         <default>7</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_1" type="integer" groupName="configuration"
@@ -760,6 +806,7 @@ Button 9 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
         <label>47: Device Led off intensity</label>
         <description>Device Led off intensity</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration"
@@ -769,6 +816,7 @@ Button 9 attributes<br /><h1>Overview</h1><p>Bit [0] = LED enable</p> <p>Bit [1]
 Device Toggle or Pulse the output<br /><h1>Overview</h1><p><strong>Device Toggle or Pulse the output:</strong></p> <p>0 = Toggle</p> <p>1 = Pulse</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_1" type="integer" groupName="configuration"
@@ -778,6 +826,7 @@ Device Toggle or Pulse the output<br /><h1>Overview</h1><p><strong>Device Toggle
 Device Background LEDs Timeout<br /><h1>Overview</h1><p><strong>Device Background LEDs Timeout:</strong></p> <p>0 = always Off</p> <p>10 - 40 = Timeout in seconds</p> <p>255 = always On!!!!!!!</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
@@ -787,6 +836,7 @@ Device Background LEDs Timeout<br /><h1>Overview</h1><p><strong>Device Backgroun
 Device touch sensitivity<br /><h1>Overview</h1><p><strong>You can choose value between 0 – 7</strong></p> <p>0 = most sensitive</p> <p>7 = least sensitive</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration">
@@ -799,6 +849,7 @@ Save and Reset<br /><h1>Overview</h1><p>255 = save and reset</p>
           <option value="0">Do NOT Save and Reset</option>
           <option value="255">Save and Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -71,6 +71,7 @@ Z-Wave Remote for Scene selection and SOS button<br /><h1>Overview</h1><p>Remote
 Basic Set Level<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren, the receiver will take it for consideration; for instance, if associated siren is received the Basic Set Command (0xFF), the siren will take alarm on.</p> <p>0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ Basic Set Level<br /><h1>Overview</h1><p>Basic Set Command will be sent where co
 SOS Event Clear Time<br /><h1>Overview</h1><p>This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’.</p> <p>This parameter is set to ‘0’, the clearing emergency event will not occurred always.</p> <p>The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -92,6 +94,7 @@ SOS Configuration<br /><h1>Overview</h1><p>This parameter defines the SOS key fu
           <option value="1">Enable Scene Mode</option>
           <option value="2">SOS Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

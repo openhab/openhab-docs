@@ -102,6 +102,7 @@ Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -116,6 +117,7 @@ Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by
           <option value="4">Heat Pump w/ O-Wire &amp; aux heating</option>
           <option value="5">Heat Pump w/ B-Wire &amp; aux heating</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -126,6 +128,7 @@ Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -136,6 +139,7 @@ Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by
           <option value="0">No Change</option>
           <option value="1">Restore Thermostat Factory Settings (minus z-wave)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -157,6 +161,7 @@ Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) -
           <option value="254">-4F</option>
           <option value="255">-5F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -169,6 +174,7 @@ Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) -
           <option value="2">High</option>
           <option value="3">Auto</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -179,6 +185,7 @@ Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) -
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -200,6 +207,7 @@ Swing Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
           <option value="9">9F</option>
           <option value="10">10F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -221,6 +229,7 @@ Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
           <option value="9">9F</option>
           <option value="10">10F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -240,6 +249,7 @@ Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
           <option value="9">Same image currently running</option>
           <option value="10">Time out during OTA download between fragments</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -250,6 +260,7 @@ Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
           <option value="0">Display off in C-Wire powered mode</option>
           <option value="1">Display on in C-Wire powered mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

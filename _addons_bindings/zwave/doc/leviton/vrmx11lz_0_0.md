@@ -88,7 +88,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/191/DI-031-VRMX1-02A-W.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/191/reference/DI-031-VRMX1-02A-W.pdf)
 
 ---
 

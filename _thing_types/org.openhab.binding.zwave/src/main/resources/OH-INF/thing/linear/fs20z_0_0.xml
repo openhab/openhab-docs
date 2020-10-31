@@ -51,6 +51,7 @@ Nightlight: LED turns ON when the switch is turned OFF<br /><h1>Overview</h1><p>
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

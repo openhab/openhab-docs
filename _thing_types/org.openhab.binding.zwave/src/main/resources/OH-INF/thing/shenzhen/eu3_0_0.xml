@@ -75,6 +75,7 @@ Restore switch status on power restore.<br /><h1>Overview</h1><p>This parameter 
           <option value="0">Do not save the On/Off status</option>
           <option value="1">Save and restore the relay On/Off status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -87,6 +88,7 @@ Enable back light when Light Switch is powered on.<br /><h1>Overview</h1><p>This
           <option value="0">Disable back light LED</option>
           <option value="1">Enable back light LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -99,6 +101,7 @@ Switch on LED indicator.<br /><h1>Overview</h1><p>This parameter defines the rel
           <option value="0">Do not change LED state when on</option>
           <option value="1">Pink LED state when on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -114,6 +117,7 @@ Endpoint device mapping setting for associated devices.<br /><h1>Overview</h1><p
           <option value="3">Endpoint 3</option>
           <option value="4">All three endpoints</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -126,6 +130,7 @@ Enables/disables button<br /><h1>Overview</h1><p>Setting this configuration as 0
           <option value="0">disable buttons</option>
           <option value="1">enable buttons</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -138,6 +143,7 @@ Timer to turn off the relay automatically<br /><h1>Overview</h1><p>Setting this 
           <option value="0">enable timer</option>
           <option value="1">disable timer</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -147,6 +153,7 @@ Timer to turn off the relay automatically<br /><h1>Overview</h1><p>Setting this 
 Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 1 when channel 1 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -156,6 +163,7 @@ Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration 
 Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 2 when channel 2 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -165,6 +173,7 @@ Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration 
 Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 3 when channel 3 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

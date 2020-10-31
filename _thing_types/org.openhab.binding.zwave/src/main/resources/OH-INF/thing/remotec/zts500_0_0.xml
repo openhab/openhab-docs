@@ -96,6 +96,7 @@ Thermostat<br /><h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enabled
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -108,6 +109,7 @@ Thermostat<br /><h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enabled
           <option value="3">3F / 1.5C</option>
           <option value="4">4F / 2C</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -120,6 +122,7 @@ Thermostat<br /><h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enabled
           <option value="3">3F / 1.5C</option>
           <option value="4">4F / 2C</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -129,6 +132,7 @@ Thermostat<br /><h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enabled
 3=3F/1.5C - 6=6F/3C<br /><h1>Overview</h1><p>The Dead Band is a temperature range in which neither COOL or HEAT turns on when in AUTO mode.</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -138,6 +142,7 @@ Thermostat<br /><h1>Overview</h1><p>Remotec ZTS-500 is a security Z-Wave enabled
 Changes Temp. Display (-10=-10F/-5C - 10=+10F/5C)<br /><h1>Overview</h1><p>Adjusts room temperature display to match a calibrated value.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

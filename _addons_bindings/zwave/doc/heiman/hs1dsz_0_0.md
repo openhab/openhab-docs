@@ -169,7 +169,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Device manual](https://opensmarthouse.org/zwavedatabase/551/HSIDS-Z.pdf)
+* [Device manual](https://opensmarthouse.org/zwavedatabase/551/reference/HSIDS-Z.pdf)
 
 ---
 

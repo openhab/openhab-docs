@@ -56,6 +56,7 @@ Dual Paddle Wall Dimmer<br /><h1>Overview</h1><p>The TZ65D wall mounted 3-way di
           <option value="0">Ignore</option>
           <option value="1">Don't ignore</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -68,6 +69,7 @@ Suspend Group 4<br /><h1>Overview</h1><p>Setting this parameter will disable tra
           <option value="0">Transmit to group 4</option>
           <option value="1">Disable transmitting to group 4</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -80,6 +82,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Defines the behav
           <option value="0">Led on when switch on</option>
           <option value="1">Night light</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -90,6 +93,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Defines the behav
           <option value="0">ON on top</option>
           <option value="1">OFF on top</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -102,6 +106,7 @@ Enable Shade Control Group 2<br /><h1>Overview</h1><p>Enable the control of shad
           <option value="0">Inactive</option>
           <option value="1">Shade Control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -114,6 +119,7 @@ Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shad
           <option value="0">Inactive</option>
           <option value="1">Shade Control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -125,6 +131,7 @@ Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shad
           <option value="1">LED blinks on activity all the time</option>
           <option value="2">LED blinks on activity 1 second</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -132,6 +139,7 @@ Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shad
         <label>20: Poll Group 2 Interval (minutes)</label>
         <description>Polling Interval in minutes (default 2)</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -144,6 +152,7 @@ Should Group 2 be pulled?<br /><h1>Overview</h1><p>Defines if the device will po
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -303,8 +303,8 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1243/wink-motion-sensor-manual.pdf)
-* [Additional configuration information](https://opensmarthouse.org/zwavedatabase/1243/wink-motion-sensor-european-manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1243/reference/wink-motion-sensor-manual.pdf)
+* [Additional configuration information](https://opensmarthouse.org/zwavedatabase/1243/reference/wink-motion-sensor-european-manual.pdf)
 
 ---
 

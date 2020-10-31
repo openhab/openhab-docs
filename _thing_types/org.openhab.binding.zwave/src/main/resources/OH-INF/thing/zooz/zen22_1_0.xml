@@ -58,6 +58,7 @@ Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or remote on/off and dimming 
           <option value="0">Upper paddle turns on, lower paddle turns off</option>
           <option value="1">Upper paddle turns off, lower paddle turns on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -68,6 +69,7 @@ Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or remote on/off and dimming 
           <option value="0">LED on when switch off, LED off when switch off</option>
           <option value="1">LED on when switch on, LED off when switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -78,6 +80,7 @@ Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or remote on/off and dimming 
           <option value="0">LED indicator is enabled</option>
           <option value="1">LED indicator is disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -90,6 +93,7 @@ Choose from 2 ramp rate options (fade-in / fade-out effect)<br /><h1>Overview</h
           <option value="0">Slow Ramp Rate</option>
           <option value="1">Fast Ramp Rate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

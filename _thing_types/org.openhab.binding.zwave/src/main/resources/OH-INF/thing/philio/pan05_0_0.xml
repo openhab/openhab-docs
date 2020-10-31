@@ -64,6 +64,7 @@ Mode<br /><h1>Overview</h1><p>Edge or Pulse mode or Edge-Toggle mode</p>
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -75,6 +76,7 @@ Mode<br /><h1>Overview</h1><p>Edge or Pulse mode or Edge-Toggle mode</p>
           <option value="1">Last Switch State</option>
           <option value="2">Switch On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -85,6 +87,7 @@ Mode<br /><h1>Overview</h1><p>Edge or Pulse mode or Edge-Toggle mode</p>
           <option value="0">Disable manual On/Off</option>
           <option value="1">Enable manual On/Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -96,6 +99,7 @@ Mode<br /><h1>Overview</h1><p>Edge or Pulse mode or Edge-Toggle mode</p>
           <option value="2">Show night mode</option>
           <option value="3">One flash mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -105,6 +109,7 @@ Mode<br /><h1>Overview</h1><p>Edge or Pulse mode or Edge-Toggle mode</p>
 Auto off timer<br /><h1>Overview</h1><p>0：Disable auto off function</p> <p>1-32767：1 ~ 32767 seconds</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -119,6 +124,7 @@ RF Off command mode<br /><h1>Overview</h1><p>Whenever a RF Off command is receiv
           <option value="2">Switch toggle</option>
           <option value="3">Switch on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

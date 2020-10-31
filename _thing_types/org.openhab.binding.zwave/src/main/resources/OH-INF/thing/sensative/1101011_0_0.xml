@@ -68,6 +68,7 @@ Strips-MaZw<br /><h1>Overview</h1><p>Strips is a Z-Wave magnet sensor that can b
           <option value="1">Notification report</option>
           <option value="2">Basic report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Strips-MaZw<br /><h1>Overview</h1><p>Strips is a Z-Wave magnet sensor that can b
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

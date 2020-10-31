@@ -79,6 +79,7 @@ Flush PWM Thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regu
           <option value="0">mono-stable switch type</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -89,6 +90,7 @@ Flush PWM Thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regu
           <option value="0">mono-stable switch type</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -99,6 +101,7 @@ Flush PWM Thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regu
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -111,6 +114,7 @@ Input 1 contact type<br /><h1>Overview</h1><p>This parameter determines how the 
           <option value="0">normally open</option>
           <option value="1">normally closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -123,6 +127,7 @@ Input 2 contact type<br /><h1>Overview</h1><p>This parameter determines how the 
           <option value="0">normally open</option>
           <option value="1">normally closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -135,6 +140,7 @@ Input 3 contact type<br /><h1>Overview</h1><p>Available config. parameters (data
           <option value="0">normally open</option>
           <option value="1">normally closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration">
@@ -149,6 +155,7 @@ Activate / deactivate ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush Heat &amp; C
           <option value="2">ALL ON is active / ALL OFF is not active</option>
           <option value="255">ALL ON is active / ALL OFF is active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration">
@@ -162,6 +169,7 @@ I1 Functionality selection<br /><h1>Overview</h1><p>If "Window Sensor" selected 
           <option value="2">Input I1 influences the heating/cooling valves</option>
           <option value="32767">No influence on the Heat/Cool process</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration">
@@ -174,6 +182,7 @@ I2 Functionality selection<br /><h1>Overview</h1><p>0-990 - Temperature setpoint
           <option value="2000">Input I2 influences the cooling value</option>
           <option value="32767">Input I2 doesnt influence on the Heat/Cool process</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration">
@@ -187,6 +196,7 @@ I3 Functionality selection<br /><h1>Overview</h1><p>default value 32767<br /> 32
           <option value="2">input I3 influences on heating/cooling valves</option>
           <option value="32767">Does not influence on the heat/cool process</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -199,7 +209,6 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><p>Choose by how 
         <options>
           <option value="0">Power consumption reporting disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -209,6 +218,7 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><p>Choose by how 
 Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).<br /></p><p>0 - report disabled<br />1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_2" type="integer" groupName="configuration"
@@ -218,6 +228,7 @@ Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value ref
 Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Available config. parameters (data type is 2 Byte DEC):<br />  default value 50 (5,0 °C)<br />  0 - 127 = 0,0°C … 12,7 °C<br />  1001 - 1127 = -0,1°C … - 12,6 °C<br />  255 - Antifreeze functionality disabled<br /> NOTE: Antifreeze is activated only in heating mode.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
@@ -227,6 +238,7 @@ Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the dev
 PWM maximum value<br /><h1>Overview</h1><p>2..100 = 2..100% Maximum PWM is set by entered value</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -236,6 +248,7 @@ PWM maximum value<br /><h1>Overview</h1><p>2..100 = 2..100% Maximum PWM is set b
 PWM minimum value<br /><h1>Overview</h1><p>0..99 = 0..99% Minimum PWM is set by entered value</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration"
@@ -245,6 +258,7 @@ PWM minimum value<br /><h1>Overview</h1><p>0..99 = 0..99% Minimum PWM is set by 
 PWM cycle duration<br /><h1>Overview</h1><p>5..127 = 5-125 seconds. PWM cycle duration is set by entered value</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_1" type="integer" groupName="configuration"
@@ -254,6 +268,7 @@ PWM cycle duration<br /><h1>Overview</h1><p>5..127 = 5-125 seconds. PWM cycle du
 PID value inside deadband<br /><h1>Overview</h1><p>0 - PID value equals PWM minimum cycle<br />1 - PID value set to LAST VALUE</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration"
@@ -263,6 +278,7 @@ PID value inside deadband<br /><h1>Overview</h1><p>0 - PID value equals PWM mini
 PID deadband<br /><h1>Overview</h1><p>0..127 = 0..12.7 °C <br />This parameter defines the zone where PID is not active.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
@@ -272,6 +288,7 @@ PID deadband<br /><h1>Overview</h1><p>0..127 = 0..12.7 °C <br />This parameter 
 Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Parameter defines the time between samples.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_2" type="integer" groupName="configuration"
@@ -279,6 +296,7 @@ Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Pa
         <label>56: P parameter</label>
         <description>P parameter</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
@@ -286,6 +304,7 @@ Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Pa
         <label>57: I parameter</label>
         <description>I parameter</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_58_2" type="integer" groupName="configuration"
@@ -293,6 +312,7 @@ Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Pa
         <label>58: D parameter</label>
         <description>D parameter</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_59_1" type="integer" groupName="configuration">
@@ -305,6 +325,7 @@ Thermostat mode<br /><h1>Overview</h1><p>Available config. parameters (data type
           <option value="0">Heat mode</option>
           <option value="1">Cool mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_2" type="integer" groupName="configuration"
@@ -314,6 +335,7 @@ Thermostat mode<br /><h1>Overview</h1><p>Available config. parameters (data type
 Too low temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.<br />Too low temperature limit is used with Association Group 4. <br />• Default value 50 (Too low temperature limit is 5.0 °C)<br /> • 1 - 1000 = 0.1 °C to 100.0 °C, step is 0.1 °C.<br /> • 1001 - 1150: - 0.1 °C to – 15.0 °C</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_2" type="integer" groupName="configuration"
@@ -323,6 +345,7 @@ Too low temperature limit<br /><h1>Overview</h1><p>This parameter determines the
 Too high temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device.<br /> • default value 700 (too high temperature limit is 70.0 °C)<br /> • 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.</p>
         ]]></description>
         <default>700</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -335,6 +358,7 @@ Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the
           <option value="0">When system is turned off the output is 0V(NC).</option>
           <option value="1">System OFF the output is 230V or 24V(NO).</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_70_2" type="integer" groupName="configuration"
@@ -344,6 +368,7 @@ Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the
 Input I1 status on delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.<br /> If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.<br /> Device status on UI change immediately, but the command will be sent after time set.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_71_2" type="integer" groupName="configuration"
@@ -353,6 +378,7 @@ Input I1 status on delay<br /><h1>Overview</h1><p>This parameter specifies the d
 Input I1 status off delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.<br />If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_72_2" type="integer" groupName="configuration"
@@ -362,6 +388,7 @@ Input I1 status off delay<br /><h1>Overview</h1><p>This parameter specifies the 
 Input I2 status on delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is activated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_73_2" type="integer" groupName="configuration"
@@ -371,6 +398,7 @@ Input I2 status on delay<br /><h1>Overview</h1><p>This parameter specifies the d
 Input I2 status off delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is deactivated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_74_2" type="integer" groupName="configuration"
@@ -380,6 +408,7 @@ Input I2 status off delay<br /><h1>Overview</h1><p>This parameter specifies the 
 Input 3 status ON delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I3 is activated.<br /> This parameter has influence only when the flood sensor functionality is selected by the parameter no. 13.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_75_2" type="integer" groupName="configuration"
@@ -389,6 +418,7 @@ Input 3 status ON delay<br /><h1>Overview</h1><p>This parameter specifies the de
 Input I3 status off delay<br /><h1>Overview</h1><p>If the value of the parameter is different to 0 means that the influence of this input to heating or cooling will react after inserted time.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_76_1" type="integer" groupName="configuration"
@@ -398,6 +428,7 @@ Input I3 status off delay<br /><h1>Overview</h1><p>If the value of the parameter
 Reporting on time interval<br /><h1>Overview</h1><p>Association group 2, 10 - reporting on time interval</p> <p>Determinates the time interval of sending device status ON/OFF to the associated device.<br /> If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).<br /> • Default value 30 = 30 minutes<br /> • 0 = Reporting disabled<br /> • 1-127 = 1 minute – 127 minutes, reporting enabled</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_2" type="integer" groupName="configuration"
@@ -407,6 +438,7 @@ Reporting on time interval<br /><h1>Overview</h1><p>Association group 2, 10 - re
 Group 10 - delay before sending Basic Set ON<br /><h1>Overview</h1><p>Association group 10 - delay before sending Basic Set ON</p> <p>Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.<br /> If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.<br /> • Default value 180 = 3 minutes<br /> • 0 = Reports with no delay<br /> • 1-32767 = 1 second– 32767 seconds, reporting enabled</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_78_1" type="integer" groupName="configuration">
@@ -419,6 +451,7 @@ Scale Selection<br /><h1>Overview</h1><p>This parameter determines in which meas
           <option value="0">degrees Celsius</option>
           <option value="1">degrees Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -437,6 +470,7 @@ Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose wheth
           <option value="6">Smoke alarm</option>
           <option value="9">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration">
@@ -453,6 +487,7 @@ Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose wheth
           <option value="6">Smoke alarm</option>
           <option value="9">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_1" type="integer" groupName="configuration">
@@ -469,6 +504,7 @@ Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose wheth
           <option value="6">Smoke alarm</option>
           <option value="9">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_2" type="integer" groupName="configuration"
@@ -478,6 +514,7 @@ Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose wheth
 Temperature sensor offset settings<br /><h1>Overview</h1><p>32536 = offset is 0.0°C<br />1..100 = offset is 0.1..10.0°C added to actual measuring value<br />1001..1100 = offset is -0.1..-10.0°C subtracted to actual measuring value</p>
         ]]></description>
         <default>32536</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -487,6 +524,7 @@ Temperature sensor offset settings<br /><h1>Overview</h1><p>32536 = offset is 0.
 Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -501,6 +539,7 @@ Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital teperat
           <option value="8">setpoint is grabbed from ext battery sensor</option>
           <option value="10">temperature &amp; setpoint from ext batt sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration"
@@ -510,6 +549,7 @@ Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital teperat
 Node Id of external battery powered sensor<br /><h1>Overview</h1><p>0 - disabled</p> <p>1..254 = NodeId of external battery powered room sensor</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

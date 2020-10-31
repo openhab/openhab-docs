@@ -65,6 +65,7 @@ LED Indication Configuration<br /><h1>Overview</h1><p>Sets mode for LED inside t
           <option value="2">LED always OFF</option>
           <option value="3">LED Always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Invert Switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
           <option value="0">Normal Switch Install</option>
           <option value="1">Inverted Switch Install</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -87,6 +89,7 @@ Invert Switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
           <option value="0">Press any button on the switch</option>
           <option value="1">Alternate Exclusion</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

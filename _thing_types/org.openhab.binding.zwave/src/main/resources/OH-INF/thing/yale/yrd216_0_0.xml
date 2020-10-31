@@ -75,6 +75,7 @@ Silent mode on/off<br /><h1>Overview</h1><p>Default is 1 or High Volume</p>
           <option value="2">Quiet</option>
           <option value="3">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -87,6 +88,7 @@ Auto Relock on/off<br /><h1>Overview</h1><p>default is 0x00 or OFF</p>
           <option value="0">Auto relock off</option>
           <option value="255">Auto relock on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@ Auto Relock on/off<br /><h1>Overview</h1><p>default is 0x00 or OFF</p>
 Auto Relock Time<br /><h1>Overview</h1><p>10 to 180 seconds (default is 30 seconds)</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ Auto Relock Time<br /><h1>Overview</h1><p>10 to 180 seconds (default is 30 secon
 Wrong code Entry Limit<br /><h1>Overview</h1><p>3 to 10 (default is 5 times)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -118,6 +122,7 @@ Language<br /><h1>Overview</h1><p>1=English, 2=Spanish, 3=French (default is 1= 
           <option value="2">Spanish</option>
           <option value="3">French</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -127,6 +132,7 @@ Language<br /><h1>Overview</h1><p>1=English, 2=Spanish, 3=French (default is 1= 
 Shut down time after wrong code entries<br /><h1>Overview</h1><p>10 to 180 seconds (default is 60 seconds)</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -140,6 +146,7 @@ Operating mode<br /><h1>Overview</h1><p>00 = normal mode (this is the default mo
           <option value="1">Vacation</option>
           <option value="2">Privacy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -149,6 +156,7 @@ Operating mode<br /><h1>Overview</h1><p>00 = normal mode (this is the default mo
 One touch locking<br /><h1>Overview</h1><p>0x00 = OFF, 0xFF = ON (default)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -158,6 +166,7 @@ One touch locking<br /><h1>Overview</h1><p>0x00 = OFF, 0xFF = ON (default)</p>
 Privacy button<br /><h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -167,6 +176,7 @@ Privacy button<br /><h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
 Lock status LED<br /><h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -176,6 +186,7 @@ Lock status LED<br /><h1>Overview</h1><p>0x00 = OFF (default), 0xFF = ON</p>
 Reset to factory default<br /><h1>Overview</h1><p>01 = Lock will execute Reset To Factory.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

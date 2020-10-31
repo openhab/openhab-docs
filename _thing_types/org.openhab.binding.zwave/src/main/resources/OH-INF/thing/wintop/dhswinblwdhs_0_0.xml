@@ -72,6 +72,7 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
           <option value="2">Two toggle switch</option>
           <option value="3">Two buttons with neutral position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -79,7 +80,6 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
         <label>2: Automatically close after</label>
         <description>If not zero, automatically close blind after a user defined time</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -92,6 +92,7 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
           <option value="2">Open</option>
           <option value="3">Open if closed, otherwise Close</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -99,7 +100,6 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
         <label>4: Typical click timeout</label>
         <description>Typical time used to differentiate click, hold, double and triple clicks</description>
         <default>50</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -110,6 +110,7 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -120,6 +121,7 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
           <option value="1">Basic</option>
           <option value="2">Send Scene</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -132,6 +134,7 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
           <option value="3">Show opened state</option>
           <option value="4">Indicator Command Class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -141,7 +144,6 @@ Set number and type of directly connected buttons<br /><h1>Overview</h1><ul><li>
 Time to go from opened to closed state<br /><h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -151,7 +153,6 @@ Time to go from opened to closed state<br /><h1>Overview</h1><p>Time to go from 
 Time to go from closed to open state<br /><h1>Overview</h1><p> Time to go from closed to open state. This value may differ from full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -161,7 +162,6 @@ Time to go from closed to open state<br /><h1>Overview</h1><p> Time to go from 
 Node Id of the blocking device<br /><h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Useful with door opening detector: if the door is open, block the blind not to break shades while they move. </p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -174,6 +174,7 @@ Blocking mode command<br /><h1>Overview</h1><p>Defines which command from blocki
           <option value="0">On</option>
           <option value="1">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -184,6 +185,7 @@ Blocking mode command<br /><h1>Overview</h1><p>Defines which command from blocki
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

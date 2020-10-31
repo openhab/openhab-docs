@@ -523,7 +523,7 @@ Association group 8 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/215/Qubino-Flush-2-Relays-PLUS-user-manual-eng-V1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/215/reference/Qubino-Flush-2-Relays-PLUS-user-manual-eng-V1-4.pdf)
 
 ---
 

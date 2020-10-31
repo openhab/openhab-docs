@@ -60,7 +60,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual (Danish)](https://opensmarthouse.org/zwavedatabase/531/QEES-Wall--brugermanual-dk-0-3.pdf)
+* [User Manual (Danish)](https://opensmarthouse.org/zwavedatabase/531/reference/QEES-Wall--brugermanual-dk-0-3.pdf)
 
 ---
 

@@ -85,6 +85,7 @@ Touch Panel Switch 3-Way (Horizontal)<br /><h1>Overview</h1><p>Touch Panel Switc
 Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -94,6 +95,7 @@ Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not save
 ALL ON/ALL OFF<br /><h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p> </td> </tr></table>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -103,6 +105,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid 
 LED Backlit brightness level<br /><h1>Overview</h1><p>0 LED disabled 1-10 Min level-Max level &gt;10 same level as 10</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -112,6 +115,7 @@ LED Backlit brightness level<br /><h1>Overview</h1><p>0 LED disabled 1-10 Min le
 Key Mode<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -121,6 +125,7 @@ Key Mode<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>
 Key On duration<br /><h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec"</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

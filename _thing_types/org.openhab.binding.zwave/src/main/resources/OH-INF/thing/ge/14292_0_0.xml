@@ -63,6 +63,7 @@ Invert Switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
           <option value="0">Normal Switch Install</option>
           <option value="1">Inverted Switch Install</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

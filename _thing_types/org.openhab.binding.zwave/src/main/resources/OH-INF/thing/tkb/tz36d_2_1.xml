@@ -64,6 +64,7 @@ LED behaviour control.<br /><h1>Overview</h1><p>From the manual: The LED on the 
           <option value="0">Switch off = LED off</option>
           <option value="1">Switch off = LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Memory function behaviour control.<br /><h1>Overview</h1><p>From the manual: Def
           <option value="0">Memory function off</option>
           <option value="1">Memory function on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +90,7 @@ Swap top and bottom switch/button.<br /><h1>Overview</h1><p>To switch top and bo
           <option value="0">Normal behaviour.</option>
           <option value="1">Switch top and buttom button.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -101,6 +104,7 @@ LED transmission indication<br /><h1>Overview</h1><p>Tranmission indication beha
           <option value="1">Flicker for 1 second at the beginning</option>
           <option value="2">Flicker entire time when transmitting.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -113,6 +117,7 @@ Group 4 command sending behaviour control.<br /><h1>Overview</h1><p>Disable tran
           <option value="0">Sending commands to Group 4 is enabled.</option>
           <option value="1">Do not sen commands to Group 4.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

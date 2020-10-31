@@ -62,6 +62,7 @@ Direction<br /><h1>Overview</h1><p>0 -&gt; The motor goes clockwise when latche
           <option value="0">Clockwise</option>
           <option value="1">The motor goes counterclockwise when latched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Speed (Torque)<br /><h1>Overview</h1><p>1 -&gt; Slowest</p> <p>2 -&gt; Slow</p> 
           <option value="4">Fast</option>
           <option value="5">Fastest</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -90,6 +92,7 @@ Mode<br /><h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power saving
           <option value="1">Full drive</option>
           <option value="2">Relay mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -99,7 +102,6 @@ Mode<br /><h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power saving
 Turn degrees<br /><h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 degrees, 9 = 90 degrees etc.)</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -109,7 +111,6 @@ Turn degrees<br /><h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 
 Auto Latch time<br /><h1>Overview</h1><p>How many seconds from the lock has been unlatched to it automatically should close again. If 0 then it is disabled.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -122,6 +123,7 @@ Sound<br /><h1>Overview</h1><p>Enable the beep sound from latch or unlatch opera
           <option value="0">Disable sound</option>
           <option value="1">Enable Sound</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -135,6 +137,7 @@ Battery Type<br /><h1>Overview</h1><p>2 -&gt; Mains power, changing from and t
           <option value="1">3,0V</option>
           <option value="2">Mains power</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -144,7 +147,6 @@ Battery Type<br /><h1>Overview</h1><p>2 -&gt; Mains power, changing from and t
 Battery alarm value<br /><h1>Overview</h1><p>When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -157,6 +159,7 @@ TurnAndGo<br /><h1>Overview</h1><p>using a optional rotation sensor. Latch&amp;G
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -183,6 +186,7 @@ Turn 75 degrees back after x seconds<br /><h1>Overview</h1><p>0 -&gt; (Default)
           <option value="14">Brake for 14 seconds</option>
           <option value="15">Brake for 15 seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -195,6 +199,7 @@ Used if the lock is using an optional rotation sensor<br /><h1>Overview</h1><p>0
           <option value="0">Async off</option>
           <option value="1">Async on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -208,6 +213,7 @@ Door lock operation report type<br /><h1>Overview</h1><p>Door lock operation rep
           <option value="1">Advanced</option>
           <option value="2">No reporting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

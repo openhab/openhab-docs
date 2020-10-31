@@ -65,6 +65,7 @@ Smart Door Sensor<br /><h1>Overview</h1><h4>Description</h4> <p>Whether you’re
 Change Open/Close Report Method<br /><h1>Overview</h1><ol><li>Notification (Default)</li> <li>Basic Set</li> <li>Basic Report</li> </ol>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

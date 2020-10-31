@@ -137,7 +137,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/186/zwn-bpc-3-28.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/186/reference/zwn-bpc-3-28.pdf)
 
 ---
 

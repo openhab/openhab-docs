@@ -167,6 +167,7 @@ Reporting threshold for changes in the ambient temperature.<br /><h1>Overview</h
           <option value="3">1.5°</option>
           <option value="4">2.0°</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -179,6 +180,7 @@ Prevents setpoint changes at thermostat.<br /><h1>Overview</h1><p>If set to 0, t
           <option value="0">Utility lock disabled</option>
           <option value="1">Utility lock enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -197,6 +199,7 @@ Variance allowed from setpoint<br /><h1>Overview</h1><p>The thermostat swing tem
           <option value="7">3.5°</option>
           <option value="8">4.0°</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -209,6 +212,7 @@ Fast or Economy recovery mode.<br /><h1>Overview</h1><p>The Thermostat Recovery 
           <option value="1">Fast recovery Mode</option>
           <option value="2">Economy recovery Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

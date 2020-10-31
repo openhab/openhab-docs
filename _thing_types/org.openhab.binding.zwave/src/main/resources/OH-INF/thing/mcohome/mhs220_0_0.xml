@@ -66,6 +66,7 @@ Micro Switch<br /><h1>Overview</h1><p>MCOHome Micro Switch MH-S220-EU is a Z-Wav
 Switch state saved or not when power down<br /><h1>Overview</h1><p>0x00 not saved，switch will be off when powered again</p> <p>0x01 saved，switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -75,6 +76,7 @@ Switch state saved or not when power down<br /><h1>Overview</h1><p>0x00 not save
 External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</p> <p>0x01 Toggle (2-state switches )</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -84,6 +86,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
 2-state switches<br /><h1>Overview</h1><p>0x00 for the toggle switch without specified on/off position</p> <p>0x01 for the toggle switch with specified on/off position</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -91,6 +94,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
         <label>4: Report from Switch 1 to Association Group 1</label>
         <description>Report from Switch 1 to Association Group 1</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -98,6 +102,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
         <label>5: OFF timer</label>
         <description>OFF timer</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -105,6 +110,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
         <label>6: Timing function</label>
         <description>Timing function</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -112,6 +118,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
         <label>7: Operation mode of Switch 1</label>
         <description>Operation mode of Switch 1</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -119,6 +126,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
         <label>8: Operation report from Sw 2 to Assoc Group 2</label>
         <description>Operation report from Switch 2 to Association Group 2</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
@@ -128,6 +136,7 @@ External switch type<br /><h1>Overview</h1><p>0x00 Button (Momentary buttons )</
 Factory setting<br /><h1>Overview</h1><p>Set parameter ID 0xFF as 0x55 will restore Factory Settings.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

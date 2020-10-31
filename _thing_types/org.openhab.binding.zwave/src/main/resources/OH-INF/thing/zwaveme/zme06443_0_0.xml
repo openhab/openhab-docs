@@ -59,7 +59,6 @@ Single Paddle Wall Controller<br /><h1>Overview</h1><p>The battery wall controll
 Typical time used to differentiate click<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks</p> <p>Defined in 10ms ticks.</p>
         ]]></description>
         <default>50</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -69,6 +68,7 @@ Typical time used to differentiate click<br /><h1>Overview</h1><p>Typical time u
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -84,7 +84,6 @@ Defines which command should be sent on button single press or hold.<br /><h1>Ov
           <option value="2">Switch All</option>
           <option value="3">Scenes</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -99,6 +98,7 @@ Defines which command should be sent on button double press or press-hold.<br />
           <option value="2">Switch All</option>
           <option value="3">Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -109,6 +109,7 @@ Defines which command should be sent on button double press or press-hold.<br />
           <option value="2">Switch ON Only</option>
           <option value="255">Switch all on and off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -119,6 +120,7 @@ Defines which command should be sent on button double press or press-hold.<br />
           <option value="1">To same node as wake up notification</option>
           <option value="2">Broadcast to neighbours</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

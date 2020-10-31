@@ -108,6 +108,7 @@ Dome Wireless Siren<br /><h1>Overview</h1><p>Alert you with sounds and built-in 
           <option value="2">Medium Volume</option>
           <option value="3">High Volume</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration">
@@ -119,6 +120,7 @@ Dome Wireless Siren<br /><h1>Overview</h1><p>Alert you with sounds and built-in 
           <option value="3">5 Minutes</option>
           <option value="255">Plays Until Battery Is Depleted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration">
@@ -130,6 +132,7 @@ Dome Wireless Siren<br /><h1>Overview</h1><p>Alert you with sounds and built-in 
           <option value="5">Five Minutes</option>
           <option value="255">Chime Will Not Play</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration">
@@ -140,6 +143,7 @@ Dome Wireless Siren<br /><h1>Overview</h1><p>Alert you with sounds and built-in 
           <option value="2">Medium Volume</option>
           <option value="3">High Volume</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration">
@@ -160,6 +164,7 @@ Set the siren primary notification sound.<br /><h1>Overview</h1><p>The siren off
           <option value="9">Beepbeepbeepbeep (Default)</option>
           <option value="10">beeeep-beeeep-beeeep</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration">
@@ -177,6 +182,7 @@ Set the siren primary notification sound.<br /><h1>Overview</h1><p>The siren off
           <option value="9">Beepbeepbeepbeep (Default)</option>
           <option value="10">beeeep-beeeep-beeeep</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration">
@@ -187,6 +193,7 @@ Set the siren primary notification sound.<br /><h1>Overview</h1><p>The siren off
           <option value="1">Primary notification will play</option>
           <option value="2">Secondary notification will play</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

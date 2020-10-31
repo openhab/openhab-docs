@@ -92,6 +92,7 @@ Shutter Panel<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-
           <option value="0">not saved</option>
           <option value="1">saved</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -104,6 +105,7 @@ Shutter Panel<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-
           <option value="2">allow ALL ON, forbid ALL OFF</option>
           <option value="255">allow ALL ON, allow ALL OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -113,6 +115,7 @@ Shutter Panel<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-
 LED Backlit brightness level<br /><h1>Overview</h1><ul><li>0 - LED disabled</li> <li>1 - 10 Min level - max level</li> </ul>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -128,6 +131,7 @@ Key Mode<br /><h1>Overview</h1><p>This function works for corridor or stairwell 
           <option value="3">hold &gt;3s then key is on, and off once released</option>
           <option value="4">single click + hold &gt;3s then key is on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -137,6 +141,7 @@ Key Mode<br /><h1>Overview</h1><p>This function works for corridor or stairwell 
 Key On duration<br /><h1>Overview</h1><ul><li>0 - infinite</li> <li>1~65535 unit "sec"</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -147,6 +152,7 @@ Basic CC integration setting<br /><h1>Overview</h1><p><strong>This parameter wor
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -157,6 +163,7 @@ Scene respond<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <l
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -169,6 +176,7 @@ Scene respond<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <l
           <option value="2">only activate scene ID1 when key1's relay open</option>
           <option value="3">only activate scene ID1 when key1's relay closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -178,6 +186,7 @@ Scene respond<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled</li> <l
 Key1 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -187,6 +196,7 @@ Key1 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid an
 Key1 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -199,6 +209,7 @@ Key1 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <
           <option value="2">,only activate scene ID1 when key2's relay open</option>
           <option value="3">nly activate scene ID1 when key2's relay closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -208,6 +219,7 @@ Key1 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <
 Key2 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -217,6 +229,7 @@ Key2 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid an
 Key2 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -229,6 +242,7 @@ Key2 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <
           <option value="2">only activate scene ID1 when key3's relay open</option>
           <option value="3">only activate scene ID1 when key3's relay closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
@@ -238,6 +252,7 @@ Key2 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <
 Key3 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid and will not send scene activate command.</li> <li>1~255 Scene ID</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
@@ -247,6 +262,7 @@ Key3 Activate Scene ID<br /><h1>Overview</h1><ul><li>0x00 Scene ID is invalid an
 Key3 Activate Scene Duration<br /><h1>Overview</h1><ul><li>0x00 Instantly</li> <li>0x01~0x7F: Dimming durations from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution</li> <li>0x80~0xFE: Specify dimming durations from 1 minute (0x80) to 127 minutes (0xFE) in 1-minute resolution. </li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -257,6 +273,7 @@ Scene respond ID 1-50<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabled
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration"
@@ -267,6 +284,7 @@ Scene respond ID 51-100<br /><h1>Overview</h1><ul><li>0x00: Scene respond disabl
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration"
@@ -277,6 +295,7 @@ Scene respond ID 101-150<br /><h1>Overview</h1><ul><li>0x00: Scene respond disab
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration"
@@ -287,6 +306,7 @@ Scene respond ID 151-200<br /><h1>Overview</h1><ul><li>0x00: Scene respond disab
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration"
@@ -297,6 +317,7 @@ Scene respond ID 201-250<br /><h1>Overview</h1><ul><li>0x00: Scene respond disab
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration"
@@ -307,7 +328,6 @@ Scene respond ID 201-250<br /><h1>Overview</h1><ul><li>0x00: Scene respond disab
         <options>
           <option value="85">restore factory setting</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -209,6 +209,7 @@ Reporting threshold for changes in the ambient temperature<br /><h1>Overview</h1
           <option value="3">1.5° F</option>
           <option value="4">2.0° F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true"
@@ -218,6 +219,7 @@ Reporting threshold for changes in the ambient temperature<br /><h1>Overview</h1
 Configured HVAC settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)<br />Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)<br />Byte 3 = Number of Heat Pump Stages<br />Byte 4 = Number of Cool Stages</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_wo" type="integer" groupName="configuration">
@@ -230,6 +232,7 @@ Prevents setpoint changes at thermostat<br /><h1>Overview</h1><p>If set to 0, th
           <option value="0">Utility lock disabled</option>
           <option value="1">Utility lock enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true"
@@ -239,6 +242,7 @@ Prevents setpoint changes at thermostat<br /><h1>Overview</h1><p>If set to 0, th
 C-Wire / Battery Status<br /><h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -253,6 +257,7 @@ Reporting threshold for changes in the relative humidity<br /><h1>Overview</h1><
           <option value="2">5% RH</option>
           <option value="3">10% RH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -265,6 +270,7 @@ Enables or disables auxiliary / emergency heating<br /><h1>Overview</h1><p>If se
           <option value="0">Auxiliary/Emergency heat disabled</option>
           <option value="1">Auxiliary/Emergency heat enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -283,6 +289,7 @@ Variance allowed from setpoint to engage HVAC<br /><h1>Overview</h1><p>The therm
           <option value="7">3.5° F</option>
           <option value="8">4.0° F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -296,6 +303,7 @@ Configures additional stages<br /><h1>Overview</h1><p>Sets the differential temp
           <option value="8">4.0° F</option>
           <option value="12">6.0° F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -308,6 +316,7 @@ Fast or Economy recovery mode<br /><h1>Overview</h1><p>The Thermostat Recovery M
           <option value="1">Fast recovery mode</option>
           <option value="2">Economy recovery mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
@@ -317,6 +326,7 @@ Fast or Economy recovery mode<br /><h1>Overview</h1><p>The Thermostat Recovery M
 Upper/Lower bounds for thermostat temperature reporting<br /><h1>Overview</h1><p>The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).</p>
         ]]></description>
         <default>124</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -329,6 +339,7 @@ Simple mode enable/disable<br /><h1>Overview</h1><p>If the value is set to 0 the
           <option value="0">Normal mode enabled</option>
           <option value="1">Simple mode enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -341,6 +352,7 @@ Enable or disables Multicast<br /><h1>Overview</h1><p>If set to 0, Multicast is 
           <option value="0">Multicast disabled</option>
           <option value="1">Multicast enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

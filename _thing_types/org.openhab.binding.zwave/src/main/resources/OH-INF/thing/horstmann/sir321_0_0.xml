@@ -58,6 +58,7 @@ RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall sw
         <label>1: Fail Save timer</label>
         <description>Enable/Disable the Fail save timer</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -65,6 +66,7 @@ RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall sw
         <label>2: Temperature Scale</label>
         <description>Set the Temperatur scale to Celsius</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -72,6 +74,7 @@ RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall sw
         <label>3: Temperature reporting intervals</label>
         <description>Define the time interval for the temperature report that is sent.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -79,6 +82,7 @@ RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall sw
         <label>4: Delta configuration temperature reporting</label>
         <description>Set the delta-configuration of the temperature report in Celsius or Fahrenheit</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -86,6 +90,7 @@ RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall sw
         <label>5: Temperature Cutoff</label>
         <description>Set the Cutoff in Celsius</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

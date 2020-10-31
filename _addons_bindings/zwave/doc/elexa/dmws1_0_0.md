@@ -281,7 +281,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Guide and ZWave command reference](https://opensmarthouse.org/zwavedatabase/651/DMWS1-dome-z-leak-detector-operating-guide.pdf)
+* [Operating Guide and ZWave command reference](https://opensmarthouse.org/zwavedatabase/651/reference/DMWS1-dome-z-leak-detector-operating-guide.pdf)
 
 ---
 

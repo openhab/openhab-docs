@@ -230,7 +230,7 @@ Association group 5 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://opensmarthouse.org/zwavedatabase/20/user-and-installer-guide-HRT4-ZWweb1.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/20/reference/user-and-installer-guide-HRT4-ZWweb1.pdf)
 
 ---
 

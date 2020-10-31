@@ -65,6 +65,7 @@ Wink D/W Sensor<br /><h1>Overview</h1><p>Reed Switch Type Door/Window Sensor. Un
 Brightness lamp should be set to when triggered<br /><h1>Overview</h1><p>BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) </p><p>The value of the Basic Set command (e.g. brightness of the lamp,) and the delay time before the BASIC_SET(0x00) is sent is configured using configuration parameters 1 and 2 respectively.<br /></p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -74,6 +75,7 @@ Brightness lamp should be set to when triggered<br /><h1>Overview</h1><p>BASIC_S
 Delay before reseting triggered device<br /><h1>Overview</h1><p>The Door/Window Sensor sends a Basic Set command to association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to events. </p><p>Then, after a preset delay, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) </p><p>The value of the Basic Set command (e.g. brightness of the lamp,) and the delay time before the BASIC_SET(0x00) is sent is configured</p><p>using configuration parameters 1 and 2 respectively.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

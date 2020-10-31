@@ -68,6 +68,7 @@ Indoor/Outdoor Wall Plug Switch<br /><h1>Overview</h1><p>This is a plug switch t
           <option value="1">Show switch state (default)</option>
           <option value="2">Operated by Indicator Command Class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -77,6 +78,7 @@ Indoor/Outdoor Wall Plug Switch<br /><h1>Overview</h1><p>This is a plug switch t
 If not zero, automatically switch device off after a user defined time<br /><h1>Overview</h1><p>If not zero, automatically switch device off after a user defined time.</p> <ul><li>0 -&gt; Disabled</li> <li>1 - 65535 -&gt; Enabled, automatically switch off after x seconds.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ Defines how to interpret RF Off-Command.<br /><h1>Overview</h1><p>Can be used in
           <option value="2">Switch on</option>
           <option value="3">Switch on if load is off, else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -103,6 +106,7 @@ Defines if the switch should restore switch state.<br /><h1>Overview</h1><p>Defi
           <option value="0">No, turn off</option>
           <option value="1">Yes, default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -112,6 +116,7 @@ Defines if the switch should restore switch state.<br /><h1>Overview</h1><p>Defi
 Maximum load 3500 Watts<br /><h1>Overview</h1><p>Specify the consumption of the load in watts, for the calculation of power consumption:</p> <ul><li>0 -&gt; Disabled</li> <li>1 - 3500 -&gt; Watts</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -125,6 +130,7 @@ Maximum load 3500 Watts<br /><h1>Overview</h1><p>Specify the consumption of the 
           <option value="3">Blue</option>
           <option value="4">Yellow</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -138,6 +144,7 @@ Maximum load 3500 Watts<br /><h1>Overview</h1><p>Specify the consumption of the 
           <option value="3">Blue</option>
           <option value="4">Yellow</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

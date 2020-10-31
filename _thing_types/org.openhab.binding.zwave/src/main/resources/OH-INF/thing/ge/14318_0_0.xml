@@ -61,6 +61,7 @@ Jasco 3-way Light Switch<br /><h1>Overview</h1><p>Transform any home into a smar
           <option value="1">LED light on when Z-Wave turned on</option>
           <option value="2">LED light always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -71,7 +72,6 @@ Jasco 3-way Light Switch<br /><h1>Overview</h1><p>Transform any home into a smar
         <options>
           <option value="1">Invert Switch</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

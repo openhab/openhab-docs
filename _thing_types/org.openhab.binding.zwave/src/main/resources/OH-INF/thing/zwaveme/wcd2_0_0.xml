@@ -62,6 +62,7 @@ Button 1 and 3 pair mode<br /><h1>Overview</h1><ul><li>In separate mode button 1
           <option value="1">In pair without double clicks</option>
           <option value="2">In pair with double clicks</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -75,6 +76,7 @@ Button 2 and 4 pair mode<br /><h1>Overview</h1><ul><li>In separate mode button 2
           <option value="1">In pair without double clicks</option>
           <option value="2">In pair with double clicks</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ Action on group 1<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -107,6 +110,7 @@ Action on group 2<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -123,6 +127,7 @@ Action on group 3<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -139,6 +144,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -146,6 +152,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
         <label>20: Typical click timeout</label>
         <description>Typical time used to differentiate click, hold and double clicks in 10ms units</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -156,6 +163,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="2">NC (Normal Close)</option>
           <option value="255">Switch all on and off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -165,6 +173,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -176,6 +185,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="1">Confirm Button Press</option>
           <option value="2">Confirm Button Press and delivery</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -186,6 +196,7 @@ Action on group 4<br /><h1>Overview</h1><ul><li>In Switch On/Off only mode On co
           <option value="1">To same node as wake up notification</option>
           <option value="2">Broadcast to neighbours</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

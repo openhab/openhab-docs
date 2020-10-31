@@ -515,7 +515,7 @@ Association group 9 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/214/Qubino-Flush-Shutter-DC-PLUS-user-manual-V1-4-eng.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/214/reference/Qubino-Flush-Shutter-DC-PLUS-user-manual-V1-4-eng.pdf)
 
 ---
 

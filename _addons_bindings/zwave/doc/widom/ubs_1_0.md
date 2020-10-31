@@ -176,7 +176,7 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/298/Widom-UBS--Operating-Manual-multiple-pages-en.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/298/reference/Widom-UBS--Operating-Manual-multiple-pages-en.pdf)
 
 ---
 

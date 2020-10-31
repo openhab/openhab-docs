@@ -64,6 +64,7 @@ Set Ignore Start Level Bit When Transmitting Dim Commands<br /><h1>Overview</h1>
           <option value="0">Use Start Level</option>
           <option value="1">Ignore Start Level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Suspend Group 4<br /><h1>Overview</h1><p>You may wish to disable transmitting co
           <option value="0">Enable Group 4</option>
           <option value="1">Disable Group 4</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +90,7 @@ Relationship between LED and status of devices in Group 1<br /><h1>Overview</h1>
           <option value="0">On when load is on</option>
           <option value="1">On when load is off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -100,6 +103,7 @@ Setting the relationship between the top of the transmitter to ON or OFF<br /><h
           <option value="0">Top-ON, Bottom-OFF</option>
           <option value="1">Bottom-ON, Top-OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -112,6 +116,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
           <option value="0">Use start level</option>
           <option value="1">Ignore start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -119,6 +124,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>7: dim step parameter</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -126,6 +132,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>8: dim timer parameter</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -133,6 +140,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>9: Local control dim step</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -140,6 +148,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>10: Local control dim timer</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -147,6 +156,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>11: ALL ON/ ALL OFF dim step</label>
         <description>dim step parameter valid values: 1-99</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -154,6 +164,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
         <label>12: ALL ON/ ALL OFF dim timer</label>
         <description>dim timer parameter valid values: 1-255</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -166,6 +177,7 @@ Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -176,6 +188,7 @@ Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -186,6 +199,7 @@ Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -196,6 +210,7 @@ Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -209,6 +224,7 @@ LED Transmission Indication<br /><h1>Overview</h1><p>The WT00Z-1 will ﬂicker i
           <option value="1">Flicker while transmitting</option>
           <option value="2">Flicker for 1 second</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -218,6 +234,7 @@ LED Transmission Indication<br /><h1>Overview</h1><p>The WT00Z-1 will ﬂicker i
 Frequency that WT00Z-1 will poll first node in Group 1<br /><h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1. How often it will poll is conﬁgured using this parameter.</p> <p><b>Parameter 20</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 1 through 255 (default: 2)</b></p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -230,6 +247,7 @@ Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>Th
           <option value="0">Do not poll first node in group</option>
           <option value="1">Poll first node in group</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

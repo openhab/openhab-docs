@@ -83,6 +83,7 @@ Multisensor 4in1<br /><h1>Overview</h1><p>Contact/temperature/humidity/luminance
           <option value="0">Celsius (default)</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -92,6 +93,7 @@ Multisensor 4in1<br /><h1>Overview</h1><p>Contact/temperature/humidity/luminance
 Set up from 0.1C to 5C<br /><h1>Overview</h1><p>Threshold change in temperature to induce an automatic report. 1 to 50 ( Set up from 0.1C to 5C)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -101,6 +103,7 @@ Set up from 0.1C to 5C<br /><h1>Overview</h1><p>Threshold change in temperature 
 Set up from 1%-50%<br /><h1>Overview</h1><p>Threshold change in humidity to induce an automatic report. 1 to 50 ( Set up from 1%-50%)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -110,6 +113,7 @@ Set up from 1%-50%<br /><h1>Overview</h1><p>Threshold change in humidity to indu
 Set up from 5%-50%<br /><h1>Overview</h1><p>Threshold change in luminance to induce an automatic report. 0 is disabled. 5 to 50 ( Set up from 5%-50%)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

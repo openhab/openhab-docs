@@ -475,7 +475,7 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [Handbuch ZHS03 (a.k.a "ZME_WALLC-S")](https://opensmarthouse.org/zwavedatabase/1227/Handbuch-Schwaiger-ZHS03-Wandschalter.pdf)
+* [Handbuch ZHS03 (a.k.a "ZME_WALLC-S")](https://opensmarthouse.org/zwavedatabase/1227/reference/Handbuch-Schwaiger-ZHS03-Wandschalter.pdf)
 
 ---
 

@@ -514,7 +514,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1196/Qubino-Luxy-Smart-Light-extended-manual-eng.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1196/reference/Qubino-Luxy-Smart-Light-extended-manual-eng.pdf)
 
 ---
 

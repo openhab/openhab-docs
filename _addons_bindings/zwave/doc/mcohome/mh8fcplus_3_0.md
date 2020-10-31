@@ -259,7 +259,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1057/MH8-FC-Zwave-Plus.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1057/reference/MH8-FC-Zwave-Plus.pdf)
 
 ---
 

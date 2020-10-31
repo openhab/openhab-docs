@@ -82,6 +82,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
           <option value="0">Obey commend start level</option>
           <option value="1">Ignore commend start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -89,6 +90,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>7: Zwave Dim Steps</label>
         <description>Number of dim steps when receving a zwave dim command</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>8: Zwave Step Timing</label>
         <description>Timing of dim steps when receving a zwave dim command</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -103,6 +106,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>9: Rocker Dim Steps</label>
         <description>Number of dim steps when pressing the rocker</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -110,6 +114,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>10: Rocker Step Timing</label>
         <description>Timing of dim steps when pressing the rocker</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -117,6 +122,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>11: Zwave Dim Steps - All Command</label>
         <description>Number of dim steps when receving a zwave All-On or All-off command</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -124,6 +130,7 @@ Ignore start level when receiving zwave dim commands<br /><h1>Overview</h1><p>Ev
         <label>12: Zwave Step Timing - All Command</label>
         <description>Timing of dim steps when receving a zwave All-On or All-Off command</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

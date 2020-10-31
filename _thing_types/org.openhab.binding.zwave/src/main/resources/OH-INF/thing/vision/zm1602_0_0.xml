@@ -51,6 +51,7 @@ AC/DC Siren<br /><h1>Overview</h1><p>Thanks for choosing the Vision’s wireless
           <option value="1">Siren</option>
           <option value="2">Strobe</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration">
@@ -63,6 +64,7 @@ AC/DC Siren<br /><h1>Overview</h1><p>Thanks for choosing the Vision’s wireless
           <option value="2">120 seconds</option>
           <option value="3">Continuous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

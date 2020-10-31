@@ -133,6 +133,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -143,6 +144,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
           <option value="0">NO (normaly open) input type</option>
           <option value="1">NC (normaly close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -153,6 +155,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
           <option value="0">NO (normaly open) input type</option>
           <option value="1">NC (normaly close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -165,6 +168,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -174,6 +178,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
 When relay goes automatically OFF after this time<br /><h1>Overview</h1><p>When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..)</p> <ul><li>0 = disabled</li> <li>1 - 32535 = time in units determined by parameter 15</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -183,6 +188,7 @@ When relay goes automatically OFF after this time<br /><h1>Overview</h1><p>When 
 When relay goes automatically ON after this time<br /><h1>Overview</h1><p>When relay is OFF it goes automatically ON after time defined by this parameter.Timer is reset to zero each time the module receive OFF command regardless from where it comes(push button, associated module, controller,..</p> <ul><li>0 - Auto ON disabled</li> <li>1 - 32535 time in units determined by parameter 15</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -195,6 +201,7 @@ NOTE: Parameter is the same for turning OFF or ON.<br /><h1>Overview</h1><p>Auto
           <option value="0">Seconds selected</option>
           <option value="1">Milliseconds selected</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -205,6 +212,7 @@ NOTE: Parameter is the same for turning OFF or ON.<br /><h1>Overview</h1><p>Auto
           <option value="0">Module saves its state before power failure</option>
           <option value="1">Module stays OFF after a power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -214,6 +222,7 @@ NOTE: Parameter is the same for turning OFF or ON.<br /><h1>Overview</h1><p>Auto
 Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled</li> </ul><p>Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <p><strong>NOTE:</strong> if power changed is less than 1W, the report is not send (pushed), independent of percentage set</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -223,6 +232,7 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li>0 – Rep
 Set value means time interval when power report is send<br /><h1>Overview</h1><p>Set value means time interval (0 – 32535) in seconds, when power report is send.</p> <ul><li>Default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 32535 = 1second – 32535 seconds.</li> <li>Reporting enabled. Power report is send with time </li> </ul>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -235,6 +245,7 @@ Set the type of the device connected to the output. (NO) / (NC)<br /><h1>Overvie
           <option value="0">Normal -NO when inactive (“off")</option>
           <option value="1">Inverse -NC when inactive (“on”)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -253,6 +264,7 @@ Enable / Disable Endpoints I2 or select Notification Type and Event<br /><h1>Ove
           <option value="6">Smoke Alarm</option>
           <option value="9">Sensor binary.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration">
@@ -271,6 +283,7 @@ Enable / Disable Endpoints I3 or select Notification Type and Event<br /><h1>Ove
           <option value="6">Smoke Alarm</option>
           <option value="9">Sensor binary.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_2" type="integer" groupName="configuration"
@@ -280,6 +293,7 @@ Enable / Disable Endpoints I3 or select Notification Type and Event<br /><h1>Ove
 Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor.</p> <ul><li> default value 32536</li> <li>32536 – offset is 0.0C - From 1 to 100–value from 0.1°C to 10.0°C is added to actual measured temperature.</li> <li>From 1001 to 1100 – value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature</li> </ul>
         ]]></description>
         <default>32536</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -289,6 +303,7 @@ Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added o
 Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter</p> <ul><li>default value 5 = 0,5°C</li> <li>0 – Reporting disabled</li> <li>1- 127 = 0,1°C – 12,7°C, step is 0,1°C</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

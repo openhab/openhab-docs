@@ -90,6 +90,7 @@ Defines the status of the output O1/O2 after 1 Click<br /><h1>Overview</h1><p>De
           <option value="3">Off</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -104,6 +105,7 @@ Defines the status of the output O1/O2 after 2 Clicks<br /><h1>Overview</h1><p>D
           <option value="3">Off</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -113,6 +115,7 @@ Defines the status of the output O1/O2 after 2 Clicks<br /><h1>Overview</h1><p>D
 Defines how the outputs are controlled<br /><h1>Overview</h1><p>Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay</p> <p><strong>Parameter value and</strong> <strong>device reaction</strong></p> <p>0 – SINGLE CHANNELS (Default Value)</p> <p>Channel 1 and Channel 2 are controlled individually</p> <p>From 1 to 9 – SINGLE POLE DOUBLE THROW RELAY</p> <p>The two channels are in opposite status. If the Channel 1 is close the Channel 2 is open, if the Channel 1 is open the Channel 2 is close. The value of the parameter defines the closing delay of the relay in tenth of seconds</p> <p>From 10 to 19 – SEQUENCING RELAY</p> <p>Channels are toggled in this way: both channels ON, only channel 1 ON, only channel 2 ON, both channels OFF. The value of the parameter, deducted of 9, defines the closing delay of the relay in tenth of seconds.</p> <p>From 20 to 39 – SELECTOR</p> <p>Both channels can be OFF but they can never be ON simultaneously. It can be used for fan coil control, roller shutters, and in general for two-speed systems. The value of the parameter, deducted of 19, defines the closing delay of the relay in tenth of seconds.</p> <p><strong>INFO:</strong> 0 – configuration is available on WiDom Universal Double Switch starting from the firmware version 1.40.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -125,6 +128,7 @@ Defines the Clicks on the Switches that control associated devices<br /><h1>Over
           <option value="1">Controlled by 1 Click</option>
           <option value="2">Controlled by 2 Clicks</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -134,7 +138,6 @@ Defines the Clicks on the Switches that control associated devices<br /><h1>Over
 Defines how to control the devices associated to group 2 and 3.<br /><h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
         ]]></description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -144,7 +147,6 @@ Defines how to control the devices associated to group 2 and 3.<br /><h1>Overvie
 Defines how to control the devices associated to group 4 and 5.<br /><h1>Overview</h1><h4>Configuration value and Action performed on the associated device</h4> <h5><br />0 – SWITCH_OFF</h5> <p>The associated devices are switched OFF</p> <h5><br />-1 – SWITCH_ON</h5> <p>The associated devices are switched ON</p> <h5>From 1 to 99</h5> <p>The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)</p> <h5><br />100 – RELAY_STATUS (Default Value)</h5> <p>If the Relay 1 is ON/OFF, the associated devices are ON/OFF</p> <h5><br />101 – RELAY_STATUS_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices</p> <h5><br />102 – RELAY_STATUS_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices</p> <h5><br />103 – RELAY_OPPOSITE_BUT_IGNORE_IF_OFF</h5> <p>If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices</p> <h5><br />104 – RELAY_OPPOSITE_BUT_IGNORE_IF_ON</h5> <p>If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices</p> <h5><br />105 – RELAY_OPPOSITE</h5> <p>If the Relay 1 is ON/OFF, the associated devices are OFF/ON</p> <h5>106 – IGNORE</h5> <p>No action is taken on the associated devices</p>
         ]]></description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -154,7 +156,6 @@ Defines how to control the devices associated to group 4 and 5.<br /><h1>Overvie
 Defines the time after which the Channel 1 is switched OFF<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 1 is OFF</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -164,7 +165,6 @@ Defines the time after which the Channel 1 is switched OFF<br /><h1>Overview</h1
 Defines the time after which the Channel 2 is switched OFF<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p><br />From 1 to 32000 (seconds): After this time the relay of the Channel 2 is OFF</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -174,7 +174,6 @@ Defines the time after which the Channel 2 is switched OFF<br /><h1>Overview</h1
 Defines the time after which the Channel 1 is switched ON<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 1 is ON</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration" readOnly="true"
@@ -184,7 +183,6 @@ Defines the time after which the Channel 1 is switched ON<br /><h1>Overview</h1>
 Defines the time after which the Channel 2 is switched ON<br /><h1>Overview</h1><p>0 (Default Value): Timer disabled</p> <p>From 1 to 32000 (seconds): After this time the relay of the Channel 2 is ON</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -199,6 +197,7 @@ Defines how Basic Set commands controlling outputs<br /><h1>Overview</h1><p>The 
           <option value="3">Ignore if OFF</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration">
@@ -211,6 +210,7 @@ Define which channels are controlled by Basic Set command<br /><h1>Overview</h1>
           <option value="1">CHANNEL 1</option>
           <option value="3">BOTH CHANNELS</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">
@@ -224,6 +224,7 @@ Define which channels are controlled by Basic Set command<br /><h1>Overview</h1>
           <option value="3">ON_ON</option>
           <option value="4">PREVIOUS STATUS</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration">
@@ -237,6 +238,7 @@ Define which channels are controlled by Basic Set command<br /><h1>Overview</h1>
           <option value="3">RESTART DEVICE</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration">
@@ -248,6 +250,7 @@ Define which channels are controlled by Basic Set command<br /><h1>Overview</h1>
           <option value="1">BUTTON</option>
           <option value="2">SWITCH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

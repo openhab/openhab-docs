@@ -66,6 +66,7 @@ Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you wa
           <option value="0">UP turns light ON</option>
           <option value="1">DOWN turns light ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Auto Turn-Off Timer Enable<br /><h1>Overview</h1><p>Enable or disable the auto t
           <option value="0">Timer Disabled</option>
           <option value="1">Timer Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -87,6 +89,7 @@ Auto Turn-Off Timer Enable<br /><h1>Overview</h1><p>Enable or disable the auto t
 Auto Turn-Off Timer Time<br /><h1>Overview</h1><p>The number is in minutes.</p> <p>Default: 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -99,6 +102,7 @@ Auto Turn-On Timer Enable<br /><h1>Overview</h1><p>enable or disable the auto tu
           <option value="0">Timer Disabled</option>
           <option value="1">Timer Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -108,6 +112,7 @@ Auto Turn-On Timer Enable<br /><h1>Overview</h1><p>enable or disable the auto tu
 Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Default: 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -119,6 +124,7 @@ Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Def
           <option value="1">On</option>
           <option value="2">Restore Previous Status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -128,6 +134,7 @@ Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Def
 Ramp Rate Control<br /><h1>Overview</h1><p>Number of seconds for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default: 1 second</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -137,6 +144,7 @@ Ramp Rate Control<br /><h1>Overview</h1><p>Number of seconds for the dimmer to r
 Minimum Brightness<br /><h1>Overview</h1><p>Minimum brightness level (in %) for your dimmer.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -146,6 +154,7 @@ Minimum Brightness<br /><h1>Overview</h1><p>Minimum brightness level (in %) for 
 Maximum Brightness<br /><h1>Overview</h1><p>Maximum brightness level (in %) for your dimmer.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -156,6 +165,7 @@ Maximum Brightness<br /><h1>Overview</h1><p>Maximum brightness level (in %) for 
           <option value="0">Full Brightness</option>
           <option value="1">Maximum Brightness Level (Parameter 11)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -169,6 +179,7 @@ Scene Control Enable<br /><h1>Overview</h1><p>Enable or disable scene control fo
           <option value="1">Scene Control Enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -183,6 +194,7 @@ Double &amp; Single Tap Enable<br /><h1>Overview</h1><p>Enable or disable the do
           <option value="2">DT Disabled, Single Tap to Full / Max Bruightness</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -193,6 +205,7 @@ Double &amp; Single Tap Enable<br /><h1>Overview</h1><p>Enable or disable the do
           <option value="0">Local control DISABLED</option>
           <option value="1">Local control ENABLED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -57,6 +57,7 @@ Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to oper
           <option value="0">Turns the LED OFF (default)</option>
           <option value="255">Turns the LED ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
@@ -67,6 +68,7 @@ Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to oper
           <option value="1">Sets the UP time in seconds</option>
           <option value="60">Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -77,6 +79,7 @@ Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to oper
           <option value="1">Sets the DOWN time in seconds</option>
           <option value="60">Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_wo" type="integer" groupName="configuration">
@@ -85,6 +88,7 @@ Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to oper
 Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -95,6 +99,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
           <option value="0">LED OFF</option>
           <option value="255">LED ON at 20% of maximum level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -105,6 +110,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
           <option value="0">Unlock the direct control of load.</option>
           <option value="255">Lock the direct control of load.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration" readOnly="true">
@@ -117,6 +123,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
           <option value="1">Bit 0: Load is going UP/DOWN</option>
           <option value="99">Bit 1: Sunblind position 99%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration" readOnly="true">
@@ -127,6 +134,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
           <option value="0">Calibration is not required.</option>
           <option value="255">It is necessary to calibrate the device.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -137,6 +145,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
           <option value="0">Long press works as default.</option>
           <option value="255">Long press works as overview.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

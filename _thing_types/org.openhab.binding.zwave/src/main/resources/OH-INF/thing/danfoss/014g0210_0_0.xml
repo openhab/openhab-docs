@@ -273,6 +273,7 @@ Type of Valve being controlled<br /><h1>Overview</h1><p>Parameter 1: Valve type:
           <option value="0">NC</option>
           <option value="1">NO</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -285,6 +286,7 @@ Set Head Load Strategy (0 = Stacking, 1 = Spreading)<br /><h1>Overview</h1><p>He
           <option value="0">Stacking (Default)</option>
           <option value="1">Spreading</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -298,6 +300,7 @@ Pulse-width modulation period<br /><h1>Overview</h1><p>The PWM period can be set
           <option value="1">30 minutes</option>
           <option value="2">60 minutes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -109,6 +109,7 @@ Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /
           <option value="2">Quiet</option>
           <option value="3">Silent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -118,6 +119,7 @@ Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /
           <option value="0">No auto-relock</option>
           <option value="255">Auto relock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -127,6 +129,7 @@ Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /
 Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -136,6 +139,7 @@ Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door i
 Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -146,6 +150,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="2">Spanish</option>
           <option value="3">French</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -153,6 +158,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
         <label>7: Shutdown</label>
         <description>Shutdown time after wrong code entries</description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -163,6 +169,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="1">Vacation</option>
           <option value="2">Privacy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -172,6 +179,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -181,6 +189,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -190,6 +199,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -199,7 +209,6 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
         <options>
           <option value="1">Factory Reset</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

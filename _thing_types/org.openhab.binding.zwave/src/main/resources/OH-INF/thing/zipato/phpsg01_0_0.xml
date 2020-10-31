@@ -77,6 +77,7 @@ Smoke Sensor<br /><h1>Overview</h1><p>Zipato Smoke Sensor (Z-Wave) is designed t
 Customer Function<br /><h1>Overview</h1><p>Notification type 0: Using Notification Report 1: Using Sensor Binary Report</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -86,6 +87,7 @@ Customer Function<br /><h1>Overview</h1><p>Notification type 0: Using Notificati
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p>
         ]]></description>
         <default>127</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

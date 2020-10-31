@@ -56,6 +56,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
           <option value="1">ON after power outage</option>
           <option value="2">OFF after power outage</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration">
@@ -66,6 +67,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
           <option value="0">LED ON when light ON</option>
           <option value="1">LED ON when light OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +78,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
           <option value="0">Disable LED</option>
           <option value="1">Enable LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +91,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
           <option value="1">Enable only All OFF command.</option>
           <option value="2">Enable only All ON command.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -100,6 +104,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
           <option value="2">Disable button from manual control.</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -109,6 +114,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
 Delay In Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be ON instantaneously once ON command is received.</p> <p>1 - 5   -&gt;  The module will detain the ON process for 1-5 seconds up to user preferences.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -118,6 +124,7 @@ Delay In Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be ON instant
 Delay Out Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be OFF instantaneously once OFF command is received.</p> <p>1 - 5   -&gt;  The module will detain the OFF process for 1-5 seconds up to user preferences.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

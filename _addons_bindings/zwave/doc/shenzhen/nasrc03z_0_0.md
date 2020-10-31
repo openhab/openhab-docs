@@ -223,7 +223,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [SOS PDF from NEO](https://opensmarthouse.org/zwavedatabase/839/SOS.pdf)
+* [SOS PDF from NEO](https://opensmarthouse.org/zwavedatabase/839/reference/SOS.pdf)
 
 ---
 

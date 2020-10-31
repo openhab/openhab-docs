@@ -297,8 +297,8 @@ Association group 1 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/140/HomeSeer-EZMotion-100.pdf)
-* [Express Controls EZMotion SDK](https://opensmarthouse.org/zwavedatabase/140/EZMotionSDK.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/140/reference/HomeSeer-EZMotion-100.pdf)
+* [Express Controls EZMotion SDK](https://opensmarthouse.org/zwavedatabase/140/reference/EZMotionSDK.pdf)
 
 ---
 

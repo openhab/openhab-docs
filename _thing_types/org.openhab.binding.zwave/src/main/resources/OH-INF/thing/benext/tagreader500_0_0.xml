@@ -68,7 +68,6 @@ Set all configuration values to default values (factory settings)<br /><h1>Overv
         <options>
           <option value="255">Reset to factory defaults</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -78,6 +77,7 @@ Set all configuration values to default values (factory settings)<br /><h1>Overv
 the time the beep goes to off<br /><h1>Overview</h1><p>0x00 = Off, 0xFF = endless</p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -87,6 +87,7 @@ the time the beep goes to off<br /><h1>Overview</h1><p>0x00 = Off, 0xFF = endles
 waiting for the wake-up-no-more command<br /><h1>Overview</h1><p>Too configure the time-out, waiting on the wakeup_no_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.</p> <p>0x00 = off</p> <p>0x01 – 0xFF: Value in seconds</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -96,6 +97,7 @@ waiting for the wake-up-no-more command<br /><h1>Overview</h1><p>Too configure t
 Amount of beeps a second<br /><h1>Overview</h1><p>To set the amount of beeps per second, every beep is around 10ms.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -108,6 +110,7 @@ Always awake mode<br /><h1>Overview</h1><p>Mode 1 =  normal working mode</p> <p
           <option value="1">normal operating mode.</option>
           <option value="3">Always awake mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -120,6 +123,7 @@ Operation mode<br /><h1>Overview</h1><ul><li>0x00: the RFID and Numeric codes ar
           <option value="0">Gateway mode</option>
           <option value="1">Local mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -132,6 +136,7 @@ Gateway confirmation<br /><h1>Overview</h1><ul><li>In gateway mode it is possibl
           <option value="0">Confirmation Disabled</option>
           <option value="1">Confirmation Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

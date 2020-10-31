@@ -128,7 +128,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [manual](https://opensmarthouse.org/zwavedatabase/687/Vitrum-I-EU-On-Off-Wireless.pdf)
+* [manual](https://opensmarthouse.org/zwavedatabase/687/reference/Vitrum-I-EU-On-Off-Wireless.pdf)
 
 ---
 

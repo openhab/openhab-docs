@@ -87,7 +87,6 @@ Temperature on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change repor
         <options>
           <option value="0">No on-change reporting</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -100,7 +99,6 @@ Humidity on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reportin
         <options>
           <option value="0">No on change reporting</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -113,6 +111,7 @@ Unit for Temperature (Celsius or Fahrenheit)<br /><h1>Overview</h1><p>0x00 Tempe
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -126,6 +125,7 @@ Resolution for Temperature<br /><h1>Overview</h1><p>0x00 No resolution (example 
           <option value="1">1/10 resolution</option>
           <option value="2">1/100 resolution</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -139,6 +139,7 @@ Resolution Humidity<br /><h1>Overview</h1><p>0x00 No resolution (example 33%)</p
           <option value="1">1/10 resolution</option>
           <option value="2">1/100 resolution</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -148,6 +149,7 @@ Resolution Humidity<br /><h1>Overview</h1><p>0x00 No resolution (example 33%)</p
 VOC on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if VOC reading changed by 100ppb - 1000ppb</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -157,6 +159,7 @@ VOC on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (on
 CO2eq on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if CO2eq reading changed by 100ppm - 1000ppm</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -166,6 +169,7 @@ CO2eq on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (
 Air quality indication via LED<br /><h1>Overview</h1><p>0x00 No air quality indication via LEDs</p> <p>0x01 Indicate measured air quality via LEDs </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

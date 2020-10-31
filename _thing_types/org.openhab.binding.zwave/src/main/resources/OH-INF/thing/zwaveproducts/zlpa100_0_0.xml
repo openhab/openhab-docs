@@ -64,6 +64,7 @@ Nightlight Operation<br /><h1>Overview</h1><p>When value = 0, the LED indicator 
           <option value="1">LED same as Load</option>
           <option value="2">LED always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

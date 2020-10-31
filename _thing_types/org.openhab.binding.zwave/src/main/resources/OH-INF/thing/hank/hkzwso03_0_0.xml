@@ -88,6 +88,7 @@ Overload Protection<br /><h1>Overview</h1><p>16.5A for over 5 seconds when this 
           <option value="1">Enabled (default)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -102,6 +103,7 @@ On/Off Status Recovery After Power Failure<br /><h1>Overview</h1><p>Choose the r
           <option value="2">Turn OFF</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -116,6 +118,7 @@ On/Off Status Change Notifications<br /><h1>Overview</h1><p>Your Smart Plug will
           <option value="2">Only Manual Changes</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -129,6 +132,7 @@ Led Indicator Control<br /><h1>Overview</h1><p>You can choose how the LED indica
           <option value="1">5 Seconds</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

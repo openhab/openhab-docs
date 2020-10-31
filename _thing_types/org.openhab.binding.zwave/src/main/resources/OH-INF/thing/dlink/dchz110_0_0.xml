@@ -81,7 +81,6 @@ Setting the BASIC command value to turn on the light.<br /><h1>Overview</h1><ul>
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -94,7 +93,6 @@ Set the sensitivity for the PIR (Passive Infrared Sensor).<br /><h1>Overview</h1
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -107,7 +105,6 @@ Set the illumination threshold to turn on the light.<br /><h1>Overview</h1><p>Wh
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -120,7 +117,6 @@ Operation Mode<br /><h1>Overview</h1><p>Parameter to set the Operation Mode.</p>
         <options>
           <option value="10">Preset: Celsius and LED on = Bits: 00001010 = 10</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -130,6 +126,7 @@ Operation Mode<br /><h1>Overview</h1><p>Parameter to set the Operation Mode.</p>
 Multi-Sensor Function Switch<br /><h1>Overview</h1><p>Parameter to set the sensor functions.</p> <ul><li>Bit 0: Disable magnetic integrate illumination to turn on the lighting nodes in the association group 2. 1: Disable, 0: Enable</li> <li>Bit1: Disable PIR integrate Illumination to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable)</li> <li>Bit2: Disable magnetic integrate PIR to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable) (Default is Disable) </li> <li>Bit3: When Bit2 is 0 (Enable), Are the device and the lighting in the same room? 0: In the same room(Default), 1: In the different room. Notice: If this bit is 1, it is recommended also set the Bit1 to 1, cause the PIR triggered, doesn't mean the people in that room. </li> <li>Bit4: Disable delay 5 seconds to turn off the light, when door/window closed. (1:Disable, 0:Enable)</li> <li>Bit5: Disable auto turn off the light, after door/window opened to turn on the light. (1:Disable, 0:Enable) Notice: If bit2 is zero, this setting is useless. Notice: If the configuration No.9 is zero, this setting is useless</li> <li>Bit6: Reserve.</li> <li>Bit7: Reserve.</li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -143,7 +140,6 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
           <option value="20">Enable PIR Super Sensitivity and Binary Report</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000008" type="integer" groupName="configuration">
@@ -153,6 +149,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
@@ -162,6 +159,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
           <option value="0">Notification Report</option>
           <option value="1">Sensor Binary Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
@@ -171,6 +169,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
@@ -180,6 +179,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -189,6 +189,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>l</p>
 PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds).</p> <p>Setting the suitable value to prevent received the trigger signal too frequently. Also can save the battery energy.</p> <p><strong>Notice:</strong> If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not start detecting.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -198,6 +199,7 @@ PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the normal mode, after t
 Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the lighting, setting the delay time to turn off the lighting when the PIR motion is not detected. 8 seconds per tick, default tick is 4 (32 seconds).</p> <p>0 means never send turn off light command.</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -207,6 +209,7 @@ Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the lighting, setting
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>0 means turn off auto report battery. The default value is 12.</p> <p>The tick time can setting by the configuration No.20</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -216,6 +219,7 @@ Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto rep
 Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time for auto report the door/window state.</p> <p>0 means turn off auto report door/window state. The default value is 12.</p> <p>The tick time can setting by the configuration No.20.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -225,6 +229,7 @@ Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time fo
 Auto Report Illumination Time<br /><h1>Overview</h1><p>The interval time for auto report the illumination.</p> <p>0 means turn off auto report illumination. The default value is 12.</p> <p>The tick time can setting by the configuration No.20</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -234,6 +239,7 @@ Auto Report Illumination Time<br /><h1>Overview</h1><p>The interval time for aut
 Auto Report Temperature Time<br /><h1>Overview</h1><p>The interval time for auto report the temperature.</p> <p>0 means turn off auto report temperature. The default value is 12.</p> <p>The tick time can setting by the configuration No.20.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -243,6 +249,7 @@ Auto Report Temperature Time<br /><h1>Overview</h1><p>The interval time for auto
 Auto Report Tick Interval<br /><h1>Overview</h1><p>The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.</p> <ul><li>0 = Turn off all auto report functions. </li> <li>1-255 = Interval time for each tick. Default is 30. Unit is in minutes</li> </ul>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -252,6 +259,7 @@ Auto Report Tick Interval<br /><h1>Overview</h1><p>The interval time for each au
 Temperature Differential Report<br /><h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function. The unit is Fahrenheit. Enable this function the device will detect every minutes. And when the temperature is over 140 degree Fahrenheit, it will continue report.</p> <p><strong>Enable this functionality will cause some issue please see the detail in the “Temperature Report” section.</strong></p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -261,6 +269,7 @@ Temperature Differential Report<br /><h1>Overview</h1><p>The temperature differe
 Illumination Differential Report<br /><h1>Overview</h1><p>The illumination differential to report. 0 means turn off this function. The unit is percentage. Enable this function the device will detect every minutes.</p> <p><strong>Enable this functionality will cause some issue please see the detail in the “Illumination Report” section.</strong></p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

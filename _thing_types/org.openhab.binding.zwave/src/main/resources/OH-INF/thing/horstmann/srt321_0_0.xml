@@ -84,6 +84,7 @@ Battery Powered Wall Thermostat<br /><h1>Overview</h1><p>The SRT321 is a wireles
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -94,6 +95,7 @@ Battery Powered Wall Thermostat<br /><h1>Overview</h1><p>The SRT321 is a wireles
           <option value="0">Celsius</option>
           <option value="255">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -101,6 +103,7 @@ Battery Powered Wall Thermostat<br /><h1>Overview</h1><p>The SRT321 is a wireles
         <label>3: Delta T</label>
         <description>Defines the temperature steps of the heating control. Steps are 0.1 K</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

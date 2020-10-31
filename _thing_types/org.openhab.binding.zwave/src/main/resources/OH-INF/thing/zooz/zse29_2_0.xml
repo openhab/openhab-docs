@@ -78,7 +78,6 @@ Outdoor Motion Sensor v2<br /><h1>Overview</h1><p>OUTDOOR SENSOR: Introducing th
 Basic Set Report Value Sent to Associated Devices<br /><h1>Overview</h1><p>Set the value of basic set report sent to the light associated with the sensor in Group 2 (so the light turns on to the selected brightness level). 99 is the equivalent of full brightness in Z-Wave terms.</p>
         ]]></description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -91,6 +90,7 @@ Enable / Disable Motion Reports<br /><h1>Overview</h1><p>Enable or disable motio
           <option value="0">Motion reports disabled</option>
           <option value="1">Motion reports enabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -100,7 +100,6 @@ Enable / Disable Motion Reports<br /><h1>Overview</h1><p>Enable or disable motio
 Motion sensitivity<br /><h1>Overview</h1><p>Adjust motion sensitivity where 10 is the most sensitive setting. The default sensitivity is 1.</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -114,7 +113,6 @@ Lux level trigger<br /><h1>Overview</h1><p>Set lux level trigger with 10 being t
           <option value="0">Set manually by lux knob</option>
           <option value="1">Ignore lux readings and always report motion</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -127,7 +125,6 @@ Motion re-trigger time<br /><h1>Overview</h1><p>Set motion re-trigger time for t
         <options>
           <option value="0">Set manually by timer knob</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -137,7 +134,6 @@ Motion re-trigger time<br /><h1>Overview</h1><p>Set motion re-trigger time for t
 Lux reporting frequency<br /><h1>Overview</h1><p>Set lux reporting frequency to decide how often in minutes the sensor will measure and send brightness level data to the hub and associated devices. The default is 30 minutes and the range is 1-1440. Note: Frequent reports will affect battery life.</p>
         ]]></description>
         <default>30</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration" readOnly="true"
@@ -147,6 +143,7 @@ Lux reporting frequency<br /><h1>Overview</h1><p>Set lux reporting frequency to 
 Reading from physical motion clear knob<br /><h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the timer (motion clear) knob set physically at the sensor.</p> <p><strong>Values: </strong>5 (at T position / test mode); 30; 60; 300; 600; 720 (seconds).</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration" readOnly="true"
@@ -156,6 +153,7 @@ Reading from physical motion clear knob<br /><h1>Overview</h1><p><strong>READ ON
 Reading from physical low lux trigger knob<br /><h1>Overview</h1><p><strong>READ ONLY. </strong>Read the values for the lux trigger knob set physically at the sensor.</p> <p><strong>Values: </strong>10; 50; 100; 200; 300; 900 lux (at T position / test mode).</p>
         ]]></description>
         <default>900</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

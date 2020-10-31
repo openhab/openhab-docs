@@ -1004,7 +1004,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1181/FGWDSEU-221-T-EN-0-16.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1181/reference/FGWDSEU-221-T-EN-0-16.pdf)
 
 ---
 

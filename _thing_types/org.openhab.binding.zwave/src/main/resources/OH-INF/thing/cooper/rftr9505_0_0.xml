@@ -61,6 +61,7 @@ Panic ON time<br /><h1>Overview</h1><p>The amount of time in seconds the switch 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -71,6 +72,7 @@ Panic OFF time<br /><h1>Overview</h1><p>The amount of time in seconds the switch
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Panic OFF time<br /><h1>Overview</h1><p>The amount of time in seconds the switch
           <option value="2">On</option>
           <option value="3">Last state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -92,6 +95,7 @@ Panic OFF time<br /><h1>Overview</h1><p>The amount of time in seconds the switch
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

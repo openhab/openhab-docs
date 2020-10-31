@@ -73,6 +73,7 @@ Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh
           <option value="3">Green value</option>
           <option value="4">Blue value</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_1_00000052" type="integer" groupName="configuration">
@@ -83,6 +84,7 @@ Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh
           <option value="0">The green LED remains On for 2 seconds</option>
           <option value="1">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_200_1_000000C8" type="integer" groupName="configuration">
@@ -92,6 +94,7 @@ Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh
           <option value="0">Aeon Labs Standard Product</option>
           <option value="1">others</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1_000000FC" type="integer" groupName="configuration">
@@ -101,12 +104,14 @@ Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_2_000000FE" type="integer" groupName="configuration"
                  min="0" max="65535">
         <label>254: Device Tag.</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_000000FF_wo" type="integer" groupName="configuration">
@@ -117,6 +122,7 @@ Range Extender 6<br /><h1>Overview</h1><p>Aeotec Range Extender is a Z-Wave mesh
           <option value="1">Reset to factory default settings</option>
           <option value="1431655765">Reset to factory default &amp; remove from network</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

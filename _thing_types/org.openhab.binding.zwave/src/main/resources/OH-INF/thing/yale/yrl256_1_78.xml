@@ -88,6 +88,7 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="2">Low</option>
           <option value="3">Silent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_wo" type="integer" groupName="configuration">
@@ -97,24 +98,28 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="-128">Auto Relock On</option>
           <option value="0">Auto Relock Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="10" max="127">
         <label>3: Auto Relock Time</label>
         <default>127</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="3" max="10">
         <label>4: Wrong Code Entry Limit</label>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
                  min="10" max="127">
         <label>7: Shut Down Time (after wrong code entries)</label>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -125,6 +130,7 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="1">Vacation Mode (Keypad Locked Out)</option>
           <option value="2">Privacy Mode (Keypad Locked, RF Unlock Functional)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -134,6 +140,7 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="-128">One Touch Locking On</option>
           <option value="0">One Touch Locking Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -143,6 +150,7 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="-128">LED On</option>
           <option value="0">LED Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -152,6 +160,7 @@ Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low V
           <option value="-128">Reset to Factory On</option>
           <option value="0">Reset to Factory Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

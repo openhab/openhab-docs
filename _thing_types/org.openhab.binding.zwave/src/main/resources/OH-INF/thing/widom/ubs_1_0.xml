@@ -59,6 +59,7 @@ WiDom Universal Relay Switch<br /><h1>Overview</h1><p>WiDOM Universal Relay Swit
           <option value="3">Off</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Device status when the external switch receives 2 clicks<br /><h1>Overview</h1><
           <option value="3">Off</option>
           <option value="4">IGNORE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

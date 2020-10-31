@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="thermofloor_heatit4512581_00_000" listed="false">
+    <label>Heatit Z Push Button 8 Wall Mounted Switch</label>
+    <description><![CDATA[
+Wall Mounted Switch<br /><h1>Overview</h1><p>Heatit Z-Push Button 8 is a battery operated wall switch with 8 push buttons. The switch enables you to control the Z-Wave- products in your smart home system. Managing your Z-Wave products becomes easy and practical. The switch can be set up to control scenarios or work in associations with other Z-Wave products.</p> <p>Heatit Z-Push Button 8 can control up to 4 seperate association groups with up to 20 products or up to 16 scenarios through your gateway.</p> <p><strong>Functions:</strong></p> <ul><li>Battery operated wall switch</li> <li>Fits Gira System 55, Elko RS-16 and Schneider Exxact</li> <li>Controls 4 separate groups and up to 20 units</li> <li>Controls up to 16 scenarios via your gateway</li> <li>LED-diode</li> <li>Easy to install with screws or double-sided tape</li> <li>Supports encryption modes S0, S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><br /><h2>Inclusion Information</h2><p><strong>Step 1.</strong> Make sure the remote control does not belong to any Z-Wave network, short press on any button, if LED indicator does not turn on, the remote control does not belong to any network, then continue to step 2, if LED indicator turns on, it means the remote control has already been added to a network, please first set the remote control to removing mode (see exclusion information), then continue to step 2.</p> <p><strong>Step 2.</strong> Set primary controller/gateway into adding mode.</p> <p><strong>Step 3.</strong> Press and hold down both buttons <strong>I</strong> and <strong>O</strong> of Group 2 our 3 seconds, LED indicator, the remote control will be set to adding mode, and waiting to be added, after 10s LED indicator blinks 6 times quickly to indicate successful adding.</p> <br /><h2>Exclusion Information</h2><p>There are two removing methods.</p> <p><strong>Method 1:</strong> Removing from the primary controller/gateway as follows:</p> <ol><li>Set the primary controller/gateway into removing mode.</li> <li>Press and hold down both buttons <strong>I</strong> and <strong>O</strong> of Group 2 over 3 seconds, LED indicator turns on, the remote control will be set to removing mode, and waiting to be removed, after 7s LED indicator blinks 4 times quickly to indicate successful removing.</li> </ol><p><strong>Method 2:</strong> Factory reset the remote control will force the remote control to be removed from a network.</p> <p>A factory reset is done by press and holding down buttons <strong>I</strong> and <strong>O</strong> of Group 2 together for over 10 seconds, LED indicator turns on and then blinks 4 times quickly to indicate successful factory reset.</p> <p><em>Note:</em> Factory reset is not recommended for removing, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.</p> <br /><h2>Wakeup Information</h2><p>The remote control is under sleepy mode for most of the time to save battery power. It can not receive wireless commands under sleepy mode. Before the gateway interacts data with the remote, the remote control shall be activated manually first. Short press any button to activate the remote control for 3s, and press and hold down <strong>I</strong> and <strong>O</strong> buttons of the Group 2 together over 1 second to activate the remote control for 7s.</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="basic_switch_binary1" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_BASIC:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer1" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:1,COMMAND_CLASS_BASIC:1</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer2" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:2,COMMAND_CLASS_BASIC:2</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:2</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer3" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:3,COMMAND_CLASS_BASIC:3</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:3</property>
+        </properties>
+      </channel>
+      <channel id="switch_dimmer4" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL:4,COMMAND_CLASS_BASIC:4</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL:4</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ThermoFloor</property>
+      <property name="modelId">Heatit Z Push Button 8</property>
+      <property name="manufacturerId">019B</property>
+      <property name="manufacturerRef">0300:A305</property>
+      <property name="dbReference">997</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><ol><li>Send Command Class "Device Reset Locally Notification V1" to associated devices of the group to report factory reset information when factory reset the remote control.</li> <li>When remote control battery power value changes, send Command Class "Battery Report V1" to associated devices of this group to report power value information.</li> <li>Short press or press and hold any button to send scene activation command to the associated devices of this group using Command Class "Central Scene Notification V3".</li> </ol>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Launch 1</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Short press <strong>I/O</strong> button of Group 2 to send ON/OFF command to associated devices of the group using Command Class "Basic Set V2".</p> <p>Press and hold down <strong>I/O</strong> button Group 2 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Launch 2</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Short press <strong>I/O</strong> button of Group 3 to send ON/OFF command to associated devices of the group using Command Class "Basic Set V2".</p> <p>Press and hold down <strong>I/O</strong> button Group 3 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Launch 3</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Short press <strong>I/O</strong> button of Group 4 to send ON/OFF command to associated devices of the group using Command Class "Basic Set V2".</p> <p>Press and hold down <strong>I/O</strong> button Group 4 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Launch 4</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Short press <strong>I/O</strong> button of Group 4 to send ON/OFF command to associated devices of the group using Command Class "Basic Set V2".</p> <p>Press and hold down <strong>I/O</strong> button Group 4 to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4"</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

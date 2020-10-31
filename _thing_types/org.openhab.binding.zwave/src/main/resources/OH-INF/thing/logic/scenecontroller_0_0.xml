@@ -281,6 +281,7 @@ Configuration of Pair Mode for the upper two buttons (button #1 and #2)<br /><h1
           <option value="0">Separate mode (toggle mode). (Default)</option>
           <option value="1">Left side ON/UP, right side OFF/DOWN</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -293,6 +294,7 @@ Configuration of Pair Mode for the middle two buttons (button #3 and #4)<br /><h
           <option value="0">Separate mode (toggle mode). (Default)</option>
           <option value="1">Left side ON/UP, right side OFF/DOWN</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -305,6 +307,7 @@ Configuration of Pair Mode for the lower two buttons (button #5 and #6)<br /><h1
           <option value="0">Separate mode (toggle mode). (Default)</option>
           <option value="1">Left side ON/UP, right side OFF/DOWN</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -323,6 +326,7 @@ Configuration of the internal operation of LED #1<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -341,6 +345,7 @@ Configuration of the internal operation of LED #2<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -359,6 +364,7 @@ Configuration of the internal operation of LED #3<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -377,6 +383,7 @@ Configuration of the internal operation of LED #4<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -395,6 +402,7 @@ Configuration of the internal operation of LED #5<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -413,6 +421,7 @@ Configuration of the internal operation of LED #6<br /><h1>Overview</h1><p>0 LED
           <option value="6">Status of the built-in relay, inverted</option>
           <option value="7">LED activated on button press</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -431,6 +440,7 @@ This parameter configures the built-in relay<br /><h1>Overview</h1><p>0 Relay is
           <option value="6">Controlled by button 6</option>
           <option value="7">Controlled by button 1, 1 sec</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -443,6 +453,7 @@ Disables or enables the sending of Central Scene notifications<br /><h1>Overview
           <option value="0">Enabled</option>
           <option value="1">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -455,6 +466,7 @@ Disable House Cleaning Mode, double press = 100% light<br /><h1>Overview</h1><p>
           <option value="0">House Cleaning Mode is enabled (Default)</option>
           <option value="1">House Cleaning Mode is disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_4_00000001" type="integer" groupName="configuration">
@@ -467,6 +479,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_4_0000FF00" type="integer" groupName="configuration"
@@ -479,7 +492,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_4_00FF0000" type="integer" groupName="configuration"
@@ -492,7 +504,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -502,6 +513,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_4_00000001" type="integer" groupName="configuration">
@@ -514,6 +526,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_4_0000FF00" type="integer" groupName="configuration"
@@ -526,7 +539,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_4_00FF0000" type="integer" groupName="configuration"
@@ -539,7 +551,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -549,6 +560,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4_00000001" type="integer" groupName="configuration">
@@ -561,6 +573,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4_0000FF00" type="integer" groupName="configuration"
@@ -573,7 +586,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4_00FF0000" type="integer" groupName="configuration"
@@ -586,7 +598,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -596,6 +607,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_4" type="integer" groupName="configuration">
@@ -608,6 +620,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_4_0000FF00" type="integer" groupName="configuration"
@@ -620,7 +633,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_4_00FF0000" type="integer" groupName="configuration"
@@ -633,7 +645,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -643,6 +654,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_4_00000001" type="integer" groupName="configuration">
@@ -655,6 +667,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_4_0000FF00" type="integer" groupName="configuration"
@@ -667,7 +680,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_4_00FF0000" type="integer" groupName="configuration"
@@ -680,7 +692,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -690,6 +701,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4_00000001" type="integer" groupName="configuration">
@@ -702,6 +714,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 1: Enable /
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4_0000FF00" type="integer" groupName="configuration"
@@ -714,7 +727,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 2: Upper sw
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4_00FF0000" type="integer" groupName="configuration"
@@ -727,7 +739,6 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4_01000000" type="integer" groupName="configuration" readOnly="true"
@@ -737,6 +748,7 @@ Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 3: Lower sw
 Configuration of the Multilevel Switch<br /><h1>Overview</h1><p>Byte 4: Not used – must be set to 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -749,6 +761,7 @@ Association groups for button 1<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -761,6 +774,7 @@ Association groups for button 2<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -773,6 +787,7 @@ Association groups for button 3<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -785,6 +800,7 @@ Association groups for button 4<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -797,6 +813,7 @@ Association groups for button 5<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -809,6 +826,7 @@ Association groups for button 6<br /><h1>Overview</h1><p>0 When commands are rec
           <option value="0">Not switched</option>
           <option value="1">Switched</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -821,6 +839,7 @@ Configuration of backlight control.<br /><h1>Overview</h1><p>0 Backlight is only
           <option value="0">By indicator command class</option>
           <option value="1">5 sec when button pressed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -833,6 +852,7 @@ Enable or disable that Basic Set commands to the root device<br /><h1>Overview</
           <option value="0">Forwarded to endpoint 1</option>
           <option value="1">Controls backlight</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

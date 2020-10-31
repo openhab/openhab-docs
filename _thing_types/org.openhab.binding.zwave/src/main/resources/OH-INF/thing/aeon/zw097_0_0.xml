@@ -125,6 +125,7 @@ Dry Contact Sensor<br /><h1>Overview</h1><p>A fully functional Z-Wave sensor th
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -134,6 +135,7 @@ Dry Contact Sensor<br /><h1>Overview</h1><p>A fully functional Z-Wave sensor th
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -143,12 +145,14 @@ Dry Contact Sensor<br /><h1>Overview</h1><p>A fully functional Z-Wave sensor th
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
                  min="10" max="50">
         <label>39: Send battery report when less than percentage</label>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -158,18 +162,21 @@ Dry Contact Sensor<br /><h1>Overview</h1><p>A fully functional Z-Wave sensor th
 Value is specified in number of seconds.<br /><h1>Overview</h1><p>Values greater than 10 will be rounded up to the nearest 4 minutes (10 through 240 = 4 minutes, 241 through 480 = 8 minutes, etc.)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_00000010" type="integer" groupName="configuration"
                  min="0" max="1">
         <label>121: Send Sensor Binary report to associated devices</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_00000100" type="integer" groupName="configuration"
                  min="0" max="1">
         <label>121: Send Basic report to associated devices</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_122_1_wo" type="integer" groupName="configuration">
@@ -188,6 +195,7 @@ Value is specified in number of seconds.<br /><h1>Overview</h1><p>Values greater
           <option value="10">Emergency alarm</option>
           <option value="11">Timer ended</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

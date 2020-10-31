@@ -223,7 +223,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Lock Manual](https://opensmarthouse.org/zwavedatabase/948/YSL-Keyless-Manual-2018-1B.pdf)
+* [Lock Manual](https://opensmarthouse.org/zwavedatabase/948/reference/YSL-Keyless-Manual-2018-1B.pdf)
 
 ---
 

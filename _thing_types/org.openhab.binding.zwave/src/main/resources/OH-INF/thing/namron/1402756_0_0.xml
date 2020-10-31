@@ -79,6 +79,7 @@ LED Dimmer<br /><h1>Overview</h1><p>This is a switch multilevel device based on 
 State After Power Restore<br /><h1>Overview</h1><p>State After Power Restore: The state the switch should return to once power is restored after power failure</p> <p>0 - off</p> <p>1 - on</p> <p>2 - Returns to level before Power Outage</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -88,6 +89,7 @@ State After Power Restore<br /><h1>Overview</h1><p>State After Power Restore: Th
 Notification when load status change<br /><h1>Overview</h1><p>Notification when load status change: The Dimmer will send notification to associated device(Group Lifeline) when status of DImmer load is changed:</p> <p>0 - The function is disabled</p> <p>1 - Send Switch Multilevel Report</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -97,6 +99,7 @@ Notification when load status change<br /><h1>Overview</h1><p>Notification when 
 Default dimming speed<br /><h1>Overview</h1><p>Default dimming speed. Valid Value: 0-100</p> <p>0 - Instantly</p> <p>1 - Fast</p> <p>...</p> <p>100 - Slow</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -106,6 +109,7 @@ Default dimming speed<br /><h1>Overview</h1><p>Default dimming speed. Valid Valu
 Enable or Disable external switch to pair network<br /><h1>Overview</h1><p>Enable or Disable external switch to pair network.</p> <p>0 - Disable</p> <p>1 - Enable</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -115,6 +119,7 @@ Enable or Disable external switch to pair network<br /><h1>Overview</h1><p>Enabl
 Setting dimming way<br /><h1>Overview</h1><p>Setting dimming way.</p> <p>0 - Linear dimming</p> <p>1 - Logarithmic dimming</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -124,6 +129,7 @@ Setting dimming way<br /><h1>Overview</h1><p>Setting dimming way.</p> <p>0 - Lin
 Setting default brightness when turn on the dimmer from off status<br /><h1>Overview</h1><p>Setting default brightness when turn on the dimmer from off status</p> <p>Setting 0 means that the dimmer will use parameter 1.</p> <p>Valid value: 0 - 99</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -133,6 +139,7 @@ Setting default brightness when turn on the dimmer from off status<br /><h1>Over
 Setting delay time when turn off the load<br /><h1>Overview</h1><p>Setting delay time when turn off the load, unit is second.</p> <p>Valid value: 0 - 60</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

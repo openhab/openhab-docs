@@ -59,6 +59,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_242_1_wo" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_243_1_wo" type="integer" groupName="configuration">
@@ -87,6 +89,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_244_1_wo" type="integer" groupName="configuration">
@@ -101,6 +104,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_245_1_wo" type="integer" groupName="configuration">
@@ -115,6 +119,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_246_1_wo" type="integer" groupName="configuration">
@@ -129,6 +134,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_247_1_wo" type="integer" groupName="configuration">
@@ -143,6 +149,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_248_1_wo" type="integer" groupName="configuration">
@@ -157,6 +164,7 @@ Minimote 4 button remote control<br /><h1>Overview</h1><p>The Minimote is a full
           <option value="4">Association Mode</option>
           <option value="5">Learn Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_250_1_wo" type="integer" groupName="configuration">
@@ -169,6 +177,7 @@ Selects Group Mode or Scene Mode<br /><h1>Overview</h1><p>When in Group Mode, th
           <option value="0">Group Mode</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -72,6 +72,7 @@ Push Button Deadbolt<br /><h1>Overview</h1><p>The Yale Real Living™ Stand-alon
           <option value="2">Low</option>
           <option value="3">High</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Push Button Deadbolt<br /><h1>Overview</h1><p>The Yale Real Living™ Stand-alon
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -90,6 +92,7 @@ Push Button Deadbolt<br /><h1>Overview</h1><p>The Yale Real Living™ Stand-alon
 Seconds; automatically re-lock after specified time<br /><h1>Overview</h1><p>Seconds; after successful code entry and unit unlocks, it will automatically re-lock after specified time</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -99,6 +102,7 @@ Seconds; automatically re-lock after specified time<br /><h1>Overview</h1><p>Sec
 The number of invalid code entries before TAMPER Alarm.<br /><h1>Overview</h1><p>The number of invalid code entries lock will accept before sending TAMPER Alarm.</p> <p>When number of wrong code entries is exceeded, lock will disable keypad for the time specified by Shutdown Time parameter.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -109,6 +113,7 @@ The number of invalid code entries before TAMPER Alarm.<br /><h1>Overview</h1><p
           <option value="2">Spanish</option>
           <option value="3">French</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -118,6 +123,7 @@ The number of invalid code entries before TAMPER Alarm.<br /><h1>Overview</h1><p
 Time unit will be inoperable after too many wrong codes<br /><h1>Overview</h1><p>Number of seconds unit will be inoperable after number of wrong code entries is exceeded.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -131,6 +137,7 @@ Operating Mode<br /><h1>Overview</h1><p>Normal Mode</p> <p>Vacation Mode - all u
           <option value="1">Vacation</option>
           <option value="2">Privacy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

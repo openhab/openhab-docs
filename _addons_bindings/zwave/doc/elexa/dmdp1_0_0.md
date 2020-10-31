@@ -1043,8 +1043,8 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Dome Door Sensor Manual](https://opensmarthouse.org/zwavedatabase/884/Dome-Door-Sensor-Manual.pdf)
-* [Dome API Documentation](https://opensmarthouse.org/zwavedatabase/884/Dome-API-Documentation.pdf)
+* [Dome Door Sensor Manual](https://opensmarthouse.org/zwavedatabase/884/reference/Dome-Door-Sensor-Manual.pdf)
+* [Dome API Documentation](https://opensmarthouse.org/zwavedatabase/884/reference/Dome-API-Documentation.pdf)
 
 ---
 

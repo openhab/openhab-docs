@@ -66,6 +66,7 @@ Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is des
           <option value="1">ALL ON disabled / ALL OFF active</option>
           <option value="2">ALL ON active / ALL OFF disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is des
           <option value="1">Map OFF status to group 1, memorize state</option>
           <option value="2">Map OFF status group 1, full brightness</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -89,12 +91,14 @@ Key no.2 is not represented by any physical device<br /><h1>Overview</h1><p>Key 
           <option value="0">Status not checked</option>
           <option value="1">Status checked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
                  min="1" max="99">
         <label>8: Dimming step at automatic control</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -102,6 +106,7 @@ Key no.2 is not represented by any physical device<br /><h1>Overview</h1><p>Key 
         <label>9: Time of MANUALLY moving between dimming values</label>
         <description>Options for changing parameter 1-255 (10ms - 2,5s)</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -111,6 +116,7 @@ Key no.2 is not represented by any physical device<br /><h1>Overview</h1><p>Key 
 Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -118,6 +124,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
         <label>11: Dimming step at manual control</label>
         <description>Options for changing parameter 1-99</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -125,6 +132,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
         <label>12: Maximum dimmer level control</label>
         <description>Options for changing parameter 2-99</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -132,6 +140,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
         <label>13: Minimum dimmer level control</label>
         <description>Options for changing parameter 1-98</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -143,6 +152,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
           <option value="1">Bi-stable input (switch)</option>
           <option value="2">Roller Blind Switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -153,6 +163,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
           <option value="0">Disable double click</option>
           <option value="1">Enable double click</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -163,6 +174,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
           <option value="0">State NOT saved at power failure</option>
           <option value="1">State saved at power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -175,6 +187,7 @@ Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch p
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -185,6 +198,7 @@ Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch p
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -197,6 +211,7 @@ Function to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This functio
           <option value="0">Device changes status on key status change</option>
           <option value="1">Device status depends on key status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -206,6 +221,7 @@ Function to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This functio
 Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170]</p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market support this.</p>
         ]]></description>
         <default>110</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -217,6 +233,7 @@ Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will 
           <option value="2">Alarm relay OFF</option>
           <option value="3">ALARM FLASHING</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -224,6 +241,7 @@ Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will 
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -233,6 +251,7 @@ Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will 
 Parameter’s value changes depending on the dimming level.<br /><h1>Overview</h1><p>Available settings: from 1 to 99. Parameter’s value changes depending on the dimming level.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -245,6 +264,7 @@ Command class scene activation for group no. 3<br /><h1>Overview</h1><p>The devi
           <option value="0">Scene functionality deactivated</option>
           <option value="1">Scene functionality activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

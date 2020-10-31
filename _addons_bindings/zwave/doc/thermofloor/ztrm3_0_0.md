@@ -615,7 +615,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1238/manual-heatit-z-trm3-fw-4-0-ver2020-b-eng.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1238/reference/manual-heatit-z-trm3-fw-4-0-ver2020-b-eng.pdf)
 
 ---
 

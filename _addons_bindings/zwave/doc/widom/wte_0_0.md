@@ -223,7 +223,7 @@ Association group 2 supports 8 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/995/Widom-Smart-Dimmer-EN.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/995/reference/Widom-Smart-Dimmer-EN.pdf)
 
 ---
 

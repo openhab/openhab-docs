@@ -181,6 +181,7 @@ Multi-socket PowerNode (6-plug)<br /><h1>Overview</h1><p>This Configuration is f
 Minimum variation in load current before a message is sent.<br /><h1>Overview</h1><p>Minimum variation in load current before a message is sent. Value in percent (30 =&gt; 30%)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration"
@@ -190,6 +191,7 @@ Minimum variation in load current before a message is sent.<br /><h1>Overview</h
 Duration (min) the device flashes after a communication error.<br /><h1>Overview</h1><p>After how many minutes the GreenWave device should start flashing if the controller didn't communicate with this device.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration" readOnly="true">
@@ -208,6 +210,7 @@ Duration (min) the device flashes after a communication error.<br /><h1>Overview
           <option value="136">Pink</option>
           <option value="137">Locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -219,6 +222,7 @@ Duration (min) the device flashes after a communication error.<br /><h1>Overview
           <option value="1">Remember last state</option>
           <option value="2">All ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -229,6 +233,7 @@ Duration (min) the device flashes after a communication error.<br /><h1>Overview
           <option value="0">Disable the LED for network error</option>
           <option value="1">Enable the LED for network error</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

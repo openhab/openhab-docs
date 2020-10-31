@@ -65,6 +65,7 @@ Door/Window Sensor 6<br /><h1>Overview</h1><p>This Door/ Window Sensor 6 is a s
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened On for Closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -72,6 +73,7 @@ Door/Window Sensor 6<br /><h1>Overview</h1><p>This Door/ Window Sensor 6 is a s
         <label>39: Low battery threshold (10% to 50%)</label>
         <description>The value the sensor will use to determine a low battery level</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -83,6 +85,7 @@ Door/Window Sensor 6<br /><h1>Overview</h1><p>This Door/ Window Sensor 6 is a s
           <option value="2">Send Sensor Binary Report CC</option>
           <option value="3">Send Basic Set CC and Sensor Binary Report CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -92,6 +95,7 @@ Door/Window Sensor 6<br /><h1>Overview</h1><p>This Door/ Window Sensor 6 is a s
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
@@ -101,6 +105,7 @@ Door/Window Sensor 6<br /><h1>Overview</h1><p>This Door/ Window Sensor 6 is a s
 Reset sensor to factory default and remove from network<br /><h1>Overview</h1><p>Writing  1431655765 to this parameter will reset to factory default and the sensor will be removed from network.</p> <p>If 1 byte is sent with a value of 0, then the senor will be reset to factory default, but the sensor will not be removed from the network.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -105,6 +105,7 @@ Z Weather<br /><h1>Overview</h1><p>Z-Weather is a cup anemometer for Z-Wave inst
         <label>1: Wind Speed Action Threshold</label>
         <description>Available Parameters: 0 - Off 1 - 30 in milliseconds Default = 6 m/s</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -112,6 +113,7 @@ Z Weather<br /><h1>Overview</h1><p>Z-Weather is a cup anemometer for Z-Wave inst
         <label>2: Twilight Action Threshold</label>
         <description>Set from 0 - 100 % Default = 37% (street lighting)</description>
         <default>37</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

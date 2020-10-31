@@ -78,6 +78,7 @@ Clamp Energy Meter<br /><h1>Overview</h1><p>The Wireless Energy Meter performs r
 MEAS_PERIOD<br /><h1>Overview</h1><p>MEAS_PERIOD represents the minimum reporting interval, i.e. 1/MEAS_PERIOD is the maximum reporting frequency. WEM checks for changes in the line measures every MEAS_PERIOD. If there are meaningful changes, a report is sent to the controller.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -87,6 +88,7 @@ MEAS_PERIOD<br /><h1>Overview</h1><p>MEAS_PERIOD represents the minimum reportin
 MAX_REP_INTERVAL<br /><h1>Overview</h1><p><strong>Units of 10 sec</strong></p> <p>MAX_REP_INTERVAL is the maximum time that can elapse without sending a report. If no meaningful events occur, WEM sends one measurement every MAX_REP_INTERVAL seconds. Notice that, since the check is performed every MEAS_PERIOD, the reporting interval is rounded to the smallest multiple integer of MEAS_PERIOD (e.g. MEAS_PERIOD = 45, MAX_REP_INTERVAL = 12, reports are sent every 135 s).</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@ MAX_REP_INTERVAL<br /><h1>Overview</h1><p><strong>Units of 10 sec</strong></p> <
 RES_ACTIVE_POWER<br /><h1>Overview</h1><p>The minimum quantity (resolution) that triggers a report</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ RES_ACTIVE_POWER<br /><h1>Overview</h1><p>The minimum quantity (resolution) that
 RES_RMS_VOLTAGE<br /><h1>Overview</h1><p><strong>Units of 100 mV</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -114,6 +118,7 @@ RES_RMS_VOLTAGE<br /><h1>Overview</h1><p><strong>Units of 100 mV</strong></p> <p
 RES_RMS_CURRENT<br /><h1>Overview</h1><p><strong>Units of 10 mA</strong></p> <p>The minimum quantity (resolution) that triggers a report</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration" readOnly="true">
@@ -127,6 +132,7 @@ CLAMP_REVERSED<br /><h1>Overview</h1><p>CLAMP_REVERSED is a read-only parameter 
           <option value="1">Clamp is REVERSED</option>
           <option value="255">Could not detect position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -139,6 +145,7 @@ ENABLE_CRC16<br /><h1>Overview</h1><p>ENABLE_CRC16 parameter provides for an ext
           <option value="0">False</option>
           <option value="1">True</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -148,6 +155,7 @@ ENABLE_CRC16<br /><h1>Overview</h1><p>ENABLE_CRC16 parameter provides for an ext
 AVG_PERIOD<br /><h1>Overview</h1><p><strong>Units of 5 seconds</strong></p> <p>AVG_PERIOD determines the time window used to compute an average over the line readings. Each unit of AVG_PERIOD is worth 5 seconds. If AVG_PERIOD = 0 no average is computed and the last sample is returned. Note that the maximum average window coincides with the minimum value of MAX_REP_INTERVAL. Also note that a delay of up to the average window can be introduced in returning the measurements (each measurement is returned only when ready).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

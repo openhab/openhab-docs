@@ -734,8 +734,8 @@ Association group 11 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual V1.6-2](https://opensmarthouse.org/zwavedatabase/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-6-2.pdf)
-* [Qubino_Flush-Dimmer-PLUS-user-manual_V1.9_eng-1.pdf](https://opensmarthouse.org/zwavedatabase/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-9-eng-1.pdf)
+* [User Manual V1.6-2](https://opensmarthouse.org/zwavedatabase/210/reference/Qubino-Flush-Dimmer-PLUS-user-manual-V1-6-2.pdf)
+* [Qubino_Flush-Dimmer-PLUS-user-manual_V1.9_eng-1.pdf](https://opensmarthouse.org/zwavedatabase/210/reference/Qubino-Flush-Dimmer-PLUS-user-manual-V1-9-eng-1.pdf)
 
 ---
 

@@ -66,6 +66,7 @@ Door Window Sensor<br /><h1>Overview</h1><p>Wireless Door/ Window Sensor</p> <br
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -196,7 +196,7 @@ Association group 9 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1112/4-Touch-Modular-Switch-compressed.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1112/reference/4-Touch-Modular-Switch-compressed.pdf)
 
 ---
 

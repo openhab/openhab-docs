@@ -72,6 +72,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
           <option value="2">Low</option>
           <option value="3">High</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
         <label>3: Relock time</label>
         <description>Time to relock after unlocking (seconds)</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -95,6 +98,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
         <label>4: Wrong Code Entry Limit</label>
         <description>Invalid unlock attempts before shutdown/alarm</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -105,6 +109,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
           <option value="2">Spanish</option>
           <option value="3">French</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -112,6 +117,7 @@ Yale Push Button Lever Lock<br /><h1>Overview</h1><p>Secure your home with this 
         <label>7: Shutdown Time</label>
         <description>Invalid unlock attempts before lock out</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -125,6 +131,7 @@ Operating mode (normal/vacation/privacy)<br /><h1>Overview</h1><p>0 = Normal</p>
           <option value="1">Vacation</option>
           <option value="2">Privacy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

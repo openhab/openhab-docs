@@ -87,6 +87,7 @@ Solar Powered Outdoor Siren<br /><h1>Overview</h1><p>This solar powered outdoor 
           <option value="1">Trigger, when removed, and turned off</option>
           <option value="2">Don't trigger at all</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -99,7 +100,6 @@ Temperature correction with positive and negative offset values<br /><h1>Overvie
         <options>
           <option value="0">Temperature adjustments</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -109,6 +109,7 @@ Temperature correction with positive and negative offset values<br /><h1>Overvie
 Threshold temperature to send unsolicited report. 10 = 1°C<br /><h1>Overview</h1><p>In 0.1°C (Default 10)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -121,7 +122,6 @@ Send unsolicited temperature report after N wake up<br /><h1>Overview</h1><p>Sen
         <options>
           <option value="0">Disable report</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -133,6 +133,7 @@ Send unsolicited temperature report after N wake up<br /><h1>Overview</h1><p>Sen
           <option value="1">Flash only</option>
           <option value="2">Flash + Siren (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

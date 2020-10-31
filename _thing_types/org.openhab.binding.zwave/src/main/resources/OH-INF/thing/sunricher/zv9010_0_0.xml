@@ -59,6 +59,7 @@ Door and window sensor<br /><h1>Overview</h1><p>The z-wave door window sensor is
 Send basic set<br /><h1>Overview</h1><p>0x00, disable to open and close the door, send basic set</p> <p>0x01, enable to open the door, send basic set, enable to close the door, do not send basic set</p> <p>0x02, enable to open the door, do not send basic set, enable to close the door, send basic set</p> <p>0x03, enable to open the door, send basic set, enable to close the door, send basic set</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -68,6 +69,7 @@ Send basic set<br /><h1>Overview</h1><p>0x00, disable to open and close the door
 Basic_set settings<br /><h1>Overview</h1><p>0x01, when the door is opened, send BASIC_SET=0xFF, when the door is close, send BASIC_SET=0x00</p> <p>0x00, when the door is opened, send BASIC_SET=0x00, when the door is close, send BASIC_SET=0xFF</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Basic_set settings<br /><h1>Overview</h1><p>0x01, when the door is opened, send 
 wake up interval<br /><h1>Overview</h1><p>10-1800(30min), unit is seconds. wake up interval (time for the device to enter to sleep mode again after press and hold down the button to wake it up)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_4" type="integer" groupName="configuration"
@@ -86,6 +89,7 @@ wake up interval<br /><h1>Overview</h1><p>10-1800(30min), unit is seconds. wake 
 wake up to send battery state<br /><h1>Overview</h1><p>0x01, automatic waking up, send battery power state</p> <p>0x00, automatic waking up, do not send battery power state</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

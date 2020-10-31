@@ -59,6 +59,7 @@ One-key Scene Controller<br /><h1>Overview</h1><p>The Scene Controller is a slav
 Set the duration value of the sent commands<br /><h1>Overview</h1><p>Setting the duration value of the sent commands, switch multilevel Set and switch multilevel start level change.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_1" type="integer" groupName="configuration">
@@ -69,6 +70,7 @@ Set the duration value of the sent commands<br /><h1>Overview</h1><p>Setting the
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -79,6 +81,7 @@ Set the duration value of the sent commands<br /><h1>Overview</h1><p>Setting the
           <option value="85">Factory Reset without Remove</option>
           <option value="1431655765">Factory Reset &amp; Remove</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

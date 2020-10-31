@@ -61,6 +61,7 @@
 Fade on time<br /><h1>Overview</h1><ul><li>0: Instant on</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Fade on time<br /><h1>Overview</h1><ul><li>0: Instant on</li> <li>1 to 127: 1-12
 Fade off time<br /><h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-127 seconds</li> <li>128 to 253: 1-126 minutes</li> </ul>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Fade off time<br /><h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-
         <label>3: Minimum Light Level</label>
         <description>Minimum light level</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -84,6 +87,7 @@ Fade off time<br /><h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-
         <label>4: Maximum Light Level</label>
         <description>Maximum light level</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -93,6 +97,7 @@ Fade off time<br /><h1>Overview</h1><ul><li>0: Instant off</li> <li>1 to 127: 1-
 Preset light level<br /><h1>Overview</h1><ul><li>0: Last dim level</li> <li>1 to 100: Level</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -102,6 +107,7 @@ Preset light level<br /><h1>Overview</h1><ul><li>0: Last dim level</li> <li>1 to
 LED dim level indicator timeout<br /><h1>Overview</h1><ul><li>0: LED indicators off</li> <li>1 to 254: Timeout in seconds</li> <li>255: Always on</li> </ul>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -111,6 +117,7 @@ LED dim level indicator timeout<br /><h1>Overview</h1><ul><li>0: LED indicators 
 Locator LED status<br /><h1>Overview</h1><ul><li>0: LED off</li> <li>254: Status mode</li> <li>255: Locator mode</li> </ul>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -120,6 +127,7 @@ Locator LED status<br /><h1>Overview</h1><ul><li>0: LED off</li> <li>254: Status
 Load type<br /><h1>Overview</h1><ul><li>0: Incandescent</li> <li>1: LED</li> <li>2: CFL</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

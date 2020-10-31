@@ -69,6 +69,7 @@ Separates pushbutton and S1 input from relay<br /><h1>Overview</h1><p>If "LocalC
           <option value="0">LocalControlOn</option>
           <option value="1">LocalControlOff</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

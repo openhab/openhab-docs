@@ -59,6 +59,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>A slim door/window sensor.</p> <br /
 Delay before turning light off again.<br /><h1>Overview</h1><p>After turn on light, setting the delay time to turn off the light. 10 seconds per tick, and minimum time is 30 seconds, default tick 3 (30 seconds).</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -69,6 +70,7 @@ Lights on, or dimmer setting.<br /><h1>Overview</h1><p>Setting the BASIC command
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -78,6 +80,7 @@ Lights on, or dimmer setting.<br /><h1>Overview</h1><p>Setting the BASIC command
 Interval between wake up and auto report.<br /><h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -87,6 +90,7 @@ Interval between wake up and auto report.<br /><h1>Overview</h1><p>The interval 
 Security / Home Automation mode<br /><h1>Overview</h1><p>1 means security mode - only reports events to controller.</p> <p>2 means home automation mode - reports events to controller and sends commands to lighting.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -96,6 +100,7 @@ Security / Home Automation mode<br /><h1>Overview</h1><p>1 means security mode -
 Ignore door/window closing<br /><h1>Overview</h1><p>0 means light control action with the door/window close.</p> <p>1 means ignore the door/window close.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

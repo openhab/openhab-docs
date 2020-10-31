@@ -132,7 +132,7 @@ Association group 1 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/810/Z-Wave-Module-2-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/810/reference/Z-Wave-Module-2-Manual.pdf)
 
 ---
 

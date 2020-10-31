@@ -104,6 +104,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /><h1>Overview</h1><p>The flush-mount
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration">
@@ -117,6 +118,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /><h1>Overview</h1><p>The flush-mount
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -130,6 +132,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /><h1>Overview</h1><p>The flush-mount
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -143,6 +146,7 @@ Transmitter Flush-Mounted 4-Gang Switch<br /><h1>Overview</h1><p>The flush-mount
           <option value="54">Move roller shutter single-surface</option>
           <option value="55">RAISE roller shutter as long as button is pressed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

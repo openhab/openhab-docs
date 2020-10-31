@@ -100,7 +100,6 @@ multiples of 5s<br /><h1>Overview</h1><p>Enable automatic interval in seconds re
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -113,7 +112,6 @@ number of 10 minute intervals<br /><h1>Overview</h1><p>Enable automatic interval
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -121,6 +119,7 @@ number of 10 minute intervals<br /><h1>Overview</h1><p>Enable automatic interval
         <label>3: Threshold of current for Load Caution</label>
         <description>1300*0.01A = 13A</description>
         <default>1300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -130,6 +129,7 @@ number of 10 minute intervals<br /><h1>Overview</h1><p>Enable automatic interval
 load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when the accumulated kWh power consumption exceeds the setting value from 1KWh ~ 10000KWh.. Set to 0 will disable kWh load caution reporting.</p>
         ]]></description>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -141,6 +141,7 @@ load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when th
           <option value="1">resume previous state</option>
           <option value="2">Switch ON after power on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -151,6 +152,7 @@ load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when th
           <option value="0">SWITCH OFF commands received are ignored.</option>
           <option value="1">SWITCH OFF commands received are honored.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -162,6 +164,7 @@ load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when th
           <option value="2">LED off with load ON</option>
           <option value="3">Flash mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -172,7 +175,6 @@ load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when th
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -185,6 +187,7 @@ load caution threshold<br /><h1>Overview</h1><p>Enable automatic warning when th
           <option value="2">If ALL OFF is received, turn ON if it is OFF</option>
           <option value="3">SWITCH ALL OFF turns Switch ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

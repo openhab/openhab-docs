@@ -60,6 +60,7 @@ Smoke Alarm<br /><h1>Overview</h1><p>A smart home can also be a safe home. With 
           <option value="0">Single Alarm</option>
           <option value="1">Double Alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

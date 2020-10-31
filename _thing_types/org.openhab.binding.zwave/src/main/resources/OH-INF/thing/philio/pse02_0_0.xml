@@ -56,6 +56,7 @@ NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Customer function switc
         ]]></description>
         <default>4</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_4" type="integer" groupName="configuration"
@@ -65,12 +66,14 @@ NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Customer function switc
 Disable the alarm function.<br /><h1>Overview</h1><p>Disable the alarm  function. 1: Disable  Alarm, 0: Enable Alarm.  Caution: After the power  up, this configuration is  always 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_0000000C" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>31: Alarm Duration</label>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

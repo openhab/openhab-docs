@@ -191,7 +191,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1029/mob-iq-ezrs-eng.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1029/reference/mob-iq-ezrs-eng.pdf)
 
 ---
 

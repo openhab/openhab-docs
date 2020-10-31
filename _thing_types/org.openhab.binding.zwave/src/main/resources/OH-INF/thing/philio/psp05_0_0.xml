@@ -63,6 +63,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Zwave plus battery operated motion sensor
         <label>2: Basic Set Level</label>
         <description>Setting the BASIC command value to turn on the light.</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -72,6 +73,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Zwave plus battery operated motion sensor
 Adjust the PIR Sensitivity<br /><h1>Overview</h1><p>This setting sets the sensitivity of the PIR (motion) sensor. A setting of 0 (zero) will disable the sensor, with 99 being the highest level of sensitivity. The default sensitivity setting is 80.</p> <p>The higher the sensitivity, the greater the range of detection (things farther away will trigger the sensor). However, this may also result in things that are nearer triggering the sensor too frequently.</p>
         ]]></description>
         <default>80</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -79,6 +81,7 @@ Adjust the PIR Sensitivity<br /><h1>Overview</h1><p>This setting sets the sensit
         <label>6: Multi-Sensor Function Switch</label>
         <description>Parameter to set the sensor functions.</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -87,6 +90,7 @@ Adjust the PIR Sensitivity<br /><h1>Overview</h1><p>This setting sets the sensit
         <description>Parameter to set the Customer Function.</description>
         <default>4</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000002" type="integer" groupName="configuration">
@@ -99,6 +103,7 @@ Sends notification when motion has completed.<br /><h1>Overview</h1><p>Sends not
           <option value="0">Don't Send Report</option>
           <option value="1">Send Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000004" type="integer" groupName="configuration">
@@ -109,6 +114,7 @@ Sends notification when motion has completed.<br /><h1>Overview</h1><p>Sends not
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
@@ -121,6 +127,7 @@ Method used to send notifications on motion<br /><h1>Overview</h1><p>Indicates m
           <option value="0">Report Notification</option>
           <option value="1">Binary Sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
@@ -133,6 +140,7 @@ Send Multi CC in auto report<br /><h1>Overview</h1><p>Investigation required to 
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
@@ -143,6 +151,7 @@ Send Multi CC in auto report<br /><h1>Overview</h1><p>Investigation required to 
           <option value="0">Enable</option>
           <option value="1">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -152,6 +161,7 @@ Send Multi CC in auto report<br /><h1>Overview</h1><p>Investigation required to 
 Multiples of 8 seconds to wait before re-detection<br /><h1>Overview</h1><p>By default, the sensor will wait 24 seconds (3 x 8) after detecting motion before it will send a further detection report. This value can be increased to a maximum of 127 (which is 127 * 8), meaning the re-detection interval will be 1,016 seconds (~17 minutes). The minimum value is 1 (1 * 8), meaning a re-detection interval of 8 seconds.</p> <p>The default is a value of 3, meaning a re-detection interval of 24 seconds.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -161,6 +171,7 @@ Multiples of 8 seconds to wait before re-detection<br /><h1>Overview</h1><p>By d
 Time to wait after lighting has been turned on before turning off again<br /><h1>Overview</h1><p>Number of seconds (in multiples of 8) to wait before turning off lights that were turned on as a result of motion occurring. A default value of 4 means (4 x 8) 32 seconds later, lights will be turned off.</p> <p>This setting should only be used when you are using association groups to control lighting events. If you are controlling on/off events as a result of motion through independent rules, this setting is irrelevant.</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -170,6 +181,7 @@ Time to wait after lighting has been turned on before turning off again<br /><h1
 How frequently battery status should be reported<br /><h1>Overview</h1><p>The frequency (in multiples of 'Tick Time') that the device should send battery status reports. If set to 0, battery status reports are not sent.</p> <p>The default 'tick time' (see other parameter settings) is 30, meaning 30 minutes. The default value of this parameter is 12, meaning that a battery report will be sent every 6 hours (12 * 30 minutes).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -179,6 +191,7 @@ How frequently battery status should be reported<br /><h1>Overview</h1><p>The fr
 Interval time for sending reports<br /><h1>Overview</h1><p>This setting is used by the battery reporting interval setting. This setting defines the 'tick interval' or the number of time blocks to wait between sending reports. The default value of 30 means that a tick interval is 30 minutes.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

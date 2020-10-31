@@ -52,6 +52,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>Plug­in switch, controls lighting and
         <label>1: Countdown timer</label>
         <description>Automatic turning off in minutes, 0 to disable</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -63,6 +64,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>Plug­in switch, controls lighting and
           <option value="1">Remember status</option>
           <option value="2">Always on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -70,6 +72,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>Plug­in switch, controls lighting and
         <label>3: LED indicator</label>
         <description>Set the intensity of the LED indicator</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

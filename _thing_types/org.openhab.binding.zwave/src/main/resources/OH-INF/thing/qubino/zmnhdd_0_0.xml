@@ -152,6 +152,7 @@ Flush Dimmer Plus<br /><h1>Overview</h1><p>This Z-Wave module is used for dimmin
           <option value="0">Mono-stable switch type (push button)</option>
           <option value="1">Bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -161,6 +162,7 @@ Flush Dimmer Plus<br /><h1>Overview</h1><p>This Z-Wave module is used for dimmin
           <option value="0">Mono-stable switch type (push button)</option>
           <option value="1">Bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -170,6 +172,7 @@ Flush Dimmer Plus<br /><h1>Overview</h1><p>This Z-Wave module is used for dimmin
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally closed) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -179,6 +182,7 @@ Flush Dimmer Plus<br /><h1>Overview</h1><p>This Z-Wave module is used for dimmin
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally closed) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration">
@@ -193,6 +197,7 @@ Flush dimmer module responds to commands ALL ON / ALL OFF<br /><h1>Overview</h1>
           <option value="2">ALL ON active, ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -202,6 +207,7 @@ Flush dimmer module responds to commands ALL ON / ALL OFF<br /><h1>Overview</h1>
 Auto OFF enabled with defined time, step is 1 second.<br /><h1>Overview</h1><ul><li>0 - Auto OFF disabled</li> <li>1 – 32536 = 1 second – 32536 seconds</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -211,6 +217,7 @@ Auto OFF enabled with defined time, step is 1 second.<br /><h1>Overview</h1><ul>
 Auto ON enabled with defined time, step is 1 second.<br /><h1>Overview</h1><ul><li>0 - Auto ON disabled</li> <li>1 – 32536 = 1 second – 32536 seconds</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -224,6 +231,7 @@ Dimming is done by push button or switch connected to I1.<br /><h1>Overview</h1>
           <option value="1">3-way switch (connected to I1 and I2)</option>
           <option value="2">Additional switch connected to I2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -236,6 +244,7 @@ A fast double click on the push button will set dimming power at maximum.<br /><
           <option value="0">double click disabled</option>
           <option value="1">double click enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -248,6 +257,7 @@ Saving the state after a power failure<br /><h1>Overview</h1><p>If state saving 
           <option value="0">Save state enabled</option>
           <option value="1">Save state disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -257,6 +267,7 @@ Saving the state after a power failure<br /><h1>Overview</h1><p>If state saving 
 Set value is percentage, set value from 0 - 100 = 0% - 100%.<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5.</p> <ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled.</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <p>NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -266,6 +277,7 @@ Set value is percentage, set value from 0 - 100 = 0% - 100%.<br /><h1>Overview</
 Set value means time interval (0 – 32767) in seconds.<br /><h1>Overview</h1><p>Set value means time interval (0 – 32767) in seconds, when power report is sent.</p> <ul><li>0 – reporting disabled</li> <li>1 – 32767 = 1 second – 32767 seconds. Reporting enabled.</li> </ul><p>Power report is send with time interval set by entered value.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration"
@@ -275,6 +287,7 @@ Set value means time interval (0 – 32767) in seconds.<br /><h1>Overview</h1><p
 Minimum dimming value is set by entered value.<br /><h1>Overview</h1><ul><li>1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.</li> </ul><p>NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration"
@@ -284,6 +297,7 @@ Minimum dimming value is set by entered value.<br /><h1>Overview</h1><ul><li>1-9
 Maximum dimming value is set by entered value.<br /><h1>Overview</h1><ul><li>2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.</li> </ul><p>NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_2" type="integer" groupName="configuration"
@@ -293,6 +307,7 @@ Maximum dimming value is set by entered value.<br /><h1>Overview</h1><ul><li>2-9
 Set value means time of moving the Dimmer between min. and max. dimming values<br /><h1>Overview</h1><p>Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).</p> <ul><li>default value 100 = 1s</li> <li>1 - 255 = 100 mseconds – 25500 mseconds, step is 10 mseconds</li> </ul>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_2" type="integer" groupName="configuration"
@@ -302,6 +317,7 @@ Set value means time of moving the Dimmer between min. and max. dimming values<b
 Time of moving the Dimmer between min. and max dimming values<br /><h1>Overview</h1><p>Time of moving the Dimmer between min. and max dimming values by continuous hold of push button I1 or associated device.</p> <ul><li>default value 3 = 3s</li> <li>1- 255 = 1 second – 255 seconds.</li> </ul>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_67_1" type="integer" groupName="configuration">
@@ -314,6 +330,7 @@ This parameter is used with association group 3<br /><h1>Overview</h1><p>This pa
           <option value="0">respect start level</option>
           <option value="1">ignore start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_68_1" type="integer" groupName="configuration"
@@ -323,6 +340,7 @@ This parameter is used with association group 3<br /><h1>Overview</h1><p>This pa
 This parameter is used with association group 3<br /><h1>Overview</h1><p>This parameter is used with association group 3. The Duration field MUST specify the time that the transition should take from the current value to the new target value. A supporting device SHOULD respect the specified Duration value.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -341,6 +359,7 @@ Enabling I2 means that Endpoint (I2) will be present on UI.<br /><h1>Overview</h
           <option value="6">Smoke Alarm</option>
           <option value="9">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration">
@@ -359,6 +378,7 @@ Enabling I3 means that Endpoint (I3) will be present on UI.<br /><h1>Overview</h
           <option value="6">Smoke Alarm</option>
           <option value="9">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_2" type="integer" groupName="configuration"
@@ -368,6 +388,7 @@ Enabling I3 means that Endpoint (I3) will be present on UI.<br /><h1>Overview</h
 Offset to actual measured value<br /><h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:</p> <ul><li>default value 32536</li> <li>32536 – offset is 0.0C</li> <li>From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.</li> </ul>
         ]]></description>
         <default>32536</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -377,6 +398,7 @@ Offset to actual measured value<br /><h1>Overview</h1><p>Set value is added or s
 Module reports measured temperature on defined temperature change<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:</p> <ul><li>default value 5 = 0.5°C</li> <li>0 – Reporting disabled</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_250_1" type="integer" groupName="configuration">
@@ -390,6 +412,7 @@ Unsecure / Secure Inclusion<br /><h1>Overview</h1><p>The Flush dimmer supports b
           <option value="1">Secure Inclusion</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

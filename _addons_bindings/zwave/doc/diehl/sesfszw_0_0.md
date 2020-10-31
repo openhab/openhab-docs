@@ -329,7 +329,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/671/SES-FS-ZW-BA-06-15-B.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/671/reference/SES-FS-ZW-BA-06-15-B.pdf)
 
 ---
 

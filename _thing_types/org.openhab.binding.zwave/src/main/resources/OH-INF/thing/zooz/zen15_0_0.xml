@@ -94,6 +94,7 @@ Overload protection.<br /><h1>Overview</h1><p>Overload protection will turn the 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -105,6 +106,7 @@ Overload protection.<br /><h1>Overview</h1><p>Overload protection will turn the 
           <option value="1">On</option>
           <option value="2">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -118,6 +120,7 @@ Send On/Off Status Change Notifications<br /><h1>Overview</h1><p>Your Power Swit
           <option value="1">Sends notification if changed manually or remotely</option>
           <option value="2">Sends notification ONLY if changed manually</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -130,6 +133,7 @@ How the LED indicator displays power consumption.<br /><h1>Overview</h1><p>You c
           <option value="0">Always On</option>
           <option value="1">Momentary (at status change)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_151_2" type="integer" groupName="configuration"
@@ -139,7 +143,6 @@ How the LED indicator displays power consumption.<br /><h1>Overview</h1><p>You c
 When to report power consumption to your controller<br /><h1>Overview</h1><p>Power Report Value Threshold Parameter 151: Choose how you want your Power Switch to report power consumption to your controller and associated devices. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 50 Watts are entered by default, the Power Switch will report any change in power usage over 50 Watts (whether it’s at least 50 Watts more or 50 Watts less compared to previous report). Values: 0 – 65535; 0 – disabled (it will not report power consumption based on value change); 50 – default setting Size: 2 byte dec.</p>
         ]]></description>
         <default>50</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_152_1" type="integer" groupName="configuration"
@@ -149,7 +152,6 @@ When to report power consumption to your controller<br /><h1>Overview</h1><p>Pow
 How to report power consumption to your controller by percentage rate<br /><h1>Overview</h1><p>Power Report Percentage Threshold Parameter 152: Choose how you want your Power Switch to report power consumption to your controller and associated devices by percentage rate. The number entered as value corresponds to the percentage in power usage change the appliance needs to go over for the event to be reported. So if 10% is entered by default, the Power Switch will report any change in power consumption over 10% (whether it’s at least 10% more or 10% less power consumption compared to previous report). Values: 0 – 255; 0 – disabled (it will not report power consumption based on percentage change); 10 – default setting Size: 1 byte dec.</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_171_4" type="integer" groupName="configuration"
@@ -159,7 +161,6 @@ How to report power consumption to your controller by percentage rate<br /><h1>O
 How often to report power consumption (W) to your controller<br /><h1>Overview</h1><p>Power Report Frequency Parameter 171: Choose how often you want your Power Switch to report power consumption (W) to your controller and associated device. The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Power Switch will report power consumption every 30 seconds. Values: 5 – 2678400; 0 – disabled (it will not report power consumption); 30 – default setting Size: 4 byte dec</p>
         ]]></description>
         <default>30</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_172_4" type="integer" groupName="configuration"
@@ -169,7 +170,6 @@ How often to report power consumption (W) to your controller<br /><h1>Overview</
 How often to report energy usage (KWH) to your controller<br /><h1>Overview</h1><p>Energy Report Frequency Parameter 172: Choose how often you want your Power Switch to report energy usage (KWH) to your controller and associated device. The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Power Switch will report energy usage every 300 seconds (5 minutes). Values: 5 – 2678400; 0 – disabled (it will not report energy usage); 300 – default setting Size: 4 byte dec.</p>
         ]]></description>
         <default>300</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_173_4" type="integer" groupName="configuration"
@@ -179,7 +179,6 @@ How often to report energy usage (KWH) to your controller<br /><h1>Overview</h1>
 How often to report voltage (V) to your controller<br /><h1>Overview</h1><p>Voltage Report Frequency Parameter 173: Choose how often you want your Power Switch to report voltage (V) to your controller and associated device. The number entered as value corresponds to the number of seconds. Values: 5 – 2678400; 0 – disabled (default – it will not report voltage levels) Size: 4 byte dec.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_174_4" type="integer" groupName="configuration"
@@ -189,7 +188,6 @@ How often to report voltage (V) to your controller<br /><h1>Overview</h1><p>Volt
 How often to report levels of electrical current (A) to your controller<br /><h1>Overview</h1><p>Electricity Report Frequency Parameter 174: Choose how often you want your Power Switch to report levels of electrical current (A) to your controller and associated device. The number entered as value corresponds to the number of seconds. Values: 5 – 2678400; 0 – disabled (default – it will not report electrical current levels) Size: 4 byte dec.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

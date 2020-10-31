@@ -63,6 +63,7 @@ Z-Wave In-Wall Smart Fan Control<br /><h1>Overview</h1><h2>Smart solutions</h2> 
           <option value="1">Invert</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

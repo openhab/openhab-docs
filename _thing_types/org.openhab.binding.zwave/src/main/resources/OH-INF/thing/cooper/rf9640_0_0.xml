@@ -80,6 +80,7 @@ Z-Wave Plus universal smart dimmer<br /><h1>Overview</h1><p><strong>OPERATION IN
 Time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seconds the switch will delay when trigger the delayed off feature</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -89,6 +90,7 @@ Time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seco
 Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@ Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in
 time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn off for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -109,6 +112,7 @@ time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of tim
           <option value="2">On</option>
           <option value="3">Last State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -119,6 +123,7 @@ time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of tim
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -128,6 +133,7 @@ time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of tim
 Time in seconds to reach desired level<br /><h1>Overview</h1><p>The amount of time in seconds the switch will take to reach the desired dim level</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -140,6 +146,7 @@ Ensures that LED / CFL bulbs turn on when the preset dim level is low<br /><h1>O
           <option value="0">disables</option>
           <option value="1">enables</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -149,42 +156,49 @@ Ensures that LED / CFL bulbs turn on when the preset dim level is low<br /><h1>O
 Reset max/min levels to factory default<br /><h1>Overview</h1><p>Sets the max/min levels to factory default</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
                  min="1" max="99">
         <label>11: Minimum Dimming Level</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
                  min="0" max="99">
         <label>12: Maximum Dimming Level</label>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>13: Blue LED brightness level while dimmer is ON</label>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>14: Blue LED brightness level while dimmer is OFF</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>15: Amber LED brightness level while the dimmer is ON</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>16: Amber LED brightness level while the dimmer is OFF</label>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

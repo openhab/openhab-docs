@@ -182,7 +182,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1078/20180531151046.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1078/reference/20180531151046.pdf)
 
 ---
 

@@ -129,6 +129,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Bottom LED ON if load is OFF</option>
           <option value="1">Bottom LED OFF if load is OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -139,6 +140,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Top of Paddle turns load ON</option>
           <option value="1">Bottom of Paddle turns load ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -146,6 +148,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
         <label>11: Remote Ramp Rate</label>
         <description>Set dimmer ramp rate for remote control</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -153,6 +156,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
         <label>12: Local Ramp Rate</label>
         <description>Set dimmer ramp rate for local control</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -163,6 +167,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Load Status</option>
           <option value="1">Custom Status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -178,6 +183,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="5">Yellow</option>
           <option value="6">Cyan</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -194,6 +200,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -210,6 +217,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -226,6 +234,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -242,6 +251,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -258,6 +268,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -274,6 +285,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -290,6 +302,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -305,7 +318,6 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="4">Blink 400ms ON, 400ms OFF</option>
           <option value="5">Blink 500ms ON, 500ms OFF</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
@@ -316,6 +328,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000002" type="integer" groupName="configuration">
@@ -326,6 +339,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000004" type="integer" groupName="configuration">
@@ -336,6 +350,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000008" type="integer" groupName="configuration">
@@ -346,6 +361,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000010" type="integer" groupName="configuration">
@@ -356,6 +372,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000020" type="integer" groupName="configuration">
@@ -366,6 +383,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000040" type="integer" groupName="configuration">
@@ -376,6 +394,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

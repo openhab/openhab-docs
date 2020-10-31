@@ -66,6 +66,7 @@ Wall-mount four Button<br /><h1>Overview</h1><p>Fantem WallMote Quad is an intel
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Wall-mount four Button<br /><h1>Overview</h1><p>Fantem WallMote Quad is an intel
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Wall-mount four Button<br /><h1>Overview</h1><p>Fantem WallMote Quad is an intel
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -98,6 +101,7 @@ Which notification to be sent to the associated devices.<br /><h1>Overview</h1><
           <option value="1">Central scene</option>
           <option value="3">Central scene and config</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -105,6 +109,7 @@ Which notification to be sent to the associated devices.<br /><h1>Overview</h1><
         <label>39: Low battery value</label>
         <description>Set the low battery value</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -115,6 +120,7 @@ Which notification to be sent to the associated devices.<br /><h1>Overview</h1><
           <option value="0">Reset to factory default</option>
           <option value="1431655765">Reset and remove</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

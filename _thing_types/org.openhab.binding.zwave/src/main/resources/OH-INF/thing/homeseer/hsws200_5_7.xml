@@ -81,6 +81,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="0">LED ON if load is OFF</option>
           <option value="1">LED OFF if load is OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -91,6 +92,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="0">Top of Paddle turns load ON</option>
           <option value="1">Bottom of Paddle turns load ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -101,6 +103,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="0">Normal mode (load status)</option>
           <option value="1">Status mode (custom status)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -116,6 +119,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="5">Yellow</option>
           <option value="6">Cyan</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -132,6 +136,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -142,6 +147,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus re
           <option value="0">No blink</option>
           <option value="1">100ms ON then 100ms OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

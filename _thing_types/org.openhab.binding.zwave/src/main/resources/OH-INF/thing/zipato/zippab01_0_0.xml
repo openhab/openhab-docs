@@ -180,6 +180,7 @@ Micro Module Energy Meter<br /><h1>Overview</h1><ul><li>Slim, compact remote Z-W
 Power meter report period, in 5 seconds unit. 720 -&gt; 1 hour<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -189,6 +190,7 @@ Power meter report period, in 5 seconds unit. 720 -&gt; 1 hour<br /><h1>Overview
 The accumulated power consumption report period<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its accumulated power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -198,6 +200,7 @@ The accumulated power consumption report period<br /><h1>Overview</h1><p>If the 
 1 =&gt; CT1 and CT2, 2 =&gt; CT1, 3 =&gt; CT2<br /><h1>Overview</h1><p>If Controller does not use Multi Channel command class to access the endpoint of the module, you may configure the endpoint that will react to the Basic Command Class, Binary Switch command class or Meter command class V3.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -728,7 +728,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product Manual](https://opensmarthouse.org/zwavedatabase/622/GC-TBZ48-Install.pdf)
+* [Product Manual](https://opensmarthouse.org/zwavedatabase/622/reference/GC-TBZ48-Install.pdf)
 
 ---
 

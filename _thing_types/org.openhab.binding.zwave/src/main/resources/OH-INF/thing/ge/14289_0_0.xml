@@ -63,6 +63,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
           <option value="1">LED ON / Device ON</option>
           <option value="2">Disable LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
           <option value="0">Default</option>
           <option value="1">Invert Switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -80,6 +82,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
         <label>7: Dim Rate Steps (From Z-Wave Controller)</label>
         <description>Dim Rate Steps (From Z-Wave Controller)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -87,6 +90,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
         <label>8: Dim Rate Timing (From Z-Wave Controller)</label>
         <description>Dim Rate Timing (From Z-Wave Controller)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -94,6 +98,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
         <label>9: Dim Rate Steps (When Manually Controlled)</label>
         <description>Dim Rate Steps (When Manually Controlled)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -101,6 +106,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
         <label>10: Dim Rate Timing (When Manually Controlled)</label>
         <description>Dim Rate Timing (When Manually Controlled)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -108,6 +114,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
         <label>11: Dim Rate Steps (When Receiving All-On/Off Command)</label>
         <description>Dim Rate Steps (When Receiving All-On/Off Command)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -117,6 +124,7 @@ In-Wall Touch Sensing Dimmer<br /><h1>Overview</h1><p>Put smart lighting control
 Dim Rate Timing (All-On/Off Command)<br /><h1>Overview</h1><p>Dim Rate Timing (When Receiving All-On/Off Command)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

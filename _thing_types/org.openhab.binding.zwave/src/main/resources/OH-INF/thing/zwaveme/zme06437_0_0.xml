@@ -67,6 +67,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This is a plug switch that can be plac
           <option value="1">Show switch state</option>
           <option value="2">Operated by Indicator Command Class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -74,6 +75,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This is a plug switch that can be plac
         <label>2: Automatic switch off</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +90,7 @@ Function of RF off command<br /><h1>Overview</h1><p>Defines how to interpret RF 
           <option value="2">Switch ON</option>
           <option value="3">Switch on if load is off else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -100,6 +103,7 @@ Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the s
           <option value="0">No, turn off</option>
           <option value="1">Yes (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -109,6 +113,7 @@ Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the s
 Energy consumption<br /><h1>Overview</h1><p>Specify the consumption of the load in watts, for the calculation of power consumption. Max load 1800 W.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -121,6 +126,7 @@ Energy consumption<br /><h1>Overview</h1><p>Specify the consumption of the load 
           <option value="3">Blue</option>
           <option value="4">Yellow</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -133,6 +139,7 @@ Energy consumption<br /><h1>Overview</h1><p>Specify the consumption of the load 
           <option value="3">Blue</option>
           <option value="4">Yellow</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

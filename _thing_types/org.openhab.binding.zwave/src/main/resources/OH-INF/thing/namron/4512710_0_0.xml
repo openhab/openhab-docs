@@ -71,6 +71,7 @@ State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stat
           <option value="1">Load is On</option>
           <option value="2">Last Power State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stat
 Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed.(When value set as 1, re-power on the dimmer, it will send basic report automatically)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -89,7 +91,6 @@ Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable 
 Default fade time<br /><h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 is 1 Minute</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -99,6 +100,7 @@ Default fade time<br /><h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 i
 Setting minimum Brightness value<br /><h1>Overview</h1><p>Setting minimum Brightness value</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -108,6 +110,7 @@ Setting minimum Brightness value<br /><h1>Overview</h1><p>Setting minimum Bright
 Choose MOSFET driving type<br /><h1>Overview</h1><p>Choose MOSFET driving type</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -117,6 +120,7 @@ Choose MOSFET driving type<br /><h1>Overview</h1><p>Choose MOSFET driving type</
 Enable/disable external switch.<br /><h1>Overview</h1><p>Enable/disable external switch to be added and removed from a network.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -126,6 +130,7 @@ Enable/disable external switch.<br /><h1>Overview</h1><p>Enable/disable external
 Setting dimmer curve<br /><h1>Overview</h1><p>Setting dimmer curve</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -135,6 +140,7 @@ Setting dimmer curve<br /><h1>Overview</h1><p>Setting dimmer curve</p>
 Setting startup brightness of the load.<br /><h1>Overview</h1><p>Setting startup brightness of the load.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

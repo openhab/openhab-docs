@@ -109,6 +109,7 @@ Wall Heating Thermostat<br /><h1>Overview</h1><p>The Heltun Heating Thermostat i
           <option value="0">Centigrade</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -120,6 +121,7 @@ Wall Heating Thermostat<br /><h1>Overview</h1><p>The Heltun Heating Thermostat i
           <option value="1">Trigger on input</option>
           <option value="2">Latch on input</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -136,6 +138,7 @@ Mode number<br /><h1>Overview</h1><p>Mode number for EXT input action. This para
           <option value="5">VAC</option>
           <option value="6">MAN</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -153,6 +156,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
           <option value="6">Power regulator and Air sensor</option>
           <option value="7">Power regulator and Floor sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -160,6 +164,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <label>5: Power reg on</label>
         <description>Power Regulation ON time, min</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -167,6 +172,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <label>6: Power reg off</label>
         <description>Power Regulation OFF time, min</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -174,6 +180,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <label>7: Dry time</label>
         <description>Dry time</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -181,6 +188,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <label>8: Time by controller</label>
         <description>Time correction by controller</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -191,6 +199,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
           <option value="0">24 hour</option>
           <option value="1">12 hour (AM / PM)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -199,6 +208,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <description>Manually set week day</description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -207,6 +217,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <description>Manually set time hour</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -215,6 +226,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
         <description>Manually set time minute</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -224,6 +236,7 @@ Source sensor<br /><h1>Overview</h1><p>Source Sensor: <br />1=A, 2=AF, 3=F, 4=FA
 Air Temperature Minimum in degree, value * 10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>210</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -233,6 +246,7 @@ Air Temperature Minimum in degree, value * 10<br /><h1>Overview</h1><p>Centigrad
 Air Temperature Maximum in degree, x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>270</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration"
@@ -242,6 +256,7 @@ Air Temperature Maximum in degree, x10<br /><h1>Overview</h1><p>Centigrade value
 Floor Temperature Minimum in degree, x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -251,6 +266,7 @@ Floor Temperature Minimum in degree, x10<br /><h1>Overview</h1><p>Centigrade val
 Floor Temperature Maximum in degree, x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>320</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -258,6 +274,7 @@ Floor Temperature Maximum in degree, x10<br /><h1>Overview</h1><p>Centigrade val
         <label>17: Floor sensor resistance</label>
         <description>Floor Sensor Resistance, kohm</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -267,6 +284,7 @@ Floor Temperature Maximum in degree, x10<br /><h1>Overview</h1><p>Centigrade val
 Air Temperature Calibration in degree x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -276,6 +294,7 @@ Air Temperature Calibration in degree x10<br /><h1>Overview</h1><p>Centigrade va
 Floor Temperature Calibration in degree x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -285,6 +304,7 @@ Floor Temperature Calibration in degree x10<br /><h1>Overview</h1><p>Centigrade 
 Temperature Hysteresis in degree, x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -294,6 +314,7 @@ Temperature Hysteresis in degree, x10<br /><h1>Overview</h1><p>Centigrade value 
 Temperature difference to send to controller, value x10<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -303,6 +324,7 @@ Temperature difference to send to controller, value x10<br /><h1>Overview</h1><p
 Active display brightness level.<br /><h1>Overview</h1><p>Active display brightness level. Must be greater than or equal param 23</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -312,6 +334,7 @@ Active display brightness level.<br /><h1>Overview</h1><p>Active display brightn
 Inactive display brightness level.<br /><h1>Overview</h1><p>Inactive display brightness level. Must be less than or equal param 22</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
@@ -319,6 +342,7 @@ Inactive display brightness level.<br /><h1>Overview</h1><p>Inactive display bri
         <label>24: Auto LCD brightness</label>
         <description>Auto LCD brightness control</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration"
@@ -328,6 +352,7 @@ Inactive display brightness level.<br /><h1>Overview</h1><p>Inactive display bri
 Auto bright level 1<br /><h1>Overview</h1><p>Auto brightness level 1 max lumens</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
@@ -337,6 +362,7 @@ Auto bright level 1<br /><h1>Overview</h1><p>Auto brightness level 1 max lumens<
 Auto bright level 2<br /><h1>Overview</h1><p>Auto brightness level 2 max lumens</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
@@ -346,6 +372,7 @@ Auto bright level 2<br /><h1>Overview</h1><p>Auto brightness level 2 max lumens<
 Auto bright level 3<br /><h1>Overview</h1><p>Auto brightness level 3 max lumens</p>
         ]]></description>
         <default>3000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
@@ -360,6 +387,7 @@ Auto bright level 3<br /><h1>Overview</h1><p>Auto brightness level 3 max lumens<
           <option value="5">VAC</option>
           <option value="6">MAN</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -369,6 +397,7 @@ Auto bright level 3<br /><h1>Overview</h1><p>Auto brightness level 3 max lumens<
 Touch buttons sensitivity.<br /><h1>Overview</h1><p>Touch buttons sensitivity.</p> <ul><li>20=Super sensitive.</li> <li>70=lowest sensitivity.</li> </ul>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
@@ -378,6 +407,7 @@ Touch buttons sensitivity.<br /><h1>Overview</h1><p>Touch buttons sensitivity.</
 Morning start time<br /><h1>Overview</h1><p>Morning start time. <br />Format: HHMM. e.g.08:00 should be sent as 0800</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -387,6 +417,7 @@ Morning start time<br /><h1>Overview</h1><p>Morning start time. <br />Format: HH
 Day start time<br /><h1>Overview</h1><p>Day start time. Format: HHMM.</p>
         ]]></description>
         <default>900</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
@@ -396,6 +427,7 @@ Day start time<br /><h1>Overview</h1><p>Day start time. Format: HHMM.</p>
 Evening start time<br /><h1>Overview</h1><p>Evening start time. Format: HHMM.</p>
         ]]></description>
         <default>1800</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_2" type="integer" groupName="configuration"
@@ -405,6 +437,7 @@ Evening start time<br /><h1>Overview</h1><p>Evening start time. Format: HHMM.</p
 Night Start time<br /><h1>Overview</h1><p>Night start time. Format: HHMM.</p>
         ]]></description>
         <default>2300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_2" type="integer" groupName="configuration"
@@ -414,6 +447,7 @@ Night Start time<br /><h1>Overview</h1><p>Night start time. Format: HHMM.</p>
 Monday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
@@ -423,6 +457,7 @@ Monday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Monday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_58_2" type="integer" groupName="configuration"
@@ -432,6 +467,7 @@ Monday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 
 Monday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_59_2" type="integer" groupName="configuration"
@@ -441,6 +477,7 @@ Monday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Monday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_2" type="integer" groupName="configuration"
@@ -450,6 +487,7 @@ Monday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.
 Tuesday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_2" type="integer" groupName="configuration"
@@ -459,6 +497,7 @@ Tuesday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 
 Tuesday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_2" type="integer" groupName="configuration"
@@ -468,6 +507,7 @@ Tuesday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5
 Tuesday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_2" type="integer" groupName="configuration"
@@ -477,6 +517,7 @@ Tuesday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 
 Tuesday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_2" type="integer" groupName="configuration"
@@ -486,6 +527,7 @@ Tuesday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22
 Wednesday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_2" type="integer" groupName="configuration"
@@ -495,6 +537,7 @@ Wednesday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g
 Wednesday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_2" type="integer" groupName="configuration"
@@ -504,6 +547,7 @@ Wednesday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22
 Wednesday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_67_2" type="integer" groupName="configuration"
@@ -513,6 +557,7 @@ Wednesday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g
 Wednesday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_68_2" type="integer" groupName="configuration"
@@ -522,6 +567,7 @@ Wednesday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 
 Thursday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_69_2" type="integer" groupName="configuration"
@@ -531,6 +577,7 @@ Thursday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g.
 Thursday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_70_2" type="integer" groupName="configuration"
@@ -540,6 +587,7 @@ Thursday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.
 Thursday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_71_2" type="integer" groupName="configuration"
@@ -549,6 +597,7 @@ Thursday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g.
 Thursday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_72_2" type="integer" groupName="configuration"
@@ -558,6 +607,7 @@ Thursday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Friday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_73_2" type="integer" groupName="configuration"
@@ -567,6 +617,7 @@ Friday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Friday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_74_2" type="integer" groupName="configuration"
@@ -576,6 +627,7 @@ Friday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 
 Friday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_75_2" type="integer" groupName="configuration"
@@ -585,6 +637,7 @@ Friday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Friday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_76_2" type="integer" groupName="configuration"
@@ -594,6 +647,7 @@ Friday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.
 Saturday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_2" type="integer" groupName="configuration"
@@ -603,6 +657,7 @@ Saturday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g.
 Saturday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_78_2" type="integer" groupName="configuration"
@@ -612,6 +667,7 @@ Saturday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.
 Saturday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_79_2" type="integer" groupName="configuration"
@@ -621,6 +677,7 @@ Saturday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g.
 Saturday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_2" type="integer" groupName="configuration"
@@ -630,6 +687,7 @@ Saturday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Sunday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_2" type="integer" groupName="configuration"
@@ -639,6 +697,7 @@ Sunday morning temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Sunday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_2" type="integer" groupName="configuration"
@@ -648,6 +707,7 @@ Sunday day temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 
 Sunday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>230</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_2" type="integer" groupName="configuration"
@@ -657,6 +717,7 @@ Sunday evening temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 2
 Sunday night temp<br /><h1>Overview</h1><p>Centigrade value * 10</p> <p>e.g. 22.5 = 225</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

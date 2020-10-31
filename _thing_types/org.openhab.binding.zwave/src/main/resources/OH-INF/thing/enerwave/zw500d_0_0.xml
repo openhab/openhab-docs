@@ -58,6 +58,7 @@ configure LED light state<br /><h1>Overview</h1><p>0 = LED off with load on</p> 
           <option value="0">LED off with load on</option>
           <option value="1">LED on with load on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Control if switch up is on or off<br /><h1>Overview</h1><p>0 = normal install, u
           <option value="0">normal install - up is on</option>
           <option value="1">invert switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

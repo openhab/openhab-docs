@@ -143,7 +143,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Smart Dimmer Switch 200W LED Manual](https://opensmarthouse.org/zwavedatabase/1114/EcoDim.pdf)
+* [Smart Dimmer Switch 200W LED Manual](https://opensmarthouse.org/zwavedatabase/1114/reference/EcoDim.pdf)
 
 ---
 

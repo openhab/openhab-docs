@@ -61,6 +61,7 @@ Scene Capable Push On/Off<br /><h1>Overview</h1><p>Decora Smart with Z-Wave Plus
           <option value="254">Status Mode</option>
           <option value="255">Locator Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -102,6 +102,7 @@ CH-201 Thermostat<br /><h1>Overview</h1><p>The CH-201 thermostat is a Z-Wave dev
           <option value="0">Normal</option>
           <option value="1">Reverse</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -111,6 +112,7 @@ CH-201 Thermostat<br /><h1>Overview</h1><p>The CH-201 thermostat is a Z-Wave dev
 Set temperature threshold<br /><h1>Overview</h1><p><strong>Unfortunately, it is not possible to always maintain one exact temperature value because of inertia.</strong></p> <p>To maintain the temperature, two values ​​are used: minimum and maximum. When the minimum value is reached, the heating will be turned on, when heating to the maximum value - the heating element will be turned off. For the convenience of the user, the controller assumes temperature adjustment with only one value, from which the thermostat will calculate the previously mentioned "minimum" and "maximum" values ​​of the temperature range. We recommend using a small range of 1 degree for more comfort and the most accurate match to the chosen temperature. If your heating element consumes a significant amount of energy at the moment of switching on, then it is recommended to reduce the number of on-off cycles by increasing this parameter. With our thermostat, you can always achieve the optimum operating mode by experiment or by contacting our specialists for help. The acceptable value is from 1 to 7 degrees:</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -124,6 +126,7 @@ Set point mode<br /><h1>Overview</h1><p>0 Switch on the heating mode at set poin
           <option value="1">Mode 1</option>
           <option value="2">Mode 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -136,6 +139,7 @@ Operating mode in case a thermostat doesn't receive data from a temp sensor<br /
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -145,6 +149,7 @@ Operating mode in case a thermostat doesn't receive data from a temp sensor<br /
 Max time of data expectation from room temperature sensor<br /><h1>Overview</h1><p>After the specified time, the absence of data from the room sensor will be considered a malfunction.</p> <p>In the event of a temperature sensor failure, the thermostat will switch to crash mode. In this mode, the temperature will be set to 0 ° C, the thermostat will go to the state specified in Parameter # 4, the first group of connections will be sent an alarm. The response of the controller will depend on the controller settings. Refer to your controller's user manual for more information.</p>
         ]]></description>
         <default>30000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -154,6 +159,7 @@ Max time of data expectation from room temperature sensor<br /><h1>Overview</h1>
 Set minimum allowable temperature<br /><h1>Overview</h1><p>The temperature set by the user can not be set below the permissible value. The allowable value (from -127 to 127 ° C)</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -163,6 +169,7 @@ Set minimum allowable temperature<br /><h1>Overview</h1><p>The temperature set b
 Set minimum allowable temperature<br /><h1>Overview</h1><p>The temperature set by the user can not be set below the permissible value. The allowable value (from -127 to 127 ° C)</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -172,6 +179,7 @@ Set minimum allowable temperature<br /><h1>Overview</h1><p>The temperature set b
 Set maximum alowable temperature<br /><h1>Overview</h1><p>The temperature set by the user can not be higher than this value, including when using turbo mode (for example, the temperature of a warm floor with a wooden base can not be above 27 ° C).  The allowable value (from -127 to 127 ° С) </p> <p>30 degrees (Default).</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -181,6 +189,7 @@ Set maximum alowable temperature<br /><h1>Overview</h1><p>The temperature set by
 Set time turbo mode<br /><h1>Overview</h1><p>Turbo mode is used for drying floors after wet cleaning. The turbo mode will maintain the maximum temperature for a predetermined period of time, after which the thermostat will switch to the previously set operating mode.</p> <p>Valid value (from 100 to 1200 seconds)</p> <p>120 seconds (default).</p>
         ]]></description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -190,6 +199,7 @@ Set time turbo mode<br /><h1>Overview</h1><p>Turbo mode is used for drying floor
 Set power on turbo mode<br /><h1>Overview</h1><p>This parameter determines whether to turn on the turbo mode when the thermostat is off.</p> <p>0 Enable (Default).</p> <p>1 Do not include</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -203,6 +213,7 @@ Set temperature sensor mode<br /><h1>Overview</h1><p>The CH-201 thermostat is eq
           <option value="1">Polling the room temperature sensor</option>
           <option value="2">Waiting for data from the room temperature sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -212,6 +223,7 @@ Set temperature sensor mode<br /><h1>Overview</h1><p>The CH-201 thermostat is eq
 Set polling period of the room sensor<br /><h1>Overview</h1><p>If you select a value, you should take into account the fact that too frequent polling of the sensor can overload the Z-Wave network</p> <p>Valid value is from 15 to 600 seconds:</p> <p>300 seconds (Default).</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -221,6 +233,7 @@ Set polling period of the room sensor<br /><h1>Overview</h1><p>If you select a v
 The value that temprature should be changed to send data<br /><h1>Overview</h1><p>The value that temprature should be changed to send data to devices in the 1st group of connections recieved from a temprature sensor</p> <p>The thermostat can send data to the controller and / or other Z-Wave network devices when the temperature changes by the specified value. Set this parameter based on your network configuration to avoid overloading.</p> <p>The valid value is from 1 to 16 degrees:</p> <p>1 degree (Default).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -230,6 +243,7 @@ The value that temprature should be changed to send data<br /><h1>Overview</h1><
 Set Interval for forced sending data<br /><h1>Overview</h1><p>Interval for forced sending data to devices in 1st group of connections recieved from a temprature sensor.</p> <p>The thermostat can send data at regular intervals, for example every 2 minutes. The value begins to count from the last successful sending of data.</p> <p>The valid value is from 10 to 600 seconds:</p> <p>300 seconds (Default).</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -244,6 +258,7 @@ Set Type of switch 1 (thermostat operating mode)<br /><h1>Overview</h1><p>0. Mon
           <option value="2">Bistable, fixed position 2</option>
           <option value="3">Bistable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -258,6 +273,7 @@ Set type of switch 2 (turbo mode)<br /><h1>Overview</h1><p>Monostable: for a swi
           <option value="2">Bistable, fixed position 2</option>
           <option value="3">Bistable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -279,6 +295,7 @@ Adjust temperature sensor if required.<br /><h1>Overview</h1><p>In some cases, f
           <option value="9">t -4°С</option>
           <option value="10">t -5°С;</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

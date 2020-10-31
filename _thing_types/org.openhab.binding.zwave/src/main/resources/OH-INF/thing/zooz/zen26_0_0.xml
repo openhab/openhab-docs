@@ -58,6 +58,7 @@ Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want
           <option value="0">Top ON, bottom OFF</option>
           <option value="1">Top OFF, bottom ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -72,6 +73,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want
           <option value="2">LED OFF</option>
           <option value="3">LED ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -81,6 +83,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want
 Enable the auto turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to set the time which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of seconds.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -92,6 +95,7 @@ Enable the auto turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to se
           <option value="1">On</option>
           <option value="2">Restore last state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

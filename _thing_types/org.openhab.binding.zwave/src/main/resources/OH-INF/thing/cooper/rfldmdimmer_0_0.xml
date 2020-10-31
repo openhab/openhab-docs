@@ -64,18 +64,21 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /><h1>Overview</h1><p>Plug-in dimmer; 30
                  min="0" max="127">
         <label>1: Delayed Off</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>2: Panic On Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>3: Panic Off Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -83,6 +86,7 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /><h1>Overview</h1><p>Plug-in dimmer; 30
         <label>4: Basic Set Value</label>
         <description>Not available in earlier versions of the device.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -93,6 +97,7 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /><h1>Overview</h1><p>Plug-in dimmer; 30
           <option value="2">On</option>
           <option value="3">LAST STATE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -102,12 +107,14 @@ ASPIRE RF Plug-In Z-Wave Lamp Dimmer<br /><h1>Overview</h1><p>Plug-in dimmer; 30
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>7: Dimmer Ramp Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

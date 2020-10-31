@@ -87,6 +87,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="6">TWO_CLICKS or THREE_CLICKS</option>
           <option value="7">ONE_CLICK, TWO_CLICKS or THREE_CLICKS</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -104,6 +105,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="7">ONE_CLICK, TWO_CLICKS or THREE_CLICKS</option>
           <option value="8">EQUAL_TO_CHANNEL_1</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -115,6 +117,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -126,6 +129,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -137,6 +141,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -148,6 +153,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -159,6 +165,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -170,6 +177,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
           <option value="0">Basic Set OFF</option>
           <option value="100">Basic Set with same value of channel status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -177,6 +185,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
         <label>10: Timer to switch OFF the Channel 1</label>
         <description>Defines the time after which the Channel 1 is switched OFF</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -184,6 +193,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
         <label>11: Timer to switch OFF the Channel 2</label>
         <description>Defines the time after which the Channel 2 is switched OFF</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -191,6 +201,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
         <label>12: Timer to switch ON the Channel 1</label>
         <description>Defines the time after which the Channel 1 is switched ON</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -198,6 +209,7 @@ Define which sequences of clicks control the load connected to Channel 1/2.<br /
         <label>13: Timer to switch ON the Channel 2</label>
         <description>Defines the time after which the Channel 2 is switched ON</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -211,6 +223,7 @@ Defines the behavior of the device Channels<br /><h1>Overview</h1><p>Defines the
           <option value="1">NEVER_BOTH_ON</option>
           <option value="2">SEQUENCING_RELAY</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">
@@ -224,6 +237,7 @@ Defines the behavior of the device Channels<br /><h1>Overview</h1><p>Defines the
           <option value="3">ON_ON - Both Channel 1 and Channel 2 ON</option>
           <option value="4">PREVIOUS STATUS - Status prior to restart</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration">
@@ -237,6 +251,7 @@ Defines the type of external switch connected both to input 1 and input 2.<br />
           <option value="1">BUTTON</option>
           <option value="2">SWITCH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -249,6 +264,7 @@ Defines the type of external switch connected both to input 1 and input 2.<br />
           <option value="2">SWITCH</option>
           <option value="3">EQUAL TO SWITCH 1</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

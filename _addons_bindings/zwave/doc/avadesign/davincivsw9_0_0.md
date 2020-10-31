@@ -866,7 +866,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/911/DA-VINCI-ver-9.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/911/reference/DA-VINCI-ver-9.pdf)
 
 ---
 

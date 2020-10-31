@@ -147,7 +147,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/545/4Touch.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/545/reference/4Touch.pdf)
 
 ---
 

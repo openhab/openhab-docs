@@ -86,6 +86,7 @@ What state is door/window when the magnet is close to the sensor<br /><h1>Overvi
           <option value="0">closed when magnet near</option>
           <option value="1">opened when magnet near</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_00000001" type="integer" groupName="configuration">
@@ -98,6 +99,7 @@ Visual LED indications - Open/close<br /><h1>Overview</h1><p>Set or reset the in
           <option value="0">no indication</option>
           <option value="1">open/close indication</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_00000002" type="integer" groupName="configuration">
@@ -110,6 +112,7 @@ Visual LED indications - wake up<br /><h1>Overview</h1><p>Show indication of wak
           <option value="0">no indication</option>
           <option value="2">Enable wake up notification</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_00000004" type="integer" groupName="configuration">
@@ -122,6 +125,7 @@ Visual LED indications - tampering<br /><h1>Overview</h1><p>Enable or disable de
           <option value="0">no indication</option>
           <option value="4">Enable indication of device tampering</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -136,6 +140,7 @@ Associations in Z-Wave network Security Mode<br /><h1>Overview</h1><p>This param
           <option value="2">3rd group "Tamper" sent as secure</option>
           <option value="3">2nd and 3rd group sent as secure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -149,6 +154,7 @@ Associations in Z-Wave network Security Mode<br /><h1>Overview</h1><p>This param
           <option value="1">switch after opening (parameter 12)</option>
           <option value="2">switch after closing (parameter 13)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -158,6 +164,7 @@ Associations in Z-Wave network Security Mode<br /><h1>Overview</h1><p>This param
 Value of ON command frame sent to 2nd association group<br /><h1>Overview</h1><p>Value sent to devices in 2nd association group when opening is detected The value of 0 turns OFF the device, 255 turns it ON. In case of associating devices allowing smooth control, values 1-99 allow to set an associated device to a specified level.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -167,6 +174,7 @@ Value of ON command frame sent to 2nd association group<br /><h1>Overview</h1><p
 Value of OFF command frame sent to 2nd association group<br /><h1>Overview</h1><p>Value sent to devices in 2nd association group when closing is detected The value of 0 turns OFF the device, 255 turns it ON. In case of associating devices allowing smooth control, values 1-99 allow to set an associated device to a specified level.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -176,6 +184,7 @@ Value of OFF command frame sent to 2nd association group<br /><h1>Overview</h1><
 Association for opening - time delay<br /><h1>Overview</h1><p>Time that must elapse from opening to send the command frame to to devices in 2nd association group.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration"
@@ -185,6 +194,7 @@ Association for opening - time delay<br /><h1>Overview</h1><p>Time that must ela
 Association for closing - time delay<br /><h1>Overview</h1><p>Time (in seconds) that must elapse from closing to send the command frame to devices in 2nd association group</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_2" type="integer" groupName="configuration"
@@ -194,6 +204,7 @@ Association for closing - time delay<br /><h1>Overview</h1><p>Time (in seconds) 
 Tamper - alarm cancellation delay<br /><h1>Overview</h1><p>Time period after which a tamper alarm will be cancelled.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -206,6 +217,7 @@ Tamper - reporting alarm cancellation<br /><h1>Overview</h1><p>Reporting cancell
           <option value="0">do not send tamper cancellation report</option>
           <option value="1">send tamper cancellation report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_2" type="integer" groupName="configuration"
@@ -215,6 +227,7 @@ Tamper - reporting alarm cancellation<br /><h1>Overview</h1><p>Reporting cancell
 Interval of temperature measurements<br /><h1>Overview</h1><p>This parameter defines how often the temperature will be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration"
@@ -224,6 +237,7 @@ Interval of temperature measurements<br /><h1>Overview</h1><p>This parameter def
 Temperature reports threshold<br /><h1>Overview</h1><p>This parameter defines the change of temperature in comparison with last reported, resulting in temperature report being sent to the main controller.</p> <p>Available settings:</p> <ul><li>0 - temperature reports based on threshold disabled</li> <li>1-300 - temperature threshold (0.1-30°C, 0.1°C step)</li> </ul>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
@@ -233,6 +247,7 @@ Temperature reports threshold<br /><h1>Overview</h1><p>This parameter defines th
 Interval of temperature reports<br /><h1>Overview</h1><p>This parameter determines how often the temperature reports will be sent to the main controller (regardless of parameters 50 and 51).</p> <p>Available settings:</p> <ul><li>0 - periodic temperature reports disabled</li> <li>300-32400 - time in seconds</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -242,6 +257,7 @@ Interval of temperature reports<br /><h1>Overview</h1><p>This parameter determin
 Temperature offset<br /><h1>Overview</h1><p>The value to be added to the actual temperature, measured by the sensor (temperature compensation). Available settings: -1000–1000 (-100–100°C, 0.1°C step)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration">
@@ -256,6 +272,7 @@ Temperature alarm reports<br /><h1>Overview</h1><p>Temperature alarms reported t
           <option value="2">low temperature alarm</option>
           <option value="3">high and low temperature alarms enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_2" type="integer" groupName="configuration"
@@ -265,6 +282,7 @@ Temperature alarm reports<br /><h1>Overview</h1><p>Temperature alarms reported t
 High temperature alarm threshold<br /><h1>Overview</h1><p>If temperature is higher than set value, overheat notification will be sent and high temperature alarm will be triggered (if activated).</p> <p>Available settings:</p> <ul><li>1-600 (0.1-60°C, 0.1°C step)</li> </ul>
         ]]></description>
         <default>350</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_2" type="integer" groupName="configuration"
@@ -274,6 +292,7 @@ High temperature alarm threshold<br /><h1>Overview</h1><p>If temperature is high
 Low temperature alarm threshold<br /><h1>Overview</h1><p>If temperature is lower than the set value, underheat notification will be sent and low temperature alarm will be triggered (if activated). Available settings: 0-599 (0-59.9°C, 0.1°C step)</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

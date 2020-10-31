@@ -957,9 +957,9 @@ Association group 9 supports 16 nodes.
 
 ### Documentation Links
 
-* [Page 1](https://opensmarthouse.org/zwavedatabase/498/qubino-zmnhld-0001.pdf)
-* [Page 2](https://opensmarthouse.org/zwavedatabase/498/qubino-zmnhld-0002.pdf)
-* [ZMNHKD Quick Manual](https://opensmarthouse.org/zwavedatabase/498/Qubino-Flush-Heat-Cool-Thermostat-PLUS-user-manual-V1-5-eng.pdf)
+* [Page 1](https://opensmarthouse.org/zwavedatabase/498/reference/qubino-zmnhld-0001.pdf)
+* [Page 2](https://opensmarthouse.org/zwavedatabase/498/reference/qubino-zmnhld-0002.pdf)
+* [ZMNHKD Quick Manual](https://opensmarthouse.org/zwavedatabase/498/reference/Qubino-Flush-Heat-Cool-Thermostat-PLUS-user-manual-V1-5-eng.pdf)
 
 ---
 

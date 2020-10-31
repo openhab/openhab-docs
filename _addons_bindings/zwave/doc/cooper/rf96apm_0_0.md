@@ -185,7 +185,7 @@ Association group 2 supports 4 nodes.
 
 ### Documentation Links
 
-* [RF96APM Manual](https://opensmarthouse.org/zwavedatabase/1272/z-wave-wireless-plugin-module-RF96APM-instrsheet.pdf)
+* [RF96APM Manual](https://opensmarthouse.org/zwavedatabase/1272/reference/z-wave-wireless-plugin-module-RF96APM-instrsheet.pdf)
 
 ---
 

@@ -72,6 +72,7 @@ MCOHome Touch Dual Switch Relay<br /><h1>Overview</h1><p>Touch Panel Switch is a
 State saved after pwr failure<br /><h1>Overview</h1><p>0: not saved, switch will be off when powered again<br />1: saved, switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -79,6 +80,7 @@ State saved after pwr failure<br /><h1>Overview</h1><p>0: not saved, switch will
         <label>3: LED Backlit brightness level</label>
         <description>LED Backlit brightness level</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ State saved after pwr failure<br /><h1>Overview</h1><p>0: not saved, switch will
 Scene respond<br /><h1>Overview</h1><p>0: All switches respond Scene CC<br />1: only S1 responds</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -97,6 +100,7 @@ Scene respond<br /><h1>Overview</h1><p>0: All switches respond Scene CC<br />1: 
 ALL ON/ALL OFF<br /><h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1: forbid ALL ON, allow ALL OFF<br />2: allow ALL ON, forbid ALL OFF<br />255: allow ALL ON, allow ALL OFF</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

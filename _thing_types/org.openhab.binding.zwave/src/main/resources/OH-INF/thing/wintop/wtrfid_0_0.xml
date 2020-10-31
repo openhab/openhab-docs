@@ -75,6 +75,7 @@ Mini Keypad RFID<br /><h1>Overview</h1><p>Zipato Mini RFID Keypad combines RFID 
         <label>1: Set to Default</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -84,6 +85,7 @@ Mini Keypad RFID<br /><h1>Overview</h1><p>Zipato Mini RFID Keypad combines RFID 
 To configure the time the beep is automatically turned off in seconds.<br /><h1>Overview</h1><p>The Mini Keypad RFiD/Z-Wave supports 3 types of notification sound configurations:</p> <ol><li>Notification sound disabled (configuration parameter 2 set to zero)</li> <li>Notification sound enabled (default, configuration parameter 2 set to auto-stop time).</li> </ol>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -93,6 +95,7 @@ To configure the time the beep is automatically turned off in seconds.<br /><h1>
 Feedback timeout<br /><h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other (0 -&gt; disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -100,6 +103,7 @@ Feedback timeout<br /><h1>Overview</h1><p>To configure the timeout to wait for a
         <label>4: Feedback beeps per Second</label>
         <description>To configure the number of beeps per second. Every beep is fixed about 10ms.</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -109,6 +113,7 @@ Feedback timeout<br /><h1>Overview</h1><p>To configure the timeout to wait for a
 Configure the operating mode<br /><h1>Overview</h1><p>If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</p> <ul><li>MODE 1: Normal operating mode.</li> <li>MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</li> </ul>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -97,6 +97,7 @@ Flush 1D relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -107,6 +108,7 @@ Flush 1D relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">NO (normaly open) input type</option>
           <option value="1">NC (normaly close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -121,6 +123,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1D
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -133,7 +136,6 @@ Automatic turning off relay after set time<br /><h1>Overview</h1><p>When relay i
         <options>
           <option value="0">Auto OFF disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -146,7 +148,6 @@ Automatic turning on relay after set time<br /><h1>Overview</h1><p>When relay is
         <options>
           <option value="0">Auto ON disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -159,6 +160,7 @@ Auto turn off / on seconds or milliseconds<br /><h1>Overview</h1><p>Automatic tu
           <option value="0">Seconds selected</option>
           <option value="1">Milliseconds selected</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -171,6 +173,7 @@ Save state after power failure<br /><h1>Overview</h1><p>Saving the state of the 
           <option value="0">Saves state before power failure</option>
           <option value="1">Do not save state after power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -183,6 +186,7 @@ Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the
           <option value="0">Output 0V when system turned off</option>
           <option value="1">Output 230V or 24V when system turned off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -201,6 +205,7 @@ Endpoint I2 Notification and Event<br /><h1>Overview</h1><p>Enabling I2 means th
           <option value="6">Smoke Alarm</option>
           <option value="9">Sensor Binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_2" type="integer" groupName="configuration"
@@ -210,6 +215,7 @@ Endpoint I2 Notification and Event<br /><h1>Overview</h1><p>Enabling I2 means th
 Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added to or subtracted from actual measured value by sensor. </p> <p>Available configuration parameters:</p> <ul><li>32536: offset is 0.0 °C</li> <li>1 to 100: value from 0.1 °C to 10.0 °C is added to actual measured temperature</li> <li>1001 to 1100: value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature<br /></li> </ul>
         ]]></description>
         <default>32536</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -219,6 +225,7 @@ Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added t
 Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.</p> <ul><li>0: Reporting disabled</li> <li>1- 127: 0,1°C - 12,7°C, step is 0,1°C</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -69,6 +69,7 @@ Enable back light when Light Switch is powered on.<br /><h1>Overview</h1><p>This
           <option value="0">Disable back light LED</option>
           <option value="1">Enable back light LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Switch on LED indicator.<br /><h1>Overview</h1><p>This parameter defines the rel
           <option value="0">Do not change LED state when on</option>
           <option value="1">Pink LED state when on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -93,6 +95,7 @@ Restore switch status on power restore.<br /><h1>Overview</h1><p>This parameter 
           <option value="0">Do not save the On/Off status</option>
           <option value="1">Save and restore the relay On/Off status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -107,6 +110,7 @@ Endpoint device mapping setting for associated devices.<br /><h1>Overview</h1><p
           <option value="2">Endpoint 2</option>
           <option value="3">Endpoint 1 and 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

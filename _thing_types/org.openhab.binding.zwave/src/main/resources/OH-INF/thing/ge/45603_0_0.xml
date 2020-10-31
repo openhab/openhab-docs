@@ -50,6 +50,7 @@ Fluorescent Light &amp; Appliance Module<br /><h1>Overview</h1><p>Jasco's Z-Wave
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -62,6 +63,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -61,6 +61,7 @@ Lamp Module<br /><h1>Overview</h1><p>300 Watt Scene Capable Plug-In Lamp Dimming
 Time it takes to fade on<br /><h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -70,18 +71,21 @@ Time it takes to fade on<br /><h1>Overview</h1><p>0 is instant on 1-127 is in se
 Time it takes to fade off<br /><h1>Overview</h1><p>0 is instant on 1-127 is in seconds 128-253 is in minutes</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="100">
         <label>3: Minimum Light Level</label>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="100">
         <label>4: Maximum Light Level</label>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -93,6 +97,7 @@ Time it takes to fade off<br /><h1>Overview</h1><p>0 is instant on 1-127 is in s
           <option value="254">Status Mode</option>
           <option value="255">Locator Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -104,6 +109,7 @@ Time it takes to fade off<br /><h1>Overview</h1><p>0 is instant on 1-127 is in s
           <option value="1">LED</option>
           <option value="2">CFL</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

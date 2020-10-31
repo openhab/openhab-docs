@@ -57,6 +57,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
           <option value="1">LED Light on when Z-Wave Turned On</option>
           <option value="2">LED Light always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -64,6 +65,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
         <label>7: Dim Rate</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -71,6 +73,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
         <label>8: Dim Rate Adjustments (From Z-Wave Controller)</label>
         <description>Timing of the steps</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -78,6 +81,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
         <label>9: Dim rate Adjustments (When Manually Controlled)</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -87,6 +91,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
 (When Manually Controlled)<br /><h1>Overview</h1><p>Timing of the steps</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -96,6 +101,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
 (When Receiving All-On/All-Off Command)<br /><h1>Overview</h1><p>number of steps of levels</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

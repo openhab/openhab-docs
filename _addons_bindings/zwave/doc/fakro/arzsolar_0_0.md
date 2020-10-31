@@ -84,7 +84,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [PDF manual](https://opensmarthouse.org/zwavedatabase/853/ARZ-SOLAR-FAKRO-EN.pdf)
+* [PDF manual](https://opensmarthouse.org/zwavedatabase/853/reference/ARZ-SOLAR-FAKRO-EN.pdf)
 
 ---
 

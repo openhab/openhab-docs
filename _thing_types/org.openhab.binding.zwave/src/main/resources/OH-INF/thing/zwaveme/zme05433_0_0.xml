@@ -66,6 +66,7 @@ Set LED indication mode<br /><h1>Overview</h1><p>Set LED indication mode</p>
           <option value="2">Night mode (inverted switch state)</option>
           <option value="3">Operated by Indicator Command Class (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ If not zero, automatically switch off after a user defined time<br /><h1>Overvie
           <option value="0">Disabled (Default)</option>
           <option value="1">Sec</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -92,6 +94,7 @@ Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>Defines how to
           <option value="2">Switch on</option>
           <option value="3">Switch on if load is off else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -104,6 +107,7 @@ ignore start level in StartLevelChange<br /><h1>Overview</h1><p>Defines if the d
           <option value="0">No</option>
           <option value="1">Yes (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -117,7 +121,6 @@ Time to dim on button presses<br /><h1>Overview</h1><p>Time to dim on button pre
           <option value="0">Instantly</option>
           <option value="30">Default</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -127,6 +130,7 @@ Time to dim on button presses<br /><h1>Overview</h1><p>Time to dim on button pre
 Time to dim on button holds and StartLevelChange<br /><h1>Overview</h1><p>Time to dim on button holds and StartLevelChange command (if it has no duration specified).</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -140,6 +144,7 @@ set action on ON command<br /><h1>Overview</h1><p>Defines if the dimmer shall se
           <option value="1">If already On</option>
           <option value="2">Always</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

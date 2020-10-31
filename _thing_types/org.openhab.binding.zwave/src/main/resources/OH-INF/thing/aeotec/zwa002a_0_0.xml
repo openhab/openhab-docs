@@ -71,6 +71,7 @@ Bulb 6 Multi-Color<br /><h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wav
           <option value="1">Blink Colors in order mode</option>
           <option value="2">Randomized blink color mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -80,23 +81,27 @@ Bulb 6 Multi-Color<br /><h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wav
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration"
                  min="5" max="8640000">
         <label>3: Rate of change to next color in Custom Mode</label>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1_wo" type="integer" groupName="configuration">
         <label>4: Set color that LED Bulb blinks in (Blink Mode)</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
                  min="0" max="100">
         <label>16: Ramp rate when dimming using Multilevel Switch</label>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -107,18 +112,21 @@ Bulb 6 Multi-Color<br /><h1>Overview</h1><p>Aeotec LED Bulb 6 Multi-Color, Z-Wav
           <option value="0">Nothing</option>
           <option value="1">Basic CC report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_2" type="integer" groupName="configuration"
                  min="2700" max="4999">
         <label>81: Adjust color component of Warm White</label>
         <default>2700</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_2" type="integer" groupName="configuration"
                  min="5000" max="6500">
         <label>82: Adjust color component of Cold White</label>
         <default>6500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

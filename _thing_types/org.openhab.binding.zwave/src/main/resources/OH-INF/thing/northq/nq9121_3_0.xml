@@ -61,7 +61,6 @@ Impulse or Rotation factor (see NorthQ docs for Gas meters)<br /><h1>Overview</h
         ]]></description>
         <default>1000</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -75,6 +74,7 @@ Defines the type of sensor<br /><h1>Overview</h1><p>Register 2 - sensor type (1 
           <option value="2">silver spot meter</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -85,7 +85,6 @@ This register holds the total number of pulses.<br /><h1>Overview</h1><p>Registe
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -96,7 +95,6 @@ How many ticks before going back to sleep in normal wakeup mode.<br /><h1>Overvi
         ]]></description>
         <default>5</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration" readOnly="true"
@@ -107,7 +105,6 @@ Set this to enter real-time mode from remote.<br /><h1>Overview</h1><p>Register 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_4" type="integer" groupName="configuration" readOnly="true"
@@ -118,6 +115,7 @@ Read-only serial number in decimal<br /><h1>Overview</h1><p>Register 12 - serial
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4" type="integer" groupName="configuration"
@@ -128,7 +126,6 @@ Aplies to devices with firmware version 3.30 or higher<br /><h1>Overview</h1><p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

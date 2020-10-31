@@ -95,6 +95,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
           <option value="2">Enable Away Manual Lock</option>
           <option value="3">Enable Away Auto Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -105,6 +106,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
           <option value="5">RFID activated</option>
           <option value="9">RFID deactivated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -115,6 +117,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
           <option value="0">Right hinged operation</option>
           <option value="1">Left hinged operation</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -130,6 +133,7 @@ Set if the lock is in away mode and if automatic locking should be enabled<br />
           <option value="5">Level 5 (Default)</option>
           <option value="6">Max. sound level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -142,6 +146,7 @@ Sets if the door should relock or not<br /><h1>Overview</h1><p>With this configu
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -161,6 +166,7 @@ Sets the validity of the service PIN<br /><h1>Overview</h1><p>A configuration ge
           <option value="9">Valid for 24h</option>
           <option value="254">Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
@@ -170,6 +176,7 @@ Sets the validity of the service PIN<br /><h1>Overview</h1><p>A configuration ge
 Sends information if the model of the lock is 101 or 150<br /><h1>Overview</h1><p>This configuration is only accepted by configuration get command</p> <p>It is a read only parameter. Default value depends on the door lock model type.</p> <p>101 = ID Lock 101</p> <p>150 = ID Lock 150</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

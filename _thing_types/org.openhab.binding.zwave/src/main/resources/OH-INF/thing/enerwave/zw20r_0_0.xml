@@ -61,6 +61,7 @@
           <option value="0">LED is on when switch is off</option>
           <option value="1">LED is on when switch is on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

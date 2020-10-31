@@ -81,6 +81,7 @@ Recover after a power failure<br /><h1>Overview</h1><p>The memory function means
           <option value="0">Device memory function not open</option>
           <option value="1">Open device memory function</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

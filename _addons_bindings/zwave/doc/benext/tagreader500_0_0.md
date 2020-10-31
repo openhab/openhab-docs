@@ -255,7 +255,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1122/tagreader500.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1122/reference/tagreader500.pdf)
 
 ---
 

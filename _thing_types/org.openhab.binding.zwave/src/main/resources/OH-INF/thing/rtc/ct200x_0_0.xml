@@ -209,6 +209,7 @@ This value determines the reporting threshold<br /><h1>Overview</h1><p>This valu
           <option value="3">1.0 degrees F</option>
           <option value="4">1.5 degrees F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration" readOnly="true"
@@ -218,6 +219,7 @@ This value determines the reporting threshold<br /><h1>Overview</h1><p>This valu
 Retrieves the HVAC Settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_wo" type="integer" groupName="configuration">
@@ -227,6 +229,7 @@ Enable or Disable the Utility Lock<br /><h1>Overview</h1><p>If set to 0, the uti
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
@@ -239,6 +242,7 @@ Query power which source is in use<br /><h1>Overview</h1><p>If 0x01, the thermos
           <option value="1">Powered by C-Wire</option>
           <option value="2">Powered by battery</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -248,6 +252,7 @@ Query power which source is in use<br /><h1>Overview</h1><p>If 0x01, the thermos
 This value determines the reporting threshold<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values are ignored.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -258,6 +263,7 @@ Auxiliary / Emergency Heat Pump Mode<br /><h1>Overview</h1><p>If set to 0, auxil
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -276,6 +282,7 @@ Temperature spread between the on and off temperatures<br /><h1>Overview</h1><p>
           <option value="7">3.5 degrees Fahrenheit</option>
           <option value="8">4.0 degrees Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -291,6 +298,7 @@ How far off from target temp before turning on unit<br /><h1>Overview</h1><p>The
           <option value="10">5.0 degrees Fahrenheit</option>
           <option value="12">6.0 degrees Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -303,6 +311,7 @@ Bring a space back to a normal occupied temp<br /><h1>Overview</h1><p>The Thermo
           <option value="1">Fast Recovery Mode</option>
           <option value="2">Economy Recovery Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -315,6 +324,7 @@ Toggle Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple UI mode is di
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -328,6 +338,7 @@ Toggle Multicast Mode<br /><h1>Overview</h1><p>If set to 0, Multicast is disable
           <option value="1">Enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -340,6 +351,7 @@ Control which info is displayed in the main display area<br /><h1>Overview</h1><
           <option value="1">Show Temperature</option>
           <option value="2">Show (unknown)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -350,6 +362,7 @@ Save Energy Mode behavior<br /><h1>Overview</h1><p>This configuration value is u
         ]]></description>
         <default>2</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -359,6 +372,7 @@ Save Energy Mode behavior<br /><h1>Overview</h1><p>This configuration value is u
 Activate Fan w/ auto shutoff timer<br /><h1>Overview</h1><p>This configuration is used to activate the fan with an automatic shut-off timer.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -369,6 +383,7 @@ Temperature Calibration / Offset<br /><h1>Overview</h1><p>This configuration is 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -381,6 +396,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>This configuration is used to set
           <option value="0">Fahrenheit</option>
           <option value="1">Celcius</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

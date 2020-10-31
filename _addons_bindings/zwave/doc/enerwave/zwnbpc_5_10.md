@@ -178,7 +178,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/795/20170111-ZWN-BPC.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/795/reference/20170111-ZWN-BPC.pdf)
 
 ---
 

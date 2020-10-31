@@ -62,6 +62,7 @@
           <option value="0">Group Mode</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

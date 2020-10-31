@@ -170,6 +170,7 @@ Dual Nano Switch with Energy Metering<br /><h1>Overview</h1><p>Aeotec Dual Nano 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -180,6 +181,7 @@ Dual Nano Switch with Energy Metering<br /><h1>Overview</h1><p>Aeotec Dual Nano 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -191,6 +193,7 @@ Dual Nano Switch with Energy Metering<br /><h1>Overview</h1><p>Aeotec Dual Nano 
           <option value="1">Always on</option>
           <option value="2">Always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -205,6 +208,7 @@ To set which notification would be sent to the associated devices (Group 1)<br /
           <option value="2">Send Basic CC report</option>
           <option value="3">Send Hail CC when using the manual switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -217,6 +221,7 @@ To set which notification would be sent to association group 3<br /><h1>Overview
           <option value="0">Send Nothing</option>
           <option value="1">Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_1" type="integer" groupName="configuration">
@@ -229,6 +234,7 @@ To set which notification would be sent to association group 4<br /><h1>Overview
           <option value="0">Send Nothing</option>
           <option value="1">Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_1" type="integer" groupName="configuration">
@@ -240,6 +246,7 @@ To set which notification would be sent to association group 4<br /><h1>Overview
           <option value="1">Momentary mode</option>
           <option value="2">Night light mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_4" type="integer" groupName="configuration"
@@ -249,7 +256,6 @@ To set which notification would be sent to association group 4<br /><h1>Overview
 Time to turn the light on and off<br /><h1>Overview</h1><p>value 1 = (range of 0 - 23) // ON (hour) value 2 = (range of 0 - 59) // ON (minute) value 3 = (range of 0 - 23) // OFF (hour) value 4 = (range of 0 - 59) // OFF (minute)   It would be best to convert each value into HEX and input them like this:   Parameter 84 = (value 1)(value 2)(value 3)(value 4)   Using the default values it would look like this = (12)(00)(08)(00) converted to decimal is = 301991936 </p>
         ]]></description>
         <default>301991936</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -260,6 +266,7 @@ Time to turn the light on and off<br /><h1>Overview</h1><p>value 1 = (range of 0
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -267,6 +274,7 @@ Time to turn the light on and off<br /><h1>Overview</h1><p>value 1 = (range of 0
         <label>91: Set the threshold value of wattage.</label>
         <description>Set the threshold value of wattage.</description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -274,6 +282,7 @@ Time to turn the light on and off<br /><h1>Overview</h1><p>value 1 = (range of 0
         <label>92: Set the threshold percent power</label>
         <description>Set the threshold value of wattage.</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -281,6 +290,7 @@ Time to turn the light on and off<br /><h1>Overview</h1><p>value 1 = (range of 0
         <description>Reset the parameter 101-103</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -304,7 +314,6 @@ To set which reports need to be sent in Report group 1<br /><h1>Overview</h1><p>
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -328,7 +337,6 @@ To set which reports will be sent in Report group 2.<br /><h1>Overview</h1><p><b
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -352,7 +360,6 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="524288">Send Multi Channel Meter Report of current (A) C1</option>
           <option value="1048576">Send Multi Channel Meter Report of current (A) C2</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
@@ -360,6 +367,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
         <description>Set parameter 111-113 to default value.</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -367,6 +375,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
         <label>111: Set the interval of automatic report for Report G1</label>
         <description>Set the interval of automatic report for Report group 1.</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -374,6 +383,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
         <label>112: Set the interval of automatic report for Report G2</label>
         <description>Set the interval of automatic report for Report group 2.</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -381,6 +391,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
         <label>113: Set the interval of automatic report for Report G3</label>
         <description>Set the interval of automatic report for Report group 3.</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
@@ -393,6 +404,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="3">Momentary push button mode</option>
           <option value="4">Enter automatic identification mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -405,6 +417,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="3">Momentary push button mode</option>
           <option value="4">Enter automatic identification mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration">
@@ -416,6 +429,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="2">control the other nodes</option>
           <option value="3">control the output loads of itself and other nodes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -426,6 +440,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -438,6 +453,7 @@ To set which reports need to be sent in Report group 3.<br /><h1>Overview</h1><p
           <option value="1431655765">Reset factory settings and remove from network</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

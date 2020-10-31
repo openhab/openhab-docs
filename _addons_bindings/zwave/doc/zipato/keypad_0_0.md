@@ -237,7 +237,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/410/wt-rfid-Zipato-Mini-Keypad-RFiD-Z-Wave-User-Manual-v1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/410/reference/wt-rfid-Zipato-Mini-Keypad-RFiD-Z-Wave-User-Manual-v1-4.pdf)
 
 ---
 

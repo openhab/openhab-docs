@@ -84,6 +84,7 @@ Yale button deadbolt without keyway<br /><h1>Overview</h1><p>Security Keyless Pu
           <option value="1">Loud</option>
           <option value="3">Silent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -94,6 +95,7 @@ Yale button deadbolt without keyway<br /><h1>Overview</h1><p>Security Keyless Pu
           <option value="0">No auto-relock</option>
           <option value="255">Auto relock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -103,6 +105,7 @@ Yale button deadbolt without keyway<br /><h1>Overview</h1><p>Security Keyless Pu
 Time for auto relock<br /><h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -112,7 +115,6 @@ Time for auto relock<br /><h1>Overview</h1><p>Amount of seconds between the door
 Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be keyed in before lock goes into temporary keypad lockout mode.</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration" readOnly="true"
@@ -123,7 +125,6 @@ Incorrect attempts shutdown time<br /><h1>Overview</h1><p>Amount of time lock sh
         ]]></description>
         <default>60</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -136,6 +137,7 @@ Incorrect attempts shutdown time<br /><h1>Overview</h1><p>Amount of time lock sh
           <option value="2">privacy</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

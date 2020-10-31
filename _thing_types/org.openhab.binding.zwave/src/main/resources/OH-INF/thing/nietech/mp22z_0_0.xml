@@ -58,6 +58,7 @@ Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,l
           <option value="1">outlet on,led off</option>
           <option value="2">led off, led no work</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration"
@@ -67,7 +68,6 @@ Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,l
 The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -75,6 +75,7 @@ The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time ca
         <label>4: Auto Turn-On Timer</label>
         <description>Outlet will turn on after</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -88,6 +89,7 @@ Restores state after power failure<br /><h1>Overview</h1><p>Parameter=6，Size=1
           <option value="1">output on</option>
           <option value="2">out put the state after power</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

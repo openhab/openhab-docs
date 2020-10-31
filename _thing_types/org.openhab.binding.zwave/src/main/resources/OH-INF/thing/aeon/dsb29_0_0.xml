@@ -65,6 +65,7 @@ Door/Window sensor Gen2<br /><h1>Overview</h1><p>The Door &amp; Window Sensor fi
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -74,6 +75,7 @@ Door/Window sensor Gen2<br /><h1>Overview</h1><p>The Door &amp; Window Sensor fi
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -83,6 +85,7 @@ Door/Window sensor Gen2<br /><h1>Overview</h1><p>The Door &amp; Window Sensor fi
           <option value="0">On for opened, Off for closed</option>
           <option value="1">Off for opened, On for closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_000000FF" type="integer" groupName="configuration">
@@ -97,6 +100,7 @@ parameter 4 (LSB)<br /><h1>Overview</h1><p>Set to 0 for no report</p> <p>Set to 
           <option value="16">SENSOR BINARY report</option>
           <option value="17">SENSOR BINARY and BATTERY report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_0000FF00" type="integer" groupName="configuration">
@@ -109,6 +113,7 @@ see overview (parameter 3)<br /><h1>Overview</h1><p>set to 0 for no report</p> <
           <option value="0">not set</option>
           <option value="1">BASIC report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

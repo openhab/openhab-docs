@@ -245,8 +245,8 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://opensmarthouse.org/zwavedatabase/931/Alarm-com-Temperature-Sensor-ADC-S2000-T-RA-User-Guide.pdf)
-* [Installation Guide](https://opensmarthouse.org/zwavedatabase/931/Alarm-com-Temperature-Sensor-ADC-S2000-T-RA-Installation-Guide.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/931/reference/Alarm-com-Temperature-Sensor-ADC-S2000-T-RA-User-Guide.pdf)
+* [Installation Guide](https://opensmarthouse.org/zwavedatabase/931/reference/Alarm-com-Temperature-Sensor-ADC-S2000-T-RA-Installation-Guide.pdf)
 
 ---
 

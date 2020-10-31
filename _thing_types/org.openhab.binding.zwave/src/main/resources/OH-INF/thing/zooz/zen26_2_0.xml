@@ -65,6 +65,7 @@ Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want
           <option value="1">Top OFF, bottom ON</option>
           <option value="2">Any paddle toggle</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want
           <option value="2">LED OFF</option>
           <option value="3">LED ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ Enable/disable turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to ena
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -100,7 +103,6 @@ Enable/disable turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to ena
 Length of time before switch turns OFF<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -113,6 +115,7 @@ Enable/disable turn-ON timer<br /><h1>Overview</h1><p>Use this parameter to enab
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -122,7 +125,6 @@ Enable/disable turn-ON timer<br /><h1>Overview</h1><p>Use this parameter to enab
 Length of time before switch turns ON<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn ON once it has been turned OFF. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -149,6 +151,7 @@ Association reports<br /><h1>Overview</h1><p>Choose which physical and Z-Wave tr
           <option value="14">Physical tap ZEN26, 3-way switch, Z-Wave or timer</option>
           <option value="15">All of the above</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -160,6 +163,7 @@ Association reports<br /><h1>Overview</h1><p>Choose which physical and Z-Wave tr
           <option value="1">On</option>
           <option value="2">Restore last state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -172,6 +176,7 @@ Enable/disable scene control<br /><h1>Overview</h1><p>Enable or disable scene co
           <option value="0">Scene control disabled</option>
           <option value="1">Scene control enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -184,6 +189,7 @@ Enable or disable local ON/OFF control<br /><h1>Overview</h1><p>Enable or disabv
           <option value="0">Local control disabled</option>
           <option value="1">Local control enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

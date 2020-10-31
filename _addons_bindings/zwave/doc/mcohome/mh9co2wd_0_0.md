@@ -194,7 +194,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/455/McoHomeCO2Monitor.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/455/reference/McoHomeCO2Monitor.pdf)
 
 ---
 

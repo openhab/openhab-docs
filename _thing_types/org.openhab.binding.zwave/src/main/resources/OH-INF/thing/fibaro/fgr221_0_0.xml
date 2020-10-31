@@ -65,6 +65,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">ALL ON disabled/ ALL OFF active</option>
           <option value="2">ALL ON active / ALL OFF disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -75,6 +76,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="0">Turn ON the shutter positioning (default)</option>
           <option value="1">Turning off the shutter positioning function</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">Bi-stable input (switch)</option>
           <option value="2">Single Mono-stable switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -93,6 +96,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
         <label>20: Dimmer/Roller shutter control</label>
         <description>Options for changing parameter 1-99, default 16</description>
         <default>16</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -104,6 +108,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">OPEN shutter alarm</option>
           <option value="2">CLOSED shutter alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -115,6 +120,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">OPEN shutter alarm</option>
           <option value="2">CLOSED shutter alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -126,6 +132,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">OPEN shutter alarm</option>
           <option value="2">CLOSED shutter alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -137,6 +144,7 @@ Roller Shutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Co
           <option value="1">OPEN shutter alarm</option>
           <option value="2">CLOSED shutter alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -149,6 +157,7 @@ Only valid for the 1.9 version of FGR221.<br /><h1>Overview</h1><p>The device of
           <option value="0">Deactivation of functionality - Default</option>
           <option value="1">Activation of functionality</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

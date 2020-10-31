@@ -102,6 +102,7 @@ Trane Z-Wave Programmable Thermostat<br /><h1>Overview</h1><p>Thermostat for Hea
           <option value="0">Hold</option>
           <option value="1">Schedule</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

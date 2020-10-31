@@ -800,7 +800,7 @@ Association group 7 supports 16 nodes.
 
 ### Documentation Links
 
-* [Motion_Switch_LED-180718.pdf](https://opensmarthouse.org/zwavedatabase/1060/Motion-Switch-LED-180718.pdf)
+* [Motion_Switch_LED-180718.pdf](https://opensmarthouse.org/zwavedatabase/1060/reference/Motion-Switch-LED-180718.pdf)
 
 ---
 

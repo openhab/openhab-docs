@@ -71,6 +71,7 @@ Multisensor<br /><h1>Overview</h1><p>The Home Control Motion Sensor measures bri
 Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the light.</p> <p>1 - 100    -&gt;  For dimmers 1 to 100 means the light strength</p>
         ]]></description>
         <default>-1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the l
 Parameter to set the Sensitivity<br /><h1>Overview</h1><p>Parameter to set the Sensitivity for the PIR (Passiv Infrared Sensor)</p> <p>0-&gt; means disable the PIR motion;</p> <p>1 - 99-&gt; means the lowest sensitivity, 99 means the highest sensitivity</p>
         ]]></description>
         <default>70</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -89,6 +91,7 @@ Parameter to set the Sensitivity<br /><h1>Overview</h1><p>Parameter to set the S
 Setting the illumination threshold to turn on the light<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</p> <p>0 -&gt;  means turn off illumination detected function and never turn on the light</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -98,6 +101,7 @@ Setting the illumination threshold to turn on the light<br /><h1>Overview</h1><p
 Operation Mode<br /><h1>Overview</h1><p>Bit 0: 1 means security mode; 0 means home automation mode. </p> <p>Bit 1: 1 means enable test mode; 0 means disable test mode. Notice: Bit0 and Bit1 will effect when the DIP Switch setting to program mode. If Bit1 is enabled, the Bit0 is useless.</p> <p> Bit 2: Disable </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -107,6 +111,7 @@ Operation Mode<br /><h1>Overview</h1><p>Bit 0: 1 means security mode; 0 means ho
 Configure Multi-Sensor Function Switch<br /><h1>Overview</h1><p>Bit 0: Disable magnetic integrate illumination. </p> <p>Bit 1: Disable PIR integrate Illumination. </p> <p>Bit 2: Disable magnetic integrate PIR (Default is Disable) </p> <p>Bit 3: When Bit2 is 0 (Enable), the device is install in the same room with the light? 0: In the same room</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -119,7 +124,6 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter to se
         <options>
           <option value="22">Super Sensitivity/Binary Report/Motion Off Report</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -129,6 +133,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter to se
 Re-detect time after motion detected<br /><h1>Overview</h1><p>In the security mode, after the PIR motion detected, setting the re-detect time </p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -138,6 +143,7 @@ Re-detect time after motion detected<br /><h1>Overview</h1><p>In the security mo
 Delay time to turn light off after no motion detected<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -145,6 +151,7 @@ Delay time to turn light off after no motion detected<br /><h1>Overview</h1><p>A
         <label>10: Auto Report Battery Time</label>
         <description>Interval time for auto report the battery level</description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -152,6 +159,7 @@ Delay time to turn light off after no motion detected<br /><h1>Overview</h1><p>A
         <label>12: Auto Report Illumination Time</label>
         <description>Interval time for auto report the illumination state</description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -159,6 +167,7 @@ Delay time to turn light off after no motion detected<br /><h1>Overview</h1><p>A
         <label>13: Auto Report Temperature Time</label>
         <description>Interval time for auto report the temperature state</description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

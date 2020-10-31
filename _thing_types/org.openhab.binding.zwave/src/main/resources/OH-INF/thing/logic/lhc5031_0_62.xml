@@ -145,6 +145,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
           <option value="3">LED flashing at 1/2 sec interval</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -153,6 +154,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
         <description>Configure the percentage of light in the status LED, when the LED is turned on.</description>
         <default>50</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -164,6 +166,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
           <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -175,6 +178,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
           <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -186,6 +190,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
           <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -197,6 +202,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
           <option value="1">10K NTC (Part number: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -205,6 +211,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
         <description>-4.0 to 4.0 degree Celsius</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -213,6 +220,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
         <description>-4.0 to 4.0 degree Celsius</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -221,6 +229,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
         <description>-4.0 to 4.0 degree Celsius</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -229,6 +238,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 = LED turned OFF, 1 =
         <description>-4.0 to 4.0 degree Celsius</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -239,6 +249,7 @@ Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>T
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -249,6 +260,7 @@ Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>T
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -259,6 +271,7 @@ Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>T
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -269,6 +282,7 @@ Time interval between consecutive temperature reports<br /><h1>Overview</h1><p>T
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

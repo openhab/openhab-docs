@@ -319,8 +319,8 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
-* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
+* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/reference/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
+* [Installation & Operation Guide](https://opensmarthouse.org/zwavedatabase/1150/reference/Eurotronic-Spirit-Thermostat-638f0de8c28ca46b5188891c26a1c05a723a.pdf)
 
 ---
 

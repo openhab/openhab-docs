@@ -62,6 +62,7 @@ Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer th
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -69,6 +70,7 @@ Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer th
         <label>9: Dim Level Increment</label>
         <description>Indicates the number of levels (1-99) to change dimming each step</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -76,6 +78,7 @@ Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer th
         <label>10: Step Duration</label>
         <description>The number of tens of milliseconds (1-255) to delay on each dimming step.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

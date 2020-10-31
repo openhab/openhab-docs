@@ -68,6 +68,7 @@ Double relay Switch 2x1.7kW<br /><h1>Overview</h1><p>https://defaro.ru/index.php
           <option value="1">Reverse</option>
           <option value="2">Blink mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -78,7 +79,6 @@ For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays ON state 
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -89,7 +89,6 @@ For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays OFF state
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -102,7 +101,6 @@ Sets auto off delay for S1<br /><h1>Overview</h1><p>Sets delay after which switc
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -115,7 +113,6 @@ Delay after ON command received<br /><h1>Overview</h1><p>Sets time after which s
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -129,7 +126,6 @@ Smart off delay for S1<br /><h1>Overview</h1><p>Sets time after which switch S1 
           <option value="0">Disable</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -142,6 +138,7 @@ Powerfail recovery mode for S1<br /><h1>Overview</h1><p>Recovery behavior for S1
           <option value="0">Restore previous state</option>
           <option value="1">Always set to OFF state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -151,7 +148,6 @@ Powerfail recovery mode for S1<br /><h1>Overview</h1><p>Recovery behavior for S1
 All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -165,6 +161,7 @@ Relay S2 mode of operation<br /><h1>Overview</h1><p>Sets S2 mode of operation:<b
           <option value="1">Reverse</option>
           <option value="2">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -177,7 +174,6 @@ Sets auto off time for S2<br /><h1>Overview</h1><p>Sets time after which switch 
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -190,7 +186,6 @@ Sets turn on delay for S2<br /><h1>Overview</h1><p>Sets delay after which switch
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -204,7 +199,6 @@ Smart delay for S2<br /><h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (
           <option value="0">Disable</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -217,6 +211,7 @@ Powerfail recovery mode for S2<br /><h1>Overview</h1><p>Recovery behavior for S2
           <option value="0">Restore state</option>
           <option value="1">Set to OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -231,6 +226,7 @@ S1 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S1
           <option value="2">Bistable (fixed switch)</option>
           <option value="3">Bistable (reversed fixed switch)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -245,6 +241,7 @@ S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2
           <option value="2">Bistable (fixed switch button)</option>
           <option value="3">Bistable (reversed fixed switch)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -255,7 +252,6 @@ Smart delay mode<br /><h1>Overview</h1><p>0 - implicit smart delay</p> <p>1 - us
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -269,6 +265,7 @@ Forced secure mode<br /><h1>Overview</h1><p>0 - accept non-secure commands</p> <
           <option value="1">Accept only secure commands</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration">
@@ -282,6 +279,7 @@ Send secure commands for S1<br /><h1>Overview</h1><p>0 - Send non-secure command
           <option value="1">Secure</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration">
@@ -295,6 +293,7 @@ Send secure commands for S2<br /><h1>Overview</h1><p>0 - Send non-secure command
           <option value="1">Secure</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

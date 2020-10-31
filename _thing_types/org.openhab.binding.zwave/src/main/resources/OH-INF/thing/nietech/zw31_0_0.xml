@@ -64,6 +64,7 @@ Invert the switch ON/OFF state<br /><h1>Overview</h1><p>Invert the switch ON/OFF
           <option value="0">Up is ON</option>
           <option value="1">Down is ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</
           <option value="2">Off</option>
           <option value="3">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration"
@@ -85,6 +87,7 @@ LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</
         <label>3: Auto Turn-Off Timer</label>
         <description>Automatically turn off switch</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -92,6 +95,7 @@ LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</
         <label>4: Auto Turn-On Timer</label>
         <description>Automatically turn on switch</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -103,6 +107,7 @@ LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</
           <option value="1">On</option>
           <option value="2">Previous State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -92,6 +92,7 @@ Fan Coil Thermostat<br /><h1>Overview</h1><p>MCOHome Fan Coil Thermostat is a Z-
           <option value="1">Fahrenheit</option>
           <option value="2">Follow the main display</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -104,6 +105,7 @@ Fan Coil Thermostat<br /><h1>Overview</h1><p>MCOHome Fan Coil Thermostat is a Z-
           <option value="2">Timing upload mode only</option>
           <option value="3">Upload the difference+timing upload mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -113,6 +115,7 @@ Fan Coil Thermostat<br /><h1>Overview</h1><p>MCOHome Fan Coil Thermostat is a Z-
 Upload the difference<br /><h1>Overview</h1><p>Base on 0.1C unit. 5 by default. 5 * 0.1C = 0.5C, 0x0003 to 0x03E8</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -122,6 +125,7 @@ Upload the difference<br /><h1>Overview</h1><p>Base on 0.1C unit. 5 by default. 
 Upload time interval in seconds (10-65535)<br /><h1>Overview</h1><p>Base is 1s unit. It is suggested to be set above 30s, 0x000A to 0xFFFF</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
@@ -131,6 +135,7 @@ Upload time interval in seconds (10-65535)<br /><h1>Overview</h1><p>Base is 1s u
 Factory Setting<br /><h1>Overview</h1><p>0x55 Restore the factory setting (write only)<br />Parameters setting back to default value, association groups deleted</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -80,6 +80,7 @@ Shutter wall switch<br /><h1>Overview</h1><p>TechniSat roller shutter is a wall 
 Enable/Disable Central scene notifcations for 2x-5x press<br /><h1>Overview</h1><p>0 - disable, 1 - enable</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -89,6 +90,7 @@ Enable/Disable Central scene notifcations for 2x-5x press<br /><h1>Overview</h1>
 Interval Current wattage meter report in 10s<br /><h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@ Interval Current wattage meter report in 10s<br /><h1>Overview</h1><p>Interval o
 Interval of active energy meter report in minutes<br /><h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -107,6 +110,7 @@ Interval of active energy meter report in minutes<br /><h1>Overview</h1><p>Inter
 Manual shutter calibration<br /><h1>Overview</h1><p>Manual shutter calibration (shutter will move up, down and up again)<br />0 - idle, 1 - start a manual shutter calibration</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

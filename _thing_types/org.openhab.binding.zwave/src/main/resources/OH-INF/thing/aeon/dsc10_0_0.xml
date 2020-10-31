@@ -58,7 +58,6 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="0">Activate Overload Protection</option>
           <option value="1">Deactivate Overload Protection</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -71,7 +70,6 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="1">Always ON</option>
           <option value="2">Always OFF</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -83,6 +81,7 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="1">Hail</option>
           <option value="2">Basic CC Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration"
@@ -93,7 +92,6 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="0">Enable parameters 91 and 92</option>
           <option value="1">Disable parameters 91 and 92</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -101,6 +99,7 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in wattage for a Report to be sent.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -108,6 +107,7 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
         <label>92: Minimum Change to send Report (%)</label>
         <description>The minimum change in wattage Percent for a report to be sent</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_200_1" type="integer" groupName="configuration" readOnly="true"
@@ -118,7 +118,6 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="0">Aeon Labs</option>
           <option value="1">Other</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration"
@@ -129,7 +128,6 @@ See overview<br /><h1>Overview</h1><p>Load will be closed when the Current more 
           <option value="0">Unlocked</option>
           <option value="1">Locked</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

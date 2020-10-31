@@ -115,6 +115,7 @@ Flush 2 relays<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -125,6 +126,7 @@ Flush 2 relays<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -139,6 +141,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -148,6 +151,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
 Automatic turning off relay Q1 after set time<br /><h1>Overview</h1><p>Auto OFF enabled with define time, step is 10 mseconds</p> <ul><li>0 = Auto OFF disabled</li> <li>1–65535 = 0,01 second – 655,35 seconds</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -157,6 +161,7 @@ Automatic turning off relay Q1 after set time<br /><h1>Overview</h1><p>Auto OFF 
 Automatic turning off relay Q2 after set time<br /><h1>Overview</h1><p>Auto OFF enabled with define time, step is 10 mseconds</p> <ul><li>0 = Auto OFF disabled</li> <li>1–65535 = 0,01 second – 655,35 seconds</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -167,6 +172,7 @@ Automatic turning off relay Q2 after set time<br /><h1>Overview</h1><p>Auto OFF 
           <option value="0">Saves state before power failure</option>
           <option value="1">Do not save state after a power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -176,6 +182,7 @@ Automatic turning off relay Q2 after set time<br /><h1>Overview</h1><p>Auto OFF 
 Power reporting in Watts on power change for Q1<br /><h1>Overview</h1><p>Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <ul><li>0 = Reporting Disabled</li> <li>1–100 = 1% - 100% Reporting enabled</li> </ul>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -185,6 +192,7 @@ Power reporting in Watts on power change for Q1<br /><h1>Overview</h1><p>Power r
 Power reporting in Watts on power change for Q2<br /><h1>Overview</h1><p>Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.</p> <ul><li>0 = Reporting Disabled</li> <li>1–100 = 1% - 100% Reporti</li> </ul>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -194,6 +202,7 @@ Power reporting in Watts on power change for Q2<br /><h1>Overview</h1><p>Power r
 Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Default value is 300 (power report in Watts is sent each 300s)</p> <ul><li>0 = Reporting Disabled</li> <li>1–65535 = 1 second – 65535 seconds. Reporting enabled.</li> </ul><p>Power report is sent with time interval set by entered value.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_2" type="integer" groupName="configuration"
@@ -203,6 +212,7 @@ Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Defaul
 Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Default value is 300 (power report in Watts is sent each 300s)</p> <ul><li>0 = Reporting Disabled</li> <li>1–65535 = 1 second – 65535 seconds. Reporting enabled.  </li> </ul><p>Power report is sent with time interval set by entered value.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

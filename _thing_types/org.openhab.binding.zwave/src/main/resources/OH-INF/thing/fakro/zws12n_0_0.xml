@@ -74,6 +74,7 @@ Chain actuator - window opener<br /><h1>Overview</h1><p>FAKRO ZWS12 chain motor 
 Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -83,6 +84,7 @@ Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p>
 Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -92,6 +94,7 @@ Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p>
 1 Motor speed II (rain sensor)<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p> <p>4 - the higest speed</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -101,6 +104,7 @@ Motor speed I<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p>
 This parameter on/off callibration function<br /><h1>Overview</h1><p>Value 1 – calibrated</p> <p>Value 2 – discalibrated</p> <p>to enter the calibration mode must first time discalibrate and then calibrate.</p> <p>Calibration possible after prior recalibration of the device. It is possible via gate (Gateway Z-Wave), remote control with a display, e.g. ZRS24 remote control (FAKRO). </p> <p>See manual.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -110,6 +114,7 @@ This parameter on/off callibration function<br /><h1>Overview</h1><p>Value 1 –
 Set servomotor in previous position<br /><h1>Overview</h1><p>This parameter set servomotor in previous position after using Basic Mode operation.</p> <p>1 – FF go to Max</p> <p>2 – FF go to previous position</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -119,6 +124,7 @@ Set servomotor in previous position<br /><h1>Overview</h1><p>This parameter set 
 Close after time min<br /><h1>Overview</h1><p>0-120 minutes</p>
         ]]></description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

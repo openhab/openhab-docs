@@ -60,6 +60,7 @@
           <option value="0">Factory Default</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_242_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@
           <option value="0">Factory Default</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_243_1" type="integer" groupName="configuration">
@@ -80,6 +82,7 @@
           <option value="0">Factory Default</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_244_1" type="integer" groupName="configuration">
@@ -90,6 +93,7 @@
           <option value="0">Factory Default</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

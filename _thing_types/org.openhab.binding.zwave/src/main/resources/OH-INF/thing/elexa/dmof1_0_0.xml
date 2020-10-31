@@ -93,6 +93,7 @@ Enable/Disable the meter report.<br /><h1>Overview</h1><p>This parameter enables
           <option value="0">Disable Meter Functionality</option>
           <option value="1">Enable Meter Functionality</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -102,6 +103,7 @@ Enable/Disable the meter report.<br /><h1>Overview</h1><p>This parameter enables
 The time between meter reports.<br /><h1>Overview</h1><p>This parameter sets the amount of time between each successive METER_REPORT signal sent to Group 1 (also see Param 1 &amp; 6.)</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -111,6 +113,7 @@ The time between meter reports.<br /><h1>Overview</h1><p>This parameter sets the
 Maximum current the plug will pass<br /><h1>Overview</h1><p>Sets the maximum current the plug will pass before it cuts off power and sends a NOTIFICATION_EVENT_POWER_ MANAGEMENT_OVER_LOAD_DETECTED signal to Group 1 and a BASIC_SET(FF) to Group 2. The LED will then blink red once per second until the current returns to normal. To clear the NOTIFICATION and start monitoring again, the BUTTON must be pushed once (only after the current is back to normal.) <strong>NOTE: this value must be higher than Param 4</strong></p>
         ]]></description>
         <default>13</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -120,6 +123,7 @@ Maximum current the plug will pass<br /><h1>Overview</h1><p>Sets the maximum cur
 Current level warning threshold<br /><h1>Overview</h1><p>Sets the current level at which the On/Off Plug-In Switch will flash its LED yellow, until the current returns to below this level. It will NOT cut off current to the device; this functions as a visible warning to the user. <strong>NOTE: this value must be lower than Param 3</strong></p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -130,6 +134,7 @@ Current level warning threshold<br /><h1>Overview</h1><p>Sets the current level 
           <option value="0">Disable LED</option>
           <option value="1">Enable LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -139,6 +144,7 @@ Current level warning threshold<br /><h1>Overview</h1><p>Sets the current level 
 Report of relative change in current flow<br /><h1>Overview</h1><p>In addition to sending a METER_REPORT to Group 1 in the time interval set by Param 2, the On/Off Plug-In Switch also sends a METER_REPORT when it detects a relative change in current flow. This parameter sets this minimum current change amount, in percent, at which point the On/Off Plug-In Switch will send a METER_REPORT to Group 1. Also see Param 1 &amp; 2.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -149,6 +155,7 @@ Report of relative change in current flow<br /><h1>Overview</h1><p>In addition t
           <option value="0">Don't Remember</option>
           <option value="1">Remember</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -161,6 +168,7 @@ Timer once plugged in before it turn off the device.<br /><h1>Overview</h1><p>If
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -170,6 +178,7 @@ Timer once plugged in before it turn off the device.<br /><h1>Overview</h1><p>If
 Time before auto shut off if on.<br /><h1>Overview</h1><p>Sets the time interval before the On/Off Plug-In Switch automatically shuts off. See Param 8.</p>
         ]]></description>
         <default>96</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -182,6 +191,7 @@ Turn off the button<br /><h1>Overview</h1><p>If this parameter is enabled, the u
           <option value="0">Disable Button</option>
           <option value="1">Enable Button</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

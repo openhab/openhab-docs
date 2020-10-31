@@ -63,6 +63,7 @@ Flood Sensor<br /><h1>Overview</h1><p>The flood detector is designed to sense th
         <label>1: Basic Level Set</label>
         <description>The value sent with Basic commands in case of detected flood</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

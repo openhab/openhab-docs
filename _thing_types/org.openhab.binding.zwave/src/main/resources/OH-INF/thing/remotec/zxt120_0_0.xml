@@ -77,18 +77,21 @@ AC IR Remote<br /><h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditioner
 Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and start learning</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="4">
         <label>26: Learning status register (Read Only)</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
                  min="0" max="65535">
         <label>27: IR code number for built-in code library</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
@@ -98,6 +101,7 @@ Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and s
           <option value="0">Normal power mode</option>
           <option value="255">High power mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -107,6 +111,7 @@ Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and s
           <option value="-1">Enable Surround IR Emitters</option>
           <option value="0">Disable Surround IR Emitters</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -116,18 +121,21 @@ Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and s
           <option value="0">Swing Off</option>
           <option value="1">Swing Auto</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_4" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="65535">
         <label>35: Learn location status. Bitmask. (Read Only)</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration"
                  min="-5" max="5">
         <label>37: Sensor temperature compensation</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -100,6 +100,7 @@ PIR sensor with relay<br /><h1>Overview</h1><p>PIR sensor with relay, mains powe
         <label>1: Time</label>
         <description>Duration of light after motion detection</description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -109,6 +110,7 @@ PIR sensor with relay<br /><h1>Overview</h1><p>PIR sensor with relay, mains powe
 Light threshold<br /><h1>Overview</h1><p>0 – run Learn ambient light sequence.<br />2000 – is used as daylight (always night mode).<br />Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.</p>
         ]]></description>
         <default>2000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -118,6 +120,7 @@ Light threshold<br /><h1>Overview</h1><p>0 – run Learn ambient light sequence.
 Motion Radar Sensitivity<br /><h1>Overview</h1><p>Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -127,6 +130,7 @@ Motion Radar Sensitivity<br /><h1>Overview</h1><p>Value can be controlled via po
 External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically.<br />If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -135,7 +139,6 @@ External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is 
         <description>Disable local control</description>
         <default>2</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_00000001" type="integer" groupName="configuration">
@@ -148,6 +151,7 @@ External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_00000002" type="integer" groupName="configuration">
@@ -160,6 +164,7 @@ External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_00000004" type="integer" groupName="configuration">
@@ -172,6 +177,7 @@ External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -181,6 +187,7 @@ External ambient light value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode is 
 Off behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after BASIC OFF (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 = Lamp/Relay is switched off and remains so until any new motion event (local or remote) is received.</p> <p>1 - 209 = Lamp/Relay is switched off and remains so until after a specified timeout once a new motion event (local or remote) is received.<br />Timeout:</p> <ul><li>1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution</li> <li>101..200 – 1 minute (101) to 100 minutes (200) 1-minute resolution</li> <li>201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</li> <li>210 - 254 = Reserved</li> <li>255 = Lamp/relay is switched off for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.</li> </ul>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -190,6 +197,7 @@ Off behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after BASIC OFF (and 
 On behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after BASIC ON (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.</p> <p>0 = Lamp/relay is switched on and remains so until any new motion event (local or remote) is received. It then works normally via current<br />motion evaluation.<br />Notice – during the day, this mode cannot be ended remotely due<br />to motion events not being transmitted – only via local motion sen-<br />sor if enabled.</p> <p>1 - 209 = Lamp/relay is switched on and remains so until after a specified timeout once a new motion event (local or remote) is received. It then<br />works normally via current motion evaluation.<br />Timeout:</p> <ul><li>1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution</li> <li>101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution</li> <li>201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution<br />Notice – during the day, this mode cannot be ended remotely due to motion events not being transmitted – only via local motion sensor if<br />enabled.</li> <li>210 - 254 = Reserved</li> <li>255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.</li> </ul>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -199,6 +207,7 @@ On behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after BASIC ON (and si
 On behaviour time over (timeout)<br /><h1>Overview</h1><p>Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or OFF_ON_BEHAVIOUR (0-209) to prevent staying ON forever when there is no motion.</p> <ul><li>0 = No additional waiting for motion.</li> <li>1 - 209 =  1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution</li> <li>101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution</li> <li>201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</li> <li>210 - 254 = Reserved</li> <li>255 = Never stop waiting for motion.</li> </ul>
         ]]></description>
         <default>204</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -208,6 +217,7 @@ On behaviour time over (timeout)<br /><h1>Overview</h1><p>Time limit to stop wai
 Sequence On-Off behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands. The intention is to use a much longer timeout value than the time after a single ON command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 10 (OFF_LOCAL_DISABLE) except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.</p>
         ]]></description>
         <default>204</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -217,6 +227,7 @@ Sequence On-Off behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after a r
 Sequence Off-On behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands. The intention is to use a much longer timeout value than the time after a single OFF command which should then be followed by a short timeout value.<br />The behaviour is the same as for parameter 11 (ON_LOCAL_DISABLE) except: 255 – device ignores OFF - ON sequence and uses ON behaviour.</p>
         ]]></description>
         <default>204</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -226,6 +237,7 @@ Sequence Off-On behaviour (timeout)<br /><h1>Overview</h1><p>Behaviour after a r
 Sequence timing<br /><h1>Overview</h1><p>Time in [100 milliseconds] of maximum delay between BASIC ON and BASIC<br />OFF (and vice versa) to consider this as a sequence. It is typically 1 second,<br />but can be exceptionally longer due to retransmissions and overload – in this<br />case, a longer interval can be allowed (up to 5 seconds).</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -235,6 +247,7 @@ Sequence timing<br /><h1>Overview</h1><p>Time in [100 milliseconds] of maximum d
 Motion Off behaviour (timeout)<br /><h1>Overview</h1><p>Motion disable timeout after BASIC SET to motion endpoint when the inter-<br />nal motion sensor is not used for evaluating the behaviour of the lamp (SLAMP)<br />relay (SPIR) and groups 2 and 3. Events are, however, still transmitted to the<br />Lifeline, and the device can be controlled via remote motion sensors.</p> <p>0 = BASIC SET to motion sensor endpoint ignored, BASIC to root is<br />mapped to relay endpoint, (SPIR) motion sensor still enabled</p> <p><br />1 - 209 = Internal motion sensor is disabled for specified timeout after BASIC<br />SET 0x00 to motion endpoint.<br />Timeout:<br />1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution<br />101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution<br />201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution</p> <p>210 - 254 = Reserved</p> <p>255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -84,6 +84,7 @@ Smart Energy Plug-in Switch<br /><h1>Overview</h1><p>This plug-in ON/OFF switch 
 Wall Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 5 seconds</strong></p> <p>Default value is 720 * 5 s = 3600 s = 1 hour</p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -93,6 +94,7 @@ Wall Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 5 seconds</str
 KWH Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 10 minutes</strong></p> <p>Default is 6 * 10 min = 1 hour</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -102,6 +104,7 @@ KWH Meter Report Period<br /><h1>Overview</h1><p><strong>Unit is 10 minutes</str
 Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0.01 Ampere</strong></p> <p>Default is 1300 * .01 A = 13 A</p>
         ]]></description>
         <default>1300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -109,6 +112,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
         <label>4: Threshold of KWH for Load caution</label>
         <description>Threshold of KWH for Load caution</description>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -120,6 +124,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
           <option value="1">Last switch state (default)</option>
           <option value="2">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -130,6 +135,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
           <option value="0">Disable</option>
           <option value="1">Enable (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -141,6 +147,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
           <option value="2">Show night mode</option>
           <option value="3">Flash mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -151,7 +158,6 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
         <options>
           <option value="0">Disable auto off function</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -165,6 +171,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><p><strong>Unit is 0
           <option value="3">Switch on</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -94,24 +94,28 @@ Rollershutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Con
                  min="1" max="32767">
         <label>1: Watt meter report period</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
                  min="1" max="32767">
         <label>2: KWh meter report period</label>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
                  min="10" max="1100">
         <label>3: Watt load caution threshold</label>
         <default>1100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
                  min="1" max="10000">
         <label>4: KWh load caution threshold</label>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

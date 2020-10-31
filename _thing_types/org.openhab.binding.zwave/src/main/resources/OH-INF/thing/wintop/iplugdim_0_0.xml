@@ -50,7 +50,6 @@ Wall Plug with dimming function<br /><h1>Overview</h1><ul><li>The iPlugDim can b
         <options>
           <option value="1">Set all config values to default values</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -277,7 +277,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/217/Zipato-Zwave-RFID-Tag-Reader-Installation.pdf)
+* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/217/reference/Zipato-Zwave-RFID-Tag-Reader-Installation.pdf)
 
 ---
 

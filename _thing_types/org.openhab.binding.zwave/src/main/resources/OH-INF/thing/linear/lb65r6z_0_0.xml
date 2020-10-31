@@ -58,6 +58,7 @@ Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>The brightness level will 
           <option value="0">Disable dim level memory</option>
           <option value="1">Enable dim level memory</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -67,6 +68,7 @@ Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>The brightness level will 
 Dimming/Brightening Step Level<br /><h1>Overview</h1><p>A low value provides gradual dimming and brightening, a high values makes it change rapidly.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -74,6 +76,7 @@ Dimming/Brightening Step Level<br /><h1>Overview</h1><p>A low value provides gra
         <label>10: Dim / Bright Speed</label>
         <description>How fast the brightness will change with each dimming step</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

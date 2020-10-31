@@ -63,6 +63,7 @@ Wall plug dimmer switch<br /><h1>Overview</h1><p>Dimming Module</p> <br /><h2>In
           <option value="1">All On is not active, All Off active</option>
           <option value="2">All On active, All Off is not active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Wall plug dimmer switch<br /><h1>Overview</h1><p>Dimming Module</p> <br /><h2>In
           <option value="0">Switch is OFF</option>
           <option value="1">Switch saves its state before power failure.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -83,6 +85,7 @@ Wall plug dimmer switch<br /><h1>Overview</h1><p>Dimming Module</p> <br /><h2>In
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -92,6 +95,7 @@ Wall plug dimmer switch<br /><h1>Overview</h1><p>Dimming Module</p> <br /><h2>In
 Dimming time frame<br /><h1>Overview</h1><p>Sets the time of moving the Dimmer from 0% to max. dimming values.</p> <p>(The ZDM-80 will implement the dimming duration if received this parameter value from controller/gateway. Otherwise, the ZDM-80 will implement the local parameter value)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -101,6 +105,7 @@ Dimming time frame<br /><h1>Overview</h1><p>Sets the time of moving the Dimmer f
 Maximum Dimmer level control<br /><h1>Overview</h1><p>Define the upper dimming level. Higher percentages lead to higher brightness level.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -110,6 +115,7 @@ Maximum Dimmer level control<br /><h1>Overview</h1><p>Define the upper dimming l
 Minimum Dimmer level control<br /><h1>Overview</h1><p>Define the lower dimming level. Lower percentages lead to lower brightness level.</p>
         ]]></description>
         <default>13</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

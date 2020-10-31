@@ -71,6 +71,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
           <option value="1">ALL ON disabled/ ALL OFF active</option>
           <option value="2">ALL ON active / ALL OFF disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
           <option value="0">Manual Override Disabled</option>
           <option value="1">Manual Override Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
         <label>4: Relay 1: OFF-delay time</label>
         <description>Automatic turning off relay 1 after set time in milliseconds, 0 to disable</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -95,6 +98,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
         <label>5: Relay 2: OFF-delay time</label>
         <description>Automatic turning off relay 2 after set time in milliseconds, 0 to disable</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -106,6 +110,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
           <option value="1">Map OFF status to group 1-last state</option>
           <option value="2">Map OFF status to group 1-full brightness</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -118,6 +123,7 @@ Map status to devices in group 2.<br /><h1>Overview</h1><p>Commands are sent whe
           <option value="0">Device status is not checked</option>
           <option value="1">Device status is checked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -128,6 +134,7 @@ Map status to devices in group 2.<br /><h1>Overview</h1><p>Commands are sent whe
           <option value="0">Toggle</option>
           <option value="1">Follow switch contact (closed=ON, open=OFF)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -138,6 +145,7 @@ Map status to devices in group 2.<br /><h1>Overview</h1><p>Commands are sent whe
           <option value="0">Mono-stable input (button)</option>
           <option value="1">Bi-stable input (switch)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -150,6 +158,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="0">Disable Dimmer/Roller shutter control</option>
           <option value="1">Enable Dimmer/Roller shutter control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -160,6 +169,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="0">State NOT saved at power failure</option>
           <option value="1">State saved at power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -171,6 +181,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -182,6 +193,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -193,6 +205,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -204,6 +217,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -211,6 +225,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -222,6 +237,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -233,6 +249,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -244,6 +261,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -255,6 +273,7 @@ Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1>
           <option value="2">Alarm Relay OFF</option>
           <option value="3">Alarm Flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

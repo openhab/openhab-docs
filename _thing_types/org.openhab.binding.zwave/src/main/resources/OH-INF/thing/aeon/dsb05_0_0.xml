@@ -78,6 +78,7 @@
           <option value="0">disable (default)</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -87,6 +88,7 @@
 On time before sending off command<br /><h1>Overview</h1><p>How long should the device associated to multi sensor keep state On before sending it Off command (if the value is bigger than 255, the value would be rounded to next integer in minutes)</p>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -96,6 +98,7 @@ On time before sending off command<br /><h1>Overview</h1><p>How long should the 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -105,6 +108,7 @@ On time before sending off command<br /><h1>Overview</h1><p>How long should the 
           <option value="1">Send Basic Set</option>
           <option value="2">send Sensor Binary report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_000000FF" type="integer" groupName="configuration"
@@ -114,6 +118,7 @@ On time before sending off command<br /><h1>Overview</h1><p>How long should the 
 Group 1 automatic report list<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery.</p> <p>The sensors have the values:</p> <p>Temperature=32</p> <p>Humidity=64</p> <p>Lightlevel=128</p> <p>Battery=1                           </p> <p>Therefore if you want all sensors and the battery report set this value to <strong>225</strong> (recommended)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_000000FF" type="integer" groupName="configuration"
@@ -123,6 +128,7 @@ Group 1 automatic report list<br /><h1>Overview</h1><p>The value is a combinatio
 Group 2 automatic report list<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery.</p> <p>The sensors have the values:</p> <p>Temperature=32</p> <p>Humidity=64</p> <p>Lightlevel=128</p> <p>Battery=1                           </p> <p>Therefore if you want all sensors and the battery report set this value to 225</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_000000FF" type="integer" groupName="configuration"
@@ -132,24 +138,28 @@ Group 2 automatic report list<br /><h1>Overview</h1><p>The value is a combinatio
 Group 3 automatic report list<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual sensors and battery.</p> <p>The sensors have the values:</p> <p>Temperature=32</p> <p>Humidity=64</p> <p>Lightlevel=128</p> <p>Battery=1                           </p> <p>Therefore if you want all sensors and the battery report set this value to 225</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>111: Interval to send out reports of group 1</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>112: Interval to send out reports of group 2</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>113: Interval to send out reports of group 3</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -160,6 +170,7 @@ Group 3 automatic report list<br /><h1>Overview</h1><p>The value is a combinatio
           <option value="0">Normal Operation</option>
           <option value="1">Reset to Factory Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

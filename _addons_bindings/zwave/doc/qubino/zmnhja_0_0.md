@@ -383,8 +383,8 @@ Association group 5 supports 99 nodes.
 
 ### Documentation Links
 
-* [User Manual [French]](https://opensmarthouse.org/zwavedatabase/354/Qubino-Flush-Pilot-wire-user-manual-V2-0-fra.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/354/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+* [User Manual [French]](https://opensmarthouse.org/zwavedatabase/354/reference/Qubino-Flush-Pilot-wire-user-manual-V2-0-fra.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/354/reference/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
 
 ---
 

@@ -78,6 +78,7 @@ Motion Sensor<br /><h1>Overview</h1><p>The Fibaro Motion Sensor is a universal Z
 The lower the value, the more sensitive the PIR sensor.<br /><h1>Overview</h1><p>The lower the value, the more sensitive the PIR sensor. Available settings: 8 - 255.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -87,6 +88,7 @@ The lower the value, the more sensitive the PIR sensor.<br /><h1>Overview</h1><p
 Period of time through which the PIR sensor is “blind”.<br /><h1>Overview</h1><p>Period of time through which the PIR sensor is “blind” (insensitive) to motion. After this time period the PIR sensor will be again able to detect motion. The longer the insensitivity period, the longer the battery life. If the sensor is required to detect motion quickly, the time period may be shortened. The time of insensitivity should be shorter that the time period set in parameter 6.<br />Available settings: 0 - 15<br />Formula to calculate the time: time [s] = 0.5 x (value + 1)<br />Default setting: 15 (8 seconds)<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@ Period of time through which the PIR sensor is “blind”.<br /><h1>Overview</h
 Sets the number of moves required for the PIR sensor to report motion.<br /><h1>Overview</h1><p>Sets the number of moves required for the PIR sensor to report motion. The lower the value, the less sensitive the PIR sensor. It’s not recommended to modify this parameter settings.<br />Available settings: 0 - 3<br />Formula to calculate the number of pulses: pulses = (value + 1) Default setting: 1 (2 pulses)<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ Sets the number of moves required for the PIR sensor to report motion.<br /><h1>
 The higher the value, the more sensitive the PIR sensor.<br /><h1>Overview</h1><p>Period of time during which the number of moves set in parameter 3 must be detected in order for the PIR sensor to report motion. The higher the value, the more sensitive the PIR sensor. It’s not recommended to modify this parameter setting.<br />Available settings: 0 - 3<br />Formula to calculate the time: time [s] = 4 x (value + 1)<br />Default setting: 2 (12 seconds)<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -114,6 +118,7 @@ The higher the value, the more sensitive the PIR sensor.<br /><h1>Overview</h1><
 Period of time after wich Motion alarm will be cancelled.<br /><h1>Overview</h1><p>Motion alarm will be cancelled in the main controller and the associated devices after the period of time set in this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted. In case of small values, below 10 seconds, the value of parameter 2 must be modified (PIR sensor’s “Blind Time”).<br />Available settings: 1 - 65535<br />Default setting: 30 (30 seconds)<br />Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -127,6 +132,7 @@ The parameter determines the part of day in which the PIR sensor will be active.
           <option value="1">PIR sensor active during the day only</option>
           <option value="2">PIR sensor active during the night only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -136,6 +142,7 @@ The parameter determines the part of day in which the PIR sensor will be active.
 The parameter defines the difference between night and day.<br /><h1>Overview</h1><p>The parameter defines the difference between night and day, in terms of light intensity, used in parameter 8. Available settings: 1 - 65535 Default setting: 200 (200 lux) Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -149,6 +156,7 @@ Determines the command frames sent in 1-st association group.<br /><h1>Overview<
           <option value="1">Only the BASIC ON</option>
           <option value="2">Only the BASIC OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -158,6 +166,7 @@ Determines the command frames sent in 1-st association group.<br /><h1>Overview<
 The value of 255 allows to turn ON a device.<br /><h1>Overview</h1><p>The value of 255 allows to turn ON a device. In case of the Dimmer, the value of 255 means turning ON at the last memorized state, e.g. the Dimmer turned ON at 30% and turned OFF using the value of 255, and then turned OFF, will be turned ON at 30%, i.e. the last memorized state.<br />Available settings: 0 - 255<br />Default setting: 255<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -167,6 +176,7 @@ The value of 255 allows to turn ON a device.<br /><h1>Overview</h1><p>The value 
 The value of 0 allows to turn OFF a device.<br /><h1>Overview</h1><p>The command frame sent at the moment of motion alarm cancellation, after the cancellation delay time, specified in parameter 6, has passed. The value of 0 allows to turn a device OFF while the value of 255 allows to turn ON a device. In case of the Dimmer, the value of 255 means turning ON at the last memorized state, e.g. the Dimmer turned ON at 30% and turned OFF using the value of 255, and then turned OFF, will be turned ON at 30%, i.e. the last memorized state.<br />Available settings: 0 - 255<br />Default setting: 0<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -176,6 +186,7 @@ The value of 0 allows to turn OFF a device.<br /><h1>Overview</h1><p>The command
 The parameter determines the changes in forces.<br /><h1>Overview</h1><p>The parameter determines the chages in forces acting on the Fibaro Motion Sensor resulting in tamper alarm being reported - g-force acceleration.<br />Available settigs: 0 - 122 (0.08 - 2g; multiply by 0.016g; 0 = tamper inactive)<br />Default setting: 15 (0.224g)<br />Parameter size: 1 [byte] </p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -185,6 +196,7 @@ The parameter determines the changes in forces.<br /><h1>Overview</h1><p>The par
 Time period after which a tamper alarm will be cancelled.<br /><h1>Overview</h1><p>Time period after which a tamper alarm will be cancelled. Another tampering detected durig the countdown to cancellation will not extend the delay.<br />Available settings: 1 - 65535<br />Default setting: 30 (seconds)<br />Parameter size: 2 [bytes] </p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -200,6 +212,7 @@ The parameter determines the behaviour of tamper and how it reports.<br /><h1>Ov
           <option value="3">Tamper/Cancellation plus Orientation in space</option>
           <option value="4">Max level of vibrations recorded (Earthquake)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -212,6 +225,7 @@ Alarm frame will or will not be sent in broadcast mode.<br /><h1>Overview</h1><p
           <option value="0">Tamper alarm is not sent in broadcast mode.</option>
           <option value="1">Tamper alarm sent in broadcast mode.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_2" type="integer" groupName="configuration"
@@ -221,6 +235,7 @@ Alarm frame will or will not be sent in broadcast mode.<br /><h1>Overview</h1><p
 Change in level of light intensity resulting in illumination report.<br /><h1>Overview</h1><p>The parameter determines the change in light intensity level resulting in illumination report being sent to the main controller.</p> <p>Available settings: 0 - 65535 (1 - 65535 lux; 0 = reports are not sent)</p> <p>Default setting: 200 (200 lux) Parameter size: 2 [byte] </p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -230,6 +245,7 @@ Change in level of light intensity resulting in illumination report.<br /><h1>Ov
 Time interval between consecutive illumination reports.<br /><h1>Overview</h1><p>Time interval between consecutive illumination reports. The reports are sent even if there are no changes in the light intensity.</p> <p>Available settings: 0 - 65535 (1 - 65535 seconds; 0 = reports are not sent)</p> <p>Default setting: 0 (no reports) Parameter size: 2 [bytes] </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration"
@@ -239,6 +255,7 @@ Time interval between consecutive illumination reports.<br /><h1>Overview</h1><p
 Change in level of temperature resulting in temperature report.<br /><h1>Overview</h1><p>The parameter determines the change in level of temperature resulting in temperature report being sent to the main controller.<br />Available settings: 0 - 255 (0.1 - 25.5oC; 0 = reports are not sent)<br />Default setting: 10 (1oC) Parameter size: 1 [byte]</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_2" type="integer" groupName="configuration"
@@ -248,6 +265,7 @@ Change in level of temperature resulting in temperature report.<br /><h1>Overvie
 The parameter determines how often the temperature will be measured.<br /><h1>Overview</h1><p>The parameter determines how often the temperature will be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.<br />Available settings: 0 - 65535 (1 - 65535 seconds; 0 = temperature will not be measured)<br />Default setting: 900 (900 seconds)<br />Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>900</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_2" type="integer" groupName="configuration"
@@ -257,6 +275,7 @@ The parameter determines how often the temperature will be measured.<br /><h1>Ov
 How often temperature reports will be sent to the main controller.<br /><h1>Overview</h1><p>The parameter determines how often the temperature reports will be sent to the main controller.<br />Available settings: 0 - 65535 (1 - 65535 seconds; 0 = reports are not sent)<br />Default setting: 0 Parameter size: 2 [byte] </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_2" type="integer" groupName="configuration"
@@ -266,6 +285,7 @@ How often temperature reports will be sent to the main controller.<br /><h1>Over
 The value to be added to the actual measured temperature.<br /><h1>Overview</h1><p>The value to be added to the actual temperature, measured by the sensor (temperature compensation).<br /> Available settings: 0 - 100 (0 to 100oC) or 64536 - 65535 (-100 to -0.10oC)<br />Default setting: 0 Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -303,6 +323,7 @@ Way in which LED diode behaves after motion has been detected.<br /><h1>Overview
           <option value="25">Cyan</option>
           <option value="26">Magenta</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration"
@@ -312,6 +333,7 @@ Way in which LED diode behaves after motion has been detected.<br /><h1>Overview
 The parameter determines the brightness of LED when indicating motion.<br /><h1>Overview</h1><p>The parameter determines the brightness of LED when indicating motion.<br />Available settings: 0 - 100 (1 - 100%; 0 = brightness determined by the ambient lighting - see parameters 82 and 83)<br />Default setting: 50 Parameter size: 1 [byte]</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_2" type="integer" groupName="configuration"
@@ -321,6 +343,7 @@ The parameter determines the brightness of LED when indicating motion.<br /><h1>
 Below which LED brightness is set to 1%<br /><h1>Overview</h1><p>The parameter is relevant only when the parameter 81 is set to 0.</p> <p>Available settings: 0 to parameter 83 value<br />Default setting: 100 (100 lux)<br />Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_2" type="integer" groupName="configuration"
@@ -330,6 +353,7 @@ Below which LED brightness is set to 1%<br /><h1>Overview</h1><p>The parameter i
 Above which LED brightness is set to 100%<br /><h1>Overview</h1><p>The parameter is relevant only when the parameter 81 is set to 0.</p> <p>Available settings: parameter 82 value to 65535<br />Default setting: 1 000 (1 000 lux)<br />Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>1000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_86_1" type="integer" groupName="configuration"
@@ -339,6 +363,7 @@ Above which LED brightness is set to 100%<br /><h1>Overview</h1><p>The parameter
 This parameter is relevant only when parameter 80 has been properly configured.<br /><h1>Overview</h1><p>This parameter is relevant only when parameter 80 has been properly configured.<br />Available settings: 0 to parameter 87 value (degrees celsius)<br />Default setting: 18 (18oC)<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>18</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_87_1" type="integer" groupName="configuration"
@@ -348,6 +373,7 @@ This parameter is relevant only when parameter 80 has been properly configured.<
 This parameter is relevant only when parameter 80 has been properly configured.<br /><h1>Overview</h1><p>This parameter is relevant only when parameter 80 has been properly configured.<br />Available settings: parameter 86 value to 255 (degrees celsius)<br />Default setting: 28 (28oC)<br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>28</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_89_1" type="integer" groupName="configuration">
@@ -360,6 +386,7 @@ Indicating mode resembles a police car (white, red and blue).<br /><h1>Overview<
           <option value="0">LED does not indicate tamper alarm.</option>
           <option value="1">LED indicates tamper alarm.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

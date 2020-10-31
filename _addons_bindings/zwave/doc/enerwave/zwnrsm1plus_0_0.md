@@ -138,7 +138,7 @@ Association group 2 supports 3 nodes.
 
 ### Documentation Links
 
-* [ZWN-RSM1-Plus Installation Instructions](https://opensmarthouse.org/zwavedatabase/575/ZWN-RSM1-Plus-0208160043-02.pdf)
+* [ZWN-RSM1-Plus Installation Instructions](https://opensmarthouse.org/zwavedatabase/575/reference/ZWN-RSM1-Plus-0208160043-02.pdf)
 
 ---
 

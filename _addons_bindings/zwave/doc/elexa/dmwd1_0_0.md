@@ -203,7 +203,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Advanced Manual](https://opensmarthouse.org/zwavedatabase/608/dome-z-wave-plus-door-window-sensor-dmwd1-advanced-manual.pdf)
+* [Advanced Manual](https://opensmarthouse.org/zwavedatabase/608/reference/dome-z-wave-plus-door-window-sensor-dmwd1-advanced-manual.pdf)
 
 ---
 

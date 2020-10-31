@@ -62,6 +62,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave 
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -71,6 +72,7 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave 
 Number of levels (1-99) to change dimming each step when controlled remotely<br /><h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled remotely.</p> <p>(This parameter was added in firmware version 5.14)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -80,6 +82,7 @@ Number of levels (1-99) to change dimming each step when controlled remotely<br 
 Time interval (in tens of ms) of brightness change when controlled remotely<br /><h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p> <p>(This parameter was added in firmware version 5.14)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -89,6 +92,7 @@ Time interval (in tens of ms) of brightness change when controlled remotely<br /
 Number of levels (1-99) to change dimming each step when controlled locally<br /><h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled locally.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -98,6 +102,7 @@ Number of levels (1-99) to change dimming each step when controlled locally<br /
 Time interval (in tens of ms) of brightness change when controlled locally<br /><h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

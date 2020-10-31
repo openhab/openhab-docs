@@ -86,6 +86,7 @@ Power Plug<br /><h1>Overview</h1><p>Controllable plug for wall outlets including
           <option value="1">Always On</option>
           <option value="2">Last state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

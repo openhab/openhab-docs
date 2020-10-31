@@ -85,6 +85,7 @@ Smart Energy Switch 3rd Edition<br /><h1>Overview</h1><p>Smart Energy Switch 3rd
 The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. 1 - 255 The MSB defines the on/off interval of the blinking. The unit is 0.1 s. This is a double byte value.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ Load will be closed when the Current over runs<br /><h1>Overview</h1><p> Load w
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -108,6 +110,7 @@ Load will be closed when the Current over runs<br /><h1>Overview</h1><p> Load w
           <option value="1">Always On</option>
           <option value="2">Always Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -121,6 +124,7 @@ Enable device to send notification to associated devices<br /><h1>Overview</h1><
           <option value="1">Hail CC Sent</option>
           <option value="2">Basic CC Report Sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -133,6 +137,7 @@ Enable the device to send notification to associated devices (Group 1)<br /><h1>
           <option value="0">The LED will follow the status of its load</option>
           <option value="1">Switch off after 5 seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -145,6 +150,7 @@ Enable/Disable automated sending of report triggered by minimal change of value.
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -154,6 +160,7 @@ Enable/Disable automated sending of report triggered by minimal change of value.
 The value represents the minimum change in Wattage for a Report to be sent.<br /><h1>Overview</h1><p> Range is 0 - 32000</p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -163,6 +170,7 @@ The value represents the minimum change in Wattage for a Report to be sent.<br /
 Minimum change in Wattage Percent for a report to be sent.<br /><h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent. Range is 0 to 100%</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -175,6 +183,7 @@ Minimum change in Wattage Percent for a report to be sent.<br /><h1>Overview</h1
           <option value="0">Set to Default</option>
           <option value="1">Nothing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -184,6 +193,7 @@ Minimum change in Wattage Percent for a report to be sent.<br /><h1>Overview</h1
 The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p>Therefore if you want all parameters sending regular r</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -193,6 +203,7 @@ The value is a combination number<br /><h1>Overview</h1><p>The value is a combin
 The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.</p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p> <p> Therefore if you want all parameters sending regular re</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -202,6 +213,7 @@ The value is a combination number<br /><h1>Overview</h1><p>The value is a combin
 The value is a combination number<br /><h1>Overview</h1><p>The value is a combination number &lt;br&gt; made up of the sum of the values for the individual parameters. &lt;br&gt; The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1. &lt;br&gt; Therefore if you want all parameters sending regular re</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -211,6 +223,7 @@ The value is a combination number<br /><h1>Overview</h1><p>The value is a combin
 Time Interval to send reports to Group 1<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 1 is sent out.</p> <p>0 s - 65535 s - Interval</p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -220,6 +233,7 @@ Time Interval to send reports to Group 1<br /><h1>Overview</h1><p>Defines the ti
 Time interval to send reports of group 2<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 2 is sent out.</p> <p>0 s - 65535 s - Interval</p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -229,6 +243,7 @@ Time interval to send reports of group 2<br /><h1>Overview</h1><p>Defines the ti
 Time interval when report of Reporting Group 3 is sent.<br /><h1>Overview</h1><p>Defines the time interval when the defined report of Reporting Group 3 is sent out.</p> <p>0 s - 65535 s - Interval</p>
         ]]></description>
         <default>65535</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -238,6 +253,7 @@ Time interval when report of Reporting Group 3 is sent.<br /><h1>Overview</h1><p
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -198,7 +198,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual version 1.0](https://opensmarthouse.org/zwavedatabase/800/hm-hs1wl-z-Smart-Water-Leakage-Sensor-Z-Wave-User-Manual-1-0.pdf)
+* [Manual version 1.0](https://opensmarthouse.org/zwavedatabase/800/reference/hm-hs1wl-z-Smart-Water-Leakage-Sensor-Z-Wave-User-Manual-1-0.pdf)
 
 ---
 

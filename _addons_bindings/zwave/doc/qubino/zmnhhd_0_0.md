@@ -645,7 +645,7 @@ Association group 4 supports 16 nodes.
 
 ### Documentation Links
 
-* [MiniDimmer_product_manual](https://opensmarthouse.org/zwavedatabase/1100/Qubino-Mini-Dimmer-extended-manual-eng-1-8.pdf)
+* [MiniDimmer_product_manual](https://opensmarthouse.org/zwavedatabase/1100/reference/Qubino-Mini-Dimmer-extended-manual-eng-1-8.pdf)
 
 ---
 

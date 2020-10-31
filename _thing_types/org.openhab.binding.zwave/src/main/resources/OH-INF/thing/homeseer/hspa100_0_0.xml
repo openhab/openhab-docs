@@ -62,6 +62,7 @@ Appliance Module<br /><h1>Overview</h1><p>The connected lighting devices can be 
           <option value="1">LED ON when light is OFF</option>
           <option value="2">LED always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

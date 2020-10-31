@@ -83,6 +83,7 @@ Slim Multi-Sensor<br /><h1>Overview</h1><p>PIR, door/window, temperature and ill
 Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the light.</p> <p>1 - 100    -&gt;  For dimmers 1 to 100 means the light strength</p>
         ]]></description>
         <default>-1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -92,6 +93,7 @@ Basic Set Level<br /><h1>Overview</h1><p>-1    -&gt;  0xFF(-1) turns on the l
 PIR Sensitivity<br /><h1>Overview</h1><p>parameter to set the Sensitivity for the PIR (Passive Infrared Sensor)</p> <p>0    -&gt;  0 means disable the PIR motion;</p> <p>1 - 99    -&gt;  1 means the lowest sensitivity, 99 means the highest sensitivity</p>
         ]]></description>
         <default>70</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -101,6 +103,7 @@ PIR Sensitivity<br /><h1>Overview</h1><p>parameter to set the Sensitivity for th
 Light Threshold<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggered and the environment illumination lower then the threshold, the device will turn on the light</p> <ul><li>0 means turn off illumination detected function. And never turn on the light.</li> <li>1 means darkest.</li> <li>99 means brightest.</li> <li>100 means turn off illumination detected function. And always turn on the light.</li> </ul>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -110,6 +113,7 @@ Light Threshold<br /><h1>Overview</h1><p>Setting the illumination threshold to t
 Operation Mode<br /><h1>Overview</h1><h1>Bit 0:</h1> <ul><li>1 means security mode;</li> <li>0 means home automation mode.</li> </ul><h1>Bit 1:</h1> <ul><li>1 means enable test mode;</li> <li>0 means disable test mode.</li> </ul><p><strong>Notice</strong>: Bit0 and bit1 will effect when the DIP Switch setting to program mode. If bit1 is enabled, the bit0 is useless.</p> <h1>Bit2:</h1> <p>Disable the door/window function.</p> <h1>Bit3:</h1> <p>Setting the temperature scale</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -119,6 +123,7 @@ Operation Mode<br /><h1>Overview</h1><h1>Bit 0:</h1> <ul><li>1 means security mo
 Multi-Sensor Function Switch<br /><h1>Overview</h1><ul><li>Bit 0: Disable magnetic integrate illumination.</li> <li>Bit 1: Disable PIR integrate Illumination.</li> <li>Bit 2: Disable magnetic integrate PIR (Default is Disable)</li> <li>Bit 3: When Bit2 is 0 (Enable), the device is install in the same room with the light? <ul><li>0: In the same room(Default),</li> <li>1: In the different room.</li> </ul></li> <li>Bit4: Disable delay 5 seconds to turn off the light, when door/window closed.</li> <li>Bit5: Disable auto turn off the light, after door/window opened to turn on the light.</li> <li>Bit6:Enable temperature monitoring. When this bit enable, the temperature changed 3 degree Fahrenheit, it will report.</li> </ul><p>And also the temperature over 140 degree Fahrenheit, it will report every 64 seconds.</p> <p><strong>Notice</strong>: If bit2 is zero, this setting is useless</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -128,6 +133,7 @@ Multi-Sensor Function Switch<br /><h1>Overview</h1><ul><li>Bit 0: Disable magnet
 PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the security mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, and minimum time is 24 seconds, default tick is 3 (24 seconds).</p> <p>Setting the suitable value to prevent received the trigger signal too frequency. Also can save the battery energy.</p> <p><strong>Notice</strong>: If this value bigger than the configuration setting NO. 9. There is a period after the light turned off and the PIR not detecting</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -137,6 +143,7 @@ PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the security mode, after
 Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected. 8 seconds per tick, and minimum time is 32 seconds, default tick is 4 (32 seconds)</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -146,6 +153,7 @@ Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the light, setting th
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours). </p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -155,6 +163,7 @@ Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto rep
 Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time for auto report the door/window state. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -164,6 +173,7 @@ Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time fo
 Auto Report Illumination Time<br /><h1>Overview</h1><p>The interval time for auto report the illumination. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -173,6 +183,7 @@ Auto Report Illumination Time<br /><h1>Overview</h1><p>The interval time for aut
 Auto Report Temperature Time<br /><h1>Overview</h1><p>The interval time for auto report the temperature. 30 minutes per tick and minimum time is 30 minutes, default tick is 12 (6 hours).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

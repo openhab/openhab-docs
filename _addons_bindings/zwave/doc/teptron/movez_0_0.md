@@ -149,7 +149,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [MOVEZ Beta User Manual](https://opensmarthouse.org/zwavedatabase/1264/MOVEZ-user-manual-draft-v2.pdf)
+* [MOVEZ Beta User Manual](https://opensmarthouse.org/zwavedatabase/1264/reference/MOVEZ-user-manual-draft-v2.pdf)
 
 ---
 

@@ -93,7 +93,6 @@ Eneco Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and 
           <option value="1">Gas enabled</option>
           <option value="2">Heat enabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration"
@@ -103,6 +102,7 @@ Eneco Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and 
 Analog gas/heat port resolution<br /><h1>Overview</h1><p>pulses per cubic meter / pulses per MJ; in Q14.2 notation</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -115,7 +115,6 @@ Analog gas/heat port resolution<br /><h1>Overview</h1><p>pulses per cubic meter 
           <option value="1">Electricity import enabled</option>
           <option value="2">Electricity export enabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -125,6 +124,7 @@ Analog gas/heat port resolution<br /><h1>Overview</h1><p>pulses per cubic meter 
 Analog electricity port resolution<br /><h1>Overview</h1><p>pulses per kWh; in Q14.2 notation</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration">
@@ -135,6 +135,7 @@ Analog electricity port resolution<br /><h1>Overview</h1><p>pulses per kWh; in Q
           <option value="1">Restart entire device</option>
           <option value="2">Restart metering chip</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

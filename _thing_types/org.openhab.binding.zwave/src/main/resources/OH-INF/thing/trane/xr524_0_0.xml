@@ -86,6 +86,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 524 To
           <option value="1">HeatPump</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 524 To
           <option value="1">Electric</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -108,6 +110,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 524 To
           <option value="1">w/Heat</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -118,6 +121,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 524 To
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -128,6 +132,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 524 To
           <option value="0">Unlocked</option>
           <option value="1">Locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -138,6 +143,7 @@ Minimum Off Time<br /><h1>Overview</h1><p>Sets the minimum off time before anoth
         ]]></description>
         <default>5</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -148,6 +154,7 @@ Minimum Run Time<br /><h1>Overview</h1><p>Sets the minimum run time before a hea
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -158,6 +165,7 @@ Heating Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -168,6 +176,7 @@ Heating Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -178,6 +187,7 @@ Heating Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>2</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -188,6 +198,7 @@ Heating Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -198,6 +209,7 @@ Heating Delta Stage 3 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>3</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -208,6 +220,7 @@ Heating Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -218,6 +231,7 @@ Cooling Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -228,6 +242,7 @@ Cooling Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -238,6 +253,7 @@ Cooling Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>2</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -247,6 +263,7 @@ Cooling Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
 Cooling Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops. Stage 1 turns off at setpoint minus (-) Delta Stage 2.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
@@ -256,6 +273,7 @@ Cooling Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
 H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between the heating and cooling setpoints. Attempts to lower the cooling below the heating setpoint by this amount will PUSH the heating setpoint down to maintain this separation. Same for setting the heating setpoint above the cooling setpoint, it will PUSH the cooling setpoint up to maintain this separation. <br />Settings in F.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -269,6 +287,7 @@ SetBack Mode<br /><h1>Overview</h1><p>0 = No Setback, 1 = Setback, 2 if ESM</p>
           <option value="1">Setback</option>
           <option value="2">ESM</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration"
@@ -278,6 +297,7 @@ SetBack Mode<br /><h1>Overview</h1><p>0 = No Setback, 1 = Setback, 2 if ESM</p>
 ESM Setpoint--Heating<br /><h1>Overview</h1><p>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control). <br />Setting in F.</p>
         ]]></description>
         <default>65</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -287,6 +307,7 @@ ESM Setpoint--Heating<br /><h1>Overview</h1><p>Energy Saving Mode (ESM) Setpoint
 ESM Setpoint--Cooling<br /><h1>Overview</h1><p>Energy Saving Mode (ESM) Setpoints are the setpoints used when the Energy Saving Mode schedule is selected in the Schedule Mode screen (or via Z-Wave control).</p>
         ]]></description>
         <default>80</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_75_1" type="integer" groupName="configuration"
@@ -296,6 +317,7 @@ ESM Setpoint--Cooling<br /><h1>Overview</h1><p>Energy Saving Mode (ESM) Setpoint
 Fan ON Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements. </p> <p>When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_76_1" type="integer" groupName="configuration"
@@ -305,6 +327,7 @@ Fan ON Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC sys
 Fan OFF Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC system fan for an ON period followed by an OFF period continuously. Used to provide minimum air ventilation requirements.</p> <p>When the Fan ON time is set to a value greater than 0, an additional Cycler Fan mode is present when pressing the FAN button on the thermostat.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_1" type="integer" groupName="configuration">
@@ -315,6 +338,7 @@ Fan OFF Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC sy
           <option value="0">no 2nd stage heat</option>
           <option value="1">2nd stage heat</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_78_1" type="integer" groupName="configuration">
@@ -325,6 +349,7 @@ Fan OFF Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC sy
           <option value="0">no aux heat</option>
           <option value="1">aux heat enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_79_1" type="integer" groupName="configuration">
@@ -335,6 +360,7 @@ Fan OFF Time<br /><h1>Overview</h1><p>The fan cycler function cycles the HVAC sy
           <option value="0">no 2nd stage cool</option>
           <option value="1">2nd stage cool</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_132_1" type="integer" groupName="configuration">
@@ -347,6 +373,7 @@ Run Schedule<br /><h1>Overview</h1><p>Set to 1 if running schedule (RUN is displ
           <option value="0">not running schedule</option>
           <option value="1">running schedule</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_137_1" type="integer" groupName="configuration"
@@ -356,6 +383,7 @@ Run Schedule<br /><h1>Overview</h1><p>Set to 1 if running schedule (RUN is displ
 Backlight Timeout<br /><h1>Overview</h1><p>Backlight Timeout is the time (in seconds) from the last button press to the backlight going out.  </p> <p>The time-out can be set between 0 and 120 seconds.  </p> <p>When set to 0, the backlight will remain always on.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_141_1" type="integer" groupName="configuration"
@@ -365,6 +393,7 @@ Backlight Timeout<br /><h1>Overview</h1><p>Backlight Timeout is the time (in sec
 Screen Timeout<br /><h1>Overview</h1><p>This is the time before any screen reverts to the Minimized Screen (temperature display only), after you stop pushing buttons.  </p> <p>Minimized Screen feature is disabled by setting this time to 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_143_1" type="integer" groupName="configuration"
@@ -375,6 +404,7 @@ Sensor (Internal) Offset<br /><h1>Overview</h1><p>The internal temperature senso
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_148_1" type="integer" groupName="configuration"
@@ -384,6 +414,7 @@ Sensor (Internal) Offset<br /><h1>Overview</h1><p>The internal temperature senso
 Screen Contrast<br /><h1>Overview</h1><p>The Screen Contrast sets the contrast level of the LCD display.</p> <p>The contrast can be set between 0 and 20.  If the display is too light, use a higher number.  If dark lines appear on the screen, use a lower number</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_185_1" type="integer" groupName="configuration"
@@ -394,6 +425,7 @@ Schedule Enable<br /><h1>Overview</h1><p>When enabled (set to 1), the local ther
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_228_4" type="integer" groupName="configuration"
@@ -404,6 +436,7 @@ Schedule Sun-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_229_4" type="integer" groupName="configuration"
@@ -414,6 +447,7 @@ Schedule Sun-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_230_4" type="integer" groupName="configuration"
@@ -424,6 +458,7 @@ Schedule Sun-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_231_4" type="integer" groupName="configuration"
@@ -434,6 +469,7 @@ Schedule Sun-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_232_4" type="integer" groupName="configuration"
@@ -444,6 +480,7 @@ Schedule Mon-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_233_4" type="integer" groupName="configuration"
@@ -454,6 +491,7 @@ Schedule Mon-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_234_4" type="integer" groupName="configuration"
@@ -464,6 +502,7 @@ Schedule Mon-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_235_4" type="integer" groupName="configuration"
@@ -474,6 +513,7 @@ Schedule Mon-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_236_4" type="integer" groupName="configuration"
@@ -484,6 +524,7 @@ Schedule Tue-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_237_4" type="integer" groupName="configuration"
@@ -494,6 +535,7 @@ Schedule Tue-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_238_4" type="integer" groupName="configuration"
@@ -504,6 +546,7 @@ Schedule Tue-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_239_4" type="integer" groupName="configuration"
@@ -514,6 +557,7 @@ Schedule Tue-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_240_4" type="integer" groupName="configuration"
@@ -524,6 +568,7 @@ Schedule Wed-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_241_4" type="integer" groupName="configuration"
@@ -534,6 +579,7 @@ Schedule Wed-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_242_4" type="integer" groupName="configuration"
@@ -544,6 +590,7 @@ Schedule Wed-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_243_4" type="integer" groupName="configuration"
@@ -554,6 +601,7 @@ Schedule Wed-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_244_4" type="integer" groupName="configuration"
@@ -564,6 +612,7 @@ Schedule Thu-1<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_246_4" type="integer" groupName="configuration"
@@ -574,6 +623,7 @@ Schedule Thu-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_247_4" type="integer" groupName="configuration"
@@ -584,6 +634,7 @@ Schedule Thu-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_248_4" type="integer" groupName="configuration"
@@ -594,6 +645,7 @@ Schedule Fri-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_249_4" type="integer" groupName="configuration"
@@ -604,6 +656,7 @@ Schedule Fri-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_250_4" type="integer" groupName="configuration"
@@ -614,6 +667,7 @@ Schedule Fri-3<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_251_4" type="integer" groupName="configuration"
@@ -624,6 +678,7 @@ Schedule Fri-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_4" type="integer" groupName="configuration"
@@ -634,6 +689,7 @@ Schedule Sat-1<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_253_4" type="integer" groupName="configuration"
@@ -644,6 +700,7 @@ Schedule Sat-2<br /><h1>Overview</h1><p>This value holds information about the s
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_4" type="integer" groupName="configuration"
@@ -654,6 +711,7 @@ Schedule Sat-3<br /><h1>Overview</h1><p>This value holds information about the t
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
@@ -664,6 +722,7 @@ Schedule Sat-4<br /><h1>Overview</h1><p>This value holds information about the f
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

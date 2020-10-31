@@ -81,6 +81,7 @@ Remember device status before the power failure.<br /><h1>Overview</h1><p>This p
           <option value="0">Switched OFF</option>
           <option value="1">Restore state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

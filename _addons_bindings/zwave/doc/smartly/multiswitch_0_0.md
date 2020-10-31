@@ -684,7 +684,7 @@ Association group 7 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/1032/SEdevices---FMS01-Multifunction-Switch-Z-Wave-User-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/1032/reference/SEdevices---FMS01-Multifunction-Switch-Z-Wave-User-Manual.pdf)
 
 ---
 

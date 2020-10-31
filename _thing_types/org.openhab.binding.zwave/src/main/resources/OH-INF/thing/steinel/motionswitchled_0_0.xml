@@ -110,7 +110,6 @@ Infrared motion detector with orientation light<br /><h1>Overview</h1><p>Infrare
         <options>
           <option value="0">Duration of light after motion detection [s]</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -123,7 +122,6 @@ Light threshold [lx]<br /><h1>Overview</h1><p>Light threshold: 2 - 2000, 0 lx</p
         <options>
           <option value="0">Light threshold [lx]</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -131,7 +129,6 @@ Light threshold [lx]<br /><h1>Overview</h1><p>Light threshold: 2 - 2000, 0 lx</p
         <label>5: SENSITIVITY</label>
         <description>Motion Radar Sensitivity [%]</description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -142,7 +139,6 @@ Brightness measuring interval [min]<br /><h1>Overview</h1><p>Interval for measur
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -153,7 +149,6 @@ Use external Ambient Light Value<br /><h1>Overview</h1><p>When GLOBAL_LIGHT mode
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -164,7 +159,6 @@ Disable local control<br /><h1>Overview</h1><p>Bit Field:</p> <table><tr><td>Bit
         ]]></description>
         <default>2</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -175,7 +169,6 @@ Off behaviour ( timeout )<br /><h1>Overview</h1><p>Behaviour after BASIC OFF ( a
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -186,7 +179,6 @@ On behaviour ( timeout )<br /><h1>Overview</h1><p>Behaviour after BASIC ON ( and
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -197,7 +189,6 @@ On behaviour time over ( timeout )<br /><h1>Overview</h1><p>Time limit to stop w
         ]]></description>
         <default>204</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -208,7 +199,6 @@ Sequence On-Off behaviour ( timeout )<br /><h1>Overview</h1><p>Behaviour after a
         ]]></description>
         <default>204</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -219,7 +209,6 @@ Sequence Off-On behaviour ( timeout )<br /><h1>Overview</h1><p>Behaviour after a
         ]]></description>
         <default>204</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -230,7 +219,6 @@ Sequence Off-On behaviour ( timeout )<br /><h1>Overview</h1><p>Time in [100 mill
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -241,7 +229,6 @@ Motion Off behaviour ( timeout )<br /><h1>Overview</h1><p>Motion disable timeout
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -252,7 +239,6 @@ Toggle button behaviour<br /><h1>Overview</h1><p>Bit Field:</p> <table><tr><td>B
         ]]></description>
         <default>8</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -262,7 +248,6 @@ Toggle button behaviour<br /><h1>Overview</h1><p>Bit Field:</p> <table><tr><td>B
 Toggle button Scene 1-4<br /><h1>Overview</h1><p>Parameters 18 specifies scene numbers ( from 1 to number ) to be switched by<br />toggle button. 0 menas - do not useany.</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_2" type="integer" groupName="configuration"
@@ -272,7 +257,6 @@ Toggle button Scene 1-4<br /><h1>Overview</h1><p>Parameters 18 specifies scene n
 Toggle button inactivity time in "legacy" mode ( timeout )<br /><h1>Overview</h1><p>In "legacy" button mode function this timeout is used to cancel motion sensor inactivity mode after motion end ( both for on and off state of LED ).</p> <p>Timeout:<br />1..100 - 1 second ( 1 ) to 100 seconds ( 100 ) in 1-second resolution<br />101..200 - 1 minute ( 101 ) to 100 minutes ( 200 ) in 1-minute resolution<br />201..209 - 1 hour ( 201 ) to 9 hours ( 209 ) in 1-hour resolution</p>
         ]]></description>
         <default>103</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

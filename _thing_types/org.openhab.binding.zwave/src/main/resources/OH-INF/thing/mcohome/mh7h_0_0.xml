@@ -110,6 +110,7 @@ Water / Electrical Heating Thermostat<br /><h1>Overview</h1><p>MCOHome Water / E
           <option value="1">Fahrenheit</option>
           <option value="2">Follow the main display</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -122,6 +123,7 @@ Water / Electrical Heating Thermostat<br /><h1>Overview</h1><p>MCOHome Water / E
           <option value="2">Timing upload mode only</option>
           <option value="3">Upload the difference+timing upload mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -129,7 +131,6 @@ Water / Electrical Heating Thermostat<br /><h1>Overview</h1><p>MCOHome Water / E
         <label>3: Upload temperature difference</label>
         <description>Base on 0.1°C unit, 5 by default, 5*0.1°C=0.5°C</description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -137,7 +138,6 @@ Water / Electrical Heating Thermostat<br /><h1>Overview</h1><p>MCOHome Water / E
         <label>4: Upload time interval regularly</label>
         <description>Base on 1s unit, it suggest to be set above 30s</description>
         <default>30</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -145,13 +145,13 @@ Water / Electrical Heating Thermostat<br /><h1>Overview</h1><p>MCOHome Water / E
         <label>5: Upload humidity difference</label>
         <description>Upload when percent difference exceeded</description>
         <default>3</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
         <label>255: Factory setting</label>
         <description>Restore the factory setting - write only, set to 85 to reset</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

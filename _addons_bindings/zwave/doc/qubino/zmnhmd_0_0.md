@@ -366,7 +366,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [draft manual](https://opensmarthouse.org/zwavedatabase/1293/Qubino_Water_meter_and_leakage_manual_draft.pdf)
+* [draft manual](https://opensmarthouse.org/zwavedatabase/1293/reference/Qubino_Water_meter_and_leakage_manual_draft.pdf)
 
 ---
 

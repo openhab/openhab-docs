@@ -64,6 +64,7 @@ NanoMote Quad<br /><h1>Overview</h1><p>Aeotec NanoMote Quad has been crafted to 
         <label>32: Level for low battery</label>
         <description>Set the level for "low battery" alert</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -74,6 +75,7 @@ NanoMote Quad<br /><h1>Overview</h1><p>Aeotec NanoMote Quad has been crafted to 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

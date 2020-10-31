@@ -495,7 +495,7 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [Specification v 1.0.0](https://opensmarthouse.org/zwavedatabase/705/bdal2-110043512.pdf)
+* [Specification v 1.0.0](https://opensmarthouse.org/zwavedatabase/705/reference/bdal2-110043512.pdf)
 
 ---
 

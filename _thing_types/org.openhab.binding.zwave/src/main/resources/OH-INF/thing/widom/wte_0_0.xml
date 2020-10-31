@@ -71,6 +71,7 @@ Widom Smart Dimmer<br /><h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wall
         <label>1: Start-up status</label>
         <description>Defines the status of the device, in term of light level, following a restart.</description>
         <default>-1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -78,6 +79,7 @@ Widom Smart Dimmer<br /><h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wall
         <label>2: Fade On Time</label>
         <description>Defines the time spent to switch the load from complete OFF to complete ON</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -85,6 +87,7 @@ Widom Smart Dimmer<br /><h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wall
         <label>3: Fade Off Time</label>
         <description>Defines the time spent to switch the load from complete ON to complete OFF</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -94,6 +97,7 @@ Widom Smart Dimmer<br /><h1>Overview</h1><p>WiDom Smart TE Dimmer is an "in-wall
 Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>Defines the time spent to switch the controlled load when the external switch is hold down</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -101,6 +105,7 @@ Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>De
         <label>10: Minimum Light Level</label>
         <description>Defines which light level will correspond to 1% in the range between 1 and 98%</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -108,6 +113,7 @@ Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>De
         <label>11: Maximum Light Level</label>
         <description>Defines which light level will correspond to 99% in the range between 2 and 99%</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -118,6 +124,7 @@ Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>De
           <option value="0">NON_DIMMABLE_LOAD</option>
           <option value="1">DIMMABLE LOAD</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration">
@@ -129,6 +136,7 @@ Defines the time spent to switch the controlled load<br /><h1>Overview</h1><p>De
           <option value="1">BUTTON</option>
           <option value="2">SWITCH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

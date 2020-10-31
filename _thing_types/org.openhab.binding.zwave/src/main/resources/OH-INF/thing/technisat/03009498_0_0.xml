@@ -79,6 +79,7 @@ Single ON/OFF Switch Relay<br /><h1>Overview</h1><p>The Single-Switch Relay cont
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -88,6 +89,7 @@ Single ON/OFF Switch Relay<br /><h1>Overview</h1><p>The Single-Switch Relay cont
 Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>3 ... 8640</strong> (30 seconds - 1 day)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -97,6 +99,7 @@ Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p
 Interval of active energy meter reports in minutes<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>10 ... 30240</strong> (10 minutes - 3 weeks)</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -109,6 +112,7 @@ Change Operation mode of button T<br /><h1>Overview</h1><p><strong>0</strong> - 
           <option value="0">T1 turns output L1 on, T2 turn output L1 off</option>
           <option value="1">T1 &amp; T2 toggle output L1</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -121,6 +125,7 @@ Configuration of switch type connected to extension connector S<br /><h1>Overvie
           <option value="0">toggle switch</option>
           <option value="1">push button switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -134,6 +139,7 @@ Central Scene mapping of extension input S<br /><h1>Overview</h1><p><strong>1</s
           <option value="2">map S to central scene of T2</option>
           <option value="3">map S to own central scene</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

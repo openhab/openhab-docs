@@ -158,8 +158,8 @@ Association group 1 supports 7 nodes.
 
 ### Documentation Links
 
-* [English User Manual V1.0](https://opensmarthouse.org/zwavedatabase/237/zipabox-rgbw-bulb-manual.pdf)
-* [English Manual V1.1](https://opensmarthouse.org/zwavedatabase/237/rgbwe27zw-Zipato-RGBW-Bulb-User-Manual-v1-1.pdf)
+* [English User Manual V1.0](https://opensmarthouse.org/zwavedatabase/237/reference/zipabox-rgbw-bulb-manual.pdf)
+* [English Manual V1.1](https://opensmarthouse.org/zwavedatabase/237/reference/rgbwe27zw-Zipato-RGBW-Bulb-User-Manual-v1-1.pdf)
 
 ---
 

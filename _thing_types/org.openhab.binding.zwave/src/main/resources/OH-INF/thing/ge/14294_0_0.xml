@@ -57,6 +57,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -67,6 +68,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -77,6 +79,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -84,6 +87,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>7: On/Off Command Dim Step</label>
         <description>Indicates how many levels the dimmer will change per step.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -91,6 +95,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>8: On/Off Command Dim Rate</label>
         <description>This sets how often the dim level will change.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -98,6 +103,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>9: Local Control Dim Step</label>
         <description>How many levels the dimmer will change for each step.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -105,6 +111,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>10: Local Control Dim Rate</label>
         <description>This sets how often the dim level will change.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -112,6 +119,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description>How many levels the dimmer will change per step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -119,6 +127,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description>This sets how often the dim level will change.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

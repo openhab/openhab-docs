@@ -66,6 +66,7 @@ Single-Pole Wireless Light Switch<br /><h1>Overview</h1><p>The ASPIRE RF 8A swit
 Delayed off<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or dedsired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -75,6 +76,7 @@ Delayed off<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seco
 Panic On Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -84,6 +86,7 @@ Panic On Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 se
 Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time. </strong></p> <p>-<strong>128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -93,6 +96,7 @@ Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed singl
 Panic Off Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -104,6 +108,7 @@ Panic Off Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 s
           <option value="2">On</option>
           <option value="3">Last State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -114,6 +119,7 @@ Panic Off Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 s
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

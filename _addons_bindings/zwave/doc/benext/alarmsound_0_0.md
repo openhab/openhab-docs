@@ -288,8 +288,8 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [Alarm Sound NL](https://opensmarthouse.org/zwavedatabase/443/alarmsound-nl.pdf)
-* [Manual EN](https://opensmarthouse.org/zwavedatabase/443/alarmsound.pdf)
+* [Alarm Sound NL](https://opensmarthouse.org/zwavedatabase/443/reference/alarmsound-nl.pdf)
+* [Manual EN](https://opensmarthouse.org/zwavedatabase/443/reference/alarmsound.pdf)
 
 ---
 

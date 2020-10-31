@@ -68,7 +68,6 @@ PM2.5 Monitor (Zwave Plus)<br /><h1>Overview</h1><p>MCOHome PM2.5 Monitor is an 
           <option value="0">Report Disabled</option>
           <option value="10">Report every whole 1μg/m³ change (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -80,7 +79,6 @@ PM2.5 Monitor (Zwave Plus)<br /><h1>Overview</h1><p>MCOHome PM2.5 Monitor is an 
           <option value="0">Report Disabled</option>
           <option value="1">Report if changed 0.5℃</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -88,7 +86,6 @@ PM2.5 Monitor (Zwave Plus)<br /><h1>Overview</h1><p>MCOHome PM2.5 Monitor is an 
         <label>4: Humidity Report Interval</label>
         <description>=0 report disabled, ≥10 report when change ≥n*0.1μg/m³</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -101,6 +98,7 @@ PM2.5 Monitor (Zwave Plus)<br /><h1>Overview</h1><p>MCOHome PM2.5 Monitor is an 
           <option value="0">Normal Operation</option>
           <option value="85">Reset to factory settings</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

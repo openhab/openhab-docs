@@ -59,6 +59,7 @@ Illumination Sensor<br /><h1>Overview</h1><p>The Illumination Sensor is designed
 Basic Set Level<br /><h1>Overview</h1><p>Set basic set value to be on or off.</p> <p>Set to 0 to disable</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -68,6 +69,7 @@ Basic Set Level<br /><h1>Overview</h1><p>Set basic set value to be on or off.</p
 Lux Trigger On Value<br /><h1>Overview</h1><p>Lux level when ON command is sent out.</p> <p>Set to 0 to disable.</p> <p>Valid values - 30-1000 or 0</p> <p>Default 30</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Lux Trigger On Value<br /><h1>Overview</h1><p>Lux level when ON command is sent 
 Lux Trigger Off Value<br /><h1>Overview</h1><p>Lux level when Off command is sent out.</p> <p>Values 30-1000 or 0</p> <p>Default 500</p> <p>Set to 0 to disable.</p>
         ]]></description>
         <default>500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -86,6 +89,7 @@ Lux Trigger Off Value<br /><h1>Overview</h1><p>Lux level when Off command is sen
 Lux Trigger Off Timer Value.<br /><h1>Overview</h1><p>Timer value in minutes.</p> <p>Values : 1-480 or 0</p> <p>Default 240</p> <p>Set to 0 to disable.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -95,6 +99,7 @@ Lux Trigger Off Timer Value.<br /><h1>Overview</h1><p>Timer value in minutes.</p
 Auto Report Time Interval<br /><h1>Overview</h1><p>Time interval in minutes to auto report to association group 1</p> <p>Valid values 1-1439 minutes or 0</p> <p>Set to 0 to Disable</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -104,6 +109,7 @@ Auto Report Time Interval<br /><h1>Overview</h1><p>Time interval in minutes to a
 Auto Report Lux Interval<br /><h1>Overview</h1><p>Lux interval step size to auto report to association group 1</p> <p>Valid Values 30-1000 (Lux)</p> <p>Set to 0 to Disable</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

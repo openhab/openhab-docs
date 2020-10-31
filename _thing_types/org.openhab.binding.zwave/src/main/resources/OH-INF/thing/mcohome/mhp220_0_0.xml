@@ -59,6 +59,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>1: Dimmer state after power down</label>
         <description>Dimmer state saved or not when power down</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -66,6 +67,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>2: External switch type</label>
         <description>External switch type</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -73,6 +75,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>3: 2-state Switches</label>
         <description>2-state Switches</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -80,6 +83,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>4: ALL ON/ALL OFF</label>
         <description>ALL ON/ALL OFF</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -87,6 +91,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>5: Minimum brightness level</label>
         <description>Minimum brightness level</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -94,6 +99,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>6: Maximum brightness level</label>
         <description>Maximum brightness level</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -101,6 +107,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>7: Single dimming step time(Manual)</label>
         <description>Single dimming step time(Manual)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -108,6 +115,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>8: Single dimming step size (Manual)</label>
         <description>Single dimming step size (Manual)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -115,6 +123,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>9: Single dimming step time (Auto)</label>
         <description>Single dimming step time (Auto)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -122,6 +131,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>10: Single dimming step size (Auto)</label>
         <description>Single dimming step size (Auto)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -129,6 +139,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>11: Timer function (Auto-off)</label>
         <description>Timer function (Auto-off)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -136,6 +147,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>13: One click of S1</label>
         <description>One click of S1</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -143,6 +155,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>14: Double click of S1</label>
         <description>Double click of S1</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -150,6 +163,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>15: Operation report Switch1 to Assoc Group 2 &amp; 3</label>
         <description>Operation report from Switch1 to Association Group 2 &amp; 3</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -157,6 +171,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>16: Operation report Switch1 to Association Group 2</label>
         <description>Operation report from Switch1 to Association Group 2</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -164,6 +179,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>17: Switch 2 function</label>
         <description>Switch 2 function</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -171,6 +187,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>18: Operation report Switch2 to Association Group 4</label>
         <description>Operation report from Switch2 to Association Group 4</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -178,6 +195,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>19: Scene ID sent to AG1 when one click of S2</label>
         <description>Scene ID sent to AG1 when one click of S2</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -185,6 +203,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>20: Scene ID sent to AG1 double click of S2</label>
         <description>Scene ID sent to AG1 when double click of S2</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -192,6 +211,7 @@ Micro Dimmer<br /><h1>Overview</h1><p>Micro Dimmer is a Z-Wave Plus enabled in-w
         <label>21: Scene ID sent to AG1 when hold S2</label>
         <description>Scene ID sent to AG1 when hold S2</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

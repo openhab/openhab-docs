@@ -69,6 +69,7 @@ Disable local control of plug<br /><h1>Overview</h1><p>31d Size:1 Default: 00d</
           <option value="0">Enable Local Control</option>
           <option value="1">Disable Local Control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -91,6 +91,7 @@ Micro Smart Energy Illuminator G2<br /><h1>Overview</h1><p>The Aeon Labs Micro S
 The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -101,6 +102,7 @@ The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><
           <option value="0">Deactivate</option>
           <option value="1">Activate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -108,6 +110,7 @@ The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><
         <label>13: Enable/Disable CRC16 encapsulation</label>
         <description>Parameter to Enable/Disable CRC16 encapsulation</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -121,6 +124,7 @@ Send load notification to associated devices<br /><h1>Overview</h1><p>Parameter 
           <option value="1">Hail CC Sent</option>
           <option value="2">Basic CC Report Sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -133,6 +137,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
           <option value="0">Deavtivate</option>
           <option value="1">Activate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -140,6 +145,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -149,6 +155,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
 The minimum change in Watage Percent for a report to be sent.<br /><h1>Overview</h1><p>The value represents the minimum change in Watage Percent for a report to be sent.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -158,6 +165,7 @@ The minimum change in Watage Percent for a report to be sent.<br /><h1>Overview<
 Which reports need to send automatically in timing intervals for group 1<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -167,6 +175,7 @@ Which reports need to send automatically in timing intervals for group 1<br /><h
 Which reports need to send automatically in timing intervals for group 2<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -176,24 +185,28 @@ Which reports need to send automatically in timing intervals for group 2<br /><h
 Which reports need to send automatically in timing intervals for group 3<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>111: Interval to send out reports of group 1</label>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>112: Interval to send out reports of group 2</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>113: Interval to send out reports of group 3</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
@@ -205,6 +218,7 @@ Which reports need to send automatically in timing intervals for group 3<br /><h
           <option value="1">2 State Switch Mode</option>
           <option value="2">3 Way Switch Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

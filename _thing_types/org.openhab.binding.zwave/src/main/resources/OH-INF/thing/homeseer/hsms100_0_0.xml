@@ -65,7 +65,6 @@ HomeSeer Z-Wave Plus Motion Sensor<br /><h1>Overview</h1><p>Motion sensor can be
 Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the more sensitive the PIR sensor.</p>
         ]]></description>
         <default>8</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -76,6 +75,7 @@ Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the mor
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -86,6 +86,7 @@ Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the mor
           <option value="0">Triggered value 255</option>
           <option value="1">Triggered value 0</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -96,6 +97,7 @@ Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the mor
           <option value="0">Do not send a vibration alarm</option>
           <option value="1">Send a vibration alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -105,7 +107,6 @@ Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the mor
 Motion timeout interval<br /><h1>Overview</h1><p>Set 0 to disable report.</p> <p>Value 1 to 65535 set timeout of transmitting command when motion has not been sensed for a period of time</p>
         ]]></description>
         <default>600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -115,7 +116,6 @@ Motion timeout interval<br /><h1>Overview</h1><p>Set 0 to disable report.</p> <p
 Level of low battery<br /><h1>Overview</h1><p>The low level from 10% to 50%</p>
         ]]></description>
         <default>20</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

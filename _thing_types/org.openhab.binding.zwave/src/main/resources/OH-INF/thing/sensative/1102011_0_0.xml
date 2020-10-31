@@ -98,6 +98,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="1">Normal</option>
           <option value="2">High Accuracy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -108,6 +109,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="0">Celcius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -118,6 +120,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -128,7 +131,6 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
         <options>
           <option value="-20">Temperature alarm level</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -139,6 +141,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -149,7 +152,6 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
         <options>
           <option value="-20">Temperature alarm level</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -160,6 +162,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -170,6 +173,7 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -180,7 +184,6 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
         <options>
           <option value="1">(1= almost dry, 100= soaking wet)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -191,7 +194,6 @@ Strips Comfort/Drips Multisensor<br /><h1>Overview</h1><p>Strips, the ultra-thin
         <options>
           <option value="0">Number of hours between moisture reports</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

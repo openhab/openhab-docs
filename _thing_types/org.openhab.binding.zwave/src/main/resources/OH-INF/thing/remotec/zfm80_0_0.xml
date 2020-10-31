@@ -60,6 +60,7 @@ Set External switch type Definitions<br /><h1>Overview</h1><p>ZFM-80 provides an
           <option value="3">TypeC</option>
           <option value="4">TypeD</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -69,6 +70,7 @@ Set External switch type Definitions<br /><h1>Overview</h1><p>ZFM-80 provides an
 Set timeout period<br /><h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -78,6 +80,7 @@ Set timeout period<br /><h1>Overview</h1><p>ZFM-80US provides an advanced functi
 Configure Node ID number for Z-Wave command source<br /><h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -87,6 +90,7 @@ Configure Node ID number for Z-Wave command source<br /><h1>Overview</h1><p>ZFM-
 Set relay output status if timeout period has been reached<br /><h1>Overview</h1><p> ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>1 = turn on relay</p> <p>0 = turn off relay</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

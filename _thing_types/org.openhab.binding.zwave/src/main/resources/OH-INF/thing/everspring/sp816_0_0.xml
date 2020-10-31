@@ -71,6 +71,7 @@ SP816 Motion Sensor<br /><h1>Overview</h1><p>The SP816 Outdoor Motion Detector i
 Basic Set Level<br /><h1>Overview</h1><p>When Basic Set Command is sent where contains a value, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set command of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Example: 0: OFF<br />1-99: ON (Binary Switch Device)<br />Dim Level (Multilevel Switch Device)<br />Function: Basic Set level</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Basic Set Level<br /><h1>Overview</h1><p>When Basic Set Command is sent where co
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ Basic Set Level<br /><h1>Overview</h1><p>When Basic Set Command is sent where co
         <label>3: Sensitivity Level</label>
         <description>1 Means lowest sensitivity and 10 means highest.</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -97,6 +100,7 @@ Basic Set Level<br /><h1>Overview</h1><p>When Basic Set Command is sent where co
 Adjust the interval of being re-triggered after a trigger<br /><h1>Overview</h1><p>The Configuration parameter that can be used to adjust the interval of being re-triggered after the detector has been triggered as Configuration Parameter #4. No response will be made during this interval if a movement is presented. The time interval can be set between 5 secs to 3600 secs. </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -106,6 +110,7 @@ Adjust the interval of being re-triggered after a trigger<br /><h1>Overview</h1>
 Minimum Lux Level to provoke trigger<br /><h1>Overview</h1><p>Sets minimum Lux Level of ambient illumination necessary for Motion Detector to trigger.</p> <p>The user can set a detecting percentage of lux level which determines when the light sensor will be activated. If percentage of lux level of ambient illumination falls below this percentage, and a person moves across or within the protected area, the detector will emit Z-Wave ON Command (i.e. Basic Set Command (Value = Basic Set Level)) to controller and activate connected modules and lighting. Percentage can be set between 1% to 100%.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -115,6 +120,7 @@ Minimum Lux Level to provoke trigger<br /><h1>Overview</h1><p>Sets minimum Lux L
 On-Off Duration<br /><h1>Overview</h1><p>The function of on-off duration setting will be useful if the detector is connected with a module or lighting. The duration determines how long the module/lighting should stay ON. For instance, Lamp Module turns off 100 secs after it has been turned on. This parameter can be configured with the value of 5 through 3600, where 5 means 5 second delay and 3600 means 3600 seconds of delay</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

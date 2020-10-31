@@ -83,6 +83,7 @@ Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_
           <option value="2">Relay 1</option>
           <option value="3">Relay 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -94,6 +95,7 @@ Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

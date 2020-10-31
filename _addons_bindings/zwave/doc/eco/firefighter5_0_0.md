@@ -343,7 +343,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1221/ecolink-z-wave-plus-fire-fighter-smoke-fire-carbon-monoxide-audio-alarm-detector.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1221/reference/ecolink-z-wave-plus-fire-fighter-smoke-fire-carbon-monoxide-audio-alarm-detector.pdf)
 
 ---
 

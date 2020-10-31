@@ -96,7 +96,6 @@ Floodlight Sensor<br /><h1>Overview</h1><p>The HS-FLS100+ is a PIR module thatâ€
 Period to send Trigger Off command after PIR is triggered.<br /><h1>Overview</h1><p>Period to send Trigger Off command after PIR is triggered. Before this period expires, the PIR will not be able to detect any subsequent motion.</p>
         ]]></description>
         <default>15</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -106,7 +105,6 @@ Period to send Trigger Off command after PIR is triggered.<br /><h1>Overview</h1
 Lux level to activate the PIR<br /><h1>Overview</h1><p>When the lux level falls below this threshold and the PIR gets triggered, the unit emits a Basic Set Command (Value=0xFF) and turns on its floodlight. This overwrites the Lux level set by the Lux knob.</p> <p>Setting = 0: always donâ€™t turn ON light</p> <p>Setting = 30~200: lighting activation by setting</p> <p>Setting = 255: turn ON light upon PIR triggered</p> <p>If the level is set to 0, the unit will not turn on its floodlight. The PIR will still send a notification report to the controller; if the level is set to 255, when motion is sensed, the sensor ignore the ambient brightness but just turn on the light.</p>
         ]]></description>
         <default>50</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -114,7 +112,6 @@ Lux level to activate the PIR<br /><h1>Overview</h1><p>When the lux level falls 
         <label>3: Auto Report luminance interval</label>
         <description>sets the interval of periodic lux level report to the controller</description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -124,6 +121,7 @@ Lux level to activate the PIR<br /><h1>Overview</h1><p>When the lux level falls 
           <option value="0">not send Basic Report</option>
           <option value="1">send Basic Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

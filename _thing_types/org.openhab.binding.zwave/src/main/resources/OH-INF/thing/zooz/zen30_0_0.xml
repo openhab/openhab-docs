@@ -72,6 +72,7 @@ LED Indicator Mode for Dimmer<br /><h1>Overview</h1><p>Choose if you want the LE
           <option value="2">LED indicator is always OFF</option>
           <option value="3">LED indicator is always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -86,6 +87,7 @@ LED Indicator Control for Relay<br /><h1>Overview</h1><p>Choose if you want the 
           <option value="2">LED indicator is always OFF</option>
           <option value="3">LED indicator is always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ LED Indicator Control for Relay<br /><h1>Overview</h1><p>Choose if you want the 
           <option value="2">Green</option>
           <option value="3">Red</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -112,6 +115,7 @@ LED Indicator Color for Relay<br /><h1>Overview</h1><p>Choose the color of the L
           <option value="2">Green</option>
           <option value="3">Red</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -125,6 +129,7 @@ LED Indicator Brightness for Dimmer<br /><h1>Overview</h1><p>Choose the LED indi
           <option value="1">Medium (60%)</option>
           <option value="2">Low (30% - default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -138,6 +143,7 @@ LED Indicator Brightness for Relay<br /><h1>Overview</h1><p>Choose the LED indic
           <option value="1">Medium (60%)</option>
           <option value="2">Low (30% - default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -150,6 +156,7 @@ LED Indicator Mode for Scene Control<br /><h1>Overview</h1><p>Choose if you want
           <option value="0">Enabled to indicate scene triggers</option>
           <option value="1">Disabled to indicate scene triggers (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4" type="integer" groupName="configuration"
@@ -162,7 +169,6 @@ Auto Turn-Off Timer for Dimmer<br /><h1>Overview</h1><p>Use this parameter to se
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -175,7 +181,6 @@ Auto Turn-On Timer for Dimmer<br /><h1>Overview</h1><p>Use this parameter to set
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
@@ -188,7 +193,6 @@ Auto Turn-Off Timer for Relay<br /><h1>Overview</h1><p>Use this parameter to set
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_4" type="integer" groupName="configuration"
@@ -201,7 +205,6 @@ Auto Turn-On Timer for Relay<br /><h1>Overview</h1><p>Use this parameter to set 
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -221,6 +224,7 @@ On Off Status After Power Failure<br /><h1>Overview</h1><p>Set the on/off status
           <option value="7">Dimmer forced to OFF, restores status for relay</option>
           <option value="8">Dimmer and relay forced to ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -233,7 +237,6 @@ Ramp Rate Control for Dimmer<br /><h1>Overview</h1><p>Adjust the ramp rate for t
         <options>
           <option value="0">Instant ON/OFF</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -243,7 +246,6 @@ Ramp Rate Control for Dimmer<br /><h1>Overview</h1><p>Adjust the ramp rate for t
 Minimum Brightness<br /><h1>Overview</h1><p>Set the minimum brightness level (in %) for the dimmer. You won’t be able to dim the light below the set value.</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -253,7 +255,6 @@ Minimum Brightness<br /><h1>Overview</h1><p>Set the minimum brightness level (in
 Maximum Brightness<br /><h1>Overview</h1><p>Set the maximum brightness level (in %) for the dimmer. You won’t be able to add brightness to the light beyond the set value.</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -266,6 +267,7 @@ Double Tap Function for Dimmer<br /><h1>Overview</h1><p>Choose if you want the d
           <option value="0">ON to full brightness with double tap (default)</option>
           <option value="1">ON to brightness set in #15 with double tap</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -279,6 +281,7 @@ Disable Double Tap<br /><h1>Overview</h1><p>Enable or disable the double-tap fun
           <option value="1">Disabled, single tap for last brightness</option>
           <option value="2">Disabled, single tap to full brightness</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -292,6 +295,7 @@ Enable/Disable Load Control for Dimmer<br /><h1>Overview</h1><p> Enable or disab
           <option value="1">Manual control enabled (default)</option>
           <option value="2">Manual and Z-Wave control disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -305,6 +309,7 @@ Enable/Disable Load Control for Relay<br /><h1>Overview</h1><p>Enable or disable
           <option value="1">Manual control enabled (default)</option>
           <option value="2">Manual and Z-Wave control disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -314,7 +319,6 @@ Enable/Disable Load Control for Relay<br /><h1>Overview</h1><p>Enable or disable
 Manual Dimming Speed<br /><h1>Overview</h1><p>Choose how many seconds it takes for the dimmer to go from 0% to 100% brightness when pressing and holding the paddle. Increase the value to decrease the dimming speed.</p>
         ]]></description>
         <default>4</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -327,6 +331,7 @@ Z-Wave Ramp Rate for Dimmer<br /><h1>Overview</h1><p>Choose if you would like to
           <option value="0">Match #13</option>
           <option value="1">Set through Command Class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -339,7 +344,6 @@ Default Brightness Level ON for Dimmer<br /><h1>Overview</h1><p>Set custom brigh
         <options>
           <option value="0">Last brightness level (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

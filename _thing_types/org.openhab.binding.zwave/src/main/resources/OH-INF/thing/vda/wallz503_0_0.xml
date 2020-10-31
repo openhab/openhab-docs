@@ -154,6 +154,7 @@ Vitrum Thermostat<br /><h1>Overview</h1><h1>Vitrum Wireless Thermostat</h1> <h2>
           <option value="26">EP_CENTRAL_SCENE -through the lifeline group</option>
           <option value="27">EP_CURTAIN_FULL_CONTROL -motor cont. in one button</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

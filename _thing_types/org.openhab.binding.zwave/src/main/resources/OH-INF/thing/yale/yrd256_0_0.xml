@@ -85,6 +85,7 @@ Touchscreen deadbolt without keyway<br /><h1>Overview</h1><ul><li>Installs On St
           <option value="2">Quiet</option>
           <option value="3">Silent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -95,6 +96,7 @@ Touchscreen deadbolt without keyway<br /><h1>Overview</h1><ul><li>Installs On St
           <option value="0">No auto-relock</option>
           <option value="255">Auto relock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -104,7 +106,6 @@ Touchscreen deadbolt without keyway<br /><h1>Overview</h1><ul><li>Installs On St
 Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
         ]]></description>
         <default>30</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -114,6 +115,7 @@ Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door i
 Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -124,6 +126,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
           <option value="255">Do report events?</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -134,6 +137,7 @@ Incorrect PINs lockout time<br /><h1>Overview</h1><p>Amount of time to lock-out 
         ]]></description>
         <default>60</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -147,6 +151,7 @@ Incorrect PINs lockout time<br /><h1>Overview</h1><p>Amount of time to lock-out 
           <option value="3">Disable Zwave</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -59,6 +59,7 @@ Factory Reset<br /><h1>Overview</h1><p>21930=Factory Reset</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

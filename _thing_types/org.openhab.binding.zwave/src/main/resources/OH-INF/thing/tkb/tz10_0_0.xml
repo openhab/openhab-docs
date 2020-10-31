@@ -78,6 +78,7 @@ Thermostat with LCD Screen<br /><h1>Overview</h1><p>Heating thermostat with LCD 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

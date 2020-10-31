@@ -482,8 +482,8 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual 19.08.2015](https://opensmarthouse.org/zwavedatabase/614/ZMNHCD-VER-S1-19-08-2015.pdf)
-* [User Manual v1.4](https://opensmarthouse.org/zwavedatabase/614/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
+* [User Manual 19.08.2015](https://opensmarthouse.org/zwavedatabase/614/reference/ZMNHCD-VER-S1-19-08-2015.pdf)
+* [User Manual v1.4](https://opensmarthouse.org/zwavedatabase/614/reference/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
 
 ---
 

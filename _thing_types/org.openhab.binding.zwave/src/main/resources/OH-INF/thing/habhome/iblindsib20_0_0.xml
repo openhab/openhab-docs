@@ -74,6 +74,7 @@ Adjust Torque Value for Auto Calibration<br /><h1>Overview</h1><p>Changing the A
           <option value="5">Increase calibration torque by 1 factor</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

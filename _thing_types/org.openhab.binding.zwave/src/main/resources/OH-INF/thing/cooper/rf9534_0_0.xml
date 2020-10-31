@@ -67,6 +67,7 @@ Smart Dimmer<br /><h1>Overview</h1><ul><li>Wireless switch replaces regular swit
 Delayed Off<br /><h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong> -128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -76,6 +77,7 @@ Delayed Off<br /><h1>Overview</h1><p>*The configuration value is a signed single
 Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -85,6 +87,7 @@ Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed singl
 Panic Off Time<br /><h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p>0<strong> to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -96,6 +99,7 @@ Panic Off Time<br /><h1>Overview</h1><p>*The configuration value is a signed sin
           <option value="2">On</option>
           <option value="3">Last State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -106,6 +110,7 @@ Panic Off Time<br /><h1>Overview</h1><p>*The configuration value is a signed sin
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

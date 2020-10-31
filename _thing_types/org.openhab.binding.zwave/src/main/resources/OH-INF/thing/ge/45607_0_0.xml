@@ -53,6 +53,7 @@ Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED.</p> <
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -65,6 +66,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -75,6 +77,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -82,6 +85,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
         <label>7: On/Off Command Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -91,6 +95,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
 On/Off Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. </p> <p>For example, if you set this parameter to 1,  then every 10ms the dim level will change. </p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -98,6 +103,7 @@ On/Off Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 mill
         <label>9: Local Control Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -107,6 +113,7 @@ On/Off Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 mill
 Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. </p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change. </p> <p>If you set it to 255, then every 2.55 &lt;br&gt;seconds the dim level will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -114,6 +121,7 @@ Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 milli
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -123,6 +131,7 @@ Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 milli
 ALL ON/ALL OFF Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change.</p> <p> For example, if you set this parameter to 1, then every 10ms the dim level will change. </p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

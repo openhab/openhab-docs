@@ -58,6 +58,7 @@ Start dimming from that start level or current level<br /><h1>Overview</h1><p>A 
           <option value="0">Use Start Level</option>
           <option value="1">Ignore Start Level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -68,6 +69,7 @@ Start dimming from that start level or current level<br /><h1>Overview</h1><p>A 
           <option value="0">LED ON - Switch ON</option>
           <option value="1">LED ON - Switch OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
@@ -80,6 +82,7 @@ Reverse switch direction<br /><h1>Overview</h1><p>To change the top of the switc
           <option value="0">Top-ON, Bottom-OFF</option>
           <option value="1">Bottom-ON, Top-OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -90,6 +93,7 @@ Reverse switch direction<br /><h1>Overview</h1><p>To change the top of the switc
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -100,6 +104,7 @@ Reverse switch direction<br /><h1>Overview</h1><p>To change the top of the switc
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -113,6 +118,7 @@ LED mode while transmitting<br /><h1>Overview</h1><p>The WD500Z-1 will flicker i
           <option value="1">Flicker while transmitting</option>
           <option value="2">Flicker for 1 second</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

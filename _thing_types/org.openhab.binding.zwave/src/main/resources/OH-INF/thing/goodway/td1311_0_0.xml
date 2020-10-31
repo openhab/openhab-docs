@@ -82,6 +82,7 @@ In wall Power Monitor Switch<br /><h1>Overview</h1><ul><li>Small form factor tha
         <label>1: Meter Report duration</label>
         <description>Meter Report duration</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

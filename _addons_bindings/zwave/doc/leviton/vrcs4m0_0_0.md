@@ -116,7 +116,7 @@ Association group 4 supports 32 nodes.
 
 ### Documentation Links
 
-* [Leviton VRCS4-M0 installation instructions](https://opensmarthouse.org/zwavedatabase/881/Leviton-VRCS4-M0.pdf)
+* [Leviton VRCS4-M0 installation instructions](https://opensmarthouse.org/zwavedatabase/881/reference/Leviton-VRCS4-M0.pdf)
 
 ---
 

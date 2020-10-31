@@ -224,7 +224,7 @@ Association group 1 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/151/ZMR-FT-1-4.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/151/reference/ZMR-FT-1-4.pdf)
 
 ---
 

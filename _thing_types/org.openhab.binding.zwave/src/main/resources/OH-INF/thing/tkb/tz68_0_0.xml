@@ -55,6 +55,7 @@ Wall Plug<br /><h1>Overview</h1><p>The TKB TZ68 is a switch plug that can be pla
           <option value="0">blue indicates off (default)</option>
           <option value="1">blue indicates on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -67,6 +68,7 @@ Memory function behaviour control.<br /><h1>Overview</h1><p>Control whether or n
           <option value="0">do not remember</option>
           <option value="1">do remember state (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

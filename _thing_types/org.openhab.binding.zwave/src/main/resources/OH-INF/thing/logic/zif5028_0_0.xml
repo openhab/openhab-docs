@@ -187,6 +187,7 @@ This parameter can be used to change the mode of the front-mounted status LED.<b
           <option value="3">The LED flashes in 1/2 second interval (1/2 Hz).</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -202,7 +203,6 @@ Determines the brightness of the status LED.<br /><h1>Overview</h1><table><tr><t
           <option value="99">Maximum brightness.</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -217,6 +217,7 @@ Configures the function of input 1.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -231,6 +232,7 @@ Configures the function of input 2.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -245,6 +247,7 @@ Configures the function of input 3.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -259,6 +262,7 @@ Configures the function of input 4.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -273,6 +277,7 @@ Configures the function of input 5.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -287,6 +292,7 @@ Configures the function of input 6.<br /><h1>Overview</h1><p>Select the value fr
           <option value="2">Mode 2, falling-edge controlled input.</option>
           <option value="3">Mode 3, rising-edge controlled input. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -297,7 +303,6 @@ The time constant of the input snubber-filter.<br /><h1>Overview</h1><p>Specifie
         ]]></description>
         <default>5</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -308,7 +313,6 @@ The time that an entry must be stable before it is accepted as active / idle.<br
         ]]></description>
         <default>200</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -319,7 +323,6 @@ Time that an input must be activated before it accepts the button latched mode.<
         ]]></description>
         <default>50</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -332,6 +335,7 @@ Central Scene notifications when the 6 inputs are activated.<br /><h1>Overview</
           <option value="0">Central Scene notifications enabled. (Standard)</option>
           <option value="1">Central Scene notifications disabled.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -344,6 +348,7 @@ Output 1 can be controlled via Z-Wave or Input 1.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 1. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -356,6 +361,7 @@ Output 2 can be controlled via Z-Wave or Input 2.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 2. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -368,6 +374,7 @@ Output 3 can be controlled via Z-Wave or Input 3.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 3. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -380,6 +387,7 @@ Output 4 can be controlled via Z-Wave or Input 4.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 4. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -392,6 +400,7 @@ Output 5 can be controlled via Z-Wave or Input 5.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 5. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -404,6 +413,7 @@ Output 6 can be controlled via Z-Wave or Input 6.<br /><h1>Overview</h1><p>Choos
           <option value="0">Output is controlled via Z-Wave messages.</option>
           <option value="1">Output is controlled by input 6. (Standard)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -86,6 +86,7 @@
 time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seconds the switch will delay when trigger the delayed off feature</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -95,6 +96,7 @@ time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seco
 Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -104,6 +106,7 @@ Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in
 time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn off for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -113,6 +116,7 @@ time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of tim
 Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -124,6 +128,7 @@ Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this
           <option value="2">On</option>
           <option value="3">Last State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -134,6 +139,7 @@ Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this
           <option value="1">Off</option>
           <option value="2">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -143,6 +149,7 @@ Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this
 Time in seconds to reach desired level<br /><h1>Overview</h1><p>The amount of time in seconds the switch will take to reach the desired dim level</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -155,6 +162,7 @@ Turn on or off rapid start feature<br /><h1>Overview</h1><p>Ensures that LED / C
           <option value="1">Off</option>
           <option value="2">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -162,6 +170,7 @@ Turn on or off rapid start feature<br /><h1>Overview</h1><p>Ensures that LED / C
         <label>11: Minimum Dimmer Level</label>
         <description>The minimum dim level the switch will allow</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -169,6 +178,7 @@ Turn on or off rapid start feature<br /><h1>Overview</h1><p>Ensures that LED / C
         <label>12: Maximum Dimmer Level</label>
         <description>The maximum dim level the switch will allow</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

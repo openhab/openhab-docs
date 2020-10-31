@@ -356,7 +356,7 @@ Association group 3 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/208/flush-2-relays-ZMNHBA2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/208/reference/flush-2-relays-ZMNHBA2.pdf)
 
 ---
 

@@ -61,6 +61,7 @@ Plug-In Dimmer<br /><h1>Overview</h1><p>Plug-in lamp control module with dimmer,
 Controls LED operation<br /><h1>Overview</h1><p>When value = 0, the LED indicator will be OFF when the connected appliance is ON, and the LED indicator will be ON when the connected appliance is OFF. If value = 1, the LED indicator will be OFF when the connected appliance is OFF, and the LED indicator will be ON when the connected appliance is ON. If value = 2, the LED indicator will be always OFF regardless of the load status.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Controls LED operation<br /><h1>Overview</h1><p>When value = 0, the LED indicato
 Steps to change dimmer level per tick<br /><h1>Overview</h1><p>Indicates the number of levels the lighting will change when the timer runs out.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -79,6 +81,7 @@ Steps to change dimmer level per tick<br /><h1>Overview</h1><p>Indicates the num
 Tick length in 10ms units<br /><h1>Overview</h1><p>Indicates the time duration of each level. The resolution is 10 ms. For example, a default value of 3 means the timer runs out every 30 milliseconds. Using the combinations of these 2 parameters, you can create a dim rate adjustment range as short as 10 ms to a very slow dim rate. </p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

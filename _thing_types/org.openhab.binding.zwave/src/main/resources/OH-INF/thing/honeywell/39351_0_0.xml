@@ -63,6 +63,7 @@ In-Wall Smart Dimmer<br /><h1>Overview</h1><ul><li>Indoor</li> <li>Dimmer Switch
           <option value="1">LED ON when load is ON</option>
           <option value="2">LED always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ In-Wall Smart Dimmer<br /><h1>Overview</h1><ul><li>Indoor</li> <li>Dimmer Switch
           <option value="0">Default</option>
           <option value="1">Invert Switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

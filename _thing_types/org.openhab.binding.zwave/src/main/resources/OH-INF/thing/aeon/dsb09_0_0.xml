@@ -129,6 +129,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
         <label>1: Voltage</label>
         <description>Voltage to calculate wattage from amperage.</description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000001" type="integer" groupName="configuration">
@@ -138,6 +139,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000002" type="integer" groupName="configuration">
@@ -147,6 +149,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000004" type="integer" groupName="configuration">
@@ -156,6 +159,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000008" type="integer" groupName="configuration">
@@ -165,6 +169,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -174,6 +179,7 @@ Home Energy Meter<br /><h1>Overview</h1><p>Your Home Energy Meter can be reset t
 Threshold change in wattage to induce an automatic report (Whole HEM).<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -183,6 +189,7 @@ Threshold change in wattage to induce an automatic report (Whole HEM).<br /><h1>
 Threshold change in wattage to induce an automatic report (Clamp 1)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -192,6 +199,7 @@ Threshold change in wattage to induce an automatic report (Clamp 1)<br /><h1>Ove
 Threshold change in wattage to induce an automatic report (Clamp 2)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -201,6 +209,7 @@ Threshold change in wattage to induce an automatic report (Clamp 2)<br /><h1>Ove
 Threshold change in wattage to induce an automatic report (Clamp 3)<br /><h1>Overview</h1><p>Valid values: 0-60,000</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -210,6 +219,7 @@ Threshold change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ove
 Percentage change in wattage to induce an automatic report (Whole HEM)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -219,6 +229,7 @@ Percentage change in wattage to induce an automatic report (Whole HEM)<br /><h1>
 Percentage change in wattage to induce an automatic report (Clamp 1)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -228,6 +239,7 @@ Percentage change in wattage to induce an automatic report (Clamp 1)<br /><h1>Ov
 Percentage change in wattage to induce an automatic report (Clamp 2)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -237,6 +249,7 @@ Percentage change in wattage to induce an automatic report (Clamp 2)<br /><h1>Ov
 Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Overview</h1><p>Valid values: 0-100</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_4_wo" type="integer" groupName="configuration">
@@ -246,6 +259,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">No change</option>
           <option value="1">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000001" type="integer" groupName="configuration">
@@ -255,6 +269,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000002" type="integer" groupName="configuration">
@@ -264,6 +279,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000004" type="integer" groupName="configuration">
@@ -273,6 +289,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000008" type="integer" groupName="configuration">
@@ -282,6 +299,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000100" type="integer" groupName="configuration">
@@ -291,6 +309,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000200" type="integer" groupName="configuration">
@@ -300,6 +319,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000400" type="integer" groupName="configuration">
@@ -309,6 +329,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00000800" type="integer" groupName="configuration">
@@ -318,6 +339,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00001000" type="integer" groupName="configuration">
@@ -327,6 +349,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_00002000" type="integer" groupName="configuration">
@@ -336,6 +359,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000001" type="integer" groupName="configuration">
@@ -345,6 +369,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000002" type="integer" groupName="configuration">
@@ -354,6 +379,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000004" type="integer" groupName="configuration">
@@ -363,6 +389,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000008" type="integer" groupName="configuration">
@@ -372,6 +399,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000100" type="integer" groupName="configuration">
@@ -381,6 +409,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000200" type="integer" groupName="configuration">
@@ -390,6 +419,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000400" type="integer" groupName="configuration">
@@ -399,6 +429,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00000800" type="integer" groupName="configuration">
@@ -408,6 +439,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00001000" type="integer" groupName="configuration">
@@ -417,6 +449,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_00002000" type="integer" groupName="configuration">
@@ -426,6 +459,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000001" type="integer" groupName="configuration">
@@ -435,6 +469,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000002" type="integer" groupName="configuration">
@@ -444,6 +479,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000004" type="integer" groupName="configuration">
@@ -453,6 +489,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000008" type="integer" groupName="configuration">
@@ -462,6 +499,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000100" type="integer" groupName="configuration">
@@ -471,6 +509,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000200" type="integer" groupName="configuration">
@@ -480,6 +519,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000400" type="integer" groupName="configuration">
@@ -489,6 +529,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00000800" type="integer" groupName="configuration">
@@ -498,6 +539,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00001000" type="integer" groupName="configuration">
@@ -507,6 +549,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4_00002000" type="integer" groupName="configuration">
@@ -516,6 +559,7 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_4_wo" type="integer" groupName="configuration">
@@ -525,24 +569,28 @@ Percentage change in wattage to induce an automatic report (Clamp 3)<br /><h1>Ov
           <option value="0">No change</option>
           <option value="1">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>111: Interval to send Report Group 1</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>112: Interval to send Report Group 2</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>113: Interval to send Report Group 3</label>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">
@@ -556,6 +604,7 @@ Reset all settings to factory defaults<br /><h1>Overview</h1><p>Reset all settin
           <option value="1">Reset to factory defaults</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

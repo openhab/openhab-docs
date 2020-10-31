@@ -49,6 +49,7 @@ Duplex receptacle<br /><h1>Overview</h1><p>Wireless Lighting Control Duplex Rece
           <option value="0">Power on, LED off</option>
           <option value="1">Power on, LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

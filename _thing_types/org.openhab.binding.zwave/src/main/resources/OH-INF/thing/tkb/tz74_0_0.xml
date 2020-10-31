@@ -73,6 +73,7 @@ Insert two channel switch module<br /><h1>Overview</h1><p>This z-wave in-wall du
           <option value="0">LED is off when load is off</option>
           <option value="1">LED is on when load is off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -83,6 +84,7 @@ Insert two channel switch module<br /><h1>Overview</h1><p>This z-wave in-wall du
           <option value="0">socket status depends on switch</option>
           <option value="1">socket status is same as before power outage</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -93,6 +95,7 @@ Insert two channel switch module<br /><h1>Overview</h1><p>This z-wave in-wall du
           <option value="0">Normal</option>
           <option value="1">In the edge mode invert switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -104,6 +107,7 @@ Insert two channel switch module<br /><h1>Overview</h1><p>This z-wave in-wall du
           <option value="2">Pulse Mode</option>
           <option value="3">Edge-toggle Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

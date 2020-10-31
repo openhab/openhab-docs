@@ -299,8 +299,8 @@ Association group 5 supports 2 nodes.
 
 ### Documentation Links
 
-* [FortrezZ MIMOlite User Manual ](https://opensmarthouse.org/zwavedatabase/219/user-manual-mimolite-05may2015.pdf)
-* [FortrezZ MIMOlite Technical Appendix](https://opensmarthouse.org/zwavedatabase/219/tech-appendix-mimolite-05may2015.pdf)
+* [FortrezZ MIMOlite User Manual ](https://opensmarthouse.org/zwavedatabase/219/reference/user-manual-mimolite-05may2015.pdf)
+* [FortrezZ MIMOlite Technical Appendix](https://opensmarthouse.org/zwavedatabase/219/reference/tech-appendix-mimolite-05may2015.pdf)
 
 ---
 

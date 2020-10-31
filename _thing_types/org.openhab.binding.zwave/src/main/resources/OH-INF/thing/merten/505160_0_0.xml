@@ -52,24 +52,28 @@ Radio Push-button CONNECT, 1 button<br /><h1>Overview</h1><p>Single-surface push
                  min="0" max="127">
         <label>0: Switching/dimming/shutters</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>4: Switching single-surface</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>44: Doorbell function</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>52: LOWER shutter as long as button is pressed</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration"
@@ -77,12 +81,14 @@ Radio Push-button CONNECT, 1 button<br /><h1>Overview</h1><p>Single-surface push
         <label>54: Move shutter single-surface</label>
         <description>Direction of movement changes after each switching process</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>55: RAISE shutter as long as button is pressed</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

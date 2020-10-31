@@ -62,6 +62,7 @@ Touch Panel Switch 1 Button<br /><h1>Overview</h1><p><strong>Touch Panel Switch<
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

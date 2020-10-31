@@ -96,7 +96,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [EVA LOGIK ZW36 Manual](https://opensmarthouse.org/zwavedatabase/1193/ZW36manual170412.pdf)
+* [EVA LOGIK ZW36 Manual](https://opensmarthouse.org/zwavedatabase/1193/reference/ZW36manual170412.pdf)
 
 ---
 

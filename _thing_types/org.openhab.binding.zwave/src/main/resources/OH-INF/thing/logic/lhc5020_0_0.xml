@@ -150,6 +150,7 @@ Diode control<br /><h1>Overview</h1><p>0 Turned off</p> <p>1 Turned on (Defaul
           <option value="2">Blinking 1 sec. interval</option>
           <option value="3">Blinking 0.5 sec. interval</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -162,6 +163,7 @@ Turn on/off voltage on input terminal 1<br /><h1>Overview</h1><p>If trigger devi
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -174,6 +176,7 @@ Turn on/off voltage on input terminal 2<br /><h1>Overview</h1><p>If trigger devi
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -186,6 +189,7 @@ Turn on/off voltage on input terminal 3<br /><h1>Overview</h1><p>If trigger devi
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -198,6 +202,7 @@ Turn on/off voltage on input terminal 4<br /><h1>Overview</h1><p>If trigger devi
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -207,6 +212,7 @@ Turn on/off voltage on input terminal 4<br /><h1>Overview</h1><p>If trigger devi
 Preliminary filter time on input terminals<br /><h1>Overview</h1><p>Time in 10x milliseconds. E.g. 5 = 50 ms. </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -216,6 +222,7 @@ Preliminary filter time on input terminals<br /><h1>Overview</h1><p>Time in 10x 
 Threshold for triggering input<br /><h1>Overview</h1><p>In 10x milliseconds, e.g. 5 = 50 ms, meaning that the voltage on the input terminals need to be stable for more than 50 ms behold the input is counted as activated. </p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -225,6 +232,7 @@ Threshold for triggering input<br /><h1>Overview</h1><p>In 10x milliseconds, e.g
 Threshold time for triggering input<br /><h1>Overview</h1><p>Time in 10x miliseconds that an input need to be activated before it is counted as activated. E.g. 50 = 500 ms. </p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -234,6 +242,7 @@ Threshold time for triggering input<br /><h1>Overview</h1><p>Time in 10x milisec
 Function for input terminal 1<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -243,6 +252,7 @@ Function for input terminal 1<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = L
 Function for input terminal 2<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -252,6 +262,7 @@ Function for input terminal 2<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = L
 Function for input terminal 3<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -261,6 +272,7 @@ Function for input terminal 3<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = L
 Function for input terminal 4<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = Level controlled</p> <p>2 = Back edge controlled</p> <p>3 = Front edge controlled. </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -270,6 +282,7 @@ Function for input terminal 4<br /><h1>Overview</h1><p>0 = Inactive</p> <p>1 = L
 Central Scene notification<br /><h1>Overview</h1><p>Send Central Scene notification when the 4 input terminals gets activated. </p> <p>0 = Notification off</p> <p>1 = Notification on</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

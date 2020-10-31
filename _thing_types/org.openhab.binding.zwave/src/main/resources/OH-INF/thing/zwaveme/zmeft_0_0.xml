@@ -68,6 +68,7 @@ Floor Thermostat<br /><h1>Overview</h1><p>Underfloor heating thermostat allows y
                  min="0" max="1800">
         <label>1: Boost Dry mode duration</label>
         <default>1800</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Floor Thermostat<br /><h1>Overview</h1><p>Underfloor heating thermostat allows y
           <option value="1">Toggle Normal Heating / Energy Save</option>
           <option value="2">Toggle Boost Dry</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -90,18 +92,21 @@ Floor Thermostat<br /><h1>Overview</h1><p>Underfloor heating thermostat allows y
           <option value="3">Set Normal Heating set point temperature</option>
           <option value="4">Switch on/off relay directly</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="1" max="60">
         <label>4: Temperature control interval</label>
         <default>18</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
                  min="1" max="60">
         <label>5: Maximum allowed temperature deviation</label>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -111,6 +116,7 @@ Floor Thermostat<br /><h1>Overview</h1><p>Underfloor heating thermostat allows y
 Maximal allowed temperature<br /><h1>Overview</h1><p>In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree.</p>
         ]]></description>
         <default>27</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -118,6 +124,7 @@ Maximal allowed temperature<br /><h1>Overview</h1><p>In all modes the thermostat
         <label>10: Typical click timeout</label>
         <description>Typical time used to differenciate click from hold</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

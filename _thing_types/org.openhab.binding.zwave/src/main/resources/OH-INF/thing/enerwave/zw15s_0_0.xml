@@ -54,6 +54,7 @@ Binary Switch<br /><h1>Overview</h1><ul><li>Perfect Replacement for regular wall
           <option value="0">Power on, LED off</option>
           <option value="1">Power on, LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -85,6 +85,7 @@ Smart meter switch<br /><h1>Overview</h1><p>TZ69 is an ON/OFF Z-Wave switch.</p>
           <option value="0">Switch off = LED off</option>
           <option value="1">Switch off = LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ determines if current state is memorized on power failure<br /><h1>Overview</h1>
           <option value="0">Memory function off</option>
           <option value="1">Memory function on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -104,6 +106,7 @@ determines if current state is memorized on power failure<br /><h1>Overview</h1>
         <label>3: Watt Meter Report Period</label>
         <description>5s x 720 (default) = 3600s = 1 hour</description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -111,6 +114,7 @@ determines if current state is memorized on power failure<br /><h1>Overview</h1>
         <label>4: kWH Meter Report Period</label>
         <description>10m * 6 (default) = 60m = 1 hour</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -120,6 +124,7 @@ determines if current state is memorized on power failure<br /><h1>Overview</h1>
 Above this level, switch enters overload mode<br /><h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
         ]]></description>
         <default>3000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -129,6 +134,7 @@ Above this level, switch enters overload mode<br /><h1>Overview</h1><p>Overload 
 Over this level, unit with go into overload mode<br /><h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
         ]]></description>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

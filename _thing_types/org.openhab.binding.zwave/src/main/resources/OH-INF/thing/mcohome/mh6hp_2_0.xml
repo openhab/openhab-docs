@@ -95,6 +95,7 @@ Programmable Thermostat<br /><h1>Overview</h1><p>MH6-HP programmable thermostat 
         <label>1: Upload temperature format automatically</label>
         <description>Upload temperature format automatically</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -102,6 +103,7 @@ Programmable Thermostat<br /><h1>Overview</h1><p>MH6-HP programmable thermostat 
         <label>2: Upload temperature and humidity automatically</label>
         <description>Upload temperature and humidity automatically</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -111,6 +113,7 @@ Programmable Thermostat<br /><h1>Overview</h1><p>MH6-HP programmable thermostat 
 Upload temperature difference<br /><h1>Overview</h1><p>Base on 0.1℃unit, 0x0005 by default, 5*0.1℃=0.5℃, 0x0003~0x03E8 (3-1000)<br /></p> <p><br /><br /></p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -118,6 +121,7 @@ Upload temperature difference<br /><h1>Overview</h1><p>Base on 0.1℃unit, 0x000
         <label>4: Upload time interval regularly</label>
         <description>Upload time interval regularly</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -125,6 +129,7 @@ Upload temperature difference<br /><h1>Overview</h1><p>Base on 0.1℃unit, 0x000
         <label>5: Upload humidity difference</label>
         <description>Upload humidity difference</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -134,6 +139,7 @@ Factory reset<br /><h1>Overview</h1><p>0x55 (85) Restore the factory setting(wri
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

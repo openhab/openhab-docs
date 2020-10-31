@@ -63,6 +63,7 @@ Outdoor Plug-In On/Off Module<br /><h1>Overview</h1><p>Outdoor Plug-In On/Off Mo
           <option value="2">LED always OFF</option>
           <option value="3">LED always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Outdoor Plug-In On/Off Module<br /><h1>Overview</h1><p>Outdoor Plug-In On/Off Mo
           <option value="0">Press any button on the switch</option>
           <option value="1">Press two times ON button and two time OFF button</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

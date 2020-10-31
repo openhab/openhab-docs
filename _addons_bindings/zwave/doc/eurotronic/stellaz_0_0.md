@@ -148,7 +148,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/183/productattachments-files-e-u-eur-stellaz.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/183/reference/productattachments-files-e-u-eur-stellaz.pdf)
 
 ---
 

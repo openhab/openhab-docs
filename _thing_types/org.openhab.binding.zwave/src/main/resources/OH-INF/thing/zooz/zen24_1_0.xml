@@ -57,6 +57,7 @@ Toggle Dimmer v2<br /><h1>Overview</h1><ul><li>Manual or remote on/off and dimmi
 Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you want the to turn the light on by clicking the toggle up or down Values:</p> <p>0 – Toggle up turns the light on, toggle down turns the light off (default);</p> <p>1 – Toggle up turns the light off, toggle down turns the light on</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -69,6 +70,7 @@ Choose from 2 ramp rate options (fade-in / fade-out effect)<br /><h1>Overview</h
           <option value="0">Slow Ramp Rate</option>
           <option value="1">Fast Ramp Rate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -127,6 +127,7 @@ Series ON/OFF Switch Relay<br /><h1>Overview</h1><p>The TechniSat series switch 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -136,6 +137,7 @@ Series ON/OFF Switch Relay<br /><h1>Overview</h1><p>The TechniSat series switch 
 Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>3 ... 8640</strong> (30 seconds - 1 day)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -145,6 +147,7 @@ Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p
 Interval of active energy meter reports in minutes<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>10 ... 30240</strong> (10 minutes - 3 weeks)</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

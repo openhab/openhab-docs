@@ -568,8 +568,8 @@ Association group 5 supports 8 nodes.
 
 ### Documentation Links
 
-* [User Manual (IT)](https://opensmarthouse.org/zwavedatabase/432/Widom-Double-Relay-IT-0.pdf)
-* [User Manual (EN)](https://opensmarthouse.org/zwavedatabase/432/Widom-Double-Relay-EN.pdf)
+* [User Manual (IT)](https://opensmarthouse.org/zwavedatabase/432/reference/Widom-Double-Relay-IT-0.pdf)
+* [User Manual (EN)](https://opensmarthouse.org/zwavedatabase/432/reference/Widom-Double-Relay-EN.pdf)
 
 ---
 

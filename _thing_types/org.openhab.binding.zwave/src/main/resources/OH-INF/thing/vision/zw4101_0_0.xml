@@ -55,6 +55,7 @@ Drapery controller (up/stop/down)<br /><h1>Overview</h1><p>Drapery controller, s
 Up output time<br /><h1>Overview</h1><p>Time to hold the "up" output button closed (shorted) when unit receives an "up" z-wave command.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -64,6 +65,7 @@ Up output time<br /><h1>Overview</h1><p>Time to hold the "up" output button clos
 Stop output time<br /><h1>Overview</h1><p>Time to hold the "stop" output button closed (shorted) when unit receives a "stop" z-wave command.</p> <p>Note that the unit will automatically execute STOP, UP or STOP, DOWN when receiving an up or down command.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -73,6 +75,7 @@ Stop output time<br /><h1>Overview</h1><p>Time to hold the "stop" output button 
 Down output time<br /><h1>Overview</h1><p>Time to hold the "down" output button closed (shorted) when unit receives a "down" z-wave command.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

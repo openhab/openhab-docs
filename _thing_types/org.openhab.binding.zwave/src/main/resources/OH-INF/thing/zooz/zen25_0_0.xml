@@ -155,6 +155,7 @@ On/Off Status After Power Failure<br /><h1>Overview</h1><p>Choose the recovery s
           <option value="1">On</option>
           <option value="2">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration"
@@ -167,7 +168,6 @@ Power Wattage Report Value Threshold<br /><h1>Overview</h1><p>Choose how you wan
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration"
@@ -177,6 +177,7 @@ Power Wattage Report Value Threshold<br /><h1>Overview</h1><p>Choose how you wan
 Power Wattage Report Frequency<br /><h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Double Plug will report power consumption (Wattage) every 30 seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -186,6 +187,7 @@ Power Wattage Report Frequency<br /><h1>Overview</h1><p>The number entered as va
 Energy (kWh) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report power consumption (W) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report energy usage every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_4" type="integer" groupName="configuration"
@@ -195,6 +197,7 @@ Energy (kWh) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want
 Voltage (V) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report voltage to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report voltage every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -204,6 +207,7 @@ Voltage (V) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want 
 Electrical Current (A) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report electrical current (A) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report current every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -213,6 +217,7 @@ Electrical Current (A) Report Frequency<br /><h1>Overview</h1><p>Choose how ofte
 Overload Protection<br /><h1>Overview</h1><p>Set the amp level for overload protection to kick in. The number entered as the value corresponds to the total number of amps the Double Plug needs to detect across both outlets to turn off automatically and send a notification to the hub and associated devices.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -225,6 +230,7 @@ Enable Auto Turn-Off Timer for Left Outlet<br /><h1>Overview</h1><p>Use this par
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -234,6 +240,7 @@ Enable Auto Turn-Off Timer for Left Outlet<br /><h1>Overview</h1><p>Use this par
 Auto Turn-Off Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -246,6 +253,7 @@ Enable Auto Turn-On Timer for Left Outlet<br /><h1>Overview</h1><p>Use this para
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_4" type="integer" groupName="configuration"
@@ -255,6 +263,7 @@ Enable Auto Turn-On Timer for Left Outlet<br /><h1>Overview</h1><p>Use this para
 Auto Turn-On Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -267,6 +276,7 @@ Enable Auto Turn-Off Timer for Right Outlet<br /><h1>Overview</h1><p>Use this pa
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_4" type="integer" groupName="configuration"
@@ -276,6 +286,7 @@ Enable Auto Turn-Off Timer for Right Outlet<br /><h1>Overview</h1><p>Use this pa
 Auto Turn-Off Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -288,6 +299,7 @@ Enable Auto Turn-On Timer for Right Outlet<br /><h1>Overview</h1><p>Use this par
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4" type="integer" groupName="configuration"
@@ -297,6 +309,7 @@ Enable Auto Turn-On Timer for Right Outlet<br /><h1>Overview</h1><p>Use this par
 Auto Turn-On Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -309,6 +322,7 @@ Enable/Disable Manual Control<br /><h1>Overview</h1><p>Choose if you want to use
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -323,6 +337,7 @@ LED Indicator Mode<br /><h1>Overview</h1><p>Choose if you want the LED indicator
           <option value="2">Momentary</option>
           <option value="3">Always Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

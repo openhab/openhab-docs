@@ -64,6 +64,7 @@ Reverse switch direction<br /><h1>Overview</h1><p>Choose if you want the upper p
           <option value="0">Top-ON, Bottom-OFF</option>
           <option value="1">Top-OFF, Bottom-ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indica
           <option value="0">LED ON - Switch OFF</option>
           <option value="1">LED ON - Switch ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +90,7 @@ Enable / Disable LED Indicator<br /><h1>Overview</h1><p>Enable / Disable LED Ind
           <option value="0">LED Enabled</option>
           <option value="1">LED Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

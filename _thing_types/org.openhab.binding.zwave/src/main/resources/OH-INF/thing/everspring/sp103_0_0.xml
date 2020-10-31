@@ -67,6 +67,7 @@ Motion Detector<br /><h1>Overview</h1><p>Motion Detector</p> <br /><h2>Inclusion
           <option value="1">Set ON</option>
           <option value="9">Set LAST Level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Motion Detector<br /><h1>Overview</h1><p>Motion Detector</p> <br /><h2>Inclusion
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

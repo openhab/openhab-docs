@@ -92,7 +92,6 @@ Motion sensitivity<br /><h1>Overview</h1><p>0 is disabled, 1 is low sensitivity,
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -102,6 +101,7 @@ Motion sensitivity<br /><h1>Overview</h1><p>0 is disabled, 1 is low sensitivity,
 The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><p>The delay in seconds before the sensor reports no motion to the hub and associated devices after detecting the last motion activity.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -112,6 +112,7 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -121,6 +122,7 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
           <option value="0">Motion 0xFF; No motion 0x00</option>
           <option value="1">Motion 0x00; No motion 0xFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -131,6 +133,7 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -140,6 +143,7 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
           <option value="0">Celcius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -149,6 +153,7 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -156,7 +161,6 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
         <label>32: Low battery notification</label>
         <description>The device will report low battery if below this level</description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_172_2" type="integer" groupName="configuration"
@@ -166,7 +170,6 @@ The delay in seconds before the sensor reports no motion<br /><h1>Overview</h1><
 The reporting frequency for battery, temperature, humidity, and light level<br /><h1>Overview</h1><p>Set the reporting frequency for battery, temperature, humidity, and light level. This is the minimum interval in which the sensor will send updates to the hub even if the reporting threshold isn't met. The values correspond to the number of hours.</p> <p>Note: Frequent reports will affect battery life.</p>
         ]]></description>
         <default>4</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_182_1" type="integer" groupName="configuration">
@@ -185,6 +188,7 @@ The reporting frequency for battery, temperature, humidity, and light level<br /
           <option value="45">45%</option>
           <option value="50">50%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_183_2" type="integer" groupName="configuration"
@@ -194,7 +198,6 @@ The reporting frequency for battery, temperature, humidity, and light level<br /
 Temperature reporting threshold<br /><h1>Overview</h1><p>The sensor will report a new temperature value to the hub whenever temperature changes by the number of degrees entered as value.</p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_184_1" type="integer" groupName="configuration"
@@ -207,7 +210,6 @@ Humidity reporting threshold<br /><h1>Overview</h1><p>Set the reporting threshol
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_185_2" type="integer" groupName="configuration"
@@ -220,7 +222,6 @@ Lux reporting threshold<br /><h1>Overview</h1><p>Set the reporting threshold for
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

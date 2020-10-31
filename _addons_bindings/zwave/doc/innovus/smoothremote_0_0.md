@@ -575,7 +575,7 @@ Association group 68 supports 30 nodes.
 
 ### Documentation Links
 
-* [Technical manual](https://opensmarthouse.org/zwavedatabase/440/smoothremote-00120001-tech.pdf)
+* [Technical manual](https://opensmarthouse.org/zwavedatabase/440/reference/smoothremote-00120001-tech.pdf)
 
 ---
 

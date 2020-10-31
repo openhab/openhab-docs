@@ -80,6 +80,7 @@ ZWN323M<br /><h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled
           <option value="0">Power on, LED off</option>
           <option value="1">Power on, LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -89,6 +90,7 @@ ZWN323M<br /><h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled
 Autosend Interval (METER_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend Interval (send METER_REPORT)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@ Autosend Interval (METER_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosen
 Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -107,6 +110,7 @@ Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Instant En
 Accumulated Autosend Interval ( METER_REPORT)<br /><h1>Overview</h1><p>Accumulated Energy Autosend Interval report (send METER_REPORT)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -121,6 +125,7 @@ Enable automatic notifications<br /><h1>Overview</h1><p>Device will send a notif
           <option value="2">Send (SENSOR_MULTI_LEVEL_REPORT) only</option>
           <option value="3">Send both</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -130,6 +135,7 @@ Enable automatic notifications<br /><h1>Overview</h1><p>Device will send a notif
 Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -54,6 +54,7 @@ Smart Relay Switch Module<br /><h1>Overview</h1><p>Transform any home into a con
 Unsolicited Report Configuration<br /><h1>Overview</h1><p>ZWN-RSM1-PLUS can send unsolicited status reports to the primary controller (Node ID 0x1) when the switch is toggled if the controller is designed as a gateway. If your controller is not a gateway or does not need the status reported or you think it could confuse your Z-Wave network, you can use Command_Class_Configuration to disable this function. By default this function is disabled.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

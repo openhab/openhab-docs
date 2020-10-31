@@ -94,7 +94,6 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
           <option value="0">No Basic Set Command will be sent</option>
           <option value="255">Basic Set Command ON will be sent</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -102,6 +101,7 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
         <label>2: Delaying time</label>
         <description>Set the delaying time to report to Group 1 in seconds</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -112,6 +112,7 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
           <option value="0">Do not remember</option>
           <option value="1">Remember</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -122,7 +123,6 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
         <options>
           <option value="0">Does not report automatically</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -133,7 +133,6 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
         <options>
           <option value="0">Does not report automatically</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -144,7 +143,6 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
         <options>
           <option value="0">Does not report automatically</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -155,7 +153,6 @@ Set Basic Set Command value to be sent to group 2 when switch is turned on<br />
         <options>
           <option value="0">Does not report automatically</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

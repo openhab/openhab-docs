@@ -79,6 +79,7 @@ Qubino LUXY Smart Light<br /><h1>Overview</h1><p>The Qubino LUXY Smart Light i
           <option value="2">Motion sensor</option>
           <option value="3">Motion sensor with memory</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -88,6 +89,7 @@ Qubino LUXY Smart Light<br /><h1>Overview</h1><p>The Qubino LUXY Smart Light i
           <option value="0">Only by Z-Wave</option>
           <option value="1">By capacitive input or Z-Wave command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -97,7 +99,6 @@ Qubino LUXY Smart Light<br /><h1>Overview</h1><p>The Qubino LUXY Smart Light i
 Time after which the output triggered by motion sensor is turned off.<br /><h1>Overview</h1><p>0 – 32534 = 0-32534 seconds after which the LED will be turned off.</p> <p>32535 – never turns off.</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -107,7 +108,6 @@ Time after which the output triggered by motion sensor is turned off.<br /><h1>O
 Defines the time after which the device is turned to last known state.<br /><h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns on</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -117,7 +117,6 @@ Defines the time after which the device is turned to last known state.<br /><h1>
 Defines the time after which the device is turned to last known state.<br /><h1>Overview</h1><p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -130,6 +129,7 @@ Restore state on power failure<br /><h1>Overview</h1><p>1 – enabled (the devic
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -142,6 +142,7 @@ Enable/disable beeper<br /><h1>Overview</h1><p>0 – disabled (the beeper does n
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

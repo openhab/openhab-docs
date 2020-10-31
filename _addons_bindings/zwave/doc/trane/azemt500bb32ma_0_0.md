@@ -188,7 +188,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/572/TZEMT500AB32MAA-.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/572/reference/TZEMT500AB32MAA-.pdf)
 
 ---
 

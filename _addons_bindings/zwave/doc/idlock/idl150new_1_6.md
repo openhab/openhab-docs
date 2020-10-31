@@ -336,10 +336,10 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Firmware Release Notes](https://opensmarthouse.org/zwavedatabase/1106/Versjonshistorikk-----ID-Lock.pdf)
-* [ID Lock 150 installation and user manual](https://opensmarthouse.org/zwavedatabase/1106/ID-Lock-150-installation-and-user-manual.pdf)
-* [ID Lock 150 Z wave manual](https://opensmarthouse.org/zwavedatabase/1106/IDLock150-ZWave-UserManual-v2-1.pdf)
-* [ZWave user manual v3.02 (FW 1.6)](https://opensmarthouse.org/zwavedatabase/1106/IDLock150-ZWave-UserManual-v3-02.pdf)
+* [Firmware Release Notes](https://opensmarthouse.org/zwavedatabase/1106/reference/Versjonshistorikk-----ID-Lock.pdf)
+* [ID Lock 150 installation and user manual](https://opensmarthouse.org/zwavedatabase/1106/reference/ID-Lock-150-installation-and-user-manual.pdf)
+* [ID Lock 150 Z wave manual](https://opensmarthouse.org/zwavedatabase/1106/reference/IDLock150-ZWave-UserManual-v2-1.pdf)
+* [ZWave user manual v3.02 (FW 1.6)](https://opensmarthouse.org/zwavedatabase/1106/reference/IDLock150-ZWave-UserManual-v3-02.pdf)
 
 ---
 

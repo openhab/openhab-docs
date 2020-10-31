@@ -65,6 +65,7 @@ Door/Window Contact<br /><h1>Overview</h1><p>Mini Door / Window Contact Detector
 Value to be sent with a BASIC SET command<br /><h1>Overview</h1><p>0: Off</p> <p>1-99, 255: Dim Level (Multilevel Switch Device), ON (Binary Switch Device)</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -74,6 +75,7 @@ Value to be sent with a BASIC SET command<br /><h1>Overview</h1><p>0: Off</p> <p
 OFF Delay in seconds<br /><h1>Overview</h1><p>The Configuration parameter that can be used to adjust the amount of delay before the OFF command is transmitted. This parameter can be configured as 0-127, where 0 means sending OFF command immediately and 127 means 127 seconds of delay. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -84,6 +86,7 @@ Staying Awake (for testing)<br /><h1>Overview</h1><p>Can be used to determine if
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

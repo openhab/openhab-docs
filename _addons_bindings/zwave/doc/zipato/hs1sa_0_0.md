@@ -129,7 +129,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/804/hm-hs1sa-z-Smart-Smoke-Sensor-Z-Wave-User-Manual-1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/804/reference/hm-hs1sa-z-Smart-Smoke-Sensor-Z-Wave-User-Manual-1-0.pdf)
 
 ---
 

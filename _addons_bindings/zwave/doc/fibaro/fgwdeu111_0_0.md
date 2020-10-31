@@ -1305,7 +1305,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Manual Fibaro Walli Dimmer FGWDEU-111](https://opensmarthouse.org/zwavedatabase/1074/FGWDEU-111-T-EN-v1-0.pdf)
+* [Operating Manual Fibaro Walli Dimmer FGWDEU-111](https://opensmarthouse.org/zwavedatabase/1074/reference/FGWDEU-111-T-EN-v1-0.pdf)
 
 ---
 

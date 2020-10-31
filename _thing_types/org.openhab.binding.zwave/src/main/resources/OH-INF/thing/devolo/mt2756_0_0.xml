@@ -71,6 +71,7 @@ MT2756 Flood Sensor<br /><h1>Overview</h1><p>The Home Control Water Sensor is a 
 Basic Set OFF Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ Basic Set OFF Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p>
 Basic Set ON Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2</li> </ul>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -92,6 +94,7 @@ Disable the Flood function<br /><h1>Overview</h1><p>Operation mode</p> <ul><li>0
           <option value="0">Flood function is enabled</option>
           <option value="1">Flood function is disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -101,6 +104,7 @@ Disable the Flood function<br /><h1>Overview</h1><p>Operation mode</p> <ul><li>0
 Customer Function<br /><h1>Overview</h1><p>Parameter to set the sensor functions</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASIC OFF after the flood event cleared</li> <li>Bit 4: Notification Type. <ul><li>0:Using Notification Report,</li> <li>1:Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in aut</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -110,6 +114,7 @@ Customer Function<br /><h1>Overview</h1><p>Parameter to set the sensor functions
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -119,6 +124,7 @@ Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto rep
 Auto Report Flood Time<br /><h1>Overview</h1><p>The interval time for auto report the flood state</p> <ul><li>0 = Turn off auto report</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -128,6 +134,7 @@ Auto Report Flood Time<br /><h1>Overview</h1><p>The interval time for auto repor
 Auto Report Tick Interval<br /><h1>Overview</h1><p>The interval time for auto reporting each tick.</p> <ul><li>0 = Turn off all auto report function.</li> <li>1-255 = Number of ticks.</li> </ul><p>Setting this configuration will effect configuration Nr. 10 and No. 15.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

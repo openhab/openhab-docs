@@ -72,6 +72,7 @@
 Siren alarm sequence interval<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total length of the interval in seconds.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -81,18 +82,21 @@ Siren alarm sequence interval<br /><h1>Overview</h1><p>The additional siren is c
 Siren alarm tone length<br /><h1>Overview</h1><p>The  additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly  off.</p> <p>This parameter defines the total  length of the sound versus silence within this interval.</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="99">
         <label>3: Value of On-Command</label>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="99">
         <label>4: Value of Off-Command</label>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

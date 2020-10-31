@@ -69,6 +69,7 @@ Set the volume level<br /><h1>Overview</h1><p>This parameter sets the volume of 
           <option value="2">Medium Volume</option>
           <option value="3">High Volume</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -83,6 +84,7 @@ Set the Notification Length<br /><h1>Overview</h1><p>This parameter defines the 
           <option value="2">I min</option>
           <option value="3">5 min</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ Secondary Notification Length<br /><h1>Overview</h1><p>This parameter defines th
           <option value="2">Time 2 Min</option>
           <option value="5">Time 5 Min</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -108,6 +111,7 @@ Secondary Notification Length<br /><h1>Overview</h1><p>This parameter defines th
           <option value="2">Medium Volume</option>
           <option value="3">High Volume</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -128,6 +132,7 @@ Primary Notification Sound<br /><h1>Overview</h1><p>The Siren offers ten differe
           <option value="9">Tone 9</option>
           <option value="10">Tone 10</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -148,6 +153,7 @@ Secondary Notification Sound<br /><h1>Overview</h1><p>If Parameter 7 is set to 0
           <option value="9">Tone 9</option>
           <option value="10">Tone 10</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -160,6 +166,7 @@ Toggle Secondary Chime<br /><h1>Overview</h1><p>This Parameter toggles between t
           <option value="1">Primary Notification Will Play</option>
           <option value="2">Secondary Notification Will Play</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -167,6 +174,7 @@ Toggle Secondary Chime<br /><h1>Overview</h1><p>This Parameter toggles between t
         <label>8: Power Level</label>
         <description>Power Level</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

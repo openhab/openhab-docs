@@ -90,6 +90,7 @@ P1-dongle<br /><h1>Overview</h1><p>The P1-dongle sends smart meter data wireless
 Baud rate: the rate the device sends data between the smart meter and z-wave<br /><h1>Overview</h1><p>Set BAUD rate value * 100.</p>
         ]]></description>
         <default>1152</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

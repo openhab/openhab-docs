@@ -78,6 +78,7 @@ Smoke and Carbon Monoxide Alarm<br /><h1>Overview</h1><p>Z-wave compatible smoke
           <option value="0">Single Alarm</option>
           <option value="1">Double Alarm</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

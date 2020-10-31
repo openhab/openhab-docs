@@ -58,6 +58,7 @@ Turn load sense on with 1, off with 0<br /><h1>Overview</h1><p>Set parameter to 
           <option value="0">Disable load sense</option>
           <option value="1">Enable load sense</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

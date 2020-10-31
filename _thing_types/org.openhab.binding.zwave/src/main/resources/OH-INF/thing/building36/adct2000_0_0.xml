@@ -110,6 +110,7 @@ Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal 
           <option value="0">Normal</option>
           <option value="1">Heat Pump</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -118,6 +119,7 @@ Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal 
         <description>Heat Stages 0-3 Default is 2.</description>
         <default>2</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -126,6 +128,7 @@ Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal 
         <description>Cool Stages 0-2 Default is 2.</description>
         <default>2</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -138,6 +141,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
           <option value="0">Fossil Fuel</option>
           <option value="1">Electric</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_4" type="integer" groupName="configuration"
@@ -145,6 +149,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <label>5: Calibration Temperature</label>
         <description>Calibration Temperature Range (in deg. F) Precision is tenths of a degree.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -153,6 +158,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <description>Overshoot Range (in deg. F) Precision is tenths of a degree. Default is 5.</description>
         <default>5</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_4" type="integer" groupName="configuration"
@@ -161,6 +167,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <description>Swing Range (in deg. F) Precision is tenths of a degree.</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -169,6 +176,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <description>Heat Staging Delay (in min)</description>
         <default>10</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -177,6 +185,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <description>Cool Staging Delay (in min)</description>
         <default>10</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
@@ -185,6 +194,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
         <description>Balance Setpont Range (in deg. F) Precision is tenths of a degree.</description>
         <default>350</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -197,6 +207,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
           <option value="0">Comfort</option>
           <option value="1">Efficient</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -205,6 +216,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <description>Fan Circulation Period (in min)</description>
         <default>20</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -213,6 +225,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <description>Duty Cycle (percentage)</description>
         <default>25</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -221,6 +234,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <description>Purge Time (in s)</description>
         <default>60</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4" type="integer" groupName="configuration"
@@ -228,6 +242,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <label>15: Maximum Heat Setpoint</label>
         <description>Max Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
         <default>950</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_4" type="integer" groupName="configuration"
@@ -235,6 +250,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <label>16: Minimum Heat Setpoint</label>
         <description>Min Heat Setpoint Range (in deg. F) Precision is tenths of a degree.</description>
         <default>350</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_4" type="integer" groupName="configuration"
@@ -242,6 +258,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <label>17: Maximum Cool Setpoint</label>
         <description>Max Cool Setpoint Range(in deg. F) Precision is tenths of a degree.</description>
         <default>950</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4" type="integer" groupName="configuration"
@@ -249,6 +266,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
         <label>18: Minimum Cool Setpoint</label>
         <description>Min Cool Setpoint (in deg. F) Precision is tenths of a degree.</description>
         <default>500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -261,6 +279,7 @@ Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (De
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -269,6 +288,7 @@ Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (De
         <description>Compressor Delay (in min)</description>
         <default>5</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -277,6 +297,7 @@ Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (De
         <description>Demand Response Period (in min)</description>
         <default>10</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -285,6 +306,7 @@ Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (De
         <description>Demand Response Duty Cycle (percentage)</description>
         <default>25</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -297,6 +319,7 @@ Celsius or Farenheit for temperature display.<br /><h1>Overview</h1><p>0 - Celsi
           <option value="0">Celsius</option>
           <option value="1">Farenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -314,6 +337,7 @@ Which heating/cooling modes are available.<br /><h1>Overview</h1><p>3 - Off, Hea
           <option value="23">Off, Heat, Cool, Emergency Heat</option>
           <option value="31">Off, Heat, Cool, Auto, Emergency Heat</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -328,6 +352,7 @@ Changes control of configurable terminal<br /><h1>Overview</h1><p>0 - Disabled (
           <option value="2">H</option>
           <option value="3">DH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -340,6 +365,7 @@ Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default
           <option value="0">Battery</option>
           <option value="1">C-Wire</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration"
@@ -348,6 +374,7 @@ Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default
         <description>Battery Alert Range (percentage)</description>
         <default>30</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
@@ -356,6 +383,7 @@ Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default
         <description>Very Low Battery Alert Range (percentage)</description>
         <default>15</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -369,6 +397,7 @@ Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>
           <option value="1">Enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4" type="integer" groupName="configuration"
@@ -377,6 +406,7 @@ Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>
         <description>Heat Differential (in deg. F) Precision is tenths of a degree.</description>
         <default>30</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4" type="integer" groupName="configuration"
@@ -385,6 +415,7 @@ Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>
         <description>Cool Differential (in deg. F) Precision is tenths of a degree.</description>
         <default>30</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4" type="integer" groupName="configuration"
@@ -393,6 +424,7 @@ Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>
         <description>Temperature Reporting Range (in deg. F) Precision is tenths of a degree.</description>
         <default>10</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration">
@@ -406,6 +438,7 @@ Configuration of O/B terminal.<br /><h1>Overview</h1><p>0 - O/B Terminal acts as
           <option value="1">O/B as O</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -419,6 +452,7 @@ Enable/Disabled Echo Assoc. Reports.<br /><h1>Overview</h1><p>0 - Disabled (Defa
           <option value="1">Enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

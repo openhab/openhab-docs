@@ -392,7 +392,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Device Manual](https://opensmarthouse.org/zwavedatabase/1211/AIBASE-Z-Wave-Multi-Sensor-UserGuide-20180606.pdf)
+* [Device Manual](https://opensmarthouse.org/zwavedatabase/1211/reference/AIBASE-Z-Wave-Multi-Sensor-UserGuide-20180606.pdf)
 
 ---
 

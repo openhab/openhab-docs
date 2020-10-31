@@ -72,7 +72,6 @@ Digital or Analog Voltage input and/or Dry Contact Relay<br /><h1>Overview</h1><
         <options>
           <option value="0">Clear Pulse Meter Counts</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -86,7 +85,6 @@ Input-to-relay Mapping<br /><h1>Overview</h1><p>The MIMOlite can be configured t
           <option value="0">Disabled</option>
           <option value="1">SIG1 triggered/untriggered sets or clears Relay1</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -99,7 +97,6 @@ Lower Threshold, High<br /><h1>Overview</h1><p>Lower Threshold, High (Default=0x
         <options>
           <option value="187">Default (0xBB)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -110,7 +107,6 @@ Lower Threshold, High<br /><h1>Overview</h1><p>Lower Threshold, High (Default=0x
         <options>
           <option value="171">Default (0xAB)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -121,7 +117,6 @@ Lower Threshold, High<br /><h1>Overview</h1><p>Lower Threshold, High (Default=0x
         <options>
           <option value="255">Default (0xFF)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -134,7 +129,6 @@ Upper Threshold, Low<br /><h1>Overview</h1><p>Upper Threshold, Low (Default = 0x
         <options>
           <option value="254">Default (0xFE)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -146,6 +140,7 @@ Upper Threshold, Low<br /><h1>Overview</h1><p>Upper Threshold, Low (Default = 0x
           <option value="2">DIGITAL, trigger OUTSIDE of thresholds.</option>
           <option value="3">DIGITAL, trigger BETWEEN thresholds.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -158,6 +153,7 @@ Multilevel AutoReport Interval<br /><h1>Overview</h1><p>Periodic send interval o
           <option value="0">Disable Automatic Reports</option>
           <option value="3">Enable Reports every 30 seconds (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -171,7 +167,6 @@ Momentary Relay1 output enable/disable (100msec).<br /><h1>Overview</h1><p>Momen
           <option value="0">Disabled (Default)</option>
           <option value="5">500 milliseconds</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -79,6 +79,7 @@ Flood Sensor<br /><h1>Overview</h1><p><strong>FIBARO Flood Sensor</strong> is a 
 Additional delay after an alarm has ceased<br /><h1>Overview</h1><p>Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -93,6 +94,7 @@ LED indicator and acoustic alarm deactivation<br /><h1>Overview</h1><p>Parameter
           <option value="2">Acoustic alarm active, visual alarm inactive</option>
           <option value="3">Acoustic and visual alarms active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -105,6 +107,7 @@ Command frame sent by the Sensor in case flooding<br /><h1>Overview</h1><p>Param
           <option value="0">ALARM WATER</option>
           <option value="255">BASIC_SET</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -114,6 +117,7 @@ Command frame sent by the Sensor in case flooding<br /><h1>Overview</h1><p>Param
 Value of the parameter specifying linking to association group no. 1<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes <em>switch on</em> / <em>open</em> command to devices from association group no. 1. In the case of alarm frames the alarm priority is specified. Possible parameter settings.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -126,6 +130,7 @@ Allows for deactivating device turn off and alarm cancellation functions<br /><h
           <option value="0">Alarm (flooding) cancellation inactive</option>
           <option value="1">Alarm (flooding) cancellation active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -135,6 +140,7 @@ Allows for deactivating device turn off and alarm cancellation functions<br /><h
 Interval between successive readings of temperature in seconds.<br /><h1>Overview</h1><p>Interval between successive readings of temperature from all sensors connected to the device in seconds.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -144,6 +150,7 @@ Interval between successive readings of temperature in seconds.<br /><h1>Overvie
 Determines a minimum temperature change value (insensitivity level; def: 0,5C)<br /><h1>Overview</h1><p>Determines a minimum temperature change value (insensitivity level; def: 0,5C), resulting in a temperature report being sent to the main controller, according to the Parameter 10 settings</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -158,6 +165,7 @@ Transmitting the alarm or control frame in 'broadcast' mode<br /><h1>Overview</h
           <option value="2">Tamper mode inactive, Tamper mode active</option>
           <option value="3">Flood and Tamper broadcast mode active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_2" type="integer" groupName="configuration"
@@ -167,6 +175,7 @@ Transmitting the alarm or control frame in 'broadcast' mode<br /><h1>Overview</h
 The parameter stores a temperature value, below which LED indicator blinks.<br /><h1>Overview</h1><p>The parameter stores a temperature value (def. 15C), below which LED indicator blinks with a colour determined by a Parameter 61 settings. By default the LED indicator blinks blue. NOTE: The main controller does not interpret negative numbers </p>
         ]]></description>
         <default>1500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration"
@@ -174,6 +183,7 @@ The parameter stores a temperature value, below which LED indicator blinks.<br /
         <label>51: High temperature alarm threshold</label>
         <description>The parameter stores a temperature value, above which LED indicator blinks.</description>
         <default>3500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_4" type="integer" groupName="configuration"
@@ -183,6 +193,7 @@ The parameter stores a temperature value, below which LED indicator blinks.<br /
 Default is blue (0x000000FF).<br /><h1>Overview</h1><p>Default is blue (0x000000FF). NOTE: A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255. Eg: Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_4" type="integer" groupName="configuration"
@@ -192,6 +203,7 @@ Default is blue (0x000000FF).<br /><h1>Overview</h1><p>Default is blue (0x000000
 Default is red (0x00FF0000).<br /><h1>Overview</h1><p>Default is red (0x00FF0000). NOTE: A main controller interprets colours as a sum of it component colours value. Each colours value is a number from 0 to 255. Eg: Indicated colour = 65536 * RED value + 256 * GREEN value + BLUE value</p>
         ]]></description>
         <default>16711680</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -205,6 +217,7 @@ Parameter determines LED indicator’s operation<br /><h1>Overview</h1><p>Parame
           <option value="1">LED indicator indicates the temperature (blink)</option>
           <option value="2">LED indicates temperature continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_73_2" type="integer" groupName="configuration"
@@ -214,6 +227,7 @@ Parameter determines LED indicator’s operation<br /><h1>Overview</h1><p>Parame
 Parameter stores a offset value from the current temperature<br /><h1>Overview</h1><p>Parameter stores a temperature value to be added to or deducted from the current temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature at the floor level</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_74_1" type="integer" groupName="configuration">
@@ -228,6 +242,7 @@ sensor’s vibrations alarm<br /><h1>Overview</h1><p>(MOVEMENT_TAMPER / BUTTON_T
           <option value="2">Movement tamper alarm active</option>
           <option value="3">Button and movement tampers alarm active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_75_2" type="integer" groupName="configuration"
@@ -237,6 +252,7 @@ sensor’s vibrations alarm<br /><h1>Overview</h1><p>(MOVEMENT_TAMPER / BUTTON_T
 Silence the Flood Sensor.<br /><h1>Overview</h1><p>The user can silence the Flood Sensor. Because the Sensor’s alarm may last for a long time, it’s possible to turn off visual and audible alarm signaling to save battery. The parameter determines a time period after which alarm will become “quiet” - still </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_76_2" type="integer" groupName="configuration"
@@ -246,6 +262,7 @@ Silence the Flood Sensor.<br /><h1>Overview</h1><p>The user can silence the Floo
 Period after which an alarm frame will be retransmitted<br /><h1>Overview</h1><p>Parameter determines a time period after which an alarm frame will be retransmitted. The value of 0 cancels an alarm frame retransmission. The value of 65535 means 'each 1 second'. NOTE: In case a time period set in this parameter is shorter th</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_1" type="integer" groupName="configuration">
@@ -258,6 +275,7 @@ Turning of the internal flood sensor.<br /><h1>Overview</h1><p>Allows for turnin
           <option value="0">Default (flood detection, reactions)</option>
           <option value="1">Built in flood sensor TURNED OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

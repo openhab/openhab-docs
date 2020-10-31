@@ -71,7 +71,6 @@ Button 1 and 3 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 work
           <option value="1">In pair without double clicks</option>
           <option value="2">In pair with double clicks</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -86,7 +85,6 @@ Button 2 and 4 pair mode<br /><h1>Overview</h1><p>In separate mode button 2 work
           <option value="1">In pair without double clicks</option>
           <option value="2">In pair with double clicks</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -106,7 +104,6 @@ Command to Control Group A<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="7">Control Door Lock</option>
           <option value="8">Central Scene to Gateway</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -126,7 +123,6 @@ Command to Control Group B<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="7">Control Door Lock</option>
           <option value="8">Central Scene to Gateway</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -146,7 +142,6 @@ Command to Control Group C<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="7">Control Door Lock</option>
           <option value="8">Central Scene to Gateway</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -166,7 +161,6 @@ Command to Control Group D<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="7">Control Door Lock</option>
           <option value="8">Central Scene to Gateway</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -179,7 +173,6 @@ Command to Control Group D<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="2">Switch on only</option>
           <option value="255">Switch all on and off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -191,7 +184,6 @@ Command to Control Group D<br /><h1>Overview</h1><p>This parameter defines the c
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
@@ -205,7 +197,6 @@ Blocks wakeup even when wakeup interval is set<br /><h1>Overview</h1><p>If the d
           <option value="0">Wakeup is blocked</option>
           <option value="1">Wakeup is possible if configured accordingly</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -218,7 +209,6 @@ Blocks wakeup even when wakeup interval is set<br /><h1>Overview</h1><p>If the d
           <option value="1">To same node as wake up notification</option>
           <option value="2">Broadcast to neighbors</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

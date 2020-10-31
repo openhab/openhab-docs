@@ -75,6 +75,7 @@ Battery driven IP44 keypad for access control.<br /><h1>Overview</h1><p>This key
         <label>1: Automatic Secure Timeout</label>
         <description>After this time a CLOSE is sent to the door lock.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -84,6 +85,7 @@ Battery driven IP44 keypad for access control.<br /><h1>Overview</h1><p>This key
 After this time the Door Bell will receive an OFF.<br /><h1>Overview</h1><p>After this time the Door Bell will receive an OFF command regardless of the actuall button is pressed or not</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -91,12 +93,14 @@ After this time the Door Bell will receive an OFF.<br /><h1>Overview</h1><p>Afte
         <label>3: Ring Button ON Command</label>
         <description>Value to send on ring button press.</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="255">
         <label>4: Ring Button OFF Command</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -107,6 +111,7 @@ After this time the Door Bell will receive an OFF.<br /><h1>Overview</h1><p>Afte
           <option value="0">Constant Scene ID 20 for all User Codes</option>
           <option value="1">Individual User Codes 1 ... 20</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -116,6 +121,7 @@ After this time the Door Bell will receive an OFF.<br /><h1>Overview</h1><p>Afte
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

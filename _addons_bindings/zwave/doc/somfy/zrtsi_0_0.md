@@ -59,7 +59,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/369/ZRTSI-Instructions-1811265.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/369/reference/ZRTSI-Instructions-1811265.pdf)
 
 ---
 

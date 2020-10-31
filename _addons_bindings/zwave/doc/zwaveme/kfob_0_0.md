@@ -393,7 +393,7 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/146/Manual-KFOB-POPP-C-En.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/146/reference/Manual-KFOB-POPP-C-En.pdf)
 
 ---
 

@@ -144,7 +144,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Technical documentation](https://opensmarthouse.org/zwavedatabase/61/smartpower-zw-tech-doc.pdf)
+* [Technical documentation](https://opensmarthouse.org/zwavedatabase/61/reference/smartpower-zw-tech-doc.pdf)
 
 ---
 

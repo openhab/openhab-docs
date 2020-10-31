@@ -57,6 +57,7 @@ PIR Sensor<br /><h1>Overview</h1><p>This sensor acts as a security device by det
                  min="0" max="255">
         <label>0: Motion timeout</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

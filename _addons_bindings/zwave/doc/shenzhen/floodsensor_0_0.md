@@ -258,7 +258,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Shenzhen Watersensor Manual](https://opensmarthouse.org/zwavedatabase/493/Shenzhen-NEO-watersensor-Z-wave.pdf)
+* [Shenzhen Watersensor Manual](https://opensmarthouse.org/zwavedatabase/493/reference/Shenzhen-NEO-watersensor-Z-wave.pdf)
 
 ---
 

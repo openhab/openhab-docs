@@ -51,6 +51,7 @@ In-Wall Smart Fan Control<br /><h1>Overview</h1><h1>Product Features</h1> <ul><l
           <option value="1">LED on when light on</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -63,6 +64,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -72,6 +74,7 @@ Invert Switch<br /><h1>Overview</h1><p>Change the top of the switch to OFF and t
 Z-Wave Command Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -81,6 +84,7 @@ Z-Wave Command Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the d
 Z-Wave Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -90,6 +94,7 @@ Z-Wave Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 mill
 Local Control Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p> <p>.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -99,6 +104,7 @@ Local Control Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the di
 Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p> <p>.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -108,6 +114,7 @@ Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 milli
 ALL ON/ALL OFF Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -117,6 +124,7 @@ ALL ON/ALL OFF Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the d
 ALL ON/ALL OFF Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dim level will change.</p> <p>Both the number of steps (or levels) that the dimmer will change and the timing of the steps can be modified to suit personal preferences. The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is 3. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

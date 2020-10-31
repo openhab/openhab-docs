@@ -114,6 +114,7 @@ Multipurpose relay<br /><h1>Overview</h1><p>The Heatit Z-Relay is a Z-Wave modul
 Configuration of the status LED.<br /><h1>Overview</h1><p>0 = LED turned off. </p> <p>1 = LED turned on. (Default) </p> <p>2 = LED flashing at 1 second intervals (½ Hz). </p> <p>3 = LED flashing at ½ second interval (1 Hz).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -123,6 +124,7 @@ Configuration of the status LED.<br /><h1>Overview</h1><p>0 = LED turned off. </
 Configure the percentage of light in the status LED, when the LED is turned on<br /><h1>Overview</h1><p>0 - 100 = Specifies the brightness level of the LED when it is on. Default is 50.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -132,6 +134,7 @@ Configure the percentage of light in the status LED, when the LED is turned on<b
 Configures the thermistor type connected to input 1.<br /><h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -141,6 +144,7 @@ Configures the thermistor type connected to input 1.<br /><h1>Overview</h1><p>0 
 Configures the thermistor type connected to input 2. VALUE DESCRIPTION<br /><h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -150,6 +154,7 @@ Configures the thermistor type connected to input 2. VALUE DESCRIPTION<br /><h1>
 Configures a temperature offset, input 1.<br /><h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 1.</p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0). </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -159,6 +164,7 @@ Configures a temperature offset, input 1.<br /><h1>Overview</h1><p>Configures a 
 Configures a temperature offset, input 2.<br /><h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 2. </p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -168,6 +174,7 @@ Configures a temperature offset, input 2.<br /><h1>Overview</h1><p>Configures a 
 Configures the time interval between when sensor reports, input 1.<br /><h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 1. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute. </p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -177,6 +184,7 @@ Configures the time interval between when sensor reports, input 1.<br /><h1>Over
 Configures the time interval between when sensor reports, input 2.<br /><h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 2.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute.  </p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -186,6 +194,7 @@ Configures the time interval between when sensor reports, input 2.<br /><h1>Over
 Configures time interval for notification reports, flood input 3.<br /><h1>Overview</h1><p>Configures the time interval between when notification reports for flood input 3.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 2 (20 seconds) which will cause reports to be sent every 20 seconds.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -195,6 +204,7 @@ Configures time interval for notification reports, flood input 3.<br /><h1>Overv
 Time interval between meter reports.<br /><h1>Overview</h1><p>Configures the time interval between when meter reports for reporting the energy (kWh) consumed by the load connected to the relay output. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 90 (900 seconds) which will cause reports to be sent every 15 minute.</p>
         ]]></description>
         <default>90</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -204,6 +214,7 @@ Time interval between meter reports.<br /><h1>Overview</h1><p>Configures the tim
 Input 3 steady time.<br /><h1>Overview</h1><p>Configures the time that the flood input (input 3) has to be steady before the state is accepted as a valid state. </p> <p>0 – 60 = 0 – 60 seconds. Default value is 6 (6 seconds) before a state is accepted as valid. </p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -213,6 +224,7 @@ Input 3 steady time.<br /><h1>Overview</h1><p>Configures the time that the flood
 Configures internal states that will cause the relay to be turned on.<br /><h1>Overview</h1><p>0 = Relay is not turned on automatically. </p> <p>1 = The relay is turned on when a flood is detected. (Default) </p> <p>2 = The relay is turned off when no flood is detected.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -222,6 +234,7 @@ Configures internal states that will cause the relay to be turned on.<br /><h1>O
 Configures internal states that will cause the relay to be turned off.<br /><h1>Overview</h1><p>0 = Relay is not turned off automatically. </p> <p>1 = The relay is turned off when a flood is detected. </p> <p>2 = The relay is turned off when no flood is detected. (Default)</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -231,6 +244,7 @@ Configures internal states that will cause the relay to be turned off.<br /><h1>
 Configures the threshold for input 3 that will cause a flood to be detected.<br /><h1>Overview</h1><p>0 - 4095 = Low value means a low detection threshold, high value will cause the input to be more sensitive. Default value is 2048.</p>
         ]]></description>
         <default>2048</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -240,6 +254,7 @@ Configures the threshold for input 3 that will cause a flood to be detected.<br 
 Voltage value used for power calculation.<br /><h1>Overview</h1><p>Configures the value used for power calculation, as only the current for the load on the relay output is measured.</p> <p>0 – 250  = 0 – 250 Volt. Default value is 220.</p>
         ]]></description>
         <default>220</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -249,6 +264,7 @@ Voltage value used for power calculation.<br /><h1>Overview</h1><p>Configures th
 NOT USED<br /><h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -258,6 +274,7 @@ NOT USED<br /><h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
 DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /><h1>Overview</h1><p>0 - 255 = 0 – 255. Default value is 81 which is corresponds to the current sensor ACS722LLCTR-20AB.</p>
         ]]></description>
         <default>81</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -267,6 +284,7 @@ DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /><h1>Overview</h1><p>0 - 255
 Actual load in Watt.<br /><h1>Overview</h1><p>Configures a constant value that will be used in power metering when this value is different from 0.  This value specifies the actual load in Watt used for power metering. </p> <p>0 – 6000 = 0 – 6000 Watt. Default value is 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

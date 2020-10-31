@@ -69,6 +69,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
           <option value="0">Send alarm</option>
           <option value="1">Send basic frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -90,6 +92,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
           <option value="2">Mode 1 report</option>
           <option value="3">Always-on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -97,6 +100,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
         <label>6: Temperature offset</label>
         <description>An offset for the temperature.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

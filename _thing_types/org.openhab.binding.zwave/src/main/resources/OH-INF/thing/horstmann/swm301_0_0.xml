@@ -71,6 +71,7 @@ Z-Wave Module for Water Meter<br /><h1>Overview</h1><p>SWM 301 is a battery-powe
 current meter reading<br /><h1>Overview</h1><p>Offset to adjust the reported to the actual meter reading.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ current meter reading<br /><h1>Overview</h1><p>Offset to adjust the reported to 
 how often meter reading is sent<br /><h1>Overview</h1><p>Defines how often the meter reading is sent.</p>
         ]]></description>
         <default>1440</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -89,12 +91,14 @@ how often meter reading is sent<br /><h1>Overview</h1><p>Defines how often the m
 min. delta for automatic report<br /><h1>Overview</h1><p>Defines the minimum change of the meter reading that results in an unsolicited meter report.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
                  min="0" max="4294967295">
         <label>4: Mechanical meter serial number</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -104,6 +108,7 @@ min. delta for automatic report<br /><h1>Overview</h1><p>Defines the minimum cha
 enable temperature monitor<br /><h1>Overview</h1><p>Enables or disables the temperature monitor.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -113,6 +118,7 @@ enable temperature monitor<br /><h1>Overview</h1><p>Enables or disables the temp
 change in temperature for report<br /><h1>Overview</h1><p>Defines how much the temperature has to change for an unsolicited temperature report.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -122,6 +128,7 @@ change in temperature for report<br /><h1>Overview</h1><p>Defines how much the t
 temperature triggering alarm<br /><h1>Overview</h1><p>Defines below what temperature a low temperature alarm is reported.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -55,6 +55,7 @@ SwiidPlug<br /><h1>Overview</h1><p>The SwiidPlug™ is designed to switch on and
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

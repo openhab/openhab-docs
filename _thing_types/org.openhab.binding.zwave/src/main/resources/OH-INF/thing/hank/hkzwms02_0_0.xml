@@ -68,7 +68,6 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Senso
           <option value="7">Sensitivity 7</option>
           <option value="8">Sensitivity 8 (max)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -79,6 +78,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Senso
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -89,6 +89,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Senso
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -98,6 +99,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Senso
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -107,7 +109,6 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor is a universal Z-Wave Senso
 Period of time after which Motion alarm will be cancelled.<br /><h1>Overview</h1><p>The Motion alarm will be cancelled in the main controller and the associated devices after 3 seconds, the alarm cancellation can be delay by this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -115,6 +116,7 @@ Period of time after which Motion alarm will be cancelled.<br /><h1>Overview</h1
         <label>32: Level of low battery</label>
         <description>Define a battery level ad the "low battery"</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

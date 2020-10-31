@@ -71,6 +71,7 @@ Smoke Detector and Siren<br /><h1>Overview</h1><h1>Secure Z-Wave Smoke Sensor pl
 This parameter defines the total length of the interval in seconds.<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the interval in seconds.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -80,18 +81,21 @@ This parameter defines the total length of the interval in seconds.<br /><h1>Ove
 Total length of the sound versus silence within this interval.<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the sound versus silence within this interval.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="99">
         <label>3: Value of On-Command</label>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="99">
         <label>4: Value of Off-Command</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -104,6 +108,7 @@ Inform other smoke detectors of same type about smoke alarms<br /><h1>Overview</
           <option value="0">inactive</option>
           <option value="1">active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -116,6 +121,7 @@ Inform other smoke detectors of same type about battery alarms<br /><h1>Overview
           <option value="0">inactive</option>
           <option value="1">active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

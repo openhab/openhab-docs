@@ -100,6 +100,7 @@ Once activated, Wall Plug will keep a connected device ...<br /><h1>Overview</h1
           <option value="0">Activated</option>
           <option value="1">Inactive</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -112,6 +113,7 @@ Define how will the Plug react after the power supply is back on.<br /><h1>Overv
           <option value="0">Do not remember state</option>
           <option value="1">Remember state before power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration"
@@ -121,6 +123,7 @@ Define how will the Plug react after the power supply is back on.<br /><h1>Overv
 Define Z-Wave network alarms to which the Wall Plug will respond.<br /><h1>Overview</h1><p>Default setting: 63</p> <p>Available settings: 0 - 63.</p> <ul><li>1 - general alarm</li> <li>2 - smoke alarm4 - CO alarm</li> <li>8 - CO2 alarm</li> <li>16 - high temperature alarm</li> <li>32 - flood alarm</li> </ul>
         ]]></description>
         <default>63</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -135,6 +138,7 @@ Parameter defines how the Wall Plug will respond to alarms ...<br /><h1>Overview
           <option value="2">Turn OFF</option>
           <option value="3">Cycle ON/OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -144,6 +148,7 @@ Parameter defines how the Wall Plug will respond to alarms ...<br /><h1>Overview
 Wall Plug's alarm mode duration. If a device sending an ...<br /><h1>Overview</h1><p>... alarm frame through the Z-Wave network sets alarm duration as well, this parameter's settings are ignored.<br />Default setting: 600 (seconds).<br />Available settings: 1 - 65536 (seconds)<br /> </p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -153,6 +158,7 @@ Wall Plug's alarm mode duration. If a device sending an ...<br /><h1>Overview</h
 Parameter defines by how much power load must change ...<br /><h1>Overview</h1><p>...in percents, to be reported to the main controller, with the highest<br />priority in the Z-Wave network. By default, Fibaro Wall Plug<br />immediately sends power report if the power load changes by 80%.<br />Default setting: 80 (%)<br />Available settings: 1 - 100 (%).<br />Value of 100 (%) means the reports are turned off. </p>
         ]]></description>
         <default>80</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration"
@@ -162,6 +168,7 @@ Parameter defines by how much power load must change ...<br /><h1>Overview</h1><
 Parameter defines by how much power load must change ..<br /><h1>Overview</h1><p>... in percents, to be reported to the main controller. By default, Fibaro<br />Wall Plug sends power report if the power load changes by 15%.<br />By default such changes in power load may be reported up to 5 times<br />per 30 seconds. Wall Plug sends 5 reports during time period<br />specified in paramater 43.<br />Default setting: 15 (%)<br />Available settings: 1 - 100 (%)<br />Value of 100 (%) means the reports are turned off </p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
@@ -171,6 +178,7 @@ Parameter defines by how much power load must change ..<br /><h1>Overview</h1><p
 This parameter defines how frequently standard power ...<br /><h1>Overview</h1><p>... (parameter 42) will be sent. By default Wall Plug sends up to 5<br />reports each 30 seconds, provided the power load changes by 15%.<br />Default seting: 30 (s)<br />Available settings: 1 - 254 (s)<br />Value of 255 - Reports will be sent only as a result of parameter 47<br />settings or in case of polling. </p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration"
@@ -180,6 +188,7 @@ This parameter defines how frequently standard power ...<br /><h1>Overview</h1><
 Reporting changes in energy consumed by controlled devices<br /><h1>Overview</h1><p>Reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).</p> <ul><li>Available settings: 1 - 254 (0,01kWh - 2,54kWh).</li> <li>Value of 255 - changes in consumed energy will not be reported.</li> <li>Reports will be sent only in case of polling.</li> </ul>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_2" type="integer" groupName="configuration"
@@ -189,6 +198,7 @@ Reporting changes in energy consumed by controlled devices<br /><h1>Overview</h1
 Time Period between reports on power and energy ...<br /><h1>Overview</h1><p>... consumption.</p> <p>Parameter defines time period between reports sent when changes in power load have not been recorded. By default, if power load changes have not been recorded, reports are sent every hour.</p> <ul><li>Default setting: 3 600 (s),</li> <li>Available settings: 1 - 65534 (s)</li> <li>Value of 65535 - no periodic reports. Reports will be sent only in case of power load / energy consumption changes (parameters 40,<br />42, 43,45) or in case of polling.</li> </ul>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_1" type="integer" groupName="configuration">
@@ -201,6 +211,7 @@ This parameter determines whether energy metering ...<br /><h1>Overview</h1><p>.
           <option value="0">Inactive</option>
           <option value="1">Activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_2" type="integer" groupName="configuration"
@@ -210,6 +221,7 @@ This parameter determines whether energy metering ...<br /><h1>Overview</h1><p>.
 Lower power threshold, used in parameter 52.<br /><h1>Overview</h1><p>Default setting: 300 (30 W)<br />Available settings: 0 - 25 000 (0,0W - 2 500W)<br />DOWN value cannot be higher than a value specified in parameter<br />51. </p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration"
@@ -219,6 +231,7 @@ Lower power threshold, used in parameter 52.<br /><h1>Overview</h1><p>Default se
 Upper power threshold, used in parameter 52.<br /><h1>Overview</h1><p>Default setting: 500 (50 W)<br />Available settings: 1 - 25 000 (0,1W - 2 500W)<br />UP value cannot be lower than a value specified in parameter 50. </p>
         ]]></description>
         <default>500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration">
@@ -236,6 +249,7 @@ Parameter defines the way 2nd association group devices ...<br /><h1>Overview</h
           <option value="5">Turn devices ON when power below DOWN and off ...</option>
           <option value="6">Turn devices OFF when power below DOWN ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_2" type="integer" groupName="configuration"
@@ -245,6 +259,7 @@ Parameter defines the way 2nd association group devices ...<br /><h1>Overview</h
 Function is active only when parameter 61 is set to 0 or 1.<br /><h1>Overview</h1><p>Default setting: 25 000 (2 500W)<br />Available settings: 1 000 - 32 000 (100W - 3200W) </p>
         ]]></description>
         <default>25000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration">
@@ -262,6 +277,7 @@ Function is active only when parameter 61 is set to 0 or 1.<br /><h1>Overview</h
           <option value="8">Magenta illumination</option>
           <option value="9">NO illumination</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration">
@@ -278,6 +294,7 @@ Function is active only when parameter 61 is set to 0 or 1.<br /><h1>Overview</h
           <option value="7">Magenta illumination</option>
           <option value="8">NO illumination</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -295,6 +312,7 @@ Function is active only when parameter 61 is set to 0 or 1.<br /><h1>Overview</h
           <option value="8">Magenta illumination</option>
           <option value="9">NO illumination</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_70_2" type="integer" groupName="configuration"
@@ -304,6 +322,7 @@ Function is active only when parameter 61 is set to 0 or 1.<br /><h1>Overview</h
 This function allows for turning off the controlled device...<br /><h1>Overview</h1><p>... in case of exceeding the defined power. Controlled device will be turned off<br />even if "always on" function is active (parameter 1).<br />Controlled device can be turned back on via B-button or sending a<br />control frame. By default this function is inactive.<br />Default setting: 65 535 (6 553,5W)<br />Available settings: 10 - 65 535 (1W - 6 553,5W).<br />Value higher than 32 000 (3 200W) turns the overload safety switch<br />off, i.e. this functionality is turned off by default. </p>
         ]]></description>
         <default>65535</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

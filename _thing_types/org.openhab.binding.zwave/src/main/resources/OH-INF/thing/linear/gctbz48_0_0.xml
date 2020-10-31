@@ -108,6 +108,7 @@ Z-Wave Plus Thermostat<br /><h1>Overview</h1><p>The Z-Wave Thermostat (GC-TBZ48)
           <option value="0">Standard</option>
           <option value="1">Heat Pump</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -120,6 +121,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">Gas</option>
           <option value="1">Electric</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -130,6 +132,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">w/Cool</option>
           <option value="1">w/Heat</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -140,6 +143,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -150,6 +154,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -160,6 +165,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -170,6 +176,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -179,6 +186,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
 Minimum Off Time<br /><h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay before another heating/cooling cycle can begin</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -188,6 +196,7 @@ Minimum Off Time<br /><h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay 
 Minimum Run Time<br /><h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay before a heating/cooling cycle can turn off</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -197,6 +206,7 @@ Minimum Run Time<br /><h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay 
 Setpoint H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between heating and cooling setpoints</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -206,6 +216,7 @@ Setpoint H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between 
 H Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -215,6 +226,7 @@ H Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
 H Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -224,6 +236,7 @@ H Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
 H Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating starts</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -233,6 +246,7 @@ H Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
 H Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating stops</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -242,6 +256,7 @@ H Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
 H Delta Aux ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating starts</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -251,6 +266,7 @@ H Delta Aux ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 
 H Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating stops</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -260,6 +276,7 @@ H Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
 C Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling starts</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -269,6 +286,7 @@ C Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
 C Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling stops</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -278,6 +296,7 @@ C Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
 C Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling starts</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -287,6 +306,7 @@ C Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
 C Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_4" type="integer" groupName="configuration"
@@ -297,6 +317,7 @@ Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to sen
         ]]></description>
         <default>8319</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -307,6 +328,7 @@ Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to sen
           <option value="0">Unlocked</option>
           <option value="1">Locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration"
@@ -316,6 +338,7 @@ Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to sen
 Backlight Timer<br /><h1>Overview</h1><p>Sets the time from last button press that the backlight will turn OFF</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration"
@@ -325,6 +348,7 @@ Backlight Timer<br /><h1>Overview</h1><p>Sets the time from last button press th
 Max Heat Setpoint<br /><h1>Overview</h1><p>Sets the maximum heating setpoint value</p>
         ]]></description>
         <default>90</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration"
@@ -334,6 +358,7 @@ Max Heat Setpoint<br /><h1>Overview</h1><p>Sets the maximum heating setpoint val
 Min Cool Setpoint<br /><h1>Overview</h1><p>Sets the minimum cooling setpoint value</p>
         ]]></description>
         <default>61</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_1" type="integer" groupName="configuration">
@@ -346,6 +371,7 @@ Schedule Enable<br /><h1>Overview</h1><p>Enable or disable thermostat's local sc
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration">
@@ -358,6 +384,7 @@ Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
           <option value="0">Hold</option>
           <option value="1">Run</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -368,6 +395,7 @@ Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
           <option value="0">No Setback</option>
           <option value="2">Unoccupied Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -377,6 +405,7 @@ Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
 Un-Occupied HSP<br /><h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
         ]]></description>
         <default>62</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration"
@@ -386,6 +415,7 @@ Un-Occupied HSP<br /><h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
 Un-Occupied CSP<br /><h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
         ]]></description>
         <default>80</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
@@ -395,6 +425,7 @@ Un-Occupied CSP<br /><h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
 Remote Sensor 1 Node Number<br /><h1>Overview</h1><p>Node number for Remote Sensor 1</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_46_1" type="integer" groupName="configuration"
@@ -404,6 +435,7 @@ Remote Sensor 1 Node Number<br /><h1>Overview</h1><p>Node number for Remote Sens
 Remote Sensor 1 Temperature<br /><h1>Overview</h1><p>Temperature of Remote Sensor 1</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration"
@@ -413,6 +445,7 @@ Remote Sensor 1 Temperature<br /><h1>Overview</h1><p>Temperature of Remote Senso
 Internal Sensor Temp Offset<br /><h1>Overview</h1><p>Internal Sensor Temperature Offset</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_1" type="integer" groupName="configuration"
@@ -422,6 +455,7 @@ Internal Sensor Temp Offset<br /><h1>Overview</h1><p>Internal Sensor Temperature
 R1 Sensor Temp Offset<br /><h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
@@ -431,6 +465,7 @@ R1 Sensor Temp Offset<br /><h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
 Heat Timer<br /><h1>Overview</h1><p>Heat Timer in hours</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_2" type="integer" groupName="configuration"
@@ -440,6 +475,7 @@ Heat Timer<br /><h1>Overview</h1><p>Heat Timer in hours</p>
 Cool Timer<br /><h1>Overview</h1><p>Cool Timer in hours</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration"
@@ -450,6 +486,7 @@ Fan Purge Heat<br /><h1>Overview</h1><p>Fan purge period for Heat mode</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration"
@@ -460,6 +497,7 @@ Fan Purge Cool<br /><h1>Overview</h1><p>Fan purge period for Cool mode</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -46,6 +46,7 @@ Home Control Smoke Detector<br /><h1>Overview</h1><p>The Home Control Smoke Dete
       <property name="manufacturerId">0175</property>
       <property name="manufacturerRef">0502:1000,2004:04A4</property>
       <property name="dbReference">615</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -58,6 +59,10 @@ Home Control Smoke Detector<br /><h1>Overview</h1><p>The Home Control Smoke Dete
       </parameter-group>
 
       <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Battery capacity low</label>
         <description><![CDATA[

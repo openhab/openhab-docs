@@ -100,6 +100,7 @@ Will turn on connected device permanently<br /><h1>Overview</h1><p>In this mode 
           <option value="0">function inactive</option>
           <option value="1">function activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -112,6 +113,7 @@ determines how the Wall Plug will react in the event of power supply failure<br 
           <option value="0">device remains switched off</option>
           <option value="1">Remember state before power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -124,7 +126,6 @@ allows to turn off the controlled device in case of exceeding the defined power.
         <options>
           <option value="0">function inactive</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -134,6 +135,7 @@ allows to turn off the controlled device in case of exceeding the defined power.
 minimum percentage change in active power<br /><h1>Overview</h1><p>This parameter determines the minimum percentage change in active power that will result in sending power report to the main controller with the highest priority in the Z-Wave network.</p> <p>By default, the Wall Plug immediately sends the power report if the power load changes by 80%.</p> <p>1-99 - power change in percent</p> <p>100 - reports are disabled</p>
         ]]></description>
         <default>80</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -143,6 +145,7 @@ minimum percentage change in active power<br /><h1>Overview</h1><p>This paramete
 minimum percentage change in active power<br /><h1>Overview</h1><p>This parameter determines the minimum percentage change in active power that will result in sending power report to the main controller</p> <p>Compared to parameter 10, the maximum number of reports sent is reduced (parameter 12) to 5 in a specified time interval. In addition, the reports are not sent in mode, which may result in overloading the Z-Wave network.</p> <p>By default changes in power load may be reported up to 5 times per 30 seconds, when power load changes by 15%.</p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -152,6 +155,7 @@ minimum percentage change in active power<br /><h1>Overview</h1><p>This paramete
 defines the time interval of sending at most 5 standard power reports<br /><h1>Overview</h1><p>This parameter defines the time interval of sending at most 5 standard power reports when the power changes by the value set in parameter 11. The higher the value of parameter 12, the fewer reports the device will send.</p> <p>Settings in second</p> <p>Default: 30s</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -164,7 +168,6 @@ specifies the minimum change in energy consumption<br /><h1>Overview</h1><p>This
         <options>
           <option value="0">energy reports inactive</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -177,7 +180,6 @@ defines time period between independent reports sent<br /><h1>Overview</h1><p>Th
         <options>
           <option value="0">periodic reports inactive</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -190,6 +192,7 @@ determines whether power metering should include the amount of power<br /><h1>Ov
           <option value="0">function inactive</option>
           <option value="1">function activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -202,6 +205,7 @@ Control of „On/Off (Button)” association group (2) devices<br /><h1>Overview
           <option value="0">control as the Wall Plug</option>
           <option value="1">control opposite to the Wall Plug</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
@@ -211,6 +215,7 @@ Control of „On/Off (Button)” association group (2) devices<br /><h1>Overview
 DOWN value - „On/Off (Power)” for association group (3)<br /><h1>Overview</h1><p>Lower power threshold, used in parameter 23. DOWN value cannot be higher than a value specified in parameter 22.</p> <p>Setting: 0-24900 (0.0-2490.0W, step 0.1W)</p> <p>Default: 300 (30W)</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -220,6 +225,7 @@ DOWN value - „On/Off (Power)” for association group (3)<br /><h1>Overview</h
 UP value - „On/Off (Power)” for association group (3)<br /><h1>Overview</h1><p>Upper power threshold, used in parameter 23. UP value cannot belower than a value specified in parameter 21.</p> <p>Available settings: 100-25000 (10.0-2500.0W, step 0.1W)<br />Default setting: 500 (50W)</p>
         ]]></description>
         <default>500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -236,6 +242,7 @@ defines the way that 3rd association group devices are controlled.<br /><h1>Over
           <option value="5">combination of 1 and 4</option>
           <option value="6">combination of 2 and 3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_2" type="integer" groupName="configuration"
@@ -248,7 +255,6 @@ SWITCH ON value - „On/Off” association groups<br /><h1>Overview</h1><p>The v
         <options>
           <option value="255">Default</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -266,6 +272,7 @@ Define Z-Wave network alarms to which the Wall Plug will respond<br /><h1>Overvi
           <option value="32">flood alarm</option>
           <option value="63">All</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration"
@@ -280,7 +287,6 @@ defines how the Wall Plug will respond to alarms<br /><h1>Overview</h1><p>This p
           <option value="1">turn connected device on</option>
           <option value="2">turn connected device off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_2" type="integer" groupName="configuration"
@@ -290,6 +296,7 @@ defines how the Wall Plug will respond to alarms<br /><h1>Overview</h1><p>This p
 specifies the duration of alarm state<br /><h1>Overview</h1><p>This parameter specifies the duration of alarm state. If a device sending an alarm frame through the Z-Wave network sets alarm duration as well, this settings are ignored.</p> <p>Available settings: 1-32400 (in seconds)<br />Default setting: 600 (10min)</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_2" type="integer" groupName="configuration"
@@ -299,6 +306,7 @@ specifies the duration of alarm state<br /><h1>Overview</h1><p>This parameter sp
 determines maximum active power value<br /><h1>Overview</h1><p>This parameter determines maximum active power value, which when exceeded, causes the LED ring flash violet. Function is active only when parameter 41 is set to 1 or 2.</p> <p>Available settings: 1000-30000 (100.0-3000.0W, step 0.1W)<br />Default setting: 25000 (2500W)</p>
         ]]></description>
         <default>25000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -319,6 +327,7 @@ LED ring colour when controlled device is on<br /><h1>Overview</h1><p>When set t
           <option value="8">cyan</option>
           <option value="9">magenta</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -338,6 +347,7 @@ LED ring colour when controlled device is off<br /><h1>Overview</h1><p>This para
           <option value="8">cyan</option>
           <option value="9">magenta</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -358,6 +368,7 @@ LED ring colour at the Z-Wave network alarm detection<br /><h1>Overview</h1><p>T
           <option value="8">cyan</option>
           <option value="9">magenta</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -372,6 +383,7 @@ defines how commands are sent in specified association groups<br /><h1>Overview<
           <option value="2">3rd group sent as secure</option>
           <option value="3">2nd and 3rd group sent as secure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

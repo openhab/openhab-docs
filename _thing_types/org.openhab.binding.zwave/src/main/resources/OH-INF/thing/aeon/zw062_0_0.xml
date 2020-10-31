@@ -72,6 +72,7 @@ Aeon Labs Garage Door Controller Gen5<br /><h1>Overview</h1><p>Aeon Labs Garage 
 Configure the default startup ringtone<br /><h1>Overview</h1><p>Configure the default startup ringtone.</p> <p>Value=0, disable the Startup ringtone.<br />Value=others, Enable and select a startup ringtone for the Garage Door Controller.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1_wo" type="integer" groupName="configuration">
@@ -84,6 +85,7 @@ Perform Sensor Calibration<br /><h1>Overview</h1><p>Sensor Calibration.</p> <p><
           <option value="0">Calibration not active</option>
           <option value="1">Begin calibration</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_2" type="integer" groupName="configuration"
@@ -93,6 +95,7 @@ Perform Sensor Calibration<br /><h1>Overview</h1><p>Sensor Calibration.</p> <p><
 Set the timeout of all calibration steps for the Sensor.<br /><h1>Overview</h1><p>Set the timeout of all calibration steps for the Sensor.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration" readOnly="true"
@@ -102,6 +105,7 @@ Set the timeout of all calibration steps for the Sensor.<br /><h1>Overview</h1><
 Get the number of alarm musics<br /><h1>Overview</h1><p>Get the numbers of alarm music.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_000000FF" type="integer" groupName="configuration">
@@ -114,6 +118,7 @@ Disable opening alarm<br /><h1>Overview</h1><p>Configure the alarm mode when the
           <option value="0">Disable alarm prompt</option>
           <option value="1">Enable alarm prompt</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
@@ -123,6 +128,7 @@ Disable opening alarm<br /><h1>Overview</h1><p>Configure the alarm mode when the
 Opening alarm volume<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is opening.</p> <p>Value3: configure the volume of alarm sound (there are 10 levels, the min volume is 1 level and the max volume is 10 levels).</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
@@ -132,6 +138,7 @@ Opening alarm volume<br /><h1>Overview</h1><p>Configure the alarm mode when the 
 Alarm mode when the garage door is opening<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is opening.</p> <p>Value2: configure the alarm sound (there are 4 types sound saved in EEPROM and user also can update it).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_0F000000" type="integer" groupName="configuration"
@@ -141,6 +148,7 @@ Alarm mode when the garage door is opening<br /><h1>Overview</h1><p>Configure th
 Opening alarm LED mode<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is opening.</p> <p>Value1: configure the frequency of blinking for the Alarm LED , there are 10 levels from 1 to 10, the minimum frequency is level 1 and the max frequency is level 10.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_000000FF" type="integer" groupName="configuration">
@@ -153,6 +161,7 @@ Disable closing alarm<br /><h1>Overview</h1><p>Configure the alarm mode when the
           <option value="0">Disable alarm prompt</option>
           <option value="1">Enable alarm prompt</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_0000FF00" type="integer" groupName="configuration"
@@ -162,6 +171,7 @@ Disable closing alarm<br /><h1>Overview</h1><p>Configure the alarm mode when the
 Closing alarm volume<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is closing.</p> <p>Value3: configure the volume of alarm sound (there are 10 levels, the min volume is 1 level and the max volume is 10 levels).</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_00FF0000" type="integer" groupName="configuration"
@@ -171,6 +181,7 @@ Closing alarm volume<br /><h1>Overview</h1><p>Configure the alarm mode when the 
 Alarm mode when the garage door is closing<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is closing.</p> <p>Value2: configure the alarm sound (there are 4 types sound saved in EEPROM and user also can update it).</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_0F000000" type="integer" groupName="configuration"
@@ -180,6 +191,7 @@ Alarm mode when the garage door is closing<br /><h1>Overview</h1><p>Configure th
 Closing alarm LED mode<br /><h1>Overview</h1><p>Configure the alarm mode when the garage door is closing.</p> <p>Value1: configure the frequency of blinking for the Alarm LED , there are 10 levels from 1 to 10, the minimum frequency is level 1 and the max frequency is level 10.</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_4" type="integer" groupName="configuration"
@@ -189,6 +201,7 @@ Closing alarm LED mode<br /><h1>Overview</h1><p>Configure the alarm mode when th
 Configuration alarm mode when the garage door is in "unknown" state<br /><h1>Overview</h1><p>Configuration alarm mode when the garage door is in<br />"unknown" state:<br />1, Value1: configure the frequency of blinking for the Alarm<br />LED , there are 10 levels that 1 to10 level, the minimum<br />frequency is level 1 and the max frequency is level 10.<br />2, Value2: configure the alarm sound (there are 4 types sound<br />saved in EEPROM and user also can update it).<br />3, Value3: configure the volume of alarm sound (there are 10<br />levels, the min volume is 1 level and the max volume is 10</p> <p>levels).<br />4, Value4=0, disable the alarm prompt. Value4=1, enable the<br />alarm prompt.</p> <p>default values:</p> <p>Value1=4<br />Value2=3<br />Value3=8<br />Value4=0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_4" type="integer" groupName="configuration"
@@ -198,6 +211,7 @@ Configuration alarm mode when the garage door is in "unknown" state<br /><h1>Ove
 Configure the alarm mode when the garage door is in closed position.<br /><h1>Overview</h1><p>Configuration alarm mode when the garage door is in<br />"closed" state:<br />1, Value1: configure the frequency of blinking for the Alarm<br />LED , there are 10 levels that 1 to10 level, the minimum<br />frequency is level 1 and the max frequency is level 10.<br />2, Value2: configure the alarm sound (there are 4 types sound<br />saved in EEPROM and user also can update it).<br />3, Value3: configure the volume of alarm sound (there are 10<br />levels, the min volume is 1 level and the max volume is 10 levels).<br />4, Value4=0, disable the alarm prompt. Value4=1, enable the<br />alarm prompt.</p> <p>default values:</p> <p>Value1=2<br />Value2=4<br />Value3=8<br />Value4=0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -207,6 +221,7 @@ Configure the alarm mode when the garage door is in closed position.<br /><h1>Ov
 Configuration report for the tamper switch State<br /><h1>Overview</h1><p>Configuration report for the tamper switch state:<br />1, Value=0x00: Sensor is not removed<br />2, Value=0x0F: Sensor is removed</p> <p><br />Note:<br />1. The Garage Door Controller will send this configuration report to gateway controller or associated nodes automatically if the Sensor is removed.<br />2. You can send the value=0x55555555 of this parameter to controller to relieve the alarm state.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration" readOnly="true"
@@ -216,6 +231,7 @@ Configuration report for the tamper switch State<br /><h1>Overview</h1><p>Config
 Configuration report for the battery state of Sensor<br /><h1>Overview</h1><p>Configuration report for the battery state of Sensor:<br />1, Value=0x00: battery power is nominal.<br />2, Value=0x0F: battery power of Sensor is in low battery.<br />It will report the battery power state to associated nodes automatically when the battery power is in low battery.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1_wo" type="integer" groupName="configuration">
@@ -224,6 +240,7 @@ Configuration report for the battery state of Sensor<br /><h1>Overview</h1><p>Co
 Start playing or Stop playing the ringtone<br /><h1>Overview</h1><p>Start playing or Stop playing the ringtone:<br />1, Value=255, stop playing ringtone.<br />2, Value=1 to 100, start playing the ringtone that you selected.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_1_wo" type="integer" groupName="configuration">
@@ -232,6 +249,7 @@ Start playing or Stop playing the ringtone<br /><h1>Overview</h1><p>Start playin
 Set volume for test of ringtone<br /><h1>Overview</h1><p>Test the volume of the current ringtone.</p> <p>Value=1 to value=10, which map to the volume level 1 to level 10.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_2" type="integer" groupName="configuration" readOnly="true"
@@ -241,6 +259,7 @@ Set volume for test of ringtone<br /><h1>Overview</h1><p>Test the volume of the 
 Get the environment temperature<br /><h1>Overview</h1><p>Get the environment temperature:<br />The temperature value contains one decimal point. E.g. If the report value=252, the temperature is 25.2 °C .<br />Range is 0 to 500 (0 to 50.0 °C ).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_1" type="integer" groupName="configuration">
@@ -253,6 +272,7 @@ Define the function of Button- or Button+.<br /><h1>Overview</h1><p>Define the f
           <option value="0">Mode 0</option>
           <option value="1">Mode 1</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -265,6 +285,7 @@ Configure the door state change report type<br /><h1>Overview</h1><p>It will sen
           <option value="1">Send hail CC</option>
           <option value="2">Send barrier operator report CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_241_4" type="integer" groupName="configuration">
@@ -277,6 +298,7 @@ Pair the Sensor with Garage Door Controller<br /><h1>Overview</h1><p>Pair the Se
           <option value="0">Stop sensor pairing</option>
           <option value="1431655681">Start sensor pairing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -289,6 +311,7 @@ Enable/disable configuration<br /><h1>Overview</h1><p>Enable/disable configurati
           <option value="0">Configuration enabled</option>
           <option value="1">Configuration disabled (locked)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

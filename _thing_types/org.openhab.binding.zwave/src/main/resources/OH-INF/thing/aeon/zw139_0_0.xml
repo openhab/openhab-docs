@@ -73,6 +73,7 @@ Nano Switch Gen5 (without meter)<br /><h1>Overview</h1><p>Once installed behind 
           <option value="0">(Default) Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -84,6 +85,7 @@ Nano Switch Gen5 (without meter)<br /><h1>Overview</h1><p>Once installed behind 
           <option value="1">Always on</option>
           <option value="2">Always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ Group 1 notifications when the state of Nano Switch's load is changed<br /><h1>O
           <option value="2">Send Basic Report CC</option>
           <option value="3">Send Hail CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -110,6 +113,7 @@ Notification to sent for Group 3 when using the external switch 1<br /><h1>Overv
           <option value="0">Send Nothing</option>
           <option value="1">Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_1" type="integer" groupName="configuration">
@@ -122,6 +126,7 @@ Notification to sent for Group 4 when using the external switch 2<br /><h1>Overv
           <option value="0">Send Nothing</option>
           <option value="1">Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_1" type="integer" groupName="configuration">
@@ -135,6 +140,7 @@ Configure the state of LED when it is in 3 modes<br /><h1>Overview</h1><p>Config
           <option value="1">Momentary indicate mode</option>
           <option value="2">Night light mode. The LED will remain ON state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_4" type="integer" groupName="configuration"
@@ -144,7 +150,6 @@ Configure the state of LED when it is in 3 modes<br /><h1>Overview</h1><p>Config
 Set the ON/OFF time of the LED when it is in Night light mode<br /><h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
         ]]></description>
         <default>301991936</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_86_4" type="integer" groupName="configuration"
@@ -154,7 +159,6 @@ Set the ON/OFF time of the LED when it is in Night light mode<br /><h1>Overview<
 Set the ON time of output load.<br /><h1>Overview</h1><p>65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting. 256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time</p>
         ]]></description>
         <default>8327680</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_87_4" type="integer" groupName="configuration"
@@ -164,6 +168,7 @@ Set the ON time of output load.<br /><h1>Overview</h1><p>65536 to 65543 The day 
 Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>
         ]]></description>
         <default>8327680</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
@@ -176,6 +181,7 @@ Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour val
           <option value="2">3 way switch mode</option>
           <option value="3">Momentary push button mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -188,6 +194,7 @@ Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour val
           <option value="2">3 way switch mode</option>
           <option value="3">Momentary push button mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration">
@@ -199,6 +206,7 @@ Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour val
           <option value="2">control the other nodes</option>
           <option value="3">control the output loads of itself and other nodes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -209,6 +217,7 @@ Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour val
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -218,6 +227,7 @@ Set the OFF time of output load<br /><h1>Overview</h1><p>256 to 316 The hour val
           <option value="0">(Default) Reset all configuration parameters</option>
           <option value="1431655765">Reset and remove from network</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -67,18 +67,21 @@ Curtain motor<br /><h1>Overview</h1><p>JTB-1007 is a Z-Wave enabled curtain mot
 Motor Open, Go to Direction B<br /><h1>Overview</h1><p>Set only, any value possible</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_4_wo" type="integer" groupName="configuration">
         <label>18: Motor Stop</label>
         <description>Motor Stop</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_4_wo" type="integer" groupName="configuration">
         <label>19: Motor Close, Go to Direction A</label>
         <description>Motor Close, Go to Direction A</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration" readOnly="true"
@@ -86,18 +89,21 @@ Motor Open, Go to Direction B<br /><h1>Overview</h1><p>Set only, any value possi
         <label>20: Motor Position</label>
         <description>Return motor current position</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_4_wo" type="integer" groupName="configuration">
         <label>22: Motor revert direction</label>
         <description>Motor revert direction</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1_wo" type="integer" groupName="configuration">
         <label>23: Clear motor lead tail endpoint setting</label>
         <description>Clear motor lead tail endpoint setting</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration" readOnly="true"
@@ -108,18 +114,21 @@ Return motor status flag<br /><h1>Overview</h1><table><tr><td>0</td> <td>  -&gt
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_wo" type="integer" groupName="configuration">
         <label>33: Enable manual pulling function</label>
         <description>Enable manual pulling function</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_wo" type="integer" groupName="configuration">
         <label>34: Disable manual pulling function</label>
         <description>Disable manual pulling function</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

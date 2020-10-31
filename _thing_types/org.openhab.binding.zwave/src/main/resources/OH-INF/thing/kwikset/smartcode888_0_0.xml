@@ -78,7 +78,6 @@ Set the first four most significant bytes of the SKU<br /><h1>Overview</h1><p>Th
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4" type="integer" groupName="configuration"
@@ -89,7 +88,6 @@ The four least significant bytes of the SKU<br /><h1>Overview</h1><p>The configu
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -102,6 +100,7 @@ Allows user to get/set the value for the Interior Status LED control<br /><h1>Ov
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_2_00000001" type="integer" groupName="configuration">
@@ -114,6 +113,7 @@ Enables or disables automatically re-locking of door<br /><h1>Overview</h1><p>Th
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_2_0000FF00" type="integer" groupName="configuration">
@@ -129,6 +129,7 @@ The number of seconds before the Auto-Lock will occur<br /><h1>Overview</h1><p>T
           <option value="120">One-Twenty Seconds</option>
           <option value="180">One-Eighty Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration">
@@ -141,6 +142,7 @@ Allows the user to get/set the audio feed back command<br /><h1>Overview</h1><p>
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -153,6 +155,7 @@ Reset to factory default settings<br /><h1>Overview</h1><p>Reset factory default
           <option value="0">Normal</option>
           <option value="1">Factory Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_1" type="integer" groupName="configuration">
@@ -165,6 +168,7 @@ Allows the device to send motor load alarms<br /><h1>Overview</h1><p>The configu
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

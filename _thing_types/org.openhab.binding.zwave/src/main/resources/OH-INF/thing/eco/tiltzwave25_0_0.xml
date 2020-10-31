@@ -92,6 +92,7 @@ Send or not send Basic Set commands<br /><h1>Overview</h1><p>Send or not send Ba
           <option value="0">Do Not Send Basic Sets</option>
           <option value="255">Send Basic Sets</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -104,6 +105,7 @@ Send Reports<br /><h1>Overview</h1><p>Send or not to send Sensor Binary Report c
           <option value="0">Send Sensor Binary and Notification Reports</option>
           <option value="255">Send Only Notification Reports</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

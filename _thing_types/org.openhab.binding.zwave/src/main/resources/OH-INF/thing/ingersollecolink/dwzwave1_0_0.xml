@@ -68,6 +68,7 @@ Fault Restore Report<br /><h1>Overview</h1><p>Enable or disable Basic Sets of 0x
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

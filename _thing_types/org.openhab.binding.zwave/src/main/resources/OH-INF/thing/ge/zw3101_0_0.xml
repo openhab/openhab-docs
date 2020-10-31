@@ -50,6 +50,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -57,6 +58,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
         <label>7: On/Off Command Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -64,6 +66,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
         <label>8: On/Off Command Dim Rate</label>
         <description>Dim Rate</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -71,6 +74,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
         <label>9: Local Control Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -78,6 +82,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
         <label>10: Local Control Dim Rate</label>
         <description>Local Control Dim Rate</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -85,12 +90,14 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
                  min="1" max="255">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -100,6 +107,7 @@ Lamp Module<br /><h1>Overview</h1><p>Plug in lamp module with on/off/dimming con
           <option value="0">Load sensing is disabled</option>
           <option value="1">Load sensing is enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

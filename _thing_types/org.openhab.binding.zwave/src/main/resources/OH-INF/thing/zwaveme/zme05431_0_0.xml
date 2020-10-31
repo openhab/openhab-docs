@@ -61,6 +61,7 @@ Flush mountable switch<br /><h1>Overview</h1><p>The switch Flush Mountable is a 
           <option value="2">Night mode</option>
           <option value="3">Remote by indicator command class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -68,6 +69,7 @@ Flush mountable switch<br /><h1>Overview</h1><p>The switch Flush Mountable is a 
         <label>2: Automatic switch off</label>
         <description>If not zero, automatically switch off after a user defined time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Function of RF off command<br /><h1>Overview</h1><p> Defines how to interpret R
           <option value="2">Switch ON</option>
           <option value="3">Switch on if load is off else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -94,6 +97,7 @@ Switch on dimming by buttons<br /><h1>Overview</h1><p>Defines if the switch shou
           <option value="0">No</option>
           <option value="1">Yes (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -106,6 +110,7 @@ Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the s
           <option value="0">No, turn off</option>
           <option value="1">Yes (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -115,6 +120,7 @@ Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the s
 Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks&lt;BR/&gt;Defined in 10ms ticks.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -124,6 +130,7 @@ Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiat
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -137,6 +144,7 @@ Switch by buttons<br /><h1>Overview</h1><p> If disabled, the local operations b
           <option value="1">By single press and hold</option>
           <option value="2">By double press and hold</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -153,6 +161,7 @@ Action on button single press or hold<br /><h1>Overview</h1><p> Defines which c
           <option value="4">Switch On/Off and Dim</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -169,6 +178,7 @@ Action on button double press or hold<br /><h1>Overview</h1><p> Defines which c
           <option value="4">Switch On/Off and Dim</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -179,6 +189,7 @@ Action on button double press or hold<br /><h1>Overview</h1><p> Defines which c
           <option value="0">Switch off only</option>
           <option value="1">Switch on only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -189,6 +200,7 @@ Action on button double press or hold<br /><h1>Overview</h1><p> Defines which c
           <option value="1">Switch On if load is Off, else switch Off</option>
           <option value="2">Switch on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

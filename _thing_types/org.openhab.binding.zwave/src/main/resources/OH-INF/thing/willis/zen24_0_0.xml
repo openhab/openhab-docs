@@ -58,6 +58,7 @@ Control Mode<br /><h1>Overview</h1><p>firmware 20.15 only (released in 12/2016)<
           <option value="0">Mode 1</option>
           <option value="1">Mode 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -86,7 +86,6 @@ Minimum Temperature change to report<br /><h1>Overview</h1><p><br />This value d
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -99,7 +98,6 @@ Minimum humidity change to report<br /><h1>Overview</h1><p>Parameter 2: Minimum 
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -112,7 +110,6 @@ Periodic Reports<br /><h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -125,7 +122,6 @@ Temperature Upper Watermark value<br /><h1>Overview</h1><p>Parameter 5: Temperat
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -135,7 +131,6 @@ Temperature Upper Watermark value<br /><h1>Overview</h1><p>Parameter 5: Temperat
 Temperature Lower Watermark value<br /><h1>Overview</h1><p>Parameter 6: Temperature Lower Watermark value<br /><br />This parameter defines a temperature. If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3 <br />Size: 2 Byte, Default Value:0<br /><br />-200-1000: 1/10 degree<br />0: disabled</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -148,7 +143,6 @@ Humidity Upper Watermark value<br /><h1>Overview</h1><p>Parameter 7: Humidity Up
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -161,7 +155,6 @@ Humidity Lower Watermark value<br /><h1>Overview</h1><p>Parameter 8: Humidity Lo
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -171,7 +164,6 @@ Humidity Lower Watermark value<br /><h1>Overview</h1><p>Parameter 8: Humidity Lo
 Low Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -181,7 +173,6 @@ Low Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Paramet
 High Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 10: High Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 2 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -191,6 +182,7 @@ High Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parame
 Low Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 11: Low Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 5 <br />Size: 1 Byte, Default Value: 255<br /><br /></p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -200,7 +192,6 @@ Low Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 
 High Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 12: High Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 4 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

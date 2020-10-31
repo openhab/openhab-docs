@@ -103,6 +103,7 @@ Popp Smart Outdoor Plug - IP44 rated<br /><h1>Overview</h1><p>The Wall Plug Swit
           <option value="0">LED off, only blinks on traffic</option>
           <option value="1">Defined by Parameter 21 and 22</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -112,6 +113,7 @@ Popp Smart Outdoor Plug - IP44 rated<br /><h1>Overview</h1><p>The Wall Plug Swit
 Defines if and after which time the device shall turn off<br /><h1>Overview</h1><p>Defines if and after which time the device shall turn off without any user interaction (in seconds) 0 = No auto off</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -124,6 +126,7 @@ Defines if and after which time the device shall turn off<br /><h1>Overview</h1>
           <option value="2">Switches on</option>
           <option value="3">Switches on, when receiving off and state is off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -136,6 +139,7 @@ This parameter defines if the local button ...<br /><h1>Overview</h1><p>This par
           <option value="0">Controls Load + Scenes</option>
           <option value="1">Scene Control Only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -148,6 +152,7 @@ Status after Power Failure<br /><h1>Overview</h1><p>Defines the switching status
           <option value="0">Always off</option>
           <option value="1">Return to last switching state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -161,6 +166,7 @@ LED Color on OFF state<br /><h1>Overview</h1><p>Defines the behavior of the LED 
           <option value="1">Red</option>
           <option value="2">Green</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -174,6 +180,7 @@ LED Color on ON state<br /><h1>Overview</h1><p>Defines the behavior of the LED w
           <option value="1">Red</option>
           <option value="2">Green</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -183,6 +190,7 @@ LED Color on ON state<br /><h1>Overview</h1><p>Defines the behavior of the LED w
 Voltage Report Threshold<br /><h1>Overview</h1><p>Report the voltage when the voltage has changed by more then X  * 1 V. When disabled (Value 0) the device will report every 10 minutes regardless of current voltage.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
@@ -192,6 +200,7 @@ Voltage Report Threshold<br /><h1>Overview</h1><p>Report the voltage when the vo
 Current Reporting Threshold<br /><h1>Overview</h1><p>Report the current when the current has changed by more then X *0,01 A. When disabled the device will report every 10 minutes regardless of current change.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
@@ -201,6 +210,7 @@ Current Reporting Threshold<br /><h1>Overview</h1><p>Report the current when the
 Power Reporting Threshold<br /><h1>Overview</h1><p>Report the power when the power  has changed by more then X Watt. When disabled (Value 0) the device will report every 10 minutes regardless of power consumption change.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
@@ -210,6 +220,7 @@ Power Reporting Threshold<br /><h1>Overview</h1><p>Report the power when the pow
 Soft Circuit Breaker Threshold<br /><h1>Overview</h1><p>When the power draw exceeds the value set in this parameter (x W) for a time set in parameter 28 the soft ciruit breaker will disconnect the load.</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration"
@@ -219,6 +230,7 @@ Soft Circuit Breaker Threshold<br /><h1>Overview</h1><p>When the power draw exce
 Soft Circuit Breaker Recovery Time<br /><h1>Overview</h1><p>Once the soft circuit breaker tipps and the load is disconnected the load will be automatically reconneced after X seconds. When disabled (value 0) the load must be repowered manually or with wireless command.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
@@ -228,6 +240,7 @@ Soft Circuit Breaker Recovery Time<br /><h1>Overview</h1><p>Once the soft circui
 Soft Circuit Breaker Delay Time<br /><h1>Overview</h1><p>This delay time (x * 0,1s) defines how fast the soft circuit breaker wil react when the threshold power is exceeded. The power is cut off only if the power draw remains over the threshold level for the defines time.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

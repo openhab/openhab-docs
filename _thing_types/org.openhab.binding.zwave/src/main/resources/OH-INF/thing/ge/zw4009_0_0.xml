@@ -63,6 +63,7 @@ Smart Toggle Switch<br /><h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/27
           <option value="2">LED always OFF</option>
           <option value="3">LED Always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -74,6 +75,7 @@ Smart Toggle Switch<br /><h1>Overview</h1><p>In-Wall Smart Toggle Switch (120/27
           <option value="1">Press two times ON button and two time OFF button</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

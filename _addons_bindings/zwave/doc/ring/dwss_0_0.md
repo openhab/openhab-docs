@@ -178,7 +178,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/893/Ring-Contact-Sensor---Manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/893/reference/Ring-Contact-Sensor---Manual.pdf)
 
 ---
 

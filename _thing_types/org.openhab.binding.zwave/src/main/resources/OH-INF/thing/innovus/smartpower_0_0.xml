@@ -66,6 +66,7 @@ RAone SmartPower<br /><h1>Overview</h1><p>For the further reduction of energy co
 Report changes in level to this node id<br /><h1>Overview</h1><p>Report Node, reports changes in level to this node id.</p> <p>Disabled if 0. -&gt; Copied from SmartDimmer, as there's no config information available.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Enable/Disable BO IR Support<br /><h1>Overview</h1><p>BO IR support is disabled 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

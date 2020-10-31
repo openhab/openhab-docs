@@ -217,7 +217,7 @@ Association group 2 supports 4 nodes.
 
 ### Documentation Links
 
-* [RF96PIRBMS Manual](https://opensmarthouse.org/zwavedatabase/1210/RF96PIRBMS-Manual-.pdf)
+* [RF96PIRBMS Manual](https://opensmarthouse.org/zwavedatabase/1210/reference/RF96PIRBMS-Manual-.pdf)
 
 ---
 

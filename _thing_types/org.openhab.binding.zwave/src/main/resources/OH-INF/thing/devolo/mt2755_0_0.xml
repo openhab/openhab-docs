@@ -80,6 +80,7 @@ Setting the temperature scale<br /><h1>Overview</h1><p>Setting the temperature s
           <option value="0">Fahrenheit</option>
           <option value="8">Celsius</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000020" type="integer" groupName="configuration">
@@ -92,6 +93,7 @@ Disable the humidity report after event triggered<br /><h1>Overview</h1><p>Disab
           <option value="0">Enable</option>
           <option value="32">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
@@ -104,6 +106,7 @@ Notification Type<br /><h1>Overview</h1><p>Notification Type:<br /> 0: Using Not
           <option value="0">Using Notification Report</option>
           <option value="16">Using Sensor Binary Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
@@ -116,6 +119,7 @@ Disable Multi CC in auto report<br /><h1>Overview</h1><p>Disable Multi CC in aut
           <option value="0">Enable</option>
           <option value="32">Disable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -125,6 +129,7 @@ Disable Multi CC in auto report<br /><h1>Overview</h1><p>Disable Multi CC in aut
 The interval time for auto report the battery level.<br /><h1>Overview</h1><p>The interval time for auto report the battery level.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -134,6 +139,7 @@ The interval time for auto report the battery level.<br /><h1>Overview</h1><p>Th
 The interval time for auto report the temperature.<br /><h1>Overview</h1><p>The interval time for auto report the temperature.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -143,6 +149,7 @@ The interval time for auto report the temperature.<br /><h1>Overview</h1><p>The 
 The interval time for auto report the humidity<br /><h1>Overview</h1><p>The interval time for auto report the humidity.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -152,6 +159,7 @@ The interval time for auto report the humidity<br /><h1>Overview</h1><p>The inte
 The interval time for auto report each tick<br /><h1>Overview</h1><p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.<br /><strong>Caution1:</strong> Setting to 0 means turn off all auto report function.</p> <p><strong>Caution2:</strong> The value is unsigned byte </p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -161,6 +169,7 @@ The interval time for auto report each tick<br /><h1>Overview</h1><p>Setting thi
 The temperature differential to report<br /><h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function.<br /> The unit is Fahrenheit.<br /> Enable this function the device will detect every 10 seconds. </p> <p>And when the temperature is over 140 degree Fahrenheit, it will continue report. </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -170,6 +179,7 @@ The temperature differential to report<br /><h1>Overview</h1><p>The temperature 
 The humidity differential to report.<br /><h1>Overview</h1><p>The humidity differential to report. 0 means turn off this function. The unit is percentage.<br /> Enable this function the device will detect every 10 seconds. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

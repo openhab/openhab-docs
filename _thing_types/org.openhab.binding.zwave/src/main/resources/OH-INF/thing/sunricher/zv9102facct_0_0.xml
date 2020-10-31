@@ -82,6 +82,7 @@ Z-wave CCT LED controller<br /><h1>Overview</h1><p>The SR-ZV9102FA-CCT is a dual
 Shut off load (default), turn on load or restore saved state after power failure<br /><h1>Overview</h1><p>Load state after power failure</p> <p>0 - (default) shut off load</p> <p>1 - turn on load</p> <p>2 - restore saved state after power failure</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -91,6 +92,7 @@ Shut off load (default), turn on load or restore saved state after power failure
 Enable/disable sending of BASIC reports<br /><h1>Overview</h1><p>Enable or disable sending of BASIC reports</p> <p>0 - Disable sending of BASIC reports</p> <p>1 - (default) Enable sending of BASIC reports</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -100,6 +102,7 @@ Enable/disable sending of BASIC reports<br /><h1>Overview</h1><p>Enable or disab
 Set number of channels of LED load - single colour, CCT or RGBW<br /><h1>Overview</h1><p>Set number of channels of LED load</p> <p>0 - single colour - 4 channel PWM output to drive 4 channels of single colour LEDs</p> <p>1 - CCT - 2 channel PWM output to drive CCT LEDs R/B control warm white, G/W control cool white</p> <p>2 - (default) RGBW - single channel PWM output to control RGBW LEDs</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -109,6 +112,7 @@ Set number of channels of LED load - single colour, CCT or RGBW<br /><h1>Overvie
 Set stage mode for lighting changes<br /><h1>Overview</h1><p>Set lighting stage mode</p> <p>0 - (Default) - no stage mode</p> <p>1 - flash mode, colors set by parameter 8</p> <p>2 - rainbow mode, system fixed changing effect</p> <p>4 - fade in and fade out mode, color changes randomly</p> <p>5 - flash mode, color changes randomly</p> <p>6 - rainbow mode, color changes randomly</p> <p>7 - random mode, the colors switch randomly</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -118,6 +122,7 @@ Set stage mode for lighting changes<br /><h1>Overview</h1><p>Set lighting stage 
 Set speed of changes in stage mode<br /><h1>Overview</h1><p>Set speed of stage mode 0-255</p> <p>0 is slowest 255 is fastest</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -127,6 +132,7 @@ Set speed of changes in stage mode<br /><h1>Overview</h1><p>Set speed of stage m
 Set execution time for stage mode<br /><h1>Overview</h1><p>Set execution time for stage mode</p> <p>0 (default) - unlimited time</p> <p>1 - 255 set execution time</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -136,6 +142,7 @@ Set execution time for stage mode<br /><h1>Overview</h1><p>Set execution time fo
 Set stage mode hue 0-255<br /><h1>Overview</h1><p>Set hue for stage mode</p> <p>0 - 255 (default)</p> <p>Only valid for fade in, fade out and flash mode.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -145,6 +152,7 @@ Set stage mode hue 0-255<br /><h1>Overview</h1><p>Set hue for stage mode</p> <p>
 Enable / disable external switch for inclusion / exclusion<br /><h1>Overview</h1><p>Enable / disable external switch for inclusion / excluison of the device to / from the network</p> <p>0 - (default) disable switch</p> <p>1 - enable switch</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

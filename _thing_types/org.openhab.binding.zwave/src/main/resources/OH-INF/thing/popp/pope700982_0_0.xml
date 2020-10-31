@@ -80,6 +80,7 @@ Iinternal magnet sensor or the external terminal<br /><h1>Overview</h1><p>This p
           <option value="0">Internal Magnet Sensor Used</option>
           <option value="1">External Terminal Inputs Used</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -92,6 +93,7 @@ This parameter deﬁnes the polarity of the magnet sensor<br /><h1>Overview</h1>
           <option value="0">Closed when Magnet in proximity</option>
           <option value="1">Opened when Magnet in proximity</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -107,7 +109,6 @@ This parameter deﬁnes when the red LED will indicate events<br /><h1>Overview<
           <option value="2">Wake Up</option>
           <option value="4">Device Tampering</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -120,6 +121,7 @@ Allows to enable the activation of a Z-Wave range test<br /><h1>Overview</h1><p>
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -133,6 +135,7 @@ Status of the magnet switch that causes sending command<br /><h1>Overview</h1><p
           <option value="1">Switch after Open</option>
           <option value="2">Switch after Close</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -146,6 +149,7 @@ which commands is sent to 2nd Association Group<br /><h1>Overview</h1><p>This pa
           <option value="1">Off</option>
           <option value="2">On and Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_wo" type="integer" groupName="configuration">
@@ -154,6 +158,7 @@ which commands is sent to 2nd Association Group<br /><h1>Overview</h1><p>This pa
 value sent in case of On event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of On event. Size: 1 Byte, Default Value: 255. Only 0 to 99 are valid values</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -163,6 +168,7 @@ value sent in case of On event<br /><h1>Overview</h1><p>This is the BASIC comman
 value sent in case of Off event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -172,6 +178,7 @@ value sent in case of Off event<br /><h1>Overview</h1><p>This is the BASIC comma
 sent after a delay<br /><h1>Overview</h1><p>On command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -181,7 +188,6 @@ sent after a delay<br /><h1>Overview</h1><p>On command is sent after a delay de�
 sent after a delay<br /><h1>Overview</h1><p>Off command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -191,6 +197,7 @@ sent after a delay<br /><h1>Overview</h1><p>Off command is sent after a delay de
 Time a tamper alarm is delayed in seconds<br /><h1>Overview</h1><p>Time a tamper alarm is delayed. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -203,6 +210,7 @@ This parameter deﬁnes if the alarm cancellation event is reported<br /><h1>Ove
           <option value="0">Do not send Report</option>
           <option value="1">Send Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -215,6 +223,7 @@ enables/disables the central scene function<br /><h1>Overview</h1><p>This parame
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -227,6 +236,7 @@ enables/disables the tilt function<br /><h1>Overview</h1><p>This parameter enabl
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

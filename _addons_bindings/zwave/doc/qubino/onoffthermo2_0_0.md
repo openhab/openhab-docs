@@ -577,7 +577,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [official product manual](https://opensmarthouse.org/zwavedatabase/1101/Qubino-Flush-On-Off-Thermostat-2-PLUS-extended-manual-eng-1-0-certification.pdf)
+* [official product manual](https://opensmarthouse.org/zwavedatabase/1101/reference/Qubino-Flush-On-Off-Thermostat-2-PLUS-extended-manual-eng-1-0-certification.pdf)
 
 ---
 

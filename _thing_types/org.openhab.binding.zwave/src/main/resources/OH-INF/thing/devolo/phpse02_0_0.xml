@@ -79,6 +79,7 @@ NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Notification Type,</p> 
         ]]></description>
         <default>4</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_4" type="integer" groupName="configuration"
@@ -88,6 +89,7 @@ NotificationReport/BinaryReport<br /><h1>Overview</h1><p>Notification Type,</p> 
 Disable the alarm function.<br /><h1>Overview</h1><p>Disable the alarm function.</p> <p>1: Disable Alarm,</p> <p>0: Enable Alarm.</p> <p>Caution: After the power up, this configuration is always 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_0000000C" type="integer" groupName="configuration"
@@ -97,6 +99,7 @@ Disable the alarm function.<br /><h1>Overview</h1><p>Disable the alarm function.
 Play alarm sound duration.<br /><h1>Overview</h1><p>Play alarm sound duration, 1 tick is 30 seconds.</p> <p>Default is 3 minutes, maximum is 63.5 minutes.</p> <p>0 means never auto stop.</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

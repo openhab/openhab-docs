@@ -68,6 +68,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="2">Switch All</option>
           <option value="3">Switch Multilevel</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -78,7 +79,6 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
         <options>
           <option value="255">Last value</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -89,6 +89,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -101,6 +102,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="2">Switch All</option>
           <option value="3">Switch Multilevel</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -111,7 +113,6 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
         <options>
           <option value="255">Last value</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -122,6 +123,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -132,6 +134,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -142,6 +145,7 @@ Door/window sensor<br /><h1>Overview</h1><p>This magnet sensor contains the late
           <option value="0">Notification</option>
           <option value="1">Sensor binary</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

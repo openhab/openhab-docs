@@ -201,7 +201,7 @@ Association group 1 supports 8 nodes.
 
 ### Documentation Links
 
-* [PSG01 Manual](https://opensmarthouse.org/zwavedatabase/950/ph-psg01---Zipato-Smoke-Sensor-User-Manual-v1-0.pdf)
+* [PSG01 Manual](https://opensmarthouse.org/zwavedatabase/950/reference/ph-psg01---Zipato-Smoke-Sensor-User-Manual-v1-0.pdf)
 
 ---
 

@@ -55,6 +55,7 @@ In Wall Micro Switch<br /><h1>Overview</h1><p>This insert switch module in a tra
           <option value="0">LED ON when load is ON</option>
           <option value="1">LED ON when load is OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -65,6 +66,7 @@ In Wall Micro Switch<br /><h1>Overview</h1><p>This insert switch module in a tra
           <option value="0">No state memory after pwr failure</option>
           <option value="1">State memory after pwr failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -78,6 +80,7 @@ Edge or Pulse mode or EdgeToggle mode<br /><h1>Overview</h1><p>Edge mode: this m
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

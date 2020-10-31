@@ -57,6 +57,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
           <option value="0">Default</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -66,6 +67,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
 Countdown to shutoff<br /><h1>Overview</h1><p>Sets switch to have a countdown to shutoff. A value of 0 disables the countdown entirely.</p> <p>From Manual:</p> <p>Countdown|Default = No Timer</p> <p>-- Parameter = 5, size = 2 bytes, value = xx xx</p> <p>-- Value = 00 (Default) = No Timer</p> <p>-- (0x00---x8000)(range = 0-32768 Seconds)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

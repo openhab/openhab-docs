@@ -1507,7 +1507,7 @@ Association group 31 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/846/manualmultiregzwavescenecontroller.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/846/reference/manualmultiregzwavescenecontroller.pdf)
 
 ---
 

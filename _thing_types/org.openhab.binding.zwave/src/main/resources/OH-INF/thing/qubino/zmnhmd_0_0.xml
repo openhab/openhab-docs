@@ -68,7 +68,6 @@ Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qub
           <option value="0">NO (normally open) contact type</option>
           <option value="1">NC (normally closed) contact type</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -80,7 +79,6 @@ Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qub
           <option value="0">NO (normally open) contact type</option>
           <option value="1">NC (normally close) contact type</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -92,7 +90,6 @@ Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qub
           <option value="0">NO (normally open) contact type</option>
           <option value="1">NC (normally close) contact type</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -104,7 +101,6 @@ Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qub
           <option value="0">enabled (the device will restore state on power failure)</option>
           <option value="1">disabled (the device will not restore state on power failure and will</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_4" type="integer" groupName="configuration"
@@ -114,6 +110,7 @@ Water meter and leakage detector with valve control<br /><h1>Overview</h1><p>Qub
 Allows the user to set a custom meter value.<br /><h1>Overview</h1><p>With this parameter we can set the current water consumption value in liters. The value is represented with two's complement notation so that it can represent negative values also. Span of the input value is from (-2147483648) to (+2147483647). Its main usage is to set the same value on our device as on physical water meter. If we get the PARAMETER_48 value with PARAMETER_GET command we get the last value that was set with this parameter and not the current water consumption value! To get the current consumption value we must send the METER_GET command.<br /></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_2" type="integer" groupName="configuration"
@@ -123,6 +120,7 @@ Allows the user to set a custom meter value.<br /><h1>Overview</h1><p>With this 
 This number defines how many liters represent 1 received pulse from the water meter connected to I2.<br /><h1>Overview</h1><p>This number defines how many liters represent 1 received pulse from the water meter connected to I2.<br /></p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_2" type="integer" groupName="configuration"
@@ -132,6 +130,7 @@ This number defines how many liters represent 1 received pulse from the water me
 This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 52 to cause the leak alarm. (depends on meter resolution).<br /></p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration"
@@ -141,6 +140,7 @@ This number defines how many minimum liters must be consumed each hour and const
 Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 51 was consumed to cause the leak alarm.<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 51 was consumed to cause the leak alarm.<br /></p>
         ]]></description>
         <default>24</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -150,6 +150,7 @@ Set value means time interval (0 – 24) in hours during which the device checks
 This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 54 to cause the leak alarm.<br /></p>
         ]]></description>
         <default>150</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration"
@@ -159,6 +160,7 @@ This number defines how many minimum liters must be consumed each hour and const
 Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 53 was consumed to cause the leak alarm.<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours during which the device checks if water consumption defined in Parameter 53 was consumed to cause the leak alarm.<br /></p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_2" type="integer" groupName="configuration"
@@ -168,6 +170,7 @@ Set value means time interval (0 – 24) in hours during which the device checks
 This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 56 to cause the leak alarm.<br /><h1>Overview</h1><p>This number defines how many minimum liters must be consumed each hour and constantly repeated for the defined time in parameter 56 to cause the leak alarm.<br /></p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_1" type="integer" groupName="configuration"
@@ -177,6 +180,7 @@ This number defines how many minimum liters must be consumed each hour and const
 Set value means time interval (0 – 24) in hours<br /><h1>Overview</h1><p>Set value means time interval (0 – 24) in hours<br /></p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration"
@@ -186,7 +190,6 @@ Set value means time interval (0 – 24) in hours<br /><h1>Overview</h1><p>Set v
 This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
         ]]></description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration"
@@ -196,7 +199,6 @@ This parameter defines what happens with the valve if the leak alarm is triggere
 This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration"
@@ -206,7 +208,6 @@ This parameter defines what happens with the valve if the leak alarm is triggere
 This parameter defines what happens with the valve if the leak alarm is triggered<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered<br /></p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration"
@@ -216,7 +217,6 @@ This parameter defines what happens with the valve if the leak alarm is triggere
 This parameter defines what happens with the valve if the leak alarm is triggered.<br /><h1>Overview</h1><p>This parameter defines what happens with the valve if the leak alarm is triggered.<br /></p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

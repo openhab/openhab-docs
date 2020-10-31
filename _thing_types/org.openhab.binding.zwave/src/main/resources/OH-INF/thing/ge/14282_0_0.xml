@@ -58,6 +58,7 @@ Control LED light behavior<br /><h1>Overview</h1><p>Default is on when connected
           <option value="1">LED is on when connected device is on</option>
           <option value="2">LED is off at all times</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

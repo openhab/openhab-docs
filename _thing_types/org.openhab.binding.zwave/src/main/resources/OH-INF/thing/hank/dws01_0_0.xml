@@ -72,6 +72,7 @@ Door and Window Sensor<br /><h1>Overview</h1><p>Sensor detects when a door is op
           <option value="0">Disable BASIC SET</option>
           <option value="1">Enable basic set</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -82,6 +83,7 @@ Door and Window Sensor<br /><h1>Overview</h1><p>Sensor detects when a door is op
           <option value="0">Send 255 when open</option>
           <option value="1">Send 0 when open</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -89,6 +91,7 @@ Door and Window Sensor<br /><h1>Overview</h1><p>Sensor detects when a door is op
         <label>32: Level for Low Battery Alarm</label>
         <description>Adjust the percent of battery left before a low battery level alarm is sent</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

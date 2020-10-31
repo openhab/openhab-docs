@@ -61,6 +61,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -79,6 +81,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -88,6 +91,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -97,6 +101,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -106,6 +111,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -120,6 +126,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="5">Frost Protection</option>
           <option value="6">Stop</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -134,6 +141,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="5">Frost Protection</option>
           <option value="6">Stop</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -148,6 +156,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="5">Frost Protection</option>
           <option value="6">Stop</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -158,6 +167,7 @@ Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control
           <option value="0">The module saves its state before power failure</option>
           <option value="1">The module does not save the state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

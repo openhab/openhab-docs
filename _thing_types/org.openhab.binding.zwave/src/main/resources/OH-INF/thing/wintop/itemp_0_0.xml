@@ -72,6 +72,7 @@ Contact and temperature sensor<br /><h1>Overview</h1><p>Binary &amp; Temperature
           <option value="0">No (default)</option>
           <option value="1">Execute reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -82,6 +83,7 @@ Contact and temperature sensor<br /><h1>Overview</h1><p>Binary &amp; Temperature
           <option value="0">Alarm Resport Type 2 (default)</option>
           <option value="1">Basic On or Basic Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -94,6 +96,7 @@ Operating Mode<br /><h1>Overview</h1><p>Defines if the sensor is in normal wakeu
           <option value="1">Normal Wakeup (default)</option>
           <option value="3">Always awake</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -103,6 +106,7 @@ Operating Mode<br /><h1>Overview</h1><p>Defines if the sensor is in normal wakeu
 Temperature Offset<br /><h1>Overview</h1><p>Can be used to calibrate the temperature sensors function. Calibrated as factory default.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

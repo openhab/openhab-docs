@@ -67,6 +67,7 @@ Wall Mounted Switch<br /><h1>Overview</h1><p>Scene and NWI capable wall mounted 
           <option value="0">On when load is on</option>
           <option value="1">Off when load is on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Wall Mounted Switch<br /><h1>Overview</h1><p>Scene and NWI capable wall mounted 
           <option value="0">Top-ON, Bottom-OFF</option>
           <option value="1">Bottom-ON, Top-OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

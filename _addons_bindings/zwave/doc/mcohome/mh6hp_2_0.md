@@ -233,7 +233,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [MH6-HP](https://opensmarthouse.org/zwavedatabase/1235/User-manual-3830222.pdf)
+* [MH6-HP](https://opensmarthouse.org/zwavedatabase/1235/reference/User-manual-3830222.pdf)
 
 ---
 

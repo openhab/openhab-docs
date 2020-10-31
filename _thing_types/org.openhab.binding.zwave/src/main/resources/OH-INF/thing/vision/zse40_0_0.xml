@@ -85,12 +85,14 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="50">
         <label>2: Temperature offset</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
         <label>3: Humidity</label>
         <description>Configure Relative Humidity</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
         <label>4: Light Sensor</label>
         <description>Configure Light Sensor</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -112,6 +116,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
         <label>5: Trigger Interval</label>
         <description>Set the trigger interval for motion sensor re-activation.</description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -127,6 +132,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
           <option value="6">lower</option>
           <option value="7">lowest</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -138,6 +144,7 @@ Zooz 4-in-one motion/temperature/humidity/luminance sensor<br /><h1>Overview</h1
           <option value="2">Pulsing Temperature, Flashing Motion</option>
           <option value="3">Flashing Temperature and Motion</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

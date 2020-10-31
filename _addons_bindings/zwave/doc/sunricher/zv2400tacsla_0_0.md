@@ -451,7 +451,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation and operation manual](https://opensmarthouse.org/zwavedatabase/1116/sunricher-SR-ZV2400TAC-SL-A.pdf)
+* [Installation and operation manual](https://opensmarthouse.org/zwavedatabase/1116/reference/sunricher-SR-ZV2400TAC-SL-A.pdf)
 
 ---
 

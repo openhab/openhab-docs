@@ -66,6 +66,7 @@ Set top and bottom button scene numbers.<br /><h1>Overview</h1><p>Z-Wave Plus in
           <option value="4">Top 9, bottom 10</option>
           <option value="99">Top 199, bottom 200</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Control other devices or issue scene commands<br /><h1>Overview</h1><p>You can s
           <option value="1">Scene control only</option>
           <option value="2">Associated devices only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ Invert top of switch ON/OFF buttons<br /><h1>Overview</h1><p>To change the top o
           <option value="0">Top ON, bottom OFF</option>
           <option value="1">Bottom ON, top OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

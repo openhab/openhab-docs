@@ -65,6 +65,7 @@ Nano Shutter<br /><h1>Overview</h1><p>Aeotec Nano Shutter is a Z-Wave motor cont
           <option value="1">Moves to 99%</option>
           <option value="2">Moves to 0%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Determine motor run direction for Shutter Mode and Venetian Mode<br /><h1>Overvi
           <option value="2">Mode 2</option>
           <option value="3">Mode 3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_2" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ Determine motor run direction for Shutter Mode and Venetian Mode<br /><h1>Overvi
 Blade Turn Time (Unit = 0.01 seconds)<br /><h1>Overview</h1><p>Note:</p> <ul><li>For Venetian, if this value is set too large for blade turning, curtain may move upwards or downwards.</li> <li>Calibration need to work correctly.Or this setting will force the curtain to move up or down.</li> <li>This configuration will not change after network exclusion</li> </ul>
         ]]></description>
         <default>150</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_2" type="integer" groupName="configuration"
@@ -97,6 +100,7 @@ Blade Turn Time (Unit = 0.01 seconds)<br /><h1>Overview</h1><p>Note:</p> <ul><li
 Curtain Trip Time<br /><h1>Overview</h1><p>Note:</p> <ul><li>For Venetian, if this value is set too large for curtain trip, blade turn positioning may cause errors.</li> <li>This configuration will not change after network exclusion</li> </ul>
         ]]></description>
         <default>15000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration">
@@ -110,6 +114,7 @@ Enter/Exit Calibration<br /><h1>Overview</h1><p>Note:</p> <p>Product will enter 
           <option value="1">Enter Shutter Mode Calibration</option>
           <option value="2">Enter Venetian Mode Calibration</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration">
@@ -120,6 +125,7 @@ Enter/Exit Calibration<br /><h1>Overview</h1><p>Note:</p> <p>Product will enter 
           <option value="0">Do Nothing (Default)</option>
           <option value="1">Next Step</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_1" type="integer" groupName="configuration" readOnly="true">
@@ -134,6 +140,7 @@ Enter/Exit Calibration<br /><h1>Overview</h1><p>Note:</p> <p>Product will enter 
           <option value="4">-&gt; Reference Point C</option>
           <option value="5">Terminated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration">
@@ -146,6 +153,7 @@ Set curtain mode<br /><h1>Overview</h1><p>Note:<br />1. This Operation will ente
           <option value="0">Shutter Mode (Default)</option>
           <option value="1">Venetian Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -156,6 +164,7 @@ Set curtain mode<br /><h1>Overview</h1><p>Note:<br />1. This Operation will ente
           <option value="0">No Action</option>
           <option value="1">Begin Repositioning</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration" readOnly="true">
@@ -165,6 +174,7 @@ Set curtain mode<br /><h1>Overview</h1><p>Note:<br />1. This Operation will ente
           <option value="0">Complete</option>
           <option value="1">In Repositioning</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -176,6 +186,7 @@ Set curtain mode<br /><h1>Overview</h1><p>Note:<br />1. This Operation will ente
           <option value="1">Enable Mode 1 (Default)</option>
           <option value="2">Enable Mode 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -187,6 +198,7 @@ Set curtain mode<br /><h1>Overview</h1><p>Note:<br />1. This Operation will ente
           <option value="1">Basic Report</option>
           <option value="2">Multilevel Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_85_1" type="integer" groupName="configuration">
@@ -200,6 +212,7 @@ Set External Button Operation Mode<br /><h1>Overview</h1><p>Set Extern Button Op
           <option value="1">Mode 1</option>
           <option value="2">Mode 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
@@ -215,6 +228,7 @@ Set Switch Type of External Switch 1<br /><h1>Overview</h1><p>Report automatical
           <option value="3">Push Button Mode</option>
           <option value="4">Automatic Identification</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -230,6 +244,7 @@ Set Switch Type of External Switch 2<br /><h1>Overview</h1><p>Report automatical
           <option value="3">Push Button Mode</option>
           <option value="4">Automatic Identification</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_243_16" type="integer" groupName="configuration" readOnly="true"
@@ -237,6 +252,7 @@ Set Switch Type of External Switch 2<br /><h1>Overview</h1><p>Report automatical
         <label>243: Get DSK from product</label>
         <description>To Get DSK from product</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_248_1" type="integer" groupName="configuration">
@@ -248,6 +264,7 @@ Set Switch Type of External Switch 2<br /><h1>Overview</h1><p>Report automatical
           <option value="2">Enable Reset to Factory</option>
           <option value="3">Enable network and reset function</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_251_1" type="integer" groupName="configuration">
@@ -260,6 +277,7 @@ Reset to Factory / Exclusion Function<br /><h1>Overview</h1><p>Enable/disable re
           <option value="0">Disable</option>
           <option value="1">Enable (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">
@@ -273,6 +291,7 @@ Reset function<br /><h1>Overview</h1><p>When the command be valid：<br />1.The 
           <option value="1431655765">Reset to factory default</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -88,7 +88,6 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
         <label>1: Relay 1 Trigger Interval</label>
         <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1_000000E0" type="integer" groupName="configuration">
@@ -103,6 +102,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="128">Trigger on Sensor 1 and Sensor 2</option>
           <option value="224">Trigger on Sensor 1 and/or Sensor 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_0000001F" type="integer" groupName="configuration"
@@ -110,7 +110,6 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
         <label>2: Relay 2 Trigger Interval</label>
         <description>Momentary trigger time in 100ms intervals, 10=1s, 0=disable</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1_000000E0" type="integer" groupName="configuration">
@@ -125,6 +124,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="128">Trigger on Sensor 1 and Sensor 2</option>
           <option value="224">Trigger on Sensor 1 and/or Sensor 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_0000003F" type="integer" groupName="configuration"
@@ -132,7 +132,6 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
         <label>3: Sensor 1 Report Interval</label>
         <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000040" type="integer" groupName="configuration">
@@ -143,6 +142,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="0">Periodically</option>
           <option value="1">On Change</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_00000080" type="integer" groupName="configuration">
@@ -153,34 +153,31 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="0">Outside</option>
           <option value="1">Inside</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>4: Sensor 1 Lower Threshold High</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>5: Sensor 1 Lower Threshold Low</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>6: Sensor 1 Upper Threshold High</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>7: Sensor 1 Upper Threshold Low</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_0000003F" type="integer" groupName="configuration"
@@ -188,7 +185,6 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
         <label>9: Sensor 2 Report Interval</label>
         <description>Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_00000040" type="integer" groupName="configuration">
@@ -199,6 +195,7 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="0">Periodically</option>
           <option value="1">On Change</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_00000080" type="integer" groupName="configuration">
@@ -209,34 +206,31 @@ Dual Digital or Analog Voltage input and Dual Contact Relay<br /><h1>Overview</h
           <option value="0">Outside</option>
           <option value="1">Inside</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>10: Sensor 2 Lower Threshold High</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>11: Sensor 2 Lower Threshold Low</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>12: Sensor 2 Upper Threshold High</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
                  min="0" max="4095">
         <label>13: Sensor 2 Upper Threshold Low</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

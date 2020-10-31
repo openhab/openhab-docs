@@ -61,6 +61,7 @@ Switch IO: On/Off Power Switch<br /><h1>Overview</h1><p>Simon Electronic Switch 
           <option value="0">Turns the main LED OFF</option>
           <option value="255">Turns the main LED ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Switch IO: On/Off Power Switch<br /><h1>Overview</h1><p>Simon Electronic Switch 
 Delay from activation request until load activation<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -79,6 +81,7 @@ Delay from activation request until load activation<br /><h1>Overview</h1><p>0-1
 Time that load performs activated after complete an activation process.<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -89,6 +92,7 @@ Time that load performs activated after complete an activation process.<br /><h1
           <option value="0">LED OFF</option>
           <option value="255">LED ON at 20% of maximum level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -99,6 +103,7 @@ Time that load performs activated after complete an activation process.<br /><h1
           <option value="0">Unlock the direct control of load</option>
           <option value="255">Lock the direct control of load</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2_wo" type="integer" groupName="configuration">
@@ -109,6 +114,7 @@ Time that load performs activated after complete an activation process.<br /><h1
           <option value="0">Normal operating mode</option>
           <option value="39015">Reset to Factory Defaults</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -118,7 +124,6 @@ Time that load performs activated after complete an activation process.<br /><h1
 Delay from deactivation request until load deactivation.<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

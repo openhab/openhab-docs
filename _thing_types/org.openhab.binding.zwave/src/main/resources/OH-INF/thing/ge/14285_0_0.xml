@@ -92,6 +92,7 @@ Direct Wire Indoor/Outdoor Smart Switch<br /><h1>Overview</h1><p><strong>SPECIFI
           <option value="1">Return to off</option>
           <option value="2">Return to on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -103,6 +104,7 @@ Direct Wire Indoor/Outdoor Smart Switch<br /><h1>Overview</h1><p><strong>SPECIFI
           <option value="1">Reports based on Parameter 3 setting</option>
           <option value="2">Once daily</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -110,6 +112,7 @@ Direct Wire Indoor/Outdoor Smart Switch<br /><h1>Overview</h1><p><strong>SPECIFI
         <label>3: Energy Report Frequency</label>
         <description>Energy Report Frequency</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -121,6 +124,7 @@ Direct Wire Indoor/Outdoor Smart Switch<br /><h1>Overview</h1><p><strong>SPECIFI
           <option value="1">Alternate Exclusion (3 button presses)</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

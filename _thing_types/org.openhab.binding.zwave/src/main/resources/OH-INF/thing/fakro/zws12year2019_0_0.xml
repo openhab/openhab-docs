@@ -73,6 +73,7 @@ Motor speed 1<br /><h1>Overview</h1><p>1- the lowest speed</p> <p>2- default</p>
           <option value="3">higher speed</option>
           <option value="4">highest speed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -85,6 +86,7 @@ This parameter on/off callibration function<br /><h1>Overview</h1><p>Value 1 –
           <option value="1">Calibrated</option>
           <option value="2">Discalibrated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -97,6 +99,7 @@ Set servomotor in previous position<br /><h1>Overview</h1><p>This parameter set 
           <option value="1">FF go to Max</option>
           <option value="2">FF go to previous position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -106,6 +109,7 @@ Set servomotor in previous position<br /><h1>Overview</h1><p>This parameter set 
 Close after time min<br /><h1>Overview</h1><p>0-120 minutes</p>
         ]]></description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

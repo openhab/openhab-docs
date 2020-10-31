@@ -129,7 +129,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Heiman HS1MS Smart Motion Sensor Manual](https://opensmarthouse.org/zwavedatabase/736/Heiman-Smart-Motion-Sensor-HSIMS-Z.pdf)
+* [Heiman HS1MS Smart Motion Sensor Manual](https://opensmarthouse.org/zwavedatabase/736/reference/Heiman-Smart-Motion-Sensor-HSIMS-Z.pdf)
 
 ---
 

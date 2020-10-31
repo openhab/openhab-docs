@@ -65,6 +65,7 @@ Choose Paddle Functionality<br /><h1>Overview</h1><p>Paddle Control</p> <p>Param
           <option value="0">Upper light on, lower light off</option>
           <option value="1">Upper light off, lower light on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>LED Indicator Cont
           <option value="2">LED indicator is always OFF</option>
           <option value="3">LED indicator is always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ enable the Auto Turn-Off Timer<br /><h1>Overview</h1><p>Auto Turn-Off Timer</p> 
           <option value="0">timer disabled</option>
           <option value="1">timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -100,6 +103,7 @@ enable the Auto Turn-Off Timer<br /><h1>Overview</h1><p>Auto Turn-Off Timer</p> 
 set Auto Turn-Off Timer Duration<br /><h1>Overview</h1><p>Parameter 4: Use this parameter to set the time a?er which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). 60 –default.</p> <p>Size: 4 byte dec.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -112,6 +116,7 @@ enable the Auto Turn-On Timer<br /><h1>Overview</h1><p>Auto Turn-On Timer</p> <p
           <option value="0">timer disabled</option>
           <option value="1">timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -121,6 +126,7 @@ enable the Auto Turn-On Timer<br /><h1>Overview</h1><p>Auto Turn-On Timer</p> <p
 set Auto Turn-On Timer Duration<br /><h1>Overview</h1><p>Parameter 6: Use this parameter to set the time a?er which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p> <p>Values: 1 – 65535 (minutes). Default</p> <p>set to 60.</p> <p>Size: 4 byte dec.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -134,6 +140,7 @@ Set the on off status for the switch after power failure.<br /><h1>Overview</h1>
           <option value="1">forced to ON</option>
           <option value="2">remembers on/off status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -143,6 +150,7 @@ Set the on off status for the switch after power failure.<br /><h1>Overview</h1>
 Adjust the ramp rate for your dimmer<br /><h1>Overview</h1><p>Ramp Rate Control</p> <p>Parameter 9: Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds</p> <p>it takes for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Values: 1 – 99 (seconds). Default set to 1.</p> <p>Size: 1 byte dec.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -152,6 +160,7 @@ Adjust the ramp rate for your dimmer<br /><h1>Overview</h1><p>Ramp Rate Control<
 Set the minimum brightness level %<br /><h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 10: Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value.</p> <p>Values: 1 – 99 (%). Default set to 1.</p> <p>Size: 1 byte dec.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -161,6 +170,7 @@ Set the minimum brightness level %<br /><h1>Overview</h1><p>Minimum and Maximum 
 Set the maximum brightness level %<br /><h1>Overview</h1><p>Minimum and Maximum Brightness</p> <p>Parameter 11: Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value. Note: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled.</p> <p>Values: 1 – 99 (%). Default set to 99.</p> <p>Size: 1 byte dec.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -173,6 +183,7 @@ brightness level after you double-tap upper paddle<br /><h1>Overview</h1><p>Doub
           <option value="0">full brightness</option>
           <option value="1">maximum brightness level set</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

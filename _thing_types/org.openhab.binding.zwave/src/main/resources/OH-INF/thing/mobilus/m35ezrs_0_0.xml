@@ -77,6 +77,7 @@ Mobilus Tubular Motor<br /><h1>Overview</h1><p>Tubular motor mob.iq EZRS M35 10/
           <option value="1">Calibration mode</option>
           <option value="2">Discalibration mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -87,6 +88,7 @@ Mobilus Tubular Motor<br /><h1>Overview</h1><p>Tubular motor mob.iq EZRS M35 10/
           <option value="0">last known non-zero position (default)</option>
           <option value="1">max open</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

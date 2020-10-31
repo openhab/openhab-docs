@@ -63,6 +63,7 @@ Motion Detector<br /><h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /
         <label>1: Basic Set Level</label>
         <description>Value to be sent with a BASIC SET command</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -73,18 +74,21 @@ Motion Detector<br /><h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /
           <option value="2">Group 1 Enabled / Group 2 Disabled</option>
           <option value="3">Group 1 Disabled / Group 2 Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="1" max="10">
         <label>3: Sensitivity Level</label>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="5" max="255">
         <label>4: Re-trigger Interval Setting</label>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -92,12 +96,14 @@ Motion Detector<br /><h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /
         <label>5: LUX Level</label>
         <description>Value for what LUX level will arm the detection sensor</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
                  min="5" max="255">
         <label>6: On-Off Duration</label>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

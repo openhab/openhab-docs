@@ -129,6 +129,7 @@ Restore state after power failure<br /><h1>Overview</h1><p>This parameter determ
           <option value="0">off after power loss</option>
           <option value="1">restore last state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -145,6 +146,7 @@ First channel - operating mode<br /><h1>Overview</h1><p>This parameter allows to
           <option value="4">auto OFF</option>
           <option value="5">flashing mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -158,6 +160,7 @@ First channel - reaction to switch for delay/auto ON/OFF modes<br /><h1>Overview
           <option value="1">no reaction to switch - mode runs until it ends</option>
           <option value="2">reset timer - start counting from the beginning</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -167,6 +170,7 @@ First channel - reaction to switch for delay/auto ON/OFF modes<br /><h1>Overview
 First channel - time parameter for delay/auto ON/OFF modes<br /><h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes.</p> <p>Available settings: 0 (0.1s), 1-32000 (1-32000s, 1s step) - time parameter</p> <p>Default setting: 50 (50s)</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -176,6 +180,7 @@ First channel - time parameter for delay/auto ON/OFF modes<br /><h1>Overview</h1
 First channel - pulse time for flashing mode<br /><h1>Overview</h1><p>This parameter allows to set time of switching to opposite state in flashing mode</p> <p>Available settings: 1-32000 (0.1-3200.0s, 0.1s step) - time parameter</p> <p>Default setting: 5 (0.5s)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -192,6 +197,7 @@ Second channel - operating mode<br /><h1>Overview</h1><p>This parameter allows t
           <option value="4">auto OFF</option>
           <option value="5">flashing mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -205,6 +211,7 @@ Second channel - reaction to switch for delay/auto ON/OFF modes<br /><h1>Overvie
           <option value="1">no reaction to switch - mode runs until it ends</option>
           <option value="2">reset timer - start counting from the beginning</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
@@ -214,6 +221,7 @@ Second channel - reaction to switch for delay/auto ON/OFF modes<br /><h1>Overvie
 Second channel - time parameter for delay/auto ON/OFF modes<br /><h1>Overview</h1><p>This parameter allows to set time parameter used in timed modes.</p> <p>Available settings: 0 (0.1s), 1-32000 (1-32000s, 1s step) - time parameter</p> <p>Default setting: 50 (50s)</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -223,6 +231,7 @@ Second channel - time parameter for delay/auto ON/OFF modes<br /><h1>Overview</h
 Second channel - pulse time for flashing mode<br /><h1>Overview</h1><p>This parameter allows to set time of switching to opposite state in flashing mode</p> <p>Available settings: 1-32000 (0.1-3200.0s, 0.1s step) - time parameter</p> <p>Default setting: 5 (0.5s)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -236,6 +245,7 @@ Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the dev
           <option value="1">toggle switch stable</option>
           <option value="2">toggle switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -246,6 +256,7 @@ Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the dev
           <option value="0">the device does not send reports</option>
           <option value="1">the device sends reports</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration"
@@ -263,7 +274,6 @@ Associations in Z-Wave network security mode<br /><h1>Overview</h1><p>This param
           <option value="8">5th group sent as secure</option>
           <option value="15">all groups sent as secure</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
@@ -281,7 +291,6 @@ S1 switch - scenes sent<br /><h1>Overview</h1><p>This parameter determines which
           <option value="8">Key Hold Down and Key Released</option>
           <option value="15">In all cases a scene ID will be sent</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration"
@@ -299,7 +308,6 @@ S2 switch - scenes sent<br /><h1>Overview</h1><p>This parameter determines which
           <option value="8">Key Hold Down and Key Released</option>
           <option value="15">In all cases a scene ID will be sent</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -316,7 +324,6 @@ S1 switch - associations sent to 2nd and 3rd association groups<br /><h1>Overvie
           <option value="4">ignore holding and releasing the switch</option>
           <option value="8">ignore double click of the switch</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_2" type="integer" groupName="configuration"
@@ -326,6 +333,7 @@ S1 switch - associations sent to 2nd and 3rd association groups<br /><h1>Overvie
 S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0 </strong>- turning off associated devices</p> <p><strong>1-99</strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_2" type="integer" groupName="configuration"
@@ -335,6 +343,7 @@ S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /><h1>Over
 S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to devices associated in 2nd and 3rd association group.</p> <p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0</strong> - turning off associated devices</p> <p><strong>1-99 </strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_2" type="integer" groupName="configuration"
@@ -344,6 +353,7 @@ S1 switch - Switch ON value sent to 2nd and 3rd association groups<br /><h1>Over
 S1 switch - Double Click value sent to 2nd and 3rd association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Double Click command to devices associated in 2nd and 3rd association group.</p> <p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0</strong> - turning off associated devices</p> <p><strong>1-99 </strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration"
@@ -360,7 +370,6 @@ S2 switch - associations sent to 4th and 5th association groups<br /><h1>Overvie
           <option value="4">ignore holding and releasing the switch</option>
           <option value="8">ignore double click of the switch</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_2" type="integer" groupName="configuration"
@@ -370,6 +379,7 @@ S2 switch - associations sent to 4th and 5th association groups<br /><h1>Overvie
 S2 switch - Switch ON value sent to 4th and 5th association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Switch On command to devic-es associated in 4th and 5th association group.</p> <p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0</strong> - turning off associated devices</p> <p><strong>1-99 </strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_2" type="integer" groupName="configuration"
@@ -379,6 +389,7 @@ S2 switch - Switch ON value sent to 4th and 5th association groups<br /><h1>Over
 S2 switch - Switch OFF value sent to 4th and 5th association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Switch OFF command to de-vices associated in 4th and 5th association group.</p> <p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0</strong> - turning off associated devices</p> <p><strong>1-99 </strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_2" type="integer" groupName="configuration"
@@ -388,6 +399,7 @@ S2 switch - Switch OFF value sent to 4th and 5th association groups<br /><h1>Ove
 S2 switch - Double Click value sent to 4th and 5th association groups<br /><h1>Overview</h1><p>This parameter defines value sent with Double Click command to de-vices associated in 4th and 5th association group.</p> <p>NOTE:</p> <p>Setting parameters 31-33, 36-38 to appropriate value should result in:</p> <p><strong>0</strong> - turning off associated devices</p> <p><strong>1-99 </strong> - forcing level of associated devices</p> <p><strong>255</strong> - setting associated devices to the last remembered state or turning them on</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -402,6 +414,7 @@ Reaction to General Alarm<br /><h1>Overview</h1><p>This parameter determines how
           <option value="2">turn OFF after receiving the alarm frame</option>
           <option value="3">flash after receiving the alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -414,6 +427,7 @@ Reaction to General Alarm<br /><h1>Overview</h1><p>This parameter determines how
           <option value="2">turn OFF after receiving the alarm frame</option>
           <option value="3">flash after receiving the alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -426,6 +440,7 @@ Reaction to General Alarm<br /><h1>Overview</h1><p>This parameter determines how
           <option value="2">turn OFF after receiving the alarm frame</option>
           <option value="3">flash after receiving the alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -438,6 +453,7 @@ Reaction to General Alarm<br /><h1>Overview</h1><p>This parameter determines how
           <option value="2">turn OFF after receiving the alarm frame</option>
           <option value="3">flash after receiving the alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_2" type="integer" groupName="configuration"
@@ -447,6 +463,7 @@ Reaction to General Alarm<br /><h1>Overview</h1><p>This parameter determines how
 Flashing alarm duration<br /><h1>Overview</h1><p>This parameter allows to set duration of flashing alarm mode.</p> <p>Available settings: 1-32000 (1-32000s, 1s step) - duration</p> <p>Default setting: 600 (10min)</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
@@ -456,6 +473,7 @@ Flashing alarm duration<br /><h1>Overview</h1><p>This parameter allows to set du
 First channel - power reports<br /><h1>Overview</h1><p>This parameter determines the minimum change in consumed power that will result in sending new power report to the main controller.</p> <p>Available settings:</p> <ul><li>0 - reports are disabled</li> <li>1-100 (1-100%) - change in power</li> </ul>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -465,6 +483,7 @@ First channel - power reports<br /><h1>Overview</h1><p>This parameter determines
 First channel - minimal time between power reports<br /><h1>Overview</h1><p>This parameter determines minimum time that has to elapse before sending new power report to the main controller.</p> <p>Available settings: </p> <p>0 - reports are disabled</p> <p>1-120 (1-120s) - report interval</p> <p>Default setting: 10 (10s)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -474,6 +493,7 @@ First channel - minimal time between power reports<br /><h1>Overview</h1><p>This
 First channel - energy reports<br /><h1>Overview</h1><p>This parameter determines minimum time that has to elapse before</p> <p>sending new power report to the main controller.</p> <p>Available settings:</p> <p>0 - reports are disabled</p> <p>1-32000 (0.01 - 320 kWh) - change in energy</p> <p>Default: 100 (1 KWh)</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration"
@@ -483,6 +503,7 @@ First channel - energy reports<br /><h1>Overview</h1><p>This parameter determine
 Second channel - power reports<br /><h1>Overview</h1><p>This parameter determines the minimum change in consumed power that will result in sending new power report to the main controller.</p> <p>Available settings:</p> <ul><li>0 - reports are disabled</li> <li>1-100 (1-100%) - change in power</li> </ul>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
@@ -492,6 +513,7 @@ Second channel - power reports<br /><h1>Overview</h1><p>This parameter determine
 Second channel - minimal time between power reports<br /><h1>Overview</h1><p>This parameter determines minimum time that has to elapse before sending new power report to the main controller.</p> <p>Available settings:</p> <p>0 - periodic reports are disabled</p> <p>1-120 (1-120s) - report interval</p> <p>Default setting: 10 (10s)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
@@ -501,6 +523,7 @@ Second channel - minimal time between power reports<br /><h1>Overview</h1><p>Thi
 Second channel - energy reports<br /><h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller.</p> <p>Available settings:</p> <p>0 - reports are disabled</p> <p>1-32000 (0.01 - 320 kWh) - change in energy</p> <p>Default setting: 100 (1 KWh)</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_58_2" type="integer" groupName="configuration"
@@ -510,6 +533,7 @@ Second channel - energy reports<br /><h1>Overview</h1><p>This parameter determin
 Periodic power reports<br /><h1>Overview</h1><p>This parameter determines in what time interval the periodic power reports are sent to the main controller.</p> <p>Available settings: </p> <p>0 - periodic reports are disabled</p> <p>1-32000 (1-32000s) - report interval</p> <p>Default setting: 3600 (1h)</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_59_2" type="integer" groupName="configuration"
@@ -519,6 +543,7 @@ Periodic power reports<br /><h1>Overview</h1><p>This parameter determines in wha
 Periodic energy reports<br /><h1>Overview</h1><p>This parameter determines in what time interval the periodic energy reports are sent to the main controller.</p> <p>Available settings:</p> <p>0 - periodic reports are disabled</p> <p>1-32000 (1-32000s) - report interval</p> <p>Default setting: 3600 (1h)</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">
@@ -531,6 +556,7 @@ Measuring energy consumed by the device itself<br /><h1>Overview</h1><p>This par
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

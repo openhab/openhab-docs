@@ -58,6 +58,7 @@ Defines the behavior when transmitting dim commands<br /><h1>Overview</h1><p>The
           <option value="0">Use transmisison start level</option>
           <option value="1">Ignore transmisison start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Disable transmission of command to Group 4<br /><h1>Overview</h1><p>You may wish
           <option value="0">Enable transmission to Group 4</option>
           <option value="1">Disable transmission to Group 4</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night 
           <option value="0">LED on when switch is OFF</option>
           <option value="1">LED on when switch is ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -94,6 +97,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -104,6 +108,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -116,6 +121,7 @@ Change behavior of dim level information update<br /><h1>Overview</h1><p>When yo
           <option value="0">Send level command</option>
           <option value="1">Don’t send level command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -123,6 +129,7 @@ Change behavior of dim level information update<br /><h1>Overview</h1><p>When yo
         <label>7: On/Off Command Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -132,6 +139,7 @@ Change behavior of dim level information update<br /><h1>Overview</h1><p>When yo
 Sets the rate at which the dimmer changes the light level.<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -139,6 +147,7 @@ Sets the rate at which the dimmer changes the light level.<br /><h1>Overview</h1
         <label>9: Local Control Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -148,6 +157,7 @@ Sets the rate at which the dimmer changes the light level.<br /><h1>Overview</h1
 Sets the dim rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dimmer will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -155,6 +165,7 @@ Sets the dim rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecon
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -164,6 +175,7 @@ Sets the dim rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecon
 Sets the dim rate for the all on/off command<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution, how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the dimmer will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -176,6 +188,7 @@ Change behavior of command to Group 4 during Dim Command<br /><h1>Overview</h1><
           <option value="0">Enable transmission to Group 4</option>
           <option value="1">Disable transmission to Group 4</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -189,6 +202,7 @@ Change behavior of LED during transmission to group 1-4<br /><h1>Overview</h1><p
           <option value="1">Flicker during all transmission</option>
           <option value="2">Flicker first second of transmission</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

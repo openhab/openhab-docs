@@ -76,7 +76,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Lumi_Manual_English](https://opensmarthouse.org/zwavedatabase/1178/User-Manual-Switch4-V1-0.pdf)
+* [Lumi_Manual_English](https://opensmarthouse.org/zwavedatabase/1178/reference/User-Manual-Switch4-V1-0.pdf)
 
 ---
 

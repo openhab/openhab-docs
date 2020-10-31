@@ -68,6 +68,7 @@ Stay awake for 10 minutes at power on<br /><h1>Overview</h1><p>Enable/Disable wa
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -77,7 +78,6 @@ Stay awake for 10 minutes at power on<br /><h1>Overview</h1><p>Enable/Disable wa
 The default PIR time<br /><h1>Overview</h1><p>The default PIR time is 4 minutes. The Multisensor will send BASIC SET CC (0x00) to the associated nodes if no motion is triggered again in 4 minutes.</p> <p>Range: 10 - 3600</p> <p>Note:<br />The time unit is second if the value range is in 10 to 255. If the value range is in 256 to 3600, the time unit will be minute and its value should follow the below rules:<br />a) Interval time = Value/60, if the interval time can be divided by 60 and withoud remainder.<br />b) Interval time = (Value/60)+1, if the interval time can be divided by 60 and has remainder.<br />Other values will be ignored.</p>
         ]]></description>
         <default>240</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -94,6 +94,7 @@ Sensitivity level of PIR sensor (1=minimum, 5=maximum)<br /><h1>Overview</h1><p>
           <option value="4">sensitivity level 4</option>
           <option value="5">sensitivity level 5</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -103,12 +104,14 @@ Sensitivity level of PIR sensor (1=minimum, 5=maximum)<br /><h1>Overview</h1><p>
           <option value="1">Basic Set CC</option>
           <option value="2">Sensor Binary Report CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
                  min="10" max="50">
         <label>39: Low battery value</label>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -121,6 +124,7 @@ Select to report on thresholds<br /><h1>Overview</h1><p>Enable/disable the selec
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

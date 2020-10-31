@@ -75,6 +75,7 @@ Z-Wave controlled door lock<br /><h1>Overview</h1><p>The ABUS Z-Wave HomeTec CFA
         <label>1: Latch Hold Time</label>
         <description>This parameter defines how long the latch is hold open.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -88,6 +89,7 @@ This parameter defines the torque of the latch.<br /><h1>Overview</h1><p>Setting
           <option value="2">Torque of the latch is medium</option>
           <option value="3">Torque of the latch is low</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -103,6 +105,7 @@ This parameter defines Acoustic Feedback signals.<br /><h1>Overview</h1><p>Setti
           <option value="4">Acoustic signal when reaching position "Locked"</option>
           <option value="5">Acoustic signal when reaching each end position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -116,6 +119,7 @@ This parameter defines the travel path of the Lock.<br /><h1>Overview</h1><p>Cur
           <option value="2">Multiple turns for one Open/Close action</option>
           <option value="3">Travel from Tilted Position is turned on (CFA3000)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -130,6 +134,7 @@ This parameter defines Touch Panel settings.<br /><h1>Overview</h1><p>Current se
           <option value="3">Touch Panel is inactive</option>
           <option value="4">Touch Panel Trap is inactive</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -142,6 +147,7 @@ This parameter defines the motor force, when turning the lock.<br /><h1>Overview
           <option value="1">Automatic/Normal force</option>
           <option value="2">Maximum force</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_153_4" type="integer" groupName="configuration" readOnly="true"
@@ -151,6 +157,7 @@ This parameter defines the motor force, when turning the lock.<br /><h1>Overview
 Counter, how often in the direction of "Locked" navigated was.<br /><h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_250_1" type="integer" groupName="configuration" readOnly="true">
@@ -168,6 +175,7 @@ This parameter reports the status of the lock.<br /><h1>Overview</h1><p>Status o
           <option value="5">locked (end stop)</option>
           <option value="6">multiple interlocked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_251_4" type="integer" groupName="configuration" readOnly="true"
@@ -177,6 +185,7 @@ This parameter reports the status of the lock.<br /><h1>Overview</h1><p>Status o
 Counter, how often the trap is activated was.<br /><h1>Overview</h1><p>Counter, how often latch was actuated.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_4" type="integer" groupName="configuration" readOnly="true"
@@ -186,6 +195,7 @@ Counter, how often the trap is activated was.<br /><h1>Overview</h1><p>Counter, 
 Counter, how often in the direction of Unlocked navigated was.<br /><h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration" readOnly="true"
@@ -195,6 +205,7 @@ Counter, how often in the direction of Unlocked navigated was.<br /><h1>Overview
 Display of ABUS Firmware version, e.g. 1.05.<br /><h1>Overview</h1><p>Display ABUS  firmware version, e.g. 1.05.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

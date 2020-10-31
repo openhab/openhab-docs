@@ -117,6 +117,7 @@ Nano Dimmer<br /><h1>Overview</h1><p>Aeotec Nano Dimmer is a Z-Wave Smart Dimmer
           <option value="0">Disable</option>
           <option value="1">(Default) Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -127,6 +128,7 @@ Nano Dimmer<br /><h1>Overview</h1><p>Aeotec Nano Dimmer is a Z-Wave Smart Dimmer
           <option value="0">(Default) Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -138,6 +140,7 @@ Nano Dimmer<br /><h1>Overview</h1><p>Aeotec Nano Dimmer is a Z-Wave Smart Dimmer
           <option value="1">Always on</option>
           <option value="2">Always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -153,6 +156,7 @@ Set notification sent to associated nodes (group 1)<br /><h1>Overview</h1><p>To 
           <option value="3">Send Multilevel Switch report</option>
           <option value="4">Send Hail CC when using the manual switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -165,6 +169,7 @@ Set notification sent to associated nodes (group 3)<br /><h1>Overview</h1><p>set
           <option value="0">Send Nothing</option>
           <option value="1">(Default) Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_1" type="integer" groupName="configuration">
@@ -177,6 +182,7 @@ Set notification sent to associated nodes (group 4)<br /><h1>Overview</h1><p>To 
           <option value="0">Send Nothing</option>
           <option value="1">(Default) Send Basic Set CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_85_4" type="integer" groupName="configuration"
@@ -186,7 +192,6 @@ Set notification sent to associated nodes (group 4)<br /><h1>Overview</h1><p>To 
 Set appointment 1<br /><h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_86_4" type="integer" groupName="configuration"
@@ -196,7 +201,6 @@ Set appointment 1<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
 Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -207,6 +211,7 @@ Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
           <option value="0">(Default) Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -214,7 +219,6 @@ Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
         <label>91: Set the threshold value of wattage</label>
         <description>Threshold change in wattage (in terms of wattage) to induce an automatic report</description>
         <default>25</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -224,7 +228,6 @@ Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
 Threshold change in wattage (in terms of percentage)<br /><h1>Overview</h1><p>Threshold change in wattage (in terms of percentage) to induce an automatic report</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration"
@@ -236,7 +239,6 @@ Threshold change in wattage (in terms of percentage)<br /><h1>Overview</h1><p>Th
           <option value="0">Reset the parameter 101-103</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration"
@@ -246,6 +248,7 @@ Threshold change in wattage (in terms of percentage)<br /><h1>Overview</h1><p>Th
 To set which reports need to be sent in Report group 1<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_1" type="integer" groupName="configuration"
@@ -255,7 +258,6 @@ To set which reports need to be sent in Report group 1<br /><h1>Overview</h1><p>
 To set which reports need to be sent in Report group 2<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_1" type="integer" groupName="configuration"
@@ -265,7 +267,6 @@ To set which reports need to be sent in Report group 2<br /><h1>Overview</h1><p>
 To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration"
@@ -277,7 +278,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="0">Reset the parameter 111-113</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -285,7 +285,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>111: Automatic report interval group 1</label>
         <description>Set the interval of automatic report for Report group 1</description>
         <default>2147483647</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -293,7 +292,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>112: Automatic report interval group 2</label>
         <description>Set the interval of automatic report for Report group 2</description>
         <default>2147483647</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -301,7 +299,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>113: Automatic report interval group 3</label>
         <description>Set the interval of automatic report for Report group 3</description>
         <default>2147483647</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1_wo" type="integer" groupName="configuration">
@@ -315,6 +312,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="3">Momentary push button mode</option>
           <option value="4">Enter automatic identification mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration">
@@ -328,6 +326,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="3">Momentary push button mode</option>
           <option value="4">Enter automatic identification mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_122_1" type="integer" groupName="configuration">
@@ -338,6 +337,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="0">(Default) the touch panel is not connected.</option>
           <option value="5">the touch panel is connected</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_123_1" type="integer" groupName="configuration">
@@ -349,6 +349,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="2">control the other nodes</option>
           <option value="3">Control itself and other nodes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_124_1" type="integer" groupName="configuration">
@@ -360,6 +361,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="2">control the other nodes</option>
           <option value="3">Control itself and other nodes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_125_1" type="integer" groupName="configuration"
@@ -367,7 +369,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>125: Set the default dimming rate</label>
         <description>The value range is 1 to 255 seconds</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_128_1" type="integer" groupName="configuration">
@@ -379,6 +380,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="1">2-wire mode</option>
           <option value="2">3-wire mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_129_1" type="integer" groupName="configuration">
@@ -389,6 +391,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="0">Trailing edge mode</option>
           <option value="1">(Default) Leading edge mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_130_1" type="integer" groupName="configuration">
@@ -401,6 +404,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="2">Capacitive load</option>
           <option value="3">Inductive load</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_131_1" type="integer" groupName="configuration"
@@ -408,7 +412,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>131: Set the minimum brightness</label>
         <description>Set the min brightness level that the load can reach to</description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_132_1" type="integer" groupName="configuration"
@@ -416,7 +419,6 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
         <label>132: Set the maximum brightness level</label>
         <description>Set the max brightness level that the load can reach to</description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_249_1" type="integer" groupName="configuration">
@@ -428,6 +430,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="1">Only recognize once when first power on</option>
           <option value="2">(Default) Recognize the load once power on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -438,6 +441,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="0">(Default) Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -449,6 +453,7 @@ To set which reports need to be sent in Report group 3<br /><h1>Overview</h1><p>
           <option value="1431655765">factory default and remove</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

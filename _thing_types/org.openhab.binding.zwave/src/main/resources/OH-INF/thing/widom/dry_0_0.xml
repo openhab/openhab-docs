@@ -52,6 +52,7 @@ Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch 
         <label>1: Numbers of clicks to control the load</label>
         <description>Defines which sequences of clicks control the load</description>
         <default>7</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -59,6 +60,7 @@ Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch 
         <label>4: Value used for devices belonging to Group 2</label>
         <description>Value sent when the external switch receives 1 Click</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -68,6 +70,7 @@ Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch 
 Value sent wen the external switch receives 2 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 3 when the external switch receives 2 Clicks</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -77,6 +80,7 @@ Value sent wen the external switch receives 2 Clicks<br /><h1>Overview</h1><p> 
 Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 4 when external switch receives 3 Clicks</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -84,6 +88,7 @@ Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Val
         <label>10: Timer to switch OFF the Relay</label>
         <description>Defines the time after which the relay is switched OFF</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -91,12 +96,14 @@ Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Val
         <label>11: Timer to switch ON the Relay</label>
         <description>Defines the time after which the relay is switched ON</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2_wo" type="integer" groupName="configuration">
         <label>15: Timer scale</label>
         <description>Defines the time unit used for parameters No.10 and No.11.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -106,6 +113,7 @@ Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Val
 Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 1 Click on the external switch</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
@@ -115,6 +123,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<b
 Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks on the external switch</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -124,6 +133,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<
 Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks on the external switch</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">
@@ -135,6 +145,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<
           <option value="2">Off</option>
           <option value="3">PREVIOUS STATUS</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_1" type="integer" groupName="configuration">
@@ -146,6 +157,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<
           <option value="1">BUTTON</option>
           <option value="2">SWITCH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

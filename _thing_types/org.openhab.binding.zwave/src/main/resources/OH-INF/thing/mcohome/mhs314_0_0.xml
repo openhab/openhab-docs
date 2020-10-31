@@ -78,6 +78,7 @@ Four Way Switch<br /><h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
 Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -87,6 +88,7 @@ Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not save
 ALL ON/ALL OFF<br /><h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -94,6 +96,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1
         <label>4: LED Backlit brightness level</label>
         <description>0 LED disabled 1-10 Min level-Max level &gt;10 same level as 10</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -103,6 +106,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1
 Key Mode (0-4)<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -110,6 +114,7 @@ Key Mode (0-4)<br /><h1>Overview</h1><p>0=single click to switch on/off status</
         <label>6: Key On duration</label>
         <description>0 infinite 1~65535 unit "sec" 0x00</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -117,6 +122,7 @@ Key Mode (0-4)<br /><h1>Overview</h1><p>0=single click to switch on/off status</
         <description>85 restore factory setting</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

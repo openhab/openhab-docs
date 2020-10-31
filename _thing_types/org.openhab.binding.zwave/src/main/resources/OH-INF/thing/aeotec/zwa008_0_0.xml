@@ -81,6 +81,7 @@ Defines if internal magnet sensor or the external terminal input is detected<br 
           <option value="0">Internal Magnet Sensor Used</option>
           <option value="1">External Terminal Inputs Used</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -91,6 +92,7 @@ Defines if internal magnet sensor or the external terminal input is detected<br 
           <option value="0">Closed when Magnet in proximity</option>
           <option value="1">Opened when Magnet in proximity</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -100,6 +102,7 @@ Defines if internal magnet sensor or the external terminal input is detected<br 
 Defines when the red LED will indicate events.<br /><h1>Overview</h1><p>Disabling all indications may extend battery life.</p> <table><tr><td><strong>Setting</strong></td> <td><strong>Description</strong></td> </tr><tr><td>Byte 1: 00000001 </td> <td>No Indications</td> </tr><tr><td>Byte 1: 00000010 </td> <td>Open/Close Status Change </td> </tr><tr><td>Byte 1: 00000100 </td> <td>Wake Up </td> </tr><tr><td>Byte 1: 00010000</td> <td>Device Tampering </td> </tr></table>
         ]]></description>
         <default>7</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -112,6 +115,7 @@ Allows to enable the activation of a Z-Wave range.<br /><h1>Overview</h1><p>Allo
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -125,6 +129,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
           <option value="1">Switch after ‘Open‘</option>
           <option value="2">Switch after ‘Close‘</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -136,6 +141,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
           <option value="1">Off</option>
           <option value="2">On and Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -143,6 +149,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>7: BASIC command value sent to 2nd Assoc Group on On</label>
         <description>BASIC command value sent to 2nd Association Group on ‘On‘ event</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -150,6 +157,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>8: BASIC command value sent to 2nd Assoc Group on Off</label>
         <description>BASIC command value sent to 2nd Association Group on ‘Off‘ event</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -157,6 +165,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>9: Time Delay of ‘On‘ command frame</label>
         <description>Time Delay of ‘On‘ command frame</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -164,6 +173,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>10: Time Delay of ‘Off‘ command frame</label>
         <description>Time Delay of ‘Off‘ command frame</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -171,6 +181,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>11: Delay of Tamper Alarm Cancellation</label>
         <description>Delay of Tamper Alarm Cancellation</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -181,6 +192,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
           <option value="0">Do not send Report</option>
           <option value="1">Send Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -191,6 +203,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -201,6 +214,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -208,6 +222,7 @@ Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview<
         <label>15: Tilt Sensor Sensitivity</label>
         <description>Tilt Sensor Sensitivity</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

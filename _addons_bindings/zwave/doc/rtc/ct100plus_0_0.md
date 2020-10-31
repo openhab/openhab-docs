@@ -544,7 +544,7 @@ Association group 1 supports 2 nodes.
 
 ### Documentation Links
 
-* [CT100 Plus User Guide](https://opensmarthouse.org/zwavedatabase/641/CT100-Plus-UserGuide.pdf)
+* [CT100 Plus User Guide](https://opensmarthouse.org/zwavedatabase/641/reference/CT100-Plus-UserGuide.pdf)
 
 ---
 

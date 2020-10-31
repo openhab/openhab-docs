@@ -70,6 +70,7 @@ Multirelay<br /><h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerf
           <option value="3">Relay 1 and 2 restore on/off status, Relay 3 OFF</option>
           <option value="4">Relay 1 and 2 restore on/off status, Relay 3 ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -84,6 +85,7 @@ Choose the wall switch type you want to connect to the Sw1 terminal<br /><h1>Ove
           <option value="2">Toggle switch (default)</option>
           <option value="3">garage door</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ Choose the wall switch type you want to connect to the Sw2 terminal<br /><h1>Ove
           <option value="2">Toggle switch (default)</option>
           <option value="3">garage door</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -112,6 +115,7 @@ Choose the wall switch type you want to connect to the Sw3 terminal.<br /><h1>Ov
           <option value="2">Toggle switch (default)</option>
           <option value="3">garage door</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -126,6 +130,7 @@ LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indica
           <option value="2">LED indicator is always OFF</option>
           <option value="3">LED indicator is always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -138,7 +143,6 @@ Auto Turn-Off Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_4" type="integer" groupName="configuration"
@@ -151,7 +155,6 @@ Auto Turn-On Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to se
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4" type="integer" groupName="configuration"
@@ -164,7 +167,6 @@ Auto Turn-Off Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -177,7 +179,6 @@ Auto Turn-On Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to se
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
@@ -190,7 +191,6 @@ Auto Turn-Off Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_4" type="integer" groupName="configuration"
@@ -203,7 +203,6 @@ Auto Turn-On Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to se
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -216,6 +215,7 @@ Enable/Disable Manual Control for Sw1<br /><h1>Overview</h1><p>Enable or disable
           <option value="0">Disable</option>
           <option value="1">Enable (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -228,6 +228,7 @@ Enable/Disable Manual Control for Sw2<br /><h1>Overview</h1><p>Enable or disable
           <option value="0">Disable</option>
           <option value="1">Enable (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -240,6 +241,7 @@ Enable/Disable Manual Control for Sw3<br /><h1>Overview</h1><p>Enable or disable
           <option value="0">Disable</option>
           <option value="1">Enable (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -41,6 +41,7 @@ This parameter is used to enable/disable the LED indicator.<br /><h1>Overview</h
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_220_1" type="integer" groupName="configuration"
@@ -50,6 +51,7 @@ This parameter is used to enable/disable the LED indicator.<br /><h1>Overview</h
 RF power level<br /><h1>Overview</h1><p>Configuration of the RF power level</p> <p>1~10, other= ignore. A total of 10 levels, level 1 <br />as the weak output power, and so on, 10 for <br />most output power level.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_242_1" type="integer" groupName="configuration">
@@ -62,6 +64,7 @@ Security network enabled<br /><h1>Overview</h1><p>Security network enabled <br /
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_243_16" type="integer" groupName="configuration"
@@ -69,6 +72,7 @@ Security network enabled<br /><h1>Overview</h1><p>Security network enabled <br /
         <label>243: Security Network Key</label>
         <description>Security Network Key</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -81,6 +85,7 @@ Configuration lock. 1=enable, 0=disable<br /><h1>Overview</h1><p>Enable/disable 
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

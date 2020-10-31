@@ -45,7 +45,6 @@ HKZW<br /><h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave technol
         <options>
           <option value="1431655765">Clear IR Information</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_1" type="integer" groupName="configuration">
@@ -55,6 +54,7 @@ HKZW<br /><h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave technol
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
@@ -66,7 +66,6 @@ HKZW<br /><h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave technol
           <option value="1431655765">Reset &amp; remove from network</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

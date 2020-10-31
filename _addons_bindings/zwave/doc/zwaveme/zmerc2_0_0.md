@@ -443,7 +443,7 @@ Association group 12 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/149/zwave-me-RC2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/149/reference/zwave-me-RC2.pdf)
 
 ---
 

@@ -94,7 +94,6 @@ Sets the volume level of the beeps and voice prompts<br /><h1>Overview</h1><p>1 
           <option value="2">Low</option>
           <option value="3">High</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -107,7 +106,6 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
         <options>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -115,7 +113,6 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
         <label>3: Re-lock Time</label>
         <description>Time after unlocking that the device will lock</description>
         <default>7</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -123,7 +120,6 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
         <label>4: Wrong Code Entry Limit</label>
         <description>The number of invalid tries before the lock shutdowns and sends an alarm</description>
         <default>3</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

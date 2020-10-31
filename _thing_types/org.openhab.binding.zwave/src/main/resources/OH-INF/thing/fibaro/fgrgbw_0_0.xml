@@ -125,6 +125,7 @@ Activation/deactivation of ALL ON/ALL OFF functions.<br /><h1>Overview</h1><p>By
           <option value="1">ALL ON inactive ALL OFF active</option>
           <option value="2">ALL ON active ALL OFF inactive</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -140,6 +141,7 @@ Associations command class choice<br /><h1>Overview</h1><p>Associations command 
           <option value="3">Brightness</option>
           <option value="4">Rainbow (RGBW)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -152,6 +154,7 @@ MODE1, Example: change saturation level from 0% to 99%<br /><h1>Overview</h1><p>
           <option value="0">MODE1</option>
           <option value="1">MODE2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -159,6 +162,7 @@ MODE1, Example: change saturation level from 0% to 99%<br /><h1>Overview</h1><p>
         <label>9: Step value (for MODE1)</label>
         <description>Step value (relevant for MODE1)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -168,6 +172,7 @@ MODE1, Example: change saturation level from 0% to 99%<br /><h1>Overview</h1><p>
 Time between steps (relevant for MODE1).<br /><h1>Overview</h1><p>Default setting: 10 ms  0 - immediate change of state, available settings: 1 - 60000 ms.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -177,6 +182,7 @@ Time between steps (relevant for MODE1).<br /><h1>Overview</h1><p>Default settin
 Step value (relevant for MODE1).<br /><h1>Overview</h1><ul><li>Default setting: 67 (3s)</li> <li>0: immediate change</li> <li>1-63: 20-126 [ms] value*20ms</li> <li>65-127: 1-63 [s] (value-64)*1s</li> <li>129-191: 10-630 [s] (value-128)*10s</li> </ul>
         ]]></description>
         <default>67</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -186,6 +192,7 @@ Step value (relevant for MODE1).<br /><h1>Overview</h1><ul><li>Default setting: 
 Maximum Brightening level.<br /><h1>Overview</h1><p>Default setting: 255, available settings: 3 - 255.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -195,6 +202,7 @@ Maximum Brightening level.<br /><h1>Overview</h1><p>Default setting: 255, availa
 Minimum dim level.<br /><h1>Overview</h1><p>Default setting: 2, available settings: 3 - 255.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -204,6 +212,7 @@ Minimum dim level.<br /><h1>Overview</h1><p>Default setting: 2, available settin
 Relevant for main controllers other than Home Center 2 only<br /><h1>Overview</h1><p>Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.<br />Default setting: 4369, Controlled device: RGBW, toggle switch inputs (NORMAL MODE).</p>
         ]]></description>
         <default>4369</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -216,6 +225,7 @@ Define how will the Plug react after the power supply is back on.<br /><h1>Overv
           <option value="0">Do not remember state</option>
           <option value="1">Remember state before power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -230,6 +240,7 @@ Alarm response<br /><h1>Overview</h1><p>Alarm of any type (General alarm, flood 
           <option value="2">ALARM OFF</option>
           <option value="3">ALARM PROGRAM</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_1" type="integer" groupName="configuration"
@@ -239,6 +250,7 @@ Alarm response<br /><h1>Overview</h1><p>Alarm of any type (General alarm, flood 
 Alarm sequence program.<br /><h1>Overview</h1><p>Default setting: 10, 1-10 specifies alarm program number.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -248,6 +260,7 @@ Alarm sequence program.<br /><h1>Overview</h1><p>Default setting: 10, 1-10 speci
 Active PROGRAM alarm time.<br /><h1>Overview</h1><p>Default setting: 600s, 1-65534 specifies alarm time in seconds.</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -259,6 +272,7 @@ Active PROGRAM alarm time.<br /><h1>Overview</h1><p>Default setting: 600s, 1-655
           <option value="1">Inputs actions (SWITCH MULTILEVEL)</option>
           <option value="2">Inputs actions (COLOR CONTROL)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
@@ -268,6 +282,7 @@ Active PROGRAM alarm time.<br /><h1>Overview</h1><p>Default setting: 600s, 1-655
 Defines which input voltage must change to be reported<br /><h1>Overview</h1><p>Parameter defines a value by which input voltage must change in order to be reported to the main controller.<br />New value is calculated based on last reported value, default setting: 5</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_2" type="integer" groupName="configuration"
@@ -277,6 +292,7 @@ Defines which input voltage must change to be reported<br /><h1>Overview</h1><p>
 Parameter defines Time between reports.<br /><h1>Overview</h1><p>Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling. Default setting: 3 600 (s)</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration"
@@ -286,6 +302,7 @@ Parameter defines Time between reports.<br /><h1>Overview</h1><p>Parameter defin
 Reporting energy consumption changes<br /><h1>Overview</h1><p>Defines the required change in power to generate an unsolicited power report. New, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_71_1" type="integer" groupName="configuration">
@@ -296,6 +313,7 @@ Reporting energy consumption changes<br /><h1>Overview</h1><p>Defines the requir
           <option value="0">Set to white (all channels controlled together)</option>
           <option value="1">last set colour is memorized</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_72_1" type="integer" groupName="configuration"
@@ -305,6 +323,7 @@ Reporting energy consumption changes<br /><h1>Overview</h1><p>Defines the requir
 Starting predefined program when device set to work in RGB/RGBW mode<br /><h1>Overview</h1><p>Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_73_1" type="integer" groupName="configuration">
@@ -315,6 +334,7 @@ Starting predefined program when device set to work in RGB/RGBW mode<br /><h1>Ov
           <option value="0">NODE INFO control frame is sent</option>
           <option value="1">starting favourite program</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

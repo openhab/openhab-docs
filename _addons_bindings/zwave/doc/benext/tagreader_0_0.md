@@ -278,7 +278,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Tag reader manual NL](https://opensmarthouse.org/zwavedatabase/444/tagreader-nl.pdf)
+* [Tag reader manual NL](https://opensmarthouse.org/zwavedatabase/444/reference/tagreader-nl.pdf)
 
 ---
 

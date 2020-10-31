@@ -63,6 +63,7 @@ Paddle Switch<br /><h1>Overview</h1><p>Z-Wave on.off switch with Scene control</
           <option value="1">Top-OFF, Bottom-ON</option>
           <option value="2">Any paddle turns light on/off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -75,6 +76,7 @@ Paddle Switch<br /><h1>Overview</h1><p>Z-Wave on.off switch with Scene control</
           <option value="2">LED always OFF</option>
           <option value="3">LED always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -87,6 +89,7 @@ Enable / Disable Auto Turn-off<br /><h1>Overview</h1><p>Default disabled</p>
           <option value="0">Timer disabled</option>
           <option value="1">Timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -96,6 +99,7 @@ Enable / Disable Auto Turn-off<br /><h1>Overview</h1><p>Default disabled</p>
 Auto-Turn-off time<br /><h1>Overview</h1><p>Default 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -108,6 +112,7 @@ Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default timer disabled</p>
           <option value="0">Timer disabled</option>
           <option value="1">Timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -117,6 +122,7 @@ Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default timer disabled</p>
 Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -128,6 +134,7 @@ Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
           <option value="1">Forced to ON</option>
           <option value="2">Restore prior status (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -138,6 +145,7 @@ Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
           <option value="0">Scene Control disabled</option>
           <option value="1">Scene Control enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -148,6 +156,7 @@ Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
           <option value="0">Local paddle control disabled</option>
           <option value="1">Local paddle control enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -66,6 +66,7 @@ Defines the command sent to group 1 when the button is pressed (Assoc. Group 2)<
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -82,6 +83,7 @@ Command to Control Group No2 (association group 3)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ Command to Control Group No3 (association group 4)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -114,6 +117,7 @@ Command to Control Group No4 (association group 5)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -130,6 +134,7 @@ Command to Control Group No5 (association group 6)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -146,6 +151,7 @@ Command to Control Group No6 (association group 7)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -162,6 +168,7 @@ Command to Control Group No7 (association group 8)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -178,6 +185,7 @@ Command to Control Scene No1 (association group 9)<br /><h1>Overview</h1><p>This
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -194,6 +202,7 @@ Command to Control Scene No2<br /><h1>Overview</h1><p>This parameter defines the
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -210,6 +219,7 @@ Command to Control Scene No3<br /><h1>Overview</h1><p>This parameter defines the
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -226,6 +236,7 @@ Command to Control group All On/Off<br /><h1>Overview</h1><p>This parameter defi
           <option value="4">Send Scenes</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -237,6 +248,7 @@ Command to Control group All On/Off<br /><h1>Overview</h1><p>This parameter defi
           <option value="2">Switch on only</option>
           <option value="255">Switch all on and off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

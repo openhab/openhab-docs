@@ -71,6 +71,7 @@ Motion and Light Mini Sensor<br /><h1>Overview</h1><p>Motion Mini Sensor provide
 This parameter defines the sensitivity of PIR detector<br /><h1>Overview</h1><p>This parameter defines the sensitivity of PIR detector, it is recommended to test the detector with movements from a farthest end of the coverage area at first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter.</p> <p>This Parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means lowest sensitivity.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ This parameter defines the sensitivity of PIR detector<br /><h1>Overview</h1><p>
 how long the associated devices should stay ON status<br /><h1>Overview</h1><p>This parameter can be determined how long the associated devices should stay ON status. For instance, this parameter is set to 30(second), the PIR detector will send a BASIC_SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter 6#. If user set this parameter to default by Configure CC, the parameter #6 will be set to default value</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -92,7 +94,6 @@ value when PIR detector is triggered and Basic Set command sent<br /><h1>Overvie
         <options>
           <option value="255">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -105,6 +106,7 @@ enabled or disabled the PIR<br /><h1>Overview</h1><p>Valid Values: 0 – Disable
           <option value="0">Disable PIR</option>
           <option value="255">Enable PIR</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -114,6 +116,7 @@ enabled or disabled the PIR<br /><h1>Overview</h1><p>Valid Values: 0 – Disable
 Set a lux level value which determines when the light sensor is activated<br /><h1>Overview</h1><p>This parameter can be set a lux level value which determines when the light sensor is activated. If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET (value = parameter 3) to an associated device and activate i</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -123,6 +126,7 @@ Set a lux level value which determines when the light sensor is activated<br /><
 Interval of being re-triggered after the PIR detector has been triggered.<br /><h1>Overview</h1><p>This Parameter can be used to adjust the interval of being re-triggered after the PIR detector has been triggered.</p> <p>This Parameter value must be less than Parameter 2#. If user set this parameter to default by Configure CC, the para</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -132,6 +136,7 @@ Interval of being re-triggered after the PIR detector has been triggered.<br /><
 Set the light sensor measure ambient illumination level interval time<br /><h1>Overview</h1><p>This Parameter can be set the light sensor measure ambient illumination level</p> <p>interval time. NOTE: This Value Must Be less than Wakeup Interval Time</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -141,6 +146,7 @@ Set the light sensor measure ambient illumination level interval time<br /><h1>O
 Lux Level Function Enable<br /><h1>Overview</h1><p>If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC_SET command frame (i.e. BASIC_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -150,6 +156,7 @@ Lux Level Function Enable<br /><h1>Overview</h1><p>If this parameter is set to �
 Ambient illumination Lux Level Report<br /><h1>Overview</h1><p>This parameter defines by how much Lux Level must change, in lux, to be reported to the main controller.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -159,6 +166,7 @@ Ambient illumination Lux Level Report<br /><h1>Overview</h1><p>This parameter de
 This parameter defines the Led on/off enable<br /><h1>Overview</h1><p>This parameter defines the Led on/off enable. If this parameter is set to ‘1’, the led blink will be enabled, the led will flash once when motion sensor detect a movement. Otherwise, the led will be turned off always.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

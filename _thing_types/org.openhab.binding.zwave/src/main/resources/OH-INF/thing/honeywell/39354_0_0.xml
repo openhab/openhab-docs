@@ -60,6 +60,7 @@ On/Off Smart Light Switch<br /><h1>Overview</h1><p>Z-Wave Plus On/Off Smart Ligh
 On/Off rocker settings can be reversed<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with On at the bottom and Off at the top, the default On/Off rocker settings can be reversed by changing parameter 4s value to 1. <br /> </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -84,6 +84,7 @@ Appliance Module<br /><h1>Overview</h1><p>The PS15EMZ5-1 is a plug in the wall d
 LED Intensity<br /><h1>Overview</h1><p>100 = full brightness</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -96,6 +97,7 @@ LED Intensity<br /><h1>Overview</h1><p>100 = full brightness</p>
           <option value="2">LED is always ON</option>
           <option value="3">LED is always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -105,6 +107,7 @@ LED Intensity<br /><h1>Overview</h1><p>100 = full brightness</p>
 Energy Monitoring<br /><h1>Overview</h1><ul><li>0 Autmatic reporting OFF</li> <li>1-255 number of minutes between reports</li> </ul>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

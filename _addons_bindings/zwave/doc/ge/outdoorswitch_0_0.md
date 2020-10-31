@@ -135,7 +135,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/643/14284-EnFrSp-QSG-v1.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/643/reference/14284-EnFrSp-QSG-v1.pdf)
 
 ---
 

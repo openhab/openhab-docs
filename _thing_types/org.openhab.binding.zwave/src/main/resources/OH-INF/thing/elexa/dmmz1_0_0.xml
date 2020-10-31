@@ -65,6 +65,7 @@ Dome Battery powered Z-Wave Plus enabled mousetrap<br /><h1>Overview</h1><p>The 
 Sets the value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2 (for more information, see “Assocation Groups”.)</p> <p>00 (0/Turn Off Device)</p> <p>01 ~ 63 (0-99)</p> <p>FF (255/Turn On Device)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ This parameter sets the “firing mode” of the Mouser.<br /><h1>Overview</h1><
           <option value="1">Continuous Fire</option>
           <option value="2">Burst Fire</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -86,6 +88,7 @@ This parameter sets the “firing mode” of the Mouser.<br /><h1>Overview</h1><
 How long the Mouser will fire continuously before it starts to burst-fire<br /><h1>Overview</h1><p>This parameter defines how long the Mouser will fire continuously before it starts to burst-fire (see parameter 2.)</p> <p>00 64 ~ 01 68 (100~360 in Seconds)</p>
         ]]></description>
         <default>64</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -98,6 +101,7 @@ Enables or disables the indicator LED alarm when the trap is tripped<br /><h1>Ov
           <option value="0">LED Alarm Disabled</option>
           <option value="1">LED Alarm Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -107,6 +111,7 @@ Enables or disables the indicator LED alarm when the trap is tripped<br /><h1>Ov
 Sets the amount of time the LED Indicator blinks after the trap is tripped<br /><h1>Overview</h1><p>This parameter sets the amount of time the LED Indicator blinks after the trap is tripped.</p> <p>00 (LED Alarm Blinks Until Trap is Cleared)</p> <p>01~FF (1~255 in Hours)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

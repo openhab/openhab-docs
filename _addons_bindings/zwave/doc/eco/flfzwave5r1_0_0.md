@@ -136,9 +136,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Conformance statement](https://opensmarthouse.org/zwavedatabase/744/pics.pdf)
-* [Partial info from user guide](https://opensmarthouse.org/zwavedatabase/744/ecolink-data.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/744/Z-Wave-Plus-Wireless-Flood-Sensor-with-a-Probe-FLF-ZWAVE5-V5.pdf)
+* [Conformance statement](https://opensmarthouse.org/zwavedatabase/744/reference/pics.pdf)
+* [Partial info from user guide](https://opensmarthouse.org/zwavedatabase/744/reference/ecolink-data.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/744/reference/Z-Wave-Plus-Wireless-Flood-Sensor-with-a-Probe-FLF-ZWAVE5-V5.pdf)
 
 ---
 

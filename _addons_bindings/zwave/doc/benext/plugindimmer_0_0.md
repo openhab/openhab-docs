@@ -264,7 +264,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/226/plugindimmer.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/226/reference/plugindimmer.pdf)
 
 ---
 

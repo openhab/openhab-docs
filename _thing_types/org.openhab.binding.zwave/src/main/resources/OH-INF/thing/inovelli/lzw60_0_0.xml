@@ -81,12 +81,14 @@
         <label>10: Low Battery Power Level Alarm</label>
         <description>Value at which sensor reports low battery to the gateway</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
                  min="0" max="10">
         <label>12: PIR Sensitivity</label>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@
 PIR Trigger Time (Time Between PIR Readings)<br /><h1>Overview</h1><p>The amount of seconds between motion detection (ie. interval)</p> <p>5 = 5 seconds</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ PIR Trigger Time (Time Between PIR Readings)<br /><h1>Overview</h1><p>The amount
 Basic Set Command Send after PIR Trigger<br /><h1>Overview</h1><p>Should Basic Set Command be sent after PIR is triggered:</p> <p>0=No, 1 = Yes</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -114,6 +118,7 @@ Basic Set Command Send after PIR Trigger<br /><h1>Overview</h1><p>Should Basic S
 PIR Trigger Correspondence Action<br /><h1>Overview</h1><p>Ability to reverse the Basic Set behavior for devices associated in group 2.</p> <p>0 = Turn the associated device ON when motion is tripped, and OFF when motion stops.</p> <p>1 = Turn the associated device OFF when motion is tripped, and ON when motion stops.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration"
@@ -123,6 +128,7 @@ PIR Trigger Correspondence Action<br /><h1>Overview</h1><p>Ability to reverse th
 Change Parameters 101-104 Back to Default Settings<br /><h1>Overview</h1><p>If changes are made to parameters 101-104, you can set parameter 100 to 1 to reset 101-104 back to default.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -132,6 +138,7 @@ Change Parameters 101-104 Back to Default Settings<br /><h1>Overview</h1><p>If c
 Temperature Reporting Interval<br /><h1>Overview</h1><p>The interval between when temperature is reported to the gateway</p> <p>0=Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -141,6 +148,7 @@ Temperature Reporting Interval<br /><h1>Overview</h1><p>The interval between whe
 Humidity Reporting Interval<br /><h1>Overview</h1><p>The interval between when humidity is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -150,6 +158,7 @@ Humidity Reporting Interval<br /><h1>Overview</h1><p>The interval between when h
 Luminance Reporting Interval<br /><h1>Overview</h1><p>The interval between when luminance is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_104_4" type="integer" groupName="configuration"
@@ -159,6 +168,7 @@ Luminance Reporting Interval<br /><h1>Overview</h1><p>The interval between when�
 Battery Reporting Interval<br /><h1>Overview</h1><p>The interval between when battery is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>86400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1" type="integer" groupName="configuration"
@@ -168,6 +178,7 @@ Battery Reporting Interval<br /><h1>Overview</h1><p>The interval between when b
 Only send sensor reports if the below thresholds are met<br /><h1>Overview</h1><p>Only send sensor reports if the below thresholds are met. 1:Yes, 0:No</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_2" type="integer" groupName="configuration"
@@ -177,6 +188,7 @@ Only send sensor reports if the below thresholds are met<br /><h1>Overview</h1><
 Temperature Threshold<br /><h1>Overview</h1><p>Set the threshold of the temperature for your sensor</p> <p>1 = .1 degree Celsius (I know... wish it was Fahrenheit), 500 = 50 degrees Celsius</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_1" type="integer" groupName="configuration"
@@ -186,6 +198,7 @@ Temperature Threshold<br /><h1>Overview</h1><p>Set the threshold of the temperat
 Humidity Threshold<br /><h1>Overview</h1><p>Set the threshold of the humidity for your sensor</p> <p>1 = 1%, 2 = 2%</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_2" type="integer" groupName="configuration"
@@ -195,6 +208,7 @@ Humidity Threshold<br /><h1>Overview</h1><p>Set the threshold of the humidity fo
 Luminance Threshold<br /><h1>Overview</h1><p>Set the threshold of the luminance for your sensor</p> <p>1 = 1 unit lux, 2 = 2 unit lux</p>
         ]]></description>
         <default>150</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_114_1" type="integer" groupName="configuration"
@@ -204,6 +218,7 @@ Luminance Threshold<br /><h1>Overview</h1><p>Set the threshold of the luminance 
 Battery Threshold<br /><h1>Overview</h1><p>Set the threshold of the battery for your sensor</p> <p>1 = 1%, 2 = 2%</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

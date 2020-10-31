@@ -136,8 +136,8 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Datasheet](https://opensmarthouse.org/zwavedatabase/475/Vitrum-III-EU-Dimmer-Wireless1-datasheet.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/475/a28c244860f3d1fa1f8637c47351c45d85d3c9e4.pdf)
+* [Datasheet](https://opensmarthouse.org/zwavedatabase/475/reference/Vitrum-III-EU-Dimmer-Wireless1-datasheet.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/475/reference/a28c244860f3d1fa1f8637c47351c45d85d3c9e4.pdf)
 
 ---
 

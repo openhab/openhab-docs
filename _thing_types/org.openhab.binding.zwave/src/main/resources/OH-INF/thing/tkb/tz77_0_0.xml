@@ -91,6 +91,7 @@ RGB dimmer switch<br /><h1>Overview</h1><p>12V DC operating voltage.</p> <p>This
 Change the state of indicator light<br /><h1>Overview</h1><p>Default status of socket: LED is on as indicator when the load is off</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -100,6 +101,7 @@ Change the state of indicator light<br /><h1>Overview</h1><p>Default status of s
 Socket status when powered on<br /><h1>Overview</h1><p>Default with memory: the socket status is same as before when power on</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

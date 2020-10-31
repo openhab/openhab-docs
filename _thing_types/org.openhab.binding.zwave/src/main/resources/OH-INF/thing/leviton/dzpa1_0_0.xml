@@ -58,6 +58,7 @@ Controls state of on-device LED<br /><h1>Overview</h1><p>Defines the behavior of
           <option value="254">LED on when switch is ON</option>
           <option value="255">LED on when switch is OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

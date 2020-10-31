@@ -74,6 +74,7 @@ Beeping sound enabled.<br /><h1>Overview</h1><p>Beeping sound enabled. When disa
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_01000000" type="integer" groupName="configuration" readOnly="true">
@@ -86,6 +87,7 @@ Automatically re-locks door 30 seconds after unlocking.<br /><h1>Overview</h1><p
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_10000000" type="integer" groupName="configuration" readOnly="true">
@@ -98,6 +100,7 @@ Door lock status LED blinks every 6 seconds.<br /><h1>Overview</h1><p>Door lock 
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1_wo" type="integer" groupName="configuration"
@@ -111,7 +114,6 @@ Reset to factory default settings.<br /><h1>Overview</h1><p>Reset factory defaul
           <option value="1">Factory Default</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

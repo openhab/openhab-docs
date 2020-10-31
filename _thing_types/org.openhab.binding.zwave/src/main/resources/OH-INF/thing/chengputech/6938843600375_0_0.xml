@@ -97,6 +97,7 @@ Z-Wave Switch 3-gang White<br /><h1>Overview</h1><p>COOLTOUCH Z-Wave smart switc
           <option value="0">close</option>
           <option value="255">Open</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -90,6 +90,7 @@ This parameter determines the state of relays after power supply failure.<br /><
           <option value="1">state of relays after restoring power</option>
           <option value="2">Restore state after restoring power see overview</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -103,6 +104,7 @@ type of switch connected to the S1<br /><h1>Overview</h1><p>This parameter defin
           <option value="1">toggle switch synchronized</option>
           <option value="2">toggle switch with memory</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -116,6 +118,7 @@ type of switch connected to the S2<br /><h1>Overview</h1><p>This parameter defin
           <option value="1">toggle switch synchronized</option>
           <option value="2">toggle switch with memory</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -128,6 +131,7 @@ reversing operation of S1 and S2 inputs<br /><h1>Overview</h1><p>This parameter 
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -140,6 +144,7 @@ reversing operation of Q1 and Q2 outputs<br /><h1>Overview</h1><p>This parameter
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_000000FF" type="integer" groupName="configuration">
@@ -154,6 +159,7 @@ which alarm frames and how the device should react<br /><h1>Overview</h1><table>
           <option value="2">turn OFF</option>
           <option value="3">turn ON/OFF continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
@@ -161,7 +167,6 @@ which alarm frames and how the device should react<br /><h1>Overview</h1><table>
         <label>30: Alarm configuration 1 Event/State</label>
         <description>Event/State Parameters</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
@@ -169,7 +174,6 @@ which alarm frames and how the device should react<br /><h1>Overview</h1><table>
         <label>30: Alarm configuration - 1st slot - Notify Status</label>
         <description>Notification Status</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
@@ -177,7 +181,6 @@ which alarm frames and how the device should react<br /><h1>Overview</h1><table>
         <label>30: Alarm configuration - 1st slot - Notify Type</label>
         <description>Notification Type</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_000000FF" type="integer" groupName="configuration">
@@ -192,6 +195,7 @@ Water Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fr
           <option value="2">turn OFF</option>
           <option value="3">turn ON/OFF continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
@@ -199,7 +203,6 @@ Water Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fr
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Event/State Parameters</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
@@ -207,7 +210,6 @@ Water Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fr
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Notification Status</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
@@ -215,7 +217,6 @@ Water Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fr
         <label>31: Alarm configuration - 2nd slot</label>
         <description>Notification Type</description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_000000FF" type="integer" groupName="configuration">
@@ -230,6 +231,7 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
           <option value="2">turn OFF</option>
           <option value="3">turn ON/OFF continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
@@ -237,7 +239,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Event/State</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
@@ -245,7 +246,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Notification Status</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_7F000000" type="integer" groupName="configuration"
@@ -253,7 +253,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>32: Alarm configuration - 3rd slot</label>
         <description>Notification Type</description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_000000FF" type="integer" groupName="configuration">
@@ -268,6 +267,7 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
           <option value="2">turn OFF</option>
           <option value="3">turn ON/OFF continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration"
@@ -275,7 +275,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Event/State</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
@@ -283,7 +282,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Notification Status</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_7F000000" type="integer" groupName="configuration"
@@ -291,7 +289,6 @@ Action<br /><h1>Overview</h1><p>This parameter determines to which alarm frames 
         <label>33: Alarm configuration - 4th slot - CO Alarm</label>
         <description>Notification Type</description>
         <default>2</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_000000FF" type="integer" groupName="configuration">
@@ -306,6 +303,7 @@ Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fra
           <option value="2">turn OFF</option>
           <option value="3">turn ON/OFF continuously</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
@@ -313,7 +311,6 @@ Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fra
         <label>34: Alarm configuration - 5th slot</label>
         <description>Event/State</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
@@ -321,7 +318,6 @@ Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fra
         <label>34: Alarm configuration - 5th slot</label>
         <description>Notification Status</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
@@ -329,7 +325,6 @@ Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fra
         <label>34: Alarm configuration - 5th slot</label>
         <description>Notification Type</description>
         <default>4</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_2" type="integer" groupName="configuration"
@@ -339,6 +334,7 @@ Heat Alarm<br /><h1>Overview</h1><p>This parameter determines to which alarm fra
 duration of alarm sequence<br /><h1>Overview</h1><p>This parameter defines duration of alarm sequence. When time set in this parameter elapses, alarm is cancelled and relays restore normal operation, but do not recover state from before the alarm. </p> <p>0 – infinite 1-32400 (1s-9h, 1s step) – duration</p> <p>Default value 600 (10min)</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -356,7 +352,6 @@ actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter dete
           <option value="8">Key hold down and key released</option>
           <option value="15">all active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -374,7 +369,6 @@ actions result in sending scene IDs<br /><h1>Overview</h1><p>This parameter dete
           <option value="8">Key hold down and key released</option>
           <option value="15">all active</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_150_1" type="integer" groupName="configuration">
@@ -389,6 +383,7 @@ choose operating mode for channel Q/Q1 output<br /><h1>Overview</h1><p>This para
           <option value="2">auto OFF</option>
           <option value="3">flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_151_1" type="integer" groupName="configuration">
@@ -403,6 +398,7 @@ operating mode for channel Q2 output<br /><h1>Overview</h1><p>This parameter all
           <option value="2">auto OFF</option>
           <option value="3">flashing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_152_1" type="integer" groupName="configuration">
@@ -416,6 +412,7 @@ S1 input in timed modes<br /><h1>Overview</h1><p><strong>First channel – react
           <option value="1">no reaction, mode runs until it ends</option>
           <option value="2">reset timer</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_153_1" type="integer" groupName="configuration">
@@ -429,6 +426,7 @@ S2 input in timed modes<br /><h1>Overview</h1><p><strong>Second channel – reac
           <option value="1">no reaction, mode runs until it ends</option>
           <option value="2">reset timer</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_154_2" type="integer" groupName="configuration"
@@ -438,7 +436,6 @@ S2 input in timed modes<br /><h1>Overview</h1><p><strong>Second channel – reac
 timer for first channel.<br /><h1>Overview</h1><p><strong>First channel – time parameter for delayed/auto OFF and flashing modes</strong></p> <p>This parameter allows to set time parameter used in timed modes for first channel. For delayed/auto OFF modes it determines duration, for flashing mode it determines cycle period.</p> <p>Default value 5 (0.5s)</p> <p>Available values</p> <p>0 – 0.1 seconds 1-32000 – 0.1-3200 seconds, 0.1s step</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_2" type="integer" groupName="configuration"
@@ -448,7 +445,6 @@ timer for first channel.<br /><h1>Overview</h1><p><strong>First channel – time
 timer for second channel<br /><h1>Overview</h1><p><strong>Second channel – time parameter for delayed/auto OFF and flashing modes</strong></p> <p>his parameter allows to set time parameter used in timed modes for first channel. For delayed/auto OFF modes it determines duration, for flashing mode it determines cycle period.</p> <p>Default value 5 (0.5s)</p> <p>Available values</p> <p>0 – 0.1 seconds 1-32000 – 0.1-3200 seconds, 0.1s step</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_2" type="integer" groupName="configuration"
@@ -458,7 +454,6 @@ timer for second channel<br /><h1>Overview</h1><p><strong>Second channel – tim
 command to devices in 2nd association group<br /><h1>Overview</h1><p><strong>S1 input – Switch ON value sent to 2nd association group</strong></p> <p>This parameter defines value sent with Switch ON command to devices in 2nd association group when using S1 input.</p> <p>Default value 255</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_157_2" type="integer" groupName="configuration"
@@ -468,7 +463,6 @@ command to devices in 2nd association group<br /><h1>Overview</h1><p><strong>S1 
 command to devices in 2nd association group<br /><h1>Overview</h1><p><strong>S1 input – Switch OFF value sent to 2nd association group </strong></p> <p>This parameter defines value sent with Switch OFF command to devices in 2nd association group when using S1 input.</p> <p>Parameter size 2B</p> <p>Default value 0</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_158_2" type="integer" groupName="configuration"
@@ -478,7 +472,6 @@ command to devices in 2nd association group<br /><h1>Overview</h1><p><strong>S1 
 Value send to 2nd ass.group<br /><h1>Overview</h1><p>S1 input – Double Click value sent to 2nd association group</p> <p> This parameter defines value sent with Double Click command to devices in 2nd association group when using S1 input.</p> <p>Parameter size 2B</p> <p>Default value 99</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_159_2" type="integer" groupName="configuration"
@@ -488,7 +481,6 @@ Value send to 2nd ass.group<br /><h1>Overview</h1><p>S1 input – Double Click v
 value to 3rd association group<br /><h1>Overview</h1><p>S2 input – Switch ON value sent to 3rd association group</p> <p>Only in Double Smart Module</p> <p>This parameter defines value sent with Switch ON command to devices in 3rd association group when using S2 input.</p> <p>Parameter size 2B</p> <p>Default value 255</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_160_2" type="integer" groupName="configuration"
@@ -498,7 +490,6 @@ value to 3rd association group<br /><h1>Overview</h1><p>S2 input – Switch ON v
 value to 3rd association group<br /><h1>Overview</h1><p>S2 input – Switch ON value sent to 3rd association group</p> <p>Only in Double Smart Module</p> <p>This parameter defines value sent with Switch ON command to devices in 3rd association group when using S2 input.</p> <p>Parameter size 2B</p> <p>Default value 255</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_161_2" type="integer" groupName="configuration"
@@ -508,7 +499,6 @@ value to 3rd association group<br /><h1>Overview</h1><p>S2 input – Switch ON v
 value to 3rd association group<br /><h1>Overview</h1><p><strong>S2 input – Double Click value sent to 3rd association group</strong></p> <p>Only in Double Smart Module</p> <p>This parameter defines value sent with Double Click command to devices in 3rd association group when using S2 input.</p> <p>Parameter size 2B</p> <p>Default value 255</p> <p>Available values</p> <p>0 – turn off</p> <p>1-99 – turn on and set level</p> <p>255 – turn on with last level</p>
         ]]></description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_162_1" type="integer" groupName="configuration">
@@ -521,6 +511,7 @@ This parameter determines type of Q1 output.<br /><h1>Overview</h1><p>Q/Q1 outpu
           <option value="0">Normally Open</option>
           <option value="1">Normally Closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_163_1" type="integer" groupName="configuration">
@@ -533,6 +524,7 @@ parameter determines type of Q2 output<br /><h1>Overview</h1><p>Q2 output type</
           <option value="0">Normally Open</option>
           <option value="1">Normally Closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_164_1" type="integer" groupName="configuration">
@@ -545,6 +537,7 @@ Lock Q1 and Q2 outputs<br /><h1>Overview</h1><p>Lock simultaneous switching of Q
           <option value="0">lock disabled</option>
           <option value="1">lock enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

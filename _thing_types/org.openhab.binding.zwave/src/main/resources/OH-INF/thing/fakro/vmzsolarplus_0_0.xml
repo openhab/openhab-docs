@@ -75,6 +75,7 @@ operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p
           <option value="1">semiauto</option>
           <option value="2">auto</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -87,6 +88,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>summer mode: go down if sun shines a
           <option value="1">summer mode only</option>
           <option value="2">winter mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -96,6 +98,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>summer mode: go down if sun shines a
 delay to auto shade<br /><h1>Overview</h1><p>Delay time in minutes after which the shade is open or closed in auto mode</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ delay to auto shade<br /><h1>Overview</h1><p>Delay time in minutes after which t
 Level of insolation to open/close the shades<br /><h1>Overview</h1><p>Level of insolation in mA to open/close the shades in the auto mode</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true"
@@ -114,6 +118,7 @@ Level of insolation to open/close the shades<br /><h1>Overview</h1><p>Level of i
 Temperature<br /><h1>Overview</h1><p>T[<sup>o</sup>C] = x minus 50</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -124,6 +129,7 @@ Temperature<br /><h1>Overview</h1><p>T[<sup>o</sup>C] = x minus 50</p>
           <option value="0">no</option>
           <option value="1">yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -136,6 +142,7 @@ Restore last position<br /><h1>Overview</h1><p>Restore last position or always g
           <option value="1">go down</option>
           <option value="2">restore last position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration" readOnly="true"
@@ -145,6 +152,7 @@ Restore last position<br /><h1>Overview</h1><p>Restore last position or always g
 Current on autoshade solar panel<br /><h1>Overview</h1><p>Current from autoshade solar panel for loading battery: 0 - 255 mA</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration" readOnly="true"
@@ -154,6 +162,7 @@ Current on autoshade solar panel<br /><h1>Overview</h1><p>Current from autoshade
 Motor current<br /><h1>Overview</h1><p>Current used by motor: 10[mA] - 2,55[A]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_1" type="integer" groupName="configuration"
@@ -163,6 +172,7 @@ Motor current<br /><h1>Overview</h1><p>Current used by motor: 10[mA] - 2,55[A]</
 CLOSE current<br /><h1>Overview</h1><p>CLOSE current: 1[mA] - 255[mA]</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_78_1" type="integer" groupName="configuration"
@@ -172,6 +182,7 @@ CLOSE current<br /><h1>Overview</h1><p>CLOSE current: 1[mA] - 255[mA]</p>
 OPEN current<br /><h1>Overview</h1><p>OPEN current: 1[mA] - 255[mA]</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_79_1" type="integer" groupName="configuration"
@@ -181,6 +192,7 @@ OPEN current<br /><h1>Overview</h1><p>OPEN current: 1[mA] - 255[mA]</p>
 CLOSE overload current<br /><h1>Overview</h1><p>CLOSE overload current: 10[mA] - 2,55[A]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
@@ -190,6 +202,7 @@ CLOSE overload current<br /><h1>Overview</h1><p>CLOSE overload current: 10[mA] -
 OPEN overload current<br /><h1>Overview</h1><p>OPEN overload current: 10[mA] - 2,55[A]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_99_1" type="integer" groupName="configuration">
@@ -202,6 +215,7 @@ Restore default config values<br /><h1>Overview</h1><p>Restore default config va
           <option value="1">restore default config values</option>
           <option value="2">user values</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -212,6 +226,7 @@ Restore default config values<br /><h1>Overview</h1><p>Restore default config va
           <option value="1">Off</option>
           <option value="2">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

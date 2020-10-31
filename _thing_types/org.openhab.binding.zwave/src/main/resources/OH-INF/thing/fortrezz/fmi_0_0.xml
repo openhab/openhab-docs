@@ -93,6 +93,7 @@ Flow Meter<br /><h1>Overview</h1><p>With Flow meter, you have the power to autom
         <label>1: Temperature Low Threshold</label>
         <description>Temperature Low Threshold</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -100,6 +101,7 @@ Flow Meter<br /><h1>Overview</h1><p>With Flow meter, you have the power to autom
         <label>2: Temperature High Threshold</label>
         <description>Temperature High Threshold</description>
         <default>70</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration"
@@ -109,6 +111,7 @@ Flow Meter<br /><h1>Overview</h1><p>With Flow meter, you have the power to autom
 Meter Count<br /><h1>Overview</h1><p>Count rolls over at 99,999,999</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -118,6 +121,7 @@ Meter Count<br /><h1>Overview</h1><p>Count rolls over at 99,999,999</p>
 Meter Report Interval<br /><h1>Overview</h1><p>Meter Report Interval, <strong>while liquid flow is detected</strong>.  If 0 is set, then no continuous reporting during liquid flow.  Note:  Report is sent every 10 hours whether or not flow is detected.</p> <p>Default is 6, which is 60 seconds.</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -127,6 +131,7 @@ Meter Report Interval<br /><h1>Overview</h1><p>Meter Report Interval, <strong>wh
 Meter Leak Threshold<br /><h1>Overview</h1><p>Meter Leak Threshold.  Set the threshold count for reporting Flow vs High Flow.  Default is set to 50 (5 gallons).</p> <p>Flow above 5 gallons/min sends (Above Threshold / 255)</p> <p>Flow below 5 gallons/min sends (Below Threshold / 128)</p> <p>Note: If MLS enabled, Value of 0 = No flow detected (during interval)</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -136,6 +141,7 @@ Meter Leak Threshold<br /><h1>Overview</h1><p>Meter Leak Threshold.  Set the th
 Toggle Commands or MLS<br /><h1>Overview</h1><p>Notification Commands vs Multi-Level Sensor Toggle.</p> <p>Notifications set as default - Value "0"</p> <p>To enable MLS - Value set to any number except 0</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

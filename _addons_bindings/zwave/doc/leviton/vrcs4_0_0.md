@@ -112,9 +112,9 @@ Association group 4 supports 32 nodes.
 
 ### Documentation Links
 
-* [Product Specifications](https://opensmarthouse.org/zwavedatabase/197/Vizia-RF---Controllers-Spec-Sheet.pdf)
-* [Z-Wave Certification](https://opensmarthouse.org/zwavedatabase/197/ZC08-08070003.pdf)
-* [Instruction sheet VRCS4](https://opensmarthouse.org/zwavedatabase/197/Instruction-Sheet-VRCS4.pdf)
+* [Product Specifications](https://opensmarthouse.org/zwavedatabase/197/reference/Vizia-RF---Controllers-Spec-Sheet.pdf)
+* [Z-Wave Certification](https://opensmarthouse.org/zwavedatabase/197/reference/ZC08-08070003.pdf)
+* [Instruction sheet VRCS4](https://opensmarthouse.org/zwavedatabase/197/reference/Instruction-Sheet-VRCS4.pdf)
 
 ---
 

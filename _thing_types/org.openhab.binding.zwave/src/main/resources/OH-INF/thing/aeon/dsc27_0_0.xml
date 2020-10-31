@@ -59,6 +59,7 @@ Send notification to Group 1 when the load has changed<br /><h1>Overview</h1><p>
           <option value="1">Hail CC Sent</option>
           <option value="2">Basic CC Report Sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Send notification to Group 1 when the load has changed<br /><h1>Overview</h1><p>
           <option value="1">2 State Switch Mode</option>
           <option value="2">3 Way Switch Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

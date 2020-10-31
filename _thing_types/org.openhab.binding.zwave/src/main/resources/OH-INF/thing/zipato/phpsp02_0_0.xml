@@ -87,7 +87,6 @@ Basic command to turn on the light<br /><h1>Overview</h1><p>Setting the BASIC co
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -97,7 +96,6 @@ Basic command to turn on the light<br /><h1>Overview</h1><p>Setting the BASIC co
 setting<br /><h1>Overview</h1><p>PIR sensitivity settings. 0 means disable the PIR motion. 1 means the lowest sensitivity, 99 means the highest sensitivity. High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequently.</p>
         ]]></description>
         <default>80</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -107,7 +105,6 @@ setting<br /><h1>Overview</h1><p>PIR sensitivity settings. 0 means disable the P
 setting<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event is triggered and the environment illumination is lower than the threshold, the device will turn on the light. 0 means turn off illumination detection function, and never turn on the light.</p> <ul><li>1 means darkest.</li> <li>99 means brightest.</li> <li>100 means turn off illumination detection function, and always turn on the light.</li> </ul><p>Notice: In test mode, only the value in 1 to 99 will enable the illumination detection function and update the illumination value.</p>
         ]]></description>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000002" type="integer" groupName="configuration">
@@ -121,6 +118,7 @@ set test mode if DIP switch in customer mode<br /><h1>Overview</h1><p>Bit1: 1 me
           <option value="2">test mode</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000004" type="integer" groupName="configuration">
@@ -134,6 +132,7 @@ Disable/Enable the function<br /><h1>Overview</h1><p>Bit2: Disable the door/wind
           <option value="1">disable the door/window function</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000008" type="integer" groupName="configuration">
@@ -147,6 +146,7 @@ set the temperature unit<br /><h1>Overview</h1><p>Bit3: temperature scale. 0: Fa
           <option value="8">Celsius</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000010" type="integer" groupName="configuration">
@@ -160,6 +160,7 @@ toggle illumination reports<br /><h1>Overview</h1><p>Bit4: Disable the illuminat
           <option value="16">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000020" type="integer" groupName="configuration">
@@ -173,6 +174,7 @@ Disable/enable temperature reports<br /><h1>Overview</h1><p>Bit5: Disable the te
           <option value="32">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1_00000080" type="integer" groupName="configuration">
@@ -186,6 +188,7 @@ Disable/enable the back key release into test mode<br /><h1>Overview</h1><p>Bit7
           <option value="128">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000001" type="integer" groupName="configuration">
@@ -199,6 +202,7 @@ switch control<br /><h1>Overview</h1><p>Bit0: Disable magnetic integrate illumin
           <option value="1">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000002" type="integer" groupName="configuration">
@@ -212,6 +216,7 @@ PIR integration<br /><h1>Overview</h1><p>Bit1: Disable PIR integrate Illuminatio
           <option value="2">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000004" type="integer" groupName="configuration">
@@ -225,6 +230,7 @@ control lighting in association group 2<br /><h1>Overview</h1><p>Bit2: Disable m
           <option value="4">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000008" type="integer" groupName="configuration">
@@ -238,6 +244,7 @@ device and lighting in same room<br /><h1>Overview</h1><p>Bit3: When Bit2 is 0 (
           <option value="8">different rooms</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000010" type="integer" groupName="configuration">
@@ -251,6 +258,7 @@ disable/enable delay<br /><h1>Overview</h1><p>Bit4: Disable delay 5 seconds to t
           <option value="16">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000020" type="integer" groupName="configuration">
@@ -264,6 +272,7 @@ disable/enable auto turn off the light<br /><h1>Overview</h1><p>Bit5: Disable au
           <option value="32">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000002" type="integer" groupName="configuration">
@@ -277,6 +286,7 @@ enable motion OFF report<br /><h1>Overview</h1><p>Bit1: Enable sending motion OF
           <option value="2">enable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000004" type="integer" groupName="configuration">
@@ -290,6 +300,7 @@ enable PIR super-sensitivity<br /><h1>Overview</h1><p>Bit2: Enable PIR super sen
           <option value="4">enable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000008" type="integer" groupName="configuration">
@@ -303,6 +314,7 @@ Disable/enable report after door closed<br /><h1>Overview</h1><p>Bit3: Disable s
           <option value="8">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
@@ -316,6 +328,7 @@ notification or sensor binary report<br /><h1>Overview</h1><p>Bit4: Notification
           <option value="16">sensor binary report</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
@@ -329,6 +342,7 @@ disable/enable multi CC in report<br /><h1>Overview</h1><p>Bit5: Disable Multi C
           <option value="32">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_00000040" type="integer" groupName="configuration">
@@ -342,6 +356,7 @@ disable/enable battery state reports<br /><h1>Overview</h1><p>Bit6: Disable to r
           <option value="64">disable</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1_0000007F" type="integer" groupName="configuration"
@@ -352,7 +367,6 @@ PIR motion re-trigger min interval<br /><h1>Overview</h1><p>In normal mode, afte
         ]]></description>
         <default>3</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_0000007F" type="integer" groupName="configuration"
@@ -363,7 +377,6 @@ time to keep the light on without motion<br /><h1>Overview</h1><p>After turn on 
         ]]></description>
         <default>4</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1_0000007F" type="integer" groupName="configuration"
@@ -374,7 +387,6 @@ battery level auto-report interval<br /><h1>Overview</h1><p>The interval time fo
         ]]></description>
         <default>12</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1_0000007F" type="integer" groupName="configuration"
@@ -385,7 +397,6 @@ door state report interval<br /><h1>Overview</h1><p>The interval time for auto r
         ]]></description>
         <default>12</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1_0000007F" type="integer" groupName="configuration"
@@ -396,7 +407,6 @@ illumination auto report interval<br /><h1>Overview</h1><p>The interval time for
         ]]></description>
         <default>12</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1_0000007F" type="integer" groupName="configuration"
@@ -407,7 +417,6 @@ temperature report interval<br /><h1>Overview</h1><p>The interval time for a tem
         ]]></description>
         <default>12</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -418,7 +427,6 @@ auto-reports tick duration<br /><h1>Overview</h1><p>The interval time for auto r
         ]]></description>
         <default>30</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1_0000007F" type="integer" groupName="configuration"
@@ -429,7 +437,6 @@ temperature differential to report<br /><h1>Overview</h1><p>The temperature diff
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1_0000003F" type="integer" groupName="configuration"
@@ -440,7 +447,6 @@ min illumination differential to report<br /><h1>Overview</h1><p>The illuminatio
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

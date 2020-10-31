@@ -52,6 +52,7 @@ Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED.</p> <
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -64,6 +65,7 @@ Invert Switch<br /><h1>Overview</h1><p>Invert the ON/OFF Switch State. Setting t
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

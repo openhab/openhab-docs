@@ -64,6 +64,7 @@ LED Light configuration<br /><h1>Overview</h1><p>0 - LED On when load is Off, Le
           <option value="1">LED On when load is On</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

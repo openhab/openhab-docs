@@ -57,6 +57,7 @@ Wall Plug Dimmer<br /><h1>Overview</h1><p>This is a wall plug dimmer that can be
           <option value="2">On when switch off</option>
           <option value="3">Operated by command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -64,6 +65,7 @@ Wall Plug Dimmer<br /><h1>Overview</h1><p>This is a wall plug dimmer that can be
         <label>2: Automatic switch off time</label>
         <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -78,6 +80,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
           <option value="2">Switch ON</option>
           <option value="3">Switch on if load is off else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -87,6 +90,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -96,6 +100,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
 Speed for fast dimming<br /><h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -105,6 +110,7 @@ Speed for fast dimming<br /><h1>Overview</h1><p>Time to dim on button presses an
 Speed for slow dimming<br /><h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -118,6 +124,7 @@ Behavior when ON received<br /><h1>Overview</h1><p>Defines the dim level on comm
           <option value="1">If on already, set to maximum</option>
           <option value="2">Always maximum dim level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -127,6 +134,7 @@ Behavior when ON received<br /><h1>Overview</h1><p>Defines the dim level on comm
 Baby dimming time<br /><h1>Overview</h1><p>Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action.</p> <p><strong>If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</strong></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -136,6 +144,7 @@ Baby dimming time<br /><h1>Overview</h1><p>Time to dim on double click Off butto
 Baby target level<br /><h1>Overview</h1><p>Target percentage level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -145,6 +154,7 @@ Baby target level<br /><h1>Overview</h1><p>Target percentage level on which to s
 Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -152,6 +162,7 @@ Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate cl
         <label>17: Limit minimum light level</label>
         <description>Minimum level should be greater than maximum.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -159,6 +170,7 @@ Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate cl
         <label>18: Limit maximum light level</label>
         <description>Maximum level should be greater than minimum. Set to 0 to act as a switch.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -168,6 +180,7 @@ Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate cl
 Dim Level on 'Switch On'<br /><h1>Overview</h1><p>defines how the dimmer hall react on a simple ON Command.</p> <p>Set to 0 to restore last level, otherwise sets dim level.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -178,6 +191,7 @@ Pause before pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these setti
         ]]></description>
         <default>28</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration"
@@ -188,6 +202,7 @@ Pause after pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these settin
         ]]></description>
         <default>28</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_1" type="integer" groupName="configuration"
@@ -198,6 +213,7 @@ Pulse width<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if 
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration">
@@ -211,6 +227,7 @@ NB: Do not touch these settings if you are not sure what they mean!<br /><h1>Ove
           <option value="1">Short</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

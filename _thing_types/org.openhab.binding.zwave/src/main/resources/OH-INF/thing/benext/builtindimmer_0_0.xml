@@ -65,6 +65,7 @@ Built-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Built-
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Built-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Built-
           <option value="1">Toggle light on release, dimming on press</option>
           <option value="2">Toggle on press &amp; Dim with quick press &amp; release</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Built-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Built-
           <option value="0">Switch own light on and send message to all nodes</option>
           <option value="1">Don't switch own light. only send to extern node</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -98,6 +101,7 @@ Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dim
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -107,6 +111,7 @@ Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dim
 Maximum load<br /><h1>Overview</h1><p>The maximum power load in watts when light is turned on, when measured higher then this value the Inline Dimmer is automatically turned off.</p>
         ]]></description>
         <default>200</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -116,6 +121,7 @@ Maximum load<br /><h1>Overview</h1><p>The maximum power load in watts when light
 Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -125,6 +131,7 @@ Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manu
 Fading up speed<br /><h1>Overview</h1><p>The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -134,6 +141,7 @@ Fading up speed<br /><h1>Overview</h1><p>The speed of fading when activated (man
 Toggle time<br /><h1>Overview</h1><p>The time window to re-press button to start dimming. Toggle time is value (* 10ms)</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -143,6 +151,7 @@ Toggle time<br /><h1>Overview</h1><p>The time window to re-press button to start
 Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 10%  Maximum value = 100%</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -152,6 +161,7 @@ Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an ener
 Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 5 watt  Maximum value = 255 watt</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -161,6 +171,7 @@ Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy val
 Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent.</p> <p>Minimum value = 10 seconds  Maximum value = 255 seconds</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -170,6 +181,7 @@ Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be pas
 Last known status<br /><h1>Overview</h1><p>What to do with lamp status when power applied.</p> <p>If 0x00: Always switch light off when power applied.</p> <p>If &gt; 0x00: Switch lamp on/off depending on last known lamp status before power was disconnected.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -179,6 +191,7 @@ Last known status<br /><h1>Overview</h1><p>What to do with lamp status when powe
 Fading down speed<br /><h1>Overview</h1><p>The speed of fading when activated (manual and RF).</p> <p>Fade speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

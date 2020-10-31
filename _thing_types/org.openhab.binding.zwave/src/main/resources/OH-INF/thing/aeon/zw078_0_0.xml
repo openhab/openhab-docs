@@ -91,6 +91,7 @@ Heavy Duty Switch<br /><h1>Overview</h1><p>Wall mounted switch for high current 
           <option value="0">Deactivate</option>
           <option value="1">Activate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -102,6 +103,7 @@ Heavy Duty Switch<br /><h1>Overview</h1><p>Wall mounted switch for high current 
           <option value="1">Always ON</option>
           <option value="2">Always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -115,6 +117,7 @@ Send to group 1 on load change<br /><h1>Overview</h1><p>Parameter to Enable to s
           <option value="1">Hail CC Sent</option>
           <option value="2">Basic CC Report Sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -127,6 +130,7 @@ Toggle automated report sending on change<br /><h1>Overview</h1><p>Parameter to 
           <option value="0">Deavtivate</option>
           <option value="1">Activate</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -134,6 +138,7 @@ Toggle automated report sending on change<br /><h1>Overview</h1><p>Parameter to 
         <label>91: Minimum Change to send Report (Watt)</label>
         <description>The value represents the minimum change in Wattage for a Report to be sent.</description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -143,6 +148,7 @@ Toggle automated report sending on change<br /><h1>Overview</h1><p>Parameter to 
 Percent change in wattage to send report<br /><h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -152,6 +158,7 @@ Percent change in wattage to send report<br /><h1>Overview</h1><p>The value repr
 See overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -161,6 +168,7 @@ See overview<br /><h1>Overview</h1><p>The value is a combination number made up 
 see overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -170,24 +178,28 @@ see overview<br /><h1>Overview</h1><p>The value is a combination number made up 
 see overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>111: Interval to send out reports of group 1</label>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>112: Interval to send out reports of group 2</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>113: Interval to send out reports of group 3</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

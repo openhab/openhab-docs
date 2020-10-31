@@ -147,7 +147,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [GKW-2000D](https://opensmarthouse.org/zwavedatabase/1175/GKW-2000D-Z-Wave-Manual-20180807.pdf)
+* [GKW-2000D](https://opensmarthouse.org/zwavedatabase/1175/reference/GKW-2000D-Z-Wave-Manual-20180807.pdf)
 
 ---
 

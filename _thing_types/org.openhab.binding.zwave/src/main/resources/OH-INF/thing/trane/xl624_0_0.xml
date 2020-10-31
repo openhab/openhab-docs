@@ -97,6 +97,7 @@ Minimum Off Time<br /><h1>Overview</h1><p>Sets the minimum off time before anoth
         ]]></description>
         <default>5</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -107,6 +108,7 @@ Minimum Run Time<br /><h1>Overview</h1><p>Sets the minimum run time before a hea
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -117,6 +119,7 @@ Heating Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -127,6 +130,7 @@ Heating Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

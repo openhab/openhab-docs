@@ -66,6 +66,7 @@ Doorbell<br /><h1>Overview</h1><p>Z-Wave Doorbell Sensor</p> <br /><h2>Inclusion
           <option value="0">Do not send battery report</option>
           <option value="1">Send Battery Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

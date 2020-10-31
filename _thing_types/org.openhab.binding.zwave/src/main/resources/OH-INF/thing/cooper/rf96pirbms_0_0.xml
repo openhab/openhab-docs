@@ -63,6 +63,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with 
         <label>1: Basic Set Level</label>
         <description>Basic Set Level</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with 
         <label>3: Sensitivity Level</label>
         <description>Sensitivity Level</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with 
         <label>4: Re-trigger Interval Setting</label>
         <description>Re-trigger Interval Setting</description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -84,6 +87,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with 
         <label>5: Lux Level</label>
         <description>Lux Level</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -91,6 +95,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Z-Wave Plus Wireless Motion Sensor, with 
         <label>6: On-Off Duration</label>
         <description>On-Off Duration</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

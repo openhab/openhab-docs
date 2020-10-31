@@ -57,6 +57,7 @@ LED mode for attached load<br /><h1>Overview</h1><p>By default, the blue LED on 
           <option value="0">On when load is on</option>
           <option value="1">Off when load is on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

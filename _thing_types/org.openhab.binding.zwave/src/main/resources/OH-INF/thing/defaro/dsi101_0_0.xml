@@ -65,7 +65,6 @@ DSI-101 binary switch<br /><h1>Overview</h1><p>https://defaro.ru/index.php/suppo
 B1 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 3 or 11 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 3 or 11 (only first device from this AG is supported!)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -75,7 +74,6 @@ B1 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B2 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 4 or 12 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 4 or 12 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -85,7 +83,6 @@ B2 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B3 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 5 or 13 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 5 or 13 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -95,7 +92,6 @@ B3 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B4 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 4 or 12 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 4 or 12 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -105,7 +101,6 @@ B4 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B5 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 7 or 15 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 7 or 15 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -115,7 +110,6 @@ B5 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B6 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 8 or 16 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 8 or 16 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -125,7 +119,6 @@ B6 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B7 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 9 or 17 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 9 or 17 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -135,7 +128,6 @@ B7 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 B8 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down for hold (monostable switch)</p> <p>1 - Turn on for short press/Dim up for hold (monostable switch)</p> <p>2 - Bistable switch</p> <p>3 - Scene activation mode</p> <p>4 - Monostable switch. Each press/hold switches on/off/sends dim up/down state for devices from AG 10 or 18 (only first device from this AG is supported!)</p> <p>5 - Bistable switch for devices from AG 10 or 18 (only first device from this AG is supported)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -145,7 +137,6 @@ B8 operation mode<br /><h1>Overview</h1><p>0 - Turn off for short press/Dim down
 Delay for long press detection<br /><h1>Overview</h1><p>In 1/10 of sec</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -155,7 +146,6 @@ Delay for long press detection<br /><h1>Overview</h1><p>In 1/10 of sec</p>
 B1 value to send for AG 11<br /><h1>Overview</h1><p>Value to send to AG 11  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -165,7 +155,6 @@ B1 value to send for AG 11<br /><h1>Overview</h1><p>Value to send to AG 11  (0 
 B2 value to send for AG 12<br /><h1>Overview</h1><p>Value to send to AG 12  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -175,7 +164,6 @@ B2 value to send for AG 12<br /><h1>Overview</h1><p>Value to send to AG 12  (0 
 B3 value to send for AG 13<br /><h1>Overview</h1><p>Value to send to AG 13  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -185,7 +173,6 @@ B3 value to send for AG 13<br /><h1>Overview</h1><p>Value to send to AG 13  (0 
 B4 value to send for AG 14<br /><h1>Overview</h1><p>Value to send to AG 14  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -195,7 +182,6 @@ B4 value to send for AG 14<br /><h1>Overview</h1><p>Value to send to AG 14  (0 
 B5 value to send for AG 15<br /><h1>Overview</h1><p>Value to send to AG 15  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -205,7 +191,6 @@ B5 value to send for AG 15<br /><h1>Overview</h1><p>Value to send to AG 15  (0 
 B6 value to send for AG 16<br /><h1>Overview</h1><p>Value to send to AG 16  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -215,7 +200,6 @@ B6 value to send for AG 16<br /><h1>Overview</h1><p>Value to send to AG 16  (0 
 B7 value to send for AG 17<br /><h1>Overview</h1><p>Value to send to AG 17  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -225,7 +209,6 @@ B7 value to send for AG 17<br /><h1>Overview</h1><p>Value to send to AG 17  (0 
 B8 value to send for AG 18<br /><h1>Overview</h1><p>Value to send to AG 18  (0 - disable this functionality)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -233,7 +216,6 @@ B8 value to send for AG 18<br /><h1>Overview</h1><p>Value to send to AG 18  (0 
         <label>20: Sensor 1 turn on value</label>
         <description>Sensor 1 turn on value for AG 19</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
@@ -241,7 +223,6 @@ B8 value to send for AG 18<br /><h1>Overview</h1><p>Value to send to AG 18  (0 
         <label>21: Sensor 1 command off value</label>
         <description>Sensor 1 command off value for AG19</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -251,7 +232,6 @@ B8 value to send for AG 18<br /><h1>Overview</h1><p>Value to send to AG 18  (0 
 Sensor 1 conversion rules<br /><h1>Overview</h1><p>All commands are sent to devices in AG 19</p> <p>0 - ignore sensor value</p> <p>1 - send ON if Value &lt;= Param20 and send OFF if Value &gt;= Param21</p> <p>2 - send OFF if Value &lt;= Param21 and send ON if Value &gt;= Param20</p> <p>3 - send ON if Value &lt;= Param20</p> <p>4 - send ON if Value &gt;= Param20</p> <p>5 - send OFF if Value &gt;= Param21</p> <p>6 - send OFF if Value &lt;= Param21</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_2" type="integer" groupName="configuration"
@@ -259,7 +239,6 @@ Sensor 1 conversion rules<br /><h1>Overview</h1><p>All commands are sent to devi
         <label>23: Sensor 2 command on value</label>
         <description>Sensor 2 command on value for AG 20</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_2" type="integer" groupName="configuration"
@@ -267,7 +246,6 @@ Sensor 1 conversion rules<br /><h1>Overview</h1><p>All commands are sent to devi
         <label>24: Sensor 2 command off value</label>
         <description>Sensor 2 command off value for AG 20</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
@@ -277,7 +255,6 @@ Sensor 1 conversion rules<br /><h1>Overview</h1><p>All commands are sent to devi
 Sensor 2 conversion rules<br /><h1>Overview</h1><p>All commands are sent to devices in AG 20</p> <p>0 - ignore sensor value</p> <p>1 - send ON if Value &lt;= Param23 and send OFF if Value &gt;= Param24</p> <p>2 - send OFF if Value &lt;= Param24 and send ON if Value &gt;= Param23</p> <p>3 - send ON if Value &lt;= Param23</p> <p>4 - send ON if Value &gt;= Param23</p> <p>5 - send OFF if Value &gt;= Param24</p> <p>6 - send OFF if Value &lt;= Param24</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -328,7 +328,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1247/Curtain-motor.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1247/reference/Curtain-motor.pdf)
 
 ---
 

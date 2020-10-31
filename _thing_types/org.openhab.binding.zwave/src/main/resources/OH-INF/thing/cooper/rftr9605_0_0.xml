@@ -64,6 +64,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>1: Delayed OFF Time</label>
         <description>Delayed OFF Time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -71,6 +72,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>2: Panic ON Time</label>
         <description>Panic ON Time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -78,6 +80,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>3: Panic OFF Time</label>
         <description>Panic OFF Time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -85,6 +88,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>5: Power Up State</label>
         <description>Power Up State</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -92,6 +96,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>6: Panic Mode Enable</label>
         <description>Panic Mode Enable</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -99,6 +104,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>13: BLUE LED Brightness level while ON</label>
         <description>BLUE LED Brightness level while the receptacle is ON</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
@@ -106,6 +112,7 @@ Wireless Duplex Receptacle<br /><h1>Overview</h1><p>Eaton’s Z-Wave Plus Wirele
         <label>14: BLUE LED Brightness level while OFF</label>
         <description>BLUE LED Brightness level while the receptacle is OFF</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

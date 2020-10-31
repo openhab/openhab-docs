@@ -65,7 +65,6 @@ Door/Window Contact<br /><h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand 
 Time between sending unsolicited battery reports<br /><h1>Overview</h1><p>255 to 4200 seconds <strong>in 255 second increments</strong> that the sensor should wait between sending unsolicited battery reports.  <br />The default configuration value for parameter 1 is defaulted to 4200 seconds on exclusion.</p>
         ]]></description>
         <default>4200</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

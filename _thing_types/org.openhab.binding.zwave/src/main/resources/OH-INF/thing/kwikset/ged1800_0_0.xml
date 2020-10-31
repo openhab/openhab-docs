@@ -68,6 +68,7 @@ Internal Buzzer<br /><h1>Overview</h1><p>Internal buzzer enabled.  Factory defa
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_01000000" type="integer" groupName="configuration" readOnly="true">
@@ -80,6 +81,7 @@ Automatically re-locks door 30 seconds after unlocking.<br /><h1>Overview</h1><p
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_10000000" type="integer" groupName="configuration" readOnly="true">
@@ -92,6 +94,7 @@ Door lock status LED blinks every 6 seconds<br /><h1>Overview</h1><p>Door lock s
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4" type="integer" groupName="configuration"
@@ -102,7 +105,6 @@ First 4 byes of SKU<br /><h1>Overview</h1><p>The configuration parameters 33 and
         ]]></description>
         <default>32</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4" type="integer" groupName="configuration"
@@ -113,7 +115,6 @@ Last 4 bytes of SKU<br /><h1>Overview</h1><p>The configuration parameters 33 and
         ]]></description>
         <default>32</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1_wo" type="integer" groupName="configuration">
@@ -127,6 +128,7 @@ Reset to factory default settings<br /><h1>Overview</h1><p>The configuration par
           <option value="1">Reset to Factory Defaults</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

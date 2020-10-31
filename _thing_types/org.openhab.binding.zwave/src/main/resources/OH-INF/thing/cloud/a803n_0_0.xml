@@ -69,6 +69,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>1: Param 1</label>
         <description>Param 1</description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -76,6 +77,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>2: Param 2</label>
         <description>Param 2</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -83,6 +85,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>3: Param 3</label>
         <description>Param 3</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -90,6 +93,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>4: Param 4</label>
         <description>Param 4</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -97,6 +101,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>5: Param 5</label>
         <description>Param 5</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -104,6 +109,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>6: Param 6</label>
         <description>Param 6</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -111,6 +117,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>7: Param 7</label>
         <description>Param 7</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -118,6 +125,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>8: Param 8</label>
         <description>Param 8</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -125,6 +133,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>9: Param 9</label>
         <description>Param 9</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -132,6 +141,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>10: Param 10</label>
         <description>Param 10</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -139,6 +149,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>11: Param 11</label>
         <description>Param 11</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -146,6 +157,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared
         <label>12: Param 12</label>
         <description>Param 12</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -255,7 +255,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Product manual](https://opensmarthouse.org/zwavedatabase/708/Danalock-V3-Product-manual-Z-Wave-V-0-9-1.pdf)
+* [Product manual](https://opensmarthouse.org/zwavedatabase/708/reference/Danalock-V3-Product-manual-Z-Wave-V-0-9-1.pdf)
 
 ---
 

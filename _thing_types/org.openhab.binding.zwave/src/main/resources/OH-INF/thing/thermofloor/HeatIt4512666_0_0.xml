@@ -93,6 +93,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>1: Temperature/ Humidity report interval</label>
         <description>Used to adjust the time between report interval for Temperature and humidity reports</description>
         <default>900</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -100,6 +101,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>2: Temperature delta value</label>
         <description>Temperature delta value</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -107,6 +109,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>3: Humidity delta value</label>
         <description>Humidity delta value</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -114,6 +117,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>4: Temperature offset settings</label>
         <description>Calibrate the internal sensor. To set negative values; 65 535 – desired value + 1</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -121,6 +125,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>5: Humidity offset settings</label>
         <description>Offsets the measured relative humidity. To set negative values; 65 535 – desired value + 1.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -128,6 +133,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>6: Proximity sensor retrigger interval</label>
         <description>Proximity sensor retrigger interval</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -135,6 +141,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>7: Proximity sensor Enable</label>
         <description>Choose if proximity sensor is used or not.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -142,6 +149,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>8: LED maximum brightness</label>
         <description>Adjust the backlight of LCD display</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -149,6 +157,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>9: LED turned on before timeout</label>
         <description>Adjust the time from proximity sensor / display touched until display goes to sleep.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -156,6 +165,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>10: Temperature Control Hysteresis</label>
         <description>Adjust the delta values for the thermostat to turn on off heating.</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -163,6 +173,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>11: Minimum Temperature Limit</label>
         <description>Set the mimum temperature limit.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -170,6 +181,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>12: Maximum Temperature Limit</label>
         <description>Maximum Temperature Limit</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -177,6 +189,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
         <label>13: External Relay &amp; Operating State update interval</label>
         <description>Set time on how often the devices sends Binary Switch Set and thermostat mode to gateway</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -189,6 +202,7 @@ Decides if the thermostat sends temperature when presence is detected<br /><h1>O
           <option value="0">Do not report to gateway when presence is detected, only at interval.</option>
           <option value="1">Send temperature report to gateway when presence is detected.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

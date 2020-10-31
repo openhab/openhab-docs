@@ -61,6 +61,7 @@ An in-wall lighting dimmer<br /><h1>Overview</h1><p>The WD500Z5-1 is an in-wall 
 Control the LED on the device.<br /><h1>Overview</h1><p>By default, the LED on the GoControl Dimmer will turn OFF when the load attached is turned ON. To make the LED turn ON when the load attached is turned ON, set Parameter 3 to a value of 1.</p> <p><strong>0</strong> - LED OFF when the load is on, and ON when the load is off (default - night lite mode)</p> <p><strong>1</strong> - LED ON when the load is on, and OFF when the load is off</p> <p><strong>2</strong> -  LED is always on</p> <p><strong>3</strong> - LED is always off</p> <p><strong>4</strong> - LED blinks during RF transmissions from or to the device</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Control the LED on the device.<br /><h1>Overview</h1><p>By default, the LED on t
 Invert the operation of the paddle.<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set Parameter 4 to a value of 1.</p> <p><strong>0</strong> - Top of switch is ON, bottom of switch is OFF (default)</p> <p><strong>1</strong> -  Bottom of switch is ON, top of switch is OFF</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -79,6 +81,7 @@ Invert the operation of the paddle.<br /><h1>Overview</h1><p>To change the top o
 The Start Level sent in a Dim command can be ignored or not.<br /><h1>Overview</h1><p>The Start Level sent in a Dim command can be ignored or not. Typically the dim level should start from the current level and dim from there instead of suddenly changing to the Start Level and then dimming.</p> <p><strong>0</strong> - Use the Start Level in the Dim Command</p> <p><strong>1</strong> - Ignore the Start Level in the Dim Command (default)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -88,6 +91,7 @@ The Start Level sent in a Dim command can be ignored or not.<br /><h1>Overview</
 Dim Remote On/Off Step (default=3, 3 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -97,6 +101,7 @@ Dim Remote On/Off Step (default=3, 3 steps)<br /><h1>Overview</h1><p>The brightn
 Dim Remote On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -106,6 +111,7 @@ Dim Remote On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The brigh
 Dim Local On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -115,6 +121,7 @@ Dim Local On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The brig
 Dim Local On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -124,6 +131,7 @@ Dim Local On/Off Timer (default = 10, 10 ms)<br /><h1>Overview</h1><p>The bright
 Dim ALL On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>Dim Step can be set to a value of 1 to 99. This value indicates how many levels the dimmer will change each time the Dim Timer expires.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -133,6 +141,7 @@ Dim ALL On/Off Step (default = 10, 10 steps)<br /><h1>Overview</h1><p>The bright
 Dim ALL On/Off Timer (default = 3, 3 ms)<br /><h1>Overview</h1><p>The brightness setting of the Dimmer is called the Dim Level. When the Dim Level is adjusted, the rate that Dim Level changes depends on the Dim Step (Parameter 7) and Dim Timer (Parameter 8) values. These values can be changed instantly to allow various scenes and effects. These values can also vary between local control, remote commands from the hub or associated device and ALL ON/OFF commands.</p> <p>The Dim Timer (how fast the dim steps happen). It can be set to a value of 1 to 255. This value indicates in 10 millisecond resolution, how often the dim level will change.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -57,6 +57,7 @@ Door/Window Contact<br /><h1>Overview</h1><p>The Door/Window Sensor is a Z-WaveÂ
         <label>1: Basic Set Level</label>
         <description>Value to be sent with a BASIC SET command</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -64,6 +65,7 @@ Door/Window Contact<br /><h1>Overview</h1><p>The Door/Window Sensor is a Z-WaveÂ
         <label>2: Configuring the OFF Delay</label>
         <description>OFF Delay in seconds</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

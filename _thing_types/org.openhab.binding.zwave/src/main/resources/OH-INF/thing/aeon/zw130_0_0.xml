@@ -114,6 +114,7 @@ WallMote Quad<br /><h1>Overview</h1><p>Aeotec WallMote Quad is an intelligent Z-
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -124,6 +125,7 @@ WallMote Quad<br /><h1>Overview</h1><p>Aeotec WallMote Quad is an intelligent Z-
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -134,6 +136,7 @@ WallMote Quad<br /><h1>Overview</h1><p>Aeotec WallMote Quad is an intelligent Z-
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -146,6 +149,7 @@ Which notification to be sent to the associated devices.<br /><h1>Overview</h1><
           <option value="1">Central scene</option>
           <option value="3">Central scene and config</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_4" type="integer" groupName="configuration"
@@ -155,6 +159,7 @@ Which notification to be sent to the associated devices.<br /><h1>Overview</h1><
 Configure which color will be displayed when a button is pressed<br /><h1>Overview</h1><p>Each color component occupies a single byte. To calculate the color value do:</p> <p>color = ((((Red * 256) + Green) * 256) + Blue) * 256</p> <p>Value 1 = Red</p> <p>Value 2 = Green</p> <p>Value 3 = Blue</p> <p>Value 4 = Reserved</p>
         ]]></description>
         <default>65280</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -162,6 +167,7 @@ Configure which color will be displayed when a button is pressed<br /><h1>Overvi
         <label>39: Low battery value</label>
         <description>Set the low battery value</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">
@@ -172,6 +178,7 @@ Configure which color will be displayed when a button is pressed<br /><h1>Overvi
           <option value="0">Reset to factory default</option>
           <option value="1431655765">Reset and remove</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -361,7 +361,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/750/VMZ-SOLAR-FAKRO-EN.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/750/reference/VMZ-SOLAR-FAKRO-EN.pdf)
 
 ---
 

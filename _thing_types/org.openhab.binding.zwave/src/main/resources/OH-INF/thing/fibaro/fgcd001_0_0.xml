@@ -112,6 +112,7 @@ Set the actions sent to controller<br /><h1>Overview</h1><p>This parameter allow
           <option value="2">Exceeding the temperature</option>
           <option value="3">Both actions enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -130,6 +131,7 @@ Set the actions which result in LED diode indications<br /><h1>Overview</h1><p>T
           <option value="6">Exceeding the temperature AND Lack of Z-Wave range</option>
           <option value="7">Tampering AND Exceeding the temp AND Lack of range</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -148,6 +150,7 @@ Set the actions which result in acoustic signals<br /><h1>Overview</h1><p>This p
           <option value="6">Exceeding the temperature AND Lack of Z-Wave range</option>
           <option value="7">Tampering AND Exceeding temp AND Lack of range</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -157,6 +160,7 @@ Set the actions which result in acoustic signals<br /><h1>Overview</h1><p>This p
 Secure or non-secure commands to assoc groups<br /><h1>Overview</h1><p>Parameter defines how commands are sent in specified association groups: as secure or non-secure.</p> <p>Parameter is active only in Z-Wave network security mode.</p> <p>It does not apply to 1st “Lifeline” association group.</p> <p>Available settings:</p> <p>1 - 2nd group sent as secure</p> <p>2 - 3rd group sent as secure</p> <p>4 - 4th group sent as secure</p> <p>8 - 5th group sent as secure</p> <p>16 - 6th group sent as secure</p> <p>32 - 7th group sent as secure</p> <p>Parameter values may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure.</p> <p>Default setting: 63</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>63</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -170,6 +174,7 @@ Commands sent to devices in 2nd association group<br /><h1>Overview</h1><p>This 
           <option value="2">BASIC OFF</option>
           <option value="3">BASIC ON &amp; BASIC OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration">
@@ -183,6 +188,7 @@ Define value of BASIC ON cmd sent to 2nd assoc group<br /><h1>Overview</h1><p>Th
           <option value="1">Forcing level of associated devices</option>
           <option value="255">Setting assoc device to last value or ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -192,6 +198,7 @@ Define value of BASIC ON cmd sent to 2nd assoc group<br /><h1>Overview</h1><p>Th
 Defines value of BASIC OFF cmd sent 2nd assoc group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 2nd association group after the CO Alarm cancellation.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration" readOnly="true"
@@ -201,6 +208,7 @@ Defines value of BASIC OFF cmd sent 2nd assoc group<br /><h1>Overview</h1><p>Thi
 Defines cmd sent to devices in 4th association group<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 4th association group (CO Level).</p> <p>Values of specified commands may be set in parameters 16 and 19.</p> <p>Available settings:</p> <p>1 - BASIC ON</p> <p>2 - BASIC OFF</p> <p>3 - BASIC ON &amp; BASIC OFF</p> <p>Default setting: 3 (ON &amp; OFF)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -210,6 +218,7 @@ Defines cmd sent to devices in 4th association group<br /><h1>Overview</h1><p>Th
 Defines min level of CO concentration starting timer<br /><h1>Overview</h1><p>This parameter defines the minimum level of CO concentration which exceeding will result in starting the timer set in parameter 15.</p> <p>Available settings: 25-400 - CO concentration level in ppm</p> <p>Parameter value must be at least 4 ppm higher than parameter 17 value.</p> <p>Default setting: 40 (40 ppm)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>40</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration"
@@ -219,6 +228,7 @@ Defines min level of CO concentration starting timer<br /><h1>Overview</h1><p>Th
 Defines time of CO concentration should remain above param values<br /><h1>Overview</h1><p>This parameter defines the time during which the level of CO concentration should remain above the value set in parameter 14 to send the BASIC ON command to 4th association group.</p> <p>Available settings:</p> <p>0 - immediate sending of BASIC ON command</p> <p>1-2880 (30s - 24h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -228,6 +238,7 @@ Defines time of CO concentration should remain above param values<br /><h1>Overv
 Defines value of BASIC ON cmd to 4th assoc group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC ON command sent to devices in 4th association group after exceeding the CO level set in parameter 14 through the time set in parameter 15.</p> <p>Available settings: 0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 255 (turn on)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
@@ -237,6 +248,7 @@ Defines value of BASIC ON cmd to 4th assoc group<br /><h1>Overview</h1><p>This p
 Defines level of CO concentration for BASIC OFF to 4th assoc group<br /><h1>Overview</h1><p>This parameter defines the level of CO concentration below which falling will result in sending the BASIC OFF command to 4th association group. Available settings: 10-400 - CO concentration level in ppm</p> <p>Default setting: 25 (25 ppm)</p> <p>Parameter value must be at least 4 ppm lower than parameter 14 value.</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_2" type="integer" groupName="configuration" readOnly="true"
@@ -246,6 +258,7 @@ Defines level of CO concentration for BASIC OFF to 4th assoc group<br /><h1>Over
 Defines value of BASIC OFF sent to 4th association group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 4th association group after falling below the CO level set in parameter 17.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -255,6 +268,7 @@ Defines value of BASIC OFF sent to 4th association group<br /><h1>Overview</h1><
 Time interval between consecutive reports of temperature<br /><h1>Overview</h1><p>Time interval (in seconds) between consecutive reports of temperature (done by built-in temperature sensor).</p> <p>Short time interval means more frequent communication, which results in shortened battery life.</p> <p>Available settings:</p> <p>0 - no periodical reports</p> <p>10-1440 (5min - 12h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -264,6 +278,7 @@ Time interval between consecutive reports of temperature<br /><h1>Overview</h1><
 Min change in temperature resulting in a report being sent<br /><h1>Overview</h1><p>This parameter defines a minimum change in temperature resulting in a report being sent to the main Z-Wave controller.</p> <p>Available settings: 1-20 (0.5°C - 10°C, each 0.5°C)</p> <p>Default setting: 2 (1°C)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -273,6 +288,7 @@ Min change in temperature resulting in a report being sent<br /><h1>Overview</h1
 Temp level resulting in sending actions (parameters 2, 3 and 4)<br /><h1>Overview</h1><p>This parameter defines the temperature level, which exceeding will result in sending actions set in parameters 2, 3 and 4.</p> <p>Available settings: 1-85 (1°C - 85°C, each 1°C)</p> <p>Default setting: 55 (55°C)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>55</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -282,6 +298,7 @@ Temp level resulting in sending actions (parameters 2, 3 and 4)<br /><h1>Overvie
 Activates reporting of CO concentration to controller.<br /><h1>Overview</h1><p>This parameter activates reporting the value of CO concentration level to the main Z-Wave controller.</p> <p>Available settings:</p> <p>0 - disabled</p> <p>1 - enabled</p> <p>Default setting: 1 (enabled)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration"
@@ -291,6 +308,7 @@ Activates reporting of CO concentration to controller.<br /><h1>Overview</h1><p>
 Minchange in CO concentration resulting in sending new value to controller<br /><h1>Overview</h1><p>This parameter defines a minimum change in CO concentration level which results in sending a new value to the main Z-Wave controller. Available settings:2-6 (10 ppm - 30 ppm, each 5 ppm)</p> <p>Default setting: 2 (10 ppm)</p> <p>Parameter size: 1 [byte]</p> <p>Parameter is closely related to parameter 26.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
@@ -300,6 +318,7 @@ Minchange in CO concentration resulting in sending new value to controller<br />
 Defines CO concentration level sending a new value to controller<br /><h1>Overview</h1><p>This parameter defines the CO concentration level, which exceeding will result in sending a new value to the main Z-Wave controller, according to parameter 25 settings.</p> <p>Adjusting the value allows to get the accurate data in case of danger and helps to save the battery in normal conditions.</p> <p>Available settings: 10-255 (ppm)</p> <p>Default setting: 30 (30 ppm)</p> <p>Parameter size: 2 [bytes]</p> <p>Parameter is closely related to parameter 25.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

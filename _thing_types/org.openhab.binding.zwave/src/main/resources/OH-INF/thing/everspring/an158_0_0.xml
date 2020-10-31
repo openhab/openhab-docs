@@ -78,6 +78,7 @@ Switch Meter Plugin<br /><h1>Overview</h1><p>ON/OFF module with energy metering<
 Time of switching status to send status message<br /><h1>Overview</h1><p>This is the time the switching status needs to remain unchanged after a change to cause the device to send out a status message</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -90,6 +91,7 @@ Enable or Disable the status message function<br /><h1>Overview</h1><p>Enable or
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -99,6 +101,7 @@ Enable or Disable the status message function<br /><h1>Overview</h1><p>Enable or
 Autoreporting meter value interval<br /><h1>Overview</h1><p>The device will report its meter value within the interval set. Set to 0 will disable the autoreporting function.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

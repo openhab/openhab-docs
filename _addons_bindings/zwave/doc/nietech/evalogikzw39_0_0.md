@@ -99,7 +99,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [ZW39 Manual](https://opensmarthouse.org/zwavedatabase/1123/ZW39manual0527.pdf)
+* [ZW39 Manual](https://opensmarthouse.org/zwavedatabase/1123/reference/ZW39manual0527.pdf)
 
 ---
 

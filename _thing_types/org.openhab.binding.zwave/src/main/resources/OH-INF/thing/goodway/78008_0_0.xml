@@ -65,6 +65,7 @@ Door/Window Sensor with Magnet<br /><h1>Overview</h1><p>Z-Wave Door/Window senso
 255: Binary switch ON, 1-99: Dimmer level<br /><h1>Overview</h1><p>255: Binary switch ON</p> <p>1-99: Dimmer level </p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -74,6 +75,7 @@ Door/Window Sensor with Magnet<br /><h1>Overview</h1><p>Z-Wave Door/Window senso
 0: Disable, 0-127 Second<br /><h1>Overview</h1><p>0: Disable</p> <p>0-127 Seconds</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -83,6 +85,7 @@ Door/Window Sensor with Magnet<br /><h1>Overview</h1><p>Z-Wave Door/Window senso
 After force to wake up, delay time to enter standby mode again<br /><h1>Overview</h1><p>After force to wake up, delay time to enter standby mode again</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -92,6 +95,7 @@ After force to wake up, delay time to enter standby mode again<br /><h1>Overview
 Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mode, after wake up, delay time for standby again</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -99,6 +103,7 @@ Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mo
         <label>5: Set waiting exclusion time</label>
         <description>Set waiting exclusion time</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -111,6 +116,7 @@ Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mo
           <option value="0">Alwas wake up</option>
           <option value="1">Enter standby mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -123,6 +129,7 @@ Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mo
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -132,6 +139,7 @@ Delay time to enter standby after wake up<br /><h1>Overview</h1><p>In standby mo
 In tamper alarm mode, delay time for continuously send Sensor_Binary_report<br /><h1>Overview</h1><p>In tamper alarm mode, delay time for continuously send Sensor_Binary_report</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -145,6 +153,7 @@ The interval time of sending battery report<br /><h1>Overview</h1><p>The interva
           <option value="5">Report every 5 minutes</option>
           <option value="10">Report every 10 minutes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -154,6 +163,7 @@ The interval time of sending battery report<br /><h1>Overview</h1><p>The interva
 BIT0: sensor1 (S1), BIT1: sensor2 (S2)<br /><h1>Overview</h1><p>BIT0: sensor1 (S1)</p> <p>BIT1: sensor2 (S2)</p> <p>0 (00b): S2 NO, S1 NO</p> <p>1 (01b): S2 NO, S1 NC</p> <p>2 (10b): S2 NC, S1 NO</p> <p>3 (11b): S2 NC, S1 NC</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

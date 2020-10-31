@@ -73,6 +73,7 @@ GE Z-Wave Plus Wireless Smart Lighting Control Appliance Module<br /><h1>Overvie
           <option value="1">LED on when switch is OFF</option>
           <option value="2">LED Light Always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

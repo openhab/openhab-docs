@@ -456,8 +456,8 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual v1.2](https://opensmarthouse.org/zwavedatabase/567/Qubino-Flush-RGBW-Dimmer-PLUS-user-manual-V1-2-eng.pdf)
-* [Extended manual](https://opensmarthouse.org/zwavedatabase/567/Qubino-Flush-RGBW-Dimmer-PLUS-extended-manual-eng-2-2.pdf)
+* [User Manual v1.2](https://opensmarthouse.org/zwavedatabase/567/reference/Qubino-Flush-RGBW-Dimmer-PLUS-user-manual-V1-2-eng.pdf)
+* [Extended manual](https://opensmarthouse.org/zwavedatabase/567/reference/Qubino-Flush-RGBW-Dimmer-PLUS-extended-manual-eng-2-2.pdf)
 
 ---
 

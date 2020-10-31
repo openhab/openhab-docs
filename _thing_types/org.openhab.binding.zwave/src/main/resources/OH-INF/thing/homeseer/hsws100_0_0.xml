@@ -64,6 +64,7 @@ Defines the behavior of the indicator LED.<br /><h1>Overview</h1><p>Defines the 
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -74,6 +75,7 @@ Defines the behavior of the indicator LED.<br /><h1>Overview</h1><p>Defines the 
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

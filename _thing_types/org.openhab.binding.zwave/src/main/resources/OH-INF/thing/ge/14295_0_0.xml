@@ -62,6 +62,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
           <option value="0">(Default) No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -69,6 +70,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>7: Dim Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -76,6 +78,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>8: Dim Rate step timing</label>
         <description>Timing of steps or levels</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -83,6 +86,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>9: Dim 2 Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -90,6 +94,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>10: Dim 2 Step Timing</label>
         <description>Timing of steps</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -97,6 +102,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>11: Dim 3 Rate Steps</label>
         <description>Number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -104,6 +110,7 @@ In-Wall Dimmer Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
         <label>12: Dim 3 Rate Timing</label>
         <description>Timing of steps or levels</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

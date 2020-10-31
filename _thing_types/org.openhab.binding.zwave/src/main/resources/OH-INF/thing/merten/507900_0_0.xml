@@ -53,6 +53,7 @@ Wall Dimmer Module - Flush Mounted<br /><h1>Overview</h1><p>The flush-mounted CO
         <label>196: Dimmer speed</label>
         <description>Set dimming speed. fast=0 ... 240=slow.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

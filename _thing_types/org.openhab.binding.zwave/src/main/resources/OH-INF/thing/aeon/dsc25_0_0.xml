@@ -52,6 +52,7 @@ Smart Energy Illuminator G2<br /><h1>Overview</h1><p>Plugin dimmer for a lamp</p
                  min="1" max="33000">
         <label>2: Configure Blinking LED</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

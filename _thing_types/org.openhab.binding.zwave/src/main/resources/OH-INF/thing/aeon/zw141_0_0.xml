@@ -73,6 +73,7 @@ Nano Shutter Controller<br /><h1>Overview</h1><p>Aeotec Nano Shutter is a Z-Wave
         <label>35: Moving time left to right</label>
         <description>Set the moving time from up (left) to down (right) for curtain.</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
@@ -82,6 +83,7 @@ Nano Shutter Controller<br /><h1>Overview</h1><p>Aeotec Nano Shutter is a Z-Wave
 Report sent to associated nodes in association group 1<br /><h1>Overview</h1><p>To set which report would be sent to the associated nodes in association group 1 when the state of output load is changed.<br />0 = Nothing<br />1 = Basic Report CC<br />Note: When just only one channel load state is changed, the report message Basic Report CC would be Multi Channel encapsulated.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_85_1" type="integer" groupName="configuration"
@@ -91,6 +93,7 @@ Report sent to associated nodes in association group 1<br /><h1>Overview</h1><p>
 Operation mode of external switch<br /><h1>Overview</h1><p>Set the operation mode of external switch.<br />0 = Operation Mode 1.<br />1 = Operation Mode 2.<br />For detailed instructions for Operation Mode 1 and 2, see end of this table.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -100,6 +103,7 @@ Operation mode of external switch<br /><h1>Overview</h1><p>Set the operation mod
 External switch mode of S1<br /><h1>Overview</h1><p>Set the external switch mode of S1<br />0 = Unidentified mode.<br />1 = Reserved.<br />2 = 3 way switch mode<br />3 = Push button mode<br />4 = Enter automatic identification mode (The blue Led will fast blink).<br />Note: When the switch mode of S1 is determined or identified or configured, this mode value will not be reset after exclusion.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_1" type="integer" groupName="configuration"
@@ -109,6 +113,7 @@ External switch mode of S1<br /><h1>Overview</h1><p>Set the external switch mode
 External switch mode of S2<br /><h1>Overview</h1><p>Set the external switch mode of S2<br />0 = Unidentified mode.<br />1 = Reserved<br />2 = 3 way switch mode<br />3 = push button mode<br />4 = enter automatic identification mode (The green Led will fast blink).<br />Note: When the switch mode of S2 is determined or identified or configured, this mode value will not be reset after exclusion.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration"
@@ -118,6 +123,7 @@ External switch mode of S2<br /><h1>Overview</h1><p>Set the external switch mode
 Enable/disable the configuration parameters to be locked<br /><h1>Overview</h1><p>Enable/disable the configuration parameters to be locked.<br />0 = disable.<br />1 = enable.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

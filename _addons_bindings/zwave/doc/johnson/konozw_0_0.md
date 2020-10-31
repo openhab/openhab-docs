@@ -412,7 +412,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1154/KONOzw-Operation-Guideline-V1-7-190711.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1154/reference/KONOzw-Operation-Guideline-V1-7-190711.pdf)
 
 ---
 

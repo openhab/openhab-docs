@@ -194,7 +194,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/39/EVLRMAS-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/39/reference/EVLRMAS-Manual.pdf)
 
 ---
 

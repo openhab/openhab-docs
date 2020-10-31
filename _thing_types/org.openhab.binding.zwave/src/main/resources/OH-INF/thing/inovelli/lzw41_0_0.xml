@@ -64,6 +64,7 @@ White Tunable Smart Bulb<br /><h1>Overview</h1><p>Full range of cool or warm whi
 0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /><h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

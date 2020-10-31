@@ -80,6 +80,7 @@ Send Basic Set to Association Group 2<br /><h1>Overview</h1><p>Configures the se
           <option value="0">Don't Send Basic Set</option>
           <option value="255">Send Basic Set</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -92,6 +93,7 @@ Send Sensor Binary Report to Association Group 1<br /><h1>Overview</h1><p>Config
           <option value="0">Send Sensor Binary Report</option>
           <option value="255">Don't Send Binary Sensor Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

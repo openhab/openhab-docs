@@ -65,6 +65,7 @@ Plug-in Dimmer<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Plug-in
         <label>1: Reset to factory settings</label>
         <description>Set all configuration values to default values (factory settings).</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dim
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -86,6 +88,7 @@ Enable dimming<br /><h1>Overview</h1><p>This parameter is used to enable the dim
 Maximum powerload<br /><h1>Overview</h1><p>The maximum powerload in watts when light is turned on, when measured higher then this value the Plugin Dimmer is automatically stops with dimming or is turned off.</p>
         ]]></description>
         <default>125</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -95,6 +98,7 @@ Maximum powerload<br /><h1>Overview</h1><p>The maximum powerload in watts when l
 Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -104,6 +108,7 @@ Dimming speed<br /><h1>Overview</h1><p>The speed of dimming when activated (manu
 Fading up speed<br /><h1>Overview</h1><p>The speed of fading up when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -113,6 +118,7 @@ Fading up speed<br /><h1>Overview</h1><p>The speed of fading up when activated (
 Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 1%  Maximum value = 100%</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -122,6 +128,7 @@ Auto meter report: percentage<br /><h1>Overview</h1><p>A percentage that an ener
 Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent.</p> <p>Minimum value = 5 watt  Maximum value = 255 watt</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -131,6 +138,7 @@ Auto meter report: watt<br /><h1>Overview</h1><p>A watt value that an energy val
 Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent.</p> <p>Minimum value = 10 seconds  Maximum value = 255 seconds</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -140,6 +148,7 @@ Auto meter report: time<br /><h1>Overview</h1><p>A time value that has to be pas
 Last known status<br /><h1>Overview</h1><p>What to do with lamp status when power applied. </p> <p>If 0x00: Always switch light off when power applied. </p> <p>If &gt; 0x00: Switch lamp on/off depending on last known lampstatus before power was disconnected.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -149,6 +158,7 @@ Last known status<br /><h1>Overview</h1><p>What to do with lamp status when powe
 Fading down speed<br /><h1>Overview</h1><p>The speed of fading down when activated (manual and RF). Fade speed is 1% per value (* 10 ms)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -157,7 +157,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Manual](https://opensmarthouse.org/zwavedatabase/9/WADWAZ-install.pdf)
+* [Installation Manual](https://opensmarthouse.org/zwavedatabase/9/reference/WADWAZ-install.pdf)
 
 ---
 

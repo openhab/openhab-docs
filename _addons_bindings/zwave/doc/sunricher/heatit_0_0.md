@@ -213,9 +213,9 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product sheet](https://opensmarthouse.org/zwavedatabase/1077/Heatit-Z-Push-Button-8.pdf)
-* [Norweian Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/anual-heatit-z-push-button-8-fw-1-25-ver2018-a.pdf)
-* [English Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/a4-manual-heatit-z-push-button-8-fw-1-25-ver2018-b.pdf)
+* [Product sheet](https://opensmarthouse.org/zwavedatabase/1077/reference/Heatit-Z-Push-Button-8.pdf)
+* [Norweian Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/reference/anual-heatit-z-push-button-8-fw-1-25-ver2018-a.pdf)
+* [English Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/reference/a4-manual-heatit-z-push-button-8-fw-1-25-ver2018-b.pdf)
 
 ---
 

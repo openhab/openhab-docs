@@ -66,6 +66,7 @@ Set the mode for the switch when receiving SWITCH ALL commands.<br /><h1>Overvie
           <option value="2">Include in All Off group</option>
           <option value="255">Include in All On and All Off groups</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Dimmer state saved or not when power is down<br /><h1>Overview</h1><p>0x00 not s
           <option value="0">not saved</option>
           <option value="1">saved</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -91,6 +93,7 @@ Momentary buttons/2-state Switches/S1 dim up, S2 dim down<br /><h1>Overview</h1>
           <option value="1">Toggle</option>
           <option value="2">S1 dim up, S2 dim down</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -103,6 +106,7 @@ toggle Dimmer without or with specified on/off position<br /><h1>Overview</h1><p
           <option value="0">without specified on/off position</option>
           <option value="1">with specified on/off position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -117,6 +121,7 @@ forbid/allow ALL ON/ALL OFF<br /><h1>Overview</h1><p>ALL ON/ALL OFF</p> <p>Value
           <option value="2">allow ALL ON, forbid ALL OFF</option>
           <option value="255">allow ALL ON, allow ALL OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -126,6 +131,7 @@ forbid/allow ALL ON/ALL OFF<br /><h1>Overview</h1><p>ALL ON/ALL OFF</p> <p>Value
 percentage brightness level<br /><h1>Overview</h1><p>Minimum brightness level</p> <p>Values in the range 1 to 98 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_5_1 and is of type INTEGER.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -135,6 +141,7 @@ percentage brightness level<br /><h1>Overview</h1><p>Minimum brightness level</p
 2~99 percentage brightness level<br /><h1>Overview</h1><p>Maximum brightness level</p> <p>Values in the range 2 to 99 may be set.</p> <p>The manufacturer defined default value is 99.</p> <p>This parameter has the configuration ID config_6_1 and is of type INTEGER.</p>
         ]]></description>
         <default>63</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -144,6 +151,7 @@ percentage brightness level<br /><h1>Overview</h1><p>Minimum brightness level</p
 Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time(Manual)</p> <p>Values in the range 1 to 255 may be set.</p> <p>The manufacturer defined default value is 3.</p> <p>This parameter has the configuration ID config_7_2 and is of type INTEGER.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -153,6 +161,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time(Manua
 1~99 percentage value (modification isn’t recommended)<br /><h1>Overview</h1><p>Single dimming step size (Manual)</p> <p>Values in the range 1 to 99 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_8_1 and is of type INTEGER.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -162,6 +171,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time(Manua
 Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time (Auto)</p> <p>Values in the range 1 to 255 may be set.</p> <p>The manufacturer defined default value is 3.</p> <p>This parameter has the configuration ID config_9_2 and is of type INTEGER.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -171,6 +181,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time (Auto
 1~99 percentage value (modification isn’t recommended)<br /><h1>Overview</h1><p>Single dimming step size (Auto)</p> <p>Values in the range 1 to 99 may be set.</p> <p>The manufacturer defined default value is 1.</p> <p>This parameter has the configuration ID config_10_1 and is of type INTEGER.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -180,6 +191,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time (Auto
 0x00 function disabled 0x0001~0x00FF 1s~255s<br /><h1>Overview</h1><p>Timer function (Auto-off)</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_11_2 and is of type INTEGER.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_0" type="integer" groupName="configuration" readOnly="true"
@@ -187,6 +199,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time (Auto
         <label>12: Reversed</label>
         <description>Reversed</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -196,6 +209,7 @@ Max 2.55s, in 10ms steps<br /><h1>Overview</h1><p>Single dimming step time (Auto
 1~99 percentage value switch<br /><h1>Overview</h1><p>One click of S1</p> <p>Values in the range 0 to 99 may be set.</p> <p>The manufacturer defined default value is 99.</p> <p>This parameter has the configuration ID config_13_1 and is of type INTEGER.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -208,6 +222,7 @@ max brightness level<br /><h1>Overview</h1><p>Double click of S1</p> <p>Values i
           <option value="0">function disabled</option>
           <option value="1">reach max brightness level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -221,6 +236,7 @@ Dimming level report only valid when holding external button<br /><h1>Overview</
           <option value="1">only report Basic Set ON</option>
           <option value="2">only report Basic Set OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -233,6 +249,7 @@ Operation report from Switch1 to Association Group 2<br /><h1>Overview</h1><p>Op
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -248,6 +265,7 @@ Enable S2 switch, enable Scene Activation and send Basic Set<br /><h1>Overview</
           <option value="3">send Basic ON/ OFF only</option>
           <option value="255">disable S2 Function</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -262,6 +280,7 @@ Operation report from Switch2 to Association Group 4<br /><h1>Overview</h1><p>Op
           <option value="2">only send Basic OFF</option>
           <option value="255">no report to AG 4</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -271,6 +290,7 @@ Operation report from Switch2 to Association Group 4<br /><h1>Overview</h1><p>Op
 0 Scene Activation disabled 1~255 send Activation CC to AG1<br /><h1>Overview</h1><p>Scene ID sent to AG1 when one click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_19_1 and is of type INTEGER.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -280,6 +300,7 @@ Operation report from Switch2 to Association Group 4<br /><h1>Overview</h1><p>Op
 0 Scene Activation disabled 1~255 send Activation CC<br /><h1>Overview</h1><p>Scene ID sent to AG1 when double click of S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_20_1 and is of type INTEGER.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -289,6 +310,7 @@ Operation report from Switch2 to Association Group 4<br /><h1>Overview</h1><p>Op
 0 Scene Activation disabled 1~255 send Activation CC<br /><h1>Overview</h1><p>Scene ID sent to AG1 when hold S2</p> <p>Values in the range 0 to 255 may be set.</p> <p>The manufacturer defined default value is 0.</p> <p>This parameter has the configuration ID config_21_1 and is of type INTEGER.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -301,6 +323,7 @@ Operation report from Switch2 to Association Group 4<br /><h1>Overview</h1><p>Op
           <option value="0">Default</option>
           <option value="85">restore factory setting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

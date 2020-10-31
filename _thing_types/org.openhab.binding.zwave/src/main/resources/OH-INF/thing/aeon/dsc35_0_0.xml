@@ -67,6 +67,7 @@ Micro Double Switch<br /><h1>Overview</h1><p>Micro Double Switch</p> <br /><h2>I
           <option value="1">Send Hail CC</option>
           <option value="2">Send Basic Report CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

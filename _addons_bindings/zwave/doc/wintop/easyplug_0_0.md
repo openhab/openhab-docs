@@ -101,7 +101,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual Text](https://opensmarthouse.org/zwavedatabase/218/Easyplug-Manual.pdf)
+* [Manual Text](https://opensmarthouse.org/zwavedatabase/218/reference/Easyplug-Manual.pdf)
 
 ---
 

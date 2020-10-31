@@ -202,9 +202,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/AMZ-SOLAR-FAKRO-EN.pdf)
-* [Manual (DE)](https://opensmarthouse.org/zwavedatabase/1030/AMZ-Solar-Z-Wave-DE.pdf)
-* [Zwave User Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/MZ-SOLAR-User-Manual-Zwave.pdf)
+* [Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/reference/AMZ-SOLAR-FAKRO-EN.pdf)
+* [Manual (DE)](https://opensmarthouse.org/zwavedatabase/1030/reference/AMZ-Solar-Z-Wave-DE.pdf)
+* [Zwave User Manual (EN)](https://opensmarthouse.org/zwavedatabase/1030/reference/MZ-SOLAR-User-Manual-Zwave.pdf)
 
 ---
 

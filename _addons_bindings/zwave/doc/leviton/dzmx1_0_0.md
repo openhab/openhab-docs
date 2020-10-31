@@ -89,8 +89,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/196/installation-instructions.pdf)
-* [Product Overview](https://opensmarthouse.org/zwavedatabase/196/Leviton-DZMX1.pdf)
+* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/196/reference/installation-instructions.pdf)
+* [Product Overview](https://opensmarthouse.org/zwavedatabase/196/reference/Leviton-DZMX1.pdf)
 
 ---
 

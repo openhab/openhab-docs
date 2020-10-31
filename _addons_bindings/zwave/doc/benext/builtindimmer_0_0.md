@@ -315,7 +315,7 @@ Association group 3 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/225/builtindimmer-quickstart.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/225/reference/builtindimmer-quickstart.pdf)
 
 ---
 

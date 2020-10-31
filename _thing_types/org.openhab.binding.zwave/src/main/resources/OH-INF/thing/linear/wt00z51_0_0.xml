@@ -50,6 +50,7 @@ LED mode for attached load<br /><h1>Overview</h1><p>The Z-Wave BASIC Command Cla
           <option value="3">Always off</option>
           <option value="4">Blink when transmitting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -62,6 +63,7 @@ Allows making the top be "off"<br /><h1>Overview</h1><p>To change the top of the
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

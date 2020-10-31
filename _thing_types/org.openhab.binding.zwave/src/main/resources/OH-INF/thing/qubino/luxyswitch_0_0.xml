@@ -171,6 +171,7 @@ Qubino Luxy Smart Switch<br /><h1>Overview</h1><p>The Qubino LUXY Smart Switch 
           <option value="0">NO</option>
           <option value="1">NC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -183,6 +184,7 @@ Turning off alarming<br /><h1>Overview</h1><p>Default value 1</p> <p>0 – only 
           <option value="0">Only by Z-Wave</option>
           <option value="1">Capacitive input or by Z-wave</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -192,7 +194,6 @@ Turning off alarming<br /><h1>Overview</h1><p>Default value 1</p> <p>0 – only 
 Auto On timer<br /><h1>Overview</h1><p>Defines the time after which the device is turned to last known state.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns on</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -202,7 +203,6 @@ Auto On timer<br /><h1>Overview</h1><p>Defines the time after which the device i
 Auto Off timer<br /><h1>Overview</h1><p>Defines the time after which the device is turned off.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -212,7 +212,6 @@ Auto Off timer<br /><h1>Overview</h1><p>Defines the time after which the device 
 Auto On timer relay<br /><h1>Overview</h1><p>Defines the time after which the device's relay is turned to last known state.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30  – 32535 seconds after which the device turns on</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -222,6 +221,7 @@ Auto On timer relay<br /><h1>Overview</h1><p>Defines the time after which the de
 Auto Off timer relay<br /><h1>Overview</h1><p>Defines the time after which the device's relay is turned off.</p> <p>Default value 0</p> <p>0 – disabled</p> <p>30 – 32535 = 30 – 32535 seconds after which the device turns off</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -231,6 +231,7 @@ Auto Off timer relay<br /><h1>Overview</h1><p>Defines the time after which the d
 Restore state on power failure<br /><h1>Overview</h1><p>Default value 1</p> <p>1 – enabled (the device will restore state on power failure)</p> <p>0 – dissabled (the device will not restore state on power failure and will remain off)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -243,6 +244,7 @@ Restore relay state on power failure<br /><h1>Overview</h1><p>Default value 1</p
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -252,7 +254,6 @@ Restore relay state on power failure<br /><h1>Overview</h1><p>Default value 1</p
 Power Consumption Reporting Threshold<br /><h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set (by default), the device will report any power consumption changes of 10% or more compared to the last reading.</p> <p>Values (size is 1 byte dec):</p> <p>default value 10</p> <p>0 - Power consumption reporting disabled</p> <p>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</p> <p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -262,7 +263,6 @@ Power Consumption Reporting Threshold<br /><h1>Overview</h1><p>Choose by how muc
 Power Consumption Threshold (time)<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <p>default value 0</p> <p>0 - Power consumption reporting disabled</p> <p>30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_70_2" type="integer" groupName="configuration"
@@ -272,7 +272,6 @@ Power Consumption Threshold (time)<br /><h1>Overview</h1><p>Set value refers to 
 Overload safety switch<br /><h1>Overview</h1><p>The function allows for turning off the controlled device in case of exceeding the defined power for more than 5s. Controlled device can be turned back on by input I1 or sending a control frame.</p> <p>Values (size is 2 byte dec):</p> <p>default value 2300</p> <p>1 – 2300 = 1 W – 2300W</p> <p>0 = function not active</p> <p>ⓘ NOTE: This functionality is not an overload safety protection, please check the technical specifications chapter for more details.</p> <p>In case of overload the following message will be send towards the controller:</p> <p>COMMAND_CLASS_NOTIFICATION_V5</p> <p>The Alarm V1 type field set to 0x00</p> <p>Notification Type 0x08 and 0x08 (Overload detected)</p>
         ]]></description>
         <default>2300</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

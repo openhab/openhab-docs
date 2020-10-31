@@ -58,6 +58,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night 
           <option value="1">LED on when switch is ON</option>
           <option value="2">LED always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Change the top of the switch to OFF<br /><h1>Overview</h1><p>Change the top of t
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

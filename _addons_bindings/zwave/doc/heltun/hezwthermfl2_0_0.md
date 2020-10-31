@@ -1061,7 +1061,7 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [Heltun Heating Thermostat Manual](https://opensmarthouse.org/zwavedatabase/1023/HELTUN-Heating-Thermostat-Manual-v1-0.pdf)
+* [Heltun Heating Thermostat Manual](https://opensmarthouse.org/zwavedatabase/1023/reference/HELTUN-Heating-Thermostat-Manual-v1-0.pdf)
 
 ---
 

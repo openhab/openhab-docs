@@ -66,6 +66,7 @@ Keypad Deadbolt<br /><h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Keypad Deadbolt<br /><h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Keypad Deadbolt<br /><h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -93,7 +96,6 @@ Keypad Deadbolt<br /><h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> 
         <label>7: Basic Set</label>
         <description>Byte to send with set command to devices in association group 1</description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

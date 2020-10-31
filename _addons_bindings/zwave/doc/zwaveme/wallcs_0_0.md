@@ -381,7 +381,7 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/145/z-wave-me-wall-controller-set-manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/145/reference/z-wave-me-wall-controller-set-manual.pdf)
 
 ---
 

@@ -60,6 +60,7 @@ Wall Mounted Switch<br /><h1>Overview</h1><p>Heatit Z-Push Button 8 is a battery
           <option value="0">normal operation</option>
           <option value="21930">factory reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

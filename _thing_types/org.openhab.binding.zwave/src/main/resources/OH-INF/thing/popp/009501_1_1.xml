@@ -63,6 +63,7 @@ Popp 09501 Flow Stop<br /><h1>Overview</h1><p>The Flow Stop moves the operating 
 No help available, self explanatory....<br /><h1>Overview</h1><p>0: LED always ON (Only on operation OFF)<br />1: LED always OFF (Only on operation ON)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration"
@@ -72,6 +73,7 @@ No help available, self explanatory....<br /><h1>Overview</h1><p>0: LED always O
 The parameter defines how to control the shut-off controller.<br /><h1>Overview</h1><p>0: Remote and manually open/close<br />1: Remote open/close only<br />2: Only remote open; only manually closing<br />3: Only manually open; only remote closing<br />4: Manually open/close only</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

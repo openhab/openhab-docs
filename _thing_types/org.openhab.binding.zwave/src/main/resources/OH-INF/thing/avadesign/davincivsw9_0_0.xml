@@ -183,6 +183,7 @@
 EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -190,6 +191,7 @@ EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>2: EP 1 Partner Id</label>
         <description>EP 1 Partner Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -197,6 +199,7 @@ EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>3: EP 1 Blind Duration</label>
         <description>EP 1 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -206,6 +209,7 @@ EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 1 Output<br /><h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -215,6 +219,7 @@ EP 1 Output<br /><h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output<
 EP 1 Button attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1] = Sound enable<br />Bit [2] = Dry contact enable<br />Bit [3] = Motor enable</p>
         ]]></description>
         <default>7</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -224,6 +229,7 @@ EP 1 Button attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1]
 EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -231,6 +237,7 @@ EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>7: EP 2 Partner Id</label>
         <description>EP 2 Partner Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -238,6 +245,7 @@ EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>8: EP 2 Blind Duration</label>
         <description>EP 2 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -247,6 +255,7 @@ EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -254,6 +263,7 @@ EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>12: EP 3 Partner-Id</label>
         <description>EP 3 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -261,6 +271,7 @@ EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>13: EP 3 Blind Duration</label>
         <description>EP 3 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -270,6 +281,7 @@ EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -277,6 +289,7 @@ EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>17: EP 4 Partner-Id</label>
         <description>EP 4 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -284,6 +297,7 @@ EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>18: EP 4 Blind Duration</label>
         <description>EP 4 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -293,6 +307,7 @@ EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -300,6 +315,7 @@ EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>22: EP 5 Partner-Id</label>
         <description>EP 5 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -307,6 +323,7 @@ EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>23: EP 5 Blind Duration</label>
         <description>EP 5 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration"
@@ -316,6 +333,7 @@ EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration"
@@ -323,6 +341,7 @@ EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>27: EP 6 Partner-Id</label>
         <description>EP 6 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
@@ -330,6 +349,7 @@ EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>28: EP 6 Blind Duration</label>
         <description>EP 6 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration"
@@ -339,6 +359,7 @@ EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -346,6 +367,7 @@ EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>32: EP 7 Partner-Id</label>
         <description>EP 7 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration"
@@ -353,6 +375,7 @@ EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>33: EP 7 Blind Duration</label>
         <description>EP 7 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration"
@@ -362,6 +385,7 @@ EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration"
@@ -369,6 +393,7 @@ EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>37: EP 8 Partner-Id</label>
         <description>EP 8 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_1" type="integer" groupName="configuration"
@@ -376,6 +401,7 @@ EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>38: EP 8 Blind Duration</label>
         <description>EP 8 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -385,6 +411,7 @@ EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
 EP 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration"
@@ -392,6 +419,7 @@ EP 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>42: EP 9 Partner-Id</label>
         <description>EP 9 Partner-Id</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
@@ -399,6 +427,7 @@ EP 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
         <label>43: EP 9 Blind Duration</label>
         <description>EP 9 Blind Duration</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -91,6 +91,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
           <option value="0">Do not save Relay State</option>
           <option value="1">Save Relay State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -101,6 +102,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
           <option value="0">Button disabled</option>
           <option value="1">Button enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -111,6 +113,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
           <option value="0">Disable LED</option>
           <option value="1">Enable LED</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -121,6 +124,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
           <option value="0">Timer Disable</option>
           <option value="1">Timer Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -128,6 +132,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
         <label>5: Timing Length Setting</label>
         <description>Timing Length Setting</description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -138,6 +143,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
           <option value="0">Disable Meter Report</option>
           <option value="1">Enable Meter Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -145,6 +151,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
         <label>7: Interval of meter reporting setting</label>
         <description>Interval of meter reporting setting</description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -154,6 +161,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This Plug provides line voltage, curre
 Maximum output current setting<br /><h1>Overview</h1><p>The Value must be greather than the alarm value defined in Parameter 10</p>
         ]]></description>
         <default>16</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -161,6 +169,7 @@ Maximum output current setting<br /><h1>Overview</h1><p>The Value must be greath
         <label>9: Current Differential Setting</label>
         <description>Current Differential Setting</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -170,6 +179,7 @@ Maximum output current setting<br /><h1>Overview</h1><p>The Value must be greath
 Current Alarm Value<br /><h1>Overview</h1><p>The Value must be less than the max. output value defined in Parameter 8</p>
         ]]></description>
         <default>13</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -182,6 +192,7 @@ Clear accumulated energy<br /><h1>Overview</h1><p>If this parameter is set to '0
           <option value="0">Save accumulated energy</option>
           <option value="1">Clear Accumulated Energy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

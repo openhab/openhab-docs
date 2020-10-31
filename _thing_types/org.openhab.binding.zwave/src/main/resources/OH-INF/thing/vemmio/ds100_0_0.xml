@@ -202,6 +202,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>0: Watt Meter Report Period</label>
         <description>720*5s=3600s=1hour</description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -209,6 +210,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>2: KWH Meter Report Period</label>
         <description>6*10 min = 1 hour</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -216,6 +218,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>3: Selected Relay</label>
         <description>1: Relay 1, 2: Relay 2, 3: Relay 1 &amp; Relay 2</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -223,6 +226,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>4: Edge or Pulse mode or Edge-Toggle mode</label>
         <description>1: Edge mode, 2: Pulse mode, 3: Edge-Toggle mode</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -230,12 +234,14 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>5: Threshold of current for load caution</label>
         <description>750*0.01A=7.5A</description>
         <default>750</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
                  min="1" max="10000">
         <label>6: Threshold of KWH for load caution</label>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -243,6 +249,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>7: Restore switch state mode</label>
         <description>0: Switch off, 1: Last switch, 2: Switch on</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -250,6 +257,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>8: Auto off timer</label>
         <description>0: Disable auto off function, 1: 0x0-0x7FFF 1s-32767s</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -257,6 +265,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>9: RF off command mode</label>
         <description>0: Switch off, 1: Ignore, 2: Switch toggle, 3: Switch on</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -264,6 +273,7 @@ Double Switch in a dual relay in-wall module.<br /><h1>Overview</h1><p>Vemmio Do
         <label>10: Existence of endpoint 3</label>
         <description>1: endpoint 3 exists, 2: No endpoint 3</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

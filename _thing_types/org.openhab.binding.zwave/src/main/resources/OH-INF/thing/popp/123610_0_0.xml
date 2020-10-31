@@ -56,6 +56,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This is a switch plug that can be plac
           <option value="2">On when switch off</option>
           <option value="3">Operated by command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -63,6 +64,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This is a switch plug that can be plac
         <label>2: Automatic switch off time</label>
         <description>If not zero, automatically switch off after a user defined time (in seconds)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -77,6 +79,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
           <option value="2">Switch ON</option>
           <option value="3">Switch on if load is off else switch off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -89,6 +92,7 @@ Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the s
           <option value="0">No - turn OFF</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

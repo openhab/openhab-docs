@@ -108,6 +108,7 @@ American Standard Z-Wave Programmable Thermostat<br /><h1>Overview</h1><p>T500B 
           <option value="0">Hold</option>
           <option value="1">Schedule</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

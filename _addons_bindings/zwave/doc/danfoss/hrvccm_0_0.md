@@ -62,7 +62,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Installation](https://opensmarthouse.org/zwavedatabase/166/AIR-installation-guide-VIEWA402-hi-res.pdf)
+* [Installation](https://opensmarthouse.org/zwavedatabase/166/reference/AIR-installation-guide-VIEWA402-hi-res.pdf)
 
 ---
 

@@ -426,7 +426,7 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/635/flush-shutter-ZMNHCA2.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/635/reference/flush-shutter-ZMNHCA2.pdf)
 
 ---
 

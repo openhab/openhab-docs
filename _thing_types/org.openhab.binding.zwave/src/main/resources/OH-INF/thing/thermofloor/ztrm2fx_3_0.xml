@@ -168,6 +168,7 @@ Operation mode<br /><h1>Overview</h1><p>Value = 0, Off (default)<br />Value = 1,
           <option value="2">Cooling mode (not implemented)</option>
           <option value="11">Energy saving heating mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -181,6 +182,7 @@ Sensor mode<br /><h1>Overview</h1><p>Value = 0, F-mode, floor sensor mode (defau
           <option value="3">A2-mode, external room sensor mode</option>
           <option value="4">A2F-mode, external sensor with floor limitation</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -197,6 +199,7 @@ Floor sensor type<br /><h1>Overview</h1><p>1. Value = 0, 10K-NTC (default)<br />
           <option value="4">33K-NTC</option>
           <option value="5">47K-NTC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -206,7 +209,6 @@ Floor sensor type<br /><h1>Overview</h1><p>1. Value = 0, 10K-NTC (default)<br />
 Temperature control hysteresis (DIFF I)<br /><h1>Overview</h1><p>1. Value = 3 - 30, 0.3C - 3.0C (default is 0.5C)</p>
         ]]></description>
         <default>5</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -216,6 +218,7 @@ Temperature control hysteresis (DIFF I)<br /><h1>Overview</h1><p>1. Value = 3 - 
 Floor minimum temperature limit (FLo)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -225,6 +228,7 @@ Floor minimum temperature limit (FLo)<br /><h1>Overview</h1><p>1. Value = 50 - 4
 Floor maximum temperature (FHi)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -234,6 +238,7 @@ Floor maximum temperature (FHi)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.
 Air (A2) minimum temperature limit (ALo)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -243,6 +248,7 @@ Air (A2) minimum temperature limit (ALo)<br /><h1>Overview</h1><p>1. Value = 50 
 Air (A2) maximum temperature limit (AHi)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -252,6 +258,7 @@ Air (A2) maximum temperature limit (AHi)<br /><h1>Overview</h1><p>1. Value = 50 
 Heating mode setpoint (CO)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C</p>
         ]]></description>
         <default>210</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -261,6 +268,7 @@ Heating mode setpoint (CO)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 
 Energy saving mode setpoint (ECO)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 18.0C</p>
         ]]></description>
         <default>180</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -270,6 +278,7 @@ Energy saving mode setpoint (ECO)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 
 Cooling setpoint (COOL)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C</p>
         ]]></description>
         <default>210</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -279,6 +288,7 @@ Cooling setpoint (COOL)<br /><h1>Overview</h1><p>1. Value = 50 - 400, 5.0C - 40.
 Floor sensor calibration<br /><h1>Overview</h1><p>1. Value = -40 - 40, -4.0C - 4.0C, default = 0.0C</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -288,6 +298,7 @@ Floor sensor calibration<br /><h1>Overview</h1><p>1. Value = -40 - 40, -4.0C - 4
 External sensor calibration<br /><h1>Overview</h1><p>1. Value = -40 - 40, -4.0V - 4.0C, default = 0.0C</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -300,6 +311,7 @@ Temperature display<br /><h1>Overview</h1><p>1. Value = 0, Display setpoint temp
           <option value="0">Display setpoint temperature (default)</option>
           <option value="1">Display measured temperature</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -309,6 +321,7 @@ Temperature display<br /><h1>Overview</h1><p>1. Value = 0, Display setpoint temp
 Button brightness - dimmed state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0% - 100%, default = 50%</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -318,6 +331,7 @@ Button brightness - dimmed state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0%
 Button brightness - active state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0% - 100%, default = 100%</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -327,6 +341,7 @@ Button brightness - active state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0%
 Display brightness - dimmed state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0% - 100%, default = 50%</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -336,6 +351,7 @@ Display brightness - dimmed state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0
 Display brightness - active state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0% - 100%, default = 100%</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_2" type="integer" groupName="configuration"
@@ -345,7 +361,6 @@ Display brightness - active state<br /><h1>Overview</h1><p>1. Value = 0 - 100, 0
 Temperature report interval<br /><h1>Overview</h1><p>1. Value = 0, Reporting of temperature disabled<br />2. Value = 30 - 32767, 30s - 32767s, default = 60s</p> <p>Time interval between consecutive temperature reports.<br />Temperature reports can also be sent as a result of polling.</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -355,6 +370,7 @@ Temperature report interval<br /><h1>Overview</h1><p>1. Value = 0, Reporting of 
 Temperature report hysteresis<br /><h1>Overview</h1><p>1. Value = 1 - 100, 0.1C - 10.0C, default = 1.0C</p> <p>The temperature report will be sent if there is a difference in temperature from the previous value reported,<br />defined in this parameter (hysteresis).<br />Temperature reports can also be sent as a result of polling.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
@@ -364,7 +380,6 @@ Temperature report hysteresis<br /><h1>Overview</h1><p>1. Value = 1 - 100, 0.1C 
 Meter report interval<br /><h1>Overview</h1><p>1. Value = 0, Reporting of metering values is disabled<br />2. Value = 30 - 32767, 30s - 32767s, default = 60s</p> <p>Time interval between consecutive meter reports.<br />Meter reports can also be sent as a result of polling.</p>
         ]]></description>
         <default>60</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -374,6 +389,7 @@ Meter report interval<br /><h1>Overview</h1><p>1. Value = 0, Reporting of meteri
 Meter report delta value<br /><h1>Overview</h1><p>1. Value = 0 - 127, 0kWh - 12.7kWh, default = 1.0kWh</p> <p>Delta value in kWh between consecutive meter reports.<br />Meter reports can also be sent as a result of polling.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

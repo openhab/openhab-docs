@@ -82,6 +82,7 @@ RGBW LED Controller<br /><h1>Overview</h1><p>The LED dimmer is a Z-Wave device t
 Saving load state before power failure<br /><h1>Overview</h1><p>Parameter number 2 defines the load state after re-power on it:</p> <p>Value 0 is off state.</p> <p>Value 1 is on state.</p> <p>Value 2 is the state before re-power on.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -91,6 +92,7 @@ Saving load state before power failure<br /><h1>Overview</h1><p>Parameter number
 Saving load state before power failure<br /><h1>Overview</h1><p>Info: Saving load state before power failure 0 – shutoff load 1 – turn on load 2 – save load state before power failure</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -100,6 +102,7 @@ Saving load state before power failure<br /><h1>Overview</h1><p>Info: Saving loa
 Enables/disables to send Basic report to the Lifeline when load state changed<br /><h1>Overview</h1><p>Parameter number 3 enables/disables to send Basic report to the Lifeline when load state changed:</p> <p>Value 0 disables to send.</p> <p>Value 1 enables to send.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -109,6 +112,7 @@ Enables/disables to send Basic report to the Lifeline when load state changed<br
 Choose a cool light stage mode<br /><h1>Overview</h1><p>Parameter number 5 defines light stage mode:</p> <p>Value 0 inactivates light stage mode.</p> <p>Value 1 is fade in and fade out mode with colors set by configuration parameter 8.</p> <p>Value 2 is flash mode with colors set by configuration parameter 8.</p> <p>Value 3 is rainbow mode with system fixed changing effect.</p> <p>Value 4 is fade in and fade out mode with randomly changing colors.</p> <p>Value 5 is flash mode with randomly changing colors.</p> <p>Value 6 is rainbow mode with randomly changing colors.</p> <p>Value 7 is random mode, colors switch randomly.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -118,6 +122,7 @@ Choose a cool light stage mode<br /><h1>Overview</h1><p>Parameter number 5 defin
 Speed of stage mode<br /><h1>Overview</h1><p>Parameter number 6 defines the speed of stage mode:</p> <p>Value 0-0xFF configurable, 0 is the slowest, 255 is the fastest.</p>
         ]]></description>
         <default>243</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -127,6 +132,7 @@ Speed of stage mode<br /><h1>Overview</h1><p>Parameter number 6 defines the spee
 Execution times of stage mode<br /><h1>Overview</h1><p>Parameter number 7 defines execution times of stage mode:</p> <p>Value 0 is unlimited times.</p> <p>Value 1~0xFF is 1~255 times.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -136,6 +142,7 @@ Execution times of stage mode<br /><h1>Overview</h1><p>Parameter number 7 define
 The hue of stage mode<br /><h1>Overview</h1><p>Parameter number 8 defines the hue of stage mode:</p> <p>Value 0~0xFF is hue 0~255.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -145,6 +152,7 @@ The hue of stage mode<br /><h1>Overview</h1><p>Parameter number 8 defines the hu
 Enable/disable external switch to be added to and removed from a network<br /><h1>Overview</h1><p>Parameter number 9 enables/disables external switch to be added to and removed from a network:</p> <p>Value 0 disables.</p> <p>Value 1 enables.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

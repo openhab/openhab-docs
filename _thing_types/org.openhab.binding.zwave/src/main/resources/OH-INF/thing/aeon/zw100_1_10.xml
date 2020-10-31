@@ -93,6 +93,7 @@ Stay awake for 10 minutes at power on<br /><h1>Overview</h1><p>Enable/Disable wa
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -102,6 +103,7 @@ Stay awake for 10 minutes at power on<br /><h1>Overview</h1><p>Enable/Disable wa
 Motion Sensor reset timeout<br /><h1>Overview</h1><ol><li>The default PIR time is 4 minutes. The Multisensor will send BASIC SET CC (0x00) to the associated nodes if no motion is triggered again in 4 minutes.</li> <li>Range: 10~3600.</li> </ol><p><strong>Note</strong>:</p> <ol><li>The time unit is second if the value range is in 10 to 255.</li> <li>If the value range is in 256 to 3600, the time unit will be minute and its value should follow the below rules:<br />a) Interval time =Value/60, if the interval time can be divided by 60 and without remainder.<br />b) Interval time= (Value/60) +1, if the interval time can be divided by 60 and has remainder.</li> <li>Other values will be ignored.</li> </ol>
         ]]></description>
         <default>240</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -116,6 +118,7 @@ Motion Sensor reset timeout<br /><h1>Overview</h1><ol><li>The default PIR time i
           <option value="4">Enable, sensitivity level 4</option>
           <option value="5">Enable, sensitivity level 5 (maximum)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -125,6 +128,7 @@ Motion Sensor reset timeout<br /><h1>Overview</h1><ol><li>The default PIR time i
           <option value="1">Send Basic Set CC</option>
           <option value="2">Send Sensor Binary Report CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -132,6 +136,7 @@ Motion Sensor reset timeout<br /><h1>Overview</h1><ol><li>The default PIR time i
         <label>8: Timeout after wake up</label>
         <description>Set the timeout of awake after the Wake Up CC is sent out...</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration" readOnly="true"
@@ -142,6 +147,7 @@ Report the current power mode and the product state of battery power mode<br /><
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2_00000001" type="integer" groupName="configuration" readOnly="true">
@@ -151,6 +157,7 @@ Report the current power mode and the product state of battery power mode<br /><
           <option value="0">Asleep</option>
           <option value="1">Awake</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2_00000100" type="integer" groupName="configuration" readOnly="true">
@@ -160,6 +167,7 @@ Report the current power mode and the product state of battery power mode<br /><
           <option value="0">USB</option>
           <option value="1">Battery</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -169,6 +177,7 @@ Report the current power mode and the product state of battery power mode<br /><
 Report Low Battery if below this value<br /><h1>Overview</h1><p>Configure low battery value.<br />Value=10 to 50.(10% to 50%)</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -181,6 +190,7 @@ Select to report on thresholds<br /><h1>Overview</h1><p>Enable/disable the selec
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_4_wo" type="integer" groupName="configuration">
@@ -190,6 +200,7 @@ Temperature change threshold<br /><h1>Overview</h1><p>Threshold change in temper
         ]]></description>
         <default>20</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_4_0000FF00" type="integer" groupName="configuration">
@@ -202,6 +213,7 @@ Sets the unit of the threshold<br /><h1>Overview</h1><p>0x0100=Celsius, 0x0200=F
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_4_00FF0000" type="integer" groupName="configuration"
@@ -211,7 +223,6 @@ Sets the unit of the threshold<br /><h1>Overview</h1><p>0x0100=Celsius, 0x0200=F
 Threshold change in temperature to induce an automatic report.<br /><h1>Overview</h1><p>Lower byte of the upper word is used for temperature threshold.</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration"
@@ -221,6 +232,7 @@ Threshold change in temperature to induce an automatic report.<br /><h1>Overview
 Humidity percent change threshold<br /><h1>Overview</h1><p>Threshold change in humidity to induce an automatic report.<br />Note:<br />1. The unit is %.<br />2. The default value is 10, which means that if the current humidity gap is<br />more than 10%, it will send out a humidity report.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_2" type="integer" groupName="configuration"
@@ -230,6 +242,7 @@ Humidity percent change threshold<br /><h1>Overview</h1><p>Threshold change in h
 Luminance change threshold<br /><h1>Overview</h1><p>Threshold change in luminance to induce an automatic report.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_1" type="integer" groupName="configuration"
@@ -239,6 +252,7 @@ Luminance change threshold<br /><h1>Overview</h1><p>Threshold change in luminanc
 Battery level threshold<br /><h1>Overview</h1><p>Threshold change in battery level to induce an automatic report.</p> <p>Note:<br />1. The unit is %.<br />2. The default value is 10, which means that if the current battery level gap is<br />more than 10%, it will send out a battery report.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration"
@@ -248,6 +262,7 @@ Battery level threshold<br /><h1>Overview</h1><p>Threshold change in battery lev
 Ultraviolet change threshold<br /><h1>Overview</h1><p>Threshold change in ultraviolet to induce an automatic report.</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_46_1" type="integer" groupName="configuration">
@@ -260,6 +275,7 @@ Send an alarm report if temperature is less than -15 °C<br /><h1>Overview</h1><
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration"
@@ -269,7 +285,6 @@ Send an alarm report if temperature is less than -15 °C<br /><h1>Overview</h1><
 Send report when measurement is at upper/lower limit<br /><h1>Overview</h1><p>Enable/disable to send a report when the measurement is more than the upper limit value or less than the lower limit value.<br />Bit mask = 0, disable.<br />Bit mask = 1, enable.<br />Bit 0 = temperature.<br />Bit 1 = humidity.<br />Bit 2 = luminance.<br />Bit 3 = ultraviolet.</p> <p>The above bit masks are used to enable/disable to send out a report when the measurement is less than the lower limit value. The below bit masks are used to enable/disable to send out a report when the measurement is more than the upper limit value<br />Bit 4 = temperature.<br />Bit 5 = humidity.<br />Bit 6 = luminance.<br />Bit 7 = ultraviolet.</p> <p><em>Note:</em> If USB power, the Sensor will check the limit every 10 seconds. If battery power, the Sensor will check the limit when it is waken up. </p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4_wo" type="integer" groupName="configuration">
@@ -279,6 +294,7 @@ Upper limit value of temperature sensor<br /><h1>Overview</h1><p>Set the upper l
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4_0000FF00_wo" type="integer" groupName="configuration">
@@ -291,6 +307,7 @@ Unit selection for upper limit value of temperature sensor<br /><h1>Overview</h1
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4_7FFF0000_wo" type="integer" groupName="configuration">
@@ -299,6 +316,7 @@ Unit selection for upper limit value of temperature sensor<br /><h1>Overview</h1
 Upper limit value of temperature sensor<br /><h1>Overview</h1><p>Set the upper limit value of temperature sensor. When the measurement is more than this upper limit, which will trigger to sent out a sensor report. High byte is the upper limit value. Low bytes represent the unit (0x0100=Celsius, 0x0200=Fahrenheit).</p> <p>When unit is Celsius:<br /> Upper limit range: -40.0 to 100.0 ℃ (0xFE70 to 0x03E8).<br />E.g. The default upper limit of EU/AU version is 28.0 ℃ (0x0118), when the measurement is more than 28.0℃, it will be triggered to send out a temperature sensor report.</p> <p>When unit is Fahrenheit:<br />Upper limit range: -40.0 to 212.0 ℉ (0xFE70 to 0x0848).<br />E.g. The default upper limit of US version is 82.4℉ (0X0338), when the measurement is more than 82.4℉, it will be triggered to send out a temperature sensor report.  </p>
         ]]></description>
         <default>280</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4_wo" type="integer" groupName="configuration">
@@ -308,6 +326,7 @@ Lower limit value of temperature sensor<br /><h1>Overview</h1><p>Set the lower l
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4_0000FF00_wo" type="integer" groupName="configuration">
@@ -320,6 +339,7 @@ Unit selection for lower limit value of temperature sensor<br /><h1>Overview</h1
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4_7FFF0000_wo" type="integer" groupName="configuration">
@@ -328,6 +348,7 @@ Unit selection for lower limit value of temperature sensor<br /><h1>Overview</h1
 Lower limit value of temperature sensor<br /><h1>Overview</h1><p>Set the lower limit value of temperature sensor. When the measurement is less than this lower limit, which will trigger to sent out a sensor report. High byte is the lower limit value. Low bytes represent the unit (0x0100=Celsius, 0x0200=Fahrenheit).</p> <p>When unit is Celsius:<br /> Lower limit range: -40.0 to 100.0 ℃ (0xFE70 to 0x03E8).<br />E.g. The default lower limit of EU/AU version is 0 ℃ (0x0000), when the measurement is less than 0℃, it will be triggered to send out a temperature sensor report.</p> <p>When unit is Fahrenheit:<br /> Upper limit range: -40.0 to 212.0 ℉ (0xFE70 to 0x0848).<br />E.g. The default lower limit of US version is 32.0℉ (0x0140), when the measurement is less than 32.0℉, it will be triggered to send out a temperature sensor report. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -337,6 +358,7 @@ Lower limit value of temperature sensor<br /><h1>Overview</h1><p>Set the lower l
 Upper limit value of humidity sensor<br /><h1>Overview</h1><p>Set the upper limit value of humidity sensor. When the measurement is more than this upper limit, which will trigger to sent out a sensor report. Upper limit range: 0 to 100%. E.g. The default upper limit is 60%, when the measurement is more than 60%, it will be triggered to send out a humidity sensor report.  </p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_1" type="integer" groupName="configuration"
@@ -346,6 +368,7 @@ Upper limit value of humidity sensor<br /><h1>Overview</h1><p>Set the upper limi
 Lower limit value of humidity sensor<br /><h1>Overview</h1><p>Set the lower limit value of humidity sensor. When the measurement is less than this lower limit, which will trigger to sent out a sensor report. Lower limit range: 0 to 100%.</p> <p>E.g. The default lower limit is 50%, when the measurement is less than 50%, it will be triggered to send out a humidity sensor report. </p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -355,6 +378,7 @@ Lower limit value of humidity sensor<br /><h1>Overview</h1><p>Set the lower limi
 Upper limit value of Lighting sensor<br /><h1>Overview</h1><p>Set the upper limit value of Lighting sensor. When the measurement is more than this upper limit, which will trigger to sent out a sensor report. Upper limit range: 0 to 30000 Lux.</p> <p>E.g. The default upper limit is 1000Lux, when the measurement is more than 1000Lux, it will be triggered to send out a Lighting sensor report.  </p>
         ]]></description>
         <default>1000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
@@ -364,6 +388,7 @@ Upper limit value of Lighting sensor<br /><h1>Overview</h1><p>Set the upper limi
 Lower limit value of Lighting sensor<br /><h1>Overview</h1><p>Set the lower limit value of Lighting sensor. When the measurement is less than this lower limit, which will trigger to sent out a sensor report. Lower limit range: 0 to 30000 Lux.</p> <p>E.g. The default lower limit is 100Lux, when the measurement is less than 100Lux, it will be triggered to send out a Lighting sensor report.  </p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
@@ -373,6 +398,7 @@ Lower limit value of Lighting sensor<br /><h1>Overview</h1><p>Set the lower limi
 Upper limit value of ultraviolet sensor<br /><h1>Overview</h1><p>Set the upper limit value of ultraviolet sensor. When the measurement is more than this upper limit, which will trigger to sent out a sensor report. Upper limit range: 1 to 11.</p> <p>E.g. The default upper limit is 8, when the measurement is more than 8, it will be triggered to send out a ultraviolet sensor report.  </p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_1" type="integer" groupName="configuration"
@@ -382,6 +408,7 @@ Upper limit value of ultraviolet sensor<br /><h1>Overview</h1><p>Set the upper l
 Lower limit value of ultraviolet sensor<br /><h1>Overview</h1><p>Set the lower limit value of ultraviolet sensor. When the measurement is less than this upper limit, which will trigger to sent out a sensor report. Lower limit range: 1 to 11.</p> <p>E.g. The default lower limit is 4, when the measurement is less than 8, it will be triggered to send out a ultraviolet sensor report.  </p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
@@ -391,6 +418,7 @@ Lower limit value of ultraviolet sensor<br /><h1>Overview</h1><p>Set the lower l
 Recover limit value of temperature sensor<br /><h1>Overview</h1><p>Set the recover limit value of temperature sensor.</p> <p><em>Note</em>:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>High byte is the recover limit value. Low byte is the unit (0x01=Celsius, 0x02=Fahrenheit).</li> <li>Recover limit range: 1.0 to 25.5 ℃/ ℉ (0x0101 to 0xFF01 or 0x0102 to 0xFF02).</li> <li>E.g. The default recover limit value is 2.0 ℃/℉ (0x1401/0x1402), when the measurement is less than (Upper limit – 2), the upper limit report would be enabled one time</li> </ol>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_58_1" type="integer" groupName="configuration"
@@ -400,6 +428,7 @@ Recover limit value of temperature sensor<br /><h1>Overview</h1><p>Set the recov
 Recover limit value of humidity sensor<br /><h1>Overview</h1><p>Set the recover limit value of humidity sensor.</p> <p>Note:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>Recover limit range: 1 to 50% (0x01 to 0x32).</li> <li>E.g. The default recover limit value is 5%, when the measurement is less than (Upper limit – 5), the upper limit report would be enabled one time or when the measurement is more than (Lower limit + 5), the lower limit report would be enabled one time. </li> </ol>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_59_1" type="integer" groupName="configuration"
@@ -409,6 +438,7 @@ Recover limit value of humidity sensor<br /><h1>Overview</h1><p>Set the recover 
 Recover limit value of Lighting sensor.<br /><h1>Overview</h1><p>Set the recover limit value of Lighting sensor.</p> <p><em>Note</em>:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>Unit = 10×Recover limit (Lux)</li> <li><strong>Recover limit range: 10 to 2550Lux (0x01 to 0xFF). </strong></li> <li>E.g. The default recover limit value is 100 Lux, when the measurement is less than (Upper limit – 100), the upper limit report would be enabled one time or when the measurement is more than (Lower limit + 100), the lower limit report would be enabled one time. </li> </ol>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration"
@@ -418,6 +448,7 @@ Recover limit value of Lighting sensor.<br /><h1>Overview</h1><p>Set the recover
 Recover limit value of Ultraviolet sensor<br /><h1>Overview</h1><p>Set the recover limit value of Ultraviolet sensor.</p> <p><em>Note</em>:</p> <ol><li>When the current measurement &lt;= (Upper limit – Recover limit), the upper limit report is enabled and then it would send out a sensor report when the next measurement is more than the upper limit. After that the upper limit report would be disabled again until the measurement &lt;= (Upper limit – Recover limit).</li> <li>When the current measurement &gt;= (Lower limit + Recover limit), the lower limit report is enabled and then it would send out a sensor report when the next measurement is less than the lower limit. After that the lower limit report would be disabled again until the measurement &gt;= (Lower limit + Recover limit).</li> <li>Recover limit range: 1 to 5 (0x01 to 0x05).</li> <li>E.g. The default recover limit value is 2, when the measurement is less than (Upper limit – 2), the upper limit report would be enabled one time or when the measurement is more than (Lower limit + 2), the lower limit report would be enabled one time.  </li> </ol>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration" readOnly="true"
@@ -427,6 +458,7 @@ Recover limit value of Ultraviolet sensor<br /><h1>Overview</h1><p>Set the recov
 Out-of-limit state of the Sensors<br /><h1>Overview</h1><p>Get the out-of-limit state of the Sensors.</p> <ul><li>Bit mask = 0, within the limit.</li> <li>Bit mask = 1, out of the limit.</li> <li>Bit 0 = temperature.</li> <li>Bit 1 = humidity.</li> <li>Bit 2 = luminance.</li> <li>Bit 3 = ultraviolet.</li> </ul><p>The above bit masks are used to indicate whether the current measurements of the Sensors are out of the lower limit.. The below bit masks are used to indicate whether the current measurements of the Sensors are out of the upper limit.</p> <ul><li>Bit 4 = temperature.</li> <li>Bit 5 = humidity.</li> <li>Bit 6 = luminance.</li> <li>Bit 7 = ultraviolet</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_1" type="integer" groupName="configuration"
@@ -436,6 +468,7 @@ Out-of-limit state of the Sensors<br /><h1>Overview</h1><p>Get the out-of-limit 
 Default unit of the automatic temperature report<br /><h1>Overview</h1><p>Set the default unit of the automatic temperature report in parameter 101- 103. 1 = Celsius. 2 = Fahrenheit.  </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -449,6 +482,7 @@ Disable/Enable LED function<br /><h1>Overview</h1><p>Enable/disable the LED blin
           <option value="1">Disable PIR LED</option>
           <option value="2">Disable ALL</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -457,6 +491,7 @@ Disable/Enable LED function<br /><h1>Overview</h1><p>Enable/disable the LED blin
 Reset 101-103 to defaults<br /><h1>Overview</h1><p>Set 101-103 to default.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -466,6 +501,7 @@ Reset 101-103 to defaults<br /><h1>Overview</h1><p>Set 101-103 to default.</p>
 Periodic reports to send to Group 1<br /><h1>Overview</h1><p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:</p> <ul><li>Battery=1</li> <li>Ultraviolet=16</li> <li>Temperature=32</li> <li>Humidity=64</li> <li>Light=128</li> </ul><p>1+16+32+64+128 = 241 and is the default value</p>
         ]]></description>
         <default>241</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -475,6 +511,7 @@ Periodic reports to send to Group 1<br /><h1>Overview</h1><p>This value is a com
 Periodic reports to send to Group 2<br /><h1>Overview</h1><p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:</p> <ul><li>Battery=1</li> <li>Ultraviolet=16</li> <li>Temperature=32</li> <li>Humidity=64</li> <li>Light=128</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -484,6 +521,7 @@ Periodic reports to send to Group 2<br /><h1>Overview</h1><p>This value is a com
 Periodic reports to send to Group 3<br /><h1>Overview</h1><p>This value is a combination number made up of the sum of the values for the individual sensors and battery. The sensors have these values:</p> <ul><li>Battery=1</li> <li>Ultraviolet=16</li> <li>Temperature=32</li> <li>Humidity=64</li> <li>Light=128</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
@@ -492,6 +530,7 @@ Periodic reports to send to Group 3<br /><h1>Overview</h1><p>This value is a com
 Set parameters 111-113 to default.<br /><h1>Overview</h1><p>Set parameters 111-113 to default.   </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -501,6 +540,7 @@ Set parameters 111-113 to default.<br /><h1>Overview</h1><p>Set parameters 111-1
 How often to update Group 1<br /><h1>Overview</h1><p>The interval time of sending reports in Report group 1 (Valid values 0x05-0x28DE80).</p> <ol><li>The unit of interval time is second if USB power.</li> <li>If battery power, the minimum interval time is 60 minutes by default, for example, if the value is set to be more than 5 and less than 3600, the interval time is 60 minutes, if the value is set to be more than 3600 and less than 7200, the interval time is 120 minutes. You can also change the minimum interval time to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set CC.</li> </ol>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -510,6 +550,7 @@ How often to update Group 1<br /><h1>Overview</h1><p>The interval time of sendin
 Group 2 Report Interval<br /><h1>Overview</h1><p>The interval time of sending reports in Report group 2 (Valid values 0x05-<br />0x28DE80).<br />Note:<br />1. The unit of interval time is second if USB power.<br />2. If battery power, the minimum interval time is 60 minutes by default, for<br />example, if the value is set to be more than 5 and less than 3600, the interval<br />time is 60 minutes, if the value is set to be more than 3600 and less than 7200,<br />the interval time is 120 minutes. You can also change the minimum interval time<br />to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set<br />CC.</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -519,6 +560,7 @@ Group 2 Report Interval<br /><h1>Overview</h1><p>The interval time of sending re
 Group 3 Report Interval<br /><h1>Overview</h1><p>The interval time of sending reports in Report group 3</p> <ol><li>The unit of interval time is second if USB power.</li> <li>If battery power, the minimum interval time is 60 minutes by default, for example, if the value is set to be more than 5 and less than 3600, the interval time is 60 minutes, if the value is set to be more than 3600 and less than 7200, the interval time is 120 minutes. You can also change the minimum interval time to 4 minutes via setting the interval value(3 bytes) to 240 in Wake Up Interval Set CC.</li> </ol>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2" type="integer" groupName="configuration"
@@ -529,6 +571,7 @@ Temperature calibration in 0.1 deg steps<br /><h1>Overview</h1><p>Temperature ca
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_000000FF" type="integer" groupName="configuration">
@@ -538,6 +581,7 @@ Temperature calibration in 0.1 deg steps<br /><h1>Overview</h1><p>Temperature ca
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration"
@@ -545,6 +589,7 @@ Temperature calibration in 0.1 deg steps<br /><h1>Overview</h1><p>Temperature ca
         <label>201: Temperature Calibration Value</label>
         <description>Calibration value containing one decimal point</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_202_1" type="integer" groupName="configuration"
@@ -554,6 +599,7 @@ Temperature calibration in 0.1 deg steps<br /><h1>Overview</h1><p>Temperature ca
 Humidity Sensor Calibration<br /><h1>Overview</h1><p>Humidity sensor calibration (the available value range is [-50, 50]).<br />The calibration value = standard value - measure value.<br />E.g. If measure value =80RH and the standard value = 75RH, so the calibration<br />value= 75RH – 80RH= -5RH (0xFB).<br />If the measure value =85RH and the standard value = 90RH, so the calibration<br />value= 90RH – 85RH=5RH (0x05).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_203_2" type="integer" groupName="configuration"
@@ -563,6 +609,7 @@ Humidity Sensor Calibration<br /><h1>Overview</h1><p>Humidity sensor calibration
 Luminance Sensor Calibration<br /><h1>Overview</h1><p>Luminance sensor calibration (the available value range is [-1000, 1000]).<br />The calibration value = standard value - measure value.<br />E.g. If measure value =800Lux and the standard value = 750Lux, so the<br />calibration value= 750 – 800= -50 (0xFFCE).<br />If the measure value =850Lux and the standard value = 900Lux, so the calibration<br />value= 900 – 850=50 (0x0032).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_204_1" type="integer" groupName="configuration"
@@ -572,6 +619,7 @@ Luminance Sensor Calibration<br /><h1>Overview</h1><p>Luminance sensor calibrati
 Ultraviolet Sensor Calibration<br /><h1>Overview</h1><p>Ultraviolet sensor calibration (the available value range is [-10, 10]).<br />The calibration value = standard value - measure value.<br />E.g. If measure value =9 and the standard value = 8, so the calibration value= 8 –<br />9= -1 (0xFE).<br />If the measure value =7 and the standard value = 9, so the calibration value= 9 –<br />7=2 (0x02).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -584,6 +632,7 @@ Disable/Enable Configuration Lock (0=Disable, 1=Enable)<br /><h1>Overview</h1><p
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">
@@ -593,6 +642,7 @@ Disable/Enable Configuration Lock (0=Disable, 1=Enable)<br /><h1>Overview</h1><p
           <option value="1">Resets all configuration parameters to defaults</option>
           <option value="1431655765">Reset to default factory settings and be excluded</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

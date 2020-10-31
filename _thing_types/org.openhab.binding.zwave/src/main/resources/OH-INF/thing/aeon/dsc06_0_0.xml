@@ -73,6 +73,7 @@ Smart Energy Switch<br /><h1>Overview</h1><p>The Aeon Labs Smart Energy Switch i
           <option value="0">Power</option>
           <option value="1">Voltage</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -86,6 +87,7 @@ Enable or disable automatic notifications<br /><h1>Overview</h1><p>Enables autom
           <option value="1">Hail</option>
           <option value="2">Basic CC Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -96,6 +98,7 @@ Enable or disable automatic notifications<br /><h1>Overview</h1><p>Enables autom
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -105,6 +108,7 @@ Enable or disable automatic notifications<br /><h1>Overview</h1><p>Enables autom
 Minimum change in wattage to trigger event<br /><h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -114,6 +118,7 @@ Minimum change in wattage to trigger event<br /><h1>Overview</h1><p>The value he
 Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -123,6 +128,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="0">No change</option>
           <option value="1">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration">
@@ -135,6 +141,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="8">Meter Report (kWh)</option>
           <option value="12">Meter Report Watts and kWh</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration">
@@ -147,6 +154,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="8">Meter Report (kWh)</option>
           <option value="12">Meter Report Watts and kWh</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration">
@@ -159,6 +167,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="8">Meter Report (kWh)</option>
           <option value="12">Meter Report Watts and kWh</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
@@ -168,6 +177,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="0">No change</option>
           <option value="1">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -175,6 +185,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
         <label>111: Interval Group 1</label>
         <description>The time interval (in seconds) for sending report to Group 1</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -182,6 +193,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
         <label>112: Interval Group 2</label>
         <description>The time interval (in seconds) for sending report to Group 2</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -189,12 +201,14 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
         <label>113: Interval Group 3</label>
         <description>The time interval (in seconds) for sending report to Group 3</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
                  min="0" max="65535">
         <label>254: Device Tag</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -204,6 +218,7 @@ Minimum change in wattage % to trigger event<br /><h1>Overview</h1><p>The value 
           <option value="0">No change</option>
           <option value="1">Reset</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -110,7 +110,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Product Manual](https://opensmarthouse.org/zwavedatabase/502/THERMZ6.pdf)
+* [Product Manual](https://opensmarthouse.org/zwavedatabase/502/reference/THERMZ6.pdf)
 
 ---
 

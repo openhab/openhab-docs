@@ -67,6 +67,7 @@ Touch Panel Switch 2 Channel<br /><h1>Overview</h1><p>The MCO_TPS412 is a glass-
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

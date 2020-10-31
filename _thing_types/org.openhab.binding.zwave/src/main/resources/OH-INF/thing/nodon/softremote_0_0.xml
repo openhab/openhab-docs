@@ -61,6 +61,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">Mono</option>
           <option value="2">Duo</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -72,6 +73,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">Mono</option>
           <option value="2">Duo</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="0">Central Scene</option>
           <option value="1">Scene Activation</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -93,6 +96,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">All switches ON</option>
           <option value="2">All switches OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -104,6 +108,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">All switches ON</option>
           <option value="2">All switches OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -115,6 +120,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">All switches ON</option>
           <option value="2">All switches OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -126,6 +132,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="1">All switches ON</option>
           <option value="2">All switches OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -138,6 +145,7 @@ Remote Control<br /><h1>Overview</h1><p>The NodOn® Soft Remote controls any com
           <option value="2">Blink to confirm command</option>
           <option value="3">Flash Blue and blink to confirm command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

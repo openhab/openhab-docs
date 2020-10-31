@@ -73,6 +73,7 @@ Battery Operated Siren<br /><h1>Overview</h1><p>This product will sound a loud s
           <option value="1">Siren Only</option>
           <option value="2">Strobe Only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -85,6 +86,7 @@ Battery Operated Siren<br /><h1>Overview</h1><p>This product will sound a loud s
           <option value="2">120 seconds</option>
           <option value="3">Continuous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

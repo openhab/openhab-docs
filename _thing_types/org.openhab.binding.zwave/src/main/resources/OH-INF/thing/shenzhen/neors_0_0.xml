@@ -63,6 +63,7 @@ NEO Coolcam Roller Shutter - Curtain Switch - NAS-SC03ZE-2-T-V3<br /><h1>Overvie
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ NEO Coolcam Roller Shutter - Curtain Switch - NAS-SC03ZE-2-T-V3<br /><h1>Overvie
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -83,6 +85,7 @@ NEO Coolcam Roller Shutter - Curtain Switch - NAS-SC03ZE-2-T-V3<br /><h1>Overvie
           <option value="0">LED Disabled</option>
           <option value="1">LED ON when Switch is ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -93,6 +96,7 @@ NEO Coolcam Roller Shutter - Curtain Switch - NAS-SC03ZE-2-T-V3<br /><h1>Overvie
           <option value="0">LED Disabled</option>
           <option value="1">LED Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -103,6 +107,7 @@ NEO Coolcam Roller Shutter - Curtain Switch - NAS-SC03ZE-2-T-V3<br /><h1>Overvie
           <option value="0">Button Switch Disabled</option>
           <option value="1">Button Switch Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

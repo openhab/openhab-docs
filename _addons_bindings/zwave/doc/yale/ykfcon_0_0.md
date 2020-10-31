@@ -242,9 +242,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Data Sheet](https://opensmarthouse.org/zwavedatabase/292/yale-smart-living-keyfree-connected-data-sheet.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/292/yale-smart-living-keyfree-connected-user-manual.pdf)
-* [Technical Information](https://opensmarthouse.org/zwavedatabase/292/yale-locks-info.pdf)
+* [Data Sheet](https://opensmarthouse.org/zwavedatabase/292/reference/yale-smart-living-keyfree-connected-data-sheet.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/292/reference/yale-smart-living-keyfree-connected-user-manual.pdf)
+* [Technical Information](https://opensmarthouse.org/zwavedatabase/292/reference/yale-locks-info.pdf)
 
 ---
 

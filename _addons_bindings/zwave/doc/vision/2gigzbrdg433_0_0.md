@@ -107,8 +107,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Manual for 2GIG version of this](https://opensmarthouse.org/zwavedatabase/978/2GIG-Z-BRDG-433-Manual.pdf)
-* [Sell sheet for 2GIG version](https://opensmarthouse.org/zwavedatabase/978/NPA-Energy-Bridge-1.pdf)
+* [Manual for 2GIG version of this](https://opensmarthouse.org/zwavedatabase/978/reference/2GIG-Z-BRDG-433-Manual.pdf)
+* [Sell sheet for 2GIG version](https://opensmarthouse.org/zwavedatabase/978/reference/NPA-Energy-Bridge-1.pdf)
 
 ---
 

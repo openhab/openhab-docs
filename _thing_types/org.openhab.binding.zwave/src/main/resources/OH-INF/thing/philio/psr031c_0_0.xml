@@ -58,6 +58,7 @@ Panic Button<br /><h1>Overview</h1><p><br /></p> <br /><h2>Inclusion Information
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes. The default value is 12(6 hours).</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

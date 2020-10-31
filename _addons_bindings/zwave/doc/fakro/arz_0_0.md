@@ -76,7 +76,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/248/AJP-Z-WAVE-FAKRO-EN.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/248/reference/AJP-Z-WAVE-FAKRO-EN.pdf)
 
 ---
 

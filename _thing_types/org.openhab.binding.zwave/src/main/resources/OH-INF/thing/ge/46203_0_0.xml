@@ -64,12 +64,14 @@ GE Enbrighten Z-Wave Plus Smart Dimmer<br /><h1>Overview</h1><p>Set the scene wi
           <option value="2">LED always OFF</option>
           <option value="3">LED always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
                  min="0" max="1">
         <label>4: Invert</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Dim up/down rate<br /><h1>Overview</h1><p>Adjust the speed at which the ramps to
           <option value="0">Quickly</option>
           <option value="1">Slowly</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -94,6 +97,7 @@ Switch Mode<br /><h1>Overview</h1><p>Turn your dimmer into an On/Off switch with
           <option value="0">Dimmer Mode</option>
           <option value="1">Switch Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -107,6 +111,7 @@ Alternate Exclusion<br /><h1>Overview</h1><p>Never accidentally remove a device 
           <option value="1">Alternate</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -116,6 +121,7 @@ Alternate Exclusion<br /><h1>Overview</h1><p>Never accidentally remove a device 
 Minimum Dim Threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration"
@@ -125,6 +131,7 @@ Minimum Dim Threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold 
 Maximum Brightness Threshold<br /><h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -134,6 +141,7 @@ Maximum Brightness Threshold<br /><h1>Overview</h1><p>Set the maximum brightness
 Default Brightness Level<br /><h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <ul><li>0 = Default</li> <li>1 - 99 = percentage</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

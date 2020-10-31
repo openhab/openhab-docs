@@ -71,6 +71,7 @@ Door/Window Sensor<br /><h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor c
 This parameter defines a battery level as the “low battery”<br /><h1>Overview</h1><p>Available settings: 0‐50 (0% ‐ 50%) </p> <p>Default setting: 10 (10%)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -83,6 +84,7 @@ Door/Window Sensor can send BASIC SET command to nodes associated with group 2.<
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -95,6 +97,7 @@ Reverse value of BASIC SET when the magnet is triggered.<br /><h1>Overview</h1><
           <option value="0">Send BASIC SET VALUE = 255 when Opened</option>
           <option value="1">Send BASIC SET VALUE = 255 when Closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_1" type="integer" groupName="configuration">
@@ -107,6 +110,7 @@ Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>0 – Unlock
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -66,6 +66,7 @@ Door Window Sensor<br /><h1>Overview</h1><ul><li>Door/Windows sensor that can be
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

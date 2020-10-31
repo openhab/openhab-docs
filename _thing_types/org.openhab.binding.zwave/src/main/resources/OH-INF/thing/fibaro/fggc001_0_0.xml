@@ -64,6 +64,7 @@ Orientation in relation to default position.<br /><h1>Overview</h1><p>Parameter 
           <option value="2">90° clockwise rotation</option>
           <option value="3">90° counter-clockwise rotation</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -74,6 +75,7 @@ Orientation in relation to default position.<br /><h1>Overview</h1><p>Parameter 
           <option value="0">Gestures detection is not signalled</option>
           <option value="1">Gestures detection is signalled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -84,6 +86,7 @@ Orientation in relation to default position.<br /><h1>Overview</h1><p>Parameter 
           <option value="0">Gestures detection is not indicated</option>
           <option value="1">Gestures detection is indicated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -97,6 +100,7 @@ Acoustic signalling of gesture recognition result (using the built-in buzzer).<b
           <option value="2">Only failed recognition is signalled</option>
           <option value="3">Successful and failed recognition is signalled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -110,7 +114,6 @@ Check if the USB pwr supply is connected, update pwr mode<br /><h1>Overview</h1>
           <option value="0">Powering mode is not updated</option>
           <option value="1">Time interval (in minutes)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -124,6 +127,7 @@ This parameter determines operation of gesture detection when battery powered.<b
           <option value="1">Simple mode</option>
           <option value="2">Swipe does not enter power saving mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -137,6 +141,7 @@ Choose if the menu can be entered using the Hold gesture.<br /><h1>Overview</h1>
           <option value="1">Hold gesture to enter the menu disabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration" readOnly="true"
@@ -155,7 +160,6 @@ Defines which actions result in sending scenes to 1st “Lifeline” group.<br /
           <option value="32">Scenes for CCW circular gesture enabled</option>
           <option value="63">All commands enabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -172,7 +176,6 @@ Define sent command for specified association groups.<br /><h1>Overview</h1><p>P
           <option value="8">5th group "Flick RIGHT” sent as secure</option>
           <option value="16">6th group "Circular AirWheel” sent as secure</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -188,7 +191,6 @@ Choose control mode for 2nd-5th groups and scenes.<br /><h1>Overview</h1><p>Para
           <option value="4">Toggle Mode enabled for 4th association group</option>
           <option value="8">Toggle Mode enabled for 5th association group</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -198,7 +200,6 @@ Choose control mode for 2nd-5th groups and scenes.<br /><h1>Overview</h1><p>Para
 Choose gesture time for "AirWheel" to reach max/min level.<br /><h1>Overview</h1><p>Parameter allows to choose how long the hand has to be held near the center of the pad after "AirWheel" gesture for the associated devices to reach their maximum/minimum level.</p> <p>Available settings:</p> <p>0-10 - duration in seconds</p> <p>255 - default settings of controlled devices</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_2" type="integer" groupName="configuration"
@@ -209,7 +210,6 @@ Value sent in SWITCH ON command<br /><h1>Overview</h1><p>This parameter allows t
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_2" type="integer" groupName="configuration"
@@ -220,7 +220,6 @@ Value sent in SWITCH OFF command frame.<br /><h1>Overview</h1><p>This parameter 
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -231,7 +230,6 @@ Value sent in SWITCH ON command frame.<br /><h1>Overview</h1><p>This parameter a
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_2" type="integer" groupName="configuration"
@@ -242,7 +240,6 @@ Value sent in SWITCH OFF command frame.<br /><h1>Overview</h1><p>This parameter 
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_2" type="integer" groupName="configuration"
@@ -253,7 +250,6 @@ Value sent in SWITCH ON command frame.<br /><h1>Overview</h1><p>This parameter a
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration"
@@ -264,7 +260,6 @@ Value sent in SWITCH OFF command frame.<br /><h1>Overview</h1><p>This parameter 
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
@@ -275,7 +270,6 @@ Value sent in SWITCH ON command frame.<br /><h1>Overview</h1><p>This parameter a
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_2" type="integer" groupName="configuration"
@@ -286,7 +280,6 @@ Value sent in SWITCH OFF command frame.<br /><h1>Overview</h1><p>This parameter 
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -297,7 +290,6 @@ Launch sequence learning procedure<br /><h1>Overview</h1><p>Parameter activated 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_2" type="integer" groupName="configuration"
@@ -308,7 +300,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_2" type="integer" groupName="configuration"
@@ -319,7 +310,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_2" type="integer" groupName="configuration"
@@ -330,7 +320,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_2" type="integer" groupName="configuration"
@@ -341,7 +330,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_2" type="integer" groupName="configuration"
@@ -352,7 +340,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_2" type="integer" groupName="configuration"
@@ -363,7 +350,6 @@ Value containing sequence of gestures.<br /><h1>Overview</h1><p>User can create 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -63,6 +63,7 @@ Water Leakage Sensor<br /><h1>Overview</h1><p>The Flood Sensor is a universal Z-
         <label>1: Flood Alarm Basic On Value</label>
         <description>Flood detected</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration" readOnly="true"
@@ -70,6 +71,7 @@ Water Leakage Sensor<br /><h1>Overview</h1><p>The Flood Sensor is a universal Z-
         <label>2: Flood Alarm Basic Off Value</label>
         <description>No Flood detected</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Water Leakage Sensor<br /><h1>Overview</h1><p>The Flood Sensor is a universal Z-
         <label>3: Enable Buzzer Sound on Alarm</label>
         <description>Buzzer enabled during flood detection</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

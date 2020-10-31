@@ -57,6 +57,7 @@ Night Light<br /><h1>Overview</h1><p>In night-light mode the LED on the switch w
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

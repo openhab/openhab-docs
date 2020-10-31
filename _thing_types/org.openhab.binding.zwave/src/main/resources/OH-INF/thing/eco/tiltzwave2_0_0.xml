@@ -67,6 +67,7 @@ Z-Wave Garage Door Sensor<br /><h1>Overview</h1><p>Sensor which transmits when 
           <option value="0">Not sent</option>
           <option value="255">Sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Z-Wave Garage Door Sensor<br /><h1>Overview</h1><p>Sensor which transmits when 
           <option value="0">Sent</option>
           <option value="255">Not sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -58,6 +58,7 @@ Dim Settings<br /><h1>Overview</h1><p>By default, the LB60Z-1 bulb will go to fu
           <option value="0">Disable dim level memory</option>
           <option value="1">Enable dim level memory</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

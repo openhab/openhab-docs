@@ -95,6 +95,7 @@ Current overload protection enable<br /><h1>Overview</h1><p>Current Overload Pro
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -108,6 +109,7 @@ Configure the output load status after re‐power<br /><h1>Overview</h1><p>Confi
           <option value="1">always on</option>
           <option value="2">always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_wo" type="integer" groupName="configuration"
@@ -117,7 +119,6 @@ Configure the output load status after re‐power<br /><h1>Overview</h1><p>Confi
 Set the RGB LED color value for testing.<br /><h1>Overview</h1><p>Value1: Reserved</p> <p>Value2: Red value</p> <p>Value3: Green value</p> <p>Value4: Blue value</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -131,6 +132,7 @@ Enable to send notifications to Group 1<br /><h1>Overview</h1><p>Enable to send 
           <option value="1">hail CC</option>
           <option value="2">basic CC report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -144,6 +146,7 @@ Configure the state of the LED<br /><h1>Overview</h1><p>Configure the state of L
           <option value="1">LED follows load for 5 seconds</option>
           <option value="2">Night light mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_3" type="integer" groupName="configuration"
@@ -151,6 +154,7 @@ Configure the state of the LED<br /><h1>Overview</h1><p>Configure the state of L
         <label>83: Color in night light mode</label>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_3_000000FF" type="integer" groupName="configuration"
@@ -160,6 +164,7 @@ Configure the state of the LED<br /><h1>Overview</h1><p>Configure the state of L
 Blue night light color value<br /><h1>Overview</h1><p>Value for parameter 83, night light blue color</p>
         ]]></description>
         <default>221</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_3_0000FF00" type="integer" groupName="configuration"
@@ -169,6 +174,7 @@ Blue night light color value<br /><h1>Overview</h1><p>Value for parameter 83, ni
 Green night light color value<br /><h1>Overview</h1><p>Green color value for parameter 83, night light mode.</p>
         ]]></description>
         <default>160</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_3_00FF0000" type="integer" groupName="configuration"
@@ -178,6 +184,7 @@ Green night light color value<br /><h1>Overview</h1><p>Green color value for par
 Configure the RGB value when it is in Night light mode<br /><h1>Overview</h1><p>Configure the RGB value when it is in Night light mode.<br />Value1: Red color value<br />Value2: Green color value<br />Value3: Blue color value</p> <p>defaults:</p> <p>Value1=0xDD<br />Value2=0xA0<br />Value3=0xDD</p>
         ]]></description>
         <default>221</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_3" type="integer" groupName="configuration"
@@ -185,6 +192,7 @@ Configure the RGB value when it is in Night light mode<br /><h1>Overview</h1><p>
         <label>84: Color in energy mode</label>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_3_000000FF" type="integer" groupName="configuration"
@@ -194,6 +202,7 @@ Configure the RGB value when it is in Night light mode<br /><h1>Overview</h1><p>
 Green brightness in energy mode (%)<br /><h1>Overview</h1><p>Configure the brightness level of RGB LED (0%-100%) when<br />it is in Energy Mode/momentary indicate mode.<br />Value1: green color value.<br />Value2: yellow color value.<br />Value3: red color value.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_3_0000FF00" type="integer" groupName="configuration"
@@ -201,6 +210,7 @@ Green brightness in energy mode (%)<br /><h1>Overview</h1><p>Configure the brigh
         <label>84: Yellow brightness in energy mode (%)</label>
         <description>Yellow brightness in energy mode (%)</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_3_00FF0000" type="integer" groupName="configuration"
@@ -208,6 +218,7 @@ Green brightness in energy mode (%)<br /><h1>Overview</h1><p>Configure the brigh
         <label>84: Red brightness in energy mode (%)</label>
         <description>Red brightness in energy mode (%)</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1" type="integer" groupName="configuration">
@@ -220,6 +231,7 @@ Enables/disables parameter 91 and 92<br /><h1>Overview</h1><p>Enables/disables p
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -229,6 +241,7 @@ Enables/disables parameter 91 and 92<br /><h1>Overview</h1><p>Enables/disables p
 minimum change in wattage to trigger<br /><h1>Overview</h1><p>The value here represents minimum change in wattage (in<br />terms of wattage) for a REPORT to be sent (Valid values 0-<br />60000).</p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -238,6 +251,7 @@ minimum change in wattage to trigger<br /><h1>Overview</h1><p>The value here rep
 minimum change in wattage percent<br /><h1>Overview</h1><p>The value here represents minimum change in wattage<br />percent (in terms of percentage) for a REPORT to be sent<br />(Valid values 0-100).</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -248,6 +262,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
           <option value="0">False</option>
           <option value="1">True</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration">
@@ -262,6 +277,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
           <option value="8">kWh</option>
           <option value="15">All Values</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration">
@@ -276,6 +292,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
           <option value="8">kWh</option>
           <option value="15">All Values</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration">
@@ -290,6 +307,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
           <option value="8">kWh</option>
           <option value="15">All Values</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
@@ -300,6 +318,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
           <option value="0">False</option>
           <option value="1">True</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -309,6 +328,7 @@ minimum change in wattage percent<br /><h1>Overview</h1><p>The value here repres
 Group 1 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 3</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -318,6 +338,7 @@ Group 1 automatic update interval<br /><h1>Overview</h1><p>The time interval of 
 Group 2 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -327,7 +348,6 @@ Group 2 automatic update interval<br /><h1>Overview</h1><p>The time interval of 
 Group 3 automatic update interval<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).</p> <p>Default value is 600</p> <p>Note: Only up to 0x7fffffff is currently supported</p>
         ]]></description>
         <default>600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -340,6 +360,7 @@ Enable/disable Configuration Locked (0 =disable, 1 = enable).<br /><h1>Overview<
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -349,6 +370,7 @@ Reset the device to defaults<br /><h1>Overview</h1><p>Reset configuration set up
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

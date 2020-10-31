@@ -80,7 +80,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Z-Wave InWall Dimmer User Guide](https://opensmarthouse.org/zwavedatabase/398/Z-Wave-InWall-Dimmer-User-Manual.pdf)
+* [Z-Wave InWall Dimmer User Guide](https://opensmarthouse.org/zwavedatabase/398/reference/Z-Wave-InWall-Dimmer-User-Manual.pdf)
 
 ---
 

@@ -55,6 +55,7 @@ Siren and Strobe Alarm<br /><h1>Overview</h1><h1>Description</h1> <p>The SSA1/SS
 Delay, from the time the siren-strobe turns on<br /><h1>Overview</h1><p>Delay, from the time the siren-strobe turns on, before the Basic Set Off command is accepted; 1 Byte (in seconds, default is 0, interpreted as unsigned integer for negative values sent in set command). This could be used, for example, to avoid the situation where an associated window/door sensor turns the SSA1 alarm on and then immediately off when the window/door is opened and then quickly closed.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

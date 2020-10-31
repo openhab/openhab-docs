@@ -73,6 +73,7 @@ Toggle send report on color change<br /><h1>Overview</h1><p>Enable/disable to se
           <option value="0">disable color updates</option>
           <option value="1">send HAIL CC</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration">
@@ -85,6 +86,7 @@ Allow external switch to toggle bulb<br /><h1>Overview</h1><p>Enable/disable the
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -97,6 +99,7 @@ Allow external switch to change color<br /><h1>Overview</h1><p>Enable/disable th
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1_wo" type="integer" groupName="configuration">
@@ -111,6 +114,7 @@ Reboot/save/exit Colorful mode<br /><h1>Overview</h1><p>Reboot/save/exit Colorfu
           <option value="2">exit color programming</option>
           <option value="3">save and exit color programming</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_000000FF" type="integer" groupName="configuration"
@@ -120,6 +124,7 @@ Reboot/save/exit Colorful mode<br /><h1>Overview</h1><p>Reboot/save/exit Colorfu
 Colour Residence Time<br /><h1>Overview</h1><p>0-254 : Corresponds from 0 to 25.4 seconds.</p> <p>255 : no change</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
@@ -129,6 +134,7 @@ Colour Residence Time<br /><h1>Overview</h1><p>0-254 : Corresponds from 0 to 25.
 Colour Change Speed<br /><h1>Overview</h1><p>Colour Change Speed (8 bits)<br />This field specifies the transition speed when one colour changes to another.</p> <p>0 is slowest adn 254 is fastest.  255 will have no effect.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
@@ -138,6 +144,7 @@ Colour Change Speed<br /><h1>Overview</h1><p>Colour Change Speed (8 bits)<br />T
 Cycle count<br /><h1>Overview</h1><p><br />The Cycle Count is used to define the number of repetitions/cycles displayed by your LED Bulb in Colour<br />Display Cycle before stopping.</p> <p>0 = Unlimited</p> <p>1-254 = cycle this number and then stop</p> <p>255 = no change to setting</p> <p>For example:<br /><br />When the Bulb is in Rainbow mode, the colour change from red to pink (Red Orange Yellow Green<br />Cyan Blue Purple Pink), going through the colours is regarded as 1 cycle.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_7F000000" type="integer" groupName="configuration">
@@ -160,6 +167,7 @@ Value 1 (MSB) see Overview<br /><h1>Overview</h1><p>scroll to bottom for example
           <option value="130">multi color mode, fade out/fade in</option>
           <option value="131">random color mode, fade out/fade in</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_000000FF" type="integer" groupName="configuration"
@@ -169,6 +177,7 @@ Value 1 (MSB) see Overview<br /><h1>Overview</h1><p>scroll to bottom for example
 Color index configuration for multi mode (1,2)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 1 and 2</p> <p>Values are additive.  The smaller numbers control index 1, and the larger control index 2. </p> <p><strong>Example:</strong></p> <p>You want to have the 1st color be red and the 2nd color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_0000FF00" type="integer" groupName="configuration"
@@ -178,6 +187,7 @@ Color index configuration for multi mode (1,2)<br /><h1>Overview</h1><p>The colo
 Color index configuration for multi mode (3,4)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 3 and 4</p> <p>Values are additive.  The smaller numbers control index 3, and the larger control index 4. </p> <p><strong>Example:</strong></p> <p>You want to have the 3rd color be red and the 4th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_00FF0000" type="integer" groupName="configuration"
@@ -187,6 +197,7 @@ Color index configuration for multi mode (3,4)<br /><h1>Overview</h1><p>The colo
 Color index configuration for multi mode (5,6)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 5 and 6</p> <p>Values are additive.  The smaller numbers control index 5, and the larger control index 6. </p> <p><strong>Example:</strong></p> <p>You want to have the 5th color be red and the 6th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4_7F000000" type="integer" groupName="configuration"
@@ -196,6 +207,7 @@ Color index configuration for multi mode (5,6)<br /><h1>Overview</h1><p>The colo
 Color index configuration for multi mode (7,8)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This is value 1, the MSB.  It controls indexes 7 and 8</p> <p>Values are additive.  The smaller numbers control index 7, and the larger control index 8. </p> <p><strong>Example:</strong></p> <p>You want to have the 7th color be red and the 8th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -207,6 +219,7 @@ Color index configuration for multi mode (7,8)<br /><h1>Overview</h1><p>The colo
           <option value="1">Hail</option>
           <option value="2">Basic</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -217,6 +230,7 @@ Color index configuration for multi mode (7,8)<br /><h1>Overview</h1><p>The colo
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

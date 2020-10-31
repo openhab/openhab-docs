@@ -90,24 +90,28 @@ Touchpad Electronic Deadbolt<br /><h1>Overview</h1><ul><li>One touch locking</li
 User Code 1 Type<br /><h1>Overview</h1><table><tr><td><strong>Parameter Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td><strong>0x00</strong></td> <td>Reserved </td> </tr><tr><td><strong>0x01</strong></td> <td>Owner (Default)</td> </tr><tr><td><strong>0x02</strong></td> <td>Reserved</td> </tr><tr><td><strong>0x03</strong></td> <td>Guest (required for Year/Day schedules)</td> </tr><tr><td><strong>0x04</strong></td> <td>Worker (required for week day schedules)</td> </tr><tr><td><strong>0x05 - 0xFE</strong></td> <td>Reserved </td> </tr><tr><td><strong>0xFF</strong></td> <td>No User Code assigned </td> </tr></table>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000001" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="1">
         <label>31: Lock Status LED</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000002" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="1">
         <label>31: Autolock setting</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000004" type="integer" groupName="configuration" readOnly="true"
                  min="0" max="1">
         <label>31: Buzzer</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4" type="integer" groupName="configuration"
@@ -115,6 +119,7 @@ User Code 1 Type<br /><h1>Overview</h1><table><tr><td><strong>Parameter Value</s
         <label>33: SKU (High 32bits)</label>
         <description>ASCII</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4" type="integer" groupName="configuration"
@@ -122,12 +127,14 @@ User Code 1 Type<br /><h1>Overview</h1><table><tr><td><strong>Parameter Value</s
         <label>34: SKU (Low 32bits)</label>
         <description>ASCII</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1_wo" type="integer" groupName="configuration">
         <label>40: Factory Reset</label>
         <description>Have lock perform factory reset. (1 will reset)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

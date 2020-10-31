@@ -69,6 +69,7 @@ Local Control ON/OFF<br /><h1>Overview</h1><p>f LocalControlOn is set (factory d
           <option value="0">Local Control On</option>
           <option value="1">Local Control Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -130,6 +130,7 @@ Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the dev
           <option value="1">toggle switches</option>
           <option value="2">single</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -142,6 +143,7 @@ Inputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the 
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -154,6 +156,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_000000FF" type="integer" groupName="configuration">
@@ -165,6 +168,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="1">Open blinds</option>
           <option value="2">Close blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_0000FF00" type="integer" groupName="configuration"
@@ -172,6 +176,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>30: Event/State Parameters - Blinda</label>
         <description>Event/State Parameters for blinds</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_00FF0000" type="integer" groupName="configuration"
@@ -179,6 +184,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>30: Notification Status for Blinds</label>
         <description>Notification Status for Blinds</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_4_7F000000" type="integer" groupName="configuration"
@@ -186,6 +192,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>30: Notification Type for Blinds</label>
         <description>Notification Type for Blinds</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_000000FF" type="integer" groupName="configuration">
@@ -197,6 +204,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="1">Open blinds</option>
           <option value="2">Close blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_0000FF00" type="integer" groupName="configuration"
@@ -204,6 +212,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>31: Event/State Parameters for Water</label>
         <description>Event/State Parameters for Water</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_00FF0000" type="integer" groupName="configuration"
@@ -211,6 +220,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>31: Notification Status for Water</label>
         <description>Notification Status for Water</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_4_7F000000" type="integer" groupName="configuration"
@@ -218,6 +228,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>31: Notification Type for Water</label>
         <description>Notification Type for Water</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_000000FF" type="integer" groupName="configuration">
@@ -229,6 +240,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="1">Open blinds</option>
           <option value="2">Close blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_0000FF00" type="integer" groupName="configuration"
@@ -236,6 +248,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>32: Event/State Parameters for Smoke</label>
         <description>Event/State Parameters for Smoke</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_00FF0000" type="integer" groupName="configuration"
@@ -243,6 +256,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>32: Notification Status for Smoke</label>
         <description>Notification Status for Smoke</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_4_7F000000" type="integer" groupName="configuration" readOnly="true"
@@ -250,6 +264,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>32: Notification Type for Smoke</label>
         <description>Notification Type for Smoke</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_000000FF" type="integer" groupName="configuration">
@@ -261,6 +276,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="1">Open blinds</option>
           <option value="2">Close blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_0000FF00" type="integer" groupName="configuration" readOnly="true"
@@ -268,6 +284,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>33: Event/State Parameters for CO</label>
         <description>Event/State Parameters for CO</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_00FF0000" type="integer" groupName="configuration"
@@ -275,12 +292,14 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>33: Notification Status for CO</label>
         <description>Notification Status for CO</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4_7F000000_wo" type="integer" groupName="configuration">
         <label>33: Notification Type for CO</label>
         <description>Notification Type for CO</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_000000FF" type="integer" groupName="configuration">
@@ -292,6 +311,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="1">Open blinds</option>
           <option value="2">Close blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_0000FF00" type="integer" groupName="configuration"
@@ -299,6 +319,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>34: Event/State Parameters for Heat</label>
         <description>Event/State Parameters for Heat</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_00FF0000" type="integer" groupName="configuration"
@@ -306,6 +327,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>34: Notification Status for Heat</label>
         <description>Notification Status for Heat</description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_4_7F000000" type="integer" groupName="configuration"
@@ -313,6 +335,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>34: Notification Status for Heat</label>
         <description>Notification Status for Heat</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -320,6 +343,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>40: S1 Switch Scenes sent</label>
         <description>Parameter values may be combined</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -327,6 +351,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>41: S2 Switch Scenes sent</label>
         <description>Parameter values may be combined</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration">
@@ -337,6 +362,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
           <option value="0">Function inactive</option>
           <option value="1">Function active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_2" type="integer" groupName="configuration"
@@ -344,6 +370,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>61: Power reports - on change</label>
         <description>Power reports - on change</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_62_2" type="integer" groupName="configuration"
@@ -351,6 +378,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>62: Power reports - periodic</label>
         <description>Power reports - periodic</description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_2" type="integer" groupName="configuration"
@@ -358,6 +386,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>65: Energy reports - on change</label>
         <description>Energy reports - on change</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_2" type="integer" groupName="configuration"
@@ -365,6 +394,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
         <label>66: Energy reports - periodic</label>
         <description>Energy reports - periodic</description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_150_1" type="integer" groupName="configuration">
@@ -378,6 +408,7 @@ Force calibration<br /><h1>Overview</h1><p>By setting this parameter to 2 the de
           <option value="1">device is calibrated</option>
           <option value="2">force device calibration</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_151_1" type="integer" groupName="configuration">
@@ -394,6 +425,7 @@ Operating mode<br /><h1>Overview</h1><p>This parameter allows adjusting operatio
           <option value="5">roller blind with built-in driver</option>
           <option value="6">roller blind with built-in driver (impulse)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_152_4" type="integer" groupName="configuration"
@@ -401,6 +433,7 @@ Operating mode<br /><h1>Overview</h1><p>This parameter allows adjusting operatio
         <label>152: Venetian blind - time of full turn of the slats</label>
         <description>Venetian blind - time of full turn of the slats</description>
         <default>150</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_153_1" type="integer" groupName="configuration">
@@ -414,6 +447,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
           <option value="1">slats return #2</option>
           <option value="2">slats return #3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_154_2" type="integer" groupName="configuration"
@@ -421,6 +455,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
         <label>154: Delay motor stop</label>
         <description>Delay motor stop after reaching end switch</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_2" type="integer" groupName="configuration"
@@ -428,6 +463,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
         <label>155: Motor operation detection</label>
         <description>Motor operation detection</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_4" type="integer" groupName="configuration"
@@ -435,6 +471,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
         <label>156: Time of up movement</label>
         <description>Time of up movement</description>
         <default>6000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_157_4" type="integer" groupName="configuration"
@@ -442,6 +479,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
         <label>157: Time of down movement</label>
         <description>Time of down movement</description>
         <default>6000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

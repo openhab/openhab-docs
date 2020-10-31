@@ -307,7 +307,7 @@ Association group 7 supports 8 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/250/nodon-crc-3-6-xx-userguide-150707-en-interactive.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/250/reference/nodon-crc-3-6-xx-userguide-150707-en-interactive.pdf)
 
 ---
 

@@ -267,7 +267,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Dome Mouser Advanced Manual](https://opensmarthouse.org/zwavedatabase/684/Dome-Mouser-Advanced-Manual.pdf)
+* [Dome Mouser Advanced Manual](https://opensmarthouse.org/zwavedatabase/684/reference/Dome-Mouser-Advanced-Manual.pdf)
 
 ---
 

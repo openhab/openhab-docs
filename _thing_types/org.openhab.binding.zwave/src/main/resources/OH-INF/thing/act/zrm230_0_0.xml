@@ -57,6 +57,7 @@ Set ignore start level bit when transmitting dim commands.<br /><h1>Overview</h1
           <option value="0">Ignore start level</option>
           <option value="1">Do not ignore start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -69,6 +70,7 @@ Disable transmitting commands to group 4 devices.<br /><h1>Overview</h1><p>You m
           <option value="0">Transmit to group 4 devices</option>
           <option value="1">Stop transmit to group 4 devices</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -81,6 +83,7 @@ LED behaviour of the ZRM230.<br /><h1>Overview</h1><p>The LED on the ZRM230 will
           <option value="0">Led when load on</option>
           <option value="1">Led when load off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -93,6 +96,7 @@ Switch (paddle) behaviour.<br /><h1>Overview</h1><p>To change the top of the swi
           <option value="0">Invert off</option>
           <option value="1">Invert on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -102,6 +106,7 @@ Switch (paddle) behaviour.<br /><h1>Overview</h1><p>To change the top of the swi
 Operate shade control devices on group 2.<br /><h1>Overview</h1><p>The ZRM230 can operate shade control devices via its group 2 if this configuration parameter is set to 1. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -111,6 +116,7 @@ Operate shade control devices on group 2.<br /><h1>Overview</h1><p>The ZRM230 ca
 Operate shade control devices on group 3.<br /><h1>Overview</h1><p>The ZRM230 can operate shade control devices via its group 3 if this configuration parameter is set to 1. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -124,6 +130,7 @@ Z-Wave transmission LED settings.<br /><h1>Overview</h1><p>The ZRM230 will flick
           <option value="1">Flicker for 1 second (default)</option>
           <option value="2">Flicker for 2 second</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -133,6 +140,7 @@ Z-Wave transmission LED settings.<br /><h1>Overview</h1><p>The ZRM230 will flick
 Poll Group 2 interval (minutes).<br /><h1>Overview</h1><p>Poll Group 2 Interval (minutes), valid values = 1 through 255 (Default value is 2).</p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -142,6 +150,7 @@ Poll Group 2 interval (minutes).<br /><h1>Overview</h1><p>Poll Group 2 Interval 
 Group 2 poll control.<br /><h1>Overview</h1><p>Poll Group 2, if value is 1, the ZRM230 will poll group 2 at the interval set in configuration Parameter 20.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

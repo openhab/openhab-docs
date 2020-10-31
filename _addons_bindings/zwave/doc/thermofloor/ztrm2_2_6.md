@@ -683,9 +683,9 @@ Association group 5 supports 7 nodes.
 
 ### Documentation Links
 
-* [Product Sheet](https://opensmarthouse.org/zwavedatabase/854/Heatit-ztrm2.pdf)
-* [Manual 2018-06-01](https://opensmarthouse.org/zwavedatabase/854/manual-heatit-z-trm2-eng-2018-06-01.pdf)
-* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/854/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
+* [Product Sheet](https://opensmarthouse.org/zwavedatabase/854/reference/Heatit-ztrm2.pdf)
+* [Manual 2018-06-01](https://opensmarthouse.org/zwavedatabase/854/reference/manual-heatit-z-trm2-eng-2018-06-01.pdf)
+* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/854/reference/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
 
 ---
 

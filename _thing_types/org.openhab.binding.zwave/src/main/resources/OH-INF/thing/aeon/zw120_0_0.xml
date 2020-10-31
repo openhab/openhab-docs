@@ -68,6 +68,7 @@ Value sent when the Magnet is triggered On/Off.<br /><h1>Overview</h1><p>Which v
           <option value="0">Close=0xFF, Open=0x00</option>
           <option value="1">Close=0x00, Open=0xFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -80,6 +81,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -90,6 +92,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
           <option value="0">Open: 0xFF, Close: 0x00</option>
           <option value="1">Open: 0x00, Close: 0xFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -97,6 +100,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
         <label>39: Set the low battery value.</label>
         <description>10% to 50%</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -104,6 +108,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
         <label>111: Set the interval time of low battery checking.</label>
         <description>Minimum interval is 4 minutes, Range is 0 to 2147483647</description>
         <default>86640</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4" type="integer" groupName="configuration"
@@ -113,6 +118,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
 Sensor report sent when triggered Opened/Closed<br /><h1>Overview</h1><p>To configure which sensor report will be sent when the Sensor is triggered Opened/Closed. Bitsets: 0-&gt;Battery report, 4-&gt;Sensor Binary, 8-&gt;Basic Set, Default setting: 0x00000100 (Basic Set).Ideal Setting for OZW is 17 (Sensor Binary and Battery Report).</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration">
@@ -123,6 +129,7 @@ Sensor report sent when triggered Opened/Closed<br /><h1>Overview</h1><p>To conf
           <option value="1">Normal</option>
           <option value="1431655765">Reset to factory default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

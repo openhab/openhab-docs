@@ -64,6 +64,7 @@ Blue LED Night Light<br /><h1>Overview</h1><p>This configuration parameter defin
           <option value="1">LED ON when switch is ON</option>
           <option value="2">LED always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

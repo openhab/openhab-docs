@@ -87,6 +87,7 @@ Enable / Disable overvoltage protection.<br /><h1>Overview</h1><p>Enable / Disab
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -100,6 +101,7 @@ Set which device status should be present after a power failure.<br /><h1>Overvi
           <option value="1">Status “on”</option>
           <option value="2">Status “off”</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -113,6 +115,7 @@ Device status report when device status changes.<br /><h1>Overview</h1><p>Device
           <option value="1">Send report</option>
           <option value="2">Send report only with manual change</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -125,6 +128,7 @@ Behaviour of the LED display with device status "On".<br /><h1>Overview</h1><p>B
           <option value="0">LED is permanently active with device status "On"</option>
           <option value="1">LED is active for 5 seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -134,6 +138,7 @@ Behaviour of the LED display with device status "On".<br /><h1>Overview</h1><p>B
 The threshold value serves as an additional condition for the time-based report.<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report.<br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 65535 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0xFFFF)</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -143,7 +148,6 @@ The threshold value serves as an additional condition for the time-based report.
 The threshold value serves as an additional condition for the time-based report.<br /><h1>Overview</h1><p>The threshold value serves as an additional condition for the time-based report. <br />If the threshold value was not exceeded, the time-based report is not sent. <br />The value 0 deactivates the power report threshold.</p> <ul><li>Adjustable from 0 – 127 in Watt</li> </ul><p>(Hexadecimal: 0x00 – 0x7F)</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration"
@@ -153,6 +157,7 @@ The threshold value serves as an additional condition for the time-based report.
 Resets parameter 101 - 104 to factory setting.<br /><h1>Overview</h1><p>84 = Resets parameter 101 - 104 to factory setting.</p>
         ]]></description>
         <default>84</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -162,7 +167,6 @@ Resets parameter 101 - 104 to factory setting.<br /><h1>Overview</h1><p>84 = Res
 The interval time of the power report (W).<br /><h1>Overview</h1><p>The interval time of the power report (W). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
         ]]></description>
         <default>600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -172,7 +176,6 @@ The interval time of the power report (W).<br /><h1>Overview</h1><p>The interval
 The interval time of the consumption report (kWh).<br /><h1>Overview</h1><p>The interval time of the consumption report (kWh). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
         ]]></description>
         <default>3600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -182,7 +185,6 @@ The interval time of the consumption report (kWh).<br /><h1>Overview</h1><p>The 
 The interval time of the voltage report (V).<br /><h1>Overview</h1><p>The interval time of the voltage report (V). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_104_4" type="integer" groupName="configuration"
@@ -192,7 +194,6 @@ The interval time of the voltage report (V).<br /><h1>Overview</h1><p>The interv
 The interval time of the current report (A).<br /><h1>Overview</h1><p>The interval time of the current report (A). <br />The value 0 disables the report.</p> <ul><li>Adjustable from 5 - 2678400 in seconds</li> </ul><p>(Hexadecimal: 0x00 - 0x28DE80)</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_1" type="integer" groupName="configuration">
@@ -205,6 +206,7 @@ Enables / Disables the configuration.<br /><h1>Overview</h1><p>Enables / Disable
           <option value="0">Configuration enabled</option>
           <option value="1">Configuration disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

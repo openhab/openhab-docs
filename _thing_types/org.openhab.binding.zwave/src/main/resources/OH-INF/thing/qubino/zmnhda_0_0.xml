@@ -95,6 +95,7 @@ Flush dimmer<br /><h1>Overview</h1><p>This Z-Wave module is used for dimming the
           <option value="0">mono-stable switch (push button)</option>
           <option value="1">bi-stable (toggle) switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -105,6 +106,7 @@ Flush dimmer<br /><h1>Overview</h1><p>This Z-Wave module is used for dimming the
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -115,6 +117,7 @@ Flush dimmer<br /><h1>Overview</h1><p>This Z-Wave module is used for dimming the
           <option value="0">NO (normally open) input type</option>
           <option value="1">NC (normally close) input type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -129,6 +132,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -139,6 +143,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
           <option value="0">Saves its state before power failure</option>
           <option value="1">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -148,6 +153,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
 Set value means percentage<br /><h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled.</li> </ul><p>Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -157,6 +163,7 @@ Set value means percentage<br /><h1>Overview</h1><ul><li>0 – Reporting Disable
 Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value means time interval (0 – 65535) in seconds, when power report is send.</p> <ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 65535 = 1 second – 65535 seconds. Reporting enabled.</li> </ul><p>Power report is send with time interval set by entered value. </p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_60_1" type="integer" groupName="configuration"
@@ -166,6 +173,7 @@ Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value mea
 Minimum dimming value<br /><h1>Overview</h1><ul><li> Default value 1 (Minimum dimming value is 1%)</li> <li>1- 98 = 1% – 98%, step is 1%. Minimum dimming values is set by entered value.</li> </ul><p><strong>NOTE</strong>: The maximum level may not be lower than the minimum level! 1% min. dimming value is defined by Z-Wave multilevel device class</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_61_1" type="integer" groupName="configuration"
@@ -175,6 +183,7 @@ Minimum dimming value<br /><h1>Overview</h1><ul><li> Default value 1 (Minimum d
 Maximum dimming value<br /><h1>Overview</h1><ul><li>Default value 99 (Maximum dimming value is 99 %)</li> <li>2- 99 = 2% – 99%, step is 1%. Maximum dimming values is set by entered value.</li> </ul><p><strong>NOTE:</strong> The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z-Wave multilevel device class</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_1" type="integer" groupName="configuration"
@@ -184,6 +193,7 @@ Maximum dimming value<br /><h1>Overview</h1><ul><li>Default value 99 (Maximum di
 Dimming time (soft on/off)<br /><h1>Overview</h1><p>Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.</p> <ul><li>Default value 100 (Dimming time between min. and max. dimming values is 1s)</li> <li>1- 255 = 10mseconds – 2550mseconds (2,55s), step is 10mseconds </li> </ul>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_1" type="integer" groupName="configuration"
@@ -193,6 +203,7 @@ Dimming time (soft on/off)<br /><h1>Overview</h1><p>Set value means time of movi
 Dimming time when key pressed<br /><h1>Overview</h1><p>Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.</p> <p>Default value 3 (Dimming time between min. and max. dimming values is 3s)</p> <p> 1- 255 = 1 second – 255 seconds</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

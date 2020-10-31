@@ -55,6 +55,7 @@ Toggle Switch v1<br /><h1>Overview</h1><p>Optimal Wireless Control</p> <p>Monito
 Determines whether up is on and down is off; or up is off, down is on<br /><h1>Overview</h1><p>Toggle Control</p> <p>Parameter 1: Choose if you want the to turn the light on by clicking the toggle up or down</p> <p>Values: 0 – Toggle up turns the light on, toggle down turns the light off (default);</p> <p>1 – Toggle up turns the light off, toggle down turns the light on</p> <p>Size: 1 byte dec.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

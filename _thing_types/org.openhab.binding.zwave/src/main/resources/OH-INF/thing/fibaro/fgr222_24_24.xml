@@ -101,6 +101,7 @@ Roller Shutter 2<br /><h1>Overview</h1><p>The device allows for controlling moto
           <option value="0">Blind position using Z-Wave Command</option>
           <option value="1">Blind position via Fibar Command</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -113,6 +114,7 @@ Roller Shutter 2<br /><h1>Overview</h1><p>The device allows for controlling moto
           <option value="3">Gate Mode, without positioning</option>
           <option value="4">Gate Mode, with positioning</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -122,6 +124,7 @@ Roller Shutter 2<br /><h1>Overview</h1><p>The device allows for controlling moto
 depending on mode, turning time or delay time<br /><h1>Overview</h1><p>In Venetian Blind mode (parameter 10 set to 2) the parameter determines time of full turn of the lamellas.</p> <p>In Gate Mode (parameter 10 set to 3 or 4) the parameter defines the delay time after which an open gate starts closing.Type range</p>
         ]]></description>
         <default>150</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -135,6 +138,7 @@ Parameter influences the lamellas positioning in venetian blind mode<br /><h1>Ov
           <option value="1">default - controller+switchlimit</option>
           <option value="2">like 1 + STOP control frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -148,6 +152,7 @@ either Toggle switches or a single, momentary switch.<br /><h1>Overview</h1><p>1
           <option value="1">Toggle switches</option>
           <option value="2">Single, momentary switch.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -157,6 +162,7 @@ either Toggle switches or a single, momentary switch.<br /><h1>Overview</h1><p>1
 delay till auto turned off or auto gate close<br /><h1>Overview</h1><p>17. In Roller Blind Mode or Venetian Blind mode (parameter 10 set to 0, 1, 2) the parameter determines when the Roller Shutter relays are turned off after reaching a limit switch. In Gate Mode (parameter 10 set to 3 or 4) the parameter determines a time period after which a gate will start closing after a S2 contact has been disconnected. In this mode, time to turn off the Roller Shutter relays after reaching a limit switch is set to 3 seconds and cannot be modified.</p> <p>Value of 0 means the gate will note close automatically. <br />Available settings: 0 - 255 (0,1-25,5s). <br />Default setting: 10 (1s). <br />Parameter size: 1 [byte]</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -164,6 +170,7 @@ delay till auto turned off or auto gate close<br /><h1>Overview</h1><p>17. In Ro
         <label>18: Motor operation detection</label>
         <description>Power threshold to be interpreted as reaching a limit switch.</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -171,6 +178,7 @@ delay till auto turned off or auto gate close<br /><h1>Overview</h1><p>17. In Ro
         <label>22: Motor operation time</label>
         <description>Time period for the motor to continue operation.</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -183,6 +191,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="0">Deactivated</option>
           <option value="1">Start calibration process</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -193,6 +202,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -203,6 +213,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -213,6 +224,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -223,6 +235,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="1">Open Blind</option>
           <option value="2">Close Blind</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -235,6 +248,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
           <option value="0">Do not change lamellas position</option>
           <option value="1">Set lamellas to their extreme position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -244,6 +258,7 @@ set to 1 will enter calibration mode<br /><h1>Overview</h1><p>29. Forced Roller 
 change that needs to occur to trigger the power report<br /><h1>Overview</h1><p>40. Power reports. Power level change that will result in new power value report being sent. The parameter defines a change that needs to occur in order to trigger the report. The value is a percentage of the previous report. Power report threshold available settings: 1-100 (1-100%). Value of 0 means the reports are turned off. Default setting: 10 (10%). Parameter size: 1 [byte]</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -251,6 +266,7 @@ change that needs to occur to trigger the power report<br /><h1>Overview</h1><p>
         <label>42: Periodic power or energy reports</label>
         <description>Time to the next report. Value of 0 means the reports are turned off.</description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration"
@@ -260,6 +276,7 @@ change that needs to occur to trigger the power report<br /><h1>Overview</h1><p>
 Energy threshold to trigger report<br /><h1>Overview</h1><p>43. Energy reports. Energy level change which will result in new energy value report being sent. The parameter defines a change that needs to occur in order to trigger the report. Energy threshold available settings: 1-254 (0,01 - 2,54kWh). Value of 0 means the reports are turned off. Default setting 10 (0,1kWh). Parameter size: 1 [byte]</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_1" type="integer" groupName="configuration">
@@ -272,6 +289,7 @@ if power and energy reports are to sent to the main controller<br /><h1>Overview
           <option value="0">Disabled</option>
           <option value="1">Activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration">
@@ -284,6 +302,7 @@ whether scenes or associations are activated by the switch keys<br /><h1>Overvie
           <option value="0">Associations Active</option>
           <option value="1">Scenes Active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

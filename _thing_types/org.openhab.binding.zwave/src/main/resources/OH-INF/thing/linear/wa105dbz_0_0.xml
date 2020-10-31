@@ -53,6 +53,7 @@
           <option value="1">Siren Only</option>
           <option value="2">Strobe Only</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration">
@@ -65,6 +66,7 @@
           <option value="2">120 seconds</option>
           <option value="3">Continuous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

@@ -83,6 +83,7 @@ Smoke Sensor<br /><h1>Overview</h1><p>The Fibaro Smoke Sensor is a universal, op
 Alarm Cancellation Delay<br /><h1>Overview</h1><p>Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ Alarm acoustic and visual signals<br /><h1>Overview</h1><p>parameter allows for 
           <option value="2">acoustic alarm active, visual alarm inactive</option>
           <option value="3">acoustic and visual alarms active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -109,6 +111,7 @@ Type of alarm to 1st association group (SMOKE)<br /><h1>Overview</h1><p>Allows f
           <option value="0">ALARM SENSOR (SMOKE)</option>
           <option value="255">BASIC_SET</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -118,6 +121,7 @@ Type of alarm to 1st association group (SMOKE)<br /><h1>Overview</h1><p>Allows f
 Forced Level of Dimming group 1<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1</p> <p>In the case of alarm frames the alarm priority is specified.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -127,12 +131,14 @@ Forced Level of Dimming group 1<br /><h1>Overview</h1><p>Value of the parameter 
 Interval between temperature readings<br /><h1>Overview</h1><p>Interval between successive readings of temperature from all sensors connected to the device in seconds.</p> <p>Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</p>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
                  min="0" max="100">
         <label>12: Insensitiveness to temperature changes.</label>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -147,6 +153,7 @@ Frame broadcast mode<br /><h1>Overview</h1><p>Transmitting the alarm or control 
           <option value="2">Smoke mode inactive, Tamper mode active</option>
           <option value="3">Smoke and Tamper broadcast mode active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_73_2" type="integer" groupName="configuration"
@@ -156,6 +163,7 @@ Frame broadcast mode<br /><h1>Overview</h1><p>Transmitting the alarm or control 
 Temperature measurement compensation<br /><h1>Overview</h1><p>Temperature value to be added to or deducted from the current measured temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature measured at the ceiling level</p> <p>Available settings: -1000 -/+ 1000 (in 0,1 C steps)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration"
@@ -165,6 +173,7 @@ Temperature measurement compensation<br /><h1>Overview</h1><p>Temperature value 
 Z-Wave range test interval<br /><h1>Overview</h1><p>Time period between the consecutive Z-Wave network range tests.</p> <p>Available settings: 0 – 144 (10min multiplier) [10min-24h]</p> <p>0 – Z-Wave network range test inactive Default setting: 1 (10min)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration"
@@ -174,6 +183,7 @@ Z-Wave range test interval<br /><h1>Overview</h1><p>Time period between the cons
 Temperature alarm threshold<br /><h1>Overview</h1><p>Temperature value, measured by the built-in temperature sensor which the temperature alarm is sent.</p> <p>Available settings: 0,2 - 100</p> <ul><li>0 – temperature alarm inactive</li> <li>2 - 100 – (2 - 100 C) Default setting:</li> <li>54 (54 C)</li> </ul>
         ]]></description>
         <default>54</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_82_1" type="integer" groupName="configuration">
@@ -187,6 +197,7 @@ Smoke Sensor sensitivity<br /><h1>Overview</h1><p>There are 3 levels of sensitiv
           <option value="2">Medium</option>
           <option value="3">Low</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_1" type="integer" groupName="configuration">
@@ -200,6 +211,7 @@ Black Box sensitivity level<br /><h1>Overview</h1><p>Parameter specifies tempera
           <option value="2">Medium</option>
           <option value="3">Low</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_1" type="integer" groupName="configuration"
@@ -209,6 +221,7 @@ Black Box sensitivity level<br /><h1>Overview</h1><p>Parameter specifies tempera
 Malfunction alarm<br /><h1>Overview</h1><p>Time interval in which malfuntion alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 10 (1s) </li> </ul>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_85_1" type="integer" groupName="configuration"
@@ -218,6 +231,7 @@ Malfunction alarm<br /><h1>Overview</h1><p>Time interval in which malfuntion ala
 Temperature alarm<br /><h1>Overview</h1><p>Time interval in which temperature alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 5 (500ms)</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_86_2" type="integer" groupName="configuration"
@@ -227,6 +241,7 @@ Temperature alarm<br /><h1>Overview</h1><p>Time interval in which temperature al
 Lack of the Z-Wave range alarm<br /><h1>Overview</h1><p>Time interval in which lack of the Z-Wave network alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
         ]]></description>
         <default>360</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_87_2" type="integer" groupName="configuration"
@@ -236,6 +251,7 @@ Lack of the Z-Wave range alarm<br /><h1>Overview</h1><p>Time interval in which l
 Low battery alarm<br /><h1>Overview</h1><p>Time interval in which low battery alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
         ]]></description>
         <default>360</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_88_1" type="integer" groupName="configuration">
@@ -248,6 +264,7 @@ Temperature measurement compensation for report<br /><h1>Overview</h1><p>Conside
           <option value="0">Ignore temperature compensation</option>
           <option value="1">Include temperature compensation</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_89_1" type="integer" groupName="configuration">
@@ -259,6 +276,7 @@ Temperature measurement compensation for report<br /><h1>Overview</h1><p>Conside
           <option value="1">Tamper alarm active, with cancellation option</option>
           <option value="2">Tamper alarm active, without cancellation option</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -88,6 +88,7 @@ Switch Meter Plugin<br /><h1>Overview</h1><p>ON/OFF module with energy metering<
         <label>1: Switch Status</label>
         <description>Switch Status delta based configuration</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -97,6 +98,7 @@ Switch Meter Plugin<br /><h1>Overview</h1><p>ON/OFF module with energy metering<
 Voltage delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base voltage reporting.</i></p> <p><i> Resolution of this parameter is 100 mV.if user wants to set 10V delta then it should be 10/0.1 = 100. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -106,6 +108,7 @@ Voltage delta based configuration<br /><h1>Overview</h1><p><i>This configuration
 Current delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base curenrt reporting.</i></p> <p><i> Resolution of this parameter is 10 mA.if user wants to set 1A delta then it should be 1/0.01 = 100. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -115,6 +118,7 @@ Current delta based configuration<br /><h1>Overview</h1><p><i>This configuration
 Power Factor delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Power Factor reporting in 0.1% resolution.</i></p> <p><i> if user wants to set Power Factor 10% = 10/0.1 = 100 </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -124,6 +128,7 @@ Power Factor delta based configuration<br /><h1>Overview</h1><p><i>This configur
 Active Power delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Active Power reporting in 1 W resolution.</i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -133,6 +138,7 @@ Active Power delta based configuration<br /><h1>Overview</h1><p><i>This configur
 Active Energy delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Active Energyreporting in 1 Wh resolution. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -142,6 +148,7 @@ Active Energy delta based configuration<br /><h1>Overview</h1><p><i>This configu
 Apparent Energy delta based configuration<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to enable/disable the delta base Apparent Energy reporting in 1 VAh resolution. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -151,6 +158,7 @@ Apparent Energy delta based configuration<br /><h1>Overview</h1><p><i>This confi
 Switch Status time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of switch status in 1 second resolution</i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -160,6 +168,7 @@ Switch Status time interval based<br /><h1>Overview</h1><p><i>This configuration
 Voltage time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of voltagein 1 second resolution.</i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -169,6 +178,7 @@ Voltage time interval based<br /><h1>Overview</h1><p><i>This configuration Param
 Current time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of currentin 1 second resolution.</i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -178,6 +188,7 @@ Current time interval based<br /><h1>Overview</h1><p><i>This configuration Param
 Power Factor time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Power Factor in 1 second resolution</i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -187,6 +198,7 @@ Power Factor time interval based<br /><h1>Overview</h1><p><i>This configuration 
 Active Power time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Power in 1 second resolution. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -196,6 +208,7 @@ Active Power time interval based<br /><h1>Overview</h1><p><i>This configuration 
 Active Energy time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Active Energy in 1 second resolution. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -205,6 +218,7 @@ Active Energy time interval based<br /><h1>Overview</h1><p><i>This configuration
 Apparent Energy time interval based<br /><h1>Overview</h1><p><i>This configuration Parameter will be used to set the time interval base reporting of Apparent Energy in 1 second resolution. </i></p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -214,6 +228,7 @@ Apparent Energy time interval based<br /><h1>Overview</h1><p><i>This configurati
 Relay and LED configuration<br /><h1>Overview</h1><p><i>This configuration is used to change the relay LED status when relay is open/close and also enable to whether to retain the last relay status over power cycle. </i></p> <table><tr><td>0</td> <td>Relay status will not be retain over power cycle, and Relay status LED will lit when relay ON and relay status LED will off when relay OFF.</td> </tr><tr><td>1</td> <td>Relay status will be retain over power cycle, and Relay status LED will lit when relay ON and relay status LED will off when relay OFF.</td> </tr><tr><td>2</td> <td>Relay status will not be retain over power cycle, and Relay status LED will off when relay ON and relay status LED will lit when relay OFF.</td> </tr><tr><td>3</td> <td>Relay status will be retain over power cycle, and Relay status LED will off when relay ON and relay status LED will lit when relay OFF.</td> </tr></table>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -223,6 +238,7 @@ Relay and LED configuration<br /><h1>Overview</h1><p><i>This configuration is us
 Sleep Current Config<br /><h1>Overview</h1><p><i>This configuration is used to disconnect the load if the device current is less the configured sleep current for more than 30 seconds, this configuration has the resolution of 0.001 A . </i></p> <p>Common attributes:</p> <p>-Min Value = 0</p> <p>-Zero configurations means that the corresponding functionality is disabled.Value set more than maximum allowable limit will be rejected silently, and SSP 302 will retain it last configuration value.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

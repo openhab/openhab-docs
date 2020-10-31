@@ -67,6 +67,7 @@ On/Off Smart Plug + Signal Repeater (Z-Wave Plus)<br /><h1>Overview</h1><p><stro
           <option value="1">Plug On / LED Off</option>
           <option value="2">LED Disabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -76,6 +77,7 @@ On/Off Smart Plug + Signal Repeater (Z-Wave Plus)<br /><h1>Overview</h1><p><stro
 Plug Auto Shut Off<br /><h1>Overview</h1><p>Plug auto shutoff</p> <p>0 - 36000 seconds</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

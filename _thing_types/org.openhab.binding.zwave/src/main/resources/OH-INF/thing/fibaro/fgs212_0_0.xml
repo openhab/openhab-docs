@@ -69,6 +69,7 @@ Relay Switch 1x2.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay Switch o
           <option value="2">ALL ON active / ALL OFF disabled</option>
           <option value="255">ALL ON active / ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ Forced auto off period<br /><h1>Overview</h1><p>If Parameter 4 states an auto of
           <option value="0">Turn off with push button disabled</option>
           <option value="1">Turn off with push button enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -90,6 +92,7 @@ Forced auto off period<br /><h1>Overview</h1><p>If Parameter 4 states an auto of
 Automatic turning off relay 1 after set time ...<br /><h1>Overview</h1><p>Default: 0 (Auto off disabled). In 100ms increments.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -103,6 +106,7 @@ Sending commands to control devices assigned ...<br /><h1>Overview</h1><p>to 1-s
           <option value="1">Map OFF status to all devices in group 1 ...</option>
           <option value="2">Map OFF status to all devices in group 1 ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -115,6 +119,7 @@ Assigns bistable key status to the device status.<br /><h1>Overview</h1><p>Avail
           <option value="0">Toggle</option>
           <option value="1">Follow switch contact (closed=ON, open=OFF)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -125,6 +130,7 @@ Assigns bistable key status to the device status.<br /><h1>Overview</h1><p>Avail
           <option value="0">Mono-stable input (button)</option>
           <option value="1">Bi-stable input (switch)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -137,6 +143,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="0">Disable Dimmer/Roller shutter control</option>
           <option value="1">Enable Dimmer/Roller shutter control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -147,6 +154,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="0">State NOT saved at pwr failure, outputs set ...</option>
           <option value="1">State saved at pwr failure, outputs are set to ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -158,6 +166,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="2">Alarm relay OFF</option>
           <option value="3">ALARM FLASHING - relay will turn ON and OFF ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -169,6 +178,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="2">Alarm relay OFF</option>
           <option value="3">ALARM FLASHING - relay will turn ON and OFF ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -180,6 +190,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="2">Alarm relay OFF</option>
           <option value="3">ALARM FLASHING - relay will turn ON and OFF ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration">
@@ -191,6 +202,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
           <option value="2">Alarm relay OFF</option>
           <option value="3">ALARM FLASHING - relay will turn ON and OFF ...</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -198,6 +210,7 @@ Enable/Disable operation of dimmer or roller shutter devices ...<br /><h1>Overvi
         <label>39: ALARM FLASHING alarm time</label>
         <description>Amount of time (ms) the device keeps on flashing after receipt of Alarm Frame</description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

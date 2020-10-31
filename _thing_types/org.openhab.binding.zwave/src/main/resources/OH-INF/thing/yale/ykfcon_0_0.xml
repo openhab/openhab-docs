@@ -69,6 +69,7 @@ Sets the volume level of the beeps and voice prompts<br /><h1>Overview</h1><p>1 
           <option value="2">Low</option>
           <option value="3">High</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -81,6 +82,7 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
         <label>3: Re-lock Time</label>
         <description>Time after unlocking that the device will lock</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -95,6 +98,7 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
         <label>4: Wrong Code Entry Limit</label>
         <description>The number of invalid tries before the lock shutdowns and sends an alarm</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -108,6 +112,7 @@ Language used by the voice prompts<br /><h1>Overview</h1><p>1 = English</p> <p>2
           <option value="2">Spanish</option>
           <option value="3">French</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -115,6 +120,7 @@ Language used by the voice prompts<br /><h1>Overview</h1><p>1 = English</p> <p>2
         <label>7: Shutdown Time</label>
         <description>Number of times the device is locked out after the invalid retries are exceeded</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -128,6 +134,7 @@ Sets if the unit operates normal, or disables keypad and Z-Wave lock/unlock<br /
           <option value="1">Vacation Mode</option>
           <option value="2">Privacy Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

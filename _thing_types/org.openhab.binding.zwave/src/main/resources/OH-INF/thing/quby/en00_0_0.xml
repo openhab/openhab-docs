@@ -62,6 +62,7 @@ Engie Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and 
           <option value="1">Gas Enabled</option>
           <option value="2">Heat Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4" type="integer" groupName="configuration"
@@ -71,6 +72,7 @@ Engie Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and 
 Analog gas/heat port resolution<br /><h1>Overview</h1><p>Analog gas/heat port resolution</p> <p>(pulses per cubic meter / pulses per MJ; in Q14.2 notation)</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Analog gas/heat port resolution<br /><h1>Overview</h1><p>Analog gas/heat port re
           <option value="1">Electricity import enabled</option>
           <option value="2">Electricity export enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -91,6 +94,7 @@ Analog gas/heat port resolution<br /><h1>Overview</h1><p>Analog gas/heat port re
 Analog electricity port resolution<br /><h1>Overview</h1><p>Analog electricity port resolution</p> <p>(pulses per kWh; in Q14.2 notation)</p>
         ]]></description>
         <default>400</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -98,6 +102,7 @@ Analog electricity port resolution<br /><h1>Overview</h1><p>Analog electricity p
         <label>5: Digital port mode</label>
         <description>Digital port mode</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration">
@@ -108,6 +113,7 @@ Analog electricity port resolution<br /><h1>Overview</h1><p>Analog electricity p
           <option value="1">Restart entire device</option>
           <option value="2">Restart metering chip</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

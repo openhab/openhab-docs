@@ -102,6 +102,7 @@ Door Opening Sensor<br /><h1>Overview</h1><p>The Fibaro Door / Window Sensor is 
 Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1><p>The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.    </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -112,6 +113,7 @@ Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1
           <option value="1">LED turned On</option>
           <option value="255">No DS18B20 temperature sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -126,6 +128,7 @@ Type of IN input<br /><h1>Overview</h1><p>Default = 0- INPUT_NC (Normally closed
           <option value="2">Monostable</option>
           <option value="3">Bistable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -143,6 +146,7 @@ Type of transmitted control frame for association group 1<br /><h1>Overview</h1>
           <option value="5">ALARM WATER</option>
           <option value="255">BASIC_SET</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -152,6 +156,7 @@ Type of transmitted control frame for association group 1<br /><h1>Overview</h1>
 Parameter for dimming/opening blinds<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified. Default value: 255 Possible parameter settings: (1 – 99) and 255 Value of 255 makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -165,6 +170,7 @@ Enable/Disable transmission of frame cancelling alarm<br /><h1>Overview</h1><p>D
           <option value="1">Group 1 sent, Group 2 not sent.</option>
           <option value="2">Group 2 sent, Group 1 not sent.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -174,6 +180,7 @@ Enable/Disable transmission of frame cancelling alarm<br /><h1>Overview</h1><p>D
 Sensitivity to temperature changes<br /><h1>Overview</h1><p>Sensitivity to temperature changes. The maximum acceptable difference between the last reported temperature and the current temperature read from the sensor. If the temperatures differ by the set value or more, a report with the current temperature value is sent to the device assigned to association group no. 3.</p> <p>Default value: 8 [0,5o C]</p> <p>Available parameter settings: 0 – 255 [0o C to 16o C] [32o F – 60,8o F] To set an appropriate parameter value use the following formula: x = delta T x 16 - for Celsius x = delta T x 80 / 9 - for Fahrenheit x = parameter value delta T – maximum acceptable temperature gradient in Celsius or Fahrenheit If the value is set to 0: - if the wake-up interval is set to 255 seconds, temperature report will be sent according to the interval, - if the wake-up interval is set to over 255, temperature report will be sent each ca. 4 minutes. Parameter size: 1 [byte].</p>
         ]]></description>
         <default>8</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -188,6 +195,7 @@ Enabling/Disabling broadcast alarm for IN and TMP<br /><h1>Overview</h1><p>Sendi
           <option value="2">IN broadcast inactive, TMP broadcast active</option>
           <option value="3">IN and TMP broadcast mode active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -200,6 +208,7 @@ Enable/Disable scene functionality<br /><h1>Overview</h1><p>Scene activation fun
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

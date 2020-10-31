@@ -216,7 +216,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/675/HKZW-MS01-MANUL.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/675/reference/HKZW-MS01-MANUL.pdf)
 
 ---
 

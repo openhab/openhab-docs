@@ -98,6 +98,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">HeatPump</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -109,6 +110,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">Elec</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -120,6 +122,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">w/Heat</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -130,6 +133,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="0">C</option>
           <option value="1">F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -140,6 +144,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="0">Unlocked</option>
           <option value="1">Locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -148,6 +153,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>Minimum OFF Time</description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -156,6 +162,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>Minimum Run Time</description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -164,6 +171,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 1 On</description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -172,6 +180,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 1 Off</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -180,6 +189,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 2 On</description>
         <default>4</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -188,6 +198,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 2 Off</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -196,6 +207,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 3 On</description>
         <default>6</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -204,6 +216,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>H Delta Stage 3 Off</description>
         <default>3</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -212,6 +225,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>C Delta Stage 1 On</description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -220,6 +234,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>C Delta Stage 1 Off</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -228,6 +243,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>C Delta Stage 2 On</description>
         <default>4</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -236,6 +252,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>C Delta Stage 2 Off</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -247,6 +264,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">Setback</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_69_1" type="integer" groupName="configuration">
@@ -258,6 +276,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">Service Mode enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_75_1" type="integer" groupName="configuration"
@@ -266,6 +285,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>Fan Cycler ON Time</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_76_1" type="integer" groupName="configuration"
@@ -274,6 +294,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
         <description>Fan Cycler OFF Time</description>
         <default>20</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_77_1" type="integer" groupName="configuration">
@@ -285,6 +306,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">2nd Stage Heat</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_78_1" type="integer" groupName="configuration">
@@ -296,6 +318,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">Aux Heat enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_79_1" type="integer" groupName="configuration">
@@ -307,6 +330,7 @@ Thermostat<br /><h1>Overview</h1><p>The TZ43 thermostat provides for typical the
           <option value="1">2nd Stage Cool</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

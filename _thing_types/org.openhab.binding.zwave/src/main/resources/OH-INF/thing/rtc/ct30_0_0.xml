@@ -95,6 +95,7 @@ Temperature Reporting Threshold<br /><h1>Overview</h1><p>Sets the reporting thre
           <option value="3">1.5°</option>
           <option value="4">2.0°</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -107,6 +108,7 @@ Utility Lock Enable/Disable<br /><h1>Overview</h1><p>The Utility Lock Configurat
           <option value="0">Utility lock disable</option>
           <option value="1">Utility lock enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -121,6 +123,7 @@ Humidity Reporting Threshold<br /><h1>Overview</h1><p>The Humidity Threshold Con
           <option value="2">5% RH</option>
           <option value="3">10%RH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -133,6 +136,7 @@ Auxiliary/Emergency<br /><h1>Overview</h1><p>The Auxiliary/Emergency configurati
           <option value="0">Auxiliary/Emergency heat disabled</option>
           <option value="1">Auxiliary/Emergency heat enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -146,6 +150,7 @@ Thermostat Swing Temperature<br /><h1>Overview</h1><p>The Thermostat Swing Tempe
           <option value="2">0.1F</option>
           <option value="8">4F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -159,6 +164,7 @@ Thermostat Diff Temperature<br /><h1>Overview</h1><p>The Thermostat Differential
           <option value="8">4.0 F</option>
           <option value="12">6.0 F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

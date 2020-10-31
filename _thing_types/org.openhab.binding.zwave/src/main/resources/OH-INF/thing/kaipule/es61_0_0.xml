@@ -72,7 +72,6 @@ Smoke Sensor<br /><h1>Overview</h1><p>ES61 is a battery powered independent phot
 send BASIC Set = Value command<br /><h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to control that deivce when the PIR is triggered.</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -82,7 +81,6 @@ send BASIC Set = Value command<br /><h1>Overview</h1><p>If there is any device i
 send BASIC Set = Value command &amp; send Basic Set = 0x00 to turn of light<br /><h1>Overview</h1><p>If there is any device in Association Group 2 the PIR Sensor will send BASIC Set = Value command to Group 2 and send Basic Set = 0x00 to turn of light after 5 x t seconds- Set value t means to send the BAsic Set command after t seconds.</p>
         ]]></description>
         <default>20</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -92,7 +90,6 @@ send BASIC Set = Value command &amp; send Basic Set = 0x00 to turn of light<br /
 Value * 5s<br /><h1>Overview</h1><p>Min time is 5s. Eg If the config is 1, this means it will eliminate alarm after 1 * 5s = 5 seconds</p>
         ]]></description>
         <default>20</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

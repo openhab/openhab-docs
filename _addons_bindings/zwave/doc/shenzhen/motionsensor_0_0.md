@@ -330,9 +330,9 @@ Association group 4 supports 4 nodes.
 
 ### Documentation Links
 
-* [Instruction Manual Motion Sensor](https://opensmarthouse.org/zwavedatabase/401/Manual-for-Motion-sensor-PIR-Zwave-Neo.pdf)
-* [Motion Detector User Guide](https://opensmarthouse.org/zwavedatabase/401/Motion-Detector-User-Guide.pdf)
-* [Motion Detector User Guide V_3.2](https://opensmarthouse.org/zwavedatabase/401/Motion-Detector-User-Guide-EU-V3-2.pdf)
+* [Instruction Manual Motion Sensor](https://opensmarthouse.org/zwavedatabase/401/reference/Manual-for-Motion-sensor-PIR-Zwave-Neo.pdf)
+* [Motion Detector User Guide](https://opensmarthouse.org/zwavedatabase/401/reference/Motion-Detector-User-Guide.pdf)
+* [Motion Detector User Guide V_3.2](https://opensmarthouse.org/zwavedatabase/401/reference/Motion-Detector-User-Guide-EU-V3-2.pdf)
 
 ---
 

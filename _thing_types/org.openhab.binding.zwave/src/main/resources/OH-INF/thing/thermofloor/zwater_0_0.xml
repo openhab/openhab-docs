@@ -156,6 +156,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 LED turned off.</p> <
           <option value="2">LED flashing at 1 second intervals (½ Hz)</option>
           <option value="3">LED flashing at ½ second interval (1 Hz)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -165,6 +166,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 LED turned off.</p> <
 Configure the percentage of light in the status LED, when the LED is turned on<br /><h1>Overview</h1><p>Specifies the brightness level of the LED when it is on. Default is 50.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -177,6 +179,7 @@ This parameter decides which kind of thermistor that is connected to the input..
           <option value="0">No thermistor, input is disabled. (Default)</option>
           <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -189,6 +192,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
           <option value="0">No thermistor, input is disabled. (Default)</option>
           <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -201,6 +205,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
           <option value="0">No thermistor, input is disabled. (Default)</option>
           <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -213,6 +218,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
           <option value="0">No thermistor, input is disabled. (Default)</option>
           <option value="1">10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -222,6 +228,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
 Input 1 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -231,6 +238,7 @@ Input 1 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
 Input 1 calibratio2<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -240,6 +248,7 @@ Input 1 calibratio2<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
 Input 3 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -249,6 +258,7 @@ Input 3 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
 Input 4 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration">
@@ -261,6 +271,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
           <option value="0">Reporting of temperatures disabled.</option>
           <option value="1">Multiply with 10 seconds, 10 seconds – 24 hours.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -270,6 +281,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
 Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -279,6 +291,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
 Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -288,6 +301,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
 Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

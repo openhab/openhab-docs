@@ -107,7 +107,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Product Specification](https://opensmarthouse.org/zwavedatabase/1208/Spec-VRCZ4-VRCS4-VRCZ1-VRCS1-VRMR1.pdf)
+* [Product Specification](https://opensmarthouse.org/zwavedatabase/1208/reference/Spec-VRCZ4-VRCS4-VRCZ1-VRCS1-VRMR1.pdf)
 
 ---
 

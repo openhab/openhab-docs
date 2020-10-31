@@ -86,6 +86,7 @@
 Group 1 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 1</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -95,6 +96,7 @@ Group 1 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
 Group 2 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 2</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -104,6 +106,7 @@ Group 2 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
 Group 3 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 3</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -113,6 +116,7 @@ Group 3 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
 Group 4 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 4</p>
         ]]></description>
         <default>40</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -122,6 +126,7 @@ Group 4 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
 Group 5 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 5</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

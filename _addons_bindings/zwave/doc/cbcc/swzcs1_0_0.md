@@ -123,7 +123,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [NodON Wall Switch User Guide](https://opensmarthouse.org/zwavedatabase/236/NodOn-WallSwitch-ZWave-UserGuide-EN-2.pdf)
+* [NodON Wall Switch User Guide](https://opensmarthouse.org/zwavedatabase/236/reference/NodOn-WallSwitch-ZWave-UserGuide-EN-2.pdf)
 
 ---
 

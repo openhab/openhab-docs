@@ -69,6 +69,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
           <option value="2">Medium Sensitivity</option>
           <option value="3">High Sensitivity</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -83,7 +84,6 @@ Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
           <option value="10">Ten Minutes</option>
           <option value="255">Test Mode [5 seconds]</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -95,6 +95,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
           <option value="2">Motion Sensor will send out Basic Set</option>
           <option value="3">Motion Sensor will sendout Basic Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
@@ -107,6 +108,7 @@ Enable &amp; Disable the LED indication<br /><h1>Overview</h1><p>Enable &amp; Di
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

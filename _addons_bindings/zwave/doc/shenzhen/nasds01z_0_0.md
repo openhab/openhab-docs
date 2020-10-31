@@ -240,9 +240,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [ Instruction Manual Door/Window Sensor](https://opensmarthouse.org/zwavedatabase/400/Manual-for-Door-sensor-Z-wave-Neo.pdf)
-* [Door/Window User Guide](https://opensmarthouse.org/zwavedatabase/400/Door-Window-User-Guide.pdf)
-* [Door/Window User Guide - Version from 23.09.2016](https://opensmarthouse.org/zwavedatabase/400/Door-Window-User-Guide.pdf)
+* [ Instruction Manual Door/Window Sensor](https://opensmarthouse.org/zwavedatabase/400/reference/Manual-for-Door-sensor-Z-wave-Neo.pdf)
+* [Door/Window User Guide](https://opensmarthouse.org/zwavedatabase/400/reference/Door-Window-User-Guide.pdf)
+* [Door/Window User Guide - Version from 23.09.2016](https://opensmarthouse.org/zwavedatabase/400/reference/Door-Window-User-Guide.pdf)
 
 ---
 

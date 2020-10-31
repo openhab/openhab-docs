@@ -61,6 +61,7 @@ Wall Switch<br /><h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch wit
           <option value="1">Up Button OFF,Down Button ON</option>
           <option value="2">Up Button ON/OFF,Down Button ON/OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -72,6 +73,7 @@ Wall Switch<br /><h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch wit
           <option value="2">LED Always OFF</option>
           <option value="3">LED Always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -81,12 +83,14 @@ Wall Switch<br /><h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch wit
           <option value="0">Timer Disabled</option>
           <option value="1">Timer Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
                  min="1" max="65535">
         <label>4: Timer</label>
         <default>65535</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

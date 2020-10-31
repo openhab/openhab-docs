@@ -85,6 +85,7 @@
 How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very Dim, 100 = Full Brightness (default)</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -97,6 +98,7 @@ How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very 
           <option value="2">LED is always on</option>
           <option value="3">LED is always off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -104,6 +106,7 @@ How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very 
         <label>7: Remote Dim Step</label>
         <description>How many levels the dimmer will change each time the Dim Timer expires</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -111,6 +114,7 @@ How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very 
         <label>8: Remote Dim Time</label>
         <description>How often the dim level will change (in 10 ms resolution)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -118,6 +122,7 @@ How bright the device LEDs should be<br /><h1>Overview</h1><p>0 = OFF, 1 = Very 
         <label>9: Local Dim Step</label>
         <description>How many levels the dimmer will change each time the Dim Timer expires</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -130,6 +135,7 @@ Provide a visual display of the ammount of energy being consumed<br /><h1>Overvi
           <option value="0">Power Monitoring Off</option>
           <option value="1">Power Monitoring On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -139,6 +145,7 @@ Provide a visual display of the ammount of energy being consumed<br /><h1>Overvi
 Number of seconds LED displays power level usage<br /><h1>Overview</h1><p>The duration the LED will change color to indicate the amount of energy being used can be set using Parameter 12. After displaying the "energy used" color, the LED will revert to OFF or ON (white) as determined by configuration parameter #3.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -148,6 +155,7 @@ Number of seconds LED displays power level usage<br /><h1>Overview</h1><p>The du
 Number of minutes between automatic reporting<br /><h1>Overview</h1><p>0: Automatic reporting OFF</p> <p>1-255: Number of minutes between automatic reporting</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -155,6 +163,7 @@ Number of minutes between automatic reporting<br /><h1>Overview</h1><p>0: Automa
         <label>16: Local Dim Time</label>
         <description>How often the dim level will change (in 10 ms resolution)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -162,6 +171,7 @@ Number of minutes between automatic reporting<br /><h1>Overview</h1><p>0: Automa
         <label>17: AllSwitch Dim Step</label>
         <description>How many levels the dimmer will change each time the Dim Timer expires</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -169,6 +179,7 @@ Number of minutes between automatic reporting<br /><h1>Overview</h1><p>0: Automa
         <label>18: AllSwitch Dim Time</label>
         <description>How often the dim level will change (in 10 ms resolution)</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -1022,7 +1022,7 @@ Association group 10 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1127/FGRGBW-442-EN-T-v1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1127/reference/FGRGBW-442-EN-T-v1-0.pdf)
 
 ---
 

@@ -62,6 +62,7 @@ Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>Lock/unlock c
           <option value="0">Unlock</option>
           <option value="1">Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -74,6 +74,7 @@ Customer function switch, using bit control<br /><h1>Overview</h1><p>Bit0 : Rese
           <option value="4">Notification Report</option>
           <option value="20">Sensor Binary Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -83,6 +84,7 @@ Customer function switch, using bit control<br /><h1>Overview</h1><p>Bit0 : Rese
 The interval time for auto report the battery level<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -63,6 +63,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
         <label>12: PIR sensor sensitivity</label>
         <description>1 = low sensitivity and 8 = high sensitivity.</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -72,6 +73,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 0 - disabled, 1 - enabled<br /><h1>Overview</h1><p>to enable or disable BASIC SET reports when motion is triggered for Group 2 of associated devices. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -81,6 +83,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 0: 255 motion, 0 timeout. 1: 0 motion, 255 timeout<br /><h1>Overview</h1><p> Use it to reverse values sent in BASIC SET reports when motion is triggered for Group 2 of associated devices. </p> <p>0 - BASIC SET sends 255 when motion is triggered, BASIC SET sends 0 when motion times out </p> <p>1 - BASIC SET sends 0 when motion is triggered, BASIC SET sends 255 when motion times out. </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -90,6 +93,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 0=disabled, 1=enabled<br /><h1>Overview</h1><p> disable the vibration sensor</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -99,6 +103,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 3=6 seconds, 65535=65538 seconds (add 3 seconds to value set)<br /><h1>Overview</h1><p>set trigger interval - the time when motion is reported again after initial trigger. </p> <p>NOTE: Small interval will increase activity and decrease battery life.</p>
         ]]></description>
         <default>27</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -108,6 +113,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 0=disabled, 1=enabled (default)<br /><h1>Overview</h1><p>to disable the LED indicator</p> <p>OR CLICK internal button 6 TIMES TO DISABLE / ENABLE LED</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -117,6 +123,7 @@ Motion &amp; Vibration Sensor<br /><h1>Overview</h1><p>Motion detection, built-i
 percent battery left<br /><h1>Overview</h1><p>battery level for low battery reports</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

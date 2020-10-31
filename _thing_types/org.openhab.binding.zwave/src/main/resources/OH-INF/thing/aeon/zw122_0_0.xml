@@ -92,6 +92,7 @@ Enables or disables a wake period of 10 minutes after power up.<br /><h1>Overvie
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -101,7 +102,6 @@ Enables or disables a wake period of 10 minutes after power up.<br /><h1>Overvie
 The number of seconds for the device to stay awake after the WakeUp is sent out.<br /><h1>Overview</h1><p>Set the timeout to go into the sleep state after the Wake Up Notification was sent out. 15 - 255</p>
         ]]></description>
         <default>30</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration" readOnly="true"
@@ -111,6 +111,7 @@ The number of seconds for the device to stay awake after the WakeUp is sent out.
 Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Battery power</p> <p>Value 2: 0=sleeping after powered on, 1=keep awake for 10 min after power on, 2=always awake</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4" type="integer" groupName="configuration"
@@ -119,6 +120,7 @@ Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Batt
         <description>Set the alarm time for the buzzer when triggered</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4_000000FF" type="integer" groupName="configuration"
@@ -128,6 +130,7 @@ Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Batt
 Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the buzzer from ON state to OFF state</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4_0000FF00" type="integer" groupName="configuration"
@@ -135,6 +138,7 @@ Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the
         <label>10: Time of buzzer keeping ON state</label>
         <description>Time of buzzer keeping ON state</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_4_7FFF0000" type="integer" groupName="configuration"
@@ -142,6 +146,7 @@ Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the
         <label>10: Time of buzzer keeping OFF state</label>
         <description>Time of buzzer keeping OFF state</description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_1" type="integer" groupName="configuration"
@@ -151,7 +156,6 @@ Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the
 Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the low battery value. Range: 10% to 50%. </p>
         ]]></description>
         <default>20</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration">
@@ -162,6 +166,7 @@ Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the 
           <option value="0">Disable Sensor report</option>
           <option value="1">Enable Sensor report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4" type="integer" groupName="configuration"
@@ -170,6 +175,7 @@ Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the 
         <description>Set the upper limit value (overheat)</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4_0000FF00" type="integer" groupName="configuration">
@@ -182,6 +188,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F),
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_4_7FFF0000" type="integer" groupName="configuration"
@@ -191,6 +198,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F),
 Temperature value<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4" type="integer" groupName="configuration"
@@ -199,6 +207,7 @@ Temperature value<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), oth
         <description>Set the lower limit value (underheat)</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4_0000FF00" type="integer" groupName="configuration">
@@ -211,6 +220,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_4_7FFF0000" type="integer" groupName="configuration"
@@ -220,6 +230,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
 Temperature limit value<br /><h1>Overview</h1><p>US Version: 0x01400100 (32 °F), other versions: 0x00000000 (0 °C)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2" type="integer" groupName="configuration"
@@ -228,6 +239,7 @@ Temperature limit value<br /><h1>Overview</h1><p>US Version: 0x01400100 (32 °F)
         <description>Set the recover limit value of the temperature sensor</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2_0000000F" type="integer" groupName="configuration">
@@ -240,6 +252,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_57_2_0000FF00" type="integer" groupName="configuration"
@@ -247,6 +260,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
         <label>57: Recover limit value</label>
         <description>Recover limit value</description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_1" type="integer" groupName="configuration">
@@ -259,6 +273,7 @@ Sets the default temperature unit.<br /><h1>Overview</h1><p>Sets the default tem
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_1" type="integer" groupName="configuration" readOnly="true"
@@ -268,6 +283,7 @@ Sets the default temperature unit.<br /><h1>Overview</h1><p>Sets the default tem
 State of tilt sensor, read only<br /><h1>Overview</h1><p>0=main unit horizontal, 1=main unit vertical</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_86_1" type="integer" groupName="configuration">
@@ -280,6 +296,7 @@ Enables or disables the buzzer<br /><h1>Overview</h1><p>Enable/Disable the buzze
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_87_1" type="integer" groupName="configuration"
@@ -289,7 +306,6 @@ Enables or disables the buzzer<br /><h1>Overview</h1><p>Enable/Disable the buzze
 Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To set which sensor is triggered the buzzer will alarm.</p> <ul><li>1 = If the Water leak is triggered, the buzzer will alarm.</li> <li>2 = If the vibration is triggered, the buzzer will alarm.</li> <li>4 = If the tilt sensor is triggered, the buzzer will alarm.</li> <li>16 = If the under heat is triggered, the buzzer will alarm.</li> <li>32 = If the overheat is triggered, the buzzer will alarm.</li> </ul><p>Note: if the value = 1+2+4+16+32=55, which means if any sensor is triggered, the buzzer will alarm. </p>
         ]]></description>
         <default>55</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_88_1" type="integer" groupName="configuration">
@@ -301,6 +317,7 @@ Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To 
           <option value="1">Water present 0xFF, no water present 0x00</option>
           <option value="2">Water present 0x00, no water present 0xFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_89_1" type="integer" groupName="configuration">
@@ -312,6 +329,7 @@ Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To 
           <option value="1">Water present 0xFF, no water present 0x00</option>
           <option value="2">Water present 0x00, no water present 0xFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_94_1" type="integer" groupName="configuration">
@@ -322,6 +340,7 @@ Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To 
           <option value="0">Report USB power level</option>
           <option value="1">Report Battery power level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1_00000065" type="integer" groupName="configuration">
@@ -336,6 +355,7 @@ To set what unsolicited report would be sent to the Lifeline group.<br /><h1>Ove
           <option value="2">Temperature</option>
           <option value="3">Battery and Temperature</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -345,7 +365,6 @@ To set what unsolicited report would be sent to the Lifeline group.<br /><h1>Ove
 Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1><p>Set the interval time for sending the unsolicited report that configured by parameter 0x65. (Valid values 0x05-0x28DE80)</p> <p>Note: 1. The unit of interval time is second if USB power. 2. If battery power, the minimum interval time is equal to Wake Up interval set by the Wake Up CC. </p>
         ]]></description>
         <default>3600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_135_1" type="integer" groupName="configuration"
@@ -353,6 +372,7 @@ Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1>
         <label>135: Sensor reports for non multichannel devices</label>
         <description>Sensor reports for non multichannel devices</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_136_1" type="integer" groupName="configuration" readOnly="true"
@@ -360,6 +380,7 @@ Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1>
         <label>136: Sensor probe status</label>
         <description>Sensor probe status (read only)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2" type="integer" groupName="configuration"
@@ -368,6 +389,7 @@ Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1>
         <description>Temperature calibration</description>
         <default>1</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_0000000F" type="integer" groupName="configuration">
@@ -380,6 +402,7 @@ Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration"
@@ -387,6 +410,7 @@ Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
         <label>201: Calibration value</label>
         <description>Calibration value</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -397,6 +421,7 @@ Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
           <option value="0">Disable configuration locked</option>
           <option value="1">Enable configuration locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration" readOnly="true">
@@ -407,6 +432,7 @@ Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
           <option value="1">do nothing</option>
           <option value="1431655765">Reset device to factory defaults</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

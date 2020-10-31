@@ -65,6 +65,7 @@ operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p
           <option value="1">semiauto</option>
           <option value="2">auto</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Aut
           <option value="0">summer mode only</option>
           <option value="50">Auto (summer / winter mode)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -84,6 +86,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Aut
         <label>3: Measurement frequency</label>
         <description>Measurement frequency</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -91,6 +94,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Aut
         <label>4: Level of sensitivity for day</label>
         <description>Level of sensitivity for day</description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration" readOnly="true"
@@ -98,6 +102,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Aut
         <label>5: Temperature</label>
         <description>Temperature</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -105,6 +110,7 @@ Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Aut
         <label>6: Level of sensitivity for night</label>
         <description>Level of sensitivity for night</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

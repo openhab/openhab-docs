@@ -115,6 +115,7 @@ Flush 2 relays<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -125,6 +126,7 @@ Flush 2 relays<br /><h1>Overview</h1><p>This Z-Wave module is used for switching
           <option value="0">mono-stable switch type (push button)</option>
           <option value="1">bi-stable switch type</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration">
@@ -139,6 +141,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
           <option value="2">ALL ON active ALL OFF is not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -148,6 +151,7 @@ Activate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 
 When relay Q1 is ON it goes automatically OFF after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive ON command regardless from where it comes  (push button, associated module, controller,..).</p> <ul><li>0 - Auto OFF disabled</li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -157,6 +161,7 @@ When relay Q1 is ON it goes automatically OFF after defined time<br /><h1>Overvi
 When relay Q1 is OFF it goes automatically ON after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 - Auto ON disabled</li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -166,6 +171,7 @@ When relay Q1 is OFF it goes automatically ON after defined time<br /><h1>Overvi
 When relay Q2 is ON it goes automatically OFF after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 -Auto OFF disabled</li> <li>1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -175,6 +181,7 @@ When relay Q2 is ON it goes automatically OFF after defined time<br /><h1>Overvi
 When relay Q2 is OFF it goes automatically ON after defined time<br /><h1>Overview</h1><p>Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).</p> <ul><li>0 -Auto ON disabled</li> <li>1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -184,6 +191,7 @@ When relay Q2 is OFF it goes automatically ON after defined time<br /><h1>Overvi
 Automatic turning off / on seconds or milliseconds selection<br /><h1>Overview</h1><p>Available configuration parameters:</p> <ul><li>0 – seconds selected</li> <li>1 – milliseconds selected</li> </ul><p><strong>NOTE:</strong> Parameter is valid for both outputs Q1, Q2 and is the same for turning off or on.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -194,6 +202,7 @@ Automatic turning off / on seconds or milliseconds selection<br /><h1>Overview</
           <option value="0">Saves its state before power failure</option>
           <option value="1">Does not save the state after a power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -203,6 +212,7 @@ Automatic turning off / on seconds or milliseconds selection<br /><h1>Overview</
 Power reporting in Watts on power change for Q1<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 –100 = 0% -100%.</p> <p>Available configuration parameters:</p> <ul><li>0 - reporting disabled</li> <li>1 -100 = 1% -100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE:</strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration"
@@ -212,6 +222,7 @@ Power reporting in Watts on power change for Q1<br /><h1>Overview</h1><p>Set val
 Power reporting in Watts on power change for Q2<br /><h1>Overview</h1><p>Set value means percentage, set value from 0 –100 = 0% -100%. Available configuration parameters:</p> <ul><li>0 - reporting disabled</li> <li>1 - 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE:</strong> If power changed is less than 1W, the report is not send (pushed), independent of percentage set.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -221,6 +232,7 @@ Power reporting in Watts on power change for Q2<br /><h1>Overview</h1><p>Set val
 Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Set value means time interval (0 – 32535) in seconds, when power report is send. Available configuration parameters:</p> <ul><li>Default value 300 (power report in Watts is send each 300s)</li> <li>0 - reporting disabled</li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.</li> </ul>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_2" type="integer" groupName="configuration"
@@ -230,6 +242,7 @@ Power reporting in Watts by time interval for Q1<br /><h1>Overview</h1><p>Set va
 Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Set value means time interval (0 –32535) in seconds, when power report is send. Available configuration parameters:</p> <ul><li>Default value 300 (power report in Watts is send each 300s)</li> <li>0 - reporting disabled</li> <li>1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.</li> </ul>
         ]]></description>
         <default>300</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration">
@@ -239,6 +252,7 @@ Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Set va
           <option value="0">System turned off, output 0V (NC)</option>
           <option value="1">System turned off, output is 230V or 24V (NO)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_1" type="integer" groupName="configuration">
@@ -248,6 +262,7 @@ Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Set va
           <option value="0">System is turned off, output is 0V (NC)</option>
           <option value="1">System turned off, output is 230V or 24V (NO)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_2" type="integer" groupName="configuration"
@@ -257,6 +272,7 @@ Power reporting in Watts by time interval for Q2<br /><h1>Overview</h1><p>Set va
 Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:</p> <ul><li>Default value 32536</li> <li>32536 - offset is 0.0C</li> <li>From 1 to 100 - value from 0.1 °C to 10.0 °C is added to actual measured temperature.</li> <li>From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.</li> </ul>
         ]]></description>
         <default>32536</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_120_1" type="integer" groupName="configuration"
@@ -266,6 +282,7 @@ Temperature sensor offset settings<br /><h1>Overview</h1><p>Set value is added o
 Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:</p> <ul><li>Default value 5 = 0,5°C</li> <li>0 – Reporting disabled</li> <li>1 - 127 = 0,1°C – 12,7°C, step is 0,1°C</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

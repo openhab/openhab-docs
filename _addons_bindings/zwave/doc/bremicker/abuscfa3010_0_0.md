@@ -408,7 +408,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [ABUS Z-Wave HomeTec CFA3010 Manual (DE, GB, FR, NL, IT, ES)](https://opensmarthouse.org/zwavedatabase/1200/Handbuch-ABUS-HomeTec-CFA3010-Z-Wave-T--rschlossantrieb.pdf)
+* [ABUS Z-Wave HomeTec CFA3010 Manual (DE, GB, FR, NL, IT, ES)](https://opensmarthouse.org/zwavedatabase/1200/reference/Handbuch-ABUS-HomeTec-CFA3010-Z-Wave-T--rschlossantrieb.pdf)
 
 ---
 

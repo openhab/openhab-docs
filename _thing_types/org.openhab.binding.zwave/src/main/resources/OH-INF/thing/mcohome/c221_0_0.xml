@@ -90,6 +90,7 @@ MCO HOME Micro Shutter<br /><h1>Overview</h1><p>MCO HOME Micro Shutter for windo
         <label>1: Watt meter report period</label>
         <description>Watt meter report period</description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

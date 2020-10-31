@@ -60,6 +60,7 @@ Panic Button Key Fob<br /><h1>Overview</h1><p>The Aeon Labs Panic Button is a fu
           <option value="0">Factory Default</option>
           <option value="1">Scene Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

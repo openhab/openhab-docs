@@ -72,6 +72,7 @@ Daaf Zipato Smoke Sensor<br /><h1>Overview</h1><p>Zipato Smoke Sensor (Z-Wave) i
           <option value="0">Notification Type, Using Notification Report.</option>
           <option value="16">Notification Type, Using Sensor Binary Report.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -81,6 +82,7 @@ Daaf Zipato Smoke Sensor<br /><h1>Overview</h1><p>Zipato Smoke Sensor (Z-Wave) i
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p>
         ]]></description>
         <default>127</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

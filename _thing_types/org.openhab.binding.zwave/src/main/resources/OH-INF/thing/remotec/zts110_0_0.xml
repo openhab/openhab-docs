@@ -99,6 +99,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
         <label>1: Swing</label>
         <description>Set Swing value from 1F/.5C to 4F/2.0C Available settings: 1 - 4</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -106,6 +107,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
         <label>2: Differntial</label>
         <description>Set Differential value from 1F/.5C to 4F/2.0C Available settings: 1 - 4</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -113,6 +115,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
         <label>3: Set Filter Counter</label>
         <description>Set filter replacement timer from 500 to 4000 hours.</description>
         <default>500</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -120,6 +123,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
         <label>4: Report Filter Counter</label>
         <description>READ ONLY: Data in hours</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -130,6 +134,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
           <option value="0">Centigrade</option>
           <option value="1">Farhenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -139,6 +144,7 @@ ZTS-110 Z Wave Thermostat<br /><h1>Overview</h1><p>ZTS-110 Z-Thermostat is a Z-W
 Upper Limit of Setpoint A<br /><h1>Overview</h1><p>Determines Upper Limit of set point A. Unit in celsius A=(B+2)min (37.0 C)max, Unit in Fahrenheit A=(B+4)min (99.0 F)max  </p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -148,6 +154,7 @@ Upper Limit of Setpoint A<br /><h1>Overview</h1><p>Determines Upper Limit of set
 Lower Limit of Setpoint B<br /><h1>Overview</h1><p>Determines Lower Limit of set point B. Unit in celsius (5.0 C to 35.0 C) Unit in Fahrenheit (41.0 F to 95.0  F)  </p>
         ]]></description>
         <default>41</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -158,6 +165,7 @@ Lower Limit of Setpoint B<br /><h1>Overview</h1><p>Determines Lower Limit of set
           <option value="0">Easy Mode Disabled</option>
           <option value="1">Easy Mode Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -168,6 +176,7 @@ Lower Limit of Setpoint B<br /><h1>Overview</h1><p>Determines Lower Limit of set
           <option value="0">24 Hour Format</option>
           <option value="1">12 Hour Format</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -177,6 +186,7 @@ Lower Limit of Setpoint B<br /><h1>Overview</h1><p>Determines Lower Limit of set
 Repeat Basic Set Counter<br /><h1>Overview</h1><p>Thermostat sends 'Basic Set' command to its association node repeatedly ever X minutes.</p> <ul><li>0 = Disabled or</li> <li>Set to Enabled Values available 3 to 255.  </li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -186,6 +196,7 @@ Repeat Basic Set Counter<br /><h1>Overview</h1><p>Thermostat sends 'Basic Set' c
 AUTO report by room temperature<br /><h1>Overview</h1><p>Trigger AUTO report if room temperature is different from last report.</p> <ul><li>0 = Disabled or</li> <li>set value from 1 to 8 where each number corresponds to 1 Degree F or .5 Degrees Celsius.  </li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -195,6 +206,7 @@ AUTO report by room temperature<br /><h1>Overview</h1><p>Trigger AUTO report if 
 Sensor temperature calibration.<br /><h1>Overview</h1><ul><li>0 = Disabled or</li> <li>set value from 1 to 10 in 1 degree F increments or -1 to -10 in 1 degree F increments . </li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -204,6 +216,7 @@ Sensor temperature calibration.<br /><h1>Overview</h1><ul><li>0 = Disabled or</l
 AUTO report by time interval.<br /><h1>Overview</h1><ul><li>0 = Disabled or</li> <li>set value from 1 to 16 where 1 = .5 hours and each consecutive number increases time by .5 hours. </li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -94,6 +94,7 @@ Power On State<br /><h1>Overview</h1><p>When power is restored, the switch rever
           <option value="1">On</option>
           <option value="2">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -106,6 +107,7 @@ Invert Switch<br /><h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap Up
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -115,7 +117,6 @@ Invert Switch<br /><h1>Overview</h1><p>Inverts the switch (Tap Down = On, Tap Up
 Auto Off Timer<br /><h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = Disabled</p> <p>1= 1 second</p> <p>32767 = 32767 seconds</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -125,6 +126,7 @@ Auto Off Timer<br /><h1>Overview</h1><p>Automatically turns the switch off after
 Association Behavior<br /><h1>Overview</h1><p>When should the switch send commands to the associated devices:</p> <p>01 = Local, 02 = 3-Way, 03 = 3-Way &amp; Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub &amp; Local, 06 = Z-Wave Hub &amp; 3-Way, 07 = Z-Wave Hub &amp; Local &amp; 3-Way, 08 = Timer, 09 = Timer &amp; Local, 10 = Timer &amp; 3-Way, 11 =Timer &amp; 3-Way &amp; Local, 12 = Timer &amp; Z-Wave Hub, 13 = Timer &amp; Z-Wave Hub &amp; Local, 14 = Timer &amp; Z-Wave Hub &amp; 3-Way, 15 = All</p>
         ]]></description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -145,7 +147,6 @@ LED Indicator Color<br /><h1>Overview</h1><p>This will set the default color of 
           <option value="234">Pink</option>
           <option value="255">White</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -167,6 +168,7 @@ LED Indicator Intensity<br /><h1>Overview</h1><p>This will set the intensity of 
           <option value="9">90%</option>
           <option value="10">100%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -188,6 +190,7 @@ LED Indicator Intensity (When Off)<br /><h1>Overview</h1><p>This is the intensit
           <option value="9">90%</option>
           <option value="10">100%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4" type="integer" groupName="configuration"
@@ -198,7 +201,6 @@ LED Strip Effect<br /><h1>Overview</h1><p>This will allow you to add some sweet 
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4_000000FF" type="integer" groupName="configuration"
@@ -219,7 +221,6 @@ LED Strip Effect (Color)<br /><h1>Overview</h1><p>This will allow you to add som
           <option value="234">Pink</option>
           <option value="255">White</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4_0000FF00" type="integer" groupName="configuration">
@@ -241,6 +242,7 @@ LED Strip Effect (Brightness)<br /><h1>Overview</h1><p>This will allow you to ad
           <option value="9">90%</option>
           <option value="10">100%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4_00FF0000" type="integer" groupName="configuration"
@@ -250,6 +252,7 @@ LED Strip Effect (Brightness)<br /><h1>Overview</h1><p>This will allow you to ad
 LED Strip Effect (Duration)<br /><h1>Overview</h1><p>This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)</p> <p>1 = 1 Second</p> <p>2 = 2 Seconds</p> <p>3 = 3 Seconds</p> <p>4 = 4 Seconds</p> <p>5 = 5 Seconds</p> <p>6 = 6 Seconds</p> <p>7 = 7 Seconds</p> <p>8 = 8 Seconds</p> <p>9 = 9 Seconds</p> <p>10 = 10 Seconds</p> <p>20 = 20 Seconds</p> <p>30 = 30 Seconds</p> <p>40 = 40 Seconds</p> <p>50 = 50 Seconds</p> <p>60 = 60 Seconds</p> <p>62 = 2 Minutes</p> <p>63 = 3 Minutes</p> <p>64 = 4 Minutes</p> <p>65 = 5 Minutes</p> <p>255 = Indefinitely</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_4_7F000000" type="integer" groupName="configuration">
@@ -265,6 +268,7 @@ LED Strip Effect (Effect)<br /><h1>Overview</h1><p>This will allow you to add so
           <option value="3">Slow Blink</option>
           <option value="4">Pulse</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -286,6 +290,7 @@ LED Strip Timeout<br /><h1>Overview</h1><p>When the LED strip is disabled (LED S
           <option value="9">Nine Seconds</option>
           <option value="10">Ten Seconds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -295,7 +300,6 @@ LED Strip Timeout<br /><h1>Overview</h1><p>When the LED strip is disabled (LED S
 Active Power Reports<br /><h1>Overview</h1><p>The power level change that will result in a new power report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -305,7 +309,6 @@ Active Power Reports<br /><h1>Overview</h1><p>The power level change that will r
 Periodic Power &amp; Energy Reports<br /><h1>Overview</h1><p>Time period between consecutive power and energy reports being sent (in seconds)</p> <p>0 = 0 seconds</p> <p>1 = 1 second</p> <p>32767 = 32767 seconds</p> <p>Timer resets after every report is sent</p>
         ]]></description>
         <default>3600</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -315,7 +318,6 @@ Periodic Power &amp; Energy Reports<br /><h1>Overview</h1><p>Time period between
 Energy Reports<br /><h1>Overview</h1><p>The energy level change that will result in a new energy report being sent (% of previous report)</p> <p>0 = Disabled</p> <p>10 = 10% of previous report</p> <p>100 = 100% of previous report</p>
         ]]></description>
         <default>10</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration">
@@ -328,6 +330,7 @@ Enable Instant On<br /><h1>Overview</h1><p>Enable instant on (ie: disable the 70
           <option value="0">No delay</option>
           <option value="1">700ms delay</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -88,7 +88,7 @@ Association group 1 supports 254 nodes.
 
 ### Documentation Links
 
-* [Product Specification and Data Sheet](https://opensmarthouse.org/zwavedatabase/350/VRF-plugin-modules-techsht-BW-v1p4HR.pdf)
+* [Product Specification and Data Sheet](https://opensmarthouse.org/zwavedatabase/350/reference/VRF-plugin-modules-techsht-BW-v1p4HR.pdf)
 
 ---
 

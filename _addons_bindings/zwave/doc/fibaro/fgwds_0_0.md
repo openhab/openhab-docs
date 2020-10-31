@@ -1762,8 +1762,8 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1094/FGWDSEU-221-T-EN-v1-0.pdf)
-* [Fibaro Walli Switch Manual](https://opensmarthouse.org/zwavedatabase/1094/FGWDSEU-221-T-EN-v1-1.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1094/reference/FGWDSEU-221-T-EN-v1-0.pdf)
+* [Fibaro Walli Switch Manual](https://opensmarthouse.org/zwavedatabase/1094/reference/FGWDSEU-221-T-EN-v1-1.pdf)
 
 ---
 

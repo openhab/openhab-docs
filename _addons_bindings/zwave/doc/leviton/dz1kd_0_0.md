@@ -229,7 +229,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/664/Leviton-DZ1KD.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/664/reference/Leviton-DZ1KD.pdf)
 
 ---
 

@@ -59,7 +59,6 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
         <label>1: Dimming Step</label>
         <description>Percentage of step when switch is dimming up or down (0 = instant)</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -67,7 +66,6 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
         <label>2: Minimum Level</label>
         <description>Minimum dimming level for attached light</description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -80,6 +78,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="2">Disabled</option>
           <option value="3">Always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -90,6 +89,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -97,7 +97,6 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
         <label>5: Auto OFF</label>
         <description>Automatically turn switch off after this number of seconds</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000001" type="integer" groupName="configuration">
@@ -108,6 +107,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000002" type="integer" groupName="configuration">
@@ -118,6 +118,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000004" type="integer" groupName="configuration">
@@ -128,6 +129,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_00000008" type="integer" groupName="configuration">
@@ -138,6 +140,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Disable</option>
           <option value="8">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -148,6 +151,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
           <option value="0">Dim up/down</option>
           <option value="1">Keep in sync</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -155,6 +159,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
         <label>8: Default Level (local)</label>
         <description>Default level when light is turned on at the switch (0 = previous level)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -162,6 +167,7 @@ Dimming Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repea
         <label>9: Default Level (Z-Wave)</label>
         <description>Default level when light is turned on via Z-Wave command (0 = previous level)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

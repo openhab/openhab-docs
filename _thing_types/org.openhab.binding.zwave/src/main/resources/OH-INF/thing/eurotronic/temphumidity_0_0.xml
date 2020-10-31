@@ -71,6 +71,7 @@ Temperature &amp; Humidity Sensor Z-Wave Plus<br /><h1>Overview</h1><p>The Tempe
 Temperature Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reporting (only time-based reports)</p><p>0x01 – 0x32 report if temperature changed by delta = 0,1°C…5,0°C</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ Temperature Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change repor
 Humidity Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reporting (only time-based reports).</p><p>0x01-0x0A report if humidity changed by delta = 1% …10%</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -87,7 +89,6 @@ Humidity Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reportin
         <label>3: Temperature Unit</label>
         <description>Temperature Unit</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -95,7 +96,6 @@ Humidity Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reportin
         <label>4: Temperature Resolution</label>
         <description>Temperature Resolution</description>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -103,7 +103,6 @@ Humidity Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reportin
         <label>5: Humidity Resolution</label>
         <description>Humidity Resolution</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

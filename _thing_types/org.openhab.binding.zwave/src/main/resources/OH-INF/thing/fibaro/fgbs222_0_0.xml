@@ -234,6 +234,7 @@ mode of 1st input<br /><h1>Overview</h1><p>This parameter allows to choose mode 
           <option value="4">Analog input without internal pull-up</option>
           <option value="5">Analog input with internal pull-up</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -250,6 +251,7 @@ mode of 2nd input<br /><h1>Overview</h1><p>This parameter allows to choose mode 
           <option value="4">Analog input without internal pull-up</option>
           <option value="5">Analog input with internal pull-up</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -262,6 +264,7 @@ reversing operation of IN1 and IN2 inputs<br /><h1>Overview</h1><p>This paramete
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -274,6 +277,7 @@ reversing operation of OUT1 and OUT2 outputs<br /><h1>Overview</h1><p>This param
           <option value="0">default</option>
           <option value="1">reversed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1_0000000F" type="integer" groupName="configuration"
@@ -289,7 +293,6 @@ sending scene ID<br /><h1>Overview</h1><p>This parameter defines which actions r
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key hold down and key released</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1_0000000F" type="integer" groupName="configuration"
@@ -305,7 +308,6 @@ sending scene ID<br /><h1>Overview</h1><p>This parameter defines which actions r
           <option value="4">Key pressed 3 times</option>
           <option value="8">Key hold down and key released</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_2" type="integer" groupName="configuration"
@@ -316,6 +318,7 @@ value sent to 2nd association group when activated<br /><h1>Overview</h1><p>This
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_2" type="integer" groupName="configuration"
@@ -326,6 +329,7 @@ value sent to 2nd association group when deactivated<br /><h1>Overview</h1><p>Th
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
@@ -336,6 +340,7 @@ value sent to 3rd association group when activated<br /><h1>Overview</h1><p>This
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
@@ -346,6 +351,7 @@ value sent to 3rd association group when deactivated<br /><h1>Overview</h1><p>Th
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_63_1" type="integer" groupName="configuration"
@@ -355,6 +361,7 @@ value sent to 3rd association group when deactivated<br /><h1>Overview</h1><p>Th
 minimal change<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of analog input value that results in sending new report. Parameter is relevant only for analog inputs (parameter 20 or 21 set to 4 or 5).</p> <p>Values: 0 - reporting on change disabled, 1-100 (0.1-10V, 0.1V step)</p> <p>Default: 5 (0.5V)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_64_2" type="integer" groupName="configuration"
@@ -364,6 +371,7 @@ minimal change<br /><h1>Overview</h1><p>This parameter defines minimal change (f
 reporting period of analog inputs value<br /><h1>Overview</h1><p>This parameter defines reporting period of analog inputs value. Periodical reports are independent from changes in value (parameter 63). Parameter is relevant only for analog inputs (parameter 20 or 21 set to 4 or 5).</p> <p>Values: 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_65_2" type="integer" groupName="configuration"
@@ -373,6 +381,7 @@ reporting period of analog inputs value<br /><h1>Overview</h1><p>This parameter 
 Internal temperature sensor - minimal change to report<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of internal temperature sensor value that results in sending new report.</p> <p>Values: 0 - reporting on change disabled, 1-255 (0.1-25.5°C)</p> <p>Default: 5 (0.5°C)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_66_2" type="integer" groupName="configuration"
@@ -382,6 +391,7 @@ Internal temperature sensor - minimal change to report<br /><h1>Overview</h1><p>
 Internal temperature sensor - periodical reports<br /><h1>Overview</h1><p>This parameter defines reporting period of internal temperature sensor value. Periodical reports are independent from changes in value (parameter 65).</p> <p>Values: 0 - 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_67_2" type="integer" groupName="configuration"
@@ -391,6 +401,7 @@ Internal temperature sensor - periodical reports<br /><h1>Overview</h1><p>This p
 External sensors - minimal change to report<br /><h1>Overview</h1><p>This parameter defines minimal change (from the last reported) of external sensors values (DS18B20 or DHT22) that results in sending new report. Parameter is relevant only for connected DS18B20 or DHT22 sensors.</p> <p>Values: 0 - reporting on change disabled, 1-255 (0.1-25.5 units, 0.1)</p> <p>Default: 5 (0.5 units)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_68_2" type="integer" groupName="configuration"
@@ -400,6 +411,7 @@ External sensors - minimal change to report<br /><h1>Overview</h1><p>This parame
 reporting period of analog inputs value<br /><h1>Overview</h1><p>This parameter defines reporting period of analog inputs value. Periodical reports are independent from changes in value (parameter 67). Parameter is relevant only for connected DS18B20 or DHT22 sensors.</p> <p>Values: 60-32400 (60s-9h)</p> <p>Default: 0 (periodical reports disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_150_1" type="integer" groupName="configuration"
@@ -409,6 +421,7 @@ reporting period of analog inputs value<br /><h1>Overview</h1><p>This parameter 
 inertia time of IN1 input in alarm modes<br /><h1>Overview</h1><p>This parameter defines the inertia time of IN1 input in alarm modes. Adjust this parameter to prevent bouncing or signal disruptions. Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-100 (10ms-1000ms, 10ms step)</p> <p>Default: 10 (100ms)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_151_1" type="integer" groupName="configuration"
@@ -418,6 +431,7 @@ inertia time of IN1 input in alarm modes<br /><h1>Overview</h1><p>This parameter
 inertia time of IN2 input in alarm modes<br /><h1>Overview</h1><p>This parameter defines the inertia time of IN2 input in alarm modes. Adjust this parameter to prevent bouncing or signal disruptions. Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-100 (10ms-1000ms, 10ms step)</p> <p>Default: 10 (100ms)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_152_2" type="integer" groupName="configuration"
@@ -427,6 +441,7 @@ inertia time of IN2 input in alarm modes<br /><h1>Overview</h1><p>This parameter
 additional delay of cancelling the alarm on IN1 input<br /><h1>Overview</h1><p>This parameter defines additional delay of cancelling the alarm on IN1 input. Parameter is relevant only if parameter 20 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-3600s</p> <p>Default: 0 (no delay)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_153_2" type="integer" groupName="configuration"
@@ -436,6 +451,7 @@ additional delay of cancelling the alarm on IN1 input<br /><h1>Overview</h1><p>T
 additional delay of cancelling the alarm on IN2 input<br /><h1>Overview</h1><p>This parameter defines additional delay of cancelling the alarm on IN2 input. Parameter is relevant only if parameter 21 is set to 0 or 1 (alarm mode).</p> <p>Values: 1-3600s</p> <p>Default: 0 (no delay)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_154_1" type="integer" groupName="configuration">
@@ -448,6 +464,7 @@ logic of OUT1 output operation<br /><h1>Overview</h1><p>This parameter defines l
           <option value="0">normally open</option>
           <option value="1">normally closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_155_1" type="integer" groupName="configuration">
@@ -460,6 +477,7 @@ OUT2 output operation<br /><h1>Overview</h1><p>This parameter defines logic of O
           <option value="0">normally open</option>
           <option value="1">normally closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_156_2" type="integer" groupName="configuration"
@@ -469,6 +487,7 @@ OUT2 output operation<br /><h1>Overview</h1><p>This parameter defines logic of O
 OUT1 automatically deactivated<br /><h1>Overview</h1><p>This parameter defines time after which OUT1 will be automatically deactivated.</p> <p>Values: 1-27000 (0.1s-45min, 0.1s step)</p> <p>Default: 0 (auto off disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_157_2" type="integer" groupName="configuration"
@@ -478,6 +497,7 @@ OUT1 automatically deactivated<br /><h1>Overview</h1><p>This parameter defines t
 OUT2 automatically deactivated<br /><h1>Overview</h1><p>This parameter defines time after which OUT2 will be automatically deactivated.</p> <p>Values: 1-27000 (0.1s-45min, 0.1s step)</p> <p>Default: 0 (auto off disabled)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

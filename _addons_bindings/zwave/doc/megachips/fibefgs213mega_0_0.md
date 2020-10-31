@@ -632,7 +632,7 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [device manual](https://opensmarthouse.org/zwavedatabase/1085/FGS-2x3-EN-T-v1-2.pdf)
+* [device manual](https://opensmarthouse.org/zwavedatabase/1085/reference/FGS-2x3-EN-T-v1-2.pdf)
 
 ---
 

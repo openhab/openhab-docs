@@ -172,6 +172,7 @@ Smart Strip<br /><h1>Overview</h1><p>Aeotec by Aeon Labs Smart Strip is a power 
         <label>1: Voltage to calculate power</label>
         <description>Line voltage used for device calculations of wattage</description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -181,6 +182,7 @@ Smart Strip<br /><h1>Overview</h1><p>Aeotec by Aeon Labs Smart Strip is a power 
 Enable selective reporting only when power changes<br /><h1>Overview</h1><p>Enable selective reporting only when power change reaches a certain threshold or percentage set in 4-11 below. This is used to reduce network traffic.           </p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -190,6 +192,7 @@ Enable selective reporting only when power changes<br /><h1>Overview</h1><p>Enab
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Whole HEM). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -199,6 +202,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 1). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -208,6 +212,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 2). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -217,6 +222,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 3). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -226,6 +232,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 4). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -235,6 +242,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 5). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -244,6 +252,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Threshold change in wattage to induce a automatic report (Socket 6). (Valid values 0-60000)           </p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -253,6 +262,7 @@ Threshold change in wattage to induce a automatic report<br /><h1>Overview</h1><
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Whole Smart Strip). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -262,6 +272,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 1). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -271,6 +282,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 2). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -280,6 +292,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 3). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -289,6 +302,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 4). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -298,6 +312,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 5). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -307,6 +322,7 @@ Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1>
 Percentage change in wattage to induce a automatic report<br /><h1>Overview</h1><p>Percentage change in wattage to induce a automatic report (Socket 6). (Valid values 0-100)           </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_4" type="integer" groupName="configuration">
@@ -320,6 +336,7 @@ Status of load changed,send group 1<br /><h1>Overview</h1><p>Status of load chan
           <option value="1">Send Hail</option>
           <option value="2">Send Basic</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_2" type="integer" groupName="configuration"
@@ -329,6 +346,7 @@ Status of load changed,send group 1<br /><h1>Overview</h1><p>Status of load chan
 Get temperature of Smart Strip<br /><h1>Overview</h1><p>Get temperature of Smart Strip (Only GET is valid)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration"
@@ -336,6 +354,7 @@ Get temperature of Smart Strip<br /><h1>Overview</h1><p>Get temperature of Smart
         <label>100: Reset 0x65~0x67 to default value</label>
         <description>Reset 0x65~0x67 to default value</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_000000FF" type="integer" groupName="configuration"
@@ -345,6 +364,7 @@ Get temperature of Smart Strip<br /><h1>Overview</h1><p>Get temperature of Smart
 A binary field for reporting consumption (kWh) of channels<br /><h1>Overview</h1><p>Choose the channel or channels to auto-report kWh based on a time interval set in parameter 111.  This is the LSB</p> <p> 1 - report only a summary of all channels ( bit 1)</p> <p> 2 - report channel 1 wattage (bit 2)</p> <p> 3 - report a summary of all channels and channel 1 (bits 1 and 2)</p> <p> 4 - report channel 2 wattage</p> <p>&lt;...&gt;</p> <p>14 - channel 3, channel 2, and channel 1</p> <p> 15 - channel 3, channel 2, channel 1, and summary</p> <p> etc.</p> <p> 127 - in the end is reporting values for each individual channel (1-6) and the summary data.  In binary, bits 1 through 7 set to 1.</p> <p> The bit values are as follows:</p> <p> 1 - summary report</p> <p>2 - channel 1 report</p> <p>4 - channel 2 report</p> <p>8 - channel 3 report</p> <p>16 - channel 4 report</p> <p>32 - channel 5 report</p> <p>64 - channel 6 report</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4_0000FF00" type="integer" groupName="configuration"
@@ -354,6 +374,7 @@ A binary field for reporting consumption (kWh) of channels<br /><h1>Overview</h1
 A binary field to choose channels to report power<br /><h1>Overview</h1><p>Choose the channel or channels to auto-report wattage based on a time interval set in parameter 111. </p> <p><strong> examples:</strong></p> <p> 1 - report only a summary of all channels ( bit 1)</p> <p> 2 - report channel 1 wattage (bit 2)</p> <p> 3 - report a summary of all channels and channel 1 (bits 1 and 2)</p> <p> 4 - report channel 2 wattage</p> <p>&lt;...&gt;</p> <p>14 - channel 3, channel 2, and channel 1</p> <p> 15 - channel 3, channel 2, channel 1, and summary</p> <p> etc.</p> <p> 127 - in the end is reporting values for each individual channel (1-6) and the summary data.  In binary, bits 1 through 7 set to 1.</p> <p> The bit values are as follows:</p> <p> 1 - summary report</p> <p>2 - channel 1 report</p> <p>4 - channel 2 report</p> <p>8 - channel 3 report</p> <p>16 - channel 4 report</p> <p>32 - channel 5 report</p> <p>64 - channel 6 report</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_000000FF" type="integer" groupName="configuration"
@@ -363,6 +384,7 @@ A binary field to choose channels to report power<br /><h1>Overview</h1><p>Choos
 Channel(s) to auto-report kWh<br /><h1>Overview</h1><p>Choose the channel or channels to auto-report kWh based on a time interval set in parameter 112.  This is the LSB</p> <p> 1 - report only a summary of all channels ( bit 1)</p> <p> 2 - report channel 1 wattage (bit 2)</p> <p> 3 - report a summary of all channels and channel 1 (bits 1 and 2)</p> <p> 4 - report channel 2 wattage</p> <p>&lt;...&gt;</p> <p>14 - channel 3, channel 2, and channel 1</p> <p> 15 - channel 3, channel 2, channel 1, and summary</p> <p> etc.</p> <p> 127 - in the end is reporting values for each individual channel (1-6) and the summary data.  In binary, bits 1 through 7 set to 1.</p> <p> The bit values are as follows:</p> <p> 1 - summary report</p> <p>2 - channel 1 report</p> <p>4 - channel 2 report</p> <p>8 - channel 3 report</p> <p>16 - channel 4 report</p> <p>32 - channel 5 report</p> <p>64 - channel 6 report</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4_0000FF00" type="integer" groupName="configuration"
@@ -372,24 +394,28 @@ Channel(s) to auto-report kWh<br /><h1>Overview</h1><p>Choose the channel or cha
 Channel(s) to auto-report wattage<br /><h1>Overview</h1><p>Choose the channel or channels to auto-report wattage based on a time interval set in parameter 112. </p> <p><strong> examples:</strong></p> <p> 1 - report only a summary of all channels ( bit 1)</p> <p> 2 - report channel 1 wattage (bit 2)</p> <p> 3 - report a summary of all channels and channel 1 (bits 1 and 2)</p> <p> 4 - report channel 2 wattage</p> <p>&lt;...&gt;</p> <p>14 - channel 3, channel 2, and channel 1</p> <p> 15 - channel 3, channel 2, channel 1, and summary</p> <p> etc.</p> <p> 127 - in the end is reporting values for each individual channel (1-6) and the summary data.  In binary, bits 1 through 7 set to 1.</p> <p> The bit values are as follows:</p> <p> 1 - summary report</p> <p>2 - channel 1 report</p> <p>4 - channel 2 report</p> <p>8 - channel 3 report</p> <p>16 - channel 4 report</p> <p>32 - channel 5 report</p> <p>64 - channel 6 report</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>111: Interval to send out reports of Group 1</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>112: Interval to send out reports of Group 2</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
                  min="1" max="2678400">
         <label>113: Interval to send out reports of Group 3</label>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -86,6 +86,7 @@ Enable/disable last brightness level when using the Color Switch Set CC<br /><h1
           <option value="0">disable</option>
           <option value="1">enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration">
@@ -100,6 +101,7 @@ Reboot/save/exit Colorful mode.<br /><h1>Overview</h1><p>Reboot/save/exit Colorf
           <option value="2">Exit Colorful mode</option>
           <option value="3">Save the current Colorful mode value</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_0000001F" type="integer" groupName="configuration"
@@ -112,7 +114,6 @@ Applies only when the Color Transition Style is set to Fade Out/In<br /><h1>Over
         <options>
           <option value="0">Constant Speed</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_000000E0" type="integer" groupName="configuration">
@@ -126,6 +127,7 @@ Applies only when the Color Transition Style is set to Fade Out/In<br /><h1>Over
           <option value="1">Time base is 10ms</option>
           <option value="2">Time base is 100ms</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_0000FF00" type="integer" groupName="configuration"
@@ -135,6 +137,7 @@ Applies only when the Color Transition Style is set to Fade Out/In<br /><h1>Over
 Defines the number of repetitions of the color transition cycle<br /><h1>Overview</h1><p>When the end is reached the strip turns off.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_00FF0000" type="integer" groupName="configuration"
@@ -144,6 +147,7 @@ Defines the number of repetitions of the color transition cycle<br /><h1>Overvie
 Brightness when in color transition mode<br /><h1>Overview</h1><p>Note that this setting only affects the brightness when in color transition mode. Use the "Brightness" channel to set the brightness outside of color transition mode.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_07000000" type="integer" groupName="configuration">
@@ -159,6 +163,7 @@ Defines the mode for determining colors used in color transitions<br /><h1>Overv
           <option value="3">Random mode</option>
           <option value="4">Single color mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_38000000" type="integer" groupName="configuration">
@@ -170,6 +175,7 @@ Defines the mode for determining colors used in color transitions<br /><h1>Overv
           <option value="1">Fade in for 5ms and fade out for 5ms</option>
           <option value="2">Fade in for 50ms and fade out for 50ms</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_4_40000000" type="integer" groupName="configuration">
@@ -182,6 +188,7 @@ Defines how the strip transitions between colors<br /><h1>Overview</h1><p>Note t
           <option value="0">Smooth color transition</option>
           <option value="1">Fade out fade in transition</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_38_4" type="integer" groupName="configuration"
@@ -191,6 +198,7 @@ Defines how the strip transitions between colors<br /><h1>Overview</h1><p>Note t
 Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed from OFF to ON.</p> <p>Value 2: The speed from ON to OFF.</p> <p>Value 3: Pause time of ON.</p> <p>Value 4: Pause time of OFF.  </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_4_000000FF" type="integer" groupName="configuration"
@@ -198,6 +206,7 @@ Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed fr
         <label>39: Multi Color, Single Color or Random Mode - Byte 4</label>
         <description>todo</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_4_0000FF00" type="integer" groupName="configuration"
@@ -205,6 +214,7 @@ Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed fr
         <label>39: Multi Color, Single Color, or Random Mode - Byte 3</label>
         <description>todo</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_4_00FF0000" type="integer" groupName="configuration"
@@ -212,6 +222,7 @@ Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed fr
         <label>39: Multi Color, Single Color, or Random Mode - Byte 2</label>
         <description>todo</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_4_7F000000" type="integer" groupName="configuration"
@@ -219,6 +230,7 @@ Change speed<br /><h1>Overview</h1><p>Change speed:</p> <p>Value 1: The speed fr
         <label>39: Multi Color, Single Color, or Random Mode - Byte 1</label>
         <description>todo</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -234,6 +246,7 @@ Colorful mode configuration<br /><h1>Overview</h1><p>Colorful mode configuration
           <option value="4">Fade out and fade in (Green)</option>
           <option value="5">Fade out and fade in (Blue)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -245,6 +258,7 @@ Colorful mode configuration<br /><h1>Overview</h1><p>Colorful mode configuration
           <option value="1">Hail CC</option>
           <option value="2">Basic CC report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_1" type="integer" groupName="configuration">
@@ -259,6 +273,7 @@ Dimmer mode:<br /><h1>Overview</h1><p>Dimmer mode:</p> <p>0 = Parabolic curve.</
           <option value="2">(Parabolic + Index)/2</option>
           <option value="3">Linear</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

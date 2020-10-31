@@ -61,6 +61,7 @@ MCO Home Dimmer Switch<br /><h1>Overview</h1><p>Wall Dimmer Switch </p> <br /><
 Dimmer state saved or not when power down<br /><h1>Overview</h1><p>0x00 not saved，Dimmer will be off</p> <p>when powered again</p> <p>0x01 saved，Dimmer will keep the same</p> <p>state when powered again</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -70,6 +71,7 @@ Dimmer state saved or not when power down<br /><h1>Overview</h1><p>0x00 not save
 Beep<br /><h1>Overview</h1><p>0x00 Beep disabled</p> <p>0x01 Beep enabled</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -79,6 +81,7 @@ Beep<br /><h1>Overview</h1><p>0x00 Beep disabled</p> <p>0x01 Beep enabled</p>
 LED Backlit Brightness Level<br /><h1>Overview</h1><p>0x00 LED disabled</p> <p>0x01~0x0A Min level-Max level</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -88,6 +91,7 @@ LED Backlit Brightness Level<br /><h1>Overview</h1><p>0x00 LED disabled</p> <p>0
 ALL ON/ALL OFF<br /><h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -97,6 +101,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <
 Minimum brightness level<br /><h1>Overview</h1><p>1~98 percentage brightness level</p> <p>The max level should always higher than min level</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -106,6 +111,7 @@ Minimum brightness level<br /><h1>Overview</h1><p>1~98 percentage brightness lev
 Maximum brightness level<br /><h1>Overview</h1><p>2~99 percentage brightness level</p> <p>The max level should always higher than min level</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration"
@@ -115,6 +121,7 @@ Maximum brightness level<br /><h1>Overview</h1><p>2~99 percentage brightness lev
 Single dimming step time(Manual)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms steps</p> <p>Manual control realized by holding external 8 button</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -124,6 +131,7 @@ Single dimming step time(Manual)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms ste
 Single dimming step time(Manual)<br /><h1>Overview</h1><p>Single dimming step size(Manual)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -133,6 +141,7 @@ Single dimming step time(Manual)<br /><h1>Overview</h1><p>Single dimming step s
 Single dimming step time (Auto)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms steps</p> <p>Auto control</p> <p>realized by:</p> <p>- one click;</p> <p>- double click of</p> <p>external button;</p> <p>- send Z-Wave CC</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -142,6 +151,7 @@ Single dimming step time (Auto)<br /><h1>Overview</h1><p>Max 2.55s, in 10ms step
 Single dimming step size (Auto)<br /><h1>Overview</h1><p>Auto control</p> <p>realized by:</p> <p>- one click;</p> <p>- double click of</p> <p>external button;</p> <p>- send Z-Wave CC</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -151,6 +161,7 @@ Single dimming step size (Auto)<br /><h1>Overview</h1><p>Auto control</p> <p>rea
 Timer function (Auto-off)<br /><h1>Overview</h1><p>0x00 function disabled</p> <p>0x0001~0x00FF 1s~255s</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -160,6 +171,7 @@ Timer function (Auto-off)<br /><h1>Overview</h1><p>0x00 function disabled</p> <p
 One click of S1<br /><h1>Overview</h1><p>0x00 switch between Off and last saved</p> <p>brightness level</p> <p>1~99 percentage value</p> <p>switch between Off and the set value</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -169,6 +181,7 @@ One click of S1<br /><h1>Overview</h1><p>0x00 switch between Off and last saved<
 Double click of S1<br /><h1>Overview</h1><p>0x00 function disabled</p> <p>0x01 reach max brightness level</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -178,6 +191,7 @@ Double click of S1<br /><h1>Overview</h1><p>0x00 function disabled</p> <p>0x01 r
 Operation report from Switch1 to Association Group 2 &amp; 3<br /><h1>Overview</h1><p>bit 6:0</p> <p>0x00 report all operation to AG2&amp;3</p> <p>0x01 only report when switching OFF</p> <p>0x02 only report when switching ON</p> <p>bit7 (valid for AG3 during dimming only)</p> <p>0 not report during dimming</p> <p>1 report during dimming</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -187,6 +201,7 @@ Operation report from Switch1 to Association Group 2 &amp; 3<br /><h1>Overview</
 Operation report from Switch1 to Association Group 2<br /><h1>Overview</h1><p>0x00 When sent Basic Set On,</p> <p>carried Value is 0xFF</p> <p>0x01 When sent Basic Set On, carried</p> <p>Value is Current Dimmer Value</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -196,6 +211,7 @@ Operation report from Switch1 to Association Group 2<br /><h1>Overview</h1><p>0x
 Scene ID sent to AG1 when one click of S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -205,6 +221,7 @@ Scene ID sent to AG1 when one click of S1<br /><h1>Overview</h1><p>0 Scene Activ
 Scene ID sent to AG1 when double click of S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -214,6 +231,7 @@ Scene ID sent to AG1 when double click of S1<br /><h1>Overview</h1><p>0 Scene Ac
 Scene ID sent to AG1 when hold S1<br /><h1>Overview</h1><p>0 Scene Activation disabled</p> <p>1~255 send Activation CC to AG1 with</p> <p>specified Scene ID</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -222,6 +240,7 @@ Scene ID sent to AG1 when hold S1<br /><h1>Overview</h1><p>0 Scene Activation di
 Factory setting<br /><h1>Overview</h1><p>0x55 restore factory setting</p>
         ]]></description>
         <default>85</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

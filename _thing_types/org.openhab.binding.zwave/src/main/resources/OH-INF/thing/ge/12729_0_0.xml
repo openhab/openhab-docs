@@ -52,6 +52,7 @@ Invert the ON/OFF Switch State.<br /><h1>Overview</h1><p>If the switch is accide
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -59,6 +60,7 @@ Invert the ON/OFF Switch State.<br /><h1>Overview</h1><p>If the switch is accide
         <label>7: On/Off Command Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -68,6 +70,7 @@ Invert the ON/OFF Switch State.<br /><h1>Overview</h1><p>If the switch is accide
 This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -75,6 +78,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
         <label>9: Local Control Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -84,6 +88,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
 This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -91,6 +96,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description>Indicates how many levels the dimmer will change for each dimming step.</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -100,6 +106,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
 This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

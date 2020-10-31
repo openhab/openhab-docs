@@ -66,6 +66,7 @@ Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-th
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-th
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-th
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -96,6 +99,7 @@ Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-th
           <option value="0">Disable</option>
           <option value="255">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration"
@@ -103,6 +107,7 @@ Touchscreen Deadbolt<br /><h1>Overview</h1><p>Z-Wave Enabled residential auto-th
         <label>16: User Code PIN Length</label>
         <description>User codes can be 4-8 digits. Changing length will delete all existing codes.</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -58,6 +58,7 @@ Accessory Switch<br /><h1>Overview</h1><p>Aspire RF Accessory Switch Compatible 
         <label>1: Delayed OFF time</label>
         <description>The time in seconds the switch will delay when trigger the delayed off feature</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

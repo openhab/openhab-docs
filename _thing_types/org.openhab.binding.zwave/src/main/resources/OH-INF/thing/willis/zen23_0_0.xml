@@ -55,6 +55,7 @@ Wall mounted switch<br /><h1>Overview</h1><p>Keep the classic look of toggle swi
           <option value="0">Mode 1</option>
           <option value="1">Mode 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

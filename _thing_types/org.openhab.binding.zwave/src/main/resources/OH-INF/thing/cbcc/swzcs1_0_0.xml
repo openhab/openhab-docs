@@ -56,6 +56,7 @@ Cord Switch<br /><h1>Overview</h1><p>The wall switch is in “Gateway” Mode as
           <option value="2">Switch off only</option>
           <option value="255">Fully enabled (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

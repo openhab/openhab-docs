@@ -84,7 +84,6 @@ Wall Plug Meter Switch<br /><h1>Overview</h1><p>Z-Wave UK Plug-in Switch plus Po
 Time frame for reporting instant power consumption<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. (one unit = 5 seconds)</p>
         ]]></description>
         <default>720</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -94,6 +93,7 @@ Time frame for reporting instant power consumption<br /><h1>Overview</h1><p>If t
 Time frame for reporting Accumulated Power Consumption<br /><h1>Overview</h1><p>if the setting is configured for 1hour (set value = 6), the device will report its Accumulated Power Consumption (KW/h) every hour (one unit = 10 min)</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -103,6 +103,7 @@ Time frame for reporting Accumulated Power Consumption<br /><h1>Overview</h1><p>
 Warn when wattage of load over the preset threshold value<br /><h1>Overview</h1><p>This is a warning when the wattage of load over the preset threshold value, if the load wattage exceeds the setting value the device will send a warning alarm command to the controller. </p>
         ]]></description>
         <default>3000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -112,6 +113,7 @@ Warn when wattage of load over the preset threshold value<br /><h1>Overview</h1>
 Warn if Acc. Power Consumption exceeds the set value<br /><h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, if the Accumulated Power Consumption exceeds the setting value the device will send a warning alarm command to the controller.</p>
         ]]></description>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -122,6 +124,7 @@ Warn if Acc. Power Consumption exceeds the set value<br /><h1>Overview</h1><p>Th
           <option value="1">Last Switch State (Default)</option>
           <option value="2">Switch On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -131,6 +134,7 @@ Warn if Acc. Power Consumption exceeds the set value<br /><h1>Overview</h1><p>Th
           <option value="0">Disabled</option>
           <option value="1">Enabled (Default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

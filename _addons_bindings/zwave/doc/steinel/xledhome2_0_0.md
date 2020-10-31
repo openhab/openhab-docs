@@ -620,8 +620,8 @@ Association group 4 supports 15 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/688/bedien-110043509.pdf)
-* [Steinel Z-Wave Interface v 1.0.0](https://opensmarthouse.org/zwavedatabase/688/bdal2-110043507-1.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/688/reference/bedien-110043509.pdf)
+* [Steinel Z-Wave Interface v 1.0.0](https://opensmarthouse.org/zwavedatabase/688/reference/bdal2-110043507-1.pdf)
 
 ---
 

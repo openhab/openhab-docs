@@ -63,6 +63,7 @@ Remember last status<br /><h1>Overview</h1><p>Remember the last status:</p> <p>I
           <option value="0">Do not remember</option>
           <option value="1">Remember</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

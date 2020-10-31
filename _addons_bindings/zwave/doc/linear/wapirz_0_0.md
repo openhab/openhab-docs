@@ -164,7 +164,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Guide](https://opensmarthouse.org/zwavedatabase/5/WAPIRZ-install.pdf)
+* [Installation Guide](https://opensmarthouse.org/zwavedatabase/5/reference/WAPIRZ-install.pdf)
 
 ---
 

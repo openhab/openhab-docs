@@ -280,7 +280,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Heating Control Manual EN](https://opensmarthouse.org/zwavedatabase/473/heatingcontrol.pdf)
+* [Heating Control Manual EN](https://opensmarthouse.org/zwavedatabase/473/reference/heatingcontrol.pdf)
 
 ---
 

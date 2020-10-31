@@ -298,7 +298,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/501/Bedienungsanleitung-DTHERMZ5.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/501/reference/Bedienungsanleitung-DTHERMZ5.pdf)
 
 ---
 

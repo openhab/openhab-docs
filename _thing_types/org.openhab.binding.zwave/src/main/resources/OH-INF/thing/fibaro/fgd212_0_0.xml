@@ -174,6 +174,7 @@ Dimmer 2<br /><h1>Overview</h1><p>FIBARO Dimmer 2 remotely controlled light dimm
 Set automatically during the calibration process<br /><h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -183,6 +184,7 @@ Set automatically during the calibration process<br /><h1>Overview</h1><p>The pa
 Set automatically during the calibration process.<br /><h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -192,6 +194,7 @@ Set automatically during the calibration process.<br /><h1>Overview</h1><p>The p
 Dimmer will set to this value after first switch on.<br /><h1>Overview</h1><p>Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -201,6 +204,7 @@ Dimmer will set to this value after first switch on.<br /><h1>Overview</h1><p>Vi
 Time for switching fluorescent lamps and certain light sources.<br /><h1>Overview</h1><p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -210,6 +214,7 @@ Time for switching fluorescent lamps and certain light sources.<br /><h1>Overvie
 Percentage of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parameter defines the percentage of a dimming step at automatic control. 1-99</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -219,6 +224,7 @@ Percentage of a dimming step at automatic control.<br /><h1>Overview</h1><p>The 
 Time of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -228,6 +234,7 @@ Time of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parame
 Percentage of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter defines the percentage of a dimming step at manual control. 1-99</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -237,6 +244,7 @@ Percentage of a dimming step at manual control.<br /><h1>Overview</h1><p>The par
 Time of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -247,6 +255,7 @@ Time of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter
           <option value="0">State not saved, outputs OFF</option>
           <option value="1">State saved, outputs to previous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -256,6 +265,7 @@ Time of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter
 Setting of the timer.<br /><h1>Overview</h1><p>The parameter defines the setting of the timer.</p> <p>Available settings:</p> <ul><li>1-32767 - time to turn off measured in seconds (1s - 9,1h)</li> <li>0 disables the function</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration">
@@ -268,6 +278,7 @@ Setting of the timer.<br /><h1>Overview</h1><p>The parameter defines the setting
           <option value="2">ALL ON active, ALL OFF not active</option>
           <option value="255">ALL ON active, ALL OFF active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -281,6 +292,7 @@ Force the calibration process<br /><h1>Overview</h1><p>Changing the value of thi
           <option value="1">Force auto-calibration of the load w/o Bypass</option>
           <option value="2">Force auto-calibration of the load with Bypass</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true">
@@ -293,6 +305,7 @@ Mode of the Dimmer (auto/man settings).<br /><h1>Overview</h1><p>This parameter 
           <option value="0">No calibration on manual setting</option>
           <option value="1">Dimmer operates on auto-calibration settings</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -302,6 +315,7 @@ Mode of the Dimmer (auto/man settings).<br /><h1>Overview</h1><p>This parameter 
 Percentage value of power variation<br /><h1>Overview</h1><p>Percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb). 1-99, 0 disables the function.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -311,6 +325,7 @@ Percentage value of power variation<br /><h1>Overview</h1><p>Percentage value of
 Delay for power variation detection<br /><h1>Overview</h1><p>Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -320,6 +335,7 @@ Delay for power variation detection<br /><h1>Overview</h1><p>Time of delay (in s
 Switching on the Dimmer will always set this brightness level.<br /><h1>Overview</h1><p>If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -331,6 +347,7 @@ Switching on the Dimmer will always set this brightness level.<br /><h1>Overview
           <option value="1">Bi-stable input (switch)</option>
           <option value="2">Roller blind switch (UP / DOWN)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -341,6 +358,7 @@ Switching on the Dimmer will always set this brightness level.<br /><h1>Overview
           <option value="0">Associated devices to last saved value</option>
           <option value="1">Synchronize brightness level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -353,6 +371,7 @@ Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This funct
           <option value="0">Changes status on key status change</option>
           <option value="1">Device status depends on key status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -363,6 +382,7 @@ Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This funct
           <option value="0">Disable double click</option>
           <option value="1">Enable double click</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -379,6 +399,7 @@ Actions not resulting in sending frames to association groups<br /><h1>Overview<
           <option value="8">do not send on double click</option>
           <option value="16">send 0xFF value on double click</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -395,6 +416,7 @@ Actions not resulting in sending frames to association groups<br /><h1>Overview<
           <option value="8">do not send on double click</option>
           <option value="16">send 0xFF value on double click</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -407,6 +429,7 @@ Key no. 2 controls the Dimmer additionally<br /><h1>Overview</h1><p>Key no. 2 co
           <option value="0">3-way switch function for S2 disabled</option>
           <option value="1">3-way switch function for S2 enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -423,6 +446,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
           <option value="8">5th group sent as secure</option>
           <option value="15">all groups (II-V) sent as secure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration">
@@ -433,6 +457,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
           <option value="0">Scene functionality deactivated</option>
           <option value="1">Scene functionality activated</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -443,6 +468,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
           <option value="0">standard mode</option>
           <option value="1">S1 operates as S2, S2 operates as S1</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -454,6 +480,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
           <option value="1">forced trailing edge control</option>
           <option value="2">control mode selected automatically</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration" readOnly="true">
@@ -464,6 +491,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
           <option value="0">leading edge control</option>
           <option value="1">trailing edge control</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration">
@@ -477,6 +505,7 @@ Ignore brightening/- dimming time settings.<br /><h1>Overview</h1><p>This mode i
           <option value="1">on/off mode enabled (dimming is not possible)</option>
           <option value="2">mode selected automatically</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration" readOnly="true">
@@ -487,6 +516,7 @@ Ignore brightening/- dimming time settings.<br /><h1>Overview</h1><p>This mode i
           <option value="0">Load recognized as dimmable</option>
           <option value="1">Load recognized as non-dimmable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration">
@@ -498,6 +528,7 @@ Ignore brightening/- dimming time settings.<br /><h1>Overview</h1><p>This mode i
           <option value="1">short soft-start (0,1s)</option>
           <option value="2">long soft-start (0,5s)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration">
@@ -513,6 +544,7 @@ Determine the trigger of auto-calibration procedure<br /><h1>Overview</h1><p>Thi
           <option value="3">Auto-calibr. perfrmd after first pwr on/Load error</option>
           <option value="4">Auto-calibr. perfrmd after pwr on/LOAD ERROR</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_1" type="integer" groupName="configuration">
@@ -522,6 +554,7 @@ Determine the trigger of auto-calibration procedure<br /><h1>Overview</h1><p>Thi
           <option value="0">Device permanently disabled</option>
           <option value="1">three attempts to turn on the load</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_39_2" type="integer" groupName="configuration"
@@ -531,6 +564,7 @@ Determine the trigger of auto-calibration procedure<br /><h1>Overview</h1><p>Thi
 Reaching the defined value will result in turning off the load<br /><h1>Overview</h1><p>Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cosφ ≥ 0.99. (1 W - 250 W). 0 disables the function.</p>
         ]]></description>
         <default>250</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration">
@@ -543,6 +577,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
           <option value="2">Turn off the load</option>
           <option value="3">Load blinking</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_41_1" type="integer" groupName="configuration">
@@ -555,6 +590,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
           <option value="2">Turn off the load</option>
           <option value="3">Load blinking</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -567,6 +603,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
           <option value="2">Turn off the load</option>
           <option value="3">Load blinking</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_1" type="integer" groupName="configuration">
@@ -579,6 +616,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
           <option value="2">Turn off the load</option>
           <option value="3">Load blinking</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_44_2" type="integer" groupName="configuration"
@@ -588,6 +626,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
 Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_45_1" type="integer" groupName="configuration">
@@ -598,6 +637,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
           <option value="0">No reaction</option>
           <option value="1">Send an alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_46_1" type="integer" groupName="configuration">
@@ -608,6 +648,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
           <option value="0">No reaction</option>
           <option value="1">Send an alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_1" type="integer" groupName="configuration">
@@ -618,6 +659,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
           <option value="0">No reaction</option>
           <option value="1">Send an alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_48_1" type="integer" groupName="configuration">
@@ -628,6 +670,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
           <option value="0">No reaction</option>
           <option value="1">Send an alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_49_1" type="integer" groupName="configuration">
@@ -637,6 +680,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
           <option value="0">No reaction</option>
           <option value="1">Send an alarm frame</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
@@ -646,6 +690,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
 Power level change resulting in new power report being sent.<br /><h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
@@ -655,6 +700,7 @@ Power level change resulting in new power report being sent.<br /><h1>Overview</
 Time period between consecutive reports.<br /><h1>Overview</h1><p>Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_2" type="integer" groupName="configuration"
@@ -664,6 +710,7 @@ Time period between consecutive reports.<br /><h1>Overview</h1><p>Parameter 52 d
 Energy level change resulting in sending a new energy report.<br /><h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_1" type="integer" groupName="configuration">
@@ -676,6 +723,7 @@ Active power and energy used by itself<br /><h1>Overview</h1><p>The Dimmer may i
           <option value="0">Self-measurement inactive</option>
           <option value="1">Self-measurement active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_58_1" type="integer" groupName="configuration">
@@ -689,6 +737,7 @@ How to calculate active power.<br /><h1>Overview</h1><p>This parameter defines h
           <option value="1">approximation based on the calibration data</option>
           <option value="2">approximation based on the control angle</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_59_2" type="integer" groupName="configuration"
@@ -698,6 +747,7 @@ How to calculate active power.<br /><h1>Overview</h1><p>This parameter defines h
 Power reported by the device at its maximum brightness level<br /><h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

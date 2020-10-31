@@ -54,6 +54,7 @@ Power Switch EU<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Power 
 Set all configuration values to default values (factory settings)<br /><h1>Overview</h1><p>All values (0x00 – 0xFF) except for 0x55 can be used to default all the configuration params .</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -63,6 +64,7 @@ Set all configuration values to default values (factory settings)<br /><h1>Overv
 state in what the switch is when power is supplied<br /><h1>Overview</h1><p>If 0x01–0xFF: When power applied socket is the state before power was disconnected</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -72,6 +74,7 @@ state in what the switch is when power is supplied<br /><h1>Overview</h1><p>If 0
 Relay delay time<br /><h1>Overview</h1><p>When the relay is switched it can't be switched again until the configured time has passed</p> <p>Value * 10 milliseconds</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -81,6 +84,7 @@ Relay delay time<br /><h1>Overview</h1><p>When the relay is switched it can't be
 Show the led compared to the relay state<br /><h1>Overview</h1><p>If value is 0: the indicator led is never switched on If value is 1: the indicator led is switched on when relay is switched on If value is 2: the indicator led is switched on when relay is switched off</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

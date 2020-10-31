@@ -79,6 +79,7 @@ Toggle current overload protection<br /><h1>Overview</h1><p>Output Load will be 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration">
@@ -92,6 +93,7 @@ Configure the iniital output load state after re-power on<br /><h1>Overview</h1>
           <option value="1">Always On</option>
           <option value="2">Always Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_4" type="integer" groupName="configuration"
@@ -101,6 +103,7 @@ Configure the iniital output load state after re-power on<br /><h1>Overview</h1>
 Set the RGB LED color value for testing<br /><h1>Overview</h1><p>Set the RGB LED color value for testing (64-bit value).</p> <ul><li>Value1: Red value (0-255) (16-bits: 48-63)</li> <li>Value2: Green value (0-255) (16-bits: 32-47)</li> <li>Value3: Blue value (0-255) (16-bits: 16-31)</li> <li>Value4: Reserved (0-255) (16-bits: 0-15)</li> </ul><p>Example Values:</p> <ul><li>Red = -16777216 (0xFF000000)</li> <li>Green = 16711680 (0x00FF0000)</li> <li>Blue = 65280 (0x0000FF00)</li> </ul><p><strong>NOTE:<br /></strong>In OpenHAB and HABmin (or other Java software) To enter an unsigned integer value greater than 2147483647 you must convert the value to a signed 32-bit value.  </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -114,6 +117,7 @@ Enable notifications for Group 1 device associations.<br /><h1>Overview</h1><p>E
           <option value="1">Hail</option>
           <option value="2">Basic CC Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -127,6 +131,7 @@ Configure the LED mode.<br /><h1>Overview</h1><p>Configure the state of LED when
           <option value="1">Momentary Mode</option>
           <option value="2">Night Light Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_83_3" type="integer" groupName="configuration"
@@ -136,6 +141,7 @@ Configure the LED mode.<br /><h1>Overview</h1><p>Configure the state of LED when
 Configure the RGB value when it is in Night light mode<br /><h1>Overview</h1><p>Configure the RGB value when it is in Night light mode. (48-bit value)</p> <ul><li>Value1: Red color value (0-255) (16-bits: 32-47)</li> <li>Value2: Green color value (0-255) (16-bits: 16-31)</li> <li>Value3: Blue color value (0-255) (16-bits: 0-15)</li> </ul><p>Example Values:</p> <ul><li>Blue = 255 (0x0000FF)</li> <li>Green = 65280 (0x00FF00)</li> <li>Red = 16711680 (0xFF0000)</li> <li>White = 1774619 (0xFFFFFF)</li> </ul>
         ]]></description>
         <default>1774619</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_84_3" type="integer" groupName="configuration"
@@ -145,6 +151,7 @@ Configure the RGB value when it is in Night light mode<br /><h1>Overview</h1><p>
 Brightness level of RGB LED (0%-100%)<br /><h1>Overview</h1><p>Configure the brightness level of RGB LED (0%-100%) when it is in Energy Mode/momentary indicate mode. (48-bit value)</p> <ul><li>Value1: green brightness value. (0-100) (16-bits: 32-47)</li> <li>Value2: yellow brightness value. (0-100) (16-bits: 16-31)</li> <li>Value3: red brightness value. (0-100) (16-bits: 0-15)</li> </ul><p>Default value is 50% brightness on all colors: 3289650 (0x323232)</p> <ul><li>Green=50 (0x320000)</li> <li>Yellow=50 (0x003200)</li> <li>Red=50 (0x000032)</li> </ul><p>Maximum value is 100% brightness on all colors: 6579300 (0x646464)</p> <ul><li>Green=100 (0x640000)</li> <li>Yellow=100 (0x006400)</li> <li>Red=100 (0x000064)</li> </ul>
         ]]></description>
         <default>3289650</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_90_1_wo" type="integer" groupName="configuration">
@@ -157,6 +164,7 @@ Enables/disables parameter 91 and 92 (reporting minimum wattage)<br /><h1>Overvi
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_91_2" type="integer" groupName="configuration"
@@ -166,6 +174,7 @@ Enables/disables parameter 91 and 92 (reporting minimum wattage)<br /><h1>Overvi
 The minimum change in wattage value for a report to be sent<br /><h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent (Valid values 0- 60000). </p> <p>Default value: 25 (watts)</p>
         ]]></description>
         <default>25</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_92_1" type="integer" groupName="configuration"
@@ -175,6 +184,7 @@ The minimum change in wattage value for a report to be sent<br /><h1>Overview</h
 The minimum change in wattage percentage for a report to be sent<br /><h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent (Valid values 0-100).</p> <p>Default value: 5 (%) </p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -187,6 +197,7 @@ Reset the reports to send to each report group to default values.<br /><h1>Overv
           <option value="0">Do Nothing</option>
           <option value="1">Reset to Defaults</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_4" type="integer" groupName="configuration"
@@ -196,6 +207,7 @@ Reset the reports to send to each report group to default values.<br /><h1>Overv
 Define which reports to send in report group 1.<br /><h1>Overview</h1><p>Which reports need to send in Report group 1 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_102_4" type="integer" groupName="configuration"
@@ -205,6 +217,7 @@ Define which reports to send in report group 1.<br /><h1>Overview</h1><p>Which r
 Define which reports to send in report group 2.<br /><h1>Overview</h1><p>Which reports need to send in Report group 2 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_103_4" type="integer" groupName="configuration"
@@ -214,6 +227,7 @@ Define which reports to send in report group 2.<br /><h1>Overview</h1><p>Which r
 Define which reports to send in report group 3.<br /><h1>Overview</h1><p>Which reports need to send in Report group 3 (See flags in user manual). </p> <p>See instruction manual for details on reporting configuration.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_110_1_wo" type="integer" groupName="configuration">
@@ -226,6 +240,7 @@ Reset the reports time interval for each report group to default values.<br /><h
           <option value="0">Do Nothing</option>
           <option value="1">Reset to Defaults</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_111_4" type="integer" groupName="configuration"
@@ -235,6 +250,7 @@ Reset the reports time interval for each report group to default values.<br /><h
 The time interval of sending Report group .<br /><h1>Overview</h1><p>The time interval of sending Report group 1 (Valid values 0x01-0x7FFFFFFF). </p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_4" type="integer" groupName="configuration"
@@ -244,6 +260,7 @@ The time interval of sending Report group .<br /><h1>Overview</h1><p>The time in
 The time interval of sending Report group 2.<br /><h1>Overview</h1><p>The time interval of sending Report group 2 (Valid values 0x01-0x7FFFFFFF). </p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_113_4" type="integer" groupName="configuration"
@@ -253,6 +270,7 @@ The time interval of sending Report group 2.<br /><h1>Overview</h1><p>The time i
 The time interval of sending Report group 3.<br /><h1>Overview</h1><p>The time interval of sending Report group 3 (Valid values 0x01-0x7FFFFFFF). </p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_200_1" type="integer" groupName="configuration" readOnly="true">
@@ -265,6 +283,7 @@ Partner ID (0= Aeon Labs Standard Product, 1= others).<br /><h1>Overview</h1><p>
           <option value="0">Aeon Labs Standard Product</option>
           <option value="1">Others</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -277,6 +296,7 @@ Enable/disable Configuration Lock<br /><h1>Overview</h1><p>Enable/disable Config
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
@@ -284,6 +304,7 @@ Enable/disable Configuration Lock<br /><h1>Overview</h1><p>Enable/disable Config
         <label>254: Device Tag</label>
         <description>Device Tag</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
@@ -292,6 +313,7 @@ Enable/disable Configuration Lock<br /><h1>Overview</h1><p>Enable/disable Config
         <description>Reset to Factory Default Settings</description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

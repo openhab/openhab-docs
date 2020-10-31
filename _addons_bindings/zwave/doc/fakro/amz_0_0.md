@@ -78,8 +78,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/616/AMZ-Z-WAVE-FAKRO-EN.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/616/AMZ-Z-WAVE-FAKRO-EN.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/616/reference/AMZ-Z-WAVE-FAKRO-EN.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/616/reference/AMZ-Z-WAVE-FAKRO-EN.pdf)
 
 ---
 

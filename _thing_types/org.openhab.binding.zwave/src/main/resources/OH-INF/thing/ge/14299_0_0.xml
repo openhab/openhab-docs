@@ -63,6 +63,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
           <option value="1">LED ON when load is ON</option>
           <option value="2">LED always OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
           <option value="0">Default</option>
           <option value="1">Invert Switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -80,6 +82,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>7: Dim Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -87,6 +90,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>8: Dim Timing</label>
         <description>timing of steps</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -94,6 +98,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>9: Dim 2 Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -101,6 +106,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>10: Dim 2 Timing</label>
         <description>timing of steps</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -108,6 +114,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>11: Dim 3 Steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -115,6 +122,7 @@ GE/Jasco In-Wall 1000W Incandescent Smart Dimmer<br /><h1>Overview</h1><p><stron
         <label>12: Dim 3 Timing</label>
         <description>timing of steps</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

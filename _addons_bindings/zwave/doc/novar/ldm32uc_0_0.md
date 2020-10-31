@@ -188,7 +188,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Full Data Sheet](https://opensmarthouse.org/zwavedatabase/998/Data-Sheet---Dimmer--50042518-D-.pdf)
+* [Full Data Sheet](https://opensmarthouse.org/zwavedatabase/998/reference/Data-Sheet---Dimmer--50042518-D-.pdf)
 
 ---
 

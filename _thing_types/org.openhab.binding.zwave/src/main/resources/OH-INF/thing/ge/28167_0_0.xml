@@ -63,6 +63,7 @@ Plug-In Smart Dimmer<br /><h1>Overview</h1><p>Transform any home into a smart ho
           <option value="1">LED On when light is turned On</option>
           <option value="2">LED always Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -72,6 +73,7 @@ Plug-In Smart Dimmer<br /><h1>Overview</h1><p>Transform any home into a smart ho
 Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -81,6 +83,7 @@ Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Number of
 Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Timing of steps</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -90,6 +93,7 @@ Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Timing of
 Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -99,6 +103,7 @@ Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Number 
 Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Timing of steps</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -108,6 +113,7 @@ Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Timing 
 Dim Rate Adjustments (All-On/Off Commands)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Commands)</p> <p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -117,6 +123,7 @@ Dim Rate Adjustments (All-On/Off Commands)<br /><h1>Overview</h1><p>Dim Rate Adj
 Dim Rate Adjustments (All-On/Off Command)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Command)</p> <p>Timing of steps</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

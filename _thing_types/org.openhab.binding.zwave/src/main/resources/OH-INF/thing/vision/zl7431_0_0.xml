@@ -55,6 +55,7 @@ In Wall Relay Switch<br /><h1>Overview</h1><p>Vision ZL7431US In-wall 1 relay sw
           <option value="1">without Indicator Light</option>
           <option value="2">with Indicator Light</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

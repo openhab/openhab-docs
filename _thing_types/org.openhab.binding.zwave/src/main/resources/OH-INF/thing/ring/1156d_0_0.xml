@@ -65,6 +65,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Rin
 Dwell Time<br /><h1>Overview</h1><p>Configures the “dwell” window or how long the sensor should not be detecting motion before sending the “no motion detected” message. </p> <p>1 to 9 minutes.</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Pet Immunity<br /><h1>Overview</h1><p>Configures the “Pet Immunity,” or sens
           <option value="1">15kg (33lb)</option>
           <option value="2">25kg (55lb)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -90,6 +92,7 @@ Walk Test<br /><h1>Overview</h1><p>Parameter 4 is used to activate a “walk tes
           <option value="0">Normal operation</option>
           <option value="255">Activate Walk Test for 15 minutes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -243,7 +243,7 @@ Association group 9 supports 4 nodes.
 
 ### Documentation Links
 
-* [Device Manual](https://opensmarthouse.org/zwavedatabase/985/ph-psr03-Zipato-Z-Wave-Remote-User-Manual-v1-0.pdf)
+* [Device Manual](https://opensmarthouse.org/zwavedatabase/985/reference/ph-psr03-Zipato-Z-Wave-Remote-User-Manual-v1-0.pdf)
 
 ---
 

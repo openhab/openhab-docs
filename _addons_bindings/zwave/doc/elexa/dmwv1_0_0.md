@@ -100,7 +100,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Guide and ZWave command reference](https://opensmarthouse.org/zwavedatabase/650/DMWV1-dome-z-wave-water-valve-controller-operating-guide.pdf)
+* [Operating Guide and ZWave command reference](https://opensmarthouse.org/zwavedatabase/650/reference/DMWV1-dome-z-wave-water-valve-controller-operating-guide.pdf)
 
 ---
 

@@ -62,7 +62,6 @@ The value sent with Basic commands in case of detected flood<br /><h1>Overview</
         <options>
           <option value="0">Off</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

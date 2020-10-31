@@ -96,6 +96,7 @@ Roller shutter controller<br /><h1>Overview</h1><p>Roller shutter micromodule</p
         <label>1: Watt meter report interval (5s)</label>
         <description>Interval (x5 seconds) to send out watt meter report</description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -103,6 +104,7 @@ Roller shutter controller<br /><h1>Overview</h1><p>Roller shutter micromodule</p
         <label>2: KWH Meter Report Interval (10min)</label>
         <description>Interval (x10 minutes) to send out KWH Meter Report</description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -110,12 +112,14 @@ Roller shutter controller<br /><h1>Overview</h1><p>Roller shutter micromodule</p
         <label>3: Threshold for Load Caution (10mA)</label>
         <description>Threshold (x0.01A) of current for Load Caution</description>
         <default>1100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
                  min="1" max="10000">
         <label>4: Threshold of KWh for Load Caution</label>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

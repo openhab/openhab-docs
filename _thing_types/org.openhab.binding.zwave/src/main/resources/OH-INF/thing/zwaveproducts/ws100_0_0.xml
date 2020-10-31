@@ -62,6 +62,7 @@ Switch<br /><h1>Overview</h1><ul><li>Works with incandescent and dimmable flores
           <option value="1">on/off</option>
           <option value="2">Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -72,6 +73,7 @@ Switch<br /><h1>Overview</h1><ul><li>Works with incandescent and dimmable flores
           <option value="0">Normal</option>
           <option value="1">Inverted</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -81,7 +81,6 @@ Setting the BASIC command value to turn on the light.<br /><h1>Overview</h1><ul>
           <option value="0">Off</option>
           <option value="255">On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -94,7 +93,6 @@ Set the sensitivity for the PIR (Passive Infrared Sensor).<br /><h1>Overview</h1
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -107,7 +105,6 @@ Set the illumination threshold to turn on the light.<br /><h1>Overview</h1><p>Wh
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -117,6 +114,7 @@ Set the illumination threshold to turn on the light.<br /><h1>Overview</h1><p>Wh
 Parameter to set the Operation Mode<br /><h1>Overview</h1><p>Parameter to set the Operation Mode. </p> <p>Bit 0: Reserved. </p> <p>Bit 1: 1 means enable test mode; 0 means normal mode.</p> <p>Notice: Ignored if DIP Switch is not set to Customer Mode. </p> <p>Bit 2: Disable the door/window function.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -126,6 +124,7 @@ Parameter to set the Operation Mode<br /><h1>Overview</h1><p>Parameter to set th
 Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set the sensor functions.  </p> <p>Bit 0: Disable magnetic integrate illumination to turn on the lighting nodes in the association group 2. 1: Disable, 0: Enable </p> <p>Bit 1: Disable PIR integrate Illumination to turn on the light</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -135,6 +134,7 @@ Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set
 Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter 7 Customer Function:</p> <table><tr><td>Bits</td> <td>Default</td> <td>Recommended</td> </tr><tr><td>0</td> <td>unused</td> <td> </td> </tr><tr><td>1</td> <td>unused</td> <td> </td> </tr><tr><td>2</td> <td>unused</td> <td> </td> </tr><tr><td>3</td> <td>Disable send out BASIC OFF after door closed. (1:Disable, 0:Enable)</td> <td>0</td> </tr><tr><td>4</td> <td>Notification Type, 0: Using Notification Report. 1: Using Sensor Binary Report</td> <td>1</td> </tr><tr><td>5</td> <td>Disable Multi CC in auto report. (1:Disable, 0:Enable)</td> <td>0</td> </tr><tr><td>6</td> <td>Disable to report battery state when the device triggered. (1:Disable, 10 0:Enable)</td> <td>0</td> </tr><tr><td>7</td> <td>unused</td> <td> </td> </tr></table><p>Comments / Tips for this device from the community:</p> <ul><li>Setting this Parameter to 20 is from user side wanted as this enables Binary Sensor to report OPEN / CLOSE status by changing Bit 4</li> <li>The calculation from the recommended column is:  Bit7 to Bit0 = 000100100 Binary which is euqal to 20 decimal</li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -144,6 +144,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter 7 Cus
 Setting the re-detect time after motion detected<br /><h1>Overview</h1><p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds). </p> <p>1 - 127 = Number of ticks. 8 seconds per tick, default value is 3 (24 seconds)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -153,6 +154,7 @@ Setting the re-detect time after motion detected<br /><h1>Overview</h1><p>In the
 Setting delay time to turn off the light when no motion<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected. </p> <p>0 = Never send turn off light command.   </p> <p>1 - 127 = Number of ticks. 8 seconds per tick, default value is 4 (32 seconds</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -162,6 +164,7 @@ Setting delay time to turn off the light when no motion<br /><h1>Overview</h1><p
 The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level.  </p> <p>0 = Turn off auto report battery.  </p> <p>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -171,6 +174,7 @@ The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p
 Interval time for auto reporting the door/window state.<br /><h1>Overview</h1><p>The interval time for auto reporting the door/window state.   </p> <p>0 = Turn off auto report door/window state. </p> <p>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -178,6 +182,7 @@ Interval time for auto reporting the door/window state.<br /><h1>Overview</h1><p
         <label>12: Auto Report Illumination Time</label>
         <description>The Interval time for auto reporting the illumination state.</description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -187,6 +192,7 @@ Interval time for auto reporting the door/window state.<br /><h1>Overview</h1><p
 The interval time for auto reporting the temperature state.<br /><h1>Overview</h1><p>The interval time for auto reporting the temperature state.       </p> <p>0 = Turn off auto report temperature.       </p> <p>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</p>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -196,6 +202,7 @@ The interval time for auto reporting the temperature state.<br /><h1>Overview</h
 The interval time for each auto report tick.<br /><h1>Overview</h1><p>The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13. </p> <p>0 = Turn off all auto report functions. </p> <p>1-255 = Interval time for each tick. Default is 30. Unit is in minutes</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -205,6 +212,7 @@ The interval time for each auto report tick.<br /><h1>Overview</h1><p>The interv
 The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report. The unit is Fahrenheit. When enabled, the device will measure the temperature every minute and when the temperature is over 140 degree Fahrenheit, it will continuesly report.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -214,6 +222,7 @@ The temperature differential to report.<br /><h1>Overview</h1><p>The temperature
 The illumination differential to report.<br /><h1>Overview</h1><p>The illumination differential to report. The unit is percentage. When enabled, the device will measure every minute. Enabling this functionality will cause some issue. Please check the “Illumination Report” section of the Multisensor manual.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

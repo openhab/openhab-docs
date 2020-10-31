@@ -61,6 +61,7 @@ Sets the sound type and volume<br /><h1>Overview</h1><p>The Value1(low byte) is 
         ]]></description>
         <default>13</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_2_0000000F" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Sets the sound type and volume<br /><h1>Overview</h1><p>The Value1(low byte) is 
           <option value="4">Siren Sound 4</option>
           <option value="5">Siren Sound 5</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_37_2_00000F00" type="integer" groupName="configuration">
@@ -83,6 +85,7 @@ Sets the sound type and volume<br /><h1>Overview</h1><p>The Value1(low byte) is 
           <option value="2">100dB</option>
           <option value="3">105dB</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -96,6 +99,7 @@ send notifications to associated devices<br /><h1>Overview</h1><p>Enable to send
           <option value="1">Hail CC</option>
           <option value="2">Basic CC Report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration">
@@ -105,6 +109,7 @@ send notifications to associated devices<br /><h1>Overview</h1><p>Enable to send
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

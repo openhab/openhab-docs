@@ -74,6 +74,7 @@ In-wall Smart Meter Dimmer Switch<br /><h1>Overview</h1><p>The ZW500DM Dimmer Sw
           <option value="0">Power on, LED off</option>
           <option value="1">Power on, LED on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -81,6 +82,7 @@ In-wall Smart Meter Dimmer Switch<br /><h1>Overview</h1><p>The ZW500DM Dimmer Sw
         <label>8: Instant Energy Autosend Interval</label>
         <description>Instant Energy Autosend Interval (send METER_REPORT)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -88,6 +90,7 @@ In-wall Smart Meter Dimmer Switch<br /><h1>Overview</h1><p>The ZW500DM Dimmer Sw
         <label>9: Instant Power Autosend Interval</label>
         <description>Instant Power Autosend interval (send SENSOR_MULTILEVEL_REPORT)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -95,6 +98,7 @@ In-wall Smart Meter Dimmer Switch<br /><h1>Overview</h1><p>The ZW500DM Dimmer Sw
         <label>10: Accumulated Energy Autosend Interval</label>
         <description>Accumulated Energy Autosend Interval report (send METER_REPORT)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -109,6 +113,7 @@ Enable automatic notifications to associated device<br /><h1>Overview</h1><p>Dev
           <option value="2">Send (SENSOR_MULTI_LEVEL_REPORT) only</option>
           <option value="3">Send both</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -118,6 +123,7 @@ Enable automatic notifications to associated device<br /><h1>Overview</h1><p>Dev
 Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

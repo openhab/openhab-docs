@@ -68,6 +68,7 @@ Toggle sending clear message to group 2<br /><h1>Overview</h1><p>Set to 0 to dis
           <option value="0">Disable sending clear message</option>
           <option value="1">Send clear message to group 2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -65,6 +65,7 @@ Inovelli Outdoor Smart Plug (2 Channel)<br /><h1>Overview</h1><ul><li>2 Controll
 LED Indicator ON/OFF/Disabled<br /><h1>Overview</h1><p>LED Indicator ON/OFF/Disabled<br />00==Plug On / LED On<br />01==Plug On / LED Off<br />02==LED Disabled</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

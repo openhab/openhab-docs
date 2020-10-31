@@ -74,6 +74,7 @@ Send or do not send Basic Set commands to AG2<br /><h1>Overview</h1><p>Parameter
           <option value="0">Do not send</option>
           <option value="255">Send Basic Sets</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -86,6 +87,7 @@ Send Sensor Binary Reports for backward compatibility<br /><h1>Overview</h1><p>P
           <option value="0">Send Sensor Binary Reports</option>
           <option value="255">Send only Notification Reports</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

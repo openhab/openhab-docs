@@ -52,6 +52,7 @@ SmoothRemote<br /><h1>Overview</h1><p>The company's Z-Wave product portfolio is 
 Button Press Time<br /><h1>Overview</h1><p> Time for presses on a single button to register as seperate and not part of a sequence, measured in 0.01s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning</strong>: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration"
@@ -61,6 +62,7 @@ Button Press Time<br /><h1>Overview</h1><p> Time for presses on a single button
 Button Multiple Press Time<br /><h1>Overview</h1><p>Time for presses on multiple buttons to register as seperate and not part of a sequence, measured in 0.01 s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning</strong>: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.</p>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -70,6 +72,7 @@ Button Multiple Press Time<br /><h1>Overview</h1><p>Time for presses on multiple
 Button Hold Time<br /><h1>Overview</h1><p>Time for presses to register as being held down in 0.01s.</p> <p>0 is interpreted as a 1.</p> <p><strong>Warning:</strong> All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. </p>
         ]]></description>
         <default>40</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -79,6 +82,7 @@ Button Hold Time<br /><h1>Overview</h1><p>Time for presses to register as being 
 Network Update Interval<br /><h1>Overview</h1><p>Time between network updates in 256 seconds. Disabled if 0.</p> <p><strong>Warning:</strong> All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. </p>
         ]]></description>
         <default>168</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

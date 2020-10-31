@@ -80,6 +80,7 @@ Single-socket PowerNode<br /><h1>Overview</h1><p>This Configuration is for the 1
 Minimum variation in load current before a message is sent.<br /><h1>Overview</h1><p> Value in percent (30 =&gt; 30%)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_1_1" type="integer" groupName="configuration"
@@ -87,6 +88,7 @@ Minimum variation in load current before a message is sent.<br /><h1>Overview</h
         <label>1: No communication light</label>
         <description>Minutes after which the device will flash if controller communicate is lost</description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -105,6 +107,7 @@ Minimum variation in load current before a message is sent.<br /><h1>Overview</h
           <option value="136">Pink</option>
           <option value="137">Locked</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -116,6 +119,7 @@ Minimum variation in load current before a message is sent.<br /><h1>Overview</h
           <option value="1">Remember last state</option>
           <option value="2">All ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -126,6 +130,7 @@ Minimum variation in load current before a message is sent.<br /><h1>Overview</h
           <option value="0">Disable the LED for network error</option>
           <option value="1">Enable the LED for network error</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

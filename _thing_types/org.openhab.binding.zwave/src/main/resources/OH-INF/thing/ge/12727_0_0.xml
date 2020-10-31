@@ -51,6 +51,7 @@ Invert switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
           <option value="0">Normal switch install</option>
           <option value="1">Inverted switch</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration"
@@ -60,6 +61,7 @@ Invert switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
 Load Sensing<br /><h1>Overview</h1><p>Load Sensing Load sensing is disabled when shipped from the factory. This feature can be enabled if desired. Setting parameter 29 to a value of 1 will enable the Load Sense function</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

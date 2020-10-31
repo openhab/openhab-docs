@@ -61,6 +61,7 @@ Dimming Switch Module (Dual Mode)<br /><h1>Overview</h1><p>Thank you for choosin
           <option value="0">Switch OFF</option>
           <option value="1">Switch saves its state before power failure</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -73,6 +74,7 @@ Double click option<br /><h1>Overview</h1><p>Double click option (set to max. br
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration"
@@ -82,6 +84,7 @@ Double click option<br /><h1>Overview</h1><p>Double click option (set to max. br
 Dimmer time from 0% to max.<br /><h1>Overview</h1><p>Time to move the Dimmer from 0% to max. dimming values.</p> <p>(The ZDS-210 will implement the dimming duration if received this parameter value from controller/gateway.Otherwise, the ZDS-210 will implement the local parameter value)</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration"
@@ -89,6 +92,7 @@ Dimmer time from 0% to max.<br /><h1>Overview</h1><p>Time to move the Dimmer fro
         <label>18: Maximum Dimmer level control</label>
         <description>Maximum Dimmer level control</description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration"
@@ -96,6 +100,7 @@ Dimmer time from 0% to max.<br /><h1>Overview</h1><p>Time to move the Dimmer fro
         <label>19: Minimum Dimmer level control</label>
         <description>Minimum Dimmer level control</description>
         <default>13</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

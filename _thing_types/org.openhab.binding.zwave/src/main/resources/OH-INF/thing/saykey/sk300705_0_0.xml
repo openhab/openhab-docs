@@ -62,6 +62,7 @@ Curtain Motor Control external module<br /><h1>Overview</h1><p>The SK-3007-05 ex
 Current Motor Position<br /><h1>Overview</h1><p>Support Get only, feedback motor current position(0x00-0x63, 0xFE)</p>
         ]]></description>
         <default>-127</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_wo" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Current Motor Position<br /><h1>Overview</h1><p>Support Get only, feedback motor
 Toggle motor direction between reverse and default<br /><h1>Overview</h1><p>Support Set only. Toggle motor direction between reverse and default as send out set command with any value (0x00-0xFF).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_wo" type="integer" groupName="configuration">
@@ -78,6 +80,7 @@ Toggle motor direction between reverse and default<br /><h1>Overview</h1><p>Supp
 Clear motor lead tail endpoint setting<br /><h1>Overview</h1><p>Support Set only.  Clear motor lead tail endpoint setting as send out set command with any value (0x00-0xFF).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1_wo" type="integer" groupName="configuration">
@@ -86,6 +89,7 @@ Clear motor lead tail endpoint setting<br /><h1>Overview</h1><p>Support Set only
 Enable manual pull function<br /><h1>Overview</h1><p>Support Set only. Enable manual pull function as send out set command with any value (0x00-0xFF).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1_wo" type="integer" groupName="configuration">
@@ -94,6 +98,7 @@ Enable manual pull function<br /><h1>Overview</h1><p>Support Set only. Enable ma
 Disable manual pull function<br /><h1>Overview</h1><p>Support Set only. Disable manual pull function as send out set command with any value (0x00-0xFF).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

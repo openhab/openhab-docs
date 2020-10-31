@@ -59,6 +59,7 @@ Set the LED light behavior<br /><h1>Overview</h1><p>This setting controls the op
           <option value="2">Indicator LED is always off</option>
           <option value="3">Indicator LED is always on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -71,6 +72,7 @@ Invert on &amp; off on the physical switch<br /><h1>Overview</h1><p>Invert what
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -78,6 +80,7 @@ Invert on &amp; off on the physical switch<br /><h1>Overview</h1><p>Invert what
         <label>5: autoOff</label>
         <description>Automatically turn switch off after this number of seconds</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

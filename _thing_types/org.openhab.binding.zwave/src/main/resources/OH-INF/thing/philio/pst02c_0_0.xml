@@ -77,6 +77,7 @@ Slim Multi-Sensor (Door/Temperature/Illumination)<br /><h1>Overview</h1><p>The s
 Setting the BASIC command value to turn on the light.<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light.</p> <ul><li>-1 = 0xFF(-1) turns on the light. (Default)</li> <li>0 = Turn off the light.</li> <li>1 - 100 = For dimmers 1 to 100 means the light strength.</li> </ul>
         ]]></description>
         <default>-1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -86,6 +87,7 @@ Setting the BASIC command value to turn on the light.<br /><h1>Overview</h1><p>S
 Setting the illumination threshold to turn on the light.<br /><h1>Overview</h1><p>Setting the illumination threshold to turn on the light. When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.</p> <ul><li>0 = Turn off illumination detected function and never turn </li> </ul>
         ]]></description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -95,6 +97,7 @@ Setting the illumination threshold to turn on the light.<br /><h1>Overview</h1><
 Parameter to set the Operation Mode.<br /><h1>Overview</h1><p>Parameter to set the Operation Mode.</p> <ul><li>Bit 0: Reserved.</li> <li>Bit 1: 1 means enable test mode; 0 means normal mode. Notice: Ignored if DIP Switch is not set to Customer Mode. Otherwise it decides by DIP switch setting to Test or Normal mode</li> <li>Bit 2: Disable the door/window function. (1: Disable, 0: Enable)</li> <li>Bit 3: Setting the temperature scale (0: Fahrenheit, 1: Celcius)</li> <li>Bit 4: Disable the illumination report after event triggered (1: Disable, 0: Enable)</li> <li>Bit 5: Disable the temperature report after event triggered (1: Disable, 0: Enable)</li> <li>Bit 6: Reserved</li> <li>Bit 7: Disable the back key release into test mode (1: Disable, 0: Enable)</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -104,6 +107,7 @@ Parameter to set the Operation Mode.<br /><h1>Overview</h1><p>Parameter to set t
 Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set the sensor functions.</p> <ul><li>Bit 0: Disable magnetic integrate illumination to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable)</li> <li>Bit 1: Disable PIR integrate Illumination to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable)</li> <li>Bit 2: Disable magnetic integrate PIR to turn ON the lighting nodes in the association group 2. (1:Disable, 0:Enable) (Default is Disable)</li> <li>Bit 3: When Bit2 is 0 (Enable), Are the device and the lighting in the same room?</li> </ul><p>0: In the same room(Default), <br /> 1: In the different room. <br />Notice: If this bit is 1, it is recommended also set the Bit1 to 1, cause the PIR triggered, doesn't mean the people in that room.</p> <ul><li>Bit 4: Disable delay 5 seconds to turn off the light, when door/window closed. (1:Disable, 0:Enable)</li> <li>Bit 5: Disable auto turn off the light, after door/window opened to turn on the light. (1:Disable, 0:Enable)</li> </ul><p>Notice: If bit2 is zero, this setting is useless<br />Notice: If the configuration No.9 is zero, this setting is useless.</p> <ul><li>Bit 6: Reserve.</li> <li>Bit 7: Reserve.</li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -113,6 +117,7 @@ Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set
 Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter to set the Customer Function.</p> <ul><li>Bit 0: Reserve.</li> <li>Bit 1: Enable sending motion OFF report. (0:Disable, 1:Enable) <br />Note: Depends on the Bit4, <br />Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report, Type: 0x0C, Value: 0x00</li> <li>Bit 2: Enable PIR super sensitivity mode. (0:Disable, 1:Enable)</li> <li>Bit 3: Disable send out BASIC OFF after door closed. (1:Disable, 0:Enable)</li> <li>Bit 4: Notification Type, <br />Using Notification Report. 1: Using Sensor Binary Report.</li> <li>Bit 5: Disable Multi CC in auto report. (1:Disable, 0:Enable)</li> <li>Bit 6: Disable to report battery state when the device triggered. (1:Disable, 0:Enable)</li> <li>Bit 7: Reserve.</li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -122,6 +127,7 @@ Parameter to set the Customer Function.<br /><h1>Overview</h1><p>Parameter to se
 PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the normal mode, after the PIR motion detected, setting the re-detect time. 8 seconds per tick, default is 3 (24 seconds).</p> <ul><li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 3 (24 seconds).</li> </ul>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -131,6 +137,7 @@ PIR Re-Detect Interval Time<br /><h1>Overview</h1><p>In the normal mode, after t
 Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the light, setting the delay time to turn off the light when the PIR motion is not detected.</p> <ul><li>0 = Never send turn off light command.</li> <li>1 - 127 = Number of ticks. 8 seconds per tick, default value is 4 (32 seconds</li> </ul>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -140,6 +147,7 @@ Turn Off Light Time<br /><h1>Overview</h1><p>After turn on the light, setting th
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -149,6 +157,7 @@ Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto rep
 Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time for auto reporting the door/window state.</p> <ul><li>0 = Turn off auto report door/window state.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -158,6 +167,7 @@ Auto Report Door/Window State Time<br /><h1>Overview</h1><p>The interval time fo
 The Interval time for auto reporting the illumination state.<br /><h1>Overview</h1><p>The Interval time for auto reporting the illumination state.</p> <ul><li>0 = Turn off auto report illumination.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -167,6 +177,7 @@ The Interval time for auto reporting the illumination state.<br /><h1>Overview</
 The interval time for auto reporting the temperature state.<br /><h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -176,6 +187,7 @@ The interval time for auto reporting the temperature state.<br /><h1>Overview</h
 The interval time for each auto report tick.<br /><h1>Overview</h1><p>The interval time for each auto report tick. Setting this configuration will effect configuration No.10, No.11, No.12 and No.13.</p> <ul><li>0 = Turn off all auto report functions.</li> <li>1-255 = Interval time for each tick. Default is 30.</li> </ul>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -185,6 +197,7 @@ The interval time for each auto report tick.<br /><h1>Overview</h1><p>The interv
 The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function. The unit is Fahrenheit. Enable this function the device will detect every minutes. And when the temperature is over 140 degree Fahrenheit, it will continue report. Enable this functionality will cause some issue please see the detail in the “Temperature Report” section.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration"
@@ -194,6 +207,7 @@ The temperature differential to report.<br /><h1>Overview</h1><p>The temperature
 The illumination differential to report.<br /><h1>Overview</h1><p>The illumination differential to report. 0 means turn off this function. The unit is percentage. Enable this function the device will detect every minutes. Enable this functionality will cause some issue please see the detail in the “Illumination Report” section.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

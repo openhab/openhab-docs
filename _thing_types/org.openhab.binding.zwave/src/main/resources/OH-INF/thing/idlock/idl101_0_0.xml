@@ -94,6 +94,7 @@ Sets the door lock mode<br /><h1>Overview</h1><p>No details in manual, will upda
           <option value="2">Enable Away Manual Lock</option>
           <option value="3">Enable Away Auto Lock</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

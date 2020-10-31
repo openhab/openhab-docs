@@ -71,7 +71,6 @@ Default State<br /><h1>Overview</h1><p>Status of the Smart Plug after a Power Fa
           <option value="1">On</option>
           <option value="2">Status before Power Failure</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -90,7 +89,6 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
           <option value="16">Enable group 7</option>
           <option value="32">Enable group 8</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -102,6 +100,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
           <option value="2">Enable group 3</option>
           <option value="3">Enable group 2 &amp; 3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -111,6 +110,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
           <option value="0">Always ON disabled</option>
           <option value="1">Always ON enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

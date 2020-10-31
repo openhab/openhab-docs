@@ -66,6 +66,7 @@ LED Indication Configuration<br /><h1>Overview</h1><p>Adjust the LED status to d
           <option value="2">LED always OFF</option>
           <option value="3">LED always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -78,6 +79,7 @@ Adjust the speed at which the ramps to a specific value other than 0 and FF<br /
           <option value="0">Fast</option>
           <option value="1">Slow</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -90,6 +92,7 @@ Turn your dimmer into an On/Off switch with switch mode<br /><h1>Overview</h1><p
           <option value="0">Dimmer Mode</option>
           <option value="1">Switch Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -103,6 +106,7 @@ Never accidentally remove a device during with alternate exclusion<br /><h1>Over
           <option value="1">Alternate Exclusion</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -112,6 +116,7 @@ Never accidentally remove a device during with alternate exclusion<br /><h1>Over
 Set the minimum dimmer threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration"
@@ -121,6 +126,7 @@ Set the minimum dimmer threshold<br /><h1>Overview</h1><p>Set the minimum dimmer
 Set the brightness threshold<br /><h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -130,6 +136,7 @@ Set the brightness threshold<br /><h1>Overview</h1><p>Set the maximum brightness
 Set the default brightness level for manual turn on<br /><h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <p>Ex. 1= 1% and 99 = 99%</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

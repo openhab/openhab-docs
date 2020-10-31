@@ -77,6 +77,7 @@ Z-Wave room sensor<br /><h1>Overview</h1><p>The flood multisensor PAT02 has floo
 set Operation Mode using bit to control<br /><h1>Overview</h1><p>set Operation Mode using bit to control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Setting temperature scale<ul><li>0: Fahrenheit</li> <li>1: Celsius</li> </ul></li> <li>Bit 4: Reserve</li> <li>Bit 5: Reserve</li> <li>Bit 6: Reserve</li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -86,7 +87,6 @@ set Operation Mode using bit to control<br /><h1>Overview</h1><p>set Operation M
 Customer Function switch using bit control<br /><h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: not applicable for this device variant, set to 0</li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: not applicable for this device variant, set to 0</li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -96,6 +96,7 @@ Customer Function switch using bit control<br /><h1>Overview</h1><p>Customer Fun
 The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -105,6 +106,7 @@ The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p
 The interval time for auto reporting the temperature state.<br /><h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -114,6 +116,7 @@ The interval time for auto reporting the temperature state.<br /><h1>Overview</h
 The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><p>The interval time for auto reporting the humidity state.</p> <ul><li>0 = Turn off auto report.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_1" type="integer" groupName="configuration"
@@ -123,6 +126,7 @@ The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><
 The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interval time for auto report each tick. Units of one minute. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>Caution1: Setting to 0 means turn off all auto report function.</li> <li>Caution2: The value is unsigned byte.</li> </ul>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -132,6 +136,7 @@ The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interv
 The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report.</p> <ul><li>The unit is Fahrenheit.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration"
@@ -141,6 +146,7 @@ The temperature differential to report.<br /><h1>Overview</h1><p>The temperature
 The humidity differential to report.<br /><h1>Overview</h1><p>The humidity differential to report.</p> <ul><li>The unit is percentage.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

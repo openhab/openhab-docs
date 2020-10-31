@@ -300,7 +300,7 @@ Association group 3 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/899/ZIP-PAB01.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/899/reference/ZIP-PAB01.pdf)
 
 ---
 

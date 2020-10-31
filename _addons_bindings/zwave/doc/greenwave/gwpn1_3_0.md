@@ -239,9 +239,9 @@ Association group 4 supports 1 node.
 
 ### Documentation Links
 
-* [Documentation of Z-Wave settings](https://opensmarthouse.org/zwavedatabase/102/z-wave-greenwave-powernode-manual.pdf)
-* [ English User Manual](https://opensmarthouse.org/zwavedatabase/102/z-wave-greenwave-powernode-manual.pdf)
-* [Documentation of Z-Wave settings](https://opensmarthouse.org/zwavedatabase/102/Technical-Doc-for-the-powernodes.pdf)
+* [Documentation of Z-Wave settings](https://opensmarthouse.org/zwavedatabase/102/reference/z-wave-greenwave-powernode-manual.pdf)
+* [ English User Manual](https://opensmarthouse.org/zwavedatabase/102/reference/z-wave-greenwave-powernode-manual.pdf)
+* [Documentation of Z-Wave settings](https://opensmarthouse.org/zwavedatabase/102/reference/Technical-Doc-for-the-powernodes.pdf)
 
 ---
 

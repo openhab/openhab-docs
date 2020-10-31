@@ -178,8 +178,8 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/238/NXZCOMBO-Specifications.pdf)
-* [Instructions sheet](https://opensmarthouse.org/zwavedatabase/238/first-alert-NXZCOMBO-instructions.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/238/reference/NXZCOMBO-Specifications.pdf)
+* [Instructions sheet](https://opensmarthouse.org/zwavedatabase/238/reference/first-alert-NXZCOMBO-instructions.pdf)
 
 ---
 

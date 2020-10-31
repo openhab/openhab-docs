@@ -324,7 +324,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/654/Jin-tao-bao-Curtain-motor.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/654/reference/Jin-tao-bao-Curtain-motor.pdf)
 
 ---
 

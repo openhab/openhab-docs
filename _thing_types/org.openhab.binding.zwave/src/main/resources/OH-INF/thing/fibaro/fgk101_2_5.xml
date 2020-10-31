@@ -97,6 +97,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>The Fibaro Door / Window Sensor is a
 Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1><p>The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.    </p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -107,6 +108,7 @@ Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1
           <option value="1">LED turned On</option>
           <option value="255">No DS18B20 temperature sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -121,6 +123,7 @@ Type of IN input<br /><h1>Overview</h1><p>Type of IN input</p>
           <option value="2">INPUT_MONOSTABLE</option>
           <option value="3">INPUT_BISTABLE</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -137,6 +140,7 @@ Type of transmitted control frame for association group 1<br /><h1>Overview</h1>
           <option value="5">ALARM WATER frame</option>
           <option value="255">Control frame BASIC_SET</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -146,7 +150,6 @@ Type of transmitted control frame for association group 1<br /><h1>Overview</h1>
 Parameter for dimming/opening blinds<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified.</p> <p>Default value: <strong>255</strong></p> <p>Possible parameter settings: (<strong>1 – 99</strong>) and <strong>255</strong></p> <p>Value of <strong>255</strong> makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%</p>
         ]]></description>
         <default>255</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -159,6 +162,7 @@ Enable/Disable transmission of frame cancelling alarm<br /><h1>Overview</h1><p>D
           <option value="0">Group no. 1 information is sent</option>
           <option value="1">Group no. 1 information is not sent</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -171,6 +175,7 @@ Enable/disable tamper alarm<br /><h1>Overview</h1><p>Enable/disable tamper alarm
           <option value="0">Tamper alarm cancellation inactive</option>
           <option value="1">Tamper alarm cancellation active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -180,7 +185,6 @@ Enable/disable tamper alarm<br /><h1>Overview</h1><p>Enable/disable tamper alarm
 Sensitivity to temperature changes<br /><h1>Overview</h1><p>The maximum acceptable difference between the last reported temperature and the current temperature read from the sensor. If the temperatures differ by the set value or more, a report with the current temperature value is sent to the device assigned to association group no. 3.</p> <p>Default value: 8 [0.5 °C]</p> <p>Available parameter settings:<strong> 0 – 255</strong> [0 °C to 16 °C] [32 °F – 60.8 °F]</p> <p> To set an appropriate parameter value use the following formula:</p> <p>x = delta T x 16 - for Celsius</p> <p>x = delta T x 80 / 9 - for Fahrenheit</p> <p>x = parameter value</p> <p>delta T – maximum acceptable temperature gradient in Celsius or Fahrenheit</p> <p>If the value is set to 0: - if the wake-up interval is set to 255 seconds, temperature report will be sent according to the interval, - if the wake-up interval is set to over 255, temperature report will be sent each ca. 4 minutes.</p>
         ]]></description>
         <default>8</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -195,6 +199,7 @@ Enabling/Disabling broadcast alarm for IN and TMP<br /><h1>Overview</h1><p>Sendi
           <option value="2">IN broadcast inactive, TMP broadcast active</option>
           <option value="3">IN and TMP broadcast mode active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -207,6 +212,7 @@ Enable/Disable scene functionality<br /><h1>Overview</h1><p>The device offers th
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration" readOnly="true">
@@ -220,6 +226,7 @@ Status of DS18B20 sensor<br /><h1>Overview</h1><p>The parameter value is automat
           <option value="1">DS18B20 is not working properly</option>
           <option value="255">No DS18B20 temperature sensor</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

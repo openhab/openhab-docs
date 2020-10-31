@@ -84,6 +84,7 @@ Doorbell<br /><h1>Overview</h1><p>Aeon Labs Doorbell is a switch binary device b
 Set the repetitions for playing doorbell ringtone. <br /><h1>Overview</h1><p>Value=1 to 255, the range of repetition is 1 to 100.   Value =0, ignore. Note: If the time of playing doorbell ringtone is more than 20s, the volume of ringtone will reduce to silence no matter how many repetitions of doorbell ringtone are set. </p>
         ]]></description>
         <default>2</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -91,6 +92,7 @@ Set the repetitions for playing doorbell ringtone. <br /><h1>Overview</h1><p>Va
         <label>5: Default ringtone</label>
         <description>Set the default doorbell ringtone. Default=1</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1_wo" type="integer" groupName="configuration"
@@ -104,7 +106,6 @@ Set a ringtone to play. Default=0<br /><h1>Overview</h1><p>Set this to any ringt
           <option value="0">Stop</option>
           <option value="255">play the default ringtone</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1_wo" type="integer" groupName="configuration">
@@ -121,6 +122,7 @@ Control current output<br /><h1>Overview</h1><p>Control items: Value=1, play Val
           <option value="4">Next</option>
           <option value="5">Previous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -128,6 +130,7 @@ Control current output<br /><h1>Overview</h1><p>Control items: Value=1, play Val
         <label>8: Ringtone volume</label>
         <description>Default=10</description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -140,6 +143,7 @@ Define functions of “Button ‐”  and “Button+”.<br /><h1>Overview</h
           <option value="0">“‐” is previous, “+” is next</option>
           <option value="1">"‐” is next, “+” is previous</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -152,6 +156,7 @@ Define short/long button presses<br /><h1>Overview</h1><p>0: short pressing chan
           <option value="0">short changes vol, long changes ringtone</option>
           <option value="1">long changes vol, short changes ringtone</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_1" type="integer" groupName="configuration">
@@ -164,6 +169,7 @@ Alert for low battery<br /><h1>Overview</h1><p>0x00:  normal battery level</p> 
           <option value="0">Battery Level Good</option>
           <option value="255">Low Battery</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_80_1" type="integer" groupName="configuration">
@@ -177,6 +183,7 @@ Enable to send notifications to associated devices (Group1)<br /><h1>Overview</h
           <option value="1">hail CC</option>
           <option value="2">basic CC report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_81_1" type="integer" groupName="configuration">
@@ -189,6 +196,7 @@ Notifies Group 1 when battery state is low<br /><h1>Overview</h1><p>Enable/disab
           <option value="0">nothing</option>
           <option value="1">Configuration report parameter 42</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_241_4" type="integer" groupName="configuration"
@@ -198,7 +206,6 @@ Notifies Group 1 when battery state is low<br /><h1>Overview</h1><p>Enable/disab
 Starts wireless button pairing mode<br /><h1>Overview</h1><p>Pair the Wireless Button with Doorbell.<br />Value=0x55555555, Start the Wireless Button pairing mode and<br />the blue Led will blink slowly, short press the Wireless Button<br />once, if the blue Led change to be solid, which means the pairing<br />is successful. Otherwise, repeat the steps.<br />It will automatically exit the pairing mode after 8s if there is no<br />pressing action of the Wireless Button.<br />Note:<br />You can send this configuration Get CC to ask the pairing result:<br />If configuration report value=0x00000000, which means the<br />pairing is failed.<br />If configuration report value =0xFFFFFFFF, which means the<br />pairing is successful.<br /></p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_252_1" type="integer" groupName="configuration"
@@ -208,6 +215,7 @@ Starts wireless button pairing mode<br /><h1>Overview</h1><p>Pair the Wireless B
 Lock configuration<br /><h1>Overview</h1><p>0:  config not locked</p> <p>1:  config locked</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4" type="integer" groupName="configuration"
@@ -217,6 +225,7 @@ Lock configuration<br /><h1>Overview</h1><p>0:  config not locked</p> <p>1:  c
 Reset to factory settings<br /><h1>Overview</h1><p>1. Size=0x01， Configuration Value=0x00:<br />Reset configuration setting.<br />2. Size=0x04， Configuration Value=0x55555555:<br />Reset Factory setting.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

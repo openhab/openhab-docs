@@ -241,7 +241,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Instruction manual](https://opensmarthouse.org/zwavedatabase/1143/4512717-INSTRUCTION-MANUAL.pdf)
+* [Instruction manual](https://opensmarthouse.org/zwavedatabase/1143/reference/4512717-INSTRUCTION-MANUAL.pdf)
 
 ---
 

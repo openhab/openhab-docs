@@ -59,6 +59,7 @@ Z-WAVE Remote<br /><h1>Overview</h1><p>Zipato Z-Wave Remote is a simple controll
 Basic Set Level<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light.</p> <ul><li>The 255 means turn on the light.</li> <li>For dimmer equipment 1 to 100 means the light strength. 0 means turn off the light.</li> </ul>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -68,6 +69,7 @@ Basic Set Level<br /><h1>Overview</h1><p>Setting the BASIC command value to turn
 Customer Function<br /><h1>Overview</h1><p>Customer function switch, using bit control.</p> <p>Bit0: Switch AV control/ Lighting group control. (0: AV control, 1: lighting group control)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Customer Function<br /><h1>Overview</h1><p>Customer function switch, using bit c
 Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <ul><li>0 means turn off auto report battery.</li> <li>Each tick means 30 minutes.</li> <li>The default value is 12(6 hours).</li> </ul>
         ]]></description>
         <default>12</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

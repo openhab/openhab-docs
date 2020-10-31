@@ -78,6 +78,7 @@ Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been devel
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -88,6 +89,7 @@ Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been devel
           <option value="0">Celsius</option>
           <option value="255">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -97,6 +99,7 @@ Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been devel
 Define the temperature steps<br /><h1>Overview</h1><p>Change between temperatures to trigger a temperature report (step 0.1) (Default 10 = 1C)</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

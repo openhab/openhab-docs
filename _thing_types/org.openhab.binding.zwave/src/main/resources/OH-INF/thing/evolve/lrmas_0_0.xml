@@ -79,6 +79,7 @@ Wall Mounted Dimmer<br /><h1>Overview</h1><p>Scene Capable Wall Switch DimmerThe
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -89,6 +90,7 @@ Wall Mounted Dimmer<br /><h1>Overview</h1><p>Scene Capable Wall Switch DimmerThe
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -98,6 +100,7 @@ Wall Mounted Dimmer<br /><h1>Overview</h1><p>Scene Capable Wall Switch DimmerThe
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

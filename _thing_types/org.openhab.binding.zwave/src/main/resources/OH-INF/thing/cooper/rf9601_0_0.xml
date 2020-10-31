@@ -64,18 +64,21 @@ Z-Wave Plus wireless switch<br /><h1>Overview</h1><p>The Z-Wave Plus wireless sw
                  min="0" max="127">
         <label>1: Delayed OFF Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>2: Panic ON Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="0" max="127">
         <label>3: Panic OFF Time</label>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -86,6 +89,7 @@ Z-Wave Plus wireless switch<br /><h1>Overview</h1><p>The Z-Wave Plus wireless sw
           <option value="2">On</option>
           <option value="3">Last State</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -95,18 +99,21 @@ Z-Wave Plus wireless switch<br /><h1>Overview</h1><p>The Z-Wave Plus wireless sw
           <option value="0">Off</option>
           <option value="1">On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>13: Blue LED brightness level when switch is ON</label>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
                  min="0" max="4">
         <label>14: Blue LED brightness level when switch is OFF</label>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

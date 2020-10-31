@@ -176,7 +176,6 @@ Available configuration parameters for input switch I1<br /><h1>Overview</h1><ul
           <option value="5">External relay control – bi-stable switch</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"
@@ -190,7 +189,6 @@ This parameter is valid for Active Powers Total, Phase1, Phase2 and Phase3.<br /
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_42_2" type="integer" groupName="configuration"
@@ -204,7 +202,6 @@ Energy report time intervals<br /><h1>Overview</h1><p>This parameter is currentl
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_43_2" type="integer" groupName="configuration"
@@ -218,7 +215,6 @@ Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power<br
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">
@@ -233,6 +229,7 @@ Enable / Disable External IR relay (BICOM)<br /><h1>Overview</h1><p>Available co
           <option value="2">IR relay enabled for Phase 1</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_101_1" type="integer" groupName="configuration">
@@ -246,6 +243,7 @@ Enable / Disable External relay (IKA)<br /><h1>Overview</h1><p>Available configu
           <option value="1">External relay enabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_106_2" type="integer" groupName="configuration"
@@ -256,7 +254,6 @@ maximum power threshold of all phases together<br /><h1>Overview</h1><p>External
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_112_2" type="integer" groupName="configuration"
@@ -270,7 +267,6 @@ Power threshold – Delay before power on<br /><h1>Overview</h1><p>External IR r
           <option value="0">External relay will not turn back on</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

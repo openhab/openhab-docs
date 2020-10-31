@@ -84,6 +84,7 @@
           <option value="0">Celsius</option>
           <option value="255">Kelvin</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -91,6 +92,7 @@
         <label>2: Lower temperature limit</label>
         <description>Defines the minimum temperature. Steps are 1C</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -98,6 +100,7 @@
         <label>3: Upper temperature limit</label>
         <description>Defines the maximum temperature. Steps are 1C</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -107,6 +110,7 @@
 Defines the temperature steps of the heating control<br /><h1>Overview</h1><p>Defines the temperature steps of the heating control value is 0.1 °С.</p> <p>0.1 ̊C / ̊F - 50 0.1 ̊C / ̊F</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

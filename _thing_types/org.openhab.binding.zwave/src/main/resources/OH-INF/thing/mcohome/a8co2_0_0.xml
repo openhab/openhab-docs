@@ -100,6 +100,7 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>1: PM25 Delta Level</label>
         <description>=0 Turn off report | &gt;=2 Report when change &gt; n * 1 µg / m3</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -107,7 +108,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>2: CO2 Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 5 ppm</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -115,7 +115,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>3: Temperature Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 0.5 °C</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -123,7 +122,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>4: Humidity Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n %</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -131,7 +129,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>5: VOC Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 5 ppb</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -139,7 +136,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>6: Lux Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 1 Lux</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -147,7 +143,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>7: dB Delta Level</label>
         <description>=0 Turn off report | &gt;=1 Report when change &gt; n * 1 dB</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -159,7 +154,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
           <option value="0">Turn off report</option>
           <option value="1">Report change</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -171,7 +165,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
           <option value="0">Turn off report</option>
           <option value="1">Report change</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -179,7 +172,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>10: Smoke Timer</label>
         <description>=0 Turn off report | &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -187,7 +179,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>11: PIR Timer</label>
         <description>=0 Turn off report | &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -195,7 +186,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>12: PM2.5 Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -203,7 +193,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>13: CO2 Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -211,7 +200,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>14: Temperature Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration"
@@ -219,7 +207,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>15: Humidity Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_2" type="integer" groupName="configuration"
@@ -227,7 +214,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>16: VOC Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_2" type="integer" groupName="configuration"
@@ -235,7 +221,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>17: Lux Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_2" type="integer" groupName="configuration"
@@ -243,7 +228,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>18: dB Timer</label>
         <description>=0 Turn off report &gt;=35 Report every interval n * 1 s</description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_47_1" type="integer" groupName="configuration"
@@ -255,7 +239,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
           <option value="0">°C</option>
           <option value="1">°F</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_50_1" type="integer" groupName="configuration"
@@ -263,7 +246,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>50: T_Offset</label>
         <description>-10.0 °C ~ 10.0 °C</description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_51_1" type="integer" groupName="configuration"
@@ -271,7 +253,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>51: RH_OffSet</label>
         <description>-20% ~ 20%</description>
         <default>20</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_52_2" type="integer" groupName="configuration"
@@ -279,7 +260,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>52: CO2_OffSet</label>
         <description>-500 ~ 500 ppm</description>
         <default>500</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_53_1" type="integer" groupName="configuration"
@@ -287,7 +267,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>53: PM2.5_OffSet</label>
         <description>-100 ~ 100 µg/m3</description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_54_2" type="integer" groupName="configuration"
@@ -295,7 +274,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>54: Lux_OffSet</label>
         <description>-5000 ~ 5000 lux</description>
         <default>5000</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_55_1" type="integer" groupName="configuration"
@@ -303,7 +281,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>55: VOC_Correct</label>
         <description>-100 ~ 100</description>
         <default>100</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_56_1" type="integer" groupName="configuration"
@@ -311,7 +288,6 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
         <label>56: dB_Correct</label>
         <description>-50 ~ 50</description>
         <default>50</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
@@ -322,6 +298,7 @@ Multi-purpose sensor<br /><h1>Overview</h1><p>MCOHome A8-9 is a Z-Wave enabled m
           <option value="85">Restore factory settings</option>
           <option value="170">Restore default parameters</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

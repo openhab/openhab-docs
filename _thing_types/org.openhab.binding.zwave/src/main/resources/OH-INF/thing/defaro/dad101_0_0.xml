@@ -72,20 +72,19 @@ Dimmer with sensors support<br /><h1>Overview</h1><p>One channel dimmer with abi
           <option value="3">LED 220V lamps</option>
           <option value="4">Non-dimmable lamps</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
                  min="1" max="94">
         <label>2: Min dimming level</label>
         <default>1</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
                  min="6" max="99">
         <label>3: Max dimming level</label>
         <default>99</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -99,7 +98,6 @@ Dimming speed<br /><h1>Overview</h1><p>Dimming speed in seconds (0 - instantly) 
           <option value="0">Disable</option>
           <option value="1">Fastest</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -112,7 +110,6 @@ Delay to turn device OFF after ON command received<br /><h1>Overview</h1><p>Sets
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -122,7 +119,6 @@ Delay to turn device OFF after ON command received<br /><h1>Overview</h1><p>Sets
 All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -133,6 +129,7 @@ All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p
           <option value="0">Restore previous state</option>
           <option value="1">Always set to OFF state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -145,6 +142,7 @@ All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p
           <option value="2">Use with motion sensor</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_2" type="integer" groupName="configuration"
@@ -158,7 +156,6 @@ Light level to maintain<br /><h1>Overview</h1><p>In lumens</p>
           <option value="150">Default</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -174,7 +171,6 @@ Lighting change trigger threshold<br /><h1>Overview</h1><p>In lumens</p>
           <option value="300">Max</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_2" type="integer" groupName="configuration"
@@ -187,7 +183,6 @@ Sets turn on delay<br /><h1>Overview</h1><p>In seconds</p>
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_2" type="integer" groupName="configuration"
@@ -201,7 +196,6 @@ Smart delay for dimmer<br /><h1>Overview</h1><p>In seconds (see Parameter 14)</p
           <option value="0">Disable</option>
         </options>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -212,7 +206,6 @@ Smart delay mode<br /><h1>Overview</h1><p>DAD-101</p> <p>0 - implicit smart dela
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_2" type="integer" groupName="configuration"
@@ -223,7 +216,6 @@ Smart delay mode<br /><h1>Overview</h1><p>DAD-101</p> <p>0 - implicit smart dela
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -239,6 +231,7 @@ S1 button operation mode<br /><h1>Overview</h1><p>Type of button connected to sw
           <option value="3">Bistable (reversed fixed switch)</option>
           <option value="4">Two monostable switches</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -253,6 +246,7 @@ S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2
           <option value="2">Bistable (fixed switch button)</option>
           <option value="3">Bistable (reversed fixed switch)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -263,6 +257,7 @@ S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2
           <option value="0">Ignore double click</option>
           <option value="1">Double click sets 100%</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -277,6 +272,7 @@ Sets sensor for dimmer control<br /><h1>Overview</h1><p>0 - off</p> <p>1 - senso
           <option value="2">Sensor 2</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -290,7 +286,6 @@ Sensor 1 ON command value<br /><h1>Overview</h1><p>Commands send to AG 6</p>
           <option value="0">Disabled</option>
           <option value="1000">Max</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_2" type="integer" groupName="configuration"
@@ -300,7 +295,6 @@ Sensor 1 ON command value<br /><h1>Overview</h1><p>Commands send to AG 6</p>
 Value to activate OFF command for Sensor 1<br /><h1>Overview</h1><p>For AG 6</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration"
@@ -310,7 +304,6 @@ Value to activate OFF command for Sensor 1<br /><h1>Overview</h1><p>For AG 6</p>
 Behavior for ON/OFF command<br /><h1>Overview</h1><p>Please see docs</p>
         ]]></description>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

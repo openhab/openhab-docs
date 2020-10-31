@@ -121,7 +121,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/310/user-and-installer-guide-HRT4-ZWweb1--1-.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/310/reference/user-and-installer-guide-HRT4-ZWweb1--1-.pdf)
 
 ---
 

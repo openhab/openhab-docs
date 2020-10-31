@@ -84,6 +84,7 @@ Multisensor<br /><h1>Overview</h1><p>Detects motion, temperature, humidity, and 
           <option value="7">Sensitivity 7</option>
           <option value="8">Sensitivity 8</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -94,6 +95,7 @@ Multisensor<br /><h1>Overview</h1><p>Detects motion, temperature, humidity, and 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -103,6 +105,7 @@ Multisensor<br /><h1>Overview</h1><p>Detects motion, temperature, humidity, and 
           <option value="0">send off</option>
           <option value="1">send on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

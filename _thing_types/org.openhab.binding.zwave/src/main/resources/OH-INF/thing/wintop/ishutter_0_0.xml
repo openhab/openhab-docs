@@ -73,6 +73,7 @@ See overview<br /><h1>Overview</h1><p>0 -&gt; One push button</p> <p>1 -&gt; Two
           <option value="2">Two toggle switch</option>
           <option value="3">Two buttons with neutral position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -80,6 +81,7 @@ See overview<br /><h1>Overview</h1><p>0 -&gt; One push button</p> <p>1 -&gt; Two
         <label>2: Automatically close after</label>
         <description>If not zero, automatically close blind after a user defined time</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -94,6 +96,7 @@ Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>0 -&gt; Close<
           <option value="2">Open</option>
           <option value="3">Open if closed, otherwise Close</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -103,6 +106,7 @@ Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>0 -&gt; Close<
 time used to differentiate click, hold, double and triple clicks<br /><h1>Overview</h1><p>1 - 100 -&gt; in 10ms units</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -115,6 +119,7 @@ Invert buttons<br /><h1>Overview</h1><p>0 -&gt; No</p> <p>1 -&gt; Yes </p>
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -127,6 +132,7 @@ Defines which command should be sent to Association group<br /><h1>Overview</h1>
           <option value="1">Switch On, Off and dim using Basic Set</option>
           <option value="2">Send Scene</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -142,6 +148,7 @@ Set LED indication mode<br /><h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 -&gt;
           <option value="3">Show opened state</option>
           <option value="4">Indicator Command Class</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -151,6 +158,7 @@ Set LED indication mode<br /><h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 -&gt;
 Time to go from opened to closed state.<br /><h1>Overview</h1><p>Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and  multilevel Set values (1-99, 255) would Open except 0 value that would Close. </p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -160,6 +168,7 @@ Time to go from opened to closed state.<br /><h1>Overview</h1><p>Used to estimat
 Time to go from closed to open state<br /><h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -169,6 +178,7 @@ Time to go from closed to open state<br /><h1>Overview</h1><p>Time to go from cl
 Id of the device which commands would not be Open/Close, but as block/unblock.<br /><h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -181,6 +191,7 @@ Protected command<br /><h1>Overview</h1><p>Which command from blocking device is
           <option value="0">on On</option>
           <option value="1">on Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -193,6 +204,7 @@ Allow exchanging open and close relays<br /><h1>Overview</h1><p>Allow exchanging
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

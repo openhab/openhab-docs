@@ -182,7 +182,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/245/d3f32301-3cd0-496f-925a-a0d76971e67c.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/245/reference/d3f32301-3cd0-496f-925a-a0d76971e67c.pdf)
 
 ---
 

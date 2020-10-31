@@ -65,6 +65,7 @@ Dome door &amp; window sensor<br /><h1>Overview</h1><p>The Dome Door/Window Sens
 The delay time from when the Door/Window Sensor sends the BASIC_SET command.<br /><h1>Overview</h1><p>The delay time from when the Door/Window Sensor sends the BASIC_SET command to Association Group 2 and when the BASIC_SET(0) is sent. It accepts a value up to 65,535, in seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -75,6 +76,7 @@ The delay time from when the Door/Window Sensor sends the BASIC_SET command.<br 
           <option value="0">0/Turn Off Device</option>
           <option value="255">Turn On Device</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

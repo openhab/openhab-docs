@@ -65,6 +65,7 @@ Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightne
           <option value="1">Upper paddle turns off, lower paddle turns on</option>
           <option value="2">Any paddle turns on/off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -77,6 +78,7 @@ Paddle Dimmer<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightne
           <option value="2">LED always OFF</option>
           <option value="3">LED always ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -89,6 +91,7 @@ Auto Turn-off enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
           <option value="0">Timer disabled</option>
           <option value="1">Timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_4" type="integer" groupName="configuration"
@@ -98,6 +101,7 @@ Auto Turn-off enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
 Auto Turn-off time<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p> <p>Default: 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -110,6 +114,7 @@ Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
           <option value="0">Timer disabled</option>
           <option value="1">Timer enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_4" type="integer" groupName="configuration"
@@ -119,6 +124,7 @@ Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default disabled</p>
 Auto Turn-on time<br /><h1>Overview</h1><p>Use this parameter to set the time aer which you want the switch to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes</p> <p>Default 60 minutes</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -130,6 +136,7 @@ Auto Turn-on time<br /><h1>Overview</h1><p>Use this parameter to set the time ae
           <option value="1">forced to ON</option>
           <option value="2">restore prior status</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -139,6 +146,7 @@ Auto Turn-on time<br /><h1>Overview</h1><p>Use this parameter to set the time ae
 Dimmer Ramp Rate<br /><h1>Overview</h1><p>Adjust the ramp rate for your dimmer (fade-in / fade-out effect for on / off operation). Values correspond to the number of seconds it take for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default 1 second</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -148,6 +156,7 @@ Dimmer Ramp Rate<br /><h1>Overview</h1><p>Adjust the ramp rate for your dimmer (
 Minimum brightness level<br /><h1>Overview</h1><p>Set the minimum brightness level (in %) for your dimmer. You won’t be able to dim the light below the set value</p> <p>Default 1 percent</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -157,6 +166,7 @@ Minimum brightness level<br /><h1>Overview</h1><p>Set the minimum brightness lev
 Maximum brightness level<br /><h1>Overview</h1><p>Set the maximum brightness level (in %) for your dimmer. You won’t be able to add brightness to the light beyond the set value.</p> <p><strong>Note</strong>: if Parameter 12 is set to value 0, Parameter 11 is automatically disabled</p> <p>Default: 99 percent</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -169,6 +179,7 @@ Double Tap function<br /><h1>Overview</h1><p>Choose if you want the dimmer to tu
           <option value="0">Full brightness (default)</option>
           <option value="1">Brightness set in parameter 11</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

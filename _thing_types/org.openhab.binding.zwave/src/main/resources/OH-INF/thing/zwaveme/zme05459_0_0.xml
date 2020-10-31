@@ -66,6 +66,7 @@ Blinds controller<br /><h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor C
           <option value="3">Operated by Indicator Command Class</option>
           <option value="4">Show if not closed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -78,7 +79,6 @@ Automatically open or close blind after time<br /><h1>Overview</h1><p>If not zer
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -93,6 +93,7 @@ Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>Defines how to
           <option value="2">Open</option>
           <option value="3">Open if closed else close</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -105,7 +106,6 @@ Time in seconds to go from opened to closed state.<br /><h1>Overview</h1><p>Time
         <options>
           <option value="0">Keep in permanent motion</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -118,7 +118,6 @@ Time in seconds to go from closed to open state.<br /><h1>Overview</h1><p>Time t
         <options>
           <option value="0">Keep in permanent motion</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -131,7 +130,6 @@ Id of the device which can block the blinds<br /><h1>Overview</h1><p>Id of the d
         <options>
           <option value="0">Disabled</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -144,6 +142,7 @@ Unprotected command<br /><h1>Overview</h1><p>Denes which command from blocking d
           <option value="0">on On</option>
           <option value="1">on Off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -157,6 +156,7 @@ Defines behaviour on open press while closing and vice versa.<br /><h1>Overview<
           <option value="1">Revert</option>
           <option value="2">Stop (by buttons, Binary and Basic)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -169,6 +169,7 @@ Invert open and close relays<br /><h1>Overview</h1><p>Allows exchanging open and
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -178,6 +179,7 @@ Invert open and close relays<br /><h1>Overview</h1><p>Allows exchanging open and
 Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold and double and triple clicks in 10ms units</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -188,6 +190,7 @@ Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiat
           <option value="0">No</option>
           <option value="1">Yes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -201,6 +204,7 @@ Local operations by buttons will/will not/ switch the load<br /><h1>Overview</h1
           <option value="1">By single press and hold</option>
           <option value="2">By double press and hold</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -217,6 +221,7 @@ Defines which command should be sent on button single press or hold.<br /><h1>Ov
           <option value="4">Switch On/Off and Dim</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -233,6 +238,7 @@ Defines which command should be sent on button double press or press-hold.<br />
           <option value="4">Switch On/Off and Dim</option>
           <option value="5">Send Preconfigured Scenes</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -244,6 +250,7 @@ Defines which command should be sent on button double press or press-hold.<br />
           <option value="2">Switch on only</option>
           <option value="255">Switch all on and off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -257,6 +264,7 @@ What to do on button Down press<br /><h1>Overview</h1><p>Defines how to interpre
           <option value="1">Open if closed else close</option>
           <option value="2">Open</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -267,6 +275,7 @@ What to do on button Down press<br /><h1>Overview</h1><p>Defines how to interpre
           <option value="0">Close blinds</option>
           <option value="1">Open blinds</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

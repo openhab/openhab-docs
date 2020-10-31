@@ -47,6 +47,7 @@ Smart Dimmer<br /><h1>Overview</h1><p> Transform any home into a smart home wit
         <label>7: Dimmer steps</label>
         <description>number of steps or levels</description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -54,6 +55,7 @@ Smart Dimmer<br /><h1>Overview</h1><p> Transform any home into a smart home wit
         <label>8: Time between dimmer steps</label>
         <description>Timing of the steps (10ms increments)</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration">
@@ -64,6 +66,7 @@ Smart Dimmer<br /><h1>Overview</h1><p> Transform any home into a smart home wit
           <option value="0">disable (default)</option>
           <option value="1">enable load sensing</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

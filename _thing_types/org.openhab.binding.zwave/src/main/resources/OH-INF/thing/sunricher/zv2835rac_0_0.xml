@@ -101,6 +101,7 @@ Saving load state before power failure<br /><h1>Overview</h1><p>Info: Saving loa
           <option value="1">turn on load</option>
           <option value="2">Save load state</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -113,6 +114,7 @@ Send the basic report to the Lifeline when the load state changed<br /><h1>Overv
           <option value="0">Disable Basic report</option>
           <option value="1">Enable Basic report</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -122,6 +124,7 @@ Send the basic report to the Lifeline when the load state changed<br /><h1>Overv
 Default fade time<br /><h1>Overview</h1><p>Default fade time (unit is second, this value has the same function as Duration of Multilevel) 0: Instantly 1-127: 1 to 127 seconds in 1 second resolution</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -129,6 +132,7 @@ Default fade time<br /><h1>Overview</h1><p>Default fade time (unit is second, th
         <label>5: Minimum brightness</label>
         <description>Minimum brightness</description>
         <default>15</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -136,6 +140,7 @@ Default fade time<br /><h1>Overview</h1><p>Default fade time (unit is second, th
         <label>6: Maximum brightness</label>
         <description>Maximum brightness</description>
         <default>100</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -148,6 +153,7 @@ MOSFET driving type<br /><h1>Overview</h1><p>MOSFET driving type:</p> <p>0 - tra
           <option value="0">Trailing edge</option>
           <option value="1">Leading edge</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -157,6 +163,7 @@ MOSFET driving type<br /><h1>Overview</h1><p>MOSFET driving type:</p> <p>0 - tra
 Step setting of the knob<br /><h1>Overview</h1><p>Setting step of the knob</p> <p>Corresponding dimming stepping level for each rotation of the knob (a full dimming stepping level is 99) Valid value: 1-50</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -169,6 +176,7 @@ Add and remove through switch<br /><h1>Overview</h1><p>Added to and removed from
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration">
@@ -182,6 +190,7 @@ Load detection<br /><h1>Overview</h1><p>Enable/disable to detect load after re-p
           <option value="1">Enable after each power on</option>
           <option value="2">Enable after first power on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration" readOnly="true">
@@ -195,6 +204,7 @@ Wiring type<br /><h1>Overview</h1><p>Wiring type</p> <p>0 - unknown<br />1 - 2 W
           <option value="1">2 Wire with no Neutral</option>
           <option value="2">3 Wire with Neutral</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration" readOnly="true">
@@ -209,6 +219,7 @@ Load type<br /><h1>Overview</h1><p>Load type</p> <p>0 - unknown<br />1 - resisti
           <option value="2">Inductive</option>
           <option value="3">Capacitive</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -221,6 +232,7 @@ Overcurrect Protection<br /><h1>Overview</h1><p>Enable/disable over current prot
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_2" type="integer" groupName="configuration"
@@ -230,6 +242,7 @@ Overcurrect Protection<br /><h1>Overview</h1><p>Enable/disable over current prot
 Power automatic report absolute threshold<br /><h1>Overview</h1><p>Power automatic report absolute threshold, unit is W<br />When power changes above the absolute threshold, immediately report current power value</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration"
@@ -239,6 +252,7 @@ Power automatic report absolute threshold<br /><h1>Overview</h1><p>Power automat
 Power automatic report percentage threshold<br /><h1>Overview</h1><p>Power automatic report percentage threshold, unit is %<br />When power changes above the percentage threshold, immediately report current power value</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_4" type="integer" groupName="configuration"
@@ -248,6 +262,7 @@ Power automatic report percentage threshold<br /><h1>Overview</h1><p>Power autom
 Power metering automatic report time cycle<br /><h1>Overview</h1><p>Power metering automatic report time cycle, unit is second<br />Valid time cycle value: 5~2678400<br />Default is 600 seconds (10 minutes)</p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_4" type="integer" groupName="configuration"
@@ -257,6 +272,7 @@ Power metering automatic report time cycle<br /><h1>Overview</h1><p>Power meteri
 Energy metering automatic report time cycle<br /><h1>Overview</h1><p>Energy metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~2678400</p> <p>Default is 1800 seconds (30 minutes)</p>
         ]]></description>
         <default>1800</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_4" type="integer" groupName="configuration"
@@ -266,6 +282,7 @@ Energy metering automatic report time cycle<br /><h1>Overview</h1><p>Energy mete
 Voltage metering automatic report time cycle<br /><h1>Overview</h1><p>Voltage metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~267840</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_4" type="integer" groupName="configuration"
@@ -275,6 +292,7 @@ Voltage metering automatic report time cycle<br /><h1>Overview</h1><p>Voltage me
 Current metering automatic report time cycle<br /><h1>Overview</h1><p>Current metering automatic report time cycle, unit is second</p> <p>Valid time cycle value: 5~2678400</p>
         ]]></description>
         <default>3600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration">
@@ -285,6 +303,7 @@ Current metering automatic report time cycle<br /><h1>Overview</h1><p>Current me
           <option value="0">Linear dimming</option>
           <option value="1">Logarithmic dimming</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -294,6 +313,7 @@ Current metering automatic report time cycle<br /><h1>Overview</h1><p>Current me
 Startup brightness<br /><h1>Overview</h1><p>Setting startup brightness of the load</p> <p>Valid value: 0~99</p> <p>Note: every time when turn on the load from OFF status, if the target brightness is lower than the startup brightness, the brightness will first go to the startup brightness value then fall down to the target brightness</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

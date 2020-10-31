@@ -59,6 +59,7 @@ Flood/water sensor<br /><h1>Overview</h1><p>Flood/Water detection</p> <br /><h2>
 Alarm Duration Time<br /><h1>Overview</h1><p>This configuration parameter that can be used to adjust the time for beep and LED turned on when water leakage is detected.</p> <p>If this parameter is set to ‘0’, the beep and LED will be turn on always until water leakage is not detected</p>
         ]]></description>
         <default>120</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -68,6 +69,7 @@ Alarm Duration Time<br /><h1>Overview</h1><p>This configuration parameter that c
 Alarm Interval<br /><h1>Overview</h1><p>This Parameter defines beep on /off interval time when water leakage is detected.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -77,6 +79,7 @@ Alarm Interval<br /><h1>Overview</h1><p>This Parameter defines beep on /off inte
 First Alarm On Time Duration<br /><h1>Overview</h1><p>This parameter defines beep on duration first time when water leakage is detected.</p>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -86,6 +89,7 @@ First Alarm On Time Duration<br /><h1>Overview</h1><p>This parameter defines bee
 Alarm on Time Duration<br /><h1>Overview</h1><p>This parameter defines beep on duration after first beep on when water leakage is detected.</p>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -98,6 +102,7 @@ Alarm Enable/Disable<br /><h1>Overview</h1><p>This parameter defines beep on is 
           <option value="0">Beep Disabled</option>
           <option value="1">Beep Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -110,6 +115,7 @@ Water Leakage Detection<br /><h1>Overview</h1><p>This parameter defines the func
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -119,6 +125,7 @@ Water Leakage Detection<br /><h1>Overview</h1><p>This parameter defines the func
 Basic Set Level<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -198,6 +198,7 @@ TWO SPDT Switch module with meter<br /><h1>Overview</h1><p>This in-wall switch m
 Watt Meter Report Period<br /><h1>Overview</h1><h1> 5 second units</h1> <p>Default: 720*5s=3600s=1 hour</p> <p>If the setting is configured for 1hour (set value =720), the PAN07/PAN09 will report its instant power consumption every 1 hour to the node of correspond Group. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr). </p>
         ]]></description>
         <default>720</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_2" type="integer" groupName="configuration"
@@ -207,6 +208,7 @@ Watt Meter Report Period<br /><h1>Overview</h1><h1> 5 second units</h1> <p>Defa
 KWH Meter Report<br /><h1>Overview</h1><h1>10 minute units</h1> <p>default: 6*10min= 1 hour</p> <p>If the setting is configured for 1hour (set value =6), the PAN07/PAN09 will report its Accumulated Power Consumption (KW/h) every 1 hour to the node of correspond Group. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days)</p>
         ]]></description>
         <default>6</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -220,6 +222,7 @@ Selected Relay<br /><h1>Overview</h1><p>If Controller not using Multi_Channel co
           <option value="2">Relay2</option>
           <option value="3">Relay1 &amp; Relay2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -231,6 +234,7 @@ Selected Relay<br /><h1>Overview</h1><p>If Controller not using Multi_Channel co
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
@@ -240,6 +244,7 @@ Selected Relay<br /><h1>Overview</h1><p>If Controller not using Multi_Channel co
 Threshold of current for Load Caution<br /><h1>Overview</h1><h1>0.01A units</h1> <p>default 600*0.01A = 6.0A</p> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 600 (6A), when the load current of Relay1 over this value, PAN07/PAN09 will send current meter report to the node of correspond Group, the Range of the setting value is from 10 to 600, and the default value is 600 (6A). </p>
         ]]></description>
         <default>600</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -249,6 +254,7 @@ Threshold of current for Load Caution<br /><h1>Overview</h1><h1>0.01A units</h1>
 Threshold of KWH for Load Caution<br /><h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 or Relay2 over this value, PAN07/PAN09 will send KWh Meter Report command to the node of correspond Group, minimum value is 1KWh and default value is 10000 kWh</p>
         ]]></description>
         <default>10000</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -259,6 +265,7 @@ Threshold of KWH for Load Caution<br /><h1>Overview</h1><p>This is a warning whe
           <option value="1">Control relay refer to meter wattage</option>
           <option value="2">Control relay directly</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration">
@@ -270,6 +277,7 @@ Threshold of KWH for Load Caution<br /><h1>Overview</h1><p>This is a warning whe
           <option value="1">Last relay switch state</option>
           <option value="2">All relay stay NO terminal</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -282,6 +290,7 @@ Existence of Endpoint3<br /><h1>Overview</h1><p>The endpoint3 of Multi-Channel C
           <option value="1">Endpoint3 exist</option>
           <option value="2">No Endpoint3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

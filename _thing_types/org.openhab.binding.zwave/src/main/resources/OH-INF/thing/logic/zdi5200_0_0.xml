@@ -73,6 +73,7 @@ Universal light dimmer<br /><h1>Overview</h1><p>DIMMY type ZDI5200 is a Z-Wave l
 Duration of dimming<br /><h1>Overview</h1><p>This parameter specifies the duration of a full regulation of the light from 0% to 100%. A regulation of the light with 1% will take 1/100 of the specified duration. This is used when the dimming is fulfilled from other Z-Wave devices with a factory default duration.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Immediately</td> </tr><tr><td>1 - 127</td> <td>Duration in seconds. (Default is 5 seconds).</td> </tr><tr><td>128 - 255</td> <td>Duration in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>
         ]]></description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -86,6 +87,7 @@ Dimmer mode<br /><h1>Overview</h1><p>The dimmer can work in three different mode
           <option value="1">Trailing edge dimming. (Default)</option>
           <option value="2">Leading edge dimming.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -95,6 +97,7 @@ Dimmer mode<br /><h1>Overview</h1><p>The dimmer can work in three different mode
 Dimmer minimum leve<br /><h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 0%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0 - 99</td> <td>Corresponds to 0 – 99% (Default is 0)</td> </tr></table>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -104,6 +107,7 @@ Dimmer minimum leve<br /><h1>Overview</h1><p>This parameter specifies the actual
 Dimmer maximum level.<br /><h1>Overview</h1><p>This parameter specifies the actual level of the dimmer output when set to 99%.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>1-99</td> <td>Corresponds to 1 – 99% (Default is 99)</td> </tr></table>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -113,6 +117,7 @@ Dimmer maximum level.<br /><h1>Overview</h1><p>This parameter specifies the actu
 Meter report time.<br /><h1>Overview</h1><p>This parameter specifies how often meter reports are sent via association group 1.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Meter reports are never sent</td> </tr><tr><td>1-127</td> <td>Report time in seconds. (Default is 60 seconds).</td> </tr><tr><td>128-255</td> <td>Report time in minutes (minus 127) from 1 – 128 minutes, where 128 is 1 minute.</td> </tr></table>
         ]]></description>
         <default>60</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

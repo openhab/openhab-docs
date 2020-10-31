@@ -122,7 +122,6 @@ Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration"
@@ -133,7 +132,6 @@ Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-
         <options>
           <option value="99">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -144,7 +142,6 @@ Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-
         <options>
           <option value="99">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -155,7 +152,6 @@ Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-
         <options>
           <option value="99">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -166,7 +162,6 @@ Set basic set value to be on or off<br /><h1>Overview</h1><p>0=Disable</p> <p>1-
         <options>
           <option value="99">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -179,7 +174,6 @@ Sets the time interval when a sensor report is sent<br /><h1>Overview</h1><p>0 =
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -192,7 +186,6 @@ Sets the temperature change causing a sensor report.<br /><h1>Overview</h1><p>0 
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -205,7 +198,6 @@ Sets the humidity change causing a sensor report.<br /><h1>Overview</h1><p>0 = D
         <options>
           <option value="0">Disable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

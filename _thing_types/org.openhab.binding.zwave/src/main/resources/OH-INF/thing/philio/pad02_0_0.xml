@@ -70,6 +70,7 @@ Switch button mode (enabled/disabled).<br /><h1>Overview</h1><p>When the mode of
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -82,6 +83,7 @@ LED mode: 1 is show switch state. 2 is night mode (opposite).<br /><h1>Overview<
           <option value="1">Show current switch state</option>
           <option value="2">Night mode (opposite)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -91,6 +93,7 @@ LED mode: 1 is show switch state. 2 is night mode (opposite).<br /><h1>Overview<
 Automatic OFF after given time.<br /><h1>Overview</h1><p>Whenever DEVICE switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch to off automatically. However if Auto off timer is set as 0, the auto off function will be disabled. The default setting is 0 (function disabled).</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -105,6 +108,7 @@ How to interpret OFF command.<br /><h1>Overview</h1><p>Whenever a switch off com
           <option value="2">Toggle Switch</option>
           <option value="3">Switch On</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

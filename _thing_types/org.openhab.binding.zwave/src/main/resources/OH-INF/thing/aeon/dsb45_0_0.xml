@@ -66,6 +66,7 @@ Water Sensor<br /><h1>Overview</h1><p>The Aeotec Z-Wave Water Sensor is able to 
           <option value="0">Open: 00, Close: FF</option>
           <option value="1">Open: FF, Close: 00</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -76,6 +77,7 @@ Water Sensor<br /><h1>Overview</h1><p>The Aeotec Z-Wave Water Sensor is able to 
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -86,6 +88,7 @@ Water Sensor<br /><h1>Overview</h1><p>The Aeotec Z-Wave Water Sensor is able to 
           <option value="0">Open: 00, Close: FF</option>
           <option value="1">Open: FF, Close: 00</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_000000FF" type="integer" groupName="configuration">
@@ -100,6 +103,7 @@ configuration Value 4(LSB)<br /><h1>Overview</h1><p>See documentation for bytes<
           <option value="16">Send Sensor Binary report</option>
           <option value="17">Send Sensor Binary and Battery reports</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_121_4_0000FF00" type="integer" groupName="configuration">
@@ -114,6 +118,7 @@ See documentation<br /><h1>Overview</h1><p>set to 1 sends BASIC SET</p> <p>set t
           <option value="16">Send ALARM</option>
           <option value="17">Send Basic Set and ALARM</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

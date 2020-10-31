@@ -89,6 +89,7 @@ Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_
           <option value="2">Relay 2</option>
           <option value="3">Relay 1+2</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -100,6 +101,7 @@ Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -113,13 +115,13 @@ Switch state after repowering<br /><h1>Overview</h1><p>0 : Switch off<br />1 : L
           <option value="1">Last Switch state</option>
           <option value="2">Switch ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
                  min="0" max="32767">
         <label>4: Auto OFF Timer</label>
         <default>0</default>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -134,6 +136,7 @@ RF OFF command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASI
           <option value="2">Switch toggle</option>
           <option value="3">Switch on</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -143,6 +146,7 @@ RF OFF command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASI
           <option value="1">Endpoint 3 exists</option>
           <option value="2">No endpoint 3</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

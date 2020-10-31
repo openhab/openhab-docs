@@ -201,6 +201,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
         <label>1: Temperature Reporting Threshold</label>
         <description>Temperature Reporting Threshold</description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4_000000FF" type="integer" groupName="configuration">
@@ -211,6 +212,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="1">Normal</option>
           <option value="2">Heat Pump</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4_00000F00" type="integer" groupName="configuration"
@@ -218,6 +220,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
         <label>2: # of Auxiliary Stages</label>
         <description># of Auxiliary Stages</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4_0000F000" type="integer" groupName="configuration">
@@ -228,6 +231,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="1">Gas</option>
           <option value="2">Electric</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4_00FF0000" type="integer" groupName="configuration"
@@ -235,6 +239,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
         <label>2: # of Heat Pump Stages.</label>
         <description># of Heat Pump Stages.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_4_0F000000" type="integer" groupName="configuration"
@@ -242,6 +247,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
         <label>2: # of Cool Stages.</label>
         <description># of Cool Stages.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -252,6 +258,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="0">Disabled</option>
           <option value="255">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -262,6 +269,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="1">C-Wire</option>
           <option value="2">Battery</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -274,6 +282,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="2">5% RH</option>
           <option value="3">10% RH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -284,6 +293,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -300,6 +310,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="7">3.5ºF</option>
           <option value="8">4.0ºF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -310,6 +321,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
           <option value="1">Fast</option>
           <option value="2">Economy</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2_0000FFFF" type="integer" groupName="configuration"
@@ -319,6 +331,7 @@ Thermostat<br /><h1>Overview</h1><p>The Z-Wave Plus enabled CT110 is a sleek, mo
 Temperature Reporting Filter (lower bound)<br /><h1>Overview</h1><p> 0 -124ºF (lower bound)</p>
         ]]></description>
         <default>124</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2_0FFF0000" type="integer" groupName="configuration"
@@ -328,6 +341,7 @@ Temperature Reporting Filter (lower bound)<br /><h1>Overview</h1><p> 0 -124ºF 
 Temperature Reporting Filter (upper bound)<br /><h1>Overview</h1><p>0-124ºF (upper bound)</p>
         ]]></description>
         <default>124</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -338,6 +352,7 @@ Temperature Reporting Filter (upper bound)<br /><h1>Overview</h1><p>0-124ºF (up
           <option value="0">Normal Mode</option>
           <option value="1">Simple Mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -348,6 +363,7 @@ Temperature Reporting Filter (upper bound)<br /><h1>Overview</h1><p>0-124ºF (up
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -358,6 +374,7 @@ Temperature Reporting Filter (upper bound)<br /><h1>Overview</h1><p>0-124ºF (up
           <option value="1">Temperature</option>
           <option value="2">Humidity</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true"
@@ -367,6 +384,7 @@ Temperature Reporting Filter (upper bound)<br /><h1>Overview</h1><p>0-124ºF (up
 Save Energy Mode Type<br /><h1>Overview</h1><p>1=Adjust by target delta, </p> <p>2=Least consuming point in the running program, </p> <p>3=Save energy absolute setpoint, </p> <p>255=Save Energy not supported</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

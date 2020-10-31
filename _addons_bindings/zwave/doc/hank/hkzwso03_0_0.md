@@ -248,7 +248,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Zooz ZEN06 Manual](https://opensmarthouse.org/zwavedatabase/677/Zooz-Z-Wave-Smart-Plug-ZEN06-Manual.pdf)
+* [Zooz ZEN06 Manual](https://opensmarthouse.org/zwavedatabase/677/reference/Zooz-Z-Wave-Smart-Plug-ZEN06-Manual.pdf)
 
 ---
 

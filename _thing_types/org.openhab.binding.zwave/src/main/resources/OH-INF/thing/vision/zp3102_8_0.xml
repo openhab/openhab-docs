@@ -76,6 +76,7 @@ Motion/Temperature Sensor<br /><h1>Overview</h1><p>The ZP3102 is a Z-Wave enable
         <label>1: On time in minutes</label>
         <description>Delay before sending OFF</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -86,6 +87,7 @@ Motion/Temperature Sensor<br /><h1>Overview</h1><p>The ZP3102 is a Z-Wave enable
           <option value="0">Celsius</option>
           <option value="1">Fahrenheit</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -95,6 +97,7 @@ Motion/Temperature Sensor<br /><h1>Overview</h1><p>The ZP3102 is a Z-Wave enable
 1 is most sensitive, 7 is least<br /><h1>Overview</h1><p>(Parameter 3) Infrared sensor sensitivity adjustment, 7 levels sensitivity, 1 = most<br />sensitive, 7 = most insensitive, default values= 4</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -59,6 +59,7 @@ Switch state after power failure<br /><h1>Overview</h1><p>State after power rest
           <option value="1">On</option>
           <option value="2">Return to state after power outage</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -72,6 +73,7 @@ Send notification to associated device when status is changed.<br /><h1>Overview
           <option value="1">Send switch multilevel report</option>
           <option value="2">When load status has not changed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -96,7 +96,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Znet manual](https://opensmarthouse.org/zwavedatabase/1257/TellStick-ZNet-Lite-technical-manual.pdf)
+* [Znet manual](https://opensmarthouse.org/zwavedatabase/1257/reference/TellStick-ZNet-Lite-technical-manual.pdf)
 
 ---
 

@@ -72,6 +72,7 @@ Metering Power Switch<br /><h1>Overview</h1><p>Remote On/Off control of the conn
 Timeout before unit transmits ON/OFF state after manual button press<br /><h1>Overview</h1><p>This setting configures the timeout after the manual on/off button is pressed before the status is transmitted. When the on/off button is pressed, the timer starts. After the timeout expires, the status of the switch is examined, and if it is different than it was prior to the first button press, the updated status is transmitted. If it is the same, no status is transmitted.</p> <p>The time setting is made in increments of 100ms, so a setting of "10" sets the timer to 10 * 100ms, or 1000ms (1s).</p>
         ]]></description>
         <default>10</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -84,6 +85,7 @@ Configure the unit to send command to other devices in Grouping 2<br /><h1>Overv
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_2" type="integer" groupName="configuration"
@@ -93,6 +95,7 @@ Configure the unit to send command to other devices in Grouping 2<br /><h1>Overv
 How often the meter should report load (W).<br /><h1>Overview</h1><p>This setting configures how often the module should report instant power load (in Watts) to the controller. The maximum interval is 9h (10s * 3240 / 3600 = 9h).</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_2" type="integer" groupName="configuration"
@@ -102,6 +105,7 @@ How often the meter should report load (W).<br /><h1>Overview</h1><p>This settin
 How often the meter should report load (kWh).<br /><h1>Overview</h1><p>This setting configures the period for the module to report power load over time (kWh). The default is 24h. Maximum period is 1 week (1min * 10080 / 60 = 168h = 1 week). Smaller loads generally need more time for accurate calculation of kilowatt-hours. </p>
         ]]></description>
         <default>1440</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

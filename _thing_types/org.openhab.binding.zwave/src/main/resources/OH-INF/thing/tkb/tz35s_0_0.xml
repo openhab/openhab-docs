@@ -58,6 +58,7 @@ Ignore start level bit<br /><h1>Overview</h1><p>Set ignore start level bit when 
           <option value="0">Don't ignore start level</option>
           <option value="1">Ignore start level</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -70,6 +71,7 @@ Indicates if LED is on when load is ON<br /><h1>Overview</h1><p>The LED on the T
           <option value="0">Night LED on</option>
           <option value="1">Night LED off</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -82,6 +84,7 @@ Invert switch behaviour<br /><h1>Overview</h1><p>To change the top of the switch
           <option value="0">ON command on TOP</option>
           <option value="1">OFF command on TOP</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_1" type="integer" groupName="configuration">
@@ -95,6 +98,7 @@ LED flickering during transmission<br /><h1>Overview</h1><p>The switch will flic
           <option value="1">Flicker all time</option>
           <option value="2">One second flicker</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

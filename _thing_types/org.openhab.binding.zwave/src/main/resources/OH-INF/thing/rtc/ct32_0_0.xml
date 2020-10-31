@@ -209,6 +209,7 @@ Sets the reporting threshold for changes in ambient temperature.<br /><h1>Overvi
           <option value="3">1.5F</option>
           <option value="4">2.0F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1_wo" type="integer" groupName="configuration">
@@ -221,6 +222,7 @@ Enables or Disables the Utility Lock.<br /><h1>Overview</h1><p>The Utility Lock 
           <option value="0">Utility lock disable</option>
           <option value="1">Utility lock enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -235,6 +237,7 @@ Sets the reporting threshold for changes in humidity.<br /><h1>Overview</h1><p>T
           <option value="2">5%RH</option>
           <option value="3">10%RH</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -247,6 +250,7 @@ Enables or Disables the Aux / Emergency Heat.<br /><h1>Overview</h1><p>The Auxil
           <option value="0">Auxiliary/Emergency heat disable</option>
           <option value="1">Auxiliary/Emergency heat enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration">
@@ -265,6 +269,7 @@ Sets the swing threshold before turning on / off HVAC.<br /><h1>Overview</h1><p>
           <option value="7">3.5F</option>
           <option value="8">4F</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -274,6 +279,7 @@ Sets the swing threshold before turning on / off HVAC.<br /><h1>Overview</h1><p>
 Set's the differential temperature for multi-stage HVAC systems.<br /><h1>Overview</h1><p>The Thermostat Differential Temperature configuration command sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages.</p>
         ]]></description>
         <default>4</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration">
@@ -284,6 +290,7 @@ Set's the differential temperature for multi-stage HVAC systems.<br /><h1>Overvi
           <option value="1">Recovery Mode is set to fast.</option>
           <option value="2">Recovery Mode is set to economy.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration">
@@ -296,6 +303,7 @@ Enables or Disables Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple 
           <option value="0">Simple UI Mode Disabled</option>
           <option value="1">Simple UI Mode Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">
@@ -306,6 +314,7 @@ Enables or Disables Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple 
           <option value="0">Multicast Disabled</option>
           <option value="1">Function is enabled.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

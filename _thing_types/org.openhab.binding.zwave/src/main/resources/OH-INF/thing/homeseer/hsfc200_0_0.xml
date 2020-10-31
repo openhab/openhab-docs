@@ -110,6 +110,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Bottom LED ON if Load is OFF</option>
           <option value="1">Bottom LED OFF is load if OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -120,6 +121,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Top of Paddle turns load ON</option>
           <option value="1">Bottom of Paddle turns load ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -130,6 +132,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">3-speed</option>
           <option value="1">4-speed</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -140,6 +143,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Normal mode (load status)</option>
           <option value="1">Status mode (custom status)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration">
@@ -155,6 +159,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="5">Yellow</option>
           <option value="6">Cyan</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration">
@@ -171,6 +176,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_1" type="integer" groupName="configuration">
@@ -187,6 +193,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -203,6 +210,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -219,6 +227,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="6">Cyan</option>
           <option value="7">White</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration">
@@ -233,6 +242,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="4">400ms ON then 400ms OFF</option>
           <option value="5">500ms ON then 500ms OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000001" type="integer" groupName="configuration">
@@ -243,6 +253,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000002" type="integer" groupName="configuration">
@@ -253,6 +264,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000004" type="integer" groupName="configuration">
@@ -263,6 +275,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000008" type="integer" groupName="configuration" readOnly="true">
@@ -273,6 +286,7 @@ Scene Capable Fan Control Switch<br /><h1>Overview</h1><p>HS-FC200+ is a Z-Wave 
           <option value="0">Solid</option>
           <option value="1">Blink</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

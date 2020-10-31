@@ -250,7 +250,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [ECOLINK ZWAVE PLUS 2.5 Manual](https://opensmarthouse.org/zwavedatabase/581/ecolink-z-wave-plus-garage-door-tilt-sensor-tiltzwave2-5-eco-manual.pdf)
+* [ECOLINK ZWAVE PLUS 2.5 Manual](https://opensmarthouse.org/zwavedatabase/581/reference/ecolink-z-wave-plus-garage-door-tilt-sensor-tiltzwave2-5-eco-manual.pdf)
 
 ---
 

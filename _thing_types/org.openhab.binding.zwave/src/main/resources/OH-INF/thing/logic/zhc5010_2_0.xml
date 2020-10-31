@@ -129,6 +129,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="0">Separate mode (toggle mode).</option>
           <option value="1">Pair mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -141,6 +142,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="0">Separate mode (toggle mode).</option>
           <option value="1">Pair mode</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -158,6 +160,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="7">5 seconds indication</option>
           <option value="8">LED indication is disabled (BASIC SET)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -175,6 +178,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="7">5 seconds indication</option>
           <option value="8">LED indication is disabled (BASIC SET)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration">
@@ -192,6 +196,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="7">5 seconds indication</option>
           <option value="8">LED indication is disabled (BASIC SET)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration">
@@ -209,6 +214,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
           <option value="7">5 seconds indication</option>
           <option value="8">LED indication is disabled (BASIC SET)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -216,6 +222,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>7: Percentage of light in the LED #1 when On</label>
         <description>Configure the percentage of light in LED # 1, when the LED is turned on.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
@@ -223,6 +230,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>8: Percentage of light in the LED #2 when On</label>
         <description>Configure the percentage of light in LED # 2, when the LED is turned on.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_1" type="integer" groupName="configuration"
@@ -230,6 +238,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>9: Percentage of light in the LED #3 when On</label>
         <description>Configure the percentage of light in LED # 3, when the LED is turned on.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_1" type="integer" groupName="configuration"
@@ -237,6 +246,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>10: Percentage of light in the LED #4 when On</label>
         <description>Configure the percentage of light in LED #4, when the LED is turned on.</description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_1" type="integer" groupName="configuration"
@@ -244,6 +254,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>11: Percentage of light in the LED #1 when Off</label>
         <description>Configure the percentage of light in LED # 1, when the LED is turned off.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration"
@@ -251,6 +262,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>12: Percentage of light in the LED #2 when Off</label>
         <description>Configure the percentage of light in LED # 2, when the LED is turned off.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration"
@@ -258,6 +270,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>13: Percentage of light in the LED #3 when Off</label>
         <description>Configure the percentage of light in LED #3, when the LED is turned off.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_14_1" type="integer" groupName="configuration"
@@ -265,6 +278,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
         <label>14: Percentage of light in the LED #4 when Off</label>
         <description>Configure the percentage of light in LED #4, when the LED is turned off.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_1" type="integer" groupName="configuration">
@@ -289,6 +303,7 @@ How built-in relay is controlled<br /><h1>Overview</h1><p>This parameter configu
           <option value="12">Relay follows the state of button #4</option>
           <option value="13">Relay is controlled by commands to root device</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_16_1" type="integer" groupName="configuration">
@@ -301,6 +316,7 @@ set the current light level for the actual LED or the level value can be stored<
           <option value="0">Indicator Set used to control the LED.</option>
           <option value="1">Indicator Set values and internal activations.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_17_1" type="integer" groupName="configuration">
@@ -313,6 +329,7 @@ Scene sequence numbers transmitted by Central Scene notifications.<br /><h1>Over
           <option value="0">Scene notifications are turned off.</option>
           <option value="1">Send scene value for button #</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_18_1" type="integer" groupName="configuration">
@@ -325,6 +342,7 @@ Disable House Cleaning Mode.<br /><h1>Overview</h1><p>This parameter is able to 
           <option value="0">House Cleaning Mode is enabled</option>
           <option value="1">1 House Cleaning Mode is disabled.</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_4_00000001" type="integer" groupName="configuration">
@@ -335,6 +353,7 @@ Disable House Cleaning Mode.<br /><h1>Overview</h1><p>This parameter is able to 
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_4_0000FF00" type="integer" groupName="configuration"
@@ -344,6 +363,7 @@ Disable House Cleaning Mode.<br /><h1>Overview</h1><p>This parameter is able to 
 Multilevel Switch - Upper switch value - (button #1)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_19_4_00FF0000" type="integer" groupName="configuration"
@@ -353,6 +373,7 @@ Multilevel Switch - Upper switch value - (button #1)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Lower switch value - (button #1)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_4_00000001" type="integer" groupName="configuration">
@@ -363,6 +384,7 @@ Multilevel Switch - Lower switch value - (button #1)<br /><h1>Overview</h1><p>Wh
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_4_0000FF00" type="integer" groupName="configuration"
@@ -372,6 +394,7 @@ Multilevel Switch - Lower switch value - (button #1)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Upper switch value - (button #2)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_20_4_00FF0000" type="integer" groupName="configuration"
@@ -381,6 +404,7 @@ Multilevel Switch - Upper switch value - (button #2)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Lower switch value - (button #2)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_4_00000001" type="integer" groupName="configuration">
@@ -391,6 +415,7 @@ Multilevel Switch - Lower switch value - (button #2)<br /><h1>Overview</h1><p>Wh
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_4_0000FF00" type="integer" groupName="configuration"
@@ -400,6 +425,7 @@ Multilevel Switch - Lower switch value - (button #2)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Upper switch value - (button #3)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_4_00FF0000" type="integer" groupName="configuration"
@@ -409,6 +435,7 @@ Multilevel Switch - Upper switch value - (button #3)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Lower switch value - (button #3)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_4_00000001" type="integer" groupName="configuration">
@@ -419,6 +446,7 @@ Multilevel Switch - Lower switch value - (button #3)<br /><h1>Overview</h1><p>Wh
           <option value="0">Disabled</option>
           <option value="1">Enabled</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_4_0000FF00" type="integer" groupName="configuration"
@@ -428,6 +456,7 @@ Multilevel Switch - Lower switch value - (button #3)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Upper switch value - (button #4)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_4_00FF0000" type="integer" groupName="configuration"
@@ -437,6 +466,7 @@ Multilevel Switch - Upper switch value - (button #4)<br /><h1>Overview</h1><p>Wh
 Multilevel Switch - Lower switch value - (button #4)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_1" type="integer" groupName="configuration">
@@ -449,6 +479,7 @@ Control of association groups for device 1 (button #1).<br /><h1>Overview</h1><p
           <option value="0">Association groups will not be switched.</option>
           <option value="1">Association groups will be switched,</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_1" type="integer" groupName="configuration">
@@ -461,6 +492,7 @@ Control of association groups for device 2 (button #2).<br /><h1>Overview</h1><p
           <option value="0">Association groups will not be switched.</option>
           <option value="1">Association groups will be switched,</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_1" type="integer" groupName="configuration">
@@ -473,6 +505,7 @@ Control of association groups for device 3 (button #3).<br /><h1>Overview</h1><p
           <option value="0">Association groups will not be switched.</option>
           <option value="1">Association groups will be switched,</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_1" type="integer" groupName="configuration">
@@ -485,6 +518,7 @@ Control of association groups for device 4 (button #4).<br /><h1>Overview</h1><p
           <option value="0">Association groups will not be switched.</option>
           <option value="1">Association groups will be switched,</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_28_1" type="integer" groupName="configuration"
@@ -494,6 +528,7 @@ Control of association groups for device 4 (button #4).<br /><h1>Overview</h1><p
 Decides the time for when a button is detected as long-pressed<br /><h1>Overview</h1><p>Decides the time for when a button is detected as long-pressed.</p> <p>0     : Detection disabled. This is not recommended.</p> <p>1-255 : Long-press detection time in 0.01 seconds, 50 equals 0.5 seconds.</p>
         ]]></description>
         <default>50</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_29_1" type="integer" groupName="configuration"
@@ -503,6 +538,7 @@ Decides the time for when a button is detected as long-pressed<br /><h1>Overview
 Specifies the detection time for single-press, double-press, etc. for button 1.<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 1.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_30_1" type="integer" groupName="configuration"
@@ -512,6 +548,7 @@ Specifies the detection time for single-press, double-press, etc. for button 1.<
 Specifies the detection time for single-press, double-press, etc. for button 2<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 2.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1" type="integer" groupName="configuration"
@@ -521,6 +558,7 @@ Specifies the detection time for single-press, double-press, etc. for button 2<b
 Specifies the detection time for single-press, double-press, etc. for button 3<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 3.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_32_1" type="integer" groupName="configuration"
@@ -530,6 +568,7 @@ Specifies the detection time for single-press, double-press, etc. for button 3<b
 Specifies the detection time for single-press, double-press, etc. for button 4<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 4.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_33_1" type="integer" groupName="configuration"
@@ -539,6 +578,7 @@ Specifies the detection time for single-press, double-press, etc. for button 4<b
 Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_34_1" type="integer" groupName="configuration"
@@ -548,6 +588,7 @@ Allow sending non-secure commands to association members if added securely<br />
 Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_35_1" type="integer" groupName="configuration"
@@ -557,6 +598,7 @@ Allow sending non-secure commands to association members if added securely<br />
 Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_36_1" type="integer" groupName="configuration"
@@ -566,6 +608,7 @@ Allow sending non-secure commands to association members if added securely<br />
 Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

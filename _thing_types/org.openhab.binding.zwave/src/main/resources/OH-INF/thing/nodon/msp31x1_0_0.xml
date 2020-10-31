@@ -88,6 +88,7 @@ Status after a power outage or after being plugged<br /><h1>Overview</h1><p>This
           <option value="1">On</option>
           <option value="2">Status before power outage</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">
@@ -102,6 +103,7 @@ Allows to enable or disable Group 2 &amp; Group 3<br /><h1>Overview</h1><p>This 
           <option value="2">Group 3 enable</option>
           <option value="3">Group 2 &amp; Group 3 enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -114,6 +116,7 @@ Forces the Micro Smart Plug status to be ON<br /><h1>Overview</h1><p>This parame
           <option value="0">Always ON disable</option>
           <option value="1">Always ON enable</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_21_1" type="integer" groupName="configuration"
@@ -136,7 +139,6 @@ Power report for changes of x % W<br /><h1>Overview</h1><p>This parameter will s
           <option value="90">Power Auto-Polling Report Enable if 90 %</option>
           <option value="100">Power Auto-Polling Report Enable if 100%</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_22_2" type="integer" groupName="configuration"
@@ -158,7 +160,6 @@ Switch off Micro Smart Plug in case the power is above x W<br /><h1>Overview</h1
           <option value="1500">Upper limit of 1500 W</option>
           <option value="2000">Upper limit of 2000 W</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_23_2" type="integer" groupName="configuration"
@@ -183,7 +184,6 @@ Auto energy report if value changes of x Wh<br /><h1>Overview</h1><p>This parame
           <option value="60000">Enable if 60.000 Wh variation</option>
           <option value="65535">Enable if 65.535 Wh variation</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_24_2" type="integer" groupName="configuration"
@@ -199,7 +199,6 @@ Reporting intervall for power and energy to lifeline.<br /><h1>Overview</h1><p>W
           <option value="21600">Enable and send report every 6 hours</option>
           <option value="43200">Enable and send report every 12 hours</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_25_2" type="integer" groupName="configuration"
@@ -225,7 +224,6 @@ Defines the High Threshold value in W.<br /><h1>Overview</h1><p>This parameter d
           <option value="1500">Power High Threshold enable 1500 W</option>
           <option value="2000">Power High Threshold enable 2000 W</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_26_2" type="integer" groupName="configuration"
@@ -252,7 +250,6 @@ Defines the Low Threshold value in W.<br /><h1>Overview</h1><p>This parameter de
           <option value="1500">Power Low Threshold enable 1500 W</option>
           <option value="2000">Power Low Threshold enable 2000 W</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_27_1" type="integer" groupName="configuration">
@@ -272,6 +269,7 @@ Defines actions if the power Low/High Threshold are reached.<br /><h1>Overview</
           <option value="13">Power High Group 4 OFF &amp; Power Low Gourp 5 ON</option>
           <option value="15">Power High Group 4 ON &amp; Power Low Group 5 ON</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

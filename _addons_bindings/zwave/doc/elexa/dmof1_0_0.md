@@ -303,7 +303,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/645/DMOF1-dome-z-wave-plug-operating-guide.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/645/reference/DMOF1-dome-z-wave-plug-operating-guide.pdf)
 
 ---
 

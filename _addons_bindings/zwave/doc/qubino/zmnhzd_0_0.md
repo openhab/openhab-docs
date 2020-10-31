@@ -593,7 +593,7 @@ Association group 3 supports 16 nodes.
 
 ### Documentation Links
 
-* [Multifunctional Weather Station - ZMNHZD1](https://opensmarthouse.org/zwavedatabase/364/qubino-ZMNHZD1-V1-1.pdf)
+* [Multifunctional Weather Station - ZMNHZD1](https://opensmarthouse.org/zwavedatabase/364/reference/qubino-ZMNHZD1-V1-1.pdf)
 
 ---
 

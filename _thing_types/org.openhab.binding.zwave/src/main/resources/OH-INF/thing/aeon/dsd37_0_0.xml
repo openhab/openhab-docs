@@ -48,6 +48,7 @@ Range Extender<br /><h1>Overview</h1><p>Aeon Labs Range Extender is a Z-Wave rep
           <option value="3">Telefonica</option>
           <option value="4">Reserved for other Partner</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_254_2" type="integer" groupName="configuration"
@@ -55,6 +56,7 @@ Range Extender<br /><h1>Overview</h1><p>Aeon Labs Range Extender is a Z-Wave rep
         <label>254: Device Tag</label>
         <description>When Repeater removed from z-wave network, Device Tag will not change</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_1" type="integer" groupName="configuration"
@@ -62,6 +64,7 @@ Range Extender<br /><h1>Overview</h1><p>Aeon Labs Range Extender is a Z-Wave rep
         <label>255: Reset configuration settings to default values</label>
         <description>Reset configuration settings to default values, except parameter is 254</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

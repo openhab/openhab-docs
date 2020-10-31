@@ -57,6 +57,7 @@ Electrical Meter<br /><h1>Overview</h1><p>The Z-Wave Smart Meter Sensor is a com
         <label>1: Pulse factor</label>
         <description>Impulse or Rotation factor per KWh * 10</description>
         <default>1024</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_2_1" type="integer" groupName="configuration">
@@ -66,6 +67,7 @@ Electrical Meter<br /><h1>Overview</h1><p>The Z-Wave Smart Meter Sensor is a com
           <option value="1">Pulse meter</option>
           <option value="2">Mechanical meter</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -73,6 +75,7 @@ Electrical Meter<br /><h1>Overview</h1><p>The Z-Wave Smart Meter Sensor is a com
         <label>3: IR Listen period</label>
         <description>Additional time for feedback measurement. Should always be 0.</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -82,6 +85,7 @@ Electrical Meter<br /><h1>Overview</h1><p>The Z-Wave Smart Meter Sensor is a com
 IR Pulse Width<br /><h1>Overview</h1><p>Adjusts transmit signal so received signal will in average be equal to this values.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"
@@ -91,6 +95,7 @@ IR Pulse Width<br /><h1>Overview</h1><p>Adjusts transmit signal so received sign
 Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times per second. This value also controls number of measurements per second on mechanical meters</p>
         ]]></description>
         <default>20</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"
@@ -98,6 +103,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
         <label>6: Pulse Threshold Low</label>
         <description>Low detection threshold for wheel meters</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_1" type="integer" groupName="configuration"
@@ -105,6 +111,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
         <label>7: Pulse Threshold High</label>
         <description>High detection threshold for wheel meters</description>
         <default>5</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
@@ -112,6 +119,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
         <label>8: Wakeup Interval</label>
         <description>like WAKEUP command class</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_9_4" type="integer" groupName="configuration"
@@ -119,6 +127,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
         <label>9: Pulse count</label>
         <description>Total pulse count (Meter reading / impulse factor)</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_10_2" type="integer" groupName="configuration"
@@ -126,6 +135,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
         <label>10: Keep alive period</label>
         <description>How many seconds before going back to sleep in normal wakeup mode.</description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_11_2" type="integer" groupName="configuration"
@@ -135,6 +145,7 @@ Poll / Wake up frequency<br /><h1>Overview</h1><p>Wake device up this many times
 Real-time mode<br /><h1>Overview</h1><p>Set this to enter real-time mode from remote. Contains seconds * poll frequency before going back to sleep.</p> <p>If you press the button once this value will be set.</p>
         ]]></description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_4" type="integer" groupName="configuration"
@@ -142,6 +153,7 @@ Real-time mode<br /><h1>Overview</h1><p>Set this to enter real-time mode from re
         <label>12: Serial number</label>
         <description>Read-only serial number in decimal</description>
         <default>0</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -151,6 +163,7 @@ Real-time mode<br /><h1>Overview</h1><p>Set this to enter real-time mode from re
           <option value="0">Off</option>
           <option value="1">LED blinks at pulse counting</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_15_4" type="integer" groupName="configuration"
@@ -161,6 +174,7 @@ Calibration status<br /><h1>Overview</h1><p>The calibration progress is calculat
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->

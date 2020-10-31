@@ -69,6 +69,7 @@ Roller Shutter Module<br /><h1>Overview</h1><p>The ARZ Z-Wave roller shutters ar
           <option value="2">Discalibrated</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_13_1" type="integer" groupName="configuration">
@@ -79,6 +80,7 @@ Roller Shutter Module<br /><h1>Overview</h1><p>The ARZ Z-Wave roller shutters ar
           <option value="1">FF go to Max</option>
           <option value="2">FF go to previous position</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->
