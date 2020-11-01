@@ -401,6 +401,12 @@ The most common problem is a wrong userId/password. Try to fix your userId/passw
 If it still fails, you're bit out of luck. You may try to restart OpenHAB (not just the binding) to clean the cookies. 
 As the cloud logon process is still little understood, your only luck might be to enable trace logging and see if you can translate the Chinese error code that it returns.
 
+_My Roborock vacuum is not found or not reacting_
+Did you link the vacuum with the Roborock app? 
+This won't work, the Roborock app is using a different communication method. 
+Reset your vacuum and connect it to the Xiaomi MiHome app. 
+This will change the communication method and the Mi IO binding can communicate with the vacuum.
+
 
 # Channels
 
@@ -1877,6 +1883,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power_price      | Number  | power_price                         |            |
 | current          | Number  | Current                             |            |
 | temperature      | Number  | Temperature                         |            |
+| lp_autooff       | Number  | Low Power Auto Off                  |            |
+| lp_autooff_delay | Number  | Low Power Limit Time                |            |
+| lp_threshold     | Number  | Low Power Threshold                 |            |
 
 ### Mi Power-strip v2 (<a name="zimi-powerstrip-v2">zimi.powerstrip.v2</a>) Channels
 
@@ -1888,6 +1897,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power_price      | Number  | power_price                         |            |
 | current          | Number  | Current                             |            |
 | temperature      | Number  | Temperature                         |            |
+| lp_autooff       | Number  | Low Power Auto Off                  |            |
+| lp_autooff_delay | Number  | Low Power Limit Time                |            |
+| lp_threshold     | Number  | Low Power Threshold                 |            |
 
 ### Xiaomi Mijia vacuum V-RVCLM21B (<a name="viomi-vacuum-v6">viomi.vacuum.v6</a>) Channels
 
@@ -4923,6 +4935,9 @@ Switch led "wifi LED" (G_powerstrip) {channel="miio:basic:powerstrip:led"}
 Number power_price "power_price" (G_powerstrip) {channel="miio:basic:powerstrip:power_price"}
 Number current "Current" (G_powerstrip) {channel="miio:basic:powerstrip:current"}
 Number temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
+Number lp_autooff "Low Power Auto Off" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff"}
+Number lp_autooff_delay "Low Power Limit Time" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff_delay"}
+Number lp_threshold "Low Power Threshold" (G_powerstrip) {channel="miio:basic:powerstrip:lp_threshold"}
 ```
 
 ### Mi Power-strip v2 (zimi.powerstrip.v2) item file lines
@@ -4937,6 +4952,9 @@ Switch led "wifi LED" (G_powerstrip) {channel="miio:basic:powerstrip:led"}
 Number power_price "power_price" (G_powerstrip) {channel="miio:basic:powerstrip:power_price"}
 Number current "Current" (G_powerstrip) {channel="miio:basic:powerstrip:current"}
 Number temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
+Number lp_autooff "Low Power Auto Off" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff"}
+Number lp_autooff_delay "Low Power Limit Time" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff_delay"}
+Number lp_threshold "Low Power Threshold" (G_powerstrip) {channel="miio:basic:powerstrip:lp_threshold"}
 ```
 
 ### Xiaomi Mijia vacuum V-RVCLM21B (viomi.vacuum.v6) item file lines
