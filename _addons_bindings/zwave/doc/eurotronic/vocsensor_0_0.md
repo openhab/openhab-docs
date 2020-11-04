@@ -337,7 +337,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation and Operation Guide](https://opensmarthouse.org/zwavedatabase/1240/Eurotronic-LGS-Z-Wave-Plus-BDA-web-EN-1.pdf)
+* [Installation and Operation Guide](https://opensmarthouse.org/zwavedatabase/1240/reference/Eurotronic-LGS-Z-Wave-Plus-BDA-web-EN-1.pdf)
 
 ---
 

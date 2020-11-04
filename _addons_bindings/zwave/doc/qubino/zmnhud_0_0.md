@@ -324,7 +324,7 @@ Association group 5 supports 99 nodes.
 
 ### Documentation Links
 
-* [Manual (French)](https://opensmarthouse.org/zwavedatabase/715/Qubino-DIN-pilot-wire-PLUS-user-manual-V1-0-fra.pdf)
+* [Manual (French)](https://opensmarthouse.org/zwavedatabase/715/reference/Qubino-DIN-pilot-wire-PLUS-user-manual-V1-0-fra.pdf)
 
 ---
 

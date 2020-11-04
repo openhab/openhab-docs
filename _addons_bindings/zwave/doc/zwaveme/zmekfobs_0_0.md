@@ -372,7 +372,7 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/548/ZME-KFOB-S.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/548/reference/ZME-KFOB-S.pdf)
 
 ---
 

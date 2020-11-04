@@ -653,7 +653,7 @@ Association group 6 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/212/z-wave-qubino-flush-pwm-thermostat-user-manual-v1-0.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/212/reference/z-wave-qubino-flush-pwm-thermostat-user-manual-v1-0.pdf)
 
 ---
 

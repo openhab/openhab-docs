@@ -457,7 +457,7 @@ Association group 6 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/363/Qubino-Flush-Dimmer-0-10V-PLUS-user-manual-V1-1-eng-1.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/363/reference/Qubino-Flush-Dimmer-0-10V-PLUS-user-manual-V1-1-eng-1.pdf)
 
 ---
 

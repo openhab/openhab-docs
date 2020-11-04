@@ -776,7 +776,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Manual](https://opensmarthouse.org/zwavedatabase/1083/FGWREU-111-T-EN-v1-0.pdf)
+* [Operating Manual](https://opensmarthouse.org/zwavedatabase/1083/reference/FGWREU-111-T-EN-v1-0.pdf)
 
 ---
 

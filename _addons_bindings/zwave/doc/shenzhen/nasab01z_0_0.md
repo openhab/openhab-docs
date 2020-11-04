@@ -249,8 +249,8 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [NASAB01Z Manual (1)](https://opensmarthouse.org/zwavedatabase/522/15-NAS-AB01Z-UserMan-pdf-3069596.pdf)
-* [NASAB01Z Manual (2)](https://opensmarthouse.org/zwavedatabase/522/NAS-AB01Z.pdf)
+* [NASAB01Z Manual (1)](https://opensmarthouse.org/zwavedatabase/522/reference/15-NAS-AB01Z-UserMan-pdf-3069596.pdf)
+* [NASAB01Z Manual (2)](https://opensmarthouse.org/zwavedatabase/522/reference/NAS-AB01Z.pdf)
 
 ---
 

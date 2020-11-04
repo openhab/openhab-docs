@@ -129,7 +129,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/239/FirstAlertSmoke-Manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/239/reference/FirstAlertSmoke-Manual.pdf)
 
 ---
 

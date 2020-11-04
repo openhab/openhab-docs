@@ -288,7 +288,7 @@ Association group 3 supports 10 nodes.
 
 ### Documentation Links
 
-* [data sheet](https://opensmarthouse.org/zwavedatabase/1273/Technical-Data-Sheet-Series-switch-flush-mount-BJ.pdf)
+* [data sheet](https://opensmarthouse.org/zwavedatabase/1273/reference/Technical-Data-Sheet-Series-switch-flush-mount-BJ.pdf)
 
 ---
 

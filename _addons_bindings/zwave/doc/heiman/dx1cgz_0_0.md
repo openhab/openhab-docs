@@ -89,8 +89,8 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Quickstart](https://opensmarthouse.org/zwavedatabase/682/Heiman-Quick-Start.pdf)
-* [Manual](https://opensmarthouse.org/zwavedatabase/682/DX1CG-Z-USER-MANUAL.pdf)
+* [Quickstart](https://opensmarthouse.org/zwavedatabase/682/reference/Heiman-Quick-Start.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/682/reference/DX1CG-Z-USER-MANUAL.pdf)
 
 ---
 

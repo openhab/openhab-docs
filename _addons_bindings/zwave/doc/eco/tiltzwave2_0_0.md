@@ -180,8 +180,8 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [English User Manual](https://opensmarthouse.org/zwavedatabase/139/Ecolink-TILTZWAVE2-ECO-manual-rev1.pdf)
-* [Updated Manual](https://opensmarthouse.org/zwavedatabase/139/Tilt-ZWave-Plus-Manual-R1-04-021816kgs.pdf)
+* [English User Manual](https://opensmarthouse.org/zwavedatabase/139/reference/Ecolink-TILTZWAVE2-ECO-manual-rev1.pdf)
+* [Updated Manual](https://opensmarthouse.org/zwavedatabase/139/reference/Tilt-ZWave-Plus-Manual-R1-04-021816kgs.pdf)
 
 ---
 

@@ -195,8 +195,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-2.pdf)
-* [Manual v1.3](https://opensmarthouse.org/zwavedatabase/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-3.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/619/reference/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-2.pdf)
+* [Manual v1.3](https://opensmarthouse.org/zwavedatabase/619/reference/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-3.pdf)
 
 ---
 

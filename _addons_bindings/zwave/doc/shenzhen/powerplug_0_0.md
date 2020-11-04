@@ -319,9 +319,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Instruction Manual Power Plug](https://opensmarthouse.org/zwavedatabase/397/Manual-for-Power-plug-Z-wave-Neo.pdf)
-* [User Manual](https://opensmarthouse.org/zwavedatabase/397/Smart-Plug-User-Guide--EU-.pdf)
-* [User Manual 23.09.2016](https://opensmarthouse.org/zwavedatabase/397/Smart-Plug-User-Guide--EU-.pdf)
+* [Instruction Manual Power Plug](https://opensmarthouse.org/zwavedatabase/397/reference/Manual-for-Power-plug-Z-wave-Neo.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/397/reference/Smart-Plug-User-Guide--EU-.pdf)
+* [User Manual 23.09.2016](https://opensmarthouse.org/zwavedatabase/397/reference/Smart-Plug-User-Guide--EU-.pdf)
 
 ---
 

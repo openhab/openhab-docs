@@ -353,8 +353,8 @@ Association group 4 supports 1 node.
 
 ### Documentation Links
 
-* [Owner Manual](https://opensmarthouse.org/zwavedatabase/264/z-wave-greenwave-powernode-manual.pdf)
-* [Technical Manual](https://opensmarthouse.org/zwavedatabase/264/Technical-Doc-for-the-powernodes.pdf)
+* [Owner Manual](https://opensmarthouse.org/zwavedatabase/264/reference/z-wave-greenwave-powernode-manual.pdf)
+* [Technical Manual](https://opensmarthouse.org/zwavedatabase/264/reference/Technical-Doc-for-the-powernodes.pdf)
 
 ---
 

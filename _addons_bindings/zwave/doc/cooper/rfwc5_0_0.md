@@ -230,8 +230,8 @@ Association group 255 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/15/WallMount5-SceneKeypadSpecSheet.pdf)
-* [Detailed Manual](https://opensmarthouse.org/zwavedatabase/15/21895AW.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/15/reference/WallMount5-SceneKeypadSpecSheet.pdf)
+* [Detailed Manual](https://opensmarthouse.org/zwavedatabase/15/reference/21895AW.pdf)
 
 ---
 

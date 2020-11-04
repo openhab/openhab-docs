@@ -265,7 +265,7 @@ Association group 4 supports 8 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/996/Widom-Dry-Contact-EN.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/996/reference/Widom-Dry-Contact-EN.pdf)
 
 ---
 

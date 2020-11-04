@@ -234,9 +234,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/1295/zcombo-g-first-alert-z-wave-smoke-and-co-alarm-manual.pdf)
-* [Product Specifications](https://opensmarthouse.org/zwavedatabase/1295/B00KMHXFAI_First_Alert_NXZCOMBO_Specifications.pdf)
-* [ZCOMBO Z-Wave Specification](https://opensmarthouse.org/zwavedatabase/1295/BRK_ZCOMBO_Z-Wave_Specification_11.0.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/1295/reference/zcombo-g-first-alert-z-wave-smoke-and-co-alarm-manual.pdf)
+* [Product Specifications](https://opensmarthouse.org/zwavedatabase/1295/reference/B00KMHXFAI_First_Alert_NXZCOMBO_Specifications.pdf)
+* [ZCOMBO Z-Wave Specification](https://opensmarthouse.org/zwavedatabase/1295/reference/BRK_ZCOMBO_Z-Wave_Specification_11.0.pdf)
 
 ---
 

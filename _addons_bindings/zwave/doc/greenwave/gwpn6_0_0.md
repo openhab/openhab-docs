@@ -381,8 +381,8 @@ Association group 4 supports 1 node.
 
 ### Documentation Links
 
-* [English User Manual](https://opensmarthouse.org/zwavedatabase/100/z-wave-greenwave-powernode-manual.pdf)
-* [Technical Notes for Smart Plugs](https://opensmarthouse.org/zwavedatabase/100/Technical-Doc-for-the-powernodes.pdf)
+* [English User Manual](https://opensmarthouse.org/zwavedatabase/100/reference/z-wave-greenwave-powernode-manual.pdf)
+* [Technical Notes for Smart Plugs](https://opensmarthouse.org/zwavedatabase/100/reference/Technical-Doc-for-the-powernodes.pdf)
 
 ---
 

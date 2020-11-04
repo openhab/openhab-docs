@@ -135,7 +135,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Scanned Manual](https://opensmarthouse.org/zwavedatabase/1189/RXZ-2C-Manual.pdf)
+* [Scanned Manual](https://opensmarthouse.org/zwavedatabase/1189/reference/RXZ-2C-Manual.pdf)
 
 ---
 

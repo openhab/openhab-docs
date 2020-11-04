@@ -266,7 +266,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/793/sr-zv9102fa-cct-user-manual.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/793/reference/sr-zv9102fa-cct-user-manual.pdf)
 
 ---
 

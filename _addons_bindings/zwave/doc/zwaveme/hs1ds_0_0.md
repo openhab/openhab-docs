@@ -103,7 +103,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/783/HSIDS-Z.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/783/reference/HSIDS-Z.pdf)
 
 ---
 

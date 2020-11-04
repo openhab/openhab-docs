@@ -612,7 +612,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product manual](https://opensmarthouse.org/zwavedatabase/1113/LZW30-SN-Manual.pdf)
+* [Product manual](https://opensmarthouse.org/zwavedatabase/1113/reference/LZW30-SN-Manual.pdf)
 
 ---
 

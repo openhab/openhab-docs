@@ -621,9 +621,9 @@ Association group 4 supports 15 nodes.
 
 ### Documentation Links
 
-* [STEINEL RS LED D2 Z-Wave - operation manual](https://opensmarthouse.org/zwavedatabase/759/bedien-110043511.pdf)
-* [STEINEL RS LED D2 Z-Wave, Z-Wave Interface v 1.0.0](https://opensmarthouse.org/zwavedatabase/759/bdal2-110043511.pdf)
-* [STEINEL RS LED D2 Z-Wave - Data Sheet](https://opensmarthouse.org/zwavedatabase/759/Steinel-RS-LED-D2-Z-Wave---DataSheet.pdf)
+* [STEINEL RS LED D2 Z-Wave - operation manual](https://opensmarthouse.org/zwavedatabase/759/reference/bedien-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave, Z-Wave Interface v 1.0.0](https://opensmarthouse.org/zwavedatabase/759/reference/bdal2-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave - Data Sheet](https://opensmarthouse.org/zwavedatabase/759/reference/Steinel-RS-LED-D2-Z-Wave---DataSheet.pdf)
 
 ---
 

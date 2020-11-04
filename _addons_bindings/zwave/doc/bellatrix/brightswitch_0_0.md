@@ -114,8 +114,8 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [BrightSwitch User Guide](https://opensmarthouse.org/zwavedatabase/953/User-Manual-3586475.pdf)
-* [Z-Wave Protocol Implementation Conformance Statement](https://opensmarthouse.org/zwavedatabase/953/ZC10-17065668.pdf)
+* [BrightSwitch User Guide](https://opensmarthouse.org/zwavedatabase/953/reference/User-Manual-3586475.pdf)
+* [Z-Wave Protocol Implementation Conformance Statement](https://opensmarthouse.org/zwavedatabase/953/reference/ZC10-17065668.pdf)
 
 ---
 

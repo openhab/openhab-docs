@@ -516,7 +516,7 @@ Association group 6 supports 5 nodes.
 
 ### Documentation Links
 
-* [Heatit Z-Relay](https://opensmarthouse.org/zwavedatabase/898/manual-heatit-z-relay--2-.pdf)
+* [Heatit Z-Relay](https://opensmarthouse.org/zwavedatabase/898/reference/manual-heatit-z-relay--2-.pdf)
 
 ---
 

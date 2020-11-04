@@ -150,7 +150,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [MH6-HP programmable thermostat.](https://opensmarthouse.org/zwavedatabase/1044/MH6-HP-User-Manual.pdf)
+* [MH6-HP programmable thermostat.](https://opensmarthouse.org/zwavedatabase/1044/reference/MH6-HP-User-Manual.pdf)
 
 ---
 

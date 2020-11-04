@@ -350,7 +350,7 @@ Association group 4 supports 4 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/478/Motion-Detector-User-Guide.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/478/reference/Motion-Detector-User-Guide.pdf)
 
 ---
 

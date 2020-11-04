@@ -358,7 +358,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [LZW31 Manual](https://opensmarthouse.org/zwavedatabase/1171/LZW31-Manual.pdf)
+* [LZW31 Manual](https://opensmarthouse.org/zwavedatabase/1171/reference/LZW31-Manual.pdf)
 
 ---
 

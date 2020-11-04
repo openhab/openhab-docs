@@ -193,7 +193,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1108/NeoRollerS.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1108/reference/NeoRollerS.pdf)
 
 ---
 

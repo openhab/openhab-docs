@@ -558,9 +558,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual Goap Smart Meter ZMNHTD](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-user-manual-V1-7-1.pdf)
-* [Qubino_Smart-Meter-PLUS-user-manual_V1.9_eng-1](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-user-manual-V1-9-eng-1--1-.pdf)
-* [Qubino_Smart-Meter-PLUS-extended-manual_eng_2.3](https://opensmarthouse.org/zwavedatabase/414/Qubino-Smart-Meter-PLUS-extended-manual-eng-2-3.pdf)
+* [Manual Goap Smart Meter ZMNHTD](https://opensmarthouse.org/zwavedatabase/414/reference/Qubino-Smart-Meter-PLUS-user-manual-V1-7-1.pdf)
+* [Qubino_Smart-Meter-PLUS-user-manual_V1.9_eng-1](https://opensmarthouse.org/zwavedatabase/414/reference/Qubino-Smart-Meter-PLUS-user-manual-V1-9-eng-1--1-.pdf)
+* [Qubino_Smart-Meter-PLUS-extended-manual_eng_2.3](https://opensmarthouse.org/zwavedatabase/414/reference/Qubino-Smart-Meter-PLUS-extended-manual-eng-2-3.pdf)
 
 ---
 

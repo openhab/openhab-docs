@@ -197,7 +197,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual (PL)](https://opensmarthouse.org/zwavedatabase/670/VMZ-Solar-FAKRO.pdf)
+* [User Manual (PL)](https://opensmarthouse.org/zwavedatabase/670/reference/VMZ-Solar-FAKRO.pdf)
 
 ---
 

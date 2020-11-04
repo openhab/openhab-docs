@@ -106,7 +106,7 @@ Association group 6 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/636/FAKRO-Zwave-Weather-Module-ZWMP-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/636/reference/FAKRO-Zwave-Weather-Module-ZWMP-Manual.pdf)
 
 ---
 

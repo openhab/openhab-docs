@@ -535,9 +535,9 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/213/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
-* [Qubino-Flush-Shutter-PLUS-user-manual-V1.0](https://opensmarthouse.org/zwavedatabase/213/ZMNHCD-S1.pdf)
-* [Qubino Flush Shutter extended manual eng 2.2](https://opensmarthouse.org/zwavedatabase/213/Qubino-Flush-Shutter-PLUS-extended-manual-eng-2-2-1.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/213/reference/Qubino-Flush-Shutter-PLUS-user-manual-V1-4.pdf)
+* [Qubino-Flush-Shutter-PLUS-user-manual-V1.0](https://opensmarthouse.org/zwavedatabase/213/reference/ZMNHCD-S1.pdf)
+* [Qubino Flush Shutter extended manual eng 2.2](https://opensmarthouse.org/zwavedatabase/213/reference/Qubino-Flush-Shutter-PLUS-extended-manual-eng-2-2-1.pdf)
 
 ---
 

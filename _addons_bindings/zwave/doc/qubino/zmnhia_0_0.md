@@ -490,7 +490,7 @@ Association group 6 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual V1.0](https://opensmarthouse.org/zwavedatabase/211/Qubino-Flush-On-Off-thermostat-user-manual-V1-0-eng.pdf)
+* [User Manual V1.0](https://opensmarthouse.org/zwavedatabase/211/reference/Qubino-Flush-On-Off-thermostat-user-manual-V1-0-eng.pdf)
 
 ---
 

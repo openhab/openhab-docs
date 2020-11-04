@@ -138,7 +138,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/728/User-Manual-HS1CAZ.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/728/reference/User-Manual-HS1CAZ.pdf)
 
 ---
 

@@ -204,7 +204,7 @@ Association group 2 supports 4 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/268/EZMultiPliOwnerManual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/268/reference/EZMultiPliOwnerManual.pdf)
 
 ---
 

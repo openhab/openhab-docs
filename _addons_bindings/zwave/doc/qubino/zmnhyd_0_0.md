@@ -406,7 +406,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
+* [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
 
 ---
 

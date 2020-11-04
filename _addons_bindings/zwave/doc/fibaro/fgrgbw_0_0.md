@@ -520,7 +520,7 @@ Association group 5 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual (v2.1-v2.3)](https://opensmarthouse.org/zwavedatabase/131/fibaro-rgbw-controller-2-1-2-3-manual.pdf)
+* [User Manual (v2.1-v2.3)](https://opensmarthouse.org/zwavedatabase/131/reference/fibaro-rgbw-controller-2-1-2-3-manual.pdf)
 
 ---
 

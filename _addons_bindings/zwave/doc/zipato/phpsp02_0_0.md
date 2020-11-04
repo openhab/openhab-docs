@@ -674,7 +674,7 @@ Association group 2 supports 8 nodes.
 
 ### Documentation Links
 
-* [Documentation](https://opensmarthouse.org/zwavedatabase/857/ph-psm02-Zipato-Multisensor-Quad-User-Manual-v1-4.pdf)
+* [Documentation](https://opensmarthouse.org/zwavedatabase/857/reference/ph-psm02-Zipato-Multisensor-Quad-User-Manual-v1-4.pdf)
 
 ---
 

@@ -433,8 +433,8 @@ Association group 3 supports 2 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/700/User-Manual-MIMO2--8May2017-removed-MI-address.pdf)
-* [Technical Manual](https://opensmarthouse.org/zwavedatabase/700/Tech-Appendix-MIMO2--8May2017-removed-MI-address.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/700/reference/User-Manual-MIMO2--8May2017-removed-MI-address.pdf)
+* [Technical Manual](https://opensmarthouse.org/zwavedatabase/700/reference/Tech-Appendix-MIMO2--8May2017-removed-MI-address.pdf)
 
 ---
 

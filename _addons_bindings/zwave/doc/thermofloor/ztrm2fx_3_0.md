@@ -643,8 +643,8 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
-* [A4_Manual_Heatit_Z-TRM2fx_FW-3.6_Ver2019-A_ENG](https://opensmarthouse.org/zwavedatabase/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-6-Ver2019-A-ENG.pdf)
+* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/980/reference/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
+* [A4_Manual_Heatit_Z-TRM2fx_FW-3.6_Ver2019-A_ENG](https://opensmarthouse.org/zwavedatabase/980/reference/A4-Manual-Heatit-Z-TRM2fx-FW-3-6-Ver2019-A-ENG.pdf)
 
 ---
 

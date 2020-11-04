@@ -129,7 +129,7 @@ Association group 5 supports 20 nodes.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/431/ZWC-K8.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/431/reference/ZWC-K8.pdf)
 
 ---
 

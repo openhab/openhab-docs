@@ -389,7 +389,7 @@ Association group 5 supports 99 nodes.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/273/reference/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
 
 ---
 

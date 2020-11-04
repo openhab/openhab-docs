@@ -46,7 +46,7 @@ The following table summarises the channels available for the RE.GUARD -:
 | Sensor (WATER_FLOW) | water_flow | water_flow |  |  | 
 | Sensor (water_temperature) | water_temperature | water_temperature |  |  | 
 | Sensor (WATER_PRESSURE) | water_pressure | water_pressure |  |  | 
-| Water meter (amps) | meter_water_cubic_meters | meter_water_cubic_meters | Water | Number | 
+| Water meter (m³) | meter_water_cubic_meters | meter_water_cubic_meters | Water | Number | 
 | Alarm (flood) | alarm_flood | alarm_flood | Water | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Alarm (water_valve) | water_valve | water_valve |  |  | 
@@ -68,7 +68,7 @@ Channel type information on this channel is not found.
 ### Sensor (WATER_PRESSURE)
 Channel type information on this channel is not found.
 
-### Water meter (amps)
+### Water meter (m³)
 Indicates the instantaneous water consumption.
 
 The ```meter_water_cubic_meters``` channel is of type ```meter_water_cubic_meters``` and supports the ```Number``` item and is in the ```Water``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -674,7 +674,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://opensmarthouse.org/zwavedatabase/1233/multi-language-small.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/1233/reference/multi-language-small.pdf)
 
 ---
 

@@ -212,8 +212,8 @@ Association group 9 supports 5 nodes.
 
 ### Documentation Links
 
-* [Lumi LM-SxZW Manual](https://opensmarthouse.org/zwavedatabase/1111/Lumi-LM-SxZW-Manual.pdf)
-* [[Official] Lumi Switch Manual in English](https://opensmarthouse.org/zwavedatabase/1111/User-Manual-Switch4-V1-0.pdf)
+* [Lumi LM-SxZW Manual](https://opensmarthouse.org/zwavedatabase/1111/reference/Lumi-LM-SxZW-Manual.pdf)
+* [[Official] Lumi Switch Manual in English](https://opensmarthouse.org/zwavedatabase/1111/reference/User-Manual-Switch4-V1-0.pdf)
 
 ---
 

@@ -266,7 +266,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manufacturer Provided Product Manual](https://opensmarthouse.org/zwavedatabase/1216/Z-Wave-Door-Window-Sensor---User-Guide---Aibase.pdf)
+* [Manufacturer Provided Product Manual](https://opensmarthouse.org/zwavedatabase/1216/reference/Z-Wave-Door-Window-Sensor---User-Guide---Aibase.pdf)
 
 ---
 

@@ -135,7 +135,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Operating Instructions](https://opensmarthouse.org/zwavedatabase/372/Comet-zwave-BDA-eng.pdf)
+* [Operating Instructions](https://opensmarthouse.org/zwavedatabase/372/reference/Comet-zwave-BDA-eng.pdf)
 
 ---
 

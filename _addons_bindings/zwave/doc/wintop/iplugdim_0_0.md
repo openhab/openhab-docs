@@ -128,7 +128,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [iPlugDim Manual](https://opensmarthouse.org/zwavedatabase/698/iplugdim.pdf)
+* [iPlugDim Manual](https://opensmarthouse.org/zwavedatabase/698/reference/iplugdim.pdf)
 
 ---
 

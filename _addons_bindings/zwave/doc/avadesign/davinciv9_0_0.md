@@ -1523,7 +1523,7 @@ Association group 37 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/910/DA-VINCI-ver-9.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/910/reference/DA-VINCI-ver-9.pdf)
 
 ---
 

@@ -86,8 +86,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Leviton VRC0P ASCII programming API](https://opensmarthouse.org/zwavedatabase/883/VRC0P-ASCII-Programming-Application-Note.pdf)
-* [Leviton VRC0P Instruction Sheet](https://opensmarthouse.org/zwavedatabase/883/Instruction-Sheet-VRC0P.pdf)
+* [Leviton VRC0P ASCII programming API](https://opensmarthouse.org/zwavedatabase/883/reference/VRC0P-ASCII-Programming-Application-Note.pdf)
+* [Leviton VRC0P Instruction Sheet](https://opensmarthouse.org/zwavedatabase/883/reference/Instruction-Sheet-VRC0P.pdf)
 
 ---
 

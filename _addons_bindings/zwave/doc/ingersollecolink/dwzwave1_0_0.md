@@ -162,7 +162,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/135/D-W-Sensor-Installation-Instructions.pdf)
+* [Installation Instructions](https://opensmarthouse.org/zwavedatabase/135/reference/D-W-Sensor-Installation-Instructions.pdf)
 
 ---
 

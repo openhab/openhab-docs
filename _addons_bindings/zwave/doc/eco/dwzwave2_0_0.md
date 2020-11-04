@@ -187,8 +187,8 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/138/Ecolink-DWZWAVE2-ECO-manual-rev1.pdf)
-* [Technical Manual](https://opensmarthouse.org/zwavedatabase/138/Advanced-Zwave-Configuration-v2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/138/reference/Ecolink-DWZWAVE2-ECO-manual-rev1.pdf)
+* [Technical Manual](https://opensmarthouse.org/zwavedatabase/138/reference/Advanced-Zwave-Configuration-v2.pdf)
 
 ---
 

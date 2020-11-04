@@ -194,7 +194,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1069/FS100Flex-Manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1069/reference/FS100Flex-Manual.pdf)
 
 ---
 

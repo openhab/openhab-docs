@@ -320,7 +320,7 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Guide](https://opensmarthouse.org/zwavedatabase/859/DHS-Shutter-ACController-Manual.pdf)
+* [User Guide](https://opensmarthouse.org/zwavedatabase/859/reference/DHS-Shutter-ACController-Manual.pdf)
 
 ---
 

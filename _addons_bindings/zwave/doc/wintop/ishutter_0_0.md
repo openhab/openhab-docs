@@ -345,7 +345,7 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [User manual for iShutter](https://opensmarthouse.org/zwavedatabase/329/iModuleShutter-11222RA-94-V0-4.pdf)
+* [User manual for iShutter](https://opensmarthouse.org/zwavedatabase/329/reference/iModuleShutter-11222RA-94-V0-4.pdf)
 
 ---
 

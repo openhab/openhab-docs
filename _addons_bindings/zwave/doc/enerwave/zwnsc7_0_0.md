@@ -94,7 +94,7 @@ Association group 7 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation guide](https://opensmarthouse.org/zwavedatabase/187/Enerwave-ZWN-SC7-InstallGuide.pdf)
+* [Installation guide](https://opensmarthouse.org/zwavedatabase/187/reference/Enerwave-ZWN-SC7-InstallGuide.pdf)
 
 ---
 

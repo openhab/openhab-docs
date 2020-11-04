@@ -341,7 +341,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1014/nas-wr01z-S2-SmartPlug-Manual.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1014/reference/nas-wr01z-S2-SmartPlug-Manual.pdf)
 
 ---
 

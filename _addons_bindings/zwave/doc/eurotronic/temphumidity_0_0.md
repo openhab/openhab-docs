@@ -211,7 +211,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1300/Temperature-and-Humdity-Sensor-Z-Wave-Plus_BDA-Web.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1300/reference/Temperature-and-Humdity-Sensor-Z-Wave-Plus_BDA-Web.pdf)
 
 ---
 

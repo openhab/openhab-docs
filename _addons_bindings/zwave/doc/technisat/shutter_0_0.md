@@ -193,8 +193,8 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [TechniSat Shutter](https://opensmarthouse.org/zwavedatabase/1242/BDA-Rollladenschalter-V6.pdf)
-* [Manual_english_TechniSat Shutter](https://opensmarthouse.org/zwavedatabase/1242/Manual-SMD01-Shutter--1-.pdf)
+* [TechniSat Shutter](https://opensmarthouse.org/zwavedatabase/1242/reference/BDA-Rollladenschalter-V6.pdf)
+* [Manual_english_TechniSat Shutter](https://opensmarthouse.org/zwavedatabase/1242/reference/Manual-SMD01-Shutter--1-.pdf)
 
 ---
 

@@ -165,7 +165,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual (NL)](https://opensmarthouse.org/zwavedatabase/340/P1-dongle-nl.pdf)
+* [Manual (NL)](https://opensmarthouse.org/zwavedatabase/340/reference/P1-dongle-nl.pdf)
 
 ---
 

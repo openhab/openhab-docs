@@ -144,7 +144,7 @@ Association group 3 supports 3 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/465/ZWN-RSM2-Plus-0208160044-01.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/465/reference/ZWN-RSM2-Plus-0208160044-01.pdf)
 
 ---
 

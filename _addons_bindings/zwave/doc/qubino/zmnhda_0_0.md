@@ -379,7 +379,7 @@ Association group 4 supports 4 nodes.
 
 ### Documentation Links
 
-* [User manual v6](https://opensmarthouse.org/zwavedatabase/209/Qubino-Flush-dimmer-user-manual-V6-eng.pdf)
+* [User manual v6](https://opensmarthouse.org/zwavedatabase/209/reference/Qubino-Flush-dimmer-user-manual-V6-eng.pdf)
 
 ---
 

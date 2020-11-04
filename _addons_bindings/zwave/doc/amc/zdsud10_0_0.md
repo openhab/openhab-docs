@@ -70,7 +70,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/184/ZDS-manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/184/reference/ZDS-manual.pdf)
 
 ---
 

@@ -236,7 +236,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/569/72027101-UM-01-meter-user-manual-v1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/569/reference/72027101-UM-01-meter-user-manual-v1-0.pdf)
 
 ---
 

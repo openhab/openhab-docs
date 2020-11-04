@@ -372,8 +372,8 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/674/Hank-Flood-Sensor-User-Manual.pdf)
-* [Test report](https://opensmarthouse.org/zwavedatabase/674/Hank-Flood-Sensor-Test-Report.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/674/reference/Hank-Flood-Sensor-User-Manual.pdf)
+* [Test report](https://opensmarthouse.org/zwavedatabase/674/reference/Hank-Flood-Sensor-Test-Report.pdf)
 
 ---
 

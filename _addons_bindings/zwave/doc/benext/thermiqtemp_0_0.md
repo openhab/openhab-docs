@@ -128,8 +128,8 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [BeNext environment configuration (NL)](https://opensmarthouse.org/zwavedatabase/1172/Hoe-meld-ik-thermostaten-aan---ThermIQ.pdf)
-* [Resistive High Power Dimmer EU Quick Start](https://opensmarthouse.org/zwavedatabase/1172/ir-paneel-dimmer.pdf)
+* [BeNext environment configuration (NL)](https://opensmarthouse.org/zwavedatabase/1172/reference/Hoe-meld-ik-thermostaten-aan---ThermIQ.pdf)
+* [Resistive High Power Dimmer EU Quick Start](https://opensmarthouse.org/zwavedatabase/1172/reference/ir-paneel-dimmer.pdf)
 
 ---
 

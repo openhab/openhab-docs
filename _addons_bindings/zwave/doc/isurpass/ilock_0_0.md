@@ -159,7 +159,7 @@ Association group 2 supports 1 node.
 
 ### Documentation Links
 
-* [iLock 15 User Manual](https://opensmarthouse.org/zwavedatabase/964/iLock-15-User-Manual.pdf)
+* [iLock 15 User Manual](https://opensmarthouse.org/zwavedatabase/964/reference/iLock-15-User-Manual.pdf)
 
 ---
 

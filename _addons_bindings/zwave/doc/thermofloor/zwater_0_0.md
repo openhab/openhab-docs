@@ -648,8 +648,8 @@ Association group 13 supports 5 nodes.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/886/Manual-Heatit-Z-Water-analog-inputs-FW-1-0.pdf)
-* [Manual 2.0](https://opensmarthouse.org/zwavedatabase/886/Manual-Heatit-Z-Water-digital-inputs-FW-2-0.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/886/reference/Manual-Heatit-Z-Water-analog-inputs-FW-1-0.pdf)
+* [Manual 2.0](https://opensmarthouse.org/zwavedatabase/886/reference/Manual-Heatit-Z-Water-digital-inputs-FW-2-0.pdf)
 
 ---
 

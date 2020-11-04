@@ -89,7 +89,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Documentation](https://opensmarthouse.org/zwavedatabase/771/HS2WD-Z-documentation.pdf)
+* [Documentation](https://opensmarthouse.org/zwavedatabase/771/reference/HS2WD-Z-documentation.pdf)
 
 ---
 

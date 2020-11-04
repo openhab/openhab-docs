@@ -122,7 +122,7 @@ Association group 1 supports 4 nodes.
 
 ### Documentation Links
 
-* [Water Valve](https://opensmarthouse.org/zwavedatabase/1063/50020-LGZW-2-Leak-Gopher-Z-Wave-Plus-Instructions-5VDC.pdf)
+* [Water Valve](https://opensmarthouse.org/zwavedatabase/1063/reference/50020-LGZW-2-Leak-Gopher-Z-Wave-Plus-Instructions-5VDC.pdf)
 
 ---
 

@@ -208,7 +208,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/659/Domux---DX1WL-Z-scanned.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/659/reference/Domux---DX1WL-Z-scanned.pdf)
 
 ---
 

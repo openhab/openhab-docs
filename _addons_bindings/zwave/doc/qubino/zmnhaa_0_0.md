@@ -292,7 +292,7 @@ Association group 4 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/205/flush-1-relay-ZMNHAA2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/205/reference/flush-1-relay-ZMNHAA2.pdf)
 
 ---
 

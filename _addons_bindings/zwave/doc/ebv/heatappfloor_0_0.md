@@ -217,7 +217,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Installationsanleitung heatapp! floor DE/EN ](https://opensmarthouse.org/zwavedatabase/811/heatapp-floor-210x420-EbV-DE-EN-Druck.pdf)
+* [Installationsanleitung heatapp! floor DE/EN ](https://opensmarthouse.org/zwavedatabase/811/reference/heatapp-floor-210x420-EbV-DE-EN-Druck.pdf)
 
 ---
 

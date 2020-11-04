@@ -217,7 +217,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [RGBGenie ZW-4001 Manual All Pages](https://opensmarthouse.org/zwavedatabase/1152/RGBGenie-ZW-4001-Manual-All-Pages.pdf)
+* [RGBGenie ZW-4001 Manual All Pages](https://opensmarthouse.org/zwavedatabase/1152/reference/RGBGenie-ZW-4001-Manual-All-Pages.pdf)
 
 ---
 

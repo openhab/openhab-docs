@@ -306,7 +306,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Siren](https://opensmarthouse.org/zwavedatabase/917/Wink-Siren-Manual.pdf)
+* [Siren](https://opensmarthouse.org/zwavedatabase/917/reference/Wink-Siren-Manual.pdf)
 
 ---
 

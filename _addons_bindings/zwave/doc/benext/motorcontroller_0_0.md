@@ -109,7 +109,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual from Forest curtain rails including Z-wave details](https://opensmarthouse.org/zwavedatabase/1215/download-287-Installing-the-FOREST-SHUTTLE-S-M-L--Z-wave-V1-6EN.pdf)
+* [Manual from Forest curtain rails including Z-wave details](https://opensmarthouse.org/zwavedatabase/1215/reference/download-287-Installing-the-FOREST-SHUTTLE-S-M-L--Z-wave-V1-6EN.pdf)
 
 ---
 

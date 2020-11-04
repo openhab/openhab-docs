@@ -98,7 +98,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual (EN)](https://opensmarthouse.org/zwavedatabase/848/ARF-ARP-Z-WAVE-EN.pdf)
+* [User Manual (EN)](https://opensmarthouse.org/zwavedatabase/848/reference/ARF-ARP-Z-WAVE-EN.pdf)
 
 ---
 

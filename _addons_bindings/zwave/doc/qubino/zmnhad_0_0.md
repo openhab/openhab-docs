@@ -626,7 +626,7 @@ Association group 9 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual v1.1](https://opensmarthouse.org/zwavedatabase/206/Qubino-Flush-1-relay-PLUS-user-manual-V1-1.pdf)
+* [User Manual v1.1](https://opensmarthouse.org/zwavedatabase/206/reference/Qubino-Flush-1-relay-PLUS-user-manual-V1-1.pdf)
 
 ---
 

@@ -320,7 +320,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Dome Motion Detector API Manual](https://opensmarthouse.org/zwavedatabase/797/DomeMotionDetectorAPIManual.pdf)
+* [Dome Motion Detector API Manual](https://opensmarthouse.org/zwavedatabase/797/reference/DomeMotionDetectorAPIManual.pdf)
 
 ---
 

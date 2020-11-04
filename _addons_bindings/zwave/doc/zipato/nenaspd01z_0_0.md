@@ -374,7 +374,7 @@ Association group 4 supports 4 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/735/ne-nas-pd01z-Zipato-PIR-Motion-Sensor-User-Manual-1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/735/reference/ne-nas-pd01z-Zipato-PIR-Motion-Sensor-User-Manual-1-0.pdf)
 
 ---
 

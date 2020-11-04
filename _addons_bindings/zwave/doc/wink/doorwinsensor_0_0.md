@@ -228,8 +228,8 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/1294/Wink-Door-Sensor-Manual.pdf)
-* [Z-Wave Protocol Implementation Conformance Statement](https://opensmarthouse.org/zwavedatabase/1294/ZC10-17075685.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/1294/reference/Wink-Door-Sensor-Manual.pdf)
+* [Z-Wave Protocol Implementation Conformance Statement](https://opensmarthouse.org/zwavedatabase/1294/reference/ZC10-17075685.pdf)
 
 ---
 

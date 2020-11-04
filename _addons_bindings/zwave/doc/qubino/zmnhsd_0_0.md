@@ -456,7 +456,7 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [Qubino DIN Dimmer User Manual](https://opensmarthouse.org/zwavedatabase/324/Qubino-DIN-Dimmer-user-PLUS-manual-V1-0-eng-1.pdf)
+* [Qubino DIN Dimmer User Manual](https://opensmarthouse.org/zwavedatabase/324/reference/Qubino-DIN-Dimmer-user-PLUS-manual-V1-0-eng-1.pdf)
 
 ---
 

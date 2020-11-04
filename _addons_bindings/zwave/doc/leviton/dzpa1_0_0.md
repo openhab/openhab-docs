@@ -169,7 +169,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product Data sheet](https://opensmarthouse.org/zwavedatabase/305/DZP-plugin-modules-Tsht-BW-v1p1--1-.pdf)
+* [Product Data sheet](https://opensmarthouse.org/zwavedatabase/305/reference/DZP-plugin-modules-Tsht-BW-v1p1--1-.pdf)
 
 ---
 

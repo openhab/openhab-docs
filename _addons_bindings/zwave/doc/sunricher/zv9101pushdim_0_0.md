@@ -237,7 +237,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [zv-9101 swe/eng manual](https://opensmarthouse.org/zwavedatabase/1058/ZV-9101-manual.pdf)
+* [zv-9101 swe/eng manual](https://opensmarthouse.org/zwavedatabase/1058/reference/ZV-9101-manual.pdf)
 
 ---
 

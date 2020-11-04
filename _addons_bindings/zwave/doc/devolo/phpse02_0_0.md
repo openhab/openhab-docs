@@ -487,7 +487,7 @@ Association group 1 supports 8 nodes.
 
 ### Documentation Links
 
-* [Quick Installation Guide V1.2](https://opensmarthouse.org/zwavedatabase/453/ph-pse02-Zipato-Siren-User-Manual-v1-2.pdf)
+* [Quick Installation Guide V1.2](https://opensmarthouse.org/zwavedatabase/453/reference/ph-pse02-Zipato-Siren-User-Manual-v1-2.pdf)
 
 ---
 

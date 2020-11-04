@@ -774,7 +774,7 @@ Association group 6 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/358/Qubino-Flush-On-Off-Thermostat-PLUS-user-manual-V1-2.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/358/reference/Qubino-Flush-On-Off-Thermostat-PLUS-user-manual-V1-2.pdf)
 
 ---
 

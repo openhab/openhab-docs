@@ -285,7 +285,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Flow Meter Technical Manual](https://opensmarthouse.org/zwavedatabase/934/Flow-Meter-Technical-Manual.pdf)
+* [Flow Meter Technical Manual](https://opensmarthouse.org/zwavedatabase/934/reference/Flow-Meter-Technical-Manual.pdf)
 
 ---
 

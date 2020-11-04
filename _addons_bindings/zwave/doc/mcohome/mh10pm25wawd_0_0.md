@@ -193,7 +193,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/1056/MH10-PM2-5-UM-Zwave-Plus.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1056/reference/MH10-PM2-5-UM-Zwave-Plus.pdf)
 
 ---
 

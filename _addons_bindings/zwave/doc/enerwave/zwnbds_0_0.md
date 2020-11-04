@@ -128,7 +128,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [ZWN-BDS Instruction Manual](https://opensmarthouse.org/zwavedatabase/834/ZWN-BDS-Insturction-Manual.pdf)
+* [ZWN-BDS Instruction Manual](https://opensmarthouse.org/zwavedatabase/834/reference/ZWN-BDS-Insturction-Manual.pdf)
 
 ---
 

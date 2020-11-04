@@ -175,8 +175,8 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://opensmarthouse.org/zwavedatabase/807/NZW31manual171102.pdf)
-* [NZw31 Command Classes and Parameters](https://opensmarthouse.org/zwavedatabase/807/nzw31-command-classes.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/807/reference/NZW31manual171102.pdf)
+* [NZw31 Command Classes and Parameters](https://opensmarthouse.org/zwavedatabase/807/reference/nzw31-command-classes.pdf)
 
 ---
 

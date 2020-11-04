@@ -179,7 +179,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/336/MH8-FC-EU-User-Manual.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/336/reference/MH8-FC-EU-User-Manual.pdf)
 
 ---
 

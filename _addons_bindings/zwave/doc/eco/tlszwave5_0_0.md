@@ -107,7 +107,7 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product Manual](https://opensmarthouse.org/zwavedatabase/915/ea1265b3f76f673ca8cf54cc210044665d4dae83.pdf)
+* [Product Manual](https://opensmarthouse.org/zwavedatabase/915/reference/ea1265b3f76f673ca8cf54cc210044665d4dae83.pdf)
 
 ---
 

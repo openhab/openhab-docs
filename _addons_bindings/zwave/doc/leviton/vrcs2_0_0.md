@@ -82,8 +82,8 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Z-Wave Protocol Implementation Conformance Statement:](https://opensmarthouse.org/zwavedatabase/418/ZC08-09060016.pdf)
-* [Manual](https://opensmarthouse.org/zwavedatabase/418/VRCS2.pdf)
+* [Z-Wave Protocol Implementation Conformance Statement:](https://opensmarthouse.org/zwavedatabase/418/reference/ZC08-09060016.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/418/reference/VRCS2.pdf)
 
 ---
 

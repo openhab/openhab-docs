@@ -117,8 +117,8 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User manual](https://opensmarthouse.org/zwavedatabase/49/ZAP-User-s-manual-vBAT-30-11-2014.pdf)
-* [advanced-swiidplug](https://opensmarthouse.org/zwavedatabase/49/advanced-swiidplug.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/49/reference/ZAP-User-s-manual-vBAT-30-11-2014.pdf)
+* [advanced-swiidplug](https://opensmarthouse.org/zwavedatabase/49/reference/advanced-swiidplug.pdf)
 
 ---
 

@@ -248,7 +248,7 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/326/DHS-Zwave-Motion-Sensor-v1.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/326/reference/DHS-Zwave-Motion-Sensor-v1.pdf)
 
 ---
 
