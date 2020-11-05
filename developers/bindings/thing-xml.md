@@ -248,7 +248,7 @@ The following XML snippet shows the definition for a temperature actuator channe
 
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
-A `String` item must be used as item type.
+A `String` or `Number` item must be used as item type.
 
 The following XML snippet defines a list of predefined state options:
 
