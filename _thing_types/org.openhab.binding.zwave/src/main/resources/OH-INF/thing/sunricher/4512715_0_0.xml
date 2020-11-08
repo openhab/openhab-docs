@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_4512715_00_000" listed="false">
+    <label>4512715 Switch 400W</label>
+    <description><![CDATA[
+Switch 400W<br /><h1>Overview</h1><p>Z-Wave in-wall switch. 400W Halogen, 200W led. 1 channel. Also sold under the brand NAMRON.</p> <br /><h2>Inclusion Information</h2><p>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</p><p>Power on the In-wall switch and set it into inclusion mode by triple pressing the action (reset) button on the switch, or by triple pressing the attached push switch.</p><p>The connected light will stay on for 3 seconds to indicate successful inclusion.<br /></p> <br /><h2>Exclusion Information</h2><p>There are two exclusion methods:<br /><br />Method 1: Exclusion from the primary controller/gateway as follows:<br /></p><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into exclusion).</li><li>Triple press the action button, the switch will be set to exclusion mode, and waiting to be excluded, then the switch will be excluded from the network.</li></ol><p>Method 2: Factory reset the switch will force the switch to be excluded from a network (Press and hold the action button for over 10 seconds, the switch will be reset to factory defaults).</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">4512715</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0200:D006</property>
+      <property name="dbReference">1303</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: State after Power Failure</label>
+        <description><![CDATA[
+State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stats should be after a device power failure.<br /></p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Shut Off Load</option>
+          <option value="1">Turn On Load</option>
+          <option value="2">Return to Previous State</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Enable/disable to send the basic report</label>
+        <description><![CDATA[
+Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed.(When value set as 1, re-power on the dimmer, it will send basic report automatically)<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable to send Basic Report</option>
+          <option value="1">Enable to send Basic Report</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Enable/disable with external switch</label>
+        <description><![CDATA[
+Enable/disable with external switch<br /><h1>Overview</h1><p>Enable/disable external switch to be added and removed from a network trough external switch. When enabled, triple press external switch within 1.5 seconds to enable the switch to be added or removed<br /></p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable</option>
+          <option value="1">Enable</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>1. When press and hold down "Reset" button to factory reset the switch, send "Device Reset Locally Notification CC" to associated devices of this group.</p><p>2. When laod state changes, send "Basic Report CC" to associated devices of this group.</p><p>3. When over temperature protections is detected, send "Emergency shutoff status" to Lifeline.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

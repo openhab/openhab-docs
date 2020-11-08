@@ -5,7 +5,7 @@ title: WLED - Bindings
 type: binding
 description: "This binding allows you to auto discover and use LED strings based on the WLED project:"
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

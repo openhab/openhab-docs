@@ -188,7 +188,7 @@ LCD Timeout
 0: No Timeout LCD always on
 
 5-30: LCD will turn off after 5 to 30 seconds
-The following option values may be configured, in addition to values in the range 5 to 30 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -283,7 +283,7 @@ Measured temperature offset
 -50 ... +50: Offsets the measured temp by -5,0°C ... +5,0°C
 
 128: External temp sensor will be used for regulation.
-The following option values may be configured, in addition to values in the range -50 to 50 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -340,7 +340,7 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://opensmarthouse.org/zwavedatabase/710/Spirit-Z-Wave-BAL-web-EN-view-04.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/710/reference/Spirit-Z-Wave-BAL-web-EN-view-04.pdf)
 
 ---
 

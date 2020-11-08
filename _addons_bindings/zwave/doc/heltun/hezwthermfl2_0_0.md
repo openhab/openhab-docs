@@ -48,6 +48,10 @@ antenna icon will be displayed with connection lines. If not on the network then
   5. Press the “–” key to start the exclusion process. Lines will be moving in the value position.
   6. The “Ecl” should appear with successful deletion. If the “Err” appear then start the exclusion process again.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the HE-ZW-THERM-FL2 -:

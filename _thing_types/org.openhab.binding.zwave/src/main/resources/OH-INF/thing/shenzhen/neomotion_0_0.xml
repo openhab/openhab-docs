@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="shenzhen_neomotion_00_000" listed="false">
+    <label>NeoMotion Motion Sensor</label>
+    <description><![CDATA[
+Motion Sensor<br /><h1>Overview</h1><p>Motion sensor(PIR) is a passive infrared detector or physical sensor. This sensor doesn't emitany energy but only passively receive and detect infrared radiation from outside. Under roomtemperature, all items have radiation. Human beings are warm-blooded animals with stableinfrared radiation, so are most easily to be detected. That's why we also call it body sensor.PIR send messages via Z-Wave network to Z-Wave gateway. In the Z-Wavenetwork communications, PIR can be connected to any Z-Wave gateway. Different countriesor areas, the radio frequency is different. In the communication between PIR and Z-Wave gatwway, PIR can only send messages, not be able to receive messages. When PIR istriggered, PIR will send message to Z-Wave gateway, and associate devices to work throughZWave gateway. PIR is battery powered, is small and can be installed easily.<br /></p> <br /><h2>Inclusion Information</h2><p>Press the code button in PIR sensor three times continuously<br /></p> <br /><h2>Exclusion Information</h2><p>Press the code button in PIR sensor three times continuously<br /></p> <br /><h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Battery</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="sensor_luminance" typeId="sensor_luminance">
+        <label>Sensor (luminance)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=LUMINANCE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_burglar" typeId="alarm_burglar">
+        <label>Alarm (burglar)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=BURGLAR</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Shenzhen Neo Electronics Co., Ltd</property>
+      <property name="modelId">NeoMotion</property>
+      <property name="manufacturerId">0258</property>
+      <property name="manufacturerRef">0200:1031</property>
+      <property name="dbReference">1301</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="8" max="255">
+        <label>1: Sensitivity Level Setting</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter defines the sensitivity of PIR sensor. At the first time of test, it is recommended to test the sensor with movements from a farthest end of the coverage area .If movements cannot be detected sensitively, simply adjust the sensitivity level by changing this parameter.<br /></p>
+        ]]></description>
+        <default>12</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="5" max="6000">
+        <label>2: On/Off Duration</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter can determine how long the associated devices should stay ON status. For instance, this parameter is set to 30(second), PIR sensor will send a BASIC SET Command toan associated device with value basic set level if PIR sensor is triggered, and the associated devices will be turned on, and stay in this status for 30(second) before it is turned off<br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Basic Set Level</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when motion sensor is triggered, Z-Wave gateway will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.<br /></p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="255">On</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>4: PIR Detecting Function Enabled/Disabled</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter can enable or disable PIR detector detecting function.<br /></p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_2" type="integer" groupName="configuration"
+                 min="0" max="1000">
+        <label>5: Ambient illumination Lux Level</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter can be set a lux level value which determines when light sensor is activated. Ifthe ambient illumination level falls below this value, and a person moves across orstands within the detected area , PIR detector will send a Z-Wave ON command(i.e.BASIC_SET value = parameter 3#) to an associated device and activate it.<br /></p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration"
+                 min="1" max="8">
+        <label>6: Re-trigger Interval Setting</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This Parameter can be used to adjust the interval of being retriggered after PIR sensor has been triggered. This Parameter value must be less than Parameter 2#.If user set this parameter to default by Configure CC, the parameter #2 will be set to default value<br /></p>
+        ]]></description>
+        <default>8</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_2" type="integer" groupName="configuration"
+                 min="60" max="36000">
+        <label>7: Light Sensor Polling Interval</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This Parameter can be set as interval time for light sensor measuring ambient illumination level.<br /></p>
+        ]]></description>
+        <default>180</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Lux Level Function Enable</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>If this parameter is set to '1', and when Lux level is less than the value defined by parameter#5, PIR sensor will send a BASIC_SET command frame(i.e. BASIC_SET (value = parameter3) to an associated device and activate it. If Lux Level is greater than the value defined by parameter #5, PIR sensor will not send a BASIC_SET command frame.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>9: Ambient illumination Lux Level Report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter defines how much Lux must be changed first, then PIR sensor will report to zwave gateway.<br /></p>
+        ]]></description>
+        <default>100</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>10: Ambient Temperature Differential Report</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter is configured the value that differential between current measured andprevious report value. If the differential value larger than the settings, device will report thismeasured temperature value to nodes associated in lifeline<br /></p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>11: Led Blink Enable</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter defines the Led on/off enable. If this parameter is set to '1', led blink will be enabled, the led will blink once when motion sensor detect a movement. Otherwise, the led will be turned off always.<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>12: Motion Event Report One Time Enable</label>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_99_2" type="integer" groupName="configuration"
+                 min="1" max="65536">
+        <label>99: Ambient light intensity calibration</label>
+        <description><![CDATA[
+<br /><h1>Overview</h1><p>This parameter defines the calibrated scale for ambient light intensity. Because the methodand position that the sensor is mounted , and the cover of sensor will bringmeasurement error,user can get more real light intensity by this parameter setting. Usershould run the steps as blows for calibrating.<br /></p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic_set</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Notification Report</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Sensor Binary Report</label>
+        <multipleLimit>4</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

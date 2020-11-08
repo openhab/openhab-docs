@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="mcohome_mhs513_05_000" listed="false">
+    <label>MH-S513 Touch Panel Switch 3-Way</label>
+    <description><![CDATA[
+Touch Panel Switch 3-Way<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class, multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network.</p><p>This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.<br /></p><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class, multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network.</p><p>This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /><h2>Inclusion Information</h2><p>ADD the device into Z-Wave network:</p><p> Set controller into ADD mode. Follow instructions provided by controller manufacturer.</p><p> Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p><p>Note: If the ADD is successful, all INDICATION LEDs on the panel will flash 4 times.<br /></p><p>ADD the device into Z-Wave network:</p> <ol><li>Set controller into ADD mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</li> </ol><p>Note: If the ADD is successful, all INDICATION LEDs on the panel will flash 4 times.</p> <br /><h2>Exclusion Information</h2><p>REMOVE the device from Z-Wave network:</p><p> Set controller into REMOVE mode. Follow instructions provided by controller manufacturer.</p><p> Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p><p>Note: If the REMOVE is successful, all INDICATION LEDs on the panel will flash 4 times. The REMOVE will delete all association data.<br /></p><p>ADD the device into Z-Wave network:</p> <ol><li>Set controller into ADD mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</li> </ol><p>Note: If the ADD is successful, all INDICATION LEDs on the panel will flash 4 times.</p> <br /><h2>Wakeup Information</h2><p><br /></p><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary1" typeId="switch_binary">
+        <label>Switch 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:1</property>
+        </properties>
+      </channel>
+      <channel id="switch_binary2" typeId="switch_binary">
+        <label>Switch 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY:2</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">McoHome Technology Co., Ltd</property>
+      <property name="modelId">MH-S513</property>
+      <property name="manufacturerId">015F</property>
+      <property name="manufacturerRef">5131:5103</property>
+      <property name="versionMin">5.0</property>
+      <property name="dbReference">1307</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Save switch state on power failure</label>
+        <description><![CDATA[
+Save switch state on power failure<br /><h1>Overview</h1><p>0: Switch state not saved, switch will be off when power is restored.<br />1: Switch state is saved, switch will be back to the same state when power is restored.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Switch state not saved</option>
+          <option value="1">Switch state is saved</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: ALL ON / ALL OFF</label>
+        <description><![CDATA[
+Allow all on/off control<br /><h1>Overview</h1><p>0: forbid ALL ON, forbid ALL OFF<br />1: forbid ALL ON, allow ALL OFF<br />2: allow ALL ON, forbid ALL OFF<br />255: allow ALL ON, allow ALL OFF</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">Forbid All ON/OFF</option>
+          <option value="1">Forbid All ON. Allow ALL OFF</option>
+          <option value="2">Allow ALL ON. Forbid ALL OFF</option>
+          <option value="255">Allow ALL ON. Allow ALL OFF</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="0" max="10">
+        <label>4: LED backlight brightness level</label>
+        <description><![CDATA[
+LED backlight brightness level<br /><h1>Overview</h1><p>0: LED lighting disabled<br />1 ~ 10: Minimum to Maximum brightness<br />11 ~ 255: Same as 10 (Maximum)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration">
+        <label>5: Switch 0 Key Mode</label>
+        <description><![CDATA[
+Switch 0 Key Mode<br /><h1>Overview</h1><p>0: single click to switch on/off status<br />1: Key default as off state. When it is turned on, then it will be turned off automatically after a time period, which can be set in Parameter 6<br />2: Key default as on state. When it is turned off, then it will be turned on automatically after a time period, which can be set in Parameter 6<br />3: hold &gt;3s then key is on, and off once released<br />4: single click to switch on/off status + hold &gt;3s then key is on, and off once released<br />5: Hold continuously then key is on, and off once released<br />6: When key is on, hold &gt;3s then key is off and will keep off status after released; When key is off, hold &gt;3s then key is on and will stay on status after released.</p> <p><strong>IMPORTANT NOTE: </strong>When key mode is 0x03 or 0x04, pressing for 8 seconds will NOT ADD/REMOVE from the network. You must use 3 clicks in quick succession, or change to another option if possible before removing.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">On/Off function</option>
+          <option value="1">Off Timer mode</option>
+          <option value="2">On Timer mode</option>
+          <option value="3">Delayed On momentary</option>
+          <option value="4">On/Off and Delayed On momentary</option>
+          <option value="5">Hold On momentary</option>
+          <option value="6">Delayed On/Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration"
+                 min="0" max="65535">
+        <label>6: Key timer duration</label>
+        <description><![CDATA[
+Key timer duration<br /><h1>Overview</h1><p>0: infinite (always on, or always off, when pressed)<br />1 ~ 65535: time in seconds until returning to the default state as per Parameter 5</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: External Switch Type</label>
+        <description><![CDATA[
+External Switch Type<br /><h1>Overview</h1><p>0: Button (Momentary buttons)<br />1: Toggle (2-state switches)</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Button (Momentary buttons)</option>
+          <option value="1">Toggle (2-state switches)</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Basic CC integration setting</label>
+        <description><![CDATA[
+Basic CC integration setting<br /><h1>Overview</h1><p>0: "Basic Set" received, key 1 responds; "Basic Get" received, key 1 sends "Basic Report"; key 1 will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association<br />1: "Basic Set" received, key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association<br />2: "Basic Set" received, all keys respond; "Basic Get" received, not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association<br />3: "Basic Set" received, all keys respond; "Basic Get" received, key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p> <p>This parameter works for integration with different gateways/systems. If do not know how to use, please keep as default.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Key 1 No report</option>
+          <option value="1">Key 1 report</option>
+          <option value="2">All Keys no reply</option>
+          <option value="3">Key 1 report only</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration">
+        <label>9: External switch to control specific load</label>
+        <description><![CDATA[
+External switch to control specific load<br /><h1>Overview</h1><p>0: Disabled<br />1: Load 1<br />2: Load 2<br />3: Load 1 and Load 2</p> <p>Optional for MH-S511 and MH-S512</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+          <option value="1">Load 1</option>
+          <option value="2">Load 2</option>
+          <option value="3">Load 1 and Load 2</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: Switch 1 Key Mode</label>
+        <description><![CDATA[
+Switch 1 Key Mode<br /><h1>Overview</h1><p>0: single click to switch on/off status<br />1: Key default as off state. When it is turned on, then it will be turned off automatically after a time period, which can be set in Parameter 6<br />2: Key default as on state. When it is turned off, then it will be turned on automatically after a time period, which can be set in Parameter 6<br />3: hold &gt;3s then key is on, and off once released<br />4: single click to switch on/off status + hold &gt;3s then key is on, and off once released<br />5: Hold continuously then key is on, and off once released<br />6: When key is on, hold &gt;3s then key is off and will keep off status after released; When key is off, hold &gt;3s then key is on and will stay on status after released.</p> <p><strong>IMPORTANT NOTE: </strong>When key mode is 0x03 or 0x04, pressing for 8 seconds will NOT ADD/REMOVE from the network. You must use 3 clicks in quick succession, or change to another option if possible before removing.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">On/Off function</option>
+          <option value="1">Off Timer mode</option>
+          <option value="2">On Timer mode</option>
+          <option value="3">Delayed On momentary</option>
+          <option value="4">On/Off and Delayed On momentary</option>
+          <option value="5">Hold On momentary</option>
+          <option value="6">Delayed On/Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration">
+        <label>11: Switch 2 Key Mode</label>
+        <description><![CDATA[
+Switch 2 Key Mode<br /><h1>Overview</h1><p>0: single click to switch on/off status<br />1: Key default as off state. When it is turned on, then it will be turned off automatically after a time period, which can be set in Parameter 6<br />2: Key default as on state. When it is turned off, then it will be turned on automatically after a time period, which can be set in Parameter 6<br />3: hold &gt;3s then key is on, and off once released<br />4: single click to switch on/off status + hold &gt;3s then key is on, and off once released<br />5: Hold continuously then key is on, and off once released<br />6: When key is on, hold &gt;3s then key is off and will keep off status after released; When key is off, hold &gt;3s then key is on and will stay on status after released.</p> <p><strong>IMPORTANT NOTE: </strong>When key mode is 0x03 or 0x04, pressing for 8 seconds will NOT ADD/REMOVE from the network. You must use 3 clicks in quick succession, or change to another option if possible before removing.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">On/Off function</option>
+          <option value="1">Off Timer mode</option>
+          <option value="2">On Timer mode</option>
+          <option value="3">Delayed On momentary</option>
+          <option value="4">On/Off and Delayed On momentary</option>
+          <option value="5">Hold On momentary</option>
+          <option value="6">Delayed On/Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration">
+        <label>12: Switch 3 Key Mode</label>
+        <description><![CDATA[
+Switch 3 Key Mode<br /><h1>Overview</h1><p>0: single click to switch on/off status</p><p>1: Key default as off state. When it is turned on, then it will be turned off automatically after a time period, which can be set in Parameter 6</p><p>2: Key default as on state. When it is turned off, then it will be turned on automatically after a time period, which can be set in Parameter 6<br /></p><p>3: hold &gt;3s then key is on, and off once released</p><p>4: single click to switch on/off status + hold &gt;3s then key is on, and off once released</p><p>5: Hold continuously then key is on, and off once released</p><p>6: When key is on, hold &gt;3s then key is off and will keep off status after released; When key is off, hold &gt;3s then key is on and will on status after released.</p> <p><strong>IMPORTANT NOTE: </strong>When key mode is 0x03 or 0x04, pressing for 8 seconds will NOT ADD/REMOVE from the network. You must use 3 clicks in quick succession, or change to another option if possible before removing.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">On/Off function</option>
+          <option value="1">Off Timer mode</option>
+          <option value="2">On Timer mode</option>
+          <option value="3">Delayed On momentary</option>
+          <option value="4">On/Off and Delayed On momentary</option>
+          <option value="5">Hold On momentary</option>
+          <option value="6">Delayed On/Off</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_14_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>14: Key lock local</label>
+        <description><![CDATA[
+Key lock function (Manually)<br /><h1>Overview</h1><p>This prevents or allows the local touch buttons to work.</p> <p>0: All keys unlocked<br />1: Key 1 locked<br />2: Key 2 locked<br />3: Keys 1 &amp; 2 locked<br />4: Key 3 locked - N/A<br />5: Keys 1 &amp; 3 locked - N/A<br />6: Keys 2 &amp; 3 locked - N/A<br />7: Keys 1 &amp; 2 &amp; 3 locked - N/A</p> <p><strong>Binary bit locations determine which keys are locked.</strong><br />BIT0: =1 Key 1 locked, operation disabled; =0 Key 1 not locked;<br />BIT1: =1 Key 2 locked, operation disabled; =0 Key 2 not locked;<br />BIT2: =1 Key 3 locked, operation disabled; =0 Key 3 not locked;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are locked.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>15: Key lock remote</label>
+        <description><![CDATA[
+Key lock function (Wirelessly)<br /><h1>Overview</h1><p>This prevents or allows the local touch buttons to work.</p> <p>0: All keys unlocked<br />1: Key 1 locked<br />2: Key 2 locked<br />3: Keys 1 &amp; 2 locked<br />4: Key 3 locked - N/A<br />5: Keys 1 &amp; 3 locked - N/A<br />6: Keys 2 &amp; 3 locked - N/A<br />7: Keys 1 &amp; 2 &amp; 3 locked - N/A</p> <p><strong>Binary bit locations determine which keys are locked.</strong><br />BIT0: =1 Key 1 locked, operation disabled; =0 Key 1 not locked;<br />BIT1: =1 Key 2 locked, operation disabled; =0 Key 2 not locked;<br />BIT2: =1 Key 3 locked, operation disabled; =0 Key 3 not locked;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are locked.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>16: Scene respond</label>
+        <description><![CDATA[
+Scene respond<br /><h1>Overview</h1><p>0: Scene respond disabled<br />1: Key 1 respond<br />2: Key 2 respond<br />3: Keys 1 &amp; 2 respond<br />4: Key 3 respond - N/A<br />5: Keys 1 &amp; 3 respond - N/A<br />6: Keys 2 &amp; 3 respond - N/A<br />7: Keys 1 &amp; 2 &amp; 3 respond - N/A</p> <p><strong>Binary bit locations determine which keys will respond.</strong><br />Bit0: =1 Key1 respond scene =0 Key1 not respond scene<br />Bit1: =1 Key2 respond scene =0 Key2 not respond scene<br />Bit2: =1 Key3 respond scene =0 Key3 not respond scene<br />Bit7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 will respond.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Key 1 Scene Mode</label>
+        <description><![CDATA[
+Key 1 Scene Activate Mode Setting<br /><h1>Overview</h1><p>0: Scene activate function disabled<br />1: One click key1, always activate scene ID1 no matter what the status of key1 is<br />2: One click key1, only activate scene ID1 when key1's relay output is open<br />3: One click key1, only activate scene ID1 when key1's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">Always Activate Scene</option>
+          <option value="2">Activate only when off</option>
+          <option value="3">Activate only when on</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>18: Key 1 Activate Scene ID</label>
+        <description><![CDATA[
+Key 1 Activate Scene ID<br /><h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>19: Key 1 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 1 Activate Scene Duration<br /><h1>Overview</h1><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_20_1" type="integer" groupName="configuration">
+        <label>20: Key 2 Scene Mode</label>
+        <description><![CDATA[
+Key 2 Scene Mode<br /><h1>Overview</h1><p>0: Scene activate function disabled<br />1: One click key2, always activate scene ID1 no matter what the status of key2 is<br />2: One click key2, only activate scene ID1 when key2's relay output is open<br />3: One click key2, only activate scene ID1 when key2's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">Always Activate Scene</option>
+          <option value="2">Activate only when off</option>
+          <option value="3">Activate only when on</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>21: Key 2 Activate Scene ID</label>
+        <description><![CDATA[
+Key 2 Activate Scene ID<br /><h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br />1 ~ 255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>22: Key 2 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 2 Activate Scene Duration<br /><h1>Overview</h1><p>0: Instantly<br />1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_1" type="integer" groupName="configuration">
+        <label>23: Key 3 Scene Mode</label>
+        <description><![CDATA[
+Key 3 Scene Mode<br /><h1>Overview</h1><p>0: Scene activate function disabled<br /></p><p>1: One click key3, always activate scene ID1 no matter what the status of key3 is<br />2: One click key3, only activate scene ID1 when key3's relay output is open<br />3: One click key3, only activate scene ID1 when key3's relay output is closed</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene activate function disabled</option>
+          <option value="1">Always Activate Scene</option>
+          <option value="2">Activate only when off</option>
+          <option value="3">Activate only when on</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>24: Key 3 Activate Scene ID</label>
+        <description><![CDATA[
+Key 3 Activate Scene ID<br /><h1>Overview</h1><p>0: Scene ID is invalid and will not send scene activate command (scene disabled)<br /></p><p>1 ~ 255: Scene ID</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_25_1" type="integer" groupName="configuration"
+                 min="0" max="254">
+        <label>25: Key 3 Activate Scene Duration</label>
+        <description><![CDATA[
+Key 3 Activate Scene Duration<br /><h1>Overview</h1><p>0: Instantly<br /></p><p>1 ~ 127: Specify dimming duration from 1 second (0x01) to 127 seconds (0x7F) in 1-second resolution<br />128 ~ 254: Specify dimming duration from 1 minute (0x80(128)) to 127 minutes (0xFE(254)) in 1-minute resolution</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>31: Central scene settings</label>
+        <description><![CDATA[
+Central scene settings<br /><h1>Overview</h1><p>This enables the central scene function for each button.</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>32: Scene respond ID 1-50</label>
+        <description><![CDATA[
+Scene respond ID 1-50<br /><h1>Overview</h1><p>This enables the scene function for each button. Scene ID 1 - 50</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_33_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>33: Scene respond ID 51-100</label>
+        <description><![CDATA[
+Scene respond ID 51-100<br /><h1>Overview</h1><p>This enables the scene function for each button. Scene ID 51 - 100</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_34_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>34: Scene respond ID 101-150</label>
+        <description><![CDATA[
+Scene respond ID 101-150<br /><h1>Overview</h1><p>This enables the scene function for each button. Scene ID 51 - 100</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_35_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>35: Scene respond ID 151-200</label>
+        <description><![CDATA[
+Scene respond ID 151-200<br /><h1>Overview</h1><p>This enables the scene function for each button. Scene ID 151 - 200</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_36_1_wo" type="integer" groupName="configuration">
+        <label>36: Scene respond ID 201-250</label>
+        <description><![CDATA[
+Scene respond ID 201-250<br /><h1>Overview</h1><p>This enables the scene function for each button. Scene ID 201 - 250</p> <p>0: All keys disabled<br />1: Key 1 enabled<br />2: Key 2 enabled<br />3: Keys 1 &amp; 2 enabled<br />4: Key 3 enabled - N/A<br />5: Keys 1 &amp; 3 enabled - N/A<br />6: Keys 2 &amp; 3 enabled - N/A<br />7: Keys 1 &amp; 2 &amp; 3 enabled - N/A</p> <p><strong>Binary bit locations determine which keys are enabled.</strong><br />BIT0: =1 Key 1 disabled; =0 Key 1 enabled;<br />BIT1: =1 Key 2 disabled; =0 Key 2 enabled;<br />BIT2: =1 Key 3 disabled; =0 Key 3 enabled;<br />BIT7: Reserved</p> <p>E.g. 0x05 (00000101) From right to left Bit 0 and 2 are on so Key 1 and 3 are enabled.</p> <p><strong>NOTE:</strong> Key 3 only on MH-S513.</p>
+        ]]></description>
+        <default>0</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_255_1_wo" type="integer" groupName="configuration">
+        <label>255: Factory Setting</label>
+        <description><![CDATA[
+restore factory defaults<br /><h1>Overview</h1><p><strong>Factory Reset.</strong></p> <p>255: Factory reset switch.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal</option>
+          <option value="255">Factory Reset</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Associate with Key 1</label>
+        <description><![CDATA[
+Associate with Key 1<br /><h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_5" type="text" groupName="association" multiple="true">
+        <label>5: Associate with Key 2 if any</label>
+        <description>Associate with Key 2 if any</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_8" type="text" groupName="association" multiple="true">
+        <label>8: Associate with Key 3 if any</label>
+        <description>Associate with Key 3 if any</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

@@ -5,7 +5,7 @@ title: TR-064 - Bindings
 type: binding
 description: "This binding brings support for internet gateway devices that support the TR-064 protocol."
 since: 3x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
