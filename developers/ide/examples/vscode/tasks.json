@@ -79,7 +79,7 @@
                 "args": [
                     "${workspaceFolder}/target/$env:dist",
                     "$env:openhab_addons"
-                ],
+                ]
             },
             "dependsOn": [
                 "mvn Compile (Offline)"
