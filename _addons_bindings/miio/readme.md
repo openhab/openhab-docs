@@ -44,7 +44,8 @@ The binding needs a token from the Xiaomi Mi Device in order to be able to contr
 The binding can retrieve the needed tokens from the Xiaomi cloud. 
 Go to the binding config page and enter your cloud username and password. 
 The server(s) to which your devices are connected need to be entered as well. 
-Use the one of the regional servers: ru,us,tw,sg,cn,de. Multiple servers can be separated with comma, or leave blank to test all known servers.
+Use the one of the regional servers: cn,de,i2,tw,ru,sg,us.
+Multiple servers can be separated with comma, or leave blank to test all known servers.
 
 ## Tokens without cloud access
 
@@ -64,7 +65,8 @@ Note. The Xiaomi devices change the token when inclusion is done. Hence if you g
 ## Binding Configuration
 
 No binding configuration is required. However to enable cloud functionality enter your Xiaomi username, password and server(s).
-The list of the known countries and related severs is [here](#Country-Servers)
+The list of the known countries and related severs is [here](#Country-Servers).
+
 After successful Xiaomi cloud login, the binding will use the connection to retrieve the required device tokens from the cloud. 
 For Xiaomi vacuums the map can be visualized in openHAB using the cloud connection.
 
@@ -95,6 +97,8 @@ or in case of unknown models include the model information of a similar device t
 `Thing miio:vacuum:s50 "vacuum" @ "livingroom" [ host="192.168.15.20", token="xxxxxxx", deviceId=“0470DDAA”, model="roborock.vacuum.s4" ]`
 
 # Mi IO Devices
+
+Currently the miio binding supports more than 200 different models.
 
 | Device                       | ThingType        | Device Model           | Supported | Remark     |
 |------------------------------|------------------|------------------------|-----------|------------|
@@ -163,9 +167,18 @@ or in case of unknown models include the model information of a similar device t
 | Mi Humdifier                 | miio:basic       | [zhimi.humidifier.v1](#zhimi-humidifier-v1) | Yes       |            |
 | Light Control (Wall Switch)  | miio:unsupported | lumi.ctrl_neutral1.v1  | No        |            |
 | Light Control (Wall Switch)  | miio:unsupported | lumi.ctrl_neutral2.v1  | No        |            |
+| Xiaomi youpin Curtain Controller (Wi-Fi) | miio:basic       | [lumi.curtain.hagl05](#lumi-curtain-hagl05) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mr Bond M1 Pro Smart Clothes Dryer | miio:basic       | [mrbond.airer.m1pro](#mrbond-airer-m1pro) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mr Bond M1 Smart Clothes Dryer | miio:basic       | [mrbond.airer.m1s](#mrbond-airer-m1s) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Mr Bond M1 Super Smart Clothes Dryer | miio:basic       | [mrbond.airer.m1super](#mrbond-airer-m1super) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+|  Xiaomi Mi Robot Vacuum MOP Essential | miio:basic       | [mijia.vacuum.v2](#mijia-vacuum-v2) | Yes       | Action commands are unknown at this time. According to spec identified actions for execution are:
+`action{"did":"vacuum-start-sweep","siid":2,"aiid":1,"in":[]}`
+`action{"did":"vacuum-stop-sweeping","siid":2,"aiid":2,"in":[]}`
+`action{"did":"vacuum-start-charge","siid":2,"aiid":3,"in":[]}`
+`action{"did":"filter-reset-filter-life","siid":11,"aiid":1,"in":[]}`
+`action{"did":"brush-cleaner-reset-brush-life","siid":14,"aiid":1,"in":[]}`
+`action{"did":"brush-cleaner-reset-brush-life","siid":15,"aiid":1,"in":[]}`
+. Please test and feedback if they are working to they can be linked to a channel. |
 | Xiaomi Scishare smart capsule coffee machine | miio:basic       | [scishare.coffee.s1102](#scishare-coffee-s1102) | Yes       | This device does not allow for regular querying for the status. Hence the status is not updated for the action channels. Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Xiaomi Scishare smart capsule coffee machine | miio:basic       | [scishare.coffee.s1301](#scishare-coffee-s1301) | Yes       | This device does not allow for regular querying for the status. Hence the status is not updated for the action channels. Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Xiaomi Philips Eyecare Smart Lamp 2 | miio:basic       | [philips.light.sread1](#philips-light-sread1) | Yes       |            |
@@ -351,10 +364,10 @@ Besides the regular configuration (like ip address, token) the modelId needs to 
 Normally the modelId is populated with the model of your device, however in this case, use the modelId of a similar device.
 Look at the openHAB forum, or the openHAB GitHub repository for the modelId of similar devices.
 
-## Supported property test
+## Supported property test for unsupported devices
 
 The unsupported device has a test channel with switch. When switching on, all known properties are tested, this may take few minutes.
-A test report will be shown in the log and is saved in the userdata/miio folder.
+A test report will be shown in the log and is saved in the `userdata/miio` folder with a filename `test-[your model]-[timestamp].txt`.
 If supported properties are found, an experimental database file is saved to the conf/misc/miio folder (see below chapter).
 The thing will go offline and will come back online as basic device, supporting the found channels.
 The database file may need to be modified to display the right channel names.
@@ -1293,6 +1306,20 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | temperature      | Number  | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
+### Xiaomi youpin Curtain Controller (Wi-Fi) (<a name="lumi-curtain-hagl05">lumi.curtain.hagl05</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| fault            | Number  | Curtain - Device Fault              | Value mapping [0="No faults"] |
+| current-position | Number  | Curtain - Current Position          |            |
+| status           | Number  | Curtain - Status                    | Value mapping [0="Stopped",1="Opening",2="Closing"] |
+| target-position  | Number  | Curtain - Target Position           |            |
+| manual-enabled   | Number  | curtain_cfg - manual_enabled        | Value mapping [0="Disable",1="Enable"] |
+| polarity         | Number  | curtain_cfg - polarity              | Value mapping [0="Positive",1="Reverse"] |
+| pos-limit        | Number  | curtain_cfg - pos_limit             | Value mapping [0="Unlimit",1="Limit"] |
+| en-night-tip-light | Switch  | Set night tip light                 | Value mapping [0="Disable",1="Enable"] |
+| run-time         | Number  | curtain_cfg - run_time              |            |
+
 ### Mr Bond M1 Pro Smart Clothes Dryer (<a name="mrbond-airer-m1pro">mrbond.airer.m1pro</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
@@ -1328,6 +1355,35 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | airer_location   | Number  | Airer Location                      |            |
 | disinfect        | Switch  | disinfect                           |            |
 | distime          | Number  | Disinfect Time                      |            |
+
+###  Xiaomi Mi Robot Vacuum MOP Essential (<a name="mijia-vacuum-v2">mijia.vacuum.v2</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| vacuumaction     | String  | Vacuum Action                       | This channel accepts `start`, `stop` and `dock`. The commands have not been confirmed working yet. Please feedback |
+| status           | Number  | Robot Cleaner - Status              | Value mapping [1="Idle",2="Sweeping",3="Paused",4="Error",5="Charging",6="Go Charging"] |
+| fault            | Number  | Robot Cleaner - Device Fault        | Value mapping [0="No Faults",1="Left-wheel-error",2="Right-whelel-error",3="Cliff-error",4="Low-battery-error",5="Bump-error",6="Main-brush-error",7="Side-brush-error",8="Fan-motor-error",9="Dustbin-error",10="Charging-error",11="No-wate-error",12="Pick-up-error"] |
+| mode             | Number  | Robot Cleaner - Mode                | Value mapping [1="Auto-clean",2="Spot-clean",3="Wallflow-clean"] |
+| target-water-level | Number  | Robot Cleaner - Target Water Level  | Value mapping [1="Level1",2="Level2",3="Level3"] |
+| fan-level        | Number  | Robot Cleaner - Fan Level           | Value mapping [0="Silence",1="Stanrd",2="Middle",3="Enchance"] |
+| battery-level    | Number  | Battery - Battery Level             |            |
+| charging-state   | Number  | Battery - Charging State            | Value mapping [0="Not-charging",1="Charging",2="Charging-competely"] |
+| alarm            | Switch  | Alarm - Alarm                       |            |
+| volume           | Number  | Alarm - Volume                      |            |
+| filter-life-level | Number  | Filter - Filter Life Level          |            |
+| filter-left-time | Number  | Filter - Filter Left Time           |            |
+| brush-life-level | Number  | Brush Cleaner - Brush Life Level    |            |
+| brush-left-time  | Number  | Brush Cleaner - Brush Left Time     |            |
+| brush-life-level1 | Number  | Brush Cleaner - Brush Life Level    |            |
+| brush-left-time1 | Number  | Brush Cleaner - Brush Left Time     |            |
+| clean-area       | Number  | Clean Record - Clean Area           |            |
+| clean-time       | Number  | Clean Record - Clean Time           |            |
+| total-clean-area | Number  | Clean Record - Total Clean Area     |            |
+| total-clean-time | Number  | Clean Record - Total Clean Time     |            |
+| total-clean-count | Number  | Clean Record - Total Clean Count    |            |
+| language         | Number  | Language - Language                 | Value mapping [0="English",1="简体中文",2="Español",3="Русский",4="Italiano",5="Français",6="Deutsch",7="한국어",8="Polski"] |
+| not-disturb-switch | Switch  | Language - Not Disturb Switch       |            |
+| mop-status       | Number  | Other Status - Mop Status           | Value mapping [0="MopUninstall",1="MopInstall"] |
 
 ### Xiaomi Scishare smart capsule coffee machine (<a name="scishare-coffee-s1102">scishare.coffee.s1102</a>) Channels
 
@@ -4239,6 +4295,23 @@ Number temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 ```
 
+### Xiaomi youpin Curtain Controller (Wi-Fi) (lumi.curtain.hagl05) item file lines
+
+note: Autogenerated example. Replace the id (curtain) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_curtain "Xiaomi youpin Curtain Controller (Wi-Fi)" <status>
+Number fault "Curtain - Device Fault" (G_curtain) {channel="miio:basic:curtain:fault"}
+Number current-position "Curtain - Current Position" (G_curtain) {channel="miio:basic:curtain:current-position"}
+Number status "Curtain - Status" (G_curtain) {channel="miio:basic:curtain:status"}
+Number target-position "Curtain - Target Position" (G_curtain) {channel="miio:basic:curtain:target-position"}
+Number manual-enabled "curtain_cfg - manual_enabled" (G_curtain) {channel="miio:basic:curtain:manual-enabled"}
+Number polarity "curtain_cfg - polarity" (G_curtain) {channel="miio:basic:curtain:polarity"}
+Number pos-limit "curtain_cfg - pos_limit" (G_curtain) {channel="miio:basic:curtain:pos-limit"}
+Switch en-night-tip-light "Set night tip light" (G_curtain) {channel="miio:basic:curtain:en-night-tip-light"}
+Number run-time "curtain_cfg - run_time" (G_curtain) {channel="miio:basic:curtain:run-time"}
+```
+
 ### Mr Bond M1 Pro Smart Clothes Dryer (mrbond.airer.m1pro) item file lines
 
 note: Autogenerated example. Replace the id (airer) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
@@ -4282,6 +4355,38 @@ Number drytime "Dry Time" (G_airer) {channel="miio:basic:airer:drytime"}
 Number airer_location "Airer Location" (G_airer) {channel="miio:basic:airer:airer_location"}
 Switch disinfect "disinfect" (G_airer) {channel="miio:basic:airer:disinfect"}
 Number distime "Disinfect Time" (G_airer) {channel="miio:basic:airer:distime"}
+```
+
+###  Xiaomi Mi Robot Vacuum MOP Essential (mijia.vacuum.v2) item file lines
+
+note: Autogenerated example. Replace the id (vacuum) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_vacuum " Xiaomi Mi Robot Vacuum MOP Essential" <status>
+String vacuumaction "Vacuum Action" (G_vacuum) {channel="miio:basic:vacuum:vacuumaction"}
+Number status "Robot Cleaner - Status" (G_vacuum) {channel="miio:basic:vacuum:status"}
+Number fault "Robot Cleaner - Device Fault" (G_vacuum) {channel="miio:basic:vacuum:fault"}
+Number mode "Robot Cleaner - Mode" (G_vacuum) {channel="miio:basic:vacuum:mode"}
+Number target-water-level "Robot Cleaner - Target Water Level" (G_vacuum) {channel="miio:basic:vacuum:target-water-level"}
+Number fan-level "Robot Cleaner - Fan Level" (G_vacuum) {channel="miio:basic:vacuum:fan-level"}
+Number battery-level "Battery - Battery Level" (G_vacuum) {channel="miio:basic:vacuum:battery-level"}
+Number charging-state "Battery - Charging State" (G_vacuum) {channel="miio:basic:vacuum:charging-state"}
+Switch alarm "Alarm - Alarm" (G_vacuum) {channel="miio:basic:vacuum:alarm"}
+Number volume "Alarm - Volume" (G_vacuum) {channel="miio:basic:vacuum:volume"}
+Number filter-life-level "Filter - Filter Life Level" (G_vacuum) {channel="miio:basic:vacuum:filter-life-level"}
+Number filter-left-time "Filter - Filter Left Time" (G_vacuum) {channel="miio:basic:vacuum:filter-left-time"}
+Number brush-life-level "Brush Cleaner - Brush Life Level" (G_vacuum) {channel="miio:basic:vacuum:brush-life-level"}
+Number brush-left-time "Brush Cleaner - Brush Left Time" (G_vacuum) {channel="miio:basic:vacuum:brush-left-time"}
+Number brush-life-level1 "Brush Cleaner - Brush Life Level" (G_vacuum) {channel="miio:basic:vacuum:brush-life-level1"}
+Number brush-left-time1 "Brush Cleaner - Brush Left Time" (G_vacuum) {channel="miio:basic:vacuum:brush-left-time1"}
+Number clean-area "Clean Record - Clean Area" (G_vacuum) {channel="miio:basic:vacuum:clean-area"}
+Number clean-time "Clean Record - Clean Time" (G_vacuum) {channel="miio:basic:vacuum:clean-time"}
+Number total-clean-area "Clean Record - Total Clean Area" (G_vacuum) {channel="miio:basic:vacuum:total-clean-area"}
+Number total-clean-time "Clean Record - Total Clean Time" (G_vacuum) {channel="miio:basic:vacuum:total-clean-time"}
+Number total-clean-count "Clean Record - Total Clean Count" (G_vacuum) {channel="miio:basic:vacuum:total-clean-count"}
+Number language "Language - Language" (G_vacuum) {channel="miio:basic:vacuum:language"}
+Switch not-disturb-switch "Language - Not Disturb Switch" (G_vacuum) {channel="miio:basic:vacuum:not-disturb-switch"}
+Number mop-status "Other Status - Mop Status" (G_vacuum) {channel="miio:basic:vacuum:mop-status"}
 ```
 
 ### Xiaomi Scishare smart capsule coffee machine (scishare.coffee.s1102) item file lines
@@ -6544,6 +6649,7 @@ Number usedhours "Run Time" (G_heater) {channel="miio:basic:heater:usedhours"}
 ### <a name="Country-Servers">Country Servers</a>
 
 Known country Servers: cn, de, i2, ru, sg, us
+
 Mapping of countries in mihome app to server:
 
 | Country                  | Country Code | Server |
