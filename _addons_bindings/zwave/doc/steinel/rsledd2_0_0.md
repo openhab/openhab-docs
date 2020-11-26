@@ -53,12 +53,12 @@ The following table summarises the channels available for the RS LED D2 Z-Wave -
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
-| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Scene Number 1 | scene_number1 | scene_number |  | Number | 
 | Alarm (burglar) 2 | alarm_burglar2 | alarm_burglar | Door | Switch | 
+| Sensor (luminance) | sensor_luminance3 | sensor_luminance |  | Number | 
 
 ### Switch
 Switch the power on and off.
@@ -81,11 +81,6 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Triggered |
 | OFF | Untriggered |
-
-### Sensor (luminance)
-Indicates the current light reading.
-
-The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (system)
 Indicates if a system alarm is triggered.
@@ -132,6 +127,11 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | OK |
 | ON | Alarm |
+
+### Sensor (luminance)
+Indicates the current light reading.
+
+The ```sensor_luminance3``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
