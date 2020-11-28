@@ -125,7 +125,7 @@ If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi
 A RPi 2 or 3 is fine, too, but a RPi 4 with 8GB of RAM is overkill, as are larger SD cards.
 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB eco system in a box and easily capable of automating your entire home.
-Mind two potential limitations of Raspberry Pis:
+Please be aware of two potential limitations of Raspberry Pis:
 RPi 3 and older are limited in RAM (1 GB of memory or less) and will probably not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
 You will want to have two GB for that to work smoothly.
 Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions (infamous 'wearout').
