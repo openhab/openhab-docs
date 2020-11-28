@@ -60,11 +60,11 @@ import java.net.URI
 A few default imports are already done, so classes from these packages do not need to be explicitly imported:
 
 ```java
-org.eclipse.smarthome.core.items
-org.eclipse.smarthome.core.persistence
-org.eclipse.smarthome.core.library.types
-org.eclipse.smarthome.core.library.items
-org.eclipse.smarthome.model.script.actions
+org.openhab.core.items
+org.openhab.core.persistence
+org.openhab.core.library.types
+org.openhab.core.library.items
+org.openhab.model.script.actions
 ```
 
 The **Variable Declarations** section can be used to declare variables that should be accessible to all rules in this file.
@@ -130,9 +130,8 @@ Item <item> changed [from <state>] [to <state>]
 
 A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
 
-An important warning is worth mentioning here.
-When using the `received command` trigger, the Rule will trigger **before** the Item's state is updated.
-Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of ItemName.state.
+When using the `received command` trigger, the Rule might trigger **before** the Item's state is updated.
+Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of `<ItemName>.state`.
 
 {: #member-of-triggers}
 ### Member of Triggers
@@ -140,7 +139,7 @@ Therefore, if the Rule needs to know what the command was, use the [implicit var
 As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
 You can also decide whether you want to catch only a specific command/status or any.
 All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
-Of particular note, the implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
+The implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
 
 ```java
 Member of <group> received command [<command>]
@@ -150,7 +149,7 @@ Member of <group> changed [from <state>] [to <state>]
 
 The `Member of` trigger only works with Items that are a direct member of the Group.
 It does not work with members of nested subgroups.
-Also, as with Item event-based triggers, when using `received command`, the Rule will trigger before the Item's state is updated.
+Also, as with Item event-based triggers, when using `received command`, the Rule might trigger before the Item's state is updated.
 So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
 
 {: #time-based-triggers}
@@ -174,9 +173,7 @@ A cron expression takes the form of six or optionally seven fields:
 6. Day-of-Week
 7. Year (optional field)
 
-for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.7/tutorials/tutorial-lesson-06.html).
-
-You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
+You may use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
 {: #system-based-triggers}
 ### System-based Triggers
@@ -186,7 +183,6 @@ Two system-based triggers are provided as described in the table below:
 | Trigger           | Description                                                                                                                                                                                        |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
-| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down.                                                                                                                       |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -436,63 +432,52 @@ val contactNum = if (MyContactItem.state == OPEN) 1 else 0
 
 ##### DateTime Item
 
-A DateTime Item carries a **DateTimeType**.
-DateTimeType presents the biggest challenge when converting and performing calculations.
-The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`.
-However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
-
-The lowest common denominator when working with time is to get at the epoch value.
-Epoch is the number of milliseconds that have passed since 1 January 1970 GMT and stored in a `long`.
-With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and vice versa.
+A DateTime Item carries a **DateTimeType**, which internally holds a Java `ZonedDateTime` object.
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis
+val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli
 
-// Get epoch from Joda DateTime
-val Number nowEpoch = now.millis
+// Get epoch from Java ZonedDateTime
+val Number nowEpoch = now.toInstant.toEpochMilli
 
-// Convert DateTimeType to Joda DateTime
-val jodaVariantOne = new DateTime(MyDateTimeItem.state.toString)
-val jodaVariantTwo = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
+// Convert DateTimeType to Java ZonedDateTime
+val javaZonedDateTime = (MyDateTimeItem.state as DateTimeType).zonedDateTime
 
-// Convert Joda DateTime to DateTimeType
-val calendar = java.util.Calendar::getInstance
-calendar.timeInMillis = now.millis
-val dtt = new DateTimeType(calendar)
+// Convert Java ZonedDateTime to DateTimeType
+val DateTimeType date = new DateTimeType(now)
 ```
 
 In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item.
 Here an option to do so utilizing SimpleDateFormat:
 
 ```java
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.time.format.DateTimeFormatter
 
 // Convert epoch to a human readable
-val SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-val String timestampString = sdf.format(new Date(timestampEpoch))
+val DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+val long epoch = now.toInstant.toEpochMilli
+val ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(epoch), ZoneOffset.UTC);
+val String dateTimeString = zdt.format(formatter)
 
 // Convert human readable time stamp to DateTimeType
-val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
+val DateTimeType dtt = DateTimeType.valueOf(dateTimeString)
 
 //convert state from Item of DateTimeType into a string
 val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
 ```
 
-Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date.
-For some examples:
+ZonedDateTimes provide a number of useful methods for comparing date times together and/or extracting parts of the date:
 
 ```java
-// See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)) ...
+// See if DateTimeType is before now
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
 
-// See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis))...
+// See if DateTimeType is after now
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime)) ...
 
 // Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).zonedDateTime.get(Calendar::HOUR_OF_DAY)
-// See the Calendar javadocs for the full set of parameters available
+val hour = (MyDateTimeItem.state as DateTimeType).zonedDateTime.hour
 ```
 
 ##### Dimmer Item
@@ -688,11 +673,12 @@ MyItem will automatically apply the method that corresponds to the argument type
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
-- `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
-- `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
-- `newState` - will be implicitly available in every rule that has at least one status update or status change event trigger.
-- `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
-- `receivedEvent` - will be implicitly available in every rule that has a channel-based trigger.
+- `receivedCommand` - implicitly available in every rule that has at least one command event trigger.
+- `previousState` - implicitly available in every rule that has at least one status change event trigger.
+- `newState` - implicitly available in every rule that has at least one status update or status change event trigger.
+- `triggeringItemName` - implicitly available in every rule that has at least one status update, status change or command event trigger.
+- `triggeringItem` - implicitly available in every rule that has a "Member of" trigger.
+- `receivedEvent` - implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 ### Early returns
@@ -791,7 +777,7 @@ logWarn(String loggerName, String format, Object... args)
 logError(String loggerName, String format, Object... args)
 ```
 
-In each case, the `loggerName` parameter is combined with the string `org.eclipse.smarthome.model.script.` to create the log4j logger name.
+In each case, the `loggerName` parameter is combined with the string `org.openhab.core.model.script.` to create the log4j logger name.
 For example, if your rules file contained the following log message:
 
 ```java
@@ -801,7 +787,7 @@ logDebug("kitchen", "Kitchen light turned on")
 then the logger you would have to configure to have your messages appearing in the console would be:
 
 ```text
-log:set DEBUG org.eclipse.smarthome.model.script.kitchen
+log:set DEBUG org.openhab.core.model.script.kitchen
 ```
 
 ## Rule Examples
