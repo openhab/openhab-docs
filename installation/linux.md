@@ -645,7 +645,7 @@ With openHAB 2 you can also [use the openHAB console]({{base}}/administration/lo
 
 ## Recommended Additional Setup Steps
 
-The following is not directly related to the openHAB installation but rather recommended on a openHAB system.
+The following is not directly related to the openHAB installation but rather recommended on an openHAB system.
 The need for these and the exact implementation on a specific system might differ from user to user.
 
 ### Privileges for Common Peripherals
@@ -667,21 +667,11 @@ If you are looking to enable sound privileges for openHAB, it will also be neces
 sudo adduser openhab audio
 ```
 
-Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.
-Therefore the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
-
-```shell
-EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyS2:/dev/ttyACM0:/dev/ttyAMA0"
-```
-
-The shown device handlers are just the most common examples.
-Please contact the community forum for more detailed information regarding individual hardware.
-
 ### Java Network Permissions
 
 The Java Virtual Machine hosting openHAB is restricted in its permissions to interact on network level for security reasons.
-Some openHAB add-ons, like the Network or AmazonDash bindings, need elevated permissions to work.
-If needed, grand these permissions by executing the following command:
+Some openHAB add-ons like the network binding need elevated permissions to work.
+If needed, grant these permissions by executing the following command:
 
 ```shell
 setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
