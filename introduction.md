@@ -124,7 +124,7 @@ If you feel serious about home automation it is better to start with a dedicated
 If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with 2 GB and a 16 GB SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
 A RPi 2 or 3 is fine, too, but a RPi 4 with 8GB of RAM is overkill, as are larger SD cards.
 
-While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB eco system in a box and easily capable of automating your entire home.
+While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB ecosystem in a box and easily capable of automating your entire home.
 Please be aware of two potential limitations of Raspberry Pis:
 RPi 3 and older are limited in RAM (1 GB of memory or less) and will probably not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
 You will want to have two GB for that to work smoothly.
