@@ -139,7 +139,7 @@ It provides more in-depth descriptions of Things, Items, Bindings, etc. that wil
 
 The amount of information provided can be overwhelming but don't hesitate to return here to lookup infos.
 
-When you encounter questions along the way that the docs don't answer for you, the openHAB community is there to help.
+When you encounter questions along the way that the docs don't answer for you, the openHAB community is here to help.
 
 ## The openHAB Community
 
