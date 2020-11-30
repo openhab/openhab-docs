@@ -6,7 +6,7 @@ type: binding
 description: "The Pushover binding allows you to notify mobile devices of a message using the [Pushover REST API](https://pushover.net/api)."
 since: 3x
 logo: images/addons/pushover.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
