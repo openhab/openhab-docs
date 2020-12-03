@@ -468,7 +468,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | co2              | Number  | CO2e                                |            |
 | tvoc             | Number  | tVOC                                |            |
 | humidity         | Number  | Humidity                            |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 
 ### Mi Air Quality Monitor S1 (<a name="cgllc-airmonitor-s1">cgllc.airmonitor.s1</a>) Channels
 
@@ -479,7 +479,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | co2              | Number  | CO2                                 |            |
 | tvoc             | Number  | tVOC                                |            |
 | humidity         | Number  | Humidity                            |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 
 ### Mi Air Humidifier (<a name="zhimi-humidifier-v1">zhimi.humidifier.v1</a>) Channels
 
@@ -495,9 +495,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | buzzer           | Switch  | Buzzer Status                       |            |
 | depth            | Number  | Depth                               |            |
 | dry              | Switch  | Dry                                 |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
 ### Mi Air Humidifier (<a name="zhimi-humidifier-ca1">zhimi.humidifier.ca1</a>) Channels
@@ -514,9 +514,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | buzzer           | Switch  | Buzzer Status                       |            |
 | depth            | Number  | Depth                               |            |
 | dry              | Switch  | Dry                                 |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
 ### Mi Air Evaporative Humidifier 2 (<a name="zhimi-humidifier-ca4">zhimi.humidifier.ca4</a>) Channels
@@ -554,9 +554,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | buzzer           | Switch  | Buzzer Status                       |            |
 | depth            | Number  | Depth                               |            |
 | dry              | Switch  | Dry                                 |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
 ### Mi Air Purifier v1 (<a name="zhimi-airpurifier-v1">zhimi.airpurifier.v1</a>) Channels
@@ -571,12 +571,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -592,12 +592,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -613,12 +613,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -634,12 +634,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -655,12 +655,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | bright           | Number  | LED Brightness                      |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -677,12 +677,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | illuminance      | Number  | Illuminance                         |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | motorspeed2      | Number  | Motor Speed 2                       |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
 ### Mi Air Purifier 2 (mini) (<a name="zhimi-airpurifier-m1">zhimi.airpurifier.m1</a>) Channels
@@ -697,12 +697,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -718,12 +718,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -739,12 +739,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -760,12 +760,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | bright           | Number  | LED Brightness                      |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -900,12 +900,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -921,12 +921,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -996,12 +996,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -1017,12 +1017,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -1038,12 +1038,12 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | LED Status                          |            |
 | buzzer           | Switch  | Buzzer Status                       |            |
 | filtermaxlife    | Number  | Filter Max Life                     |            |
-| filterhours      | Number  | Filter Hours used                   |            |
-| usedhours        | Number  | Run Time                            |            |
+| filterhours      | Number:Time | Filter Hours used                   |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
 | filterlife       | Number  | Filter  Life                        |            |
 | favoritelevel    | Number  | Favorite Level                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | purifyvolume     | Number  | Purivied Volume                     |            |
 | childlock        | Switch  | Child Lock                          |            |
 
@@ -1053,7 +1053,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Switch  | Buzzer                              |            |
@@ -1075,7 +1075,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Switch  | Buzzer                              |            |
@@ -1097,7 +1097,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Switch  | Buzzer                              |            |
@@ -1119,7 +1119,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Switch  | Buzzer                              |            |
@@ -1137,7 +1137,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Switch  | Buzzer                              |            |
@@ -1155,7 +1155,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Number  | Buzzer                              |            |
@@ -1172,7 +1172,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | angleEnable      | Switch  | Rotation                            |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | angle            | Number  | Angle                               |            |
 | poweroffTime     | Number  | Timer                               |            |
 | buzzer           | Number  | Buzzer                              |            |
@@ -1325,9 +1325,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | buzzer           | Switch  | Buzzer Status                       |            |
 | depth            | Number  | Depth                               |            |
 | dry              | Switch  | Dry                                 |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 | motorspeed       | Number  | Motor Speed                         |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | childlock        | Switch  | Child Lock                          |            |
 
 ### Xiaomi youpin Curtain Controller (Wi-Fi) (<a name="lumi-curtain-hagl05">lumi.curtain.hagl05</a>) Channels
@@ -1935,7 +1935,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | led              | Switch  | Indicator light                     |            |
 
 ### Mi Power-plug v1 (<a name="chuangmi-plug-v1">chuangmi.plug.v1</a>) Channels
@@ -1944,7 +1944,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | usb              | Switch  | USB                                 |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 
 ### Mi Power-plug v2 (<a name="chuangmi-plug-v2">chuangmi.plug.v2</a>) Channels
 
@@ -1967,7 +1967,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | led              | Switch  | Indicator light                     |            |
 
 ### Mi Smart Plug (<a name="chuangmi-plug-hmi205">chuangmi.plug.hmi205</a>) Channels
@@ -1975,7 +1975,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | led              | Switch  | Indicator light                     |            |
 
 ### Mi Smart Plug (<a name="chuangmi-plug-hmi206">chuangmi.plug.hmi206</a>) Channels
@@ -2005,7 +2005,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | wifi LED                            |            |
 | power_price      | Number  | power_price                         |            |
 | current          | Number  | Current                             |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | lp_autooff       | Number  | Low Power Auto Off                  |            |
 | lp_autooff_delay | Number  | Low Power Limit Time                |            |
 | lp_threshold     | Number  | Low Power Threshold                 |            |
@@ -2019,7 +2019,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | led              | Switch  | wifi LED                            |            |
 | power_price      | Number  | power_price                         |            |
 | current          | Number  | Current                             |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | lp_autooff       | Number  | Low Power Auto Off                  |            |
 | lp_autooff_delay | Number  | Low Power Limit Time                |            |
 | lp_threshold     | Number  | Low Power Threshold                 |            |
@@ -2153,7 +2153,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2176,7 +2176,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2199,7 +2199,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2222,7 +2222,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2245,7 +2245,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2268,7 +2268,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2291,7 +2291,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2314,7 +2314,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2337,7 +2337,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2360,7 +2360,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2383,7 +2383,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2406,7 +2406,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2429,7 +2429,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2452,7 +2452,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2475,7 +2475,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | run_status       | Number  | Run Status                          |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | rinse            | Number  | Rinse                               |            |
 | tds_in           | Number  | TDS in                              |            |
 | tds_out          | Number  | TDS out                             |            |
@@ -2579,7 +2579,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | bh_mode          | String  | Bath Heater mode                    |            |
 | brightness       | Dimmer  | Brightness                          |            |
 | delayoff         | Number  | Shutdown Timer                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | nightlightBrightness | Number  | Nightlight Brightness               |            |
 
 ### Yeelight BadHeater (<a name="yeelink-bhf_light-v2">yeelink.bhf_light.v2</a>) Channels
@@ -2590,7 +2590,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | bh_mode          | String  | Bath Heater mode                    |            |
 | brightness       | Dimmer  | Brightness                          |            |
 | delayoff         | Number  | Shutdown Timer                      |            |
-| temperature      | Number  | Temperature                         |            |
+| temperature      | Number:Temperature | Temperature                         |            |
 | nightlightBrightness | Number  | Nightlight Brightness               |            |
 
 ### Yeelight LED Ceiling Lamp (<a name="yeelink-light-ceiling1">yeelink.light.ceiling1</a>) Channels
@@ -3263,7 +3263,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | childlock        | Switch  | Child Lock                          |            |
 | HWSwitch         | Switch  | HW Switch                           |            |
 | temperature      | Number:Temperature | Temperature                         |            |
-| usedhours        | Number  | Run Time                            |            |
+| usedhours        | Number:Time | Run Time                            |            |
 
 ### Zhimi Heater (<a name="zhimi-heater-za2">zhimi.heater.za2</a>) Channels
 
@@ -3387,7 +3387,7 @@ Number pm25 "PM2.5" (G_airmonitor) {channel="miio:basic:airmonitor:pm25"}
 Number co2 "CO2e" (G_airmonitor) {channel="miio:basic:airmonitor:co2"}
 Number tvoc "tVOC" (G_airmonitor) {channel="miio:basic:airmonitor:tvoc"}
 Number humidity "Humidity" (G_airmonitor) {channel="miio:basic:airmonitor:humidity"}
-Number temperature "Temperature" (G_airmonitor) {channel="miio:basic:airmonitor:temperature"}
+Number:Temperature temperature "Temperature" (G_airmonitor) {channel="miio:basic:airmonitor:temperature"}
 ```
 
 ### Mi Air Quality Monitor S1 (cgllc.airmonitor.s1) item file lines
@@ -3401,7 +3401,7 @@ Number pm25 "PM2.5" (G_airmonitor) {channel="miio:basic:airmonitor:pm25"}
 Number co2 "CO2" (G_airmonitor) {channel="miio:basic:airmonitor:co2"}
 Number tvoc "tVOC" (G_airmonitor) {channel="miio:basic:airmonitor:tvoc"}
 Number humidity "Humidity" (G_airmonitor) {channel="miio:basic:airmonitor:humidity"}
-Number temperature "Temperature" (G_airmonitor) {channel="miio:basic:airmonitor:temperature"}
+Number:Temperature temperature "Temperature" (G_airmonitor) {channel="miio:basic:airmonitor:temperature"}
 ```
 
 ### Mi Air Humidifier (zhimi.humidifier.v1) item file lines
@@ -3420,9 +3420,9 @@ Number bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:br
 Switch buzzer "Buzzer Status" (G_humidifier) {channel="miio:basic:humidifier:buzzer"}
 Number depth "Depth" (G_humidifier) {channel="miio:basic:humidifier:depth"}
 Switch dry "Dry" (G_humidifier) {channel="miio:basic:humidifier:dry"}
-Number usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
+Number:Time usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
 Number motorspeed "Motor Speed" (G_humidifier) {channel="miio:basic:humidifier:motorspeed"}
-Number temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
+Number:Temperature temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 ```
 
@@ -3442,9 +3442,9 @@ Number bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:br
 Switch buzzer "Buzzer Status" (G_humidifier) {channel="miio:basic:humidifier:buzzer"}
 Number depth "Depth" (G_humidifier) {channel="miio:basic:humidifier:depth"}
 Switch dry "Dry" (G_humidifier) {channel="miio:basic:humidifier:dry"}
-Number usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
+Number:Time usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
 Number motorspeed "Motor Speed" (G_humidifier) {channel="miio:basic:humidifier:motorspeed"}
-Number temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
+Number:Temperature temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 ```
 
@@ -3488,9 +3488,9 @@ Number bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:br
 Switch buzzer "Buzzer Status" (G_humidifier) {channel="miio:basic:humidifier:buzzer"}
 Number depth "Depth" (G_humidifier) {channel="miio:basic:humidifier:depth"}
 Switch dry "Dry" (G_humidifier) {channel="miio:basic:humidifier:dry"}
-Number usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
+Number:Time usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
 Number motorspeed "Motor Speed" (G_humidifier) {channel="miio:basic:humidifier:motorspeed"}
-Number temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
+Number:Temperature temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 ```
 
@@ -3508,12 +3508,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3532,12 +3532,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3556,12 +3556,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3580,12 +3580,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3604,12 +3604,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Number bright "LED Brightness" (G_airpurifier) {channel="miio:basic:airpurifier:bright"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3629,12 +3629,12 @@ Number volume "Volume" (G_airpurifier) {channel="miio:basic:airpurifier:volume"}
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Number illuminance "Illuminance" (G_airpurifier) {channel="miio:basic:airpurifier:illuminance"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number motorspeed2 "Motor Speed 2" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed2"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
 
@@ -3652,12 +3652,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3676,12 +3676,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3700,12 +3700,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3724,12 +3724,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Number bright "LED Brightness" (G_airpurifier) {channel="miio:basic:airpurifier:bright"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3873,12 +3873,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3897,12 +3897,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -3984,12 +3984,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -4008,12 +4008,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -4032,12 +4032,12 @@ Number averageaqi "Average Air Quality Index" (G_airpurifier) {channel="miio:bas
 Switch led "LED Status" (G_airpurifier) {channel="miio:basic:airpurifier:led"}
 Switch buzzer "Buzzer Status" (G_airpurifier) {channel="miio:basic:airpurifier:buzzer"}
 Number filtermaxlife "Filter Max Life" (G_airpurifier) {channel="miio:basic:airpurifier:filtermaxlife"}
-Number filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
-Number usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
+Number:Time filterhours "Filter Hours used" (G_airpurifier) {channel="miio:basic:airpurifier:filterhours"}
+Number:Time usedhours "Run Time" (G_airpurifier) {channel="miio:basic:airpurifier:usedhours"}
 Number motorspeed "Motor Speed" (G_airpurifier) {channel="miio:basic:airpurifier:motorspeed"}
 Number filterlife "Filter  Life" (G_airpurifier) {channel="miio:basic:airpurifier:filterlife"}
 Number favoritelevel "Favorite Level" (G_airpurifier) {channel="miio:basic:airpurifier:favoritelevel"}
-Number temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_airpurifier) {channel="miio:basic:airpurifier:temperature"}
 Number purifyvolume "Purivied Volume" (G_airpurifier) {channel="miio:basic:airpurifier:purifyvolume"}
 Switch childlock "Child Lock" (G_airpurifier) {channel="miio:basic:airpurifier:childlock"}
 ```
@@ -4050,7 +4050,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Mi Smart Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Switch buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4075,7 +4075,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Mi Smart Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Switch buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4100,7 +4100,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Mi Smart Pedestal Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Switch buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4125,7 +4125,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Xiaomi Mi Smart Pedestal Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Switch buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4146,7 +4146,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Xiaomi Mi Smart Pedestal Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Switch buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4167,7 +4167,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Xiaomi Mi Smart Pedestal Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Number buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4187,7 +4187,7 @@ note: Autogenerated example. Replace the id (fan) in the channel with your own. 
 Group G_fan "Xiaomi Mi Smart Pedestal Fan" <status>
 Switch power "Power" (G_fan) {channel="miio:basic:fan:power"}
 Switch angleEnable "Rotation" (G_fan) {channel="miio:basic:fan:angleEnable"}
-Number usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
+Number:Time usedhours "Run Time" (G_fan) {channel="miio:basic:fan:usedhours"}
 Number angle "Angle" (G_fan) {channel="miio:basic:fan:angle"}
 Number poweroffTime "Timer" (G_fan) {channel="miio:basic:fan:poweroffTime"}
 Number buzzer "Buzzer" (G_fan) {channel="miio:basic:fan:buzzer"}
@@ -4370,9 +4370,9 @@ Number bright "LED Brightness" (G_humidifier) {channel="miio:basic:humidifier:br
 Switch buzzer "Buzzer Status" (G_humidifier) {channel="miio:basic:humidifier:buzzer"}
 Number depth "Depth" (G_humidifier) {channel="miio:basic:humidifier:depth"}
 Switch dry "Dry" (G_humidifier) {channel="miio:basic:humidifier:dry"}
-Number usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
+Number:Time usedhours "Run Time" (G_humidifier) {channel="miio:basic:humidifier:usedhours"}
 Number motorspeed "Motor Speed" (G_humidifier) {channel="miio:basic:humidifier:motorspeed"}
-Number temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
+Number:Temperature temperature "Temperature" (G_humidifier) {channel="miio:basic:humidifier:temperature"}
 Switch childlock "Child Lock" (G_humidifier) {channel="miio:basic:humidifier:childlock"}
 ```
 
@@ -5115,7 +5115,7 @@ note: Autogenerated example. Replace the id (plug) in the channel with your own.
 ```java
 Group G_plug "Mi Power-plug" <status>
 Switch power "Power" (G_plug) {channel="miio:basic:plug:power"}
-Number temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
+Number:Temperature temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
 Switch led "Indicator light" (G_plug) {channel="miio:basic:plug:led"}
 ```
 
@@ -5127,7 +5127,7 @@ note: Autogenerated example. Replace the id (plug) in the channel with your own.
 Group G_plug "Mi Power-plug v1" <status>
 Switch power "Power" (G_plug) {channel="miio:basic:plug:power"}
 Switch usb "USB" (G_plug) {channel="miio:basic:plug:usb"}
-Number temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
+Number:Temperature temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
 ```
 
 ### Mi Power-plug v2 (chuangmi.plug.v2) item file lines
@@ -5159,7 +5159,7 @@ note: Autogenerated example. Replace the id (plug) in the channel with your own.
 ```java
 Group G_plug "Mi Power-plug" <status>
 Switch power "Power" (G_plug) {channel="miio:basic:plug:power"}
-Number temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
+Number:Temperature temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
 Switch led "Indicator light" (G_plug) {channel="miio:basic:plug:led"}
 ```
 
@@ -5170,7 +5170,7 @@ note: Autogenerated example. Replace the id (plug) in the channel with your own.
 ```java
 Group G_plug "Mi Smart Plug" <status>
 Switch power "Power" (G_plug) {channel="miio:basic:plug:power"}
-Number temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
+Number:Temperature temperature "Temperature" (G_plug) {channel="miio:basic:plug:temperature"}
 Switch led "Indicator light" (G_plug) {channel="miio:basic:plug:led"}
 ```
 
@@ -5209,7 +5209,7 @@ Number powerUsage "Power Consumption" (G_powerstrip) {channel="miio:basic:powers
 Switch led "wifi LED" (G_powerstrip) {channel="miio:basic:powerstrip:led"}
 Number power_price "power_price" (G_powerstrip) {channel="miio:basic:powerstrip:power_price"}
 Number current "Current" (G_powerstrip) {channel="miio:basic:powerstrip:current"}
-Number temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
+Number:Temperature temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
 Number lp_autooff "Low Power Auto Off" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff"}
 Number lp_autooff_delay "Low Power Limit Time" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff_delay"}
 Number lp_threshold "Low Power Threshold" (G_powerstrip) {channel="miio:basic:powerstrip:lp_threshold"}
@@ -5226,7 +5226,7 @@ Number powerUsage "Power Consumption" (G_powerstrip) {channel="miio:basic:powers
 Switch led "wifi LED" (G_powerstrip) {channel="miio:basic:powerstrip:led"}
 Number power_price "power_price" (G_powerstrip) {channel="miio:basic:powerstrip:power_price"}
 Number current "Current" (G_powerstrip) {channel="miio:basic:powerstrip:current"}
-Number temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
+Number:Temperature temperature "Temperature" (G_powerstrip) {channel="miio:basic:powerstrip:temperature"}
 Number lp_autooff "Low Power Auto Off" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff"}
 Number lp_autooff_delay "Low Power Limit Time" (G_powerstrip) {channel="miio:basic:powerstrip:lp_autooff_delay"}
 Number lp_threshold "Low Power Threshold" (G_powerstrip) {channel="miio:basic:powerstrip:lp_threshold"}
@@ -5384,7 +5384,7 @@ note: Autogenerated example. Replace the id (waterpurifier) in the channel with 
 Group G_waterpurifier "Mi Water Purifier v1" <status>
 Switch power "Power" (G_waterpurifier) {channel="miio:basic:waterpurifier:power"}
 Number run_status "Run Status" (G_waterpurifier) {channel="miio:basic:waterpurifier:run_status"}
-Number temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
 Number rinse "Rinse" (G_waterpurifier) {channel="miio:basic:waterpurifier:rinse"}
 Number tds_in "TDS in" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_in"}
 Number tds_out "TDS out" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_out"}
@@ -5410,7 +5410,7 @@ note: Autogenerated example. Replace the id (waterpurifier) in the channel with 
 Group G_waterpurifier "Mi Water Purifier v2" <status>
 Switch power "Power" (G_waterpurifier) {channel="miio:basic:waterpurifier:power"}
 Number run_status "Run Status" (G_waterpurifier) {channel="miio:basic:waterpurifier:run_status"}
-Number temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
 Number rinse "Rinse" (G_waterpurifier) {channel="miio:basic:waterpurifier:rinse"}
 Number tds_in "TDS in" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_in"}
 Number tds_out "TDS out" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_out"}
@@ -5436,7 +5436,7 @@ note: Autogenerated example. Replace the id (waterpurifier) in the channel with 
 Group G_waterpurifier "Mi Water Purifier v3" <status>
 Switch power "Power" (G_waterpurifier) {channel="miio:basic:waterpurifier:power"}
 Number run_status "Run Status" (G_waterpurifier) {channel="miio:basic:waterpurifier:run_status"}
-Number temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
 Number rinse "Rinse" (G_waterpurifier) {channel="miio:basic:waterpurifier:rinse"}
 Number tds_in "TDS in" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_in"}
 Number tds_out "TDS out" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_out"}
@@ -5462,7 +5462,7 @@ note: Autogenerated example. Replace the id (waterpurifier) in the channel with 
 Group G_waterpurifier "Mi Water Purifier v4" <status>
 Switch power "Power" (G_waterpurifier) {channel="miio:basic:waterpurifier:power"}
 Number run_status "Run Status" (G_waterpurifier) {channel="miio:basic:waterpurifier:run_status"}
-Number temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpurifier) {channel="miio:basic:waterpurifier:temperature"}
 Number rinse "Rinse" (G_waterpurifier) {channel="miio:basic:waterpurifier:rinse"}
 Number tds_in "TDS in" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_in"}
 Number tds_out "TDS out" (G_waterpurifier) {channel="miio:basic:waterpurifier:tds_out"}
@@ -5488,7 +5488,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx2" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5514,7 +5514,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx3" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5540,7 +5540,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx4" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5566,7 +5566,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx5" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5592,7 +5592,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx6" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5618,7 +5618,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx7" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5644,7 +5644,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx8" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5670,7 +5670,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx9" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5696,7 +5696,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx10" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5722,7 +5722,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx11" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5748,7 +5748,7 @@ note: Autogenerated example. Replace the id (waterpuri) in the channel with your
 Group G_waterpuri "Mi Water Purifier lx12" <status>
 Switch power "Power" (G_waterpuri) {channel="miio:basic:waterpuri:power"}
 Number run_status "Run Status" (G_waterpuri) {channel="miio:basic:waterpuri:run_status"}
-Number temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
+Number:Temperature temperature "Temperature" (G_waterpuri) {channel="miio:basic:waterpuri:temperature"}
 Number rinse "Rinse" (G_waterpuri) {channel="miio:basic:waterpuri:rinse"}
 Number tds_in "TDS in" (G_waterpuri) {channel="miio:basic:waterpuri:tds_in"}
 Number tds_out "TDS out" (G_waterpuri) {channel="miio:basic:waterpuri:tds_out"}
@@ -5876,7 +5876,7 @@ Switch power "Power" (G_bhf_light) {channel="miio:basic:bhf_light:power"}
 String bh_mode "Bath Heater mode" (G_bhf_light) {channel="miio:basic:bhf_light:bh_mode"}
 Dimmer brightness "Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:brightness"}
 Number delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
-Number temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
+Number:Temperature temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
 Number nightlightBrightness "Nightlight Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:nightlightBrightness"}
 ```
 
@@ -5890,7 +5890,7 @@ Switch power "Power" (G_bhf_light) {channel="miio:basic:bhf_light:power"}
 String bh_mode "Bath Heater mode" (G_bhf_light) {channel="miio:basic:bhf_light:bh_mode"}
 Dimmer brightness "Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:brightness"}
 Number delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
-Number temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
+Number:Temperature temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
 Number nightlightBrightness "Nightlight Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:nightlightBrightness"}
 ```
 
@@ -6722,7 +6722,7 @@ Number relative_humidity "Relative Humidity" (G_heater) {channel="miio:basic:hea
 Switch childlock "Child Lock" (G_heater) {channel="miio:basic:heater:childlock"}
 Switch HWSwitch "HW Switch" (G_heater) {channel="miio:basic:heater:HWSwitch"}
 Number:Temperature temperature "Temperature" (G_heater) {channel="miio:basic:heater:temperature"}
-Number usedhours "Run Time" (G_heater) {channel="miio:basic:heater:usedhours"}
+Number:Time usedhours "Run Time" (G_heater) {channel="miio:basic:heater:usedhours"}
 ```
 
 ### Zhimi Heater (zhimi.heater.za2) item file lines
