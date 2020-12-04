@@ -154,17 +154,19 @@ For a recommendation to new users which one(s) to use, see the section below. In
 ### Textual vs. Graphical Configuration
 
 In openHAB 1.x, smart home configuration was done via configuration files only.
-openHAB 2 added the administrative web interface "Paper UI".
-It allows for configuration of the base system and setup of openHAB 2 add-ons.
+openHAB 2 added the general administrative web interface "Paper UI" and specialized admin UIs such as "habmin".
+They allow for configuration of the base system and setup of openHAB 2 add-ons.
 Please be aware that not every addon/binding of openHAB version 1.x has been updated to version 2 and thus to work with Paper UI.
 You can still run these but you need to use file configuration for them.
+_Teaser: openHAB 3 will replace these UIs by a single MainUI. The explanation of text/UI mechanisms below will remain in OH3._
 
 Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database](/docs/administration/jsondb.html).
-Both of the above described methods could be used parallel, e.g. a Thing can be discovered and created by Paper UI and the Items that link to that very same Thing (that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
+Both methods can be used in parallel, e.g. a Thing can be discovered and created in Paper UI and the Items that link to that very same Thing (or that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
 
 ::: warning
-While it's technically possible to use both methods in parallel, we recommend to choose only one of them to avoid confusion and a loss of overview of your openHAB environment.
-It would work to mix but you may easily forget about what is your "source of truth" when you reconfigure Things or Items at a later stage.
+While it's technically possible to use text and UI config in parallel, we recommend to choose only one of them to maintain components of one type (e.g. UI for Things and text for Items, but not files **and** UI for Items (or for Things).
+This will avoid confusion and a loss of overview of your openHAB environment.
+It would work to mix but you may easily forget about what is your "source of truth" when you add or reconfigure Things or Items at a later stage.
 :::
 
 Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it.
@@ -182,7 +184,7 @@ You have the full freedom of choice. On the other hand, this can be very confusi
 To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
 * Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
-* Create items and groups in `.items` files. You can also use [Homebuilder](homebuilder.html) to create your initial set of [.items](items.html) and [.sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
+* Create items and groups in `.items` files. 
 * Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
 * Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
 * Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
