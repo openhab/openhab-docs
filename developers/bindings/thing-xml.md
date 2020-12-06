@@ -544,6 +544,7 @@ If a configuration parameter will be used, then its respective `parameter` shall
 
 The label and descriptions for things, channels and config descriptions should follow the following format.
 The label should be short so that for most UIs it does not spread across multiple lines.
+Guideline is 2-3 words with up to 25 chars.
 Labels should be capitalized using the following rules:
 * Always capitalize the first and the last word.
 * Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
