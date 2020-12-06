@@ -8,7 +8,7 @@ title: Configuration
 openHAB is the center of your home automation.
 Properties and capabilities of all your devices are available through openHAB to the user interface.
 
-openHAB is a system installed and driven by you, **running independently** from any online services or proprietary technologies.
+openHAB is a system installed and driven by you, **running independently** of any online services or proprietary technologies.
 You as the end-user have the **full control** over every aspect of your smart home, and it'll keep working even when your Internet link goes down.
 
 Every device connected to openHAB is functionally and logically different.
@@ -82,7 +82,7 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>transform/*.map files</td>
+      <td>transform/*.map *.js files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
