@@ -72,35 +72,35 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
       <td>✔️</td>
       <td>✔️</td>
       <td>(✔️)</td>
-      <td>items/*.items files</td>
+      <td>`items/*.items` files</td>
     </tr>
     <tr>
       <td>Define GUI</td>
-      <td>sitemaps/*.sitemap files</td>
+      <td>sitemaps only</td>
       <td>✔️<br>includes YAML view</td>
       <td>✔️</td>
-      <td>Main UI</td>
+      <td>Main UI<br>`sitemaps/*.sitemap` files</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>transform/*.map *.js files</td>
+      <td>`transform/*.map *.js` files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>persistence/*.persist files</td>
+      <td>`persistence/*.persist` files</td>
     </tr>
     <tr>
       <td>Define Rules</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>Main UI<br>use Blockly to create JS code<br>for advanced users:<br>rules/*.rules files for rules DSL and JSR223</td>
+      <td>Main UI<br>starters: Blockly<br>(graphically create JS code)<br>for advanced users:<br>`rules/*.rules` files<br>for rules DSL and JSR223</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices</td>
