@@ -72,35 +72,35 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
       <td>✔️</td>
       <td>✔️</td>
       <td>(✔️)</td>
-      <td>`items/*.items` files</td>
+      <td>items/*.items files</td>
     </tr>
     <tr>
       <td>Define GUI</td>
       <td>sitemaps only</td>
       <td>✔️<br>includes YAML view</td>
       <td>✔️</td>
-      <td>Main UI<br>`sitemaps/*.sitemap` files</td>
+      <td>Main UI<br>sitemaps/*.sitemap files</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>`transform/*.map *.js` files</td>
+      <td>transform/*.map *.js files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>`persistence/*.persist` files</td>
+      <td>persistence/*.persist files</td>
     </tr>
     <tr>
       <td>Define Rules</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>Main UI<br>starters: Blockly<br>(graphically create JS code)<br>for advanced users:<br>`rules/*.rules` files<br>for rules DSL and JSR223</td>
+      <td>Main UI<br>for starters: Blockly<br>(graphically create JS code)<br>for advanced users:<br>rules/*.rules files<br>for rules DSL and JSR223</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices</td>
@@ -160,9 +160,8 @@ Here's some hints to avoid major pitfalls.
   This will ultimately ease a lot of setup work in the long run as it'll allow for group functions such as "switch off lights in _kitchen" or _ground floor_ or _house_" and
   e.g. enables voice assistants to properly execute your instructions.
   Watch out to apply a consistent naming scheme right in the beginning.
-* use Main UI to manage Things and Items
-  Remember once initially configured, their configuration is not changing much over time.
-* run autodiscovery for _Things_ so you don't have to enter all of them manually
+* use Main UI to manage Things - remember once initially configured, their configuration is not changing much over time.
+* run autodiscovery for _Things_ whereever offered so you don't have to enter all of them manually
 * also use Main UI to manage Items
   You can use the import function to import `.items` files or snippets taken from other sources like e.g. the forum
 * Use VS code extensions to [edit rules, items and sitemap files](editors.html).
