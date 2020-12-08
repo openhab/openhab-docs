@@ -33,7 +33,7 @@ openHAB 3 now provides a _single_ graphical user interface to modify settings, m
 
 While there's no full scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
 
-::: tip Important changes for OH2 users<br>
+::: tip Important changes for openHAB 2 users<br>
 PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.
 It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
 v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
@@ -44,10 +44,10 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
 <table class="centered highlight">
   <thead>
     <tr>
-      <th data-field="task">Task</th>
-      <th data-field="files">Configuration via text files</th>
-      <th data-field="mainui">Main UI</th>
-      <th data-field="karaf">Console</th>
+      <th data-field="task">Configuration Task</th>
+      <th data-field="files">via text files</th>
+      <th data-field="mainui">in Main UI</th>
+      <th data-field="karaf">Karaf console</th>
       <th data-field="recommendation">Recommendation</th>
     </tr>
   </thead>
@@ -114,7 +114,7 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>Paper UI</td>
+      <td>Main UI</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
