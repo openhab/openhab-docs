@@ -22,7 +22,7 @@ In order to represent all of these, openHAB defines the following base component
 - [Transformations](transform.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
-- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](https://en.wikipedia.org/wiki/ECMAScript), [Jython](http://www.jython.org) or [Groovy](http://www.groovy-lang.org/)
+- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](http://openjdk.java.net/projects/nashorn/), [Jython](http://www.jython.org) or [Groovy](http://www.groovy-lang.org/)
 
 The individual articles have all the details needed to understand the concepts behind these building bricks for your Smart Home.
 For more details on the base concept behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
@@ -33,11 +33,13 @@ openHAB 3 now provides a _single_ graphical user interface to modify settings, m
 
 While there's no full scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
 
-Important changes for OH2 users in a nutshell:<br>
-PaperUI and HABmin are no longer supported, they are replaced by the new Main UI. It also provides flexible charting now.
-v1 bindings are no longer available.
-File based configuration is still available, then again we recommend anyone to start over with a fresh setup using the new Main UI only.
-_Note there is an option in Main UI to bulk create Things and Items by copy'n'pasting the contents of your .things/.items files.
+::: tip Important changes for OH2 users<br>
+PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.
+It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
+v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
+File based configuration is still available, then again we recommend anyone to start over with a fresh setup using the new Main UI only.<br>
+_Note there is an option in Main UI to bulk create Things and Items by copy'n'pasting the contents of your .things/.items files._
+:::
 
 <table class="centered highlight">
   <thead>
