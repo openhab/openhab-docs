@@ -79,7 +79,7 @@ def process_main_docs(docs_source_dir)
     process_file("#{docs_source_dir}/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
     #process_file("#{docs_source_dir}/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
     FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
-    FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
+    #FileUtils.cp_r("#{docs_source_dir}/tutorials/images", "docs/configuration/migration")
 
 
 
