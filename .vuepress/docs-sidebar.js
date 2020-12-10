@@ -35,20 +35,20 @@ module.exports = [
       ['installation/security', 'Security']
     ]
   },
-  {
-    title: 'New User Tutorial',
-    collapsable: false,
-    children: [
-      ['tutorial/', 'Tutorial Overview'],
-      'tutorial/1sttimesetup',
-      'tutorial/uis',
-      'tutorial/configuration',
-      'tutorial/sitemap',
-      'tutorial/rules',
-      'tutorial/logs',
-      ['tutorial/persistence', 'Persistence']
-    ]
-  },
+  // {
+  //   title: 'New User Tutorial',
+  //   collapsable: false,
+  //   children: [
+  //     ['tutorial/', 'Tutorial Overview'],
+  //     'tutorial/1sttimesetup',
+  //     'tutorial/uis',
+  //     'tutorial/configuration',
+  //     'tutorial/sitemap',
+  //     'tutorial/rules',
+  //     'tutorial/logs',
+  //     ['tutorial/persistence', 'Persistence']
+  //   ]
+  // },
   {
     title: 'Configuration Guide',
     collapsable: false,
@@ -66,7 +66,7 @@ module.exports = [
       'configuration/jsr223',
       'configuration/services',
       'configuration/multimedia',
-      ['configuration/migration/', 'Migration from 1.x']
+      // ['configuration/migration/', 'Migration from 1.x']
     ]
   },
   {
