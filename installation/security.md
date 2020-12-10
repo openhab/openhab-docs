@@ -533,14 +533,14 @@ sudo nano /usr/local/etc/nginx/sites-enabled/openHAB-auth
 server {
     listen                          2020; #This is simply an unused port, it can be any number
 
-    server_name                     dow-family-adsl.ddns.net;
-
+    server_name                     your_domain.com;
+    
     return 301                      https://$server_name$request_uri;
 }
 
 server {
     listen                          7443 ssl; #This is simply an unused port, it can be any number
-    server_name                     dow-family-adsl.ddns.net;
+    server_name                     your_domain.com;
 
     location / {
         proxy_pass                              https://localhost:8443/; #Update the port number if needed
