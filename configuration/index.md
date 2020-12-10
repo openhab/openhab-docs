@@ -9,7 +9,7 @@ openHAB is the center of your home automation.
 Properties and capabilities of all your devices are available through openHAB to the user interface.
 
 openHAB is a system installed and driven by you, **running independently** of any online services or proprietary technologies.
-You as the end-user have the **full control** over every aspect of your smart home, and it'll keep working even when your Internet link goes down.
+You as the end-user have the **full control** over every aspect of your smart home, and it will keep working even when your Internet link goes down.
 
 Every device connected to openHAB is functionally and logically different.
 In order to represent all of these, openHAB defines the following base components:
