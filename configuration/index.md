@@ -47,7 +47,7 @@ _Note there is an option in Main UI to bulk create Things and Items by copy'n'pa
       <th data-field="task">Configuration Task</th>
       <th data-field="files">via text files</th>
       <th data-field="mainui">in Main UI</th>
-      <th data-field="karaf">Karaf console</th>
+      <th data-field="karaf">openHAB console</th>
       <th data-field="recommendation">Recommendation</th>
     </tr>
   </thead>
