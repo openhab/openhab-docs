@@ -80,7 +80,7 @@ The `org.eclipse.smarthome.core.library.dimension` and `javax.measure.quantity` 
 All units which are currently supported by default are listed in the tables below.
 
 
-Imperial:
+Imperial (base unit symbols):
 
 | Type        | Unit            | Symbol |
 |-------------|-----------------|--------|
@@ -95,7 +95,7 @@ Imperial:
 | Length      | Mile            | mi     |
 | Length      | League          | lea    |
 
-SI:
+SI (base unit symbols):
 
 | Type                   | Unit                             | Symbol |
 |------------------------|----------------------------------|--------|
@@ -111,22 +111,10 @@ SI:
 | ArealDensity           | Dobson Unit                      | DU     |
 | CatalyticActivity      | Katal                            | kat    |
 | DataAmount             | Bit                              | bit    |
-| DataAmount             | Megabit                          | Mbit   |
-| DataAmount             | Kilobit                          | kbit   |
-| DataAmount             | Gigabit                          | Gbit   |
-| DataAmount             | Terabit                          | Tbit   |
 | DataAmount             | Byte                             | B      |
 | DataAmount             | Octet                            | o      |
-| DataAmount             | Kibioctet                        | Kio    |
-| DataAmount             | Mebioctet                        | Mio    |
-| DataAmount             | Gibioctet                        | Gio    |
 | DataTransferRate       | Bit per Second                   | bit/s  |
-| DataTransferRate       | Kilobit per Second               | kbit/s |
-| DataTransferRate       | Megabit per Second               | Mbit/s | 
-| DataTransferRate       | Gigabit per Second               | Gbit/s | 
-| DataTransferRate       | Terabit per Second               | Tbit/s | 
-| Density                | Microgram per cubic Metre        | µg/m³  |
-| Density                | Kilogram per cubic Metre         | kg/m³  |
+| Density                | Gram per cubic Metre             | g/m³   |
 | Dimensionless          | Percent                          | %      |
 | Dimensionless          | Parts per Million                | ppm    |
 | Dimensionless          | Decibel                          | dB     |
@@ -134,7 +122,6 @@ SI:
 | ElectricCapacitance    | Farad                            | F      |
 | ElectricCharge         | Coulomb                          | C      |
 | ElectricCharge         | Ampere Hour                      | Ah     |
-| ElectricCharge         | Milliampere Hour                 | mAh    |
 | ElectricConductance    | Siemens                          | S      |
 | ElectricConductivity   | Siemens per Metre                | S/m    |
 | ElectricCurrent        | Ampere                           | A      |
@@ -143,41 +130,32 @@ SI:
 | Energy                 | Joule                            | J      |
 | Energy                 | Watt Second                      | Ws     |
 | Energy                 | Watt Hour                        | Wh     |
-| Energy                 | Kilowatt Hour                    | kWh    |
-| Energy                 | Megawatt Hour                    | MWh    |
 | Energy                 | Volt-Ampere Hour                 | VAh    |
 | Energy                 | Volt-Ampere Reactive Hour        | varh   |
-| Energy                 | Kilovar Hour                     | kvarh  |
 | Force                  | Newton                           | N      |
 | Frequency              | Hertz                            | Hz     |
 | Illuminance            | Lux                              | lx     |
 | Intensity              | Irradiance                       | W/m²   |
 | Intensity              | Microwatt per square Centimeter  | µW/cm² |
 | Length                 | Metre                            | m      |
-| Length                 | Kilometre                        | km     |
 | LuminousFlux           | Lumen                            | lm     |
 | LuminousIntensity      | Candela                          | cd     |
 | MagneticFlux           | Weber                            | Wb     |
 | MagneticFluxDensity    | Tesla                            | T      |
-| Mass                   | Kilogram                         | kg     |
 | Mass                   | Gram                             | g      |
 | Power                  | Watt                             | W      |
 | Power                  | Volt-Ampere                      | VA     |
 | Power                  | Volt-Ampere Reactive             | var    |
-| Power                  | Kilovar                          | kvar   |
 | Power                  | Decibel-Milliwatts               | dBm    |
 | Pressure               | Pascal                           | Pa     |
 | Pressure               | Hectopascal                      | hPa    |
 | Pressure               | Millimetre of Mercury            | mmHg   |
 | Pressure               | Bar                              | bar    |
-| Pressure               | Millibar                         | mbar   |
 | Radioactivity          | Becquerel                        | Bq     |
 | RadiationDoseAbsorbed  | Gray                             | Gy     |
 | RadiationDoseEffective | Sievert                          | Sv     |
 | SolidAngle             | Steradian                        | sr     |
 | Speed                  | Metre per Second                 | m/s    |
-| Speed                  | Millimetre per Hour              | mm/h   |
-| Speed                  | Kilometre per Hour               | km/h   |
 | Speed                  | Knot                             | kn     |
 | Temperature            | Kelvin                           | K      |
 | Temperature            | Celsius                          | °C     |
