@@ -404,7 +404,7 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 ```perl
 Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
 
-// display a snapshot image from an IP camera
+// display a snapshot image from an IP camera, using refresh parameter to get updated images
 Image url="http://192.168.1.203:8080/?action=snapshot" refresh=10000
 ```
 
