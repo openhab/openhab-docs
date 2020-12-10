@@ -59,7 +59,7 @@ def process_main_docs(docs_source_dir)
         process_file("#{docs_source_dir}/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
     }
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/tutorials/beginner/images", "docs/tutorial/images")
+    # FileUtils.cp_r("#{docs_source_dir}/tutorials/beginner/images", "docs/tutorial/images")
     # FileUtils.cp_r("#{docs_source_dir}/tutorials/images/*", "docs/tutorial/images")
 
 
