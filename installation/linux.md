@@ -198,6 +198,36 @@ Optionally, you may in addition install the legacy add-ons package `openhab2-add
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
+#### Arch Linux
+
+{% include collapsible/body.html %}
+
+The Arch User Repository ([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) is a community-driven repository for Arch users.
+
+It contains package descriptions (PKGBUILDs) that allow you to compile a package from source with makepkg and then install it via pacman.
+
+There is a package description for stable releases of [openHAB 3](https://aur.archlinux.org/packages/openhab3/) in the AUR.
+
+In order to create the package first make sure the necessary tools are installed.
+
+```shell
+sudo pacman -Sy --needed base-devel
+```
+
+Next clone the package description, change into the created directory, and make the package.
+
+```shell
+git clone https://aur.archlinux.org/openhab3.git
+cd openhab3
+makepkg -s
+```
+
+If all goes well, you'll end up with a package file which can be installed with pacman.
+
+```shell
+sudo pacman -U openhab3-3.0.0.M4-1-any.pkg.tar.zst
+```
+
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
 {% include collapsible/start.html %}
