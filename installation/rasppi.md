@@ -68,11 +68,11 @@ sudo apt-get install screen mc vim git htop
 ```
 
 **Note on Java:**
-Raspbian in the latest full version already includes Oracle Java 8.
+Raspbian in the latest full version already includes Oracle Java 11.
 However, at the time of this writing, the installed revision is lower than the [recommended](index.html#prerequisites).
 Raspbian Lite comes without Java to begin with.
 
-Please refer to the Linux article for instructions on [how to install the latest Java 8 revision](linux.html).
+Please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
 **Installation:**
 Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB 2 on Linux](linux.html) article:
