@@ -16,7 +16,7 @@ module.exports = [
       'concepts/discovery',
       'concepts/audio',
       'concepts/units-of-measurement',  // from v2.3 onwards
-      ['tutorials/getting_started/intro', "Getting Started"],
+      ['tutorials/getting_started', "Getting Started"]
     ]
   },
   {
