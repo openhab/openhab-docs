@@ -5,6 +5,7 @@ title: Studer - Bindings
 type: binding
 description: "This extension adds support for the Studer protocol."
 since: 3x
+logo: images/addons/modbus.studer.png
 install: manual
 ---
 
