@@ -80,12 +80,13 @@ Usage: openhab:send <item> <command> - sends a command for an item
 
 ### Links
 
-| Command                                                 | Description                    |
-|---------------------------------------------------------|--------------------------------|
-| `openhab:links list`                                    | lists all links                |
-| `openhab:links addChannelLink <itemName> <channelUID>`  | links an item with a channel   |
-| `openhab:links removeChannelLink <itemName> <thingUID>` | unlinks an item with a channel |
-| `openhab:links clear`                                   | removes all managed links      |
+| Command                                                 | Description                                                                      |
+|---------------------------------------------------------|----------------------------------------------------------------------------------|
+| `openhab:links list`                                    | lists all links                                                                  |
+| `openhab:links link <itemName> <channelUID>`            | links an item with to channel                                                    |
+| `openhab:links unlink <itemName> <thingUID>`            | unlinks an item with to channel                                                  |
+| `openhab:links clear`                                   | removes all managed links                                                        |
+| `openhab:links orphan <list|purge>`                     | lists/purges all orphaned - one missing element (either item or channel) - links |
 
 ### Audio
 
