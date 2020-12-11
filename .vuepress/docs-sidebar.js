@@ -16,6 +16,7 @@ module.exports = [
       'concepts/discovery',
       'concepts/audio',
       'concepts/units-of-measurement',  // from v2.3 onwards
+      ['tutorials/getting_started/intro', "Getting Started"],
     ]
   },
   {
@@ -35,20 +36,6 @@ module.exports = [
       ['installation/security', 'Security']
     ]
   },
-  // {
-  //   title: 'New User Tutorial',
-  //   collapsable: false,
-  //   children: [
-  //     ['tutorial/', 'Tutorial Overview'],
-  //     'tutorial/1sttimesetup',
-  //     'tutorial/uis',
-  //     'tutorial/configuration',
-  //     'tutorial/sitemap',
-  //     'tutorial/rules',
-  //     'tutorial/logs',
-  //     ['tutorial/persistence', 'Persistence']
-  //   ]
-  // },
   {
     title: 'Configuration Guide',
     collapsable: false,
