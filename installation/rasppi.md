@@ -25,7 +25,7 @@ Recommendations for a ["headless"](https://en.wikipedia.org/wiki/Headless_comput
 
 ## Recommended Setup
 
-We are proud to provide a **preconfigured image** for the Raspberry Pi, with the latest build of openHAB 2 and many useful software components (like Samba, Grafana or Mosquitto) as optional setup steps.
+We are proud to provide a **preconfigured image** for the Raspberry Pi, with the latest build of openHAB and many useful software components (like Samba, Grafana or Mosquitto) as optional setup steps.
 The image provided by the **openHABian** projects is based on Raspbian and under constant improvement.
 
 Check out more details about [openHABian, the hassle-free openHAB setup](openhabian.html).
@@ -75,6 +75,6 @@ Raspbian Lite comes without Java to begin with.
 Please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
 **Installation:**
-Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB 2 on Linux](linux.html) article:
+Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB on Linux](linux.html) article:
 
 - [Package Repository based Installation on Linux](linux.html#package-repository-installation)
