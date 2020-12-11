@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: First Steps
+title: Getting Started - First Steps
 ---
 
 {% include base.html %}
