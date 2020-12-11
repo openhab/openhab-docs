@@ -20,7 +20,7 @@ Always keep this in mind, when searching for help and solutions.
 1.  You are **new to openHAB** and want to give it a try? You are in luck:
     - Set up openHAB on your local PC or Mac in just a few steps.
 
-2.  You gained some experience and want to use openHAB to seriously control your home?
+1.  You gained some experience and want to use openHAB to seriously control your home?
     Typical hardware and software requirements are:
     - **24/7 availability:** A dedicated system connected by Ethernet and running continuously.
     - **Energy and space efficient:** A device capable of performing the task at hand without being exaggerated
@@ -43,6 +43,10 @@ Zulu is currently the recommended Java platform for openHAB.
 [Download](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) and [installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but licensing restrictions may apply.
 OpenJDK may also be used, but it has some [known limitations](https://community.openhab.org/t/running-openhab-2-on-openjdk/21443/8?u=gatekeeper6838) with openHAB and is not recommended.
+
+::: warning
+Please note that higher versions than Java 11 are also not supported at the moment.
+:::
 
 | Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
