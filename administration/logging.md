@@ -52,7 +52,7 @@ openhab> log:tail
 A useful functionality is that filters can be applied:
 
 ```
-openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
+openhab> log:tail org.openhab.io.rest.core.item.ItemResource
 20:36:52.879 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'ON'.
 20:36:53.545 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'OFF'.
 ```
@@ -142,7 +142,7 @@ logInfo("heating-control.rules", "This is a log entry of type Info!")
 logDebug("heating-control.rules", "This is a log entry of type Debug!")
 ```
 
-The main package of all script/rules based log entries is predefined as `org.eclipse.smarthome.model.script`.
+The main package of all script/rules based log entries is predefined as `org.openhab.model.script`.
 The chosen subpackage is appended to the end of the main package.
 It can be useful for filtering or package-based log level settings.
 
@@ -233,7 +233,7 @@ The configuration file for openHAB is placed in the [openhab-distro/lauch/home/l
 	<!-- We have removed part of the original file in this example -->
 	...
 
-	
+
 	<logger name="smarthome.event" level="INFO" additivity="false">
 		<!-- The element <logger> may contain zero or more <appender-ref> elements -->
 		<appender-ref ref="EVENTFILE" />
@@ -243,7 +243,7 @@ The configuration file for openHAB is placed in the [openhab-distro/lauch/home/l
 	<!-- Logback uses inheritance to determine the log level.
  		If a given logger is NOT assigned a level it inherits one from the its closest ancestor -->
 	<logger name="org.openhab" level="DEBUG" />
-	<logger name="org.eclipse.smarthome" level="DEBUG" />
+	<logger name="org.openhab" level="DEBUG" />
 
 	<logger name="org.eclipse.jetty" level="INFO" />
 	<logger name="org.jupnp" level="ERROR"/>
@@ -252,16 +252,16 @@ The configuration file for openHAB is placed in the [openhab-distro/lauch/home/l
 	<logger name="javax.jmdns.impl.constants" level="OFF"/>
 	<logger name="tuwien.auto.calimero" level="WARN" />
 
-	<!-- The root logger is at the top of the logger hierarchy. 
-			All loggers inherit its level, if there are no ancestors 
-			between the root and the logger --> 
+	<!-- The root logger is at the top of the logger hierarchy.
+			All loggers inherit its level, if there are no ancestors
+			between the root and the logger -->
 	<root level="INFO">
 		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>
 
 	<logger name="OSGi" level="OFF" />
-	
+
 </configuration>
 
 ```
@@ -300,7 +300,7 @@ The process of redirecting the log to a text file is as simple as :
 
 - adding a new `FileAppender` and specifying the path of the output file:
 
-```xml 
+```xml
 <appender name="YOUR_APPENDER_NAME" class="ch.qos.logback.core.FileAppender">
 <file>relative/path/to/file.log</file>
 	<encoder>

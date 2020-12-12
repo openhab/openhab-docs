@@ -7,6 +7,10 @@ title: Armbian
 
 # Armbian
 
+::: warning
+This article may be outdated due to a main version change in openHAB
+:::
+
 ## What is Armbian?
 
 Armbian is a base operating system platform for single board computers.

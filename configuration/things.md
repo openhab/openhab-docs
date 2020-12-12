@@ -20,7 +20,7 @@ Items are used to control Things and consume their information.
 Ultimately, when Items are linked to Channels on a Thing, they become available to the various user interfaces and to the rules engine.
 
 ::: tip Note
-Things are a new concept in openHAB 2, Things definitions are not needed for 1.x bindings.
+Things are a new concept in openHAB, Things definitions are not needed for 1.x bindings.
 :::
 
 ## Defining Things

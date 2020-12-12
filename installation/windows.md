@@ -5,9 +5,9 @@ title: Windows
 
 {% include base.html %}
 
-# openHAB 2 on Windows
+# openHAB on Windows
 
-The following instructions will guide you through the process of setting up openHAB 2.
+The following instructions will guide you through the process of setting up openHAB.
 
 This page is structured as follows:
 
@@ -30,7 +30,7 @@ Create a New System Variable based on your Java installation directory:
 ![JAVA_HOME](images/JAVA_HOME.png)
 
 The directory that openHAB is installed to must **contain no spaces**.
-On this page, we will be using `C:\openHAB2` as an example.
+On this page, we will be using `C:\openHAB` as an example.
 
 ## Installation
 
@@ -39,11 +39,9 @@ To install it, follow these simple steps:
 
 1.  Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
 
-2.  Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
+2.  Unzip the file in your chosen directory (e.g. `C:\openHAB`)
 
-    ![openHAB 2 Folders](images/openHAB_2_Folders.png)
-
-3.  Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
+3.  Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
 
     ![Karaf_Windows](images/Karaf_Windows.png)
 
@@ -53,30 +51,30 @@ To install it, follow these simple steps:
 
 ### File Locations
 
-Assuming a successful install, you will now have various folders inside `C:\openHAB2`:
+Assuming a successful install, you will now have various folders inside `C:\openHAB`:
 
 |                                  | Windows Installation         |
 |:--------------------------------:|:-----------------------------|
-| openHAB application              | `C:\openHAB2\runtime`        |
-| Additional add-on files          | `C:\openHAB2\addons`         |
-| Site configuration               | `C:\openHAB2\conf`           |
-| Log files                        | `C:\openHAB2\userdata\logs`  |
-| Userdata like rrd4j databases    | `C:\openHAB2\userdata`       |
-| Service configuration            | `C:\openHAB2\userdata\etc`   |
+| openHAB application              | `C:\openHAB\runtime`        |
+| Additional add-on files          | `C:\openHAB\addons`         |
+| Site configuration               | `C:\openHAB\conf`           |
+| Log files                        | `C:\openHAB\userdata\logs`  |
+| Userdata like rrd4j databases    | `C:\openHAB\userdata`       |
+| Service configuration            | `C:\openHAB\userdata\etc`   |
 
 ## Backup
 
 Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB2` folder.
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB` folder.
 Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
 
 To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
-Assuming you have openHAB installed in `C:\openHAB2`:
+Assuming you have openHAB installed in `C:\openHAB`:
 
 ```shell
-cd C:\openHAB2
+cd C:\openHAB
 . .\runtime\bin\update.ps1
 Update-openHAB -OHVersion x.x.x
 ```
@@ -97,25 +95,25 @@ By installing the openHAB process as a service in Windows, you can:
 2.  Issue the following two commands in your openHAB console:
     ```shell
     feature:install service-wrapper
-    wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
+    wrapper:install --name "openHAB" --display "openHAB" --description "openHAB Service"
     ```
 
     ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
 3.  Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters.
+4.  Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters.
 
-    - Copy all the config text from the below section and paste it in your `openHAB2-wrapper.conf`, replacing all existing content.
+    - Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
     - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
     #*******************************************************
-    # openHAB2-wrapper.conf for Windows Service Installation
+    # openHAB-wrapper.conf for Windows Service Installation
     #*******************************************************
 
     # openHAB installation dir (Adapt this first setting to your system)
-    set.default.OPENHAB_HOME=C:\openHAB2
+    set.default.OPENHAB_HOME=C:\openHAB
 
     # Wrapper Properties
     set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
@@ -170,10 +168,10 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.syslog.loglevel=NONE
 
     # Wrapper Windows Properties
-    wrapper.console.title=openHAB2
-    wrapper.ntservice.name=openHAB2
-    wrapper.ntservice.displayname=openHAB2
-    wrapper.ntservice.description=openHAB 2 Service
+    wrapper.console.title=openHAB
+    wrapper.ntservice.name=openHAB
+    wrapper.ntservice.displayname=openHAB
+    wrapper.ntservice.description=openHAB Service
     wrapper.ntservice.dependency.1=
     wrapper.ntservice.starttype=AUTO_START
     wrapper.ntservice.interactive=false
@@ -182,8 +180,8 @@ By installing the openHAB process as a service in Windows, you can:
 5.  Open an elevated command prompt and type the following commands:
 
     ```text
-    C:\openHAB2\userdata\bin\openHAB2-service.bat install
-    net start "openHAB2"
+    C:\openHAB\userdata\bin\openHAB-service.bat install
+    net start "openHAB"
     ```
 
     ![Admin cmd](images/Admin_CMD.jpg)
@@ -196,7 +194,7 @@ By installing the openHAB process as a service in Windows, you can:
     -   Browsing to [http://localhost:8080](http://localhost:8080)
 
     -   Verifying that the Windows Service is running and set to Automatic Startup type.
-        Use `services.msc` and find the `openHAB2` service.
+        Use `services.msc` and find the `openHAB` service.
 
         ![Windows Service](images/Windows_Service.jpg)
 
@@ -204,7 +202,7 @@ By installing the openHAB process as a service in Windows, you can:
 
 ### Connecting to the openHAB console
 
-You can connect to openHAB's console using the the `C:\openHAB2\runtime\bin\client.bat` script on the local machine. 
+You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine.
 Alternatively, you can use a standard SSH client:
 
 -   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
