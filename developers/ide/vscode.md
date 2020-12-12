@@ -13,7 +13,7 @@ The following steps will only need to be done once to setup both VSCode and your
 
 1. Install Java Extension Pack for VSCode (https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
    
-2. Clone the addons (https://github.com/openhab/openhab-addons.git or preferably your own fork) to %BASE%\openhab-addons
+1. Clone the addons (https://github.com/openhab/openhab-addons.git or preferably your own fork) to %BASE%\openhab-addons
    
 3. On Windows, VSCode should be configured to use powershell instead of the classic command line.
 If not configured already, add the following to the VSCode settings:
@@ -22,7 +22,7 @@ If not configured already, add the following to the VSCode settings:
 
      Either globally define the options via the global ```settings.json```.  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
-4. If you want to setup openHAB code formatting guidelines, add the following to the VSCode settings:
+1. If you want to setup openHAB code formatting guidelines, add the following to the VSCode settings:
          
     ![define .vscode](images/ide_setup_vscode_settings.png)
 
