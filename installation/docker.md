@@ -5,7 +5,7 @@ title: Docker
 
 {% include base.html %}
 
-# openHAB 2 inside a Docker Container
+# openHAB inside a Docker Container
 
 Docker is the most popular among a collection of tools that provide containerization.
 Containerization allows one to run a server in its own isolated environment without the overhead of running a full virtual machine.
@@ -38,8 +38,6 @@ The install is a manual installation so all of the files are located here.
 This is also set as the home directory of the `openhab` user.
 
 The Image has a very minimal installation of Linux with no services running and just enough installed to allow openHAB to run.
-
-At the time of this writing, the official image uses the latest snapshot version of openHAB 2.
 
 ## Installation through Docker
 
@@ -124,15 +122,15 @@ To change the runtime parameters stop the container then execute the long comman
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 If running on a Systemd based Linux distro (Ubuntu 16.04 to be specific).
-The following openhab2.service file will start a new openHAB 2 container every time it starts the service and destroy that container when the service stops.
-What that means is any data that you want to preserve between restarts of openHAB 2 (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
+The following openhab2.service file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
+What that means is any data that you want to preserve between restarts of openHAB (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
 
 Creating a new container on every run greatly simplifies the upgrade and update process.
 It also ensures that you start with a fresh install every time you run which can avoid some problems.
 
 ```bash
 [Unit]
-Description=openHAB 2
+Description=openHAB
 Requires=docker.service
 After=docker.service
 
@@ -170,7 +168,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
-- `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
+- `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
 - `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
