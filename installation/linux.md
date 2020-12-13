@@ -263,7 +263,7 @@ The first start may take **up to 15 minutes**, this is a good time to reward you
 You should be able to reach the openHAB Dashboard at [http://openhab-device:8080]() at this point.
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
 
-![The openHAB 2 Dashboard page](images/Home_Openhab_3.png)
+![The openHAB Dashboard page](images/Home_Openhab_3.png)
 
 #### Service Control
 
