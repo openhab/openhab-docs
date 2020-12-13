@@ -263,7 +263,7 @@ The first start may take **up to 15 minutes**, this is a good time to reward you
 You should be able to reach the openHAB Dashboard at [http://openhab-device:8080]() at this point.
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
 
-![The openHAB 2 Dashboard page](images/Accueil_Openhab_2.png)
+![The openHAB Dashboard page](images/Home_Openhab_3.png)
 
 #### Service Control
 
@@ -489,7 +489,7 @@ Please be aware, that openHAB will need a few minutes so finish the first start,
 Let openHAB settle for **around 15 minutes**.
 If the portal is not reachable by then, restart once.
 
-![The openHAB portal page](images/Accueil_Openhab_2.png)
+![The openHAB portal page](images/Home_Openhab_3.png)
 
 An important downside of the above method is, that openHAB will be terminated, as soon as you close your terminal.
 To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal.
