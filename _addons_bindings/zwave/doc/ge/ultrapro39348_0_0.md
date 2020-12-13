@@ -43,17 +43,11 @@ The following table summarises the channels available for the UltraPro 39348/ZW4
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
-| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Switch
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-### Scene Number
-Triggers when a scene button is pressed.
-
-The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Scene Number
 Triggers when a scene button is pressed.
