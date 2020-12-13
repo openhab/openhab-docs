@@ -32,9 +32,7 @@ For example, an Item bound to a sensor receives updated sensor readings and an I
 
 There are two methods for defining Items:
 
-1.  Through [Paper UI]({{base}}/configuration/ui/paperui.html).
-    Generally all 2.x version Bindings can be configured through Paper UI.
-    (Note that 1.x and legacy Bindings do not offer this option)
+1.  Through UI
 
 2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
     Files here must have the extension `.items`; you may create as many `.items` files as needed.
@@ -44,9 +42,9 @@ There are two methods for defining Items:
 Generally 1.x version Bindings can only be bound to Items through `.items` files.
 2.x Bindings may be configured using either method described above.
 
-**Assumptions for Paper UI:**
+**Assumptions for UI:**
 The examples below assume that the user is using a text editor to create a `.items` file.
-While the way of defining an Item using the graphical, interactive Paper UI is different, the elements and the nature of an Item definition are identical using either method.
+While the way of defining an Item using the graphical, interactive UI is different, the elements and the nature of an Item definition are identical using either method.
 
 **Editor Recommendation:**
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
@@ -327,7 +325,7 @@ The following guidelines apply to user-added icon files:
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
 The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
 It is thereby important to decide on one format beforehand; vector graphics are recommended.
-The setting can be changed via Paper UI for most user interfaces.
+The setting can be changed via UI for most user interfaces.
 Please check the user interface documentation if in doubt.
 Note that image files with the wrong file ending will be ignored.
 
@@ -474,13 +472,13 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 
 Group state aggregation functions can be any of the following:
 
-| Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |
-|----------------------------|-------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |
-| `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |
-| `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |
-| `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |
-| `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |
+|   | Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |   |
+|---|----------------------------|-------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+|   | `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |   |
+|   | `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |   |
+|   | `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |   |
+|   | `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |   |
+|   | `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |   |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -555,49 +553,7 @@ The Binding of an Item is given in the last part of the Item definition between 
 Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
-Users should note that there are significant differences between how Items are associated with devices between 1.x Binding configuration and 2.x Channel linking.
-These are described below.
-
-<!-- TODO: Everything below was not yet revised -->
-
-#### 1.x Binding Configuration
-
-To bind an Item to a Binding, you add a Binding definition in curly brackets at the end of the Item definition:
-
-```java
-Switch Phone_Mobile {ns="192.168.1.123:80"}
-```
-
-Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
-Every Binding defines what values must be given in the Binding configuration string.
-That can be the id of a sensor, an ip or mac address or anything else.
-The information required for each binding is specified in the configuration information provided for each of the available [Bindings](/addons/#binding).
-
-Examples:
-
-```java
-Switch Phone_Mobile        "My Mobile Phone"                 {ns="192.168.1.123:80"}
-Number Netatmo_Indoor_CO2  "CO2 [%d]"                        {netatmo="00:00:00:00:00:00#Co2"}
-Number Azimuth             "Azimuth [%d]"                    {astro="planet=sun, type=position, property=azimuth"}
-Contact Garage_Door        "Garage door is [MAP(en.map):%s]" {zwave="21:command=sensor_binary,respond_to_basic=true"}
-```
-
-In some cases, you will need to use legacy openHAB 1.x bindings with your openHAB 2.0 installation.
-In this case, you will need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-You can then download the legacy .jar file and placed it in the `$OPENHAB_CFG/addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this file.
-For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the `OPENHAB_CFG/services/` directory (substitute the name of your binding for `bindingname` above).
-
-Some bindings will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
-Inside these files are predefined variables which are required for the Binding to operate.
-In many cases you will need to view and edit these to suit your system.
-These variables can hold IP addresses, API keys, user names, passwords etc.
-These are all in plain text, so be careful who you share these with if some data is sensitive.
-
-#### 2.x Binding Configuration
-
-openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
-Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
+openHAB introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
 There are two different kinds of channels:
 
@@ -608,28 +564,26 @@ For example, when you use a Binding that integrates buttons or wall switches, a 
 This event on its own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
 Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
 
-Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
-Once accepted, the new Thing will appear under Configuration > Things.
+Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the UI.
+Once accepted, the new Thing will appear under Settings > Things.
 
-Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
+Other Bindings support defining Things in a `.things` file located in the `$OPENHAB_CONFIG/things/` folder.
 
 See the [Bindings](/addons/#binding) configuration section for more information on how to discover or manually define Things for a given Binding.
 
-##### Paper UI Linking
+#### UI Linking
 
-As described above, you can link an Item with a Channel using the Paper UI.
+As described above, you can link an Item with a Channel using the UI.
+The easiest way to do so, is navigating to the thing and the wanted channel of it.
+Expand the view of the needed channel and press `Add Link to item...`.
+The then opened view will ask you for an existing item or give you the offer to add a new one.
 
-1. First create the Item in Paper UI under Configuration Items.
-2. Next navigate to the Thing that has the Channel to link to the Item.
-3. Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
-4. Select the Item from the list and press "Link".
+#### Text File Linking
 
-##### Text File Linking
+You may also link an Item with a Channel using the `.items` file located in the `$OPENHAB_CONFIG/items/` folder.
+Information about available Channels and options can be found in the Binding readme or discovered via UI.
 
-You may also link an Item with a Channel using the `.items` file located in the `OPENHAB_CFBG/items/` folder.
-Information about available Channels and options can be found in the Binding readme or discovered via Paper UI.
-
-In Paper UI select a Thing to learn about Channels it supports.
+In UI select a Thing to learn about Channels it supports.
 
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
 
@@ -650,24 +604,25 @@ Commands and Updates from and to these Items will be combined, and can be used i
 Example:
 
 ```java
-Switch Office_PC {nh="192.168.3.203", wol="192.168.0.2"}
-Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
+Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", channel="network:servicedevice:6d5de4e65d"}
 ```
 
-The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
-where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
+The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
+
 
 {: #autoupdate}
 #### Parameter `autoupdate`
 
-`autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
-This way, the Item is unchanged unless you explicitly post an *update* to the item.
+When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
+This prediction may be influenced by any linked channels.
+`autoupdate="false"` is a special instruction which keeps the current state of the Item, even if a *command* has been received.
+This way, the Item is unchanged unless you explicitly post an *update* to the Item, or a binding updates it.
+`autoupdate="true"` forces `autoupdate` to act, overriding any binding recommendations.
 
 Example:
 
 ```java
-Switch Garage_Gate {binding="xxx", autoupdate="false"}
+Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
 
 {: #expire}
@@ -715,26 +670,28 @@ Profiles can be specified as a parameter for a given Channel on the Item configu
 ```
 
 There are some built-in Profiles available which are described in the table below.
+
 Some Bindings will may offer additional Profiles for Binding-specific use cases.
 If this is the case, you'll find those within the documentation of the Binding.
+
 Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you'd like to use.
 
-| ID                                                                                            | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
-|-----------------------------------------------------------------------------------------------|---------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                    |
-| `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates. |
-| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.                                                                                                                                                                                                                  |
-| `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                              |
-| `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                |
-| `rawbutton-toggle-rollershutter`                                                              | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                            |
-| `rawbutton-toggle-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                  |
-| `rawrocker-to-on-off`                                                                         | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                            |
-| `rawrocker-to-dimmer`                                                                         | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                             |
-| `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                     |
-| `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                |
-| `timestamp-update`                                                                            | State   | All                   | This profile will update a DateTime Item to track every update of the state of a given channel, whatever the state is.                                                                                                                                                                                                                                                                                                    |
-| `timestamp-change`                                                                            | State   | All                   | This profile will update a DateTime Item to track every change of the state of a given channel.                                                                                                                                                                                                                                                                                                                           |
+| ID                                                                                      | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+|-----------------------------------------------------------------------------------------|---------|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `default`                                                                               | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                  |
+| follow                                                                                  | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates. |
+| `offset`                                                                                | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.                                                                                                                                                                                                                      |
+| `rawbutton-on-off-switch`                                                               | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                                      |
+| `rawbutton-toggle-player`                                                                 | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                      |
+| `rawbutton-toggle-rollershutter`                                                          | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                                  |
+| `rawbutton-toggle-switch`                                                                 | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                    |
+| `rawrocker-to-on-off`                                                                     | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                                |
+| `rawrocker-to-dimmer`                                                                     | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                                 |
+| `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                                 |
+| `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                         | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                        |
+| `timestamp-update`                                                                        | State   | All                   | This profile will update a DateTime Item to track every update of the state of a given channel, whatever the state is.                                                                                                                                                                                                                                                                                                  |
+| `timestamp-change`                                                                        | State   | All                   | This profile will update a DateTime Item to track every change of the state of a given channel.                                                                                                                                                                                                                                                                                                                         |
 
 Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
