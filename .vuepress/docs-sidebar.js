@@ -31,7 +31,7 @@ module.exports = [
       'installation/armbian',
       'installation/docker',
       'installation/synology',
-      'installation/qnap',
+      // 'installation/qnap', // Remove until we get feedback about the current package state
       ['installation/security', 'Security']
     ]
   },
