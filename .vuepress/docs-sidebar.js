@@ -73,7 +73,6 @@ module.exports = [
     title: 'Interfaces and Ecosystem',
     collapsable: false,
     children: [
-      'configuration/packages',
       'configuration/editors',
       ['configuration/ui/habot/', 'HABot'],
       'configuration/habpanel',
