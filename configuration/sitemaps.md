@@ -85,7 +85,7 @@ openHAB supports these dependencies by providing parameters for dynamic behavior
 Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
 
 For the technically interested: The Sitemap definition language is an
-Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/eclipse/smarthome/blob/master/bundles/model/org.eclipse.smarthome.model.sitemap/src/org/eclipse/smarthome/model/Sitemap.xtext).
+Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
 
 ### Special Element 'sitemap'
 

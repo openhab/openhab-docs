@@ -52,13 +52,13 @@ openhab> bundle:list
 Bundles are named according to the following convention:
 
 ```text
-<prefix>-<type>-<id>
+<prefix>.<type>.<id>
 ```
 
 where
 
 - **prefix** is the first element to categorize the bundle.
-  For addons this is often `openhab` or `esh`. 
+  For addons this is `org.openhab`. 
 - **type** is the add-on type, e.g. "binding" or "ui"
 - **id** is the identifier for this bundle
 

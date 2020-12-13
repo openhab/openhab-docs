@@ -51,11 +51,8 @@ public class MyBindingHandlerTest {
 
     private ThingHandler handler;
 
-    @Mock
-    private ThingHandlerCallback callback;
-
-    @Mock
-    private Thing thing;
+    private @Mock ThingHandlerCallback callback;
+    private @Mock Thing thing;
 
     @Before
     public void setUp() {
@@ -150,14 +147,14 @@ import static org.mockito.MockitoAnnotations.initMocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.smarthome.core.items.Item;
-import org.eclipse.smarthome.core.items.ItemProvider;
-import org.eclipse.smarthome.core.items.ItemRegistry;
-import org.eclipse.smarthome.core.library.items.SwitchItem;
-import org.eclipse.smarthome.test.java.JavaOSGiTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.openhab.core.items.Item;
+import org.openhab.core.items.ItemProvider;
+import org.openhab.core.items.ItemRegistry;
+import org.openhab.core.library.items.SwitchItem;
+import org.openhab.test.java.JavaOSGiTest;
 
 import com.google.common.collect.Lists;
 
@@ -166,8 +163,7 @@ public class JavaItemRegistryOSGiTest extends JavaOSGiTest {
     private static String ITEM_NAME = "switchItem";
     private ItemRegistry itemRegistry;
 
-    @Mock
-    private ItemProvider itemProvider;
+    private @Mock ItemProvider itemProvider;
 
     @Before
     public void setUp() {

@@ -19,9 +19,9 @@ which describe details about their functionality and configuration options.
 
 ## ThingTypeProvider / ChannelTypeProvider
 
-Technically, the thing types are provided by `ThingTypeProvider`s (`org.eclipse.smarthome.core.thing.binding.ThingTypeProvider`).
+Technically, the thing types are provided by `ThingTypeProvider`s (`org.openhab.core.thing.binding.ThingTypeProvider`).
 
-openHAB comes with an implementation of such a provider that reads XML files from the folder `ESH-INF/thing` of bundles.
+openHAB comes with an implementation of such a provider that reads XML files from the folder `OH-INF/thing` of bundles.
 Although we refer to this XML syntax in the following, you also have the option to provide directly object model instances through your own provider implementation.
 
 The same applies for the channel types.
@@ -607,10 +607,10 @@ Every binding has to provide meta information about which bridges and/or *Thing*
 In that way a binding could describe that it requires specific bridges to be operational or define which channels (e.g. temperature, color, etc.) it provides.
 
 Every bridge or *Thing* has to provide meta information such as label or description.
-The meta information of all bridges and *Thing*s is accessible through the `org.eclipse.smarthome.core.thing.binding.ThingTypeProvider` service.
+The meta information of all bridges and *Thing*s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
 
-Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/ESH-INF/thing/`.
-The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.eclipse.smarthome.core.thing.type`.
+Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
+The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
 
 
 ### XML Structure for Thing Descriptions
