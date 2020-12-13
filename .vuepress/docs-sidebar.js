@@ -75,7 +75,6 @@ module.exports = [
     children: [
       'configuration/packages',
       'configuration/editors',
-      'configuration/homebuilder',
       ['configuration/ui/habot/', 'HABot'],
       'configuration/habpanel',
       ['configuration/ui/basic/', 'Basic UI'],
