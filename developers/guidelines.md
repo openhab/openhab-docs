@@ -134,7 +134,7 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 
 ## D. Language Levels and Libraries
 
-1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
+1. openHAB generally targets the long time supported Java 11 releases with the following restrictions:
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
 2. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
 3. [slf4j](http://slf4j.org) is used for logging.
@@ -149,7 +149,7 @@ Expensive operations should therefore rather be scheduled as a job.
 2. Creation of threads must be avoided.
 Instead, resort into using existing schedulers which use pre-configured thread pools.
 If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
-For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)).
+For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
 3. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
 This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
 4. Bundles must not require any substantial CPU time.

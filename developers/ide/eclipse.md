@@ -15,10 +15,10 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 
 ## Eclipse IDE Setup
 
-1. Install the Java 8 JDK if you did not have it installed.
+1. Install the Java 11 JDK if you did not have it installed.
 
    ::: warning Attention
-   openHAB development requires **Java JDK version 8**.
+   openHAB development requires **Java JDK version 11**.
    :::
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
