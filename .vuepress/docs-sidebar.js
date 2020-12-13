@@ -86,7 +86,7 @@ module.exports = [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
-      ['ecosystem/ifttt/', 'IFTTT'],
+      // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
     ]
   },
