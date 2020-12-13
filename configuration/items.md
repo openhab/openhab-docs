@@ -622,6 +622,40 @@ Example:
 Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
 
+{: #expire}
+#### Parameter `expire`
+
+This parameter allows to post an update or command to an item after a period of time has passed.
+
+The expiration timer is started or restarted every time an item receives an update or a command *other than* the specified "expire" update/command.
+Any future expiring update or command is cancelled, if the item receives an update or command that matches the "expire" update/command.
+
+The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
+
+```
+expire="1h 30m 45s"
+expire="1h05s"
+expire="55h 59m 12s"
+```
+
+Every part is optional, but all parts present must be in the given order (hours, minutes, seconds).
+Whitespaces are allowed between the sections.
+
+This duration can optionally be followed by a comma and the state or command to post, when the timer expires.
+If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
+
+```
+Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
+Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
+String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds
+Switch MySwitch   { expire="2h" }              // update state to Undefined two hours after last value
+```
+
+Note that the `state=` part is optional.
+
+In the special case of a String item, it is possible to define a state/command as the string "UNDEF" or "NULL" by putting it into single quotes (e.g. "1m,state='UNDEF'").
+Without the quotes, the state would be the system type `UNDEF`.
+
 #### Profiles
 
 With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
@@ -653,7 +687,6 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                         | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                        |
 | `timestamp-update`                                                                        | State   | All                   | This profile will update a DateTime Item to track every update of the state of a given channel, whatever the state is.                                                                                                                                                                                                                                                                                                  |
 | `timestamp-change`                                                                        | State   | All                   | This profile will update a DateTime Item to track every change of the state of a given channel.                                                                                                                                                                                                                                                                                                                         |
-| `expire`                                                                                  | State   | All                   | This profile will update or command an Item after a configured period of time has passed. An optional state can be configured as a paramater (e.g. state=OFF). If no state is configured UNDEF will be used.                                                                                                                                                                                                            |
 
 Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
