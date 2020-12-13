@@ -46,8 +46,7 @@ To install it, follow these simple steps:
     ![Karaf_Windows](images/Karaf_Windows.png)
 
 4.  Point your browser to `http://localhost:8080`.
-    You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html).
-    When you've selected an appropriate package, this page will contain the UI selection screen, see [here]({{base}}/tutorial/1sttimesetup.html) for example.
+    You should now follow the first installation procedure.
 
 ### File Locations
 
