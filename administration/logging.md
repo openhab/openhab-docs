@@ -159,7 +159,7 @@ An example output of the last log statement above is:
 
 Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
 
-## Logback configuration and logging into separate files
+## Log4j configuration and logging into separate files
 
 As per default, all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`.
 Additional files can be defined in order to write specifics logs to a separate place.
