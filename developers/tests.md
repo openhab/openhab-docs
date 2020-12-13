@@ -17,7 +17,7 @@ to make sure everything (all your OSGi services) start up correctly.
 
 ## Unit tests
 
-Each class inside the `src/main/test` folder will have all public methods with a `@Test` annotation  automatically executed as a test.
+Each class inside the `src/test` folder will have all public methods with a `@Test` annotation  automatically executed as a test.
 Inside the class one can refer to all classes from the host bundle and all imported classes.
 
 The following code snippet shows a simple JUnit test which tests the `toString` conversation of a PercentType.
