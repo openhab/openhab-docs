@@ -129,7 +129,6 @@ module.exports = [
       'developer/tests',
       'developer/contributing',
       'developer/governance',
-      'developer/legacy/compatibilitylayer',
       {
         title: 'Javadoc',
         path: 'https://next.openhab.org/javadoc/latest/'
