@@ -101,7 +101,7 @@ or in case of unknown models include the model information of a similar device t
 
 # Mi IO Devices
 
-Currently the miio binding supports more than 220 different models.
+Currently the miio binding supports more than 230 different models.
 
 | Device                       | ThingType        | Device Model           | Supported | Remark     |
 |------------------------------|------------------|------------------------|-----------|------------|
@@ -172,6 +172,8 @@ Currently the miio binding supports more than 220 different models.
 | Mi Air Purifier virtual      | miio:basic       | [lumi.gateway.mgl03](#lumi-gateway-mgl03) | Yes       | Used to control the gateway itself. Use the mihome binding to control devices connected to the Xiaomi gateway.<br />Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO ARIES For Bedroom     | miio:basic       | [huayi.light.ari013](#huayi-light-ari013) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO ARIES For Living Room | miio:basic       | [huayi.light.aries](#huayi-light-aries) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO Fan Light             | miio:basic       | [huayi.light.fanwy](#huayi-light-fanwy) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO Fan Light(2020)       | miio:basic       | [huayi.light.fanwy2](#huayi-light-fanwy2) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO PEGASUS For Living Room | miio:basic       | [huayi.light.peg091](#huayi-light-peg091) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO PEGASUS For Bedroom   | miio:basic       | [huayi.light.peg093](#huayi-light-peg093) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO PISCES For Bedroom    | miio:basic       | [huayi.light.pis123](#huayi-light-pis123) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
@@ -181,6 +183,12 @@ Currently the miio binding supports more than 220 different models.
 | HUIZUO VIRGO For Bedroom     | miio:basic       | [huayi.light.vir063](#huayi-light-vir063) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO VIRGO For Living Room | miio:basic       | [huayi.light.virgo](#huayi-light-virgo) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO Ceiling Light         | miio:basic       | [huayi.light.wy](#huayi-light-wy) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO LIANGCHEN(BLE Mesh)   | miio:basic       | [huayi.light.wy200](#huayi-light-wy200) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO SAG Downlight (BLE Mesh) | miio:basic       | [huayi.light.wy201](#huayi-light-wy201) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO Bulb (BLE Mesh)       | miio:basic       | [huayi.light.wy202](#huayi-light-wy202) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO YONG Downlight (BLE Mesh) | miio:basic       | [huayi.light.wy203](#huayi-light-wy203) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| huayi.light.wy204            | miio:basic       | [huayi.light.wy204](#huayi-light-wy204) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
+| HUIZUO Heating Lamp          | miio:basic       | [huayi.light.wyheat](#huayi-light-wyheat) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | HUIZUO ZIWEI Ceiling Lamp    | miio:basic       | [huayi.light.zw131](#huayi-light-zw131) | Yes       | Experimental support. Please report back if all channels are functional. Preferably share the debug log of property refresh and command responses |
 | Aqara Wall Switch(No Neutral, Single Rocker) | miio:unsupported | lumi.ctrl_neutral1.v1  | No        |            |
 | Aqara Wall Switch (No Neutral, Double Rocker) | miio:unsupported | lumi.ctrl_neutral2.v1  | No        |            |
@@ -1399,96 +1407,178 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO ARIES For Living Room (<a name="huayi-light-aries">huayi.light.aries</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO Fan Light (<a name="huayi-light-fanwy">huayi.light.fanwy</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+| on1              | Switch  | Fan - Power                         |            |
+| fan-level        | Number:Dimensionless | Fan - Fan Level                     |            |
+| motor-reverse    | Switch  | Fan - Motor Reverse                 |            |
+| mode             | Number  | Fan - Mode                          | Value mapping [1="Normal Wind",2="Natural Wind"] |
+
+### HUIZUO Fan Light(2020) (<a name="huayi-light-fanwy2">huayi.light.fanwy2</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+| on1              | Switch  | Fan - Power                         |            |
+| fan-level        | Number:Dimensionless | Fan - Fan Level                     |            |
+| mode             | Number  | Fan - Mode                          | Value mapping [0="Basic",1="Natural Wind"] |
+| time-off         | Number:Time | Presets - Time Off                  |            |
+| pre-colortemp    | Number:Temperature | Presets - Pre Colortemp             |            |
+| pre-brightness   | Number:Dimensionless | Presets - Pre Brightness            |            |
+| pre-speed        | Number:Dimensionless | Presets - Pre Speed                 |            |
+| reversal         | Number  | Presets - Reversal                  | Value mapping [0="Positive",1="Reverse"] |
+| pre-custom       | Number  | Presets - Pre Custom                | Value mapping [0="Switch Off",1="Open"] |
+| flabellum        | Switch  | Presets - Flabellum                 |            |
 
 ### HUIZUO PEGASUS For Living Room (<a name="huayi-light-peg091">huayi.light.peg091</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO PEGASUS For Bedroom (<a name="huayi-light-peg093">huayi.light.peg093</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO PISCES For Bedroom (<a name="huayi-light-pis123">huayi.light.pis123</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO PISCES For Living Room (<a name="huayi-light-pisces">huayi.light.pisces</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO TAURUS For Bedroom (<a name="huayi-light-tau023">huayi.light.tau023</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO TAURUS For Living Room (<a name="huayi-light-taurus">huayi.light.taurus</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO VIRGO For Bedroom (<a name="huayi-light-vir063">huayi.light.vir063</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO VIRGO For Living Room (<a name="huayi-light-virgo">huayi.light.virgo</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### HUIZUO Ceiling Light (<a name="huayi-light-wy">huayi.light.wy</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO LIANGCHEN(BLE Mesh) (<a name="huayi-light-wy200">huayi.light.wy200</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO SAG Downlight (BLE Mesh) (<a name="huayi-light-wy201">huayi.light.wy201</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO Bulb (BLE Mesh) (<a name="huayi-light-wy202">huayi.light.wy202</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO YONG Downlight (BLE Mesh) (<a name="huayi-light-wy203">huayi.light.wy203</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### huayi.light.wy204 (<a name="huayi-light-wy204">huayi.light.wy204</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+
+### HUIZUO Heating Lamp (<a name="huayi-light-wyheat">huayi.light.wyheat</a>) Channels
+
+| Channel          | Type    | Description                         | Comment    |
+|------------------|---------|-------------------------------------|------------|
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
+| color-temperature | Number:Temperature | Light - Color Temperature           |            |
+| on1              | Switch  | Heater - Power                      |            |
+| fault            | Number  | Heater - Device Fault               | Value mapping [0="No Faults"] |
+| heat-level       | Number  | Heater - Heat Level                 |            |
+| screenshow       | Switch  | Other - Screenshow                  |            |
 
 ### HUIZUO ZIWEI Ceiling Lamp (<a name="huayi-light-zw131">huayi.light.zw131</a>) Channels
 
 | Channel          | Type    | Description                         | Comment    |
 |------------------|---------|-------------------------------------|------------|
-| on               | Switch  | Light - Switch Status               |            |
-| brightness       | Number:Dimensionless | Light - Brightness                  |            |
+| on               | Switch  | Light - Power                       |            |
+| brightness       | Dimmer  | Light - Brightness                  |            |
 | color-temperature | Number:Temperature | Light - Color Temperature           |            |
 
 ### Xiaomiyoupin Curtain Controller (Wi-Fi) (<a name="lumi-curtain-hagl05">lumi.curtain.hagl05</a>) Channels
@@ -2663,10 +2753,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -2676,10 +2765,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -2689,10 +2777,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -2703,7 +2790,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power            | Switch  | Power                               |            |
 | bh_mode          | String  | Bath Heater mode                    |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
 | temperature      | Number:Temperature | Temperature                         |            |
 | nightlightBrightness | Number  | Nightlight Brightness               |            |
 
@@ -2714,7 +2801,7 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power            | Switch  | Power                               |            |
 | bh_mode          | String  | Bath Heater mode                    |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
 | temperature      | Number:Temperature | Temperature                         |            |
 | nightlightBrightness | Number  | Nightlight Brightness               |            |
 
@@ -2724,8 +2811,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2737,8 +2824,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2750,8 +2837,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2764,8 +2851,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
 | ambientBrightness | Number  | Ambient Brightness                  |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | ambientPower     | Switch  | Ambient Power                       |            |
@@ -2781,8 +2868,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2794,8 +2881,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2807,8 +2894,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2820,8 +2907,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2833,8 +2920,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2846,8 +2933,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2860,8 +2947,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
 | ambientBrightness | Number  | Ambient Brightness                  |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | ambientPower     | Switch  | Ambient Power                       |            |
@@ -2877,8 +2964,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2890,8 +2977,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2903,8 +2990,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2916,8 +3003,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2929,8 +3016,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2942,8 +3029,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2955,8 +3042,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2968,8 +3055,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2981,8 +3068,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -2994,8 +3081,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3007,8 +3094,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3020,8 +3107,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3033,8 +3120,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3046,8 +3133,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3059,8 +3146,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3072,8 +3159,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3085,8 +3172,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3096,8 +3183,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3107,8 +3194,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3118,8 +3205,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3129,8 +3216,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3140,8 +3227,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3151,8 +3238,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3162,8 +3249,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3173,8 +3260,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3184,8 +3271,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3195,8 +3282,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3206,8 +3293,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3217,8 +3304,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3230,10 +3317,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3243,10 +3329,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3256,8 +3341,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3267,8 +3352,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 
@@ -3278,10 +3363,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3291,10 +3375,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3304,10 +3387,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3317,10 +3399,9 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
-| colorMode        | String  | Color Mode                          |            |
-| toggle           | Switch  | toggle                              |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
+| colorMode        | Number  | Color Mode                          |            |
 | rgbColor         | Color   | RGB Color                           |            |
 | name             | String  | Name                                |            |
 
@@ -3344,8 +3425,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3357,8 +3438,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -3370,8 +3451,8 @@ e.g. `smarthome:send actionCommand 'upd_timer["1498595904821", "on"]'` would ena
 |------------------|---------|-------------------------------------|------------|
 | power            | Switch  | Power                               |            |
 | brightness       | Dimmer  | Brightness                          |            |
-| delayoff         | Number  | Shutdown Timer                      |            |
-| colorTemperature | Number  | Color Temperature                   |            |
+| delayoff         | Number:Time | Shutdown Timer                      |            |
+| colorTemperature | Number:Temperature | Color Temperature                   |            |
 | colorMode        | Number  | Color Mode                          |            |
 | name             | String  | Name                                |            |
 | customScene      | String  | Set Scene                           |            |
@@ -4565,8 +4646,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO ARIES For Bedroom" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4576,9 +4657,45 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO ARIES For Living Room" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO Fan Light (huayi.light.fanwy) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO Fan Light" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+Switch on1 "Fan - Power" (G_light) {channel="miio:basic:light:on1"}
+Number:Dimensionless fan-level "Fan - Fan Level" (G_light) {channel="miio:basic:light:fan-level"}
+Switch motor-reverse "Fan - Motor Reverse" (G_light) {channel="miio:basic:light:motor-reverse"}
+Number mode "Fan - Mode" (G_light) {channel="miio:basic:light:mode"}
+```
+
+### HUIZUO Fan Light(2020) (huayi.light.fanwy2) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO Fan Light(2020)" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+Switch on1 "Fan - Power" (G_light) {channel="miio:basic:light:on1"}
+Number:Dimensionless fan-level "Fan - Fan Level" (G_light) {channel="miio:basic:light:fan-level"}
+Number mode "Fan - Mode" (G_light) {channel="miio:basic:light:mode"}
+Number:Time time-off "Presets - Time Off" (G_light) {channel="miio:basic:light:time-off"}
+Number:Temperature pre-colortemp "Presets - Pre Colortemp" (G_light) {channel="miio:basic:light:pre-colortemp"}
+Number:Dimensionless pre-brightness "Presets - Pre Brightness" (G_light) {channel="miio:basic:light:pre-brightness"}
+Number:Dimensionless pre-speed "Presets - Pre Speed" (G_light) {channel="miio:basic:light:pre-speed"}
+Number reversal "Presets - Reversal" (G_light) {channel="miio:basic:light:reversal"}
+Number pre-custom "Presets - Pre Custom" (G_light) {channel="miio:basic:light:pre-custom"}
+Switch flabellum "Presets - Flabellum" (G_light) {channel="miio:basic:light:flabellum"}
 ```
 
 ### HUIZUO PEGASUS For Living Room (huayi.light.peg091) item file lines
@@ -4587,8 +4704,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO PEGASUS For Living Room" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4598,8 +4715,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO PEGASUS For Bedroom" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4609,8 +4726,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO PISCES For Bedroom" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4620,8 +4737,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO PISCES For Living Room" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4631,8 +4748,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO TAURUS For Bedroom" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4642,8 +4759,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO TAURUS For Living Room" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4653,8 +4770,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO VIRGO For Bedroom" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4664,8 +4781,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO VIRGO For Living Room" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -4675,9 +4792,79 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO Ceiling Light" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO LIANGCHEN(BLE Mesh) (huayi.light.wy200) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO LIANGCHEN(BLE Mesh)" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO SAG Downlight (BLE Mesh) (huayi.light.wy201) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO SAG Downlight (BLE Mesh)" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO Bulb (BLE Mesh) (huayi.light.wy202) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO Bulb (BLE Mesh)" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO YONG Downlight (BLE Mesh) (huayi.light.wy203) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO YONG Downlight (BLE Mesh)" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### huayi.light.wy204 (huayi.light.wy204) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "huayi.light.wy204" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+```
+
+### HUIZUO Heating Lamp (huayi.light.wyheat) item file lines
+
+note: Autogenerated example. Replace the id (light) in the channel with your own. Replace `basic` with `generic` in the thing UID depending on how your thing was discovered.
+
+```java
+Group G_light "HUIZUO Heating Lamp" <status>
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
+Switch on1 "Heater - Power" (G_light) {channel="miio:basic:light:on1"}
+Number fault "Heater - Device Fault" (G_light) {channel="miio:basic:light:fault"}
+Number heat-level "Heater - Heat Level" (G_light) {channel="miio:basic:light:heat-level"}
+Switch screenshow "Other - Screenshow" (G_light) {channel="miio:basic:light:screenshow"}
 ```
 
 ### HUIZUO ZIWEI Ceiling Lamp (huayi.light.zw131) item file lines
@@ -4686,8 +4873,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 
 ```java
 Group G_light "HUIZUO ZIWEI Ceiling Lamp" <status>
-Switch on "Light - Switch Status" (G_light) {channel="miio:basic:light:on"}
-Number:Dimensionless brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
+Switch on "Light - Power" (G_light) {channel="miio:basic:light:on"}
+Dimmer brightness "Light - Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number:Temperature color-temperature "Light - Color Temperature" (G_light) {channel="miio:basic:light:color-temperature"}
 ```
 
@@ -6102,10 +6289,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Bedside Lamp" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6118,10 +6304,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Bedside Lamp 2" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6134,10 +6319,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Bedside Lamp II" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6151,7 +6335,7 @@ Group G_bhf_light "Yeelight Smart Bath Heater Pro" <status>
 Switch power "Power" (G_bhf_light) {channel="miio:basic:bhf_light:power"}
 String bh_mode "Bath Heater mode" (G_bhf_light) {channel="miio:basic:bhf_light:bh_mode"}
 Dimmer brightness "Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:brightness"}
-Number delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
+Number:Time delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
 Number:Temperature temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
 Number nightlightBrightness "Nightlight Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:nightlightBrightness"}
 ```
@@ -6165,7 +6349,7 @@ Group G_bhf_light "Yeelight Smart Bath Heater" <status>
 Switch power "Power" (G_bhf_light) {channel="miio:basic:bhf_light:power"}
 String bh_mode "Bath Heater mode" (G_bhf_light) {channel="miio:basic:bhf_light:bh_mode"}
 Dimmer brightness "Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:brightness"}
-Number delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
+Number:Time delayoff "Shutdown Timer" (G_bhf_light) {channel="miio:basic:bhf_light:delayoff"}
 Number:Temperature temperature "Temperature" (G_bhf_light) {channel="miio:basic:bhf_light:temperature"}
 Number nightlightBrightness "Nightlight Brightness" (G_bhf_light) {channel="miio:basic:bhf_light:nightlightBrightness"}
 ```
@@ -6178,8 +6362,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6194,8 +6378,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light SE" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6210,8 +6394,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6227,8 +6411,8 @@ Group G_light "Yeelight LED Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number ambientBrightness "Ambient Brightness" (G_light) {channel="miio:basic:light:ambientBrightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 Switch ambientPower "Ambient Power" (G_light) {channel="miio:basic:light:ambientPower"}
@@ -6247,8 +6431,8 @@ note: Autogenerated example. Replace the id (ceiling4) in the channel with your 
 Group G_ceiling4 "Yeelight LED Ceiling Ambi Lamp" <status>
 Switch power "Power" (G_ceiling4) {channel="miio:basic:ceiling4:power"}
 Dimmer brightness "Brightness" (G_ceiling4) {channel="miio:basic:ceiling4:brightness"}
-Number delayoff "Shutdown Timer" (G_ceiling4) {channel="miio:basic:ceiling4:delayoff"}
-Number colorTemperature "Color Temperature" (G_ceiling4) {channel="miio:basic:ceiling4:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_ceiling4) {channel="miio:basic:ceiling4:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_ceiling4) {channel="miio:basic:ceiling4:colorTemperature"}
 Number colorMode "Color Mode" (G_ceiling4) {channel="miio:basic:ceiling4:colorMode"}
 String name "Name" (G_ceiling4) {channel="miio:basic:ceiling4:name"}
 String customScene "Set Scene" (G_ceiling4) {channel="miio:basic:ceiling4:customScene"}
@@ -6263,8 +6447,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi LED Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6279,8 +6463,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight HaoShi LED Ceiling Lamp Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6295,8 +6479,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Haoshi Ceiling Lamp" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6311,8 +6495,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "LED Ceiling Light Crystal Plus" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6327,8 +6511,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight HaoShi LED Ceiling Lamp Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6344,8 +6528,8 @@ Group G_light "Yeelight Crystal Pendant Lamp" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
 Number ambientBrightness "Ambient Brightness" (G_light) {channel="miio:basic:light:ambientBrightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 Switch ambientPower "Ambient Power" (G_light) {channel="miio:basic:light:ambientPower"}
@@ -6364,8 +6548,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light 320 1S" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6380,8 +6564,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight stylized Ceiling Light  Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6396,8 +6580,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6412,8 +6596,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light Mini" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6428,8 +6612,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light 480 1S" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6444,8 +6628,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Xingyu Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6460,8 +6644,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight ShaoHua Celing Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6476,8 +6660,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6492,8 +6676,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6508,8 +6692,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6524,8 +6708,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Smart LED Living Room Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6540,8 +6724,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Smart LED Ceiling Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6556,8 +6740,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Smart LED Ceiling Light (350mm)" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6572,8 +6756,8 @@ note: Autogenerated example. Replace the id (ceiling10) in the channel with your
 Group G_ceiling10 "Yeelight LED Ceiling Ambi Lamp" <status>
 Switch power "Power" (G_ceiling10) {channel="miio:basic:ceiling10:power"}
 Dimmer brightness "Brightness" (G_ceiling10) {channel="miio:basic:ceiling10:brightness"}
-Number delayoff "Shutdown Timer" (G_ceiling10) {channel="miio:basic:ceiling10:delayoff"}
-Number colorTemperature "Color Temperature" (G_ceiling10) {channel="miio:basic:ceiling10:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_ceiling10) {channel="miio:basic:ceiling10:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_ceiling10) {channel="miio:basic:ceiling10:colorTemperature"}
 Number colorMode "Color Mode" (G_ceiling10) {channel="miio:basic:ceiling10:colorMode"}
 String name "Name" (G_ceiling10) {channel="miio:basic:ceiling10:name"}
 String customScene "Set Scene" (G_ceiling10) {channel="miio:basic:ceiling10:customScene"}
@@ -6588,8 +6772,8 @@ note: Autogenerated example. Replace the id (ceiling19) in the channel with your
 Group G_ceiling19 "Yeelight LED Ceiling Ambi Lamp" <status>
 Switch power "Power" (G_ceiling19) {channel="miio:basic:ceiling19:power"}
 Dimmer brightness "Brightness" (G_ceiling19) {channel="miio:basic:ceiling19:brightness"}
-Number delayoff "Shutdown Timer" (G_ceiling19) {channel="miio:basic:ceiling19:delayoff"}
-Number colorTemperature "Color Temperature" (G_ceiling19) {channel="miio:basic:ceiling19:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_ceiling19) {channel="miio:basic:ceiling19:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_ceiling19) {channel="miio:basic:ceiling19:colorTemperature"}
 Number colorMode "Color Mode" (G_ceiling19) {channel="miio:basic:ceiling19:colorMode"}
 String name "Name" (G_ceiling19) {channel="miio:basic:ceiling19:name"}
 String customScene "Set Scene" (G_ceiling19) {channel="miio:basic:ceiling19:customScene"}
@@ -6604,8 +6788,8 @@ note: Autogenerated example. Replace the id (ceiling20) in the channel with your
 Group G_ceiling20 "Yeelight LED Ceiling Ambi Lamp" <status>
 Switch power "Power" (G_ceiling20) {channel="miio:basic:ceiling20:power"}
 Dimmer brightness "Brightness" (G_ceiling20) {channel="miio:basic:ceiling20:brightness"}
-Number delayoff "Shutdown Timer" (G_ceiling20) {channel="miio:basic:ceiling20:delayoff"}
-Number colorTemperature "Color Temperature" (G_ceiling20) {channel="miio:basic:ceiling20:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_ceiling20) {channel="miio:basic:ceiling20:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_ceiling20) {channel="miio:basic:ceiling20:colorTemperature"}
 Number colorMode "Color Mode" (G_ceiling20) {channel="miio:basic:ceiling20:colorMode"}
 String name "Name" (G_ceiling20) {channel="miio:basic:ceiling20:name"}
 String customScene "Set Scene" (G_ceiling20) {channel="miio:basic:ceiling20:customScene"}
@@ -6620,8 +6804,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Bulb (Tunable)" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6634,8 +6818,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Bulb" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6648,8 +6832,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight White Bulb v2" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6662,8 +6846,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Filament Bulb" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6676,8 +6860,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi LED Desk Lamp" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6690,8 +6874,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi Smart LED Desk Lamp Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6704,8 +6888,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Lamp" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6718,8 +6902,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi LED Desk Lamp 1S" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6732,8 +6916,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Smart Desk Lamp Prime" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6746,8 +6930,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6760,8 +6944,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Light Sensor Desk Lamp V1" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6774,8 +6958,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6788,8 +6972,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Whiteglow Panel Light" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6804,10 +6988,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Lightstrip" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6820,10 +7003,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Lightstrip Plus" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6836,8 +7018,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Willow LED Lightstrip" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6850,8 +7032,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Light Group (Mi & Yeelight)" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6864,10 +7046,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight Color Bulb" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6880,10 +7061,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Bulb (Color)" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6896,10 +7076,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Mi LED Smart Bulb (White and Color)" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6912,10 +7091,9 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yeelight LED Bulb 1S（Color）" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
-String colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
-Switch toggle "toggle" (G_light) {channel="miio:basic:light:toggle"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 Color rgbColor "RGB Color" (G_light) {channel="miio:basic:light:rgbColor"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 ```
@@ -6945,8 +7123,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yilai Ceiling Light Aiyue 480" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6961,8 +7139,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yilai Ceiling Lamp Hefeng 430" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
@@ -6977,8 +7155,8 @@ note: Autogenerated example. Replace the id (light) in the channel with your own
 Group G_light "Yilai Ceiling Lamp Hefeng Pro" <status>
 Switch power "Power" (G_light) {channel="miio:basic:light:power"}
 Dimmer brightness "Brightness" (G_light) {channel="miio:basic:light:brightness"}
-Number delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
-Number colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
+Number:Time delayoff "Shutdown Timer" (G_light) {channel="miio:basic:light:delayoff"}
+Number:Temperature colorTemperature "Color Temperature" (G_light) {channel="miio:basic:light:colorTemperature"}
 Number colorMode "Color Mode" (G_light) {channel="miio:basic:light:colorMode"}
 String name "Name" (G_light) {channel="miio:basic:light:name"}
 String customScene "Set Scene" (G_light) {channel="miio:basic:light:customScene"}
