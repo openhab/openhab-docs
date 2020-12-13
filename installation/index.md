@@ -65,9 +65,9 @@ The 32-bit JVM performs better on the ARM platform. Some add-ons use libraries t
 Check your current Java version by opening a command line console and typing `java -version`:
 
 ```text
-java version "1.8.0_121"
-Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
-Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
+openjdk version "11.0.9.1" 2020-11-04 LTS
+OpenJDK Runtime Environment Zulu11.43+55-CA (build 11.0.9.1+1-LTS)
+OpenJDK 64-Bit Server VM Zulu11.43+55-CA (build 11.0.9.1+1-LTS, mixed mode)
 ```
 
 ## Setup variants

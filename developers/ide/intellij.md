@@ -6,7 +6,7 @@ title: IntelliJ
 # IntelliJ IDE
 
 ## Prerequisities
-  - git, Maven, IntelliJ and Java 8 are installed
+  - git, Maven, IntelliJ and Java 11 are installed
 
 ## Install OpenHAB distribution
 1. Install the official [openHAB distribution](https://www.openhab.org/download/)

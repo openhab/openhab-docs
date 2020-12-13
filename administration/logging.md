@@ -157,7 +157,7 @@ An example output of the last log statement above is:
 2016-06-04 16:28:39.482 [DEBUG] [org.openhab.core.model.script.heating] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
 
-Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
+Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
 
 ## Log4j configuration and logging into separate files
 
