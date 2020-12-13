@@ -7,12 +7,12 @@ title: openHAB REST API
 
 # openHAB REST API
 
-Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspects of the openHAB system can be readily accessed by other programs.  
-This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke actions that can change the state of Items or influence the behavior of other elements of openHAB. 
-Interactions with the REST API are based on the http protocol. 
-Access over the Internet to the REST API is possible, but this represents a significant security risk. 
-Users are encouraged to [ensure safe and secure connections](http://docs.openhab.org/installation/security.html). 
-Be aware that the documentation of the REST API may not be automatically installed, but once installed it is accessible through the openHAB dashboard. 
+Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspects of the openHAB system can be readily accessed by other programs.
+This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke actions that can change the state of Items or influence the behavior of other elements of openHAB.
+Interactions with the REST API are based on the http protocol.
+Access over the Internet to the REST API is possible, but this represents a significant security risk.
+Users are encouraged to [ensure safe and secure connections](http://docs.openhab.org/installation/security.html).
+Be aware that the documentation of the REST API may not be automatically installed, but once installed it is accessible through the openHAB dashboard.
 
 ## REST API Examples
 
@@ -25,23 +25,23 @@ Be aware that the documentation of the REST API may not be automatically install
 The openHAB REST API is excellently documented with detailled use instructions.
 It would vastly exceed this space to present all possible examples.
 Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/CURL), a common command line tool available for many platforms:
-- Switching ```My_Item``` OFF by issuing an http [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) request: 
+- Switching ```My_Item``` OFF by issuing an http [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) request:
 
 ```java
 curl -X POST --header "Content-Type: text/plain" --header "Accept: application/json" -d "OFF" "http://{openHAB_IP}:8080/rest/items/My_Item"
-``` 
+```
 
-- Setting a Contact item  ```My_Item``` to CLOSED by issuing an http PUT request to ```My_Item/state```: 
+- Setting a Contact item  ```My_Item``` to CLOSED by issuing an http PUT request to ```My_Item/state```:
 
 ```java
 curl -X PUT --header "Content-Type: text/plain" --header "Accept: application/json" -d "CLOSED" "http://{openHAB_IP}:8080/rest/items/My_Item/state"
-``` 
+```
 
-- Retrieving a list of all Items and Groups by issuing a GET request: 
+- Retrieving a list of all Items and Groups by issuing a GET request:
 
 ```java
 curl -X GET --header "Accept: application/json" "http://{openHAB_IP}:8080/rest/items?recursive=false"
-``` 
+```
 
 - Retrieving a list of all sitemaps by issuing a GET request:
 
@@ -59,7 +59,7 @@ curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/things/{thingUID}/st
 curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID}/triggered"
 ```
 
-The commands above have been copied from the REST API documentation for illustration. 
+The commands above have been copied from the REST API documentation for illustration.
 
 ## REST API documentation
 
@@ -70,12 +70,12 @@ You will see an addon called "REST Documentation" that can be easily installed.
 
 On the welcome screen of openHAB, you will now see a new interface called "REST API" where you can easily see the documentation of the REST API and test it!
 
-All available commands will be displayed in the REST API documentation as a response to the button "Try me out" (may require some user input for mandatory fields).  
+All available commands will be displayed in the REST API documentation as a response to the button "Try me out" (may require some user input for mandatory fields).
 
 
 ## Additional Considerations
 
 The REST API also supports server-push supporting subscriptions on change notification for certain resources.
 
-One final remark - when openHAB's REST API is accessed from another domain the following error may be encountered: [No 'Access-Control-Allow-Origin' header is present on the requested resource](https://community.openhab.org/t/cors-problem-at-rest-api/3712/10). 
-In this case, it may be necessary to add the line `org.eclipse.smarthome.cors:enable=true` in the file `services/runtime.cfg`.
+One final remark - when openHAB's REST API is accessed from another domain the following error may be encountered: [No 'Access-Control-Allow-Origin' header is present on the requested resource](https://community.openhab.org/t/cors-problem-at-rest-api/3712/10).
+In this case, it may be necessary to add the line `org.openhab.cors:enable=true` in the file `services/runtime.cfg`.

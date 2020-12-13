@@ -86,11 +86,11 @@ Within the `OPENHAB_USERDATA/jsondb/` directory, you will find the following fil
 
 | Filename                                                        | _Contents_                            |
 |-----------------------------------------------------------------|---------------------------------------|
-| org.eclipse.smarthome.config.discovery.**DiscoveryResult.json** | _Results of Paper UI Discovery_       |
-| org.eclipse.smarthome.core.items.**Item.json**                  | _Items configurations_                |
-| org.eclipse.smarthome.core.thing.link.**ItemChannelLink.json**  | _Item to Channel Link configurations_ |
-| org.eclipse.smarthome.core.thing.link.**ItemThingLink.json**    | _Item to Thing Link configurations_   |
-| org.eclipse.smarthome.core.thing.**Thing.json**                 | _Things configurations_               |
+| org.openhab.config.discovery.**DiscoveryResult.json** | _Results of Paper UI Discovery_       |
+| org.openhab.core.items.**Item.json**                  | _Items configurations_                |
+| org.openhab.core.thing.link.**ItemChannelLink.json**  | _Item to Channel Link configurations_ |
+| org.openhab.core.thing.link.**ItemThingLink.json**    | _Item to Thing Link configurations_   |
+| org.openhab.core.thing.**Thing.json**                 | _Things configurations_               |
 
 
 ## Example Use
@@ -100,13 +100,13 @@ In this example, we will use the Network Binding (2.0) to Search for Things, add
 Step 1. Add new Thing (name: `ISP_Gateway`) from Paper UIs Inbox:
 ![Add_Thing_Paper_UI](./images/add_thing_paper_ui.png)
 
-Step 2. Check the contents of the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file:
+Step 2. Check the contents of the `OPENHAB_USERDATA/jsondb/org.openhab.core.thing.Thing.json` file:
 
 ```
-root@rpi3:~# more /var/lib/openhab2/jsondb/org.eclipse.smarthome.core.thing.Thing.json
+root@rpi3:~# more /var/lib/openhab2/jsondb/org.openhab.core.thing.Thing.json
 {
   "network:device:172_16_13_254": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "class": "org.openhab.core.thing.internal.ThingImpl",
     "value": {
       "label": "ISP_Gateway",
       "channels": [
@@ -194,5 +194,5 @@ Step 3. Using Paper UI :arrow_right: Configuration :arrow_right: Things, edit th
 and save:
 ![Edit_Thing_Paper_UI](./images/edit_thing_paper_ui.png)
 
-Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file:
+Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.openhab.core.thing.Thing.json` file:
 ![New_Json](./images/new_json_file.png)

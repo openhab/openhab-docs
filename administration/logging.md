@@ -52,7 +52,7 @@ openhab> log:tail
 A useful functionality is that filters can be applied:
 
 ```
-openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
+openhab> log:tail org.openhab.io.rest.core.item.ItemResource
 20:36:52.879 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'ON'.
 20:36:53.545 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'OFF'.
 ```

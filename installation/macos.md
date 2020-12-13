@@ -136,7 +136,7 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distr
 
 ## Backup and Restore
 
-To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
+To make a backup of your openHAB system, you need to retain your configuration and userdata files.
 As of version 2.2.0, you can use openHAB's scripts for storing your configuration in a zip file. From the terminal:
 By default, the script saves the zip file in `/var/lib/openhab2/backups` for automatic installs and `openhab2/backups` for manual installs.
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
