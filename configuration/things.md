@@ -53,7 +53,7 @@ Other bindings (such as the [ZWave](/addons/bindings/zwave/) binding) currently 
 
 Things can be added to the system using [discovery]({{base}}/concepts/discovery.html), which allows Things to be discovered automatically if the appropriate binding has been installed and configured.
 When a Thing has been discovered, it appears in the discovery inbox.
-Newly discovered Things can be added to the system from the inbox using the [Paper UI]({{base}}/configuration/paperui.html).
+Newly discovered Things can be added to the system from the inbox using the UI.
 
 Things that are added to openHAB from the inbox are maintained in an internal database as opposed to a manually defined `.things` file (see below).
 Unlike manually defined Things, if a Thing has configurable properties, these properties can be set through a user interface.

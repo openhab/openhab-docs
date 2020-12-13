@@ -555,49 +555,7 @@ The Binding of an Item is given in the last part of the Item definition between 
 Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
-Users should note that there are significant differences between how Items are associated with devices between 1.x Binding configuration and 2.x Channel linking.
-These are described below.
-
-<!-- TODO: Everything below was not yet revised -->
-
-#### 1.x Binding Configuration
-
-To bind an Item to a Binding, you add a Binding definition in curly brackets at the end of the Item definition:
-
-```java
-Switch Phone_Mobile {ns="192.168.1.123:80"}
-```
-
-Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
-Every Binding defines what values must be given in the Binding configuration string.
-That can be the id of a sensor, an ip or mac address or anything else.
-The information required for each binding is specified in the configuration information provided for each of the available [Bindings](/addons/#binding).
-
-Examples:
-
-```java
-Switch Phone_Mobile        "My Mobile Phone"                 {ns="192.168.1.123:80"}
-Number Netatmo_Indoor_CO2  "CO2 [%d]"                        {netatmo="00:00:00:00:00:00#Co2"}
-Number Azimuth             "Azimuth [%d]"                    {astro="planet=sun, type=position, property=azimuth"}
-Contact Garage_Door        "Garage door is [MAP(en.map):%s]" {zwave="21:command=sensor_binary,respond_to_basic=true"}
-```
-
-In some cases, you will need to use legacy openHAB 1.x bindings with your openHAB 2.0 installation.
-In this case, you will need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-You can then download the legacy .jar file and placed it in the `$OPENHAB_CFG/addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this file.
-For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the `OPENHAB_CFG/services/` directory (substitute the name of your binding for `bindingname` above).
-
-Some bindings will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
-Inside these files are predefined variables which are required for the Binding to operate.
-In many cases you will need to view and edit these to suit your system.
-These variables can hold IP addresses, API keys, user names, passwords etc.
-These are all in plain text, so be careful who you share these with if some data is sensitive.
-
-#### 2.x Binding Configuration
-
-openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
-Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
+openHAB introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
 There are two different kinds of channels:
 
@@ -611,25 +569,23 @@ Also, you could e.g. define a Rule that is triggered by this event and calculate
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
 Once accepted, the new Thing will appear under Configuration > Things.
 
-Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
+Other Bindings support defining Things in a `.things` file located in the `$OPENHAB_CONFIG/things/` folder.
 
 See the [Bindings](/addons/#binding) configuration section for more information on how to discover or manually define Things for a given Binding.
 
-##### Paper UI Linking
+#### UI Linking
 
-As described above, you can link an Item with a Channel using the Paper UI.
+As described above, you can link an Item with a Channel using the UI.
+The easiest way to do so, is navigating to the thing and the wanted channel of it.
+Expand the view of the needed channel and press `Add Link to item...`.
+The then opened view will ask you for an existing item or give you the offer to add a new one.
 
-1. First create the Item in Paper UI under Configuration Items.
-2. Next navigate to the Thing that has the Channel to link to the Item.
-3. Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
-4. Select the Item from the list and press "Link".
+#### Text File Linking
 
-##### Text File Linking
-
-You may also link an Item with a Channel using the `.items` file located in the `OPENHAB_CFBG/items/` folder.
+You may also link an Item with a Channel using the `.items` file located in the `$OPENHAB_CONFIG/items/` folder.
 Information about available Channels and options can be found in the Binding readme or discovered via Paper UI.
 
-In Paper UI select a Thing to learn about Channels it supports.
+In UI select a Thing to learn about Channels it supports.
 
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
 
@@ -650,13 +606,11 @@ Commands and Updates from and to these Items will be combined, and can be used i
 Example:
 
 ```java
-Switch Office_PC {nh="192.168.3.203", wol="192.168.0.2"}
-Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
+Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", channel="network:servicedevice:6d5de4e65d"}
 ```
 
-The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
-where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
+The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
+
 
 {: #autoupdate}
 #### Parameter `autoupdate`
@@ -667,7 +621,7 @@ This way, the Item is unchanged unless you explicitly post an *update* to the it
 Example:
 
 ```java
-Switch Garage_Gate {binding="xxx", autoupdate="false"}
+Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
 
 {: #expire}
