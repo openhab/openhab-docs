@@ -66,5 +66,5 @@ To speed up the process activate the device several times until the Thing shows 
 As shown, some technologies like Zwave and Zigbee require additional manual steps to add them to openHAB. 
 However, there are some technologies and bindings that simply do not support automatic discovery at all. 
 
-<!--Next -> [Advanced Thing Creation](https://community.openhab.org/t/wiki-getting-started-with-oh3-rewriting-the-tutorial-5-adding-a-thing-advanced/100997)-->
+Next: [Advanced Thing Creation]({{base}}/things_advanced.html)
 Previous: [Adding Things - Simple]({{base}}/things_simple.html)
