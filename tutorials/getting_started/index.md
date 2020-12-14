@@ -72,9 +72,9 @@ There may be concepts or steps that are presented earlier that are required to u
 
 [Adding Things: Simple]({{base}}/tutorials/getting_started/things_simple.html): Discovering Things
 
-<!--
 [Adding Things: Intermediate]({{base}}/tutorials/getting_started/things_intermediate.html): Creating Bridges
 
+<!--
 [Adding Things: Advanced]({{base}}/tutorials/getting_started/things_advanced.html): Manual creation of Things
 
 [Items and the Semantic Model]({{base}}/tutorials/getting_started/model.html): Creating Items and putting them into a semantic model
