@@ -70,9 +70,9 @@ There may be concepts or steps that are presented earlier that are required to u
 
 [First Steps]({{base}}/tutorials/getting_started/first_steps.html): Initial configuration
 
-<!--
 [Adding Things: Simple]({{base}}/tutorials/getting_started/things_simple.html): Discovering Things
 
+<!--
 [Adding Things: Intermediate]({{base}}/tutorials/getting_started/things_intermediate.html): Creating Bridges
 
 [Adding Things: Advanced]({{base}}/tutorials/getting_started/things_advanced.html): Manual creation of Things
