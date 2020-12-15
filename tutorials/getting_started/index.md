@@ -78,9 +78,9 @@ There may be concepts or steps that are presented earlier that are required to u
 
 [Items and the Semantic Model]({{base}}/tutorials/getting_started/model.html): Creating Items and putting them into a semantic model
 
-<!--
 [Persistence]({{base}}/tutorials/getting_started/persistence.html): Saving and retrieving historic data
 
+<!--
 [Pages: Introduction]({{base}}//tutorials/getting_started/pages_intro.html): What are Pages?
 
 [Pages: Widgets]({{base}}/tutorials/getting_started/pages_widgets.html): Introduction to populating Pages
