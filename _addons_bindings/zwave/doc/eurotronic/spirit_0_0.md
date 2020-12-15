@@ -203,7 +203,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Backlight
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|

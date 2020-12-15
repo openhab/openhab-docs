@@ -11,7 +11,7 @@ The skill currently supportes the English (U.S.) and English (U.K.) languages bu
 ### Requirements
 
 - A running [instance of Mycroft](https://mycroft.ai/get-mycroft/) (Mark 1, picroft, ...)
-- A running instance of openHAB (version 1.x or v2.x)
+- A running instance of openHAB
 - openHAB must be reacheable from the Mycroft instance
 
 ### Skill Installation
