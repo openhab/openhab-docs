@@ -29,16 +29,16 @@ For more details on the base concept behind openHAB, please visit the [Concepts 
 
 ## Versatility
 
-openHAB 3 provides a _single_ graphical user interface to modify settings, to manage your components, rules and GUI for users.
+openHAB 3 provides a _single_ graphical user interface to modify settings and to manage your components, rules and GUI for users.
 
-While there's no full scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
+While there's no full scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starts at 26:26).
 
-::: tip Important changes for openHAB 2 users<br>
-PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.
+::: tip Important changes for all openHAB 2 users<br>
+PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.<br>
 It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
 v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
 File based configuration is still available, then again we recommend anyone to start over with a fresh setup using the new Main UI only.<br>
-_Note there is an option in Main UI to bulk create Things and Items where you can copy'n'paste the contents of your .things/.items files._
+_Note the 'Add Items from Textual Definitions' option in Main UI 'Developer Tools' section to bulk create Items where you can copy'n'paste the contents of your .items files._
 :::
 
 <table class="centered highlight">
@@ -128,12 +128,15 @@ _Note there is an option in Main UI to bulk create Things and Items where you ca
 
 ### Textual vs. Graphical Configuration
 
-In openHAB 1.x, smart home configuration was done via configuration files only, openHAB 2 added the general administrative web interface "Paper UI" andopenHAB 3 now streamlines input capabilities.
+In openHAB 1.x, smart home configuration was done via configuration files only.
+openHAB 2 added the general administrative web interface "Paper UI" and openHAB 3 now streamlines input capabilities.
+::: tip when you start a new setup
+_Pay special attention to the new Semantic Model in Main UI_. Read up on it before you start a new configuration - it will save you quite some work in the long run.
+:::
+
 Things and Items can still be defined either in configuration files or via GUI.
 We highly recommend to add them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
-_Note there is an option in Main UI to bulk create Things and Items by copy'n'pasting the contents of existing .things/.items files. Bulk delete is there, too.
-_Watch out for the Semantic Model in Main UI_.
-
+_Note there is an option in Main UI to bulk create Items by copy'n'pasting the contents of existing .items files. Bulk delete is there, too.<br>
 Both methods can still be used in parallel, e.g. a Thing can be discovered and created in Main UI and the Items that link to that very same Thing (or that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
 Technically speaking it's even possible to use text and UI config in parallel to maintain components of one type, however
 
@@ -160,10 +163,10 @@ Here's some hints to avoid some pitfalls in the first place.
   This will ultimately ease a lot of setup work in the long run as it'll allow for group functions such as "switch off lights in _kitchen" or _ground floor_ or _house_" and
   e.g. enables voice assistants to properly execute your instructions.
   Watch out to apply a consistent naming scheme right in the beginning.
-* use Main UI to manage Things - remember once initially configured, their configuration is not changing much over time.
+* use Main UI to manage Things - remember once initially configured, their configuration is not changing much over time
 * run autodiscovery for _Things_ whereever offered so you don't have to enter all of them manually
 * also use Main UI to manage Items
   You can use the import function to import `.items` files or snippets taken from other sources like e.g. the forum
-* Use VS code extensions to [edit rules, items and sitemap files](editors.html).
+* Use VS code extensions to [edit rules, items and sitemap files](editors.html).<br>
   You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.
   
