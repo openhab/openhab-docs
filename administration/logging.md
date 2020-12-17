@@ -64,7 +64,8 @@ Please see the [Karaf documentation](http://karaf.apache.org/manual/latest/#_com
 The config file for logging is located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab/etc` (apt/deb-based setup).
 
 ::: tip Attention OH2 users
-The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and became `log4j2.xml`in openHAB 3.
+The format and filename to store log settings has changed. It used to be `org.ops4j.pax.logging.cfg` in openHAB 2 and is `log4j2.xml` in openHAB 3.
+Do not delete the `.cfg` though, it needs to include the new `.xml`.
 :::
 
 ## Defining what to log
@@ -143,7 +144,7 @@ The logging commands require two parameters: the subpackage, in the examples bel
 logError("heating", "This is a log entry of type Error!")
 logWarn("heating", "Heating control failed while in mode {}", Heating_Mode.state)
 logInfo("heating", "Heating mode set to normal")
-logDebug("heating", "Bedroom: Temperature: {}, Mode: {}", Bedroom_Temp.state, Bedroom_Heater_Mode.state)logWarn("heating", "This is a log entry of type Warn!")
+logDebug("heating", "Bedroom: Temperature: {}, Mode: {}", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
 ```
 
 The main package of all script/rules based log entries is predefined as `org.openhab.core.model.script`.
