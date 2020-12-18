@@ -5,7 +5,7 @@ title: Windows
 
 {% include base.html %}
 
-# openHAB 2 on Windows
+# openHAB 3 on Windows
 
 The following instructions will guide you through the process of setting up openHAB 3.
 
@@ -20,12 +20,9 @@ This page is structured as follows:
 
 Before you start, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-- Add the `JAVA_HOME` System Environment Variable in Windows.
-Navigate to:
-
-Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
-
-- Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
+- Prepare the `JAVA_HOME` System Environment Variable in Windows.
+  - Navigate to: Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+  - Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
 
 ![JAVA_HOME](images/JAVA_HOME.png)
 
@@ -50,6 +47,10 @@ To install it, follow these simple steps:
 4.  Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting to set up an administrator username and password.
     
+You are now able to work in the openHAB environment, when launched using the start.bat. 
+You can choose to add a link to it on your Desktop, Taskbar or start menu as you deem more convenient.
+If you instead would like to have openHAB start automatically with Windows and run in the background, you can choose to install it as a service as described below.
+
 ## Starting openHAB as a Service
 
 By installing the openHAB process as a service in Windows, you can:
