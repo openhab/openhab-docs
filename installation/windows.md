@@ -189,7 +189,7 @@ Assuming a successful install, you will now have various folders inside `C:\open
 
 ## What next?
 You can:
-- go back to read the[Additional steps]({{base}}/installation/index.md#additional-steps) in the Installation overview 
+- continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview 
 - read more about how to handle basic maintenance tasks, in the section below
 
 ## Maintenance
