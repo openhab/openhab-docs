@@ -52,7 +52,7 @@ To install it, follow these simple steps:
     
 ![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
     
-You are now able to work in the openHAB environment, when launched using the start.bat. 
+You are now able to work in the openHAB environment, when launched using  `C:\openHAB3\start.bat`. 
 You can choose to add a link to it on your Desktop, Taskbar or start menu as you deem more convenient.
 If you instead would like to have openHAB start automatically with Windows and run in the background, you can choose to install it as a service as described below.
 
