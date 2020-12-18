@@ -7,7 +7,7 @@ title: Windows
 
 # openHAB 2 on Windows
 
-The following instructions will guide you through the process of setting up openHAB 2.
+The following instructions will guide you through the process of setting up openHAB 3.
 
 This page is structured as follows:
 
@@ -16,21 +16,21 @@ This page is structured as follows:
 - TOC
 {:toc}
 
-## Prerequisites
+## Preparation of the environment.
 
-First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
+Before you start, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-Add the `JAVA_HOME` System Environment Variable in Windows.
+- Add the `JAVA_HOME` System Environment Variable in Windows.
 Navigate to:
 
-- Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
 
-Create a New System Variable based on your Java installation directory:
+- Create a New System Variable named JAVA_HOME (or update the existing one) to match the installation directory of the Java Platform chosen and installed in the step [Prerequisites]({{base}}/installation/index.html#prerequisites).
 
 ![JAVA_HOME](images/JAVA_HOME.png)
 
-The directory that openHAB is installed to must **contain no spaces**.
-On this page, we will be using `C:\openHAB2` as an example.
+- Choose a folder name for the openHAB installation. The name must **contain no spaces**.
+On this page, we will be using `C:\openHAB3` as an example.
 
 ## Installation
 
@@ -49,38 +49,7 @@ To install it, follow these simple steps:
 
 4.  Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting to set up an administrator username and password.
-### File Locations
-
-Assuming a successful install, you will now have various folders inside `C:\openHAB2`:
-
-|                                  | Windows Installation         |
-|:--------------------------------:|:-----------------------------|
-| openHAB application              | `C:\openHAB3\runtime`        |
-| Additional add-on files          | `C:\openHAB3\addons`         |
-| Site configuration               | `C:\openHAB3\conf`           |
-| Log files                        | `C:\openHAB3\userdata\logs`  |
-| Userdata like rrd4j databases    | `C:\openHAB3\userdata`       |
-| Service configuration            | `C:\openHAB3\userdata\etc`   |
-
-## Backup
-
-Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB3` folder.
-Which can be used any time after a failure.
-
-## Updating the openHAB Runtime
-
-To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
-Assuming you have openHAB installed in `C:\openHAB2`:
-
-```shell
-cd C:\openHAB3
-. .\runtime\bin\update.ps1
-Update-openHAB -OHVersion x.x.x
-```
-
-Now that openHAB has updated, you only need to run the above commands again for future versions.
-
+    
 ## Starting openHAB as a Service
 
 By installing the openHAB process as a service in Windows, you can:
@@ -197,6 +166,48 @@ By installing the openHAB process as a service in Windows, you can:
         ![Windows Service](images/Windows_Service.jpg)
 
     -   Logging in with an SSH client to the console (see info below)
+
+### File Locations
+
+Assuming a successful install, you will now have various folders inside `C:\openHAB3`:
+
+|                                  | Windows Installation         |
+|:--------------------------------:|:-----------------------------|
+| openHAB application              | `C:\openHAB3\runtime`        |
+| Additional add-on files          | `C:\openHAB3\addons`         |
+| Site configuration               | `C:\openHAB3\conf`           |
+| Log files                        | `C:\openHAB3\userdata\logs`  |
+| Userdata like rrd4j databases    | `C:\openHAB3\userdata`       |
+| Service configuration            | `C:\openHAB3\userdata\etc`   |
+
+# Maintenance
+
+## Backup
+
+Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB3` folder.
+Which can be used any time after a failure.
+
+## Updating the openHAB Runtime
+
+To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
+Assuming you have openHAB installed in `C:\openHAB2`:
+
+```shell
+cd C:\openHAB3
+. .\runtime\bin\update.ps1
+Update-openHAB -OHVersion x.x.x
+```
+Now that openHAB has updated, you only need to run the above commands again for future versions.
+
+## Uninstallation 
+- perform a backup as described above
+- uninstall openHAB as a Windows service: run PowerShell as an administrator and use the following commands
+```
+net stop openHAB3
+C:\openHAB3\userdata\bin\openHAB3-service.bat remove
+```
+- you can delete the whole contents of the C:\openHAB3\ folder.
 
 ### Connecting to the openHAB console
 
