@@ -49,6 +49,7 @@ To install it, follow these simple steps:
 
 4.  Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting you to set up an administrator username and password:
+    
 ![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
     
 You are now able to work in the openHAB environment, when launched using the start.bat. 
