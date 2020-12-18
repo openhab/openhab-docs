@@ -158,11 +158,10 @@ All text files must be created with UTF-8 encoding. When using Visual Studio Cod
 
 Here's some hints to avoid some pitfalls in the first place.
 
-* Start by modelling your house along the Semantic Model in Main UI.
+* Start by modelling your home along the Semantic Model in Main UI.
   Use it to create groups for rooms and apply proper semantic tags right away.
-  This will ultimately ease a lot of setup work in the long run as it'll allow for group functions such as "switch off lights in _kitchen" or _ground floor_ or _house_" and
-  e.g. enables voice assistants to properly execute your instructions.
-  Watch out to apply a consistent naming scheme right in the beginning.
+  This will ultimately ease a lot of setup work in the long run as it'll allow to apply generic functions to groups such as "turn on lights in _living room_" or "check _house_ for open windows" and helps voice assistants properly interpret your intents.
+  Also watch out to apply a consistent naming scheme right from the beginning.
 * use Main UI to manage Things - remember once initially configured, their configuration is not changing much over time
 * run autodiscovery for _Things_ whereever offered so you don't have to enter all of them manually
 * also use Main UI to manage Items
