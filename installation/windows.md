@@ -39,35 +39,33 @@ To install it, follow these simple steps:
 
 1.  Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
 
-2.  Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
+2.  Unzip the file in your chosen directory (e.g. `C:\openHAB3`)
 
     ![openHAB 2 Folders](images/openHAB_2_Folders.png)
 
-3.  Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
+3.  Start the server: Launch the runtime by executing the script `C:\openHAB3\start.bat` and wait a while for it to start and complete.
 
     ![Karaf_Windows](images/Karaf_Windows.png)
 
 4.  Point your browser to `http://localhost:8080`.
-    You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html).
-    When you've selected an appropriate package, this page will contain the UI selection screen, see [here]({{base}}/tutorial/1sttimesetup.html) for example.
-
+    You should be looking at the openHAB page requesting to set up an administrator username and password.
 ### File Locations
 
 Assuming a successful install, you will now have various folders inside `C:\openHAB2`:
 
 |                                  | Windows Installation         |
 |:--------------------------------:|:-----------------------------|
-| openHAB application              | `C:\openHAB2\runtime`        |
-| Additional add-on files          | `C:\openHAB2\addons`         |
-| Site configuration               | `C:\openHAB2\conf`           |
-| Log files                        | `C:\openHAB2\userdata\logs`  |
-| Userdata like rrd4j databases    | `C:\openHAB2\userdata`       |
-| Service configuration            | `C:\openHAB2\userdata\etc`   |
+| openHAB application              | `C:\openHAB3\runtime`        |
+| Additional add-on files          | `C:\openHAB3\addons`         |
+| Site configuration               | `C:\openHAB3\conf`           |
+| Log files                        | `C:\openHAB3\userdata\logs`  |
+| Userdata like rrd4j databases    | `C:\openHAB3\userdata`       |
+| Service configuration            | `C:\openHAB3\userdata\etc`   |
 
 ## Backup
 
 Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB2` folder.
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB3` folder.
 Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
@@ -76,7 +74,7 @@ To start the update process, run PowerShell as an administrator and use the foll
 Assuming you have openHAB installed in `C:\openHAB2`:
 
 ```shell
-cd C:\openHAB2
+cd C:\openHAB3
 . .\runtime\bin\update.ps1
 Update-openHAB -OHVersion x.x.x
 ```
@@ -92,21 +90,20 @@ By installing the openHAB process as a service in Windows, you can:
 
 **Windows Service Installation Steps**
 
-1.  Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
-
+1.  Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
 2.  Issue the following two commands in your openHAB console:
     ```shell
     feature:install service-wrapper
-    wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
+    wrapper:install --name "openHAB3" --display "openHAB3" --description "openHAB 3 Service"
     ```
 
     ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
 3.  Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters.
+4.  Update the newly created `C:\openHAB3\userdata\etc\openHAB3-wrapper.conf` to include all necessary parameters:
 
-    - Copy all the config text from the below section and paste it in your `openHAB2-wrapper.conf`, replacing all existing content.
+    - Copy all the config text from the below section and paste it in your `openHAB3-wrapper.conf`, replacing all existing content.
     - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
@@ -115,7 +112,7 @@ By installing the openHAB process as a service in Windows, you can:
     #*******************************************************
 
     # openHAB installation dir (Adapt this first setting to your system)
-    set.default.OPENHAB_HOME=C:\openHAB2
+    set.default.OPENHAB_HOME=C:\openHAB3
 
     # Wrapper Properties
     set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
@@ -134,6 +131,8 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
     wrapper.java.classpath.1=%KARAF_HOME%\lib\boot\*.jar
     wrapper.java.classpath.2=%KARAF_DATA%\lib\wrapper\*.jar
+    wrapper.java.classpath.3=%KARAF_HOME%\lib\jdk9plus\*.jar
+    wrapper.java.classpath.4=%KARAF_HOME%\lib\endorsed\*.jar
     wrapper.java.library.path.1=%KARAF_DATA%\lib\wrapper\
 
     # Java Parameters
@@ -144,18 +143,16 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.5=-Dcom.sun.management.jmxremote
     wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
     wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
-    wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%\jre\lib\endorsed;%JAVA_HOME%\lib\endorsed;%KARAF_HOME%\lib\endorsed"
-    wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%\jre\lib\ext;%JAVA_HOME%\lib\ext;%KARAF_HOME%\lib\ext"
-    wrapper.java.additional.10=-Dopenhab.home="%OPENHAB_HOME%"
-    wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
-    wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
-    wrapper.java.additional.13=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
-    wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
-    wrapper.java.additional.15=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
-    wrapper.java.additional.16=-Dorg.osgi.service.http.port=8080
-    wrapper.java.additional.17=-Dorg.osgi.service.http.port.secure=8443
-    wrapper.java.additional.18=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
-    wrapper.java.additional.19=-Dkaraf.logs="%OPENHAB_LOGDIR%"
+    wrapper.java.additional.8=-Dopenhab.home="%OPENHAB_HOME%"
+    wrapper.java.additional.9=-Dopenhab.conf="%OPENHAB_HOME%\conf"
+    wrapper.java.additional.10=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
+    wrapper.java.additional.11-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+    wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
+    wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
+    wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
+    wrapper.java.additional.15=-Dorg.osgi.service.http.port.secure=8443
+    wrapper.java.additional.16=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
+    wrapper.java.additional.17=-Dkaraf.logs="%OPENHAB_LOGDIR%"
     wrapper.java.maxmemory=512
 
     # Wrapper Logging Properties
@@ -169,10 +166,10 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.syslog.loglevel=NONE
 
     # Wrapper Windows Properties
-    wrapper.console.title=openHAB2
-    wrapper.ntservice.name=openHAB2
-    wrapper.ntservice.displayname=openHAB2
-    wrapper.ntservice.description=openHAB 2 Service
+    wrapper.console.title=openHAB3
+    wrapper.ntservice.name=openHAB3
+    wrapper.ntservice.displayname=openHAB3
+    wrapper.ntservice.description=openHAB 3 Service
     wrapper.ntservice.dependency.1=
     wrapper.ntservice.starttype=AUTO_START
     wrapper.ntservice.interactive=false
@@ -181,8 +178,8 @@ By installing the openHAB process as a service in Windows, you can:
 5.  Open an elevated command prompt and type the following commands:
 
     ```text
-    C:\openHAB2\userdata\bin\openHAB2-service.bat install
-    net start "openHAB2"
+    C:\openHAB3\userdata\bin\openHAB3-service.bat install
+    net start "openHAB3"
     ```
 
     ![Admin cmd](images/Admin_CMD.jpg)
@@ -203,7 +200,7 @@ By installing the openHAB process as a service in Windows, you can:
 
 ### Connecting to the openHAB console
 
-You can connect to openHAB's console using the the `C:\openHAB2\runtime\bin\client.bat` script on the local machine. 
+You can connect to openHAB's console using the the `C:\openHAB3\runtime\bin\client.bat` script on the local machine. 
 Alternatively, you can use a standard SSH client:
 
 -   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
