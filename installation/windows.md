@@ -48,7 +48,8 @@ To install it, follow these simple steps:
     ![Karaf_Windows](images/Karaf_Windows.png)
 
 4.  Point your browser to `http://localhost:8080`.
-    You should be looking at the openHAB page requesting to set up an administrator username and password.
+    You should be looking at the openHAB page requesting you to set up an administrator username and password:
+![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
     
 You are now able to work in the openHAB environment, when launched using the start.bat. 
 You can choose to add a link to it on your Desktop, Taskbar or start menu as you deem more convenient.
@@ -170,6 +171,7 @@ By installing the openHAB process as a service in Windows, you can:
         ![Windows Service](images/Windows_Service.jpg)
 
     -   Logging in with an SSH client to the console (see info below)
+   
 
 ### File Locations
 
@@ -185,6 +187,7 @@ Assuming a successful install, you will now have various folders inside `C:\open
 | Service configuration            | `C:\openHAB3\userdata\etc`   |
 
 ## Maintenance
+
 
 ### Backup
 
