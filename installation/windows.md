@@ -69,7 +69,7 @@ By installing the openHAB process as a service in Windows, you can:
 2.  Issue the following two commands in your openHAB console:
     ```shell
     feature:install service-wrapper
-    wrapper:install --name "openHAB" --display "openHAB" --description "openHAB 3 Service"
+    wrapper:install --name "openHAB" --display "openHAB" --description "openHAB Service"
     ```
 
     ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
