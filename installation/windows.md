@@ -83,7 +83,7 @@ By installing the openHAB process as a service in Windows, you can:
 
     ```conf
     #*******************************************************
-    # openHAB2-wrapper.conf for Windows Service Installation
+    # openHAB-wrapper.conf for Windows Service Installation
     #*******************************************************
 
     # openHAB installation dir (Adapt this first setting to your system)
