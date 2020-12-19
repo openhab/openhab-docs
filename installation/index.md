@@ -32,7 +32,7 @@ Experiences with different devices and environments can be found in the [communi
 
 The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, especially as we offer a quick setup with [openHABian](openhabian.html).
 A popular alternative is [our solution for the Synology DiskStation](synology.html), which many users already own in their homes.
-The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB experience on an existing Debian/Ubuntu based Linux systems.
+The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB experience on existing Debian/Ubuntu based Linux systems.
 
 Please check the menu to the left for all available options.
 
