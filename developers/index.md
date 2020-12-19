@@ -5,38 +5,38 @@ title: Developer Guide
 
 # Overview
 
-A variety of different parts of openHAB can be extended, we go through all of them.
+A variety of different parts of openHAB can be extended.
+We will cover the most important ones here.
 
 openHAB uses [git](https://git-scm.com/) as its version control system and [GitHub](https://github.com/openhab) for hosting the different repositories and source code.
-You will get in contact with git in many places and it makes sense to get familiar with its basic commands and concepts.
-There are many pages to learn about Git.
+You will come in contact with git in many places, and it makes sense to familiarize yourself with its basic commands and concepts.
+There are many places to learn about Git.
 Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start.
 
-Add-ons and the core itself are written in Java.
+Add-ons and the openHAB core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-The different guides of this chapter assume that you are somewhat familiar with Java 11 and that you have a rough idea of Git's workflow (eg "checkout", "branches", "push").
+The different guides of this chapter assume that you are somewhat familiar with Java 11 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
 
 ## Choose the Right Concept
 
-openHAB allows you to build up on the following concepts:
+openHAB allows you to build upon the following concepts:
 
-* **Bindings**: A binding connects to external services or devices,
-* **Automation engine module**: A trigger, condition or action that can be used in automation rules (or scripts),
-* **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*,
-* **an IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service)
-* **a Persistence service**: Persist item state updates and/or changes and allow them to be retrieved for specific points in time.
+* **Bindings**: A binding connects to external services or devices.
+* **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
+* **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*.
+* **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
+* **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
 * **Natural language processing skill**:
-  Executes something depending on the understood Intents and returns something back to the user,
+  Executes something depending on the understood Intents and returns something back to the user.
 * **Audio sinks/sources**:
-  Extend where audio can be played on or implement audio sources.
+  Control where audio can be played or implement audio sources.
 * and many more (not covered yet).
 
-Sometimes though it's just not worth writing a binding and you are better off
-just using an http action in a rule or script to retrieve some values.
-
-Therefore: First think what you want to achieve! Check our [community forum](https://community.openhab.org)
+First think about what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
+Sometimes it may not even be worth writing a binding or other addon if you can achieve your goal in an easier way.
+For example, you may be better off using an http action in a rule or script to retrieve some values.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
 General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
@@ -78,7 +78,7 @@ Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.ecl
 
 ## Develop a NEW binding
 
-To start developing a new binding a script is available to generate the basis for your new binding.
+To help start developing a new binding, a script is available to generate the basic skeleton for you.
 This script is specific for binding addons. Follow these steps to generate your binding:
 
 1. From the command line in `openhab-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
