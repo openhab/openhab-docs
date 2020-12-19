@@ -5,7 +5,7 @@ title: Windows
 
 {% include base.html %}
 
-# openHAB 3 on Windows
+# openHAB on Windows
 
 The following instructions will guide you through the process of setting up openHAB 3.
 
