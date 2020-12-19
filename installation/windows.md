@@ -7,7 +7,7 @@ title: Windows
 
 # openHAB on Windows
 
-The following instructions will guide you through the process of setting up openHAB 3.
+The following instructions will guide you through the process of setting up openHAB.
 
 This page is structured as follows:
 
