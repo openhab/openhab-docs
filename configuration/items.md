@@ -271,7 +271,7 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 If no state presentation and no square brackets are given, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
-Formatting of the presentation is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax).
+Formatting of the presentation is done applying [Java formatter class syntax](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax).
 
 If square brackets are given, the leading `%` and the trailing formatter conversion are mandatory.
 Free text, like a unit, can be added before or after the formatter string.

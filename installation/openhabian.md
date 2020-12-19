@@ -27,23 +27,24 @@ To that end, the project provides two things:
 {:toc}
 
 ## Features
-The following features are provided by the openHABian image out of the box:
 
--   Hassle-free setup without a display or keyboard, connected via Ethernet or [WiFi](#wifi-based-setup-notes)
--   the latest stable version of openHAB 2
--   Zulu Embedded OpenJDK Java 8, 11 or AdoptOpenJDK
--   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
--   web based openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
--   Samba file sharing [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
--   Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
--   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
--   Customized Bash shell experience, settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and [nano](https://github.com/airix1/openhabnano)
--   [Mosquitto](https://mosquitto.org) MQTT broker
--   the [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
--   FIND, the [Framework for Internal Navigation and Discovery](https://www.internalpositioning.com/)
--   [Tailscale](https://tailscale.com/blog/how-tailscale-works/) VPN and [WireGuard](https://www.wireguard.com/) for remote VPN access
+The following features are provided by the openHABian images out of the box:
 
-The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian-configuration-tool) provides the following optional settings and components:
+- Hassle-free setup without a display or keyboard, connected via [Ethernet or Wi-Fi](#wifi-setup)
+- openHAB 2 in the latest stable version
+- Zulu Embedded OpenJDK Java 11 ([newest revision](http://zulu.org/zulu-community/zulurelnotes))
+- [openHABian Configuration Tool](#openhabian-config) including updater functionality
+- openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
+- Samba file sharing with [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
+- Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
+- Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
+- Customized Bash shell experience
+- Customized vim settings, including [openHAB syntax highlighting](https://github.com/cyberkov/openhab-vim)
+- Customized nano settings, including [openHAB syntax highlighting](https://github.com/airix1/openhabnano)
+- Version control for `/etc` by the help of [etckeeper](http://etckeeper.branchable.com) (git)
+- [Raspberry Pi specific](rasppi.html): Extend to the whole SD card, 16MB GPU memory split
+
+Additionally the **openHABian Configuration Tool** [`openhabian-config`](#openhabian-config) is included and provides the following optional settings and components:
 
 ![openHABian-config menu](images/openHABian-config.png)
 
