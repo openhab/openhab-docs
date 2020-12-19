@@ -8,7 +8,7 @@
   <thing-type id="ge_zw4005_00_000" listed="false">
     <label>ZW4005, 12722 On/Off Relay Switch</label>
     <description><![CDATA[
-On/Off Relay Switch<br /><h1>Overview</h1><p>Also marketed as GE / Jasco 12722.</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network.</p>
+On/Off Relay Switch<br /> <h1>Overview</h1><p>Also marketed as GE / Jasco 12722.</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -44,7 +44,7 @@ On/Off Relay Switch<br /><h1>Overview</h1><p>Also marketed as GE / Jasco 12722.<
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
-Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED.</p> <p>Default is Night Light mode where LED is on when switch is off.</p>
+Night Light<br /> <h1>Overview</h1><p>Defines the behavior of the blue LED.</p> <p>Default is Night Light mode where LED is on when switch is off.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -58,7 +58,7 @@ Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED.</p> <
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert Switch<br /><h1>Overview</h1><p>Invert the ON/OFF Switch State. Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON.</p> <p>Note: If you invert the switches and also install the product upside down, the load will now be control</p>
+Invert Switch<br /> <h1>Overview</h1><p>Invert the ON/OFF Switch State. Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON.</p> <p>Note: If you invert the switches and also install the product upside down, the load will now be control</p>
         ]]></description>
         <default>0</default>
         <options>

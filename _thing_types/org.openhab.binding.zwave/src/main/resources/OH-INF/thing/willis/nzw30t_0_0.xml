@@ -8,7 +8,7 @@
   <thing-type id="willis_nzw30t_00_000" listed="false">
     <label>NZW30T Inovelli In-Wall Switch (On/Off) Scene Enabled</label>
     <description><![CDATA[
-Inovelli In-Wall Switch (On/Off) Scene Enabled<br /><h1>Overview</h1><p>Basic On/Off switch that is "Scene Enabled." Normal usage: short press up or down turns the switch on or off respectively, but longer presses up or down activate scenes on SmartThings. In smart things, "when pushed" relates to pushing the switch up and "when held" relates to pushing the switch down.</p> <br /><h2>Inclusion Information</h2><p>Device will automatically enter into inclusion mode when power is first provided to the device for 30 seconds (that is, will stay in inclusion mode for 30 seconds). When power is already present, you can return the switch to inclusion mode by pressing up on the switch 6 times in rapid succession (within 2 seconds).</p> <p>To include your device with the power already on, here’s what you need to do:</p> <ul><li>Put your HUB/Controller into inclusion mode</li> <li>Press the UP button on your switch 6x rapidly (in a second or so)</li> <li>If your device is not included after this, try again, it took a few tries to get it for me.</li> </ul><br /><h2>Exclusion Information</h2><p>To remove your device, here’s what you need to do:</p> <ul><li>Put your HUB/Controller into exclusion mode</li> <li>Press the UP button on your switch 6x rapidly (in a second or so)</li> <li>Hopefully your device has been removed</li> </ul><br /><h2>Wakeup Information</h2><p>N/A</p>
+Inovelli In-Wall Switch (On/Off) Scene Enabled<br /> <h1>Overview</h1><p>Basic On/Off switch that is "Scene Enabled." Normal usage: short press up or down turns the switch on or off respectively, but longer presses up or down activate scenes on SmartThings. In smart things, "when pushed" relates to pushing the switch up and "when held" relates to pushing the switch down.</p> <br /> <h2>Inclusion Information</h2><p>Device will automatically enter into inclusion mode when power is first provided to the device for 30 seconds (that is, will stay in inclusion mode for 30 seconds). When power is already present, you can return the switch to inclusion mode by pressing up on the switch 6 times in rapid succession (within 2 seconds).</p> <p>To include your device with the power already on, here’s what you need to do:</p> <ul><li>Put your HUB/Controller into inclusion mode</li> <li>Press the UP button on your switch 6x rapidly (in a second or so)</li> <li>If your device is not included after this, try again, it took a few tries to get it for me.</li> </ul> <br /> <h2>Exclusion Information</h2><p>To remove your device, here’s what you need to do:</p> <ul><li>Put your HUB/Controller into exclusion mode</li> <li>Press the UP button on your switch 6x rapidly (in a second or so)</li> <li>Hopefully your device has been removed</li> </ul> <br /> <h2>Wakeup Information</h2><p>N/A</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -50,7 +50,7 @@ Inovelli In-Wall Switch (On/Off) Scene Enabled<br /><h1>Overview</h1><p>Basic On
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert</label>
         <description><![CDATA[
-Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1>Overview</h1><p>Invert|Default = Top/On, Bottom/Off</p> <p>-- Parameter = 4, size = 1 byte, value = 00, Up = On, Down = Off</p> <p>-- Parameter = 4, size = 1 byte, value = 01, Up = Off, Down = On</p>
+Change the top of the switch to OFF and the bottom of the switch to ON.<br /> <h1>Overview</h1><p>Invert|Default = Top/On, Bottom/Off</p> <p>-- Parameter = 4, size = 1 byte, value = 00, Up = On, Down = Off</p> <p>-- Parameter = 4, size = 1 byte, value = 01, Up = Off, Down = On</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -64,7 +64,7 @@ Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1
                  min="0" max="32768">
         <label>5: Countdown</label>
         <description><![CDATA[
-Countdown to shutoff<br /><h1>Overview</h1><p>Sets switch to have a countdown to shutoff. A value of 0 disables the countdown entirely.</p> <p>From Manual:</p> <p>Countdown|Default = No Timer</p> <p>-- Parameter = 5, size = 2 bytes, value = xx xx</p> <p>-- Value = 00 (Default) = No Timer</p> <p>-- (0x00---x8000)(range = 0-32768 Seconds)</p>
+Countdown to shutoff<br /> <h1>Overview</h1><p>Sets switch to have a countdown to shutoff. A value of 0 disables the countdown entirely.</p> <p>From Manual:</p> <p>Countdown|Default = No Timer</p> <p>-- Parameter = 5, size = 2 bytes, value = xx xx</p> <p>-- Value = 00 (Default) = No Timer</p> <p>-- (0x00---x8000)(range = 0-32768 Seconds)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

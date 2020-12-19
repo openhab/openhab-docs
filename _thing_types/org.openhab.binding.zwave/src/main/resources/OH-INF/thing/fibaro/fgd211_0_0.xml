@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgd211_00_000" listed="false">
     <label>FGD211 Universal Dimmer 500W</label>
     <description><![CDATA[
-Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <p>As a Dimmer it operates under the following loads:</p> <ul><li>conventional incandescent</li> <li>Halogen 230V</li> <li>low voltage halogen 12V (with electronic transformers)</li> <li>dimmable LED</li> <li>when used with FGB001 it may operate with any dimmable load up to 500W</li> </ul><br /><h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes.</p> <br /><h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes</p>
+Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <p>As a Dimmer it operates under the following loads:</p> <ul><li>conventional incandescent</li> <li>Halogen 230V</li> <li>low voltage halogen 12V (with electronic transformers)</li> <li>dimmable LED</li> <li>when used with FGB001 it may operate with any dimmable load up to 500W</li> </ul> <br /> <h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes.</p> <br /> <h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -77,7 +77,7 @@ Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer design
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Control key #2 behaviour</label>
         <description><![CDATA[
-Key no. 2 is not represented by any physical device<br /><h1>Overview</h1><p>Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no. 2 through polling devices from association list one by one and checking their actual states</p>
+Key no. 2 is not represented by any physical device<br /> <h1>Overview</h1><p>Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no. 2 through polling devices from association list one by one and checking their actual states</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -98,7 +98,7 @@ Key no. 2 is not represented by any physical device<br /><h1>Overview</h1><p>Inf
                  min="1" max="255">
         <label>9: Time of MANUALLY moving between values</label>
         <description><![CDATA[
-Options for changing parameter 1-255 (10ms - 2,5s)<br /><h1>Overview</h1><p>Time of MANUALLY moving between the extreme dimming values</p>
+Options for changing parameter 1-255 (10ms - 2,5s)<br /> <h1>Overview</h1><p>Time of MANUALLY moving between the extreme dimming values</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -108,7 +108,7 @@ Options for changing parameter 1-255 (10ms - 2,5s)<br /><h1>Overview</h1><p>Time
                  min="0" max="255">
         <label>10: Time of AUTOMATIC moving between values</label>
         <description><![CDATA[
-Time of autom. moving the dimmer between min/max<br /><h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
+Time of autom. moving the dimmer between min/max<br /> <h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -174,7 +174,7 @@ Time of autom. moving the dimmer between min/max<br /><h1>Overview</h1><p>Option
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: 3-way switch</label>
         <description><![CDATA[
-Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch provides the option to double key no. 1. The dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons. (default value 0)</p>
+Function of 3-way switch<br /> <h1>Overview</h1><p>The function of 3-way switch provides the option to double key no. 1. The dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons. (default value 0)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -198,7 +198,7 @@ Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch p
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Change [On-Off] bi-stable keys</label>
         <description><![CDATA[
-Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
+Allow user to change [On-Off] bi-stable keys<br /> <h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -212,7 +212,7 @@ Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This funct
                  min="100" max="170">
         <label>20: Control impulse length</label>
         <description><![CDATA[
-Change of control impulse length.<br /><h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170].</p> <p>By changing the minimem level, the user may completely dim LED bulbs. Not all LED bulbs available on the market have the dimming capabilty.</p>
+Change of control impulse length.<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170].</p> <p>By changing the minimem level, the user may completely dim LED bulbs. Not all LED bulbs available on the market have the dimming capabilty.</p>
         ]]></description>
         <default>110</default>
         <limitToOptions>false</limitToOptions>

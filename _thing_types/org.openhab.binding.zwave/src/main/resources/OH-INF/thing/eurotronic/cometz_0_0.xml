@@ -8,7 +8,7 @@
   <thing-type id="eurotronic_cometz_00_000" listed="false">
     <label>CometZ Thermostatic Valve</label>
     <description><![CDATA[
-Thermostatic Valve<br /><h1>Overview</h1><p>Comet Z-wave is a Z-Wave radio standard compatible energy-saving radiator thermostat.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.</p> <br /><h2>Wakeup Information</h2><p>Click the button in the battery compartment of the Comet Z-wave once.</p>
+Thermostatic Valve<br /> <h1>Overview</h1><p>Comet Z-wave is a Z-Wave radio standard compatible energy-saving radiator thermostat.</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.</p> <br /> <h2>Wakeup Information</h2><p>Click the button in the battery compartment of the Comet Z-wave once.</p>
     ]]></description>
     <category>RadiatorControl</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="willis_zen23_00_000" listed="false">
     <label>ZEN23 Wall mounted switch</label>
     <description><![CDATA[
-Wall mounted switch<br /><h1>Overview</h1><p>Keep the classic look of toggle switches while adding the latest technology to your lights. Wireless control through Z-Wave guarantees fast and reliable performance of your smart home</p> <br /><h2>Inclusion Information</h2><p>Toggle the switch up and down quickly 3 times to finalize the inclusion process</p> <br /><h2>Exclusion Information</h2><p>Toggle the switch up and down quickly 3 times to complete the exclusion process</p>
+Wall mounted switch<br /> <h1>Overview</h1><p>Keep the classic look of toggle switches while adding the latest technology to your lights. Wireless control through Z-Wave guarantees fast and reliable performance of your smart home</p> <br /> <h2>Inclusion Information</h2><p>Toggle the switch up and down quickly 3 times to finalize the inclusion process</p> <br /> <h2>Exclusion Information</h2><p>Toggle the switch up and down quickly 3 times to complete the exclusion process</p>
     ]]></description>
     <category>WallSwitch</category>
 

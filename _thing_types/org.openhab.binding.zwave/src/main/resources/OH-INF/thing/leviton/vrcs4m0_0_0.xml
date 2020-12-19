@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrcs4m0_00_000" listed="false">
     <label>VRCS4-M0 4-Scene controller with load control</label>
     <description><![CDATA[
-4-Scene controller with load control<br /><h1>Overview</h1><p>Hybrid 4 button scene controller with single pole switch. Vizia RF + 4-Button Remote Scene Controller with built in single pole switch, rated @ 120/240 VAC, 50/60HZ.</p> <p>The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. </p> <p>The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.</p> <br /><h2>Inclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode.  When the 4-Scene controller is included in your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.</p> <p>The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.</p> <p>If the 4-Scene controller has been successfully included in the network and the user tries to include it again without first excluding it from the network, the controller will retain the first node ID it had received and ignore the second.</p> <br /><h2>Exclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode.  When the 4-Scene controller is excluded from your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.</p>
+4-Scene controller with load control<br /> <h1>Overview</h1><p>Hybrid 4 button scene controller with single pole switch. Vizia RF + 4-Button Remote Scene Controller with built in single pole switch, rated @ 120/240 VAC, 50/60HZ.</p> <p>The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. </p> <p>The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.</p> <br /> <h2>Inclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode.  When the 4-Scene controller is included in your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.</p> <p>The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.</p> <p>If the 4-Scene controller has been successfully included in the network and the user tries to include it again without first excluding it from the network, the controller will retain the first node ID it had received and ignore the second.</p> <br /> <h2>Exclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode.  When the 4-Scene controller is excluded from your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -56,7 +56,7 @@
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Button 1</label>
         <description><![CDATA[
-First (top) button on controller<br /><h1>Overview</h1><p>On off control of associated scene or zone.</p>
+First (top) button on controller<br /> <h1>Overview</h1><p>On off control of associated scene or zone.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -64,7 +64,7 @@ First (top) button on controller<br /><h1>Overview</h1><p>On off control of asso
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Button 2</label>
         <description><![CDATA[
-Second button on controller<br /><h1>Overview</h1><p>On off control of associated scene or zone.</p>
+Second button on controller<br /> <h1>Overview</h1><p>On off control of associated scene or zone.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -72,7 +72,7 @@ Second button on controller<br /><h1>Overview</h1><p>On off control of associate
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Button 3</label>
         <description><![CDATA[
-Third button on controller<br /><h1>Overview</h1><p>On off control of associated scene or zone.</p>
+Third button on controller<br /> <h1>Overview</h1><p>On off control of associated scene or zone.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -80,7 +80,7 @@ Third button on controller<br /><h1>Overview</h1><p>On off control of associated
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Button 4</label>
         <description><![CDATA[
-Fourth button on controller<br /><h1>Overview</h1><p>On off control of associated scene or zone.</p>
+Fourth button on controller<br /> <h1>Overview</h1><p>On off control of associated scene or zone.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>

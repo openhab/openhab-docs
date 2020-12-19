@@ -8,7 +8,7 @@
   <thing-type id="horstmann_srt323_00_000" listed="false">
     <label>SRT323 Secure Z-Wave Room Thermostat</label>
     <description><![CDATA[
-Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been developed to control central heating systems where the demand temperature can be set locally or remotely by a third party device. The SRT323 also has the capability to act as a temperature sensor</p> <br /><h2>Inclusion Information</h2><p>Set DIL switch 1 to ’ON’ position on the back of the unit, scroll through the function menu by rotating the dial until<strong> L</strong> is displayed</p> <p>Once the character starts flashing the installer has 60 sec to activate the 3rd party unit. Once the 3rd party unit has been activated the process must be completed within 240 sec or SRT323 will timeout. Preferably, start the process to add a node from the controller then press the dial of the SRT323</p> <br /><h2>Exclusion Information</h2><p>Not Provided</p> <br /><h2>Wakeup Information</h2><p>Not Provided</p>
+Secure Z-Wave Room Thermostat<br /> <h1>Overview</h1><p>The SRT323 has been developed to control central heating systems where the demand temperature can be set locally or remotely by a third party device. The SRT323 also has the capability to act as a temperature sensor</p> <br /> <h2>Inclusion Information</h2><p>Set DIL switch 1 to ’ON’ position on the back of the unit, scroll through the function menu by rotating the dial until<strong> L</strong> is displayed</p> <p>Once the character starts flashing the installer has 60 sec to activate the 3rd party unit. Once the 3rd party unit has been activated the process must be completed within 240 sec or SRT323 will timeout. Preferably, start the process to add a node from the controller then press the dial of the SRT323</p> <br /> <h2>Exclusion Information</h2><p>Not Provided</p> <br /> <h2>Wakeup Information</h2><p>Not Provided</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -96,7 +96,7 @@ Secure Z-Wave Room Thermostat<br /><h1>Overview</h1><p>The SRT323 has been devel
                  min="0" max="100">
         <label>3: Delta T</label>
         <description><![CDATA[
-Define the temperature steps<br /><h1>Overview</h1><p>Change between temperatures to trigger a temperature report (step 0.1) (Default 10 = 1C)</p>
+Define the temperature steps<br /> <h1>Overview</h1><p>Change between temperatures to trigger a temperature report (step 0.1) (Default 10 = 1C)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

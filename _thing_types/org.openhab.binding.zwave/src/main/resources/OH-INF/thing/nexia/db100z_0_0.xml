@@ -8,7 +8,7 @@
   <thing-type id="nexia_db100z_00_000" listed="false">
     <label>DB100Z Doorbell</label>
     <description><![CDATA[
-Doorbell<br /><h1>Overview</h1><p>Z-Wave Doorbell Sensor</p> <br /><h2>Inclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been included into your Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been excluded from your Z-Wave network.</p> <br /><h2>Wakeup Information</h2><p>Press Install button three times rapidly.</p>
+Doorbell<br /> <h1>Overview</h1><p>Z-Wave Doorbell Sensor</p> <br /> <h2>Inclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been included into your Z-Wave network.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the INSTALL button on the DB100Z. The DB100Z LED will blink rapidly for 3 seconds when it has been excluded from your Z-Wave network.</p> <br /> <h2>Wakeup Information</h2><p>Press Install button three times rapidly.</p>
     ]]></description>
     <category>Door</category>
 

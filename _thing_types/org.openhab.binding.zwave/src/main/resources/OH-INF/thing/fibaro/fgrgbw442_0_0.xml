@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgrgbw442_00_000" listed="false">
     <label>FGRGBW-442 RGBW CONTROLLER 2</label>
     <description><![CDATA[
-RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM output signal, allowing it to control LED, RGB, RGBW strips, halogen lights and other resistive loads. It can also measure active power and energy consumed by the load. Controlled devices may be powered by 12 or 24V DC.</p> <p>Inputs support momentary/toggle switches and 0-10V analog sensors, like temperature sensors, humidity sensors, light sensors etc</p> <br /><h2>Inclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Exclusion Information</h2><p>Quickly, three times click the service button.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM output signal, allowing it to control LED, RGB, RGBW strips, halogen lights and other resistive loads. It can also measure active power and energy consumed by the load. Controlled devices may be powered by 12 or 24V DC.</p> <p>Inputs support momentary/toggle switches and 0-10V analog sensors, like temperature sensors, humidity sensors, light sensors etc</p> <br /> <h2>Inclusion Information</h2><p>Quickly, three times click the service button.</p> <br /> <h2>Exclusion Information</h2><p>Quickly, three times click the service button.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -355,7 +355,7 @@ RGBW CONTROLLER 2<br /><h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM out
                  min="0" max="32400">
         <label>62: Power reports - periodic</label>
         <description><![CDATA[
-Power reports - periodic<br /><h1>Overview</h1><p>This parameter determines in what time intervals the periodic power reports are sent to the main controller. Periodic reports do not depend of power change (parameter 61).</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> <li>Default - 3600 (1h)</li> </ul>
+Power reports - periodic<br /> <h1>Overview</h1><p>This parameter determines in what time intervals the periodic power reports are sent to the main controller. Periodic reports do not depend of power change (parameter 61).</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> <li>Default - 3600 (1h)</li> </ul>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -365,7 +365,7 @@ Power reports - periodic<br /><h1>Overview</h1><p>This parameter determines in w
                  min="0" max="100">
         <label>63: Analog inputs output change on input change</label>
         <description><![CDATA[
-Analog inputs output change on input change<br /><h1>Overview</h1><h1>Analog inputs reports and output change on input change</h1> <p>This parameter defines minimal change (from the last reported) of analog input voltage that results in sending new report and change in the output value. Parameter is relevant only for analog inpu ts (parameter 20, 21, 22 or 23 set to 0 or 1).</p> <ul><li>0 - reporting on change disabled</li> <li>1-100 (0.1-10V, 0.1V step)</li> <li>Default - 5 (0.5V)</li> </ul>
+Analog inputs output change on input change<br /> <h1>Overview</h1><h1>Analog inputs reports and output change on input change</h1> <p>This parameter defines minimal change (from the last reported) of analog input voltage that results in sending new report and change in the output value. Parameter is relevant only for analog inpu ts (parameter 20, 21, 22 or 23 set to 0 or 1).</p> <ul><li>0 - reporting on change disabled</li> <li>1-100 (0.1-10V, 0.1V step)</li> <li>Default - 5 (0.5V)</li> </ul>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -375,7 +375,7 @@ Analog inputs output change on input change<br /><h1>Overview</h1><h1>Analog inp
                  min="0" max="32400">
         <label>64: Analog inputs reports - periodic</label>
         <description><![CDATA[
-Analog inputs reports - periodic<br /><h1>Overview</h1><p>This parameter defines reporting period of analog inputs value.</p> <p>Periodical reports are independent from changes in value (parameter 63).</p> <p>Parameter is relevant only for analog inputs (parameter 20, 21, 22 or 23 set to 0 or 1)</p> <ul><li>0 – periodical reports disabled</li> <li>30-32400 (30-32400s, 1s step)</li> </ul>
+Analog inputs reports - periodic<br /> <h1>Overview</h1><p>This parameter defines reporting period of analog inputs value.</p> <p>Periodical reports are independent from changes in value (parameter 63).</p> <p>Parameter is relevant only for analog inputs (parameter 20, 21, 22 or 23 set to 0 or 1)</p> <ul><li>0 – periodical reports disabled</li> <li>30-32400 (30-32400s, 1s step)</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -385,7 +385,7 @@ Analog inputs reports - periodic<br /><h1>Overview</h1><p>This parameter defines
                  min="0" max="500">
         <label>65: Energy reports - on change</label>
         <description><![CDATA[
-Energy reports - on change<br /><h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller. Energy reports are sent no often than every 30 seconds.</p> <ul><li>0 - reports are disabled</li> <li>1-500 (0.01 - 5 kWh) - change in energy</li> </ul>
+Energy reports - on change<br /> <h1>Overview</h1><p>This parameter determines the minimum change in consumed energy that will result in sending new energy report to the main controller. Energy reports are sent no often than every 30 seconds.</p> <ul><li>0 - reports are disabled</li> <li>1-500 (0.01 - 5 kWh) - change in energy</li> </ul>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -395,7 +395,7 @@ Energy reports - on change<br /><h1>Overview</h1><p>This parameter determines th
                  min="0" max="32400">
         <label>66: Energy reports - periodic</label>
         <description><![CDATA[
-Energy reports - periodic<br /><h1>Overview</h1><p>This parameter determines in what time intervals the periodic energy reports are sent to the main controller. Periodic reports do not depend of energy change (parameter 65)</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> </ul>
+Energy reports - periodic<br /> <h1>Overview</h1><p>This parameter determines in what time intervals the periodic energy reports are sent to the main controller. Periodic reports do not depend of energy change (parameter 65)</p> <ul><li>0 - periodic reports are disabled</li> <li>30-32400 (30-32400s) - report interval</li> </ul>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -416,7 +416,7 @@ Energy reports - periodic<br /><h1>Overview</h1><p>This parameter determines in 
                  min="0" max="254">
         <label>151: Local control - transition time</label>
         <description><![CDATA[
-Local control - transition time<br /><h1>Overview</h1><p>This parameter determines time of smooth transition between 0% and 100% when controlling with connected switches.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+Local control - transition time<br /> <h1>Overview</h1><p>This parameter determines time of smooth transition between 0% and 100% when controlling with connected switches.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -426,7 +426,7 @@ Local control - transition time<br /><h1>Overview</h1><p>This parameter determin
                  min="0" max="254">
         <label>152: Remote control - transition time</label>
         <description><![CDATA[
-Remote control - transition time<br /><h1>Overview</h1><p>This parameter determines time needed to change the state between current and target values when controlling via Z-Wave network.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
+Remote control - transition time<br /> <h1>Overview</h1><p>This parameter determines time needed to change the state between current and target values when controlling via Z-Wave network.</p> <ul><li>0 – instantly</li> <li>1-127 (1s-127s, 1s step)</li> <li>128-254 (1min-127min, 1min step)</li> </ul>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -558,7 +558,7 @@ Remote control - transition time<br /><h1>Overview</h1><p>This parameter determi
       <parameter name="config_157_1" type="integer" groupName="configuration">
         <label>157: Start programmed sequence</label>
         <description><![CDATA[
-Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will start programmed sequence with selected number. User can define own sequences via controller. While the sequence is active, the menu is unavailable.</p>
+Start programmed sequence<br /> <h1>Overview</h1><p>Setting this parameter will start programmed sequence with selected number. User can define own sequences via controller. While the sequence is active, the menu is unavailable.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -585,7 +585,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: RGBW Sync</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>allows to synchronize state of other FIBARO RGBW Controller devices (FGRGBW-442 and FGRGBWM- 441)</p> <p>- do not use with other devices.</p>
+<br /> <h1>Overview</h1><p>allows to synchronize state of other FIBARO RGBW Controller devices (FGRGBW-442 and FGRGBWM- 441)</p> <p>- do not use with other devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -593,7 +593,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: On/Off (IN1)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN1 operation.</p>
+<br /> <h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN1 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -601,7 +601,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Dimmer (IN1)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN1 operation.</p>
+<br /> <h1>Overview</h1><p>used to change level of associated devices reflecting IN1 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -609,7 +609,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: On/Off (IN2)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN2 operation.</p>
+<br /> <h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN2 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -617,7 +617,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: Dimmer (IN2)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN2 operation.</p>
+<br /> <h1>Overview</h1><p>used to change level of associated devices reflecting IN2 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -625,7 +625,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_7" type="text" groupName="association" multiple="true">
         <label>7: On/Off (IN3)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN3 operation.</p>
+<br /> <h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN3 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -633,7 +633,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_8" type="text" groupName="association" multiple="true">
         <label>8: Dimmer (IN3)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN3 operation.</p>
+<br /> <h1>Overview</h1><p>used to change level of associated devices reflecting IN3 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -641,7 +641,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_9" type="text" groupName="association" multiple="true">
         <label>9: On/Off (IN4)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN4 operation.</p>
+<br /> <h1>Overview</h1><p>used to turn the associated devices on/off reflecting IN4 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -649,7 +649,7 @@ Start programmed sequence<br /><h1>Overview</h1><p>Setting this parameter will s
       <parameter name="group_10" type="text" groupName="association" multiple="true">
         <label>10: Dimmer (IN4)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>used to change level of associated devices reflecting IN4 operation.</p>
+<br /> <h1>Overview</h1><p>used to change level of associated devices reflecting IN4 operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

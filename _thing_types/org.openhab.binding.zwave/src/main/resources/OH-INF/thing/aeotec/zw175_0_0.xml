@@ -8,7 +8,7 @@
   <thing-type id="aeotec_zw175_00_000" listed="false">
     <label>ZW175 Smart Switch 7</label>
     <description><![CDATA[
-Smart Switch 7<br /><h1>Overview</h1><p>Aeotec Smart Switch 7 (SS7) has been crafted to power connected lighting using SmartStart, S2 framework, and Z-Wave Plus. It is powered by Aeotec’s S2 technology. </p> <ul><li>Smart Switch 7 is intended for indoor use in dry locations only. Do not use in damp, moist, and/or wet locations.</li> <li>Max-amperage: 15 amps for ZW175-A</li> <li>May-amperage: 10 amps for ZW175-C</li> </ul><br /><h2>Inclusion Information</h2><p>Getting your Smart Switch up and running is as simple as plugging it into a wall socket and adding it to your Z-Wave network.</p> <ol><li>Set your Z-Wave Controller into its 'Add Device' mode in order to add the product into your Z-Wave system. Refer to the Controller's manual if you are unsure of how to perform this step.</li> <li>Power your Smart Switch 7 to any outlet; its LED will be breathing a blue light if it is ready to be paired.</li> <li>Click Action Button 2 times slowly to set your Smart Switch 7 into pair mode.</li> <li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on its Smart Switch 7.<br />a) If pairing succeeds, it will become a bright blue light for 2 seconds. Smart Switch 7 is now a part of your Z-Wave home control system. You can configure it and its automation via your Z-Wave system; please refer to your software's user guide for precise instructions.<br />b) If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li> </ol><br /><h2>Exclusion Information</h2><p>Your Smart Switch can be removed from your Z-Wave network at any time. You’ll need to use your Z-Wave network’s main controller to do this and the following instructions will tell you how to do this using Aeotec by Aeon Labs’ Z-Stick or Minimote controller.<br /><br />If you are using other products as your main Z-Wave controller, please refer to the part of their respective manuals that tells you how to remove devices from your network.</p> <p>If you're using an existing gateway:</p> <ol><li>Set your Z-Wave Controller into its 'Remove Device' / 'Unpair Device' mode in order to remove the product from your Z-Wave system. Refer to the Controller's manual if you are unsure of how to perform this step.</li> <li>Make sure the product is powered. If not, plug it into a wall socket and power it on.</li> <li>Click Action Button 2 times quickly; it will bright violet light up to 2s.<br />a. If Removing fails, it will bright red light for 2 seconds and then turn back to Load Indicator Mode; repeat steps 1 to 3. Contact us for further support if needed.<br />b. If Removing succeeds, it will become breathing blue light. Smart Switch 7 is removed from the Z-Wave network successfully and is ready to be paired again.</li> </ol>
+Smart Switch 7<br /> <h1>Overview</h1><p>Aeotec Smart Switch 7 (SS7) has been crafted to power connected lighting using SmartStart, S2 framework, and Z-Wave Plus. It is powered by Aeotec’s S2 technology. </p> <ul><li>Smart Switch 7 is intended for indoor use in dry locations only. Do not use in damp, moist, and/or wet locations.</li> <li>Max-amperage: 15 amps for ZW175-A</li> <li>May-amperage: 10 amps for ZW175-C</li> </ul> <br /> <h2>Inclusion Information</h2><p>Getting your Smart Switch up and running is as simple as plugging it into a wall socket and adding it to your Z-Wave network.</p> <ol><li>Set your Z-Wave Controller into its 'Add Device' mode in order to add the product into your Z-Wave system. Refer to the Controller's manual if you are unsure of how to perform this step.</li> <li>Power your Smart Switch 7 to any outlet; its LED will be breathing a blue light if it is ready to be paired.</li> <li>Click Action Button 2 times slowly to set your Smart Switch 7 into pair mode.</li> <li>If your Z-Wave Controller supports S2 encryption, enter the first 5 digits of DSK into your Controller's interface if it is requested. The DSK is printed on its Smart Switch 7.<br />a) If pairing succeeds, it will become a bright blue light for 2 seconds. Smart Switch 7 is now a part of your Z-Wave home control system. You can configure it and its automation via your Z-Wave system; please refer to your software's user guide for precise instructions.<br />b) If pairing fails, it will light a solid bright red light for 2 seconds and then return to a breathing blue light; repeat steps 1 to 4 if this happens.</li> </ol> <br /> <h2>Exclusion Information</h2><p>Your Smart Switch can be removed from your Z-Wave network at any time. You’ll need to use your Z-Wave network’s main controller to do this and the following instructions will tell you how to do this using Aeotec by Aeon Labs’ Z-Stick or Minimote controller.<br /><br />If you are using other products as your main Z-Wave controller, please refer to the part of their respective manuals that tells you how to remove devices from your network.</p> <p>If you're using an existing gateway:</p> <ol><li>Set your Z-Wave Controller into its 'Remove Device' / 'Unpair Device' mode in order to remove the product from your Z-Wave system. Refer to the Controller's manual if you are unsure of how to perform this step.</li> <li>Make sure the product is powered. If not, plug it into a wall socket and power it on.</li> <li>Click Action Button 2 times quickly; it will bright violet light up to 2s.<br />a. If Removing fails, it will bright red light for 2 seconds and then turn back to Load Indicator Mode; repeat steps 1 to 3. Contact us for further support if needed.<br />b. If Removing succeeds, it will become breathing blue light. Smart Switch 7 is removed from the Z-Wave network successfully and is ready to be paired again.</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -127,7 +127,7 @@ Smart Switch 7<br /><h1>Overview</h1><p>Aeotec Smart Switch 7 (SS7) has been cr
                  min="0" max="2415">
         <label>4: Overload threshold</label>
         <description><![CDATA[
-Set Watt (W) Threshold for Overpower.<br /><h1>Overview</h1><p>If power exceeds the value set in this parameter for over 1 minute, Smart Switch 7 will report and overload report and turn off Smart Switch 7.</p>
+Set Watt (W) Threshold for Overpower.<br /> <h1>Overview</h1><p>If power exceeds the value set in this parameter for over 1 minute, Smart Switch 7 will report and overload report and turn off Smart Switch 7.</p>
         ]]></description>
         <default>2415</default>
         <limitToOptions>false</limitToOptions>
@@ -136,7 +136,7 @@ Set Watt (W) Threshold for Overpower.<br /><h1>Overview</h1><p>If power exceeds 
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Switch reaction to alarm</label>
         <description><![CDATA[
-What do to when an alarm is recieved<br /><h1>Overview</h1><p>Set the response of the switch in response to an operation performed when an alarm is received.</p>
+What do to when an alarm is recieved<br /> <h1>Overview</h1><p>Set the response of the switch in response to an operation performed when an alarm is received.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -152,7 +152,7 @@ What do to when an alarm is recieved<br /><h1>Overview</h1><p>Set the response o
                  min="0" max="32513">
         <label>9: Alarm reaction when received</label>
         <description><![CDATA[
-Configure what alarms Smart Switch 7 will react to from other Z-Wave devices.<br /><h1>Overview</h1><table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>The alarm will be triggered by open state, and be disabled by closed state.</td> </tr><tr><td>1</td> <td>The alarm will be triggered by closed state, and be disabled by open state.</td> </tr><tr><td>256</td> <td>Smoke alarm.</td> </tr><tr><td>512</td> <td>CO Alarm</td> </tr><tr><td>1024</td> <td>CO2 Alarm</td> </tr><tr><td>2048</td> <td>Heat Alarm</td> </tr><tr><td>4096</td> <td>Water Alarm</td> </tr><tr><td>8192</td> <td>Access Control</td> </tr><tr><td>16384</td> <td>Home Security</td> </tr></table><p>Value 0 and 1 cannot be used at the same time, choose one as a part of your calculation.</p> <p>Use the sum of values to determine what alarms trigger your Smart Switch 7.</p> <p>For example:</p> <p>Value = 0 + 256 + 512 + 1024 = 1792<br />0 = sets the control scheme to turn on Smart Switch 7 when open alarm state happens</p> <p>256 = allows Smoke Alarm signals to control SS7</p> <p>512 = allows CO Alarm signals to control SS7</p> <p>1024 = allows CO2 Alarm signals to control SS7</p>
+Configure what alarms Smart Switch 7 will react to from other Z-Wave devices.<br /> <h1>Overview</h1><table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>The alarm will be triggered by open state, and be disabled by closed state.</td> </tr><tr><td>1</td> <td>The alarm will be triggered by closed state, and be disabled by open state.</td> </tr><tr><td>256</td> <td>Smoke alarm.</td> </tr><tr><td>512</td> <td>CO Alarm</td> </tr><tr><td>1024</td> <td>CO2 Alarm</td> </tr><tr><td>2048</td> <td>Heat Alarm</td> </tr><tr><td>4096</td> <td>Water Alarm</td> </tr><tr><td>8192</td> <td>Access Control</td> </tr><tr><td>16384</td> <td>Home Security</td> </tr></table><p>Value 0 and 1 cannot be used at the same time, choose one as a part of your calculation.</p> <p>Use the sum of values to determine what alarms trigger your Smart Switch 7.</p> <p>For example:</p> <p>Value = 0 + 256 + 512 + 1024 = 1792<br />0 = sets the control scheme to turn on Smart Switch 7 when open alarm state happens</p> <p>256 = allows Smoke Alarm signals to control SS7</p> <p>512 = allows CO Alarm signals to control SS7</p> <p>1024 = allows CO2 Alarm signals to control SS7</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -173,7 +173,7 @@ Configure what alarms Smart Switch 7 will react to from other Z-Wave devices.<br
                  min="0" max="255">
         <label>10: Release/Disable alarm</label>
         <description><![CDATA[
-Sets how you are able to disable Smart Switch 7s alarm state<br /><h1>Overview</h1><table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Tap 3 times to disable the alarm state.</td> </tr><tr><td>1</td> <td>Notification idle events.</td> </tr><tr><td>10 - 255</td> <td>Sets time in minutes on how long the alarm state should be held.</td> </tr></table>
+Sets how you are able to disable Smart Switch 7s alarm state<br /> <h1>Overview</h1><table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Tap 3 times to disable the alarm state.</td> </tr><tr><td>1</td> <td>Notification idle events.</td> </tr><tr><td>10 - 255</td> <td>Sets time in minutes on how long the alarm state should be held.</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -183,7 +183,7 @@ Sets how you are able to disable Smart Switch 7s alarm state<br /><h1>Overview</
                  min="0" max="255">
         <label>18: Flash frequency</label>
         <description><![CDATA[
-Configures the LED flash frequency and amount of time<br /><h1>Overview</h1><table><tr><td><strong>Byte Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>(MSB Value 1)<br />1 - 9</td> <td>Sets the flash frequency in seconds. (Default = 0x0002 or 2)</td> </tr></table>
+Configures the LED flash frequency and amount of time<br /> <h1>Overview</h1><table><tr><td><strong>Byte Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>(MSB Value 1)<br />1 - 9</td> <td>Sets the flash frequency in seconds. (Default = 0x0002 or 2)</td> </tr></table>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -200,7 +200,7 @@ Configures the LED flash frequency and amount of time<br /><h1>Overview</h1><tab
                  min="0" max="2">
         <label>20: Power restored state</label>
         <description><![CDATA[
-Switches state after an power outage<br /><h1>Overview</h1><p>Sets which state Smart Switch 7 switches to when power is lost then restored (power outage)</p> <table><tr><td> <p><strong>Value</strong></p> </td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Last known state. (restore state before power loss)</td> </tr><tr><td>1</td> <td>Power restored to ON.</td> </tr><tr><td>2</td> <td> <p>Power restored to OFF.</p> </td> </tr></table>
+Switches state after an power outage<br /> <h1>Overview</h1><p>Sets which state Smart Switch 7 switches to when power is lost then restored (power outage)</p> <table><tr><td> <p><strong>Value</strong></p> </td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Last known state. (restore state before power loss)</td> </tr><tr><td>1</td> <td>Power restored to ON.</td> </tr><tr><td>2</td> <td> <p>Power restored to OFF.</p> </td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -209,7 +209,7 @@ Switches state after an power outage<br /><h1>Overview</h1><p>Sets which state S
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Status Update</label>
         <description><![CDATA[
-Determine which reports are sent to your gateway<br /><h1>Overview</h1><p>Keeps the status of Smart Switch 7 in sync with your Z-Wave gateway. Determine which reports are sent to your gateway upon a state change (ie. If switch turns ON, then the switch will forward state update to Z-Wave gateway).</p> <p>Size = 1 Byte</p> <p>Default Setting = 2</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>No report sent.</td> </tr><tr><td>1</td> <td>Report Basic Report.</td> </tr><tr><td>2</td> <td>Report Binary Switch.</td> </tr></table>
+Determine which reports are sent to your gateway<br /> <h1>Overview</h1><p>Keeps the status of Smart Switch 7 in sync with your Z-Wave gateway. Determine which reports are sent to your gateway upon a state change (ie. If switch turns ON, then the switch will forward state update to Z-Wave gateway).</p> <p>Size = 1 Byte</p> <p>Default Setting = 2</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>No report sent.</td> </tr><tr><td>1</td> <td>Report Basic Report.</td> </tr><tr><td>2</td> <td>Report Binary Switch.</td> </tr></table>
         ]]></description>
         <default>2</default>
         <options>
@@ -223,7 +223,7 @@ Determine which reports are sent to your gateway<br /><h1>Overview</h1><p>Keeps 
       <parameter name="config_81_1" type="integer" groupName="configuration">
         <label>81: LED indicator mode</label>
         <description><![CDATA[
-Allows you to configure how the LED indicator works<br /><h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>LED Disabled.</td> </tr><tr><td>1</td> <td>Night Light Mode. <ul><li>Use Parameter 82 to configure Night Light timing.</li> <li>Brightness can be controlled via Multilevel Switch CC.</li> <li>Colour can be controlled via Color Switch CC.</li> </ul></td> </tr><tr><td>2</td> <td>On/Off Mode. <ul><li>Default use <ul><li>ON = 50% white light</li> <li>OFF = 10% green light</li> </ul></li> <li>Brightness can be controlled via Multilevel Switch CC.</li> <li>Colour can be controlled via Color Switch CC.</li> </ul></td> </tr></table>
+Allows you to configure how the LED indicator works<br /> <h1>Overview</h1><table><tr><td>Value</td> <td>Description</td> </tr><tr><td>0</td> <td>LED Disabled.</td> </tr><tr><td>1</td> <td>Night Light Mode. <ul><li>Use Parameter 82 to configure Night Light timing.</li> <li>Brightness can be controlled via Multilevel Switch CC.</li> <li>Colour can be controlled via Color Switch CC.</li> </ul></td> </tr><tr><td>2</td> <td>On/Off Mode. <ul><li>Default use <ul><li>ON = 50% white light</li> <li>OFF = 10% green light</li> </ul></li> <li>Brightness can be controlled via Multilevel Switch CC.</li> <li>Colour can be controlled via Color Switch CC.</li> </ul></td> </tr></table>
         ]]></description>
         <default>2</default>
         <options>
@@ -238,7 +238,7 @@ Allows you to configure how the LED indicator works<br /><h1>Overview</h1><table
                  min="0" max="4294967295">
         <label>82: Night Light Mode</label>
         <description><![CDATA[
-Enable or disable Night Light Mode during specific times<br /><h1>Overview</h1><table><tr><td>Value 1</td> <td>ON Hour (0 - 23)</td> </tr><tr><td>Value 2</td> <td>ON Minute (0 - 59)</td> </tr><tr><td>Value 3</td> <td>OFF Hour (0 - 23)</td> </tr><tr><td>Value 4</td> <td>OFF Minute (0 - 59)</td> </tr></table><p>Byte value = 0x<strong>(Value 1)(Value 2)(Value 3)(Value 4)</strong></p> <p>Suggestion - use a hexadecimal to decimal converter that can be easily found on google.</p> <p>For example:</p> <p>If you want to set Night Light Mode to be enabled at 19:00 at night and disable at 07:30 in the morning, you just need to configure:</p> <p>Value1=0x13, Value2=0x00, Value3=0x07, Value4=0x1E.</p> <p>Input 0x1300071E into a hexadecimal calculator, the output decimal value will be 318768926</p>
+Enable or disable Night Light Mode during specific times<br /> <h1>Overview</h1><table><tr><td>Value 1</td> <td>ON Hour (0 - 23)</td> </tr><tr><td>Value 2</td> <td>ON Minute (0 - 59)</td> </tr><tr><td>Value 3</td> <td>OFF Hour (0 - 23)</td> </tr><tr><td>Value 4</td> <td>OFF Minute (0 - 59)</td> </tr></table> <p>Byte value = 0x<strong>(Value 1)(Value 2)(Value 3)(Value 4)</strong></p> <p>Suggestion - use a hexadecimal to decimal converter that can be easily found on google.</p> <p>For example:</p> <p>If you want to set Night Light Mode to be enabled at 19:00 at night and disable at 07:30 in the morning, you just need to configure:</p> <p>Value1=0x13, Value2=0x00, Value3=0x07, Value4=0x1E.</p> <p>Input 0x1300071E into a hexadecimal calculator, the output decimal value will be 318768926</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -248,7 +248,7 @@ Enable or disable Night Light Mode during specific times<br /><h1>Overview</h1><
                  min="0" max="2300">
         <label>91: Watt threshold</label>
         <description><![CDATA[
-When to send a watt report<br /><h1>Overview</h1><p>If Watt passes the threshold setting by + or -, a Watt report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable Watt threshold.</td> </tr><tr><td>1 - 2300</td> <td>Watt threshold setting.</td> </tr></table>
+When to send a watt report<br /> <h1>Overview</h1><p>If Watt passes the threshold setting by + or -, a Watt report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable Watt threshold.</td> </tr><tr><td>1 - 2300</td> <td>Watt threshold setting.</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -258,7 +258,7 @@ When to send a watt report<br /><h1>Overview</h1><p>If Watt passes the threshold
                  min="0" max="10000">
         <label>92: kWh threshold</label>
         <description><![CDATA[
-When to send a kWh report<br /><h1>Overview</h1><p>If kWh passes the threshold setting by + or -, a kWh report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable kWh threshold.</td> </tr><tr><td>1 - 10000</td> <td>kWh threshold setting.</td> </tr></table>
+When to send a kWh report<br /> <h1>Overview</h1><p>If kWh passes the threshold setting by + or -, a kWh report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable kWh threshold.</td> </tr><tr><td>1 - 10000</td> <td>kWh threshold setting.</td> </tr></table>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -268,7 +268,7 @@ When to send a kWh report<br /><h1>Overview</h1><p>If kWh passes the threshold s
                  min="0" max="100">
         <label>93: Current threshold</label>
         <description><![CDATA[
-When to send a current report<br /><h1>Overview</h1><p>If current passes the threshold setting by + or -, a current report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable Current threshold.</td> </tr><tr><td>1 - 100</td> <td>Current threshold setting by scale of 0.1A</td> </tr></table><p>If value 10 is set, this is the equivalent of setting threshold to 1.0A.</p>
+When to send a current report<br /> <h1>Overview</h1><p>If current passes the threshold setting by + or -, a current report will be sent to update its value.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Disable Current threshold.</td> </tr><tr><td>1 - 100</td> <td>Current threshold setting by scale of 0.1A</td> </tr></table> <p>If value 10 is set, this is the equivalent of setting threshold to 1.0A.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -278,7 +278,7 @@ When to send a current report<br /><h1>Overview</h1><p>If current passes the thr
                  min="0" max="15">
         <label>101: Timed report enable/disable</label>
         <description><![CDATA[
-Configure timed report<br /><h1>Overview</h1><p>Sets what sensors should be reported at a timed interval. This can be used at the same time as threshold reporting to allow both thresholds and timed reports to be used.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>1</td> <td>kWh (Accumulated Power)</td> </tr><tr><td>2</td> <td>Watt (Power used at the time of the report)</td> </tr><tr><td>4</td> <td>Current</td> </tr><tr><td>8</td> <td>Voltage</td> </tr></table><p>The values in the table above should be added together. </p> <p>For example:</p> <p>If you want kWh and Watt only, you would add 1 + 2 = 3.<br /><br />If you want all values (current, voltage, watt, kWh) reported at an interval, you would add 1 + 2 + 4 + 8 = 15.</p> <p>If 0 is set to this parameter setting, this would completely disable timed reports. (Parameter 111 does not need to be set).</p>
+Configure timed report<br /> <h1>Overview</h1><p>Sets what sensors should be reported at a timed interval. This can be used at the same time as threshold reporting to allow both thresholds and timed reports to be used.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>1</td> <td>kWh (Accumulated Power)</td> </tr><tr><td>2</td> <td>Watt (Power used at the time of the report)</td> </tr><tr><td>4</td> <td>Current</td> </tr><tr><td>8</td> <td>Voltage</td> </tr></table><p>The values in the table above should be added together. </p> <p>For example:</p> <p>If you want kWh and Watt only, you would add 1 + 2 = 3.<br /><br />If you want all values (current, voltage, watt, kWh) reported at an interval, you would add 1 + 2 + 4 + 8 = 15.</p> <p>If 0 is set to this parameter setting, this would completely disable timed reports. (Parameter 111 does not need to be set).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -288,7 +288,7 @@ Configure timed report<br /><h1>Overview</h1><p>Sets what sensors should be repo
                  min="30" max="2592000">
         <label>111: Timed report interval</label>
         <description><![CDATA[
-Reports the sensors set on Parameter 101<br /><h1>Overview</h1><p>Reports the sensors set on Parameter 101.</p> <p>Size = 4 Byte</p> <p>Default Setting = 600</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>30 - 2592000</td> <td>Interval set in seconds.</td> </tr></table>
+Reports the sensors set on Parameter 101<br /> <h1>Overview</h1><p>Reports the sensors set on Parameter 101.</p> <p>Size = 4 Byte</p> <p>Default Setting = 600</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>30 - 2592000</td> <td>Interval set in seconds.</td> </tr></table>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
@@ -298,7 +298,7 @@ Reports the sensors set on Parameter 101<br /><h1>Overview</h1><p>Reports the se
                  min="0" max="4294967295">
         <label>255: Factory reset</label>
         <description><![CDATA[
-Factory reset the smart switch 7<br /><h1>Overview</h1><p>This value can only be configured to reset default values of Smart Switch 7 parameter settings. This can also be used to factory reset and remove it from your Z-Wave network.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Do nothing.</td> </tr><tr><td>Any value within 4 bytes.</td> <td>Reset Parameter Settings to default settings.</td> </tr><tr><td>0x55555555 or 1431655765</td> <td>Completely factory reset and remove from network.</td> </tr></table>
+Factory reset the smart switch 7<br /> <h1>Overview</h1><p>This value can only be configured to reset default values of Smart Switch 7 parameter settings. This can also be used to factory reset and remove it from your Z-Wave network.</p> <table><tr><td><strong>Value</strong></td> <td><strong>Description</strong></td> </tr><tr><td>0</td> <td>Do nothing.</td> </tr><tr><td>Any value within 4 bytes.</td> <td>Reset Parameter Settings to default settings.</td> </tr><tr><td>0x55555555 or 1431655765</td> <td>Completely factory reset and remove from network.</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="linear_pir200_00_000" listed="false">
     <label>PIR-200 Motion Sensor</label>
     <description><![CDATA[
-Motion Sensor<br /><h1>Overview</h1><p>The PIR-200 Motion Sensor is designed to monitor guest rooms and suites where furniture layout may block a wall-mounted detector’s line of sight. The Sensor combines state-of-the-art optic design with advanced detection algorithms while covering up to 130 feet line of sight.<br />Low battery signalling allows for efficient power management and prolonged battery life. In addition, each Sensor is constantly monitored for tampering and reports to the receiver. <br />This device is typically used in conjunction with the DS-100 and complies with US and European standards.</p> <br /><h2>Inclusion Information</h2><p>Use paper clip, push button for one second.</p> <br /><h2>Exclusion Information</h2><p>Use paper clip, push button for one second.</p> <br /><h2>Wakeup Information</h2><p>Use paper clip, push button a few times.</p>
+Motion Sensor<br /> <h1>Overview</h1><p>The PIR-200 Motion Sensor is designed to monitor guest rooms and suites where furniture layout may block a wall-mounted detector’s line of sight. The Sensor combines state-of-the-art optic design with advanced detection algorithms while covering up to 130 feet line of sight.<br />Low battery signalling allows for efficient power management and prolonged battery life. In addition, each Sensor is constantly monitored for tampering and reports to the receiver. <br />This device is typically used in conjunction with the DS-100 and complies with US and European standards.</p> <br /> <h2>Inclusion Information</h2><p>Use paper clip, push button for one second.</p> <br /> <h2>Exclusion Information</h2><p>Use paper clip, push button for one second.</p> <br /> <h2>Wakeup Information</h2><p>Use paper clip, push button a few times.</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -62,7 +62,7 @@ Motion Sensor<br /><h1>Overview</h1><p>The PIR-200 Motion Sensor is designed to 
                  min="1" max="255">
         <label>5: Re-trigger duration</label>
         <description><![CDATA[
-Re-trigger duration<br /><h1>Overview</h1><p>User can change value from 1 to 255 minutes to setup the re-trigger time when there is no movement detected in the period of time.</p>
+Re-trigger duration<br /> <h1>Overview</h1><p>User can change value from 1 to 255 minutes to setup the re-trigger time when there is no movement detected in the period of time.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -71,7 +71,7 @@ Re-trigger duration<br /><h1>Overview</h1><p>User can change value from 1 to 255
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Motion Sensitivity</label>
         <description><![CDATA[
-Motion Sensitivity<br /><h1>Overview</h1><p>1 = sensitive</p> <p>7 = insensitive</p>
+Motion Sensitivity<br /> <h1>Overview</h1><p>1 = sensitive</p> <p>7 = insensitive</p>
         ]]></description>
         <default>4</default>
         <options>

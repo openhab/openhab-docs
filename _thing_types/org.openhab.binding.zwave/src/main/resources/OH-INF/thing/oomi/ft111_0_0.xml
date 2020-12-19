@@ -8,7 +8,7 @@
   <thing-type id="oomi_ft111_00_000" listed="false">
     <label>FT111 Nano Dimmer</label>
     <description><![CDATA[
-Nano Dimmer<br /><h1>Overview</h1><p>Fantem Nano Dimmer is a Z-Wave Smart Dimmer specifically used to enable Z-Wave command and control (on/off/dim) of any wall switches. It can report immediate wattage consumption or kWh energy usage over a period of time.</p> <p>In the event of power failure, non-volatile memory retains all programmed information relating to the unit’s operating status. It can connect to 2 external manual switches to control the load ON/OFF independently.</p> <p>Its surface has a pin socket, which can be used for connecting to the touch panel, so you can also use the touch panel to control the Nano Dimmer.</p> <p>The Nano Dimmer is also a security Z-Wave plus device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /><h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode. Press the Action Button on the Nano Dimmer or toggle the external manual switch once, the green LED (non-secure indication) will blink to indicate the Nano Dimmer is entering into pairing mode.</p> <p>If the Nano Dimmer has been successfully added to your Z-Wave network, its RGB LED will be solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colourful gradient, repeat the instructions above.</p> <br /><h2>Exclusion Information</h2><p>Set your Z-Wave controller into removal mode. 2. Press the Action Button on the Nano Dimmer. 3.</p> <p>If the Nano Dimmer has been successfully removed from your Z-Wave network, its RGB LED will remain colourful gradient. If the removal was unsuccessful, the RGB LED will still be solid (following the state of the output load), repeat the instructions above.</p>
+Nano Dimmer<br /> <h1>Overview</h1><p>Fantem Nano Dimmer is a Z-Wave Smart Dimmer specifically used to enable Z-Wave command and control (on/off/dim) of any wall switches. It can report immediate wattage consumption or kWh energy usage over a period of time.</p> <p>In the event of power failure, non-volatile memory retains all programmed information relating to the unit’s operating status. It can connect to 2 external manual switches to control the load ON/OFF independently.</p> <p>Its surface has a pin socket, which can be used for connecting to the touch panel, so you can also use the touch panel to control the Nano Dimmer.</p> <p>The Nano Dimmer is also a security Z-Wave plus device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /> <h2>Inclusion Information</h2><p>Set your Z-Wave controller into pairing mode. Press the Action Button on the Nano Dimmer or toggle the external manual switch once, the green LED (non-secure indication) will blink to indicate the Nano Dimmer is entering into pairing mode.</p> <p>If the Nano Dimmer has been successfully added to your Z-Wave network, its RGB LED will be solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colourful gradient, repeat the instructions above.</p> <br /> <h2>Exclusion Information</h2><p>Set your Z-Wave controller into removal mode. 2. Press the Action Button on the Nano Dimmer. 3.</p> <p>If the Nano Dimmer has been successfully removed from your Z-Wave network, its RGB LED will remain colourful gradient. If the removal was unsuccessful, the RGB LED will still be solid (following the state of the output load), repeat the instructions above.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -133,7 +133,7 @@ Nano Dimmer<br /><h1>Overview</h1><p>Fantem Nano Dimmer is a Z-Wave Smart Dimmer
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Group 1 notificaiton</label>
         <description><![CDATA[
-Set notification sent to associated nodes (group 1)<br /><h1>Overview</h1><p>To set which notification would be sent to the associated devices (Group 1) when the state of Nano Dimmer’s load is changed.</p>
+Set notification sent to associated nodes (group 1)<br /> <h1>Overview</h1><p>To set which notification would be sent to the associated devices (Group 1) when the state of Nano Dimmer’s load is changed.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -149,7 +149,7 @@ Set notification sent to associated nodes (group 1)<br /><h1>Overview</h1><p>To 
       <parameter name="config_81_1" type="integer" groupName="configuration">
         <label>81: Group 3 notificaiton</label>
         <description><![CDATA[
-Set notification sent to associated nodes (group 3)<br /><h1>Overview</h1><p>set notification sent to associated nodes (group 4)</p> <p>To set which notification would be sent to the associated nodes in association Group 3 when using the external switch 1 to switch the loads.</p>
+Set notification sent to associated nodes (group 3)<br /> <h1>Overview</h1><p>set notification sent to associated nodes (group 4)</p> <p>To set which notification would be sent to the associated nodes in association Group 3 when using the external switch 1 to switch the loads.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -162,7 +162,7 @@ Set notification sent to associated nodes (group 3)<br /><h1>Overview</h1><p>set
       <parameter name="config_82_1" type="integer" groupName="configuration">
         <label>82: Group 4 notificaiton</label>
         <description><![CDATA[
-Set notification sent to associated nodes (group 4)<br /><h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association Group 4 when using the external switch 2 to switch the loads.</p>
+Set notification sent to associated nodes (group 4)<br /> <h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association Group 4 when using the external switch 2 to switch the loads.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -176,7 +176,7 @@ Set notification sent to associated nodes (group 4)<br /><h1>Overview</h1><p>To 
                  min="0" max="16843197">
         <label>85: Set appointment 1</label>
         <description><![CDATA[
-Set appointment 1<br /><h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
+Set appointment 1<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -185,7 +185,7 @@ Set appointment 1<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
                  min="0" max="16843197">
         <label>86: Set appointment 2</label>
         <description><![CDATA[
-Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
+Set appointment 2<br /> <h1>Overview</h1><p>0 to 99     The brightness level<br />256 to 316     The minute value of ON time<br />65536 to 65560     The hour value of ON time<br />16777215 to 16777222     The day value (Mon to Sun)</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -212,7 +212,7 @@ Set appointment 2<br /><h1>Overview</h1><p>0 to 99     The brightness level<b
                  min="0" max="100">
         <label>92: Set the threshold value of percent power</label>
         <description><![CDATA[
-Threshold change in wattage (in terms of percentage)<br /><h1>Overview</h1><p>Threshold change in wattage (in terms of percentage) to induce an automatic report</p>
+Threshold change in wattage (in terms of percentage)<br /> <h1>Overview</h1><p>Threshold change in wattage (in terms of percentage) to induce an automatic report</p>
         ]]></description>
         <default>5</default>
       </parameter>
@@ -232,7 +232,7 @@ Threshold change in wattage (in terms of percentage)<br /><h1>Overview</h1><p>Th
                  min="0" max="255">
         <label>101: Set group 1 reports</label>
         <description><![CDATA[
-To set which reports need to be sent in Report group 1<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
+To set which reports need to be sent in Report group 1<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -242,7 +242,7 @@ To set which reports need to be sent in Report group 1<br /><h1>Overview</h1><p>
                  min="0" max="255">
         <label>102: Set group 2 reports</label>
         <description><![CDATA[
-To set which reports need to be sent in Report group 2<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
+To set which reports need to be sent in Report group 2<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -251,7 +251,7 @@ To set which reports need to be sent in Report group 2<br /><h1>Overview</h1><p>
                  min="0" max="15">
         <label>103: Reports sent to Report group 3</label>
         <description><![CDATA[
-Reports sent to Report group 3<br /><h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
+Reports sent to Report group 3<br /> <h1>Overview</h1><p>1     Send Meter Report of voltage (V)<br />2     Send Meter Report of current (A)<br />4     Send Meter Report of wattage (W)<br />8     Send Meter Report of energy (kWh)</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -447,7 +447,7 @@ Reports sent to Report group 3<br /><h1>Overview</h1><p>1     Send Meter Repo
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline. When the load state of Nano Dimmer (on/off/dim the load ) is changed, the Hail CC, Switch Multilevel Report and Basic Report (configured by parameter 80) can be sent to the associated nodes in this group.</p>
+Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p>Z-Wave Plus Lifeline. When the load state of Nano Dimmer (on/off/dim the load ) is changed, the Hail CC, Switch Multilevel Report and Basic Report (configured by parameter 80) can be sent to the associated nodes in this group.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -455,7 +455,7 @@ Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline. When the loa
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Forward</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Forward the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Switch all to the associated nodes in Group 2 when the Nano Dimmer receives the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Switch all commands from main controller.</p>
+<br /> <h1>Overview</h1><p>Forward the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Switch all to the associated nodes in Group 2 when the Nano Dimmer receives the Basic Set, Switch Binary Set, Switch Multilevel Start Level Change, Switch Multilevel Stop Level Change, Switch Multilevel Set, Switch all commands from main controller.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -463,7 +463,7 @@ Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline. When the loa
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Send Basic Set (Group 3) Sw 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Send Basic Set (configured by parameter 0x51 ) to the associated nodes in Group 3 when the external switch S1 is operated</p>
+<br /> <h1>Overview</h1><p>Send Basic Set (configured by parameter 0x51 ) to the associated nodes in Group 3 when the external switch S1 is operated</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -471,7 +471,7 @@ Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline. When the loa
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Send Basic Set (Group 3) Sw 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Send Basic Set (configured by parameter 0x52) to the associated nodes in Group 4 when the external switch S2 is operated</p>
+<br /> <h1>Overview</h1><p>Send Basic Set (configured by parameter 0x52) to the associated nodes in Group 4 when the external switch S2 is operated</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

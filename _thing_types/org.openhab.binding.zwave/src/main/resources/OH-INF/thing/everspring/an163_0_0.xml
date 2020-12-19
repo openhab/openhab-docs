@@ -8,7 +8,7 @@
   <thing-type id="everspring_an163_00_000" listed="false">
     <label>AN163 Metering Power Switch</label>
     <description><![CDATA[
-Metering Power Switch<br /><h1>Overview</h1><p>Remote On/Off control of the connected load is possible with other manufacturer’s Wireless Controller. Each module is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots</p> <p>This plug-in ON/OFF Module is able to detect current wattage (5~1440W) and overload wattage of connected non-dimmable lights or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be locked out of which LED will flash quickly for 30 seconds. However, unplug and re-connect the Module will reset its overload condition to normal status</p> <br /><h2>Inclusion Information</h2><p>Pressing On/Off button three times within 1.5 seconds will enter inclusion mode</p> <br /><h2>Exclusion Information</h2><p>Pressing On/Off button three times within 1.5 seconds will enter exclusion mode.</p>
+Metering Power Switch<br /> <h1>Overview</h1><p>Remote On/Off control of the connected load is possible with other manufacturer’s Wireless Controller. Each module is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots</p> <p>This plug-in ON/OFF Module is able to detect current wattage (5~1440W) and overload wattage of connected non-dimmable lights or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be locked out of which LED will flash quickly for 30 seconds. However, unplug and re-connect the Module will reset its overload condition to normal status</p> <br /> <h2>Inclusion Information</h2><p>Pressing On/Off button three times within 1.5 seconds will enter inclusion mode</p> <br /> <h2>Exclusion Information</h2><p>Pressing On/Off button three times within 1.5 seconds will enter exclusion mode.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -69,7 +69,7 @@ Metering Power Switch<br /><h1>Overview</h1><p>Remote On/Off control of the conn
                  min="0" max="120">
         <label>1: True Period</label>
         <description><![CDATA[
-Timeout before unit transmits ON/OFF state after manual button press<br /><h1>Overview</h1><p>This setting configures the timeout after the manual on/off button is pressed before the status is transmitted. When the on/off button is pressed, the timer starts. After the timeout expires, the status of the switch is examined, and if it is different than it was prior to the first button press, the updated status is transmitted. If it is the same, no status is transmitted.</p> <p>The time setting is made in increments of 100ms, so a setting of "10" sets the timer to 10 * 100ms, or 1000ms (1s).</p>
+Timeout before unit transmits ON/OFF state after manual button press<br /> <h1>Overview</h1><p>This setting configures the timeout after the manual on/off button is pressed before the status is transmitted. When the on/off button is pressed, the timer starts. After the timeout expires, the status of the switch is examined, and if it is different than it was prior to the first button press, the updated status is transmitted. If it is the same, no status is transmitted.</p> <p>The time setting is made in increments of 100ms, so a setting of "10" sets the timer to 10 * 100ms, or 1000ms (1s).</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Timeout before unit transmits ON/OFF state after manual button press<br /><h1>Ov
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Send Basic Command to Group 2</label>
         <description><![CDATA[
-Configure the unit to send command to other devices in Grouping 2<br /><h1>Overview</h1><p>If set to 0, pressing the manual on/off button or receiving a basic_set command will not send a command to other devices in grouping 2. If set to 1, the device will send a command to other devices in grouping 2.</p>
+Configure the unit to send command to other devices in Grouping 2<br /> <h1>Overview</h1><p>If set to 0, pressing the manual on/off button or receiving a basic_set command will not send a command to other devices in grouping 2. If set to 1, the device will send a command to other devices in grouping 2.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -92,7 +92,7 @@ Configure the unit to send command to other devices in Grouping 2<br /><h1>Overv
                  min="0" max="3240">
         <label>3: Meter Report Period (W)</label>
         <description><![CDATA[
-How often the meter should report load (W).<br /><h1>Overview</h1><p>This setting configures how often the module should report instant power load (in Watts) to the controller. The maximum interval is 9h (10s * 3240 / 3600 = 9h).</p>
+How often the meter should report load (W).<br /> <h1>Overview</h1><p>This setting configures how often the module should report instant power load (in Watts) to the controller. The maximum interval is 9h (10s * 3240 / 3600 = 9h).</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -102,7 +102,7 @@ How often the meter should report load (W).<br /><h1>Overview</h1><p>This settin
                  min="0" max="10080">
         <label>4: Meter Report Period (kWh)</label>
         <description><![CDATA[
-How often the meter should report load (kWh).<br /><h1>Overview</h1><p>This setting configures the period for the module to report power load over time (kWh). The default is 24h. Maximum period is 1 week (1min * 10080 / 60 = 168h = 1 week). Smaller loads generally need more time for accurate calculation of kilowatt-hours. </p>
+How often the meter should report load (kWh).<br /> <h1>Overview</h1><p>This setting configures the period for the module to report power load over time (kWh). The default is 24h. Maximum period is 1 week (1min * 10080 / 60 = 168h = 1 week). Smaller loads generally need more time for accurate calculation of kilowatt-hours. </p>
         ]]></description>
         <default>1440</default>
         <limitToOptions>false</limitToOptions>
@@ -112,14 +112,14 @@ How often the meter should report load (kWh).<br /><h1>Overview</h1><p>This sett
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Grouping 1</label>
         <description><![CDATA[
-Grouping 1 reports status<br /><h1>Overview</h1><p> Grouping 1 includes ALARM_REPORT, SWITCH_BINARY_REPORT, METER_REPORT_COMMAND</p>
+Grouping 1 reports status<br /> <h1>Overview</h1><p> Grouping 1 includes ALARM_REPORT, SWITCH_BINARY_REPORT, METER_REPORT_COMMAND</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Grouping 2</label>
         <description><![CDATA[
-Allows control of up to four other devices<br /><h1>Overview</h1><p> Grouping 2 includes BASIC_SET.</p>
+Allows control of up to four other devices<br /> <h1>Overview</h1><p> Grouping 2 includes BASIC_SET.</p>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>

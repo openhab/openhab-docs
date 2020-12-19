@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_nasds01z_00_000" listed="false">
     <label>NAS-DS01Z Door/Window Sensor</label>
     <description><![CDATA[
-Door/Window Sensor<br /><h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed.<br />The battery operated sensor consits of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.</p> <p>Technical parameters:</p> <ul><li>Power: CR14250 x1</li> <li>Standby current: 1uA</li> <li>Battery life: 10 years</li> <li>Radio Protocol: Z-wave</li> <li>Radio Frequency: 868.4MHz EU; 908.4MHz US; 921.4MHz ANZ; 869.2MHz RU</li> <li>Wireless distance：50m</li> <li>Operation temperature: 0-40℃</li> <li>Storage temperature: 0-60℃</li> <li>Size: Contact sensor main body (L x W x H): 70mmx20mmx20mm Contact sensor deputy body (L x W x H): 40mmx11mmx11mm</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the device cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode.</li> </ol><br /><h2>Wakeup Information</h2><p>Press the button three times within 1.5 second to wake the device. If pressed successfully, the LED will blink one time.</p> <ul><li>The minimum wakeup interval is 300s (5 minutes)</li> <li>The maximum wakeup interval is 16,777,200s (about 194 days)</li> <li>Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…</li> <li>Note: The default value is 12 hours. This value is longer, the battery life is greater.</li> </ul>
+Door/Window Sensor<br /> <h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed.<br />The battery operated sensor consits of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.</p> <p>Technical parameters:</p> <ul><li>Power: CR14250 x1</li> <li>Standby current: 1uA</li> <li>Battery life: 10 years</li> <li>Radio Protocol: Z-wave</li> <li>Radio Frequency: 868.4MHz EU; 908.4MHz US; 921.4MHz ANZ; 869.2MHz RU</li> <li>Wireless distance：50m</li> <li>Operation temperature: 0-40℃</li> <li>Storage temperature: 0-60℃</li> <li>Size: Contact sensor main body (L x W x H): 70mmx20mmx20mm Contact sensor deputy body (L x W x H): 40mmx11mmx11mm</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Remove the device cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the button three times within 1.5 second to wake the device. If pressed successfully, the LED will blink one time.</p> <ul><li>The minimum wakeup interval is 300s (5 minutes)</li> <li>The maximum wakeup interval is 16,777,200s (about 194 days)</li> <li>Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…</li> <li>Note: The default value is 12 hours. This value is longer, the battery life is greater.</li> </ul>
     ]]></description>
     <category>Door</category>
 
@@ -69,7 +69,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>The NEO Coolcam Door/Window Sensor p
                  min="0" max="65535">
         <label>1: ON/OFF Delay</label>
         <description><![CDATA[
-Delay before the OFF command is transmitted<br /><h1>Overview</h1><p>Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.</p>
+Delay before the OFF command is transmitted<br /> <h1>Overview</h1><p>Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -79,7 +79,7 @@ Delay before the OFF command is transmitted<br /><h1>Overview</h1><p>Adjust the 
                  min="0" max="255">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Command sent when door/window is opened or closed<br /><h1>Overview</h1><p>Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1 - 99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
+Basic Set Command sent when door/window is opened or closed<br /> <h1>Overview</h1><p>Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1 - 99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -89,7 +89,7 @@ Basic Set Command sent when door/window is opened or closed<br /><h1>Overview</h
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Is assigned to the device status - OPEN/CLOSED.<br /><h1>Overview</h1><p>It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.</p> <ul><li>NOTIFICATION_REPORT</li> <li>BATTERY_REPORT</li> <li>SENSOR_BINARY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
+Is assigned to the device status - OPEN/CLOSED.<br /> <h1>Overview</h1><p>It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.</p> <ul> <li>NOTIFICATION_REPORT</li> <li>BATTERY_REPORT</li> <li>SENSOR_BINARY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -97,7 +97,7 @@ Is assigned to the device status - OPEN/CLOSED.<br /><h1>Overview</h1><p>It enab
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.<br /><h1>Overview</h1><p>BASIC_SET</p>
+Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.<br /> <h1>Overview</h1><p>BASIC_SET</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -105,7 +105,7 @@ Sending control commands to associated devices. This association group is config
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-Send Notification to associated devices.<br /><h1>Overview</h1><p>NOTIFICATION_REPORT</p>
+Send Notification to associated devices.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -113,7 +113,7 @@ Send Notification to associated devices.<br /><h1>Overview</h1><p>NOTIFICATION_R
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-Send Notification to associated devices.<br /><h1>Overview</h1><p>SENSOR_BINARY_REPORT</p>
+Send Notification to associated devices.<br /> <h1>Overview</h1><p>SENSOR_BINARY_REPORT</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="merten_507502_00_000" listed="false">
     <label>507502 Flush-mounted switch</label>
     <description><![CDATA[
-Flush-mounted switch<br /><h1>Overview</h1><p>The flush-mounted receiver can be used to switch loads on and off via radio (for information about permitted loads, see the technical data). When it receives the radio signal, the flush-mounted receiver switches the corresponding contact.</p> <br /><h2>Inclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Exclusion Information</h2><p>Triple click on the switch button</p> <br /><h2>Wakeup Information</h2><p>Triple click on the switch button</p>
+Flush-mounted switch<br /> <h1>Overview</h1><p>The flush-mounted receiver can be used to switch loads on and off via radio (for information about permitted loads, see the technical data). When it receives the radio signal, the flush-mounted receiver switches the corresponding contact.</p> <br /> <h2>Inclusion Information</h2><p>Triple click on the switch button</p> <br /> <h2>Exclusion Information</h2><p>Triple click on the switch button</p> <br /> <h2>Wakeup Information</h2><p>Triple click on the switch button</p>
     ]]></description>
     <category>WallSwitch</category>
 

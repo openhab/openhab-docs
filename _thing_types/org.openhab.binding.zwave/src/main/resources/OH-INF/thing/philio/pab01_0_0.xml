@@ -8,7 +8,7 @@
   <thing-type id="philio_pab01_00_000" listed="false">
     <label>ZIP-PAB01 Zipato Micromodule Energy Meter</label>
     <description><![CDATA[
-Zipato Micromodule Energy Meter<br /><h1>Overview</h1><p>Zipato Energy Meter monitors total electricity consumption of connected appliances and reports it to Zipato or any other Z-Wave enabled controller in real time. Small and compact size allows easy installation in majority of electricity distribution boxes. It supports two loads up to 6000W each (@ 120V)</p> <br /><h2>Inclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter exclusion mode.</p>
+Zipato Micromodule Energy Meter<br /> <h1>Overview</h1><p>Zipato Energy Meter monitors total electricity consumption of connected appliances and reports it to Zipato or any other Z-Wave enabled controller in real time. Small and compact size allows easy installation in majority of electricity distribution boxes. It supports two loads up to 6000W each (@ 120V)</p> <br /> <h2>Inclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing On/Off (Include) button three times within 2 seconds will enter exclusion mode.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -165,7 +165,7 @@ Zipato Micromodule Energy Meter<br /><h1>Overview</h1><p>Zipato Energy Meter mon
                  min="1" max="32767">
         <label>1: Power meter report period</label>
         <description><![CDATA[
-Power meter report period, in 5 seconds unit. 720 -&gt; 1 hour<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
+Power meter report period, in 5 seconds unit. 720 -&gt; 1 hour<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its instant power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its instant power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
@@ -175,7 +175,7 @@ Power meter report period, in 5 seconds unit. 720 -&gt; 1 hour<br /><h1>Overview
                  min="1" max="32767">
         <label>2: Energy meter report period</label>
         <description><![CDATA[
-The accumulated power consumption report period<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its accumulated power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
+The accumulated power consumption report period<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value 720), the module will report its accumulated power consumption every 1 hour to the node of the corresponding group. The maximum interval to report its accumulated power consumption is 45h (5s * 32767 / 3600 = 45h)</p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
@@ -185,7 +185,7 @@ The accumulated power consumption report period<br /><h1>Overview</h1><p>If the 
                  min="1" max="3">
         <label>3: Selected default endpoint</label>
         <description><![CDATA[
-1 =&gt; CT1 and CT2, 2 =&gt; CT1, 3 =&gt; CT2<br /><h1>Overview</h1><p>If Controller does not use Multi Channel command class to access the endpoint of the module, you may configure the endpoint that will react to the Basic Command Class, Binary Switch command class or Meter command class V3.</p>
+1 =&gt; CT1 and CT2, 2 =&gt; CT1, 3 =&gt; CT2<br /> <h1>Overview</h1><p>If Controller does not use Multi Channel command class to access the endpoint of the module, you may configure the endpoint that will react to the Basic Command Class, Binary Switch command class or Meter command class V3.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -195,21 +195,21 @@ The accumulated power consumption report period<br /><h1>Overview</h1><p>If the 
       <parameter name="group_1" type="text" groupName="association">
         <label>1: CT1 and CT2</label>
         <description><![CDATA[
-Sum of CT1 and CT2<br /><h1>Overview</h1><p>Sum of :</p> <ul><li>Instant power consumption from CT1 and CT2 (W)</li> <li>Accumulated power consumption from CT1 and CT2 (kWh)</li> </ul>
+Sum of CT1 and CT2<br /> <h1>Overview</h1><p>Sum of :</p> <ul> <li>Instant power consumption from CT1 and CT2 (W)</li> <li>Accumulated power consumption from CT1 and CT2 (kWh)</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association">
         <label>2: CT1</label>
         <description><![CDATA[
-Data from CT1<br /><h1>Overview</h1><ul><li>Instant power consumption from CT1 (W)</li> <li>Accumulated power consumption from CT1 (kWh)</li> </ul>
+Data from CT1<br /> <h1>Overview</h1><ul> <li>Instant power consumption from CT1 (W)</li> <li>Accumulated power consumption from CT1 (kWh)</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association">
         <label>3: CT2</label>
         <description><![CDATA[
-Data from CT2<br /><h1>Overview</h1><ol><li>Instant power consumption from CT2 (W)</li> <li>Accumulated power consumption from CT2 (kWh)</li> </ol>
+Data from CT2<br /> <h1>Overview</h1><ol> <li>Instant power consumption from CT2 (W)</li> <li>Accumulated power consumption from CT2 (kWh)</li> </ol>
         ]]></description>
       </parameter>
 

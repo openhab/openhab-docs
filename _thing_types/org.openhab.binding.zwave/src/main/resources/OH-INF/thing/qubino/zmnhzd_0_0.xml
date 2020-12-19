@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhzd_00_000" listed="false">
     <label>ZMNHZD Multifunctional Weather Station</label>
     <description><![CDATA[
-Multifunctional Weather Station<br /><h1>Overview</h1><p>Weather Station is used for measuring temperature, humidity, wind &amp; rain properties and sending the measurement values to your Z-Wave network.The Weather Station can measure 10 different values: two sets of temperature/humidity sensors, wing gauge with 5 sensors (direction, velocity, wind gust, temperature and wind chill) and a rain sensor. With the use of the included Weather Station USB KEY all 10 values (end points) are sent and rendered in your home Z-Wave network. Qubino Weather Station Key is used for receiving Wireless data packages (from Thermo/ Hygro Sensor Ch1, Thermo/ Hygro Sensor Ch2, Rain Gauge, Wind Gauge) and sends it to the Z-Wave Controller. The Key is designed to be plugged into the USB Power Adapter. Module receives data for Temperature, Wind Chill, Velocity, Wind Gust, Wind Direction, Humidity, Rain Rate and Battery Level for each Sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <p>Remote Weather Sensors The remote weather sensors include a thermo-hygrometer, anemometer (wind sensor) and rain sensor. All data collected by the sensors are transmitted to the Weather Station Key by wireless RF, with a range up to 100 meters (open area). The Weather station Key supports a maximum of 2 thermo-hygrometers, allowing 2 channels of temperature/humidity display (Ch1 and Ch2)</p> <br /><h2>Inclusion Information</h2><p>Connect module to USB Power Supply auto-inclusion (works for about 5 seconds after connected to power supply) or enable add/remove mode on main controller hold service button S between 1.5 and 4 seconds</p> <p>NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to USB power supply.</p> <br /><h2>Exclusion Information</h2><p>Connect module to power supply enable add/remove mode on main controller, hold service button S between 4 seconds and 8 seconds By this function, all parameters of the module are set to default values and own ID is deleted.</p> <p>If service button S hold more than 1.5 and less than 4 seconds module is excluded, but configuration parameters are not set to default values.</p>
+Multifunctional Weather Station<br /> <h1>Overview</h1><p>Weather Station is used for measuring temperature, humidity, wind &amp; rain properties and sending the measurement values to your Z-Wave network.The Weather Station can measure 10 different values: two sets of temperature/humidity sensors, wing gauge with 5 sensors (direction, velocity, wind gust, temperature and wind chill) and a rain sensor. With the use of the included Weather Station USB KEY all 10 values (end points) are sent and rendered in your home Z-Wave network. Qubino Weather Station Key is used for receiving Wireless data packages (from Thermo/ Hygro Sensor Ch1, Thermo/ Hygro Sensor Ch2, Rain Gauge, Wind Gauge) and sends it to the Z-Wave Controller. The Key is designed to be plugged into the USB Power Adapter. Module receives data for Temperature, Wind Chill, Velocity, Wind Gust, Wind Direction, Humidity, Rain Rate and Battery Level for each Sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <p>Remote Weather Sensors The remote weather sensors include a thermo-hygrometer, anemometer (wind sensor) and rain sensor. All data collected by the sensors are transmitted to the Weather Station Key by wireless RF, with a range up to 100 meters (open area). The Weather station Key supports a maximum of 2 thermo-hygrometers, allowing 2 channels of temperature/humidity display (Ch1 and Ch2)</p> <br /> <h2>Inclusion Information</h2><p>Connect module to USB Power Supply auto-inclusion (works for about 5 seconds after connected to power supply) or enable add/remove mode on main controller hold service button S between 1.5 and 4 seconds</p> <p>NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to USB power supply.</p> <br /> <h2>Exclusion Information</h2><p>Connect module to power supply enable add/remove mode on main controller, hold service button S between 4 seconds and 8 seconds By this function, all parameters of the module are set to default values and own ID is deleted.</p> <p>If service button S hold more than 1.5 and less than 4 seconds module is excluded, but configuration parameters are not set to default values.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -200,7 +200,7 @@ Multifunctional Weather Station<br /><h1>Overview</h1><p>Weather Station is used
                  min="0" max="8800">
         <label>1: Wind Gauge - Gust Top Value</label>
         <description><![CDATA[
-Wind Gauge, Wind Gust Top Value<br /><h1>Overview</h1><p>Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association</p>
+Wind Gauge, Wind Gust Top Value<br /> <h1>Overview</h1><p>Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association</p>
         ]]></description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
@@ -210,7 +210,7 @@ Wind Gauge, Wind Gust Top Value<br /><h1>Overview</h1><p>Wind Gauge, Wind Gust T
                  min="0" max="30000">
         <label>2: Rain Gauge - Rate top value</label>
         <description><![CDATA[
-Rain Rate top value<br /><h1>Overview</h1><p>If the sensor Rain Rate is higher than the parameter value, a device triggers a association.</p>
+Rain Rate top value<br /> <h1>Overview</h1><p>If the sensor Rain Rate is higher than the parameter value, a device triggers a association.</p>
         ]]></description>
         <default>200</default>
         <limitToOptions>false</limitToOptions>
@@ -220,7 +220,7 @@ Rain Rate top value<br /><h1>Overview</h1><p>If the sensor Rain Rate is higher t
                  min="0" max="1">
         <label>3: Wind Gauge</label>
         <description><![CDATA[
-Wind Gust<br /><h1>Overview</h1><p>0 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set = 0x00</p> <p>1 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set =0xff</p>
+Wind Gust<br /> <h1>Overview</h1><p>0 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set = 0x00</p> <p>1 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set =0xff</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -230,7 +230,7 @@ Wind Gust<br /><h1>Overview</h1><p>0 - if the wind gauge is higher than the para
                  min="0" max="1">
         <label>4: Rain Gauge</label>
         <description><![CDATA[
-Rain Rate<br /><h1>Overview</h1><p>0 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set = 0x00</p> <p>1 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set =0xff</p>
+Rain Rate<br /> <h1>Overview</h1><p>0 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set = 0x00</p> <p>1 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set =0xff</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -240,7 +240,7 @@ Rain Rate<br /><h1>Overview</h1><p>0 - if the rain amount is higher than the par
                  min="0" max="1">
         <label>5: End Point 1</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -250,7 +250,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>6: End Point 2</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -260,7 +260,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>7: End Point 3</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -270,7 +270,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>8: End Point 4</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -280,7 +280,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>9: End Point 5</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -290,7 +290,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>10: End Point 6</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -300,7 +300,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>11: End Point 7</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -310,7 +310,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>12: End Point 8</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -320,7 +320,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>13: End Point 9</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -330,7 +330,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>14: End Point 10</label>
         <description><![CDATA[
-Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
+Unsolicited report<br /> <h1>Overview</h1><p>0 - Unsolicited report disabled</p> <p>1 - Unsolicited report enabled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -340,7 +340,7 @@ Unsolicited report<br /><h1>Overview</h1><p>0 - Unsolicited report disabled</p> 
                  min="0" max="1">
         <label>15: Random ID enable</label>
         <description><![CDATA[
-enables/disables random ID<br /><h1>Overview</h1><p>If Random ID is disabled, the Weather Station USB Key can receive data from multiple 433 MHz Sensors on the same Channel. If the Random ID is enabled, the USB Key can receive data from only one sensor on the same channel. If the USB Key does not receive a data from a sensor on a specific channel for more than 2.5 hours, it clears the Random ID of the device and waits for a new ID. If you replace the batteries in the modules, the Random ID will change. If you want that the USB Key accept a module immediately, set the Parameter No. 15 to “0” and in the next step again to “1”.</p>
+enables/disables random ID<br /> <h1>Overview</h1><p>If Random ID is disabled, the Weather Station USB Key can receive data from multiple 433 MHz Sensors on the same Channel. If the Random ID is enabled, the USB Key can receive data from only one sensor on the same channel. If the USB Key does not receive a data from a sensor on a specific channel for more than 2.5 hours, it clears the Random ID of the device and waits for a new ID. If you replace the batteries in the modules, the Random ID will change. If you want that the USB Key accept a module immediately, set the Parameter No. 15 to “0” and in the next step again to “1”.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -350,7 +350,7 @@ enables/disables random ID<br /><h1>Overview</h1><p>If Random ID is disabled, th
                  min="0" max="1">
         <label>250: Unsecure / Secure Inclusion</label>
         <description><![CDATA[
-Unsecure / Secure Inclusion<br /><h1>Overview</h1><ul><li>default Value 0</li> <li>0 – Unsecure Inclusion</li> <li>1 – Secure Inclusion</li> </ul><p>The Weather Station Key supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, the Key could be included as unsecure and keep all the functionality. By default, the Key includes as unsecure. To include the Key as secure follow the procedure:</p> <ol><li>Include the Key into the controller</li> <li>Set the parameter 250 to the value “1”</li> <li>Enable add/remove mode on main controller,</li> <li>Hold service button S between 1.5 and 4 seconds to exclude the module</li> <li>If the exclusion of the module was successful, the LED on the module starts blinking</li> <li>Unplug the module out of the power supply</li> <li>enable add/remove mode on main controller</li> <li>Plug the module into the power supply to star autoinclusion</li> <li>Now the module should be included as secure</li> </ol><p>The same procedure is to include the module as unsecure</p>
+Unsecure / Secure Inclusion<br /> <h1>Overview</h1><ul><li>default Value 0</li> <li>0 – Unsecure Inclusion</li> <li>1 – Secure Inclusion</li> </ul><p>The Weather Station Key supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, the Key could be included as unsecure and keep all the functionality. By default, the Key includes as unsecure. To include the Key as secure follow the procedure:</p> <ol><li>Include the Key into the controller</li> <li>Set the parameter 250 to the value “1”</li> <li>Enable add/remove mode on main controller,</li> <li>Hold service button S between 1.5 and 4 seconds to exclude the module</li> <li>If the exclusion of the module was successful, the LED on the module starts blinking</li> <li>Unplug the module out of the power supply</li> <li>enable add/remove mode on main controller</li> <li>Plug the module into the power supply to star autoinclusion</li> <li>Now the module should be included as secure</li> </ol><p>The same procedure is to include the module as unsecure</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

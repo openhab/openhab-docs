@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zw15rm_00_000" listed="false">
     <label>ZW15RM-PLUS In-Wall Smart Meter Duplex Receptacle (15A)</label>
     <description><![CDATA[
-In-Wall Smart Meter Duplex Receptacle (15A)<br /><h1>Overview</h1><p>Z-Wave Tamper Resistant Duplex Receptacle that monitors power and allows for Z-Wave control of the "bottom" outlet. The outlet is rated for 120VAC, 15A.</p> <br /><h2>Inclusion Information</h2><ol><li>Active "Inclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button on the receptacle for around 3 seconds.</li> <li>The primary controller will indicate the inclusion is successful.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Active "Exclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button for 3 seconds.</li> <li>The blue LED indicator will blink, indicating exclusion was successful.</li> </ol>
+In-Wall Smart Meter Duplex Receptacle (15A)<br /> <h1>Overview</h1><p>Z-Wave Tamper Resistant Duplex Receptacle that monitors power and allows for Z-Wave control of the "bottom" outlet. The outlet is rated for 120VAC, 15A.</p> <br /> <h2>Inclusion Information</h2><ol><li>Active "Inclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button on the receptacle for around 3 seconds.</li> <li>The primary controller will indicate the inclusion is successful.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Active "Exclusion Mode" on your controller.</li> <li>Press and hold the manual ON/OFF button for 3 seconds.</li> <li>The blue LED indicator will blink, indicating exclusion was successful.</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -62,7 +62,7 @@ In-Wall Smart Meter Duplex Receptacle (15A)<br /><h1>Overview</h1><p>Z-Wave Tamp
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: ON/OFF</label>
         <description><![CDATA[
-Synchronization of outlet power and LED indicator<br /><h1>Overview</h1><p> This value only controls the bottom outlet, the top outlet is always on.</p>
+Synchronization of outlet power and LED indicator<br /> <h1>Overview</h1><p> This value only controls the bottom outlet, the top outlet is always on.</p>
         ]]></description>
         <default>0</default>
         <options>

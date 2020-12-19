@@ -8,7 +8,7 @@
   <thing-type id="zipato_hmhs1ca_00_000" listed="false">
     <label>HM-HS1CA CO Sensor with acoustic alarm</label>
     <description><![CDATA[
-CO Sensor with acoustic alarm<br /><h1>Overview</h1><p>This product is a Smart Carbon Monoxide Sensor and adopts super low power consumption Z-Wave wireless network technology, used for detecting carbon monoxide. Sensor adopts high performance eloctrochemical sensor, supports sound and flash alarm. It has high stability, super low power consumption, little sensitivity drift and many other features.</p> <br /><h2>Inclusion Information</h2><p> Press the Net_Button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.</p> <br /><h2>Exclusion Information</h2><p> Press the Net_Button 3 times within 1.5s</p> <br /><h2>Wakeup Information</h2><p>Every 24h by default</p>
+CO Sensor with acoustic alarm<br /> <h1>Overview</h1><p>This product is a Smart Carbon Monoxide Sensor and adopts super low power consumption Z-Wave wireless network technology, used for detecting carbon monoxide. Sensor adopts high performance eloctrochemical sensor, supports sound and flash alarm. It has high stability, super low power consumption, little sensitivity drift and many other features.</p> <br /> <h2>Inclusion Information</h2><p> Press the Net_Button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.</p> <br /> <h2>Exclusion Information</h2><p> Press the Net_Button 3 times within 1.5s</p> <br /> <h2>Wakeup Information</h2><p>Every 24h by default</p>
     ]]></description>
     <category>SmokeDetector</category>
 
@@ -60,7 +60,7 @@ CO Sensor with acoustic alarm<br /><h1>Overview</h1><p>This product is a Smart C
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Root Device group(Binary Sensor) Binary Sensor Command Class: Compatible with 300 series </p> <ol><li>Binary Sensor reports status of CO or no CO via Lifeline.</li> <li>When the sensor detects status change of CO and no CO, the device will be triggered.</li> </ol>
+<br /> <h1>Overview</h1><p>Root Device group(Binary Sensor) Binary Sensor Command Class: Compatible with 300 series </p> <ol> <li>Binary Sensor reports status of CO or no CO via Lifeline.</li> <li>When the sensor detects status change of CO and no CO, the device will be triggered.</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -68,7 +68,7 @@ CO Sensor with acoustic alarm<br /><h1>Overview</h1><p>This product is a Smart C
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Root Device group(Notification) </p> <ol><li>Notification reports status of detect CO or no CO via Lifeline. </li> <li>When the sensor detects status change of CO and no CO, the device will be triggered.</li> </ol>
+<br /> <h1>Overview</h1><p>Root Device group(Notification) </p> <ol> <li>Notification reports status of detect CO or no CO via Lifeline. </li> <li>When the sensor detects status change of CO and no CO, the device will be triggered.</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

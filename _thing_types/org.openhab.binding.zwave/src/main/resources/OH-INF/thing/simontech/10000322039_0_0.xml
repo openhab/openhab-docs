@@ -8,7 +8,7 @@
   <thing-type id="simontech_10000322039_00_000" listed="false">
     <label>10002034-13X Switch IO: On/Off Power Switch</label>
     <description><![CDATA[
-Switch IO: On/Off Power Switch<br /><h1>Overview</h1><p>Simon Electronic Switch IO integrated by Electronic Switch that provides power Switch and Rocker that provides Z-Wave communication attributes.</p> <br /><h2>Inclusion Information</h2><ol><li>Put controller into inclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put controller into exclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to exclude the device from the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol>
+Switch IO: On/Off Power Switch<br /> <h1>Overview</h1><p>Simon Electronic Switch IO integrated by Electronic Switch that provides power Switch and Rocker that provides Z-Wave communication attributes.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put controller into inclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Put controller into exclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to exclude the device from the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -68,7 +68,7 @@ Switch IO: On/Off Power Switch<br /><h1>Overview</h1><p>Simon Electronic Switch 
                  min="0" max="254">
         <label>10: Delay ON</label>
         <description><![CDATA[
-Delay from activation request until load activation<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
+Delay from activation request until load activation<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Delay from activation request until load activation<br /><h1>Overview</h1><p>0-1
                  min="0" max="254">
         <label>11: Activation Time</label>
         <description><![CDATA[
-Time that load performs activated after complete an activation process.<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
+Time that load performs activated after complete an activation process.<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ Time that load performs activated after complete an activation process.<br /><h1
                  min="0" max="254">
         <label>16: Delay OFF</label>
         <description><![CDATA[
-Delay from deactivation request until load deactivation.<br /><h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
+Delay from deactivation request until load deactivation.<br /> <h1>Overview</h1><p>0-127 Delay in seconds, 128-254 Delay in minutes</p>
         ]]></description>
         <default>0</default>
       </parameter>

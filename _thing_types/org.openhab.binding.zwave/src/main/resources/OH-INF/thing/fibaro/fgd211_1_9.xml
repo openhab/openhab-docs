@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgd211_01_009" listed="false">
     <label>FGD211 Universal Dimmer 500W</label>
     <description><![CDATA[
-Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <br /><h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p> <br /><h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p>
+Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer is designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <br /> <h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p> <br /> <h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -84,7 +84,7 @@ Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is des
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Control key #2 behaviour</label>
         <description><![CDATA[
-Key no.2 is not represented by any physical device<br /><h1>Overview</h1><p>Key no.2 is not represented by any physical device - only devices in the association list.</p> <p>This functionality prevents of lack of reaction on pressing key no.2 through polling devices from association list one by one and checking their</p>
+Key no.2 is not represented by any physical device<br /> <h1>Overview</h1><p>Key no.2 is not represented by any physical device - only devices in the association list.</p> <p>This functionality prevents of lack of reaction on pressing key no.2 through polling devices from association list one by one and checking their</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -113,7 +113,7 @@ Key no.2 is not represented by any physical device<br /><h1>Overview</h1><p>Key 
                  min="0" max="255">
         <label>10: Time of AUTOMATIC moving between dimming values</label>
         <description><![CDATA[
-Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
+Options for changing parameter 1-255<br /> <h1>Overview</h1><p>Options for changing parameter 1-255 (10ms - 2,5s) - 0: this value disables the smooth change in light intensity. NOTE: value 0 is required for inductive and capacitive devices unsuitable for dimming (e.g. fluorescent lamps, motors, etc...)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -180,7 +180,7 @@ Options for changing parameter 1-255<br /><h1>Overview</h1><p>Options for changi
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: 3-way switch</label>
         <description><![CDATA[
-Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch provides the option to double key no. 1. The dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons. (default value 0)</p>
+Function of 3-way switch<br /> <h1>Overview</h1><p>The function of 3-way switch provides the option to double key no. 1. The dimmer may control two bi-stable push-buttons or an infinite number of mono-stable push-buttons. (default value 0)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -204,7 +204,7 @@ Function of 3-way switch<br /><h1>Overview</h1><p>The function of 3-way switch p
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Change [On-Off] bi-stable keys</label>
         <description><![CDATA[
-Function to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
+Function to change [On-Off] bi-stable keys<br /> <h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -218,7 +218,7 @@ Function to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This functio
                  min="100" max="170">
         <label>20: Parm 20</label>
         <description><![CDATA[
-Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170]</p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market support this.</p>
+Enable decreasing the minimum level<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse.[100 - 170]</p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market support this.</p>
         ]]></description>
         <default>110</default>
         <limitToOptions>false</limitToOptions>
@@ -248,7 +248,7 @@ Enable decreasing the minimum level<br /><h1>Overview</h1><p>This function will 
                  min="0" max="255">
         <label>40: Updating the dimming level without switch.</label>
         <description><![CDATA[
-Parameter’s value changes depending on the dimming level.<br /><h1>Overview</h1><p>Available settings: from 1 to 99. Parameter’s value changes depending on the dimming level.</p>
+Parameter’s value changes depending on the dimming level.<br /> <h1>Overview</h1><p>Available settings: from 1 to 99. Parameter’s value changes depending on the dimming level.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -257,7 +257,7 @@ Parameter’s value changes depending on the dimming level.<br /><h1>Overview</h
       <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Scene activation functionality</label>
         <description><![CDATA[
-Command class scene activation for group no. 3<br /><h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3.</p>
+Command class scene activation for group no. 3<br /> <h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3.</p>
         ]]></description>
         <default>0</default>
         <options>

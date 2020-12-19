@@ -8,7 +8,7 @@
   <thing-type id="philio_pan16_01_002" listed="false">
     <label>PAN16 Smart Energy Plug In Switch</label>
     <description><![CDATA[
-Smart Energy Plug In Switch<br /><h1>Overview</h1><p>This plug-in ON/OFF switch PAN16 is a security enabled Z-Wave Plus product, based on Z-Wave Plus technology. The device will enable security mode automatically if the controller supports security mode, too. Z-Wave PlusTM enabled devices displaying the Z-Wave PlusTM logo can also be used with it regardless of the manufacturer, and can also be used in other manufacturer’s Z-WaveTM enabled networks. Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because PAN16 supports Security Command Class, it can learn with a Secured enabled Z-Wave controller to fully utilize the device. Its functionality and supported command classes is identical when included as a secure and non-secure device. <br />This plug-in ON/OFF switch is able to detect instance wattage (3000W/230Vac) (13Ampere) and overload current (14.5A with resistive load) of connected lights or appliances. When detecting overload state, the Switch will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, unplug and re-connect the switch will reset its overload condition to normal status. <br />Adding to Z-WaveTM Network <br />In the front casing, there is an On/Off button with LED indicator which is used to toggle switch on and off or carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it has not been assigned a node ID and start auto inclusion. <br />Auto Inclusion <br />The function of auto inclusion will be executed as long as the switch does not have Node ID and just plug the switch into a wall outlet. <br />Note: Auto inclusion timeout is 2 minute during which the node information of explorer frame will be emitted once several seconds. Unlike “inclusion” function as shown in the table below, the execution of auto inclusion is free from pressing the On/Off button on the Switch. </p> <br /><h2>Inclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter inclusion mode. </p> <br /><h2>Exclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter exclusion mode.</p>
+Smart Energy Plug In Switch<br /> <h1>Overview</h1><p>This plug-in ON/OFF switch PAN16 is a security enabled Z-Wave Plus product, based on Z-Wave Plus technology. The device will enable security mode automatically if the controller supports security mode, too. Z-Wave PlusTM enabled devices displaying the Z-Wave PlusTM logo can also be used with it regardless of the manufacturer, and can also be used in other manufacturer’s Z-WaveTM enabled networks. Remote On/Off control of the connected load is possible with other manufacturer’s wireless Controller. Each switch is designed to act as a repeater. Repeaters will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacles and radio dead spots. Because PAN16 supports Security Command Class, it can learn with a Secured enabled Z-Wave controller to fully utilize the device. Its functionality and supported command classes is identical when included as a secure and non-secure device. <br />This plug-in ON/OFF switch is able to detect instance wattage (3000W/230Vac) (13Ampere) and overload current (14.5A with resistive load) of connected lights or appliances. When detecting overload state, the Switch will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, unplug and re-connect the switch will reset its overload condition to normal status. <br />Adding to Z-WaveTM Network <br />In the front casing, there is an On/Off button with LED indicator which is used to toggle switch on and off or carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it has not been assigned a node ID and start auto inclusion. <br />Auto Inclusion <br />The function of auto inclusion will be executed as long as the switch does not have Node ID and just plug the switch into a wall outlet. <br />Note: Auto inclusion timeout is 2 minute during which the node information of explorer frame will be emitted once several seconds. Unlike “inclusion” function as shown in the table below, the execution of auto inclusion is free from pressing the On/Off button on the Switch. </p> <br /> <h2>Inclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter inclusion mode. </p> <br /> <h2>Exclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter exclusion mode.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -88,7 +88,7 @@ Smart Energy Plug In Switch<br /><h1>Overview</h1><p>This plug-in ON/OFF switch 
                  min="1" max="32767">
         <label>1: Watt Meter Report Period</label>
         <description><![CDATA[
-Watt Meter Report Period<br /><h1>Overview</h1><h1>720*5s = 3600s = 1 hour</h1> <p>If the setting is configured for 1hour (set value =720), the PAN16 will report its instant power consumption every 1 hour to Group1 node.</p> <p>The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).</p>
+Watt Meter Report Period<br /> <h1>Overview</h1><h1>720*5s = 3600s = 1 hour</h1> <p>If the setting is configured for 1hour (set value =720), the PAN16 will report its instant power consumption every 1 hour to Group1 node.</p> <p>The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr).</p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
@@ -98,7 +98,7 @@ Watt Meter Report Period<br /><h1>Overview</h1><h1>720*5s = 3600s = 1 hour</h1> 
                  min="1" max="32767">
         <label>2: KWH Meter Report Period</label>
         <description><![CDATA[
-KWH Meter Report Period<br /><h1>Overview</h1><h1>6*10min=1 hour</h1> <p>If the setting is configured for 1hour (set value =6), the PAN16 will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. </p> <p>The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days). </p>
+KWH Meter Report Period<br /> <h1>Overview</h1><h1>6*10min=1 hour</h1> <p>If the setting is configured for 1hour (set value =6), the PAN16 will report its Accumulated Power Consumption (KW/h) every 1 hour to Group1 node. </p> <p>The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days). </p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -108,7 +108,7 @@ KWH Meter Report Period<br /><h1>Overview</h1><h1>6*10min=1 hour</h1> <p>If the 
                  min="10" max="1300">
         <label>3: Threshold of current for Load caution</label>
         <description><![CDATA[
-Threshold of current for Load caution<br /><h1>Overview</h1><h1>1300*0.01A = 13A </h1> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 1300, when the load current of Relay1 over this value, PAN16 will send current meter report to warn the Group1 node. </p> <p>The Range of the setting value is from 10 to 1300,and the default value is 1300. </p>
+Threshold of current for Load caution<br /> <h1>Overview</h1><h1>1300*0.01A = 13A </h1> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 1300, when the load current of Relay1 over this value, PAN16 will send current meter report to warn the Group1 node. </p> <p>The Range of the setting value is from 10 to 1300,and the default value is 1300. </p>
         ]]></description>
         <default>1300</default>
         <limitToOptions>false</limitToOptions>
@@ -118,7 +118,7 @@ Threshold of current for Load caution<br /><h1>Overview</h1><h1>1300*0.01A = 13A
                  min="1" max="10000">
         <label>4: Threshold of KWh for Load caution</label>
         <description><![CDATA[
-Threshold of KWh for Load caution<br /><h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 over this value, PAN16 will send KWH meter report to warn the Group1 node,</p> <p>minimum value is 1KWh and default value is 10000 kWh. </p>
+Threshold of KWh for Load caution<br /> <h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 over this value, PAN16 will send KWH meter report to warn the Group1 node,</p> <p>minimum value is 1KWh and default value is 10000 kWh. </p>
         ]]></description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>
@@ -163,7 +163,7 @@ Threshold of KWh for Load caution<br /><h1>Overview</h1><p>This is a warning whe
                  min="0" max="32767">
         <label>8: Auto off timer</label>
         <description><![CDATA[
-Auto off timer<br /><h1>Overview</h1><ul><li>0 : Disable auto off function</li> <li>1-32767 : 1s ~32767s</li> </ul>
+Auto off timer<br /> <h1>Overview</h1><ul><li>0 : Disable auto off function</li> <li>1-32767 : 1s ~32767s</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -172,7 +172,7 @@ Auto off timer<br /><h1>Overview</h1><ul><li>0 : Disable auto off function</li> 
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: RF off command mode</label>
         <description><![CDATA[
-RF off command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASIC_SET、BINARY_SWITCH_SET、SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.</p> <ul><li>Switch Off：It switches to OFF state. The default setting is Switch Off.</li> <li>Ignore：The switch off command will be ignored.</li> <li>Switch Toggle：It switches to the inverse of current state.</li> <li>Switch On：It switches to ON state. </li> </ul>
+RF off command mode<br /> <h1>Overview</h1><p>Whenever a switch off command, BASIC_SET、BINARY_SWITCH_SET、SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.</p> <ul><li>Switch Off：It switches to OFF state. The default setting is Switch Off.</li> <li>Ignore：The switch off command will be ignored.</li> <li>Switch Toggle：It switches to the inverse of current state.</li> <li>Switch On：It switches to ON state. </li> </ul>
         ]]></description>
         <default>0</default>
         <options>

@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw42_00_000" listed="false">
     <label>LZW42 Ilumin RGBW Bulb</label>
     <description><![CDATA[
-Ilumin RGBW Bulb<br /><h1>Overview</h1><p>Let’s get to know your sweet new smart bulb! Good news is, it’s literally a normal bulb, but with tons of colored LED’s and powered by Z-Wave. I’m not really sure what else to write here other than maybe the silver part goes into the lamp and the white part shines the light. Also, remember to always keep power to your light bulb as the Z-Wave module needs power to send/receive commands</p> <br /><h2>Inclusion Information</h2><ul><li>Start the inclusion process on your HUB/Gateway.</li> <li>Once the inclusion process has started, turn on and off power to the bulb 3x (ie: Turn On, Turn Off, Turn On, Turn Off, Turn On) and the bulb should flash 3x indicating it’s in inclusion mode. </li> <li>If the bulb was included successfully, it will blink one more time. If it was not included successfully, you may have to run an exclusion as mentioned above. If there’s still issues, please ensure your bulb is within range (Pages 2 &amp; 3)</li> </ul><br /><h2>Exclusion Information</h2><p>Put your HUB in Exclusion mode and turn the power on/off/on/off/on/off/on (3x on and 2x off) until your bulb blinks three (3x) and then blinks 1x to confirm. Your HUB should say that the device is excluded.</p>
+Ilumin RGBW Bulb<br /> <h1>Overview</h1><p>Let’s get to know your sweet new smart bulb! Good news is, it’s literally a normal bulb, but with tons of colored LED’s and powered by Z-Wave. I’m not really sure what else to write here other than maybe the silver part goes into the lamp and the white part shines the light. Also, remember to always keep power to your light bulb as the Z-Wave module needs power to send/receive commands</p> <br /> <h2>Inclusion Information</h2><ul><li>Start the inclusion process on your HUB/Gateway.</li> <li>Once the inclusion process has started, turn on and off power to the bulb 3x (ie: Turn On, Turn Off, Turn On, Turn Off, Turn On) and the bulb should flash 3x indicating it’s in inclusion mode. </li> <li>If the bulb was included successfully, it will blink one more time. If it was not included successfully, you may have to run an exclusion as mentioned above. If there’s still issues, please ensure your bulb is within range (Pages 2 &amp; 3)</li> </ul> <br /> <h2>Exclusion Information</h2><p>Put your HUB in Exclusion mode and turn the power on/off/on/off/on/off/on (3x on and 2x off) until your bulb blinks three (3x) and then blinks 1x to confirm. Your HUB should say that the device is excluded.</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -67,7 +67,7 @@ Ilumin RGBW Bulb<br /><h1>Overview</h1><p>Let’s get to know your sweet new sma
                  min="0" max="1">
         <label>2: Memory Function</label>
         <description><![CDATA[
-0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /><h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
+0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /> <h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

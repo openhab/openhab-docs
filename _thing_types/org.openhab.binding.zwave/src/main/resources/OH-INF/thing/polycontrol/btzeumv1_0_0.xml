@@ -8,7 +8,7 @@
   <thing-type id="polycontrol_btzeumv1_00_000" listed="false">
     <label>BTZEUMV1 Danalock Universal Module V1</label>
     <description><![CDATA[
-Danalock Universal Module V1<br /><h1>Overview</h1><p>The universal module enables the control of existing electrical locking systems via smartphone. It is a circuit board with a relay to switch potential-free contacts. The module is connected near the lock system and actuates engine locks, garage doors, digital cylinders or the door number.</p> <br /><h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <ol><li>Set the controller in inclusion mode</li> <li>Push the switch once until you hear two beeps.</li> </ol><br /><h2>Exclusion Information</h2><p>To remove or exclude the Danalock from a Z-Wave network</p> <ol><li>Set the controller in inclusion mode</li> <li>Push the switch once until you hear two beeps.</li> </ol>
+Danalock Universal Module V1<br /> <h1>Overview</h1><p>The universal module enables the control of existing electrical locking systems via smartphone. It is a circuit board with a relay to switch potential-free contacts. The module is connected near the lock system and actuates engine locks, garage doors, digital cylinders or the door number.</p> <br /> <h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <ol><li>Set the controller in inclusion mode</li> <li>Push the switch once until you hear two beeps.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove or exclude the Danalock from a Z-Wave network</p> <ol><li>Set the controller in inclusion mode</li> <li>Push the switch once until you hear two beeps.</li> </ol>
     ]]></description>
     <category>Lock</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="horstmann_sir321_00_000" listed="false">
     <label>SIR-321 RF Countdown Timer</label>
     <description><![CDATA[
-RF Countdown Timer<br /><h1>Overview</h1><p>Wirelessly controllable 3 KW wall switch timer function</p> <br /><h2>Inclusion Information</h2><p>Press and hold the pairing button on the unit until the RF LED starts flashing at a fast rate. Then release the button. </p> <br /><h2>Exclusion Information</h2><p>Press and hold the pairing button on the unit until the RF LED starts flashing at a fast rate. Then release the button.</p>
+RF Countdown Timer<br /> <h1>Overview</h1><p>Wirelessly controllable 3 KW wall switch timer function</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the pairing button on the unit until the RF LED starts flashing at a fast rate. Then release the button. </p> <br /> <h2>Exclusion Information</h2><p>Press and hold the pairing button on the unit until the RF LED starts flashing at a fast rate. Then release the button.</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="zooz_zse29_00_000" listed="false">
     <label>ZSE29 Outdoor Motion Sensor</label>
     <description><![CDATA[
-Outdoor Motion Sensor<br /><h1>Overview</h1><p>OUTDOOR SENSOR: Introducing the first Z-Wave motion detector created for outdoor use. Monitor activity remotely through your Z-Wave hub and automate outdoor lighting based on motion. Battery or 5V USB powered.</p> <br /><h2>Inclusion Information</h2><p>Click the tamper switch 3 times quickly</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the sensor within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode.</li> <li>Press and release the tamper switch 3 times quickly.</li> <li>Your hub will confirm exclusion and the sensor will disappear from your controller's device list.</li> </ol><br /><h2>Wakeup Information</h2><p>The sensor’s wake-up interval is set to 4 hours by default to save battery life. Use the Wake Up Command Class to adjust the interval (in seconds, working in 600s intervals, with 600 as min and 86400 as max values). During wake-up, the sensor turns the Z-Wave radio on for 10 seconds to receive communication from the hub. Long wake-up interval will not affect how often the sensor reports motion to your hub.</p>
+Outdoor Motion Sensor<br /> <h1>Overview</h1><p>OUTDOOR SENSOR: Introducing the first Z-Wave motion detector created for outdoor use. Monitor activity remotely through your Z-Wave hub and automate outdoor lighting based on motion. Battery or 5V USB powered.</p> <br /> <h2>Inclusion Information</h2><p>Click the tamper switch 3 times quickly</p> <br /> <h2>Exclusion Information</h2><ol><li>Bring the sensor within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode.</li> <li>Press and release the tamper switch 3 times quickly.</li> <li>Your hub will confirm exclusion and the sensor will disappear from your controller's device list.</li> </ol> <br /> <h2>Wakeup Information</h2><p>The sensor’s wake-up interval is set to 4 hours by default to save battery life. Use the Wake Up Command Class to adjust the interval (in seconds, working in 600s intervals, with 600 as min and 86400 as max values). During wake-up, the sensor turns the Z-Wave radio on for 10 seconds to receive communication from the hub. Long wake-up interval will not affect how often the sensor reports motion to your hub.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -74,7 +74,7 @@ Outdoor Motion Sensor<br /><h1>Overview</h1><p>OUTDOOR SENSOR: Introducing the f
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Basic Set commands PIR Control<br /><h1>Overview</h1><p>The Outdoor Motion Sensor supports Group 1 with 1 Controller node for lifeline communication and Group 2 with up to 4 devices for PIR Control. This device will send a Notification Report to Group 1 and BASIC_SET command to Group 2 whenever it detects motion.</p>
+Basic Set commands PIR Control<br /> <h1>Overview</h1><p>The Outdoor Motion Sensor supports Group 1 with 1 Controller node for lifeline communication and Group 2 with up to 4 devices for PIR Control. This device will send a Notification Report to Group 1 and BASIC_SET command to Group 2 whenever it detects motion.</p>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="cooper_rftr9505_00_000" listed="false">
     <label>RFTR9505 Duplex receptacle</label>
     <description><![CDATA[
-Duplex receptacle<br /><h1>Overview</h1><p>The Aspire RF 15A split receptacle replaces regular receptacles to provide local and remote RF ON/OFF control of a single outlet. Moreover, the Aspire RF receptacle provides other programmable functions (scenes, events, association, child lockout, etc.) when used with Aspire RF or other Z-Wave® compliant controllers*. The receptacle can be manually and remotely controlled by commands sent from an Aspire RF controller (RFHDCSG, RFTDCSG, RFTCP, RFUSB-PRO) or other Z-Wave compatible controllers or programs. An Aspire RF receptacle utilizes existing 120 V/AC 60Hz standard house wiring and fits into a standard wallbox. No new wiring needed.*Note: some specific Aspire RF features may not be programmable</p> <br /><h2>Inclusion Information</h2><p>Press the Install button</p> <br /><h2>Exclusion Information</h2><p>Press the Install button</p>
+Duplex receptacle<br /> <h1>Overview</h1><p>The Aspire RF 15A split receptacle replaces regular receptacles to provide local and remote RF ON/OFF control of a single outlet. Moreover, the Aspire RF receptacle provides other programmable functions (scenes, events, association, child lockout, etc.) when used with Aspire RF or other Z-Wave® compliant controllers*. The receptacle can be manually and remotely controlled by commands sent from an Aspire RF controller (RFHDCSG, RFTDCSG, RFTCP, RFUSB-PRO) or other Z-Wave compatible controllers or programs. An Aspire RF receptacle utilizes existing 120 V/AC 60Hz standard house wiring and fits into a standard wallbox. No new wiring needed.*Note: some specific Aspire RF features may not be programmable</p> <br /> <h2>Inclusion Information</h2><p>Press the Install button</p> <br /> <h2>Exclusion Information</h2><p>Press the Install button</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -57,7 +57,7 @@ Duplex receptacle<br /><h1>Overview</h1><p>The Aspire RF 15A split receptacle re
                  min="-128" max="127">
         <label>2: Panic ON time</label>
         <description><![CDATA[
-Panic ON time<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>
+Panic ON time<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -68,7 +68,7 @@ Panic ON time<br /><h1>Overview</h1><p>The amount of time in seconds the switch 
                  min="-128" max="127">
         <label>3: Panic OFF time</label>
         <description><![CDATA[
-Panic OFF time<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn off when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>
+Panic OFF time<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn off when panic mode is triggered. </p> <table><tr><td><strong>Value</strong></td> <td><strong>Time</strong></td> </tr><tr><td>0 to 127</td> <td>0 to 127 seconds</td> </tr><tr><td>-128 to -1</td> <td>128 to 255 seconds</td> </tr></table>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>

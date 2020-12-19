@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen26_00_000" listed="false">
     <label>ZEN26 Paddle Switch</label>
     <description><![CDATA[
-Paddle Switch<br /><h1>Overview</h1><p>Manual or Z-Wave on/off control with instant status updates</p> <p>Simple Direct 3-Way: connect with existing on/off switches in 3-way, 4-way, and 5-way set-ups, no add-on needed (neutral wire required)</p> <p>Remembers and restores on/off status after power failure</p> <p>LED indicator signals inclusion, exclusion, reset, and setting changes</p> <p>Built-in Z-Wave Plus signal repeater to extend network range</p> <p>Works with LED, CFL, and incandescent bulbs</p> <p>S2 security protocol and the latest 500 Z-Wave chip for faster and safer wireless communication</p> <p>Supported by most Z-Wave controllers</p> <br /><h2>Inclusion Information</h2><p>TAP Upper paddle 3-5 TIMES QUICKLY</p> <p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion</p> <br /><h2>Exclusion Information</h2><p> Tap the lower paddle on the switch 3 times quickly</p>
+Paddle Switch<br /> <h1>Overview</h1><p>Manual or Z-Wave on/off control with instant status updates</p> <p>Simple Direct 3-Way: connect with existing on/off switches in 3-way, 4-way, and 5-way set-ups, no add-on needed (neutral wire required)</p> <p>Remembers and restores on/off status after power failure</p> <p>LED indicator signals inclusion, exclusion, reset, and setting changes</p> <p>Built-in Z-Wave Plus signal repeater to extend network range</p> <p>Works with LED, CFL, and incandescent bulbs</p> <p>S2 security protocol and the latest 500 Z-Wave chip for faster and safer wireless communication</p> <p>Supported by most Z-Wave controllers</p> <br /> <h2>Inclusion Information</h2><p>TAP Upper paddle 3-5 TIMES QUICKLY</p> <p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion</p> <br /> <h2>Exclusion Information</h2><p> Tap the lower paddle on the switch 3 times quickly</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -51,7 +51,7 @@ Paddle Switch<br /><h1>Overview</h1><p>Manual or Z-Wave on/off control with inst
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Paddle control</label>
         <description><![CDATA[
-Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want the upper paddle to turn the light ON or turn the light OFF when tapped</p>
+Choose paddle functionality (invert)<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light ON or turn the light OFF when tapped</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -64,7 +64,7 @@ Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED indicator control</label>
         <description><![CDATA[
-Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is ON or OFF, or if you want it to remain ON or OIFF at all times. 6 x TAP PADDLE to manually change the LED indicator mode.</p>
+Change behavior of the LED indicator<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is ON or OFF, or if you want it to remain ON or OIFF at all times. 6 x TAP PADDLE to manually change the LED indicator mode.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -80,7 +80,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want
                  min="0" max="32768">
         <label>3: Auto turn-OFF timer</label>
         <description><![CDATA[
-Enable the auto turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to set the time which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of seconds.</p>
+Enable the auto turn-OFF timer<br /> <h1>Overview</h1><p>Use this parameter to set the time which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of seconds.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -102,14 +102,14 @@ Enable the auto turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to se
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
+<br /> <h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Control</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
+<br /> <h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

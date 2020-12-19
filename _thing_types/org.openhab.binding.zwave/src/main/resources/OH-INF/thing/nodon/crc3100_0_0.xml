@@ -8,7 +8,7 @@
   <thing-type id="nodon_crc3100_00_000" listed="false">
     <label>CRC-3100 Octan Remote Control</label>
     <description><![CDATA[
-Octan Remote Control<br /><h1>Overview</h1><p>The Octan remote is capable to launch up to 16 different scenes through your home automation gateway</p> <br /><h2>Inclusion Information</h2><p>Place your home automation gateway into “Inclusion” Mode.</p> <p>Simultaneously push on circle button and plus button, during 1sec. The LED glows in pink to confirm the selection.</p> <p>Push on circle button within 10 seconds.</p> <p>The LED blinks in pink to confirm your choice</p> <p>The LED blinks in green to confirm the procedure</p> <br /><h2>Exclusion Information</h2><p>Place your home automation gateway into “Exclusion” Mode.</p> <p>Simultaneously push on circle button and plus button, during 1sec. The LED glows in pink to confirm the selection.</p> <p>Push on circle button within 10 seconds.</p> <p>The LED blinks in pink to confirm your choice</p> <p>The LED blinks in green to confirm the procedure</p> <br /><h2>Wakeup Information</h2><p>When the product in ""Gateway"" mode, any action on button will send a wake up notification to the gateway.</p>
+Octan Remote Control<br /> <h1>Overview</h1><p>The Octan remote is capable to launch up to 16 different scenes through your home automation gateway</p> <br /> <h2>Inclusion Information</h2><p>Place your home automation gateway into “Inclusion” Mode.</p> <p>Simultaneously push on circle button and plus button, during 1sec. The LED glows in pink to confirm the selection.</p> <p>Push on circle button within 10 seconds.</p> <p>The LED blinks in pink to confirm your choice</p> <p>The LED blinks in green to confirm the procedure</p> <br /> <h2>Exclusion Information</h2><p>Place your home automation gateway into “Exclusion” Mode.</p> <p>Simultaneously push on circle button and plus button, during 1sec. The LED glows in pink to confirm the selection.</p> <p>Push on circle button within 10 seconds.</p> <p>The LED blinks in pink to confirm your choice</p> <p>The LED blinks in green to confirm the procedure</p> <br /> <h2>Wakeup Information</h2><p>When the product in ""Gateway"" mode, any action on button will send a wake up notification to the gateway.</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -152,7 +152,7 @@ Octan Remote Control<br /><h1>Overview</h1><p>The Octan remote is capable to lau
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1>
+<br /> <h1>Overview</h1>
         ]]></description>
       </parameter>
 

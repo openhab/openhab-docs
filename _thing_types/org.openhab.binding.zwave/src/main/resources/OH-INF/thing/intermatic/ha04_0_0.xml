@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha04_00_000" listed="false">
     <label>HA04 Outdoor Module</label>
     <description><![CDATA[
-Outdoor Module<br /><h1>Overview</h1><p>Plug-in outdoor lighting module; switch; 15A</p> <br /><h2>Inclusion Information</h2><p>press and release the PROGRAM button (the black button) on the module till the lamp comes ON. The green LED on the module will blink.</p> <br /><h2>Exclusion Information</h2><p>press and release the PROGRAM button (the black button) on the module till the lamp comes ON.</p>
+Outdoor Module<br /> <h1>Overview</h1><p>Plug-in outdoor lighting module; switch; 15A</p> <br /> <h2>Inclusion Information</h2><p>press and release the PROGRAM button (the black button) on the module till the lamp comes ON. The green LED on the module will blink.</p> <br /> <h2>Exclusion Information</h2><p>press and release the PROGRAM button (the black button) on the module till the lamp comes ON.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

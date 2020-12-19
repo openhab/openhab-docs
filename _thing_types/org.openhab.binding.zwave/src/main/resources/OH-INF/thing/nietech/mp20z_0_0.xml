@@ -8,7 +8,7 @@
   <thing-type id="nietech_mp20z_00_000" listed="false">
     <label>MP20Z Zwave Plug 2 channel plugin outlet</label>
     <description><![CDATA[
-Zwave Plug 2 channel plugin outlet<br /><h1>Overview</h1><p>The 2 ports smart plug provides one Z-Wave outlet for remote controlled by controller through Z-Wave gateway for internet of thing service and can be configured in Z-Wave sensor network, </p> <p>if Z-Wave certified controller features remote access, you can now control your device from your mobile phone devices. the other outlet will be manual On/Off by push button on front. </p> <p>The outlets have maximum load for 600W Incandescent, ½ HP motor or 1200W resistive.</p> <br /><h2>Inclusion Information</h2><p>Press the button on the smart plug three times.</p> <br /><h2>Exclusion Information</h2><p>Press the button on the smart plug three times.</p>
+Zwave Plug 2 channel plugin outlet<br /> <h1>Overview</h1><p>The 2 ports smart plug provides one Z-Wave outlet for remote controlled by controller through Z-Wave gateway for internet of thing service and can be configured in Z-Wave sensor network, </p> <p>if Z-Wave certified controller features remote access, you can now control your device from your mobile phone devices. the other outlet will be manual On/Off by push button on front. </p> <p>The outlets have maximum load for 600W Incandescent, ½ HP motor or 1200W resistive.</p> <br /> <h2>Inclusion Information</h2><p>Press the button on the smart plug three times.</p> <br /> <h2>Exclusion Information</h2><p>Press the button on the smart plug three times.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_nasrc03z_00_000" listed="false">
     <label>NAS-RC03Z SOS/Remote Control 1 Button</label>
     <description><![CDATA[
-SOS/Remote Control 1 Button<br /><h1>Overview</h1><p>Remote control/SOS is a smart security device that can communication with other devices via z-wave. It is compatible with z-wave plus devices, battery powered, compact to carry.</p> <p>SOS is used for emergency: with 4 buttons, you can use Remote control for emergency call and set 6 different scenes.</p> <br /><h2>Inclusion Information</h2><ol><li>Ensure remote control is in z-wave range.</li> <li>Set the controller in learning mode.(refer to the controller user manual)</li> <li>Quickly pressing the red button three times,Led will blink.</li> <li>The controller will recognize remote control and add it into z-wave network.</li> <li>Wait for the controller to configure.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Ensure the device is connected to power supply.</li> <li>Set the controller in remove mode(refer to controller’s user manual)</li> <li>Quick pressing the red button for three times.</li> <li>Wait for removing SOS from the controller .</li> </ol><br /><h2>Wakeup Information</h2><p>Quick pressing the red button for three times.</p>
+SOS/Remote Control 1 Button<br /> <h1>Overview</h1><p>Remote control/SOS is a smart security device that can communication with other devices via z-wave. It is compatible with z-wave plus devices, battery powered, compact to carry.</p> <p>SOS is used for emergency: with 4 buttons, you can use Remote control for emergency call and set 6 different scenes.</p> <br /> <h2>Inclusion Information</h2><ol><li>Ensure remote control is in z-wave range.</li> <li>Set the controller in learning mode.(refer to the controller user manual)</li> <li>Quickly pressing the red button three times,Led will blink.</li> <li>The controller will recognize remote control and add it into z-wave network.</li> <li>Wait for the controller to configure.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Ensure the device is connected to power supply.</li> <li>Set the controller in remove mode(refer to controller’s user manual)</li> <li>Quick pressing the red button for three times.</li> <li>Wait for removing SOS from the controller .</li> </ol> <br /> <h2>Wakeup Information</h2><p>Quick pressing the red button for three times.</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -62,7 +62,7 @@ SOS/Remote Control 1 Button<br /><h1>Overview</h1><p>Remote control/SOS is a sma
                  min="0" max="100">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Command will be sent when SOS is triggered<br /><h1>Overview</h1><p>Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren, the receiver will take it for consideration; for instance, if associated siren is received the Basic Set Command (0xFF), the siren will take alarm on.</p> <p>0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.</p>
+Basic Set Command will be sent when SOS is triggered<br /> <h1>Overview</h1><p>Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren, the receiver will take it for consideration; for instance, if associated siren is received the Basic Set Command (0xFF), the siren will take alarm on.</p> <p>0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ Basic Set Command will be sent when SOS is triggered<br /><h1>Overview</h1><p>Ba
                  min="30" max="32767">
         <label>2: SOS Event Clear Time</label>
         <description><![CDATA[
-Time to clear emergency event after emergency event is triggered<br /><h1>Overview</h1><p>This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’.</p> <p>This parameter is set to ‘0’, the clearing emergency event will not occurred always.</p> <p>The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.</p>
+Time to clear emergency event after emergency event is triggered<br /> <h1>Overview</h1><p>This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’.</p> <p>This parameter is set to ‘0’, the clearing emergency event will not occurred always.</p> <p>The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -81,7 +81,7 @@ Time to clear emergency event after emergency event is triggered<br /><h1>Overvi
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: SOS Configuration</label>
         <description><![CDATA[
-Key function configured as emergency event key or central scene notification key<br /><h1>Overview</h1><p>This parameter defines the SOS key function, the SOS key can be configured as emergency event key or central scene notification key.</p> <p>If this parameter is set to ‘1’, the SOS key will be configured as central scene notification key.</p> <p>If this parameter is set to ‘2’, the SOS key will be configured as emergency event notification key. The default settings is ‘2’, the SOS key is configured as emergency event notification key.</p>
+Key function configured as emergency event key or central scene notification key<br /> <h1>Overview</h1><p>This parameter defines the SOS key function, the SOS key can be configured as emergency event key or central scene notification key.</p> <p>If this parameter is set to ‘1’, the SOS key will be configured as central scene notification key.</p> <p>If this parameter is set to ‘2’, the SOS key will be configured as emergency event notification key. The default settings is ‘2’, the SOS key is configured as emergency event notification key.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -95,14 +95,14 @@ Key function configured as emergency event key or central scene notification key
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Able to control z-wave main controller setting or alarm host status.<br /><h1>Overview</h1><ul><li>COMMAND_CLASS_ZWAVEPLUS_INFO (V2)</li> <li>COMMAND_CLASS_VERSION (V2)</li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC (V2)</li> <li>COMMAND_CLASS_DEVICE_RESET_LOCALLY (V1)</li> <li>COMMAND_CLASS_POWERLEVEL (V1)</li> <li>COMMAND_CLASS_BATTERY (V1)</li> <li>COMMAND_CLASS_ASSOCIATION (V2)</li> <li>COMMAND_CLASS_ASSOCIATION_GRP_INFO (V1)</li> <li>COMMAND_CLASS_WAKE_UP (V2)</li> <li>COMMAND_CLASS_NOTIFICATION (V8)</li> <li>COMMAND_CLASS_SENSOR_BINARY (V2)</li> <li>COMMAND_CLASS_CONFIGURATION (V1)</li> </ul>
+Able to control z-wave main controller setting or alarm host status.<br /> <h1>Overview</h1><ul> <li>COMMAND_CLASS_ZWAVEPLUS_INFO (V2)</li> <li>COMMAND_CLASS_VERSION (V2)</li> <li>COMMAND_CLASS_MANUFACTURER_SPECIFIC (V2)</li> <li>COMMAND_CLASS_DEVICE_RESET_LOCALLY (V1)</li> <li>COMMAND_CLASS_POWERLEVEL (V1)</li> <li>COMMAND_CLASS_BATTERY (V1)</li> <li>COMMAND_CLASS_ASSOCIATION (V2)</li> <li>COMMAND_CLASS_ASSOCIATION_GRP_INFO (V1)</li> <li>COMMAND_CLASS_WAKE_UP (V2)</li> <li>COMMAND_CLASS_NOTIFICATION (V8)</li> <li>COMMAND_CLASS_SENSOR_BINARY (V2)</li> <li>COMMAND_CLASS_CONFIGURATION (V1)</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Group 2</label>
         <description><![CDATA[
-Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .<br /><h1>Overview</h1><p>Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.</p>
+Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .<br /> <h1>Overview</h1><p>Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.</p>
         ]]></description>
       </parameter>
 

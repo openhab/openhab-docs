@@ -8,7 +8,7 @@
   <thing-type id="ge_26933_00_000" listed="false">
     <label>In-Wall Smart Motion Dimmer 26932/26933/ZW3008 In-Wall Smart Motion Dimmer</label>
     <description><![CDATA[
-26932/26933/ZW3008 In-Wall Smart Motion Dimmer<br /><h1>Overview</h1><h4>Description</h4> <p>Set your life in motion with the Z-Wave Plus In-Wall Smart Motion Switch. This energy-efficient sensor works with your home’s gateway to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is has turned lights on or off.</p> <p>Three different modes offer the best lighting option for you: occupancy, vacancy and manual. In occupancy mode, the lights will automatically turn on when you enter the room and automatically turn off once you’ve left (customizable between 5 seconds and 30 minutes).</p> <p>In vacancy mode, the lights are turned on manually and will turn off automatically after a preset amount of time. In manual mode, the lights will function as a normal light switch and manually turn on and off. Along with conveniently saving you time and energy costs, the smart motion dimmer can replace any existing light switch in your home, and can be used in 3- and 4-way applications.</p> <p>You may also coordinate the switch with your household decor with the included white and light almond buttons. Experience the comfort of automation in your life when you come home to the Z-Wave Plus In Wall Smart Motion Switch.</p> <h4>Features</h4> <ul><li>Wirelessly trigger scenes and send alerts when motion detection has turned lights on or off</li> <li>Remotely monitor with any mobile device (Requires Z-Wave gateway or controller)</li> <li>Compatible with all certified Z-Wave devices</li> <li>Requires in-wall installation with hard-wired connections - neutral wire required</li> <li>Can be used in 3- and 4-way applications</li> <li>Works with all dimmable LED, CFL, halogen and incandescent bulbs</li> <li>Multiple operation modes: Occupancy - auto ON/auto OFF, Vacancy - manual ON/auto OFF, Manual - manual ON/OFF</li> <li>Built-in timer lets you set length of time light stays on after motion ceases - from 5 seconds to 30 minutes</li> <li>3 sensitivity levels - low, medium, high</li> <li>Includes white and light almond paddles</li> <li>Indoor use only</li> </ul><h4>Technical Specifications</h4> <ul><li>Specification Value Max Load 600W Incandescent</li> <li>150W Dimmable Power 120VAC, 60Hz</li> <li>Operating Temp. Rge 32-104°F (0-40°C)</li> <li>Signal Frequency 908.4/916MHz</li> <li>Wireless Range Up to 150 feet</li> </ul><br /><h2>Inclusion Information</h2><p>Adding your device to a Z-Wave network</p> <ol><li>Follow the instructions for your Z-Wave certified controller to add the smart dimmer to the Z-Wave network.</li> <li>Once the controller is ready to add your smart dimmer, press and release the top or bottom button on the smart dimmer to include it in the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p> <br /><h2>Exclusion Information</h2><p>To remove and reset the device</p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top button on the smart dimmer to remove it from the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p>
+26932/26933/ZW3008 In-Wall Smart Motion Dimmer<br /> <h1>Overview</h1><h4>Description</h4> <p>Set your life in motion with the Z-Wave Plus In-Wall Smart Motion Switch. This energy-efficient sensor works with your home’s gateway to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is has turned lights on or off.</p> <p>Three different modes offer the best lighting option for you: occupancy, vacancy and manual. In occupancy mode, the lights will automatically turn on when you enter the room and automatically turn off once you’ve left (customizable between 5 seconds and 30 minutes).</p> <p>In vacancy mode, the lights are turned on manually and will turn off automatically after a preset amount of time. In manual mode, the lights will function as a normal light switch and manually turn on and off. Along with conveniently saving you time and energy costs, the smart motion dimmer can replace any existing light switch in your home, and can be used in 3- and 4-way applications.</p> <p>You may also coordinate the switch with your household decor with the included white and light almond buttons. Experience the comfort of automation in your life when you come home to the Z-Wave Plus In Wall Smart Motion Switch.</p> <h4>Features</h4> <ul><li>Wirelessly trigger scenes and send alerts when motion detection has turned lights on or off</li> <li>Remotely monitor with any mobile device (Requires Z-Wave gateway or controller)</li> <li>Compatible with all certified Z-Wave devices</li> <li>Requires in-wall installation with hard-wired connections - neutral wire required</li> <li>Can be used in 3- and 4-way applications</li> <li>Works with all dimmable LED, CFL, halogen and incandescent bulbs</li> <li>Multiple operation modes: Occupancy - auto ON/auto OFF, Vacancy - manual ON/auto OFF, Manual - manual ON/OFF</li> <li>Built-in timer lets you set length of time light stays on after motion ceases - from 5 seconds to 30 minutes</li> <li>3 sensitivity levels - low, medium, high</li> <li>Includes white and light almond paddles</li> <li>Indoor use only</li> </ul><h4>Technical Specifications</h4> <ul><li>Specification Value Max Load 600W Incandescent</li> <li>150W Dimmable Power 120VAC, 60Hz</li> <li>Operating Temp. Rge 32-104°F (0-40°C)</li> <li>Signal Frequency 908.4/916MHz</li> <li>Wireless Range Up to 150 feet</li> </ul> <br /> <h2>Inclusion Information</h2><p>Adding your device to a Z-Wave network</p> <ol><li>Follow the instructions for your Z-Wave certified controller to add the smart dimmer to the Z-Wave network.</li> <li>Once the controller is ready to add your smart dimmer, press and release the top or bottom button on the smart dimmer to include it in the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p> <br /> <h2>Exclusion Information</h2><p>To remove and reset the device</p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the Z-Wave network.</li> <li>Once the controller is ready to remove your device, press and release the top button on the smart dimmer to remove it from the network.</li> </ol><p>To return to factory defaults</p> <p>Press and release the top button ten times within 5 seconds. The LED will flash 3 times quickly confirming change.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -98,7 +98,7 @@
                  min="0" max="255">
         <label>2: Dim Level</label>
         <description><![CDATA[
-Brightness of associated light(s)<br /><h1>Overview</h1><p>Valid values are 0-99 or 255 for last dimming level</p>
+Brightness of associated light(s)<br /> <h1>Overview</h1><p>Valid values are 0-99 or 255 for last dimming level</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Brightness of associated light(s)<br /><h1>Overview</h1><p>Valid values are 0-99
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Operation Mode</label>
         <description><![CDATA[
-Sets how the light responds to motion<br /><h1>Overview</h1><p>Occupancy – Light turns on automatically with motion and off automatically without motion</p> <p>Vacancy – Light turns on manually and off automatically without motion</p> <p>Manual – Light only turns on and off manually</p>
+Sets how the light responds to motion<br /> <h1>Overview</h1><p>Occupancy – Light turns on automatically with motion and off automatically without motion</p> <p>Vacancy – Light turns on manually and off automatically without motion</p> <p>Manual – Light only turns on and off manually</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -155,7 +155,7 @@ Sets how the light responds to motion<br /><h1>Overview</h1><p>Occupancy – Lig
                  min="1" max="99">
         <label>7: Remote Control Dim Step</label>
         <description><![CDATA[
-Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
+Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -165,7 +165,7 @@ Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=S
                  min="1" max="255">
         <label>8: Remote Control Dim Rate</label>
         <description><![CDATA[
-Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -175,7 +175,7 @@ Set the speed at which the dim level will change. (10 millisecond precision)<br 
                  min="1" max="99">
         <label>9: Local Control Dim Step</label>
         <description><![CDATA[
-Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
+Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2-99=Steps/Levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -185,7 +185,7 @@ Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2-99=S
                  min="1" max="255">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
-Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -195,7 +195,7 @@ Set the speed at which the dim level will change. (10 millisecond precision)<br 
                  min="1" max="99">
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description><![CDATA[
-Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2=99=Steps/Levels</p>
+Sets the step size of the dimmer.<br /> <h1>Overview</h1><p>1=Default<br />2=99=Steps/Levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Sets the step size of the dimmer.<br /><h1>Overview</h1><p>1=Default<br />2=99=S
                  min="1" max="255">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
-Set the speed at which the dim level will change. (10 millisecond precision)<br /><h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
+Set the speed at which the dim level will change. (10 millisecond precision)<br /> <h1>Overview</h1><p>When set to 1, the dim level will change every 10ms, when set to 255 the dim level will change every 2.55 seconds. The default value is 3 / 30 ms.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -226,7 +226,7 @@ Set the speed at which the dim level will change. (10 millisecond precision)<br 
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Light Sensing</label>
         <description><![CDATA[
-Enable/Disable whether motion sensor only turns light on if room is dark<br /><h1>Overview</h1><p>Light Sensing does not apply in Manual or Vacancy modes</p>
+Enable/Disable whether motion sensor only turns light on if room is dark<br /> <h1>Overview</h1><p>Light Sensing does not apply in Manual or Vacancy modes</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -240,7 +240,7 @@ Enable/Disable whether motion sensor only turns light on if room is dark<br /><h
                  min="0" max="110">
         <label>15: Reset Cycle</label>
         <description><![CDATA[
-Reset Cycle<br /><h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 seconds<br />3=30 seconds<br />4=45 seconds<br />5 to 109 = 15 second intervals, starting at 60 seconds<br />110=27 minutes 15 seconds</p>
+Reset Cycle<br /> <h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 seconds<br />3=30 seconds<br />4=45 seconds<br />5 to 109 = 15 second intervals, starting at 60 seconds<br />110=27 minutes 15 seconds</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -261,7 +261,7 @@ Reset Cycle<br /><h1>Overview</h1><p>0=disable<br />1=10 seconds<br />2=20 secon
                  min="0" max="99">
         <label>17: Switch Level</label>
         <description><![CDATA[
-Set power level for plain switch functionality<br /><h1>Overview</h1><p>0=disabled (default)<br />1-99=Brightness Level</p>
+Set power level for plain switch functionality<br /> <h1>Overview</h1><p>0=disabled (default)<br />1-99=Brightness Level</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

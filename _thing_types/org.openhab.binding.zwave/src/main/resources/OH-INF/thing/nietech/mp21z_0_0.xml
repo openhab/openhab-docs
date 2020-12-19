@@ -8,7 +8,7 @@
   <thing-type id="nietech_mp21z_00_000" listed="false">
     <label>MP21Z Z-Wave Mini Plug</label>
     <description><![CDATA[
-Z-Wave Mini Plug<br /><h1>Overview</h1><p>Outdoor AC Plug</p><p>Key Features:</p><ul><li>Remote ON/OFF control via the Z-Wave controller<br /></li><li>Manual ON/OFF control with the front panel push button<br /></li><li>Support Association Group and Auto Report switch status<br /></li><li>Over temperature protection<br /></li><li>Support firmware upgrades via Over-the-air (need Gateways support)<br /></li></ul><p>Outdoor AC Plug</p> <p>Key Features:</p> <ul><li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support Association Group and Auto Report switch status</li> <li>Over temperature protection</li> <li>Support firmware upgrades via Over-the-air (need Gateways support)</li> </ul><br /><h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /><h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Z-Wave Mini Plug<br /> <h1>Overview</h1><p>Outdoor AC Plug</p><p>Key Features:</p><ul><li>Remote ON/OFF control via the Z-Wave controller<br /></li><li>Manual ON/OFF control with the front panel push button<br /></li><li>Support Association Group and Auto Report switch status<br /></li><li>Over temperature protection<br /></li><li>Support firmware upgrades via Over-the-air (need Gateways support)<br /></li></ul><p>Outdoor AC Plug</p> <p>Key Features:</p> <ul><li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support Association Group and Auto Report switch status</li> <li>Over temperature protection</li> <li>Support firmware upgrades via Over-the-air (need Gateways support)</li> </ul> <br /> <h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /> <h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network<br /></p><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -51,7 +51,7 @@ Z-Wave Mini Plug<br /><h1>Overview</h1><p>Outdoor AC Plug</p><p>Key Features:</p
                  min="0" max="2">
         <label>1: LED Indicator</label>
         <description><![CDATA[
-Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>
+Status LED Configuration<br /> <h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -64,7 +64,7 @@ Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,l
       <parameter name="config_2_2" type="integer" groupName="configuration">
         <label>2: Auto Turn-Off Timer</label>
         <description><![CDATA[
-The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
+The countdown time, the socket closed<br /> <h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -77,7 +77,7 @@ The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time ca
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Association group 1<br /><h1>Overview</h1><p>Association group_1 is default to associate with the primary controller (Gateway/Hub/Controller) for MP21Z Status change report</p><p>1. MP21Z will trigger AUTO report function if the Switch status had been changed.</p><p>2. Device Reset Locally Notification(Only report when the MP21Z Switch Module has been triggered the RESET TO DEFAULT)</p>
+Association group 1<br /> <h1>Overview</h1><p>Association group_1 is default to associate with the primary controller (Gateway/Hub/Controller) for MP21Z Status change report</p><p>1. MP21Z will trigger AUTO report function if the Switch status had been changed.</p><p>2. Device Reset Locally Notification(Only report when the MP21Z Switch Module has been triggered the RESET TO DEFAULT)</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -85,7 +85,7 @@ Association group 1<br /><h1>Overview</h1><p>Association group_1 is default to a
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Basic set command</label>
         <description><![CDATA[
-Association Group 2<br /><h1>Overview</h1><p>When the output of the MP21Z socket is changed, On (0xFF) or Off (0x00). The MP21Z will automatically send out a related On (0xFF) or Off (0x00) to its associated group.</p>
+Association Group 2<br /> <h1>Overview</h1><p>When the output of the MP21Z socket is changed, On (0xFF) or Off (0x00). The MP21Z will automatically send out a related On (0xFF) or Off (0x00) to its associated group.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

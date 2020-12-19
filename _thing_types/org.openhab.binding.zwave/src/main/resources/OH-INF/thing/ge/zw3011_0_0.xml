@@ -8,7 +8,7 @@
   <thing-type id="ge_zw3011_00_000" listed="false">
     <label>ZW3011/14322/46565 In-Wall Smart Toggle Dimmer</label>
     <description><![CDATA[
-In-Wall Smart Toggle Dimmer<br /><h1>Overview</h1><p>In-Wall Smart Toggle Dimmer with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /><h2>Inclusion Information</h2><p>Adding your device to a Z-Wave network:</p> <ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press up and release the toggle.</li> </ol><br /><h2>Exclusion Information</h2><p>To remove and reset the device:</p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the network.</li> <li>Once the controller is ready to remove your device, press up and release the toggle.</li> </ol>
+In-Wall Smart Toggle Dimmer<br /> <h1>Overview</h1><p>In-Wall Smart Toggle Dimmer with QuickFit and SimpleWire enhancements. Revolutionary QuickFit design features a housing depth that is up to 20 percent smaller than the previous Z-Wave models. This reduced size coupled with the elimination of heat taps provides a better fit in older style boxes and multi-gang configurations. SimpleWire technology allows line and load to automatically be configured with auto-sensing line-load terminals. All of this is coupled with Z-Wave S2 and Smart Start allows for effortless installation while being safer than ever!</p> <br /> <h2>Inclusion Information</h2><p>Adding your device to a Z-Wave network:</p> <ol><li>Follow the instructions for your Z-Wave certified controller to add a device to the Z-Wave network.</li> <li>Once the controller is ready to add your device, press up and release the toggle.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove and reset the device:</p> <ol><li>Follow the instructions for your Z-Wave certified controller to remove a device from the network.</li> <li>Once the controller is ready to remove your device, press up and release the toggle.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@ In-Wall Smart Toggle Dimmer<br /><h1>Overview</h1><p>In-Wall Smart Toggle Dimmer
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Mode</label>
         <description><![CDATA[
-LED Indication Configuration<br /><h1>Overview</h1><p>Adjust the LED status to default, invert, always OFF or always ON</p>
+LED Indication Configuration<br /> <h1>Overview</h1><p>Adjust the LED status to default, invert, always OFF or always ON</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -72,7 +72,7 @@ LED Indication Configuration<br /><h1>Overview</h1><p>Adjust the LED status to d
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Dim up/down rate</label>
         <description><![CDATA[
-Adjust the speed at which the ramps to a specific value other than 0 and FF<br /><h1>Overview</h1><p>0 means "Dim up/down the light to the specified level quickly by command except value 0 and FF"<br />1 means "Dim up/down the light to the specified level slowly by command except value 0 and ff"</p>
+Adjust the speed at which the ramps to a specific value other than 0 and FF<br /> <h1>Overview</h1><p>0 means "Dim up/down the light to the specified level quickly by command except value 0 and FF"<br />1 means "Dim up/down the light to the specified level slowly by command except value 0 and ff"</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -85,7 +85,7 @@ Adjust the speed at which the ramps to a specific value other than 0 and FF<br /
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Switch Mode</label>
         <description><![CDATA[
-Turn your dimmer into an On/Off switch with switch mode<br /><h1>Overview</h1><p>0 for normal dimmer operation, 1 enables switch mode</p>
+Turn your dimmer into an On/Off switch with switch mode<br /> <h1>Overview</h1><p>0 for normal dimmer operation, 1 enables switch mode</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -98,7 +98,7 @@ Turn your dimmer into an On/Off switch with switch mode<br /><h1>Overview</h1><p
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Alternate Exclusion</label>
         <description><![CDATA[
-Never accidentally remove a device during with alternate exclusion<br /><h1>Overview</h1><p>0: Normal operation, press any button on the device</p> <p>1: Press two times ON button and two times OFF button, LED will flash 5 times if exclusion is successful</p>
+Never accidentally remove a device during with alternate exclusion<br /> <h1>Overview</h1><p>0: Normal operation, press any button on the device</p> <p>1: Press two times ON button and two times OFF button, LED will flash 5 times if exclusion is successful</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -113,7 +113,7 @@ Never accidentally remove a device during with alternate exclusion<br /><h1>Over
                  min="1" max="99">
         <label>30: Minimum Dim Threshold</label>
         <description><![CDATA[
-Set the minimum dimmer threshold<br /><h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
+Set the minimum dimmer threshold<br /> <h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ Set the minimum dimmer threshold<br /><h1>Overview</h1><p>Set the minimum dimmer
                  min="0" max="99">
         <label>31: Maximum Brightness Threshold</label>
         <description><![CDATA[
-Set the brightness threshold<br /><h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
+Set the brightness threshold<br /> <h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -133,7 +133,7 @@ Set the brightness threshold<br /><h1>Overview</h1><p>Set the maximum brightness
                  min="0" max="99">
         <label>32: Default Brightness Level</label>
         <description><![CDATA[
-Set the default brightness level for manual turn on<br /><h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <p>Ex. 1= 1% and 99 = 99%</p>
+Set the default brightness level for manual turn on<br /> <h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p> <p>Ex. 1= 1% and 99 = 99%</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

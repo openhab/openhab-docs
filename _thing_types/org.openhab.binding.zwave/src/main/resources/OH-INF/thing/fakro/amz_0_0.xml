@@ -8,7 +8,7 @@
   <thing-type id="fakro_amz_00_000" listed="false">
     <label>AMZ Awning Blinds Controller</label>
     <description><![CDATA[
-Awning Blinds Controller<br /><h1>Overview</h1><p>Only for external installation with Fakro roof windows.</p> <br /><h2>Inclusion Information</h2><ol><li>Press the "In/Ex" button on the controller.</li> <li>Press the programming button on the awning blind for 1 second.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press the "In/Ex" button on the controller.</li> <li>Press the programming button on the awning blind for 1 second.</li> </ol><br /><h2>Wakeup Information</h2><p>Not provided</p>
+Awning Blinds Controller<br /> <h1>Overview</h1><p>Only for external installation with Fakro roof windows.</p> <br /> <h2>Inclusion Information</h2><ol><li>Press the "In/Ex" button on the controller.</li> <li>Press the programming button on the awning blind for 1 second.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Press the "In/Ex" button on the controller.</li> <li>Press the programming button on the awning blind for 1 second.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Not provided</p>
     ]]></description>
     <category>Blinds</category>
 

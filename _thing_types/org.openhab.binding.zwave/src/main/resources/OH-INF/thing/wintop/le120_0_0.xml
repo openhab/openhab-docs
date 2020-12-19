@@ -8,7 +8,7 @@
   <thing-type id="wintop_le120_00_000" listed="false">
     <label>LE120 Appliance Module</label>
     <description><![CDATA[
-Appliance Module<br /><h1>Overview</h1><p>plugin lamp module</p> <br /><h2>Inclusion Information</h2><p>Press the button</p> <br /><h2>Exclusion Information</h2><p>Press the button</p>
+Appliance Module<br /> <h1>Overview</h1><p>plugin lamp module</p> <br /> <h2>Inclusion Information</h2><p>Press the button</p> <br /> <h2>Exclusion Information</h2><p>Press the button</p>
     ]]></description>
     <category>PowerOutlet</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz77_00_000" listed="false">
     <label>TZ77 RGB dimmer switch</label>
     <description><![CDATA[
-RGB dimmer switch<br /><h1>Overview</h1><p>12V DC operating voltage.</p> <p>This insert switch module is a transceiver which is a Z-Wave enabled device<br />and is fully compatible with any Z-Wave enabled network. <br />Remote on/off control of the connected load is possible with other manufacturer's<br />wireless controller. Each switch is designed to act as a repeater.</p> <br /><h2>Inclusion Information</h2><p>Pressing ON/OFF button three times within 1.5 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing ON/OFF button three times within 1.5 seconds will enter exclusion mode.</p>
+RGB dimmer switch<br /> <h1>Overview</h1><p>12V DC operating voltage.</p> <p>This insert switch module is a transceiver which is a Z-Wave enabled device<br />and is fully compatible with any Z-Wave enabled network. <br />Remote on/off control of the connected load is possible with other manufacturer's<br />wireless controller. Each switch is designed to act as a repeater.</p> <br /> <h2>Inclusion Information</h2><p>Pressing ON/OFF button three times within 1.5 seconds will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing ON/OFF button three times within 1.5 seconds will enter exclusion mode.</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -88,7 +88,7 @@ RGB dimmer switch<br /><h1>Overview</h1><p>12V DC operating voltage.</p> <p>This
                  min="0" max="1">
         <label>1: Indicator light state</label>
         <description><![CDATA[
-Change the state of indicator light<br /><h1>Overview</h1><p>Default status of socket: LED is on as indicator when the load is off</p>
+Change the state of indicator light<br /> <h1>Overview</h1><p>Default status of socket: LED is on as indicator when the load is off</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -98,7 +98,7 @@ Change the state of indicator light<br /><h1>Overview</h1><p>Default status of s
                  min="0" max="1">
         <label>2: Memory function</label>
         <description><![CDATA[
-Socket status when powered on<br /><h1>Overview</h1><p>Default with memory: the socket status is same as before when power on</p>
+Socket status when powered on<br /> <h1>Overview</h1><p>Default with memory: the socket status is same as before when power on</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

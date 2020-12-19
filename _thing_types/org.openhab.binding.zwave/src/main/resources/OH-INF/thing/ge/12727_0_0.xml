@@ -8,7 +8,7 @@
   <thing-type id="ge_12727_00_000" listed="false">
     <label>12727 GE 12727 Z-Wave Wireless Lighting Control Smart Toggle Switch</label>
     <description><![CDATA[
-GE 12727 Z-Wave Wireless Lighting Control Smart Toggle Switch<br /><h1>Overview</h1><ul><li>The switch enables you to wirelessly control lights turning them on and off, schedule a timed event, or create a custom scene from anywhere in the world, at any time of the day.</li> <li>Easily replace any standard in-wall switch with the GE Z-Wave Smart Switch to control permanently installed lighting or fans with your mobile device or computer using any Z-Wave certified gateway. Can be controlled in groups of multiple lights or turned on or off within ambient interior lighting scene</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.</li> <li>Once the controller is ready to include your device, press up and release the toggle switch to include it in the network.<br />Note: Your controller may need to be within 10 feet of the device to be included.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.</li> </ol><br /><h2>Exclusion Information</h2><p>Press up and release the toggle switch</p>
+GE 12727 Z-Wave Wireless Lighting Control Smart Toggle Switch<br /> <h1>Overview</h1><ul><li>The switch enables you to wirelessly control lights turning them on and off, schedule a timed event, or create a custom scene from anywhere in the world, at any time of the day.</li> <li>Easily replace any standard in-wall switch with the GE Z-Wave Smart Switch to control permanently installed lighting or fans with your mobile device or computer using any Z-Wave certified gateway. Can be controlled in groups of multiple lights or turned on or off within ambient interior lighting scene</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.</li> <li>Once the controller is ready to include your device, press up and release the toggle switch to include it in the network.<br />Note: Your controller may need to be within 10 feet of the device to be included.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.</li> </ol> <br /> <h2>Exclusion Information</h2><p>Press up and release the toggle switch</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -44,7 +44,7 @@ GE 12727 Z-Wave Wireless Lighting Control Smart Toggle Switch<br /><h1>Overview<
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert switch</label>
         <description><![CDATA[
-Invert switch<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
+Invert switch<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -58,7 +58,7 @@ Invert switch<br /><h1>Overview</h1><p>If the switch is accidentally installed u
                  min="0" max="1">
         <label>29: Load Sensing</label>
         <description><![CDATA[
-Load Sensing<br /><h1>Overview</h1><p>Load Sensing Load sensing is disabled when shipped from the factory. This feature can be enabled if desired. Setting parameter 29 to a value of 1 will enable the Load Sense function</p>
+Load Sensing<br /> <h1>Overview</h1><p>Load Sensing Load sensing is disabled when shipped from the factory. This feature can be enabled if desired. Setting parameter 29 to a value of 1 will enable the Load Sense function</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

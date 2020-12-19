@@ -8,7 +8,7 @@
   <thing-type id="zwaveproducts_zlpa100_00_000" listed="false">
     <label>ZL-PA-100 ZL-PA-100</label>
     <description><![CDATA[
-ZL-PA-100<br /><h1>Overview</h1><p>Overview<br />ZL-PA-100 is designed to provide easy Z-Wave control for plug-in appliances and lighting that require On/Off operation. Simply plug the ZL-PA-100 into any standard outlet and the appliance or lamp you wish to control, up to 1800W, into the ZA-PA-100. Add to your Z-Wave network and enjoy custom scenes and scheduled timed events when you're either home or away.</p> <br /><h2>Inclusion Information</h2><p>Normally, the sequence is as follows:</p> <ol><li>Place your network controller into inclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was added successfully.</li> <li>Once the has been successfully added to your home network, you can move it to the preferred location in the home. If the controller shows it failed, repeat the procedure.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place your network controller into exclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was removed successfully.</li> </ol><br /><h2>Wakeup Information</h2><p>Mains powered, acts as a repeater also</p>
+ZL-PA-100<br /> <h1>Overview</h1><p>Overview<br />ZL-PA-100 is designed to provide easy Z-Wave control for plug-in appliances and lighting that require On/Off operation. Simply plug the ZL-PA-100 into any standard outlet and the appliance or lamp you wish to control, up to 1800W, into the ZA-PA-100. Add to your Z-Wave network and enjoy custom scenes and scheduled timed events when you're either home or away.</p> <br /> <h2>Inclusion Information</h2><p>Normally, the sequence is as follows:</p> <ol><li>Place your network controller into inclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was added successfully.</li> <li>Once the has been successfully added to your home network, you can move it to the preferred location in the home. If the controller shows it failed, repeat the procedure.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Place your network controller into exclusion mode by following the controller manufacturer's instructions.</li> <li>When the controller is ready, single click the button on the front of PA-100. The controller should indicate that the new device was removed successfully.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Mains powered, acts as a repeater also</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -56,7 +56,7 @@ ZL-PA-100<br /><h1>Overview</h1><p>Overview<br />ZL-PA-100 is designed to provid
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Nightlight</label>
         <description><![CDATA[
-Nightlight Operation<br /><h1>Overview</h1><p>When value = 0, the LED indicator will be OFF when the connected appliance is ON, and the LED indicator will be ON when the connected appliance is OFF. If value = 1, the LED indicator will be OFF when the connected appliance is OFF, and the LED indicator will be ON when the connected appliance is ON. If value = 2, the LED indicator will be always OFF regardless of the load status.</p>
+Nightlight Operation<br /> <h1>Overview</h1><p>When value = 0, the LED indicator will be OFF when the connected appliance is ON, and the LED indicator will be ON when the connected appliance is OFF. If value = 1, the LED indicator will be OFF when the connected appliance is OFF, and the LED indicator will be ON when the connected appliance is ON. If value = 2, the LED indicator will be always OFF regardless of the load status.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -71,7 +71,7 @@ Nightlight Operation<br /><h1>Overview</h1><p>When value = 0, the LED indicator 
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Device status<br /><h1>Overview</h1><ol><li>PA-100 supports group one for lifeline communication.</li> <li>You can only associate one Z-Wave device to group one.</li> <li>Lifeline association only supports the "manual reset" event.</li> </ol>
+Device status<br /> <h1>Overview</h1><ol> <li>PA-100 supports group one for lifeline communication.</li> <li>You can only associate one Z-Wave device to group one.</li> <li>Lifeline association only supports the "manual reset" event.</li> </ol>
         ]]></description>
       </parameter>
 

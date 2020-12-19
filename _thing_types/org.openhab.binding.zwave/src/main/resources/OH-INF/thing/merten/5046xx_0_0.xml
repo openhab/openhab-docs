@@ -8,7 +8,7 @@
   <thing-type id="merten_5046xx_00_000" listed="false">
     <label>5046xx Dimmer Insert Button</label>
     <description><![CDATA[
-Dimmer Insert Button<br /><h1>Overview</h1><p>A CONNECT radio sensor cover for dimmer inserts.</p> <br /><h2>Inclusion Information</h2><p>Press the button three times</p> <br /><h2>Exclusion Information</h2><p>Press the button three times</p>
+Dimmer Insert Button<br /> <h1>Overview</h1><p>A CONNECT radio sensor cover for dimmer inserts.</p> <br /> <h2>Inclusion Information</h2><p>Press the button three times</p> <br /> <h2>Exclusion Information</h2><p>Press the button three times</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="philio_pat02c_00_000" listed="false">
     <label>PAT02-C Flood Sensor</label>
     <description><![CDATA[
-Flood Sensor<br /><h1>Overview</h1><p>The flood multisensor PAT02 has flood sensor, based on Z-WaveTM technology.</p> <br /><h2>Inclusion Information</h2><p>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode</p> <br /><h2>Wakeup Information</h2><p>Press the tamper key once. The device will wake-up 10 seconds</p>
+Flood Sensor<br /> <h1>Overview</h1><p>The flood multisensor PAT02 has flood sensor, based on Z-WaveTM technology.</p> <br /> <h2>Inclusion Information</h2><p>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode</p> <br /> <h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode</p> <br /> <h2>Wakeup Information</h2><p>Press the tamper key once. The device will wake-up 10 seconds</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ Flood Sensor<br /><h1>Overview</h1><p>The flood multisensor PAT02 has flood sens
                  min="0" max="255">
         <label>1: Basic Set OFF Level</label>
         <description><![CDATA[
-Setting the BASIC command value<br /><h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2.</li> </ul></li> </ul>
+Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2.</li> </ul></li> </ul>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -77,7 +77,7 @@ Setting the BASIC command value<br /><h1>Overview</h1><ul><li>Setting the BASIC 
                  min="0" max="255">
         <label>2: Basic Set ON Level</label>
         <description><![CDATA[
-Setting the BASIC command value<br /><h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2.  </li> </ul></li> </ul>
+Setting the BASIC command value<br /> <h1>Overview</h1><ul><li>Setting the BASIC command value <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2.  </li> </ul></li> </ul>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -86,7 +86,7 @@ Setting the BASIC command value<br /><h1>Overview</h1><ul><li>Setting the BASIC 
                  min="0" max="255">
         <label>5: Operation Mode</label>
         <description><![CDATA[
-Operation mode. Using bit to control.<br /><h1>Overview</h1><p>Operation mode. Using bit to control.</p> <ul><li>Bit0: Disable the Flood function.</li> <li>Bit1: Reserve.</li> <li>Bit2: Reserve.</li> <li>Bit3: not applicable for this device variant, set to 0</li> <li>Bit4: Reserve.</li> <li>Bit5: not applicable for this device variant, set to 1</li> <li>Bit6: Reserve.</li> <li>Bit7: Reserve.</li> </ul>
+Operation mode. Using bit to control.<br /> <h1>Overview</h1><p>Operation mode. Using bit to control.</p> <ul><li>Bit0: Disable the Flood function.</li> <li>Bit1: Reserve.</li> <li>Bit2: Reserve.</li> <li>Bit3: not applicable for this device variant, set to 0</li> <li>Bit4: Reserve.</li> <li>Bit5: not applicable for this device variant, set to 1</li> <li>Bit6: Reserve.</li> <li>Bit7: Reserve.</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -99,7 +99,7 @@ Operation mode. Using bit to control.<br /><h1>Overview</h1><p>Operation mode. U
                  min="0" max="255">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Parameter to set the sensor functions<br /><h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASI OFF after flood event cleared <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: Disable to report Battery state when the device triggered <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 7: Reserve</li> </ul>
+Parameter to set the sensor functions<br /> <h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASI OFF after flood event cleared <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: Disable to report Battery state when the device triggered <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -108,7 +108,7 @@ Parameter to set the sensor functions<br /><h1>Overview</h1><p>Customer Function
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-The interval time for auto report the battery level.<br /><h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>0 means turn off auto report. The default value is 12. The tick time can setting by the configuration No.20.</p>
+The interval time for auto report the battery level.<br /> <h1>Overview</h1><p>The interval time for auto report the battery level.</p> <p>0 means turn off auto report. The default value is 12. The tick time can setting by the configuration No.20.</p>
         ]]></description>
         <default>12</default>
       </parameter>
@@ -117,7 +117,7 @@ The interval time for auto report the battery level.<br /><h1>Overview</h1><p>Th
                  min="0" max="127">
         <label>15: Auto Report Flood Time</label>
         <description><![CDATA[
-The interval time for auto report the flood state.<br /><h1>Overview</h1><p>The interval time for auto report the flood state.</p> <p>0 means turn off auto report. The default value is 12. The tick time can setting by the configuration No.20.</p>
+The interval time for auto report the flood state.<br /> <h1>Overview</h1><p>The interval time for auto report the flood state.</p> <p>0 means turn off auto report. The default value is 12. The tick time can setting by the configuration No.20.</p>
         ]]></description>
         <default>12</default>
       </parameter>
@@ -126,7 +126,7 @@ The interval time for auto report the flood state.<br /><h1>Overview</h1><p>The 
                  min="0" max="255">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
-The interval time for auto reporting each tick.<br /><h1>Overview</h1><p>The interval time for auto report each tick.</p> <p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.</p> <p>Caution1: Setting to 0 means turn off all auto report function.</p> <p>Caution2: The value is unsigned byte</p>
+The interval time for auto reporting each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick.</p> <p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.</p> <p>Caution1: Setting to 0 means turn off all auto report function.</p> <p>Caution2: The value is unsigned byte</p>
         ]]></description>
         <default>30</default>
       </parameter>

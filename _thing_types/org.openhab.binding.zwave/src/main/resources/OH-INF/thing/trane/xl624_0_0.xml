@@ -8,7 +8,7 @@
   <thing-type id="trane_xl624_00_000" listed="false">
     <label>XL624 Touchscreen Comfort Control Thermostat</label>
     <description><![CDATA[
-Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 624 Touchscreen Comfort Control is compatible with single and multistage forced air systems, including:</p> <ul><li>Gas furnace systems</li> <li>Oil furnace systems</li> <li>Electric furnace systems</li> <li>Heat pump systems</li> <li>Air conditioning systems</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Press MENU on the 624 Control.</li> <li>Press NEXT to advance to the Z-WAVE menu.</li> <li>Press SELECT</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press MENU on the 624 Control.</li> <li>Press NEXT to scroll to Z-WAVE screen then press SELECT.</li> <li>Press YES to exclude the control</li> </ol>
+Touchscreen Comfort Control Thermostat<br /> <h1>Overview</h1><p>The Trane 624 Touchscreen Comfort Control is compatible with single and multistage forced air systems, including:</p> <ul><li>Gas furnace systems</li> <li>Oil furnace systems</li> <li>Electric furnace systems</li> <li>Heat pump systems</li> <li>Air conditioning systems</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Press MENU on the 624 Control.</li> <li>Press NEXT to advance to the Z-WAVE menu.</li> <li>Press SELECT</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Press MENU on the 624 Control.</li> <li>Press NEXT to scroll to Z-WAVE screen then press SELECT.</li> <li>Press YES to exclude the control</li> </ol>
     ]]></description>
     <category>HVAC</category>
 
@@ -93,7 +93,7 @@ Touchscreen Comfort Control Thermostat<br /><h1>Overview</h1><p>The Trane 624 To
                  min="5" max="9">
         <label>10: Minimum Off Time</label>
         <description><![CDATA[
-Minimum Off Time<br /><h1>Overview</h1><p>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</p>
+Minimum Off Time<br /> <h1>Overview</h1><p>Sets the minimum off time before another heating/cooling cycle can begin to provide compressor short cycle protection. The thermostat screen will display WAIT when minimum off time is being enforced.</p>
         ]]></description>
         <default>5</default>
         <advanced>true</advanced>
@@ -104,7 +104,7 @@ Minimum Off Time<br /><h1>Overview</h1><p>Sets the minimum off time before anoth
                  min="1" max="9">
         <label>11: Minimum Run Time</label>
         <description><![CDATA[
-Minimum Run Time<br /><h1>Overview</h1><p>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display "Cool ON" or "Heat ON" while the minimum run time is being enforced.</p>
+Minimum Run Time<br /> <h1>Overview</h1><p>Sets the minimum run time before a heating/cooling cycle can turn off to prevent rapid cycling. Thermostat screen will display "Cool ON" or "Heat ON" while the minimum run time is being enforced.</p>
         ]]></description>
         <default>6</default>
         <advanced>true</advanced>
@@ -115,7 +115,7 @@ Minimum Run Time<br /><h1>Overview</h1><p>Sets the minimum run time before a hea
                  min="1" max="8">
         <label>12: Heating Delta Stage 1 ON</label>
         <description><![CDATA[
-Heating Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts.</p>
+Heating Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts.</p>
         ]]></description>
         <default>1</default>
         <advanced>true</advanced>
@@ -126,7 +126,7 @@ Heating Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint t
                  min="0" max="8">
         <label>13: Heating Delta Stage 1 OFF</label>
         <description><![CDATA[
-Heating Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</p>
+Heating Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops. Stage 1 turns off at setpoint minus (-) Delta Stage 1.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>

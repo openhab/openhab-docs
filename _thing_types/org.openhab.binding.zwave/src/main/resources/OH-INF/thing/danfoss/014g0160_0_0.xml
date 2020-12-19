@@ -8,7 +8,7 @@
   <thing-type id="danfoss_014g0160_00_000" listed="false">
     <label>014G0160 Room Thermostat</label>
     <description><![CDATA[
-Room Thermostat<br /><h1>Overview</h1><p>The Danfoss Link™ RS (Room Sensor) has a built-in temperature sensor, which measures the ambient temperature. It allows you to control the heating, based on room temperature in the room where installed. With the Danfoss Link™ RS you can also adjust the temperature.</p> <br /><h2>Inclusion Information</h2><p>Push one time LED Button</p> <br /><h2>Exclusion Information</h2><p>Push one time LED Button</p> <br /><h2>Wakeup Information</h2><p>Any button (LED, Temp+ or Temp-)</p>
+Room Thermostat<br /> <h1>Overview</h1><p>The Danfoss Link™ RS (Room Sensor) has a built-in temperature sensor, which measures the ambient temperature. It allows you to control the heating, based on room temperature in the room where installed. With the Danfoss Link™ RS you can also adjust the temperature.</p> <br /> <h2>Inclusion Information</h2><p>Push one time LED Button</p> <br /> <h2>Exclusion Information</h2><p>Push one time LED Button</p> <br /> <h2>Wakeup Information</h2><p>Any button (LED, Temp+ or Temp-)</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -44,7 +44,7 @@ Room Thermostat<br /><h1>Overview</h1><p>The Danfoss Link™ RS (Room Sensor) ha
       <property name="vendor">Danfoss</property>
       <property name="modelId">014G0160</property>
       <property name="manufacturerId">0002</property>
-      <property name="manufacturerRef">0003:8010</property>
+      <property name="manufacturerRef">0003:8010,8003:8001</property>
       <property name="dbReference">359</property>
     </properties>
 
@@ -62,7 +62,7 @@ Room Thermostat<br /><h1>Overview</h1><p>The Danfoss Link™ RS (Room Sensor) ha
                  min="1" max="100">
         <label>1: Temperature Report threshold</label>
         <description><![CDATA[
-Temperature Report threshold<br /><h1>Overview</h1><p>Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C</p>
+Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

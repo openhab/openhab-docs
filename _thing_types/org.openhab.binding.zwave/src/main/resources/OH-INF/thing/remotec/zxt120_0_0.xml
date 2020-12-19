@@ -8,7 +8,7 @@
   <thing-type id="remotec_zxt120_00_000" listed="false">
     <label>ZXT-120 AC IR Remote</label>
     <description><![CDATA[
-AC IR Remote<br /><h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditioner (AC) IR Extender and it works with any Z-Wave compliant gateway which supports the same command classes (check with your gateway support for compatibility) or portable controller by translating Z-Wave’s Thermostat commands to AC IR control code. User can set the IR code from the built-in code library of ZXT-120 through the configuration commands, or use the learning function of ZXT-120 through the UI on gateway. ZXT-120 also built in a temperature sensor that allow to report your room temperature to home gateway. </p> <br /><h2>Inclusion Information</h2><p>Click once on the PROG button</p> <br /><h2>Exclusion Information</h2><p>Click once on the PROG button</p>
+AC IR Remote<br /> <h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditioner (AC) IR Extender and it works with any Z-Wave compliant gateway which supports the same command classes (check with your gateway support for compatibility) or portable controller by translating Z-Wave’s Thermostat commands to AC IR control code. User can set the IR code from the built-in code library of ZXT-120 through the configuration commands, or use the learning function of ZXT-120 through the UI on gateway. ZXT-120 also built in a temperature sensor that allow to report your room temperature to home gateway. </p> <br /> <h2>Inclusion Information</h2><p>Click once on the PROG button</p> <br /> <h2>Exclusion Information</h2><p>Click once on the PROG button</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -74,7 +74,7 @@ AC IR Remote<br /><h1>Overview</h1><p>The ZXT-120 is a Z-Wave to air-conditioner
                  min="0" max="22">
         <label>25: Location</label>
         <description><![CDATA[
-Location<br /><h1>Overview</h1><p>Indicate a location for IR code learning and start learning</p>
+Location<br /> <h1>Overview</h1><p>Indicate a location for IR code learning and start learning</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz69_00_000" listed="false">
     <label>TZ69 Smart meter switch</label>
     <description><![CDATA[
-Smart meter switch<br /><h1>Overview</h1><p>TZ69 is an ON/OFF Z-Wave switch.</p> <p>TZ69 is able to detect current wattage (10-3000W) and overwattage (3000-3300). When detecting overload state, the switch will be disabled and its On/Off button will be locked, while LED will flash quickly. However, after unplug and re-connect the switch will reset its overload condition to normal state.</p> <p>In the front casing, there is an On/Off button with LED indicator which is used to toggle switch on and off or carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashed on and off repeatedly at 2 seconds intervals. It implies that is has not been assigned a node ID and cannot (yet) work with Z-Wave network.</p> <br /><h2>Inclusion Information</h2><ol><li>Please put your main Z-Wave Controller into Inclusion mode.</li> <li>Press On/Off button three times within 1.5 seconds</li> <li>The switch ihould be included.</li> </ol><p>The switch also has auto-inclusion mode, if it was not included. Auto inclusion will be run as long as the switch does not have Node ID and was just plugged into wall outlet. Auto inclusion timeout is 30 seconds, during which node information of eplorer frame will be emitted every 5 seconds. Unlinke manual inclusion, you do not have to press On/Off button to complete inclusion.</p> <br /><h2>Exclusion Information</h2><ol><li>Put your main Z-Wave controller into exclusion mode.</li> <li>Press On/Off button three times within 1.5 seconds</li> <li>The switch shall be excluded (confirmed by LED blinking 1 second on, 1 second off)</li> </ol>
+Smart meter switch<br /> <h1>Overview</h1><p>TZ69 is an ON/OFF Z-Wave switch.</p> <p>TZ69 is able to detect current wattage (10-3000W) and overwattage (3000-3300). When detecting overload state, the switch will be disabled and its On/Off button will be locked, while LED will flash quickly. However, after unplug and re-connect the switch will reset its overload condition to normal state.</p> <p>In the front casing, there is an On/Off button with LED indicator which is used to toggle switch on and off or carry out inclusion, exclusion, reset or association. When first power is applied, its LED flashed on and off repeatedly at 2 seconds intervals. It implies that is has not been assigned a node ID and cannot (yet) work with Z-Wave network.</p> <br /> <h2>Inclusion Information</h2><ol><li>Please put your main Z-Wave Controller into Inclusion mode.</li> <li>Press On/Off button three times within 1.5 seconds</li> <li>The switch ihould be included.</li> </ol><p>The switch also has auto-inclusion mode, if it was not included. Auto inclusion will be run as long as the switch does not have Node ID and was just plugged into wall outlet. Auto inclusion timeout is 30 seconds, during which node information of eplorer frame will be emitted every 5 seconds. Unlinke manual inclusion, you do not have to press On/Off button to complete inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Put your main Z-Wave controller into exclusion mode.</li> <li>Press On/Off button three times within 1.5 seconds</li> <li>The switch shall be excluded (confirmed by LED blinking 1 second on, 1 second off)</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -91,7 +91,7 @@ Smart meter switch<br /><h1>Overview</h1><p>TZ69 is an ON/OFF Z-Wave switch.</p>
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Memory Function</label>
         <description><![CDATA[
-determines if current state is memorized on power failure<br /><h1>Overview</h1><p>Manual states: TZ69 by default value is 1, when the value is 0, TZ69 memory function not used; when the value is 1, TZ69 memory function is used</p>
+determines if current state is memorized on power failure<br /> <h1>Overview</h1><p>Manual states: TZ69 by default value is 1, when the value is 0, TZ69 memory function not used; when the value is 1, TZ69 memory function is used</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -121,7 +121,7 @@ determines if current state is memorized on power failure<br /><h1>Overview</h1>
                  min="10" max="3000">
         <label>5: Threshold of Watt for Load Caution</label>
         <description><![CDATA[
-Above this level, switch enters overload mode<br /><h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
+Above this level, switch enters overload mode<br /> <h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
         ]]></description>
         <default>3000</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Above this level, switch enters overload mode<br /><h1>Overview</h1><p>Overload 
                  min="1" max="10000">
         <label>6: Threshold of kWH for Load Caution</label>
         <description><![CDATA[
-Over this level, unit with go into overload mode<br /><h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
+Over this level, unit with go into overload mode<br /> <h1>Overview</h1><p>Overload mode means the switch is disabled and the LED flashes at 0.5 second intervals. Unplug unit to clear mode.</p>
         ]]></description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>

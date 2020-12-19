@@ -8,7 +8,7 @@
   <thing-type id="everspring_st815_00_000" listed="false">
     <label>ST815 Illumination Sensor</label>
     <description><![CDATA[
-Illumination Sensor<br /><h1>Overview</h1><p>The Illumination Sensor is designed to monitor the current illumination of ambient environment. The reading of illumination can be reported to you on a regular base at your disposal. If illumination reaches set points, the sensor will send alerts to associated devices for further execution (such as trigger on connected lightings). The Illumination Sensor is suitable for use in darkness and outdoor. </p> <br /><h2>Inclusion Information</h2><p>Pressing ESC key 3 times within 1.5 seconds will enter inclusion mode. </p> <br /><h2>Exclusion Information</h2><p>Pressing ESC key 3 times within 1.5 seconds will enter exclusion mode. </p> <br /><h2>Wakeup Information</h2><p>Not Provided</p>
+Illumination Sensor<br /> <h1>Overview</h1><p>The Illumination Sensor is designed to monitor the current illumination of ambient environment. The reading of illumination can be reported to you on a regular base at your disposal. If illumination reaches set points, the sensor will send alerts to associated devices for further execution (such as trigger on connected lightings). The Illumination Sensor is suitable for use in darkness and outdoor. </p> <br /> <h2>Inclusion Information</h2><p>Pressing ESC key 3 times within 1.5 seconds will enter inclusion mode. </p> <br /> <h2>Exclusion Information</h2><p>Pressing ESC key 3 times within 1.5 seconds will enter exclusion mode. </p> <br /> <h2>Wakeup Information</h2><p>Not Provided</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -56,7 +56,7 @@ Illumination Sensor<br /><h1>Overview</h1><p>The Illumination Sensor is designed
                  min="0" max="99">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Level<br /><h1>Overview</h1><p>Set basic set value to be on or off.</p> <p>Set to 0 to disable</p>
+Basic Set Level<br /> <h1>Overview</h1><p>Set basic set value to be on or off.</p> <p>Set to 0 to disable</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -66,7 +66,7 @@ Basic Set Level<br /><h1>Overview</h1><p>Set basic set value to be on or off.</p
                  min="0" max="1000">
         <label>2: Lux Trigger On Value</label>
         <description><![CDATA[
-Lux Trigger On Value<br /><h1>Overview</h1><p>Lux level when ON command is sent out.</p> <p>Set to 0 to disable.</p> <p>Valid values - 30-1000 or 0</p> <p>Default 30</p>
+Lux Trigger On Value<br /> <h1>Overview</h1><p>Lux level when ON command is sent out.</p> <p>Set to 0 to disable.</p> <p>Valid values - 30-1000 or 0</p> <p>Default 30</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -76,7 +76,7 @@ Lux Trigger On Value<br /><h1>Overview</h1><p>Lux level when ON command is sent 
                  min="0" max="1000">
         <label>3: Lux Trigger Off Value</label>
         <description><![CDATA[
-Lux Trigger Off Value<br /><h1>Overview</h1><p>Lux level when Off command is sent out.</p> <p>Values 30-1000 or 0</p> <p>Default 500</p> <p>Set to 0 to disable.</p>
+Lux Trigger Off Value<br /> <h1>Overview</h1><p>Lux level when Off command is sent out.</p> <p>Values 30-1000 or 0</p> <p>Default 500</p> <p>Set to 0 to disable.</p>
         ]]></description>
         <default>500</default>
         <limitToOptions>false</limitToOptions>
@@ -86,7 +86,7 @@ Lux Trigger Off Value<br /><h1>Overview</h1><p>Lux level when Off command is sen
                  min="0" max="480">
         <label>4: Lux Trigger Off Timer Value.</label>
         <description><![CDATA[
-Lux Trigger Off Timer Value.<br /><h1>Overview</h1><p>Timer value in minutes.</p> <p>Values : 1-480 or 0</p> <p>Default 240</p> <p>Set to 0 to disable.</p>
+Lux Trigger Off Timer Value.<br /> <h1>Overview</h1><p>Timer value in minutes.</p> <p>Values : 1-480 or 0</p> <p>Default 240</p> <p>Set to 0 to disable.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -96,7 +96,7 @@ Lux Trigger Off Timer Value.<br /><h1>Overview</h1><p>Timer value in minutes.</p
                  min="0" max="1439">
         <label>5: Auto Report Time Interval</label>
         <description><![CDATA[
-Auto Report Time Interval<br /><h1>Overview</h1><p>Time interval in minutes to auto report to association group 1</p> <p>Valid values 1-1439 minutes or 0</p> <p>Set to 0 to Disable</p>
+Auto Report Time Interval<br /> <h1>Overview</h1><p>Time interval in minutes to auto report to association group 1</p> <p>Valid values 1-1439 minutes or 0</p> <p>Set to 0 to Disable</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -106,7 +106,7 @@ Auto Report Time Interval<br /><h1>Overview</h1><p>Time interval in minutes to a
                  min="0" max="1000">
         <label>6: Auto Report Lux Interval</label>
         <description><![CDATA[
-Auto Report Lux Interval<br /><h1>Overview</h1><p>Lux interval step size to auto report to association group 1</p> <p>Valid Values 30-1000 (Lux)</p> <p>Set to 0 to Disable</p>
+Auto Report Lux Interval<br /> <h1>Overview</h1><p>Lux interval step size to auto report to association group 1</p> <p>Valid Values 30-1000 (Lux)</p> <p>Set to 0 to Disable</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="ebv_heatappfloor_00_000" listed="false">
     <label>heatapp! floor heatapp! floor is a controller for thermal actuators in underfloor heating installations and is part of the heatapp! system, providing individual circ</label>
     <description><![CDATA[
-heatapp! floor is a controller for thermal actuators in underfloor heating installations and is part of the heatapp! system, providing individual circ<br /><h1>Overview</h1><p>Information at the z-wave alliance product cataloge: https://products.z-wavealliance.org/products/1249</p> <br /><h2>Inclusion Information</h2><p>Press the learn key (10) for 2 seconds that will start the inclusion process on the device.</p> <br /><h2>Exclusion Information</h2><p>Press the learn key (10) for 2 seconds that will start the exclusion process on the device.</p>
+heatapp! floor is a controller for thermal actuators in underfloor heating installations and is part of the heatapp! system, providing individual circ<br /> <h1>Overview</h1><p>Information at the z-wave alliance product cataloge: https://products.z-wavealliance.org/products/1249</p> <br /> <h2>Inclusion Information</h2><p>Press the learn key (10) for 2 seconds that will start the inclusion process on the device.</p> <br /> <h2>Exclusion Information</h2><p>Press the learn key (10) for 2 seconds that will start the exclusion process on the device.</p>
     ]]></description>
     <category>RadiatorControl</category>
 
@@ -93,7 +93,7 @@ heatapp! floor is a controller for thermal actuators in underfloor heating insta
                  min="10" max="240">
         <label>1: Missing Radio Link time</label>
         <description><![CDATA[
-Missing Radio Link time<br /><h1>Overview</h1><p>Maximum time device will wait for reconnection before it going ot emergency mode (All switches ON). </p> <p>It is possible to set in the range of 10 min to 4 hours. Default value is 30 min, only 1 Byte</p>
+Missing Radio Link time<br /> <h1>Overview</h1><p>Maximum time device will wait for reconnection before it going ot emergency mode (All switches ON). </p> <p>It is possible to set in the range of 10 min to 4 hours. Default value is 30 min, only 1 Byte</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -102,7 +102,7 @@ Missing Radio Link time<br /><h1>Overview</h1><p>Maximum time device will wait f
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Relay type</label>
         <description><![CDATA[
-0 normal open, 1 normal close, 2 switching<br /><h1>Overview</h1><p>Configuaration parameter2 relay type. Default relay type is normal open, only 1 Byte. 0 normal open, 1 normal close, 2 switching</p>
+0 normal open, 1 normal close, 2 switching<br /> <h1>Overview</h1><p>Configuaration parameter2 relay type. Default relay type is normal open, only 1 Byte. 0 normal open, 1 normal close, 2 switching</p>
         ]]></description>
         <default>0</default>
         <options>

@@ -8,7 +8,7 @@
   <thing-type id="precision_zsl301eu_00_000" listed="false">
     <label>ZSL301EU Single relay switch</label>
     <description><![CDATA[
-Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF module purposed to control lighting lamps or motor loads.</p> <br /><h2>Inclusion Information</h2><p>When prompted by your primary controller, press the button</p> <br /><h2>Exclusion Information</h2><p>When prompted by your primary controller, press the button</p>
+Single relay switch<br /> <h1>Overview</h1><p>Switch Link is a power ON/OFF module purposed to control lighting lamps or motor loads.</p> <br /> <h2>Inclusion Information</h2><p>When prompted by your primary controller, press the button</p> <br /> <h2>Exclusion Information</h2><p>When prompted by your primary controller, press the button</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -111,7 +111,7 @@ Single relay switch<br /><h1>Overview</h1><p>Switch Link is a power ON/OFF modul
                  min="0" max="5">
         <label>5: Delay In Time</label>
         <description><![CDATA[
-Delay In Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be ON instantaneously once ON command is received.</p> <p>1 - 5   -&gt;  The module will detain the ON process for 1-5 seconds up to user preferences.</p>
+Delay In Time<br /> <h1>Overview</h1><p>0   -&gt;  The light will be ON instantaneously once ON command is received.</p> <p>1 - 5   -&gt;  The module will detain the ON process for 1-5 seconds up to user preferences.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ Delay In Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be ON instant
                  min="0" max="5">
         <label>6: Delay Out Time</label>
         <description><![CDATA[
-Delay Out Time<br /><h1>Overview</h1><p>0   -&gt;  The light will be OFF instantaneously once OFF command is received.</p> <p>1 - 5   -&gt;  The module will detain the OFF process for 1-5 seconds up to user preferences.</p>
+Delay Out Time<br /> <h1>Overview</h1><p>0   -&gt;  The light will be OFF instantaneously once OFF command is received.</p> <p>1 - 5   -&gt;  The module will detain the OFF process for 1-5 seconds up to user preferences.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

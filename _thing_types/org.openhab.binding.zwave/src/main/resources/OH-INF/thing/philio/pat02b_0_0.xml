@@ -8,7 +8,7 @@
   <thing-type id="philio_pat02b_00_000" listed="false">
     <label>PAT02-B Z-Wave room sensor</label>
     <description><![CDATA[
-Z-Wave room sensor<br /><h1>Overview</h1><p>The flood multisensor PAT02 has flood, temperature and humidity, 3 sensors function in one, based on Z-WaveTM technology</p> <br /><h2>Inclusion Information</h2><p>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode</p> <br /><h2>Wakeup Information</h2><p>Press the tamper key once. The device will wake-up 10 seconds.</p>
+Z-Wave room sensor<br /> <h1>Overview</h1><p>The flood multisensor PAT02 has flood, temperature and humidity, 3 sensors function in one, based on Z-WaveTM technology</p> <br /> <h2>Inclusion Information</h2><p>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode</p> <br /> <h2>Wakeup Information</h2><p>Press the tamper key once. The device will wake-up 10 seconds.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -74,7 +74,7 @@ Z-Wave room sensor<br /><h1>Overview</h1><p>The flood multisensor PAT02 has floo
                  min="0" max="255">
         <label>5: Operation Mode</label>
         <description><![CDATA[
-set Operation Mode using bit to control<br /><h1>Overview</h1><p>set Operation Mode using bit to control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Setting temperature scale<ul><li>0: Fahrenheit</li> <li>1: Celsius</li> </ul></li> <li>Bit 4: Reserve</li> <li>Bit 5: Reserve</li> <li>Bit 6: Reserve</li> <li>Bit 7: Reserve</li> </ul>
+set Operation Mode using bit to control<br /> <h1>Overview</h1><p>set Operation Mode using bit to control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Setting temperature scale<ul><li>0: Fahrenheit</li> <li>1: Celsius</li> </ul></li> <li>Bit 4: Reserve</li> <li>Bit 5: Reserve</li> <li>Bit 6: Reserve</li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -84,7 +84,7 @@ set Operation Mode using bit to control<br /><h1>Overview</h1><p>set Operation M
                  min="0" max="255">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Customer Function switch using bit control<br /><h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: not applicable for this device variant, set to 0</li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: not applicable for this device variant, set to 0</li> <li>Bit 7: Reserve</li> </ul>
+Customer Function switch using bit control<br /> <h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: not applicable for this device variant, set to 0</li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: not applicable for this device variant, set to 0</li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -93,7 +93,7 @@ Customer Function switch using bit control<br /><h1>Overview</h1><p>Customer Fun
                  min="1" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the battery level.<br /> <h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -103,7 +103,7 @@ The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p
                  min="1" max="127">
         <label>13: Auto Report Temperature Time</label>
         <description><![CDATA[
-The interval time for auto reporting the temperature state.<br /><h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the temperature state.<br /> <h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -113,7 +113,7 @@ The interval time for auto reporting the temperature state.<br /><h1>Overview</h
                  min="0" max="127">
         <label>14: Auto Report Humidity Time</label>
         <description><![CDATA[
-The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><p>The interval time for auto reporting the humidity state.</p> <ul><li>0 = Turn off auto report.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the humidity state.<br /> <h1>Overview</h1><p>The interval time for auto reporting the humidity state.</p> <ul><li>0 = Turn off auto report.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><
                  min="0" max="255">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
-The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interval time for auto report each tick. Units of one minute. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>Caution1: Setting to 0 means turn off all auto report function.</li> <li>Caution2: The value is unsigned byte.</li> </ul>
+The interval time for auto report each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Units of one minute. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>Caution1: Setting to 0 means turn off all auto report function.</li> <li>Caution2: The value is unsigned byte.</li> </ul>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -133,7 +133,7 @@ The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interv
                  min="0" max="127">
         <label>21: Temperature Differential Report</label>
         <description><![CDATA[
-The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report.</p> <ul><li>The unit is Fahrenheit.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
+The temperature differential to report.<br /> <h1>Overview</h1><p>The temperature differential to report.</p> <ul><li>The unit is Fahrenheit.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -143,7 +143,7 @@ The temperature differential to report.<br /><h1>Overview</h1><p>The temperature
                  min="0" max="60">
         <label>23: Humidity Differential Report</label>
         <description><![CDATA[
-The humidity differential to report.<br /><h1>Overview</h1><p>The humidity differential to report.</p> <ul><li>The unit is percentage.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
+The humidity differential to report.<br /> <h1>Overview</h1><p>The humidity differential to report.</p> <ul><li>The unit is percentage.</li> <li>Enable this function the device will detect every 10 seconds.</li> </ul>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

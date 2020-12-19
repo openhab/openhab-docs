@@ -8,7 +8,7 @@
   <thing-type id="act_zdm230_00_000" listed="false">
     <label>ZDM230 HomePro Wall Dimmer ZDM230</label>
     <description><![CDATA[
-HomePro Wall Dimmer ZDM230<br /><h1>Overview</h1><p>Radio Frequency (RF) Controlled, 500W, 230 VAC, European Wall Mounted, 3-Way Dimmer Receiver, Dual Switch, Release 1.1</p> <br /><h2>Inclusion Information</h2><p>Press and release the button.</p> <br /><h2>Exclusion Information</h2><p>Press and release the button.</p>
+HomePro Wall Dimmer ZDM230<br /> <h1>Overview</h1><p>Radio Frequency (RF) Controlled, 500W, 230 VAC, European Wall Mounted, 3-Way Dimmer Receiver, Dual Switch, Release 1.1</p> <br /> <h2>Inclusion Information</h2><p>Press and release the button.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the button.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -51,7 +51,7 @@ HomePro Wall Dimmer ZDM230<br /><h1>Overview</h1><p>Radio Frequency (RF) Control
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Ignore Start-Level (Transmitting)</label>
         <description><![CDATA[
-Dimmers controlled by this switch will start dimming from their current level.<br /><h1>Overview</h1><p>Set ignore start level bit when transmitting dim commands. The ZDM230 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command also has a bit that indicates whether the dimmer should ignore the start level. If the bit is set to 1, the dimmer will ignore the start level and instead start dimming from its current level. If this bit is set to 0, the dimmer will not ignore the start level.</p>
+Dimmers controlled by this switch will start dimming from their current level.<br /> <h1>Overview</h1><p>Set ignore start level bit when transmitting dim commands. The ZDM230 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command also has a bit that indicates whether the dimmer should ignore the start level. If the bit is set to 1, the dimmer will ignore the start level and instead start dimming from its current level. If this bit is set to 0, the dimmer will not ignore the start level.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -64,7 +64,7 @@ Dimmers controlled by this switch will start dimming from their current level.<b
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Suspend group 4</label>
         <description><![CDATA[
-Temporarily disable transmitting commands to Group 4<br /><h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “disassociating” those devices from the group. Setting parameter 2 to the value of 1 will stop the ZDM230 from transmitting to devices that are “associated” into Group 4. It is possible that you may only want the units in Group 4 to track when the dimmer is being turned ON and OFF and not when dimming.</p>
+Temporarily disable transmitting commands to Group 4<br /> <h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “disassociating” those devices from the group. Setting parameter 2 to the value of 1 will stop the ZDM230 from transmitting to devices that are “associated” into Group 4. It is possible that you may only want the units in Group 4 to track when the dimmer is being turned ON and OFF and not when dimming.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -77,7 +77,7 @@ Temporarily disable transmitting commands to Group 4<br /><h1>Overview</h1><p>Yo
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
-Night-light mode<br /><h1>Overview</h1><p>The LED on the ZDM230 will by default, turn ON when the load attached is turned ON.</p> <p>To make the LED turn ON when the load attached is turned OFF instead, set parameter 3 to a value of 1.</p>
+Night-light mode<br /> <h1>Overview</h1><p>The LED on the ZDM230 will by default, turn ON when the load attached is turned ON.</p> <p>To make the LED turn ON when the load attached is turned OFF instead, set parameter 3 to a value of 1.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -97,7 +97,7 @@ Night-light mode<br /><h1>Overview</h1><p>The LED on the ZDM230 will by default,
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Right Paddle<br /><h1>Overview</h1><p>Right Paddle</p>
+Right Paddle<br /> <h1>Overview</h1><p>Right Paddle</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -105,7 +105,7 @@ Right Paddle<br /><h1>Overview</h1><p>Right Paddle</p>
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-Right double click paddle<br /><h1>Overview</h1><p>Right double click paddle</p>
+Right double click paddle<br /> <h1>Overview</h1><p>Right double click paddle</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -113,7 +113,7 @@ Right double click paddle<br /><h1>Overview</h1><p>Right double click paddle</p>
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-Group used to inform devices about status updates<br /><h1>Overview</h1><p>Group used to inform devices about the updates of status of the ZDM230 dimmer</p>
+Group used to inform devices about status updates<br /> <h1>Overview</h1><p>Group used to inform devices about the updates of status of the ZDM230 dimmer</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

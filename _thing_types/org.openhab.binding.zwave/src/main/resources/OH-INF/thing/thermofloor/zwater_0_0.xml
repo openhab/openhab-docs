@@ -8,7 +8,7 @@
   <thing-type id="thermofloor_zwater_00_000" listed="false">
     <label>Heatit Z Water Relay control</label>
     <description><![CDATA[
-Relay control<br /><h1>Overview</h1><ul><li>The relay outputs may be used for controlling actuators/valves in a hydronic heating system</li> <li>May be used to control both 24V actuators and 230V actuators</li> <li>Can be used together with a Heatit Z-Temp sensor in each zone</li> <li>DIN rail mounting</li> <li>Works as a Z-Wave repeater</li> <li>Firmware updates (OTA)</li> <li>Available firmware versions (analog/digital inputs)</li> <li>Supports encryption mode: S0, S2 Access Control Class, S2 Authenticated Class, S2 Unauthenticated Class</li> </ul><br /><h2>Inclusion Information</h2><p>Place your primary controller in Adding Mode by following the manufacturer’s instructions, then activate the add mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Adding Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been added to the Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>Place your primary controller in Remov Mode by following the manufacturer’s instructions, then activate the remove mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Remove Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been removed from the Z-Wave network.</p> <br /><h2>Wakeup Information</h2><p>NA</p>
+Relay control<br /> <h1>Overview</h1><ul><li>The relay outputs may be used for controlling actuators/valves in a hydronic heating system</li> <li>May be used to control both 24V actuators and 230V actuators</li> <li>Can be used together with a Heatit Z-Temp sensor in each zone</li> <li>DIN rail mounting</li> <li>Works as a Z-Wave repeater</li> <li>Firmware updates (OTA)</li> <li>Available firmware versions (analog/digital inputs)</li> <li>Supports encryption mode: S0, S2 Access Control Class, S2 Authenticated Class, S2 Unauthenticated Class</li> </ul> <br /> <h2>Inclusion Information</h2><p>Place your primary controller in Adding Mode by following the manufacturer’s instructions, then activate the add mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Adding Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been added to the Z-Wave network.</p> <br /> <h2>Exclusion Information</h2><p>Place your primary controller in Remov Mode by following the manufacturer’s instructions, then activate the remove mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Remove Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been removed from the Z-Wave network.</p> <br /> <h2>Wakeup Information</h2><p>NA</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -147,7 +147,7 @@ Relay control<br /><h1>Overview</h1><ul><li>The relay outputs may be used for co
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Status LED</label>
         <description><![CDATA[
-Configuration of the status LED<br /><h1>Overview</h1><p>0 LED turned off.</p> <p>1 LED turned on. (Default)</p> <p>2 LED flashing at 1 second intervals (½ Hz).</p> <p>3 LED flashing at ½ second interval (1 Hz).</p>
+Configuration of the status LED<br /> <h1>Overview</h1><p>0 LED turned off.</p> <p>1 LED turned on. (Default)</p> <p>2 LED flashing at 1 second intervals (½ Hz).</p> <p>3 LED flashing at ½ second interval (1 Hz).</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -163,7 +163,7 @@ Configuration of the status LED<br /><h1>Overview</h1><p>0 LED turned off.</p> <
                  min="0" max="100">
         <label>2: LED brightness</label>
         <description><![CDATA[
-Configure the percentage of light in the status LED, when the LED is turned on<br /><h1>Overview</h1><p>Specifies the brightness level of the LED when it is on. Default is 50.</p>
+Configure the percentage of light in the status LED, when the LED is turned on<br /> <h1>Overview</h1><p>Specifies the brightness level of the LED when it is on. Default is 50.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -172,7 +172,7 @@ Configure the percentage of light in the status LED, when the LED is turned on<b
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Thermistor type input 1</label>
         <description><![CDATA[
-This parameter decides which kind of thermistor that is connected to the input..<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+This parameter decides which kind of thermistor that is connected to the input..<br /> <h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -185,7 +185,7 @@ This parameter decides which kind of thermistor that is connected to the input..
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Thermistor type input 2</label>
         <description><![CDATA[
-This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+This parameter decides which kind of thermistor that is connected to the input.<br /> <h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -198,7 +198,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Thermistor type input 3</label>
         <description><![CDATA[
-This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+This parameter decides which kind of thermistor that is connected to the input.<br /> <h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -211,7 +211,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Thermistor type input 4</label>
         <description><![CDATA[
-This parameter decides which kind of thermistor that is connected to the input.<br /><h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
+This parameter decides which kind of thermistor that is connected to the input.<br /> <h1>Overview</h1><p>0 No thermistor, input is disabled. (Default)</p> <p>1 10K NTC. (PART NUMBER: TT02-10KC3-93D-3000R-TPH)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -225,7 +225,7 @@ This parameter decides which kind of thermistor that is connected to the input.<
                  min="-40" max="40">
         <label>7: Input 1 calibration</label>
         <description><![CDATA[
-Input 1 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+Input 1 calibration<br /> <h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -235,7 +235,7 @@ Input 1 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
                  min="-40" max="40">
         <label>8: Input 2 calibration</label>
         <description><![CDATA[
-Input 1 calibratio2<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+Input 1 calibratio2<br /> <h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -245,7 +245,7 @@ Input 1 calibratio2<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
                  min="-40" max="40">
         <label>9: Input 3 calibration</label>
         <description><![CDATA[
-Input 3 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+Input 3 calibration<br /> <h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -255,7 +255,7 @@ Input 3 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
                  min="-40" max="40">
         <label>10: Input 4 calibration</label>
         <description><![CDATA[
-Input 4 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
+Input 4 calibration<br /> <h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0.0°C).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -264,7 +264,7 @@ Input 4 calibration<br /><h1>Overview</h1><p>-4.0°C – 4.0°C. Default is 0 (0
       <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Input 1 report interval</label>
         <description><![CDATA[
-Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds)</p>
+Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds)</p>
         ]]></description>
         <default>6</default>
         <options>
@@ -278,7 +278,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
                  min="0" max="8640">
         <label>12: Input 2 report interval</label>
         <description><![CDATA[
-Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -288,7 +288,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
                  min="0" max="8640">
         <label>13: Input 3 report interval</label>
         <description><![CDATA[
-Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -298,7 +298,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
                  min="0" max="8640">
         <label>14: Input 4 report interval</label>
         <description><![CDATA[
-Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
+Time interval between consecutive temperature reports.<br /> <h1>Overview</h1><p>0 Reporting of temperatures disabled.</p> <p>1 - 8640 Multiply with 10 seconds, 10 seconds – 24 hours. Default is 6 (60 seconds).</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -308,7 +308,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Device Reset notifications, Central Scene notifications and Basic Report On / Off to the controller</p>
+<br /> <h1>Overview</h1><p>Sends Device Reset notifications, Central Scene notifications and Basic Report On / Off to the controller</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -316,7 +316,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Input 1 Basic Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 1 is activated.</p>
+<br /> <h1>Overview</h1><p>Sends Basic Set On / Off when input 1 is activated.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -324,7 +324,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Input 1 Switch Binary Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 1 is activated.</p>
+<br /> <h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 1 is activated.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -332,7 +332,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Input 1 Multilevel Switch Set</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 1 is activated. Is typically used for controlling light dimmers, curtain controllers, etc</p>
+<br /> <h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 1 is activated. Is typically used for controlling light dimmers, curtain controllers, etc</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -340,7 +340,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Input 2 Basic Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Basic Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -348,7 +348,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: Input 2 Switch Binary Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -356,7 +356,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_7" type="text" groupName="association" multiple="true">
         <label>7: Input 2 Multilevel Switch Set</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 2 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+<br /> <h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 2 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -364,7 +364,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_8" type="text" groupName="association" multiple="true">
         <label>8: Input 3 Basic Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Basic Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -372,7 +372,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_9" type="text" groupName="association" multiple="true">
         <label>9: Input 3 Switch Binary Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -380,7 +380,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_10" type="text" groupName="association" multiple="true">
         <label>10: Input 3 Multilevel Switch Set</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 3 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+<br /> <h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 3 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -388,7 +388,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_11" type="text" groupName="association" multiple="true">
         <label>11: Input 4 Basic Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Basic Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Basic Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -396,7 +396,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_12" type="text" groupName="association" multiple="true">
         <label>12: Input 4 Switch Binary Set On / Off</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
+<br /> <h1>Overview</h1><p>Sends Switch Binary Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -404,7 +404,7 @@ Time interval between consecutive temperature reports.<br /><h1>Overview</h1><p>
       <parameter name="group_13" type="text" groupName="association" multiple="true">
         <label>13: Input 4 Multilevel Switch Set</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 4 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
+<br /> <h1>Overview</h1><p>Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 4 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zwn323m_00_000" listed="false">
     <label>Plug-In Smart Meter Dimmer Switch ZWN323M</label>
     <description><![CDATA[
-ZWN323M<br /><h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled device and is fully interoperable with other Z-Wave certified device. In a Z-Wave network, ZWN-323M enable you to remotely ON/OFF&amp;Dim control a Z-Wave ZWN-323M also acts as a repeater, retransmitting the RF signal from one device to another until the intended device is reached. With a horizontal design, the ZWN-323M plug-in dimmer module will not block other nearby AC outlets.</p> <br /><h2>Inclusion Information</h2><p> While the gateway/remote is in the adding mode and the blue LED blinks on the ZWN-323M, press the program button on the module. </p> <br /><h2>Exclusion Information</h2><p>While the gateway or remote in the deleting mode, press the program button on the ZWN-323M. The gateway or remote will verify the deleting, remove the module from the current Z-Wave network, and the LED will blink on the module. </p>
+ZWN323M<br /> <h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled device and is fully interoperable with other Z-Wave certified device. In a Z-Wave network, ZWN-323M enable you to remotely ON/OFF&amp;Dim control a Z-Wave ZWN-323M also acts as a repeater, retransmitting the RF signal from one device to another until the intended device is reached. With a horizontal design, the ZWN-323M plug-in dimmer module will not block other nearby AC outlets.</p> <br /> <h2>Inclusion Information</h2><p> While the gateway/remote is in the adding mode and the blue LED blinks on the ZWN-323M, press the program button on the module. </p> <br /> <h2>Exclusion Information</h2><p>While the gateway or remote in the deleting mode, press the program button on the ZWN-323M. The gateway or remote will verify the deleting, remove the module from the current Z-Wave network, and the LED will blink on the module. </p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -87,7 +87,7 @@ ZWN323M<br /><h1>Overview</h1><p>This ZWN-323 Dimming Module is a Z-Wave enabled
                  min="0" max="255">
         <label>8: Autosend Interval (METER_REPORT)</label>
         <description><![CDATA[
-Autosend Interval (METER_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend Interval (send METER_REPORT)</p>
+Autosend Interval (METER_REPORT)<br /> <h1>Overview</h1><p>Instant Energy Autosend Interval (send METER_REPORT)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Autosend Interval (METER_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosen
                  min="0" max="255">
         <label>9: Autosend interval (SENSOR_MULTILEVEL_REPORT)</label>
         <description><![CDATA[
-Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</p>
+Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Instant Energy Autosend interval (send SENSOR_MULTILEVEL_REPORT)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Autosend interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Instant En
                  min="0" max="255">
         <label>10: Accumulated Autosend Interval ( METER_REPORT)</label>
         <description><![CDATA[
-Accumulated Autosend Interval ( METER_REPORT)<br /><h1>Overview</h1><p>Accumulated Energy Autosend Interval report (send METER_REPORT)</p>
+Accumulated Autosend Interval ( METER_REPORT)<br /> <h1>Overview</h1><p>Accumulated Energy Autosend Interval report (send METER_REPORT)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -116,7 +116,7 @@ Accumulated Autosend Interval ( METER_REPORT)<br /><h1>Overview</h1><p>Accumulat
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Enable automatic notifications</label>
         <description><![CDATA[
-Enable automatic notifications<br /><h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
+Enable automatic notifications<br /> <h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -132,7 +132,7 @@ Enable automatic notifications<br /><h1>Overview</h1><p>Device will send a notif
                  min="0" max="255">
         <label>12: Minimum change in wattage report</label>
         <description><![CDATA[
-Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
+Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

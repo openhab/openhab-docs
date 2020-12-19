@@ -8,7 +8,7 @@
   <thing-type id="danfoss_mt02650_00_000" listed="false">
     <label>MT02650 Devolo Thermostat (09356)</label>
     <description><![CDATA[
-Devolo Thermostat (09356)<br /><h1>Overview</h1><p>Radiator Thermostat</p> <br /><h2>Inclusion Information</h2><p>Short push middle button</p> <br /><h2>Exclusion Information</h2><p>Short push middle button</p> <br /><h2>Wakeup Information</h2><p>Short push middle button</p>
+Devolo Thermostat (09356)<br /> <h1>Overview</h1><p>Radiator Thermostat</p> <br /> <h2>Inclusion Information</h2><p>Short push middle button</p> <br /> <h2>Exclusion Information</h2><p>Short push middle button</p> <br /> <h2>Wakeup Information</h2><p>Short push middle button</p>
     ]]></description>
     <category>RadiatorControl</category>
 
@@ -62,7 +62,7 @@ Devolo Thermostat (09356)<br /><h1>Overview</h1><p>Radiator Thermostat</p> <br /
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Target for Wakeup and Override Notifications</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>A group of devices that receive temperature reports and an alarm in the event of a sensor shutdown. This group can have up to 10 devices with a controller in mind, which is recommended to be included in this group.</p>
+<br /> <h1>Overview</h1><p>A group of devices that receive temperature reports and an alarm in the event of a sensor shutdown. This group can have up to 10 devices with a controller in mind, which is recommended to be included in this group.</p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>
@@ -70,7 +70,7 @@ Devolo Thermostat (09356)<br /><h1>Overview</h1><p>Radiator Thermostat</p> <br /
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Temprature sensor</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>A group of connections for connecting a room temperature sensor, in which it will be necessary to add a Z-Wave temperature sensor, the temperature of which the thermostat will use to control the heating device. Only one temperature sensor can be added to this group.</p>
+<br /> <h1>Overview</h1><p>A group of connections for connecting a room temperature sensor, in which it will be necessary to add a Z-Wave temperature sensor, the temperature of which the thermostat will use to control the heating device. Only one temperature sensor can be added to this group.</p>
         ]]></description>
       </parameter>
 

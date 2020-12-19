@@ -8,7 +8,7 @@
   <thing-type id="building36_adct2000_00_000" listed="false">
     <label>ADC-T 2000 Alarm.com Smart Thermostat</label>
     <description><![CDATA[
-Alarm.com Smart Thermostat<br /><h1>Overview</h1><ul><li> Intelligently Connected with Alarm.com (Alarm.com account required) </li> <li> Remote Access and Control </li> <li> Custom Schedules </li> <li> Critical Temperature Alerts and Geo-Services Automation </li> <li> Can be paired with Alarm.com Temperature Sensor ADC-S2000-T-RA for enhanced climate control and improved energy savings (sold separately) </li> </ul><br /><h2>Inclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin inclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon becomes solid, the thermostat has been included.</p> <br /><h2>Exclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin exclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon flashes red, the thermostat has been excluded.</p>
+Alarm.com Smart Thermostat<br /> <h1>Overview</h1><ul><li> Intelligently Connected with Alarm.com (Alarm.com account required) </li> <li> Remote Access and Control </li> <li> Custom Schedules </li> <li> Critical Temperature Alerts and Geo-Services Automation </li> <li> Can be paired with Alarm.com Temperature Sensor ADC-S2000-T-RA for enhanced climate control and improved energy savings (sold separately) </li> </ul> <br /> <h2>Inclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin inclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon becomes solid, the thermostat has been included.</p> <br /> <h2>Exclusion Information</h2><p>Put thermostat in OFF mode (no mode icons are lit)</p> <p>Press and hold the DOWN button to begin exclusion mode. Release when the RADIO icon lights up.</p> <p>When the RADIO icon flashes red, the thermostat has been excluded.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -103,7 +103,7 @@ Alarm.com Smart Thermostat<br /><h1>Overview</h1><ul><li> Intelligently Connecte
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: HVAC System Type</label>
         <description><![CDATA[
-Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal (Default)</p> <p>1 - Heat Pump</p>
+Configures the type of heating system used.<br /> <h1>Overview</h1><p>0 - Normal (Default)</p> <p>1 - Heat Pump</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -134,7 +134,7 @@ Configures the type of heating system used.<br /><h1>Overview</h1><p>0 - Normal 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Heat Fuel Type</label>
         <description><![CDATA[
-Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Overview</h1><p>0 - Fossil Fuel</p> <p>1 - Electric (Default)</p>
+Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /> <h1>Overview</h1><p>0 - Fossil Fuel</p> <p>1 - Electric (Default)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -200,7 +200,7 @@ Choose type of fuel. Reality - whether unit is boiler vs forced air.<br /><h1>Ov
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Recovery Settings</label>
         <description><![CDATA[
-Whether thermostat uses intelligence to try and make the best of energy usage.<br /><h1>Overview</h1><p>0 - Comfort</p> <p>1 - Efficient (Default)</p>
+Whether thermostat uses intelligence to try and make the best of energy usage.<br /> <h1>Overview</h1><p>0 - Comfort</p> <p>1 - Efficient (Default)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -272,7 +272,7 @@ Whether thermostat uses intelligence to try and make the best of energy usage.<b
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Thermostat Lock</label>
         <description><![CDATA[
-Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+Lock out physical thermostat controls.<br /> <h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -312,7 +312,7 @@ Lock out physical thermostat controls.<br /><h1>Overview</h1><p>0 - Disabled (De
       <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: Temperature Display Units</label>
         <description><![CDATA[
-Celsius or Farenheit for temperature display.<br /><h1>Overview</h1><p>0 - Celsius</p> <p>1 - Farenheit (Default)</p>
+Celsius or Farenheit for temperature display.<br /> <h1>Overview</h1><p>0 - Celsius</p> <p>1 - Farenheit (Default)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -325,7 +325,7 @@ Celsius or Farenheit for temperature display.<br /><h1>Overview</h1><p>0 - Celsi
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: HVAC Modes Enabled</label>
         <description><![CDATA[
-Which heating/cooling modes are available.<br /><h1>Overview</h1><p>3 - Off, Heat<br />5 - Off, Cool<br />7 - Off, Heat, Cool<br />15 - Off, Heat, Cool, Auto (Default)<br />19 - Off, Heat, Emergency Heat<br />23 - Off, Heat, Cool, Emergency Heat<br />31 - Off, Heat, Cool, Auto, Emergency Heat</p>
+Which heating/cooling modes are available.<br /> <h1>Overview</h1><p>3 - Off, Heat<br />5 - Off, Cool<br />7 - Off, Heat, Cool<br />15 - Off, Heat, Cool, Auto (Default)<br />19 - Off, Heat, Emergency Heat<br />23 - Off, Heat, Cool, Emergency Heat<br />31 - Off, Heat, Cool, Auto, Emergency Heat</p>
         ]]></description>
         <default>15</default>
         <options>
@@ -343,7 +343,7 @@ Which heating/cooling modes are available.<br /><h1>Overview</h1><p>3 - Off, Hea
       <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Configurable Terminal Setting</label>
         <description><![CDATA[
-Changes control of configurable terminal<br /><h1>Overview</h1><p>0 - Disabled (Default)<br />1 - W3 - Third Stage HEAT or 2nd Stage of 2-Stage Auxiliary / Backup heat<br />2 - H - External Dehumidifier Control<br />3 - DH - External Dehumidifier Operation</p>
+Changes control of configurable terminal<br /> <h1>Overview</h1><p>0 - Disabled (Default)<br />1 - W3 - Third Stage HEAT or 2nd Stage of 2-Stage Auxiliary / Backup heat<br />2 - H - External Dehumidifier Control<br />3 - DH - External Dehumidifier Operation</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -358,7 +358,7 @@ Changes control of configurable terminal<br /><h1>Overview</h1><p>0 - Disabled (
       <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: Power Source</label>
         <description><![CDATA[
-Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default)</p> <p>1 - C-Wire</p>
+Which source of power is utilized.<br /> <h1>Overview</h1><p>0 - Battery (Default)</p> <p>1 - C-Wire</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -389,7 +389,7 @@ Which source of power is utilized.<br /><h1>Overview</h1><p>0 - Battery (Default
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Remote Temperature Enable</label>
         <description><![CDATA[
-Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+Enables remote temperature sensor instead of built-in.<br /> <h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -430,7 +430,7 @@ Enables remote temperature sensor instead of built-in.<br /><h1>Overview</h1><p>
       <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: O/B Select</label>
         <description><![CDATA[
-Configuration of O/B terminal.<br /><h1>Overview</h1><p>0 - O/B Terminal acts as B terminal, closed when cooling<br />1 - O/B Terminal acts as O terminal, closed when heating (Default)</p>
+Configuration of O/B terminal.<br /> <h1>Overview</h1><p>0 - O/B Terminal acts as B terminal, closed when cooling<br />1 - O/B Terminal acts as O terminal, closed when heating (Default)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -444,7 +444,7 @@ Configuration of O/B terminal.<br /><h1>Overview</h1><p>0 - O/B Terminal acts as
       <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Z-Wave Echo Association Reports</label>
         <description><![CDATA[
-Enable/Disabled Echo Assoc. Reports.<br /><h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
+Enable/Disabled Echo Assoc. Reports.<br /> <h1>Overview</h1><p>0 - Disabled (Default)</p> <p>1 - Enabled</p>
         ]]></description>
         <default>0</default>
         <options>

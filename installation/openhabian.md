@@ -27,24 +27,23 @@ To that end, the project provides two things:
 {:toc}
 
 ## Features
+The following features are provided by the openHABian image out of the box:
 
-The following features are provided by the openHABian images out of the box:
+-   Hassle-free setup without a display or keyboard, connected via Ethernet or [WiFi](#wifi-based-setup-notes)
+-   the latest stable version of openHAB 2
+-   Zulu Embedded OpenJDK Java 8, 11 or AdoptOpenJDK
+-   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
+-   web based openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
+-   Samba file sharing [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
+-   Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
+-   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
+-   Customized Bash shell experience, settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and [nano](https://github.com/airix1/openhabnano)
+-   [Mosquitto](https://mosquitto.org) MQTT broker
+-   the [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
+-   FIND, the [Framework for Internal Navigation and Discovery](https://www.internalpositioning.com/)
+-   [Tailscale](https://tailscale.com/blog/how-tailscale-works/) VPN and [WireGuard](https://www.wireguard.com/) for remote VPN access
 
-- Hassle-free setup without a display or keyboard, connected via [Ethernet or Wi-Fi](#wifi-setup)
-- openHAB 2 in the latest stable version
-- Zulu Embedded OpenJDK Java 11 ([newest revision](http://zulu.org/zulu-community/zulurelnotes))
-- [openHABian Configuration Tool](#openhabian-config) including updater functionality
-- openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
-- Samba file sharing with [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
-- Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
-- Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
-- Customized Bash shell experience
-- Customized vim settings, including [openHAB syntax highlighting](https://github.com/cyberkov/openhab-vim)
-- Customized nano settings, including [openHAB syntax highlighting](https://github.com/airix1/openhabnano)
-- Version control for `/etc` by the help of [etckeeper](http://etckeeper.branchable.com) (git)
-- [Raspberry Pi specific](rasppi.html): Extend to the whole SD card, 16MB GPU memory split
-
-Additionally the **openHABian Configuration Tool** [`openhabian-config`](#openhabian-config) is included and provides the following optional settings and components:
+The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian-configuration-tool) provides the following optional settings and components:
 
 ![openHABian-config menu](images/openHABian-config.png)
 
@@ -78,13 +77,13 @@ openHABian is designed as a headless system, you will not need a display or a ke
 -   [Download the latest "openHABian" SD card image file](https://github.com/openhab/openhabian/releases) (Note: the file is *xz* compressed)
 -   Write the image to your SD card (e.g. with [Etcher](https://www.balena.io/etcher/), able to directly work with *xz* files)
 -   Insert the SD card into your Raspberry Pi, connect Ethernet ([WiFi also supported](#wifi-based-setup-notes)) and power on.
--   Wait approximately **15-45 minutes** for openHABian to do its magic. <br>(You can check the progress in your web-browser [here](http://openhab).)
+-   Wait approximately **15-45 minutes** for openHABian to do its magic. <br>(You can check the progress in your web-browser [here](http://openhabiandevice).)
 -   Enjoy!
 
--   The device will be available under its IP or via the local DNS name `openhab`
--   [Connect to the openHAB 2 dashboard](https://www.openhab.org/docs/configuration/packages.html): [http://openhab:8080](http://openhab:8080)
+-   The device will be accessible by its IP or via the local DNS name `openhabiandevice` (or whatever you changed 'hostname' in `openhabian.conf` to)
+-   [Connect to the openHAB 2 dashboard](https://www.openhab.org/docs/configuration/packages.html): [http://openhabiandevice:8080](http://openhabiandevice:8080)
 -   [Connect to the Samba network shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally) with username `openhabian` and password `openhabian`
--   Connect to the openHAB Log Viewer (frontail): [http://openhab:9001](http://openhab:9001)
+-   Connect to the openHAB Log Viewer (frontail): [http://openhabiandevice:9001](http://openhabiandevice:9001)
 -   If you encounter any setup problem, [please continue here](#successful)
 
 You can stop reading now, openHABian has installed and configured your openHAB system and you can start to use it right away.
@@ -140,8 +139,8 @@ openhabian-config unattended
 
 to get the automated openHABian installation going.
 
-Please note that we cannot test HW/OS combos upfront so there is no support / no guarantee for this work as explained in the [README](https://github.com/openhab/openhabian/blob/master/README.md).
-Don't be too disappointed if you run into errors. Drop us a note on Github.
+Please note that we cannot test HW/OS combos beyond RPis upfront so there is no support / no promise for this work as explained in the [README](https://github.com/openhab/openhabian/blob/master/README.md).
+Drop us a note on Github.
 
 ## openHABian Configuration Tool
 The following instructions target a Raspberry Pi openHABian setup but should be applicable to all openHABian environments.
@@ -259,10 +258,10 @@ You can also make use of this if you don't use the image but unattended installa
 Make the `adminkeyurl` point to an URL to contain a public SSH key. This will be included with your administration
 user's `.ssh/authorized_keys` and the openHAB Karaf console so the admin user (yourself, usually) can login after installation.
 
-#### WiFi based Setup Notes
+#### WiFi based setup notes
 If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible WiFi dongle you can set up and use openHABian via WiFi only.
 For the WiFi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
-So in addition to the setup instructions given above, uncomment and complete the lines reading `wifi_ssid="My WiFi SSID"` and `wifi_psk="password123"` in `openhabian.conf`.
+So in addition to the setup instructions given above, uncomment and complete the lines reading `wifi_ssid=""` and `wifi_psk=""` in `openhabian.conf`.
 
 #### WiFi Hotspot
 Whenever the WiFi interface wlan0 exists but does not have connectivity, openHABian will launch a **Hotspot**.
@@ -270,7 +269,7 @@ When you use your mobile phone to scan for WiFi networks, you should be seeing a
 Connecting will work without a password. Once connected, open your browser and point it at `http://raspberrypi.local` or `http://comitup-<n>`.
 This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities. If you cannot connect to this address, go to `http://10.42.0.1`.
 On that page you can select the SSID of the network you want to connect your system to. Provide the password and press the button.
-Note that as soon as you do, the wlan0 IP address changes so your mobile browser will not receive/priovide you any more feedback.
+Note that as soon as you do, the wlan0 IP address changes so your mobile browser will not be able to provide you any feedback if that worked out.
 Try to ping the new system's hostname (default is `openHABianDevice`) or check DHCP on your router if your openHABian system appeared there.
 For more information on this feature see [comitup-cli](https://davesteele.github.io/comitup/).
 You can use `sudo comitup-cli` inside openHABian to change networks and eventually remove network credentials.

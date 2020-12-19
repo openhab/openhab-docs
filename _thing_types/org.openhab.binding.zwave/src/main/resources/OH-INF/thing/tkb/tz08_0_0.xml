@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz08_00_000" listed="false">
     <label>TZ08 Rollershutter Controller</label>
     <description><![CDATA[
-Rollershutter Controller<br /><h1>Overview</h1><p>The in-wall Roller Shutter Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to this Roller Controller.</p> <p>This in-wall Roller Shutter Controller is a transceiver which is a Z-WaveTM enabled device and is fully compatible with any Z-WaveTM enabled network. Slim design let the Controller can easily hide itself into the wall box and that will be good for the house decoration.</p> <br /><h2>Inclusion Information</h2><p>Pressing Include button three times within 1.5 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing Include button three times within 1.5 seconds will enter exclusion mode. </p>
+Rollershutter Controller<br /> <h1>Overview</h1><p>The in-wall Roller Shutter Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to this Roller Controller.</p> <p>This in-wall Roller Shutter Controller is a transceiver which is a Z-WaveTM enabled device and is fully compatible with any Z-WaveTM enabled network. Slim design let the Controller can easily hide itself into the wall box and that will be good for the house decoration.</p> <br /> <h2>Inclusion Information</h2><p>Pressing Include button three times within 1.5 seconds will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing Include button three times within 1.5 seconds will enter exclusion mode. </p>
     ]]></description>
     <category>Blinds</category>
 

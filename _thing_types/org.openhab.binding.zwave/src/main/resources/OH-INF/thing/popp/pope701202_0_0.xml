@@ -8,7 +8,7 @@
   <thing-type id="popp_pope701202_00_000" listed="false">
     <label>POPE701202 Popp Mold detector</label>
     <description><![CDATA[
-Popp Mold detector<br /><h1>Overview</h1><p>Product Description<br /><br />This device measures the three air quality parameters temperature, humidity and dew point an reports them to a central controller. Beside this, the device can directly control groups of other Z-Wave devices on over- and undershooting a set temperature and/or humidity parameter. This can be used to establish control loops for temperature and humidity. The device wakes up every 4 minutes to measure the values and it will send unsolicited reports when values change. Additionally, the device will report all values on request.<br />The mold detector is actively monitoring the danger of mold in a room based on the temperature and humidity and will issue alarm warnings when critical air conditions met. Wireless Alarm and red and a green blinking LED will indicate a mold condition. This local LED warning function is also available when the device is not included in any Z-Wave network and works stand alone.</p> <p>The POPP Mold Detector can be mounted in two ways.</p> <ol><li>use the enclosed adhesive tape. Clean the substrate carefully from grease and dirt to achieve optimum strength of the adhesive areas.</li> <li>use the enclosed screws and dowels to fix it to the wall or other surface.</li> </ol><br /><h2>Inclusion Information</h2><p>On factory default the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. This process is called Inclusion.<br /><br />Tripple clicking the tamper button includes (adds) the device.</p> <br /><h2>Exclusion Information</h2><p>Devices can also be removed from a network. This process is called Exclusion. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.</p> <p>Tripple clicking the tamper button excludes (removes) the device.</p> <br /><h2>Wakeup Information</h2><h1>Communication to a Sleeping device (Wakeup)</h1> <p><strong>A triple click (3 cliecks) on the tamper button will wakeup the device</strong>.</p> <p><br />This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.<br /><br />This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device. To wakeup the device please perform the following action: </p>
+Popp Mold detector<br /> <h1>Overview</h1><p>Product Description<br /><br />This device measures the three air quality parameters temperature, humidity and dew point an reports them to a central controller. Beside this, the device can directly control groups of other Z-Wave devices on over- and undershooting a set temperature and/or humidity parameter. This can be used to establish control loops for temperature and humidity. The device wakes up every 4 minutes to measure the values and it will send unsolicited reports when values change. Additionally, the device will report all values on request.<br />The mold detector is actively monitoring the danger of mold in a room based on the temperature and humidity and will issue alarm warnings when critical air conditions met. Wireless Alarm and red and a green blinking LED will indicate a mold condition. This local LED warning function is also available when the device is not included in any Z-Wave network and works stand alone.</p> <p>The POPP Mold Detector can be mounted in two ways.</p> <ol><li>use the enclosed adhesive tape. Clean the substrate carefully from grease and dirt to achieve optimum strength of the adhesive areas.</li> <li>use the enclosed screws and dowels to fix it to the wall or other surface.</li> </ol> <br /> <h2>Inclusion Information</h2><p>On factory default the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. This process is called Inclusion.<br /><br />Tripple clicking the tamper button includes (adds) the device.</p> <br /> <h2>Exclusion Information</h2><p>Devices can also be removed from a network. This process is called Exclusion. Both processes are initiated by the primary controller of the Z-Wave network. This controller is turned into exclusion respective inclusion mode. Inclusion and Exclusion is then performed doing a special manual action right on the device.</p> <p>Tripple clicking the tamper button excludes (removes) the device.</p> <br /> <h2>Wakeup Information</h2><h1>Communication to a Sleeping device (Wakeup)</h1> <p><strong>A triple click (3 cliecks) on the tamper button will wakeup the device</strong>.</p> <p><br />This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.<br /><br />This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device. To wakeup the device please perform the following action: </p>
     ]]></description>
     <category>Sensor</category>
 
@@ -80,7 +80,7 @@ Popp Mold detector<br /><h1>Overview</h1><p>Product Description<br /><br />This 
                  min="0" max="100">
         <label>1: Min. Temp. change</label>
         <description><![CDATA[
-Minimum Temperature change to report<br /><h1>Overview</h1><p><br />This value defines the minimum change of temperature to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the temperature changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 20<br /><br />1-100: 1/10 degree<br />0: disabled</p>
+Minimum Temperature change to report<br /> <h1>Overview</h1><p><br />This value defines the minimum change of temperature to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the temperature changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 20<br /><br />1-100: 1/10 degree<br />0: disabled</p>
         ]]></description>
         <default>20</default>
         <options>
@@ -92,7 +92,7 @@ Minimum Temperature change to report<br /><h1>Overview</h1><p><br />This value d
                  min="0" max="20">
         <label>2: Min humidity change.</label>
         <description><![CDATA[
-Minimum humidity change to report<br /><h1>Overview</h1><p>Parameter 2: Minimum humidity change to report<br /><br />This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the humidity changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 7</p>
+Minimum humidity change to report<br /> <h1>Overview</h1><p>Parameter 2: Minimum humidity change to report<br /><br />This value defines the minimum change of humidity to cause an unsolicited report of humidity to the central controller using Lifeline.<br />If the value is set to 0, there will be no reports sent to the controller, when the humidity changes. However, periodic reports, managed by configuration parameter 4, may still be active. <br />Size: 1 Byte, Default Value: 7</p>
         ]]></description>
         <default>7</default>
         <options>
@@ -104,7 +104,7 @@ Minimum humidity change to report<br /><h1>Overview</h1><p>Parameter 2: Minimum 
                  min="0" max="65535">
         <label>4: Periodic Reports</label>
         <description><![CDATA[
-Periodic Reports<br /><h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br />This parameter defines the time interval to send an unsolicited report.<br />If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. <br />Size: 2 Byte, Default Value: 43200</p>
+Periodic Reports<br /> <h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br />This parameter defines the time interval to send an unsolicited report.<br />If the value is set to 0, there will be no periodic reports sent to the controller. However, reports on temperature/humidity changes, managed by configuration parameters 1 and 2, may still be active. <br />Size: 2 Byte, Default Value: 43200</p>
         ]]></description>
         <default>43200</default>
         <options>
@@ -116,7 +116,7 @@ Periodic Reports<br /><h1>Overview</h1><p>Parameter 4: Periodic Reports<br /><br
                  min="0" max="1000">
         <label>5: Temperature Upper Watermark</label>
         <description><![CDATA[
-Temperature Upper Watermark value<br /><h1>Overview</h1><p>Parameter 5: Temperature Upper Watermark value<br /><br />This parameter defines a temperature. If the measured temperature surpasses this watermark a BASIC command is sent into Association Group 2 <br />Size: 2 Byte, Default Value: 0<br /><br />1-1000; 1/10 degree<br />0: disabled</p>
+Temperature Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 5: Temperature Upper Watermark value<br /><br />This parameter defines a temperature. If the measured temperature surpasses this watermark a BASIC command is sent into Association Group 2 <br />Size: 2 Byte, Default Value: 0<br /><br />1-1000; 1/10 degree<br />0: disabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -128,7 +128,7 @@ Temperature Upper Watermark value<br /><h1>Overview</h1><p>Parameter 5: Temperat
                  min="-200" max="1000">
         <label>6: Temperature Lower Watermark</label>
         <description><![CDATA[
-Temperature Lower Watermark value<br /><h1>Overview</h1><p>Parameter 6: Temperature Lower Watermark value<br /><br />This parameter defines a temperature. If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3 <br />Size: 2 Byte, Default Value:0<br /><br />-200-1000: 1/10 degree<br />0: disabled</p>
+Temperature Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 6: Temperature Lower Watermark value<br /><br />This parameter defines a temperature. If the measured temperature dropps below this watermark a BASIC command is sent into Association Group 3 <br />Size: 2 Byte, Default Value:0<br /><br />-200-1000: 1/10 degree<br />0: disabled</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -137,7 +137,7 @@ Temperature Lower Watermark value<br /><h1>Overview</h1><p>Parameter 6: Temperat
                  min="10" max="100">
         <label>7: Humidity Upper Watermark</label>
         <description><![CDATA[
-Humidity Upper Watermark value<br /><h1>Overview</h1><p>Parameter 7: Humidity Upper Watermark value<br /><br />This parameter defines a relative humidity. If the measured relative humidity surpasses this watermark a BASIC command is sent into Association Group 4 <br />Size: 1 Byte, Default Value: 0<br /><br />10-100: %<br />0: disabled</p>
+Humidity Upper Watermark value<br /> <h1>Overview</h1><p>Parameter 7: Humidity Upper Watermark value<br /><br />This parameter defines a relative humidity. If the measured relative humidity surpasses this watermark a BASIC command is sent into Association Group 4 <br />Size: 1 Byte, Default Value: 0<br /><br />10-100: %<br />0: disabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -149,7 +149,7 @@ Humidity Upper Watermark value<br /><h1>Overview</h1><p>Parameter 7: Humidity Up
                  min="0" max="90">
         <label>8: Humidity Lower Watermark</label>
         <description><![CDATA[
-Humidity Lower Watermark value<br /><h1>Overview</h1><p>Parameter 8: Humidity Lower Watermark value<br /><br />This parameter defines a relative humidity. If the measured temperature dropps below this relative humidity a BASIC command is sent into Association Group 5 <br />Size: 1 Byte<br /><br />1-90: %<br />0: disabled</p>
+Humidity Lower Watermark value<br /> <h1>Overview</h1><p>Parameter 8: Humidity Lower Watermark value<br /><br />This parameter defines a relative humidity. If the measured temperature dropps below this relative humidity a BASIC command is sent into Association Group 5 <br />Size: 1 Byte<br /><br />1-90: %<br />0: disabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -161,7 +161,7 @@ Humidity Lower Watermark value<br /><h1>Overview</h1><p>Parameter 8: Humidity Lo
                  min="0" max="255">
         <label>9: Low Temperature Trigger</label>
         <description><![CDATA[
-Low Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
+Low Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 9: Low Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 3 <br />Size: 1 Byte, Default Value: 255</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -170,7 +170,7 @@ Low Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Paramet
                  min="0" max="255">
         <label>10: High Temperature Trigger</label>
         <description><![CDATA[
-High Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 10: High Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 2 <br />Size: 1 Byte, Default Value: 0</p>
+High Temperature Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 10: High Temperature Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 2 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -179,7 +179,7 @@ High Temperature Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parame
                  min="0" max="255">
         <label>11: Low Humidity Trigger</label>
         <description><![CDATA[
-Low Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 11: Low Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 5 <br />Size: 1 Byte, Default Value: 255<br /><br /></p>
+Low Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 11: Low Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 5 <br />Size: 1 Byte, Default Value: 255<br /><br /></p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -189,7 +189,7 @@ Low Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 
                  min="0" max="255">
         <label>12: High Humidity Trigger</label>
         <description><![CDATA[
-High Humidity Trigger BASIC Set Command Value<br /><h1>Overview</h1><p>Parameter 12: High Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 4 <br />Size: 1 Byte, Default Value: 0</p>
+High Humidity Trigger BASIC Set Command Value<br /> <h1>Overview</h1><p>Parameter 12: High Humidity Trigger BASIC Set Command Value<br /><br />This defines what BASIC command shall be sent out into association group 4 <br />Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
       </parameter>

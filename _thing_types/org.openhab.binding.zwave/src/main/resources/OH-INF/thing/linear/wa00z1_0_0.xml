@@ -8,7 +8,7 @@
   <thing-type id="linear_wa00z1_00_000" listed="false">
     <label>WA00Z-1 Wall Mounted Switch</label>
     <description><![CDATA[
-Wall Mounted Switch<br /><h1>Overview</h1><p>The WA00Z-1 Wall Mounted Switch is simple to set up and can be installed anywhere to operate other load bearing Z-Wave devices. </p> <br /><h2>Inclusion Information</h2><p>Press either button on the WA00Z-1. The green LED should flash twice.</p> <br /><h2>Exclusion Information</h2><p>Remove the switch by pressing either button on the WA00Z-1. The LED will flash twice indicating that it has been removed.</p> <br /><h2>Wakeup Information</h2><p>Tap the top switch five times in rapid succession.</p>
+Wall Mounted Switch<br /> <h1>Overview</h1><p>The WA00Z-1 Wall Mounted Switch is simple to set up and can be installed anywhere to operate other load bearing Z-Wave devices. </p> <br /> <h2>Inclusion Information</h2><p>Press either button on the WA00Z-1. The green LED should flash twice.</p> <br /> <h2>Exclusion Information</h2><p>Remove the switch by pressing either button on the WA00Z-1. The LED will flash twice indicating that it has been removed.</p> <br /> <h2>Wakeup Information</h2><p>Tap the top switch five times in rapid succession.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -55,7 +55,7 @@ Wall Mounted Switch<br /><h1>Overview</h1><p>The WA00Z-1 Wall Mounted Switch is 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Activation of Central Scene</label>
         <description><![CDATA[
-Set top and bottom button scene numbers.<br /><h1>Overview</h1><p>Z-Wave Plus introduces a new process for scene activation – “Central Scene <br />Control”. Press and release the button, it will send a certain command to the <br />central controller via the lifeline association group 1. This allows the controller <br />to react to both a button press and a button release. This mode implements <br />communication pattern 6, and requires a gateway supporting Z-Wave Plus.</p>
+Set top and bottom button scene numbers.<br /> <h1>Overview</h1><p>Z-Wave Plus introduces a new process for scene activation – “Central Scene <br />Control”. Press and release the button, it will send a certain command to the <br />central controller via the lifeline association group 1. This allows the controller <br />to react to both a button press and a button release. This mode implements <br />communication pattern 6, and requires a gateway supporting Z-Wave Plus.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -72,7 +72,7 @@ Set top and bottom button scene numbers.<br /><h1>Overview</h1><p>Z-Wave Plus in
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Control Mode</label>
         <description><![CDATA[
-Control other devices or issue scene commands<br /><h1>Overview</h1><p>You can set the WA00Z-1 to control other devices or issue various scene activation commands to a central controller.</p>
+Control other devices or issue scene commands<br /> <h1>Overview</h1><p>You can set the WA00Z-1 to control other devices or issue various scene activation commands to a central controller.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Control other devices or issue scene commands<br /><h1>Overview</h1><p>You can s
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert top of switch ON/OFF buttons<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set Parameter 4 to a value of 1.</p>
+Invert top of switch ON/OFF buttons<br /> <h1>Overview</h1><p>To change the top of the switch to OFF and the bottom of the switch ON, set Parameter 4 to a value of 1.</p>
         ]]></description>
         <default>0</default>
         <options>

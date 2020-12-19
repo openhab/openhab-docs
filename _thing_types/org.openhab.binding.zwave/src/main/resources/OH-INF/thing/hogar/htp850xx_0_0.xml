@@ -8,7 +8,7 @@
   <thing-type id="hogar_htp850xx_00_000" listed="false">
     <label>HTP-8S0-XX 8 way touch light switch</label>
     <description><![CDATA[
-8 way touch light switch<br /><h1>Overview</h1><p>8 way touch panel manufactured by Hogar controls.</p> <br /><h2>Inclusion Information</h2><p>Touch and hold any key on the panel excess 5 seconds. All indication lights blinks blue, then release, touch panel start inclusion process</p> <br /><h2>Exclusion Information</h2><p>Touch and hold any key on the panel excess 10 seconds. All indication lights blinks blue, then release, touch panel start exclusion process</p> <br /><h2>Wakeup Information</h2><p>n/a</p>
+8 way touch light switch<br /> <h1>Overview</h1><p>8 way touch panel manufactured by Hogar controls.</p> <br /> <h2>Inclusion Information</h2><p>Touch and hold any key on the panel excess 5 seconds. All indication lights blinks blue, then release, touch panel start inclusion process</p> <br /> <h2>Exclusion Information</h2><p>Touch and hold any key on the panel excess 10 seconds. All indication lights blinks blue, then release, touch panel start exclusion process</p> <br /> <h2>Wakeup Information</h2><p>n/a</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgk101_03_002" listed="false">
     <label>FGK101 Door Opening Sensor</label>
     <description><![CDATA[
-Door Opening Sensor<br /><h1>Overview</h1><p><strong>FIBARO Door/Window Sensor</strong> is a wireless, battery powered reed sensor compatible with the Z-Wave standard. Changing the device’s status will automatically send signal to the Z-Wave controller and associated devices. </p> <p>Sensor can be used to trigger scenes and everywhere there is a need for information about opening or closing of doors, windows, garage doors, etc. Opening is detected by separating the sensor’s body and the magnet.</p> <p>In addition the FIBARO Door/Window Sensor supports one DS18B20 temperature sensor and has one potential free input.</p> <br /><h2>Inclusion Information</h2><p>Quickly, three times press the TMP button. </p> <br /><h2>Exclusion Information</h2><p>Quickly, three times press the TMP button. </p> <br /><h2>Wakeup Information</h2><p>To wake up the sensor manually, click one of the TMP buttons (while the other button is pressed).</p>
+Door Opening Sensor<br /> <h1>Overview</h1><p><strong>FIBARO Door/Window Sensor</strong> is a wireless, battery powered reed sensor compatible with the Z-Wave standard. Changing the device’s status will automatically send signal to the Z-Wave controller and associated devices. </p> <p>Sensor can be used to trigger scenes and everywhere there is a need for information about opening or closing of doors, windows, garage doors, etc. Opening is detected by separating the sensor’s body and the magnet.</p> <p>In addition the FIBARO Door/Window Sensor supports one DS18B20 temperature sensor and has one potential free input.</p> <br /> <h2>Inclusion Information</h2><p>Quickly, three times press the TMP button. </p> <br /> <h2>Exclusion Information</h2><p>Quickly, three times press the TMP button. </p> <br /> <h2>Wakeup Information</h2><p>To wake up the sensor manually, click one of the TMP buttons (while the other button is pressed).</p>
     ]]></description>
     <category>Door</category>
 
@@ -87,7 +87,7 @@ Door Opening Sensor<br /><h1>Overview</h1><p><strong>FIBARO Door/Window Sensor</
                  min="0" max="1">
         <label>1: Operations mode</label>
         <description><![CDATA[
-Parameter defines device operation mode<br /><h1>Overview</h1><p>Available settings:</p> <p>0 - Door/Window Sensor or external alarm sensor<br />1 - external button</p>
+Parameter defines device operation mode<br /> <h1>Overview</h1><p>Available settings:</p> <p>0 - Door/Window Sensor or external alarm sensor<br />1 - external button</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Parameter defines device operation mode<br /><h1>Overview</h1><p>Available setti
                  min="0" max="1">
         <label>2: Door/Window or alarm status</label>
         <description><![CDATA[
-Parameter defines state of the sensor when the magnet ...<br /><h1>Overview</h1><p>... is close. If the alarm sensor is connected, it determines the output type. Parameter inactive in external button mode (parameter 1 set to 1).</p> <p>Available settings:</p> <p>0 - Door/Window Sensor or external alarm sensor<br />1 - external button</p>
+Parameter defines state of the sensor when the magnet ...<br /> <h1>Overview</h1><p>... is close. If the alarm sensor is connected, it determines the output type. Parameter inactive in external button mode (parameter 1 set to 1).</p> <p>Available settings:</p> <p>0 - Door/Window Sensor or external alarm sensor<br />1 - external button</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Parameter defines state of the sensor when the magnet ...<br /><h1>Overview</h1>
                  min="0" max="6">
         <label>3: Visual LED indications</label>
         <description><![CDATA[
-This parameter defines events indicated by the visual ...<br /><h1>Overview</h1><p>... LED indicator. Disabling events might extend battery life.</p> <p>Available settings:</p> <p>0 - no indications<br />1 - indication of opening/closing status change<br />(input IN)<br />2 - indication of wake up (1 x click or periodical)<br />4 - indication of device tampering</p>
+This parameter defines events indicated by the visual ...<br /> <h1>Overview</h1><p>... LED indicator. Disabling events might extend battery life.</p> <p>Available settings:</p> <p>0 - no indications<br />1 - indication of opening/closing status change<br />(input IN)<br />2 - indication of wake up (1 x click or periodical)<br />4 - indication of device tampering</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -117,7 +117,7 @@ This parameter defines events indicated by the visual ...<br /><h1>Overview</h1>
                  min="0" max="1">
         <label>4: Range test after double click</label>
         <description><![CDATA[
-Allows to enable activation of Z-Wave range test with ...<br /><h1>Overview</h1><p>... double click of a TMP button.</p> <p>Available settings:</p> <p>0 - disabled<br />1 - enabled</p>
+Allows to enable activation of Z-Wave range test with ...<br /> <h1>Overview</h1><p>... double click of a TMP button.</p> <p>Available settings:</p> <p>0 - disabled<br />1 - enabled</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -127,7 +127,7 @@ Allows to enable activation of Z-Wave range test with ...<br /><h1>Overview</h1>
                  min="0" max="2">
         <label>10: 2nd association group triggers</label>
         <description><![CDATA[
-Parameter defines events which result in sending on/off ...<br /><h1>Overview</h1><p>... commands to devices added to the 2nd association group. These commands are sent alternately to switch the devices on and off. Commands represent the values of BASIC SET command frames. Parameter is inactive in external button mode (parameter 1 set to 1). </p> <p>Available settings:</p> <p>0 - switch after opening and closing<br />1 - switch after opening<br />2 - switch after closing</p>
+Parameter defines events which result in sending on/off ...<br /> <h1>Overview</h1><p>... commands to devices added to the 2nd association group. These commands are sent alternately to switch the devices on and off. Commands represent the values of BASIC SET command frames. Parameter is inactive in external button mode (parameter 1 set to 1). </p> <p>Available settings:</p> <p>0 - switch after opening and closing<br />1 - switch after opening<br />2 - switch after closing</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Parameter defines events which result in sending on/off ...<br /><h1>Overview</h
                  min="0" max="2">
         <label>11: Commands sent to 2nd association group</label>
         <description><![CDATA[
-Command frames sent to devices added to the 2nd association group.<br /><h1>Overview</h1><p>Available settings:</p> <p>0 - ON<br />1 - OFF<br />2 - ON &amp; OFF</p>
+Command frames sent to devices added to the 2nd association group.<br /> <h1>Overview</h1><p>Available settings:</p> <p>0 - ON<br />1 - OFF<br />2 - ON &amp; OFF</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -147,7 +147,7 @@ Command frames sent to devices added to the 2nd association group.<br /><h1>Over
                  min="0" max="255">
         <label>12: ON command sent to 2nd assoc. group</label>
         <description><![CDATA[
-Value of ON command frame sent to 2nd association group<br /><h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br />an associated device to a specifed level.</p>
+Value of ON command frame sent to 2nd association group<br /> <h1>Overview</h1><p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br />an associated device to a specifed level.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -157,7 +157,7 @@ Value of ON command frame sent to 2nd association group<br /><h1>Overview</h1><p
                  min="0" max="255">
         <label>13: OFF command sent to 2nd assoc. group</label>
         <description><![CDATA[
-The value of 0 turns OFF the device, 255 turns it ON.<br /><h1>Overview</h1><p>In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set an associated device to a specified level</p> <p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br />an associated device to a specifed level.</p>
+The value of 0 turns OFF the device, 255 turns it ON.<br /> <h1>Overview</h1><p>In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set an associated device to a specified level</p> <p>The value of 0 turns OFF the device, 255 turns it On. In case of associating the Dimmer or Roller Shutter module, values 1-99 allow to set<br />an associated device to a specifed level.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -183,7 +183,7 @@ The value of 0 turns OFF the device, 255 turns it ON.<br /><h1>Overview</h1><p>I
                  min="0" max="5">
         <label>20: Type of sent alarm frames</label>
         <description><![CDATA[
-Type of control frames transmitted to the main controller ...<br /><h1>Overview</h1><p>... and 3rd association group “Alarm”. If an external sensor is connected to IN input, it is possible to choose its functionality. Otherwise it is recommended to set this parameter to default value.</p> <p>Available settings:</p> <p>0 - Door/Window Sensor (General Purpose Alarm)<br />1 - smoke sensor (Smoke Alarm)<br />2 - CO detector (CO Alarm)<br />3 - CO2 detector (CO2 Alarm)<br />4 - high temperature sensor (Heat Alarm)<br />5 - flood sensor (Water Alarm)</p>
+Type of control frames transmitted to the main controller ...<br /> <h1>Overview</h1><p>... and 3rd association group “Alarm”. If an external sensor is connected to IN input, it is possible to choose its functionality. Otherwise it is recommended to set this parameter to default value.</p> <p>Available settings:</p> <p>0 - Door/Window Sensor (General Purpose Alarm)<br />1 - smoke sensor (Smoke Alarm)<br />2 - CO detector (CO Alarm)<br />3 - CO2 detector (CO2 Alarm)<br />4 - high temperature sensor (Heat Alarm)<br />5 - flood sensor (Water Alarm)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -201,7 +201,7 @@ Type of control frames transmitted to the main controller ...<br /><h1>Overview<
                  min="0" max="1">
         <label>31: Reporting tamper alarm cancellation</label>
         <description><![CDATA[
-Reporting cancellation of tamper alarm to the controller ...<br /><h1>Overview</h1><p>... and 5th association group.</p> <p>Available settings:</p> <p>0 - do not send tamper cancellation report<br />1 - send tamper cancellation report</p>
+Reporting cancellation of tamper alarm to the controller ...<br /> <h1>Overview</h1><p>... and 5th association group.</p> <p>Available settings:</p> <p>0 - do not send tamper cancellation report<br />1 - send tamper cancellation report</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -211,7 +211,7 @@ Reporting cancellation of tamper alarm to the controller ...<br /><h1>Overview</
                  min="0" max="32400">
         <label>50: Interval of temperature measurements</label>
         <description><![CDATA[
-This parameter defines how often the temperature will ...<br /><h1>Overview</h1><p>... be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.</p> <p>Available settings:</p> <p>0 - temperature measurements disabled<br />5-32400 - time in seconds</p>
+This parameter defines how often the temperature will ...<br /> <h1>Overview</h1><p>... be measured. The shorter the time, the more frequently the temperature will be measured, but the battery life will shorten.</p> <p>Available settings:</p> <p>0 - temperature measurements disabled<br />5-32400 - time in seconds</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -221,7 +221,7 @@ This parameter defines how often the temperature will ...<br /><h1>Overview</h1>
                  min="0" max="300">
         <label>51: Temperature reports threshold</label>
         <description><![CDATA[
-This parameter defines the change of temperature in ...<br /><h1>Overview</h1><p>...comparison with last reported, resulting in temperature report being sent to the main controller.</p> <p>Available settings:</p> <p>0 - temperature reports based on threshold disabled<br />1-300 - temperature threshold (0.1-30°C, 0.1°C step)</p>
+This parameter defines the change of temperature in ...<br /> <h1>Overview</h1><p>...comparison with last reported, resulting in temperature report being sent to the main controller.</p> <p>Available settings:</p> <p>0 - temperature reports based on threshold disabled<br />1-300 - temperature threshold (0.1-30°C, 0.1°C step)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -231,7 +231,7 @@ This parameter defines the change of temperature in ...<br /><h1>Overview</h1><p
                  min="0" max="32400">
         <label>52: Interval of temperature reports</label>
         <description><![CDATA[
-This parameter determines how often the temperature ...<br /><h1>Overview</h1><p>...  reports will be sent to the main controller.</p> <p>Available settings:</p> <p>0 - periodic temperature reports disabled<br />5-32400 - time in seconds</p>
+This parameter determines how often the temperature ...<br /> <h1>Overview</h1><p>...  reports will be sent to the main controller.</p> <p>Available settings:</p> <p>0 - periodic temperature reports disabled<br />5-32400 - time in seconds</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -241,7 +241,7 @@ This parameter determines how often the temperature ...<br /><h1>Overview</h1><p
                  min="-1000" max="1000">
         <label>53: Temperature offset</label>
         <description><![CDATA[
-The value to be added to the actual temperature, measured ...<br /><h1>Overview</h1><p>... by the sensor (temperature compensation).</p> <p>Available settings:</p> <p>-1000-1000 (-100-100°C, 0.1°C step)</p>
+The value to be added to the actual temperature, measured ...<br /> <h1>Overview</h1><p>... by the sensor (temperature compensation).</p> <p>Available settings:</p> <p>-1000-1000 (-100-100°C, 0.1°C step)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -251,7 +251,7 @@ The value to be added to the actual temperature, measured ...<br /><h1>Overview<
                  min="0" max="3">
         <label>54: Temperature alarm reports</label>
         <description><![CDATA[
-Temperature alarms reported to the Z-Wave controller.<br /><h1>Overview</h1><p>Thresholds are set in parameters 55 and 56.</p> <p>Available settings:</p> <p>0 - temperature alarms disabled<br />1 - high temperature alarm<br />2 - low temperature alarm<br />3 - high and low temperature alarms enabled</p>
+Temperature alarms reported to the Z-Wave controller.<br /> <h1>Overview</h1><p>Thresholds are set in parameters 55 and 56.</p> <p>Available settings:</p> <p>0 - temperature alarms disabled<br />1 - high temperature alarm<br />2 - low temperature alarm<br />3 - high and low temperature alarms enabled</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -261,7 +261,7 @@ Temperature alarms reported to the Z-Wave controller.<br /><h1>Overview</h1><p>T
                  min="0" max="1000">
         <label>55: High temperature alarm threshold</label>
         <description><![CDATA[
-If temperature is higher than set value, overheat ...<br /><h1>Overview</h1><p>... notification will be sent and high temperature scene will be triggered (if activated).</p> <p>Available settings:</p> <p>0-1000 (0-100°C, 0.1°C step)</p>
+If temperature is higher than set value, overheat ...<br /> <h1>Overview</h1><p>... notification will be sent and high temperature scene will be triggered (if activated).</p> <p>Available settings:</p> <p>0-1000 (0-100°C, 0.1°C step)</p>
         ]]></description>
         <default>540</default>
         <limitToOptions>false</limitToOptions>
@@ -271,7 +271,7 @@ If temperature is higher than set value, overheat ...<br /><h1>Overview</h1><p>.
                  min="-300" max="700">
         <label>56: Low temperature alarm threshold</label>
         <description><![CDATA[
-If temperature is lower than the set value, underheat ...<br /><h1>Overview</h1><p>... notification will be sent and low temperature scene will be triggered (if activated).</p> <p>Available settings:</p> <p>-300-700 (-30-70°C, 0.1°C step)</p>
+If temperature is lower than the set value, underheat ...<br /> <h1>Overview</h1><p>... notification will be sent and low temperature scene will be triggered (if activated).</p> <p>Available settings:</p> <p>-300-700 (-30-70°C, 0.1°C step)</p>
         ]]></description>
         <default>40</default>
         <limitToOptions>false</limitToOptions>
@@ -281,7 +281,7 @@ If temperature is lower than the set value, underheat ...<br /><h1>Overview</h1>
                  min="0" max="2048">
         <label>70: Scene activation functionality</label>
         <description><![CDATA[
-The device can trigger scenes using scene IDs assigned ...<br /><h1>Overview</h1><p>... to different events. To deactivate all scenes set the value to 0. To activate all scenes set the value to 3903.</p> <p>Available settings:</p> <p>1 - [ID 10] opening door/window (single click)<br />2 - [ID 11] closing door/window (single click)<br />4 - [ID 12] holding<br />8 - [ID 13] releasing<br />16 - [ID 14] double click<br />32 - [ID 15] triple click<br />256 - [ID 50] high temperature - door/window<br />opened<br />512 - [ID 50] high temperature - door/window<br />closed<br />1024 - [ID 51] low temperature - door/window<br />opened<br />2048 - [ID 51] low temperature - door/window<br />closed</p>
+The device can trigger scenes using scene IDs assigned ...<br /> <h1>Overview</h1><p>... to different events. To deactivate all scenes set the value to 0. To activate all scenes set the value to 3903.</p> <p>Available settings:</p> <p>1 - [ID 10] opening door/window (single click)<br />2 - [ID 11] closing door/window (single click)<br />4 - [ID 12] holding<br />8 - [ID 13] releasing<br />16 - [ID 14] double click<br />32 - [ID 15] triple click<br />256 - [ID 50] high temperature - door/window<br />opened<br />512 - [ID 50] high temperature - door/window<br />closed<br />1024 - [ID 51] low temperature - door/window<br />opened<br />2048 - [ID 51] low temperature - door/window<br />closed</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -291,7 +291,7 @@ The device can trigger scenes using scene IDs assigned ...<br /><h1>Overview</h1
                  min="0" max="4">
         <label>71: Alarm broadcast</label>
         <description><![CDATA[
-Settings for broadcasting ON/OFF commands, sensor ...<br /><h1>Overview</h1><p>... alarm and tamper alarm. Value other than 0 means alarms are sent in Broadcast Mode, to all devices only within the range of the device. They are not repeated by the mesh network.</p> <p>Available settings:</p> <p>0 - broadcasts inactive<br />1 - ON/OFF commands broadcast active<br />2 - sensor alarm broadcast active<br />4 - tamper alarm broadcast active</p>
+Settings for broadcasting ON/OFF commands, sensor ...<br /> <h1>Overview</h1><p>... alarm and tamper alarm. Value other than 0 means alarms are sent in Broadcast Mode, to all devices only within the range of the device. They are not repeated by the mesh network.</p> <p>Available settings:</p> <p>0 - broadcasts inactive<br />1 - ON/OFF commands broadcast active<br />2 - sensor alarm broadcast active<br />4 - tamper alarm broadcast active</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -301,7 +301,7 @@ Settings for broadcasting ON/OFF commands, sensor ...<br /><h1>Overview</h1><p>.
                  min="0" max="15">
         <label>72: Associations in Z-Wave network Security Mode</label>
         <description><![CDATA[
-This parameter defines how commands are sent in ...<br /><h1>Overview</h1><p>... specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st group “Lifeline”.</p> <p>Available settings:</p> <p>0 - none of the groups sent as secure<br />1 - 2nd group ”Control” sent as secure<br />2 - 3rd group ”Alarm” sent as secure<br />4 - 4th group “Sensor ZW3” sent as secure<br />8 - 5th group “Tamper ZW3” sent as secure</p> <p>15 - (all)</p>
+This parameter defines how commands are sent in ...<br /> <h1>Overview</h1><p>... specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st group “Lifeline”.</p> <p>Available settings:</p> <p>0 - none of the groups sent as secure<br />1 - 2nd group ”Control” sent as secure<br />2 - 3rd group ”Alarm” sent as secure<br />4 - 4th group “Sensor ZW3” sent as secure<br />8 - 5th group “Tamper ZW3” sent as secure</p> <p>15 - (all)</p>
         ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>

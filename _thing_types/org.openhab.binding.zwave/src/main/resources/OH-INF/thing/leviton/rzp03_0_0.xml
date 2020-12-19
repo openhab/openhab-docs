@@ -8,7 +8,7 @@
   <thing-type id="leviton_rzp03_00_000" listed="false">
     <label>RZP03 Scene Capable Plug-In Lamp Dimming Module</label>
     <description><![CDATA[
-Scene Capable Plug-In Lamp Dimming Module<br /><h1>Overview</h1><p>Scene Capable Plug-In Lamp Dimming Module , Rated: 120VAC, 60Hz, Incandescent: 300W max., 60W min </p> <br /><h2>Inclusion Information</h2><p>Press the ON/OFF button on the module</p> <br /><h2>Exclusion Information</h2><p>Press the ON/OFF button on the module</p>
+Scene Capable Plug-In Lamp Dimming Module<br /> <h1>Overview</h1><p>Scene Capable Plug-In Lamp Dimming Module , Rated: 120VAC, 60Hz, Incandescent: 300W max., 60W min </p> <br /> <h2>Inclusion Information</h2><p>Press the ON/OFF button on the module</p> <br /> <h2>Exclusion Information</h2><p>Press the ON/OFF button on the module</p>
     ]]></description>
     <category>WallSwitch</category>
 

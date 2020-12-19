@@ -8,7 +8,7 @@
   <thing-type id="vision_pid15903_00_000" listed="false">
     <label>PID15903 Plug In Power Monitor</label>
     <description><![CDATA[
-Plug In Power Monitor<br /><h1>Overview</h1><p>Power Outlet</p> <br /><h2>Inclusion Information</h2><p>Press the Program Switch three times within two seconds.</p> <br /><h2>Exclusion Information</h2><p>Press the Program Switch</p>
+Plug In Power Monitor<br /> <h1>Overview</h1><p>Power Outlet</p> <br /> <h2>Inclusion Information</h2><p>Press the Program Switch three times within two seconds.</p> <br /> <h2>Exclusion Information</h2><p>Press the Program Switch</p>
     ]]></description>
     <category>PowerOutlet</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="philio_psr031c_00_000" listed="false">
     <label>PSR03-1C Panic Button</label>
     <description><![CDATA[
-Panic Button<br /><h1>Overview</h1><p><br /></p> <br /><h2>Inclusion Information</h2><p>1. Put the Z-Wave Controller in inclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter inclusion mode.</p><p>3. After successful inclusion, the device will wake to receive the</p><p>setting command from Z-Wave Controller in about 20 seconds.</p> <br /><h2>Exclusion Information</h2><p>1. Put the Z-Wave Controller in exclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter exclusion mode.</p><p>3. Node ID has been excluded.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Panic Button<br /> <h1>Overview</h1><p><br /></p> <br /> <h2>Inclusion Information</h2><p>1. Put the Z-Wave Controller in inclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter inclusion mode.</p><p>3. After successful inclusion, the device will wake to receive the</p><p>setting command from Z-Wave Controller in about 20 seconds.</p> <br /> <h2>Exclusion Information</h2><p>1. Put the Z-Wave Controller in exclusion mode.</p><p>2. Press panic key three times within 1.5 seconds to enter exclusion mode.</p><p>3. Node ID has been excluded.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Battery</category>
 
@@ -55,7 +55,7 @@ Panic Button<br /><h1>Overview</h1><p><br /></p> <br /><h2>Inclusion Information
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes. The default value is 12(6 hours).</p>
+Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto report the battery level. 0 means turn off auto report battery. Each tick means 30 minutes. The default value is 12(6 hours).</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>

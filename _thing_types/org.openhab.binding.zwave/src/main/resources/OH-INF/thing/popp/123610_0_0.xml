@@ -8,7 +8,7 @@
   <thing-type id="popp_123610_00_000" listed="false">
     <label>123610 Wall Plug Switch</label>
     <description><![CDATA[
-Wall Plug Switch<br /><h1>Overview</h1><p>This is a switch plug that can be placed between a standard Schuko (Type F) wall outlet and electric devices, plugged in by cord. It can switch all electrical loads up to 3500 W. The device is IP 20 rated and can therefore only be used on dry environments. Switching is controlled wirelessly using Z-Wave or locally using a toggleing button. A blue LED indicates the switching status. An automatic 'Off' function and programmable switching behavior make the device a very flexible tool for the inhouse lighting</p> <br /><h2>Inclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p> <br /><h2>Exclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p>
+Wall Plug Switch<br /> <h1>Overview</h1><p>This is a switch plug that can be placed between a standard Schuko (Type F) wall outlet and electric devices, plugged in by cord. It can switch all electrical loads up to 3500 W. The device is IP 20 rated and can therefore only be used on dry environments. Switching is controlled wirelessly using Z-Wave or locally using a toggleing button. A blue LED indicates the switching status. An automatic 'Off' function and programmable switching behavior make the device a very flexible tool for the inhouse lighting</p> <br /> <h2>Inclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p> <br /> <h2>Exclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -70,7 +70,7 @@ Wall Plug Switch<br /><h1>Overview</h1><p>This is a switch plug that can be plac
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: RF Off command</label>
         <description><![CDATA[
-RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:</p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics;</li> <li>Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</li> </ul>
+RF Off command<br /> <h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:</p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics;</li> <li>Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -85,7 +85,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Restore switch state after power cycle</label>
         <description><![CDATA[
-Restore switch state after power cycle<br /><h1>Overview</h1><p>Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</p>
+Restore switch state after power cycle<br /> <h1>Overview</h1><p>Defines if the switch should restore switch state to the last state prior to device power off (power cycle).</p>
         ]]></description>
         <default>1</default>
         <options>

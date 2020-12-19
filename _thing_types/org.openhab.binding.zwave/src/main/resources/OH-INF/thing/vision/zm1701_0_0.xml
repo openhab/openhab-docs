@@ -8,7 +8,7 @@
   <thing-type id="vision_zm1701_00_000" listed="false">
     <label>ZM1701 Monoprice keypad door lock</label>
     <description><![CDATA[
-Monoprice keypad door lock<br /><h1>Overview</h1><p>Device is OEMed as Monoprice 10798.</p> <br /><h2>Inclusion Information</h2><p>Iinsert the following Key sequence on the key pad: 'C' + '8' + '8' + '8' than manually turn the door lock from inside. The operation is confirmed by a long beep.</p> <br /><h2>Exclusion Information</h2><p>Iinsert the following Key sequence on the key pad: 'C' + '8' + '8' + '8' than manually turn the door lock from inside. The operation is confirmed by a long beep.</p>
+Monoprice keypad door lock<br /> <h1>Overview</h1><p>Device is OEMed as Monoprice 10798.</p> <br /> <h2>Inclusion Information</h2><p>Iinsert the following Key sequence on the key pad: 'C' + '8' + '8' + '8' than manually turn the door lock from inside. The operation is confirmed by a long beep.</p> <br /> <h2>Exclusion Information</h2><p>Iinsert the following Key sequence on the key pad: 'C' + '8' + '8' + '8' than manually turn the door lock from inside. The operation is confirmed by a long beep.</p>
     ]]></description>
     <category>Lock</category>
 

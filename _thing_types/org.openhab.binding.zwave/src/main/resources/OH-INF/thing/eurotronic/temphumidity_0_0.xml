@@ -8,7 +8,7 @@
   <thing-type id="eurotronic_temphumidity_00_000" listed="false">
     <label>Eurotronic Temperature &amp; Humidity Sensor Z-Wave Plus Temperature &amp; Humidity Sensor Z-Wave Plus</label>
     <description><![CDATA[
-Temperature &amp; Humidity Sensor Z-Wave Plus<br /><h1>Overview</h1><p>The Temperature &amp; Humidity Sensor Z-Wave Plus is a temperature and humidity sensor for living and working rooms that is compatible with the Z-Wave wireless standard.<br /></p> <br /><h2>Inclusion Information</h2><p>Press button three times within 1 second</p> <br /><h2>Exclusion Information</h2><p>Press button three times within 1 second<br /></p> <br /><h2>Wakeup Information</h2><p>Press button once</p>
+Temperature &amp; Humidity Sensor Z-Wave Plus<br /> <h1>Overview</h1><p>The Temperature &amp; Humidity Sensor Z-Wave Plus is a temperature and humidity sensor for living and working rooms that is compatible with the Z-Wave wireless standard.<br /></p> <br /> <h2>Inclusion Information</h2><p>Press button three times within 1 second</p> <br /> <h2>Exclusion Information</h2><p>Press button three times within 1 second<br /></p> <br /> <h2>Wakeup Information</h2><p>Press button once</p>
     ]]></description>
     <category>Battery</category>
 
@@ -68,7 +68,7 @@ Temperature &amp; Humidity Sensor Z-Wave Plus<br /><h1>Overview</h1><p>The Tempe
                  min="0" max="32">
         <label>1: Temperature Reporting</label>
         <description><![CDATA[
-Temperature Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reporting (only time-based reports)</p><p>0x01 – 0x32 report if temperature changed by delta = 0,1°C…5,0°C</p>
+Temperature Change on Reporting<br /> <h1>Overview</h1><p>0x00 No on change reporting (only time-based reports)</p><p>0x01 – 0x32 report if temperature changed by delta = 0,1°C…5,0°C</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Temperature Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change repor
                  min="0" max="10">
         <label>2: Humidity Reporting</label>
         <description><![CDATA[
-Humidity Change on Reporting<br /><h1>Overview</h1><p>0x00 No on change reporting (only time-based reports).</p><p>0x01-0x0A report if humidity changed by delta = 1% …10%</p>
+Humidity Change on Reporting<br /> <h1>Overview</h1><p>0x00 No on change reporting (only time-based reports).</p><p>0x01-0x0A report if humidity changed by delta = 1% …10%</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

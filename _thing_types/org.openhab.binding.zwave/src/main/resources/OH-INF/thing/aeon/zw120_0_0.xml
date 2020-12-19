@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw120_00_000" listed="false">
     <label>ZW120 Door/Window sensor Gen5</label>
     <description><![CDATA[
-Door/Window sensor Gen5<br /><h1>Overview</h1><p>Aeon Labs Door/ Window Sensor Gen5 is a smart Z-Wave sensor that can detect the status of door/window's open/close in real time. It’s a security Z-Wave device that supports security encryption. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from manufacturers and/or other applications.</p> <br /><h2>Inclusion Information</h2><p>To include your Sensor as a non-security device in your Z-wave network, turn the primary controller into inclusion mode, then press the Action Button once on Door Window Sensor.    To include your Sensor as a secure device, turn the primary controller into inclusion mode, then press the Sensor’s Action Button 2 times within 1 second</p> <br /><h2>Exclusion Information</h2><p>To exclude your sensor from the z-wave network, turn the primary controller into exclusion mode, then press the Action Button once on Door Window Sensor. </p> <br /><h2>Wakeup Information</h2><p>Remove your Sensor unit from its Back Mounting Plate, press  the Action Button on the back of the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.</p>
+Door/Window sensor Gen5<br /> <h1>Overview</h1><p>Aeon Labs Door/ Window Sensor Gen5 is a smart Z-Wave sensor that can detect the status of door/window's open/close in real time. It’s a security Z-Wave device that supports security encryption. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from manufacturers and/or other applications.</p> <br /> <h2>Inclusion Information</h2><p>To include your Sensor as a non-security device in your Z-wave network, turn the primary controller into inclusion mode, then press the Action Button once on Door Window Sensor.    To include your Sensor as a secure device, turn the primary controller into inclusion mode, then press the Sensor’s Action Button 2 times within 1 second</p> <br /> <h2>Exclusion Information</h2><p>To exclude your sensor from the z-wave network, turn the primary controller into exclusion mode, then press the Action Button once on Door Window Sensor. </p> <br /> <h2>Wakeup Information</h2><p>Remove your Sensor unit from its Back Mounting Plate, press  the Action Button on the back of the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -61,7 +61,7 @@ Door/Window sensor Gen5<br /><h1>Overview</h1><p>Aeon Labs Door/ Window Sensor G
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Magnet ON/OFF</label>
         <description><![CDATA[
-Value sent when the Magnet is triggered On/Off.<br /><h1>Overview</h1><p>Which value of the Sensor Binary Report or Basic Set will be sent when the Magnet is triggered On/Off.</p>
+Value sent when the Magnet is triggered On/Off.<br /> <h1>Overview</h1><p>Which value of the Sensor Binary Report or Basic Set will be sent when the Magnet is triggered On/Off.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -74,7 +74,7 @@ Value sent when the Magnet is triggered On/Off.<br /><h1>Overview</h1><p>Which v
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Wake up 10 minutes</label>
         <description><![CDATA[
-Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-power on the sensor</p>
+Default setting: Disable<br /> <h1>Overview</h1><p>Wake up 10 minutes when re-power on the sensor</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -115,7 +115,7 @@ Default setting: Disable<br /><h1>Overview</h1><p>Wake up 10 minutes when re-pow
                  min="0" max="65535">
         <label>121: Report type</label>
         <description><![CDATA[
-Sensor report sent when triggered Opened/Closed<br /><h1>Overview</h1><p>To configure which sensor report will be sent when the Sensor is triggered Opened/Closed. Bitsets: 0-&gt;Battery report, 4-&gt;Sensor Binary, 8-&gt;Basic Set, Default setting: 0x00000100 (Basic Set).Ideal Setting for OZW is 17 (Sensor Binary and Battery Report).</p>
+Sensor report sent when triggered Opened/Closed<br /> <h1>Overview</h1><p>To configure which sensor report will be sent when the Sensor is triggered Opened/Closed. Bitsets: 0-&gt;Battery report, 4-&gt;Sensor Binary, 8-&gt;Basic Set, Default setting: 0x00000100 (Basic Set).Ideal Setting for OZW is 17 (Sensor Binary and Battery Report).</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

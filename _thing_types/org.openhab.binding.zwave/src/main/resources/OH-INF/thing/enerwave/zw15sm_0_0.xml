@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zw15sm_00_000" listed="false">
     <label>ZW15SM Binary Switch + Meter</label>
     <description><![CDATA[
-Binary Switch + Meter<br /><h1>Overview</h1><p>The on/off switch replaces your current light switch, uses your existing wiring, and provides in-wall control of overhead lighting and remote access.</p> <br /><h2>Inclusion Information</h2><p>The process of "Inclusion/ Exclusion" is to Add or Remove the device from the Hub. All Z-Wave devices must be "Included" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the "Inclusion" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. </p> <ol><li>Go to the "Add Device" page.</li> <li>Select "Include Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch</li> </ol><br /><h2>Exclusion Information</h2><ol><li>From the Control Panel, go the the device Exclusion page.</li> <li>Select "Exclude Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch.</li> </ol>
+Binary Switch + Meter<br /> <h1>Overview</h1><p>The on/off switch replaces your current light switch, uses your existing wiring, and provides in-wall control of overhead lighting and remote access.</p> <br /> <h2>Inclusion Information</h2><p>The process of "Inclusion/ Exclusion" is to Add or Remove the device from the Hub. All Z-Wave devices must be "Included" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the "Inclusion" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. </p> <ol><li>Go to the "Add Device" page.</li> <li>Select "Include Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>From the Control Panel, go the the device Exclusion page.</li> <li>Select "Exclude Device".</li> <li>When prompted, press the "ON" or "OFF" Button on the switch.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -82,7 +82,7 @@ Binary Switch + Meter<br /><h1>Overview</h1><p>The on/off switch replaces your c
                  min="0" max="255">
         <label>8: METER_REPORT Instant Energy Interval</label>
         <description><![CDATA[
-METER_REPORT Instant Energy Interval<br /><h1>Overview</h1><p>Send METER_REPORT at this interval</p> <p>0 means to not send</p>
+METER_REPORT Instant Energy Interval<br /> <h1>Overview</h1><p>Send METER_REPORT at this interval</p> <p>0 means to not send</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -92,7 +92,7 @@ METER_REPORT Instant Energy Interval<br /><h1>Overview</h1><p>Send METER_REPORT 
                  min="0" max="255">
         <label>9: Instant Energy Autosend Interval</label>
         <description><![CDATA[
-Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
+Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /> <h1>Overview</h1><p>Send SENSOR_MULTILEVEL_REPORT at this interval</p> <p>0 means to not send</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -102,7 +102,7 @@ Instant Energy Autosend Interval (SENSOR_MULTILEVEL_REPORT)<br /><h1>Overview</h
                  min="0" max="255">
         <label>10: Accumulated Energy Autosend Interval report</label>
         <description><![CDATA[
-Accumulated Energy Autosend Interval report (METER_REPORT)<br /><h1>Overview</h1><p>Send accumulated METER_REPORT at this interval</p> <p>0 means to not send</p>
+Accumulated Energy Autosend Interval report (METER_REPORT)<br /> <h1>Overview</h1><p>Send accumulated METER_REPORT at this interval</p> <p>0 means to not send</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -112,7 +112,7 @@ Accumulated Energy Autosend Interval report (METER_REPORT)<br /><h1>Overview</h1
                  min="0" max="3">
         <label>11: Power change notification</label>
         <description><![CDATA[
-Enable automatic notifications whenever there is a wattage change<br /><h1>Overview</h1><p>Enable automatic notifications to associated device whenever there is a wattage change</p> <p>0: No report<br />1: Send METER_REPORT<br />2: Send SENSOR_MULTILEVEL_REPORT<br />3: Send both METER_REPORT and SENSOR_MULTILEVEL_REPORT</p>
+Enable automatic notifications whenever there is a wattage change<br /> <h1>Overview</h1><p>Enable automatic notifications to associated device whenever there is a wattage change</p> <p>0: No report<br />1: Send METER_REPORT<br />2: Send SENSOR_MULTILEVEL_REPORT<br />3: Send both METER_REPORT and SENSOR_MULTILEVEL_REPORT</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -122,7 +122,7 @@ Enable automatic notifications whenever there is a wattage change<br /><h1>Overv
                  min="0" max="255">
         <label>12: Power change notification threshold</label>
         <description><![CDATA[
-Minimum change in wattage report<br /><h1>Overview</h1><p>When the power changes by this many watts, send an automatic power level notification</p> <p>0: 0.0W<br />....<br />255: 25.5W</p>
+Minimum change in wattage report<br /> <h1>Overview</h1><p>When the power changes by this many watts, send an automatic power level notification</p> <p>0: 0.0W<br />....<br />255: 25.5W</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

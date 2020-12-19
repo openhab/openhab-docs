@@ -8,7 +8,7 @@
   <thing-type id="willis_zw78s_00_000" listed="false">
     <label>ZW78S In-line, in-wall 110v Z-Wave power switch</label>
     <description><![CDATA[
-In-line, in-wall 110v Z-Wave power switch<br /><h1>Overview</h1><p>Generic Z-Wave module. Small and easy to place in box with a standard 110v light switch. Allows for both use of the standard switch as well as Z-Wave.   Sold online from zwave4less.  Identified as Willis Elect. Co, Ltd.</p> <br /><h2>Inclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p>
+In-line, in-wall 110v Z-Wave power switch<br /> <h1>Overview</h1><p>Generic Z-Wave module. Small and easy to place in box with a standard 110v light switch. Allows for both use of the standard switch as well as Z-Wave.   Sold online from zwave4less.  Identified as Willis Elect. Co, Ltd.</p> <br /> <h2>Inclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p> <br /> <h2>Exclusion Information</h2><p>Press the onboard learn button for at least 1 second.</p>
     ]]></description>
     <category>WallSwitch</category>
 

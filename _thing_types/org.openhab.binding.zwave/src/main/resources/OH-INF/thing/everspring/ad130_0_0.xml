@@ -8,7 +8,7 @@
   <thing-type id="everspring_ad130_00_000" listed="false">
     <label>AD130 Dimmer Plugin</label>
     <description><![CDATA[
-Dimmer Plugin<br /><h1>Overview</h1><p>This plug-in Lamp Module is designed to work with our Passive Infrared Detectors SP103 and Door/Window Detectors SM103, serving as a receiver.</p> <br /><h2>Inclusion Information</h2><p>Press the knob on the module</p> <br /><h2>Exclusion Information</h2><p>Press the knob on the module</p>
+Dimmer Plugin<br /> <h1>Overview</h1><p>This plug-in Lamp Module is designed to work with our Passive Infrared Detectors SP103 and Door/Window Detectors SM103, serving as a receiver.</p> <br /> <h2>Inclusion Information</h2><p>Press the knob on the module</p> <br /> <h2>Exclusion Information</h2><p>Press the knob on the module</p>
     ]]></description>
     <category>WallSwitch</category>
 

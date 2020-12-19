@@ -8,7 +8,7 @@
   <thing-type id="nodon_asp31_00_000" listed="false">
     <label>ASP-3-1 Smart Plug</label>
     <description><![CDATA[
-Smart Plug<br /><h1>Overview</h1><h1>"Learning Mode"</h1> <p>Press on the Smart Plug button during 2 seconds until the LED becomes red. Release the button, the LED will then glow in red. The Smart Plug is in “Learning mode”. To add or to remove the Smart Plug from a Z-Wave® network, follow “INCLUSION” or “EXCLUSION” procedures below.</p> <p>If the Smart Plug is not added or removed from a network within 30 seconds (or if the button is pushed during learning mode), the Smart Plug will automatically exit learning mode.</p> <h1>“Factory Reset”</h1> <p>To perform a factory reset, press on the Smart Plug button during 5 seconds until the LED becomes orange. Release the button, the LED will blink red/green. Factory Reset clears the Smart Plug’s memory and set parameters to default value.</p> <p>Please use this procedure only when the primary controller is missing or otherwise inoperable. Resetting the Smart Plug does not mean it has been removed from Z-Wave network controller’s memory. Use the primary controller to remove the Smart Plug from its Z-Wave network (follow “EXCLUSION” procedures below), before doing a Factory Reset.</p> <br /><h2>Inclusion Information</h2><p>To add the Smart Plug into a Z-Wave network:</p> <ol><li>Plug the Smart Plug.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Inclusion procedure).</li> <li>The Smart Plug will confirm the Inclusion procedure by blinking its LED in Green.</li> </ol><br /><h2>Exclusion Information</h2><p>To remove the Smart Plug from a Z-Wave network:</p> <ol><li>Make sure the Smart Plug is plugged.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Exclusion procedure).</li> <li>The Smart Plug will confirm the Exclusion procedure by blinking its LED in Red.</li> </ol>
+Smart Plug<br /> <h1>Overview</h1><h1>"Learning Mode"</h1> <p>Press on the Smart Plug button during 2 seconds until the LED becomes red. Release the button, the LED will then glow in red. The Smart Plug is in “Learning mode”. To add or to remove the Smart Plug from a Z-Wave® network, follow “INCLUSION” or “EXCLUSION” procedures below.</p> <p>If the Smart Plug is not added or removed from a network within 30 seconds (or if the button is pushed during learning mode), the Smart Plug will automatically exit learning mode.</p> <h1>“Factory Reset”</h1> <p>To perform a factory reset, press on the Smart Plug button during 5 seconds until the LED becomes orange. Release the button, the LED will blink red/green. Factory Reset clears the Smart Plug’s memory and set parameters to default value.</p> <p>Please use this procedure only when the primary controller is missing or otherwise inoperable. Resetting the Smart Plug does not mean it has been removed from Z-Wave network controller’s memory. Use the primary controller to remove the Smart Plug from its Z-Wave network (follow “EXCLUSION” procedures below), before doing a Factory Reset.</p> <br /> <h2>Inclusion Information</h2><p>To add the Smart Plug into a Z-Wave network:</p> <ol><li>Plug the Smart Plug.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Inclusion procedure).</li> <li>The Smart Plug will confirm the Inclusion procedure by blinking its LED in Green.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove the Smart Plug from a Z-Wave network:</p> <ol><li>Make sure the Smart Plug is plugged.</li> <li>Put the Smart Plug in “Learning mode”.</li> <li>Within 30 seconds put the Z-Wave Controller in “Learning mode” (See the Controller user guide for its own Exclusion procedure).</li> <li>The Smart Plug will confirm the Exclusion procedure by blinking its LED in Red.</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -63,7 +63,7 @@ Smart Plug<br /><h1>Overview</h1><h1>"Learning Mode"</h1> <p>Press on the Smart 
                  min="0" max="63">
         <label>1: Default State</label>
         <description><![CDATA[
-Default State<br /><h1>Overview</h1><p>Status of the Smart Plug after a Power Failure or after being plugged</p>
+Default State<br /> <h1>Overview</h1><p>Status of the Smart Plug after a Power Failure or after being plugged</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -77,7 +77,7 @@ Default State<br /><h1>Overview</h1><p>Status of the Smart Plug after a Power Fa
                  min="0" max="63">
         <label>2: Power Failure</label>
         <description><![CDATA[
-Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Failure / Recover notification and the associated group (Groups 4, 5, 6, 7, 8).</p> <p>The value may be a sum of available values. For example, if you want to activate Power Failure and enable group 4 &amp; 5, the parameter value should be 1+2+4=7.</p>
+Power Failure<br /> <h1>Overview</h1><p>This parameter is to set-up the Power Failure / Recover notification and the associated group (Groups 4, 5, 6, 7, 8).</p> <p>The value may be a sum of available values. For example, if you want to activate Power Failure and enable group 4 &amp; 5, the parameter value should be 1+2+4=7.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -117,7 +117,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This group is generally used to report information of the Smart Plug to the Main Controller of the network.</p>
+<br /> <h1>Overview</h1><p>This group is generally used to report information of the Smart Plug to the Main Controller of the network.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -125,7 +125,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Follow State</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send ON (respectively OFF) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send ON (respectively OFF) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -133,7 +133,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Follow Complementary State</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send OFF (respectively ON) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug is switched ON (respectively OFF) using the local button, it will send OFF (respectively ON) command to the associated devices. No command is sent if the Smart Plug is switched ON or OFF wirelessly.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -141,7 +141,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Power Failure Notification</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug detects a power failure or recovers from a power failure, it sends the notification report to the associated devices.</p> <p>The notification sent is “Notification Report: Power Management – AC Disconnected / Re-connected”.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug detects a power failure or recovers from a power failure, it sends the notification report to the associated devices.</p> <p>The notification sent is “Notification Report: Power Management – AC Disconnected / Re-connected”.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -149,7 +149,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Power Failure Set ON</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch ON the associated devices.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch ON the associated devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -157,7 +157,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: Power Failure Set OFF</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch OFF the associated devices.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug detects a Power Failure, it will switch OFF the associated devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -165,7 +165,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_7" type="text" groupName="association" multiple="true">
         <label>7: Power Recover Set ON</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch ON the associated devices.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch ON the associated devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -173,7 +173,7 @@ Power Failure<br /><h1>Overview</h1><p>This parameter is to set-up the Power Fai
       <parameter name="group_8" type="text" groupName="association" multiple="true">
         <label>8: Power Recover Set OFF</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch OFF the associated devices.</p>
+<br /> <h1>Overview</h1><p>When the Smart Plug detects a Power Recover, it will switch OFF the associated devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

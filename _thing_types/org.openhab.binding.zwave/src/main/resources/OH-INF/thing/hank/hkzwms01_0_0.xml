@@ -8,7 +8,7 @@
   <thing-type id="hank_hkzwms01_00_000" listed="false">
     <label>HKZW_MS01 Multisensor</label>
     <description><![CDATA[
-Multisensor<br /><h1>Overview</h1><p>Detects motion, temperature, humidity, and luminance</p> <br /><h2>Inclusion Information</h2><p>Triple click the Z-Button</p> <p>Hold Z-button for 3 seconds for secure inclusion</p> <br /><h2>Exclusion Information</h2><p>Triple click the Z-Button</p> <br /><h2>Wakeup Information</h2><p>Press the Z-Button</p>
+Multisensor<br /> <h1>Overview</h1><p>Detects motion, temperature, humidity, and luminance</p> <br /> <h2>Inclusion Information</h2><p>Triple click the Z-Button</p> <p>Hold Z-button for 3 seconds for secure inclusion</p> <br /> <h2>Exclusion Information</h2><p>Triple click the Z-Button</p> <br /> <h2>Wakeup Information</h2><p>Press the Z-Button</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -112,7 +112,7 @@ Multisensor<br /><h1>Overview</h1><p>Detects motion, temperature, humidity, and 
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Reports the motion detection and battery<br /><h1>Overview</h1><p>Reports the motion detection and battery</p>
+Reports the motion detection and battery<br /> <h1>Overview</h1><p>Reports the motion detection and battery</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="nietech_zw31_00_000" listed="false">
     <label>ZW31 In-Wall Smart Dimmer Switch 3-Way</label>
     <description><![CDATA[
-In-Wall Smart Dimmer Switch 3-Way<br /><h1>Overview</h1><p>Rule your home into a smart home with EVA LOGIK Z-Wave Plus Smart Switch. Each switch product also gives you perfect control and perfect intelligent automation.</p> <p>Monitor and control your lighting and small appliances with your smartphone. Connect this Z-Wave switch to your existing 3-way switch. It doesn’t need a dedicated companion so you can save more on multi-switch set-up!</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your device, quickly, three times press the top or bottom of the wireless smart switch(rocker) to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, quickly, three times press the top or bottom of the wireless smart switch (rock- er) to exclude it from the network.</p>
+In-Wall Smart Dimmer Switch 3-Way<br /> <h1>Overview</h1><p>Rule your home into a smart home with EVA LOGIK Z-Wave Plus Smart Switch. Each switch product also gives you perfect control and perfect intelligent automation.</p> <p>Monitor and control your lighting and small appliances with your smartphone. Connect this Z-Wave switch to your existing 3-way switch. It doesn’t need a dedicated companion so you can save more on multi-switch set-up!</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your device, quickly, three times press the top or bottom of the wireless smart switch(rocker) to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, quickly, three times press the top or bottom of the wireless smart switch (rock- er) to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@ In-Wall Smart Dimmer Switch 3-Way<br /><h1>Overview</h1><p>Rule your home into a
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Locally Button Function</label>
         <description><![CDATA[
-Invert the switch ON/OFF state<br /><h1>Overview</h1><p>Invert the switch ON/OFF state</p> <p>0 = Up is ON</p> <p>1 = Down is ON</p>
+Invert the switch ON/OFF state<br /> <h1>Overview</h1><p>Invert the switch ON/OFF state</p> <p>0 = Up is ON</p> <p>1 = Down is ON</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -70,7 +70,7 @@ Invert the switch ON/OFF state<br /><h1>Overview</h1><p>Invert the switch ON/OFF
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED Indicator</label>
         <description><![CDATA[
-LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</p>
+LED Indicator<br /> <h1>Overview</h1><p>When the LED indicator should be ON/OFF</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -114,7 +114,7 @@ LED Indicator<br /><h1>Overview</h1><p>When the LED indicator should be ON/OFF</
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The association group supports five nodes and lifeline function</p>
+<br /> <h1>Overview</h1><p>The association group supports five nodes and lifeline function</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="aeotec_zwa005_00_000" listed="false">
     <label>ZWA005 Motion, light, and temperature sensor</label>
     <description><![CDATA[
-Motion, light, and temperature sensor<br /><h1>Overview</h1><p>Aeotec TriSensor is a universal Z-Wave Plus compatible product, consists of temperature, lighting and motion sensors, powered by a CR123A battery. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. By the built-in motion sensor, an alarm will be sent to the gateway when the motion sensor is triggered.</p> <br /><h2>Inclusion Information</h2><p>Press once TriSensor’s Action Button. If it is the first installation, the yellow LED will keep solid until whole network processing is complete. If successful, the LED will flash white -&gt; green -&gt; white -&gt; green, after 2 seconds finished. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once. If it is the S2 encryption network, please enter the first 5 digits of DSK.</p> <br /><h2>Exclusion Information</h2><p>Press once TriSensor’s Action Button, the Purple LED will keep solid until whole network processing is complete. If the exclusion is successful, the LED will flash white -&gt; green - &gt;white -&gt; green and then LED will pulse a blue. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once.</p> <br /><h2>Wakeup Information</h2><p>Press and hold the button at least 2s until Red Led is on and then release the button,device will send wakeup notification to controller if device is in a Z-Wave network.</p>
+Motion, light, and temperature sensor<br /> <h1>Overview</h1><p>Aeotec TriSensor is a universal Z-Wave Plus compatible product, consists of temperature, lighting and motion sensors, powered by a CR123A battery. It can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. By the built-in motion sensor, an alarm will be sent to the gateway when the motion sensor is triggered.</p> <br /> <h2>Inclusion Information</h2><p>Press once TriSensor’s Action Button. If it is the first installation, the yellow LED will keep solid until whole network processing is complete. If successful, the LED will flash white -&gt; green -&gt; white -&gt; green, after 2 seconds finished. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once. If it is the S2 encryption network, please enter the first 5 digits of DSK.</p> <br /> <h2>Exclusion Information</h2><p>Press once TriSensor’s Action Button, the Purple LED will keep solid until whole network processing is complete. If the exclusion is successful, the LED will flash white -&gt; green - &gt;white -&gt; green and then LED will pulse a blue. If failed, the yellow LED lasts for 30 seconds, then the green LED flashes once.</p> <br /> <h2>Wakeup Information</h2><p>Press and hold the button at least 2s until Red Led is on and then release the button,device will send wakeup notification to controller if device is in a Z-Wave network.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ Motion, light, and temperature sensor<br /><h1>Overview</h1><p>Aeotec TriSensor 
                  min="0" max="32767">
         <label>1: Motion Retrigger Time</label>
         <description><![CDATA[
-Delay before the motion event can be re-triggered<br /><h1>Overview</h1><p>This parameter is configured the delay time before PIR sensor can be triggered again to reset motion timeout counter.</p>
+Delay before the motion event can be re-triggered<br /> <h1>Overview</h1><p>This parameter is configured the delay time before PIR sensor can be triggered again to reset motion timeout counter.</p>
         ]]></description>
         <default>30</default>
         <options>
@@ -80,7 +80,7 @@ Delay before the motion event can be re-triggered<br /><h1>Overview</h1><p>This 
                  min="0" max="32767">
         <label>2: Motion Clear Time</label>
         <description><![CDATA[
-Time until the motion event is cleared<br /><h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller and send BASIC_SET= 0x00 to nodes associated in group 2.</p>
+Time until the motion event is cleared<br /> <h1>Overview</h1><p>This parameter is configured the time to clear motion event after a motion event detected. Time to motion clear, the device will send a clear event report to controller and send BASIC_SET= 0x00 to nodes associated in group 2.</p>
         ]]></description>
         <default>240</default>
         <limitToOptions>false</limitToOptions>
@@ -90,7 +90,7 @@ Time until the motion event is cleared<br /><h1>Overview</h1><p>This parameter i
                  min="0" max="11">
         <label>3: Motion Sensitivity</label>
         <description><![CDATA[
-Motion sensor sensitivity on a scale from 1-11<br /><h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect.</p>
+Motion sensor sensitivity on a scale from 1-11<br /> <h1>Overview</h1><p>This parameter is configured the sensitivity that motion detect.</p>
         ]]></description>
         <default>11</default>
         <options>
@@ -112,7 +112,7 @@ Motion sensor sensitivity on a scale from 1-11<br /><h1>Overview</h1><p>This par
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Send BASIC_SET to Associated nodes</label>
         <description><![CDATA[
-Send BASIC_SET when events are triggered<br /><h1>Overview</h1><p>This parameter enables sending BASIC_SET command to nodes that associated in group 2 and group 3.</p>
+Send BASIC_SET when events are triggered<br /> <h1>Overview</h1><p>This parameter enables sending BASIC_SET command to nodes that associated in group 2 and group 3.</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -143,7 +143,7 @@ Send BASIC_SET when events are triggered<br /><h1>Overview</h1><p>This parameter
                  min="-400" max="1185">
         <label>7: Temperature Alarm Value</label>
         <description><![CDATA[
-Alert nodes when temperature is above this value<br /><h1>Overview</h1><p>This parameter is configured the threshold value that alarm level for temperature. When the current ambient temperature value is larger than this configuration value, device will send a BASIC_SET = 0xFF to nodes associated in group 3. If current temperature value is less than this value, device will send a BASIC_SET = 0x00 to nodes associated in group 3.</p>
+Alert nodes when temperature is above this value<br /> <h1>Overview</h1><p>This parameter is configured the threshold value that alarm level for temperature. When the current ambient temperature value is larger than this configuration value, device will send a BASIC_SET = 0xFF to nodes associated in group 3. If current temperature value is less than this value, device will send a BASIC_SET = 0x00 to nodes associated in group 3.</p>
         ]]></description>
         <default>239</default>
         <limitToOptions>false</limitToOptions>
@@ -152,7 +152,7 @@ Alert nodes when temperature is above this value<br /><h1>Overview</h1><p>This p
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: LED Indicate Disable</label>
         <description><![CDATA[
-Whether to blink the LED when motion is detected<br /><h1>Overview</h1><p>This parameter is configured the Led light on disable or enable.</p>
+Whether to blink the LED when motion is detected<br /> <h1>Overview</h1><p>This parameter is configured the Led light on disable or enable.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -249,7 +249,7 @@ Whether to blink the LED when motion is detected<br /><h1>Overview</h1><p>This p
                  min="0" max="250">
         <label>21: Temperature Threshold Value to Report</label>
         <description><![CDATA[
-Minimum temperature change to report<br /><h1>Overview</h1><p>Change threshold value for change in temperature to induce an automatic report for temperature sensor. Setting of value 20 can be a change of -2.0 or +2.0 (C or F depending on Parameter No.20) to induce automatic report or setting a value of 2 will be a change of 0.2(C or F).</p>
+Minimum temperature change to report<br /> <h1>Overview</h1><p>Change threshold value for change in temperature to induce an automatic report for temperature sensor. Setting of value 20 can be a change of -2.0 or +2.0 (C or F depending on Parameter No.20) to induce automatic report or setting a value of 2 will be a change of 0.2(C or F).</p>
         ]]></description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
@@ -259,7 +259,7 @@ Minimum temperature change to report<br /><h1>Overview</h1><p>Change threshold v
                  min="0" max="10000">
         <label>22: Light intensity Threshold Value to Report</label>
         <description><![CDATA[
-Minimum light intensity change to report<br /><h1>Overview</h1><p>Change threshold value for change in light sensor to induce an automatic report for temperature sensor.</p>
+Minimum light intensity change to report<br /> <h1>Overview</h1><p>Change threshold value for change in light sensor to induce an automatic report for temperature sensor.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -269,7 +269,7 @@ Minimum light intensity change to report<br /><h1>Overview</h1><p>Change thresho
                  min="0" max="32767">
         <label>23: Temperature Sensor Report Interval</label>
         <description><![CDATA[
-Interval for timed temperature reports<br /><h1>Overview</h1><p>This parameter is configured the time interval for temperature sensor report. This value is larger, the battery life is longer. And the temperature value changed is not obvious.</p>
+Interval for timed temperature reports<br /> <h1>Overview</h1><p>This parameter is configured the time interval for temperature sensor report. This value is larger, the battery life is longer. And the temperature value changed is not obvious.</p>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -279,7 +279,7 @@ Interval for timed temperature reports<br /><h1>Overview</h1><p>This parameter i
                  min="0" max="32767">
         <label>24: Light Sensor Report Interval</label>
         <description><![CDATA[
-Interval for timed light level reports<br /><h1>Overview</h1><p>This parameter is configured the time interval for light sensor report. This value is larger, the battery life is longer. And the light intensity changed is not obvious.</p>
+Interval for timed light level reports<br /> <h1>Overview</h1><p>This parameter is configured the time interval for light sensor report. This value is larger, the battery life is longer. And the light intensity changed is not obvious.</p>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -289,7 +289,7 @@ Interval for timed light level reports<br /><h1>Overview</h1><p>This parameter i
                  min="-200" max="200">
         <label>30: Temperature Offset Value</label>
         <description><![CDATA[
-Adjustment for temperature measurements<br /><h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting.</p>
+Adjustment for temperature measurements<br /> <h1>Overview</h1><p>The current measuring temperature value can be add and minus a value by this setting.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -299,7 +299,7 @@ Adjustment for temperature measurements<br /><h1>Overview</h1><p>The current mea
                  min="-1000" max="1000">
         <label>31: Light Intensity Offset Value</label>
         <description><![CDATA[
-Adjustment for light intensity measurements<br /><h1>Overview</h1><p>The current measuring light intensity value can be add and minus a value by this setting.</p>
+Adjustment for light intensity measurements<br /> <h1>Overview</h1><p>The current measuring light intensity value can be add and minus a value by this setting.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -309,7 +309,7 @@ Adjustment for light intensity measurements<br /><h1>Overview</h1><p>The current
                  min="1" max="32767">
         <label>100: Light Sensor Calibrated Coefficient</label>
         <description><![CDATA[
-Calibration coefficient for light measurements<br /><h1>Overview</h1><p>This configuration defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating:</p> <ol><li>Set this parameter value to default (Assumes the sensor has been added in a Z- Wave Network).</li> <li>Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of luxmeter.</li> <li>The scale calibration formula: k = Vm / Vs.</li> <li>The value of k is then multiplied by 1024 and rounded to the nearest whole number.</li> <li>Set the value getting in 5) to this parameter, calibrate finished.</li> </ol><p>For example, Vm = 300, Vs = 2600, then k = 2600 / 300 = 8.6667,<br />k = 8.6667 * 1024 = 8874.7 ≈ 8875. In this case, the parameter should be set to 8875.</p>
+Calibration coefficient for light measurements<br /> <h1>Overview</h1><p>This configuration defines the calibrated scale for ambient light intensity. Because the method and position that the sensor mounted and the cover of sensor will bring measurement error, user can get more real light intensity by this parameter setting. User should run the steps as blows for calibrating:</p> <ol><li>Set this parameter value to default (Assumes the sensor has been added in a Z- Wave Network).</li> <li>Place a digital luxmeter close to sensor and keep the same direction, monitor the light intensity value (Vm) which report to controller and record it. The same time user should record the value (Vs) of luxmeter.</li> <li>The scale calibration formula: k = Vm / Vs.</li> <li>The value of k is then multiplied by 1024 and rounded to the nearest whole number.</li> <li>Set the value getting in 5) to this parameter, calibrate finished.</li> </ol><p>For example, Vm = 300, Vs = 2600, then k = 2600 / 300 = 8.6667,<br />k = 8.6667 * 1024 = 8874.7 ≈ 8875. In this case, the parameter should be set to 8875.</p>
         ]]></description>
         <default>1024</default>
         <limitToOptions>false</limitToOptions>
@@ -324,7 +324,7 @@ Calibration coefficient for light measurements<br /><h1>Overview</h1><p>This con
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Motion Alarm</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 2 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
+<br /> <h1>Overview</h1><p>Group 2 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -332,7 +332,7 @@ Calibration coefficient for light measurements<br /><h1>Overview</h1><p>This con
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Temperature Alarm</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 3 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
+<br /> <h1>Overview</h1><p>Group 3 is controlling group, all nodes associated in this group will be controlled through BASIC_SET command by the device when device detects a movement event. Basic Set Value is decided by Configuration Parameter 6.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

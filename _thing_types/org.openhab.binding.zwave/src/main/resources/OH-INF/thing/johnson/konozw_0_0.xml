@@ -8,7 +8,7 @@
   <thing-type id="johnson_konozw_00_000" listed="false">
     <label>KONOzw LUX KONOzw Smart Hub Thermostat</label>
     <description><![CDATA[
-LUX KONOzw Smart Hub Thermostat<br /><h1>Overview</h1><p>KONOzw is the smart hub thermostat made with you in mind. It seamlessly connects to many smart hubs and blends in or stands out with its interchangeable Décorsnap covers™. KONOzw makes it easier than ever to personalize your comfort, décor, and savings.</p> <br /><h2>Inclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select ADD and press the knob to confirm</p> <p>- The device will begin the adding process</p> <br /><h2>Exclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select RST and press the knob to confirm</p> <p>- The device will begin the removal process</p>
+LUX KONOzw Smart Hub Thermostat<br /> <h1>Overview</h1><p>KONOzw is the smart hub thermostat made with you in mind. It seamlessly connects to many smart hubs and blends in or stands out with its interchangeable Décorsnap covers™. KONOzw makes it easier than ever to personalize your comfort, décor, and savings.</p> <br /> <h2>Inclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select ADD and press the knob to confirm</p> <p>- The device will begin the adding process</p> <br /> <h2>Exclusion Information</h2><p>- In HOME screen, press the knob once to enter the menu settings </p> <p>- Rotate the knob to select wireless symbol, then press the knob to enter the inclusion/exclusion menu</p> <p>- In the inclusion/exclusion menu, select RST and press the knob to confirm</p> <p>- The device will begin the removal process</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -116,7 +116,7 @@ LUX KONOzw Smart Hub Thermostat<br /><h1>Overview</h1><p>KONOzw is the smart hub
                  min="-250" max="250">
         <label>1: User Temperature Calibration</label>
         <description><![CDATA[
-Step-size = 10<br /><h1>Overview</h1><p>Adjusts room temperature display to match a calibrated value.</p>
+Step-size = 10<br /> <h1>Overview</h1><p>Adjusts room temperature display to match a calibrated value.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -176,7 +176,7 @@ Step-size = 10<br /><h1>Overview</h1><p>Adjusts room temperature display to matc
                  min="60" max="90">
         <label>8: Temperature Limit - Heat Max</label>
         <description><![CDATA[
-Increment by 1F<br /><h1>Overview</h1><p>60.00F-90.00F (16C-32C)</p>
+Increment by 1F<br /> <h1>Overview</h1><p>60.00F-90.00F (16C-32C)</p>
         ]]></description>
         <default>90</default>
         <limitToOptions>false</limitToOptions>
@@ -186,7 +186,7 @@ Increment by 1F<br /><h1>Overview</h1><p>60.00F-90.00F (16C-32C)</p>
                  min="45" max="60">
         <label>9: Temperature Limit - Heat Min</label>
         <description><![CDATA[
-Increment by 1F<br /><h1>Overview</h1><p>45.00F-60.00F (7C-16C)</p>
+Increment by 1F<br /> <h1>Overview</h1><p>45.00F-60.00F (7C-16C)</p>
         ]]></description>
         <default>45</default>
         <limitToOptions>false</limitToOptions>
@@ -196,7 +196,7 @@ Increment by 1F<br /><h1>Overview</h1><p>45.00F-60.00F (7C-16C)</p>
                  min="60" max="95">
         <label>10: Temperature Limit - Cool Max</label>
         <description><![CDATA[
-Increment by 1F. Actual allowable range depends on the heat set point limit<br /><h1>Overview</h1><p>60F-95F (16C-35C)</p>
+Increment by 1F. Actual allowable range depends on the heat set point limit<br /> <h1>Overview</h1><p>60F-95F (16C-35C)</p>
         ]]></description>
         <default>95</default>
         <limitToOptions>false</limitToOptions>
@@ -206,7 +206,7 @@ Increment by 1F. Actual allowable range depends on the heat set point limit<br /
                  min="50" max="75">
         <label>11: Temperature Limit - Cool Min</label>
         <description><![CDATA[
-Increment by 1F. Actual allowable range depends on the heat set point limit<br /><h1>Overview</h1><p>50F-75F (10C-24C)</p>
+Increment by 1F. Actual allowable range depends on the heat set point limit<br /> <h1>Overview</h1><p>50F-75F (10C-24C)</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -216,7 +216,7 @@ Increment by 1F. Actual allowable range depends on the heat set point limit<br /
                  min="100" max="250">
         <label>12: Temperature Minimum Setpoint Deadband</label>
         <description><![CDATA[
-100 to 250, stepsize = 10<br /><h1>Overview</h1><p>The Dead Band is a temperature range in which neither COOL or HEAT turns on when in AUTO mode.</p>
+100 to 250, stepsize = 10<br /> <h1>Overview</h1><p>The Dead Band is a temperature range in which neither COOL or HEAT turns on when in AUTO mode.</p>
         ]]></description>
         <default>200</default>
         <limitToOptions>false</limitToOptions>

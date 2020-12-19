@@ -8,7 +8,7 @@
   <thing-type id="honeywell_39354_00_000" listed="false">
     <label>39354 On/Off Smart Light Switch</label>
     <description><![CDATA[
-On/Off Smart Light Switch<br /><h1>Overview</h1><p>Z-Wave Plus On/Off Smart Light Switch, In-Wall Toggle, built-in repeater range extender, requires neutral wire</p> <br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network.</li> </ol>
+On/Off Smart Light Switch<br /> <h1>Overview</h1><p>Z-Wave Plus On/Off Smart Light Switch, In-Wall Toggle, built-in repeater range extender, requires neutral wire</p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@ On/Off Smart Light Switch<br /><h1>Overview</h1><p>Z-Wave Plus On/Off Smart Ligh
                  min="0" max="1">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-On/Off rocker settings can be reversed<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with On at the bottom and Off at the top, the default On/Off rocker settings can be reversed by changing parameter 4s value to 1. <br /> </p>
+On/Off rocker settings can be reversed<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with On at the bottom and Off at the top, the default On/Off rocker settings can be reversed by changing parameter 4s value to 1. <br /> </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ On/Off rocker settings can be reversed<br /><h1>Overview</h1><p>If the switch is
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Basic Set local load</label>
         <description><![CDATA[
-Supports Basic Set and is controlled with the local load<br /><h1>Overview</h1><p><br /><br /></p>
+Supports Basic Set and is controlled with the local load<br /> <h1>Overview</h1><p><br /><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -80,7 +80,7 @@ Supports Basic Set and is controlled with the local load<br /><h1>Overview</h1><
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Basic Set double press button</label>
         <description><![CDATA[
-Controlled by double pressing the On or Off button<br /><h1>Overview</h1><p>Supports Basic Set and is controlled by double pressing the On or Off button</p>
+Controlled by double pressing the On or Off button<br /> <h1>Overview</h1><p>Supports Basic Set and is controlled by double pressing the On or Off button</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

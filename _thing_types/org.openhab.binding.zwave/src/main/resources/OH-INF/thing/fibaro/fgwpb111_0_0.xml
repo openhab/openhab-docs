@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgwpb111_00_000" listed="false">
     <label>FGWPB-111 FIBARO Wall Plug</label>
     <description><![CDATA[
-FIBARO Wall Plug<br /><h1>Overview</h1><p>FIBARO Wall Plug is a remotely controlled plug-in switch with the ability to measure power and energy consumption.</p> <ul><li>Compatible with type B sockets and plugs.</li> <li>Compatible with any Z-Wave or Z-Wave+ Controller.</li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 with PRNG-based encryption.</li> <li>Extremely easy installation – simply plug the device into the mains socket.</li> <li>Active power and energy consumption metering.</li> <li>Equipped with USB charging port with power metering (only FGWPB-121).</li> <li>Works as a Z-Wave signal repeater.</li> <li>Current value of the load and operating mode are indicated by the multi-color LED frame.</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED frame will glow red signaling not being added (reset or remove the device otherwise)</li> <li>Set the main controller into the adding mode (see the controller’s manual).</li> <li>Quickly, triple click the button located on the casing.</li> <li>If you are adding in S2 authenticated mode, type in the device pin code (underlined part of the public key available on the device or in the manual).</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED frame will glow green signaling being added (removing is not necessary otherwise).</li> <li>Set the main controller in remove mode (see the controller's manual).</li> <li>Quickly, triple click the button located on the casing.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol>
+FIBARO Wall Plug<br /> <h1>Overview</h1><p>FIBARO Wall Plug is a remotely controlled plug-in switch with the ability to measure power and energy consumption.</p> <ul><li>Compatible with type B sockets and plugs.</li> <li>Compatible with any Z-Wave or Z-Wave+ Controller.</li> <li>Supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 with PRNG-based encryption.</li> <li>Extremely easy installation – simply plug the device into the mains socket.</li> <li>Active power and energy consumption metering.</li> <li>Equipped with USB charging port with power metering (only FGWPB-121).</li> <li>Works as a Z-Wave signal repeater.</li> <li>Current value of the load and operating mode are indicated by the multi-color LED frame.</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED frame will glow red signaling not being added (reset or remove the device otherwise)</li> <li>Set the main controller into the adding mode (see the controller’s manual).</li> <li>Quickly, triple click the button located on the casing.</li> <li>If you are adding in S2 authenticated mode, type in the device pin code (underlined part of the public key available on the device or in the manual).</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Plug the device into a socket nearby the main Z-Wave controller.</li> <li>The LED frame will glow green signaling being added (removing is not necessary otherwise).</li> <li>Set the main controller in remove mode (see the controller's manual).</li> <li>Quickly, triple click the button located on the casing.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -74,7 +74,7 @@ FIBARO Wall Plug<br /><h1>Overview</h1><p>FIBARO Wall Plug is a remotely control
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: PowerFailure</label>
         <description><![CDATA[
-How the Wall Plug will react in the event of power supply failure<br /><h1>Overview</h1><p>After the power supply is back on, the Wall Plug can be restored to the previous state or remain switched off</p>
+How the Wall Plug will react in the event of power supply failure<br /> <h1>Overview</h1><p>After the power supply is back on, the Wall Plug can be restored to the previous state or remain switched off</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -88,7 +88,7 @@ How the Wall Plug will react in the event of power supply failure<br /><h1>Overv
                  min="0" max="18000">
         <label>3: Overload safety switch</label>
         <description><![CDATA[
-turn off the controlled device in case of exceeding the defined power.<br /><h1>Overview</h1><p>This function allows to turn off the controlled device in case of ex- ceeding the defined power.</p> <p>Controlled device can be turned back on via button or sending a con- trol frame. By default this function is inactive.</p>
+turn off the controlled device in case of exceeding the defined power.<br /> <h1>Overview</h1><p>This function allows to turn off the controlled device in case of ex- ceeding the defined power.</p> <p>Controlled device can be turned back on via button or sending a con- trol frame. By default this function is inactive.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -98,7 +98,7 @@ turn off the controlled device in case of exceeding the defined power.<br /><h1>
                  min="0" max="100">
         <label>11: PowerReporting</label>
         <description><![CDATA[
-Minimum change in active power consumption to trigger<br /><h1>Overview</h1><p>This parameter determines the minimum percentage change in active power consumption (in relation to the previously reported) that will result in sending new power report.</p>
+Minimum change in active power consumption to trigger<br /> <h1>Overview</h1><p>This parameter determines the minimum percentage change in active power consumption (in relation to the previously reported) that will result in sending new power report.</p>
         ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
@@ -108,7 +108,7 @@ Minimum change in active power consumption to trigger<br /><h1>Overview</h1><p>T
                  min="0" max="500">
         <label>12: EnergyReportingThreshold</label>
         <description><![CDATA[
-Energy reporting threshold<br /><h1>Overview</h1><p>This parameter determines the minimum change in energy consumption (in relation to the previously reported) that will result in sending a new report.</p>
+Energy reporting threshold<br /> <h1>Overview</h1><p>This parameter determines the minimum change in energy consumption (in relation to the previously reported) that will result in sending a new report.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -118,7 +118,7 @@ Energy reporting threshold<br /><h1>Overview</h1><p>This parameter determines th
                  min="0" max="32400">
         <label>13: PeriodicPowerRpt</label>
         <description><![CDATA[
-Periodic power reporting<br /><h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
+Periodic power reporting<br /> <h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -128,7 +128,7 @@ Periodic power reporting<br /><h1>Overview</h1><p>This parameter defines time pe
                  min="0" max="32400">
         <label>14: PeriodicEnergyRpt</label>
         <description><![CDATA[
-Periodic energy reporting<br /><h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
+Periodic energy reporting<br /> <h1>Overview</h1><p>This parameter defines time period between independent reports sent when changes in power load have not been recorded or if changes are insignificant. By default reports are sent every hour.</p>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Periodic energy reporting<br /><h1>Overview</h1><p>This parameter defines time p
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: SelfConsumption</label>
         <description><![CDATA[
-Measuring energy consumed by the Wall Plug itself<br /><h1>Overview</h1><p>This parameter determines whether power metering should include the amount of power consumed by the Wall Plug itself. Results are being added to the value of power consumed by controlled device.</p>
+Measuring energy consumed by the Wall Plug itself<br /> <h1>Overview</h1><p>This parameter determines whether power metering should include the amount of power consumed by the Wall Plug itself. Results are being added to the value of power consumed by controlled device.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -151,7 +151,7 @@ Measuring energy consumed by the Wall Plug itself<br /><h1>Overview</h1><p>This 
                  min="100" max="18000">
         <label>21: UPValue</label>
         <description><![CDATA[
-UP value -On/Off (Power) association group (3)<br /><h1>Overview</h1><p>upper power threshold, used in parameter 23. uP value cannot be lower than a value specified in parameter 22.</p>
+UP value -On/Off (Power) association group (3)<br /> <h1>Overview</h1><p>upper power threshold, used in parameter 23. uP value cannot be lower than a value specified in parameter 22.</p>
         ]]></description>
         <default>500</default>
         <limitToOptions>false</limitToOptions>
@@ -161,7 +161,7 @@ UP value -On/Off (Power) association group (3)<br /><h1>Overview</h1><p>upper po
                  min="0" max="17900">
         <label>22: DOWNvalue</label>
         <description><![CDATA[
-lower power threshold<br /><h1>Overview</h1><p>Lower power threshold, used in parameter 23. DOWn value cannot be higher than a value specified in parameter 21.</p>
+lower power threshold<br /> <h1>Overview</h1><p>Lower power threshold, used in parameter 23. DOWn value cannot be higher than a value specified in parameter 21.</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ lower power threshold<br /><h1>Overview</h1><p>Lower power threshold, used in pa
       <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: ControlMode</label>
         <description><![CDATA[
-the way that 3rd association group devices are controlled<br /><h1>Overview</h1><p>This parameter defines the way that 3rd association group devices are controlled. Depends on the actual measured power (according to parameters 21 and 22 settings).</p>
+the way that 3rd association group devices are controlled<br /> <h1>Overview</h1><p>This parameter defines the way that 3rd association group devices are controlled. Depends on the actual measured power (according to parameters 21 and 22 settings).</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -185,7 +185,7 @@ the way that 3rd association group devices are controlled<br /><h1>Overview</h1>
                  min="0" max="255">
         <label>24: SwitchOn</label>
         <description><![CDATA[
-Command sent when physical button is pressed<br /><h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device On using the button.</p>
+Command sent when physical button is pressed<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device On using the button.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -195,7 +195,7 @@ Command sent when physical button is pressed<br /><h1>Overview</h1><p>The value 
                  min="0" max="255">
         <label>25: SwitchOff</label>
         <description><![CDATA[
-Command sent when button turned off.<br /><h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device OFF using the button.</p>
+Command sent when button turned off.<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 2nd group „On/Off (Button)” when turning the device OFF using the button.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Command sent when button turned off.<br /><h1>Overview</h1><p>The value of BASIC
                  min="0" max="255">
         <label>26: ThresholdUpCmd</label>
         <description><![CDATA[
-Command sent if power exceeds param 21<br /><h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 3rd group „On/Off (Power)” if power exceeded value of param- eter 21.</p>
+Command sent if power exceeds param 21<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associat- ed in 3rd group „On/Off (Power)” if power exceeded value of param- eter 21.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -215,7 +215,7 @@ Command sent if power exceeds param 21<br /><h1>Overview</h1><p>The value of BAS
                  min="0" max="255">
         <label>27: ThresholdDownCmd</label>
         <description><![CDATA[
-Command sent when power drops below threshold<br /><h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associ- ated in 3rd group „On/Off (Power)” if power dropped below value of parameter 22.</p>
+Command sent when power drops below threshold<br /> <h1>Overview</h1><p>The value of BASIC SET command frame sent to the devices associ- ated in 3rd group „On/Off (Power)” if power dropped below value of parameter 22.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -224,7 +224,7 @@ Command sent when power drops below threshold<br /><h1>Overview</h1><p>The value
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: ActiveAlarm</label>
         <description><![CDATA[
-Z-Wave network alarms to which the Wall Plug will respond<br /><h1>Overview</h1><p>Define Z-Wave network alarms to which the Wall Plug will respond.</p>
+Z-Wave network alarms to which the Wall Plug will respond<br /> <h1>Overview</h1><p>Define Z-Wave network alarms to which the Wall Plug will respond.</p>
         ]]></description>
         <default>63</default>
         <options>
@@ -243,7 +243,7 @@ Z-Wave network alarms to which the Wall Plug will respond<br /><h1>Overview</h1>
                  min="0" max="50">
         <label>31: AlarmResponse</label>
         <description><![CDATA[
-how the Wall Plug will respond to alarms<br /><h1>Overview</h1><p>This parameter defines how the Wall Plug will respond to alarms (de- vice’s status change).</p> <p>In case of values 1 or 2 the Wall Plug is operating normally and LED frame signals an alarm through time defined in parameter 32 or until the alarm is canceled.</p> <p>In case of values 5 to 50 the Wall Plug does not report status change, power changes, ignores BASIC SET command frames. After time defined in parameter 32 or after the alarm cancellation, connected device is set to the previous state.</p> <p>5-50 (0.5-5.0s, step 0.1s) - cyclically change device state with set period</p>
+how the Wall Plug will respond to alarms<br /> <h1>Overview</h1><p>This parameter defines how the Wall Plug will respond to alarms (de- vice’s status change).</p> <p>In case of values 1 or 2 the Wall Plug is operating normally and LED frame signals an alarm through time defined in parameter 32 or until the alarm is canceled.</p> <p>In case of values 5 to 50 the Wall Plug does not report status change, power changes, ignores BASIC SET command frames. After time defined in parameter 32 or after the alarm cancellation, connected device is set to the previous state.</p> <p>5-50 (0.5-5.0s, step 0.1s) - cyclically change device state with set period</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -257,7 +257,7 @@ how the Wall Plug will respond to alarms<br /><h1>Overview</h1><p>This parameter
                  min="1" max="32400">
         <label>32: AlarmDuration</label>
         <description><![CDATA[
-duration of alarm state<br /><h1>Overview</h1><p>This parameter specifies the duration of alarm state. If a device send- ing an alarm frame through the Z-Wave network sets alarm duration as well, this settings are ignored.</p>
+duration of alarm state<br /> <h1>Overview</h1><p>This parameter specifies the duration of alarm state. If a device send- ing an alarm frame through the Z-Wave network sets alarm duration as well, this settings are ignored.</p>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
@@ -267,7 +267,7 @@ duration of alarm state<br /><h1>Overview</h1><p>This parameter specifies the du
                  min="1000" max="18000">
         <label>40: PwrLoadViolet</label>
         <description><![CDATA[
-maximum active power value causes the LED frame to flash violet<br /><h1>Overview</h1><p>This parameter determines maximum active power value, which when exceeded, causes the LED frame to flash violet. Function is active only when parameter 41 is set to 1 or 2.</p>
+maximum active power value causes the LED frame to flash violet<br /> <h1>Overview</h1><p>This parameter determines maximum active power value, which when exceeded, causes the LED frame to flash violet. Function is active only when parameter 41 is set to 1 or 2.</p>
         ]]></description>
         <default>18000</default>
         <limitToOptions>false</limitToOptions>
@@ -276,7 +276,7 @@ maximum active power value causes the LED frame to flash violet<br /><h1>Overvie
       <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: LEDwhenOn</label>
         <description><![CDATA[
-LED frame color when controlled device is on<br /><h1>Overview</h1><p>When set to 1 or 2, LED frame color will change depending on active power and parameter 40. Other colors are set permanently and do not depend on power consumption.</p>
+LED frame color when controlled device is on<br /> <h1>Overview</h1><p>When set to 1 or 2, LED frame color will change depending on active power and parameter 40. Other colors are set permanently and do not depend on power consumption.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -297,7 +297,7 @@ LED frame color when controlled device is on<br /><h1>Overview</h1><p>When set t
       <parameter name="config_42_1" type="integer" groupName="configuration">
         <label>42: LEDwhenOff</label>
         <description><![CDATA[
-LED frame color when controlled device is off<br /><h1>Overview</h1><p>This parameter defines the illumination color after turning off.</p>
+LED frame color when controlled device is off<br /> <h1>Overview</h1><p>This parameter defines the illumination color after turning off.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -317,7 +317,7 @@ LED frame color when controlled device is off<br /><h1>Overview</h1><p>This para
       <parameter name="config_43_1" type="integer" groupName="configuration">
         <label>43: LEDwhenAlarm</label>
         <description><![CDATA[
-LED frame color at the Z-Wave network alarm detection<br /><h1>Overview</h1><p>This parameter defines the illumination color in case of Z-Wave alarm.</p>
+LED frame color at the Z-Wave network alarm detection<br /> <h1>Overview</h1><p>This parameter defines the illumination color in case of Z-Wave alarm.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -344,7 +344,7 @@ LED frame color at the Z-Wave network alarm detection<br /><h1>Overview</h1><p>T
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: OnOffButton</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>devices in this group will be switched on or off when relay status is changed using the but- ton</p>
+<br /> <h1>Overview</h1><p>devices in this group will be switched on or off when relay status is changed using the but- ton</p>
         ]]></description>
         <multipleLimit>50</multipleLimit>
       </parameter>
@@ -352,7 +352,7 @@ LED frame color at the Z-Wave network alarm detection<br /><h1>Overview</h1><p>T
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: OnOffPlugPower</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>devices in this group will be switched on or off depending on the current load of plugged device (uses Basic command class).</p>
+<br /> <h1>Overview</h1><p>devices in this group will be switched on or off depending on the current load of plugged device (uses Basic command class).</p>
         ]]></description>
         <multipleLimit>50</multipleLimit>
       </parameter>

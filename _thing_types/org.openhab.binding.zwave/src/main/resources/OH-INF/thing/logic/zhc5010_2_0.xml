@@ -8,7 +8,7 @@
   <thing-type id="logic_zhc5010_02_000" listed="false">
     <label>ZHC5010 FUGA Wall 4-way Switch with LED + Relay</label>
     <description><![CDATA[
-FUGA Wall 4-way Switch with LED + Relay<br /><h1>Overview</h1><p>ZHC5010 is a wall switch module with Z-Wave communication. The module contains four buttons, four LEDs, a built-in relay switch and is designed to fit into a standard LK FUGA® wall box (one-module format). The ZHC5010 Wall Switch allows you to control the local load as well as Z-Wave connected devices in up to four additional Z-Wave groups.</p> <p>Configuration updated: 2017-12-10, firmware 2.03</p> <br /><h2>Inclusion Information</h2><p>Place your primary controller in Adding Mode by following the manufacturer's instructions, then activate the add mode on the device by triple-clicking the upper left button on the module, or by triple-clicking the little button in the middle of the module (hidden behind the small plastic cover). Adding Mode is indicated by blinking of upper left LED until the timeout occurs after 10 seconds or the module has been added in the network. </p> <br /><h2>Exclusion Information</h2><p>Follow the inclusion procedures; the device is removed in the same manner, when the controller is in Removing Mode.</p> <p>Factory reset:</p> <p>ZHC5010 can be factory reset by pressing the small button in the middle of the module (normally covered by small plastic cover) for at least 10 seconds. Remove the middle plastic cover by means of a small screwdriver, and press the small button for at least 10 seconds, until all the LEDs lights up. Please use this procedure only when the network primary controller is missing or otherwise inoperable.</p>
+FUGA Wall 4-way Switch with LED + Relay<br /> <h1>Overview</h1><p>ZHC5010 is a wall switch module with Z-Wave communication. The module contains four buttons, four LEDs, a built-in relay switch and is designed to fit into a standard LK FUGA® wall box (one-module format). The ZHC5010 Wall Switch allows you to control the local load as well as Z-Wave connected devices in up to four additional Z-Wave groups.</p> <p>Configuration updated: 2017-12-10, firmware 2.03</p> <br /> <h2>Inclusion Information</h2><p>Place your primary controller in Adding Mode by following the manufacturer's instructions, then activate the add mode on the device by triple-clicking the upper left button on the module, or by triple-clicking the little button in the middle of the module (hidden behind the small plastic cover). Adding Mode is indicated by blinking of upper left LED until the timeout occurs after 10 seconds or the module has been added in the network. </p> <br /> <h2>Exclusion Information</h2><p>Follow the inclusion procedures; the device is removed in the same manner, when the controller is in Removing Mode.</p> <p>Factory reset:</p> <p>ZHC5010 can be factory reset by pressing the small button in the middle of the module (normally covered by small plastic cover) for at least 10 seconds. Remove the middle plastic cover by means of a small screwdriver, and press the small button for at least 10 seconds, until all the LEDs lights up. Please use this procedure only when the network primary controller is missing or otherwise inoperable.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -122,7 +122,7 @@ FUGA Wall 4-way Switch with LED + Relay<br /><h1>Overview</h1><p>ZHC5010 is a wa
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Upper paddle buttons mode</label>
         <description><![CDATA[
-Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode for the upper two buttons (button #1 and #2) </p>
+Pair Mode, upper two buttons<br /> <h1>Overview</h1><p>Configuration of Pair Mode for the upper two buttons (button #1 and #2) </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -135,7 +135,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Lower paddle buttons mode</label>
         <description><![CDATA[
-Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode for the upper two buttons (button #1 and #2).</p>
+Pair Mode, upper two buttons<br /> <h1>Overview</h1><p>Configuration of Pair Mode for the upper two buttons (button #1 and #2).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -284,7 +284,7 @@ Pair Mode, upper two buttons<br /><h1>Overview</h1><p>Configuration of Pair Mode
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Relay mode</label>
         <description><![CDATA[
-How built-in relay is controlled<br /><h1>Overview</h1><p>This parameter configures which of the buttons that shall control the built-in relay, or if the relay only will be activated for one second, each time button #1 is used.</p>
+How built-in relay is controlled<br /> <h1>Overview</h1><p>This parameter configures which of the buttons that shall control the built-in relay, or if the relay only will be activated for one second, each time button #1 is used.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -309,7 +309,7 @@ How built-in relay is controlled<br /><h1>Overview</h1><p>This parameter configu
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Indicator mode.</label>
         <description><![CDATA[
-set the current light level for the actual LED or the level value can be stored<br /><h1>Overview</h1><p>When ZHC5010 receives an Indicator Set message, then the received value can be used only to set the current light level for the actual LED or the level value can be stored and will then be used for subsequent internal activations. </p>
+set the current light level for the actual LED or the level value can be stored<br /> <h1>Overview</h1><p>When ZHC5010 receives an Indicator Set message, then the received value can be used only to set the current light level for the actual LED or the level value can be stored and will then be used for subsequent internal activations. </p>
         ]]></description>
         <default>1</default>
         <options>
@@ -322,7 +322,7 @@ set the current light level for the actual LED or the level value can be stored<
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: Scene notification offset.</label>
         <description><![CDATA[
-Scene sequence numbers transmitted by Central Scene notifications.<br /><h1>Overview</h1><p>Configure the scene sequence numbers that will be transmitted by Central Scene notifications.</p> <p>Button #1 will send scene [value], button #2 will send scene [value] + 1, button #3 will send scene [value] + 2, button #4 will send scene [value] + 3. (Default = 1)</p>
+Scene sequence numbers transmitted by Central Scene notifications.<br /> <h1>Overview</h1><p>Configure the scene sequence numbers that will be transmitted by Central Scene notifications.</p> <p>Button #1 will send scene [value], button #2 will send scene [value] + 1, button #3 will send scene [value] + 2, button #4 will send scene [value] + 3. (Default = 1)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -335,7 +335,7 @@ Scene sequence numbers transmitted by Central Scene notifications.<br /><h1>Over
       <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Disable House Cleaning.</label>
         <description><![CDATA[
-Disable House Cleaning Mode.<br /><h1>Overview</h1><p>This parameter is able to enable or disable the so-called “House Cleaning Mode”, where ZHC5010 is able send a dimming command in order to set the level of the lights to 100%.</p>
+Disable House Cleaning Mode.<br /> <h1>Overview</h1><p>This parameter is able to enable or disable the so-called “House Cleaning Mode”, where ZHC5010 is able send a dimming command in order to set the level of the lights to 100%.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -360,7 +360,7 @@ Disable House Cleaning Mode.<br /><h1>Overview</h1><p>This parameter is able to 
                  min="0" max="255">
         <label>19: Upper switch value - (button #1)</label>
         <description><![CDATA[
-Multilevel Switch - Upper switch value - (button #1)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
+Multilevel Switch - Upper switch value - (button #1)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -370,7 +370,7 @@ Multilevel Switch - Upper switch value - (button #1)<br /><h1>Overview</h1><p>Wh
                  min="0" max="99">
         <label>19: Lower switch value - (button #1)</label>
         <description><![CDATA[
-Multilevel Switch - Lower switch value - (button #1)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
+Multilevel Switch - Lower switch value - (button #1)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -391,7 +391,7 @@ Multilevel Switch - Lower switch value - (button #1)<br /><h1>Overview</h1><p>Wh
                  min="0" max="255">
         <label>20: Upper switch value - (button #2)</label>
         <description><![CDATA[
-Multilevel Switch - Upper switch value - (button #2)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
+Multilevel Switch - Upper switch value - (button #2)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -401,7 +401,7 @@ Multilevel Switch - Upper switch value - (button #2)<br /><h1>Overview</h1><p>Wh
                  min="0" max="99">
         <label>20: Lower switch value - (button #2)</label>
         <description><![CDATA[
-Multilevel Switch - Lower switch value - (button #2)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
+Multilevel Switch - Lower switch value - (button #2)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -422,7 +422,7 @@ Multilevel Switch - Lower switch value - (button #2)<br /><h1>Overview</h1><p>Wh
                  min="0" max="255">
         <label>21: Upper switch value - (button #3)</label>
         <description><![CDATA[
-Multilevel Switch - Upper switch value - (button #3)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
+Multilevel Switch - Upper switch value - (button #3)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -432,7 +432,7 @@ Multilevel Switch - Upper switch value - (button #3)<br /><h1>Overview</h1><p>Wh
                  min="0" max="99">
         <label>21: Lower switch value - (button #3)</label>
         <description><![CDATA[
-Multilevel Switch - Lower switch value - (button #3)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
+Multilevel Switch - Lower switch value - (button #3)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -453,7 +453,7 @@ Multilevel Switch - Lower switch value - (button #3)<br /><h1>Overview</h1><p>Wh
                  min="0" max="255">
         <label>22: Upper switch value - (button #4)</label>
         <description><![CDATA[
-Multilevel Switch - Upper switch value - (button #4)<br /><h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
+Multilevel Switch - Upper switch value - (button #4)<br /> <h1>Overview</h1><p>When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -463,7 +463,7 @@ Multilevel Switch - Upper switch value - (button #4)<br /><h1>Overview</h1><p>Wh
                  min="0" max="99">
         <label>22: Lower switch value - (button #4)</label>
         <description><![CDATA[
-Multilevel Switch - Lower switch value - (button #4)<br /><h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
+Multilevel Switch - Lower switch value - (button #4)<br /> <h1>Overview</h1><p>When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -472,7 +472,7 @@ Multilevel Switch - Lower switch value - (button #4)<br /><h1>Overview</h1><p>Wh
       <parameter name="config_23_1" type="integer" groupName="configuration">
         <label>23: Control of association groups (button #1).</label>
         <description><![CDATA[
-Control of association groups for device 1 (button #1).<br /><h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
+Control of association groups for device 1 (button #1).<br /> <h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -485,7 +485,7 @@ Control of association groups for device 1 (button #1).<br /><h1>Overview</h1><p
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Control of association groups (button #2).</label>
         <description><![CDATA[
-Control of association groups for device 2 (button #2).<br /><h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
+Control of association groups for device 2 (button #2).<br /> <h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -498,7 +498,7 @@ Control of association groups for device 2 (button #2).<br /><h1>Overview</h1><p
       <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Control of association groups (button #3).</label>
         <description><![CDATA[
-Control of association groups for device 3 (button #3).<br /><h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
+Control of association groups for device 3 (button #3).<br /> <h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -511,7 +511,7 @@ Control of association groups for device 3 (button #3).<br /><h1>Overview</h1><p
       <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: Control of association groups (button #4).</label>
         <description><![CDATA[
-Control of association groups for device 4 (button #4).<br /><h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
+Control of association groups for device 4 (button #4).<br /> <h1>Overview</h1><p>Enable or disable if received commands are relayed to the nodes in the association groups.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -525,7 +525,7 @@ Control of association groups for device 4 (button #4).<br /><h1>Overview</h1><p
                  min="0" max="255">
         <label>28: Threshold time for long-press</label>
         <description><![CDATA[
-Decides the time for when a button is detected as long-pressed<br /><h1>Overview</h1><p>Decides the time for when a button is detected as long-pressed.</p> <p>0     : Detection disabled. This is not recommended.</p> <p>1-255 : Long-press detection time in 0.01 seconds, 50 equals 0.5 seconds.</p>
+Decides the time for when a button is detected as long-pressed<br /> <h1>Overview</h1><p>Decides the time for when a button is detected as long-pressed.</p> <p>0     : Detection disabled. This is not recommended.</p> <p>1-255 : Long-press detection time in 0.01 seconds, 50 equals 0.5 seconds.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -535,7 +535,7 @@ Decides the time for when a button is detected as long-pressed<br /><h1>Overview
                  min="0" max="255">
         <label>29: Threshold time for keypress detection of button 1</label>
         <description><![CDATA[
-Specifies the detection time for single-press, double-press, etc. for button 1.<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 1.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
+Specifies the detection time for single-press, double-press, etc. for button 1.<br /> <h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 1.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -545,7 +545,7 @@ Specifies the detection time for single-press, double-press, etc. for button 1.<
                  min="0" max="255">
         <label>30: Threshold time for keypress detection of button 2</label>
         <description><![CDATA[
-Specifies the detection time for single-press, double-press, etc. for button 2<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 2.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
+Specifies the detection time for single-press, double-press, etc. for button 2<br /> <h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 2.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -555,7 +555,7 @@ Specifies the detection time for single-press, double-press, etc. for button 2<b
                  min="0" max="255">
         <label>31: Threshold time for keypress detection of button 3</label>
         <description><![CDATA[
-Specifies the detection time for single-press, double-press, etc. for button 3<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 3.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
+Specifies the detection time for single-press, double-press, etc. for button 3<br /> <h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 3.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -565,7 +565,7 @@ Specifies the detection time for single-press, double-press, etc. for button 3<b
                  min="0" max="255">
         <label>32: Threshold time for keypress detection of button 4</label>
         <description><![CDATA[
-Specifies the detection time for single-press, double-press, etc. for button 4<br /><h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 4.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
+Specifies the detection time for single-press, double-press, etc. for button 4<br /> <h1>Overview</h1><p>Specifies the detection time for single-press, double-press, etc. for button 4.</p> <p>0       : Detection disabled. This is not recommended.</p> <p>1 - 255 : Detection time in 0.01 seconds, 30 equals 0.3 seconds.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -575,7 +575,7 @@ Specifies the detection time for single-press, double-press, etc. for button 4<b
                  min="0" max="255">
         <label>33: Non-secure commands for AG in logical device 1</label>
         <description><![CDATA[
-Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
+Allow sending non-secure commands to association members if added securely<br /> <h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -585,7 +585,7 @@ Allow sending non-secure commands to association members if added securely<br />
                  min="0" max="255">
         <label>34: Non-secure commands for AG in logical device 2</label>
         <description><![CDATA[
-Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
+Allow sending non-secure commands to association members if added securely<br /> <h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -595,7 +595,7 @@ Allow sending non-secure commands to association members if added securely<br />
                  min="0" max="255">
         <label>35: Non-secure commands for AG in logical device 3</label>
         <description><![CDATA[
-Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
+Allow sending non-secure commands to association members if added securely<br /> <h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -605,7 +605,7 @@ Allow sending non-secure commands to association members if added securely<br />
                  min="0" max="255">
         <label>36: Non-secure commands for AG in logical device 4</label>
         <description><![CDATA[
-Allow sending non-secure commands to association members if added securely<br /><h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
+Allow sending non-secure commands to association members if added securely<br /> <h1>Overview</h1><p>If ZHC5010 is included secure, this parameter allows sending messages on keypresses to non-secure devices (e.g. pre-gen5 relays).</p> <p>If ZHC5010 is included non-secure, this parameter has no function.</p> <p>0         : No commands sent unencrypted (default)</p> <p>1  (0x01) : Bit#1. Not used.</p> <p>2  (0x02) : Bit#2. Send BASICREPORT to association group 2 unencrypted.</p> <p>4  (0x04) : Bit#3. Send BASICSET to association group 3 unencrypted.</p> <p>8  (0x08) : Bit#4. Send BINARYSWITCHSET to association group 4 unencrypted.</p> <p>16 (0x10) : Bit#5. Send BINARYTOGGLESWITCHSET to association group 5 unencrypted.</p> <p>32 (0x20) : Bit#6. Send MULTILEVELSWITCH to association group 6 unencrypted.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

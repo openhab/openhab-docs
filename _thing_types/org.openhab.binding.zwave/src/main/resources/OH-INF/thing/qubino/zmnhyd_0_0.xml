@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhyd_00_000" listed="false">
     <label>ZMNHYD Smart Plug</label>
     <description><![CDATA[
-Smart Plug<br /><h1>Overview</h1><p>This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.</p> <ul><li>Power supply: 230V +/- 10%, 50 Hz</li> <li>Power load: 15A resistive max.</li> <li>Overload protection &gt;16 A</li> <li>Power consumption &lt;1W</li> </ul><br /><h2>Inclusion Information</h2><p>Auto inclusion (first time usage)</p> <ul><li>start inclusion mode of z-wave controller</li> <li>plug device into power outlet (5 seconds auto inclusion)</li> </ul><p>Manual inclusion</p> <ul><li>plug device into power outlet</li> <li>start inclusion mode of z-wave controller</li> <li>press the service button (S) 3 times within 3 seconds</li> </ul><br /><h2>Exclusion Information</h2><ul><li>plug device into power outlet</li> <li>ensure device is within maximum 1 meter (3 feet) of the main controller</li> <li>enable exclusion mode on main controller</li> <li>press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)</li> </ul><br /><h2>Wakeup Information</h2><p>Press the Service button (S) 3 times within 3 seconds.</p>
+Smart Plug<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.</p> <ul><li>Power supply: 230V +/- 10%, 50 Hz</li> <li>Power load: 15A resistive max.</li> <li>Overload protection &gt;16 A</li> <li>Power consumption &lt;1W</li> </ul> <br /> <h2>Inclusion Information</h2><p>Auto inclusion (first time usage)</p> <ul><li>start inclusion mode of z-wave controller</li> <li>plug device into power outlet (5 seconds auto inclusion)</li> </ul><p>Manual inclusion</p> <ul><li>plug device into power outlet</li> <li>start inclusion mode of z-wave controller</li> <li>press the service button (S) 3 times within 3 seconds</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>plug device into power outlet</li> <li>ensure device is within maximum 1 meter (3 feet) of the main controller</li> <li>enable exclusion mode on main controller</li> <li>press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)</li> </ul> <br /> <h2>Wakeup Information</h2><p>Press the Service button (S) 3 times within 3 seconds.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -93,7 +93,7 @@ Smart Plug<br /><h1>Overview</h1><p>This Z-Wave module is used for switching and
                  min="0" max="32535">
         <label>11: Automatic turning OFF relay after set time</label>
         <description><![CDATA[
-When the relay is turned ON, it automatically turns OFF after the defined time<br /><h1>Overview</h1><p>The timer is reset each time, the module receives an ON command (from push button/main controller/association).</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.</li> </ul>
+When the relay is turned ON, it automatically turns OFF after the defined time<br /> <h1>Overview</h1><p>The timer is reset each time, the module receives an ON command (from push button/main controller/association).</p> <ul><li>0 = Auto OFF disabled</li> <li>1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -104,7 +104,7 @@ When the relay is turned ON, it automatically turns OFF after the defined time<b
       <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: On automatically with timer</label>
         <description><![CDATA[
-Turn Smart plug On Automatically with Timer<br /><h1>Overview</h1><p>If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 - Auto ON Disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).</li> </ul>
+Turn Smart plug On Automatically with Timer<br /> <h1>Overview</h1><p>If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.</p> <ul><li>0 - Auto ON Disabled</li> <li>1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -117,7 +117,7 @@ Turn Smart plug On Automatically with Timer<br /><h1>Overview</h1><p>If Smart pl
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Timer Settings Unit</label>
         <description><![CDATA[
-Set Timer Units to Seconds or Milliseconds<br /><h1>Overview</h1><p>Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).</p>
+Set Timer Units to Seconds or Milliseconds<br /> <h1>Overview</h1><p>Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -142,7 +142,7 @@ Set Timer Units to Seconds or Milliseconds<br /><h1>Overview</h1><p>Choose if yo
                  min="0" max="100">
         <label>40: Treshold Change in Power for reporting</label>
         <description><![CDATA[
-Change of power consumption [Watt] reporting threshold<br /><h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.</p> <ul><li>0 - Power consumption reporting disabled</li> <li>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</li> </ul><p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p> <p>NOTE: When reporting Watts, module will automatically report also [V] (Voltage) and [A] (Amperes)</p>
+Change of power consumption [Watt] reporting threshold<br /> <h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.</p> <ul><li>0 - Power consumption reporting disabled</li> <li>1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</li> </ul><p>NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.</p> <p>NOTE: When reporting Watts, module will automatically report also [V] (Voltage) and [A] (Amperes)</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -152,7 +152,7 @@ Change of power consumption [Watt] reporting threshold<br /><h1>Overview</h1><p>
                  min="0" max="32535">
         <label>41: Threshold time for power reporting</label>
         <description><![CDATA[
-Threshold time for power reporting [Seconds]<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <ul><li>0 - Power consumption reporting disabled</li> <li>30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul><p>The device is reporting the following values (if there was a change): Power [W], Voltage [V] and Current [A]</p>
+Threshold time for power reporting [Seconds]<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <ul><li>0 - Power consumption reporting disabled</li> <li>30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul><p>The device is reporting the following values (if there was a change): Power [W], Voltage [V] and Current [A]</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -162,7 +162,7 @@ Threshold time for power reporting [Seconds]<br /><h1>Overview</h1><p>Set value 
                  min="0" max="32535">
         <label>42: Power Consumption Reporting Time Threshold</label>
         <description><![CDATA[
-Power Consumption Reporting Time Threshold [Seconds]<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).</p> <p>If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <p>Values :</p> <ul><li>0 : Power consumption reporting disabled</li> <li>30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul>
+Power Consumption Reporting Time Threshold [Seconds]<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).</p> <p>If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).</p> <p>Values :</p> <ul><li>0 : Power consumption reporting disabled</li> <li>30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -172,7 +172,7 @@ Power Consumption Reporting Time Threshold [Seconds]<br /><h1>Overview</h1><p>Se
                  min="0" max="4000">
         <label>50: Down value</label>
         <description><![CDATA[
-Down value [watt]<br /><h1>Overview</h1><p>Lower power threshold used in parameter no. 52. </p> <p>Values:</p> <ul><li>default value 30 : 30 W <br /></li> <li>0 – 4000 : 0W – 4000 W <br /></li> </ul><p>Down value cannot be higher than a value specified in parameter no. 51 <br /></p> <p>NOTE:</p> <ul><li>if parameter no. 50 value is 100W and if measured power is lower than 100W, the association is send association is send again if measured power will rise above 105W</li> <li>Power threshold step is 1W <br /></li> </ul>
+Down value [watt]<br /> <h1>Overview</h1><p>Lower power threshold used in parameter no. 52. </p> <p>Values:</p> <ul><li>default value 30 : 30 W <br /></li> <li>0 – 4000 : 0W – 4000 W <br /></li> </ul><p>Down value cannot be higher than a value specified in parameter no. 51 <br /></p> <p>NOTE:</p> <ul><li>if parameter no. 50 value is 100W and if measured power is lower than 100W, the association is send association is send again if measured power will rise above 105W</li> <li>Power threshold step is 1W <br /></li> </ul>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -182,7 +182,7 @@ Down value [watt]<br /><h1>Overview</h1><p>Lower power threshold used in paramet
                  min="0" max="4000">
         <label>51: Up value</label>
         <description><![CDATA[
-Upper power threshold used in parameter no. 52<br /><h1>Overview</h1><p>Values</p> <ul><li>default value 50 : 50 W</li> <li>0 – 4000 : 0 W – 400 W </li> </ul><p>Up value cannot be lower than a value specified in the parameter no. 50.</p> <p>NOTE:</p> <ul><li>If parameter no. 51 value is 200W and if measured power is higher than 200W the association is send</li> <li>Association is send again if measured power will fall below 190W</li> <li>Power threshold step is 1W </li> </ul>
+Upper power threshold used in parameter no. 52<br /> <h1>Overview</h1><p>Values</p> <ul><li>default value 50 : 50 W</li> <li>0 – 4000 : 0 W – 400 W </li> </ul><p>Up value cannot be lower than a value specified in the parameter no. 50.</p> <p>NOTE:</p> <ul><li>If parameter no. 51 value is 200W and if measured power is higher than 200W the association is send</li> <li>Association is send again if measured power will fall below 190W</li> <li>Power threshold step is 1W </li> </ul>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -213,7 +213,7 @@ Upper power threshold used in parameter no. 52<br /><h1>Overview</h1><p>Values</
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Status on/off</label>
         <description><![CDATA[
-Send control command BASIC_SET 0x00/0xFF<br /><h1>Overview</h1><p>This group is assigned to the Smart Plug status On/Off. It allows sending the control command BASIC_SET 0x00/0xFF to associated devices whenevert the Smart Plug is turned On or Off.</p>
+Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is assigned to the Smart Plug status On/Off. It allows sending the control command BASIC_SET 0x00/0xFF to associated devices whenevert the Smart Plug is turned On or Off.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -221,7 +221,7 @@ Send control command BASIC_SET 0x00/0xFF<br /><h1>Overview</h1><p>This group is 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Load dependent</label>
         <description><![CDATA[
-sending control commands BASIC_SET 0x00/0xFF depending on current load<br /><h1>Overview</h1><p>This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.</p>
+sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -229,7 +229,7 @@ sending control commands BASIC_SET 0x00/0xFF depending on current load<br /><h1>
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Secure Status On/Off</label>
         <description><![CDATA[
-Send control command BASIC_SET 0x00/0xFF<br /><h1>Overview</h1><p>This group is equivalent to association group 2, except commands are sent securily encapsulated.</p>
+Send control command BASIC_SET 0x00/0xFF<br /> <h1>Overview</h1><p>This group is equivalent to association group 2, except commands are sent securily encapsulated.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -237,7 +237,7 @@ Send control command BASIC_SET 0x00/0xFF<br /><h1>Overview</h1><p>This group is 
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Secure Load dependent</label>
         <description><![CDATA[
-sending control commands BASIC_SET 0x00/0xFF depending on current load<br /><h1>Overview</h1><p>This group is equivalent to association group 3, except commands are sent securily encapsulated.</p>
+sending control commands BASIC_SET 0x00/0xFF depending on current load<br /> <h1>Overview</h1><p>This group is equivalent to association group 3, except commands are sent securily encapsulated.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

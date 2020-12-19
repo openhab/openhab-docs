@@ -8,7 +8,7 @@
   <thing-type id="trane_TZEMT500B_00_000" listed="false">
     <label>TZEMT500B Thermostat</label>
     <description><![CDATA[
-Thermostat<br /><h1>Overview</h1><p>The TZEMT500B Thermostat is compatible with single and multistage forced air systems, including:</p><p>• Gas furnace systems</p><p>• Oil furnace systems</p><p>• Electric furnace systems</p><p>• Heat pump systems</p><p>• Air conditioning cooling systems</p> <br /><h2>Inclusion Information</h2><p>Press the MENU button on the thermostat.</p><p>Scroll down to Z Wave Install, and press the Select button.</p><p>Press the Yes button to enroll the thermostat.</p> <br /><h2>Exclusion Information</h2><p>Press the MENU button on the thermostat.</p><p>Scroll down to Z-Wave Install and press the Select button.</p><p>Press the Yes button to exclude the thermostat.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Thermostat<br /> <h1>Overview</h1><p>The TZEMT500B Thermostat is compatible with single and multistage forced air systems, including:</p><p>• Gas furnace systems</p><p>• Oil furnace systems</p><p>• Electric furnace systems</p><p>• Heat pump systems</p><p>• Air conditioning cooling systems</p> <br /> <h2>Inclusion Information</h2><p>Press the MENU button on the thermostat.</p><p>Scroll down to Z Wave Install, and press the Select button.</p><p>Press the Yes button to enroll the thermostat.</p> <br /> <h2>Exclusion Information</h2><p>Press the MENU button on the thermostat.</p><p>Scroll down to Z-Wave Install and press the Select button.</p><p>Press the Yes button to exclude the thermostat.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>HVAC</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="hank_acc01_00_000" listed="false">
     <label>ACC01 HKZW</label>
     <description><![CDATA[
-HKZW<br /><h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave technology. It is used for sending IR codes to infrared communicaiton controlling devices suchas TV, air condition, and TV box.</p> <br /><h2>Inclusion Information</h2><p>Triple click the Z-Button within 1.5 seconds.</p> <p>For secure inclusion, press and hold the button for 3 seconds.</p> <br /><h2>Exclusion Information</h2><p>Triple click the Z-Button within 1.5 seconds.</p>
+HKZW<br /> <h1>Overview</h1><p>ACC01 is an IR Transceiver based on Z-Wave technology. It is used for sending IR codes to infrared communicaiton controlling devices suchas TV, air condition, and TV box.</p> <br /> <h2>Inclusion Information</h2><p>Triple click the Z-Button within 1.5 seconds.</p> <p>For secure inclusion, press and hold the button for 3 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Triple click the Z-Button within 1.5 seconds.</p>
     ]]></description>
     <category>RemoteControl</category>
 

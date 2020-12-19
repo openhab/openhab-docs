@@ -8,7 +8,7 @@
   <thing-type id="goodway_36511_00_000" listed="false">
     <label>36511 RGBW Dimmer Module</label>
     <description><![CDATA[
-RGBW Dimmer Module<br /><h1>Overview</h1><p>This RGBW Dimmer Module enables remote control of your LED light strips, dimmable bulbs, and halogen bulbs. When included in your Z-Wave® mesh network, you can easily adjust the brightness and intensity of the lights. The dimmer is small and lightweight, making it easier to fit into junction boxes and tight spaces.</p> <br /><h2>Inclusion Information</h2><p>Press the include button three times within 2 seconds or use the auto inclusion feature after powering up.</p> <br /><h2>Exclusion Information</h2><p>Press the exclude button three times within 2 seconds.</p>
+RGBW Dimmer Module<br /> <h1>Overview</h1><p>This RGBW Dimmer Module enables remote control of your LED light strips, dimmable bulbs, and halogen bulbs. When included in your Z-Wave® mesh network, you can easily adjust the brightness and intensity of the lights. The dimmer is small and lightweight, making it easier to fit into junction boxes and tight spaces.</p> <br /> <h2>Inclusion Information</h2><p>Press the include button three times within 2 seconds or use the auto inclusion feature after powering up.</p> <br /> <h2>Exclusion Information</h2><p>Press the exclude button three times within 2 seconds.</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -113,7 +113,7 @@ RGBW Dimmer Module<br /><h1>Overview</h1><p>This RGBW Dimmer Module enables remo
                  min="1" max="1127">
         <label>6: Auto Scene Mode Duration</label>
         <description><![CDATA[
-Auto Scene Mode Duration<br /><h1>Overview</h1><p>1-127=1-127 seconds</p> <p>1001-1127=1-127 minutes</p>
+Auto Scene Mode Duration<br /> <h1>Overview</h1><p>1-127=1-127 seconds</p> <p>1001-1127=1-127 minutes</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

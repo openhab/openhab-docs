@@ -8,7 +8,7 @@
   <thing-type id="schlage_fe599nx_00_000" listed="false">
     <label>FE599NX Connected Keypad with Lever</label>
     <description><![CDATA[
-Connected Keypad with Lever<br /><h1>Overview</h1><p>Camelot style residential keypad deadbolt door lock and lever.</p> <br /><h2>Inclusion Information</h2><ol><li>Enter 6 digit Programming Code</li> <li>Wait for Schlage button to blink 3 times and 3 beeps</li> <li>Press the Schlage button and then 0</li> </ol><p>On Success the Schlage button will blink with no beeps.</p> <br /><h2>Exclusion Information</h2><ol><li>Enter 6 digit Programming Code</li> <li>Wait for Schlage button to blink 3 times and 3 beeps</li> <li>Press the Schlage button and then 0</li> </ol>
+Connected Keypad with Lever<br /> <h1>Overview</h1><p>Camelot style residential keypad deadbolt door lock and lever.</p> <br /> <h2>Inclusion Information</h2><ol><li>Enter 6 digit Programming Code</li> <li>Wait for Schlage button to blink 3 times and 3 beeps</li> <li>Press the Schlage button and then 0</li> </ol><p>On Success the Schlage button will blink with no beeps.</p> <br /> <h2>Exclusion Information</h2><ol><li>Enter 6 digit Programming Code</li> <li>Wait for Schlage button to blink 3 times and 3 beeps</li> <li>Press the Schlage button and then 0</li> </ol>
     ]]></description>
     <category>Lock</category>
 

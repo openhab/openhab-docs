@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw080_00_000" listed="false">
     <label>ZW080 Siren Gen5</label>
     <description><![CDATA[
-Siren Gen5<br /><h1>Overview</h1><p>Indoor Siren Gen5</p> <br /><h2>Inclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Press the Action Button.</li> <li>If the Learning is failed, please repeat the process from step 2.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into exclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Action Button.</li> <li>If the remove is failed, please repeat the process from step 2.</li> </ol><p>Note: If Siren is removed from Z‐wave network, it will be reset to factory default.</p>
+Siren Gen5<br /> <h1>Overview</h1><p>Indoor Siren Gen5</p> <br /> <h2>Inclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Press the Action Button.</li> <li>If the Learning is failed, please repeat the process from step 2.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Install Siren, and plug it into the socket of AC Power.</li> <li>Let the primary controller into exclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Action Button.</li> <li>If the remove is failed, please repeat the process from step 2.</li> </ol><p>Note: If Siren is removed from Z‐wave network, it will be reset to factory default.</p>
     ]]></description>
     <category>Siren</category>
 
@@ -83,7 +83,7 @@ Siren Gen5<br /><h1>Overview</h1><p>Indoor Siren Gen5</p> <br /><h2>Inclusion In
                  min="0" max="255">
         <label>80: Enable Notifications to Group 1</label>
         <description><![CDATA[
-what type of notification to send to Group 1<br /><h1>Overview</h1><p>Enable to send notifications to associated devices (Group1) when the state of Siren changed (0=nothing,1=hailCC,2=basic CC report).</p>
+what type of notification to send to Group 1<br /> <h1>Overview</h1><p>Enable to send notifications to associated devices (Group1) when the state of Siren changed (0=nothing,1=hailCC,2=basic CC report).</p>
         ]]></description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="mcohome_mh6hp_02_000" listed="false">
     <label>MH6-HP Programmable Thermostat</label>
     <description><![CDATA[
-Programmable Thermostat<br /><h1>Overview</h1><p>MH6-HP programmable thermostat is a Z-Wave Plus enabled device for indoor temperature control. It is mainly applied to heat pump system for heating/cooling, with 3 modes easily switchable: Schedule, Hold and Holiday. The device is of high reliability and practicability, and it can support up to 3H/2C system. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /><h2>Inclusion Information</h2><p>In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.</p> <br /><h2>Exclusion Information</h2><p>In normal display, press and hold ^ button to enter interface for removing of Z-Wave network. A Node ID will display on the screen. Then press ^ button once, “- - -” will display on the screen to show removal was successful.</p>
+Programmable Thermostat<br /> <h1>Overview</h1><p>MH6-HP programmable thermostat is a Z-Wave Plus enabled device for indoor temperature control. It is mainly applied to heat pump system for heating/cooling, with 3 modes easily switchable: Schedule, Hold and Holiday. The device is of high reliability and practicability, and it can support up to 3H/2C system. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /> <h2>Inclusion Information</h2><p>In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.</p> <br /> <h2>Exclusion Information</h2><p>In normal display, press and hold ^ button to enter interface for removing of Z-Wave network. A Node ID will display on the screen. Then press ^ button once, “- - -” will display on the screen to show removal was successful.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -110,7 +110,7 @@ Programmable Thermostat<br /><h1>Overview</h1><p>MH6-HP programmable thermostat 
                  min="3" max="1000">
         <label>3: Upload temperature difference</label>
         <description><![CDATA[
-Upload temperature difference<br /><h1>Overview</h1><p>Base on 0.1℃unit, 0x0005 by default, 5*0.1℃=0.5℃, 0x0003~0x03E8 (3-1000)<br /></p> <p><br /><br /></p>
+Upload temperature difference<br /> <h1>Overview</h1><p>Base on 0.1℃unit, 0x0005 by default, 5*0.1℃=0.5℃, 0x0003~0x03E8 (3-1000)<br /></p> <p><br /><br /></p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -135,7 +135,7 @@ Upload temperature difference<br /><h1>Overview</h1><p>Base on 0.1℃unit, 0x000
       <parameter name="config_255_1_wo" type="integer" groupName="configuration">
         <label>255: Factory reset</label>
         <description><![CDATA[
-Factory reset<br /><h1>Overview</h1><p>0x55 (85) Restore the factory setting(write only)</p> <p><br /><br /></p>
+Factory reset<br /> <h1>Overview</h1><p>0x55 (85) Restore the factory setting(write only)</p> <p><br /><br /></p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>

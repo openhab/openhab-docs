@@ -8,7 +8,7 @@
   <thing-type id="remotec_zrc100_00_000" listed="false">
     <label>ZRC-100 Remote Control</label>
     <description><![CDATA[
-Remote Control<br /><h2>Inclusion Information</h2><p>Hold the up + down arrow keys simultaneously for 3 seconds and select "Learning Mode"</p> <br /><h2>Wakeup Information</h2><p>Manually by pressing any button</p>
+Remote Control<br /> <h2>Inclusion Information</h2><p>Hold the up + down arrow keys simultaneously for 3 seconds and select "Learning Mode"</p> <br /> <h2>Wakeup Information</h2><p>Manually by pressing any button</p>
     ]]></description>
     <category>RemoteControl</category>
 

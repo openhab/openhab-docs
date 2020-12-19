@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhwd_00_000" listed="false">
     <label>ZMNHWD Qubino Flush RGBW Dimmer</label>
     <description><![CDATA[
-Qubino Flush RGBW Dimmer<br /><h1>Overview</h1><p>Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.</p> <p>Supported control types:</p> <ul><li>Push button (monostable switch)</li> <li>Bistable switch</li> </ul><p>This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).</p> <br /><h2>Inclusion Information</h2><p>To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.</p> <p>The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.</p> <br /><h2>Exclusion Information</h2><p>To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.</p>
+Qubino Flush RGBW Dimmer<br /> <h1>Overview</h1><p>Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.</p> <p>Supported control types:</p> <ul><li>Push button (monostable switch)</li> <li>Bistable switch</li> </ul><p>This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).</p> <br /> <h2>Inclusion Information</h2><p>To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.</p> <p>The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -204,7 +204,7 @@ Qubino Flush RGBW Dimmer<br /><h1>Overview</h1><p>Qubino Flush RGBW module contr
                  min="1" max="1127">
         <label>6: Auto Scene Mode</label>
         <description><![CDATA[
-Duration between Colour change<br /><h1>Overview</h1><ul><li>1-127 – delay duration is 1 sec to 127 sec </li> <li>1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene. </li> </ul>
+Duration between Colour change<br /> <h1>Overview</h1><ul><li>1-127 – delay duration is 1 sec to 127 sec </li> <li>1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene. </li> </ul>
         ]]></description>
         <default>3</default>
       </parameter>
@@ -224,7 +224,7 @@ Duration between Colour change<br /><h1>Overview</h1><ul><li>1-127 – delay dur
                  min="0" max="32536">
         <label>8: Automatic turning off output after set time</label>
         <description><![CDATA[
-Automatic turning off output after set time<br /><h1>Overview</h1><ul><li>0 – Auto OFF disabled </li> <li>1 – 32536 = 1 second – 32536 seconds Auto OFF</li> </ul>
+Automatic turning off output after set time<br /> <h1>Overview</h1><ul><li>0 – Auto OFF disabled </li> <li>1 – 32536 = 1 second – 32536 seconds Auto OFF</li> </ul>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -233,7 +233,7 @@ Automatic turning off output after set time<br /><h1>Overview</h1><ul><li>0 – 
                  min="0" max="32536">
         <label>9: Automatic turning on output after set time</label>
         <description><![CDATA[
-Automatic turning on output after set time<br /><h1>Overview</h1><ul><li>0 – Auto ON disabled</li> <li>1 – 32536 = 1 second – 32536 seconds Auto ON</li> </ul>
+Automatic turning on output after set time<br /> <h1>Overview</h1><ul><li>0 – Auto ON disabled</li> <li>1 – 32536 = 1 second – 32536 seconds Auto ON</li> </ul>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -242,7 +242,7 @@ Automatic turning on output after set time<br /><h1>Overview</h1><ul><li>0 – A
                  min="2" max="99">
         <label>10: MAX dimming value</label>
         <description><![CDATA[
-MAX dimming value<br /><h1>Overview</h1><p>2-99 = 2 % – 99 %</p>
+MAX dimming value<br /> <h1>Overview</h1><p>2-99 = 2 % – 99 %</p>
         ]]></description>
         <default>99</default>
       </parameter>
@@ -251,7 +251,7 @@ MAX dimming value<br /><h1>Overview</h1><p>2-99 = 2 % – 99 %</p>
                  min="1" max="98">
         <label>11: MIN dimming value</label>
         <description><![CDATA[
-MIN dimming value<br /><h1>Overview</h1><p>1-98 = 1 % – 98 %</p>
+MIN dimming value<br /> <h1>Overview</h1><p>1-98 = 1 % – 98 %</p>
         ]]></description>
         <default>1</default>
       </parameter>
@@ -260,7 +260,7 @@ MIN dimming value<br /><h1>Overview</h1><p>1-98 = 1 % – 98 %</p>
                  min="5" max="25">
         <label>12: Dimming time (soft on/off)</label>
         <description><![CDATA[
-Dimming time (soft on/off)<br /><h1>Overview</h1><ul><li>Default value 10 = 1 s </li> <li>5 – 25 = from 0.5 to 2.5 seconds </li> </ul>
+Dimming time (soft on/off)<br /> <h1>Overview</h1><ul><li>Default value 10 = 1 s </li> <li>5 – 25 = from 0.5 to 2.5 seconds </li> </ul>
         ]]></description>
         <default>10</default>
       </parameter>
@@ -269,7 +269,7 @@ Dimming time (soft on/off)<br /><h1>Overview</h1><ul><li>Default value 10 = 1 s�
                  min="1" max="127">
         <label>13: Dimming time when key pressed</label>
         <description><![CDATA[
-Dimming time when key pressed<br /><h1>Overview</h1><p>1 – 127 = from 1 to 127 seconds </p> <p>NOTE: Dimming time depends also on Min and Max dimming value. </p>
+Dimming time when key pressed<br /> <h1>Overview</h1><p>1 – 127 = from 1 to 127 seconds </p> <p>NOTE: Dimming time depends also on Min and Max dimming value. </p>
         ]]></description>
         <default>3</default>
       </parameter>
@@ -277,7 +277,7 @@ Dimming time when key pressed<br /><h1>Overview</h1><p>1 – 127 = from 1 to 127
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: 4 Dimmers mode</label>
         <description><![CDATA[
-4 Dimmers mode<br /><h1>Overview</h1><p>NOTE: If the parameter no. 14 is enabled, parameter no. 1,2,3,4 has no effect. </p> <p>NOTE: After parameter change, first exclude device (without setting parameters to default value) and then re include the device. </p>
+4 Dimmers mode<br /> <h1>Overview</h1><p>NOTE: If the parameter no. 14 is enabled, parameter no. 1,2,3,4 has no effect. </p> <p>NOTE: After parameter change, first exclude device (without setting parameters to default value) and then re include the device. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -293,7 +293,7 @@ Dimming time when key pressed<br /><h1>Overview</h1><p>1 – 127 = from 1 to 127
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Send basic report to this group</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The Module can be set 1 auto-report ID in Group 1.</p> <p>The Module will send BASIC_REPORT to device associated in Group 1 when correspond Device is activated.</p>
+<br /> <h1>Overview</h1><p>The Module can be set 1 auto-report ID in Group 1.</p> <p>The Module will send BASIC_REPORT to device associated in Group 1 when correspond Device is activated.</p>
         ]]></description>
       </parameter>
 

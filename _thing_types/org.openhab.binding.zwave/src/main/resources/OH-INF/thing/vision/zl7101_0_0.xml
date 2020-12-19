@@ -8,7 +8,7 @@
   <thing-type id="vision_zl7101_00_000" listed="false">
     <label>ZL7101 Lamp Dimmer Module</label>
     <description><![CDATA[
-Lamp Dimmer Module<br /><h1>Overview</h1><p>ZL 7101 Z-Wave Plug-in Dimmer Module</p> <p>Features:</p> <ul><li>Plug-In Module</li> <li>Z-wave control &amp; AC power output</li> <li>Suitable for most bulb type appliance</li> <li>Adjusting the light via the middle button</li> <li>Protection function via the middle button</li> <li>Max load output: 300W, 60Hz</li> </ul><br /><h2>Inclusion Information</h2><p>Press program button once</p> <br /><h2>Exclusion Information</h2><p>Press program button once</p>
+Lamp Dimmer Module<br /> <h1>Overview</h1><p>ZL 7101 Z-Wave Plug-in Dimmer Module</p> <p>Features:</p> <ul><li>Plug-In Module</li> <li>Z-wave control &amp; AC power output</li> <li>Suitable for most bulb type appliance</li> <li>Adjusting the light via the middle button</li> <li>Protection function via the middle button</li> <li>Max load output: 300W, 60Hz</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press program button once</p> <br /> <h2>Exclusion Information</h2><p>Press program button once</p>
     ]]></description>
     <category>PowerOutlet</category>
 

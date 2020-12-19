@@ -8,7 +8,7 @@
   <thing-type id="innovus_00110001_01_000" listed="false">
     <label>SmartDimmer RAone SmartDimmer</label>
     <description><![CDATA[
-RAone SmartDimmer<br /><h1>Overview</h1><p>The "RAone Smart Dimmer" offers extensive application possibilities. Equipped with a fingertip panel, many lighting scenarios can be covered and also reduce the energy consumption caused by the lamps. Some application examples are the time-controlled, gradual reduction of the light intensity, eg in the children's bedroom or hallways etc. </p> <p>The Smart Dimmer can be controlled via various remote controls, such as Bang &amp; Olufsen, Logitech 895 or the INNOVUS "SmoothRemote". The dimmers are also equipped with an integrated "power meter", which determines the energy consumption of the lamps. Connected to the House Control system, the power consumption of all devices connected to the dimmer can be measured.</p> <br /><h2>Inclusion Information</h2><p> The device is put into learn mode by touching the touchplate. </p> <br /><h2>Exclusion Information</h2><p> The device is put into learn mode by touching the touchplate.</p>
+RAone SmartDimmer<br /> <h1>Overview</h1><p>The "RAone Smart Dimmer" offers extensive application possibilities. Equipped with a fingertip panel, many lighting scenarios can be covered and also reduce the energy consumption caused by the lamps. Some application examples are the time-controlled, gradual reduction of the light intensity, eg in the children's bedroom or hallways etc. </p> <p>The Smart Dimmer can be controlled via various remote controls, such as Bang &amp; Olufsen, Logitech 895 or the INNOVUS "SmoothRemote". The dimmers are also equipped with an integrated "power meter", which determines the energy consumption of the lamps. Connected to the House Control system, the power consumption of all devices connected to the dimmer can be measured.</p> <br /> <h2>Inclusion Information</h2><p> The device is put into learn mode by touching the touchplate. </p> <br /> <h2>Exclusion Information</h2><p> The device is put into learn mode by touching the touchplate.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -71,7 +71,7 @@ RAone SmartDimmer<br /><h1>Overview</h1><p>The "RAone Smart Dimmer" offers exten
                  min="0" max="99">
         <label>0: Maximum dim level</label>
         <description><![CDATA[
-Maximum dim level<br /><h1>Overview</h1><p>Maximum Level, a limit on the maximum level the dimmer can reach. Levels larger than 99 will simply be interpreted as 99 ie. no limit.</p>
+Maximum dim level<br /> <h1>Overview</h1><p>Maximum Level, a limit on the maximum level the dimmer can reach. Levels larger than 99 will simply be interpreted as 99 ie. no limit.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -111,7 +111,7 @@ Maximum dim level<br /><h1>Overview</h1><p>Maximum Level, a limit on the maximum
                  min="1" max="255">
         <label>4: Dimming level duration</label>
         <description><![CDATA[
-Dimming level duration<br /><h1>Overview</h1><p>Default Dimming Level Duration, how long time it takes to dim one level in 0.01s.</p>
+Dimming level duration<br /> <h1>Overview</h1><p>Default Dimming Level Duration, how long time it takes to dim one level in 0.01s.</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -129,7 +129,7 @@ Dimming level duration<br /><h1>Overview</h1><p>Default Dimming Level Duration, 
                  min="0" max="255">
         <label>6: Long dim duration</label>
         <description><![CDATA[
-Long dim duration<br /><h1>Overview</h1><p>Long Dim Duration, time to use dimming to level 0 when double clicking. Format is the same as multilevel switch duration.</p>
+Long dim duration<br /> <h1>Overview</h1><p>Long Dim Duration, time to use dimming to level 0 when double clicking. Format is the same as multilevel switch duration.</p>
         ]]></description>
         <default>158</default>
         <limitToOptions>false</limitToOptions>
@@ -139,7 +139,7 @@ Long dim duration<br /><h1>Overview</h1><p>Long Dim Duration, time to use dimmin
                  min="1" max="255">
         <label>7: Touch press time</label>
         <description><![CDATA[
-Touch press time<br /><h1>Overview</h1><p>Touch Press Time, time for presses to register as separate and not part of a sequence, measured in 0.01s. 0 is interpreted as a 1.</p>
+Touch press time<br /> <h1>Overview</h1><p>Touch Press Time, time for presses to register as separate and not part of a sequence, measured in 0.01s. 0 is interpreted as a 1.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -149,7 +149,7 @@ Touch press time<br /><h1>Overview</h1><p>Touch Press Time, time for presses to 
                  min="0" max="255">
         <label>8: Touch Multiple Press Time</label>
         <description><![CDATA[
-No specific usage in this product<br /><h1>Overview</h1><p>Touch Multiple Press Time, has no specific usage is this product, shouldn't be changed.</p>
+No specific usage in this product<br /> <h1>Overview</h1><p>Touch Multiple Press Time, has no specific usage is this product, shouldn't be changed.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -159,7 +159,7 @@ No specific usage in this product<br /><h1>Overview</h1><p>Touch Multiple Press 
                  min="0" max="255">
         <label>9: Touch Hold Time</label>
         <description><![CDATA[
-Touch Hold Time<br /><h1>Overview</h1><p>Touch Hold Time, time for presses to register as being held down in 0.01s. 0 is interpreted as a 1.</p>
+Touch Hold Time<br /> <h1>Overview</h1><p>Touch Hold Time, time for presses to register as being held down in 0.01s. 0 is interpreted as a 1.</p>
         ]]></description>
         <default>40</default>
         <limitToOptions>false</limitToOptions>
@@ -169,7 +169,7 @@ Touch Hold Time<br /><h1>Overview</h1><p>Touch Hold Time, time for presses to re
                  min="0" max="65535">
         <label>10: Network Update Interval</label>
         <description><![CDATA[
-Network Update Interval<br /><h1>Overview</h1><p>Network Update Interval, time between network updates in 256 seconds. Disabled if 0.</p>
+Network Update Interval<br /> <h1>Overview</h1><p>Network Update Interval, time between network updates in 256 seconds. Disabled if 0.</p>
         ]]></description>
         <default>168</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgss001_00_000" listed="false">
     <label>FGSS001 Smoke Sensor</label>
     <description><![CDATA[
-Smoke Sensor<br /><h1>Overview</h1><p>The Fibaro Smoke Sensor is a universal, optical Z-Wave smoke sensor. The device can be hard wired (12 or 24 VDC) or battery operated (battery life 3 years*). Smoke detection is signaled through siren and LED diode blinking. Additionally, the smoke sensor signal can be sent to an alarm system or fire alarm system hub, through a NC (normally closed) contact terminals. </p> <p>The optical sensor detects smoke at an early stage of fire, often before flames appear and temperature starts to rise significantly. Moreover the device has a built-in temperature sensor, which can also trigger the alarm once the specified temperatute threshold is exceeded. </p> <p>The Fibaro Smoke Sensor is designed to be placed on a wall or ceiling. LED indicator signals fire, operating mode and used to see if device is within the Z-Wave network. The smoke sensor is designed to operate in confined spaces, under normal conditions (lacking smoke, dust, condensed water vapor)</p> <br /><h2>Inclusion Information</h2><p>Manual Fibaro Smoke Sensor inclusion:</p> <ol><li>Connect the power source to the Fibaro Smoke Detctor and/or install the battery. Make sure the device is located within direct range of the Z-Wave controller.</li> <li>Set the main controller into the learn mode (see main controller’s operating manual).</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s enclosure.</li> <li>Fibaro Smoke Sensor will be detected and included in the Z-Wave network.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the sensor is connected to power source (battery and/or hard wired).</li> <li>Set the main controller into the learn mode (see main controller’s operating manual)</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s enclosure</li> </ol><br /><h2>Wakeup Information</h2><p>If the sensor is already included in the Z-Wave network, wake it up by triple clicking the B-button..</p>
+Smoke Sensor<br /> <h1>Overview</h1><p>The Fibaro Smoke Sensor is a universal, optical Z-Wave smoke sensor. The device can be hard wired (12 or 24 VDC) or battery operated (battery life 3 years*). Smoke detection is signaled through siren and LED diode blinking. Additionally, the smoke sensor signal can be sent to an alarm system or fire alarm system hub, through a NC (normally closed) contact terminals. </p> <p>The optical sensor detects smoke at an early stage of fire, often before flames appear and temperature starts to rise significantly. Moreover the device has a built-in temperature sensor, which can also trigger the alarm once the specified temperatute threshold is exceeded. </p> <p>The Fibaro Smoke Sensor is designed to be placed on a wall or ceiling. LED indicator signals fire, operating mode and used to see if device is within the Z-Wave network. The smoke sensor is designed to operate in confined spaces, under normal conditions (lacking smoke, dust, condensed water vapor)</p> <br /> <h2>Inclusion Information</h2><p>Manual Fibaro Smoke Sensor inclusion:</p> <ol><li>Connect the power source to the Fibaro Smoke Detctor and/or install the battery. Make sure the device is located within direct range of the Z-Wave controller.</li> <li>Set the main controller into the learn mode (see main controller’s operating manual).</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s enclosure.</li> <li>Fibaro Smoke Sensor will be detected and included in the Z-Wave network.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Make sure the sensor is connected to power source (battery and/or hard wired).</li> <li>Set the main controller into the learn mode (see main controller’s operating manual)</li> <li>Quickly, triple click the B-button, located on Fibaro Smoke Sensor’s enclosure</li> </ol> <br /> <h2>Wakeup Information</h2><p>If the sensor is already included in the Z-Wave network, wake it up by triple clicking the B-button..</p>
     ]]></description>
     <category>SmokeDetector</category>
 
@@ -80,7 +80,7 @@ Smoke Sensor<br /><h1>Overview</h1><p>The Fibaro Smoke Sensor is a universal, op
                  min="0" max="3600">
         <label>1: Alarm Cancellation Delay</label>
         <description><![CDATA[
-Alarm Cancellation Delay<br /><h1>Overview</h1><p>Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased.</p>
+Alarm Cancellation Delay<br /> <h1>Overview</h1><p>Additional delay after an alarm has ceased. The parameter allows you to specify additional time, after which the alarm is cancelled once its violation has ceased.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -89,7 +89,7 @@ Alarm Cancellation Delay<br /><h1>Overview</h1><p>Additional delay after an alar
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Alarm acoustic and visual signals</label>
         <description><![CDATA[
-Alarm acoustic and visual signals<br /><h1>Overview</h1><p>parameter allows for LED indicator and acoustic alarm deactivation in case of smoke detection</p>
+Alarm acoustic and visual signals<br /> <h1>Overview</h1><p>parameter allows for LED indicator and acoustic alarm deactivation in case of smoke detection</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -104,7 +104,7 @@ Alarm acoustic and visual signals<br /><h1>Overview</h1><p>parameter allows for 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Type of alarm to 1st association group (SMOKE)</label>
         <description><![CDATA[
-Type of alarm to 1st association group (SMOKE)<br /><h1>Overview</h1><p>Allows for choosing a command class used in 1-st Association Group.</p>
+Type of alarm to 1st association group (SMOKE)<br /> <h1>Overview</h1><p>Allows for choosing a command class used in 1-st Association Group.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -118,7 +118,7 @@ Type of alarm to 1st association group (SMOKE)<br /><h1>Overview</h1><p>Allows f
                  min="1" max="255">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
-Forced Level of Dimming group 1<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1</p> <p>In the case of alarm frames the alarm priority is specified.</p>
+Forced Level of Dimming group 1<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming / opening sun blinds when comes 'switch on' / 'open' command to devices from association group no. 1</p> <p>In the case of alarm frames the alarm priority is specified.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -128,7 +128,7 @@ Forced Level of Dimming group 1<br /><h1>Overview</h1><p>Value of the parameter 
                  min="1" max="32767">
         <label>10: Interval between temperature readings</label>
         <description><![CDATA[
-Interval between temperature readings<br /><h1>Overview</h1><p>Interval between successive readings of temperature from all sensors connected to the device in seconds.</p> <p>Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</p>
+Interval between temperature readings<br /> <h1>Overview</h1><p>Interval between successive readings of temperature from all sensors connected to the device in seconds.</p> <p>Note: taking temperature readings from the sensor does not result in sending a temperature condition report to the central hub.</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -144,7 +144,7 @@ Interval between temperature readings<br /><h1>Overview</h1><p>Interval between 
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Frame broadcast mode</label>
         <description><![CDATA[
-Frame broadcast mode<br /><h1>Overview</h1><p>Transmitting the alarm or control frame in 'broadcast' mode (i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.</p> <p><strong>NOTE</strong>: If the broadcast mode of information transmission is activated for a given </p>
+Frame broadcast mode<br /> <h1>Overview</h1><p>Transmitting the alarm or control frame in 'broadcast' mode (i.e. to all devices within range), information sent in this mode is not repeated by the mesh network.</p> <p><strong>NOTE</strong>: If the broadcast mode of information transmission is activated for a given </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -160,7 +160,7 @@ Frame broadcast mode<br /><h1>Overview</h1><p>Transmitting the alarm or control 
                  min="-1000" max="1000">
         <label>73: Temperature measurement compensation</label>
         <description><![CDATA[
-Temperature measurement compensation<br /><h1>Overview</h1><p>Temperature value to be added to or deducted from the current measured temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature measured at the ceiling level</p> <p>Available settings: -1000 -/+ 1000 (in 0,1 C steps)</p>
+Temperature measurement compensation<br /> <h1>Overview</h1><p>Temperature value to be added to or deducted from the current measured temperature measured by internal temperature sensor in order to compensate the difference between air temperature and temperature measured at the ceiling level</p> <p>Available settings: -1000 -/+ 1000 (in 0,1 C steps)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ Temperature measurement compensation<br /><h1>Overview</h1><p>Temperature value 
                  min="0" max="255">
         <label>80: Z-Wave range test interval</label>
         <description><![CDATA[
-Z-Wave range test interval<br /><h1>Overview</h1><p>Time period between the consecutive Z-Wave network range tests.</p> <p>Available settings: 0 – 144 (10min multiplier) [10min-24h]</p> <p>0 – Z-Wave network range test inactive Default setting: 1 (10min)</p>
+Z-Wave range test interval<br /> <h1>Overview</h1><p>Time period between the consecutive Z-Wave network range tests.</p> <p>Available settings: 0 – 144 (10min multiplier) [10min-24h]</p> <p>0 – Z-Wave network range test inactive Default setting: 1 (10min)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -180,7 +180,7 @@ Z-Wave range test interval<br /><h1>Overview</h1><p>Time period between the cons
                  min="0" max="100">
         <label>81: Temperature alarm threshold</label>
         <description><![CDATA[
-Temperature alarm threshold<br /><h1>Overview</h1><p>Temperature value, measured by the built-in temperature sensor which the temperature alarm is sent.</p> <p>Available settings: 0,2 - 100</p> <ul><li>0 – temperature alarm inactive</li> <li>2 - 100 – (2 - 100 C) Default setting:</li> <li>54 (54 C)</li> </ul>
+Temperature alarm threshold<br /> <h1>Overview</h1><p>Temperature value, measured by the built-in temperature sensor which the temperature alarm is sent.</p> <p>Available settings: 0,2 - 100</p> <ul><li>0 – temperature alarm inactive</li> <li>2 - 100 – (2 - 100 C) Default setting:</li> <li>54 (54 C)</li> </ul>
         ]]></description>
         <default>54</default>
         <limitToOptions>false</limitToOptions>
@@ -189,7 +189,7 @@ Temperature alarm threshold<br /><h1>Overview</h1><p>Temperature value, measured
       <parameter name="config_82_1" type="integer" groupName="configuration">
         <label>82: Smoke Sensor sensitivity</label>
         <description><![CDATA[
-Smoke Sensor sensitivity<br /><h1>Overview</h1><p>There are 3 levels of sensitivity to smoke presence.</p> <p>Level 1 means the highest sensitivity.</p>
+Smoke Sensor sensitivity<br /> <h1>Overview</h1><p>There are 3 levels of sensitivity to smoke presence.</p> <p>Level 1 means the highest sensitivity.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -203,7 +203,7 @@ Smoke Sensor sensitivity<br /><h1>Overview</h1><p>There are 3 levels of sensitiv
       <parameter name="config_83_1" type="integer" groupName="configuration">
         <label>83: Black Box sensitivity level</label>
         <description><![CDATA[
-Black Box sensitivity level<br /><h1>Overview</h1><p>Parameter specifies temperature and smoke level after which the Black Box starts recording them.</p>
+Black Box sensitivity level<br /> <h1>Overview</h1><p>Parameter specifies temperature and smoke level after which the Black Box starts recording them.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -218,7 +218,7 @@ Black Box sensitivity level<br /><h1>Overview</h1><p>Parameter specifies tempera
                  min="-126" max="127">
         <label>84: Malfunction alarm</label>
         <description><![CDATA[
-Malfunction alarm<br /><h1>Overview</h1><p>Time interval in which malfuntion alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 10 (1s) </li> </ul>
+Malfunction alarm<br /> <h1>Overview</h1><p>Time interval in which malfuntion alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 10 (1s) </li> </ul>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -228,7 +228,7 @@ Malfunction alarm<br /><h1>Overview</h1><p>Time interval in which malfuntion ala
                  min="-126" max="127">
         <label>85: Temperature alarm</label>
         <description><![CDATA[
-Temperature alarm<br /><h1>Overview</h1><p>Time interval in which temperature alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 5 (500ms)</li> </ul>
+Temperature alarm<br /> <h1>Overview</h1><p>Time interval in which temperature alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 255 (100 ms multiplier) [100ms-25,5s]</li> <li>Default setting: 5 (500ms)</li> </ul>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -238,7 +238,7 @@ Temperature alarm<br /><h1>Overview</h1><p>Time interval in which temperature al
                  min="1" max="17280">
         <label>86: Lack of the Z-Wave range alarm</label>
         <description><![CDATA[
-Lack of the Z-Wave range alarm<br /><h1>Overview</h1><p>Time interval in which lack of the Z-Wave network alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
+Lack of the Z-Wave range alarm<br /> <h1>Overview</h1><p>Time interval in which lack of the Z-Wave network alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
         ]]></description>
         <default>360</default>
         <limitToOptions>false</limitToOptions>
@@ -248,7 +248,7 @@ Lack of the Z-Wave range alarm<br /><h1>Overview</h1><p>Time interval in which l
                  min="1" max="17280">
         <label>87: Low battery alarm</label>
         <description><![CDATA[
-Low battery alarm<br /><h1>Overview</h1><p>Time interval in which low battery alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
+Low battery alarm<br /> <h1>Overview</h1><p>Time interval in which low battery alarm, if detected, is repeated using visual and acoustic alarms.</p> <p>Available settings:</p> <ul><li>1 - 17280 (5s multiplier) [5s-24h]</li> <li>Default setting: 360 (30min)</li> </ul>
         ]]></description>
         <default>360</default>
         <limitToOptions>false</limitToOptions>
@@ -257,7 +257,7 @@ Low battery alarm<br /><h1>Overview</h1><p>Time interval in which low battery al
       <parameter name="config_88_1" type="integer" groupName="configuration">
         <label>88: Temperature measurement compensation for report</label>
         <description><![CDATA[
-Temperature measurement compensation for report<br /><h1>Overview</h1><p>Consider temperature measurement compensation (parameter 73) when sending temperature report.</p>
+Temperature measurement compensation for report<br /> <h1>Overview</h1><p>Consider temperature measurement compensation (parameter 73) when sending temperature report.</p>
         ]]></description>
         <default>0</default>
         <options>

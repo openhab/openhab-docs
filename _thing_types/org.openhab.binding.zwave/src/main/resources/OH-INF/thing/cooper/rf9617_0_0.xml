@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9617_00_000" listed="false">
     <label>RF9617 Z-Wave Plus smart accessory switch</label>
     <description><![CDATA[
-Z-Wave Plus smart accessory switch<br /><h1>Overview</h1><p>Z-Wave Plus accessory switches can be paired with Z-Wave Plus wireless switches (RF9601) to provide multi-location ON/OFF control forup to (5) locations. These are ideal when there’s no traveler wire between the two locations in a 3-way application. Z-Wave Plus accessorieswill need to be associated with the load controlling switch using a compatible Z-Wave compliant controller.</p> <br /><h2>Inclusion Information</h2><p>Put the controller into inclusion mode, press the Install button once</p> <br /><h2>Exclusion Information</h2><p>Put the controller into exclusion mode, press the Install button once</p>
+Z-Wave Plus smart accessory switch<br /> <h1>Overview</h1><p>Z-Wave Plus accessory switches can be paired with Z-Wave Plus wireless switches (RF9601) to provide multi-location ON/OFF control forup to (5) locations. These are ideal when there’s no traveler wire between the two locations in a 3-way application. Z-Wave Plus accessorieswill need to be associated with the load controlling switch using a compatible Z-Wave compliant controller.</p> <br /> <h2>Inclusion Information</h2><p>Put the controller into inclusion mode, press the Install button once</p> <br /> <h2>Exclusion Information</h2><p>Put the controller into exclusion mode, press the Install button once</p>
     ]]></description>
     <category>WallSwitch</category>
 

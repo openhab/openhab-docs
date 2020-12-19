@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhld_00_000" listed="false">
     <label>ZMNHLD Flush PWM Thermostat</label>
     <description><![CDATA[
-Flush PWM Thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. Regulation is done using full wave PWM technology. The module can be controlled either through Z-wave network or through the wall switch. The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch. Module measures power consumption of connected device. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <br /><h2>Inclusion Information</h2><p>WARNING: Service button S <strong>must NOT be used</strong> when module is connected to 110-230V power supply.</p> <ul><li>Connect module to power supply (with temperature sensor connected - if purchased),</li> <li>Enable add/remove mode on main controller</li> <li>Auto-inclusion (works for about 5 seconds after connected to power supply) or</li> <li><strong>110V-230V power supply: </strong>Press push button I1 three times within 3 seconds (3 times change switch state within 3 seconds)</li> <li><strong>24V SELV: </strong>Press service button <strong>S</strong> for more than 2 seconds.</li> </ul><p><strong>NOTE1:</strong> For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.</p> <p><strong>NOTE2:</strong> When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.</p> <br /><h2>Exclusion Information</h2><p>WARNING: Service button S <strong>must NOT be used</strong> when module is connected to 110-230V power supply.</p> <ul><li>Connect module to power supply</li> <li>Bring module within maximum 1 meter (3 feet) of the main controller</li> <li>Enable add/remove mode on main controller</li> <li><strong>110V-230V power supply:</strong> Press push button <strong>I1</strong> five times within 3 seconds (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply</li> <li><strong>24V SELV:</strong> Press ervice button <strong>S</strong> for more than 6 seconds.</li> </ul><p>By this function all parameters of the module are set to default values and own ID is deleted. If push button I1 is pressed three times within 3 seconds (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.</p> <p>NOTE: If the module is included with parameters 100 or 101 with values different to default and module reset is done, wait at least 30s before next inclusion.</p>
+Flush PWM Thermostat<br /> <h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. Regulation is done using full wave PWM technology. The module can be controlled either through Z-wave network or through the wall switch. The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch. Module measures power consumption of connected device. It is designed to act as repeater in order to improve range and stability of Z-wave network.</p> <br /> <h2>Inclusion Information</h2><p>WARNING: Service button S <strong>must NOT be used</strong> when module is connected to 110-230V power supply.</p> <ul><li>Connect module to power supply (with temperature sensor connected - if purchased),</li> <li>Enable add/remove mode on main controller</li> <li>Auto-inclusion (works for about 5 seconds after connected to power supply) or</li> <li><strong>110V-230V power supply: </strong>Press push button I1 three times within 3 seconds (3 times change switch state within 3 seconds)</li> <li><strong>24V SELV: </strong>Press service button <strong>S</strong> for more than 2 seconds.</li> </ul><p><strong>NOTE1:</strong> For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.</p> <p><strong>NOTE2:</strong> When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.</p> <br /> <h2>Exclusion Information</h2><p>WARNING: Service button S <strong>must NOT be used</strong> when module is connected to 110-230V power supply.</p> <ul><li>Connect module to power supply</li> <li>Bring module within maximum 1 meter (3 feet) of the main controller</li> <li>Enable add/remove mode on main controller</li> <li><strong>110V-230V power supply:</strong> Press push button <strong>I1</strong> five times within 3 seconds (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply</li> <li><strong>24V SELV:</strong> Press ervice button <strong>S</strong> for more than 6 seconds.</li> </ul><p>By this function all parameters of the module are set to default values and own ID is deleted. If push button I1 is pressed three times within 3 seconds (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.</p> <p>NOTE: If the module is included with parameters 100 or 101 with values different to default and module reset is done, wait at least 30s before next inclusion.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -107,7 +107,7 @@ Flush PWM Thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regu
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Input 1 contact type</label>
         <description><![CDATA[
-Input 1 contact type<br /><h1>Overview</h1><p>This parameter determines how the sensor is connected (for example: door/window sensor) Set this parameter according to the type of sensor you use. This parameter has influence only when parameter no. 11 is set to the value “2”. After setting this parameter, switch the window sensor once, so that the device can determine the input state.</p>
+Input 1 contact type<br /> <h1>Overview</h1><p>This parameter determines how the sensor is connected (for example: door/window sensor) Set this parameter according to the type of sensor you use. This parameter has influence only when parameter no. 11 is set to the value “2”. After setting this parameter, switch the window sensor once, so that the device can determine the input state.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -120,7 +120,7 @@ Input 1 contact type<br /><h1>Overview</h1><p>This parameter determines how the 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Input 2 contact type</label>
         <description><![CDATA[
-Input 2 contact type<br /><h1>Overview</h1><p>This parameter determines how the sensor is connected (for example: door/window sensor). Set this parameter according to the type of sensor you use. </p><p>This parameter has influence only when parameter no. 12 is set to value "2000"<br />After setting the parameter switch the sensor once, so tha the module could determine the input state</p>
+Input 2 contact type<br /> <h1>Overview</h1><p>This parameter determines how the sensor is connected (for example: door/window sensor). Set this parameter according to the type of sensor you use. </p><p>This parameter has influence only when parameter no. 12 is set to value "2000"<br />After setting the parameter switch the sensor once, so tha the module could determine the input state</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -133,7 +133,7 @@ Input 2 contact type<br /><h1>Overview</h1><p>This parameter determines how the 
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Input 3 contact type</label>
         <description><![CDATA[
-Input 3 contact type<br /><h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - NO (normally open) input type<br />  1 - NC (normally close) input type<br /> NOTE: This parameter has influence only when parameter no. 13 is set to the value “2”. After setting this parameter, switch the flood sensor once, so that the module could determine the input state.<br /></p>
+Input 3 contact type<br /> <h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - NO (normally open) input type<br />  1 - NC (normally close) input type<br /> NOTE: This parameter has influence only when parameter no. 13 is set to the value “2”. After setting this parameter, switch the flood sensor once, so that the module could determine the input state.<br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -146,7 +146,7 @@ Input 3 contact type<br /><h1>Overview</h1><p>Available config. parameters (data
       <parameter name="config_10_2" type="integer" groupName="configuration">
         <label>10: Activate / deactivate ALL ON/ALL OFF</label>
         <description><![CDATA[
-Activate / deactivate ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush Heat &amp; Cool Thermostat device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.</p>
+Activate / deactivate ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush Heat &amp; Cool Thermostat device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -161,7 +161,7 @@ Activate / deactivate ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush Heat &amp; C
       <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: I1 Functionality selection</label>
         <description><![CDATA[
-I1 Functionality selection<br /><h1>Overview</h1><p>If "Window Sensor" selected (value set to "2"), parameter 100 (enable/disable endpoint) must be set to non-zero value and module re-included!</p>
+I1 Functionality selection<br /> <h1>Overview</h1><p>If "Window Sensor" selected (value set to "2"), parameter 100 (enable/disable endpoint) must be set to non-zero value and module re-included!</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -175,7 +175,7 @@ I1 Functionality selection<br /><h1>Overview</h1><p>If "Window Sensor" selected 
       <parameter name="config_12_2" type="integer" groupName="configuration">
         <label>12: I2 Functionality selection</label>
         <description><![CDATA[
-I2 Functionality selection<br /><h1>Overview</h1><p>0-990 - Temperature setpoint from 0,0 to 99,0 °C<br />1001-1150 - Temperature setpoint -0.1 to -15°C<br />2000 - Input I2 influences on the cooling value according to the status of condense sensor. <br />32767 - input I2 does not influence on the Heat/Cool process </p> If "Condense Sensor" selected (value set to "2000"), parameter 101 (enable/disable endpoint) must be set to non-zero value and device re-included!
+I2 Functionality selection<br /> <h1>Overview</h1><p>0-990 - Temperature setpoint from 0,0 to 99,0 °C<br />1001-1150 - Temperature setpoint -0.1 to -15°C<br />2000 - Input I2 influences on the cooling value according to the status of condense sensor. <br />32767 - input I2 does not influence on the Heat/Cool process </p> If "Condense Sensor" selected (value set to "2000"), parameter 101 (enable/disable endpoint) must be set to non-zero value and device re-included!
         ]]></description>
         <default>32767</default>
         <options>
@@ -188,7 +188,7 @@ I2 Functionality selection<br /><h1>Overview</h1><p>0-990 - Temperature setpoint
       <parameter name="config_13_2" type="integer" groupName="configuration">
         <label>13: I3 Functionality selection</label>
         <description><![CDATA[
-I3 Functionality selection<br /><h1>Overview</h1><p>default value 32767<br /> 32767 - input I3 does not influence on the heat/cool process<br /> 1 - input I3 changes the mode of the thermostat between Heat and Cool and override parameter 59. In this case function on flood sensor is disabled NOTE: After parameter change, first exclude module (without setting parameters to default value) and then re include the module!<br /> 2 - input I3 influences on heating/cooling valves according to status of flood sensor. In this case function of Heat/Cool selection by I3 is disabled<br /> NOTE1: If this parameter is changed, it is necessary to reinclude the module.<br /> NOTE2: If "Flood Sensor" selected (value set to "2"), parameter 102 (enable/disable endpoint) must be set to non zero value and module re-included!</p>
+I3 Functionality selection<br /> <h1>Overview</h1><p>default value 32767<br /> 32767 - input I3 does not influence on the heat/cool process<br /> 1 - input I3 changes the mode of the thermostat between Heat and Cool and override parameter 59. In this case function on flood sensor is disabled NOTE: After parameter change, first exclude module (without setting parameters to default value) and then re include the module!<br /> 2 - input I3 influences on heating/cooling valves according to status of flood sensor. In this case function of Heat/Cool selection by I3 is disabled<br /> NOTE1: If this parameter is changed, it is necessary to reinclude the module.<br /> NOTE2: If "Flood Sensor" selected (value set to "2"), parameter 102 (enable/disable endpoint) must be set to non zero value and module re-included!</p>
         ]]></description>
         <default>32767</default>
         <options>
@@ -203,7 +203,7 @@ I3 Functionality selection<br /><h1>Overview</h1><p>default value 32767<br /> 32
                  min="0" max="100">
         <label>40: Power reporting in Watts on power change</label>
         <description><![CDATA[
-Power reporting in Watts on power change<br /><h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading. Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter. <br /> 0 - Power consumption reporting disabled<br /> 1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</p>
+Power reporting in Watts on power change<br /> <h1>Overview</h1><p>Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading. Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter. <br /> 0 - Power consumption reporting disabled<br /> 1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -215,7 +215,7 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><p>Choose by how 
                  min="0" max="32767">
         <label>42: Power reporting in Watts by time interval</label>
         <description><![CDATA[
-Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).<br /></p><p>0 - report disabled<br />1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval</p>
+Power reporting in Watts by time interval<br /> <h1>Overview</h1><p>Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).<br /></p><p>0 - report disabled<br />1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -225,7 +225,7 @@ Power reporting in Watts by time interval<br /><h1>Overview</h1><p>Set value ref
                  min="0" max="1127">
         <label>45: Antifreeze</label>
         <description><![CDATA[
-Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Available config. parameters (data type is 2 Byte DEC):<br />  default value 50 (5,0 °C)<br />  0 - 127 = 0,0°C … 12,7 °C<br />  1001 - 1127 = -0,1°C … - 12,6 °C<br />  255 - Antifreeze functionality disabled<br /> NOTE: Antifreeze is activated only in heating mode.</p>
+Antifreeze<br /> <h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Available config. parameters (data type is 2 Byte DEC):<br />  default value 50 (5,0 °C)<br />  0 - 127 = 0,0°C … 12,7 °C<br />  1001 - 1127 = -0,1°C … - 12,6 °C<br />  255 - Antifreeze functionality disabled<br /> NOTE: Antifreeze is activated only in heating mode.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -235,7 +235,7 @@ Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the dev
                  min="2" max="100">
         <label>50: PWM maximum value</label>
         <description><![CDATA[
-PWM maximum value<br /><h1>Overview</h1><p>2..100 = 2..100% Maximum PWM is set by entered value</p>
+PWM maximum value<br /> <h1>Overview</h1><p>2..100 = 2..100% Maximum PWM is set by entered value</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -245,7 +245,7 @@ PWM maximum value<br /><h1>Overview</h1><p>2..100 = 2..100% Maximum PWM is set b
                  min="0" max="99">
         <label>51: PWM minimum value</label>
         <description><![CDATA[
-PWM minimum value<br /><h1>Overview</h1><p>0..99 = 0..99% Minimum PWM is set by entered value</p>
+PWM minimum value<br /> <h1>Overview</h1><p>0..99 = 0..99% Minimum PWM is set by entered value</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -255,7 +255,7 @@ PWM minimum value<br /><h1>Overview</h1><p>0..99 = 0..99% Minimum PWM is set by 
                  min="5" max="127">
         <label>52: PWM cycle duration</label>
         <description><![CDATA[
-PWM cycle duration<br /><h1>Overview</h1><p>5..127 = 5-125 seconds. PWM cycle duration is set by entered value</p>
+PWM cycle duration<br /> <h1>Overview</h1><p>5..127 = 5-125 seconds. PWM cycle duration is set by entered value</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -265,7 +265,7 @@ PWM cycle duration<br /><h1>Overview</h1><p>5..127 = 5-125 seconds. PWM cycle du
                  min="0" max="127">
         <label>53: PID value inside deadband</label>
         <description><![CDATA[
-PID value inside deadband<br /><h1>Overview</h1><p>0 - PID value equals PWM minimum cycle<br />1 - PID value set to LAST VALUE</p>
+PID value inside deadband<br /> <h1>Overview</h1><p>0 - PID value equals PWM minimum cycle<br />1 - PID value set to LAST VALUE</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -275,7 +275,7 @@ PID value inside deadband<br /><h1>Overview</h1><p>0 - PID value equals PWM mini
                  min="0" max="127">
         <label>54: PID deadband</label>
         <description><![CDATA[
-PID deadband<br /><h1>Overview</h1><p>0..127 = 0..12.7 °C <br />This parameter defines the zone where PID is not active.</p>
+PID deadband<br /> <h1>Overview</h1><p>0..127 = 0..12.7 °C <br />This parameter defines the zone where PID is not active.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -285,7 +285,7 @@ PID deadband<br /><h1>Overview</h1><p>0..127 = 0..12.7 °C <br />This parameter 
                  min="0" max="127">
         <label>55: Integral sampling time</label>
         <description><![CDATA[
-Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Parameter defines the time between samples.</p>
+Integral sampling time<br /> <h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Parameter defines the time between samples.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -318,7 +318,7 @@ Integral sampling time<br /><h1>Overview</h1><p>0..127 = 0..127 seconds.<br />Pa
       <parameter name="config_59_1" type="integer" groupName="configuration">
         <label>59: Thermostat mode</label>
         <description><![CDATA[
-Thermostat mode<br /><h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - Heat mode<br />  1 - Cool mode<br /> If parameter changed it is necessary to re-include module.</p>
+Thermostat mode<br /> <h1>Overview</h1><p>Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - Heat mode<br />  1 - Cool mode<br /> If parameter changed it is necessary to re-include module.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -332,7 +332,7 @@ Thermostat mode<br /><h1>Overview</h1><p>Available config. parameters (data type
                  min="1" max="1150">
         <label>60: Too low temperature limit</label>
         <description><![CDATA[
-Too low temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.<br />Too low temperature limit is used with Association Group 4. <br />• Default value 50 (Too low temperature limit is 5.0 °C)<br /> • 1 - 1000 = 0.1 °C to 100.0 °C, step is 0.1 °C.<br /> • 1001 - 1150: - 0.1 °C to – 15.0 °C</p>
+Too low temperature limit<br /> <h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.<br />Too low temperature limit is used with Association Group 4. <br />• Default value 50 (Too low temperature limit is 5.0 °C)<br /> • 1 - 1000 = 0.1 °C to 100.0 °C, step is 0.1 °C.<br /> • 1001 - 1150: - 0.1 °C to – 15.0 °C</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -342,7 +342,7 @@ Too low temperature limit<br /><h1>Overview</h1><p>This parameter determines the
                  min="1" max="1000">
         <label>61: Too high temperature limit</label>
         <description><![CDATA[
-Too high temperature limit<br /><h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device.<br /> • default value 700 (too high temperature limit is 70.0 °C)<br /> • 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.</p>
+Too high temperature limit<br /> <h1>Overview</h1><p>This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device.<br /> • default value 700 (too high temperature limit is 70.0 °C)<br /> • 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.</p>
         ]]></description>
         <default>700</default>
         <limitToOptions>false</limitToOptions>
@@ -351,7 +351,7 @@ Too high temperature limit<br /><h1>Overview</h1><p>This parameter determines th
       <parameter name="config_63_1" type="integer" groupName="configuration">
         <label>63: Output Switch selection</label>
         <description><![CDATA[
-Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the device that is connected to the PWM output. The device type can be normally open (NO) or normally close (NC).<br /> Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - When system is turned off the output is 0 V.<br />  1 - When system is turned off the output is 230 V.<br /></p>
+Output Switch selection<br /> <h1>Overview</h1><p>Set value means the type of the device that is connected to the PWM output. The device type can be normally open (NO) or normally close (NC).<br /> Available config. parameters (data type is 1 Byte DEC):<br />  default value 0<br />  0 - When system is turned off the output is 0 V.<br />  1 - When system is turned off the output is 230 V.<br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -365,7 +365,7 @@ Output Switch selection<br /><h1>Overview</h1><p>Set value means the type of the
                  min="0" max="32000">
         <label>70: Input I1 status on delay</label>
         <description><![CDATA[
-Input I1 status on delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.<br /> If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.<br /> Device status on UI change immediately, but the command will be sent after time set.</p>
+Input I1 status on delay<br /> <h1>Overview</h1><p>This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.<br /> If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.<br /> Device status on UI change immediately, but the command will be sent after time set.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -375,7 +375,7 @@ Input I1 status on delay<br /><h1>Overview</h1><p>This parameter specifies the d
                  min="0" max="32000">
         <label>71: Input I1 status off delay</label>
         <description><![CDATA[
-Input I1 status off delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.<br />If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.</p>
+Input I1 status off delay<br /> <h1>Overview</h1><p>This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.<br />If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -385,7 +385,7 @@ Input I1 status off delay<br /><h1>Overview</h1><p>This parameter specifies the 
                  min="0" max="32000">
         <label>72: Input I2 status on delay</label>
         <description><![CDATA[
-Input I2 status on delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is activated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
+Input I2 status on delay<br /> <h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is activated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -395,7 +395,7 @@ Input I2 status on delay<br /><h1>Overview</h1><p>This parameter specifies the d
                  min="0" max="32000">
         <label>73: Input I2 status off delay</label>
         <description><![CDATA[
-Input I2 status off delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is deactivated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
+Input I2 status off delay<br /> <h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I2 is deactivated.<br /> This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -405,7 +405,7 @@ Input I2 status off delay<br /><h1>Overview</h1><p>This parameter specifies the 
                  min="0" max="32000">
         <label>74: Input 3 status ON delay</label>
         <description><![CDATA[
-Input 3 status ON delay<br /><h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I3 is activated.<br /> This parameter has influence only when the flood sensor functionality is selected by the parameter no. 13.</p>
+Input 3 status ON delay<br /> <h1>Overview</h1><p>This parameter specifies the delay before the device execute command after input I3 is activated.<br /> This parameter has influence only when the flood sensor functionality is selected by the parameter no. 13.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -415,7 +415,7 @@ Input 3 status ON delay<br /><h1>Overview</h1><p>This parameter specifies the de
                  min="0" max="32000">
         <label>75: Input I3 status off delay</label>
         <description><![CDATA[
-Input I3 status off delay<br /><h1>Overview</h1><p>If the value of the parameter is different to 0 means that the influence of this input to heating or cooling will react after inserted time.</p>
+Input I3 status off delay<br /> <h1>Overview</h1><p>If the value of the parameter is different to 0 means that the influence of this input to heating or cooling will react after inserted time.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -425,7 +425,7 @@ Input I3 status off delay<br /><h1>Overview</h1><p>If the value of the parameter
                  min="0" max="127">
         <label>76: Reporting on time interval</label>
         <description><![CDATA[
-Reporting on time interval<br /><h1>Overview</h1><p>Association group 2, 10 - reporting on time interval</p> <p>Determinates the time interval of sending device status ON/OFF to the associated device.<br /> If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).<br /> • Default value 30 = 30 minutes<br /> • 0 = Reporting disabled<br /> • 1-127 = 1 minute – 127 minutes, reporting enabled</p>
+Reporting on time interval<br /> <h1>Overview</h1><p>Association group 2, 10 - reporting on time interval</p> <p>Determinates the time interval of sending device status ON/OFF to the associated device.<br /> If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).<br /> • Default value 30 = 30 minutes<br /> • 0 = Reporting disabled<br /> • 1-127 = 1 minute – 127 minutes, reporting enabled</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -435,7 +435,7 @@ Reporting on time interval<br /><h1>Overview</h1><p>Association group 2, 10 - re
                  min="0" max="32767">
         <label>77: Group 10 - delay before sending Basic Set ON</label>
         <description><![CDATA[
-Group 10 - delay before sending Basic Set ON<br /><h1>Overview</h1><p>Association group 10 - delay before sending Basic Set ON</p> <p>Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.<br /> If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.<br /> • Default value 180 = 3 minutes<br /> • 0 = Reports with no delay<br /> • 1-32767 = 1 second– 32767 seconds, reporting enabled</p>
+Group 10 - delay before sending Basic Set ON<br /> <h1>Overview</h1><p>Association group 10 - delay before sending Basic Set ON</p> <p>Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.<br /> If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.<br /> • Default value 180 = 3 minutes<br /> • 0 = Reports with no delay<br /> • 1-32767 = 1 second– 32767 seconds, reporting enabled</p>
         ]]></description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
@@ -444,7 +444,7 @@ Group 10 - delay before sending Basic Set ON<br /><h1>Overview</h1><p>Associatio
       <parameter name="config_78_1" type="integer" groupName="configuration">
         <label>78: Scale Selection</label>
         <description><![CDATA[
-Scale Selection<br /><h1>Overview</h1><p>This parameter determines in which measurement unit the device will report temperature - Fahrenheit or Celsius.<br /> This scale has influence on Temperature reporting and scale reporting. The device is capable of receiving a Set point in all supported scales</p>
+Scale Selection<br /> <h1>Overview</h1><p>This parameter determines in which measurement unit the device will report temperature - Fahrenheit or Celsius.<br /> This scale has influence on Temperature reporting and scale reporting. The device is capable of receiving a Set point in all supported scales</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -457,7 +457,7 @@ Scale Selection<br /><h1>Overview</h1><p>This parameter determines in which meas
       <parameter name="config_100_1" type="integer" groupName="configuration">
         <label>100: Enable/Disable I1 or select Type and Event</label>
         <description><![CDATA[
-Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).<br /> After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!<br /> When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.<br /> If "endpoint enabled" (value is set to 1-9), parameter 11 must be set to "2" as "Window Sensor" to determine how device input I1 will operate</p>
+Enable/Disable I1 or select Type and Event<br /> <h1>Overview</h1><p>Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).<br /> After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!<br /> When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.<br /> If "endpoint enabled" (value is set to 1-9), parameter 11 must be set to "2" as "Window Sensor" to determine how device input I1 will operate</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -511,7 +511,7 @@ Enable/Disable I1 or select Type and Event<br /><h1>Overview</h1><p>Choose wheth
                  min="0" max="32536">
         <label>110: Temperature sensor offset settings</label>
         <description><![CDATA[
-Temperature sensor offset settings<br /><h1>Overview</h1><p>32536 = offset is 0.0°C<br />1..100 = offset is 0.1..10.0°C added to actual measuring value<br />1001..1100 = offset is -0.1..-10.0°C subtracted to actual measuring value</p>
+Temperature sensor offset settings<br /> <h1>Overview</h1><p>32536 = offset is 0.0°C<br />1..100 = offset is 0.1..10.0°C added to actual measuring value<br />1001..1100 = offset is -0.1..-10.0°C subtracted to actual measuring value</p>
         ]]></description>
         <default>32536</default>
         <limitToOptions>false</limitToOptions>
@@ -521,7 +521,7 @@ Temperature sensor offset settings<br /><h1>Overview</h1><p>32536 = offset is 0.
                  min="0" max="127">
         <label>120: Digital temperature sensor reporting</label>
         <description><![CDATA[
-Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter</p>
+Digital temperature sensor reporting<br /> <h1>Overview</h1><p>If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -546,7 +546,7 @@ Digital temperature sensor reporting<br /><h1>Overview</h1><p>If digital teperat
                  min="0" max="254">
         <label>122: Node Id of external battery powered sensor</label>
         <description><![CDATA[
-Node Id of external battery powered sensor<br /><h1>Overview</h1><p>0 - disabled</p> <p>1..254 = NodeId of external battery powered room sensor</p>
+Node Id of external battery powered sensor<br /> <h1>Overview</h1><p>0 - disabled</p> <p>1..254 = NodeId of external battery powered room sensor</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

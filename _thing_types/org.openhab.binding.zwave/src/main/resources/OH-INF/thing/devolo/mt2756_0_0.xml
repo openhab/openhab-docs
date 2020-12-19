@@ -8,7 +8,7 @@
   <thing-type id="devolo_mt2756_00_000" listed="false">
     <label>MT2756 MT2756 Flood Sensor</label>
     <description><![CDATA[
-MT2756 Flood Sensor<br /><h1>Overview</h1><p>The Home Control Water Sensor is a water sensor and warns you about flooding or leaking water. As soon as water touches the open metal contacts, the device triggers an alarm. The Home Control Water Sensor is ideal for use in locations such as under a sink, under the supply valve of a washing machine or on an aquarium. It is equipped with an integrated LED and a release button.</p> <br /><h2>Inclusion Information</h2><ul><li>Pressing the tamper key three times within 1.5  seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-Wave™  Controller about 20 seconds.</li> </ul><br /><h2>Exclusion Information</h2><p>Press tamper key three times within 1.5 seconds to enter the exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>None given</p>
+MT2756 Flood Sensor<br /> <h1>Overview</h1><p>The Home Control Water Sensor is a water sensor and warns you about flooding or leaking water. As soon as water touches the open metal contacts, the device triggers an alarm. The Home Control Water Sensor is ideal for use in locations such as under a sink, under the supply valve of a washing machine or on an aquarium. It is equipped with an integrated LED and a release button.</p> <br /> <h2>Inclusion Information</h2><ul><li>Pressing the tamper key three times within 1.5  seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-Wave™  Controller about 20 seconds.</li> </ul> <br /> <h2>Exclusion Information</h2><p>Press tamper key three times within 1.5 seconds to enter the exclusion mode.</p> <br /> <h2>Wakeup Information</h2><p>None given</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ MT2756 Flood Sensor<br /><h1>Overview</h1><p>The Home Control Water Sensor is a 
                  min="0" max="255">
         <label>1: Basic Set OFF Level</label>
         <description><![CDATA[
-Basic Set OFF Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2</li> </ul>
+Basic Set OFF Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger off(0x00), send the BASIC CC to the group 2</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Basic Set OFF Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p>
                  min="0" max="255">
         <label>2: Basic Set ON Level</label>
         <description><![CDATA[
-Basic Set ON Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2</li> </ul>
+Basic Set ON Level<br /> <h1>Overview</h1><p>Setting the BASIC command value</p> <ul><li>When the flood trigger on(0xFF), send the BASIC CC to the group 2</li> </ul>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Basic Set ON Level<br /><h1>Overview</h1><p>Setting the BASIC command value</p> 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Disable the Flood function</label>
         <description><![CDATA[
-Disable the Flood function<br /><h1>Overview</h1><p>Operation mode</p> <ul><li>0: Flood function is enabled</li> <li>1: Flood function is disabled</li> </ul>
+Disable the Flood function<br /> <h1>Overview</h1><p>Operation mode</p> <ul><li>0: Flood function is enabled</li> <li>1: Flood function is disabled</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -101,7 +101,7 @@ Disable the Flood function<br /><h1>Overview</h1><p>Operation mode</p> <ul><li>0
                  min="0" max="255">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Customer Function<br /><h1>Overview</h1><p>Parameter to set the sensor functions</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASIC OFF after the flood event cleared</li> <li>Bit 4: Notification Type. <ul><li>0:Using Notification Report,</li> <li>1:Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in aut</li> </ul>
+Customer Function<br /> <h1>Overview</h1><p>Parameter to set the sensor functions</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASIC OFF after the flood event cleared</li> <li>Bit 4: Notification Type. <ul><li>0:Using Notification Report,</li> <li>1:Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in aut</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -111,7 +111,7 @@ Customer Function<br /><h1>Overview</h1><p>Parameter to set the sensor functions
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20.</p>
+Auto Report Battery Time<br /> <h1>Overview</h1><p>The interval time for auto reporting the battery level</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20.</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ Auto Report Battery Time<br /><h1>Overview</h1><p>The interval time for auto rep
                  min="0" max="127">
         <label>15: Auto Report Flood Time</label>
         <description><![CDATA[
-Auto Report Flood Time<br /><h1>Overview</h1><p>The interval time for auto report the flood state</p> <ul><li>0 = Turn off auto report</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20</p>
+Auto Report Flood Time<br /> <h1>Overview</h1><p>The interval time for auto report the flood state</p> <ul><li>0 = Turn off auto report</li> <li>1-127 = Number of ticks.</li> </ul><p>The default value is 12. The tick time can be set by configuration No. 20</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Auto Report Flood Time<br /><h1>Overview</h1><p>The interval time for auto repor
                  min="0" max="255">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
-Auto Report Tick Interval<br /><h1>Overview</h1><p>The interval time for auto reporting each tick.</p> <ul><li>0 = Turn off all auto report function.</li> <li>1-255 = Number of ticks.</li> </ul><p>Setting this configuration will effect configuration Nr. 10 and No. 15.</p>
+Auto Report Tick Interval<br /> <h1>Overview</h1><p>The interval time for auto reporting each tick.</p> <ul><li>0 = Turn off all auto report function.</li> <li>1-255 = Number of ticks.</li> </ul><p>Setting this configuration will effect configuration Nr. 10 and No. 15.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Auto Report Tick Interval<br /><h1>Overview</h1><p>The interval time for auto re
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The device sends a notification report of the command class Battery report, notification report, and local device reset Notification, Binary Report.</p>
+<br /> <h1>Overview</h1><p>The device sends a notification report of the command class Battery report, notification report, and local device reset Notification, Binary Report.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

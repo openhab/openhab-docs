@@ -8,7 +8,7 @@
   <thing-type id="ring_dwss_00_000" listed="false">
     <label>DW-SS Door/Window Contact</label>
     <description><![CDATA[
-Door/Window Contact<br /><h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand your Ring Alarm system to secure each door and window in your home, and get alerts as soon as they open.</p> <br /><h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Open contact sensor’s cover</li> <li>Press and hold the reset button on sensor circuitry</li> <li>Remove and replace battery quickly – Blue LED will start to blink rapidly</li> <li>Wait for the blue LED to stop blinking</li> </ol><br /><h2>Wakeup Information</h2><p>By opening the top cover, the sensor will get to tamper state and stay awake.</p>
+Door/Window Contact<br /> <h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand your Ring Alarm system to secure each door and window in your home, and get alerts as soon as they open.</p> <br /> <h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Open contact sensor’s cover</li> <li>Press and hold the reset button on sensor circuitry</li> <li>Remove and replace battery quickly – Blue LED will start to blink rapidly</li> <li>Wait for the blue LED to stop blinking</li> </ol> <br /> <h2>Wakeup Information</h2><p>By opening the top cover, the sensor will get to tamper state and stay awake.</p>
     ]]></description>
     <category>Door</category>
 
@@ -62,7 +62,7 @@ Door/Window Contact<br /><h1>Overview</h1><p>Ring Alarm Contact Sensor: Expand 
                  min="255" max="4200">
         <label>1: Wait time</label>
         <description><![CDATA[
-Time between sending unsolicited battery reports<br /><h1>Overview</h1><p>255 to 4200 seconds <strong>in 255 second increments</strong> that the sensor should wait between sending unsolicited battery reports.  <br />The default configuration value for parameter 1 is defaulted to 4200 seconds on exclusion.</p>
+Time between sending unsolicited battery reports<br /> <h1>Overview</h1><p>255 to 4200 seconds <strong>in 255 second increments</strong> that the sensor should wait between sending unsolicited battery reports.  <br />The default configuration value for parameter 1 is defaulted to 4200 seconds on exclusion.</p>
         ]]></description>
         <default>4200</default>
       </parameter>
@@ -76,7 +76,7 @@ Time between sending unsolicited battery reports<br /><h1>Overview</h1><p>255 to
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Basic Report</label>
         <description><![CDATA[
-Basic report of either 0x00 for CLOSED or 0xFF for OPEN<br /><h1>Overview</h1><p>When a node is associated with Group 2, the sensor will send a basic report of either 0x00 for “Closed” or 0xFF for “Open.” </p>
+Basic report of either 0x00 for CLOSED or 0xFF for OPEN<br /> <h1>Overview</h1><p>When a node is associated with Group 2, the sensor will send a basic report of either 0x00 for “Closed” or 0xFF for “Open.” </p>
         ]]></description>
       </parameter>
 

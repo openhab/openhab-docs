@@ -8,7 +8,7 @@
   <thing-type id="vision_zs6301_00_000" listed="false">
     <label>ZS6301 CO Detector</label>
     <description><![CDATA[
-CO Detector<br /><h1>Overview</h1><p>This device is measuring the CO concentration in the air and issues an alarm when a certain level of CO is exceeded. </p> <br /><h2>Inclusion Information</h2><p>Press the test switch of ZS6301-5 once to be included. </p> <br /><h2>Exclusion Information</h2><p>Press the test switch of ZS6301-5 once to be excluded. </p> <br /><h2>Wakeup Information</h2><p>To leave “Sleep” mode, please press the test switch once, the device will send “Wake Up Notification” after 10 seconds.  </p>
+CO Detector<br /> <h1>Overview</h1><p>This device is measuring the CO concentration in the air and issues an alarm when a certain level of CO is exceeded. </p> <br /> <h2>Inclusion Information</h2><p>Press the test switch of ZS6301-5 once to be included. </p> <br /> <h2>Exclusion Information</h2><p>Press the test switch of ZS6301-5 once to be excluded. </p> <br /> <h2>Wakeup Information</h2><p>To leave “Sleep” mode, please press the test switch once, the device will send “Wake Up Notification” after 10 seconds.  </p>
     ]]></description>
     <category>SmokeDetector</category>
 

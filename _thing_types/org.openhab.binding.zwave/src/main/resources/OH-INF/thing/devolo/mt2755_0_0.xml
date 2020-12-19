@@ -8,7 +8,7 @@
   <thing-type id="devolo_mt2755_00_000" listed="false">
     <label>MT02755 Humidity Sensor</label>
     <description><![CDATA[
-Humidity Sensor<br /><h1>Overview</h1><p>The multisensor MT02755 has temperature and humidity function in one, based on Z-WaveTM technology.</p> <br /><h2>Inclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network.</p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <ol><li>Have Z-WaveTM Controller entered inclusion mode.</li> <li>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</li> </ol><br /><h2>Exclusion Information</h2><p><strong>Exclude/Remove:</strong></p> <ol><li>Have Z-WaveTM Controller entered exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode. Node ID has been excluded. </li> </ol><p><strong>Reset:</strong></p> <p>Notice: Use this procedure only in the event that the primary controller is lost or otherwise inoperable.</p> <ol><li> <p>Pressing tamper key four times within 1.5 seconds and do not release the tamper key in the 4th pressed, and the LED will light ON.</p> </li> <li> <p>After 3 seconds the LED will turn OFF, after that within 2 seconds, release the tamper key. If successful, the LED will light ON one second. Otherwise, the LED will flash once. </p> </li> <li> <p>IDs are excluded and all settings will reset to factory default. </p> </li> </ol><br /><h2>Wakeup Information</h2><p>Press the tamper button on the back side</p>
+Humidity Sensor<br /> <h1>Overview</h1><p>The multisensor MT02755 has temperature and humidity function in one, based on Z-WaveTM technology.</p> <br /> <h2>Inclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network.</p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <ol><li>Have Z-WaveTM Controller entered inclusion mode.</li> <li>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</li> </ol> <br /> <h2>Exclusion Information</h2><p><strong>Exclude/Remove:</strong></p> <ol><li>Have Z-WaveTM Controller entered exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode. Node ID has been excluded. </li> </ol><p><strong>Reset:</strong></p> <p>Notice: Use this procedure only in the event that the primary controller is lost or otherwise inoperable.</p> <ol><li> <p>Pressing tamper key four times within 1.5 seconds and do not release the tamper key in the 4th pressed, and the LED will light ON.</p> </li> <li> <p>After 3 seconds the LED will turn OFF, after that within 2 seconds, release the tamper key. If successful, the LED will light ON one second. Otherwise, the LED will flash once. </p> </li> <li> <p>IDs are excluded and all settings will reset to factory default. </p> </li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the tamper button on the back side</p>
     ]]></description>
     <category>Door</category>
 
@@ -73,7 +73,7 @@ Humidity Sensor<br /><h1>Overview</h1><p>The multisensor MT02755 has temperature
       <parameter name="config_5_1_00000008" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
-Setting the temperature scale<br /><h1>Overview</h1><p>Setting the temperature scale: 0: Fahrenheit, 1:Celsius</p>
+Setting the temperature scale<br /> <h1>Overview</h1><p>Setting the temperature scale: 0: Fahrenheit, 1:Celsius</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Setting the temperature scale<br /><h1>Overview</h1><p>Setting the temperature s
       <parameter name="config_6_1_00000020" type="integer" groupName="configuration">
         <label>6: Multi Sensor Function Switch</label>
         <description><![CDATA[
-Disable the humidity report after event triggered<br /><h1>Overview</h1><p>Disable the humidity report after event triggered. (1:Disable, 0:Enable) </p>
+Disable the humidity report after event triggered<br /> <h1>Overview</h1><p>Disable the humidity report after event triggered. (1:Disable, 0:Enable) </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -99,7 +99,7 @@ Disable the humidity report after event triggered<br /><h1>Overview</h1><p>Disab
       <parameter name="config_7_1_00000010" type="integer" groupName="configuration">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Notification Type<br /><h1>Overview</h1><p>Notification Type:<br /> 0: Using Notification Report. 1: Using Sensor Binary Report. </p>
+Notification Type<br /> <h1>Overview</h1><p>Notification Type:<br /> 0: Using Notification Report. 1: Using Sensor Binary Report. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -112,7 +112,7 @@ Notification Type<br /><h1>Overview</h1><p>Notification Type:<br /> 0: Using Not
       <parameter name="config_7_1_00000020" type="integer" groupName="configuration">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Disable Multi CC in auto report<br /><h1>Overview</h1><p>Disable Multi CC in auto report. (1:Disable, 0:Enable) </p>
+Disable Multi CC in auto report<br /> <h1>Overview</h1><p>Disable Multi CC in auto report. (1:Disable, 0:Enable) </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -126,7 +126,7 @@ Disable Multi CC in auto report<br /><h1>Overview</h1><p>Disable Multi CC in aut
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-The interval time for auto report the battery level.<br /><h1>Overview</h1><p>The interval time for auto report the battery level.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
+The interval time for auto report the battery level.<br /> <h1>Overview</h1><p>The interval time for auto report the battery level.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -136,7 +136,7 @@ The interval time for auto report the battery level.<br /><h1>Overview</h1><p>Th
                  min="0" max="127">
         <label>13: Auto Report Temperature Time</label>
         <description><![CDATA[
-The interval time for auto report the temperature.<br /><h1>Overview</h1><p>The interval time for auto report the temperature.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
+The interval time for auto report the temperature.<br /> <h1>Overview</h1><p>The interval time for auto report the temperature.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -146,7 +146,7 @@ The interval time for auto report the temperature.<br /><h1>Overview</h1><p>The 
                  min="0" max="127">
         <label>14: Auto Report Humidity Time</label>
         <description><![CDATA[
-The interval time for auto report the humidity<br /><h1>Overview</h1><p>The interval time for auto report the humidity.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
+The interval time for auto report the humidity<br /> <h1>Overview</h1><p>The interval time for auto report the humidity.<br /> 0 means turn off auto report.<br /> The default value is 12. The tick time can setting by the configuration No.20. </p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -156,7 +156,7 @@ The interval time for auto report the humidity<br /><h1>Overview</h1><p>The inte
                  min="0" max="255">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
-The interval time for auto report each tick<br /><h1>Overview</h1><p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.<br /><strong>Caution1:</strong> Setting to 0 means turn off all auto report function.</p> <p><strong>Caution2:</strong> The value is unsigned byte </p>
+The interval time for auto report each tick<br /> <h1>Overview</h1><p>Setting this configuration will effect configuration No.10, No.13, No.14 and No.15.</p> <p>Units of one minute.<br /><strong>Caution1:</strong> Setting to 0 means turn off all auto report function.</p> <p><strong>Caution2:</strong> The value is unsigned byte </p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -166,7 +166,7 @@ The interval time for auto report each tick<br /><h1>Overview</h1><p>Setting thi
                  min="0" max="127">
         <label>21: Temperature Differential Report</label>
         <description><![CDATA[
-The temperature differential to report<br /><h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function.<br /> The unit is Fahrenheit.<br /> Enable this function the device will detect every 10 seconds. </p> <p>And when the temperature is over 140 degree Fahrenheit, it will continue report. </p>
+The temperature differential to report<br /> <h1>Overview</h1><p>The temperature differential to report. 0 means turn off this function.<br /> The unit is Fahrenheit.<br /> Enable this function the device will detect every 10 seconds. </p> <p>And when the temperature is over 140 degree Fahrenheit, it will continue report. </p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -176,7 +176,7 @@ The temperature differential to report<br /><h1>Overview</h1><p>The temperature 
                  min="0" max="60">
         <label>23: Humidity Differential Report</label>
         <description><![CDATA[
-The humidity differential to report.<br /><h1>Overview</h1><p>The humidity differential to report. 0 means turn off this function. The unit is percentage.<br /> Enable this function the device will detect every 10 seconds. </p>
+The humidity differential to report.<br /> <h1>Overview</h1><p>The humidity differential to report. 0 means turn off this function. The unit is percentage.<br /> Enable this function the device will detect every 10 seconds. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -186,7 +186,7 @@ The humidity differential to report.<br /><h1>Overview</h1><p>The humidity diffe
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Receiving Report Message</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 1 is for receiving the report message, like triggered event, temperature, humidity </p>
+<br /> <h1>Overview</h1><p>Group 1 is for receiving the report message, like triggered event, temperature, humidity </p>
         ]]></description>
         <multipleLimit>8</multipleLimit>
       </parameter>

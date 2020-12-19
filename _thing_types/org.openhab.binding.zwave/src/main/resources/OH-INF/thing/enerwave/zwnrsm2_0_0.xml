@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zwnrsm2_00_000" listed="false">
     <label>ZWN-RSM2 Smart Dual Relay Switch Module</label>
     <description><![CDATA[
-Smart Dual Relay Switch Module<br /><h1>Overview</h1><p>This smart relay can be used to convert a continuous load into a remotely switched load or used in conjunction with the existing manual switches to add remote operability. For the advanced users of Z-Wave, the functions can be customized with programming codes. </p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, toggle ON and OFF 3 times </p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, toggle ON and OFF 3 times</p>
+Smart Dual Relay Switch Module<br /> <h1>Overview</h1><p>This smart relay can be used to convert a continuous load into a remotely switched load or used in conjunction with the existing manual switches to add remote operability. For the advanced users of Z-Wave, the functions can be customized with programming codes. </p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, toggle ON and OFF 3 times </p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, toggle ON and OFF 3 times</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -64,7 +64,7 @@ Smart Dual Relay Switch Module<br /><h1>Overview</h1><p>This smart relay can be 
                  min="0" max="255">
         <label>3: Unsolicited Report Configuration</label>
         <description><![CDATA[
-Send unsolicited status report to primary controller<br /><h1>Overview</h1><p>ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net</p>
+Send unsolicited status report to primary controller<br /> <h1>Overview</h1><p>ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

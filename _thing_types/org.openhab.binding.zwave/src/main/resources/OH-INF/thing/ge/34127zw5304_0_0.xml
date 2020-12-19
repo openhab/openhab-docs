@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_34127zw5304_00_000" listed="false">
+    <label>34127/ZW5304 Solo Scene Remote</label>
+    <description><![CDATA[
+Solo Scene Remote<br /> <h1>Overview</h1><p>No Hub Necessary – The remote allows you to create one scene to control smart devices with or without a Z-Wave hub. It is able to directly pair with Z-Wave switches, dimmers, fan controls and more simple-setup home automation. Dual- and quad-scene models – 34174 and 34176 – are also available for even more varied automation.</p><p>Scalable Automation – One-to-many or many-to-one configurations accommodate any need. Create a scene for up to 20 devices with one remote or use several remotes to control a single fixture. Universal compatibility allows the remote to pair with Z-Wave Plus and all previous Z-Wave generations.</p><p>Ideal Applications – Trigger actions of several devices to enjoy the comfort of knowing all of your lights are turned off when you leave the house or illuminate your whole home as soon as you arrive. Connecting multiple remotes to one fixture, lamp or fan instantly creates a multi-switch network for control from various locations.</p><p>Versatile Placement– Compact construction and two provided CR2032 batteries offer comfortable handheld operation for easy portability. The included unique magnetic adapter and rocker-style wallplate support wall-mount options. The remote can also be incorporated into existing switchboxes and multi-gang setups or replace blanks. Tabletop placement with an available cradle – model 39943 – allows convenient accessibility anywhere.</p><p>Full-Range Dimmability – When connected to a Z-Wave dimmer, adjust brightness levels of dimmable lights from 0-100 percent. Dimming lights reduces energy costs and improves bulb life.</p> <br /> <h2>Inclusion Information</h2><p>1. Press and hold the Up and Down buttons for 5 seconds. The LED will slowly flash.</p><p>2. Press and hold the Up button 3 seconds. The LED will rapidly flash.</p><p>3. Press the Down button to set the device as a receiver. The LED will flash every</p><p>second. If network transfer was successful, the LED will turn on for two seconds</p> <br /> <h2>Exclusion Information</h2><p>1. Press and hold the Up and Down buttons for 3 seconds. The LED will slowly flash.<br /></p><p>2. Press and hold the Up and Down buttons for 3 seconds. The LED will quickly flash for 20 seconds.</p><p>3. Press the manual/program button on the Z-Wave module/switch to remove it from the network. The LED will turn on for two seconds.</p> <br /> <h2>Wakeup Information</h2><p>1. Press and hold the Up and Down buttons for 3 seconds. The LED will slowly flash.<br /></p><p>2. Press and hold the Down button for 2 seconds. The LED will quickly flash.</p><p>3. Press the Up button. The LED will turn on for two seconds. If the setup is successful, the keypad will stay awake for 30 seconds. During awake mode, the controller will sleep again within two seconds after any button is pressed</p>
+    ]]></description>
+    <category>RemoteControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">34127/ZW5304</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4843:3031</property>
+      <property name="dbReference">1313</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

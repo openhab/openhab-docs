@@ -8,7 +8,7 @@
   <thing-type id="linear_wt00z1_00_000" listed="false">
     <label>WT00Z-1 3-Way Wall Accessory Switch</label>
     <description><![CDATA[
-3-Way Wall Accessory Switch<br /><h1>Overview</h1><p>Radio Frequency (RF) Controlled, 120 VAC, Wall Mounted Transmitter </p> <br /><h2>Inclusion Information</h2><p>Tap either the top or bottom of the WT00Z-1 once.</p> <br /><h2>Exclusion Information</h2><p>You  must  first  “RESET  UNIT”  with  your  controller  to  remove  it  from the network. Although adding it to a group includes it in the network, removing  it  from  a  group  does  not  remove  it  from  the  network.  If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network.</p>
+3-Way Wall Accessory Switch<br /> <h1>Overview</h1><p>Radio Frequency (RF) Controlled, 120 VAC, Wall Mounted Transmitter </p> <br /> <h2>Inclusion Information</h2><p>Tap either the top or bottom of the WT00Z-1 once.</p> <br /> <h2>Exclusion Information</h2><p>You  must  first  “RESET  UNIT”  with  your  controller  to  remove  it  from the network. Although adding it to a group includes it in the network, removing  it  from  a  group  does  not  remove  it  from  the  network.  If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Dim Start Level</label>
         <description><![CDATA[
-Set Ignore Start Level Bit When Transmitting Dim Commands<br /><h1>Overview</h1><p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers.The Dim command has a start level embedded in it. A dimmer receivingthis command will start dimming from that start level. However, thecommand can be sent so that the dimmer ignores the start level andinstead starts dimming from its current level. By default, the WT00Z-1sends the command so that the dimmer will start dimming from itscurrent dim level rather than the start level embedded in the command.To change this, simply set the conﬁguration parameter to 0.</p> <p><b>• Parameter No: 1• </b></p> <p><b>Length: 1 Byte• </b></p> <p><b>Valid Values = 0 or 1 (default 1)</b></p> <p><b>NOTE:</b></p> <p>Any ACT Z-Wave enabled dimmers have the conﬁguration optionto ignore the start level no matter how you conﬁgure the WT00Z-1</p>  
+Set Ignore Start Level Bit When Transmitting Dim Commands<br /> <h1>Overview</h1><p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers.The Dim command has a start level embedded in it. A dimmer receivingthis command will start dimming from that start level. However, thecommand can be sent so that the dimmer ignores the start level andinstead starts dimming from its current level. By default, the WT00Z-1sends the command so that the dimmer will start dimming from itscurrent dim level rather than the start level embedded in the command.To change this, simply set the conﬁguration parameter to 0.</p> <p><b>• Parameter No: 1• </b></p> <p><b>Length: 1 Byte• </b></p> <p><b>Valid Values = 0 or 1 (default 1)</b></p> <p><b>NOTE:</b></p> <p>Any ACT Z-Wave enabled dimmers have the conﬁguration optionto ignore the start level no matter how you conﬁgure the WT00Z-1</p>  
         ]]></description>
         <default>1</default>
         <options>
@@ -70,7 +70,7 @@ Set Ignore Start Level Bit When Transmitting Dim Commands<br /><h1>Overview</h1>
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Suspend Group 4</label>
         <description><![CDATA[
-Suspend Group 4<br /><h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “un-associating” those devices from the group. Setting parameter 2 to the value of 1 will stop the WT00Z-1 from transmitting to devices that are “associated” into Group 4.</p> <p><b>• Parameter No: 2•</b></p> <p><b> Length: 1 </b></p> <p><b>Byte• Valid Values = 0 or 1 (default 0</b></p>
+Suspend Group 4<br /> <h1>Overview</h1><p>You may wish to disable transmitting commands to Z-Wave devices that are in Group 4 without “un-associating” those devices from the group. Setting parameter 2 to the value of 1 will stop the WT00Z-1 from transmitting to devices that are “associated” into Group 4.</p> <p><b>• Parameter No: 2•</b></p> <p><b> Length: 1 </b></p> <p><b>Byte• Valid Values = 0 or 1 (default 0</b></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -83,7 +83,7 @@ Suspend Group 4<br /><h1>Overview</h1><p>You may wish to disable transmitting co
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
-Relationship between LED and status of devices in Group 1<br /><h1>Overview</h1><p>The LED on the WT00Z-1 will by default, turn ON when the status of the devices in Group 1 is ON. To make the LED turn ON when the status of Group 1 is OFF set this parameter to a value of 1.</p> <p><b>Parameter No: 3• </b></p> <p><b>Length: 1 Byte• </b></p> <p><b>Valid Values = 0 or 1 (default 0</b></p>
+Relationship between LED and status of devices in Group 1<br /> <h1>Overview</h1><p>The LED on the WT00Z-1 will by default, turn ON when the status of the devices in Group 1 is ON. To make the LED turn ON when the status of Group 1 is OFF set this parameter to a value of 1.</p> <p><b>Parameter No: 3• </b></p> <p><b>Length: 1 Byte• </b></p> <p><b>Valid Values = 0 or 1 (default 0</b></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -96,7 +96,7 @@ Relationship between LED and status of devices in Group 1<br /><h1>Overview</h1>
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Setting the relationship between the top of the transmitter to ON or OFF<br /><h1>Overview</h1><p>To change the top of the transmitter to OFF and the bottom of the transmitter to ON, set parameter 4 to 1. </p> <p>To change back to original settings, set this parameter to the value of 0.</p> <p><b>Parameter No: 4</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 0)</b></p>
+Setting the relationship between the top of the transmitter to ON or OFF<br /> <h1>Overview</h1><p>To change the top of the transmitter to OFF and the bottom of the transmitter to ON, set parameter 4 to 1. </p> <p>To change back to original settings, set this parameter to the value of 0.</p> <p><b>Parameter No: 4</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 0)</b></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -109,7 +109,7 @@ Setting the relationship between the top of the transmitter to ON or OFF<br /><h
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Ignore start level when recieving dim commands</label>
         <description><![CDATA[
-Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command can be sent so that the dimmer ignores the start level and instead start dimming from its current level. By default, the WT00Z-1 sends the command so that the dimmer will start dimming from its current dim level rather then the start level embedded in the command. To change this, simply set the conﬁguration parameter to 0.</p> <p><b>Parameter No: 5•</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 1</b></p>
+Ignore start level when recieving dim commands<br /> <h1>Overview</h1><p>The WT00Z-1 can send Dim commands to Z-Wave enabled dimmers. The Dim command has a start level embedded in it. A dimmer receiving this command will start dimming from that start level. However, the command can be sent so that the dimmer ignores the start level and instead start dimming from its current level. By default, the WT00Z-1 sends the command so that the dimmer will start dimming from its current dim level rather then the start level embedded in the command. To change this, simply set the conﬁguration parameter to 0.</p> <p><b>Parameter No: 5•</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 1</b></p>
         ]]></description>
         <default>1</default>
         <options>
@@ -170,7 +170,7 @@ Ignore start level when recieving dim commands<br /><h1>Overview</h1><p>The WT00
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Disable group 4 during a dim command</label>
         <description><![CDATA[
-Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 is commanded to stop dimming when dimming because of the DIM START command, it will then command the Z-Wave devices that are in Group 4 to its new level. To prevent the WT00Z-1 from commanding the Z-Wave devices in Group 4 during this particular occurrence, set Parameter 13 to the value of 1.</p> <p><b>Parameter 13</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 0</b></p>
+Disable group 4 during a dim command<br /> <h1>Overview</h1><p>After the WT00Z-1 is commanded to stop dimming when dimming because of the DIM START command, it will then command the Z-Wave devices that are in Group 4 to its new level. To prevent the WT00Z-1 from commanding the Z-Wave devices in Group 4 during this particular occurrence, set Parameter 13 to the value of 1.</p> <p><b>Parameter 13</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 or 1 (default 0</b></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -216,7 +216,7 @@ Disable group 4 during a dim command<br /><h1>Overview</h1><p>After the WT00Z-1 
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: LED Transmission Indication</label>
         <description><![CDATA[
-LED Transmission Indication<br /><h1>Overview</h1><p>The WT00Z-1 will ﬂicker its LED when it is transmitting to any of its 4 groups. This ﬂickering can be set to not ﬂicker at all (set to 0), to ﬂicker the entire time it is transmitting (set to 1), or to ﬂicker for only 1 second when it begins transmitting (set to 2). By default, the WT00Z-1 is set to ﬂicker for only 1 second.</p> <p><b>Parameter 19</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 , 1, 2 (default 2)</b></p>
+LED Transmission Indication<br /> <h1>Overview</h1><p>The WT00Z-1 will ﬂicker its LED when it is transmitting to any of its 4 groups. This ﬂickering can be set to not ﬂicker at all (set to 0), to ﬂicker the entire time it is transmitting (set to 1), or to ﬂicker for only 1 second when it begins transmitting (set to 2). By default, the WT00Z-1 is set to ﬂicker for only 1 second.</p> <p><b>Parameter 19</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 , 1, 2 (default 2)</b></p>
         ]]></description>
         <default>2</default>
         <options>
@@ -231,7 +231,7 @@ LED Transmission Indication<br /><h1>Overview</h1><p>The WT00Z-1 will ﬂicker i
                  min="1" max="255">
         <label>20: Poll: minutes</label>
         <description><![CDATA[
-Frequency that WT00Z-1 will poll first node in Group 1<br /><h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1. How often it will poll is conﬁgured using this parameter.</p> <p><b>Parameter 20</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 1 through 255 (default: 2)</b></p>
+Frequency that WT00Z-1 will poll first node in Group 1<br /> <h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1. How often it will poll is conﬁgured using this parameter.</p> <p><b>Parameter 20</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 1 through 255 (default: 2)</b></p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -240,7 +240,7 @@ Frequency that WT00Z-1 will poll first node in Group 1<br /><h1>Overview</h1><p>
       <parameter name="config_21_1" type="integer" groupName="configuration">
         <label>21: Poll first node in group 1</label>
         <description><![CDATA[
-Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1.</p> <p><b>Parameter 21</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 , 1 (default 0)</b></p>
+Activate/Deactivate polling of first node in Group 1<br /> <h1>Overview</h1><p>The WT00Z-1 will poll the ﬁrst node in Group 1 in order to keep itself synchronized with the group if this conﬁguration parameter is set to 1.</p> <p><b>Parameter 21</b></p> <p><b>Length: 1 Byte</b></p> <p><b>Valid Values = 0 , 1 (default 0)</b></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -254,7 +254,7 @@ Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>Th
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Controller</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle or OFF by tapping the bottom of the paddle. Nodes associated into this group are dimmed by pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by pressing and holding the top of the paddle until the desired level is reached. The LED on the WT00Z-1 will indicate the status of this group ONLY.</p>
+<br /> <h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle or OFF by tapping the bottom of the paddle. Nodes associated into this group are dimmed by pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by pressing and holding the top of the paddle until the desired level is reached. The LED on the WT00Z-1 will indicate the status of this group ONLY.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -262,7 +262,7 @@ Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>Th
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Associating Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle twice or OFF by tapping the bottom of the paddle twice. Nodes associated into this group are dimmed by tapping the bottom of the paddle once and then pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by tapping the top  of  the  paddle  once  then  pressing and holding the top of the paddle  until the desire level is reached</p>
+<br /> <h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle twice or OFF by tapping the bottom of the paddle twice. Nodes associated into this group are dimmed by tapping the bottom of the paddle once and then pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by tapping the top  of  the  paddle  once  then  pressing and holding the top of the paddle  until the desire level is reached</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -270,7 +270,7 @@ Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>Th
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Associating Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle three times or OFF by tapping the bottom of the paddle three times. Nodes associated into this group are dimmed by tapping the bottom of the paddle twice and then pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by tapping the top of the paddle twice then pressing and holding the top of the paddle until the desired level is reached</p>
+<br /> <h1>Overview</h1><p>Nodes in this group are turned ON by tapping the top of the paddle three times or OFF by tapping the bottom of the paddle three times. Nodes associated into this group are dimmed by tapping the bottom of the paddle twice and then pressing and holding the bottom of the paddle until the desired dim level is reached or brightened by tapping the top of the paddle twice then pressing and holding the top of the paddle until the desired level is reached</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -278,7 +278,7 @@ Activate/Deactivate polling of first node in Group 1<br /><h1>Overview</h1><p>Th
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Associating Group 4</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Nodes in this group are turned ON or OFF or set to a speciﬁc dim level when the WT00Z-1 is controlled remotely. You can place up to 5 nodes in each group. If controlling dimmers, for best results, associate the dimmers into the group ﬁrst</p>
+<br /> <h1>Overview</h1><p>Nodes in this group are turned ON or OFF or set to a speciﬁc dim level when the WT00Z-1 is controlled remotely. You can place up to 5 nodes in each group. If controlling dimmers, for best results, associate the dimmers into the group ﬁrst</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

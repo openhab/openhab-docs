@@ -8,7 +8,7 @@
   <thing-type id="centralite_3210l_00_000" listed="false">
     <label>3210-L Smart Plug</label>
     <description><![CDATA[
-Smart Plug<br /><h1>Overview</h1><p>The Lowe's IRIS Smart Plug acts as a repeater for other Z-Wave devices. </p> <br /><h2>Inclusion Information</h2><p>Unplug device from the wall.  While holding the front button, re-insert device into the receptacle. Once the blue light illuminates, release button to factory reset.  Use this procedure only in the event that the network primary controller is missing or otherwise inoperable.  </p> <br /><h2>Exclusion Information</h2><p>Power off device by unplugging it from its receptacle. </p>
+Smart Plug<br /> <h1>Overview</h1><p>The Lowe's IRIS Smart Plug acts as a repeater for other Z-Wave devices. </p> <br /> <h2>Inclusion Information</h2><p>Unplug device from the wall.  While holding the front button, re-insert device into the receptacle. Once the blue light illuminates, release button to factory reset.  Use this procedure only in the event that the network primary controller is missing or otherwise inoperable.  </p> <br /> <h2>Exclusion Information</h2><p>Power off device by unplugging it from its receptacle. </p>
     ]]></description>
     <category>PowerOutlet</category>
 

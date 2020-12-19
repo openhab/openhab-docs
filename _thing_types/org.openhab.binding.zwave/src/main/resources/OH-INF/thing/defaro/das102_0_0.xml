@@ -8,7 +8,7 @@
   <thing-type id="defaro_das102_00_000" listed="false">
     <label>DAS-102 Double relay Switch 2x1.7kW</label>
     <description><![CDATA[
-Double relay Switch 2x1.7kW<br /><h1>Overview</h1><p>https://defaro.ru/index.php/support/instructions/70-das-102</p> <br /><h2>Inclusion Information</h2><ol><li>Put controller in inclusion mode.</li> <li>Power on device. It should be added automatically (using NWI).</li> <li>If not fast press add/remove button three times.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put controller in exclusion mode.</li> <li>Fast press add/remove button three times.</li> <li>Please note that all parameters except for parameters 15 &amp; 16 will reset to their default state</li> </ol><br /><h2>Wakeup Information</h2><p>Always woken.</p>
+Double relay Switch 2x1.7kW<br /> <h1>Overview</h1><p>https://defaro.ru/index.php/support/instructions/70-das-102</p> <br /> <h2>Inclusion Information</h2><ol><li>Put controller in inclusion mode.</li> <li>Power on device. It should be added automatically (using NWI).</li> <li>If not fast press add/remove button three times.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Put controller in exclusion mode.</li> <li>Fast press add/remove button three times.</li> <li>Please note that all parameters except for parameters 15 &amp; 16 will reset to their default state</li> </ol> <br /> <h2>Wakeup Information</h2><p>Always woken.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -75,7 +75,7 @@ Double relay Switch 2x1.7kW<br /><h1>Overview</h1><p>https://defaro.ru/index.php
                  min="0" max="65000">
         <label>2: Relay closed interval</label>
         <description><![CDATA[
-For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays ON state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
+For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays ON state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
@@ -85,7 +85,7 @@ For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays ON state 
                  min="0" max="65000">
         <label>3: Relay open interval</label>
         <description><![CDATA[
-For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays OFF state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
+For blink mode for both S1 and S2<br /> <h1>Overview</h1><p>Sets relays OFF state time in 1/10 of second, if Parameter 1 or 10 set to 3</p>
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
@@ -95,7 +95,7 @@ For blink mode for both S1 and S2<br /><h1>Overview</h1><p>Sets relays OFF state
                  min="0" max="65000">
         <label>4: S1 auto off delay</label>
         <description><![CDATA[
-Sets auto off delay for S1<br /><h1>Overview</h1><p>Sets delay after which switch S1 will turn off in 1/10 sec. (0 - disable)</p>
+Sets auto off delay for S1<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn off in 1/10 sec. (0 - disable)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -107,7 +107,7 @@ Sets auto off delay for S1<br /><h1>Overview</h1><p>Sets delay after which switc
                  min="0" max="65000">
         <label>5: S1 On delay</label>
         <description><![CDATA[
-Delay after ON command received<br /><h1>Overview</h1><p>Sets time after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable feature)</p>
+Delay after ON command received<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable feature)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -119,7 +119,7 @@ Delay after ON command received<br /><h1>Overview</h1><p>Sets time after which s
                  min="0" max="65000">
         <label>6: S1 smart delay</label>
         <description><![CDATA[
-Smart off delay for S1<br /><h1>Overview</h1><p>Sets time after which switch S1 will turn off after receiving OFF command in 1/10 sec.</p> <p>Events to which this delay is applicable set in Parameter 18.</p> <p>(0 - disable feature)</p>
+Smart off delay for S1<br /> <h1>Overview</h1><p>Sets time after which switch S1 will turn off after receiving OFF command in 1/10 sec.</p> <p>Events to which this delay is applicable set in Parameter 18.</p> <p>(0 - disable feature)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -131,7 +131,7 @@ Smart off delay for S1<br /><h1>Overview</h1><p>Sets time after which switch S1 
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: S1 powerfail recovery</label>
         <description><![CDATA[
-Powerfail recovery mode for S1<br /><h1>Overview</h1><p>Recovery behavior for S1</p> <p>0 - restore (default)</p> <p>1 - set to OFF state</p>
+Powerfail recovery mode for S1<br /> <h1>Overview</h1><p>Recovery behavior for S1</p> <p>0 - restore (default)</p> <p>1 - set to OFF state</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -145,7 +145,7 @@ Powerfail recovery mode for S1<br /><h1>Overview</h1><p>Recovery behavior for S1
                  min="0" max="3">
         <label>8: All ON/OFF behaviour</label>
         <description><![CDATA[
-All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
+All ON/OFF behaviour<br /> <h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p>1 - Ignore All ON/All OFF</p> <p>2 - Ignore All ON/React on All OFF</p> <p>3 - React on All ON/Ignore All OFF</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -153,7 +153,7 @@ All ON/OFF behaviour<br /><h1>Overview</h1><p>0 - React on All ON/All OFF</p> <p
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Relay S2 mode</label>
         <description><![CDATA[
-Relay S2 mode of operation<br /><h1>Overview</h1><p>Sets S2 mode of operation:<br /><br />0 - normal mode (ON-turn switch on, 1 - turn switch off) (default)<br /><br />1 - reverse mode (ON-turn switch off, 1 - turn switch on)<br /><br />2 - Blink mode (see parameters 2 and 3)</p>
+Relay S2 mode of operation<br /> <h1>Overview</h1><p>Sets S2 mode of operation:<br /><br />0 - normal mode (ON-turn switch on, 1 - turn switch off) (default)<br /><br />1 - reverse mode (ON-turn switch off, 1 - turn switch on)<br /><br />2 - Blink mode (see parameters 2 and 3)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -168,7 +168,7 @@ Relay S2 mode of operation<br /><h1>Overview</h1><p>Sets S2 mode of operation:<b
                  min="0" max="65000">
         <label>11: S2 auto off time</label>
         <description><![CDATA[
-Sets auto off time for S2<br /><h1>Overview</h1><p>Sets time after which switch S2 will turn off in 1/10 sec. (0 - disable)</p>
+Sets auto off time for S2<br /> <h1>Overview</h1><p>Sets time after which switch S2 will turn off in 1/10 sec. (0 - disable)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -180,7 +180,7 @@ Sets auto off time for S2<br /><h1>Overview</h1><p>Sets time after which switch 
                  min="0" max="65000">
         <label>12: S2 turn on delay</label>
         <description><![CDATA[
-Sets turn on delay for S2<br /><h1>Overview</h1><p>Sets delay after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable)</p>
+Sets turn on delay for S2<br /> <h1>Overview</h1><p>Sets delay after which switch S1 will turn on after receiving ON command in 1/10 sec. (0 - disable)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -192,7 +192,7 @@ Sets turn on delay for S2<br /><h1>Overview</h1><p>Sets delay after which switch
                  min="0" max="65000">
         <label>13: S2 smart delay</label>
         <description><![CDATA[
-Smart delay for S2<br /><h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (see Parameters 2,3,6 for description) (0-disable)</p>
+Smart delay for S2<br /> <h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (see Parameters 2,3,6 for description) (0-disable)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -204,7 +204,7 @@ Smart delay for S2<br /><h1>Overview</h1><p>Sets smart delay for S2 in 1/10sec (
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: S2 powerfail recovery</label>
         <description><![CDATA[
-Powerfail recovery mode for S2<br /><h1>Overview</h1><p>Recovery behavior for S2</p> <p>0 - restore (default)</p> <p>1 - set to OFF state</p>
+Powerfail recovery mode for S2<br /> <h1>Overview</h1><p>Recovery behavior for S2</p> <p>0 - restore (default)</p> <p>1 - set to OFF state</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -217,7 +217,7 @@ Powerfail recovery mode for S2<br /><h1>Overview</h1><p>Recovery behavior for S2
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: S1 button mode</label>
         <description><![CDATA[
-S1 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S1 switch</p>
+S1 button operation mode<br /> <h1>Overview</h1><p>Type of button connected to S1 switch</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -232,7 +232,7 @@ S1 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S1
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: S2 button mode</label>
         <description><![CDATA[
-S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2 switch</p>
+S2 button operation mode<br /> <h1>Overview</h1><p>Type of button connected to S2 switch</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -248,7 +248,7 @@ S2 button operation mode<br /><h1>Overview</h1><p>Type of button connected to S2
                  min="0" max="2">
         <label>18: Smart delay</label>
         <description><![CDATA[
-Smart delay mode<br /><h1>Overview</h1><p>0 - implicit smart delay</p> <p>1 - use smart delay for all devices NOT in Group 1. Also smart delay ignored for controller and button issued commands</p> <p>2 - use smart delay for all devices IN Group 1. Also smart delay will be used for controller and button issued commands</p>
+Smart delay mode<br /> <h1>Overview</h1><p>0 - implicit smart delay</p> <p>1 - use smart delay for all devices NOT in Group 1. Also smart delay ignored for controller and button issued commands</p> <p>2 - use smart delay for all devices IN Group 1. Also smart delay will be used for controller and button issued commands</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -257,7 +257,7 @@ Smart delay mode<br /><h1>Overview</h1><p>0 - implicit smart delay</p> <p>1 - us
       <parameter name="config_50_1" type="integer" groupName="configuration">
         <label>50: Forced secure mode</label>
         <description><![CDATA[
-Forced secure mode<br /><h1>Overview</h1><p>0 - accept non-secure commands</p> <p>1 - accept only secure commands</p>
+Forced secure mode<br /> <h1>Overview</h1><p>0 - accept non-secure commands</p> <p>1 - accept only secure commands</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -271,7 +271,7 @@ Forced secure mode<br /><h1>Overview</h1><p>0 - accept non-secure commands</p> <
       <parameter name="config_51_1" type="integer" groupName="configuration">
         <label>51: Secure send for S1</label>
         <description><![CDATA[
-Send secure commands for S1<br /><h1>Overview</h1><p>0 - Send non-secure commands to Group 2 (S1 associations)</p> <p>1 - Send secure commands to Group 2 (S1 associations)</p>
+Send secure commands for S1<br /> <h1>Overview</h1><p>0 - Send non-secure commands to Group 2 (S1 associations)</p> <p>1 - Send secure commands to Group 2 (S1 associations)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -285,7 +285,7 @@ Send secure commands for S1<br /><h1>Overview</h1><p>0 - Send non-secure command
       <parameter name="config_52_1" type="integer" groupName="configuration">
         <label>52: Secure send for S2</label>
         <description><![CDATA[
-Send secure commands for S2<br /><h1>Overview</h1><p>0 - Send non-secure commands to Group 3 (S2 associations)</p> <p>1 - Send secure commands to Group 3 (S2 associations)</p>
+Send secure commands for S2<br /> <h1>Overview</h1><p>0 - Send non-secure commands to Group 3 (S2 associations)</p> <p>1 - Send secure commands to Group 3 (S2 associations)</p>
         ]]></description>
         <default>0</default>
         <options>

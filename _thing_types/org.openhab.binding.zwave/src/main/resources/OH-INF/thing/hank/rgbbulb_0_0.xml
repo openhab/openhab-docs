@@ -8,7 +8,7 @@
   <thing-type id="hank_rgbbulb_00_000" listed="false">
     <label>RGB bulb HKZW-RGB01-V1.0</label>
     <description><![CDATA[
-HKZW-RGB01-V1.0<br /><h1>Overview</h1><p>A smart bulb with over 16 million colors</p> <br /><h2>Inclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p> <br /><h2>Exclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p>
+HKZW-RGB01-V1.0<br /> <h1>Overview</h1><p>A smart bulb with over 16 million colors</p> <br /> <h2>Inclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p> <br /> <h2>Exclusion Information</h2><p>Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -84,7 +84,7 @@ HKZW-RGB01-V1.0<br /><h1>Overview</h1><p>A smart bulb with over 16 million color
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Notification when Load status change</label>
         <description><![CDATA[
-RGB BULB can send notifications to associated device<br /><h1>Overview</h1><p>RGB BULB can send notifications to associated device (Group Lifeline) when the status of the RGB BULB is changed.</p>
+RGB BULB can send notifications to associated device<br /> <h1>Overview</h1><p>RGB BULB can send notifications to associated device (Group Lifeline) when the status of the RGB BULB is changed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -109,7 +109,7 @@ RGB BULB can send notifications to associated device<br /><h1>Overview</h1><p>RG
       <parameter name="config_61_4" type="integer" groupName="configuration">
         <label>61: Advance mode</label>
         <description><![CDATA[
-RGB BULB can blink or cyclic/random change color automatically at set intervals.<br /><h1>Overview</h1><p>RGB BULB can blink or cyclic/random change color automatically at set intervals. It will stop blink or change color when receiving any control command like Basic Set</p>
+RGB BULB can blink or cyclic/random change color automatically at set intervals.<br /> <h1>Overview</h1><p>RGB BULB can blink or cyclic/random change color automatically at set intervals. It will stop blink or change color when receiving any control command like Basic Set</p>
         ]]></description>
         <default>3072</default>
         <options>

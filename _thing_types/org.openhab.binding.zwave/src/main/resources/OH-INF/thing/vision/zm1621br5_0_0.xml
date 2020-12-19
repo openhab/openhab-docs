@@ -8,7 +8,7 @@
   <thing-type id="vision_zm1621br5_00_000" listed="false">
     <label>ZM1621 Battery Operated Siren</label>
     <description><![CDATA[
-Battery Operated Siren<br /><h1>Overview</h1><p>The ZM1621 will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave™ enabled network. When the device is secure included into Z-Wave network, above communication will be encrypted. </p> <br /><h2>Inclusion Information</h2><p>To get the ZM1621 in the “inclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. After setting, the LED Light should go off, if not, please try again. </p> <br /><h2>Exclusion Information</h2><p>To get the ZM1621 in the “exclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. LED light will flash continuously in Exclusion condition.</p>
+Battery Operated Siren<br /> <h1>Overview</h1><p>The ZM1621 will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave™ enabled network. When the device is secure included into Z-Wave network, above communication will be encrypted. </p> <br /> <h2>Inclusion Information</h2><p>To get the ZM1621 in the “inclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. After setting, the LED Light should go off, if not, please try again. </p> <br /> <h2>Exclusion Information</h2><p>To get the ZM1621 in the “exclusion” mode, get magnet of the bracket to touch the reed switch on the ZM1621 and separate at once to be included. LED light will flash continuously in Exclusion condition.</p>
     ]]></description>
     <category>Siren</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="nietech_ms12z_00_000" listed="false">
     <label>MS12Z Wall Switch</label>
     <description><![CDATA[
-Wall Switch<br /><h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch with timer capabilities</p> <br /><h2>Inclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /><h2>Exclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Wall Switch<br /> <h1>Overview</h1><p>Minoston MS12Z - a simple on/off switch with timer capabilities</p> <br /> <h2>Inclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /> <h2>Exclusion Information</h2><p>Press the up or down button three times quickly to ADD and REMOVE</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 

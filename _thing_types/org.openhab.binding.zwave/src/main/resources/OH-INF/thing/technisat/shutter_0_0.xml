@@ -8,7 +8,7 @@
   <thing-type id="technisat_shutter_00_000" listed="false">
     <label>TechniSat Shutter Shutter wall switch</label>
     <description><![CDATA[
-Shutter wall switch<br /><h1>Overview</h1><p>TechniSat roller shutter is a wall switch to control window roller shutters via Z-Wave. At the same time, the roller shutters can still be operated manually via the switch. Furthermore, the power consumption can be determined.</p> <p>The roller shutter switch is installed in standard flush-mounted boxes</p> <br /><h2>Inclusion Information</h2><p>Press the upper position of the left button (T1) 3x within a second.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.</p>
+Shutter wall switch<br /> <h1>Overview</h1><p>TechniSat roller shutter is a wall switch to control window roller shutters via Z-Wave. At the same time, the roller shutters can still be operated manually via the switch. Furthermore, the power consumption can be determined.</p> <p>The roller shutter switch is installed in standard flush-mounted boxes</p> <br /> <h2>Inclusion Information</h2><p>Press the upper position of the left button (T1) 3x within a second.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -77,7 +77,7 @@ Shutter wall switch<br /><h1>Overview</h1><p>TechniSat roller shutter is a wall 
                  min="0" max="1">
         <label>1: Central scene notification</label>
         <description><![CDATA[
-Enable/Disable Central scene notifcations for 2x-5x press<br /><h1>Overview</h1><p>0 - disable, 1 - enable</p>
+Enable/Disable Central scene notifcations for 2x-5x press<br /> <h1>Overview</h1><p>0 - disable, 1 - enable</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Enable/Disable Central scene notifcations for 2x-5x press<br /><h1>Overview</h1>
                  min="0" max="8640">
         <label>2: Wattage meter</label>
         <description><![CDATA[
-Interval Current wattage meter report in 10s<br /><h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable</p>
+Interval Current wattage meter report in 10s<br /> <h1>Overview</h1><p>Interval of current wattage meter report in 10 second steps, 30s ... 1day, 0 - disable</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Interval Current wattage meter report in 10s<br /><h1>Overview</h1><p>Interval o
                  min="0" max="30240">
         <label>3: Energy meter report</label>
         <description><![CDATA[
-Interval of active energy meter report in minutes<br /><h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable</p>
+Interval of active energy meter report in minutes<br /> <h1>Overview</h1><p>Interval of active energy meter report in minutes, 10min ... 3 weeks, 0 - disable</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Interval of active energy meter report in minutes<br /><h1>Overview</h1><p>Inter
                  min="0" max="1">
         <label>4: Manual shutter calibration</label>
         <description><![CDATA[
-Manual shutter calibration<br /><h1>Overview</h1><p>Manual shutter calibration (shutter will move up, down and up again)<br />0 - idle, 1 - start a manual shutter calibration</p>
+Manual shutter calibration<br /> <h1>Overview</h1><p>Manual shutter calibration (shutter will move up, down and up again)<br />0 - idle, 1 - start a manual shutter calibration</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -117,14 +117,14 @@ Manual shutter calibration<br /><h1>Overview</h1><p>Manual shutter calibration (
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ul><li>Device Reset Locally Notification</li> <li>Central Scene notification</li> <li>Meter Report</li> <li>Multilevel Switch Report</li> <li>Notification Report</li> </ul>
+<br /> <h1>Overview</h1><ul> <li>Device Reset Locally Notification</li> <li>Central Scene notification</li> <li>Meter Report</li> <li>Multilevel Switch Report</li> <li>Notification Report</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Switch State</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Basic Set</p>
+<br /> <h1>Overview</h1><p>Basic Set</p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>

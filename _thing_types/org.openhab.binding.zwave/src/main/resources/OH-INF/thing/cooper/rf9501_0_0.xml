@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9501_00_000" listed="false">
     <label>RF9501 15A Light Switch</label>
     <description><![CDATA[
-15A Light Switch<br /><h1>Overview</h1><p>The RF9501 is a battery operated device that allows you to install a switch/dimmer almost anywhere you desire and control (On/Off/Dim/Brighten) loads/lights wired to ASPIRE RF devices using the Associations.</p> <br /><h2>Inclusion Information</h2><p>Press the switch one time to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Press the switch one time to exclude it from the network.</p>
+15A Light Switch<br /> <h1>Overview</h1><p>The RF9501 is a battery operated device that allows you to install a switch/dimmer almost anywhere you desire and control (On/Off/Dim/Brighten) loads/lights wired to ASPIRE RF devices using the Associations.</p> <br /> <h2>Inclusion Information</h2><p>Press the switch one time to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Press the switch one time to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -87,7 +87,7 @@
                  min="0" max="255">
         <label>4: Basic Set Value</label>
         <description><![CDATA[
-Value to be transmitted to devices in association group<br /><h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
+Value to be transmitted to devices in association group<br /> <h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

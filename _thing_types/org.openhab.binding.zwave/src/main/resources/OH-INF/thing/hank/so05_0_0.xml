@@ -8,7 +8,7 @@
   <thing-type id="hank_so05_00_000" listed="false">
     <label>HKZW-SO05 Smart Plug</label>
     <description><![CDATA[
-Smart Plug<br /><h1>Overview</h1><p>Smart plug is a Z-Wave Switch plugin module specifically used to enable Z-Wave command and control (on/off) of any plug-in tool. It can report wattage consumption or kWh energy usage. Smart Plug is also a security Z-Wave device and supports the Over The Air (OTA) feature for the product's firmware upgrade.</p> <p>HKZW-SO05 is a Smart Plug based on Z-Wave plus specification</p> <p>The features list:</p> <p>1) Supports 1xAC output and 2xUSB outputs;</p> <p>2) AC output switch on/off by manual or Z-Wave command;</p> <p>3) RGB LED indicates the Z-Wave network range;</p> <p>4) RGB LED indicates the load power;</p> <p>5) Z-Wave plus compatible (500 serials product);</p> <p>6) supporting power meter;</p> <p>7) supporting repeater role;</p> <p>Supporting firmware OTA;</p> <br /><h2>Inclusion Information</h2><p><strong>Automatic Z-Wave network inclusion:</strong></p> <p>1) Set the Z-Wave network main controller into inclusion mode.</p> <p>2) Insert the Plug into a socket.</p> <p>3) Auto-inclusion will be activated, i.e. Plug automatically starts looking for Z-Wave network controller. Auto-inclusion activation is signaled by a single, RGB LED indicator blink fast in blue.</p> <p>4) Smart Plug should be recognized and automatically included into the Z-Wave network.</p> <p><strong>Manual Z-Wave network inclusion:</strong></p> <p>1) Connect the power supply.</p> <p>2) Set the Z-Wave network main controller into inclusion mode.</p> <p>3) Triple click the Z-button, RGB LED indicator should blink fast in blue.</p> <p>4) Smart Plug should be recognized and included into the Z-Wave network.</p> <p><strong>Included as a secure device:</strong></p> <p>1) Connect the power supply.</p> <p>2) Set the Z-Wave network main controller into secure inclusion mode.</p> <p>3) Press and hold the Z-button for more than 3 seconds, RGB LED indicator should blink fast in green.</p> <p>4) Smart Plug should be recognized and included into the Z-Wave security network.</p> <br /><h2>Exclusion Information</h2><p><strong>To remove Smart Plug from the Z-Wave network:</strong></p> <p>1) Insert the plug into a socket.</p> <p>2) Set the Z-Wave network main controller into exclusion mode.</p> <p>3) Triple click the Z-button.</p> <p>4) RGB LED indicator will blink orange till the removing process is completed, then the indicator will keep orange for 3 seconds.</p>
+Smart Plug<br /> <h1>Overview</h1><p>Smart plug is a Z-Wave Switch plugin module specifically used to enable Z-Wave command and control (on/off) of any plug-in tool. It can report wattage consumption or kWh energy usage. Smart Plug is also a security Z-Wave device and supports the Over The Air (OTA) feature for the product's firmware upgrade.</p> <p>HKZW-SO05 is a Smart Plug based on Z-Wave plus specification</p> <p>The features list:</p> <p>1) Supports 1xAC output and 2xUSB outputs;</p> <p>2) AC output switch on/off by manual or Z-Wave command;</p> <p>3) RGB LED indicates the Z-Wave network range;</p> <p>4) RGB LED indicates the load power;</p> <p>5) Z-Wave plus compatible (500 serials product);</p> <p>6) supporting power meter;</p> <p>7) supporting repeater role;</p> <p>Supporting firmware OTA;</p> <br /> <h2>Inclusion Information</h2><p><strong>Automatic Z-Wave network inclusion:</strong></p> <p>1) Set the Z-Wave network main controller into inclusion mode.</p> <p>2) Insert the Plug into a socket.</p> <p>3) Auto-inclusion will be activated, i.e. Plug automatically starts looking for Z-Wave network controller. Auto-inclusion activation is signaled by a single, RGB LED indicator blink fast in blue.</p> <p>4) Smart Plug should be recognized and automatically included into the Z-Wave network.</p> <p><strong>Manual Z-Wave network inclusion:</strong></p> <p>1) Connect the power supply.</p> <p>2) Set the Z-Wave network main controller into inclusion mode.</p> <p>3) Triple click the Z-button, RGB LED indicator should blink fast in blue.</p> <p>4) Smart Plug should be recognized and included into the Z-Wave network.</p> <p><strong>Included as a secure device:</strong></p> <p>1) Connect the power supply.</p> <p>2) Set the Z-Wave network main controller into secure inclusion mode.</p> <p>3) Press and hold the Z-button for more than 3 seconds, RGB LED indicator should blink fast in green.</p> <p>4) Smart Plug should be recognized and included into the Z-Wave security network.</p> <br /> <h2>Exclusion Information</h2><p><strong>To remove Smart Plug from the Z-Wave network:</strong></p> <p>1) Insert the plug into a socket.</p> <p>2) Set the Z-Wave network main controller into exclusion mode.</p> <p>3) Triple click the Z-button.</p> <p>4) RGB LED indicator will blink orange till the removing process is completed, then the indicator will keep orange for 3 seconds.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -127,7 +127,7 @@ Smart Plug<br /><h1>Overview</h1><p>Smart plug is a Z-Wave Switch plugin module 
                  min="0" max="65535">
         <label>151: Power Report Threshold</label>
         <description><![CDATA[
-Power threashold for when to send reports to associated devices<br /><h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.  0 -- The function is disabled.</p>
+Power threashold for when to send reports to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.  0 -- The function is disabled.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Power threashold for when to send reports to associated devices<br /><h1>Overvie
                  min="0" max="255">
         <label>152: Power Report Percentage Threshold</label>
         <description><![CDATA[
-Percentage threshold for when to send report to associated devices<br /><h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.</p> <p>0 -- The function is disabled.</p>
+Percentage threshold for when to send report to associated devices<br /> <h1>Overview</h1><p>When the change value of the load power exceeds the threshold, the meter report is send to associated devices.</p> <p>0 -- The function is disabled.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -147,7 +147,7 @@ Percentage threshold for when to send report to associated devices<br /><h1>Over
                  min="5" max="2678400">
         <label>171: Power Report Frequence</label>
         <description><![CDATA[
-The interval of sending power report to association device.<br /><h1>Overview</h1><p>The interval of sending power report to association device.</p> <p>0 = The function is disabled.</p>
+The interval of sending power report to association device.<br /> <h1>Overview</h1><p>The interval of sending power report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -157,7 +157,7 @@ The interval of sending power report to association device.<br /><h1>Overview</h
                  min="5" max="2678400">
         <label>172: Energy Report Frequence</label>
         <description><![CDATA[
-The interval of sending energy report to association device.<br /><h1>Overview</h1><p>The interval of sending energy report to association device.</p> <p>0 = The function is disabled.</p>
+The interval of sending energy report to association device.<br /> <h1>Overview</h1><p>The interval of sending energy report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -167,7 +167,7 @@ The interval of sending energy report to association device.<br /><h1>Overview</
                  min="0" max="2678400">
         <label>173: Voltage Report Frequency</label>
         <description><![CDATA[
-The interval of sending voltage report to association device.<br /><h1>Overview</h1><p>The interval of sending voltage report to association device.</p> <p>0 = The function is disabled.</p>
+The interval of sending voltage report to association device.<br /> <h1>Overview</h1><p>The interval of sending voltage report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -177,7 +177,7 @@ The interval of sending voltage report to association device.<br /><h1>Overview<
                  min="0" max="2678400">
         <label>174: Electricity Report Frequency</label>
         <description><![CDATA[
-The interval of sending electricity report to association device.<br /><h1>Overview</h1><p>The interval of sending electricity report to association device.</p> <p>0 = The function is disabled.</p>
+The interval of sending electricity report to association device.<br /> <h1>Overview</h1><p>The interval of sending electricity report to association device.</p> <p>0 = The function is disabled.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

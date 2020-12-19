@@ -8,7 +8,7 @@
   <thing-type id="rtc_ct200_00_000" listed="false">
     <label>CT200 Vivint Element Thermostat w/ other sensors</label>
     <description><![CDATA[
-Vivint Element Thermostat w/ other sensors<br /><h1>Overview</h1><p>This thermostat is provided by Vivint, but can join a non-Vivint ZWave network.</p> <br /><h2>Inclusion Information</h2><p>The Vivint Element Thermostat is a Z-Wave® compliant thermostat. It has an onboard radio that can be added to an existing Z-Wave® network. This device can be used on a network with products from different vendors.</p> <ol><li>Set your primary controller to INCLUDE mode to add the thermostat as a node on your network (see your specific controller’s User Manual for detailed instructions).</li> <li>The Thermostat main screen shows a welcome message. Press the SIDE button to continue.</li> <li>Press the SIDE button to initiate the inclusion process. This initiates the network connection process. <ul><li>If inclusion fails, the screen says “Failed”. Press the SIDE button to try adding again.</li> </ul></li> <li>When the Thermostat has been successfully included to a Z-Wave network, the screen displays a confirmation check mark. Press the SIDE button to continue. You can now configure the thermostat to work with your HVAC system.</li> <li>Your primary controller indicates that the thermostat was successfully added to its network (see your specific controller’s User Manual for details).</li> </ol><br /><h2>Exclusion Information</h2><p>The Vivint Element can be excluded from the Z-Wave network process similar to the inclusion process. Set your primary controller to EXCLUDE.</p> <br /><h2>Wakeup Information</h2><p>When your thermostat is running on battery power, the Z-Wave radio will turn off to help conserve battery life. The Thermostat Z-Wave radio module supports Z-Wave beaming, which allows other devices in the network to wake up the Z-Wave module and accept commands and then go back to sleep.</p> <p>When your thermostat is running on C-Wire power, the Z-Wave radio will stay on and actively help route messages within the Z-Wave network. The thermostat’s node type is fixed when it is included to the Z-Wave network; if the C-Wire is present and powered when including to the network, the thermostat will remain an alwayslistening node until it is removed from the network.</p>
+Vivint Element Thermostat w/ other sensors<br /> <h1>Overview</h1><p>This thermostat is provided by Vivint, but can join a non-Vivint ZWave network.</p> <br /> <h2>Inclusion Information</h2><p>The Vivint Element Thermostat is a Z-Wave® compliant thermostat. It has an onboard radio that can be added to an existing Z-Wave® network. This device can be used on a network with products from different vendors.</p> <ol><li>Set your primary controller to INCLUDE mode to add the thermostat as a node on your network (see your specific controller’s User Manual for detailed instructions).</li> <li>The Thermostat main screen shows a welcome message. Press the SIDE button to continue.</li> <li>Press the SIDE button to initiate the inclusion process. This initiates the network connection process. <ul><li>If inclusion fails, the screen says “Failed”. Press the SIDE button to try adding again.</li> </ul></li> <li>When the Thermostat has been successfully included to a Z-Wave network, the screen displays a confirmation check mark. Press the SIDE button to continue. You can now configure the thermostat to work with your HVAC system.</li> <li>Your primary controller indicates that the thermostat was successfully added to its network (see your specific controller’s User Manual for details).</li> </ol> <br /> <h2>Exclusion Information</h2><p>The Vivint Element can be excluded from the Z-Wave network process similar to the inclusion process. Set your primary controller to EXCLUDE.</p> <br /> <h2>Wakeup Information</h2><p>When your thermostat is running on battery power, the Z-Wave radio will turn off to help conserve battery life. The Thermostat Z-Wave radio module supports Z-Wave beaming, which allows other devices in the network to wake up the Z-Wave module and accept commands and then go back to sleep.</p> <p>When your thermostat is running on C-Wire power, the Z-Wave radio will stay on and actively help route messages within the Z-Wave network. The thermostat’s node type is fixed when it is included to the Z-Wave network; if the C-Wire is present and powered when including to the network, the thermostat will remain an alwayslistening node until it is removed from the network.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -181,7 +181,7 @@ Vivint Element Thermostat w/ other sensors<br /><h1>Overview</h1><p>This thermos
       <parameter name="config_1_1_wo" type="integer" groupName="configuration">
         <label>1: Temperature Reporting Threshold (8-bit)</label>
         <description><![CDATA[
-This value determines the reporting threshold<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled.</p> <p>Unsupported values are ignored.</p>
+This value determines the reporting threshold<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled.</p> <p>Unsupported values are ignored.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -197,7 +197,7 @@ This value determines the reporting threshold<br /><h1>Overview</h1><p>This valu
                  min="0" max="4294967295">
         <label>2: HVAC Settings</label>
         <description><![CDATA[
-Retrieves the HVAC Settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
+Retrieves the HVAC Settings<br /> <h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -206,7 +206,7 @@ Retrieves the HVAC Settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal
       <parameter name="config_3_1_wo" type="integer" groupName="configuration">
         <label>3: Utility Lock</label>
         <description><![CDATA[
-Enable or Disable the Utility Lock<br /><h1>Overview</h1><p>If set to 0, the utility lock is disabled. All other values (1-255) enable the utility lock.</p>
+Enable or Disable the Utility Lock<br /> <h1>Overview</h1><p>If set to 0, the utility lock is disabled. All other values (1-255) enable the utility lock.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -216,7 +216,7 @@ Enable or Disable the Utility Lock<br /><h1>Overview</h1><p>If set to 0, the uti
       <parameter name="config_4_1" type="integer" groupName="configuration" readOnly="true">
         <label>4: C-Wire/Battery Status</label>
         <description><![CDATA[
-Query power which source is in use<br /><h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire.</p> <p>If 0x02, the thermostat is powered by batteries.</p>
+Query power which source is in use<br /> <h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire.</p> <p>If 0x02, the thermostat is powered by batteries.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -230,7 +230,7 @@ Query power which source is in use<br /><h1>Overview</h1><p>If 0x01, the thermos
                  min="0" max="3">
         <label>5: Humidity Reporting Threshold</label>
         <description><![CDATA[
-This value determines the reporting threshold<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values are ignored.</p>
+This value determines the reporting threshold<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values are ignored.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -240,7 +240,7 @@ This value determines the reporting threshold<br /><h1>Overview</h1><p>This valu
                  min="0" max="1">
         <label>6: Auxiliary/Emergency</label>
         <description><![CDATA[
-Auxiliary / Emergency Heat Pump Mode<br /><h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled.</p> <p>All other values (1-255) enable auxiliary / emergency heat.</p> <p>This can only be enabled when the thermostat is set to Heat Pump mode.</p>
+Auxiliary / Emergency Heat Pump Mode<br /> <h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled.</p> <p>All other values (1-255) enable auxiliary / emergency heat.</p> <p>This can only be enabled when the thermostat is set to Heat Pump mode.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -250,7 +250,7 @@ Auxiliary / Emergency Heat Pump Mode<br /><h1>Overview</h1><p>If set to 0, auxil
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Thermostat Swing Temp</label>
         <description><![CDATA[
-Temperature spread between the on and off temperatures<br /><h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.</p> <p>A value of 0x01 is 0.5F and 0x02 is 1.0F.</p> <p>The supported values may vary from thermostat to thermostat but typically the allowed values are 0.5F (0x01) to 4.0F (0x08).</p>
+Temperature spread between the on and off temperatures<br /> <h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.</p> <p>A value of 0x01 is 0.5F and 0x02 is 1.0F.</p> <p>The supported values may vary from thermostat to thermostat but typically the allowed values are 0.5F (0x01) to 4.0F (0x08).</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -269,7 +269,7 @@ Temperature spread between the on and off temperatures<br /><h1>Overview</h1><p>
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Thermostat Diff Temp</label>
         <description><![CDATA[
-How far off from target temp before turning on unit<br /><h1>Overview</h1><p>The thermostat differential temperature is in units of 0.5 degrees</p> <p>Fahrenheit. A value of 0x04 is 2.0F and 0x06 is 3.0F. The differential</p> <p>temperature must be an integer value. Non-integer values, such</p> <p>as 1.5F (0x03), should not be used. The supported values may vary</p> <p>from thermostat to thermostat but typically, the allowed values are</p> <p>2.0F (0x04) to 6.0F (0x0C).</p>
+How far off from target temp before turning on unit<br /> <h1>Overview</h1><p>The thermostat differential temperature is in units of 0.5 degrees</p> <p>Fahrenheit. A value of 0x04 is 2.0F and 0x06 is 3.0F. The differential</p> <p>temperature must be an integer value. Non-integer values, such</p> <p>as 1.5F (0x03), should not be used. The supported values may vary</p> <p>from thermostat to thermostat but typically, the allowed values are</p> <p>2.0F (0x04) to 6.0F (0x0C).</p>
         ]]></description>
         <default>4</default>
         <options>
@@ -285,7 +285,7 @@ How far off from target temp before turning on unit<br /><h1>Overview</h1><p>The
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Thermostat Recovery Mode</label>
         <description><![CDATA[
-Bring a space back to a normal occupied temp<br /><h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or</p> <p>economy (0x02).</p>
+Bring a space back to a normal occupied temp<br /> <h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or</p> <p>economy (0x02).</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -298,7 +298,7 @@ Bring a space back to a normal occupied temp<br /><h1>Overview</h1><p>The Thermo
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Simple UI Mode</label>
         <description><![CDATA[
-Toggle Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple UI mode is disabled. If set to 1, Simple UI mode</p> <p>is enabled.</p>
+Toggle Simple UI Mode<br /> <h1>Overview</h1><p>If set to 0, Simple UI mode is disabled. If set to 1, Simple UI mode</p> <p>is enabled.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -311,7 +311,7 @@ Toggle Simple UI Mode<br /><h1>Overview</h1><p>If set to 0, Simple UI mode is di
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Multicast</label>
         <description><![CDATA[
-Toggle Multicast Mode<br /><h1>Overview</h1><p>If set to 0, Multicast is disabled. If set to 1, Multicast is enabled.</p>
+Toggle Multicast Mode<br /> <h1>Overview</h1><p>If set to 0, Multicast is disabled. If set to 1, Multicast is enabled.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -325,7 +325,7 @@ Toggle Multicast Mode<br /><h1>Overview</h1><p>If set to 0, Multicast is disable
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Main Display Selection</label>
         <description><![CDATA[
-Control which info is displayed in the main display area<br /><h1>Overview</h1><p>This configuration Param on the CT110 sets what information is displayed in the main thermostat display area (the largest central numbers on the display). The default values is to display the Temperature (0x01) on the main numbers.</p>
+Control which info is displayed in the main display area<br /> <h1>Overview</h1><p>This configuration Param on the CT110 sets what information is displayed in the main thermostat display area (the largest central numbers on the display). The default values is to display the Temperature (0x01) on the main numbers.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -339,7 +339,7 @@ Control which info is displayed in the main display area<br /><h1>Overview</h1><
                  min="1" max="255">
         <label>14: Save Energy Mode Type</label>
         <description><![CDATA[
-Save Energy Mode behavior<br /><h1>Overview</h1><p>This configuration value is used to read/write what behavior Save Energy Mode causes in the thermostat when the thermostat enters Save Energy Mode.</p>
+Save Energy Mode behavior<br /> <h1>Overview</h1><p>This configuration value is used to read/write what behavior Save Energy Mode causes in the thermostat when the thermostat enters Save Energy Mode.</p>
         ]]></description>
         <default>2</default>
         <advanced>true</advanced>
@@ -350,7 +350,7 @@ Save Energy Mode behavior<br /><h1>Overview</h1><p>This configuration value is u
                  min="0" max="60">
         <label>15: Fan Timer</label>
         <description><![CDATA[
-Activate Fan w/ auto shutoff timer<br /><h1>Overview</h1><p>This configuration is used to activate the fan with an automatic shut-off timer.</p>
+Activate Fan w/ auto shutoff timer<br /> <h1>Overview</h1><p>This configuration is used to activate the fan with an automatic shut-off timer.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -360,7 +360,7 @@ Activate Fan w/ auto shutoff timer<br /><h1>Overview</h1><p>This configuration i
                  min="-6" max="6">
         <label>17: Temperature Calibration</label>
         <description><![CDATA[
-Temperature Calibration / Offset<br /><h1>Overview</h1><p>This configuration is used to set the temperature offset of the thermostat. The valid values are from -6 to 6. Note: although the thermostat UI can set calibrations in intervals of 0.5°F, this parameter can only accept whole numbers.</p>
+Temperature Calibration / Offset<br /> <h1>Overview</h1><p>This configuration is used to set the temperature offset of the thermostat. The valid values are from -6 to 6. Note: although the thermostat UI can set calibrations in intervals of 0.5°F, this parameter can only accept whole numbers.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -370,7 +370,7 @@ Temperature Calibration / Offset<br /><h1>Overview</h1><p>This configuration is 
       <parameter name="config_18_1" type="integer" groupName="configuration">
         <label>18: Display Units</label>
         <description><![CDATA[
-Celsius or Fahrenheit<br /><h1>Overview</h1><p>This configuration is used to set units used by the device to display temperature.</p>
+Celsius or Fahrenheit<br /> <h1>Overview</h1><p>This configuration is used to set units used by the device to display temperature.</p>
         ]]></description>
         <default>0</default>
         <options>

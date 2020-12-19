@@ -8,7 +8,7 @@
   <thing-type id="schlage_be469zp_00_000" listed="false">
     <label>BE469ZP Touchscreen Deadbolt Z-Wave Plus</label>
     <description><![CDATA[
-Touchscreen Deadbolt Z-Wave Plus<br /><h1>Overview</h1><p>Touchscreen Deadbolt with Alarm</p> <br /><h2>Inclusion Information</h2><p>One-button Add lock to Z-Wave Network (Inclusion) 1.Place your home automation system or panel into the Add or Inclusion Mode (Refer to the respective documentation for that specific home automation system or panel device for details). 2.Remove the battery cover of the deadbolt. 3.Press then release the button on the PCB.4.An LED will flash amber indicating the Add or Inclusion process is in progress. If the Security Scheme is Security 2 (S2), verify the DSK of the lock at the Z-Wave Controller. The PIN Code portion of the Z-Wave DSK will be needed.5.When a green LED turns ON, the Add or Inclusion has completed successfully. 6. If a red LED turns ON, try repeating steps 1-3</p> <p>Interactive Instruction for Add https://instructions.allegion.com/instr/86/2543</p> <br /><h2>Exclusion Information</h2><p>One-button Remove lock from Z-Wave Network (Exclusion) 1.Place your home automation system or panel into the Remove or Exclusion Mode (Refer to the respective documentation for that specific home automation system or panel device for details). 2.Remove the battery cover of the deadbolt. 3.Press then release the button on the PCB. 4.An LED will flash amber indicating the Remove or Exclusion process is in progress. 5.When a green LED flashes 3 times, the Remove or Exclusion process is completed successfully. 6. If a red LED turns ON, try repeating steps 1-3</p> <p>Interactive Instruction for Remove https://instructions.allegion.com/instr/86/2581</p>
+Touchscreen Deadbolt Z-Wave Plus<br /> <h1>Overview</h1><p>Touchscreen Deadbolt with Alarm</p> <br /> <h2>Inclusion Information</h2><p>One-button Add lock to Z-Wave Network (Inclusion) 1.Place your home automation system or panel into the Add or Inclusion Mode (Refer to the respective documentation for that specific home automation system or panel device for details). 2.Remove the battery cover of the deadbolt. 3.Press then release the button on the PCB.4.An LED will flash amber indicating the Add or Inclusion process is in progress. If the Security Scheme is Security 2 (S2), verify the DSK of the lock at the Z-Wave Controller. The PIN Code portion of the Z-Wave DSK will be needed.5.When a green LED turns ON, the Add or Inclusion has completed successfully. 6. If a red LED turns ON, try repeating steps 1-3</p> <p>Interactive Instruction for Add https://instructions.allegion.com/instr/86/2543</p> <br /> <h2>Exclusion Information</h2><p>One-button Remove lock from Z-Wave Network (Exclusion) 1.Place your home automation system or panel into the Remove or Exclusion Mode (Refer to the respective documentation for that specific home automation system or panel device for details). 2.Remove the battery cover of the deadbolt. 3.Press then release the button on the PCB. 4.An LED will flash amber indicating the Remove or Exclusion process is in progress. 5.When a green LED flashes 3 times, the Remove or Exclusion process is completed successfully. 6. If a red LED turns ON, try repeating steps 1-3</p> <p>Interactive Instruction for Remove https://instructions.allegion.com/instr/86/2581</p>
     ]]></description>
     <category>Lock</category>
 
@@ -61,7 +61,7 @@ Touchscreen Deadbolt Z-Wave Plus<br /><h1>Overview</h1><p>Touchscreen Deadbolt w
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Beeper</label>
         <description><![CDATA[
-Keypad beeper to be turned ON or OFF<br /><h1>Overview</h1><p>This configuration setting controls the keypad beeper of the deadbolt allowing the keypad beeper to be turned ON or OFF </p>
+Keypad beeper to be turned ON or OFF<br /> <h1>Overview</h1><p>This configuration setting controls the keypad beeper of the deadbolt allowing the keypad beeper to be turned ON or OFF </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -74,7 +74,7 @@ Keypad beeper to be turned ON or OFF<br /><h1>Overview</h1><p>This configuration
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Vacation Mode</label>
         <description><![CDATA[
-Vacation Mode<br /><h1>Overview</h1><p>This configuration setting controls the keypad entry of User Codes allowing all User Codes to be turned ON (disable Vacation Mode) or OFF (enable Vacation Mode)</p>
+Vacation Mode<br /> <h1>Overview</h1><p>This configuration setting controls the keypad entry of User Codes allowing all User Codes to be turned ON (disable Vacation Mode) or OFF (enable Vacation Mode)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -87,7 +87,7 @@ Vacation Mode<br /><h1>Overview</h1><p>This configuration setting controls the k
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Lock and Leave Mode</label>
         <description><![CDATA[
-Controls button push for throwing the deadbolt.<br /><h1>Overview</h1><p>This configuration setting controls the use of the u0022Schlageu0022 button on the keypad for single button push for throwing the deadbolt. </p>
+Controls button push for throwing the deadbolt.<br /> <h1>Overview</h1><p>This configuration setting controls the use of the u0022Schlageu0022 button on the keypad for single button push for throwing the deadbolt. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -101,7 +101,7 @@ Controls button push for throwing the deadbolt.<br /><h1>Overview</h1><p>This co
                  min="0" max="4294967103">
         <label>6: User Slot Bit Field</label>
         <description><![CDATA[
-Occupied slots for User Codes<br /><h1>Overview</h1><p>This configuration setting indicates the occupied slots (from 1 to 30) that contain User Codes that will activate the deadbolt when entered on the keypad.</p> <p>Byte 1 (msb): Bit 7: User 8 Status Bit 6: User 7 Status Bit 5: User 6 Status Bit 4: User 5 Status Bit 3: User 4 Status Bit 2: User 3 Status Bit 1: User 2 Status Bit 0: User 1 Status Byte 2 : Bit 7: User 16 Status Bit 6: User 15 Status Bit 5: User 14 Status Bit 4: User 13 Status Bit 3: User 12 Status Bit 2: User 11 Status Bit 1: User 10 Status Bit 0: User 9 Status Byte 3 : Bit 7: User 24 Status Bit 6: User 23 Status Bit 5: User 22 Status Bit 4: User 21 Status Bit 3: User 20 Status Bit 2: User 19 Status Bit 1: User 18 Status Bit 0: User 17 Status Byte 4 (lsb): Bit 7: reserved Bit 6: reserved Bit 5: User 30 Status Bit 4: User 29 Status Bit 3: User 28 Status Bit 2: User 27 Status Bit 1: User 26 Status Bit 0: User 25 Status</p>
+Occupied slots for User Codes<br /> <h1>Overview</h1><p>This configuration setting indicates the occupied slots (from 1 to 30) that contain User Codes that will activate the deadbolt when entered on the keypad.</p> <p>Byte 1 (msb): Bit 7: User 8 Status Bit 6: User 7 Status Bit 5: User 6 Status Bit 4: User 5 Status Bit 3: User 4 Status Bit 2: User 3 Status Bit 1: User 2 Status Bit 0: User 1 Status Byte 2 : Bit 7: User 16 Status Bit 6: User 15 Status Bit 5: User 14 Status Bit 4: User 13 Status Bit 3: User 12 Status Bit 2: User 11 Status Bit 1: User 10 Status Bit 0: User 9 Status Byte 3 : Bit 7: User 24 Status Bit 6: User 23 Status Bit 5: User 22 Status Bit 4: User 21 Status Bit 3: User 20 Status Bit 2: User 19 Status Bit 1: User 18 Status Bit 0: User 17 Status Byte 4 (lsb): Bit 7: reserved Bit 6: reserved Bit 5: User 30 Status Bit 4: User 29 Status Bit 3: User 28 Status Bit 2: User 27 Status Bit 1: User 26 Status Bit 0: User 25 Status</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Occupied slots for User Codes<br /><h1>Overview</h1><p>This configuration settin
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Alarm Mode</label>
         <description><![CDATA[
-Lock Specific Alarm Mode<br /><h1>Overview</h1><p>This configuration setting indicates the Mode of the built-in alarm function of the lock. </p>
+Lock Specific Alarm Mode<br /> <h1>Overview</h1><p>This configuration setting indicates the Mode of the built-in alarm function of the lock. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -125,7 +125,7 @@ Lock Specific Alarm Mode<br /><h1>Overview</h1><p>This configuration setting ind
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Alarm Alert Sensitivity</label>
         <description><![CDATA[
-Lock Specific Alarm Alert Sensitivity<br /><h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Alert function of the built-in alarm. </p>
+Lock Specific Alarm Alert Sensitivity<br /> <h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Alert function of the built-in alarm. </p>
         ]]></description>
         <default>3</default>
         <options>
@@ -141,7 +141,7 @@ Lock Specific Alarm Alert Sensitivity<br /><h1>Overview</h1><p>This configuratio
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Alarm Tamper Sensitivity</label>
         <description><![CDATA[
-Lock Specific Alarm Tamper Sensitivity<br /><h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Tamper function of the built-in alarm. </p>
+Lock Specific Alarm Tamper Sensitivity<br /> <h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Tamper function of the built-in alarm. </p>
         ]]></description>
         <default>3</default>
         <options>
@@ -157,7 +157,7 @@ Lock Specific Alarm Tamper Sensitivity<br /><h1>Overview</h1><p>This configurati
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Alarm Kick Sensitivity</label>
         <description><![CDATA[
-Lock Specific Alarm Kick Sensitivity<br /><h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Forced Entry function of the built-in alarm</p>
+Lock Specific Alarm Kick Sensitivity<br /> <h1>Overview</h1><p>This configuration setting indicates the sensitivity setting of the Forced Entry function of the built-in alarm</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -173,7 +173,7 @@ Lock Specific Alarm Kick Sensitivity<br /><h1>Overview</h1><p>This configuration
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Alarm Disable Local Controls</label>
         <description><![CDATA[
-Lock Specific Alarm Disable Local Controls<br /><h1>Overview</h1><p>This configuration setting controls the ability to ENABLE or DISABLE local control of the built-in alarm function. </p>
+Lock Specific Alarm Disable Local Controls<br /> <h1>Overview</h1><p>This configuration setting controls the ability to ENABLE or DISABLE local control of the built-in alarm function. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -187,7 +187,7 @@ Lock Specific Alarm Disable Local Controls<br /><h1>Overview</h1><p>This configu
                  min="0" max="9999">
         <label>12: Electronic Transition Count</label>
         <description><![CDATA[
-Get Electronic Transition Count<br /><h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via electronic activation. </p>
+Get Electronic Transition Count<br /> <h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via electronic activation. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -197,7 +197,7 @@ Get Electronic Transition Count<br /><h1>Overview</h1><p>This configuration sett
                  min="0" max="9999">
         <label>13: Mechanical Transition Count</label>
         <description><![CDATA[
-Get Mechanical Transition Count<br /><h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via mechanical activation. </p>
+Get Mechanical Transition Count<br /> <h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via mechanical activation. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -207,7 +207,7 @@ Get Mechanical Transition Count<br /><h1>Overview</h1><p>This configuration sett
                  min="0" max="9999">
         <label>14: Electronic Failed Count</label>
         <description><![CDATA[
-Get Electronic Failed Count<br /><h1>Overview</h1><p>This configuration setting indicates the number of failed electronic activation attempts for this lock</p>
+Get Electronic Failed Count<br /> <h1>Overview</h1><p>This configuration setting indicates the number of failed electronic activation attempts for this lock</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -216,7 +216,7 @@ Get Electronic Failed Count<br /><h1>Overview</h1><p>This configuration setting 
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Auto Lock</label>
         <description><![CDATA[
-Automatically throws the deadbolt 30 after seconds<br /><h1>Overview</h1><p>This configuration setting controls the lock feature that automatically throws the deadbolt 30 seconds after a valid User Code has been entered at the keypad. </p>
+Automatically throws the deadbolt 30 after seconds<br /> <h1>Overview</h1><p>This configuration setting controls the lock feature that automatically throws the deadbolt 30 seconds after a valid User Code has been entered at the keypad. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -230,7 +230,7 @@ Automatically throws the deadbolt 30 after seconds<br /><h1>Overview</h1><p>This
                  min="4" max="8">
         <label>16: User Code PIN Length</label>
         <description><![CDATA[
-Required length of all User Codes<br /><h1>Overview</h1><p>This configuration setting controls the length of all User Codes stored in the lock. The values are 4 to 8 with default set to 4. </p>
+Required length of all User Codes<br /> <h1>Overview</h1><p>This configuration setting controls the length of all User Codes stored in the lock. The values are 4 to 8 with default set to 4. </p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -240,7 +240,7 @@ Required length of all User Codes<br /><h1>Overview</h1><p>This configuration se
                  min="0" max="9999">
         <label>17: Get Electrical High Preload Transition Count</label>
         <description><![CDATA[
-Count of high preload on the deadbolt<br /><h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via electronic activation that indicated a high preload on the deadbolt. This value is a subset of Parameter 12.</p>
+Count of high preload on the deadbolt<br /> <h1>Overview</h1><p>This configuration setting indicates the number of transitions from locked to unlocked or unlocked to locked state via electronic activation that indicated a high preload on the deadbolt. This value is a subset of Parameter 12.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -250,7 +250,7 @@ Count of high preload on the deadbolt<br /><h1>Overview</h1><p>This configuratio
                  min="0" max="255">
         <label>18: Get Bootloader Version</label>
         <description><![CDATA[
-Bootloader Version<br /><h1>Overview</h1><p>This configuration setting returns the version number of the bootloader in the lock.</p>
+Bootloader Version<br /> <h1>Overview</h1><p>This configuration setting returns the version number of the bootloader in the lock.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -260,7 +260,7 @@ Bootloader Version<br /><h1>Overview</h1><p>This configuration setting returns t
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-One device controls an other device<br /><h1>Overview</h1><p>Z-Wave devices control other Z-Wave devices. The relationship between one device controlling another device is called association. In order to control a different device, the controlling device needs to maintain a list of devices that will receive controlling commands. These lists are called association groups and they are always related to certain events (e.g. button pressed, sensor triggers, ...). In case the event happens all devices stored in the respective association group will receive the same wireless command wireless command, typically a 'Basic Set' Command.</p>
+One device controls an other device<br /> <h1>Overview</h1><p>Z-Wave devices control other Z-Wave devices. The relationship between one device controlling another device is called association. In order to control a different device, the controlling device needs to maintain a list of devices that will receive controlling commands. These lists are called association groups and they are always related to certain events (e.g. button pressed, sensor triggers, ...). In case the event happens all devices stored in the respective association group will receive the same wireless command wireless command, typically a 'Basic Set' Command.</p>
         ]]></description>
         <multipleLimit>2</multipleLimit>
       </parameter>

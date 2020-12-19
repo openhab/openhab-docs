@@ -8,7 +8,7 @@
   <thing-type id="honeywell_39349_00_000" listed="false">
     <label>39349 Smart Outlet</label>
     <description><![CDATA[
-Smart Outlet<br /><h1>Overview</h1><ul><li>One Z-Wave remote controlled outlet, one always-ON outlet</li> <li>Remote ON/OFF control via the Z-Wave controller/network</li> <li>Manual ON/OFF control with the manual/program button</li> <li>Blue LED indicates outlet location in a dark room </li> </ul><br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, then press and release the program button to add it to the network. </p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, then press and release the program button to remove it from the network.</p>
+Smart Outlet<br /> <h1>Overview</h1><ul><li>One Z-Wave remote controlled outlet, one always-ON outlet</li> <li>Remote ON/OFF control via the Z-Wave controller/network</li> <li>Manual ON/OFF control with the manual/program button</li> <li>Blue LED indicates outlet location in a dark room </li> </ul> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, then press and release the program button to add it to the network. </p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, then press and release the program button to remove it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -80,7 +80,7 @@ Smart Outlet<br /><h1>Overview</h1><ul><li>One Z-Wave remote controlled outlet, 
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Basic Set, ON/OFF button</label>
         <description><![CDATA[
-Supports Basic Set and is controlled by pressing the On or Off button<br /><h1>Overview</h1><p>Supports Basic Set and is controlled by pressing the On or Off button</p>
+Supports Basic Set and is controlled by pressing the On or Off button<br /> <h1>Overview</h1><p>Supports Basic Set and is controlled by pressing the On or Off button</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

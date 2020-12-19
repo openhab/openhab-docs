@@ -8,7 +8,7 @@
   <thing-type id="elexa_dmmz1_00_000" listed="false">
     <label>DMMZ1 Dome Battery powered Z-Wave Plus enabled mousetrap</label>
     <description><![CDATA[
-Dome Battery powered Z-Wave Plus enabled mousetrap<br /><h1>Overview</h1><p>The Dome Mouser is a battery powered Z-Wave Plus enabled mousetrap that works by electrocution and is designed to be humane and painless to the rodent. After a mouse is caught, the Mouser will send a Z-Wave signal to its controller to notify the user, and will not retrigger until the trap is reset. </p> <br /><h2>Inclusion Information</h2><p>Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating inclusion</p> <br /><h2>Exclusion Information</h2><p>Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating exclusion/disconnection. </p> <br /><h2>Wakeup Information</h2><p>The device can be forced to wake up to submit reports or accept new settings immediately by simply pressing and holding the BUTTON for two seconds. The LED INDICATOR will flash once indicating successful wake up</p>
+Dome Battery powered Z-Wave Plus enabled mousetrap<br /> <h1>Overview</h1><p>The Dome Mouser is a battery powered Z-Wave Plus enabled mousetrap that works by electrocution and is designed to be humane and painless to the rodent. After a mouse is caught, the Mouser will send a Z-Wave signal to its controller to notify the user, and will not retrigger until the trap is reset. </p> <br /> <h2>Inclusion Information</h2><p>Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating inclusion</p> <br /> <h2>Exclusion Information</h2><p>Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating exclusion/disconnection. </p> <br /> <h2>Wakeup Information</h2><p>The device can be forced to wake up to submit reports or accept new settings immediately by simply pressing and holding the BUTTON for two seconds. The LED INDICATOR will flash once indicating successful wake up</p>
     ]]></description>
     <category>Lock</category>
 
@@ -62,7 +62,7 @@ Dome Battery powered Z-Wave Plus enabled mousetrap<br /><h1>Overview</h1><p>The 
                  min="0" max="255">
         <label>1: BASIC_SET Level</label>
         <description><![CDATA[
-Sets the value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2 (for more information, see “Assocation Groups”.)</p> <p>00 (0/Turn Off Device)</p> <p>01 ~ 63 (0-99)</p> <p>FF (255/Turn On Device)</p>
+Sets the value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2 (for more information, see “Assocation Groups”.)</p> <p>00 (0/Turn Off Device)</p> <p>01 ~ 63 (0-99)</p> <p>FF (255/Turn On Device)</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -71,7 +71,7 @@ Sets the value sent by the BASIC_SET command to Association Group 2<br /><h1>Ove
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Set Firing Mode</label>
         <description><![CDATA[
-This parameter sets the “firing mode” of the Mouser.<br /><h1>Overview</h1><p>This parameter sets “firing mode” of the Mouser. Two firing modes are available: in the first (Continuous Fire,) electricity is passed continuously for the entire duration, and in the second (Burst Fire,) electricity is passed continuously only for the first minute and it is pulsed at approximately 400 beats per minute for the remainder of the time.</p> <p>01 (Continuous Fire)</p> <p>02 (Burst Fire)</p>
+This parameter sets the “firing mode” of the Mouser.<br /> <h1>Overview</h1><p>This parameter sets “firing mode” of the Mouser. Two firing modes are available: in the first (Continuous Fire,) electricity is passed continuously for the entire duration, and in the second (Burst Fire,) electricity is passed continuously only for the first minute and it is pulsed at approximately 400 beats per minute for the remainder of the time.</p> <p>01 (Continuous Fire)</p> <p>02 (Burst Fire)</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -85,7 +85,7 @@ This parameter sets the “firing mode” of the Mouser.<br /><h1>Overview</h1><
                  min="64" max="168">
         <label>3: High Voltage Duration Time</label>
         <description><![CDATA[
-How long the Mouser will fire continuously before it starts to burst-fire<br /><h1>Overview</h1><p>This parameter defines how long the Mouser will fire continuously before it starts to burst-fire (see parameter 2.)</p> <p>00 64 ~ 01 68 (100~360 in Seconds)</p>
+How long the Mouser will fire continuously before it starts to burst-fire<br /> <h1>Overview</h1><p>This parameter defines how long the Mouser will fire continuously before it starts to burst-fire (see parameter 2.)</p> <p>00 64 ~ 01 68 (100~360 in Seconds)</p>
         ]]></description>
         <default>64</default>
         <limitToOptions>false</limitToOptions>
@@ -94,7 +94,7 @@ How long the Mouser will fire continuously before it starts to burst-fire<br /><
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Enable/Disable LED Alarm</label>
         <description><![CDATA[
-Enables or disables the indicator LED alarm when the trap is tripped<br /><h1>Overview</h1><p>This parameter enables or disables the indicator LED alarm when the trap is tripped.</p> <p>00 (LED Alarm Disabled)</p> <p>01 (LED Alarm Enabled)</p>
+Enables or disables the indicator LED alarm when the trap is tripped<br /> <h1>Overview</h1><p>This parameter enables or disables the indicator LED alarm when the trap is tripped.</p> <p>00 (LED Alarm Disabled)</p> <p>01 (LED Alarm Enabled)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -108,7 +108,7 @@ Enables or disables the indicator LED alarm when the trap is tripped<br /><h1>Ov
                  min="0" max="255">
         <label>5: LED Alarm Duration</label>
         <description><![CDATA[
-Sets the amount of time the LED Indicator blinks after the trap is tripped<br /><h1>Overview</h1><p>This parameter sets the amount of time the LED Indicator blinks after the trap is tripped.</p> <p>00 (LED Alarm Blinks Until Trap is Cleared)</p> <p>01~FF (1~255 in Hours)</p>
+Sets the amount of time the LED Indicator blinks after the trap is tripped<br /> <h1>Overview</h1><p>This parameter sets the amount of time the LED Indicator blinks after the trap is tripped.</p> <p>00 (LED Alarm Blinks Until Trap is Cleared)</p> <p>01~FF (1~255 in Hours)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -118,7 +118,7 @@ Sets the amount of time the LED Indicator blinks after the trap is tripped<br />
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report and a Binary Sensor Report when it is tripped, reset, armed, and disarmed. It also sends this group a Battery Report in response to Battery Get commands.</p>
+<br /> <h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report and a Binary Sensor Report when it is tripped, reset, armed, and disarmed. It also sends this group a Battery Report in response to Battery Get commands.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -126,7 +126,7 @@ Sets the amount of time the LED Indicator blinks after the trap is tripped<br />
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The Mouser sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) when it is tripped. After the trap is reset, a BASIC_SET(00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 1.</p>
+<br /> <h1>Overview</h1><p>The Mouser sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) when it is tripped. After the trap is reset, a BASIC_SET(00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 1.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -134,7 +134,7 @@ Sets the amount of time the LED Indicator blinks after the trap is tripped<br />
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 3 supports up to 5 members and the Mouser sends it a NOTIFICATION_REPORT when tripped, reset, armed, and disarmed.</p>
+<br /> <h1>Overview</h1><p>Group 3 supports up to 5 members and the Mouser sends it a NOTIFICATION_REPORT when tripped, reset, armed, and disarmed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -142,7 +142,7 @@ Sets the amount of time the LED Indicator blinks after the trap is tripped<br />
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 4 supports up to 5 members and the Mouser sends it a SENSOR_BINARY_REPORT when tripped, reset, armed, and disarmed.</p>
+<br /> <h1>Overview</h1><p>Group 4 supports up to 5 members and the Mouser sends it a SENSOR_BINARY_REPORT when tripped, reset, armed, and disarmed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

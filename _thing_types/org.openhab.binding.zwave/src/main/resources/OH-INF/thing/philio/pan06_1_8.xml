@@ -8,7 +8,7 @@
   <thing-type id="philio_pan06_01_008" listed="false">
     <label>PAN06 In Wall Dual Relay (1 Way) Switch Module 2 x 1.5kW</label>
     <description><![CDATA[
-In Wall Dual Relay (1 Way) Switch Module 2 x 1.5kW<br /><h1>Overview</h1><p>The PAN06 allows controlling two independent loads both wirelessly via Z-Wave and locally utilizing a traditional wall switch. Thanks to its calibration technology the device cannot only be used to switch resistive devices but also works perfectly with many kind of reactive or resistive loads such as fluorescent lights or LEDs.</p> <p>The device is placed in a wall box right behind the normal switch. The switch is not longer directly connected to the load but acts as input device for the insert that is controlling the load. This device is designed for a 3 wire system and needs a neutral wire in the wall box.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing Include button of PAN06 three times within 2 seconds will enter inclusion mode</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Wave Controller entered exclusion mode.</li> <li>Pressing Include button of PAN06 three times within 2 seconds will enter exclusion mode</li> </ol>
+In Wall Dual Relay (1 Way) Switch Module 2 x 1.5kW<br /> <h1>Overview</h1><p>The PAN06 allows controlling two independent loads both wirelessly via Z-Wave and locally utilizing a traditional wall switch. Thanks to its calibration technology the device cannot only be used to switch resistive devices but also works perfectly with many kind of reactive or resistive loads such as fluorescent lights or LEDs.</p> <p>The device is placed in a wall box right behind the normal switch. The switch is not longer directly connected to the load but acts as input device for the insert that is controlling the load. This device is designed for a 3 wire system and needs a neutral wire in the wall box.</p> <br /> <h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing Include button of PAN06 three times within 2 seconds will enter inclusion mode</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Have Z-Wave Controller entered exclusion mode.</li> <li>Pressing Include button of PAN06 three times within 2 seconds will enter exclusion mode</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -81,7 +81,7 @@ In Wall Dual Relay (1 Way) Switch Module 2 x 1.5kW<br /><h1>Overview</h1><p>The 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Selected endpoint</label>
         <description><![CDATA[
-Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_Channel command class to access the endpoint of PAN06, you may configure the endpoint value to react the Basic Command Class</p>
+Send Basic Command Class<br /> <h1>Overview</h1><p>If Controller not using Multi_Channel command class to access the endpoint of PAN06, you may configure the endpoint value to react the Basic Command Class</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -107,7 +107,7 @@ Send Basic Command Class<br /><h1>Overview</h1><p>If Controller not using Multi_
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Restore Switch State Mode</label>
         <description><![CDATA[
-Switch state after repowering<br /><h1>Overview</h1><p>0 : Switch off<br />1 : Last switch state<br />2 : Switch on</p> <p>Whenever the AC power return from lost, PAN06 will restore the switch state which<br />could be SWITCH OFF、 LAST SWITCH STATE、 SWITCH ON. The default setting is<br />LAST SWITCH STATE</p>
+Switch state after repowering<br /> <h1>Overview</h1><p>0 : Switch off<br />1 : Last switch state<br />2 : Switch on</p> <p>Whenever the AC power return from lost, PAN06 will restore the switch state which<br />could be SWITCH OFF、 LAST SWITCH STATE、 SWITCH ON. The default setting is<br />LAST SWITCH STATE</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -127,7 +127,7 @@ Switch state after repowering<br /><h1>Overview</h1><p>0 : Switch off<br />1 : L
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: RF OFF command</label>
         <description><![CDATA[
-RF OFF command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASIC_SET 、BINARY_SWITCH_SET 、<br />SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.<br />3-5-1 Switch Off：It switches to OFF state. The default setting is Switch Off.<br />3-5-2 Ignore：The switch off command will be ignored.<br />3-5-3 Switch Toggle：It switches to the inverse of current state.<br />3-5-4 Switch On：It switches to ON state.</p> <p>0 : Switch off<br />1 : Ignore<br />2 : Switch toggle<br />3 : Switch on</p>
+RF OFF command mode<br /> <h1>Overview</h1><p>Whenever a switch off command, BASIC_SET 、BINARY_SWITCH_SET 、<br />SWITCH_ALL_OFF, is received, it could be interpreted as 4 variety of commands.<br />3-5-1 Switch Off：It switches to OFF state. The default setting is Switch Off.<br />3-5-2 Ignore：The switch off command will be ignored.<br />3-5-3 Switch Toggle：It switches to the inverse of current state.<br />3-5-4 Switch On：It switches to ON state.</p> <p>0 : Switch off<br />1 : Ignore<br />2 : Switch toggle<br />3 : Switch on</p>
         ]]></description>
         <default>0</default>
         <options>

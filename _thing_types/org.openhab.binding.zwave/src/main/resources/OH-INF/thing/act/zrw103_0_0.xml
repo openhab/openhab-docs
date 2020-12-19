@@ -8,7 +8,7 @@
   <thing-type id="act_zrw103_00_000" listed="false">
     <label>ZRW103 Wall Mounted 3-Way Switch</label>
     <description><![CDATA[
-Wall Mounted 3-Way Switch<br /><h1>Overview</h1><p>Z-Wave remote control relay wall switch. Supports ON and OFF only, no dimming. Use for fluorescent or motor loads. Neutral is required. Supports 3-way operation, up to 2 companion switches may be connected (use AS101 for companion switches). </p> <br /><h2>Inclusion Information</h2><p>Tap either the top or bottom of the switch once</p> <br /><h2>Exclusion Information</h2><p>Tap either the top or bottom of the switch once</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Wall Mounted 3-Way Switch<br /> <h1>Overview</h1><p>Z-Wave remote control relay wall switch. Supports ON and OFF only, no dimming. Use for fluorescent or motor loads. Neutral is required. Supports 3-way operation, up to 2 companion switches may be connected (use AS101 for companion switches). </p> <br /> <h2>Inclusion Information</h2><p>Tap either the top or bottom of the switch once</p> <br /> <h2>Exclusion Information</h2><p>Tap either the top or bottom of the switch once</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -50,7 +50,7 @@ Wall Mounted 3-Way Switch<br /><h1>Overview</h1><p>Z-Wave remote control relay w
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Tap twice to invoke on/off for group<br /></p>
+<br /> <h1>Overview</h1><p>Tap twice to invoke on/off for group<br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -58,7 +58,7 @@ Wall Mounted 3-Way Switch<br /><h1>Overview</h1><p>Z-Wave remote control relay w
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Tap three times to invoke on/off for group</p>
+<br /> <h1>Overview</h1><p>Tap three times to invoke on/off for group</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

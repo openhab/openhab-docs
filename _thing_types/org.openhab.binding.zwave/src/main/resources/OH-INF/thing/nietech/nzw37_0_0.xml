@@ -8,7 +8,7 @@
   <thing-type id="nietech_nzw37_00_000" listed="false">
     <label>NZW37 2-Channel Dual Smart Plug</label>
     <description><![CDATA[
-2-Channel Dual Smart Plug<br /><h1>Overview</h1><p>Remotely control 2 individual Smart Outlets</p> <br /><h2>Inclusion Information</h2><p>Press the Middle Button on the front of your NZW37 3-5 times within 3 seconds to activate inclusion</p> <br /><h2>Exclusion Information</h2><p>Press the Middle Button on the front of your NZW37 3-5 times within 3 seconds to activate exclusion</p>
+2-Channel Dual Smart Plug<br /> <h1>Overview</h1><p>Remotely control 2 individual Smart Outlets</p> <br /> <h2>Inclusion Information</h2><p>Press the Middle Button on the front of your NZW37 3-5 times within 3 seconds to activate inclusion</p> <br /> <h2>Exclusion Information</h2><p>Press the Middle Button on the front of your NZW37 3-5 times within 3 seconds to activate exclusion</p>
     ]]></description>
     <category>PowerOutlet</category>
 

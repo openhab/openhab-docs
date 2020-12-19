@@ -8,7 +8,7 @@
   <thing-type id="chromagic_em6556_00_000" listed="false">
     <label>EM6556 In wall single switch</label>
     <description><![CDATA[
-In wall single switch<br /><h1>Overview</h1><p>Eminent e-DOMOTICA in wall mini switch. Allows you to turn on and turn off your illumination and other electircal devices by using the e-Domotica e-Centre touchscreen or the EM6511 e-Domotica remote control. </p> <p>The switch utilizes the Z-Wave protocol and can be included into a Z-Wave network.</p> <br /><h2>Inclusion Information</h2><ul><li>Put your Z-Wave controller into inclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now included</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Put your Z-Wave controller into exclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now excluded</li> </ul>
+In wall single switch<br /> <h1>Overview</h1><p>Eminent e-DOMOTICA in wall mini switch. Allows you to turn on and turn off your illumination and other electircal devices by using the e-Domotica e-Centre touchscreen or the EM6511 e-Domotica remote control. </p> <p>The switch utilizes the Z-Wave protocol and can be included into a Z-Wave network.</p> <br /> <h2>Inclusion Information</h2><ul><li>Put your Z-Wave controller into inclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now included</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Put your Z-Wave controller into exclusion mode. </li> <li>Press the button on the switch 3 times</li> <li>The switch is now excluded</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 

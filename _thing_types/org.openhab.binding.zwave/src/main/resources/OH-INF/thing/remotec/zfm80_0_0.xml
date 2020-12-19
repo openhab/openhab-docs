@@ -8,7 +8,7 @@
   <thing-type id="remotec_zfm80_00_000" listed="false">
     <label>ZFM-80 Fixture Switch Module</label>
     <description><![CDATA[
-Fixture Switch Module<br /><h1>Overview</h1><p>The ZFM-80US Fixture Switch Module is a Z-Wave enabled device and fully compatible with any Z-Wave enabled network. It allows remote On/Off control of specified resistive household appliance. Each fixture switch module is designed to act as a repeater, which will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacle and radio dead spots.</p> <p>Key Features:</p> <ul><li>High output power</li> <li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support External ON/OFF key connects to the module</li> <li>Advanced function</li> </ul><p>Conditional trigger for "Fail Safe Installation"</p> <ul><li>Support Network Wide Inclusion (NWI) and Explore Frames</li> <li>Screw terminals for wires connection</li> <li>Flexible mounting structure - mount inside gang box or any place</li> </ul><br /><h2>Inclusion Information</h2><p>Include or exclude the Fixture Switch Module from the existing ZWave home control network with your primary controller.</p> <ul><li>Refer to your primary controller instructions to process the inclusion / exclusion setup procedure.</li> <li>When prompted by your primary controller, click once on the PROG button or external switch.</li> <li>The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat the procedure.</li> <li>Once the Fixture Switch Module is part of the network, the same basic procedure is used to add the Fixture Switch Module to groups or scenes. Refer to the primary controller's instructions for details.</li> </ul><br /><h2>Exclusion Information</h2><p>Click once on the PROG button or external switch.</p>
+Fixture Switch Module<br /> <h1>Overview</h1><p>The ZFM-80US Fixture Switch Module is a Z-Wave enabled device and fully compatible with any Z-Wave enabled network. It allows remote On/Off control of specified resistive household appliance. Each fixture switch module is designed to act as a repeater, which will re-transmit the RF signal to ensure that the signal is received by its intended destination by routing the signal around obstacle and radio dead spots.</p> <p>Key Features:</p> <ul><li>High output power</li> <li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support External ON/OFF key connects to the module</li> <li>Advanced function</li> </ul><p>Conditional trigger for "Fail Safe Installation"</p> <ul><li>Support Network Wide Inclusion (NWI) and Explore Frames</li> <li>Screw terminals for wires connection</li> <li>Flexible mounting structure - mount inside gang box or any place</li> </ul> <br /> <h2>Inclusion Information</h2><p>Include or exclude the Fixture Switch Module from the existing ZWave home control network with your primary controller.</p> <ul><li>Refer to your primary controller instructions to process the inclusion / exclusion setup procedure.</li> <li>When prompted by your primary controller, click once on the PROG button or external switch.</li> <li>The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat the procedure.</li> <li>Once the Fixture Switch Module is part of the network, the same basic procedure is used to add the Fixture Switch Module to groups or scenes. Refer to the primary controller's instructions for details.</li> </ul> <br /> <h2>Exclusion Information</h2><p>Click once on the PROG button or external switch.</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -50,7 +50,7 @@ Fixture Switch Module<br /><h1>Overview</h1><p>The ZFM-80US Fixture Switch Modul
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: ExternalSwitchType</label>
         <description><![CDATA[
-Set External switch type Definitions<br /><h1>Overview</h1><p>ZFM-80 provides an option to user that can add an external switch to control the On/Off function. ZFM-80US can be placed into the switch box with external wall switch cover. User can configure the external switch type through the configuration command</p>
+Set External switch type Definitions<br /> <h1>Overview</h1><p>ZFM-80 provides an option to user that can add an external switch to control the On/Off function. ZFM-80US can be placed into the switch box with external wall switch cover. User can configure the external switch type through the configuration command</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -67,7 +67,7 @@ Set External switch type Definitions<br /><h1>Overview</h1><p>ZFM-80 provides an
                  min="0" max="240">
         <label>2: Timeout</label>
         <description><![CDATA[
-Set timeout period<br /><h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
+Set timeout period<br /> <h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -77,7 +77,7 @@ Set timeout period<br /><h1>Overview</h1><p>ZFM-80US provides an advanced functi
                  min="0" max="232">
         <label>3: NodeIdNumber</label>
         <description><![CDATA[
-Configure Node ID number for Z-Wave command source<br /><h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
+Configure Node ID number for Z-Wave command source<br /> <h1>Overview</h1><p>ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>(default value is 0 [function disabled])</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Configure Node ID number for Z-Wave command source<br /><h1>Overview</h1><p>ZFM-
                  min="0" max="1">
         <label>4: OutputStatus</label>
         <description><![CDATA[
-Set relay output status if timeout period has been reached<br /><h1>Overview</h1><p> ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>1 = turn on relay</p> <p>0 = turn off relay</p>
+Set relay output status if timeout period has been reached<br /> <h1>Overview</h1><p> ZFM-80US provides an advanced function "Conditional trigger for Fail Safe Installation". It can turn on or turn off the relay if ZFM-80US has not received any Z-Wave commands from a specified Z-Wave Node ID and within a specified period. For example: Z-Wave gateway can monitor a Z-Wave device status and power on equipment if this Z-Wave device is out of service.</p> <p>1 = turn on relay</p> <p>0 = turn off relay</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Set relay output status if timeout period has been reached<br /><h1>Overview</h1
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: AssociationGroup</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Used to report the relay on/off status to specify nodes with ZFM-80US predefined association group once the relay state has been changed.</p>
+<br /> <h1>Overview</h1><p>Used to report the relay on/off status to specify nodes with ZFM-80US predefined association group once the relay state has been changed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

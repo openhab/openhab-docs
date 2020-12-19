@@ -8,7 +8,7 @@
   <thing-type id="isurpass_dl9101v_00_000" listed="false">
     <label>DL9101V Door Lock with Handle</label>
     <description><![CDATA[
-Door Lock with Handle<br /><h1>Overview</h1><p>The iSurpass Smart Door Lock provides more convenience to secure your home. It supports passwords, key and remote lock/unlock. It's a Z-Wave product and compatible with all Z-Wave networks. Any third party manufacturer controller can include/exclude this lock. Use in conjunction with a Security Enabled Z-Wave Controller to fully utilize all implemented functions.</p> <br /><h2>Inclusion Information</h2><p>Set door lock in learn mode. </p> <p>press reset button -&gt; input admin password + # -&gt; press 0</p> <br /><h2>Exclusion Information</h2><p>Set door lock in learn mode. </p> <p>press reset button -&gt; input admin password + # -&gt; press 0</p>
+Door Lock with Handle<br /> <h1>Overview</h1><p>The iSurpass Smart Door Lock provides more convenience to secure your home. It supports passwords, key and remote lock/unlock. It's a Z-Wave product and compatible with all Z-Wave networks. Any third party manufacturer controller can include/exclude this lock. Use in conjunction with a Security Enabled Z-Wave Controller to fully utilize all implemented functions.</p> <br /> <h2>Inclusion Information</h2><p>Set door lock in learn mode. </p> <p>press reset button -&gt; input admin password + # -&gt; press 0</p> <br /> <h2>Exclusion Information</h2><p>Set door lock in learn mode. </p> <p>press reset button -&gt; input admin password + # -&gt; press 0</p>
     ]]></description>
     <category>Lock</category>
 

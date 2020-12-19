@@ -8,7 +8,7 @@
   <thing-type id="widom_dry_00_000" listed="false">
     <label>DRY Widom Smart Dry contact</label>
     <description><![CDATA[
-Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch can turn ON and OFF equipments with an independent power supply, such as solenoid valves (e.g. gas, water and irrigation), power operated valves etc. </p> <p>WiDom Smart Dry Contact Switch is very easy to install and works with both momentary and toggle switches. </p> <p>The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Double Switch will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>WiDom Smart Dry Contact Switch is compatible with all Z-Wave/Z-Wave Plus certified controllers. The device supports both the Network Wide Inclusion mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and Normal Inclusion. By default, the inclusion procedure starts in Normal Inclusion mode and after a short time out the procedure continues in Network Wide Inclusion mode that lasts for about 20 Seconds.</p> <p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed. </p> <br /><h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in Learning Mode. As soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED and the App_status in the interface is OK. </p>
+Widom Smart Dry contact<br /> <h1>Overview</h1><p>WiDom Smart Dry Contact Switch can turn ON and OFF equipments with an independent power supply, such as solenoid valves (e.g. gas, water and irrigation), power operated valves etc. </p> <p>WiDom Smart Dry Contact Switch is very easy to install and works with both momentary and toggle switches. </p> <p>The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Double Switch will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /> <h2>Inclusion Information</h2><p>WiDom Smart Dry Contact Switch is compatible with all Z-Wave/Z-Wave Plus certified controllers. The device supports both the Network Wide Inclusion mechanism (which offers the ability to be included in a network, even if the device is not directly connected to the controller) and Normal Inclusion. By default, the inclusion procedure starts in Normal Inclusion mode and after a short time out the procedure continues in Network Wide Inclusion mode that lasts for about 20 Seconds.</p> <p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. The device is included in the network when the LED status is OFF and the interview is completed. </p> <br /> <h2>Exclusion Information</h2><p>Only a controller can remove the device from the network. After activating the exclusion function by the controller, the device can be removed by setting it in Learning Mode. As soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED and the App_status in the interface is OK. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -67,7 +67,7 @@ Widom Smart Dry contact<br /><h1>Overview</h1><p>WiDom Smart Dry Contact Switch 
                  min="-1" max="100">
         <label>5: Value used for devices belonging to Group 3</label>
         <description><![CDATA[
-Value sent wen the external switch receives 2 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 3 when the external switch receives 2 Clicks</p>
+Value sent wen the external switch receives 2 Clicks<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 3 when the external switch receives 2 Clicks</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -77,7 +77,7 @@ Value sent wen the external switch receives 2 Clicks<br /><h1>Overview</h1><p> 
                  min="-1" max="100">
         <label>6: Value used for devices belonging to Group 4</label>
         <description><![CDATA[
-Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Value used for devices belonging to Group 4 when external switch receives 3 Clicks</p>
+Value sent when external switch receives 3 Clicks<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 4 when external switch receives 3 Clicks</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Value sent when external switch receives 3 Clicks<br /><h1>Overview</h1><p> Val
                  min="0" max="255">
         <label>20: One Click Scene Activation Set</label>
         <description><![CDATA[
-Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 1 Click on the external switch</p>
+Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 1 Click on the external switch</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -120,7 +120,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 1 Click<b
                  min="0" max="255">
         <label>21: Two Clicks Scene Activation Set</label>
         <description><![CDATA[
-Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks on the external switch</p>
+Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks on the external switch</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -130,7 +130,7 @@ Defines the Scene Activation Set value sent to the Lifeline group with 2 Clicks<
                  min="0" max="255">
         <label>22: Three Clicks Scene Activation Set</label>
         <description><![CDATA[
-Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<br /><h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks on the external switch</p>
+Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks<br /> <h1>Overview</h1><p>Defines the Scene Activation Set value sent to the Lifeline group with 3 Clicks on the external switch</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

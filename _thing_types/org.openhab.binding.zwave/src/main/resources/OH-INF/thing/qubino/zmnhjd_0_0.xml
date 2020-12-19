@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhjd_00_000" listed="false">
     <label>ZMNHJD Flush Pilot</label>
     <description><![CDATA[
-Flush Pilot<br /><h1>Overview</h1><p>This Z-Wave module is used to control electric Radiators with 6 different working modes by pilot wire control signal. The module can be controlled either through a Z-Wave network or through the wall switch.</p> <br /><h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds). </li> </ul><br /><h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s ( 5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
+Flush Pilot<br /> <h1>Overview</h1><p>This Z-Wave module is used to control electric Radiators with 6 different working modes by pilot wire control signal. The module can be controlled either through a Z-Wave network or through the wall switch.</p> <br /> <h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds). </li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s ( 5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
     ]]></description>
     <category>RadiatorControl</category>
 

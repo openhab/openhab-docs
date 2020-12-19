@@ -8,7 +8,7 @@
   <thing-type id="everspring_sp103_00_000" listed="false">
     <label>SP103 Motion Detector</label>
     <description><![CDATA[
-Motion Detector<br /><h1>Overview</h1><p>Motion Detector</p> <br /><h2>Inclusion Information</h2><p>Press the tamper switch on the detector to complete the inclusion process.</p> <br /><h2>Exclusion Information</h2><p>Press the tamper switch on the detector to complete the exclusion process.</p> <br /><h2>Wakeup Information</h2><p>Press the tamper switch on the detector to wake the device for 10 minutes.</p>
+Motion Detector<br /> <h1>Overview</h1><p>Motion Detector</p> <br /> <h2>Inclusion Information</h2><p>Press the tamper switch on the detector to complete the inclusion process.</p> <br /> <h2>Exclusion Information</h2><p>Press the tamper switch on the detector to complete the exclusion process.</p> <br /> <h2>Wakeup Information</h2><p>Press the tamper switch on the detector to wake the device for 10 minutes.</p>
     ]]></description>
     <category>MotionDetector</category>
 

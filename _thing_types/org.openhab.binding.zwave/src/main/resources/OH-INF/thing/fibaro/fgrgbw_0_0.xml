@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgrgbw_00_000" listed="false">
     <label>FGRGBW RGBW Controller</label>
     <description><![CDATA[
-RGBW Controller<br /><h1>Overview</h1><p>Fibaro RGBW Controller is a universal, Z-Wave compatible RGB / RGBW controller. Fibaro RGBW Controller uses PWM output signal, which enables it to control LED, RGB, RGBW strips, halogen lights and fans. Controlled devices may be powered by 12 or 24 VDC. In addition the device supports up to four, 0V - 10V analog sensors, such as temperature sensors, humidity sensors, wind sensors, air quality sensors, light sensors etc. All IN and OUT terminals may be user configured for LED control or 0V-10V signal readouts. </p> <br /><h2>Inclusion Information</h2><p>Triple click the B-button or any switch connected to I1-I4 inputs</p> <br /><h2>Exclusion Information</h2><p>Triple click the B-button or any switch connected to I1-I4 inputs</p>
+RGBW Controller<br /> <h1>Overview</h1><p>Fibaro RGBW Controller is a universal, Z-Wave compatible RGB / RGBW controller. Fibaro RGBW Controller uses PWM output signal, which enables it to control LED, RGB, RGBW strips, halogen lights and fans. Controlled devices may be powered by 12 or 24 VDC. In addition the device supports up to four, 0V - 10V analog sensors, such as temperature sensors, humidity sensors, wind sensors, air quality sensors, light sensors etc. All IN and OUT terminals may be user configured for LED control or 0V-10V signal readouts. </p> <br /> <h2>Inclusion Information</h2><p>Triple click the B-button or any switch connected to I1-I4 inputs</p> <br /> <h2>Exclusion Information</h2><p>Triple click the B-button or any switch connected to I1-I4 inputs</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -116,7 +116,7 @@ RGBW Controller<br /><h1>Overview</h1><p>Fibaro RGBW Controller is a universal, 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: ALL ON / ALL OFF function activation</label>
         <description><![CDATA[
-Activation/deactivation of ALL ON/ALL OFF functions.<br /><h1>Overview</h1><p>By default, ALL ON active ALL OFF active.</p>
+Activation/deactivation of ALL ON/ALL OFF functions.<br /> <h1>Overview</h1><p>By default, ALL ON active ALL OFF active.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -131,7 +131,7 @@ Activation/deactivation of ALL ON/ALL OFF functions.<br /><h1>Overview</h1><p>By
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Associations command class choice</label>
         <description><![CDATA[
-Associations command class choice<br /><h1>Overview</h1><p>Associations command class choice.</p> <p>By default, Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</p>
+Associations command class choice<br /> <h1>Overview</h1><p>Associations command class choice.</p> <p>By default, Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -147,7 +147,7 @@ Associations command class choice<br /><h1>Overview</h1><p>Associations command 
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Outputs state change mode</label>
         <description><![CDATA[
-MODE1, Example: change saturation level from 0% to 99%<br /><h1>Overview</h1><p>Parameter 9: Step = 5, Parameter 10: Time between steps: 10ms, Default setting: MODE1</p>
+MODE1, Example: change saturation level from 0% to 99%<br /> <h1>Overview</h1><p>Parameter 9: Step = 5, Parameter 10: Time between steps: 10ms, Default setting: MODE1</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -169,7 +169,7 @@ MODE1, Example: change saturation level from 0% to 99%<br /><h1>Overview</h1><p>
                  min="0" max="60000">
         <label>10: Time between steps (relevant for MODE1)</label>
         <description><![CDATA[
-Time between steps (relevant for MODE1).<br /><h1>Overview</h1><p>Default setting: 10 ms  0 - immediate change of state, available settings: 1 - 60000 ms.</p>
+Time between steps (relevant for MODE1).<br /> <h1>Overview</h1><p>Default setting: 10 ms  0 - immediate change of state, available settings: 1 - 60000 ms.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -179,7 +179,7 @@ Time between steps (relevant for MODE1).<br /><h1>Overview</h1><p>Default settin
                  min="0" max="255">
         <label>11: Time for changing from start to end value</label>
         <description><![CDATA[
-Step value (relevant for MODE1).<br /><h1>Overview</h1><ul><li>Default setting: 67 (3s)</li> <li>0: immediate change</li> <li>1-63: 20-126 [ms] value*20ms</li> <li>65-127: 1-63 [s] (value-64)*1s</li> <li>129-191: 10-630 [s] (value-128)*10s</li> </ul>
+Step value (relevant for MODE1).<br /> <h1>Overview</h1><ul><li>Default setting: 67 (3s)</li> <li>0: immediate change</li> <li>1-63: 20-126 [ms] value*20ms</li> <li>65-127: 1-63 [s] (value-64)*1s</li> <li>129-191: 10-630 [s] (value-128)*10s</li> </ul>
         ]]></description>
         <default>67</default>
         <limitToOptions>false</limitToOptions>
@@ -189,7 +189,7 @@ Step value (relevant for MODE1).<br /><h1>Overview</h1><ul><li>Default setting: 
                  min="3" max="255">
         <label>12: Maximum Brightening level</label>
         <description><![CDATA[
-Maximum Brightening level.<br /><h1>Overview</h1><p>Default setting: 255, available settings: 3 - 255.</p>
+Maximum Brightening level.<br /> <h1>Overview</h1><p>Default setting: 255, available settings: 3 - 255.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -199,7 +199,7 @@ Maximum Brightening level.<br /><h1>Overview</h1><p>Default setting: 255, availa
                  min="2" max="255">
         <label>13: Minimum dim level</label>
         <description><![CDATA[
-Minimum dim level.<br /><h1>Overview</h1><p>Default setting: 2, available settings: 3 - 255.</p>
+Minimum dim level.<br /> <h1>Overview</h1><p>Default setting: 2, available settings: 3 - 255.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -209,7 +209,7 @@ Minimum dim level.<br /><h1>Overview</h1><p>Default setting: 2, available settin
                  min="0" max="65535">
         <label>14: Inputs/Outputs configuration</label>
         <description><![CDATA[
-Relevant for main controllers other than Home Center 2 only<br /><h1>Overview</h1><p>Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.<br />Default setting: 4369, Controlled device: RGBW, toggle switch inputs (NORMAL MODE).</p>
+Relevant for main controllers other than Home Center 2 only<br /> <h1>Overview</h1><p>Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.<br />Default setting: 4369, Controlled device: RGBW, toggle switch inputs (NORMAL MODE).</p>
         ]]></description>
         <default>4369</default>
         <limitToOptions>false</limitToOptions>
@@ -218,7 +218,7 @@ Relevant for main controllers other than Home Center 2 only<br /><h1>Overview</h
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Remember device status after power failure</label>
         <description><![CDATA[
-Define how will the Plug react after the power supply is back on.<br /><h1>Overview</h1><p>Define how will the Plug react after the power supply is back on.</p>
+Define how will the Plug react after the power supply is back on.<br /> <h1>Overview</h1><p>Define how will the Plug react after the power supply is back on.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -231,7 +231,7 @@ Define how will the Plug react after the power supply is back on.<br /><h1>Overv
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Alarm response</label>
         <description><![CDATA[
-Alarm response<br /><h1>Overview</h1><p>Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.)                             </p> <p>Default setting: INACTIVE</p>
+Alarm response<br /> <h1>Overview</h1><p>Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.)                             </p> <p>Default setting: INACTIVE</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -247,7 +247,7 @@ Alarm response<br /><h1>Overview</h1><p>Alarm of any type (General alarm, flood 
                  min="1" max="10">
         <label>38: Alarm sequence program</label>
         <description><![CDATA[
-Alarm sequence program.<br /><h1>Overview</h1><p>Default setting: 10, 1-10 specifies alarm program number.</p>
+Alarm sequence program.<br /> <h1>Overview</h1><p>Default setting: 10, 1-10 specifies alarm program number.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -257,7 +257,7 @@ Alarm sequence program.<br /><h1>Overview</h1><p>Default setting: 10, 1-10 speci
                  min="1" max="65534">
         <label>39: Active PROGRAM alarm time</label>
         <description><![CDATA[
-Active PROGRAM alarm time.<br /><h1>Overview</h1><p>Default setting: 600s, 1-65534 specifies alarm time in seconds.</p>
+Active PROGRAM alarm time.<br /> <h1>Overview</h1><p>Default setting: 600s, 1-65534 specifies alarm time in seconds.</p>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
@@ -279,7 +279,7 @@ Active PROGRAM alarm time.<br /><h1>Overview</h1><p>Default setting: 600s, 1-655
                  min="1" max="100">
         <label>43: Reporting 0-10v analog inputs change threshold</label>
         <description><![CDATA[
-Defines which input voltage must change to be reported<br /><h1>Overview</h1><p>Parameter defines a value by which input voltage must change in order to be reported to the main controller.<br />New value is calculated based on last reported value, default setting: 5</p>
+Defines which input voltage must change to be reported<br /> <h1>Overview</h1><p>Parameter defines a value by which input voltage must change in order to be reported to the main controller.<br />New value is calculated based on last reported value, default setting: 5</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -289,7 +289,7 @@ Defines which input voltage must change to be reported<br /><h1>Overview</h1><p>
                  min="0" max="65534">
         <label>44: Power load reporting frequency</label>
         <description><![CDATA[
-Parameter defines Time between reports.<br /><h1>Overview</h1><p>Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling. Default setting: 3 600 (s)</p>
+Parameter defines Time between reports.<br /> <h1>Overview</h1><p>Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling. Default setting: 3 600 (s)</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -299,7 +299,7 @@ Parameter defines Time between reports.<br /><h1>Overview</h1><p>Parameter defin
                  min="0" max="255">
         <label>45: Reporting energy consumption changes</label>
         <description><![CDATA[
-Reporting energy consumption changes<br /><h1>Overview</h1><p>Defines the required change in power to generate an unsolicited power report. New, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).</p>
+Reporting energy consumption changes<br /> <h1>Overview</h1><p>Defines the required change in power to generate an unsolicited power report. New, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -320,7 +320,7 @@ Reporting energy consumption changes<br /><h1>Overview</h1><p>Defines the requir
                  min="1" max="10">
         <label>72: Starting animation program</label>
         <description><![CDATA[
-Starting predefined program when device set to work in RGB/RGBW mode<br /><h1>Overview</h1><p>Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1</p>
+Starting predefined program when device set to work in RGB/RGBW mode<br /> <h1>Overview</h1><p>Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

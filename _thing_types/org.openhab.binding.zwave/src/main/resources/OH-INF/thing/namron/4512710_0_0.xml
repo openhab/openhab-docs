@@ -8,7 +8,7 @@
   <thing-type id="namron_4512710_00_000" listed="false">
     <label>4512710 Dimmer 400W</label>
     <description><![CDATA[
-Dimmer 400W<br /><h1>Overview</h1><p>Z-wave in-wall dimmer.  400W 1 channel.</p> <br /><h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</li> <li>Power on the In-wall dimmer and set it into inclusion mode. There are ttwo methods to set the In-wall dimmer into inclusion mode: <ol><li>Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press the action button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol></li> </ol><p>The connected light will stay on for 3 seconds to indicate successful inclusion.</p> <br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>Method 1:</p> <ol><li>Set primarry controller/gateway into exclusion mode(Please refer to your primary controllers manual on how to turn your controller into exclusion)</li> <li>Triple press the action button on the dimmer, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.</li> </ol><p>Method 2:</p> <p>Factory reset the dimmer will force the dimmer to be excluded.</p> <p>Factory reset:</p> <ul><li>Press and hold down the action button for over 10 seconds, the dimmer will be reset to factory defaults. </li> </ul>
+Dimmer 400W<br /> <h1>Overview</h1><p>Z-wave in-wall dimmer.  400W 1 channel.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion)</li> <li>Power on the In-wall dimmer and set it into inclusion mode. There are ttwo methods to set the In-wall dimmer into inclusion mode: <ol><li>Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.</li> <li>Triple press the action button on the dimmer, it will set the dimmer into inclusion mode.</li> </ol></li> </ol><p>The connected light will stay on for 3 seconds to indicate successful inclusion.</p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>Method 1:</p> <ol><li>Set primarry controller/gateway into exclusion mode(Please refer to your primary controllers manual on how to turn your controller into exclusion)</li> <li>Triple press the action button on the dimmer, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.</li> </ol><p>Method 2:</p> <p>Factory reset the dimmer will force the dimmer to be excluded.</p> <p>Factory reset:</p> <ul><li>Press and hold down the action button for over 10 seconds, the dimmer will be reset to factory defaults. </li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -63,7 +63,7 @@ Dimmer 400W<br /><h1>Overview</h1><p>Z-wave in-wall dimmer.  400W 1 channel.</p
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: State after Power Failure</label>
         <description><![CDATA[
-State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stats should be after a device power failure.</p>
+State after Power Failure<br /> <h1>Overview</h1><p>Determines what the load stats should be after a device power failure.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -78,7 +78,7 @@ State after Power Failure<br /><h1>Overview</h1><p>Determines what the load stat
                  min="0" max="2">
         <label>3: Enable/disable to send the basic report</label>
         <description><![CDATA[
-Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed.(When value set as 1, re-power on the dimmer, it will send basic report automatically)</p>
+Enable/disable to send the basic report<br /> <h1>Overview</h1><p>Enable/disable to send the basic report to the Lifeline when the load state changed.(When value set as 1, re-power on the dimmer, it will send basic report automatically)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -88,7 +88,7 @@ Enable/disable to send the basic report<br /><h1>Overview</h1><p>Enable/disable 
                  min="0" max="255">
         <label>4: Default fade time</label>
         <description><![CDATA[
-Default fade time<br /><h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 is 1 Minute</p>
+Default fade time<br /> <h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 is 1 Minute</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -97,7 +97,7 @@ Default fade time<br /><h1>Overview</h1><p>Default(255) Is 1 second</p> <p>254 i
                  min="0" max="50">
         <label>5: Setting minimum Brightness value</label>
         <description><![CDATA[
-Setting minimum Brightness value<br /><h1>Overview</h1><p>Setting minimum Brightness value</p>
+Setting minimum Brightness value<br /> <h1>Overview</h1><p>Setting minimum Brightness value</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Setting minimum Brightness value<br /><h1>Overview</h1><p>Setting minimum Bright
                  min="0" max="1">
         <label>6: Choose MOSFET driving type</label>
         <description><![CDATA[
-Choose MOSFET driving type<br /><h1>Overview</h1><p>Choose MOSFET driving type</p>
+Choose MOSFET driving type<br /> <h1>Overview</h1><p>Choose MOSFET driving type</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -117,7 +117,7 @@ Choose MOSFET driving type<br /><h1>Overview</h1><p>Choose MOSFET driving type</
                  min="0" max="1">
         <label>7: Enable/disable external switch.</label>
         <description><![CDATA[
-Enable/disable external switch.<br /><h1>Overview</h1><p>Enable/disable external switch to be added and removed from a network.</p>
+Enable/disable external switch.<br /> <h1>Overview</h1><p>Enable/disable external switch to be added and removed from a network.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -127,7 +127,7 @@ Enable/disable external switch.<br /><h1>Overview</h1><p>Enable/disable external
                  min="0" max="1">
         <label>8: Setting dimmer curve</label>
         <description><![CDATA[
-Setting dimmer curve<br /><h1>Overview</h1><p>Setting dimmer curve</p>
+Setting dimmer curve<br /> <h1>Overview</h1><p>Setting dimmer curve</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Setting dimmer curve<br /><h1>Overview</h1><p>Setting dimmer curve</p>
                  min="0" max="99">
         <label>9: Setting startup brightness of the load.</label>
         <description><![CDATA[
-Setting startup brightness of the load.<br /><h1>Overview</h1><p>Setting startup brightness of the load.</p>
+Setting startup brightness of the load.<br /> <h1>Overview</h1><p>Setting startup brightness of the load.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -147,7 +147,7 @@ Setting startup brightness of the load.<br /><h1>Overview</h1><p>Setting startup
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ol><li>When factory reset the dimmer, send "Device Reset Locally Notification CC" to associated of this group report factory reset information.</li> <li>When load state changes, send "Basic Report CC" to associated devices of this group.</li> <li>When a load malfunction is detected, send "Emergency shutoff status" to Lifeline</li> </ol>
+<br /> <h1>Overview</h1><ol> <li>When factory reset the dimmer, send "Device Reset Locally Notification CC" to associated of this group report factory reset information.</li> <li>When load state changes, send "Basic Report CC" to associated devices of this group.</li> <li>When a load malfunction is detected, send "Emergency shutoff status" to Lifeline</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -5,10 +5,10 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="inovelli_lzw31dimmer_00_000" listed="false">
+  <thing-type id="inovelli_lzw31_00_000" listed="false">
     <label>LZW31 Black Series Dimmer</label>
     <description><![CDATA[
-Black Series Dimmer<br /><h1>Overview</h1><p>For starters, we’ve upgraded our Z-Wave module for better distance. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>Lastly, the LED bar can be changed to any default color you’d prefer and also allows for it to be dimmed, or disabled altogether.</p> <br /><h2>Inclusion Information</h2><p>Start the Inclusion process on your HUB/Gateway. Turn the power back on and auto-inclusion will activate.You will have 60 seconds before it times out. If it does timeout,the backup method to pair/include the device is to press the Config Button (A) 3 times.</p> <br /><h2>Exclusion Information</h2><p>Put your HUB in Exclusion mode and press the Config Button (A) 3x until your HUB says the device is excluded.</p>
+Black Series Dimmer<br /> <h1>Overview</h1><p>For starters, we’ve upgraded our Z-Wave module for better distance. The switch can be used in any 3-Way or 4-Way setting and allows you to use either an auxiliary switch, a smart switch or your existing dumb switch (NOTE: this only applies if a neutral wire is installed. If there is no neutral wire, the switch only works in a single-pole setting).</p> <p>Lastly, the LED bar can be changed to any default color you’d prefer and also allows for it to be dimmed, or disabled altogether.</p> <br /> <h2>Inclusion Information</h2><p>Start the Inclusion process on your HUB/Gateway. Turn the power back on and auto-inclusion will activate.You will have 60 seconds before it times out. If it does timeout,the backup method to pair/include the device is to press the Config Button (A) 3 times.</p> <br /> <h2>Exclusion Information</h2><p>Put your HUB in Exclusion mode and press the Config Button (A) 3x until your HUB says the device is excluded.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -52,7 +52,7 @@ Black Series Dimmer<br /><h1>Overview</h1><p>For starters, we’ve upgraded our 
                  min="0" max="100">
         <label>1: Dimming Speed</label>
         <description><![CDATA[
-How fast or slow the light turns on when you hold the switch<br /><h1>Overview</h1><p>How fast or slow the lights turns on when you hold the switch ( ie: dimming from 10-20%, 80-60%, etc)</p> <p>0 = instant on, 1=1 second, 100=100 seconds</p>
+How fast or slow the light turns on when you hold the switch<br /> <h1>Overview</h1><p>How fast or slow the lights turns on when you hold the switch ( ie: dimming from 10-20%, 80-60%, etc)</p> <p>0 = instant on, 1=1 second, 100=100 seconds</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -62,7 +62,7 @@ How fast or slow the light turns on when you hold the switch<br /><h1>Overview</
                  min="0" max="101">
         <label>2: Dimming Speed ( Z-wave )</label>
         <description><![CDATA[
-How fast or slow the light turns dim when you adjust via network<br /><h1>Overview</h1><p>How fast or slow the light turns dim when you adjust the switch remotely.</p> <p>(ie: dimming from 10-20%, 80-60%, etc)</p> <p>0= instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
+How fast or slow the light turns dim when you adjust via network<br /> <h1>Overview</h1><p>How fast or slow the light turns dim when you adjust the switch remotely.</p> <p>(ie: dimming from 10-20%, 80-60%, etc)</p> <p>0= instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
         ]]></description>
         <default>101</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ How fast or slow the light turns dim when you adjust via network<br /><h1>Overvi
                  min="0" max="101">
         <label>3: Ramp Rate</label>
         <description><![CDATA[
-How fast or slow the light turns on when you press the switch<br /><h1>Overview</h1><p>How fast or slow the light turns on when you press the switch 1x to bring from ON to OFF or OFF to ON</p> <p>0=instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
+How fast or slow the light turns on when you press the switch<br /> <h1>Overview</h1><p>How fast or slow the light turns on when you press the switch 1x to bring from ON to OFF or OFF to ON</p> <p>0=instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
         ]]></description>
         <default>101</default>
         <limitToOptions>false</limitToOptions>
@@ -82,7 +82,7 @@ How fast or slow the light turns on when you press the switch<br /><h1>Overview<
                  min="0" max="101">
         <label>4: Ramp Rate ( Z-wave)</label>
         <description><![CDATA[
-How fast or slow the light turns on / off via the network<br /><h1>Overview</h1><p>How fast or slow the light turns on when you turn the switch ON to OFF or OFF to ON remotely.</p> <p>0=instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
+How fast or slow the light turns on / off via the network<br /> <h1>Overview</h1><p>How fast or slow the light turns on when you turn the switch ON to OFF or OFF to ON remotely.</p> <p>0=instant on, 1=1 second, 100=100 seconds, 101=keep in sync with Parameter 1</p>
         ]]></description>
         <default>101</default>
         <limitToOptions>false</limitToOptions>
@@ -92,7 +92,7 @@ How fast or slow the light turns on / off via the network<br /><h1>Overview</h1>
                  min="1" max="45">
         <label>5: Minimum Dim Level</label>
         <description><![CDATA[
-Minimum level the light switch will dim to<br /><h1>Overview</h1><p>Minimum level the light switch will dim to (great for fixing flickering bulbs).</p> <p>1=1%, 45=45%</p>
+Minimum level the light switch will dim to<br /> <h1>Overview</h1><p>Minimum level the light switch will dim to (great for fixing flickering bulbs).</p> <p>1=1%, 45=45%</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -102,7 +102,7 @@ Minimum level the light switch will dim to<br /><h1>Overview</h1><p>Minimum leve
                  min="55" max="100">
         <label>6: Maximum Dim Level</label>
         <description><![CDATA[
-Maximum level the light switch will dim to<br /><h1>Overview</h1><p>Maximum level the light switch will dim to.</p> <p>55%=55%, 100=100%</p>
+Maximum level the light switch will dim to<br /> <h1>Overview</h1><p>Maximum level the light switch will dim to.</p> <p>55%=55%, 100=100%</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -112,7 +112,7 @@ Maximum level the light switch will dim to<br /><h1>Overview</h1><p>Maximum leve
                  min="0" max="1">
         <label>7: Invert Switch</label>
         <description><![CDATA[
-Inverts the switch<br /><h1>Overview</h1><p>Inverts the switch ( tap down = ON, tap up = OFF)</p> <p>0 = disabled, 1 = enabled</p>
+Inverts the switch<br /> <h1>Overview</h1><p>Inverts the switch ( tap down = ON, tap up = OFF)</p> <p>0 = disabled, 1 = enabled</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -122,7 +122,7 @@ Inverts the switch<br /><h1>Overview</h1><p>Inverts the switch ( tap down = ON, 
                  min="0" max="32767">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
-Automatically tuns the switch off after X seconds<br /><h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = disabled, 1 = 1 second, 32767 = 32767 seconds.</p>
+Automatically tuns the switch off after X seconds<br /> <h1>Overview</h1><p>Automatically turns the switch off after x amount of seconds</p> <p>0 = disabled, 1 = 1 second, 32767 = 32767 seconds.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -132,7 +132,7 @@ Automatically tuns the switch off after X seconds<br /><h1>Overview</h1><p>Autom
                  min="0" max="100">
         <label>9: Default Level ( Local )</label>
         <description><![CDATA[
-Default dim level when pressed locally<br /><h1>Overview</h1><p>Default dim level for the switch when pressed locally</p> <p>0 = Switch will return to the level it was prior to being off, 1=1%, 100=100%</p>
+Default dim level when pressed locally<br /> <h1>Overview</h1><p>Default dim level for the switch when pressed locally</p> <p>0 = Switch will return to the level it was prior to being off, 1=1%, 100=100%</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -142,7 +142,7 @@ Default dim level when pressed locally<br /><h1>Overview</h1><p>Default dim leve
                  min="0" max="100">
         <label>10: Default level ( Z-Wave )</label>
         <description><![CDATA[
-Default dim level when switch on via network<br /><h1>Overview</h1><p>Default dim level for the switch when powered on via a Z-Wave command</p> <p>0 = Switch will return to level it was prior to being off, 1=1%, 100=100%</p>
+Default dim level when switch on via network<br /> <h1>Overview</h1><p>Default dim level for the switch when powered on via a Z-Wave command</p> <p>0 = Switch will return to level it was prior to being off, 1=1%, 100=100%</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -152,7 +152,7 @@ Default dim level when switch on via network<br /><h1>Overview</h1><p>Default di
                  min="0" max="101">
         <label>11: Power On State</label>
         <description><![CDATA[
-When power is restored switch reverts On/Off/Last<br /><h1>Overview</h1><p>When power is restored, the switch reverts to either On, Off, or Last Level</p> <p>0=Off, 1-100= specific % On, 101= returns to level before power outage</p>
+When power is restored switch reverts On/Off/Last<br /> <h1>Overview</h1><p>When power is restored, the switch reverts to either On, Off, or Last Level</p> <p>0=Off, 1-100= specific % On, 101= returns to level before power outage</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -162,7 +162,7 @@ When power is restored switch reverts On/Off/Last<br /><h1>Overview</h1><p>When 
                  min="0" max="15">
         <label>12: Association Behavior</label>
         <description><![CDATA[
-When should the switch send commands to associated devices<br /><h1>Overview</h1><p>01=local, 02=3-way, 03=3-way &amp; local, 04=Z-wave hub, 05=Z-wave Hub &amp; local</p> <p>06=Z-wave hub &amp; 3-way, 07=Z-wave hub &amp; local &amp; 3-way, 08=timer, 09= timer &amp;local</p> <p>10=timer &amp; 3-way, 11=timer &amp; 3-way &amp; local, 12= timer &amp; z-wave hub</p> <p>13= timer &amp; z-wave hub &amp; local, 14=timer &amp; z-wave hub &amp; 3-way, 15= ALL</p>
+When should the switch send commands to associated devices<br /> <h1>Overview</h1><p>01=local, 02=3-way, 03=3-way &amp; local, 04=Z-wave hub, 05=Z-wave Hub &amp; local</p> <p>06=Z-wave hub &amp; 3-way, 07=Z-wave hub &amp; local &amp; 3-way, 08=timer, 09= timer &amp;local</p> <p>10=timer &amp; 3-way, 11=timer &amp; 3-way &amp; local, 12= timer &amp; z-wave hub</p> <p>13= timer &amp; z-wave hub &amp; local, 14=timer &amp; z-wave hub &amp; 3-way, 15= ALL</p>
         ]]></description>
         <default>15</default>
         <limitToOptions>false</limitToOptions>
@@ -172,7 +172,7 @@ When should the switch send commands to associated devices<br /><h1>Overview</h1
                  min="0" max="255">
         <label>13: LED Indicator Colo</label>
         <description><![CDATA[
-Sets the default color of the LED bar<br /><h1>Overview</h1><p>This will set the default color of the LED bar</p> <p>Calculated by using a hue color circle ( value / 255*360) see website for more detail</p>
+Sets the default color of the LED bar<br /> <h1>Overview</h1><p>This will set the default color of the LED bar</p> <p>Calculated by using a hue color circle ( value / 255*360) see website for more detail</p>
         ]]></description>
         <default>170</default>
         <limitToOptions>false</limitToOptions>
@@ -182,7 +182,7 @@ Sets the default color of the LED bar<br /><h1>Overview</h1><p>This will set the
                  min="0" max="10">
         <label>14: LED Indicator Intensity</label>
         <description><![CDATA[
-Sets the intensity of the LED bar (brightness)<br /><h1>Overview</h1><p>This will set the intensity of the LED bar</p> <p>0=Off, 1=low, 5=medium, 10=high</p>
+Sets the intensity of the LED bar (brightness)<br /> <h1>Overview</h1><p>This will set the intensity of the LED bar</p> <p>0=Off, 1=low, 5=medium, 10=high</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -192,7 +192,7 @@ Sets the intensity of the LED bar (brightness)<br /><h1>Overview</h1><p>This wil
                  min="0" max="10">
         <label>15: LED Indicator Intensity (when off)</label>
         <description><![CDATA[
-LED Indicator brightness when switch is off<br /><h1>Overview</h1><p>LED Indicator intensity when light is off</p> <p>0=off , 1 =low, 10=high</p>
+LED Indicator brightness when switch is off<br /> <h1>Overview</h1><p>LED Indicator intensity when light is off</p> <p>0=off , 1 =low, 10=high</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -202,7 +202,7 @@ LED Indicator brightness when switch is off<br /><h1>Overview</h1><p>LED Indicat
                  min="0" max="2147483647">
         <label>16: LED Strip Effect</label>
         <description><![CDATA[
-Add sweet effects to the LED bar<br /><h1>Overview</h1><p>Sweet effects: pulse, chase, solid, etc</p> <p>Byte 1 = choose color</p> <p>Byte 2 = Choose Brightness Level</p> <p>Byte 3 = Choose Effect</p> <p>Byte 4 = Duration </p> <p>See Website for details</p>
+Add sweet effects to the LED bar<br /> <h1>Overview</h1><p>Sweet effects: pulse, chase, solid, etc</p> <p>Byte 1 = choose color</p> <p>Byte 2 = Choose Brightness Level</p> <p>Byte 3 = Choose Effect</p> <p>Byte 4 = Duration </p> <p>See Website for details</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -212,9 +212,29 @@ Add sweet effects to the LED bar<br /><h1>Overview</h1><p>Sweet effects: pulse, 
                  min="0" max="10">
         <label>17: LED timeout</label>
         <description><![CDATA[
-Timeout for LED notifications<br /><h1>Overview</h1><p>Changes the amount of time the RGB bar shows the dim level if the LED bar has been disabled</p> <p>0=always off, 1=1 second after level is adjusted, 10=10 seconds after level is adjusted</p>
+Timeout for LED notifications<br /> <h1>Overview</h1><p>Changes the amount of time the RGB bar shows the dim level if the LED bar has been disabled</p> <p>0=always off, 1=1 second after level is adjusted, 10=10 seconds after level is adjusted</p>
         ]]></description>
         <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>21: AC Power Type</label>
+        <description><![CDATA[
+Neutral or no neutral<br /> <h1>Overview</h1><p>Select whether you are wiring your switch with or without a neutral wire</p><p>0 = No-Neutral, 1 = Neutral</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>22: Switch Type</label>
+        <description><![CDATA[
+Single Pole or Multi Pole<br /> <h1>Overview</h1><p>Select what type of installation you have</p><p>0 = Single-Pole (ie: one switch), 1 = Multi-Switch (Dumb Switch), 2 = Multi-Switch (Auxillary Switch)</p>
+        ]]></description>
+        <default>0</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 

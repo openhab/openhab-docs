@@ -8,7 +8,7 @@
   <thing-type id="sunricher_veggplug_00_000" listed="false">
     <label>VEGGPLUG NAMRON Smart Plug</label>
     <description><![CDATA[
-NAMRON Smart Plug<br /><h1>Overview</h1><p>Zwave Smart Plug</p> <br /><h2>Inclusion Information</h2><p>Press and hold down action button for 10 seconds</p> <br /><h2>Exclusion Information</h2><p>Triple click the action button</p>
+NAMRON Smart Plug<br /> <h1>Overview</h1><p>Zwave Smart Plug</p> <br /> <h2>Inclusion Information</h2><p>Press and hold down action button for 10 seconds</p> <br /> <h2>Exclusion Information</h2><p>Triple click the action button</p>
     ]]></description>
     <category>PowerOutlet</category>
 

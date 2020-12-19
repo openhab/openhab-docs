@@ -8,7 +8,7 @@
   <thing-type id="heiman_hs1dsz_00_000" listed="false">
     <label>HS1DS-Z Smart Door Sensor</label>
     <description><![CDATA[
-Smart Door Sensor<br /><h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hardware as DOMUX DX1DS-Z.</p> <br /><h2>Inclusion Information</h2><ul><li>Press a Func_Button 3 time in HS1DS-Z (Door Sensor), Green LED is Blinking 3 times within 1 second.</li> <li>If Inclusion Process is successful, Green led will turn off. </li> </ul><br /><h2>Exclusion Information</h2><ul><li>Press a Func_Button 3 times quickly on HS1DS-Z.</li> <li>If Exclusion Process is successful, Green led is Blinking 6 times, then turn off the HS1DS-Z.</li> </ul><br /><h2>Wakeup Information</h2><ul><li>Wake up Notification is transmitted every 24 hours by default.</li> <li>Wake up Notification is transmitted after Notification Report is Transmitted.</li> </ul>
+Smart Door Sensor<br /> <h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hardware as DOMUX DX1DS-Z.</p> <br /> <h2>Inclusion Information</h2><ul><li>Press a Func_Button 3 time in HS1DS-Z (Door Sensor), Green LED is Blinking 3 times within 1 second.</li> <li>If Inclusion Process is successful, Green led will turn off. </li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Press a Func_Button 3 times quickly on HS1DS-Z.</li> <li>If Exclusion Process is successful, Green led is Blinking 6 times, then turn off the HS1DS-Z.</li> </ul> <br /> <h2>Wakeup Information</h2><ul><li>Wake up Notification is transmitted every 24 hours by default.</li> <li>Wake up Notification is transmitted after Notification Report is Transmitted.</li> </ul>
     ]]></description>
     <category>Sensor</category>
 
@@ -67,7 +67,7 @@ Smart Door Sensor<br /><h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hard
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Binary Door status change</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Description: Binary Sensor Command Classes:Compatible with 300 series<br />1-Binary Sensor reports status of open or close door via Lifeline.<br />2-When the sensor detects status change between close door and open door, the device will be triggered.</p>
+<br /> <h1>Overview</h1><p>Description: Binary Sensor Command Classes:Compatible with 300 series<br />1-Binary Sensor reports status of open or close door via Lifeline.<br />2-When the sensor detects status change between close door and open door, the device will be triggered.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -75,7 +75,7 @@ Smart Door Sensor<br /><h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hard
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Binary Tamper</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Description: Binary Sensor Command Classes:Compatible with 300 series<br />1-Binary Sensor reports the removed status of door sensor.<br />2-When the sensor detects status change of tamper, the device will be triggered.</p>
+<br /> <h1>Overview</h1><p>Description: Binary Sensor Command Classes:Compatible with 300 series<br />1-Binary Sensor reports the removed status of door sensor.<br />2-When the sensor detects status change of tamper, the device will be triggered.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -83,7 +83,7 @@ Smart Door Sensor<br /><h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hard
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Notification Door status change</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>1-Notification report open door or close status via Lifeline.<br />2- When the sensor detects status change between close door and open door, the device will be triggered</p>
+<br /> <h1>Overview</h1><p>1-Notification report open door or close status via Lifeline.<br />2- When the sensor detects status change between close door and open door, the device will be triggered</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -91,7 +91,7 @@ Smart Door Sensor<br /><h1>Overview</h1><p>Door/Window Contact.</p> <p>Same hard
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Notification Tamper</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>1-Binary Sensor reports the removed status of door sensor.<br />2- When the sensor detects status change of tamper, the device will be triggered</p>
+<br /> <h1>Overview</h1><p>1-Binary Sensor reports the removed status of door sensor.<br />2- When the sensor detects status change of tamper, the device will be triggered</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

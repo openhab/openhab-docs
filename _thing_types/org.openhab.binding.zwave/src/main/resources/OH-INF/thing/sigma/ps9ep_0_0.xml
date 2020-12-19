@@ -8,7 +8,7 @@
   <thing-type id="sigma_ps9ep_00_000" listed="false">
     <label>PS9EP Z-wave 9 channel_module</label>
     <description><![CDATA[
-Z-wave 9 channel_module<br /><h1>Overview</h1><p>There is 9 endpoint 3 binary and 6 multi channel with energy metering   </p> <br /><h2>Inclusion Information</h2><p>Press the button 3 times for inclusion </p> <br /><h2>Exclusion Information</h2><p>Press the button 3 times for exclusion </p> <br /><h2>Wakeup Information</h2><p>This node is always listing </p>
+Z-wave 9 channel_module<br /> <h1>Overview</h1><p>There is 9 endpoint 3 binary and 6 multi channel with energy metering   </p> <br /> <h2>Inclusion Information</h2><p>Press the button 3 times for inclusion </p> <br /> <h2>Exclusion Information</h2><p>Press the button 3 times for exclusion </p> <br /> <h2>Wakeup Information</h2><p>This node is always listing </p>
     ]]></description>
     <category>WallSwitch</category>
 

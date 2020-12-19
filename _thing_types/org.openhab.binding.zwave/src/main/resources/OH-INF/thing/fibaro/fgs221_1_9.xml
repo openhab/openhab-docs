@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgs221_01_009" listed="false">
     <label>FGS221 Double Relay Switch 2x1.5kW</label>
     <description><![CDATA[
-Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay Switch of Fibaro System is designed to operate in a wall switch box or in locations where the control of an electric device (up to 3kW) is needed.<br />It is also possible to send a signal to any system that is to be integrated with Fibaro system.</p> <br /><h2>Inclusion Information</h2><p>Add Fibaro Switch to the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p> <br /><h2>Exclusion Information</h2><p>Remove Fibaro Switch from the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p>
+Double Relay Switch 2x1.5kW<br /> <h1>Overview</h1><p>Remotely Controlled Relay Switch of Fibaro System is designed to operate in a wall switch box or in locations where the control of an electric device (up to 3kW) is needed.<br />It is also possible to send a signal to any system that is to be integrated with Fibaro system.</p> <br /> <h2>Inclusion Information</h2><p>Add Fibaro Switch to the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p> <br /> <h2>Exclusion Information</h2><p>Remove Fibaro Switch from the network by pushing three times key no. 1 or push-button B located inside the housing of the device. For toggle switch perform 3 position changes.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -116,7 +116,7 @@ Double Relay Switch 2x1.5kW<br /><h1>Overview</h1><p>Remotely Controlled Relay S
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Control key #2 behaviour</label>
         <description><![CDATA[
-Map status to devices in group 2.<br /><h1>Overview</h1><p>Commands are sent when device is turned off. Enabling device does not send control commands. Double-clicking key sends 'turn on' command, dimmers memorize the last saved state (e.g. 50% brightness).</p>
+Map status to devices in group 2.<br /> <h1>Overview</h1><p>Commands are sent when device is turned off. Enabling device does not send control commands. Double-clicking key sends 'turn on' command, dimmers memorize the last saved state (e.g. 50% brightness).</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -151,7 +151,7 @@ Map status to devices in group 2.<br /><h1>Overview</h1><p>Commands are sent whe
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Dimmer/Roller shutter control</label>
         <description><![CDATA[
-Enable/Disable operation of dimmer associated to group 1.<br /><h1>Overview</h1><p>Enable/Disable operation of dimmer or roller shutter devices associated to group 1. Available only when using mono-stable inputs (buttons) - Hold button 1 or double-tap for operation</p>
+Enable/Disable operation of dimmer associated to group 1.<br /> <h1>Overview</h1><p>Enable/Disable operation of dimmer or roller shutter devices associated to group 1. Available only when using mono-stable inputs (buttons) - Hold button 1 or double-tap for operation</p>
         ]]></description>
         <default>0</default>
         <options>

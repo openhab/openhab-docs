@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha14wd_00_000" listed="false">
     <label>HA14WD Dimmer Switch</label>
     <description><![CDATA[
-Dimmer Switch<br /><h1>Overview</h1><p>Rocker-style dimmer switch</p> <br /><h2>Inclusion Information</h2><p>Press and release bottom rocker switch.</p> <br /><h2>Exclusion Information</h2><p>Press and release bottom rocker switch.</p>
+Dimmer Switch<br /> <h1>Overview</h1><p>Rocker-style dimmer switch</p> <br /> <h2>Inclusion Information</h2><p>Press and release bottom rocker switch.</p> <br /> <h2>Exclusion Information</h2><p>Press and release bottom rocker switch.</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="popp_004001_00_000" listed="false">
     <label>004001 Smoke Detector and Siren</label>
     <description><![CDATA[
-Smoke Detector and Siren<br /><h1>Overview</h1><h1>Secure Z-Wave Smoke Sensor plus Siren</h1> <p>This product combines a certified stand-alone smoke detector with an insertable Z-Wave module. The smoke detector is certified by the VdS and DIN EN 14604 and satisfies all legal requirements. The smokebox is made of steel and antistatic plastic.</p> <p>A button on the device can be used to test the smokebox, the electronics and the battery. In addition the device has an integrated test functionality to make manual tests with Aerosol unnecessary. The battery warning gets send for at least 30 days. During this time the smoke sensor stays fully functional.</p> <p>The Z-Wave radio module enables the smoke and battery alarms to be transmitted to a central Z-Wave controller. The smoke sensor can also be used as Z-Wave siren; for that the Z-Wave controller sends an on or off command to the siren. The radio module uses either the smoke sensors integrated 9V battery or can be powered by an external 12V power supply.</p> <p>According to the VdS 3515 (smoke sensors with radio communication) this device will relay all alarms to all other smoke sensors (004001) in the Z-Wave network to create a house-wide alarm. This connection of the smoke sensors is fully automatical and needs no further configuration. The smoke sensors and the controller communicate via an secure protocol to prevent manipulation.</p> <br /><h2>Inclusion Information</h2><p>A single click on the button (3) includes the device. If the button is pressed for at least 2 seconds the inclusion will be done without the (Security Command Class ). </p> <br /><h2>Exclusion Information</h2><p>A single click on the button will exclude the device.</p>
+Smoke Detector and Siren<br /> <h1>Overview</h1><h1>Secure Z-Wave Smoke Sensor plus Siren</h1> <p>This product combines a certified stand-alone smoke detector with an insertable Z-Wave module. The smoke detector is certified by the VdS and DIN EN 14604 and satisfies all legal requirements. The smokebox is made of steel and antistatic plastic.</p> <p>A button on the device can be used to test the smokebox, the electronics and the battery. In addition the device has an integrated test functionality to make manual tests with Aerosol unnecessary. The battery warning gets send for at least 30 days. During this time the smoke sensor stays fully functional.</p> <p>The Z-Wave radio module enables the smoke and battery alarms to be transmitted to a central Z-Wave controller. The smoke sensor can also be used as Z-Wave siren; for that the Z-Wave controller sends an on or off command to the siren. The radio module uses either the smoke sensors integrated 9V battery or can be powered by an external 12V power supply.</p> <p>According to the VdS 3515 (smoke sensors with radio communication) this device will relay all alarms to all other smoke sensors (004001) in the Z-Wave network to create a house-wide alarm. This connection of the smoke sensors is fully automatical and needs no further configuration. The smoke sensors and the controller communicate via an secure protocol to prevent manipulation.</p> <br /> <h2>Inclusion Information</h2><p>A single click on the button (3) includes the device. If the button is pressed for at least 2 seconds the inclusion will be done without the (Security Command Class ). </p> <br /> <h2>Exclusion Information</h2><p>A single click on the button will exclude the device.</p>
     ]]></description>
     <category>SmokeDetector</category>
 
@@ -68,7 +68,7 @@ Smoke Detector and Siren<br /><h1>Overview</h1><h1>Secure Z-Wave Smoke Sensor pl
                  min="3" max="129">
         <label>1: Siren alarm sequence interval in seconds</label>
         <description><![CDATA[
-This parameter defines the total length of the interval in seconds.<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the interval in seconds.</p>
+This parameter defines the total length of the interval in seconds.<br /> <h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the interval in seconds.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ This parameter defines the total length of the interval in seconds.<br /><h1>Ove
                  min="3" max="129">
         <label>2: Siren alarm tone length</label>
         <description><![CDATA[
-Total length of the sound versus silence within this interval.<br /><h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the sound versus silence within this interval.</p>
+Total length of the sound versus silence within this interval.<br /> <h1>Overview</h1><p>The additional siren is creating a different acoustic signal differentiate from the smoke alarm. This sound is partly on and partly off. This parameter defines the total length of the sound versus silence within this interval.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -101,7 +101,7 @@ Total length of the sound versus silence within this interval.<br /><h1>Overview
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Status of automated meshing of smoke alarms</label>
         <description><![CDATA[
-Inform other smoke detectors of same type about smoke alarms<br /><h1>Overview</h1><p>This smoke detector can automatically inform other smoke detectors of same type about smoke alarms. They will then also turn on the siren. This function is a requirement of wireless networked smoke detectors.</p>
+Inform other smoke detectors of same type about smoke alarms<br /> <h1>Overview</h1><p>This smoke detector can automatically inform other smoke detectors of same type about smoke alarms. They will then also turn on the siren. This function is a requirement of wireless networked smoke detectors.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -114,7 +114,7 @@ Inform other smoke detectors of same type about smoke alarms<br /><h1>Overview</
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Status of automated meshing of battery alarms</label>
         <description><![CDATA[
-Inform other smoke detectors of same type about battery alarms<br /><h1>Overview</h1><p>This smoke detector can automatically inform other smoke detectors of same type about battery alarms. They will then also turn on the siren. This function is a requirement of wireless networked smoke detectors.</p>
+Inform other smoke detectors of same type about battery alarms<br /> <h1>Overview</h1><p>This smoke detector can automatically inform other smoke detectors of same type about battery alarms. They will then also turn on the siren. This function is a requirement of wireless networked smoke detectors.</p>
         ]]></description>
         <default>1</default>
         <options>

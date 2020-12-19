@@ -8,7 +8,7 @@
   <thing-type id="devolo_mt2653_00_000" listed="false">
     <label>MT2653 Keyfob</label>
     <description><![CDATA[
-Keyfob<br /><h1>Overview</h1><p>You can use the Home Control Key-Fob Switch for conveniently controlling your Home Control devices at the touch of a button.</p> <br /><h2>Inclusion Information</h2><p>In factory default mode pushing one of the four buttons for 1 sec will start different inclusion modes:</p> <ul><li>Button 1: Include (Add) KFOB as sec. controller</li> <li>Button 2: Include (add) KFOB as secondary controller - non secure</li> <li>Button 3: Include (add) new device into KFOBS network</li> <li>Button 4: Include (add) new device into KFOBS network - non secure</li> </ul><p>The process for button 1 and 2 are indicated with fast red/green blinking, the process for button 3 and 4 show a fast green blinking. Every button push stops the process.</p> <p>This fast inclusion only works when device is in factory default. Once one device is included or the fob is included as secondary controller further inclusion and exclusion operation require to turn the device into management mode</p> <p>In management mode</p> <ul><li>Button 1: Include or Exclude the device as secondary controller</li> <li>Button 2: Issue Wakeup Notification and send out Node Information Frame</li> <li>Button 3 followed by short click of button 1: Start Secure Inclusion</li> <li>Button 3 followed by short click of button 2: Start Unsecure Inclusion</li> <li>Button 3 followed by short click of button 3: Start Exclusion</li> <li>Button 3 followed by short click of button 4: Start Primary Handover</li> </ul><br /><h2>Exclusion Information</h2><p>Leaving the network - i.e. being excluded - sets the device back to factory default.</p> <p>In management mode the following actions can be performed:</p> <ul><li><strong>Button 3 followed by short click </strong><strong>of button 3:</strong> Start Exclusion (Remove)</li> <li><strong>Button 3 followed by pushing </strong><strong>button 4 for 5 seconds</strong>: Factory Default Reset. After clicking on button 3 keep button 4 pushed for 4 seconds</li> </ul><br /><h2>Wakeup Information</h2><p>Not Provided</p>
+Keyfob<br /> <h1>Overview</h1><p>You can use the Home Control Key-Fob Switch for conveniently controlling your Home Control devices at the touch of a button.</p> <br /> <h2>Inclusion Information</h2><p>In factory default mode pushing one of the four buttons for 1 sec will start different inclusion modes:</p> <ul><li>Button 1: Include (Add) KFOB as sec. controller</li> <li>Button 2: Include (add) KFOB as secondary controller - non secure</li> <li>Button 3: Include (add) new device into KFOBS network</li> <li>Button 4: Include (add) new device into KFOBS network - non secure</li> </ul><p>The process for button 1 and 2 are indicated with fast red/green blinking, the process for button 3 and 4 show a fast green blinking. Every button push stops the process.</p> <p>This fast inclusion only works when device is in factory default. Once one device is included or the fob is included as secondary controller further inclusion and exclusion operation require to turn the device into management mode</p> <p>In management mode</p> <ul><li>Button 1: Include or Exclude the device as secondary controller</li> <li>Button 2: Issue Wakeup Notification and send out Node Information Frame</li> <li>Button 3 followed by short click of button 1: Start Secure Inclusion</li> <li>Button 3 followed by short click of button 2: Start Unsecure Inclusion</li> <li>Button 3 followed by short click of button 3: Start Exclusion</li> <li>Button 3 followed by short click of button 4: Start Primary Handover</li> </ul> <br /> <h2>Exclusion Information</h2><p>Leaving the network - i.e. being excluded - sets the device back to factory default.</p> <p>In management mode the following actions can be performed:</p> <ul><li><strong>Button 3 followed by short click </strong><strong>of button 3:</strong> Start Exclusion (Remove)</li> <li><strong>Button 3 followed by pushing </strong><strong>button 4 for 5 seconds</strong>: Factory Default Reset. After clicking on button 3 keep button 4 pushed for 4 seconds</li> </ul> <br /> <h2>Wakeup Information</h2><p>Not Provided</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -55,7 +55,7 @@ Keyfob<br /><h1>Overview</h1><p>You can use the Home Control Key-Fob Switch for 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Button 1 and 3 pair mode</label>
         <description><![CDATA[
-Button 1 and 3 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down.</p> <p>In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks</p>
+Button 1 and 3 pair mode<br /> <h1>Overview</h1><p>In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down.</p> <p>In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -69,7 +69,7 @@ Button 1 and 3 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 work
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Button 2 and 4 pair mode</label>
         <description><![CDATA[
-Button 2 and 4 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down.</p> <p>In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks</p>
+Button 2 and 4 pair mode<br /> <h1>Overview</h1><p>In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down.</p> <p>In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -83,7 +83,7 @@ Button 2 and 4 pair mode<br /><h1>Overview</h1><p>In separate mode button 1 work
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Action on group 1</label>
         <description><![CDATA[
-Action on group 1<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group A when the related button is pressed.</p>
+Action on group 1<br /> <h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group A when the related button is pressed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -103,7 +103,7 @@ Action on group 1<br /><h1>Overview</h1><p>This parameter defines the command to
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Action on group 2</label>
         <description><![CDATA[
-Action on group 2<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group B when the related button is pressed.</p>
+Action on group 2<br /> <h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group B when the related button is pressed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -123,7 +123,7 @@ Action on group 2<br /><h1>Overview</h1><p>This parameter defines the command to
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Action on group 3</label>
         <description><![CDATA[
-Action on group 3<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group C when the related button is pressed.</p>
+Action on group 3<br /> <h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group C when the related button is pressed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -143,7 +143,7 @@ Action on group 3<br /><h1>Overview</h1><p>This parameter defines the command to
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Action on group 4</label>
         <description><![CDATA[
-Action on group 4<br /><h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group D when the related button is pressed.</p>
+Action on group 4<br /> <h1>Overview</h1><p>This parameter defines the command to be sent to devices of control group D when the related button is pressed.</p>
         ]]></description>
         <default>1</default>
         <options>

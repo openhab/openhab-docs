@@ -8,7 +8,7 @@
   <thing-type id="schlage_be369_00_000" listed="false">
     <label>BE369 Keypad Deadbolt</label>
     <description><![CDATA[
-Keypad Deadbolt<br /><h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> <p>Shares same hardware as FE599 lock (lever version).</p> <br /><h2>Inclusion Information</h2><p>When prompted, follow the lock’s enrollment process:</p> <ol><li>Enter your 6-digit programming code</li> <li>Wait for the device to beep three times</li> <li>Press the Schlage button</li> <li>Press 0</li> <li>The Schlage button will blink three times to confirm</li> </ol><br /><h2>Exclusion Information</h2><p>When prompted, follow the lock’s removal process:</p> <ol><li>Enter your 6-digit programming code</li> <li>Wait for the device to beep three times</li> <li>Press the Schlage button</li> <li>Press 0</li> <li>The Schlage button will blink three times to confirm</li> </ol>
+Keypad Deadbolt<br /> <h1>Overview</h1><p>Schlage BE369 Keypad Door Lock - </p> <p>Shares same hardware as FE599 lock (lever version).</p> <br /> <h2>Inclusion Information</h2><p>When prompted, follow the lock’s enrollment process:</p> <ol><li>Enter your 6-digit programming code</li> <li>Wait for the device to beep three times</li> <li>Press the Schlage button</li> <li>Press 0</li> <li>The Schlage button will blink three times to confirm</li> </ol> <br /> <h2>Exclusion Information</h2><p>When prompted, follow the lock’s removal process:</p> <ol><li>Enter your 6-digit programming code</li> <li>Wait for the device to beep three times</li> <li>Press the Schlage button</li> <li>Press 0</li> <li>The Schlage button will blink three times to confirm</li> </ol>
     ]]></description>
     <category>Lock</category>
 

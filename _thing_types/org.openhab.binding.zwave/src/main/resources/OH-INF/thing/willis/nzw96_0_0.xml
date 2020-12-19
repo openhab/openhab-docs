@@ -8,7 +8,7 @@
   <thing-type id="willis_nzw96_00_000" listed="false">
     <label>NZW96 Outdoor Plug-in Module (1-Channel)</label>
     <description><![CDATA[
-Outdoor Plug-in Module (1-Channel)<br /><h1>Overview</h1><p>Inovelli's Outdoor Smart Plug-In On/Off Module + Repeater has the ability to turn on and off appliances, lights, and more from anywhere in the world. In addition to the outlet, the smart plug acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.</p> <br /><h2>Inclusion Information</h2><p>Press the button on the front 5 times within 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press the front button 5 times within 1 second.</p>
+Outdoor Plug-in Module (1-Channel)<br /> <h1>Overview</h1><p>Inovelli's Outdoor Smart Plug-In On/Off Module + Repeater has the ability to turn on and off appliances, lights, and more from anywhere in the world. In addition to the outlet, the smart plug acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.</p> <br /> <h2>Inclusion Information</h2><p>Press the button on the front 5 times within 1 second.</p> <br /> <h2>Exclusion Information</h2><p>Press the front button 5 times within 1 second.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

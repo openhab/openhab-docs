@@ -8,7 +8,7 @@
   <thing-type id="heiman_hs2skz_00_000" listed="false">
     <label>HS2SK-Z Smart Metering Plug</label>
     <description><![CDATA[
-Smart Metering Plug<br /><h1>Overview</h1><p>Smart metering outlet. Same hardware as DOMUX DX2SK-Z</p> <br /><h2>Inclusion Information</h2><p>Press power on/off button for 3 times in 1.5 sec then blue LED will flash quickly.</p> <br /><h2>Exclusion Information</h2><p>Press power on/off button for 3 times in 1.5 sec then blue LED will flash slowly.</p>
+Smart Metering Plug<br /> <h1>Overview</h1><p>Smart metering outlet. Same hardware as DOMUX DX2SK-Z</p> <br /> <h2>Inclusion Information</h2><p>Press power on/off button for 3 times in 1.5 sec then blue LED will flash quickly.</p> <br /> <h2>Exclusion Information</h2><p>Press power on/off button for 3 times in 1.5 sec then blue LED will flash slowly.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

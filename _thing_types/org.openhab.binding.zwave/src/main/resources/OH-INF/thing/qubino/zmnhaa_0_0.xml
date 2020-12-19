@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhaa_00_000" listed="false">
     <label>ZMNHAA Flush 1 relay</label>
     <description><![CDATA[
-Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching on or off the electrical device (e.g. light, fan, etc ...). The module can be controlled either through Z-wave network or through the wall switch.</p> <br /><h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds).</li> </ul><br /><h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
+Flush 1 relay<br /> <h1>Overview</h1><p>This Z-Wave module is used for switching on or off the electrical device (e.g. light, fan, etc ...). The module can be controlled either through Z-wave network or through the wall switch.</p> <br /> <h2>Inclusion Information</h2><ul><li>press service button S for more than 2 second or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds).</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>press service button S for more than 6 second or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -113,7 +113,7 @@ Flush 1 relay<br /><h1>Overview</h1><p>This Z-Wave module is used for switching 
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Activate / deactivate functions ALL ON/ALL OFF</label>
         <description><![CDATA[
-ctivate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
+ctivate / deactivate functions ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -129,7 +129,7 @@ ctivate / deactivate functions ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush 1 r
                  min="0" max="65535">
         <label>11: Automatic turning off relay after set time</label>
         <description><![CDATA[
-Automatic turning off relay after set time<br /><h1>Overview</h1><p>Default value 0</p> <ul><li> 0 - Auto OFF disabled</li> <li> 1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds.</li> </ul>
+Automatic turning off relay after set time<br /> <h1>Overview</h1><p>Default value 0</p> <ul><li> 0 - Auto OFF disabled</li> <li> 1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds.</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -150,7 +150,7 @@ Automatic turning off relay after set time<br /><h1>Overview</h1><p>Default valu
                  min="0" max="255">
         <label>40: Power reporting in Watts on percentage change</label>
         <description><![CDATA[
-Power reporting in Watts on percentage change<br /><h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%</p>
+Power reporting in Watts on percentage change<br /> <h1>Overview</h1><ul><li>0 – Reporting Disabled</li> <li>1 – 100 = 1% - 100% Reporting enabled</li> </ul><p>Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -160,7 +160,7 @@ Power reporting in Watts on percentage change<br /><h1>Overview</h1><ul><li>0 �
                  min="0" max="65535">
         <label>42: Power reporting in Watts on power change</label>
         <description><![CDATA[
-Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 65535 = 1second – 65535 seconds.</li> </ul><p>Reporting enabled. Power report is send with time interval set by entered value. </p>
+Power reporting in Watts on power change<br /> <h1>Overview</h1><ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li>1 – 65535 = 1second – 65535 seconds.</li> </ul><p>Reporting enabled. Power report is send with time interval set by entered value. </p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li>default v
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: basic on/off</label>
         <description><![CDATA[
-triggered at change of the output Q state and reflecting its state<br /><h1>Overview</h1><p>e</p>
+triggered at change of the output Q state and reflecting its state<br /> <h1>Overview</h1><p>e</p>
         ]]></description>
         <multipleLimit>16</multipleLimit>
       </parameter>

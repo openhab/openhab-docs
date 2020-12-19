@@ -8,7 +8,7 @@
   <thing-type id="yale_yrd110_00_000" listed="false">
     <label>YRD110 Yale button deadbolt without keyway</label>
     <description><![CDATA[
-Yale button deadbolt without keyway<br /><h1>Overview</h1><p>Security Keyless Push Button Stand Alone Deadbolt.</p> <br /><h2>Inclusion Information</h2><p>To enroll using the Z-Wave button:</p> <ol><li>Remove the battery cover</li> <li>Press the Z-Wave button and hold until the lock beeps two times</li> <li>Release the button to start network joining</li> <li>Replace the battery conver</li> </ol><br /><h2>Exclusion Information</h2><p>To remove the lock using the Z-Wave button:</p> <ol><li>Remove the battery cover</li> <li>Press the Z-Wave button and hold until the lock beeps five times</li> <li>Release the button to start network removal</li> <li>Replace the battery cover</li> </ol>
+Yale button deadbolt without keyway<br /> <h1>Overview</h1><p>Security Keyless Push Button Stand Alone Deadbolt.</p> <br /> <h2>Inclusion Information</h2><p>To enroll using the Z-Wave button:</p> <ol><li>Remove the battery cover</li> <li>Press the Z-Wave button and hold until the lock beeps two times</li> <li>Release the button to start network joining</li> <li>Replace the battery conver</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove the lock using the Z-Wave button:</p> <ol><li>Remove the battery cover</li> <li>Press the Z-Wave button and hold until the lock beeps five times</li> <li>Release the button to start network removal</li> <li>Replace the battery cover</li> </ol>
     ]]></description>
     <category>Lock</category>
 
@@ -102,7 +102,7 @@ Yale button deadbolt without keyway<br /><h1>Overview</h1><p>Security Keyless Pu
                  min="5" max="255">
         <label>3: Auto relock time</label>
         <description><![CDATA[
-Time for auto relock<br /><h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.</p>
+Time for auto relock<br /> <h1>Overview</h1><p>Amount of seconds between the door is unlocked and when it automatically attempts to re-lock itself, when auto-relocking is enabled.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -112,7 +112,7 @@ Time for auto relock<br /><h1>Overview</h1><p>Amount of seconds between the door
                  min="1" max="7">
         <label>4: Wrong code limit</label>
         <description><![CDATA[
-Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be keyed in before lock goes into temporary keypad lockout mode.</p>
+Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of incorrect PINs that can be keyed in before lock goes into temporary keypad lockout mode.</p>
         ]]></description>
         <default>5</default>
       </parameter>
@@ -121,7 +121,7 @@ Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incor
                  min="1" max="255">
         <label>7: Shutdown time</label>
         <description><![CDATA[
-Incorrect attempts shutdown time<br /><h1>Overview</h1><p>Amount of time lock should ignore the keypad, if the number of incorrect PINs is exceeded.  (Can still be locked and unlocked by zwave while in shutdown.)</p>
+Incorrect attempts shutdown time<br /> <h1>Overview</h1><p>Amount of time lock should ignore the keypad, if the number of incorrect PINs is exceeded.  (Can still be locked and unlocked by zwave while in shutdown.)</p>
         ]]></description>
         <default>60</default>
         <advanced>true</advanced>
@@ -144,7 +144,7 @@ Incorrect attempts shutdown time<br /><h1>Overview</h1><p>Amount of time lock sh
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Receive Alarms</label>
         <description><![CDATA[
-Group that will receive alarm notices from the lock<br /><h1>Overview</h1><p>The lock supports 1 association group with 5 devices. Alarm Reports are sent out unsolicited to devices included in the association group.</p>
+Group that will receive alarm notices from the lock<br /> <h1>Overview</h1><p>The lock supports 1 association group with 5 devices. Alarm Reports are sent out unsolicited to devices included in the association group.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

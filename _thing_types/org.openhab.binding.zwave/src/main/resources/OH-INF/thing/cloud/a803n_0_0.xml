@@ -8,7 +8,7 @@
   <thing-type id="cloud_a803n_00_000" listed="false">
     <label>A803N Motion Sensor</label>
     <description><![CDATA[
-Motion Sensor<br /><h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared detector or physical sensor.</p> <br /><h2>Inclusion Information</h2><p>Press the PIR button 3 times</p> <br /><h2>Exclusion Information</h2><p>Press the PIR button 3 times</p> <br /><h2>Wakeup Information</h2><p>Press the PIR Button</p>
+Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor (PIR) is a passive infrared detector or physical sensor.</p> <br /> <h2>Inclusion Information</h2><p>Press the PIR button 3 times</p> <br /> <h2>Exclusion Information</h2><p>Press the PIR button 3 times</p> <br /> <h2>Wakeup Information</h2><p>Press the PIR Button</p>
     ]]></description>
     <category>Sensor</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="vision_zl7431_00_000" listed="false">
     <label>ZL7431 In Wall Relay Switch</label>
     <description><![CDATA[
-In Wall Relay Switch<br /><h1>Overview</h1><p>Vision ZL7431US In-wall 1 relay switch</p> <br /><h2>Inclusion Information</h2><ul><li>Turn on and turn off the wall switch that connects with ZL 7431 module 4 times to be included</li> <li>(or press the Program SW 4 times within 2 seconds to be included),</li> </ul><p>then LED shall stop flashing. </p> <br /><h2>Exclusion Information</h2><ul><li>Turn on and turn off the wall switch that connects with ZL 7431 module 4 times to be excluded</li> <li>(or press the Program SW 4 times within 2 seconds to be excluded),</li> </ul><p>then LED shall start flashing</p>
+In Wall Relay Switch<br /> <h1>Overview</h1><p>Vision ZL7431US In-wall 1 relay switch</p> <br /> <h2>Inclusion Information</h2><ul><li>Turn on and turn off the wall switch that connects with ZL 7431 module 4 times to be included</li> <li>(or press the Program SW 4 times within 2 seconds to be included),</li> </ul><p>then LED shall stop flashing. </p> <br /> <h2>Exclusion Information</h2><ul><li>Turn on and turn off the wall switch that connects with ZL 7431 module 4 times to be excluded</li> <li>(or press the Program SW 4 times within 2 seconds to be excluded),</li> </ul><p>then LED shall start flashing</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="elexa_dmws1_00_000" listed="false">
     <label>DMWS1 Dome Leak Sensor</label>
     <description><![CDATA[
-Dome Leak Sensor<br /><h1>Overview</h1><p>The Dome Leak Sensor is a battery powered Z-Wave Plus device that can detect wetness and send a notification when it does so. The Leak Sensor consists of two parts—the “SENSOR ASSEMBLY,” and the optional “REMOTE SENSOR PROBE.” They both detect water similarly, using three visible “LEAD.” The moment water touches any of the LEAD, the device will beep and send a notification with its moisture status to its Z-Wave controller.</p> <br /><h2>Inclusion Information</h2><p>Put controller in inclusion mode.</p> <p>Remove cover from device, remove tab from battery (if present), and press button 3 times rapidly.</p> <br /><h2>Exclusion Information</h2><p>Put controller in exclusion mode.</p> <p>Remove cover from device and press button 3 times rapidly.</p> <br /><h2>Wakeup Information</h2><p>Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up. If this doesn't wake up the device, try triple-clicking the button. This causes the device to emit a NIF frame, which the binding treats as a wake up.</p>
+Dome Leak Sensor<br /> <h1>Overview</h1><p>The Dome Leak Sensor is a battery powered Z-Wave Plus device that can detect wetness and send a notification when it does so. The Leak Sensor consists of two parts—the “SENSOR ASSEMBLY,” and the optional “REMOTE SENSOR PROBE.” They both detect water similarly, using three visible “LEAD.” The moment water touches any of the LEAD, the device will beep and send a notification with its moisture status to its Z-Wave controller.</p> <br /> <h2>Inclusion Information</h2><p>Put controller in inclusion mode.</p> <p>Remove cover from device, remove tab from battery (if present), and press button 3 times rapidly.</p> <br /> <h2>Exclusion Information</h2><p>Put controller in exclusion mode.</p> <p>Remove cover from device and press button 3 times rapidly.</p> <br /> <h2>Wakeup Information</h2><p>Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up. If this doesn't wake up the device, try triple-clicking the button. This causes the device to emit a NIF frame, which the binding treats as a wake up.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ Dome Leak Sensor<br /><h1>Overview</h1><p>The Dome Leak Sensor is a battery powe
                  min="0" max="255">
         <label>1: Total Alarm Duration</label>
         <description><![CDATA[
-Total time the Leak Sensor will beep and light its LED in the event of a leak<br /><h1>Overview</h1><p>0: Leak Sensor beeps until water is removed</p> <p>1-255: 1-255 minutes</p>
+Total time the Leak Sensor will beep and light its LED in the event of a leak<br /> <h1>Overview</h1><p>0: Leak Sensor beeps until water is removed</p> <p>1-255: 1-255 minutes</p>
         ]]></description>
         <default>120</default>
         <limitToOptions>false</limitToOptions>
@@ -124,7 +124,7 @@ Total time the Leak Sensor will beep and light its LED in the event of a leak<br
                  min="0" max="255">
         <label>7: Basic Set Level</label>
         <description><![CDATA[
-The value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview</h1><p>Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected</p>
+The value sent by the BASIC_SET command to Association Group 2<br /> <h1>Overview</h1><p>Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -134,7 +134,7 @@ The value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller.  The Leak Sensor sends this group a Notification Report and a Binary Sensor Report when water is detected or removed.  It also sends this group a Battery Report in reponse to Battery Get commands and a Locally Reset Notification upon local reset.</p>
+<br /> <h1>Overview</h1><p>Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller.  The Leak Sensor sends this group a Notification Report and a Binary Sensor Report when water is detected or removed.  It also sends this group a Battery Report in reponse to Battery Get commands and a Locally Reset Notification upon local reset.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -142,7 +142,7 @@ The value sent by the BASIC_SET command to Association Group 2<br /><h1>Overview
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Control</label>
         <description><![CDATA[
-Group to receive BASIC_SET on leak change<br /><h1>Overview</h1><p>The Leak Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to a detected leak. Then, after the leak is no longer detected, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 7. </p>
+Group to receive BASIC_SET on leak change<br /> <h1>Overview</h1><p>The Leak Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to a detected leak. Then, after the leak is no longer detected, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 7. </p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -150,7 +150,7 @@ Group to receive BASIC_SET on leak change<br /><h1>Overview</h1><p>The Leak Sens
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Notification</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 3 supports up to 5 members and the Leak Sensor sends it a NOTIFICATION_REPORT when water is detected or removed</p>
+<br /> <h1>Overview</h1><p>Group 3 supports up to 5 members and the Leak Sensor sends it a NOTIFICATION_REPORT when water is detected or removed</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -158,7 +158,7 @@ Group to receive BASIC_SET on leak change<br /><h1>Overview</h1><p>The Leak Sens
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Sensor Binary</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 4 supports up to 5 members and the Leak Sensor sends it a SENSOR_BINARY_REPORT when water is detected or removed.</p>
+<br /> <h1>Overview</h1><p>Group 4 supports up to 5 members and the Leak Sensor sends it a SENSOR_BINARY_REPORT when water is detected or removed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="vision_zd2201_00_000" listed="false">
     <label>ZD2201 Multisensor 4in1</label>
     <description><![CDATA[
-Multisensor 4in1<br /><h1>Overview</h1><p>Contact/temperature/humidity/luminance sensor.  Can also be called Zipato Quad Sensor (Z+).</p> <br /><h2>Inclusion Information</h2><p> Press the program switch once on Multisensor 4 in 1</p> <br /><h2>Exclusion Information</h2><p> Press the program switch once on Multisensor 4 in 1 for 1 second at least</p> <br /><h2>Wakeup Information</h2><p> Press the program switch once on Multisensor 4 in 1</p>
+Multisensor 4in1<br /> <h1>Overview</h1><p>Contact/temperature/humidity/luminance sensor.  Can also be called Zipato Quad Sensor (Z+).</p> <br /> <h2>Inclusion Information</h2><p> Press the program switch once on Multisensor 4 in 1</p> <br /> <h2>Exclusion Information</h2><p> Press the program switch once on Multisensor 4 in 1 for 1 second at least</p> <br /> <h2>Wakeup Information</h2><p> Press the program switch once on Multisensor 4 in 1</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -90,7 +90,7 @@ Multisensor 4in1<br /><h1>Overview</h1><p>Contact/temperature/humidity/luminance
                  min="1" max="50">
         <label>2: Temperature Reporting Threshold</label>
         <description><![CDATA[
-Set up from 0.1C to 5C<br /><h1>Overview</h1><p>Threshold change in temperature to induce an automatic report. 1 to 50 ( Set up from 0.1C to 5C)</p>
+Set up from 0.1C to 5C<br /> <h1>Overview</h1><p>Threshold change in temperature to induce an automatic report. 1 to 50 ( Set up from 0.1C to 5C)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -100,7 +100,7 @@ Set up from 0.1C to 5C<br /><h1>Overview</h1><p>Threshold change in temperature 
                  min="1" max="50">
         <label>3: Humidity Reporting Threshold</label>
         <description><![CDATA[
-Set up from 1%-50%<br /><h1>Overview</h1><p>Threshold change in humidity to induce an automatic report. 1 to 50 ( Set up from 1%-50%)</p>
+Set up from 1%-50%<br /> <h1>Overview</h1><p>Threshold change in humidity to induce an automatic report. 1 to 50 ( Set up from 1%-50%)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Set up from 1%-50%<br /><h1>Overview</h1><p>Threshold change in humidity to indu
                  min="0" max="50">
         <label>4: Luminance Reporting Threshold</label>
         <description><![CDATA[
-Set up from 5%-50%<br /><h1>Overview</h1><p>Threshold change in luminance to induce an automatic report. 0 is disabled. 5 to 50 ( Set up from 5%-50%)</p>
+Set up from 5%-50%<br /> <h1>Overview</h1><p>Threshold change in luminance to induce an automatic report. 0 is disabled. 5 to 50 ( Set up from 5%-50%)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

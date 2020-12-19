@@ -8,7 +8,7 @@
   <thing-type id="philio_pat02a_00_000" listed="false">
     <label>PAT02-A Flood Multisensor (incl. humidty and temperature)</label>
     <description><![CDATA[
-Flood Multisensor (incl. humidty and temperature)<br /><h1>Overview</h1><p>The flood multisensor PAT02 has flood, temperature and humidity, 3 sensors function in one, based on Z-WaveTM technology. It is the Z-WaveTM plus product, it support the security, OTA... Those newest features of the Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances. </p> <p>This product can be included and operated in any Z-WaveTM network with other Z-WaveTM certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network. </p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by Z-WaveTM Controller means “Remove” or “Exclusion”.</p> <ol><li>Have Z-WaveTM Controller entered inclusion mode.</li> <li>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</li> </ol><br /><h2>Exclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network. </p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by Z-WaveTM Controller means “Remove” or “Exclusion”.</p> <ol><li>Have Z-WaveTM Controller entered exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode. Node ID has been excluded.</li> </ol><br /><h2>Wakeup Information</h2><p>After the device adding to the network, it will wake-up once per day in default. When it wake-up it will broadcast the “Wake Up Notification” message to the network, and wake-up 10 seconds for receive the setting commands.</p> <p>The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. And the interval step is 30 minutes.</p> <p>Press the tamper key once. The device will wake-up 10 seconds.</p>
+Flood Multisensor (incl. humidty and temperature)<br /> <h1>Overview</h1><p>The flood multisensor PAT02 has flood, temperature and humidity, 3 sensors function in one, based on Z-WaveTM technology. It is the Z-WaveTM plus product, it support the security, OTA... Those newest features of the Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances. </p> <p>This product can be included and operated in any Z-WaveTM network with other Z-WaveTM certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <br /> <h2>Inclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network. </p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by Z-WaveTM Controller means “Remove” or “Exclusion”.</p> <ol><li>Have Z-WaveTM Controller entered inclusion mode.</li> <li>Pressing the tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the device will wake to receive the setting command from Z-WaveTM Controller about 20 seconds.</li> </ol> <br /> <h2>Exclusion Information</h2><p>There are one tamper keys in the back side of the device, It can add, remove, reset or association from the Z-WaveTM network. </p> <p>In the first time, add the device into the Z-WaveTM network. First, make sure the primary controller is in the add mode. And then power on the device, just take out the insulation Mylar in the back side of the device. The device will auto start the NWI (Network Wide Inclusion) mode. And it should be included in 5 seconds. You will see the LED light ON one second.</p> <p>Notice: Including a node ID allocated by Z-WaveTM Controller means “Add” or “Inclusion”. Excluding a node ID allocated by Z-WaveTM Controller means “Remove” or “Exclusion”.</p> <ol><li>Have Z-WaveTM Controller entered exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode. Node ID has been excluded.</li> </ol> <br /> <h2>Wakeup Information</h2><p>After the device adding to the network, it will wake-up once per day in default. When it wake-up it will broadcast the “Wake Up Notification” message to the network, and wake-up 10 seconds for receive the setting commands.</p> <p>The wake-up interval minimum setting is 30 minutes, and maximum setting is 120 hours. And the interval step is 30 minutes.</p> <p>Press the tamper key once. The device will wake-up 10 seconds.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -80,7 +80,7 @@ Flood Multisensor (incl. humidty and temperature)<br /><h1>Overview</h1><p>The f
                  min="0" max="255">
         <label>1: Basic Set OFF Level</label>
         <description><![CDATA[
-Setting the BASIC command value.<br /><h1>Overview</h1><p>Setting the BASIC command value.</p> <p>When the flood trigger off (0x00), send the BASIC CC to the group 2</p>
+Setting the BASIC command value.<br /> <h1>Overview</h1><p>Setting the BASIC command value.</p> <p>When the flood trigger off (0x00), send the BASIC CC to the group 2</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -90,7 +90,7 @@ Setting the BASIC command value.<br /><h1>Overview</h1><p>Setting the BASIC comm
                  min="0" max="255">
         <label>2: Basic Set ON Level</label>
         <description><![CDATA[
-Setting the BASIC command value.<br /><h1>Overview</h1><p>Setting the BASIC command value.</p> <p>When the flood trigger on(0xFF), send the BASIC CC to the group 2.</p>
+Setting the BASIC command value.<br /> <h1>Overview</h1><p>Setting the BASIC command value.</p> <p>When the flood trigger on(0xFF), send the BASIC CC to the group 2.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -99,7 +99,7 @@ Setting the BASIC command value.<br /><h1>Overview</h1><p>Setting the BASIC comm
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
-Parameter to set the Operation Mode.<br /><h1>Overview</h1><p>Parameter to set the Operation Mode.</p> <ul><li>Bit 0: Disable the Flood function</li> <li>Bit 1: Reserved.</li> <li>Bit 2: Reserved.</li> <li>Bit 3: Set the temperature scale. 0: Fahrenheit, 1:Celsius</li> <li>Bit 4: Reserved.</li> <li>Bit 5: Disable the temperature report after event triggered. (1:Disable, 0:Enable) </li> <li>Bit 6: Reserved.</li> <li>Bit 7: Reserved.</li> </ul>
+Parameter to set the Operation Mode.<br /> <h1>Overview</h1><p>Parameter to set the Operation Mode.</p> <ul><li>Bit 0: Disable the Flood function</li> <li>Bit 1: Reserved.</li> <li>Bit 2: Reserved.</li> <li>Bit 3: Set the temperature scale. 0: Fahrenheit, 1:Celsius</li> <li>Bit 4: Reserved.</li> <li>Bit 5: Disable the temperature report after event triggered. (1:Disable, 0:Enable) </li> <li>Bit 6: Reserved.</li> <li>Bit 7: Reserved.</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -115,7 +115,7 @@ Parameter to set the Operation Mode.<br /><h1>Overview</h1><p>Parameter to set t
                  min="0" max="127">
         <label>6: Multi-Sensor Function Switch</label>
         <description><![CDATA[
-Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set the sensor functions.</p> <ul><li>Bit 0: Reserved.</li> <li>Bit 1: Reserved.</li> <li>Bit 2: Reserved.</li> <li>Bit 3: Reserved.</li> <li>Bit 4: Reserved.</li> <li>Bit 5: Reserved.</li> <li>Bit 6: Disable the </li> </ul>
+Parameter to set the sensor functions.<br /> <h1>Overview</h1><p>Parameter to set the sensor functions.</p> <ul><li>Bit 0: Reserved.</li> <li>Bit 1: Reserved.</li> <li>Bit 2: Reserved.</li> <li>Bit 3: Reserved.</li> <li>Bit 4: Reserved.</li> <li>Bit 5: Reserved.</li> <li>Bit 6: Disable the </li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -125,7 +125,7 @@ Parameter to set the sensor functions.<br /><h1>Overview</h1><p>Parameter to set
                  min="0" max="127">
         <label>7: Customer Function</label>
         <description><![CDATA[
-Customer function switch, using bit control.<br /><h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASI OFF after flood event cleared <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: Disable to report Battery state when the device triggered <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 7: Reserve</li> </ul>
+Customer function switch, using bit control.<br /> <h1>Overview</h1><p>Customer Function switch using bit control</p> <ul><li>Bit 0: Reserve</li> <li>Bit 1: Reserve</li> <li>Bit 2: Reserve</li> <li>Bit 3: Disable send out BASI OFF after flood event cleared <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 4: Notification Type <ul><li>0: Using Notification Report</li> <li>1: Using Sensor Binary Report</li> </ul></li> <li>Bit 5: Disable Multi CC in auto report <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 6: Disable to report Battery state when the device triggered <ul><li>0: Enable</li> <li>1: Disable</li> </ul></li> <li>Bit 7: Reserve</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -137,7 +137,7 @@ Customer function switch, using bit control.<br /><h1>Overview</h1><p>Customer F
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the battery level.<br /> <h1>Overview</h1><p>The interval time for auto reporting the battery level.</p> <ul><li>0 = Turn off auto report battery.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -147,7 +147,7 @@ The interval time for auto reporting the battery level.<br /><h1>Overview</h1><p
                  min="1" max="127">
         <label>13: Auto Report Temperature Time</label>
         <description><![CDATA[
-The interval time for auto reporting the temperature state.<br /><h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the temperature state.<br /> <h1>Overview</h1><p>The interval time for auto reporting the temperature state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -157,7 +157,7 @@ The interval time for auto reporting the temperature state.<br /><h1>Overview</h
                  min="1" max="127">
         <label>14: Auto Report Humidity Time</label>
         <description><![CDATA[
-The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><p>The interval time for auto reporting the humidity state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the humidity state.<br /> <h1>Overview</h1><p>The interval time for auto reporting the humidity state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -167,7 +167,7 @@ The interval time for auto reporting the humidity state.<br /><h1>Overview</h1><
                  min="1" max="127">
         <label>15: Auto Report Flood Time</label>
         <description><![CDATA[
-The interval time for auto reporting the flood state.<br /><h1>Overview</h1><p>The interval time for auto reporting the flood state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
+The interval time for auto reporting the flood state.<br /> <h1>Overview</h1><p>The interval time for auto reporting the flood state.</p> <ul><li>0 = Turn off auto report temperature.</li> <li>1-127 = Number of ticks. The default value is 12. The tick time can be set by configuration No. 20.</li> </ul>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -177,7 +177,7 @@ The interval time for auto reporting the flood state.<br /><h1>Overview</h1><p>T
                  min="0" max="254">
         <label>20: Auto Report Tick Interval</label>
         <description><![CDATA[
-The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interval time for auto report each tick. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>0 = Caution: Setting to 0 means turn off all auto report function.</li> <li>1-254 = Caution: The value is unsigned byt</li> </ul>
+The interval time for auto report each tick.<br /> <h1>Overview</h1><p>The interval time for auto report each tick. Setting configuration will affect configuration no. 10, 13, 14 and 15.</p> <ul><li>0 = Caution: Setting to 0 means turn off all auto report function.</li> <li>1-254 = Caution: The value is unsigned byt</li> </ul>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -187,7 +187,7 @@ The interval time for auto report each tick.<br /><h1>Overview</h1><p>The interv
                  min="0" max="127">
         <label>21: Temperature Differential Report</label>
         <description><![CDATA[
-The temperature differential to report.<br /><h1>Overview</h1><p>The temperature differential to report. The unit is Fahrenheit. Enable this function the device will detect every 10 seconds.</p> <ul><li>0 = means turn off this function.</li> </ul>
+The temperature differential to report.<br /> <h1>Overview</h1><p>The temperature differential to report. The unit is Fahrenheit. Enable this function the device will detect every 10 seconds.</p> <ul><li>0 = means turn off this function.</li> </ul>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -197,7 +197,7 @@ The temperature differential to report.<br /><h1>Overview</h1><p>The temperature
                  min="0" max="60">
         <label>23: Humidity Differential Report</label>
         <description><![CDATA[
-The humidity differential to report.<br /><h1>Overview</h1><p>The humidity differential to report. The unit is percentage. Enable this function the device will detect every 10 seconds.</p> <ul><li>0 = means turn off this function.</li> </ul>
+The humidity differential to report.<br /> <h1>Overview</h1><p>The humidity differential to report. The unit is percentage. Enable this function the device will detect every 10 seconds.</p> <ul><li>0 = means turn off this function.</li> </ul>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

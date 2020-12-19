@@ -8,7 +8,7 @@
   <thing-type id="mcohome_mhs41255_00_000" listed="false">
     <label>MH-S412 MCO Touch Panel Switch</label>
     <description><![CDATA[
-MCO Touch Panel Switch<br /><h1>Overview</h1><p>The Touch Panel Switch can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc.</p> <br /><h2>Inclusion Information</h2><ol><li>Set controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.<br />Note: If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.<br />Note: If the exclusion is successful, all INDICATION LEDs on the panel will flash 4 times. The exclusion will delete all association data.</li> </ol>
+MCO Touch Panel Switch<br /> <h1>Overview</h1><p>The Touch Panel Switch can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.<br />Note: If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Set controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</li> <li>Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.<br />Note: If the exclusion is successful, all INDICATION LEDs on the panel will flash 4 times. The exclusion will delete all association data.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -69,7 +69,7 @@ MCO Touch Panel Switch<br /><h1>Overview</h1><p>The Touch Panel Switch can be us
                  min="0" max="1">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
-Switch state saved or not when power failure<br /><h1>Overview</h1><p>0x00 not saved，switch will be off when powered again</p> <p>0x01 saved，switch will keep the same state when powered again - DEFAULT</p>
+Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0x00 not saved，switch will be off when powered again</p> <p>0x01 saved，switch will keep the same state when powered again - DEFAULT</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -79,7 +79,7 @@ Switch state saved or not when power failure<br /><h1>Overview</h1><p>0x00 not s
                  min="0" max="255">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
-ALL ON/ALL OFF<br /><h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF - DEFAULT</p>
+ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <p>0x01 forbid ALL ON, allow ALL OFF</p> <p>0x02 allow ALL ON, forbid ALL OFF</p> <p>0xFF allow ALL ON, allow ALL OFF - DEFAULT</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -89,7 +89,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><p>0x00 forbid ALL ON, forbid ALL OFF</p> <
                  min="1" max="10">
         <label>4: LED Backlit brightness level</label>
         <description><![CDATA[
-LED Backlit brightness level<br /><h1>Overview</h1><p>0x00 LED disabled</p> <p>0x01~0x0A Min level-Max level</p> <p>&gt;0x0A same level as 0x0A - DEFAULT</p>
+LED Backlit brightness level<br /> <h1>Overview</h1><p>0x00 LED disabled</p> <p>0x01~0x0A Min level-Max level</p> <p>&gt;0x0A same level as 0x0A - DEFAULT</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -99,7 +99,7 @@ LED Backlit brightness level<br /><h1>Overview</h1><p>0x00 LED disabled</p> <p>0
                  min="0" max="4">
         <label>5: Key Mode</label>
         <description><![CDATA[
-Key Mode<br /><h1>Overview</h1><p>0x00 single click to switch on/off status - DEFAULT</p> <p>0x01 Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 0x06</p> <p>0x02 Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 0x06</p> <p>0x03 hold &gt;3s then key is on, and off once released</p> <p>0X04 single click to switch on/off status + hold &gt;3s then key is on, and off once released</p> <p>**** This function works for corridor or stairwell situation. ****</p>
+Key Mode<br /> <h1>Overview</h1><p>0x00 single click to switch on/off status - DEFAULT</p> <p>0x01 Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 0x06</p> <p>0x02 Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 0x06</p> <p>0x03 hold &gt;3s then key is on, and off once released</p> <p>0X04 single click to switch on/off status + hold &gt;3s then key is on, and off once released</p> <p>**** This function works for corridor or stairwell situation. ****</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -109,7 +109,7 @@ Key Mode<br /><h1>Overview</h1><p>0x00 single click to switch on/off status - DE
                  min="0" max="65535">
         <label>6: Key On duration</label>
         <description><![CDATA[
-Key On duration<br /><h1>Overview</h1><p>0x00 infinite - DEFAULT</p> <p>1~65535 unit "sec"</p>
+Key On duration<br /> <h1>Overview</h1><p>0x00 infinite - DEFAULT</p> <p>1~65535 unit "sec"</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -119,7 +119,7 @@ Key On duration<br /><h1>Overview</h1><p>0x00 infinite - DEFAULT</p> <p>1~65535 
                  min="0" max="3">
         <label>8: Basic CC integration setting</label>
         <description><![CDATA[
-Basic CC integration setting<br /><h1>Overview</h1><p>0x00 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association - DEFAULT</p> <p>0x01 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p> <p>0x02 "Basic Set" received，all keys respond; "Basic Get" received，not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint） to LifeLine Association</p> <p>0x03 "Basic Set" received，all keys respond; "Basic Get" received，key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p>
+Basic CC integration setting<br /> <h1>Overview</h1><p>0x00 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association - DEFAULT</p> <p>0x01 "Basic Set" received，key 1 responds; "Basic Get" received，key 1 sends "Basic Report"; key 1 will send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p> <p>0x02 "Basic Set" received，all keys respond; "Basic Get" received，not reply "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint） to LifeLine Association</p> <p>0x03 "Basic Set" received，all keys respond; "Basic Get" received，key 1 sends "Basic Report"; All keys will not send unsolicited "Basic Report"（No Endpoint）to LifeLine Association</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -129,7 +129,7 @@ Basic CC integration setting<br /><h1>Overview</h1><p>0x00 "Basic Set" received�
                  min="0" max="255">
         <label>10: Scene respond</label>
         <description><![CDATA[
-Scene respond<br /><h1>Overview</h1><p>0x00: Scene respond disabled</p> <p>Bit0: =1 Key1 respond scene</p> <p>        =0 Key1 not respond scene</p> <p>Bit1: =1 Key2 respond scene</p> <p>        =0 Key2 not respond scene</p> <p>Bit7:4 Rev</p>
+Scene respond<br /> <h1>Overview</h1><p>0x00: Scene respond disabled</p> <p>Bit0: =1 Key1 respond scene</p> <p>        =0 Key1 not respond scene</p> <p>Bit1: =1 Key2 respond scene</p> <p>        =0 Key2 not respond scene</p> <p>Bit7:4 Rev</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

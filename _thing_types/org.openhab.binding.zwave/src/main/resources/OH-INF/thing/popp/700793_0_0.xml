@@ -8,7 +8,7 @@
   <thing-type id="popp_700793_00_000" listed="false">
     <label>700793 Power Plug</label>
     <description><![CDATA[
-Power Plug<br /><h1>Overview</h1><p>Controllable plug for wall outlets including energy and power meter.This device is VDE and CE certified </p> <br /><h2>Inclusion Information</h2><p>Press the button on the wall plug 3 times within a period of around 2 seconds. </p> <br /><h2>Exclusion Information</h2><p>Press the button on the wall plug 3 times within a period of around 2 seconds. </p>
+Power Plug<br /> <h1>Overview</h1><p>Controllable plug for wall outlets including energy and power meter.This device is VDE and CE certified </p> <br /> <h2>Inclusion Information</h2><p>Press the button on the wall plug 3 times within a period of around 2 seconds. </p> <br /> <h2>Exclusion Information</h2><p>Press the button on the wall plug 3 times within a period of around 2 seconds. </p>
     ]]></description>
     <category>PowerOutlet</category>
 

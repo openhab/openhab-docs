@@ -8,7 +8,7 @@
   <thing-type id="vision_zm1601_00_000" listed="false">
     <label>ZM1601 Battery Operated Siren</label>
     <description><![CDATA[
-Battery Operated Siren<br /><h1>Overview</h1><p>This product will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave enabled network. </p> <br /><h2>Inclusion Information</h2><p>Open the bracket and press the program switch of ZM 1601 for 1 second at least &amp; release to be included. After setting, the LED Setting Lighting should go off, if not, please try again.</p> <br /><h2>Exclusion Information</h2><p>Press the program switch of ZM 1601 for 1 second at least &amp; release to be excluded.</p> <p>Note: LED setting light will flash (orange color) continuously in Exclusion condition. </p>
+Battery Operated Siren<br /> <h1>Overview</h1><p>This product will sound a loud siren and flash a strobe light when an alarm message or alert is received on any Z-Wave enabled network. </p> <br /> <h2>Inclusion Information</h2><p>Open the bracket and press the program switch of ZM 1601 for 1 second at least &amp; release to be included. After setting, the LED Setting Lighting should go off, if not, please try again.</p> <br /> <h2>Exclusion Information</h2><p>Press the program switch of ZM 1601 for 1 second at least &amp; release to be excluded.</p> <p>Note: LED setting light will flash (orange color) continuously in Exclusion condition. </p>
     ]]></description>
     <category>Siren</category>
 

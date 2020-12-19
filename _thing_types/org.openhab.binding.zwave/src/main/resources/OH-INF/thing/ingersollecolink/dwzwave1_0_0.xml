@@ -8,7 +8,7 @@
   <thing-type id="ingersollecolink_dwzwave1_00_000" listed="false">
     <label>DWZWAVE1 Z-Wave Door/Window Sensor</label>
     <description><![CDATA[
-Z-Wave Door/Window Sensor<br /><h1>Overview</h1><p>Monitor activities at your home with this Z-Wave Door and Window Sensor.  Choose to receive mobile or email alerts when a door or window is opened.  Use the Door/Window sensor to trigger video recording or turn on the lights.  View the status of the sensor from your smartphone, tablet, or computer.</p> <br /><h2>Inclusion Information</h2><p>Remove the battery for 10 seconds and replace the battery to restart enrollment mode.</p> <br /><h2>Exclusion Information</h2><ol><li>Remove the battery from the Sensor.</li> <li>Leave the battery out for at least ten (10) seconds.</li> <li>Reinstall the battery into the Sensor.</li> </ol><br /><h2>Wakeup Information</h2><p>Press the "+" button once.</p>
+Z-Wave Door/Window Sensor<br /> <h1>Overview</h1><p>Monitor activities at your home with this Z-Wave Door and Window Sensor.  Choose to receive mobile or email alerts when a door or window is opened.  Use the Door/Window sensor to trigger video recording or turn on the lights.  View the status of the sensor from your smartphone, tablet, or computer.</p> <br /> <h2>Inclusion Information</h2><p>Remove the battery for 10 seconds and replace the battery to restart enrollment mode.</p> <br /> <h2>Exclusion Information</h2><ol><li>Remove the battery from the Sensor.</li> <li>Leave the battery out for at least ten (10) seconds.</li> <li>Reinstall the battery into the Sensor.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the "+" button once.</p>
     ]]></description>
     <category>Door</category>
 
@@ -61,7 +61,7 @@ Z-Wave Door/Window Sensor<br /><h1>Overview</h1><p>Monitor activities at your ho
       <parameter name="config_99_1" type="integer" groupName="configuration">
         <label>99: Fault Restore Report</label>
         <description><![CDATA[
-Fault Restore Report<br /><h1>Overview</h1><p>Enable or disable Basic Sets of 0x00 on a fault restore to nodes in Group 2. Default = Enabled.</p>
+Fault Restore Report<br /> <h1>Overview</h1><p>Enable or disable Basic Sets of 0x00 on a fault restore to nodes in Group 2. Default = Enabled.</p>
         ]]></description>
         <default>255</default>
         <options>

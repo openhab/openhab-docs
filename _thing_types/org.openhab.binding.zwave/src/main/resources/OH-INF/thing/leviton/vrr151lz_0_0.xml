@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrr151lz_00_000" listed="false">
     <label>VRR15-1LZ Receptacle</label>
     <description><![CDATA[
-Receptacle<br /><h1>Overview</h1><p>Vizia RF + Split Duplex Receptacle</p> <br /><h2>Inclusion Information</h2><p>Install VRR15-1LZ, place controller in inclusion mode, press on/off button on VRR15-1LZ to include</p> <br /><h2>Exclusion Information</h2><p>Place controller in exclusion mode, press on/off button on VRR15-1LZ to exclude</p>
+Receptacle<br /> <h1>Overview</h1><p>Vizia RF + Split Duplex Receptacle</p> <br /> <h2>Inclusion Information</h2><p>Install VRR15-1LZ, place controller in inclusion mode, press on/off button on VRR15-1LZ to include</p> <br /> <h2>Exclusion Information</h2><p>Place controller in exclusion mode, press on/off button on VRR15-1LZ to exclude</p>
     ]]></description>
     <category>PowerOutlet</category>
 

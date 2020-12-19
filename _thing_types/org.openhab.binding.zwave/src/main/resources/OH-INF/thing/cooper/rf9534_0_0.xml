@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9534_00_000" listed="false">
     <label>RF9534 Smart Dimmer</label>
     <description><![CDATA[
-Smart Dimmer<br /><h1>Overview</h1><ul><li>Wireless switch replaces regular switches or dimmers to provide local and remote ON/OFF control</li> <li>For incandescent, magnetic low-voltage, electronic low-voltage and fluorescent lighting loads</li> </ul><br /><h2>Inclusion Information</h2><p>Press the RF Master Dimmer ON/OFF switch one time to include it in the network. The LED will stop blinking.</p> <br /><h2>Exclusion Information</h2><p> Press the RF Master ON/OFF switch one time to exclude it from the network. The LED will start blinking.</p>
+Smart Dimmer<br /> <h1>Overview</h1><ul><li>Wireless switch replaces regular switches or dimmers to provide local and remote ON/OFF control</li> <li>For incandescent, magnetic low-voltage, electronic low-voltage and fluorescent lighting loads</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press the RF Master Dimmer ON/OFF switch one time to include it in the network. The LED will stop blinking.</p> <br /> <h2>Exclusion Information</h2><p> Press the RF Master ON/OFF switch one time to exclude it from the network. The LED will start blinking.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -64,7 +64,7 @@ Smart Dimmer<br /><h1>Overview</h1><ul><li>Wireless switch replaces regular swit
                  min="-128" max="127">
         <label>1: Delayed Off</label>
         <description><![CDATA[
-Delayed Off<br /><h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong> -128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Delayed Off<br /> <h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong> -128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -74,7 +74,7 @@ Delayed Off<br /><h1>Overview</h1><p>*The configuration value is a signed single
                  min="-128" max="127">
         <label>2: Panic On Time</label>
         <description><![CDATA[
-Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Panic On Time<br /> <h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -84,7 +84,7 @@ Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed singl
                  min="-128" max="127">
         <label>3: Panic Off Time</label>
         <description><![CDATA[
-Panic Off Time<br /><h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p>0<strong> to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Panic Off Time<br /> <h1>Overview</h1><p>*The configuration value is a signed single byte number This value may represent a value such as time.</p> <p>0<strong> to 127 (decimal) represents 0 to 127 seconds of time.</strong></p> <p><strong>-128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

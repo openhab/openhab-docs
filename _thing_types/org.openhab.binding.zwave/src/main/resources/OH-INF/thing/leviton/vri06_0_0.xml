@@ -8,7 +8,7 @@
   <thing-type id="leviton_vri06_00_000" listed="false">
     <label>VRI06 Incandescent Scene Capable Dimmer</label>
     <description><![CDATA[
-Incandescent Scene Capable Dimmer<br /><h1>Overview</h1><ul><li>Leviton Vizia+ VRI06-1LZ - 600W Max. - Incandescent Scene Capable Dimmer w/Radio Frequency</li> <li>Single Pole / 3-Way / Multi-Location - Features LED Locator and Brightness Display - Push Pad Switch - White/Ivory/Light Almond - 120 Volt</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Install VRI06</li> <li>Place controller in inclusion mode</li> <li>Press paddle on VRI06 to turn on/off light</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press paddle on VRI06 to turn on/off light</li> </ol>
+Incandescent Scene Capable Dimmer<br /> <h1>Overview</h1><ul><li>Leviton Vizia+ VRI06-1LZ - 600W Max. - Incandescent Scene Capable Dimmer w/Radio Frequency</li> <li>Single Pole / 3-Way / Multi-Location - Features LED Locator and Brightness Display - Push Pad Switch - White/Ivory/Light Almond - 120 Volt</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Install VRI06</li> <li>Place controller in inclusion mode</li> <li>Press paddle on VRI06 to turn on/off light</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press paddle on VRI06 to turn on/off light</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 

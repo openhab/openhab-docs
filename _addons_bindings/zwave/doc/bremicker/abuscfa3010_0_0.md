@@ -17,11 +17,17 @@ The CFA3010 supports routing. This allows the device to communicate using other 
 
 ## Overview
 
-The ABUS Z-Wave HomeTec CFA3010 wireless door lock actuator is a system designed for retrofitting to doors that open inwards to provide motorized locking and unlocking functions. The door can be electronically operated using local buttons and any Z-Wave device capable to control door locks. For the wireless door lock actuator to work, the cylinder must project 7-12 mm on the inside of the door (plus the thickness of the fitting or collar). Because the actuator operates with a key permanently inserted in the lock, the cylinder must have an emergency feature where the door can be opened with a key from the outside even when another key is inserted on the inside. In addition, the door lock must be a profile cylinder compliant with DIN 18252. This device is security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products. This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.
+The ABUS Z-Wave HomeTec CFA3010 wireless door lock actuator is a system designed for retrofitting to doors that open inwards to provide motorized locking and unlocking functions.
+
+The door can be electronically operated using local buttons and any Z-Wave device capable to control door locks. For the wireless door lock actuator to work, the cylinder must project 7-12 mm on the inside of the door (plus the thickness of the fitting or collar).
+
+Because the actuator operates with a key permanently inserted in the lock, the cylinder must have an emergency feature where the door can be opened with a key from the outside even when another key is inserted on the inside. In addition, the door lock must be a profile cylinder compliant with DIN 18252. This device is security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products.
+
+This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.
 
 ### Inclusion Information
 
-In order to include (add) a Z-Wave device to a network it **must be in factory default state.** Please make sure to reset the device into factory default. You can do this by performing an Exclusion operation as described below in the manual. Every Z-Wave controller is able to perform this operation however it is recommended to use the primary controller of the previous network to make sure the very device is excluded properly from this network.  **Reset to factory defaul** This device also allows to be reset without any involvement of a Z-Wave controller. This procedure should only be used when the primary controller is inoperable.
+In order to include (add) a Z-Wave device to a network it **must be in factory default state.** Please make sure to reset the device into factory default. You can do this by performing an Exclusion operation as described below in the manual. Every Z-Wave controller is able to perform this operation however it is recommended to use the primary controller of the previous network to make sure the very device is excluded properly from this network.  **Reset to factory default**. This device also allows to be reset without any involvement of a Z-Wave controller. This procedure should only be used when the primary controller is inoperable.
 
   * Enable management mode by holding down **F1** and **F2** for 3 seconds. Green left LED will light up to confirm management mode.
   * Move in this menu by pushing **F1** or **F2** Arrows. The left LED will change its color to indicate different menu items. left LED = green: Learn Mode, left LED = red: Reset Mode
@@ -82,7 +88,9 @@ Clicking the "unlock button", when Learn Mode is started, will terminate the inc
 
 ### General Usage Information
 
-This door lock can be operated by a central Z-Wave enabled controller (using e.g. mobile phone), a dedicated Z-Wave remote control and from local buttons. Once installed, the ABUS Z-Wave HomeTec CFA3010 can turn the door lock to open and close. In parallel legacy operation using a key from the outside remains possible. The local buttons "door open" and "door close" accessible from the inside allows convenient locking and unlocking the key. It is possible to just close the door and really lock it up moving the deadbolt into the "close" position.
+This door lock can be operated by a central Z-Wave enabled controller (using e.g. mobile phone), a dedicated Z-Wave remote control and from local buttons. Once installed, the ABUS Z-Wave HomeTec CFA3010 can turn the door lock to open and close. In parallel legacy operation using a key from the outside remains possible. 
+
+The local buttons "door open" and "door close" accessible from the inside allows convenient locking and unlocking the key. It is possible to just close the door and really lock it up moving the deadbolt into the "close" position.
 
 ## Channels
 
@@ -91,6 +99,7 @@ The following table summarises the channels available for the CFA3010 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
+| Door Sensor | sensor_door | sensor_door | Door | Contact | 
 | Alarm (access) | alarm_access | alarm_access | Door | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
@@ -106,6 +115,18 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Locked |
 | OFF | Unlocked |
+
+### Door Sensor
+Indicates if the door/window is open or closed.
+
+The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Contact``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OPEN | Open |
+| CLOSED | Closed |
 
 ### Alarm (access)
 Indicates if the access control alarm is triggered.

@@ -8,7 +8,7 @@
   <thing-type id="nietech_nzw30s_00_000" listed="false">
     <label>NZW30S In-Wall Switch (On/Off) Scene Enabled</label>
     <description><![CDATA[
-In-Wall Switch (On/Off) Scene Enabled<br /><h1>Overview</h1><p>Turn ON/OFF manually or remotely via the Z-Wave controller<br />• Can be Included in multiple Groups and Scenes <br />• Compatible with all incandescent and CFL/ LED bulbs<br />• Blue LED indicates switch location in a dark room<br />• Z-Wave Certified for simple pairing and integrated home automation<br />• Screw Terminal Installation — requires wiring connections for Line (Hot), Load, Neutral.</p> <br /><h2>Inclusion Information</h2><p>AUTO-INCLUSION! PLEASE READ.</p> <p>PLEASE NOTE: This product is equipped with auto-inclusion to make your life easier. However, please read below to make sure you set it up properly:</p> <ul><li>Please DO NOT switch on your power until you are physically including the switch to [your controller] as auto-inclusion will time-out in 30 seconds</li> <li>If successful, the switch will blink twice</li> <li>If unsuccessful, please use the backup method, which is to press the top button 6x within 2 seconds</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, press the B button 6 times within two seconds.</li> <li>Manual removal by pressing B button 5 seconds after shutting power off and turning it back on)</li> </ul>
+In-Wall Switch (On/Off) Scene Enabled<br /> <h1>Overview</h1><p>Turn ON/OFF manually or remotely via the Z-Wave controller<br />• Can be Included in multiple Groups and Scenes <br />• Compatible with all incandescent and CFL/ LED bulbs<br />• Blue LED indicates switch location in a dark room<br />• Z-Wave Certified for simple pairing and integrated home automation<br />• Screw Terminal Installation — requires wiring connections for Line (Hot), Load, Neutral.</p> <br /> <h2>Inclusion Information</h2><p>AUTO-INCLUSION! PLEASE READ.</p> <p>PLEASE NOTE: This product is equipped with auto-inclusion to make your life easier. However, please read below to make sure you set it up properly:</p> <ul><li>Please DO NOT switch on your power until you are physically including the switch to [your controller] as auto-inclusion will time-out in 30 seconds</li> <li>If successful, the switch will blink twice</li> <li>If unsuccessful, please use the backup method, which is to press the top button 6x within 2 seconds</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, press the B button 6 times within two seconds.</li> <li>Manual removal by pressing B button 5 seconds after shutting power off and turning it back on)</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -68,7 +68,7 @@ In-Wall Switch (On/Off) Scene Enabled<br /><h1>Overview</h1><p>Turn ON/OFF manua
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert</label>
         <description><![CDATA[
-Invert switch<br /><h1>Overview</h1><p>To change the top of the switch to OFF and the bottom to ON.</p>
+Invert switch<br /> <h1>Overview</h1><p>To change the top of the switch to OFF and the bottom to ON.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -82,7 +82,7 @@ Invert switch<br /><h1>Overview</h1><p>To change the top of the switch to OFF an
                  min="0" max="32768">
         <label>5: Countdown</label>
         <description><![CDATA[
-Countdown Timer<br /><h1>Overview</h1><p>Value 0 (default) = No Timer</p> <p>Range = 0 - 32768 Seconds</p>
+Countdown Timer<br /> <h1>Overview</h1><p>Value 0 (default) = No Timer</p> <p>Range = 0 - 32768 Seconds</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -91,7 +91,7 @@ Countdown Timer<br /><h1>Overview</h1><p>Value 0 (default) = No Timer</p> <p>Ran
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
+<br /> <h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

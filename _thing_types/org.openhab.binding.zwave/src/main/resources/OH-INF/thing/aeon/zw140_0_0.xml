@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw140_00_000" listed="false">
     <label>ZW140 Dual Nano Switch</label>
     <description><![CDATA[
-Dual Nano Switch<br /><h1>Overview</h1><p>Aeotec Dual Nano Switch is a Z-Wave Smart Switch specifically used to enable Z-Wave command and control (on/off) of any wall switches. <br />In the event of power failure, non-volatile memory retains all programmed information relating to the unit’s operating status. <br />It can connect to 2 external manual switches to control the load ON/OFF independently. Its surface has a pin socket, which can be used for connecting to the touch panel, so you can also use the touch panel to control the Dual Nano Switch. <br />The Dual Nano Switch is also a security Z-Wave device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /><h2>Inclusion Information</h2><p><strong>Including Dual Nano Switch as a non-secure device:</strong></p> <p>If you want your Dual Nano Switch as a non-secure device in your Z-Wave network, press the Action Button once on Dual Nano Switch when you pair it to your gateway. If inclusion is successful, the green LED will be on for 2 seconds, and then return to a solid indication. If inclusion is unsuccessful, the red LED will be on for 2 seconds and then return to a colourful gradient.</p> <p><strong>Including Dual Nano Switch as a secure device: </strong></p> <p>In order to take full advantage of the Dual Nano Switch, you will want your Dual Nano Switch as a security device that uses encrypted messages to communicate in your Z-wave network. A security enabled controller/gateway (or Z-Wave Plus controller) is required</p> <ol><li>Set your Z-Wave Plus controller into pairing mode.</li> <li>Press the Action Button 2 times within 1 second on the Dual Nano Switch, the blue LED (secure indication) will blink to indicate the Dual Nano Switch is entering into secure pairing mode.</li> <li>If the Dual Nano Switch has been successfully added to your Z-Wave network, its RGB LED will be solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colourful gradient, repeat the instructions above from step 1.</li> </ol><br /><h2>Exclusion Information</h2><p><strong>Removing Dual Nano Switch from a Z-Wave network. </strong></p> <p>Your Dual Nano Switch can be removed from your Z-Wave network at any time. You’ll need to use your Z-Wave network’s main controller. To set your Z-Wave controller/gateway into removal mode, please refer to the respective section within your controller instruction manual</p> <ol><li>Set your Z-Wave controller into removal mode.</li> <li>Press the Action Button on the Dual Nano Switch or toggle the external manual switch 3 times in fast succession.</li> <li>If the Dual Nano Switch has been successfully removed from your Z-Wave network, its RGB LED will remain colourful gradient. If the removal was unsuccessful, the RGB LED will still be solid (following the state of the output load), repeat the instructions above from step 1</li> </ol>
+Dual Nano Switch<br /> <h1>Overview</h1><p>Aeotec Dual Nano Switch is a Z-Wave Smart Switch specifically used to enable Z-Wave command and control (on/off) of any wall switches. <br />In the event of power failure, non-volatile memory retains all programmed information relating to the unit’s operating status. <br />It can connect to 2 external manual switches to control the load ON/OFF independently. Its surface has a pin socket, which can be used for connecting to the touch panel, so you can also use the touch panel to control the Dual Nano Switch. <br />The Dual Nano Switch is also a security Z-Wave device and supports Over The Air (OTA) feature for the products firmware upgrade.</p> <br /> <h2>Inclusion Information</h2><p><strong>Including Dual Nano Switch as a non-secure device:</strong></p> <p>If you want your Dual Nano Switch as a non-secure device in your Z-Wave network, press the Action Button once on Dual Nano Switch when you pair it to your gateway. If inclusion is successful, the green LED will be on for 2 seconds, and then return to a solid indication. If inclusion is unsuccessful, the red LED will be on for 2 seconds and then return to a colourful gradient.</p> <p><strong>Including Dual Nano Switch as a secure device: </strong></p> <p>In order to take full advantage of the Dual Nano Switch, you will want your Dual Nano Switch as a security device that uses encrypted messages to communicate in your Z-wave network. A security enabled controller/gateway (or Z-Wave Plus controller) is required</p> <ol><li>Set your Z-Wave Plus controller into pairing mode.</li> <li>Press the Action Button 2 times within 1 second on the Dual Nano Switch, the blue LED (secure indication) will blink to indicate the Dual Nano Switch is entering into secure pairing mode.</li> <li>If the Dual Nano Switch has been successfully added to your Z-Wave network, its RGB LED will be solid. If the pairing was unsuccessful, the red LED will be on for 2 seconds and then remain a colourful gradient, repeat the instructions above from step 1.</li> </ol> <br /> <h2>Exclusion Information</h2><p><strong>Removing Dual Nano Switch from a Z-Wave network. </strong></p> <p>Your Dual Nano Switch can be removed from your Z-Wave network at any time. You’ll need to use your Z-Wave network’s main controller. To set your Z-Wave controller/gateway into removal mode, please refer to the respective section within your controller instruction manual</p> <ol><li>Set your Z-Wave controller into removal mode.</li> <li>Press the Action Button on the Dual Nano Switch or toggle the external manual switch 3 times in fast succession.</li> <li>If the Dual Nano Switch has been successfully removed from your Z-Wave network, its RGB LED will remain colourful gradient. If the removal was unsuccessful, the RGB LED will still be solid (following the state of the output load), repeat the instructions above from step 1</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -118,7 +118,7 @@ Dual Nano Switch<br /><h1>Overview</h1><p>Aeotec Dual Nano Switch is a Z-Wave Sm
       <parameter name="config_81_1" type="integer" groupName="configuration">
         <label>81: Group 3 notifications</label>
         <description><![CDATA[
-Group 3 notifications<br /><h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association group 3</p>
+Group 3 notifications<br /> <h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association group 3</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -131,7 +131,7 @@ Group 3 notifications<br /><h1>Overview</h1><p>To set which notification would b
       <parameter name="config_82_1" type="integer" groupName="configuration">
         <label>82: Group 4 notifications</label>
         <description><![CDATA[
-Group 4 notifications<br /><h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association group 4</p>
+Group 4 notifications<br /> <h1>Overview</h1><p>To set which notification would be sent to the associated nodes in association group 4</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -157,7 +157,7 @@ Group 4 notifications<br /><h1>Overview</h1><p>To set which notification would b
                  min="0" max="16777276">
         <label>84: ON/OFF time in Night light mode.</label>
         <description><![CDATA[
-Set the ON/OFF time of the LED when it is in Night light mode.<br /><h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
+Set the ON/OFF time of the LED when it is in Night light mode.<br /> <h1>Overview</h1><p>0 to 60 The minute time of OFF 256 to 316 The hour time of OFF 65536 to 65596 The minute time of ON 16777216 to 16777276 The hour time of ON</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -168,7 +168,7 @@ Set the ON/OFF time of the LED when it is in Night light mode.<br /><h1>Overview
                  min="0" max="16777216">
         <label>86: Set appointment 1</label>
         <description><![CDATA[
-Set appointment 1<br /><h1>Overview</h1><p>256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time 65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting.</p>
+Set appointment 1<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time 16777215 Disable the setting. 0 to 60 The minute value of ON time 65536 to 65543 The day value (Mon to Sun) 16777216 Enable the setting.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -179,7 +179,7 @@ Set appointment 1<br /><h1>Overview</h1><p>256 to 316 The hour value of ON time 
                  min="0" max="16777216">
         <label>87: Set appointment 2</label>
         <description><![CDATA[
-Set appointment 2<br /><h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>
+Set appointment 2<br /> <h1>Overview</h1><p>256 to 316 The hour value of ON time 65536 to 65543 The day value (Mon to Sun) 16777215 Disable the setting. 0 to 60 The minute value of ON time 16777216 Enable the setting.</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>

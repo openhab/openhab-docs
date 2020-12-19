@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrcz1_00_000" listed="false">
     <label>VRCZ1 1-Zone Dimming Controller/ Virtual Matching Dimmer Remote</label>
     <description><![CDATA[
-1-Zone Dimming Controller/ Virtual Matching Dimmer Remote<br /><h1>Overview</h1><ul><li>Leviton Vizia+ 1 Zone dimming controller/Virtual matching dimmer remote</li> <li>Controls dimming of remote load</li> </ul><br /><h2>Inclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul>
+1-Zone Dimming Controller/ Virtual Matching Dimmer Remote<br /> <h1>Overview</h1><ul><li>Leviton Vizia+ 1 Zone dimming controller/Virtual matching dimmer remote</li> <li>Controls dimming of remote load</li> </ul> <br /> <h2>Inclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>To access Program mode, engage the air-gap switch by gently pressing the top of the push pad until the bottom lifts completely out of the frame and a click is heard.</li> <li>Wait 5 seconds and then press the push pad back into the frame and hold push pad until the LED turns Amber.</li> <li>Release the push pad and the LED should blink Amber. You are now in Programming mode.</li> <li>If the LED on the 1-zone controller turns solid Red while including, there has been a communication error.</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -46,7 +46,7 @@
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The VRCZ1 can be associated with a single device.</p>
+<br /> <h1>Overview</h1><p>The VRCZ1 can be associated with a single device.</p>
         ]]></description>
       </parameter>
 

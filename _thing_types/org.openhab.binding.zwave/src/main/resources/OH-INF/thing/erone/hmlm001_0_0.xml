@@ -8,7 +8,7 @@
   <thing-type id="erone_hmlm001_00_000" listed="false">
     <label>HM-LM001 Lighting Module</label>
     <description><![CDATA[
-Lighting Module<br /><h1>Overview</h1><ul><li>Use with incandescent light bulbs up to 200W</li> <li>Control on/off for attached lamp</li> <li>Dim the attached lamp</li> <li>LED shows that module is working</li> <li>Manual override button</li> </ul><br /><h2>Inclusion Information</h2><ul><li>Start the inclusion process on the hub</li> <li>Single click the button on the device</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Start the exclusion process on the hub</li> <li>Triple click the button on the device</li> </ul>
+Lighting Module<br /> <h1>Overview</h1><ul><li>Use with incandescent light bulbs up to 200W</li> <li>Control on/off for attached lamp</li> <li>Dim the attached lamp</li> <li>LED shows that module is working</li> <li>Manual override button</li> </ul> <br /> <h2>Inclusion Information</h2><ul><li>Start the inclusion process on the hub</li> <li>Single click the button on the device</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Start the exclusion process on the hub</li> <li>Triple click the button on the device</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 

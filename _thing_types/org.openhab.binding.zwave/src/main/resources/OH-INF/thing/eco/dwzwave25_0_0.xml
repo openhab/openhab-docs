@@ -8,7 +8,7 @@
   <thing-type id="eco_dwzwave25_00_000" listed="false">
     <label>DWZWAVE25 Z-Wave Door/Window Sensor</label>
     <description><![CDATA[
-Z-Wave Door/Window Sensor<br /><h1>Overview</h1><p>Z-Wave+ enabled device which provides open/closed position status</p> <p>Transmits open/closed status</p> <p>Reports tamper condition when cover is open</p> <br /><h2>Inclusion Information</h2><p>Start by placing the controller into inclusion mode.</p> <p>Activate inclusion mode for the sensor by removing the plastic pull-tab from the back of the sensor. When the inclusion process in complete, the LED on the sensor will be solid blue, then go out.</p> <p>Test the sensor. Place the magnet next to the sensor to represent a closed position (see Installation section to see where to position the magnet). If the LED flashes ONE TIME, it is successfully communicating on your Zwave network. If the LED on the sensor flashes slow and steady for 5 seconds, you need to repeat the inclusion process.</p> <p>Notes:</p> <p>If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 10 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.</p> <p>This sensor also supports Network Wide Inclusion such that the Sensor can be included into the Z-Wave network over the mesh network and not directly near the main controller. This mode is automatically activated after regular inclusion was not successful.</p> <br /><h2>Exclusion Information</h2><p>Exclusion mode on the sensor is initiated following the same exact procedure as inclusion.</p> <br /><h2>Wakeup Information</h2><p>The sensor will wake up every so often and when the case is closed to send a Wake-Up Notification to allow the life line master node controller that the sensor is now available for any queued messages that the controller may have for the sensor. The time between Wake-Up Notifications can be configured with the Wake- Up Notification command class to be between 1 hour and 1 week with interval steps of 200 seconds.</p> <p>To save power, this sensor sleeps most of the time and is therefore not awake to receive messages from a gateway for testing. Removing the top case from the sensor will put in device into a tampered mode in which the sensor will stay awake and able to receive messages. Most of the time an end user would not do this, but if the sensor needs to be configured after inclusion, an end user can follow the instructions below for sending Wake-Up notifications.</p>
+Z-Wave Door/Window Sensor<br /> <h1>Overview</h1><p>Z-Wave+ enabled device which provides open/closed position status</p> <p>Transmits open/closed status</p> <p>Reports tamper condition when cover is open</p> <br /> <h2>Inclusion Information</h2><p>Start by placing the controller into inclusion mode.</p> <p>Activate inclusion mode for the sensor by removing the plastic pull-tab from the back of the sensor. When the inclusion process in complete, the LED on the sensor will be solid blue, then go out.</p> <p>Test the sensor. Place the magnet next to the sensor to represent a closed position (see Installation section to see where to position the magnet). If the LED flashes ONE TIME, it is successfully communicating on your Zwave network. If the LED on the sensor flashes slow and steady for 5 seconds, you need to repeat the inclusion process.</p> <p>Notes:</p> <p>If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 10 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.</p> <p>This sensor also supports Network Wide Inclusion such that the Sensor can be included into the Z-Wave network over the mesh network and not directly near the main controller. This mode is automatically activated after regular inclusion was not successful.</p> <br /> <h2>Exclusion Information</h2><p>Exclusion mode on the sensor is initiated following the same exact procedure as inclusion.</p> <br /> <h2>Wakeup Information</h2><p>The sensor will wake up every so often and when the case is closed to send a Wake-Up Notification to allow the life line master node controller that the sensor is now available for any queued messages that the controller may have for the sensor. The time between Wake-Up Notifications can be configured with the Wake- Up Notification command class to be between 1 hour and 1 week with interval steps of 200 seconds.</p> <p>To save power, this sensor sleeps most of the time and is therefore not awake to receive messages from a gateway for testing. Removing the top case from the sensor will put in device into a tampered mode in which the sensor will stay awake and able to receive messages. Most of the time an end user would not do this, but if the sensor needs to be configured after inclusion, an end user can follow the instructions below for sending Wake-Up notifications.</p>
     ]]></description>
     <category>Door</category>
 
@@ -73,7 +73,7 @@ Z-Wave Door/Window Sensor<br /><h1>Overview</h1><p>Z-Wave+ enabled device which 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Send Basic Set</label>
         <description><![CDATA[
-Send Basic Set to Association Group 2<br /><h1>Overview</h1><p>Configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state i.e. the door is closed. By default the sensor does NOT send Basic Set commands of 0x00.</p>
+Send Basic Set to Association Group 2<br /> <h1>Overview</h1><p>Configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state i.e. the door is closed. By default the sensor does NOT send Basic Set commands of 0x00.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Send Basic Set to Association Group 2<br /><h1>Overview</h1><p>Configures the se
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Send Sensor Binary Report</label>
         <description><![CDATA[
-Send Sensor Binary Report to Association Group 1<br /><h1>Overview</h1><p>Configures the sensor to either to send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller can disable the Sensor Binary Report Commands completely.</p>
+Send Sensor Binary Report to Association Group 1<br /> <h1>Overview</h1><p>Configures the sensor to either to send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller can disable the Sensor Binary Report Commands completely.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -100,7 +100,7 @@ Send Sensor Binary Report to Association Group 1<br /><h1>Overview</h1><p>Config
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Receive unsolicited messages relating to door/window open/close notifications, case tampering notifications, low-battery notifications, and sensor binary reports.</p>
+<br /> <h1>Overview</h1><p>Receive unsolicited messages relating to door/window open/close notifications, case tampering notifications, low-battery notifications, and sensor binary reports.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -108,7 +108,7 @@ Send Sensor Binary Report to Association Group 1<br /><h1>Overview</h1><p>Config
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Control</label>
         <description><![CDATA[
-Group to receive Basic Set<br /><h1>Overview</h1><p>Intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set. </p>
+Group to receive Basic Set<br /> <h1>Overview</h1><p>Intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set. </p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="yale_yrd446_00_000" listed="false">
     <label>YRD446 Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth</label>
     <description><![CDATA[
-Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /><h1>Overview</h1><p>This device is a security enabled Z-Wave Plus product that is able to use encrypted ZWave Plus messages to communicate to other security enabled Z-Wave Plus products. This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions. This product can be operated in any ZWave network with other Z-Wave certified devices from other manufacturers. All nonbattery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. </p> <br /><h2>Inclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>1</strong> key followed by the <strong>Setup</strong> key.</li> </ul><br /><h2>Exclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <b>3</b> key followed by the <strong>Setup</strong> key.</li> </ul>
+Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /> <h1>Overview</h1><p>This device is a security enabled Z-Wave Plus product that is able to use encrypted ZWave Plus messages to communicate to other security enabled Z-Wave Plus products. This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions. This product can be operated in any ZWave network with other Z-Wave certified devices from other manufacturers. All nonbattery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network. </p> <br /> <h2>Inclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>1</strong> key followed by the <strong>Setup</strong> key.</li> </ul> <br /> <h2>Exclusion Information</h2><p><strong>Note:</strong> In these instructions the <strong>Setup</strong> key is the one that has a hollow gear symbol on it.</p> <ul><li>Enter the 4 - 8 digit Master PIN  code followed by the <strong>Setup</strong> key.</li> <li>Press the <strong>7</strong> key followed by the <strong>Setup</strong> key.</li> <li>Press the <b>3</b> key followed by the <strong>Setup</strong> key.</li> </ul>
     ]]></description>
     <category>Lock</category>
 
@@ -126,7 +126,7 @@ Yale Real Living Key Free Touchscreen Assure Lock with Z-Wave and Bluetooth<br /
                  min="5" max="255">
         <label>3: Auto relock time</label>
         <description><![CDATA[
-Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
+Time for auto relock<br /> <h1>Overview</h1><p>Number of seconds after the door is unlocked that it will attempt to automatically re-lock itself, if enabled.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -136,7 +136,7 @@ Time for auto relock<br /><h1>Overview</h1><p>Number of seconds after the door i
                  min="1" max="7">
         <label>4: Incorrect PIN limit</label>
         <description><![CDATA[
-Number of incorrect PINs before lockout<br /><h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
+Number of incorrect PINs before lockout<br /> <h1>Overview</h1><p>Number of incorrect PINs that can be attempted before lock goes into temporary keypad lockout.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw41_00_000" listed="false">
     <label>LZW41 White Tunable Smart Bulb</label>
     <description><![CDATA[
-White Tunable Smart Bulb<br /><h1>Overview</h1><p>Full range of cool or warm white, 806 lumens, and only 9.5W, this bulb will definitely add some brightness to your life.</p> <br /><h2>Inclusion Information</h2><ul><li>With the bulb powered off, start the inclusion process and turn on the bulb (ie: power it on) and the bulb will flash twice (2x) indicating it’s in the inclusion mode</li> <li>If the bulb was included successfully, it will blink one more time. If it was not included successfully, you may have to run an exclusion. If there’s still issues, please ensure your bulb is within range</li> </ul><br /><h2>Exclusion Information</h2><ul><li>With the power off to the bulb, start the exclusion process on your HUB/Gateway</li> <li>Then, turn the power on to the bulb and it will flash 2x, followed by a single flash if successful</li> </ul>
+White Tunable Smart Bulb<br /> <h1>Overview</h1><p>Full range of cool or warm white, 806 lumens, and only 9.5W, this bulb will definitely add some brightness to your life.</p> <br /> <h2>Inclusion Information</h2><ul><li>With the bulb powered off, start the inclusion process and turn on the bulb (ie: power it on) and the bulb will flash twice (2x) indicating it’s in the inclusion mode</li> <li>If the bulb was included successfully, it will blink one more time. If it was not included successfully, you may have to run an exclusion. If there’s still issues, please ensure your bulb is within range</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>With the power off to the bulb, start the exclusion process on your HUB/Gateway</li> <li>Then, turn the power on to the bulb and it will flash 2x, followed by a single flash if successful</li> </ul>
     ]]></description>
     <category>LightBulb</category>
 
@@ -61,7 +61,7 @@ White Tunable Smart Bulb<br /><h1>Overview</h1><p>Full range of cool or warm whi
                  min="0" max="1">
         <label>2: Memory Function</label>
         <description><![CDATA[
-0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /><h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
+0 returns to last ON state, 1 = Returns to last state (ON or OFF)<br /> <h1>Overview</h1><p>When power is restored, the bulb reverts to its last ON state, or last state (ON or OFF). 0 returns to last ON state, 1 = Returns to last state (ON or OFF)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -58,9 +58,9 @@ The following table summarises the channels available for the ID-150 -:
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
 | Door State | sensor_door | sensor_door | Door | Contact | 
-| Alarm (access) | alarm_access | alarm_access | Door | Switch | 
-| Alarm (emergency)  [Deprecated]| alarm_emergency | alarm_emergency | Alarm | Switch | 
-| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Access control | notification_access_control | notification_access_control |  | Number | 
+| Emergency (Contact Fire Service)  [Deprecated]| alarm_emergency | alarm_emergency | Alarm | Switch | 
+| Burglar alarm (tampering) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Alarm (raw)  [Deprecated]| alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
@@ -87,19 +87,58 @@ The following state translation is provided for this channel to the ```Contact``
 | OPEN | Open |
 | CLOSED | Closed |
 
-### Alarm (access)
-Indicates if the access control alarm is triggered.
+### Access control
 
-The ```alarm_access``` channel is of type ```alarm_access``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
-The following state translation is provided for this channel to the ```Switch``` item type -:
+Access Control.
+
+The ```notification_access_control``` channel is of type ```notification_access_control``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+| 0 | Previous Events cleared |
+| 1 | Manual Lock Operation |
+| 2 | Manual Unlock Operation |
+| 3 | RF Lock Operation |
+| 4 | RF Unlock Operation |
+| 5 | Keypad Lock Operation |
+| 6 | Keypad Unlock Operation |
+| 7 | Manual Not Fully Locked Operation |
+| 8 | RF Not Fully Locked Operation |
+| 9 | Auto Lock Locked Operation |
+| 10 | Auto Lock Not Fully Operation |
+| 11 | LockJammed |
+| 12 | All user codes deleted |
+| 13 | Single user code deleted |
+| 14 | New user code added |
+| 15 | New user code not added due to duplicate code |
+| 16 | Keypad temporary disabled |
+| 17 | Keypad busy |
+| 18 | New Program code Entered- Unique code for lock configuration |
+| 19 | Manually Enter user Access code exceeds code limit |
+| 20 | Unlock by RF with invalid user code |
+| 21 | Locked by RF with invalid user code |
+| 22 | Window/Door is open |
+| 23 | Window/Door is closed |
+| 64 | Barrier performing initialization process |
+| 65 | Barrier operation (Open / Close) force has been exceeded |
+| 66 | Barrier motor has exceeded manufacturer's operational time limit |
+| 67 | Barrier operation has exceeded physical mechanical limits |
+| 68 | Barrier unable to perform requested operation due to UL requirements |
+| 69 | Barrier Unattended operation has been disabled per UL requirements |
+| 70 | Barrier failed to perform Requested operation, device malfunction |
+| 71 | Barrier Vacation Mode |
+| 72 | Barrier Safety Beam Obstacle |
+| 73 | Barrier Sensor Not Detected / Supervisory Error |
+| 74 | Barrier Sensor Low Battery Warning |
+| 75 | Barrier detected short in WallStation wires |
+| 76 | Barrier associated with non-Z-wave remote control |
 
-### Alarm (emergency) [Deprecated]
+### Emergency (Contact Fire Service) [Deprecated]
+2: Contact Fire Service
+
 Indicates Police, Fire, or Medical services should be contacted.
 
 The ```alarm_emergency``` channel is of type ```alarm_emergency``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -113,7 +152,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 **Note:** This channel is marked as deprecated so should not be used.
 
-### Alarm (burglar)
+### Burglar alarm (tampering)
+3: Tampering (case opened)
+
 Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -340,6 +381,10 @@ Association group 1 supports 5 nodes.
 * [ID Lock 150 installation and user manual](https://opensmarthouse.org/zwavedatabase/1106/reference/ID-Lock-150-installation-and-user-manual.pdf)
 * [ID Lock 150 Z wave manual](https://opensmarthouse.org/zwavedatabase/1106/reference/IDLock150-ZWave-UserManual-v2-1.pdf)
 * [ZWave user manual v3.02 (FW 1.6)](https://opensmarthouse.org/zwavedatabase/1106/reference/IDLock150-ZWave-UserManual-v3-02.pdf)
+* [Firmware Release Notes 2020](https://opensmarthouse.org/zwavedatabase/1106/reference/versjonshistorikk-----id-lock_1.5.7.pdf)
+* [Firmware Release Notes 2020](https://opensmarthouse.org/zwavedatabase/1106/reference/versjonshistorikk-----id-lock_1.5.7_1.pdf)
+* [Z-wave module (FW 1.6) user manual](https://opensmarthouse.org/zwavedatabase/1106/reference/User-manual-Z-Wave-modul_EN_1.1.pdf)
+* [Firmware Release Notes 2020 (delete the other ones with same name)](https://opensmarthouse.org/zwavedatabase/1106/reference/versjonshistorikk-----id-lock_1.5.7_2.pdf)
 
 ---
 

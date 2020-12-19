@@ -8,7 +8,7 @@
   <thing-type id="mcohome_mhs513_00_000" listed="false">
     <label>MH-S513 Touch Panel Switch 3-Way</label>
     <description><![CDATA[
-Touch Panel Switch 3-Way<br /><h1>Overview</h1><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class，multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /><h2>Inclusion Information</h2><p>INCLUDING the device into Z-Wave network:</p> <p>1. Set controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</p> <p>2. Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p> <p>Note: If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times. </p> <br /><h2>Exclusion Information</h2><p>EXCLUDING the device from Z-Wave network:</p> <p>1. Set controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</p> <p>2. Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p> <p>Note: If the exclusion is successful, all INDICATION LEDs on the panel will flash 4 times. The exclusion will delete all association data.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Touch Panel Switch 3-Way<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall panel built-in with Z-Wave Plus module. With its stylish design and stable performance, the panel can be used to control house-hold electrical appliances like lamp, motor, coffee machine, TV set etc. It supports basic command class，multi channel command class and multi channel association command class, also works as a repeater in a Z-Wave network. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.</p> <br /> <h2>Inclusion Information</h2><p>INCLUDING the device into Z-Wave network:</p> <p>1. Set controller into INCLUSION mode. Follow instructions provided by controller manufacturer.</p> <p>2. Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p> <p>Note: If inclusion is successful, all INDICATION LEDs on the panel will flash 4 times. </p> <br /> <h2>Exclusion Information</h2><p>EXCLUDING the device from Z-Wave network:</p> <p>1. Set controller into EXCLUSION mode. Follow instructions provided by controller manufacturer.</p> <p>2. Press and hold any key on the panel for 8 seconds or 3 clicks in quick succession.</p> <p>Note: If the exclusion is successful, all INDICATION LEDs on the panel will flash 4 times. The exclusion will delete all association data.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -77,7 +77,7 @@ Touch Panel Switch 3-Way<br /><h1>Overview</h1><p>Touch Panel Switch is a wall p
                  min="0" max="1">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
-Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
+Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not save
                  min="0" max="255">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
-ALL ON/ALL OFF<br /><h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p> </td> </tr></table>
+ALL ON/ALL OFF<br /> <h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p> </td> </tr></table>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><table><tr><td> <p>0=forbid ALL ON, forbid 
                  min="0" max="10">
         <label>4: LED Backlit brightness level</label>
         <description><![CDATA[
-LED Backlit brightness level<br /><h1>Overview</h1><p>0 LED disabled 1-10 Min level-Max level &gt;10 same level as 10</p>
+LED Backlit brightness level<br /> <h1>Overview</h1><p>0 LED disabled 1-10 Min level-Max level &gt;10 same level as 10</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ LED Backlit brightness level<br /><h1>Overview</h1><p>0 LED disabled 1-10 Min le
                  min="0" max="4">
         <label>5: Key Mode</label>
         <description><![CDATA[
-Key Mode<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
+Key Mode<br /> <h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -117,7 +117,7 @@ Key Mode<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>
                  min="0" max="65535">
         <label>6: Key On duration</label>
         <description><![CDATA[
-Key On duration<br /><h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec"</p>
+Key On duration<br /> <h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec"</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -127,14 +127,14 @@ Key On duration<br /><h1>Overview</h1><p>0x00 infinite</p> <p>1~65535 unit "sec"
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Associate with gateway<br /><h1>Overview</h1><p>Send unsolicited reports to the gateway</p>
+Associate with gateway<br /> <h1>Overview</h1><p>Send unsolicited reports to the gateway</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Associate with Key 1</label>
         <description><![CDATA[
-Associate with Key 1<br /><h1>Overview</h1><p>send Basic Set Command to associated devices</p>
+Associate with Key 1<br /> <h1>Overview</h1><p>send Basic Set Command to associated devices</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -142,7 +142,7 @@ Associate with Key 1<br /><h1>Overview</h1><p>send Basic Set Command to associat
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Associate with Key 2 if any</label>
         <description><![CDATA[
-Associate with Key 2 if any<br /><h1>Overview</h1><p>send Basic Set Command to associated devices</p>
+Associate with Key 2 if any<br /> <h1>Overview</h1><p>send Basic Set Command to associated devices</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -150,7 +150,7 @@ Associate with Key 2 if any<br /><h1>Overview</h1><p>send Basic Set Command to a
       <parameter name="group_8" type="text" groupName="association" multiple="true">
         <label>8: Associate with Key 3 if any</label>
         <description><![CDATA[
-Associate with Key 3 if any<br /><h1>Overview</h1><p>send Basic Set Command to associated devices</p>
+Associate with Key 3 if any<br /> <h1>Overview</h1><p>send Basic Set Command to associated devices</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

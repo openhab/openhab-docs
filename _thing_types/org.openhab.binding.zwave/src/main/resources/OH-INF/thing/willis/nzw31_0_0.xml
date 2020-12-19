@@ -8,7 +8,7 @@
   <thing-type id="willis_nzw31_00_000" listed="false">
     <label>NZW31 In-wall Dimming Switch</label>
     <description><![CDATA[
-In-wall Dimming Switch<br /><h1>Overview</h1><p>Z-Wave Plus dimming switch with instant status reporting.</p> <br /><h2>Inclusion Information</h2><p> Press the top (UP) button 6x within 2 seconds</p> <br /><h2>Exclusion Information</h2><p> triple press the Up/Down push button to exclude it from the network</p>
+In-wall Dimming Switch<br /> <h1>Overview</h1><p>Z-Wave Plus dimming switch with instant status reporting.</p> <br /> <h2>Inclusion Information</h2><p> Press the top (UP) button 6x within 2 seconds</p> <br /> <h2>Exclusion Information</h2><p> triple press the Up/Down push button to exclude it from the network</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -46,7 +46,7 @@ In-wall Dimming Switch<br /><h1>Overview</h1><p>Z-Wave Plus dimming switch with 
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
+<br /> <h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

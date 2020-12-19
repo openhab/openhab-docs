@@ -8,7 +8,7 @@
   <thing-type id="everspring_ad147_00_000" listed="false">
     <label>AD147 Z-Wave Dimmer Plug</label>
     <description><![CDATA[
-Z-Wave Dimmer Plug<br /><h1>Overview</h1><p>The mini Dimmer Plug is a Z-WaveTM enabled device which is fully compatible with any Z-WaveTM enabled network. Z-WaveTM enabled devices displaying the Z-WaveTM logo can also be used with it regardless of the manufacturer, and ours can also be used in other manufacturer’s Z-WaveTM enabled networks. Inclusion of this unit on other manufacturer’s Wireless Controller menu allows remote operation of the unit and the connected load.</p> <p>The mini Dimmer Plug is designed to control the on/off status of lighting and appliance load in your house. The unit also provides dimmer function which is only applicable to light bulbs. At 220-240V voltage, this Dimmer Plug can support connected load of 6W - 250W</p> <br /><h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into exclusion mode</p>
+Z-Wave Dimmer Plug<br /> <h1>Overview</h1><p>The mini Dimmer Plug is a Z-WaveTM enabled device which is fully compatible with any Z-WaveTM enabled network. Z-WaveTM enabled devices displaying the Z-WaveTM logo can also be used with it regardless of the manufacturer, and ours can also be used in other manufacturer’s Z-WaveTM enabled networks. Inclusion of this unit on other manufacturer’s Wireless Controller menu allows remote operation of the unit and the connected load.</p> <p>The mini Dimmer Plug is designed to control the on/off status of lighting and appliance load in your house. The unit also provides dimmer function which is only applicable to light bulbs. At 220-240V voltage, this Dimmer Plug can support connected load of 6W - 250W</p> <br /> <h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into exclusion mode</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -74,7 +74,7 @@ Z-Wave Dimmer Plug<br /><h1>Overview</h1><p>The mini Dimmer Plug is a Z-WaveTM e
                  min="0" max="1">
         <label>3: Remember the last status</label>
         <description><![CDATA[
-Remember the last status<br /><h1>Overview</h1><p>1 = Remember</p> <p>0 = Do not remember</p>
+Remember the last status<br /> <h1>Overview</h1><p>1 = Remember</p> <p>0 = Do not remember</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -84,7 +84,7 @@ Remember the last status<br /><h1>Overview</h1><p>1 = Remember</p> <p>0 = Do not
                  min="0" max="1">
         <label>4: Output mode setting: Dimming, On/Off</label>
         <description><![CDATA[
-Output mode setting: Dimming, On/Off<br /><h1>Overview</h1><p>0 = Dimming</p> <p>1 = On/off</p>
+Output mode setting: Dimming, On/Off<br /> <h1>Overview</h1><p>0 = Dimming</p> <p>1 = On/off</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

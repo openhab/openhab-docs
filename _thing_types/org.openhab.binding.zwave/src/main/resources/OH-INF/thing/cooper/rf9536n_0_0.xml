@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9536n_00_000" listed="false">
     <label>RF9536-N 1000W Dimmer Light Switch</label>
     <description><![CDATA[
-1000W Dimmer Light Switch<br /><h1>Overview</h1><ul><li>ASPIRE RF Dimmers replace regular switches to provide local and remote ON/OFF/DIM/BRIGHT control and are compatible with Incandescent, Magnetic Low-Voltage lighting loads.</li> <li>ASPIRE RF Dimmers provide other programmable functions (scenes, events, association, child lockout, etc.) when used with ASPIRE RF or other Z-Wave compliant controllers*. Each dimmer can be manually and remotely controlled by commands sent from an ASPIRE RF controller (RFTDCSG, RFHDCSG, RFBER) or other Z-Wave compatible controllers or programs.</li> <li>ASPIRE RF Dimmers utilize existing 120V/AC, 60Hz standard house wiring and fit into standard wallboxes. No new wiring needed.</li> </ul><p>(*Note: some specific ASPIRE RF features may not be programmable)</p> <br /><h2>Inclusion Information</h2><p>Press the device switch one time to include it in the network. The LED will stop blinking.</p> <br /><h2>Exclusion Information</h2><p>Press the device switch one time to exclude it in the network. The LED will start blinking.</p>
+1000W Dimmer Light Switch<br /> <h1>Overview</h1><ul><li>ASPIRE RF Dimmers replace regular switches to provide local and remote ON/OFF/DIM/BRIGHT control and are compatible with Incandescent, Magnetic Low-Voltage lighting loads.</li> <li>ASPIRE RF Dimmers provide other programmable functions (scenes, events, association, child lockout, etc.) when used with ASPIRE RF or other Z-Wave compliant controllers*. Each dimmer can be manually and remotely controlled by commands sent from an ASPIRE RF controller (RFTDCSG, RFHDCSG, RFBER) or other Z-Wave compatible controllers or programs.</li> <li>ASPIRE RF Dimmers utilize existing 120V/AC, 60Hz standard house wiring and fit into standard wallboxes. No new wiring needed.</li> </ul><p>(*Note: some specific ASPIRE RF features may not be programmable)</p> <br /> <h2>Inclusion Information</h2><p>Press the device switch one time to include it in the network. The LED will stop blinking.</p> <br /> <h2>Exclusion Information</h2><p>Press the device switch one time to exclude it in the network. The LED will start blinking.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -83,7 +83,7 @@
                  min="0" max="255">
         <label>1: Delayed OFF time</label>
         <description><![CDATA[
-time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seconds the switch will delay when trigger the delayed off feature</p>
+time in seconds to delay OFF<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will delay when trigger the delayed off feature</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -93,7 +93,7 @@ time in seconds to delay OFF<br /><h1>Overview</h1><p>The amount of time in seco
                  min="0" max="255">
         <label>2: Panic ON time</label>
         <description><![CDATA[
-Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered</p>
+Time in seconds for panic mode ON<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn on for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -103,7 +103,7 @@ Time in seconds for panic mode ON<br /><h1>Overview</h1><p>The amount of time in
                  min="0" max="255">
         <label>3: Panic OFF time</label>
         <description><![CDATA[
-time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of time in seconds the switch will turn off for when panic mode is triggered</p>
+time in seconds for OFF in panic mode<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will turn off for when panic mode is triggered</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -113,7 +113,7 @@ time in seconds for OFF in panic mode<br /><h1>Overview</h1><p>The amount of tim
                  min="0" max="255">
         <label>4: Basic Set Value</label>
         <description><![CDATA[
-Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
+Send value to association group on trigger<br /> <h1>Overview</h1><p>Setting this to anything other than 0 will cause the value to be transmitted to devices in the association group when the switch is triggered. A setting other than 0 will likely result in undesired operation</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -146,7 +146,7 @@ Send value to association group on trigger<br /><h1>Overview</h1><p>Setting this
                  min="0" max="255">
         <label>7: Dimmer Ramp Time</label>
         <description><![CDATA[
-Time in seconds to reach desired level<br /><h1>Overview</h1><p>The amount of time in seconds the switch will take to reach the desired dim level</p>
+Time in seconds to reach desired level<br /> <h1>Overview</h1><p>The amount of time in seconds the switch will take to reach the desired dim level</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -155,7 +155,7 @@ Time in seconds to reach desired level<br /><h1>Overview</h1><p>The amount of ti
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Kickstart / Rapid Start</label>
         <description><![CDATA[
-Turn on or off rapid start feature<br /><h1>Overview</h1><p>Ensures that LED / CFL bulbs turn on when the preset dim level is low.  Enabling this feature may cause the lights brightness to momentarily be bright when the switch is turned on before reducing in brightness to desired level</p>
+Turn on or off rapid start feature<br /> <h1>Overview</h1><p>Ensures that LED / CFL bulbs turn on when the preset dim level is low.  Enabling this feature may cause the lights brightness to momentarily be bright when the switch is turned on before reducing in brightness to desired level</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -190,7 +190,7 @@ Turn on or off rapid start feature<br /><h1>Overview</h1><p>Ensures that LED / C
       <parameter name="group_255" type="text" groupName="association">
         <label>255: Group 255</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Life line to the controller</p>
+<br /> <h1>Overview</h1><p>Life line to the controller</p>
         ]]></description>
       </parameter>
 

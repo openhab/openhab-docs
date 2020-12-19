@@ -8,7 +8,7 @@
   <thing-type id="thermofloor_heatitzrelay_00_000" listed="false">
     <label>HEATIT Z-RELAY Multipurpose relay</label>
     <description><![CDATA[
-Multipurpose relay<br /><h1>Overview</h1><p>The Heatit Z-Relay is a Z-Wave module in a water-resistant housing equipped with 10 x membrane cable entries. </p> <p>The Heatit Z-Relay is equipped with 1 relay output and 3 multi-purpose inputs, and a Z-Wave radio for interfacing to the wireless Z-Wave network. The module must be power supplied from a 230V AC mains connection. </p> <p>This heavy-duty relay can be freely controlled from the Z-Wave network, and can be used for several purposes, e.g. control of valve actuators, stoves etc. </p> <p>Two of the Heatit Z-Relay inputs can be configured to function as either digital inputs or as analogue inputs for interfacing simple NTC temperature sensors. When the inputs are used as digital inputs, they can be connected to potential free contacts, open-collector outputs, and will be able to control other Z-Wave devices when the status of the inputs sent to other Z-Wave devices on the Z-Wave network. The last input can be used as either digital input or be used to be connected to a flood detector. </p> <p>It is possible to configure the level- and the indication of the status indicator LED on the modules circuit board.</p> <br /><h2>Inclusion Information</h2><p>On delivery, the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. Devices can also be removed from a network. Both add and remove process are initiated by the primary controller of the Z-Wave network. This controller will be turned into a mode for adding or removing devices. Please refer to your primary controller’s manual on how to turn your controller into add or remove mode. Only if the primary controller is in add or remove mode, this device can be added or removed from the network. When the device is removed from the network, it will set the device back to factory default. </p> <p>If the device already belongs to a network, follow the remove process before adding it in your network. Otherwise, the adding of this device will fail. Place your primary controller in Adding Mode by following the manufacturer’s instructions, then activate the add mode on the device by clicking the inclusion button in the module. The Adding Mode is indicated by status LED is blinking until a timeout occurs after 10 seconds or if the module has been added to the Z-Wave network.  </p> <br /><h2>Exclusion Information</h2><p>The device is removed in the same manner, when the controller is put into Removing Mode. </p>
+Multipurpose relay<br /> <h1>Overview</h1><p>The Heatit Z-Relay is a Z-Wave module in a water-resistant housing equipped with 10 x membrane cable entries. </p> <p>The Heatit Z-Relay is equipped with 1 relay output and 3 multi-purpose inputs, and a Z-Wave radio for interfacing to the wireless Z-Wave network. The module must be power supplied from a 230V AC mains connection. </p> <p>This heavy-duty relay can be freely controlled from the Z-Wave network, and can be used for several purposes, e.g. control of valve actuators, stoves etc. </p> <p>Two of the Heatit Z-Relay inputs can be configured to function as either digital inputs or as analogue inputs for interfacing simple NTC temperature sensors. When the inputs are used as digital inputs, they can be connected to potential free contacts, open-collector outputs, and will be able to control other Z-Wave devices when the status of the inputs sent to other Z-Wave devices on the Z-Wave network. The last input can be used as either digital input or be used to be connected to a flood detector. </p> <p>It is possible to configure the level- and the indication of the status indicator LED on the modules circuit board.</p> <br /> <h2>Inclusion Information</h2><p>On delivery, the device does not belong to any Z-Wave network. The device needs to be added to an existing wireless network to communicate with the devices of this network. Devices can also be removed from a network. Both add and remove process are initiated by the primary controller of the Z-Wave network. This controller will be turned into a mode for adding or removing devices. Please refer to your primary controller’s manual on how to turn your controller into add or remove mode. Only if the primary controller is in add or remove mode, this device can be added or removed from the network. When the device is removed from the network, it will set the device back to factory default. </p> <p>If the device already belongs to a network, follow the remove process before adding it in your network. Otherwise, the adding of this device will fail. Place your primary controller in Adding Mode by following the manufacturer’s instructions, then activate the add mode on the device by clicking the inclusion button in the module. The Adding Mode is indicated by status LED is blinking until a timeout occurs after 10 seconds or if the module has been added to the Z-Wave network.  </p> <br /> <h2>Exclusion Information</h2><p>The device is removed in the same manner, when the controller is put into Removing Mode. </p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -111,7 +111,7 @@ Multipurpose relay<br /><h1>Overview</h1><p>The Heatit Z-Relay is a Z-Wave modul
                  min="0" max="3">
         <label>1: Status LED.</label>
         <description><![CDATA[
-Configuration of the status LED.<br /><h1>Overview</h1><p>0 = LED turned off. </p> <p>1 = LED turned on. (Default) </p> <p>2 = LED flashing at 1 second intervals (½ Hz). </p> <p>3 = LED flashing at ½ second interval (1 Hz).</p>
+Configuration of the status LED.<br /> <h1>Overview</h1><p>0 = LED turned off. </p> <p>1 = LED turned on. (Default) </p> <p>2 = LED flashing at 1 second intervals (½ Hz). </p> <p>3 = LED flashing at ½ second interval (1 Hz).</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ Configuration of the status LED.<br /><h1>Overview</h1><p>0 = LED turned off. </
                  min="0" max="100">
         <label>2: Status LED brightness level.</label>
         <description><![CDATA[
-Configure the percentage of light in the status LED, when the LED is turned on<br /><h1>Overview</h1><p>0 - 100 = Specifies the brightness level of the LED when it is on. Default is 50.</p>
+Configure the percentage of light in the status LED, when the LED is turned on<br /> <h1>Overview</h1><p>0 - 100 = Specifies the brightness level of the LED when it is on. Default is 50.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Configure the percentage of light in the status LED, when the LED is turned on<b
                  min="0" max="1">
         <label>3: Thermistor type for input 1.</label>
         <description><![CDATA[
-Configures the thermistor type connected to input 1.<br /><h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
+Configures the thermistor type connected to input 1.<br /> <h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Configures the thermistor type connected to input 1.<br /><h1>Overview</h1><p>0 
                  min="0" max="1">
         <label>4: Thermistor type for input 2.</label>
         <description><![CDATA[
-Configures the thermistor type connected to input 2. VALUE DESCRIPTION<br /><h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
+Configures the thermistor type connected to input 2. VALUE DESCRIPTION<br /> <h1>Overview</h1><p>0 = Input disabled. (Default). </p> <p>1 = 10K NTC (TEWA PART NUMBER: TT02-10KC3-93D-3000R-TPH) </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -151,7 +151,7 @@ Configures the thermistor type connected to input 2. VALUE DESCRIPTION<br /><h1>
                  min="-40" max="40">
         <label>5: Temperature offset on input 1.</label>
         <description><![CDATA[
-Configures a temperature offset, input 1.<br /><h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 1.</p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0). </p>
+Configures a temperature offset, input 1.<br /> <h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 1.</p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0). </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -161,7 +161,7 @@ Configures a temperature offset, input 1.<br /><h1>Overview</h1><p>Configures a 
                  min="-40" max="40">
         <label>6: Temperature offset on input 2.</label>
         <description><![CDATA[
-Configures a temperature offset, input 2.<br /><h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 2. </p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0).</p>
+Configures a temperature offset, input 2.<br /> <h1>Overview</h1><p>Configures a temperature offset that can be added to the measured temperature in order to get a more accurate measurement from the thermistor on input 2. </p> <p>-40  40 =  -4,0 – 4,0°C. Value is added to the temperature measurement. (Default is 0).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -171,7 +171,7 @@ Configures a temperature offset, input 2.<br /><h1>Overview</h1><p>Configures a 
                  min="0" max="8640">
         <label>7: Time interval for reports sent about input 1.</label>
         <description><![CDATA[
-Configures the time interval between when sensor reports, input 1.<br /><h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 1. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute. </p>
+Configures the time interval between when sensor reports, input 1.<br /> <h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 1. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute. </p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -181,7 +181,7 @@ Configures the time interval between when sensor reports, input 1.<br /><h1>Over
                  min="0" max="8640">
         <label>8: Time interval for reports sent about input 2.</label>
         <description><![CDATA[
-Configures the time interval between when sensor reports, input 2.<br /><h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 2.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute.  </p>
+Configures the time interval between when sensor reports, input 2.<br /> <h1>Overview</h1><p>Configures the time interval between when sensor reports are transmitted for input 2.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 6 (60 seconds) which will cause a report to be sent every minute.  </p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -191,7 +191,7 @@ Configures the time interval between when sensor reports, input 2.<br /><h1>Over
                  min="0" max="8640">
         <label>9: Time interval input 3 reports.</label>
         <description><![CDATA[
-Configures time interval for notification reports, flood input 3.<br /><h1>Overview</h1><p>Configures the time interval between when notification reports for flood input 3.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 2 (20 seconds) which will cause reports to be sent every 20 seconds.</p>
+Configures time interval for notification reports, flood input 3.<br /> <h1>Overview</h1><p>Configures the time interval between when notification reports for flood input 3.</p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 2 (20 seconds) which will cause reports to be sent every 20 seconds.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -201,7 +201,7 @@ Configures time interval for notification reports, flood input 3.<br /><h1>Overv
                  min="0" max="8640">
         <label>10: Time interval between meter reports.</label>
         <description><![CDATA[
-Time interval between meter reports.<br /><h1>Overview</h1><p>Configures the time interval between when meter reports for reporting the energy (kWh) consumed by the load connected to the relay output. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 90 (900 seconds) which will cause reports to be sent every 15 minute.</p>
+Time interval between meter reports.<br /> <h1>Overview</h1><p>Configures the time interval between when meter reports for reporting the energy (kWh) consumed by the load connected to the relay output. </p> <p>0 – 8,640 = 0 – 864 seconds. Default value is 90 (900 seconds) which will cause reports to be sent every 15 minute.</p>
         ]]></description>
         <default>90</default>
         <limitToOptions>false</limitToOptions>
@@ -211,7 +211,7 @@ Time interval between meter reports.<br /><h1>Overview</h1><p>Configures the tim
                  min="0" max="60">
         <label>11: Flood steady timer</label>
         <description><![CDATA[
-Input 3 steady time.<br /><h1>Overview</h1><p>Configures the time that the flood input (input 3) has to be steady before the state is accepted as a valid state. </p> <p>0 – 60 = 0 – 60 seconds. Default value is 6 (6 seconds) before a state is accepted as valid. </p>
+Input 3 steady time.<br /> <h1>Overview</h1><p>Configures the time that the flood input (input 3) has to be steady before the state is accepted as a valid state. </p> <p>0 – 60 = 0 – 60 seconds. Default value is 6 (6 seconds) before a state is accepted as valid. </p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -221,7 +221,7 @@ Input 3 steady time.<br /><h1>Overview</h1><p>Configures the time that the flood
                  min="0" max="2">
         <label>12: Auto relay on.</label>
         <description><![CDATA[
-Configures internal states that will cause the relay to be turned on.<br /><h1>Overview</h1><p>0 = Relay is not turned on automatically. </p> <p>1 = The relay is turned on when a flood is detected. (Default) </p> <p>2 = The relay is turned off when no flood is detected.</p>
+Configures internal states that will cause the relay to be turned on.<br /> <h1>Overview</h1><p>0 = Relay is not turned on automatically. </p> <p>1 = The relay is turned on when a flood is detected. (Default) </p> <p>2 = The relay is turned off when no flood is detected.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -231,7 +231,7 @@ Configures internal states that will cause the relay to be turned on.<br /><h1>O
                  min="0" max="2">
         <label>13: Auto relay off.</label>
         <description><![CDATA[
-Configures internal states that will cause the relay to be turned off.<br /><h1>Overview</h1><p>0 = Relay is not turned off automatically. </p> <p>1 = The relay is turned off when a flood is detected. </p> <p>2 = The relay is turned off when no flood is detected. (Default)</p>
+Configures internal states that will cause the relay to be turned off.<br /> <h1>Overview</h1><p>0 = Relay is not turned off automatically. </p> <p>1 = The relay is turned off when a flood is detected. </p> <p>2 = The relay is turned off when no flood is detected. (Default)</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -241,7 +241,7 @@ Configures internal states that will cause the relay to be turned off.<br /><h1>
                  min="0" max="4095">
         <label>14: Flood detection threshold.</label>
         <description><![CDATA[
-Configures the threshold for input 3 that will cause a flood to be detected.<br /><h1>Overview</h1><p>0 - 4095 = Low value means a low detection threshold, high value will cause the input to be more sensitive. Default value is 2048.</p>
+Configures the threshold for input 3 that will cause a flood to be detected.<br /> <h1>Overview</h1><p>0 - 4095 = Low value means a low detection threshold, high value will cause the input to be more sensitive. Default value is 2048.</p>
         ]]></description>
         <default>2048</default>
         <limitToOptions>false</limitToOptions>
@@ -251,7 +251,7 @@ Configures the threshold for input 3 that will cause a flood to be detected.<br 
                  min="0" max="250">
         <label>15: Voltage.</label>
         <description><![CDATA[
-Voltage value used for power calculation.<br /><h1>Overview</h1><p>Configures the value used for power calculation, as only the current for the load on the relay output is measured.</p> <p>0 – 250  = 0 – 250 Volt. Default value is 220.</p>
+Voltage value used for power calculation.<br /> <h1>Overview</h1><p>Configures the value used for power calculation, as only the current for the load on the relay output is measured.</p> <p>0 – 250  = 0 – 250 Volt. Default value is 220.</p>
         ]]></description>
         <default>220</default>
         <limitToOptions>false</limitToOptions>
@@ -261,7 +261,7 @@ Voltage value used for power calculation.<br /><h1>Overview</h1><p>Configures th
                  min="0" max="255">
         <label>16: Ampere</label>
         <description><![CDATA[
-NOT USED<br /><h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
+NOT USED<br /> <h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -271,7 +271,7 @@ NOT USED<br /><h1>Overview</h1><p>0 - 255 = Default value is 0.</p>
                  min="0" max="255">
         <label>17: Digital value per ampere.</label>
         <description><![CDATA[
-DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /><h1>Overview</h1><p>0 - 255 = 0 – 255. Default value is 81 which is corresponds to the current sensor ACS722LLCTR-20AB.</p>
+DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /> <h1>Overview</h1><p>0 - 255 = 0 – 255. Default value is 81 which is corresponds to the current sensor ACS722LLCTR-20AB.</p>
         ]]></description>
         <default>81</default>
         <limitToOptions>false</limitToOptions>
@@ -281,7 +281,7 @@ DO NOT CHANGE THIS VALUE, UNLESS INSTRUCTED TO.<br /><h1>Overview</h1><p>0 - 255
                  min="0" max="6000">
         <label>18: Size of load connected on the relay output.</label>
         <description><![CDATA[
-Actual load in Watt.<br /><h1>Overview</h1><p>Configures a constant value that will be used in power metering when this value is different from 0.  This value specifies the actual load in Watt used for power metering. </p> <p>0 – 6000 = 0 – 6000 Watt. Default value is 0.</p>
+Actual load in Watt.<br /> <h1>Overview</h1><p>Configures a constant value that will be used in power metering when this value is different from 0.  This value specifies the actual load in Watt used for power metering. </p> <p>0 – 6000 = 0 – 6000 Watt. Default value is 0.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

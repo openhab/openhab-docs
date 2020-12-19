@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zw500d_00_000" listed="false">
     <label>ZW500D Dimmer</label>
     <description><![CDATA[
-Dimmer<br /><h1>Overview</h1><p>The ZW500D Dimmer Switch is a perfect wireless manual and remote on/off/dim/ bright control replacement of regular on/off and dimmer switch, controlling incandescent, dimmable LED and CFL. This ZW500D dimmer switch is fully compatible with other Z-Wave devices, provides programmable function creating a perfect ambiance such as scenes, association, schedule event, etc. Also it can be added to most Z-Wave compliant controllers. Sliding Air-Gap switch to a totally disconnect power while replacing light bulbs and preventing from leakage current from the fixture(s). This ZW500D dimmer works with ZW3K 3-Way Auxiliary Switch that reducing energy consumption, enhancing the value of technology of your home, condominiums and apartment.</p> <br /><h2>Inclusion Information</h2><p>When the primary controller sends the program command, press the button</p> <br /><h2>Exclusion Information</h2><p>When the primary controller sends the program command, press the button</p>
+Dimmer<br /> <h1>Overview</h1><p>The ZW500D Dimmer Switch is a perfect wireless manual and remote on/off/dim/ bright control replacement of regular on/off and dimmer switch, controlling incandescent, dimmable LED and CFL. This ZW500D dimmer switch is fully compatible with other Z-Wave devices, provides programmable function creating a perfect ambiance such as scenes, association, schedule event, etc. Also it can be added to most Z-Wave compliant controllers. Sliding Air-Gap switch to a totally disconnect power while replacing light bulbs and preventing from leakage current from the fixture(s). This ZW500D dimmer works with ZW3K 3-Way Auxiliary Switch that reducing energy consumption, enhancing the value of technology of your home, condominiums and apartment.</p> <br /> <h2>Inclusion Information</h2><p>When the primary controller sends the program command, press the button</p> <br /> <h2>Exclusion Information</h2><p>When the primary controller sends the program command, press the button</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -51,7 +51,7 @@ Dimmer<br /><h1>Overview</h1><p>The ZW500D Dimmer Switch is a perfect wireless m
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: configure LED light state</label>
         <description><![CDATA[
-configure LED light state<br /><h1>Overview</h1><p>0 = LED off with load on</p> <p>1 = LED on with load on</p>
+configure LED light state<br /> <h1>Overview</h1><p>0 = LED off with load on</p> <p>1 = LED on with load on</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -64,7 +64,7 @@ configure LED light state<br /><h1>Overview</h1><p>0 = LED off with load on</p> 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Reverse installed direction</label>
         <description><![CDATA[
-Control if switch up is on or off<br /><h1>Overview</h1><p>0 = normal install, up is on</p> <p>1 = invert switch</p>
+Control if switch up is on or off<br /> <h1>Overview</h1><p>0 = normal install, up is on</p> <p>1 = invert switch</p>
         ]]></description>
         <default>0</default>
         <options>

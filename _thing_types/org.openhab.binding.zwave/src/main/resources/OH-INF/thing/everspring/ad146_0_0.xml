@@ -8,7 +8,7 @@
   <thing-type id="everspring_ad146_00_000" listed="false">
     <label>AD146 In-Wall Dimmer Module</label>
     <description><![CDATA[
-In-Wall Dimmer Module<br /><h1>Overview</h1><p>In-Wall Dimmer Module </p> <br /><h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into exclusion mode.</p>
+In-Wall Dimmer Module<br /> <h1>Overview</h1><p>In-Wall Dimmer Module </p> <br /> <h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into exclusion mode.</p>
     ]]></description>
     <category>WallSwitch</category>
 

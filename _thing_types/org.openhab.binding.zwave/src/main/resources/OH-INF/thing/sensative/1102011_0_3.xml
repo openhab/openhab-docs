@@ -8,7 +8,7 @@
   <thing-type id="sensative_1102011_00_003" listed="false">
     <label>11 02 011 Strips Multisensor Comfort/Drip</label>
     <description><![CDATA[
-Strips Multisensor Comfort/Drip<br /><h1>Overview</h1><p>Strips Comfort is a discreet temperature and light sensor, Strips Drip is a water leakage sensor and has a range up to 40 meters.</p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p> <br /><h2>Wakeup Information</h2><p>Place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p>
+Strips Multisensor Comfort/Drip<br /> <h1>Overview</h1><p>Strips Comfort is a discreet temperature and light sensor, Strips Drip is a water leakage sensor and has a range up to 40 meters.</p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p> <br /> <h2>Wakeup Information</h2><p>Place the magnet by the rounded edge, and once the LED blinks, move the magnet away. Repeat two more times within 10 seconds.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -178,7 +178,7 @@ Strips Multisensor Comfort/Drip<br /><h1>Overview</h1><p>Strips Comfort is a dis
                  min="1" max="42000">
         <label>11: Low ambient light report level</label>
         <description><![CDATA[
-Low ambient light report level<br /><h1>Overview</h1><p>Must be significantly lower than parameter 10 </p>
+Low ambient light report level<br /> <h1>Overview</h1><p>Must be significantly lower than parameter 10 </p>
         ]]></description>
         <default>5000</default>
         <limitToOptions>false</limitToOptions>

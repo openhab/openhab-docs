@@ -8,7 +8,7 @@
   <thing-type id="popp_pope700168_00_000" listed="false">
     <label>POPE700168 POPP Rain-Sensor</label>
     <description><![CDATA[
-POPP Rain-Sensor<br /><h1>Overview</h1><p>The POPP Rain-Sensor is a Rain Measuring Sensor Device for Europe</p> <br /><h2>Inclusion Information</h2><p>Put controller in inclusion mode, push the Z-Wave button once</p> <br /><h2>Exclusion Information</h2><p>Put controller in exclusion mode, push the Z-Wave button once</p> <br /><h2>Wakeup Information</h2><p>Push the Z-Wave button once</p>
+POPP Rain-Sensor<br /> <h1>Overview</h1><p>The POPP Rain-Sensor is a Rain Measuring Sensor Device for Europe</p> <br /> <h2>Inclusion Information</h2><p>Put controller in inclusion mode, push the Z-Wave button once</p> <br /> <h2>Exclusion Information</h2><p>Put controller in exclusion mode, push the Z-Wave button once</p> <br /> <h2>Wakeup Information</h2><p>Push the Z-Wave button once</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -74,7 +74,7 @@ POPP Rain-Sensor<br /><h1>Overview</h1><p>The POPP Rain-Sensor is a Rain Measuri
                  min="0" max="32000">
         <label>1: Rain Counter</label>
         <description><![CDATA[
-total count of rain<br /><h1>Overview</h1><p>Ths values shows the total count of rain from the moment of inclusion in mm waterlevel. By writing this value this counter can be reset. Size: 2 Byte, Default Value: 0</p>
+total count of rain<br /> <h1>Overview</h1><p>Ths values shows the total count of rain from the moment of inclusion in mm waterlevel. By writing this value this counter can be reset. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -84,7 +84,7 @@ total count of rain<br /><h1>Overview</h1><p>Ths values shows the total count of
                  min="0" max="99">
         <label>2: Rain Start Command</label>
         <description><![CDATA[
-Send rain start command to group 2<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects start of rain Size: 1 Byte, Default Value: 99</p>
+Send rain start command to group 2<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects start of rain Size: 1 Byte, Default Value: 99</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -94,7 +94,7 @@ Send rain start command to group 2<br /><h1>Overview</h1><p>This BASIC Set Comma
                  min="0" max="99">
         <label>3: Rain Stop Command</label>
         <description><![CDATA[
-Send rain stop to group 2<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects stop of rain Size: 1 Byte, Default Value: 0</p>
+Send rain stop to group 2<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 2 when the device detects stop of rain Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -104,7 +104,7 @@ Send rain stop to group 2<br /><h1>Overview</h1><p>This BASIC Set Command value 
                  min="1" max="1000">
         <label>4: Meter Multiplier</label>
         <description><![CDATA[
-Adapt the display<br /><h1>Overview</h1><p>This multiplier allows to adapt the display to certain controllers not being able to handle very low numbers. Size: 2 Byte, Default Value: 1 only 1/10/100/1000</p>
+Adapt the display<br /> <h1>Overview</h1><p>This multiplier allows to adapt the display to certain controllers not being able to handle very low numbers. Size: 2 Byte, Default Value: 1 only 1/10/100/1000</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -114,7 +114,7 @@ Adapt the display<br /><h1>Overview</h1><p>This multiplier allows to adapt the d
                  min="0" max="255">
         <label>5: Heavy Rain</label>
         <description><![CDATA[
-Threshold defines heavy rain condition<br /><h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>
+Threshold defines heavy rain condition<br /> <h1>Overview</h1><p>This threshold defines when a heavy rain condition is hit. In most countries this is defined as &gt; 15 mm rain per hour. The default value however is to turn this function off. Size: 1 Byte, Default Value: 255</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -124,7 +124,7 @@ Threshold defines heavy rain condition<br /><h1>Overview</h1><p>This threshold d
                  min="0" max="99">
         <label>6: Heavy Rain Start Command</label>
         <description><![CDATA[
-Send heavy rain start to group 3<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects start of heavy rain Size: 1 Byte, Default Value: 99</p>
+Send heavy rain start to group 3<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects start of heavy rain Size: 1 Byte, Default Value: 99</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -134,7 +134,7 @@ Send heavy rain start to group 3<br /><h1>Overview</h1><p>This BASIC Set Command
                  min="0" max="99">
         <label>7: Heavy Rain Stop Command</label>
         <description><![CDATA[
-Send heavy rain stop to group 3<br /><h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects stop of heavy rain Size: 1 Byte, Default Value: 0</p>
+Send heavy rain stop to group 3<br /> <h1>Overview</h1><p>This BASIC Set Command value is sent out into Association Group 3 when the device detects stop of heavy rain Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

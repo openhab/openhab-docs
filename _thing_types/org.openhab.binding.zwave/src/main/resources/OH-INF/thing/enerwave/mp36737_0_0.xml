@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="enerwave_mp36737_00_000" listed="false">
+    <label>Monoprice Z-Wave Plus On/Off Switch Monoprice in wall on/off switch model number 36737</label>
+    <description><![CDATA[
+Monoprice in wall on/off switch model number 36737<br /> <h1>Overview</h1><p>Perfect Replacement for regular wall switch, 120VAC, 15Amp</p><p>Wireless Z-Wave technology creates a mesh network for command and Manual and Remote ON/OFF control of any connected lighting and interoperability with other Z-Wave compliant controller and devices</p><p>Manual and Remote ON/OFF control of any connected lighting and other electrical load </p><p>Can be used for signal pole or 3- Way (Multi-location) with ZW3K Auxiliary Air-Gap Switch</p><p>Air-Gap Switch feature meets UL requirement and disconnect power from load locally</p><p>A blue LED illuminates when the load is off</p> <br /> <h2>Inclusion Information</h2><p>Once switch paddle (top/button) is pressed, the device will enter into learn mode to accomplish inclusion or exclusion by controller.  <br /></p> <br /> <h2>Exclusion Information</h2><p>Once switch paddle (top/button) is pressed, the device will enter into learn mode to accomplish inclusion or exclusion by controller.  <br /></p> <br /> <h2>Wakeup Information</h2><p>N/A</p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Wenzhou MTLC Electric Appliances Co.,Ltd.</property>
+      <property name="modelId">Monoprice Z-Wave Plus On/Off Switch</property>
+      <property name="manufacturerId">011A</property>
+      <property name="manufacturerRef">0101:0101</property>
+      <property name="dbReference">1317</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>1: LED State</label>
+        <description>LED State</description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline: Send device reset locally notification<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description>StatusReport: Send basic report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description>AssGroupSet: Send Basic set command</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

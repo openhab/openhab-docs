@@ -8,7 +8,7 @@
   <thing-type id="yale_yrd120_00_000" listed="false">
     <label>YRD120 Touchscreen deadbolt without key</label>
     <description><![CDATA[
-Touchscreen deadbolt without key<br /><h1>Overview</h1><ul><li>Lock and unlock your door by entering your 4-8 digit pin code on the backlit, touchscreen keypad or through your Z-Wave smart home or alarm system app</li> <li>Store up to 100 unique pin codes to share with friends and family</li> <li>100% key free with a 9V battery back-up to prevent lock-outs</li> <li>Installs on doors with just a screwdriver; fits 1-3/4 inch to 2-1/4 inch thick doors</li> </ul><br /><h2>Inclusion Information</h2><p>The lock can be included in a Z-Wave Network from the touchscreen as follows:</p> <ol><li>Touch the lock screen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 1, then #</li> </ol><p>The lock will now be in inclusion mode.  Alternatively, the lock can be included by pressing and holding the radio button until the unit beeps 2 times. Release the button and the unit will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>The lock can be excluded from a Z-Wave Network from the touchscreen as follows:</p> <ol><li>Touch the lock screen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 3, then #</li> </ol><p>The lock will now be in exclusion mode.  Alternatively, the lock can be excluded by pressing and holding the radio button until the unit beeps 5 times. Release the button and the unit will enter exclusion mode.</p>
+Touchscreen deadbolt without key<br /> <h1>Overview</h1><ul><li>Lock and unlock your door by entering your 4-8 digit pin code on the backlit, touchscreen keypad or through your Z-Wave smart home or alarm system app</li> <li>Store up to 100 unique pin codes to share with friends and family</li> <li>100% key free with a 9V battery back-up to prevent lock-outs</li> <li>Installs on doors with just a screwdriver; fits 1-3/4 inch to 2-1/4 inch thick doors</li> </ul> <br /> <h2>Inclusion Information</h2><p>The lock can be included in a Z-Wave Network from the touchscreen as follows:</p> <ol><li>Touch the lock screen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 1, then #</li> </ol><p>The lock will now be in inclusion mode.  Alternatively, the lock can be included by pressing and holding the radio button until the unit beeps 2 times. Release the button and the unit will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>The lock can be excluded from a Z-Wave Network from the touchscreen as follows:</p> <ol><li>Touch the lock screen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 3, then #</li> </ol><p>The lock will now be in exclusion mode.  Alternatively, the lock can be excluded by pressing and holding the radio button until the unit beeps 5 times. Release the button and the unit will enter exclusion mode.</p>
     ]]></description>
     <category>Lock</category>
 
@@ -73,7 +73,7 @@ Touchscreen deadbolt without key<br /><h1>Overview</h1><ul><li>Lock and unlock y
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Audio Volume</label>
         <description><![CDATA[
-Sets the volume level of the beeps and voice prompts<br /><h1>Overview</h1><p>1 = Silent</p> <p>2 = Low</p> <p>3 = High</p>
+Sets the volume level of the beeps and voice prompts<br /> <h1>Overview</h1><p>1 = Silent</p> <p>2 = Low</p> <p>3 = High</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -87,7 +87,7 @@ Sets the volume level of the beeps and voice prompts<br /><h1>Overview</h1><p>1 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Auto Re-lock</label>
         <description><![CDATA[
-When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = Off</p> <p>255 = On</p>
+When enabled, the unit will automatically re-lock<br /> <h1>Overview</h1><p>0 = Off</p> <p>255 = On</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -124,7 +124,7 @@ When enabled, the unit will automatically re-lock<br /><h1>Overview</h1><p>0 = O
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Operating Mode</label>
         <description><![CDATA[
-Sets if the unit operates normal, or disables the keypad and Z-Wave lock/unlock<br /><h1>Overview</h1><p>0 = Normal</p> <p>1 = Vacation Mode (User Codes Disabled)</p> <p>2 = Privacy Mode (User Codes and Z-Wave Disabled)</p>
+Sets if the unit operates normal, or disables the keypad and Z-Wave lock/unlock<br /> <h1>Overview</h1><p>0 = Normal</p> <p>1 = Vacation Mode (User Codes Disabled)</p> <p>2 = Privacy Mode (User Codes and Z-Wave Disabled)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -139,7 +139,7 @@ Sets if the unit operates normal, or disables the keypad and Z-Wave lock/unlock<
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Alarm Reports</label>
         <description><![CDATA[
-Alarm reports are sent out to all devices in the association group<br /><h1>Overview</h1>
+Alarm reports are sent out to all devices in the association group<br /> <h1>Overview</h1>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

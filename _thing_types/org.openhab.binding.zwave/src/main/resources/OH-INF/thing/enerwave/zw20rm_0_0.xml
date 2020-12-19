@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zw20rm_00_000" listed="false">
     <label>ZW20RM In-wall Smart Meter Duplex Receptacle</label>
     <description><![CDATA[
-In-wall Smart Meter Duplex Receptacle<br /><h1>Overview</h1><p>The ZW20RM TR Duplex Receptacle is a perfect wireless manual and remote on/off control replacement of regular receptacles, controlling table and floor lamps, small appliances, etc. This ZW20RM TR Duplex Receptacle provides two different type outlets. One outlet with Z-Wave mark has programmable functions such as scenes, association, schedule event, etc. It can be added to most Z-Wave compliant controllers, and a Blue LED on the face cover indicates the status of the controlled outlet and acts as a night light. The other outlet with Tamper-Resistant feature provides constant power, helps you and your families prevent electrical injuries.</p> <br /><h2>Inclusion Information</h2><p>press the program button of ZW20RM</p> <br /><h2>Exclusion Information</h2><p>press the program button of ZW20RM</p>
+In-wall Smart Meter Duplex Receptacle<br /> <h1>Overview</h1><p>The ZW20RM TR Duplex Receptacle is a perfect wireless manual and remote on/off control replacement of regular receptacles, controlling table and floor lamps, small appliances, etc. This ZW20RM TR Duplex Receptacle provides two different type outlets. One outlet with Z-Wave mark has programmable functions such as scenes, association, schedule event, etc. It can be added to most Z-Wave compliant controllers, and a Blue LED on the face cover indicates the status of the controlled outlet and acts as a night light. The other outlet with Tamper-Resistant feature provides constant power, helps you and your families prevent electrical injuries.</p> <br /> <h2>Inclusion Information</h2><p>press the program button of ZW20RM</p> <br /> <h2>Exclusion Information</h2><p>press the program button of ZW20RM</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -103,7 +103,7 @@ In-wall Smart Meter Duplex Receptacle<br /><h1>Overview</h1><p>The ZW20RM TR Dup
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Enable automatic notifications</label>
         <description><![CDATA[
-Enable automatic notifications to associated device<br /><h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
+Enable automatic notifications to associated device<br /> <h1>Overview</h1><p>Device will send a notification whenever the is a wattage change</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -119,7 +119,7 @@ Enable automatic notifications to associated device<br /><h1>Overview</h1><p>Dev
                  min="0" max="255">
         <label>12: Minimum change to report</label>
         <description><![CDATA[
-Minimum change in wattage report<br /><h1>Overview</h1><p>0-255: 0.0-25.5W</p>
+Minimum change in wattage report<br /> <h1>Overview</h1><p>0-255: 0.0-25.5W</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

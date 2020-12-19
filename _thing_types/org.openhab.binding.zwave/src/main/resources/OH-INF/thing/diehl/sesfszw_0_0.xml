@@ -8,7 +8,7 @@
   <thing-type id="diehl_sesfszw_00_000" listed="false">
     <label>SES FS-ZW Plug Actuator</label>
     <description><![CDATA[
-Plug Actuator<br /><h1>Overview</h1><p>Smart outlet with energy monitoring.</p> <br /><h2>Inclusion Information</h2><p>The inclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).</li> <li>Start “Inclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>During the next 5 seconds, the wireless connection is established and the inclusion process for linking the plug actuator to the central unit is performed.</p> <br /><h2>Exclusion Information</h2><p>The exclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Make sure that no device is plugged into the plug actuator.</li> <li>Start “Exclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>The exclusion process for disconnecting the plug actuator from the central unit runs for the next 5 seconds. The Status LED flashes white 3x once the exclusion process has been successfully completed.</p>
+Plug Actuator<br /> <h1>Overview</h1><p>Smart outlet with energy monitoring.</p> <br /> <h2>Inclusion Information</h2><p>The inclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).</li> <li>Start “Inclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>During the next 5 seconds, the wireless connection is established and the inclusion process for linking the plug actuator to the central unit is performed.</p> <br /> <h2>Exclusion Information</h2><p>The exclusion process is controlled by the central unit – refer to the documentation for the central unit.</p> <ol><li>Make sure that no device is plugged into the plug actuator.</li> <li>Start “Exclusion” mode on the chosen central unit.</li> <li>Press the button on the plug actuator 3 times within a period of around 2 seconds.</li> </ol><p>The Status LED lights up white.</p> <p>The exclusion process for disconnecting the plug actuator from the central unit runs for the next 5 seconds. The Status LED flashes white 3x once the exclusion process has been successfully completed.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -125,7 +125,7 @@ Plug Actuator<br /><h1>Overview</h1><p>Smart outlet with energy monitoring.</p> 
                  min="0" max="32767">
         <label>6: Energy delta value</label>
         <description><![CDATA[
-Minimum change required for a new energy value to be transmitted.<br /><h1>Overview</h1><p>The transmission must take place in the time window between parameter 2 and 3.</p>
+Minimum change required for a new energy value to be transmitted.<br /> <h1>Overview</h1><p>The transmission must take place in the time window between parameter 2 and 3.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -135,7 +135,7 @@ Minimum change required for a new energy value to be transmitted.<br /><h1>Overv
                  min="0" max="32767">
         <label>7: Power delta value</label>
         <description><![CDATA[
-Minimum change required for a new power value to be transmitted.<br /><h1>Overview</h1><p>The transmission must take place in the time window between parameter 4 and 5</p>
+Minimum change required for a new power value to be transmitted.<br /> <h1>Overview</h1><p>The transmission must take place in the time window between parameter 4 and 5</p>
         ]]></description>
         <default>150</default>
         <limitToOptions>false</limitToOptions>
@@ -144,7 +144,7 @@ Minimum change required for a new power value to be transmitted.<br /><h1>Overvi
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Safety shutdown configuration</label>
         <description><![CDATA[
-Behaviour in the event of a safety shutdown<br /><h1>Overview</h1><p>The plug actuator remains OFF after 3x safety shutdowns.</p>
+Behaviour in the event of a safety shutdown<br /> <h1>Overview</h1><p>The plug actuator remains OFF after 3x safety shutdowns.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -157,7 +157,7 @@ Behaviour in the event of a safety shutdown<br /><h1>Overview</h1><p>The plug ac
       <parameter name="config_9_1_wo" type="integer" groupName="configuration">
         <label>9: Reset of overcurrent shutdown</label>
         <description><![CDATA[
-Activation despite 3x safety shutdown<br /><h1>Overview</h1><p> Activation despite 3x safety shutdown (parameter 8 = 1)</p> <p> A reset request (“Set” command) is normally executed very quickly, as a result of which a query (“Get” command) for this parameter usually returns the response “0” (no reset) for this parameter. In some cases, this can be interpreted incorrectly. Consequently, this parameter should be treated only as “write only”. </p>
+Activation despite 3x safety shutdown<br /> <h1>Overview</h1><p> Activation despite 3x safety shutdown (parameter 8 = 1)</p> <p> A reset request (“Set” command) is normally executed very quickly, as a result of which a query (“Get” command) for this parameter usually returns the response “0” (no reset) for this parameter. In some cases, this can be interpreted incorrectly. Consequently, this parameter should be treated only as “write only”. </p>
         ]]></description>
         <default>0</default>
         <options>

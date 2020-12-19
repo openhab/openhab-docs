@@ -8,7 +8,7 @@
   <thing-type id="frostdale_fdn2300_00_000" listed="false">
     <label>FDN2300 3way switch with temp sensor</label>
     <description><![CDATA[
-3way switch with temp sensor<br /><h1>Overview</h1><p>3 way switch with temperature sensor</p> <br /><h2>Inclusion Information</h2><p>Press and hold the top button for 3 seconds min and release when beep is heard to signify the device has been included into the network.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the top button for 3 seconds min and release when beep is heard to signify the device has been excluded from the network.</p>
+3way switch with temp sensor<br /> <h1>Overview</h1><p>3 way switch with temperature sensor</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the top button for 3 seconds min and release when beep is heard to signify the device has been included into the network.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the top button for 3 seconds min and release when beep is heard to signify the device has been excluded from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 

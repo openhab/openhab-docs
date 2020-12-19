@@ -8,7 +8,7 @@
   <thing-type id="ge_14280_00_000" listed="false">
     <label>ZW3107 / GE 14280 Plug-In Smart Dimmer (Dual Linked Outlets)</label>
     <description><![CDATA[
-Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simultaneously Controlled Outlets</li> <li>Only Blocks One Outlet / Cords Exit Sideways</li> <li>Indoor</li> <li>Wall Plug</li> <li>120 VAC, 60 Hz</li> <li>908.42/916 MHz</li> <li>Max Incandescent Load 600W (5A)</li> <li>Max Resistive Load 1800W (15A)</li> <li>Max Motor 1/2 HP</li> <li>Max Range 45 m</li> <li>Operating Temperature Range 0°C to 40°C</li> <li>UL Listed</li> <li>FCC ID U2ZZW4104</li> <li>IC 6924A-ZW4104</li> </ul><p>Appears to be the same as the Honeywell 39339 / Jasco ZW3107.</p> <br /><h2>Inclusion Information</h2><p>Press and release the manual/program button.  (Tested to work with Network Wide Inclusion.)</p> <br /><h2>Exclusion Information</h2><p>Press and release the manual/program button.</p>
+Plug-In Smart Dimmer (Dual Linked Outlets)<br /> <h1>Overview</h1><ul><li>2 Simultaneously Controlled Outlets</li> <li>Only Blocks One Outlet / Cords Exit Sideways</li> <li>Indoor</li> <li>Wall Plug</li> <li>120 VAC, 60 Hz</li> <li>908.42/916 MHz</li> <li>Max Incandescent Load 600W (5A)</li> <li>Max Resistive Load 1800W (15A)</li> <li>Max Motor 1/2 HP</li> <li>Max Range 45 m</li> <li>Operating Temperature Range 0°C to 40°C</li> <li>UL Listed</li> <li>FCC ID U2ZZW4104</li> <li>IC 6924A-ZW4104</li> </ul><p>Appears to be the same as the Honeywell 39339 / Jasco ZW3107.</p> <br /> <h2>Inclusion Information</h2><p>Press and release the manual/program button.  (Tested to work with Network Wide Inclusion.)</p> <br /> <h2>Exclusion Information</h2><p>Press and release the manual/program button.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -88,7 +88,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
                  min="1" max="255">
         <label>10: Dim Timing (When Manually Controlled)</label>
         <description><![CDATA[
-(When Manually Controlled)<br /><h1>Overview</h1><p>Timing of the steps</p>
+(When Manually Controlled)<br /> <h1>Overview</h1><p>Timing of the steps</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -98,7 +98,7 @@ Plug-In Smart Dimmer (Dual Linked Outlets)<br /><h1>Overview</h1><ul><li>2 Simul
                  min="1" max="99">
         <label>11: Dim Rate Adjustments</label>
         <description><![CDATA[
-(When Receiving All-On/All-Off Command)<br /><h1>Overview</h1><p>number of steps of levels</p>
+(When Receiving All-On/All-Off Command)<br /> <h1>Overview</h1><p>number of steps of levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

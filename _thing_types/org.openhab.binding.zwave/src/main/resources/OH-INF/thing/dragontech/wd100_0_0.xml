@@ -8,7 +8,7 @@
   <thing-type id="dragontech_wd100_00_000" listed="false">
     <label>WD-100 Wall Dimmer Switch</label>
     <description><![CDATA[
-Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer that’s designed for wireless on-off-dim control of connected dimmable lighting loads. </p> <br /><h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the exclusion process. </p>
+Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer that’s designed for wireless on-off-dim control of connected dimmable lighting loads. </p> <br /> <h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /> <h2>Exclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the exclusion process. </p>
     ]]></description>
     <category>WallSwitch</category>
 

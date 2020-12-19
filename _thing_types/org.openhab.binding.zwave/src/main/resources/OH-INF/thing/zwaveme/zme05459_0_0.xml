@@ -8,7 +8,7 @@
   <thing-type id="zwaveme_zme05459_00_000" listed="false">
     <label>ZME_05459 Blinds controller</label>
     <description><![CDATA[
-Blinds controller<br /><h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor Control is a wireless actuator able to control 230 V powered motors for blinds and jalousies.</p> <p>The device is delivered as a complete set with ush mountable insert, paddle and mounting frame compatible to the design of the switching series DURO 2000 SI in color pearl white from Busch Jaeger. The paddle of the device is used to control the device itself but can also be congured to activate scenes in a central IP gateway or controller.</p> <p>The status of the motor control is indicated on a dual color LED for test purposes and every status change is - if congured - reported to a central IP gateway or controller. The function of the local paddle can be congured as detached from the local operation. In this local control different devices are controlled by Z-Wave while the local actuator is controlled by other devices using Z-Wave.</p> <p>This device is designed for a 3 wire system and needs a neutral wire in the wall box</p> <br /><h2>Inclusion Information</h2><p>Triple click one of the buttons on the device will include the device</p> <br /><h2>Exclusion Information</h2><p>The device is excluded by triple click to one of the buttons.</p>
+Blinds controller<br /> <h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor Control is a wireless actuator able to control 230 V powered motors for blinds and jalousies.</p> <p>The device is delivered as a complete set with ush mountable insert, paddle and mounting frame compatible to the design of the switching series DURO 2000 SI in color pearl white from Busch Jaeger. The paddle of the device is used to control the device itself but can also be congured to activate scenes in a central IP gateway or controller.</p> <p>The status of the motor control is indicated on a dual color LED for test purposes and every status change is - if congured - reported to a central IP gateway or controller. The function of the local paddle can be congured as detached from the local operation. In this local control different devices are controlled by Z-Wave while the local actuator is controlled by other devices using Z-Wave.</p> <p>This device is designed for a 3 wire system and needs a neutral wire in the wall box</p> <br /> <h2>Inclusion Information</h2><p>Triple click one of the buttons on the device will include the device</p> <br /> <h2>Exclusion Information</h2><p>The device is excluded by triple click to one of the buttons.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -73,7 +73,7 @@ Blinds controller<br /><h1>Overview</h1><p>The Z-Wave.Me Flush Mountable Motor C
                  min="0" max="65535">
         <label>2: Automatically open or close after</label>
         <description><![CDATA[
-Automatically open or close blind after time<br /><h1>Overview</h1><p>If not zero, automatically open or close blind after a user defined time</p>
+Automatically open or close blind after time<br /> <h1>Overview</h1><p>If not zero, automatically open or close blind after a user defined time</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -84,7 +84,7 @@ Automatically open or close blind after time<br /><h1>Overview</h1><p>If not zer
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: What to do on RF close command</label>
         <description><![CDATA[
-Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.</p>
+Defines how to interpret RF Off command.<br /> <h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -100,7 +100,7 @@ Defines how to interpret RF Off command.<br /><h1>Overview</h1><p>Defines how to
                  min="0" max="255">
         <label>4: Full close time</label>
         <description><![CDATA[
-Time in seconds to go from opened to closed state.<br /><h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
+Time in seconds to go from opened to closed state.<br /> <h1>Overview</h1><p>Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
         ]]></description>
         <default>60</default>
         <options>
@@ -112,7 +112,7 @@ Time in seconds to go from opened to closed state.<br /><h1>Overview</h1><p>Time
                  min="0" max="255">
         <label>5: Full open time</label>
         <description><![CDATA[
-Time in seconds to go from closed to open state.<br /><h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
+Time in seconds to go from closed to open state.<br /> <h1>Overview</h1><p>Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close.</p>
         ]]></description>
         <default>60</default>
         <options>
@@ -124,7 +124,7 @@ Time in seconds to go from closed to open state.<br /><h1>Overview</h1><p>Time t
                  min="0" max="232">
         <label>6: Node ID of the blocking device</label>
         <description><![CDATA[
-Id of the device which can block the blinds<br /><h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>
+Id of the device which can block the blinds<br /> <h1>Overview</h1><p>Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -135,7 +135,7 @@ Id of the device which can block the blinds<br /><h1>Overview</h1><p>Id of the d
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Unprotected command</label>
         <description><![CDATA[
-Unprotected command<br /><h1>Overview</h1><p>Denes which command from blocking device to interpret as closed door and hence, unprotected. </p>
+Unprotected command<br /> <h1>Overview</h1><p>Denes which command from blocking device to interpret as closed door and hence, unprotected. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -148,7 +148,7 @@ Unprotected command<br /><h1>Overview</h1><p>Denes which command from blocking d
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Stop or Revert if opposite button is pressed</label>
         <description><![CDATA[
-Defines behaviour on open press while closing and vice versa.<br /><h1>Overview</h1><p>Defines behaviour on open press while closing and vice versa. To allow Stop behavior when switched by remote, use Stop by Basic</p>
+Defines behaviour on open press while closing and vice versa.<br /> <h1>Overview</h1><p>Defines behaviour on open press while closing and vice versa. To allow Stop behavior when switched by remote, use Stop by Basic</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -162,7 +162,7 @@ Defines behaviour on open press while closing and vice versa.<br /><h1>Overview<
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Invert open and close relays</label>
         <description><![CDATA[
-Invert open and close relays<br /><h1>Overview</h1><p>Allows exchanging open and close relays if blind control is wired to the motor incorrectly</p>
+Invert open and close relays<br /> <h1>Overview</h1><p>Allows exchanging open and close relays if blind control is wired to the motor incorrectly</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -176,7 +176,7 @@ Invert open and close relays<br /><h1>Overview</h1><p>Allows exchanging open and
                  min="0" max="100">
         <label>10: Typical click timeout</label>
         <description><![CDATA[
-Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold and double and triple clicks in 10ms units</p>
+Typical click timeout<br /> <h1>Overview</h1><p>Typical time used to differentiate click, hold and double and triple clicks in 10ms units</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -196,7 +196,7 @@ Typical click timeout<br /><h1>Overview</h1><p>Typical time used to differentiat
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Switch by buttons</label>
         <description><![CDATA[
-Local operations by buttons will/will not/ switch the load<br /><h1>Overview</h1><p>If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.</p>
+Local operations by buttons will/will not/ switch the load<br /> <h1>Overview</h1><p>If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -210,7 +210,7 @@ Local operations by buttons will/will not/ switch the load<br /><h1>Overview</h1
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Action on button single press or hold</label>
         <description><![CDATA[
-Defines which command should be sent on button single press or hold.<br /><h1>Overview</h1><p>Defines which command should be sent on button single press or hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast.</p>
+Defines which command should be sent on button single press or hold.<br /> <h1>Overview</h1><p>Defines which command should be sent on button single press or hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast.</p>
         ]]></description>
         <default>4</default>
         <options>
@@ -227,7 +227,7 @@ Defines which command should be sent on button single press or hold.<br /><h1>Ov
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Action on button double press or hold</label>
         <description><![CDATA[
-Defines which command should be sent on button double press or press-hold.<br /><h1>Overview</h1><p>Defines which command should be sent on button double press or press-hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</p>
+Defines which command should be sent on button double press or press-hold.<br /> <h1>Overview</h1><p>Defines which command should be sent on button double press or press-hold. Basic and Scene Activation commands are sent to Association group. Use Scene Controller Conf to set up Scene ID for Scene Activation. Switch All commands are sent broadcast. If not disabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -256,7 +256,7 @@ Defines which command should be sent on button double press or press-hold.<br />
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: What to do on button Down press</label>
         <description><![CDATA[
-What to do on button Down press<br /><h1>Overview</h1><p>Defines how to interpret button Down press. Depends on "Switch by buttons" parameter. If not Disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with Auto Off function.</p>
+What to do on button Down press<br /> <h1>Overview</h1><p>Defines how to interpret button Down press. Depends on "Switch by buttons" parameter. If not Disabled this parameter will affect the action selected by the latter parameter. Can be used in conjunction with Auto Off function.</p>
         ]]></description>
         <default>0</default>
         <options>

@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhla_00_000" listed="false">
     <label>ZMNHLA Flush PWM thermostat</label>
     <description><![CDATA[
-Flush PWM thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. Regulation is done using full wave PWM technology. The module can be controlled either through Z-wave network or through the wall switch. </p> <br /><h2>Inclusion Information</h2><ul><li>press service button S for more than 2 seconds or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds</li> </ul><br /><h2>Exclusion Information</h2><ul><li>press service button S for more than 6 seconds or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
+Flush PWM thermostat<br /> <h1>Overview</h1><p>This Z-Wave module is used to regulate temperature. Regulation is done using full wave PWM technology. The module can be controlled either through Z-wave network or through the wall switch. </p> <br /> <h2>Inclusion Information</h2><ul><li>press service button S for more than 2 seconds or</li> <li>press push button I1 three times within 3s (3 times change switch state within 3 seconds</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>press service button S for more than 6 seconds or</li> <li>press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.</li> </ul>
     ]]></description>
     <category>HVAC</category>
 
@@ -140,7 +140,7 @@ Flush PWM thermostat<br /><h1>Overview</h1><p>This Z-Wave module is used to regu
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Activate / deactivate functions ALL ON/ALL OFF</label>
         <description><![CDATA[
-Respond to ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush PWM thermostat module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.           </p>
+Respond to ALL ON/ALL OFF<br /> <h1>Overview</h1><p>Flush PWM thermostat module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.           </p>
         ]]></description>
         <default>255</default>
         <options>
@@ -156,7 +156,7 @@ Respond to ALL ON/ALL OFF<br /><h1>Overview</h1><p>Flush PWM thermostat module r
                  min="1" max="65535">
         <label>11: I1 Functionality Selection</label>
         <description><![CDATA[
-I1 Functionality Selection<br /><h1>Overview</h1><p>Default Value = 1.</p> <ul><li>65535 – Input I1 does not influence on the heat/cool process.</li> <li>1 - Input I1 changes the mode ofthe thermostat between OFF and AUTO. In this case function on flood sensor (if connected) is disabled.</li> <li>2 – input I1 influences on cooling and heating valves according to status of flood sensor. In this case function of Off and Auto selection by I1 is disabled</li> </ul>
+I1 Functionality Selection<br /> <h1>Overview</h1><p>Default Value = 1.</p> <ul><li>65535 – Input I1 does not influence on the heat/cool process.</li> <li>1 - Input I1 changes the mode ofthe thermostat between OFF and AUTO. In this case function on flood sensor (if connected) is disabled.</li> <li>2 – input I1 influences on cooling and heating valves according to status of flood sensor. In this case function of Off and Auto selection by I1 is disabled</li> </ul>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -166,7 +166,7 @@ I1 Functionality Selection<br /><h1>Overview</h1><p>Default Value = 1.</p> <ul><
                  min="1" max="65535">
         <label>12: I2 Functionality Selection</label>
         <description><![CDATA[
-I2 Functionality Selection<br /><h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I2 does not influence on the heat/ cool process</li> <li>From 0 to 990 – Temperature set point from 0.0 °C to 99.0 °C. When I2 is pressed, temperature set point is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>From 1001 to 1150 – Temperature set point from -0.1 °C to -15.0 °C. When I2 is pressed, temperature setpoint is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>2000 – Input I2 influences on the cooling valve according to status of condense sensor, In this case function of setpoint selection with I2 is disabled.</li> </ul>
+I2 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I2 does not influence on the heat/ cool process</li> <li>From 0 to 990 – Temperature set point from 0.0 °C to 99.0 °C. When I2 is pressed, temperature set point is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>From 1001 to 1150 – Temperature set point from -0.1 °C to -15.0 °C. When I2 is pressed, temperature setpoint is automatically set to value defined here. In this case function of condense sensor is disabled.</li> <li>2000 – Input I2 influences on the cooling valve according to status of condense sensor, In this case function of setpoint selection with I2 is disabled.</li> </ul>
         ]]></description>
         <default>65535</default>
         <limitToOptions>false</limitToOptions>
@@ -176,7 +176,7 @@ I2 Functionality Selection<br /><h1>Overview</h1><ul><li>default value 65535</li
                  min="1" max="65535">
         <label>13: I3 Functionality Selection</label>
         <description><![CDATA[
-I3 Functionality Selection<br /><h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I3 does not influence on the heat/ cool process</li> <li>1 – input I3 changes the mode of the thermostat between Heat and Cool. In this case function on window sensor is disabled.</li> <li>2 – input I3 influences on cooling and heating valves according to status of window sensor. In this case function of Heat and Cool selection by I3 is disabled. </li> </ul>
+I3 Functionality Selection<br /> <h1>Overview</h1><ul><li>default value 65535</li> <li>65535 – input I3 does not influence on the heat/ cool process</li> <li>1 – input I3 changes the mode of the thermostat between Heat and Cool. In this case function on window sensor is disabled.</li> <li>2 – input I3 influences on cooling and heating valves according to status of window sensor. In this case function of Heat and Cool selection by I3 is disabled. </li> </ul>
         ]]></description>
         <default>65535</default>
         <limitToOptions>false</limitToOptions>
@@ -186,7 +186,7 @@ I3 Functionality Selection<br /><h1>Overview</h1><ul><li>default value 65535</li
                  min="0" max="100">
         <label>40: Power reporting in Watts on power change</label>
         <description><![CDATA[
-Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li> default value 0</li> <li>0 – Reporting Disabled</li> <li>1–100 = 1%-100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE</strong>: If power changed is less than 1W, the report is not send (pushed), independent of percentage set</p>
+Power reporting in Watts on power change<br /> <h1>Overview</h1><ul><li> default value 0</li> <li>0 – Reporting Disabled</li> <li>1–100 = 1%-100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.</li> </ul><p><strong>NOTE</strong>: If power changed is less than 1W, the report is not send (pushed), independent of percentage set</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -196,7 +196,7 @@ Power reporting in Watts on power change<br /><h1>Overview</h1><ul><li> default
                  min="0" max="32767">
         <label>42: Power reporting in Watts by timer interval</label>
         <description><![CDATA[
-Power reporting in Watts by timer interval<br /><h1>Overview</h1><ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li> 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is send with time interval set by entered value.  </li> </ul>
+Power reporting in Watts by timer interval<br /> <h1>Overview</h1><ul><li>default value 300 (power report in Watts is send each 300s)</li> <li>0 – Reporting Disabled</li> <li> 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is send with time interval set by entered value.  </li> </ul>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -206,7 +206,7 @@ Power reporting in Watts by timer interval<br /><h1>Overview</h1><ul><li>default
                  min="0" max="255">
         <label>45: Antifreeze</label>
         <description><![CDATA[
-Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.</p> <p>Available configuration parameters </p> <ul><li>default value 50 (5,0 °C)</li> <li>255 – Antifreeze functionality disabled</li> </ul><p><strong>NOTE:</strong> Antifreeze is activated only in heating mode</p>
+Antifreeze<br /> <h1>Overview</h1><p>Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.</p> <p>Available configuration parameters </p> <ul><li>default value 50 (5,0 °C)</li> <li>255 – Antifreeze functionality disabled</li> </ul><p><strong>NOTE:</strong> Antifreeze is activated only in heating mode</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -216,7 +216,7 @@ Antifreeze<br /><h1>Overview</h1><p>Set value means at which temperature the dev
                  min="2" max="100">
         <label>50: PWM Maximum Value</label>
         <description><![CDATA[
-PWM Maximum Value<br /><h1>Overview</h1><ul><li>default value 100 (Maximum PWM value)</li> <li>2–100 = 2%-100%, step is 1%. Max. PWM set by entered value.</li> </ul><p><strong>NOTE</strong>: The maximum level may not be lower than the minimum level! </p>
+PWM Maximum Value<br /> <h1>Overview</h1><ul><li>default value 100 (Maximum PWM value)</li> <li>2–100 = 2%-100%, step is 1%. Max. PWM set by entered value.</li> </ul><p><strong>NOTE</strong>: The maximum level may not be lower than the minimum level! </p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -226,7 +226,7 @@ PWM Maximum Value<br /><h1>Overview</h1><ul><li>default value 100 (Maximum PWM v
                  min="0" max="99">
         <label>51: PWM Minimum Value</label>
         <description><![CDATA[
-PWM Minimum Value<br /><h1>Overview</h1><ul><li>Default value 0 (Minimum PWM value is 0%)</li> <li>1- 99 = 1% – 99%, step is 1%. Minimum PWM set by entered value.</li> </ul><p><strong>NOTE:</strong> The minimum level may not exceed maximum level! </p>
+PWM Minimum Value<br /> <h1>Overview</h1><ul><li>Default value 0 (Minimum PWM value is 0%)</li> <li>1- 99 = 1% – 99%, step is 1%. Minimum PWM set by entered value.</li> </ul><p><strong>NOTE:</strong> The minimum level may not exceed maximum level! </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -236,7 +236,7 @@ PWM Minimum Value<br /><h1>Overview</h1><ul><li>Default value 0 (Minimum PWM val
                  min="1" max="127">
         <label>52: PWM Cycle Duration</label>
         <description><![CDATA[
-PWM Cycle Duration<br /><h1>Overview</h1><ul><li>Default value 10 (Cycle duration set to 10s)</li> <li> 1-127 = 1–127s, step is 1s. PWM cycle duration set by entered value.</li> </ul><p><strong>NOTE:</strong> PWM cycle duration define the summary of all ON plus OFF time periods. For example if Output is set to 70% with PWM cycle duration of 20s, output will be ON for 14s then OFF 6s, again 14s ON, etc… </p>
+PWM Cycle Duration<br /> <h1>Overview</h1><ul><li>Default value 10 (Cycle duration set to 10s)</li> <li> 1-127 = 1–127s, step is 1s. PWM cycle duration set by entered value.</li> </ul><p><strong>NOTE:</strong> PWM cycle duration define the summary of all ON plus OFF time periods. For example if Output is set to 70% with PWM cycle duration of 20s, output will be ON for 14s then OFF 6s, again 14s ON, etc… </p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -245,7 +245,7 @@ PWM Cycle Duration<br /><h1>Overview</h1><ul><li>Default value 10 (Cycle duratio
       <parameter name="config_53_1" type="integer" groupName="configuration">
         <label>53: PID Value Inside Deadband</label>
         <description><![CDATA[
-PID Value Inside Deadband<br /><h1>Overview</h1><ul><li>Default value 0 (PID value equal ZERO)</li> <li>1 = PID value set to LAST VALUE</li> </ul><p><strong>NOTE</strong>: When value is set to ZERO PID inside deadband is forced to zero. LASTVALUE means that PID remains on same level as was before entering into deadband </p>
+PID Value Inside Deadband<br /> <h1>Overview</h1><ul><li>Default value 0 (PID value equal ZERO)</li> <li>1 = PID value set to LAST VALUE</li> </ul><p><strong>NOTE</strong>: When value is set to ZERO PID inside deadband is forced to zero. LASTVALUE means that PID remains on same level as was before entering into deadband </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -259,7 +259,7 @@ PID Value Inside Deadband<br /><h1>Overview</h1><ul><li>Default value 0 (PID val
                  min="0" max="127">
         <label>54: PID Deadband</label>
         <description><![CDATA[
-PID Deadband<br /><h1>Overview</h1><ul><li>default value 5 (0,5 °C)</li> <li>0-127 – 0.0 °C to 12.7 °C, step is 0,1°C</li> </ul><p><strong>NOTE</strong>: This parameter defines the zone where PID is not active. If the temperature difference between actual and setpoint is bigger than PID deadband, then the PID will start to regulate the system, otherwise the PID is zero or fixed.</p>
+PID Deadband<br /> <h1>Overview</h1><ul><li>default value 5 (0,5 °C)</li> <li>0-127 – 0.0 °C to 12.7 °C, step is 0,1°C</li> </ul><p><strong>NOTE</strong>: This parameter defines the zone where PID is not active. If the temperature difference between actual and setpoint is bigger than PID deadband, then the PID will start to regulate the system, otherwise the PID is zero or fixed.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -269,7 +269,7 @@ PID Deadband<br /><h1>Overview</h1><ul><li>default value 5 (0,5 °C)</li> <li>0-
                  min="0" max="127">
         <label>55: Integral Sampling Time</label>
         <description><![CDATA[
-Integral Sampling Time<br /><h1>Overview</h1><ul><li>default value 5 (5s)</li> <li>0-127 – 0s to 127s, step is 1s</li> </ul><p>Parameter defines the time between samples. On each sample the controller capture difference between SP-act.</p>
+Integral Sampling Time<br /> <h1>Overview</h1><ul><li>default value 5 (5s)</li> <li>0-127 – 0s to 127s, step is 1s</li> </ul><p>Parameter defines the time between samples. On each sample the controller capture difference between SP-act.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -313,7 +313,7 @@ Integral Sampling Time<br /><h1>Overview</h1><ul><li>default value 5 (5s)</li> <
                  min="1" max="1000">
         <label>60: Too low temperature limit</label>
         <description><![CDATA[
-Too low temperature limit<br /><h1>Overview</h1><ul><li>Default value 50 (Too low temperature limit is 5.0°C)</li> <li>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C.</li> </ul><p>Too low temperature limit is set by entered value. In case measured temperature is below set value, module sends BasicSet value. Look chapter associations.</p>
+Too low temperature limit<br /> <h1>Overview</h1><ul><li>Default value 50 (Too low temperature limit is 5.0°C)</li> <li>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C.</li> </ul><p>Too low temperature limit is set by entered value. In case measured temperature is below set value, module sends BasicSet value. Look chapter associations.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -323,7 +323,7 @@ Too low temperature limit<br /><h1>Overview</h1><ul><li>Default value 50 (Too lo
                  min="1" max="1000">
         <label>61: Too high temperature limit</label>
         <description><![CDATA[
-Too high temperature limit<br /><h1>Overview</h1><ul><li>Default value 700 (too high temperature limit is 70.0°C)</li> <li>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C.</li> </ul><p>Too high temperature limit is set by entered value. In case measured temperature is higher than set value, module sends BasicSet value. Look chapter associations</p>
+Too high temperature limit<br /> <h1>Overview</h1><ul><li>Default value 700 (too high temperature limit is 70.0°C)</li> <li>1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C.</li> </ul><p>Too high temperature limit is set by entered value. In case measured temperature is higher than set value, module sends BasicSet value. Look chapter associations</p>
         ]]></description>
         <default>700</default>
         <limitToOptions>false</limitToOptions>
@@ -343,7 +343,7 @@ Too high temperature limit<br /><h1>Overview</h1><ul><li>Default value 700 (too 
                  min="0" max="32000">
         <label>70: Input 1 Status on delay</label>
         <description><![CDATA[
-Input 1 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 11 must be set to 2!</p>
+Input 1 Status on delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 11 must be set to 2!</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -353,7 +353,7 @@ Input 1 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1
                  min="0" max="32000">
         <label>71: Input 1 Status off delay</label>
         <description><![CDATA[
-Input 1 Status off delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 11 must be set to 2!</p>
+Input 1 Status off delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 11 must be set to 2!</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -363,7 +363,7 @@ Input 1 Status off delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>
                  min="0" max="32000">
         <label>72: Input 2 Status on delay</label>
         <description><![CDATA[
-Input 2 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 12 must be set to 2000!</p>
+Input 2 Status on delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 12 must be set to 2000!</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -373,7 +373,7 @@ Input 2 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1
                  min="0" max="32000">
         <label>73: Input 2 Status off delay</label>
         <description><![CDATA[
-Input 2 Status off delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 12 must be set to 2000! </p>
+Input 2 Status off delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 12 must be set to 2000! </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -383,7 +383,7 @@ Input 2 Status off delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>
                  min="0" max="32000">
         <label>74: Input 3 Status on delay</label>
         <description><![CDATA[
-Input 3 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 13 must be set to 2!</p>
+Input 3 Status on delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 13 must be set to 2!</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -393,7 +393,7 @@ Input 3 Status on delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1
                  min="0" max="32000">
         <label>75: Input 3 Status off delay</label>
         <description><![CDATA[
-Input 3 Status off delay<br /><h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 13 must be set to 2! </p>
+Input 3 Status off delay<br /> <h1>Overview</h1><ul><li>default value 0</li> <li>1 – 32000 seconds</li> </ul><p>If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. Parameter 13 must be set to 2! </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="powerley_pwly7828_00_000" listed="false">
     <label>PWLY-7828-A1 Thermostat - HVAC</label>
     <description><![CDATA[
-Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by the home's heating and cooling system, and Powerley provides the connectivity to understand usage of the home's HVAC and control remotely or automatically with the Powerley Thermostat. The Powerley Thermostat uses the Z-Wave protocol and can be seamlessly integrated into the connected home via the Powerley Energy Bridge to facilitate communication and control between the devices. The thermostat provides the user with the ability to remotely control home temperature and also allows Powerley to optimize the HVAC system's use balancing energy usage and comfort. The device also provides for the ability to facilitate Demand Response events, including allowing the consumer to choose whether or not to participate in the event via push notifications.</p> <br /><h2>Inclusion Information</h2><p>To put your thermostat into inclusion mode, press and hold Mode for 5 seconds. Hold for 5 seconds:   • CONNECT will scroll across the thermostat display once in inclusion mode. • SUCCESS will scroll across the thermostat display once included. • FAIL will scroll across the thermostat display if inclusion is unsuccessful, or if process takes longer than 1 minute.</p> <br /><h2>Exclusion Information</h2><p>To exclude your Thermostat, press and hold Mode for 5 seconds to initiate Z-Wave exclusion process:   • DELETE will scroll across the thermostat display once in exclusion mode. • To cancel the exclusion process, press Mode. • To complete exclusion press either of the up/down arrows. • SUCCESS will scroll across the thermostat display once excluded. NOTE: Excluding the thermostat will restore it to the default state for Z-Wave and temperature set points.</p>
+Thermostat - HVAC<br /> <h1>Overview</h1><p>Residential energy usage is driven by the home's heating and cooling system, and Powerley provides the connectivity to understand usage of the home's HVAC and control remotely or automatically with the Powerley Thermostat. The Powerley Thermostat uses the Z-Wave protocol and can be seamlessly integrated into the connected home via the Powerley Energy Bridge to facilitate communication and control between the devices. The thermostat provides the user with the ability to remotely control home temperature and also allows Powerley to optimize the HVAC system's use balancing energy usage and comfort. The device also provides for the ability to facilitate Demand Response events, including allowing the consumer to choose whether or not to participate in the event via push notifications.</p> <br /> <h2>Inclusion Information</h2><p>To put your thermostat into inclusion mode, press and hold Mode for 5 seconds. Hold for 5 seconds:   • CONNECT will scroll across the thermostat display once in inclusion mode. • SUCCESS will scroll across the thermostat display once included. • FAIL will scroll across the thermostat display if inclusion is unsuccessful, or if process takes longer than 1 minute.</p> <br /> <h2>Exclusion Information</h2><p>To exclude your Thermostat, press and hold Mode for 5 seconds to initiate Z-Wave exclusion process:   • DELETE will scroll across the thermostat display once in exclusion mode. • To cancel the exclusion process, press Mode. • To complete exclusion press either of the up/down arrows. • SUCCESS will scroll across the thermostat display once excluded. NOTE: Excluding the thermostat will restore it to the default state for Z-Wave and temperature set points.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -145,7 +145,7 @@ Thermostat - HVAC<br /><h1>Overview</h1><p>Residential energy usage is driven by
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Temperature Calibration</label>
         <description><![CDATA[
-Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) - (-2.8) C</p>
+Temperature Calibration<br /> <h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) - (-2.8) C</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -191,7 +191,7 @@ Temperature Calibration<br /><h1>Overview</h1><p>251 - 255 (-5) - (-1) F; (-1) -
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Swing Setting</label>
         <description><![CDATA[
-Swing Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
+Swing Setting<br /> <h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -213,7 +213,7 @@ Swing Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Differential Setting</label>
         <description><![CDATA[
-Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
+Differential Setting<br /> <h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -267,7 +267,7 @@ Differential Setting<br /><h1>Overview</h1><p>0-10: 0-10 F; 0-5.6 C</p>
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This thermostat supports a single Z-Wave Association Group (Group 1) called the "lifeline.” All thermostat related commands are sent to the NodeID programmed in Group 1. Z-Wave commands that are sent to Group 1 include: Battery Level Thermostat heat set point Thermostat cool set point Device local reset notification Temperature Humidity Fan mode Fan mode current state of operation Thermostat mode Thermostat current state of operation.</p>
+<br /> <h1>Overview</h1><p>This thermostat supports a single Z-Wave Association Group (Group 1) called the "lifeline.” All thermostat related commands are sent to the NodeID programmed in Group 1. Z-Wave commands that are sent to Group 1 include: Battery Level Thermostat heat set point Thermostat cool set point Device local reset notification Temperature Humidity Fan mode Fan mode current state of operation Thermostat mode Thermostat current state of operation.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

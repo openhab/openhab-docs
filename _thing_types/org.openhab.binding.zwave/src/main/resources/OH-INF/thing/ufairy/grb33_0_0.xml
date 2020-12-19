@@ -8,7 +8,7 @@
   <thing-type id="ufairy_grb33_00_000" listed="false">
     <label>GR-B3-3 3 Gang In-wall Switch</label>
     <description><![CDATA[
-3 Gang In-wall Switch<br /><h1>Overview</h1><p>3 gang in-wall switch</p> <br /><h2>Inclusion Information</h2><p>Quickly press the on/off switch six times</p> <br /><h2>Exclusion Information</h2><p>Quickly press the on/off switch six times</p>
+3 Gang In-wall Switch<br /> <h1>Overview</h1><p>3 gang in-wall switch</p> <br /> <h2>Inclusion Information</h2><p>Quickly press the on/off switch six times</p> <br /> <h2>Exclusion Information</h2><p>Quickly press the on/off switch six times</p>
     ]]></description>
     <category>WallSwitch</category>
 

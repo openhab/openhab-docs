@@ -8,7 +8,7 @@
   <thing-type id="aeotec_zwa001_00_000" listed="false">
     <label>ZWA001 Bulb 6 Multi-White</label>
     <description><![CDATA[
-Bulb 6 Multi-White<br /><h1>Overview</h1><p>Standard form factor and appearance of the light bulb with 800 lm output Tunable white: dimmable from 5% to 100%, tunable from 2700K to 6500K. Possible to be included in groups, scenes, or schedules Suitable for indoor lighting: Corridors, Bedroom, Living Room, etc.</p> <p>Reset the device :</p> <ul><li>Please use this procedure only when the network primary controller is missing or otherwise inoperable.</li> <li>Led bulb re-power 6 times (between 0.5-2 seconds each time); If the 6th power on, the led bulb flashes twice, which means that the resetting is successful.</li> </ul><br /><h2>Inclusion Information</h2><p>Add for inclusion:</p> <ul><li>Set the Z-Wave network main controller into adding mode.</li> <li>Power cycle once for led bulb(OFF-&gt;ON).The led bulb will flash twice and send node info frame.</li> <li>Wait a moment, the led bulb should be added to the controller.Then the led bulb will flash once when it has been included into the network.</li> </ul><br /><h2>Exclusion Information</h2><p>Remove for exclusion:</p> <ul><li>Set the Z-Wave network main controller into removing mode.</li> <li>Led bulb re-power 3 times (between 0.5-2 seconds each time).</li> <li>Wait a moment, the led bulb should be removed from the controller.Then the led bulb will flash once, dim to 5% first, and then increased to 100% after 5 seconds.</li> </ul>
+Bulb 6 Multi-White<br /> <h1>Overview</h1><p>Standard form factor and appearance of the light bulb with 800 lm output Tunable white: dimmable from 5% to 100%, tunable from 2700K to 6500K. Possible to be included in groups, scenes, or schedules Suitable for indoor lighting: Corridors, Bedroom, Living Room, etc.</p> <p>Reset the device :</p> <ul><li>Please use this procedure only when the network primary controller is missing or otherwise inoperable.</li> <li>Led bulb re-power 6 times (between 0.5-2 seconds each time); If the 6th power on, the led bulb flashes twice, which means that the resetting is successful.</li> </ul> <br /> <h2>Inclusion Information</h2><p>Add for inclusion:</p> <ul><li>Set the Z-Wave network main controller into adding mode.</li> <li>Power cycle once for led bulb(OFF-&gt;ON).The led bulb will flash twice and send node info frame.</li> <li>Wait a moment, the led bulb should be added to the controller.Then the led bulb will flash once when it has been included into the network.</li> </ul> <br /> <h2>Exclusion Information</h2><p>Remove for exclusion:</p> <ul><li>Set the Z-Wave network main controller into removing mode.</li> <li>Led bulb re-power 3 times (between 0.5-2 seconds each time).</li> <li>Wait a moment, the led bulb should be removed from the controller.Then the led bulb will flash once, dim to 5% first, and then increased to 100% after 5 seconds.</li> </ul>
     ]]></description>
     <category>LightBulb</category>
 
@@ -72,7 +72,7 @@ Bulb 6 Multi-White<br /><h1>Overview</h1><p>Standard form factor and appearance 
       <parameter name="config_80_1" type="integer" groupName="configuration" readOnly="true">
         <label>80: Send notifications to associated devices</label>
         <description><![CDATA[
-To send notifications to (Group 1) when state change.0 = Nothing.1= Basic CC.<br /><h1>Overview</h1><p>Enable to send notifications to associated devices(Group 1) when the state of LED Bulb is changed.0 = Nothing.1= Basic CC report.</p>
+To send notifications to (Group 1) when state change.0 = Nothing.1= Basic CC.<br /> <h1>Overview</h1><p>Enable to send notifications to associated devices(Group 1) when the state of LED Bulb is changed.0 = Nothing.1= Basic CC report.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -86,7 +86,7 @@ To send notifications to (Group 1) when state change.0 = Nothing.1= Basic CC.<br
                  min="2700" max="4999">
         <label>81: Adjust color temperature in warm white color comp</label>
         <description><![CDATA[
-available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /><h1>Overview</h1><p>Adjusting the color temperature in warm white color component. available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))</p>
+available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /> <h1>Overview</h1><p>Adjusting the color temperature in warm white color component. available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))</p>
         ]]></description>
         <default>2700</default>
         <options>
@@ -98,7 +98,7 @@ available value: 0x0A8C-1387Warm White(0x0A8C(2700k) ~ 0x1387 (4999k))<br /><h1>
                  min="5000" max="6500">
         <label>82: Color temperature in cold white color comp</label>
         <description><![CDATA[
-Available value:0x1388-0x1964Cold White (0x1388 (5000k) ~ 0x1964 (6500k))<br /><h1>Overview</h1><p>Adjusting the color temperature in cold white color component. available value:0x1388-0x1964 Cold White (0x1388 (5000k) ~ 0x1964 (6500k))</p>
+Available value:0x1388-0x1964Cold White (0x1388 (5000k) ~ 0x1964 (6500k))<br /> <h1>Overview</h1><p>Adjusting the color temperature in cold white color component. available value:0x1388-0x1964 Cold White (0x1388 (5000k) ~ 0x1964 (6500k))</p>
         ]]></description>
         <default>6500</default>
         <options>

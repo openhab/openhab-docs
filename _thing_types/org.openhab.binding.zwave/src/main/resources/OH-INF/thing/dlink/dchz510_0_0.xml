@@ -8,7 +8,7 @@
   <thing-type id="dlink_dchz510_00_000" listed="false">
     <label>DCH-Z510 Siren</label>
     <description><![CDATA[
-Siren<br /><h1>Overview</h1><p>The DCH-Z510 mydlink Z-Wave Siren is a wireless siren.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller enter inclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the LED will light ON 1 second </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Wave Controller enter exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode.</li> <li>Node ID has been excluded. </li> </ol>
+Siren<br /> <h1>Overview</h1><p>The DCH-Z510 mydlink Z-Wave Siren is a wireless siren.</p> <br /> <h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller enter inclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the inclusion mode.</li> <li>After add successful, the LED will light ON 1 second </li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Have Z-Wave Controller enter exclusion mode.</li> <li>Pressing tamper key three times within 1.5 seconds to enter the exclusion mode.</li> <li>Node ID has been excluded. </li> </ol>
     ]]></description>
     <category>Siren</category>
 

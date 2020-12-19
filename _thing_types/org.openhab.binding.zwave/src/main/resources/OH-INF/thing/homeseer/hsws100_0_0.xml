@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hsws100_00_000" listed="false">
     <label>HS-WS100+ Scene Capable Wall Switch</label>
     <description><![CDATA[
-Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS100+ is a Z-Wave wall switch that’s designed for wireless on-off control of connected lighting and appliance loads. </p> <br /><h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Single click and release the rocker switch.  </p>
+Scene Capable Wall Switch<br /> <h1>Overview</h1><p>HS-WS100+ is a Z-Wave wall switch that’s designed for wireless on-off control of connected lighting and appliance loads. </p> <br /> <h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /> <h2>Exclusion Information</h2><p>Single click and release the rocker switch.  </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -56,7 +56,7 @@ Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS100+ is a Z-Wave wall sw
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Indicator LED</label>
         <description><![CDATA[
-Defines the behavior of the indicator LED.<br /><h1>Overview</h1><p>Defines the behavior of the indicator LED.  Default is Night Light mode where LED is on when switch is off.</p>
+Defines the behavior of the indicator LED.<br /> <h1>Overview</h1><p>Defines the behavior of the indicator LED.  Default is Night Light mode where LED is on when switch is off.</p>
         ]]></description>
         <default>0</default>
         <options>

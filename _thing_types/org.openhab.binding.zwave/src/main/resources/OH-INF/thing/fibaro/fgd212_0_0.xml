@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgd212_00_000" listed="false">
     <label>FGD212 Dimmer 2</label>
     <description><![CDATA[
-Dimmer 2<br /><h1>Overview</h1><p>FIBARO Dimmer 2 remotely controlled light dimming module is designed to work with various types of light sources.  It may be connected to  two-wire or three-wire configuration so it can operate with or without neutral lead. FIBARO Dimmer 2 can switch or dim connected light  source either through radio waves or through the wall switch connected directly to it.</p> <br /><h2>Inclusion Information</h2><ol><li>Place the Dimmer 2 within the direct range of your Z-Wave controller</li> <li>Identify switch no. 1 (turns the light on) or the B-button (located on the device’s housing)</li> <li>Set the main controller in (security/non-security) add mode (see the controller’s manual)</li> <li>Quickly, three times press switch no. 1 or the B-button</li> <li>Wait for the adding process to end</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place the Dimmer 2 within the direct range of your Z-Wave controller</li> <li>Identify switch no. 1 (turns the light on) or the B-button (located on the device’s housing)</li> <li>Set the main controller in remove mode (see the controller’s manual)</li> <li>Quickly, three times press switch no. 1 or the B-button</li> <li>Wait for the removing process to end</li> <li>Successful removing will be confrimed by the Z-Wave controller’s message</li> <li>Dimmer 2 will start the calibration process</li> </ol>
+Dimmer 2<br /> <h1>Overview</h1><p>FIBARO Dimmer 2 remotely controlled light dimming module is designed to work with various types of light sources.  It may be connected to  two-wire or three-wire configuration so it can operate with or without neutral lead. FIBARO Dimmer 2 can switch or dim connected light  source either through radio waves or through the wall switch connected directly to it.</p> <br /> <h2>Inclusion Information</h2><ol><li>Place the Dimmer 2 within the direct range of your Z-Wave controller</li> <li>Identify switch no. 1 (turns the light on) or the B-button (located on the device’s housing)</li> <li>Set the main controller in (security/non-security) add mode (see the controller’s manual)</li> <li>Quickly, three times press switch no. 1 or the B-button</li> <li>Wait for the adding process to end</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Place the Dimmer 2 within the direct range of your Z-Wave controller</li> <li>Identify switch no. 1 (turns the light on) or the B-button (located on the device’s housing)</li> <li>Set the main controller in remove mode (see the controller’s manual)</li> <li>Quickly, three times press switch no. 1 or the B-button</li> <li>Wait for the removing process to end</li> <li>Successful removing will be confrimed by the Z-Wave controller’s message</li> <li>Dimmer 2 will start the calibration process</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -171,7 +171,7 @@ Dimmer 2<br /><h1>Overview</h1><p>FIBARO Dimmer 2 remotely controlled light dimm
                  min="1" max="98">
         <label>1: Minimum brightness level</label>
         <description><![CDATA[
-Set automatically during the calibration process<br /><h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
+Set automatically during the calibration process<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -181,7 +181,7 @@ Set automatically during the calibration process<br /><h1>Overview</h1><p>The pa
                  min="1" max="99">
         <label>2: Maximum brightness level</label>
         <description><![CDATA[
-Set automatically during the calibration process.<br /><h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
+Set automatically during the calibration process.<br /> <h1>Overview</h1><p>The parameter is set automatically during the calibration process. The parameter can be changed manually after the calibration.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -191,7 +191,7 @@ Set automatically during the calibration process.<br /><h1>Overview</h1><p>The p
                  min="1" max="99">
         <label>3: Incandescence level of dimmable fluorescent lamps</label>
         <description><![CDATA[
-Dimmer will set to this value after first switch on.<br /><h1>Overview</h1><p>Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p>
+Dimmer will set to this value after first switch on.<br /> <h1>Overview</h1><p>Virtual value set as a percentage level between parameters MIN (1%) and MAX. (99%). The Dimmer will set to this value after first switch on. It is required for warming up and switching dimmable compact fluorescent lamps and certain types of light sources.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -201,7 +201,7 @@ Dimmer will set to this value after first switch on.<br /><h1>Overview</h1><p>Vi
                  min="0" max="255">
         <label>4: Incandescence time of dimmable fluorescent lamps</label>
         <description><![CDATA[
-Time for switching fluorescent lamps and certain light sources.<br /><h1>Overview</h1><p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s)</p>
+Time for switching fluorescent lamps and certain light sources.<br /> <h1>Overview</h1><p>This parameter determines the time required for switching compact fluorescent lamps and certain types of light sources. Setting this parameter to 0 will disable the incandescence functionality. Available settings: 0-255 (0s - 25,5s)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -211,7 +211,7 @@ Time for switching fluorescent lamps and certain light sources.<br /><h1>Overvie
                  min="1" max="99">
         <label>5: Dimming Step at Automatic Control</label>
         <description><![CDATA[
-Percentage of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parameter defines the percentage of a dimming step at automatic control. 1-99</p>
+Percentage of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The parameter defines the percentage of a dimming step at automatic control. 1-99</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -221,7 +221,7 @@ Percentage of a dimming step at automatic control.<br /><h1>Overview</h1><p>The 
                  min="0" max="255">
         <label>6: Dimming Step Timing at Automatic Control</label>
         <description><![CDATA[
-Time of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)</p>
+Time of a dimming step at automatic control.<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at automatic control. Available settings: 0-255 (0s - 2,55s)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -231,7 +231,7 @@ Time of a dimming step at automatic control.<br /><h1>Overview</h1><p>The parame
                  min="1" max="99">
         <label>7: Dimming Step at Manual Control</label>
         <description><![CDATA[
-Percentage of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter defines the percentage of a dimming step at manual control. 1-99</p>
+Percentage of a dimming step at manual control.<br /> <h1>Overview</h1><p>The parameter defines the percentage of a dimming step at manual control. 1-99</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -241,7 +241,7 @@ Percentage of a dimming step at manual control.<br /><h1>Overview</h1><p>The par
                  min="0" max="255">
         <label>8: Dimming Step Timing at Manual Control</label>
         <description><![CDATA[
-Time of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)</p>
+Time of a dimming step at manual control.<br /> <h1>Overview</h1><p>The parameter defines the time of a dimming step at manual control. Available settings: 0-255 (0s - 2,55s)</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -262,7 +262,7 @@ Time of a dimming step at manual control.<br /><h1>Overview</h1><p>The parameter
                  min="0" max="32767">
         <label>10: Timer functionality (auto - off).</label>
         <description><![CDATA[
-Setting of the timer.<br /><h1>Overview</h1><p>The parameter defines the setting of the timer.</p> <p>Available settings:</p> <ul><li>1-32767 - time to turn off measured in seconds (1s - 9,1h)</li> <li>0 disables the function</li> </ul>
+Setting of the timer.<br /> <h1>Overview</h1><p>The parameter defines the setting of the timer.</p> <p>Available settings:</p> <ul><li>1-32767 - time to turn off measured in seconds (1s - 9,1h)</li> <li>0 disables the function</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -284,7 +284,7 @@ Setting of the timer.<br /><h1>Overview</h1><p>The parameter defines the setting
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Force auto-calibration</label>
         <description><![CDATA[
-Force the calibration process<br /><h1>Overview</h1><p>Changing the value of this parameter to 1 will force the calibration process. During the calibration parameter is set to 1 and switched to 0 upon completion.</p>
+Force the calibration process<br /> <h1>Overview</h1><p>Changing the value of this parameter to 1 will force the calibration process. During the calibration parameter is set to 1 and switched to 0 upon completion.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -298,7 +298,7 @@ Force the calibration process<br /><h1>Overview</h1><p>Changing the value of thi
       <parameter name="config_14_1" type="integer" groupName="configuration" readOnly="true">
         <label>14: Auto-calibration status (read-only parameter)</label>
         <description><![CDATA[
-Mode of the Dimmer (auto/man settings).<br /><h1>Overview</h1><p>This parameter determines operating mode of the Dimmer (automatic/manual settings).</p>
+Mode of the Dimmer (auto/man settings).<br /> <h1>Overview</h1><p>This parameter determines operating mode of the Dimmer (automatic/manual settings).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -312,7 +312,7 @@ Mode of the Dimmer (auto/man settings).<br /><h1>Overview</h1><p>This parameter 
                  min="0" max="99">
         <label>15: Burnt out bulb detection</label>
         <description><![CDATA[
-Percentage value of power variation<br /><h1>Overview</h1><p>Percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb). 1-99, 0 disables the function.</p>
+Percentage value of power variation<br /> <h1>Overview</h1><p>Percentage value of power variation, compared to standard power consumption, measured during the calibration procedure (to be interpreted as load error/burnt out bulb). 1-99, 0 disables the function.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -322,7 +322,7 @@ Percentage value of power variation<br /><h1>Overview</h1><p>Percentage value of
                  min="0" max="255">
         <label>16: Time delay of burnt out bulb/overload detection</label>
         <description><![CDATA[
-Delay for power variation detection<br /><h1>Overview</h1><p>Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.</p>
+Delay for power variation detection<br /> <h1>Overview</h1><p>Time of delay (in seconds) for power variation detection, interpreted as a LOAD ERROR or OVERLOAD detection (too much power connected to the Dimmer 2). 0 disables the function.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -332,7 +332,7 @@ Delay for power variation detection<br /><h1>Overview</h1><p>Time of delay (in s
                  min="0" max="99">
         <label>19: Forced switch on brightness level</label>
         <description><![CDATA[
-Switching on the Dimmer will always set this brightness level.<br /><h1>Overview</h1><p>If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.</p>
+Switching on the Dimmer will always set this brightness level.<br /> <h1>Overview</h1><p>If the parameter is active, switching on the Dimmer 2 (S1 single click) will always set this brightness level. 0 disables the function.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -364,7 +364,7 @@ Switching on the Dimmer will always set this brightness level.<br /><h1>Overview
       <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Change [On-Off] bi-stable keys</label>
         <description><![CDATA[
-Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
+Allow user to change [On-Off] bi-stable keys<br /> <h1>Overview</h1><p>This function allow user to change [On-Off] bi-stable keys (parameter no. 14) (default value 0)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -388,7 +388,7 @@ Allow user to change [On-Off] bi-stable keys<br /><h1>Overview</h1><p>This funct
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Command frames sent in 2nd and 3rd assoc groups</label>
         <description><![CDATA[
-Actions not resulting in sending frames to association groups<br /><h1>Overview</h1><p>Parameter determines, which actions will not result in sending frames to association groups.</p>
+Actions not resulting in sending frames to association groups<br /> <h1>Overview</h1><p>Parameter determines, which actions will not result in sending frames to association groups.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -405,7 +405,7 @@ Actions not resulting in sending frames to association groups<br /><h1>Overview<
       <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Command frames sent in 4th and 5th assoc groups</label>
         <description><![CDATA[
-Actions not resulting in sending frames to association groups<br /><h1>Overview</h1><p>Parameter determines, which actions will not result in sending frames to association groups.</p>
+Actions not resulting in sending frames to association groups<br /> <h1>Overview</h1><p>Parameter determines, which actions will not result in sending frames to association groups.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -422,7 +422,7 @@ Actions not resulting in sending frames to association groups<br /><h1>Overview<
       <parameter name="config_26_1" type="integer" groupName="configuration">
         <label>26: The function of 3-way switch</label>
         <description><![CDATA[
-Key no. 2 controls the Dimmer additionally<br /><h1>Overview</h1><p>Key no. 2 controls the Dimmer additionally (in 3-way switch mode). Function disabled for parameter 20 set to 2 (roller blind switch).</p>
+Key no. 2 controls the Dimmer additionally<br /> <h1>Overview</h1><p>Key no. 2 controls the Dimmer additionally (in 3-way switch mode). Function disabled for parameter 20 set to 2 (roller blind switch).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -435,7 +435,7 @@ Key no. 2 controls the Dimmer additionally<br /><h1>Overview</h1><p>Key no. 2 co
       <parameter name="config_27_1" type="integer" groupName="configuration">
         <label>27: Associations in Z-Wave network security mode</label>
         <description><![CDATA[
-Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</h1><p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st Lifeline group.</p>
+Param. sent in specified assoc. groups: secure or non-secure<br /> <h1>Overview</h1><p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network security mode. It does not apply to 1st Lifeline group.</p>
         ]]></description>
         <default>15</default>
         <options>
@@ -497,7 +497,7 @@ Param. sent in specified assoc. groups: secure or non-secure<br /><h1>Overview</
       <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: On/Off mode</label>
         <description><![CDATA[
-Ignore brightening/- dimming time settings.<br /><h1>Overview</h1><p>This mode is necessary while connecting non-dimmable light sources. Enabling parameter 32 automatically ignores brightening/- dimming time settings.</p>
+Ignore brightening/- dimming time settings.<br /> <h1>Overview</h1><p>This mode is necessary while connecting non-dimmable light sources. Enabling parameter 32 automatically ignores brightening/- dimming time settings.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -534,7 +534,7 @@ Ignore brightening/- dimming time settings.<br /><h1>Overview</h1><p>This mode i
       <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Auto-calibration after power on</label>
         <description><![CDATA[
-Determine the trigger of auto-calibration procedure<br /><h1>Overview</h1><p>This parameter determines the trigger of auto-calibration procedure, e.g. power on, load error, etc.</p>
+Determine the trigger of auto-calibration procedure<br /> <h1>Overview</h1><p>This parameter determines the trigger of auto-calibration procedure, e.g. power on, load error, etc.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -561,7 +561,7 @@ Determine the trigger of auto-calibration procedure<br /><h1>Overview</h1><p>Thi
                  min="0" max="250">
         <label>39: Power limit - OVERLOAD</label>
         <description><![CDATA[
-Reaching the defined value will result in turning off the load<br /><h1>Overview</h1><p>Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cosφ ≥ 0.99. (1 W - 250 W). 0 disables the function.</p>
+Reaching the defined value will result in turning off the load<br /> <h1>Overview</h1><p>Reaching the defined value will result in turning off the load. Parameter 39 is relevant only in a 3-wire connection i or a 2-wire connection for load of cosφ ≥ 0.99. (1 W - 250 W). 0 disables the function.</p>
         ]]></description>
         <default>250</default>
         <limitToOptions>false</limitToOptions>
@@ -623,7 +623,7 @@ Reaching the defined value will result in turning off the load<br /><h1>Overview
                  min="1" max="32767">
         <label>44: Time of alarm state</label>
         <description><![CDATA[
-Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).</p>
+Alarm state may be cancelled earlier<br /> <h1>Overview</h1><p>Alarm state may be cancelled earlier, as a result of pushing the wall-switch keys or sending the Z-Wave command frame. Available settings: 1-32767 (1s - 32767s).</p>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
@@ -687,7 +687,7 @@ Alarm state may be cancelled earlier<br /><h1>Overview</h1><p>Alarm state may be
                  min="0" max="100">
         <label>50: Active power reports</label>
         <description><![CDATA[
-Power level change resulting in new power report being sent.<br /><h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
+Power level change resulting in new power report being sent.<br /> <h1>Overview</h1><p>The parameter defines the power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 disables the function.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -697,7 +697,7 @@ Power level change resulting in new power report being sent.<br /><h1>Overview</
                  min="0" max="32767">
         <label>52: Periodic active power and energy reports</label>
         <description><![CDATA[
-Time period between consecutive reports.<br /><h1>Overview</h1><p>Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.</p>
+Time period between consecutive reports.<br /> <h1>Overview</h1><p>Parameter 52 defines a time period between consecutive reports. Timer is reset and counted from zero after each report (1 sec - 32767 sec). 0 disables the function.</p>
         ]]></description>
         <default>3600</default>
         <limitToOptions>false</limitToOptions>
@@ -707,7 +707,7 @@ Time period between consecutive reports.<br /><h1>Overview</h1><p>Parameter 52 d
                  min="0" max="255">
         <label>53: Energy reports</label>
         <description><![CDATA[
-Energy level change resulting in sending a new energy report.<br /><h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.</p>
+Energy level change resulting in sending a new energy report.<br /> <h1>Overview</h1><p>Energy level change which will result in sending a new energy report. Available settings: 1-255 (0,01 - 2,55 kWh). 0 disables the function.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -716,7 +716,7 @@ Energy level change resulting in sending a new energy report.<br /><h1>Overview<
       <parameter name="config_54_1" type="integer" groupName="configuration">
         <label>54: Self-measurement</label>
         <description><![CDATA[
-Active power and energy used by itself<br /><h1>Overview</h1><p>The Dimmer may include active power and energy used by itself in reports sent to the main controller.</p>
+Active power and energy used by itself<br /> <h1>Overview</h1><p>The Dimmer may include active power and energy used by itself in reports sent to the main controller.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -729,7 +729,7 @@ Active power and energy used by itself<br /><h1>Overview</h1><p>The Dimmer may i
       <parameter name="config_58_1" type="integer" groupName="configuration">
         <label>58: Method of calculating the active power</label>
         <description><![CDATA[
-How to calculate active power.<br /><h1>Overview</h1><p>This parameter defines how to calculate active power. It is useful in a case of 2-wire connection with light sources other than resistive. Note: Parameter 58 is set to 0 after forced auto-calibration</p>
+How to calculate active power.<br /> <h1>Overview</h1><p>This parameter defines how to calculate active power. It is useful in a case of 2-wire connection with light sources other than resistive. Note: Parameter 58 is set to 0 after forced auto-calibration</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -744,7 +744,7 @@ How to calculate active power.<br /><h1>Overview</h1><p>This parameter defines h
                  min="0" max="500">
         <label>59: Approximated power at the maximum brightness level</label>
         <description><![CDATA[
-Power reported by the device at its maximum brightness level<br /><h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.</p>
+Power reported by the device at its maximum brightness level<br /> <h1>Overview</h1><p>This parameter determines the approximate value of the power that will be reported by the device at its maximum brightness level. Available settings: 0-500 (0-500W). Note: Parameter 59 works only when parameter 58 has a value other than 0.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -758,7 +758,7 @@ Power reported by the device at its maximum brightness level<br /><h1>Overview</
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Send BASIC SET command class frame S1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>2nd Association Group „On/Oﬀ (S1)” is assigned to switch no. 1.<br />Sends BASIC command class frame according to the state of the device</p>
+<br /> <h1>Overview</h1><p>2nd Association Group „On/Oﬀ (S1)” is assigned to switch no. 1.<br />Sends BASIC command class frame according to the state of the device</p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>
@@ -766,7 +766,7 @@ Power reported by the device at its maximum brightness level<br /><h1>Overview</
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Sends MULTILEVEL SWITCH command class frame S1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>3rd Association Group „Dimmer (S1)” is assigned to switch no. 1.<br />Sends MULTILEVEL SWITCH command class frame. Allows sending<br />dim/brighten command to associated devices.</p>
+<br /> <h1>Overview</h1><p>3rd Association Group „Dimmer (S1)” is assigned to switch no. 1.<br />Sends MULTILEVEL SWITCH command class frame. Allows sending<br />dim/brighten command to associated devices.</p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>
@@ -774,7 +774,7 @@ Power reported by the device at its maximum brightness level<br /><h1>Overview</
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Sends BASIC SET command class S2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>4th Association Group „On/Oﬀ (S2)” is assigned to switch no. 2.<br />Sends BASIC command class frame according to the state of the device. <br /> </p>
+<br /> <h1>Overview</h1><p>4th Association Group „On/Oﬀ (S2)” is assigned to switch no. 2.<br />Sends BASIC command class frame according to the state of the device. <br /> </p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>
@@ -782,7 +782,7 @@ Power reported by the device at its maximum brightness level<br /><h1>Overview</
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Sends MULTILEVEL SWITCH command class frame S2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>5th Association Group „Dimmer (S2)” is assigned to switch no. 2.<br />Sends MulTIlEVEl SWITCH command class frame. Allows sending<br />dim/brighten command to associated devices. <br /> </p>
+<br /> <h1>Overview</h1><p>5th Association Group „Dimmer (S2)” is assigned to switch no. 2.<br />Sends MulTIlEVEl SWITCH command class frame. Allows sending<br />dim/brighten command to associated devices. <br /> </p>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>

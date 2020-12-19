@@ -8,7 +8,7 @@
   <thing-type id="econet_gr105n_00_000" listed="false">
     <label>GR-105N Z-Wave Motor for water/gas ball valves</label>
     <description><![CDATA[
-Z-Wave Motor for water/gas ball valves<br /><h1>Overview</h1><p>This valve clamps onto your existing valve, allowing you to open/close the valve via Z-Wave as soon as you notice a problem.</p> <br /><h2>Inclusion Information</h2><p>With controller in inclusion mode, triple-press valve button within 1 second to include.</p> <br /><h2>Exclusion Information</h2><p>With controller in exclusion mode, triple-press valve button within 1 second to exclude.</p> <p>Holding the valve button for more than 10 seconds resets to factory default settings.</p>
+Z-Wave Motor for water/gas ball valves<br /> <h1>Overview</h1><p>This valve clamps onto your existing valve, allowing you to open/close the valve via Z-Wave as soon as you notice a problem.</p> <br /> <h2>Inclusion Information</h2><p>With controller in inclusion mode, triple-press valve button within 1 second to include.</p> <br /> <h2>Exclusion Information</h2><p>With controller in exclusion mode, triple-press valve button within 1 second to exclude.</p> <p>Holding the valve button for more than 10 seconds resets to factory default settings.</p>
     ]]></description>
     <category>Valve</category>
 
@@ -45,7 +45,7 @@ Z-Wave Motor for water/gas ball valves<br /><h1>Overview</h1><p>This valve clamp
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Sends state updates when the valve is operated locally with the valve button.</p>
+<br /> <h1>Overview</h1><p>Sends state updates when the valve is operated locally with the valve button.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

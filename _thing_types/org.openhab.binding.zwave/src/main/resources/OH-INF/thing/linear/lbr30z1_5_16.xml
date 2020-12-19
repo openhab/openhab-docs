@@ -8,7 +8,7 @@
   <thing-type id="linear_lbr30z1_05_016" listed="false">
     <label>LBR30Z-1 Dimmable LED Light Bulb</label>
     <description><![CDATA[
-Dimmable LED Light Bulb<br /><h1>Overview</h1><p>Zwave Controlled Smart LED PAR38 Light Bulb, 650 Lumens, equivalentto a 65 Watt incandescent light bulb.</p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, turn the power to the light bulb socket ON.</p> <br /><h2>Exclusion Information</h2><p>Set the Controller into “exclusion” mode. Reset the bulb by using the wall switch to turn the power to the bulb ON. The Smart LED Light Bulb will flash twice to confirm the exclusion</p>
+Dimmable LED Light Bulb<br /> <h1>Overview</h1><p>Zwave Controlled Smart LED PAR38 Light Bulb, 650 Lumens, equivalentto a 65 Watt incandescent light bulb.</p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, turn the power to the light bulb socket ON.</p> <br /> <h2>Exclusion Information</h2><p>Set the Controller into “exclusion” mode. Reset the bulb by using the wall switch to turn the power to the bulb ON. The Smart LED Light Bulb will flash twice to confirm the exclusion</p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -53,7 +53,7 @@ Dimmable LED Light Bulb<br /><h1>Overview</h1><p>Zwave Controlled Smart LED PAR3
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Dim Level Memory</label>
         <description><![CDATA[
-Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>By default, the LBR30Z-1 bulb will go to full brightness when turned on. To have the bulb turn on to the last dim level setting, set parameter 1 to 1.</p>
+Turn Dim Level Memory ON/OFF<br /> <h1>Overview</h1><p>By default, the LBR30Z-1 bulb will go to full brightness when turned on. To have the bulb turn on to the last dim level setting, set parameter 1 to 1.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -67,7 +67,7 @@ Turn Dim Level Memory ON/OFF<br /><h1>Overview</h1><p>By default, the LBR30Z-1 b
                  min="1" max="99">
         <label>9: Dim / Bright Step Level</label>
         <description><![CDATA[
-How much the brightness will change with each dimming step<br /><h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how much the bulb brightness will change is set by the programmed dimming step level. </p>
+How much the brightness will change with each dimming step<br /> <h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how much the bulb brightness will change is set by the programmed dimming step level. </p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -77,7 +77,7 @@ How much the brightness will change with each dimming step<br /><h1>Overview</h1
                  min="1" max="10">
         <label>10: Dim / Bright Speed</label>
         <description><![CDATA[
-How fast the brightness will change with each dimming step<br /><h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how fast the bulb brightness will change is set by the programmed dimming step speed</p>
+How fast the brightness will change with each dimming step<br /> <h1>Overview</h1><p>When the brightness is adjusted by the controller/gateway, how fast the bulb brightness will change is set by the programmed dimming step speed</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

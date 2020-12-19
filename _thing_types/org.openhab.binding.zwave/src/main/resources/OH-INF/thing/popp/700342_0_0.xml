@@ -8,7 +8,7 @@
   <thing-type id="popp_700342_00_000" listed="false">
     <label>700342 10 Year Smoke Detector</label>
     <description><![CDATA[
-10 Year Smoke Detector<br /><h1>Overview</h1><p>This smoke detector will report smoke alarms wirelessly and securily into a Z-Wave network and is able to control other devices using associations The smoke detector’s sensor head is certified with the Q quality label, conforms DIN EN 14604 and satisfies all contemporary legal requirements. The High-End 10-years smoke detector offers a large test button conveniently accessible even with a broomstick when mounted on the ceiling. The smoke chamber is monitored electronically to avoid any malfunction and wrong alerts. The device will also report its end of life to make sure it is getting replaced on time. Tampering a smoke detector by removing it from the mounting base will issue a wireless alarm command as well.</p> <br /><h2>Inclusion Information</h2><p>Secure Inclusion: Push the button for 3 seconds<br />Unsecure Inclusion: Push the button for 1 seconds</p> <br /><h2>Exclusion Information</h2><p>Push the button for 1 second</p> <br /><h2>Wakeup Information</h2><p>Push the button shortly to wake up the device.</p>
+10 Year Smoke Detector<br /> <h1>Overview</h1><p>This smoke detector will report smoke alarms wirelessly and securily into a Z-Wave network and is able to control other devices using associations The smoke detector’s sensor head is certified with the Q quality label, conforms DIN EN 14604 and satisfies all contemporary legal requirements. The High-End 10-years smoke detector offers a large test button conveniently accessible even with a broomstick when mounted on the ceiling. The smoke chamber is monitored electronically to avoid any malfunction and wrong alerts. The device will also report its end of life to make sure it is getting replaced on time. Tampering a smoke detector by removing it from the mounting base will issue a wireless alarm command as well.</p> <br /> <h2>Inclusion Information</h2><p>Secure Inclusion: Push the button for 3 seconds<br />Unsecure Inclusion: Push the button for 1 seconds</p> <br /> <h2>Exclusion Information</h2><p>Push the button for 1 second</p> <br /> <h2>Wakeup Information</h2><p>Push the button shortly to wake up the device.</p>
     ]]></description>
     <category>SmokeDetector</category>
 
@@ -74,7 +74,7 @@
                  min="0" max="255">
         <label>3: Value of ON-Command</label>
         <description><![CDATA[
-Value of ON-Command<br /><h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm occurs.</p>
+Value of ON-Command<br /> <h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm occurs.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -84,7 +84,7 @@ Value of ON-Command<br /><h1>Overview</h1><p>This value is sent as BASIC Set to 
                  min="0" max="255">
         <label>4: Value of Off-Command</label>
         <description><![CDATA[
-Value of Off-Command<br /><h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm is cleared.</p>
+Value of Off-Command<br /> <h1>Overview</h1><p>This value is sent as BASIC Set to Association Group 2 when an Smoke Alarm is cleared.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>

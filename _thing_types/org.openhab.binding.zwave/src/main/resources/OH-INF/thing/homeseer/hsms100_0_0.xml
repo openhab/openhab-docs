@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hsms100_00_000" listed="false">
     <label>HS-MS100+ HomeSeer Z-Wave Plus Motion Sensor</label>
     <description><![CDATA[
-HomeSeer Z-Wave Plus Motion Sensor<br /><h1>Overview</h1><p>Motion sensor can be included and operated in any Z-Wave network with other Z-Wave certified devices. <br />The features list:</p> <ol><li>Z-Wave Plus certified for wide compatibility (500 serials product)</li> <li>Supports security 0 and security 2 protected mode with AES-128 encryption.</li> <li>Motion sensor.</li> <li>Tamper alarm by shock sensor.</li> <li>The battery life is up to 1 year.</li> <li>Low battery alarm.</li> <li>Support firmware OTA.</li> </ol><br /><h2>Inclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into inclusion mode <ol><li>"Secure Inclusion". Hold Z-button for 5 sec and then release. The LED indicator should blink fast.</li> <li>"Non-secure Inclusion". Press Z-button once. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the adding process to end</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into exclusion mode <ol><li>Triple click Z-button quickly. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the removing process to end</li> </ol><br /><h2>Wakeup Information</h2><p>Press and hold Z button for more than 5 seconds and release</p>
+HomeSeer Z-Wave Plus Motion Sensor<br /> <h1>Overview</h1><p>Motion sensor can be included and operated in any Z-Wave network with other Z-Wave certified devices. <br />The features list:</p> <ol><li>Z-Wave Plus certified for wide compatibility (500 serials product)</li> <li>Supports security 0 and security 2 protected mode with AES-128 encryption.</li> <li>Motion sensor.</li> <li>Tamper alarm by shock sensor.</li> <li>The battery life is up to 1 year.</li> <li>Low battery alarm.</li> <li>Support firmware OTA.</li> </ol> <br /> <h2>Inclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into inclusion mode <ol><li>"Secure Inclusion". Hold Z-button for 5 sec and then release. The LED indicator should blink fast.</li> <li>"Non-secure Inclusion". Press Z-button once. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the adding process to end</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Open the cover</li> <li>Place the device withing the direct range of your Z-Wave controller</li> <li>Set the main controller into exclusion mode <ol><li>Triple click Z-button quickly. The LED indicator should blink fast.</li> </ol></li> <li>Wait for the removing process to end</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press and hold Z button for more than 5 seconds and release</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -62,7 +62,7 @@ HomeSeer Z-Wave Plus Motion Sensor<br /><h1>Overview</h1><p>Motion sensor can be
                  min="1" max="8">
         <label>12: Motion sensor sensitivity</label>
         <description><![CDATA[
-Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the more sensitive the PIR sensor.</p>
+Motion sensor sensitivity<br /> <h1>Overview</h1><p>The higher the value, the more sensitive the PIR sensor.</p>
         ]]></description>
         <default>8</default>
       </parameter>
@@ -104,7 +104,7 @@ Motion sensor sensitivity<br /><h1>Overview</h1><p>The higher the value, the mor
                  min="0" max="65535">
         <label>18: Motion timeout interval</label>
         <description><![CDATA[
-Motion timeout interval<br /><h1>Overview</h1><p>Set 0 to disable report.</p> <p>Value 1 to 65535 set timeout of transmitting command when motion has not been sensed for a period of time</p>
+Motion timeout interval<br /> <h1>Overview</h1><p>Set 0 to disable report.</p> <p>Value 1 to 65535 set timeout of transmitting command when motion has not been sensed for a period of time</p>
         ]]></description>
         <default>600</default>
       </parameter>
@@ -113,7 +113,7 @@ Motion timeout interval<br /><h1>Overview</h1><p>Set 0 to disable report.</p> <p
                  min="10" max="50">
         <label>32: Level of low battery</label>
         <description><![CDATA[
-Level of low battery<br /><h1>Overview</h1><p>The low level from 10% to 50%</p>
+Level of low battery<br /> <h1>Overview</h1><p>The low level from 10% to 50%</p>
         ]]></description>
         <default>20</default>
       </parameter>
@@ -122,7 +122,7 @@ Level of low battery<br /><h1>Overview</h1><p>The low level from 10% to 50%</p>
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline:</p> <ol><li>Notification Report. Sensor will send Notification Report to the associated nodes when Motion Sensor is removed or/and PIR is triggered.</li> <li>Battery Report. Motion Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally Notification.</li> </ol>
+<br /> <h1>Overview</h1><p>Z-Wave Plus Lifeline:</p> <ol> <li>Notification Report. Sensor will send Notification Report to the associated nodes when Motion Sensor is removed or/and PIR is triggered.</li> <li>Battery Report. Motion Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally Notification.</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -130,7 +130,7 @@ Level of low battery<br /><h1>Overview</h1><p>The low level from 10% to 50%</p>
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>1. Basic Set. Motion Sensor will send Basic Set to associated nodes when the PIR is triggered.</p>
+<br /> <h1>Overview</h1><p>1. Basic Set. Motion Sensor will send Basic Set to associated nodes when the PIR is triggered.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

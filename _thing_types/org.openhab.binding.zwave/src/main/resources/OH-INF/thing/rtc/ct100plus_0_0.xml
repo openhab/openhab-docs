@@ -8,7 +8,7 @@
   <thing-type id="rtc_ct100plus_00_000" listed="false">
     <label>CT100 Plus Z-Wave Thermostat</label>
     <description><![CDATA[
-Z-Wave Thermostat<br /><h1>Overview</h1><p>The CT100 Plus is a sleek, modern thermostat design for home automation systems. It’s clean user interface compliments app-enabled systems. It features adjustable real-time alerts to enable cloud triggers, a robust data stream of HVAC information for cloud monitoring, and configurable comfort response settings to customize home control scenes. The CT100 Plus is compatible with all popular HVAC systems and is battery-operated without the need for a C-wire.</p> <br /><h2>Inclusion Information</h2><ol><li> From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.</li> <li>Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.</li> </ol><p>When the CT100 has successfully joined a Z-Wave network, the MATE icon is replaced by the LINK icon under the radio tower. </p> <br /><h2>Exclusion Information</h2><ol><li> From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.</li> <li>Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.</li> </ol><p>When you are trying to disconnect from (leave) a network, the LINK icon disappears when the node has successfully left the network.</p>
+Z-Wave Thermostat<br /> <h1>Overview</h1><p>The CT100 Plus is a sleek, modern thermostat design for home automation systems. It’s clean user interface compliments app-enabled systems. It features adjustable real-time alerts to enable cloud triggers, a robust data stream of HVAC information for cloud monitoring, and configurable comfort response settings to customize home control scenes. The CT100 Plus is compatible with all popular HVAC systems and is battery-operated without the need for a C-wire.</p> <br /> <h2>Inclusion Information</h2><ol><li> From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.</li> <li>Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.</li> </ol><p>When the CT100 has successfully joined a Z-Wave network, the MATE icon is replaced by the LINK icon under the radio tower. </p> <br /> <h2>Exclusion Information</h2><ol><li> From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.</li> <li>Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.</li> </ol><p>When you are trying to disconnect from (leave) a network, the LINK icon disappears when the node has successfully left the network.</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -199,7 +199,7 @@ Z-Wave Thermostat<br /><h1>Overview</h1><p>The CT100 Plus is a sleek, modern the
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature Reporting Threshold</label>
         <description><![CDATA[
-Reporting threshold for changes in the ambient temperature<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
+Reporting threshold for changes in the ambient temperature<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -216,7 +216,7 @@ Reporting threshold for changes in the ambient temperature<br /><h1>Overview</h1
                  min="0" max="4294967295">
         <label>2: HVAC Settings</label>
         <description><![CDATA[
-Configured HVAC settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)<br />Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)<br />Byte 3 = Number of Heat Pump Stages<br />Byte 4 = Number of Cool Stages</p>
+Configured HVAC settings<br /> <h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)<br />Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)<br />Byte 3 = Number of Heat Pump Stages<br />Byte 4 = Number of Cool Stages</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -225,7 +225,7 @@ Configured HVAC settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0
       <parameter name="config_3_1_wo" type="integer" groupName="configuration">
         <label>3: Utility Lock Enable/Disable</label>
         <description><![CDATA[
-Prevents setpoint changes at thermostat<br /><h1>Overview</h1><p>If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock. This will prevent changes to the setpoint at the thermostat screen.</p>
+Prevents setpoint changes at thermostat<br /> <h1>Overview</h1><p>If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock. This will prevent changes to the setpoint at the thermostat screen.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -239,7 +239,7 @@ Prevents setpoint changes at thermostat<br /><h1>Overview</h1><p>If set to 0, th
                  min="0" max="255">
         <label>4: Power Status</label>
         <description><![CDATA[
-C-Wire / Battery Status<br /><h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries. </p>
+C-Wire / Battery Status<br /> <h1>Overview</h1><p>If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -248,7 +248,7 @@ C-Wire / Battery Status<br /><h1>Overview</h1><p>If 0x01, the thermostat is powe
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Humidity Reporting Threshold</label>
         <description><![CDATA[
-Reporting threshold for changes in the relative humidity<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
+Reporting threshold for changes in the relative humidity<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -263,7 +263,7 @@ Reporting threshold for changes in the relative humidity<br /><h1>Overview</h1><
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Auxiliary/Emergency</label>
         <description><![CDATA[
-Enables or disables auxiliary / emergency heating<br /><h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled, all other values, 1-255, will enable the auxiliary / emergency heat. This can only be enabled when the thermostat is set to Heat Pump mode.</p>
+Enables or disables auxiliary / emergency heating<br /> <h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled, all other values, 1-255, will enable the auxiliary / emergency heat. This can only be enabled when the thermostat is set to Heat Pump mode.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -276,7 +276,7 @@ Enables or disables auxiliary / emergency heating<br /><h1>Overview</h1><p>If se
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Thermostat Swing Temperature</label>
         <description><![CDATA[
-Variance allowed from setpoint to engage HVAC<br /><h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.</p>
+Variance allowed from setpoint to engage HVAC<br /> <h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -295,7 +295,7 @@ Variance allowed from setpoint to engage HVAC<br /><h1>Overview</h1><p>The therm
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Thermostat Diff Temperature</label>
         <description><![CDATA[
-Configures additional stages<br /><h1>Overview</h1><p>Sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. This command configures both the heat and cool differential temperatures.</p>
+Configures additional stages<br /> <h1>Overview</h1><p>Sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. This command configures both the heat and cool differential temperatures.</p>
         ]]></description>
         <default>4</default>
         <options>
@@ -309,7 +309,7 @@ Configures additional stages<br /><h1>Overview</h1><p>Sets the differential temp
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Thermostat Recovery Mode</label>
         <description><![CDATA[
-Fast or Economy recovery mode<br /><h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (1) or economy (2).</p>
+Fast or Economy recovery mode<br /> <h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (1) or economy (2).</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -323,7 +323,7 @@ Fast or Economy recovery mode<br /><h1>Overview</h1><p>The Thermostat Recovery M
                  min="0" max="124">
         <label>10: Temperature Reporting Filter</label>
         <description><![CDATA[
-Upper/Lower bounds for thermostat temperature reporting<br /><h1>Overview</h1><p>The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).</p>
+Upper/Lower bounds for thermostat temperature reporting<br /> <h1>Overview</h1><p>The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).</p>
         ]]></description>
         <default>124</default>
         <limitToOptions>false</limitToOptions>
@@ -332,7 +332,7 @@ Upper/Lower bounds for thermostat temperature reporting<br /><h1>Overview</h1><p
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Simple UI Mode</label>
         <description><![CDATA[
-Simple mode enable/disable<br /><h1>Overview</h1><p>If the value is set to 0 then Normal Mode is enabled. If the value is set to 1 then Simple Mode is enabled.</p>
+Simple mode enable/disable<br /> <h1>Overview</h1><p>If the value is set to 0 then Normal Mode is enabled. If the value is set to 1 then Simple Mode is enabled.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -345,7 +345,7 @@ Simple mode enable/disable<br /><h1>Overview</h1><p>If the value is set to 0 the
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Multicast</label>
         <description><![CDATA[
-Enable or disables Multicast<br /><h1>Overview</h1><p>If set to 0, Multicast is disabled. If set to 1, Multicast is enabled. </p>
+Enable or disables Multicast<br /> <h1>Overview</h1><p>If set to 0, Multicast is disabled. If set to 1, Multicast is enabled. </p>
         ]]></description>
         <default>0</default>
         <options>

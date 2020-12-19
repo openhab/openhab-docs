@@ -8,7 +8,7 @@
   <thing-type id="vision_pid11995_00_000" listed="false">
     <label>PID11995 Monoprice ZWave On/Off Plugin</label>
     <description><![CDATA[
-Monoprice ZWave On/Off Plugin<br /><h1>Overview</h1><p>Lamp and Appliance Switch Module</p> <br /><h2>Inclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p>
+Monoprice ZWave On/Off Plugin<br /> <h1>Overview</h1><p>Lamp and Appliance Switch Module</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the Program switch for about 1 second.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

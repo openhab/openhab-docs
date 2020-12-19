@@ -8,7 +8,7 @@
   <thing-type id="isurpass_jwzho201514_00_000" listed="false">
     <label>JWZH-O-2015-14 Gas Water Valve Controller</label>
     <description><![CDATA[
-Gas Water Valve Controller<br /><h1>Overview</h1><p>Valve controller with on/off operation. Can be mounted on various valve handles (water, gas or other) for remote control. <br />Specifications:</p> <ul><li>Power Voltage : DC12V/1A</li> <li>Communication Technology : Z-WAVE PLUS  EU868.42MHz</li> <li>Wireless Distance(Outdoor) : 30 Meters</li> <li>Valve Pressure : 1.6MPa</li> <li>Time Off Valve Auto : 5~10 sencod</li> <li>Time Off Valve Electric : 5~10 sencod</li> <li>Torque : 30~60 Kg.cm</li> </ul><br /><h2>Inclusion Information</h2><p>With controller in inclusion mode, triple click the button within 1 second on the valve.</p> <br /><h2>Exclusion Information</h2><p>With controller in exclusion mode, triple click the button within 1 second on the valve.</p>
+Gas Water Valve Controller<br /> <h1>Overview</h1><p>Valve controller with on/off operation. Can be mounted on various valve handles (water, gas or other) for remote control. <br />Specifications:</p> <ul><li>Power Voltage : DC12V/1A</li> <li>Communication Technology : Z-WAVE PLUS  EU868.42MHz</li> <li>Wireless Distance(Outdoor) : 30 Meters</li> <li>Valve Pressure : 1.6MPa</li> <li>Time Off Valve Auto : 5~10 sencod</li> <li>Time Off Valve Electric : 5~10 sencod</li> <li>Torque : 30~60 Kg.cm</li> </ul> <br /> <h2>Inclusion Information</h2><p>With controller in inclusion mode, triple click the button within 1 second on the valve.</p> <br /> <h2>Exclusion Information</h2><p>With controller in exclusion mode, triple click the button within 1 second on the valve.</p>
     ]]></description>
     <category>Valve</category>
 

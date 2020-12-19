@@ -8,7 +8,7 @@
   <thing-type id="popp_123665_00_000" listed="false">
     <label>123665 Wall Plug Meter Switch</label>
     <description><![CDATA[
-Wall Plug Meter Switch<br /><h1>Overview</h1><p>Z-Wave UK Plug-in Switch plus Power Meter </p> <br /><h2>Inclusion Information</h2><ul><li>Turn the controller into inclusion mode. </li> <li>Press the button on the wall plug 3 times within a period of around 2 seconds.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Turn the controller into exclusion mode. </li> <li>Press the button on the wall plug 3 times within a period of around 2 seconds.</li> </ul>
+Wall Plug Meter Switch<br /> <h1>Overview</h1><p>Z-Wave UK Plug-in Switch plus Power Meter </p> <br /> <h2>Inclusion Information</h2><ul><li>Turn the controller into inclusion mode. </li> <li>Press the button on the wall plug 3 times within a period of around 2 seconds.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Turn the controller into exclusion mode. </li> <li>Press the button on the wall plug 3 times within a period of around 2 seconds.</li> </ul>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -81,7 +81,7 @@ Wall Plug Meter Switch<br /><h1>Overview</h1><p>Z-Wave UK Plug-in Switch plus Po
                  min="0" max="65535">
         <label>1: Watt Meter Report Period</label>
         <description><![CDATA[
-Time frame for reporting instant power consumption<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. (one unit = 5 seconds)</p>
+Time frame for reporting instant power consumption<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. (one unit = 5 seconds)</p>
         ]]></description>
         <default>720</default>
       </parameter>
@@ -90,7 +90,7 @@ Time frame for reporting instant power consumption<br /><h1>Overview</h1><p>If t
                  min="0" max="65535">
         <label>2: KWH Meter Report Period</label>
         <description><![CDATA[
-Time frame for reporting Accumulated Power Consumption<br /><h1>Overview</h1><p>if the setting is configured for 1hour (set value = 6), the device will report its Accumulated Power Consumption (KW/h) every hour (one unit = 10 min)</p>
+Time frame for reporting Accumulated Power Consumption<br /> <h1>Overview</h1><p>if the setting is configured for 1hour (set value = 6), the device will report its Accumulated Power Consumption (KW/h) every hour (one unit = 10 min)</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -100,7 +100,7 @@ Time frame for reporting Accumulated Power Consumption<br /><h1>Overview</h1><p>
                  min="0" max="65535">
         <label>3: Threshold of Watt for Load caution</label>
         <description><![CDATA[
-Warn when wattage of load over the preset threshold value<br /><h1>Overview</h1><p>This is a warning when the wattage of load over the preset threshold value, if the load wattage exceeds the setting value the device will send a warning alarm command to the controller. </p>
+Warn when wattage of load over the preset threshold value<br /> <h1>Overview</h1><p>This is a warning when the wattage of load over the preset threshold value, if the load wattage exceeds the setting value the device will send a warning alarm command to the controller. </p>
         ]]></description>
         <default>3000</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Warn when wattage of load over the preset threshold value<br /><h1>Overview</h1>
                  min="0" max="65535">
         <label>4: Threshold of KWh for Load caution</label>
         <description><![CDATA[
-Warn if Acc. Power Consumption exceeds the set value<br /><h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, if the Accumulated Power Consumption exceeds the setting value the device will send a warning alarm command to the controller.</p>
+Warn if Acc. Power Consumption exceeds the set value<br /> <h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, if the Accumulated Power Consumption exceeds the setting value the device will send a warning alarm command to the controller.</p>
         ]]></description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>

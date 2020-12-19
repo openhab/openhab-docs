@@ -8,7 +8,7 @@
   <thing-type id="nietech_nzw30_00_000" listed="false">
     <label>NZW30 In-Wall Switch (On/Off)</label>
     <description><![CDATA[
-In-Wall Switch (On/Off)<br /><h1>Overview</h1><p>Turn ON/OFF manually or remotely via the Z-Wave controller<br />• Can be Included in multiple Groups and Scenes<br />• Compatible with all incandescent and CFL/ LED bulbs<br />• Blue LED indicates switch location in a dark room<br />• Z-Wave Certified for simple pairing and integrated home automation<br />• Screw Terminal Installation — requires wiring connections for Line (Hot), Load, Neutral.</p> <br /><h2>Inclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to include your device, triple press the Up/Down push button to include it in the network.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, triple press the Up/Down push button to exclude it from the network.</li> </ul>
+In-Wall Switch (On/Off)<br /> <h1>Overview</h1><p>Turn ON/OFF manually or remotely via the Z-Wave controller<br />• Can be Included in multiple Groups and Scenes<br />• Compatible with all incandescent and CFL/ LED bulbs<br />• Blue LED indicates switch location in a dark room<br />• Z-Wave Certified for simple pairing and integrated home automation<br />• Screw Terminal Installation — requires wiring connections for Line (Hot), Load, Neutral.</p> <br /> <h2>Inclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to include a device to the Z-Wave network.</li> <li>Once the controller is ready to include your device, triple press the Up/Down push button to include it in the network.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to Exclude your device, triple press the Up/Down push button to exclude it from the network.</li> </ul>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -50,7 +50,7 @@ In-Wall Switch (On/Off)<br /><h1>Overview</h1><p>Turn ON/OFF manually or remotel
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: ledIndicator</label>
         <description><![CDATA[
-Set the LED light behavior<br /><h1>Overview</h1><p>This setting controls the operation of the LED indicator light on the bottom of the switch.  The options are 0,1,2,3.  They are described below.</p> <ul><li>0 (default): Turn LED indicator on when switch is off</li> <li>1: Turn LED indicator on when switch is on</li> <li>2: Indicator LED is always off</li> <li>3: Indicator LED is always on</li> </ul>
+Set the LED light behavior<br /> <h1>Overview</h1><p>This setting controls the operation of the LED indicator light on the bottom of the switch.  The options are 0,1,2,3.  They are described below.</p> <ul><li>0 (default): Turn LED indicator on when switch is off</li> <li>1: Turn LED indicator on when switch is on</li> <li>2: Indicator LED is always off</li> <li>3: Indicator LED is always on</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -65,7 +65,7 @@ Set the LED light behavior<br /><h1>Overview</h1><p>This setting controls the op
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: invert</label>
         <description><![CDATA[
-Invert on &amp; off on the physical switch<br /><h1>Overview</h1><p>Invert what the top and bottom of the switch does.</p>
+Invert on &amp; off on the physical switch<br /> <h1>Overview</h1><p>Invert what the top and bottom of the switch does.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -87,7 +87,7 @@ Invert on &amp; off on the physical switch<br /><h1>Overview</h1><p>Invert what
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
+<br /> <h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

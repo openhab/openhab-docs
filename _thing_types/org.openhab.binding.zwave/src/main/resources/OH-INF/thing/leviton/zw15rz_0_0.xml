@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="leviton_zw15rz_00_000" listed="false">
+    <label>ZW15R Tamper-Resistant Z-Wave Outlet - Model ZW15R</label>
+    <description><![CDATA[
+Tamper-Resistant Z-Wave Outlet - Model ZW15R<br /> <h1>Overview</h1><p>The Decora Smart branded Z-Wave enabled outlet is designed for use with modern Z-Wave hubs.</p><p>This product can be operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers. Your outlet will act as a repeater in the network to increase the reliability of the network.</p> <br /> <h2>Inclusion Information</h2><ol><li>To enter programming mode, hold the button for 7seconds.  The status light will turn amber. Release and the status light will blink.</li><li>Follow the Z-Wave controller instructions to enter inclusion mode.</li><li>Tap the button one time.  The status light will quickly flash green.</li><li>The Z-Wave controller will confirm successful inclusion to the network.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>To enter programming mode, hold the button for 7seconds.  The status light will turn amber. Release and the status light will blink.</li><li>Follow Z-Wave controller directions to enter exclusion mode.</li><li>Tap the the top of the paddle 1 time. The status light will quickly flash green.</li><li>The Z-Wave controller will remove the device from the network.</li></ol><p><br /></p><p>When removing a device from a network it is best practice to use the exclusion process. In situations where a device needs to be returned to factory default follow the following steps. A reset should only be used when a controller is inoperable or missing.</p><ol><li>After holding the button for 7 seconds, the status light will turn amber. Continue holding the button for another 7 seconds (total of 14 seconds). Light will quickly flash red/amber.</li><li>Release the button and the device will reset.</li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Leviton</property>
+      <property name="modelId">ZW15R</property>
+      <property name="manufacturerId">001D</property>
+      <property name="manufacturerRef">0037:0002</property>
+      <property name="dbReference">1319</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>7: Status LED Configuration</label>
+        <description><![CDATA[
+Allow turning the status LED to various modes (off, status, locator)<br /> <h1>Overview</h1><p>0 = LED Off</p><p>254 = Status Mode</p><p>255 = Locater Mode</p>
+        ]]></description>
+        <default>255</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Controller</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Command Class: 0x5A01, 0x2503 and Ox8703<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

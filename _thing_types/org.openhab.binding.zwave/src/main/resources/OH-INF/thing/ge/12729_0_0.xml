@@ -8,7 +8,7 @@
   <thing-type id="ge_12729_00_000" listed="false">
     <label>12729 In-Wall Smart Dimmer</label>
     <description><![CDATA[
-In-Wall Smart Dimmer<br /><h1>Overview</h1><ul><li>The dimmer allows you to wirelessly schedule, control and adjust the brightness of any hard-wired, dimmable light in your home anywhere in the world, at any time of the day.</li> <li>Easily replace any standard in-wall switch with the GE Z-Wave controlled dimmer switch to turn lighting On/Off or adjust dim levels with your mobile device or computer using any Z-Wave certified gateway. Can be controlled in groups of multiple lights or turned on or off within ambient interior lighting scenes.</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.</li> <li>Once the controller is ready to include your device, press up and release the toggle switch to include it in the network.<br />Note: Your controller may need to be within 10 feet of the device to be included.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.</li> </ol><br /><h2>Exclusion Information</h2><p>Press up and release the toggle switch</p>
+In-Wall Smart Dimmer<br /> <h1>Overview</h1><ul><li>The dimmer allows you to wirelessly schedule, control and adjust the brightness of any hard-wired, dimmable light in your home anywhere in the world, at any time of the day.</li> <li>Easily replace any standard in-wall switch with the GE Z-Wave controlled dimmer switch to turn lighting On/Off or adjust dim levels with your mobile device or computer using any Z-Wave certified gateway. Can be controlled in groups of multiple lights or turned on or off within ambient interior lighting scenes.</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-wave certified controller to include a device to the Z-wave network.</li> <li>Once the controller is ready to include your device, press up and release the toggle switch to include it in the network.<br />Note: Your controller may need to be within 10 feet of the device to be included.</li> <li>Once your controller has confirmed that the device has been included, refresh the Z-wave network to optimize performance.</li> </ol> <br /> <h2>Exclusion Information</h2><p>Press up and release the toggle switch</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -45,7 +45,7 @@ In-Wall Smart Dimmer<br /><h1>Overview</h1><ul><li>The dimmer allows you to wire
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert the ON/OFF Switch State.<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
+Invert the ON/OFF Switch State.<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -67,7 +67,7 @@ Invert the ON/OFF Switch State.<br /><h1>Overview</h1><p>If the switch is accide
                  min="1" max="255">
         <label>8: On/Off Command Dim Rate</label>
         <description><![CDATA[
-This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -85,7 +85,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
                  min="1" max="255">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
-This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -103,7 +103,7 @@ This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timi
                  min="1" max="255">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
-This sets how often the dim level will change.<br /><h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
+This sets how often the dim level will change.<br /> <h1>Overview</h1><p>The timing of the steps can be adjusted in 10 millisecond intervals. As an example, the default setting for parameter 8 is “3”. This means that the lighting level will change every 30 milliseconds when the Dim Command is received. A value of 255 would mean that the level would change every 2.55 seconds. Combined, the two parameters allow dim rate adjustments from 10 milliseconds to 4.2 minutes to go from maximum-to-minimum or minimum-to-maximum brightness levels.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

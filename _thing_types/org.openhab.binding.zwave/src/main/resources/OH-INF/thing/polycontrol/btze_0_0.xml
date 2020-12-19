@@ -8,7 +8,7 @@
   <thing-type id="polycontrol_btze_00_000" listed="false">
     <label>Danalock V3-BTZE Z-Wave controlled door lock with Bluetooth Smart</label>
     <description><![CDATA[
-Z-Wave controlled door lock with Bluetooth Smart<br /><h1>Overview</h1><p>Danalock supports:</p> <ul><li>S0/S2 Z-Wave Security</li> <li>Bluetooth Smart</li> <li>Twist Assist</li> <li>Auto Lock</li> <li>Hold And Release</li> <li>Back To Back </li> </ul><br /><h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <ol><li>Pair the lock with bluetooth first</li> <li> <p>Set the controller in inclusion mode</p> </li> <li> <p>Push the switch once.</p> </li> <li> <p>Wait 5 seconds. </p> </li> </ol><br /><h2>Exclusion Information</h2><p>To remove or exclude the Danalock into a Z-Wave network</p> <ol><li>Delete the lock within the app (bluetooth)</li> <li> <p>Set the controller in exclusion mode</p> </li> <li> <p>Push the switch once.</p> </li> <li> <p>Wait 5 seconds. </p> </li> </ol>
+Z-Wave controlled door lock with Bluetooth Smart<br /> <h1>Overview</h1><p>Danalock supports:</p> <ul><li>S0/S2 Z-Wave Security</li> <li>Bluetooth Smart</li> <li>Twist Assist</li> <li>Auto Lock</li> <li>Hold And Release</li> <li>Back To Back </li> </ul> <br /> <h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <ol><li>Pair the lock with bluetooth first</li> <li> <p>Set the controller in inclusion mode</p> </li> <li> <p>Push the switch once.</p> </li> <li> <p>Wait 5 seconds. </p> </li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove or exclude the Danalock into a Z-Wave network</p> <ol><li>Delete the lock within the app (bluetooth)</li> <li> <p>Set the controller in exclusion mode</p> </li> <li> <p>Push the switch once.</p> </li> <li> <p>Wait 5 seconds. </p> </li> </ol>
     ]]></description>
     <category>Lock</category>
 
@@ -61,7 +61,7 @@ Z-Wave controlled door lock with Bluetooth Smart<br /><h1>Overview</h1><p>Danalo
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Twin Assist</label>
         <description><![CDATA[
-Helps you to lock and unlock your door lock.<br /><h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 -&gt; enabled</p>
+Helps you to lock and unlock your door lock.<br /> <h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 -&gt; enabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -75,7 +75,7 @@ Helps you to lock and unlock your door lock.<br /><h1>Overview</h1><p>0 -&gt; di
                  min="0" max="2147483647">
         <label>2: Hold and Release</label>
         <description><![CDATA[
-After a unlock operation the lock holds the lock, so the door can be opened<br /><h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
+After a unlock operation the lock holds the lock, so the door can be opened<br /> <h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -98,7 +98,7 @@ After a unlock operation the lock holds the lock, so the door can be opened<br /
                  min="0" max="2147483647">
         <label>4: BLE Temporary Allowed</label>
         <description><![CDATA[
-The BLE is enabled for a number of seconds.<br /><h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
+The BLE is enabled for a number of seconds.<br /> <h1>Overview</h1><p>0 -&gt; Disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ The BLE is enabled for a number of seconds.<br /><h1>Overview</h1><p>0 -&gt; Dis
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: BLE Always Allowed</label>
         <description><![CDATA[
-BLE Always Allowed<br /><h1>Overview</h1><p>0 -&gt; BLE Always disabled</p> <p>1 -&gt; BLE Always enabled</p>
+BLE Always Allowed<br /> <h1>Overview</h1><p>0 -&gt; BLE Always disabled</p> <p>1 -&gt; BLE Always enabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -121,7 +121,7 @@ BLE Always Allowed<br /><h1>Overview</h1><p>0 -&gt; BLE Always disabled</p> <p>
                  min="0" max="2147483647">
         <label>6: Autolock</label>
         <description><![CDATA[
-Lock after an unlock.Value is delay in sec before lock is locked again.<br /><h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
+Lock after an unlock.Value is delay in sec before lock is locked again.<br /> <h1>Overview</h1><p>0 -&gt; disabled</p> <p>1 to 2147483647 -&gt; enabled no. of seconds</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Lock after an unlock.Value is delay in sec before lock is locked again.<br /><h1
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Z-Wave Plus Lifeline<br /><h1>Overview</h1><p>Z-Wave Plus Lifeline</p> <ul><li>Device Reset Locally: triggered upon reset.</li> <li>Battery/notification: triggered upon low battery.</li> <li>Door Lock operation report: triggered upon a change in door lock</li> <li>Notification: triggered upon a change in door lock</li> </ul>
+Z-Wave Plus Lifeline<br /> <h1>Overview</h1><p>Z-Wave Plus Lifeline</p> <ul> <li>Device Reset Locally: triggered upon reset.</li> <li>Battery/notification: triggered upon low battery.</li> <li>Door Lock operation report: triggered upon a change in door lock</li> <li>Notification: triggered upon a change in door lock</li> </ul>
         ]]></description>
       </parameter>
 

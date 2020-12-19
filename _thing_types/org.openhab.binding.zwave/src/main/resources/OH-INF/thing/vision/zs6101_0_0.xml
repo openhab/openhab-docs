@@ -8,7 +8,7 @@
   <thing-type id="vision_zs6101_00_000" listed="false">
     <label>ZS6101 Smoke Detector</label>
     <description><![CDATA[
-Smoke Detector<br /><h1>Overview</h1><p>This detector is designed to sense smoke that comes into the detector chamber and send Z-Wave™ signal when the detector detects a certain density of smoke then the horn of smoke detector will sound. </p> <br /><h2>Inclusion Information</h2><p>Press the program switch for 1 second at least</p> <br /><h2>Exclusion Information</h2><p>Press the program switch for 1 second at least</p> <br /><h2>Wakeup Information</h2><p>Press the program switch for 1 second at least</p>
+Smoke Detector<br /> <h1>Overview</h1><p>This detector is designed to sense smoke that comes into the detector chamber and send Z-Wave™ signal when the detector detects a certain density of smoke then the horn of smoke detector will sound. </p> <br /> <h2>Inclusion Information</h2><p>Press the program switch for 1 second at least</p> <br /> <h2>Exclusion Information</h2><p>Press the program switch for 1 second at least</p> <br /> <h2>Wakeup Information</h2><p>Press the program switch for 1 second at least</p>
     ]]></description>
     <category>SmokeDetector</category>
 

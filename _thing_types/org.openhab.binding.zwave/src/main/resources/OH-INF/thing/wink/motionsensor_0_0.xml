@@ -8,7 +8,7 @@
   <thing-type id="wink_motionsensor_00_000" listed="false">
     <label>Motion Sensor Motion Sensor</label>
     <description><![CDATA[
-Motion Sensor<br /><h1>Overview</h1><p>Magnetically mounted motion sensor</p> <br /><h2>Inclusion Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times until unit blinks blue five times.</p> <br /><h2>Exclusion Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times until unit blinks blue five times.</p> <br /><h2>Wakeup Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times and light will blink blue five times.</p>
+Motion Sensor<br /> <h1>Overview</h1><p>Magnetically mounted motion sensor</p> <br /> <h2>Inclusion Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times until unit blinks blue five times.</p> <br /> <h2>Exclusion Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times until unit blinks blue five times.</p> <br /> <h2>Wakeup Information</h2><p>Twist back of unit, then lift off. (Will be difficult due to strong mounting magnet.) Push connect button three times and light will blink blue five times.</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -68,7 +68,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Magnetically mounted motion sensor</p> <b
                  min="8" max="255">
         <label>1: Motion Sensitivity</label>
         <description><![CDATA[
-Motion Sensitivity<br /><h1>Overview</h1><p>This parameter sets the sensitivity of the Motion Detector. It is a unitless parameter ranging in values from 8 up to 255, with 8 being the highest sensitivity level and 255 being the lowest.After physical installation, make sure the farthest part of the coverage area is still visible to the Motion Detector by adjusting this parameter</p>
+Motion Sensitivity<br /> <h1>Overview</h1><p>This parameter sets the sensitivity of the Motion Detector. It is a unitless parameter ranging in values from 8 up to 255, with 8 being the highest sensitivity level and 255 being the lowest.After physical installation, make sure the farthest part of the coverage area is still visible to the Motion Detector by adjusting this parameter</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Motion Sensitivity<br /><h1>Overview</h1><p>This parameter sets the sensitivity 
                  min="5" max="600">
         <label>2: Motion Cleared Time Delay</label>
         <description><![CDATA[
-Motion Cleared Time Delay<br /><h1>Overview</h1><p>This parameters sets (in seconds) the amount of time after a motion event before the Motion Detector reports no activity to the main controller (see Notification and Binary Sensor command classes for more information.) This also sets the amount of time before a BASIC_SET (00) command is sent to Association Group 2 to turn off any activated devices. This value must be higher than the value of Parameter 6, and if this parameter is reset to default settings, Parameter 6 will also be reset.</p>
+Motion Cleared Time Delay<br /> <h1>Overview</h1><p>This parameters sets (in seconds) the amount of time after a motion event before the Motion Detector reports no activity to the main controller (see Notification and Binary Sensor command classes for more information.) This also sets the amount of time before a BASIC_SET (00) command is sent to Association Group 2 to turn off any activated devices. This value must be higher than the value of Parameter 6, and if this parameter is reset to default settings, Parameter 6 will also be reset.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -88,7 +88,7 @@ Motion Cleared Time Delay<br /><h1>Overview</h1><p>This parameters sets (in seco
                  min="0" max="255">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Level<br /><h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2</p>
+Basic Set Level<br /> <h1>Overview</h1><p>This parameter sets the value sent by the BASIC_SET command to Association Group 2</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Basic Set Level<br /><h1>Overview</h1><p>This parameter sets the value sent by t
       <parameter name="config_4_1_wo" type="integer" groupName="configuration">
         <label>4: Enable/Disable Motion Detection</label>
         <description><![CDATA[
-Enable/Disable Motion Detection<br /><h1>Overview</h1><p>This setting enables or disables motion detection. </p>
+Enable/Disable Motion Detection<br /> <h1>Overview</h1><p>This setting enables or disables motion detection. </p>
         ]]></description>
         <default>1</default>
         <options>
@@ -111,7 +111,7 @@ Enable/Disable Motion Detection<br /><h1>Overview</h1><p>This setting enables or
                  min="5" max="1000">
         <label>5: Group 2 Ambient Light Threshold</label>
         <description><![CDATA[
-Group 2 Ambient Light Threshold<br /><h1>Overview</h1><p>If Parameter 8 is enabled, this setting sets the light level (in lux) below which the Motion Detector will send BASIC_SET commands to Association Group 2 when motion is detected.</p>
+Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If Parameter 8 is enabled, this setting sets the light level (in lux) below which the Motion Detector will send BASIC_SET commands to Association Group 2 when motion is detected.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -121,7 +121,7 @@ Group 2 Ambient Light Threshold<br /><h1>Overview</h1><p>If Parameter 8 is enabl
                  min="1" max="8">
         <label>6: Retrigger Interval</label>
         <description><![CDATA[
-Retrigger Interval<br /><h1>Overview</h1><p>After each motion event, the Motion Detector is disabled for the amount of time (in seconds) set by this parameter before it can send out another Motion Detected Notification Report/Binary Sensor Report.This value must be lower than the value of Parameter 2, and if this parameter is reset to default settings, Parameter 2 will also be reset.</p> <p>Essentially, when motion is detected the sensor will send a motion event every X seconds to the controller, as controlled by this parameter. (When motion is not detected, it fires off one and is done.)</p>
+Retrigger Interval<br /> <h1>Overview</h1><p>After each motion event, the Motion Detector is disabled for the amount of time (in seconds) set by this parameter before it can send out another Motion Detected Notification Report/Binary Sensor Report.This value must be lower than the value of Parameter 2, and if this parameter is reset to default settings, Parameter 2 will also be reset.</p> <p>Essentially, when motion is detected the sensor will send a motion event every X seconds to the controller, as controlled by this parameter. (When motion is not detected, it fires off one and is done.)</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Retrigger Interval<br /><h1>Overview</h1><p>After each motion event, the Motion 
                  min="60" max="3600">
         <label>7: Light Sensing Interval</label>
         <description><![CDATA[
-Light Sensing Interval<br /><h1>Overview</h1><p>This parameter sets the amount of time (in seconds) between each successive ambient light level reading that is sent. This value must be less than the Wakeup Interval Time (which is 43,200 seconds or 12 hours by default). This defaults to 180.</p>
+Light Sensing Interval<br /> <h1>Overview</h1><p>This parameter sets the amount of time (in seconds) between each successive ambient light level reading that is sent. This value must be less than the Wakeup Interval Time (which is 43,200 seconds or 12 hours by default). This defaults to 180.</p>
         ]]></description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
@@ -140,7 +140,7 @@ Light Sensing Interval<br /><h1>Overview</h1><p>This parameter sets the amount o
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Enable/Disable Group 2 Ambient Light Threshold</label>
         <description><![CDATA[
-Enable/Disable Group 2 Ambient Light Threshold<br /><h1>Overview</h1><p>If this parameter is enabled, the Motion Detector will only send Basic Set commands to Associon Group 2 if the ambient light level is below the value set in Parameter 05. For more information, see Group 2 on page 14. </p>
+Enable/Disable Group 2 Ambient Light Threshold<br /> <h1>Overview</h1><p>If this parameter is enabled, the Motion Detector will only send Basic Set commands to Associon Group 2 if the ambient light level is below the value set in Parameter 05. For more information, see Group 2 on page 14. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -154,7 +154,7 @@ Enable/Disable Group 2 Ambient Light Threshold<br /><h1>Overview</h1><p>If this 
                  min="0" max="255">
         <label>9: Ambient Light Sensitivity Level</label>
         <description><![CDATA[
-Ambient Light Sensitivity Level<br /><h1>Overview</h1><p>This Parameter sets the minimum change in ambient light level (in lux) the Motion Detector must detect before a Multilevel Sensor Report is sent to the main controller. </p>
+Ambient Light Sensitivity Level<br /> <h1>Overview</h1><p>This Parameter sets the minimum change in ambient light level (in lux) the Motion Detector must detect before a Multilevel Sensor Report is sent to the main controller. </p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -163,7 +163,7 @@ Ambient Light Sensitivity Level<br /><h1>Overview</h1><p>This Parameter sets the
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: LED enable/disable</label>
         <description><![CDATA[
-LED enable/disable<br /><h1>Overview</h1><p>If this parameter is enabled, the LED INDICATOR will flash everytime there motion is detected.If this is disabled, the LED INDICATOR will not flash to indicate motion events.</p>
+LED enable/disable<br /> <h1>Overview</h1><p>If this parameter is enabled, the LED INDICATOR will flash everytime there motion is detected.If this is disabled, the LED INDICATOR will not flash to indicate motion events.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -177,7 +177,7 @@ LED enable/disable<br /><h1>Overview</h1><p>If this parameter is enabled, the LE
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 1 is the Lifeline group, which can hold five devices.The Motion Detector sends this group a Notification Report and Binary Sensor Report whenever motion is detected and when it stops.It also sends a Multilevel Sensor Report incrementally based on time (see Param 7,) or when a relative change in light level is detected (see Param 9.) Finally, the Motion Detector sends this group Battery Reports and a Device Reset Locally notification to remove itself from the Z-Wave network.</p> <p><br /><br /><br /></p>
+<br /> <h1>Overview</h1><p>Group 1 is the Lifeline group, which can hold five devices.The Motion Detector sends this group a Notification Report and Binary Sensor Report whenever motion is detected and when it stops.It also sends a Multilevel Sensor Report incrementally based on time (see Param 7,) or when a relative change in light level is detected (see Param 9.) Finally, the Motion Detector sends this group Battery Reports and a Device Reset Locally notification to remove itself from the Z-Wave network.</p> <p><br /> <br /><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -185,7 +185,7 @@ LED enable/disable<br /><h1>Overview</h1><p>If this parameter is enabled, the LE
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: BASIC_SET</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The Motion Detector sends a BASIC_SET command to Association Group 2 to directly trigger devices (like a siren, chime, etc.) when motion is detected and when it stops.Optionally, the Motion Detector can be set to only send this when ambient light levels fall below a predetermined level (see Configuration Parameters 5 and 8.)See Configuration Parameters 2, 3, 5, and 8 for more details regarding Association Group 2.</p> <p><br /><br /><br /></p>
+<br /> <h1>Overview</h1><p>The Motion Detector sends a BASIC_SET command to Association Group 2 to directly trigger devices (like a siren, chime, etc.) when motion is detected and when it stops.Optionally, the Motion Detector can be set to only send this when ambient light levels fall below a predetermined level (see Configuration Parameters 5 and 8.)See Configuration Parameters 2, 3, 5, and 8 for more details regarding Association Group 2.</p> <p><br /> <br /><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -193,7 +193,7 @@ LED enable/disable<br /><h1>Overview</h1><p>If this parameter is enabled, the LE
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Notification report</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 3 supports up to 5 members and the Motion Detector sends it a NOTIFICATION_REPORT when motion is detected and when it stops</p> <p><br /><br /><br /></p>
+<br /> <h1>Overview</h1><p>Group 3 supports up to 5 members and the Motion Detector sends it a NOTIFICATION_REPORT when motion is detected and when it stops</p> <p><br /> <br /><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -201,7 +201,7 @@ LED enable/disable<br /><h1>Overview</h1><p>If this parameter is enabled, the LE
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Sensor binary report</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 4 supports up to 5 members and the Motion Detector sends it a SENSOR_BINARY_REPORT when motion is detected and when it stops.</p> <p><br /><br /><br /></p>
+<br /> <h1>Overview</h1><p>Group 4 supports up to 5 members and the Motion Detector sends it a SENSOR_BINARY_REPORT when motion is detected and when it stops.</p> <p><br /> <br /><br /></p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

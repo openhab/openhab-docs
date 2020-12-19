@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_nasab01z_00_000" listed="false">
     <label>NAS-AB01Z Siren Alarm</label>
     <description><![CDATA[
-Siren Alarm<br /><h1>Overview</h1><p>Siren Alarm with ten different sounds.</p> <br /><h2>Inclusion Information</h2><p>The siren alarm can be included to the Z-wave network by pressing on the code button.</p> <ol><li>Disassemble the siren alarm and insert the battery into the siren alarm. Make sure the device is located within the direct range of the controller.</li> <li>Set the controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the code button, LED light will flash red.</li> <li>Siren alarm will be detected and included in the Z-Wave network.</li> <li>Wait for the main controller to configure the siren alarm.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the sensor is connected to power source.</li> <li>Set the main controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the code button, LED light will flash red for 5 times.</li> <li>Wait for the main controller to delete the sensor.</li> </ol><br /><h2>Wakeup Information</h2><p>Press code button once, LED will blink one time.</p>
+Siren Alarm<br /> <h1>Overview</h1><p>Siren Alarm with ten different sounds.</p> <br /> <h2>Inclusion Information</h2><p>The siren alarm can be included to the Z-wave network by pressing on the code button.</p> <ol><li>Disassemble the siren alarm and insert the battery into the siren alarm. Make sure the device is located within the direct range of the controller.</li> <li>Set the controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the code button, LED light will flash red.</li> <li>Siren alarm will be detected and included in the Z-Wave network.</li> <li>Wait for the main controller to configure the siren alarm.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Make sure the sensor is connected to power source.</li> <li>Set the main controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the code button, LED light will flash red for 5 times.</li> <li>Wait for the main controller to delete the sensor.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press code button once, LED will blink one time.</p>
     ]]></description>
     <category>Siren</category>
 
@@ -116,7 +116,7 @@ Siren Alarm<br /><h1>Overview</h1><p>Siren Alarm with ten different sounds.</p> 
                  min="1" max="2">
         <label>7: Default Siren on mode</label>
         <description><![CDATA[
-Default Siren on mode<br /><h1>Overview</h1><p>This parameter defines the default music index, volume and duration time for siren on.</p> <p>This parameter can be selected between ALARM MUSIC and DOOR BELL music.</p> <p>The settings for ALARM MUSIC defines by Param #1, #2, #5.</p> <p>The settings for DOOR BELL defines by Param #3, #4, #6.</p>
+Default Siren on mode<br /> <h1>Overview</h1><p>This parameter defines the default music index, volume and duration time for siren on.</p> <p>This parameter can be selected between ALARM MUSIC and DOOR BELL music.</p> <p>The settings for ALARM MUSIC defines by Param #1, #2, #5.</p> <p>The settings for DOOR BELL defines by Param #3, #4, #6.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -126,7 +126,7 @@ Default Siren on mode<br /><h1>Overview</h1><p>This parameter defines the defaul
                  min="0" max="1">
         <label>8: Alarm Led Enable</label>
         <description><![CDATA[
-Alarm Led Enable<br /><h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for ALARM SOUND MODE. If parameter is set to ‘0’, led will be disable. If parameter is set to ‘1’, led will be enable. When siren is on, the led will blink.<br /></p>
+Alarm Led Enable<br /> <h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for ALARM SOUND MODE. If parameter is set to ‘0’, led will be disable. If parameter is set to ‘1’, led will be enable. When siren is on, the led will blink.<br /></p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -136,7 +136,7 @@ Alarm Led Enable<br /><h1>Overview</h1><p>This parameter defines the default led
                  min="0" max="1">
         <label>9: Door Bell Led Enable</label>
         <description><![CDATA[
-Door Bell Led Enable<br /><h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for DOOR BELL SOUND MODE.</p><p>If parameter is set to ‘0’, led will be disable.</p><p>If parameter is set t0 ‘1’, led will be enable. When siren is on, the led will blink.</p>
+Door Bell Led Enable<br /> <h1>Overview</h1><p>This parameter defines the default led enable status when siren is on for DOOR BELL SOUND MODE.</p><p>If parameter is set to ‘0’, led will be disable.</p><p>If parameter is set t0 ‘1’, led will be enable. When siren is on, the led will blink.</p>
         ]]></description>
         <default>0</default>
       </parameter>

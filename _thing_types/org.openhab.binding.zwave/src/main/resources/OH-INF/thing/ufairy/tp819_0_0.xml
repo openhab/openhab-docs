@@ -8,7 +8,7 @@
   <thing-type id="ufairy_tp819_00_000" listed="false">
     <label>Topvico TP-819ZW Water Leak Sensor Alarm</label>
     <description><![CDATA[
-Water Leak Sensor Alarm<br /><h1>Overview</h1><p>Water sensor powered by two AAA batteries, 1.5m probe cable.</p> <br /><h2>Inclusion Information</h2><p>Click button inside housing for 0.5 seconds</p> <br /><h2>Exclusion Information</h2><p>Click button inside housing for 0.5 seconds</p> <br /><h2>Wakeup Information</h2><p>Click button inside housing for 0.5 seconds</p>
+Water Leak Sensor Alarm<br /> <h1>Overview</h1><p>Water sensor powered by two AAA batteries, 1.5m probe cable.</p> <br /> <h2>Inclusion Information</h2><p>Click button inside housing for 0.5 seconds</p> <br /> <h2>Exclusion Information</h2><p>Click button inside housing for 0.5 seconds</p> <br /> <h2>Wakeup Information</h2><p>Click button inside housing for 0.5 seconds</p>
     ]]></description>
     <category>Sensor</category>
 

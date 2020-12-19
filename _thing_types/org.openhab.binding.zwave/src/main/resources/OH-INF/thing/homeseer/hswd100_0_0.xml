@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hswd100_00_000" listed="false">
     <label>HS-WD100+ Scene Capable Wall Dimmer Switch</label>
     <description><![CDATA[
-Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer that’s designed for wireless on-off-dim control of connected dimmable lighting loads. </p> <br /><h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete. </p> <br /><h2>Exclusion Information</h2><p>Single click and release the rocker switch. </p>
+Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD100+ is a Z-Wave wall dimmer that’s designed for wireless on-off-dim control of connected dimmable lighting loads. </p> <br /> <h2>Inclusion Information</h2><p>Tap the paddle of your new HomeSeer switch to begin the inclusion process. This will take a few moments to complete. </p> <br /> <h2>Exclusion Information</h2><p>Single click and release the rocker switch. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -69,17 +69,17 @@ Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD100+ is a Z-Wave 
                  min="1" max="99">
         <label>7: Remote Dimming Level Increment</label>
         <description><![CDATA[
-Number of levels (1-99) to change dimming each step when controlled remotely<br /><h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled remotely.</p> <p>(This parameter was added in firmware version 5.14)</p>
+Number of levels (1-99) to change dimming each step when controlled remotely<br /> <h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled remotely.</p> <p>(This parameter was added in firmware version 5.14)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_1" type="integer" groupName="configuration"
+      <parameter name="config_8_2" type="integer" groupName="configuration"
                  min="1" max="255">
         <label>8: Remote Dimming Step Duration</label>
         <description><![CDATA[
-Time interval (in tens of ms) of brightness change when controlled remotely<br /><h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p> <p>(This parameter was added in firmware version 5.14)</p>
+Time interval (in tens of ms) of brightness change when controlled remotely<br /> <h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p> <p>(This parameter was added in firmware version 5.14)</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -89,7 +89,7 @@ Time interval (in tens of ms) of brightness change when controlled remotely<br /
                  min="1" max="99">
         <label>9: Local Dimming Level Increment</label>
         <description><![CDATA[
-Number of levels (1-99) to change dimming each step when controlled locally<br /><h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled locally.</p>
+Number of levels (1-99) to change dimming each step when controlled locally<br /> <h1>Overview</h1><p>This is the step value that the dimmer level is incremented or decremented for each step duration when controlled locally.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -99,7 +99,7 @@ Number of levels (1-99) to change dimming each step when controlled locally<br /
                  min="1" max="255">
         <label>10: Local Dimming Step Duration</label>
         <description><![CDATA[
-Time interval (in tens of ms) of brightness change when controlled locally<br /><h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p>
+Time interval (in tens of ms) of brightness change when controlled locally<br /> <h1>Overview</h1><p>Select time interval to move to the next brightness level. The larger the number, the slower the adjustment to dim levels. </p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

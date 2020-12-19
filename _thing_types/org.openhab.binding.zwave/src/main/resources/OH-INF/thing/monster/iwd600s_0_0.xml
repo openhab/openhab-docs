@@ -8,7 +8,7 @@
   <thing-type id="monster_iwd600s_00_000" listed="false">
     <label>IWD600S Dimmer switch 600w incandescent</label>
     <description><![CDATA[
-Dimmer switch 600w incandescent<br /><h1>Overview</h1><p>Scene-Capable Preset Digital / Z-Wave 900MHz Incandescent Return to Neutral Dimmer. </p> <p>Rebranded Leviton RZI06-1L</p> <br /><h2>Inclusion Information</h2><table><tr><td> <ol><li>Install IWD600S</li> <li>Place controller in inclusion mode</li> <li>Press light on/off paddle on IWD600S</li> </ol></td> </tr></table><br /><h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press light on/off paddle on IWD600S</li> </ol>
+Dimmer switch 600w incandescent<br /> <h1>Overview</h1><p>Scene-Capable Preset Digital / Z-Wave 900MHz Incandescent Return to Neutral Dimmer. </p> <p>Rebranded Leviton RZI06-1L</p> <br /> <h2>Inclusion Information</h2><table><tr><td> <ol><li>Install IWD600S</li> <li>Place controller in inclusion mode</li> <li>Press light on/off paddle on IWD600S</li> </ol></td> </tr></table> <br /> <h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press light on/off paddle on IWD600S</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw078_00_000" listed="false">
     <label>ZW078 Heavy Duty Switch</label>
     <description><![CDATA[
-Heavy Duty Switch<br /><h1>Overview</h1><p>Wall mounted switch for high current appliances, up to 40A. Power reporting.</p> <br /><h2>Inclusion Information</h2><p>Press the Action Button on your Heavy Duty Smart Switch</p> <p>If your switch has been successfully linked to your Z-Wave network, its Status LED will no longer blink. If the linking was unsuccessful, the Status LED continues to blink.</p> <br /><h2>Exclusion Information</h2><p>Press the Action Button on your Heavy Duty Smart Switch.</p> <p>If your Heavy Duty Smart Switch has been successfully removed from your network, its Status LED will blink. If the removal was unsuccessful, its Status LED will not blink.</p>
+Heavy Duty Switch<br /> <h1>Overview</h1><p>Wall mounted switch for high current appliances, up to 40A. Power reporting.</p> <br /> <h2>Inclusion Information</h2><p>Press the Action Button on your Heavy Duty Smart Switch</p> <p>If your switch has been successfully linked to your Z-Wave network, its Status LED will no longer blink. If the linking was unsuccessful, the Status LED continues to blink.</p> <br /> <h2>Exclusion Information</h2><p>Press the Action Button on your Heavy Duty Smart Switch.</p> <p>If your Heavy Duty Smart Switch has been successfully removed from your network, its Status LED will blink. If the removal was unsuccessful, its Status LED will not blink.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -109,7 +109,7 @@ Heavy Duty Switch<br /><h1>Overview</h1><p>Wall mounted switch for high current 
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Notification on Status Change</label>
         <description><![CDATA[
-Send to group 1 on load change<br /><h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed</p>
+Send to group 1 on load change<br /> <h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -123,7 +123,7 @@ Send to group 1 on load change<br /><h1>Overview</h1><p>Parameter to Enable to s
       <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Send report on value change</label>
         <description><![CDATA[
-Toggle automated report sending on change<br /><h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
+Toggle automated report sending on change<br /> <h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -145,7 +145,7 @@ Toggle automated report sending on change<br /><h1>Overview</h1><p>Parameter to 
                  min="0" max="255">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
-Percent change in wattage to send report<br /><h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent.</p>
+Percent change in wattage to send report<br /> <h1>Overview</h1><p>The value represents the minimum change in Wattage Percent for a report to be sent.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -155,7 +155,7 @@ Percent change in wattage to send report<br /><h1>Overview</h1><p>The value repr
                  min="0" max="65535">
         <label>101: reports to send automatically</label>
         <description><![CDATA[
-See overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
+See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -165,7 +165,7 @@ See overview<br /><h1>Overview</h1><p>The value is a combination number made up 
                  min="0" max="65535">
         <label>102: which reports to send to group 2</label>
         <description><![CDATA[
-see overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
+see overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -175,7 +175,7 @@ see overview<br /><h1>Overview</h1><p>The value is a combination number made up 
                  min="0" max="65535">
         <label>103: which reports to send to group 3</label>
         <description><![CDATA[
-see overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
+see overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters.                                                       </p> <p>The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.                          </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -206,7 +206,7 @@ see overview<br /><h1>Overview</h1><p>The value is a combination number made up 
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The Node IDs in Group 1 will receive Hail Command/Basic report (configurable) when Heavy Duty Smart Switch Gen5's level changed.</p>
+<br /> <h1>Overview</h1><p>The Node IDs in Group 1 will receive Hail Command/Basic report (configurable) when Heavy Duty Smart Switch Gen5's level changed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -214,7 +214,7 @@ see overview<br /><h1>Overview</h1><p>The value is a combination number made up 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Heavy Duty Smart Switch Gen5 receives the commands Basic Set, Switch Binary Set, or Scene Activation Set it will forward the commands to all node IDs (in Group 2).</p>
+<br /> <h1>Overview</h1><p>When the Heavy Duty Smart Switch Gen5 receives the commands Basic Set, Switch Binary Set, or Scene Activation Set it will forward the commands to all node IDs (in Group 2).</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

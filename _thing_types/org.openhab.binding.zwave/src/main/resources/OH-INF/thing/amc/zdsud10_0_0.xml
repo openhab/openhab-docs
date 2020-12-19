@@ -8,7 +8,7 @@
   <thing-type id="amc_zdsud10_00_000" listed="false">
     <label>ZDS-UD10 Dimming Switch Module</label>
     <description><![CDATA[
-Dimming Switch Module<br /><h1>Overview</h1><p>Thank you for choosing ZDS-100 Z-Wave control product. Our Z-Wave enabled product allows user to remotely control lighting, home appliance, and make home control easy at low installation / maintenance cost. </p> <br /><h2>Inclusion Information</h2><p>Tap the button</p> <br /><h2>Exclusion Information</h2><p>Tap the button</p>
+Dimming Switch Module<br /> <h1>Overview</h1><p>Thank you for choosing ZDS-100 Z-Wave control product. Our Z-Wave enabled product allows user to remotely control lighting, home appliance, and make home control easy at low installation / maintenance cost. </p> <br /> <h2>Inclusion Information</h2><p>Tap the button</p> <br /> <h2>Exclusion Information</h2><p>Tap the button</p>
     ]]></description>
     <category>PowerOutlet</category>
 

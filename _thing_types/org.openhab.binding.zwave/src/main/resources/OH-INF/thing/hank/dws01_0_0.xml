@@ -8,7 +8,7 @@
   <thing-type id="hank_dws01_00_000" listed="false">
     <label>DWS01 Door and Window Sensor</label>
     <description><![CDATA[
-Door and Window Sensor<br /><h1>Overview</h1><p>Sensor detects when a door is open or closed, also has a tamper switch.</p> <br /><h2>Inclusion Information</h2><p>Non-secure: press the Z-button three times rapidly.</p> <p>Secure: hold the Z-button for three seconds.</p> <br /><h2>Exclusion Information</h2><p>Press the Z-button three times rapidly.</p> <br /><h2>Wakeup Information</h2><p>Separate the magnet from the sensor body or pull the cover back and press the little button near the tamper switch until the little blue LED illuminates.</p>
+Door and Window Sensor<br /> <h1>Overview</h1><p>Sensor detects when a door is open or closed, also has a tamper switch.</p> <br /> <h2>Inclusion Information</h2><p>Non-secure: press the Z-button three times rapidly.</p> <p>Secure: hold the Z-button for three seconds.</p> <br /> <h2>Exclusion Information</h2><p>Press the Z-button three times rapidly.</p> <br /> <h2>Wakeup Information</h2><p>Separate the magnet from the sensor body or pull the cover back and press the little button near the tamper switch until the little blue LED illuminates.</p>
     ]]></description>
     <category>Door</category>
 
@@ -98,7 +98,7 @@ Door and Window Sensor<br /><h1>Overview</h1><p>Sensor detects when a door is op
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-Association Group 1<br /><h1>Overview</h1><ul><li> <p>Group 1 reports the status of the Door/Window Sensor, the battery level, and the tamper button status. </p> </li> </ul>
+Association Group 1<br /> <h1>Overview</h1><ul> <li> <p>Group 1 reports the status of the Door/Window Sensor, the battery level, and the tamper button status. </p> </li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -106,7 +106,7 @@ Association Group 1<br /><h1>Overview</h1><ul><li> <p>Group 1 reports the status
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Association Group 2<br /><h1>Overview</h1><ul><li> <p>Group 2 is assigned to the Door/Window Sensor BASIC SET command. </p> </li> </ul>
+Association Group 2<br /> <h1>Overview</h1><ul> <li> <p>Group 2 is assigned to the Door/Window Sensor BASIC SET command. </p> </li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

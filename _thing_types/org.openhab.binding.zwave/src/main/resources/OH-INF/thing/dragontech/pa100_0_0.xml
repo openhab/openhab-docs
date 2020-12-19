@@ -8,7 +8,7 @@
   <thing-type id="dragontech_pa100_00_000" listed="false">
     <label>PA-100 Plug-in On/Off Switch</label>
     <description><![CDATA[
-Plug-in On/Off Switch<br /><h1>Overview</h1><p>PA-100 can be used to turn On or Off lamps or AC operated appliances.</p> <br /><h2>Inclusion Information</h2><p>Single click the button on the front of the PA-100</p> <br /><h2>Exclusion Information</h2><p>Single click the button on the front of the PA-100</p>
+Plug-in On/Off Switch<br /> <h1>Overview</h1><p>PA-100 can be used to turn On or Off lamps or AC operated appliances.</p> <br /> <h2>Inclusion Information</h2><p>Single click the button on the front of the PA-100</p> <br /> <h2>Exclusion Information</h2><p>Single click the button on the front of the PA-100</p>
     ]]></description>
     <category>PowerOutlet</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="polycontrol_btzu125_00_000" listed="false">
     <label>BTZW125 Danalock v2 circle</label>
     <description><![CDATA[
-Danalock v2 circle<br /><h1>Overview</h1><ul><li>Smartlock for easy and fast installation on almost any door</li> <li>Incl. adjustable cylinder</li> <li>No keys required, Operation via Danalock App / Z-Wave</li> </ul><br /><h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <p>Set the controller in inclusion mode</p> <p>Push the switch once until you hear two beeps.</p> <br /><h2>Exclusion Information</h2><p>To exclude the Danalock out off the Z-Wave network</p> <p>Set the controller in inclusion mode</p> <p>Push the switch once until you hear two beeps.</p>
+Danalock v2 circle<br /> <h1>Overview</h1><ul><li>Smartlock for easy and fast installation on almost any door</li> <li>Incl. adjustable cylinder</li> <li>No keys required, Operation via Danalock App / Z-Wave</li> </ul> <br /> <h2>Inclusion Information</h2><p>To add or include the Danalock into a Z-Wave network</p> <p>Set the controller in inclusion mode</p> <p>Push the switch once until you hear two beeps.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the Danalock out off the Z-Wave network</p> <p>Set the controller in inclusion mode</p> <p>Push the switch once until you hear two beeps.</p>
     ]]></description>
     <category>Lock</category>
 
@@ -55,7 +55,7 @@ Danalock v2 circle<br /><h1>Overview</h1><ul><li>Smartlock for easy and fast ins
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Direction</label>
         <description><![CDATA[
-Direction<br /><h1>Overview</h1><p>0 -&gt; The motor goes clockwise when latched</p> <p>1 -&gt; The motor goes counterclockwise when latched</p>
+Direction<br /> <h1>Overview</h1><p>0 -&gt; The motor goes clockwise when latched</p> <p>1 -&gt; The motor goes counterclockwise when latched</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -68,7 +68,7 @@ Direction<br /><h1>Overview</h1><p>0 -&gt; The motor goes clockwise when latche
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Speed (Torque)</label>
         <description><![CDATA[
-Speed (Torque)<br /><h1>Overview</h1><p>1 -&gt; Slowest</p> <p>2 -&gt; Slow</p> <p>3 -&gt; (Default) Normal</p> <p>4 -&gt; Fast</p> <p>5 -&gt; Fastest</p>
+Speed (Torque)<br /> <h1>Overview</h1><p>1 -&gt; Slowest</p> <p>2 -&gt; Slow</p> <p>3 -&gt; (Default) Normal</p> <p>4 -&gt; Fast</p> <p>5 -&gt; Fastest</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -84,7 +84,7 @@ Speed (Torque)<br /><h1>Overview</h1><p>1 -&gt; Slowest</p> <p>2 -&gt; Slow</p> 
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Mode</label>
         <description><![CDATA[
-Mode<br /><h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power saving)</p> <p>1 -&gt; (Default) Stepper motor mode full drive(Normal)</p> <p>2 -&gt; Relay mode</p>
+Mode<br /> <h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power saving)</p> <p>1 -&gt; (Default) Stepper motor mode full drive(Normal)</p> <p>2 -&gt; Relay mode</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -99,7 +99,7 @@ Mode<br /><h1>Overview</h1><p>0 -&gt; Stepper motor mode wave drive(power saving
                  min="1" max="100">
         <label>4: Turn degrees</label>
         <description><![CDATA[
-Turn degrees<br /><h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 degrees, 9 = 90 degrees etc.)</p>
+Turn degrees<br /> <h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 degrees, 9 = 90 degrees etc.)</p>
         ]]></description>
         <default>1</default>
       </parameter>
@@ -108,7 +108,7 @@ Turn degrees<br /><h1>Overview</h1><p>(Default) Factor 10 turn degrees ( 1 = 10 
                  min="0" max="60">
         <label>5: Auto Latch time</label>
         <description><![CDATA[
-Auto Latch time<br /><h1>Overview</h1><p>How many seconds from the lock has been unlatched to it automatically should close again. If 0 then it is disabled.</p>
+Auto Latch time<br /> <h1>Overview</h1><p>How many seconds from the lock has been unlatched to it automatically should close again. If 0 then it is disabled.</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -116,7 +116,7 @@ Auto Latch time<br /><h1>Overview</h1><p>How many seconds from the lock has been
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Sound</label>
         <description><![CDATA[
-Sound<br /><h1>Overview</h1><p>Enable the beep sound from latch or unlatch operations</p>
+Sound<br /> <h1>Overview</h1><p>Enable the beep sound from latch or unlatch operations</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -129,7 +129,7 @@ Sound<br /><h1>Overview</h1><p>Enable the beep sound from latch or unlatch opera
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Battery Type</label>
         <description><![CDATA[
-Battery Type<br /><h1>Overview</h1><p>2 -&gt; Mains power, changing from and to mains power requires the Danalock to be excluded and included.</p> <p>0 -&gt; 3,6 Volt battery</p> <p>1 -&gt; (Default) 3.0 Volt battery.</p>
+Battery Type<br /> <h1>Overview</h1><p>2 -&gt; Mains power, changing from and to mains power requires the Danalock to be excluded and included.</p> <p>0 -&gt; 3,6 Volt battery</p> <p>1 -&gt; (Default) 3.0 Volt battery.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -144,7 +144,7 @@ Battery Type<br /><h1>Overview</h1><p>2 -&gt; Mains power, changing from and t
                  min="0" max="100">
         <label>8: Battery alarm</label>
         <description><![CDATA[
-Battery alarm value<br /><h1>Overview</h1><p>When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch</p>
+Battery alarm value<br /> <h1>Overview</h1><p>When the battery level is under this value, the device will notify user with a beep sound after latch or unlatch</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -152,7 +152,7 @@ Battery alarm value<br /><h1>Overview</h1><p>When the battery level is under thi
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: TurnAndGo</label>
         <description><![CDATA[
-TurnAndGo<br /><h1>Overview</h1><p>using a optional rotation sensor. Latch&amp;Go on will turn automatically when manual turn is detected.</p>
+TurnAndGo<br /> <h1>Overview</h1><p>using a optional rotation sensor. Latch&amp;Go on will turn automatically when manual turn is detected.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -165,7 +165,7 @@ TurnAndGo<br /><h1>Overview</h1><p>using a optional rotation sensor. Latch&amp;G
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: BrakeAndGoBack</label>
         <description><![CDATA[
-Turn 75 degrees back after x seconds<br /><h1>Overview</h1><p>0 -&gt; (Default) Disabled</p> <p>1 to 15 -&gt; Seconds to brake. When used the lock will brake for x amount of seconds and then turn 75 degrees back. Made for special doors without door lever.(Only when unlatching).</p>
+Turn 75 degrees back after x seconds<br /> <h1>Overview</h1><p>0 -&gt; (Default) Disabled</p> <p>1 to 15 -&gt; Seconds to brake. When used the lock will brake for x amount of seconds and then turn 75 degrees back. Made for special doors without door lever.(Only when unlatching).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -192,7 +192,7 @@ Turn 75 degrees back after x seconds<br /><h1>Overview</h1><p>0 -&gt; (Default)
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Async</label>
         <description><![CDATA[
-Used if the lock is using an optional rotation sensor<br /><h1>Overview</h1><p>0 -&gt; (Default) Async off</p> <p>1 -&gt; Async on. Used if the lock is using an optional rotation sensor. When async is enabled the lock will auto calibrate if already unlatched and asked to Unlatch again (used for special door locks where the key turn is asynced from the inside nob.)</p>
+Used if the lock is using an optional rotation sensor<br /> <h1>Overview</h1><p>0 -&gt; (Default) Async off</p> <p>1 -&gt; Async on. Used if the lock is using an optional rotation sensor. When async is enabled the lock will auto calibrate if already unlatched and asked to Unlatch again (used for special door locks where the key turn is asynced from the inside nob.)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -205,7 +205,7 @@ Used if the lock is using an optional rotation sensor<br /><h1>Overview</h1><p>0
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: ReportType</label>
         <description><![CDATA[
-Door lock operation report type<br /><h1>Overview</h1><p>Door lock operation report type</p> <p>2 -&gt; No Door lock operation reports are sent unsolicited.</p> <p>0 -&gt; (Default) Simple supported by all controllers that support door locks.</p> <p>1 -&gt; Advanced, more specific reports through notification Command Class.</p>
+Door lock operation report type<br /> <h1>Overview</h1><p>Door lock operation report type</p> <p>2 -&gt; No Door lock operation reports are sent unsolicited.</p> <p>0 -&gt; (Default) Simple supported by all controllers that support door locks.</p> <p>1 -&gt; Advanced, more specific reports through notification Command Class.</p>
         ]]></description>
         <default>0</default>
         <options>

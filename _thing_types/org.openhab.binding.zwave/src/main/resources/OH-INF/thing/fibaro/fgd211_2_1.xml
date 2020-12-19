@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgd211_02_001" listed="false">
     <label>FGD211 Universal Dimmer 500W</label>
     <description><![CDATA[
-Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <br /><h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p> <br /><h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p>
+Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer is designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <br /> <h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p> <br /> <h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -77,7 +77,7 @@ Universal Dimmer 500W<br /><h1>Overview</h1><p>Remotely controlled Dimmer is des
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Separation of association sending (key 1)</label>
         <description><![CDATA[
-Activate/Deactivate association sending for group 1 - Also see param #16<br /><h1>Overview</h1><p>Sending commands to control devices assigned to 1-st association group (key no. 1).</p> <p>NOTE: Parameter 15 value must be set to 1 to work properly. This activates the double-click functionality - dimmer/roller shutter control.</p>
+Activate/Deactivate association sending for group 1 - Also see param #16<br /> <h1>Overview</h1><p>Sending commands to control devices assigned to 1-st association group (key no. 1).</p> <p>NOTE: Parameter 15 value must be set to 1 to work properly. This activates the double-click functionality - dimmer/roller shutter control.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -91,7 +91,7 @@ Activate/Deactivate association sending for group 1 - Also see param #16<br /><h
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Control key #2 behaviour</label>
         <description><![CDATA[
-Checking the device status before sending a control frame from the key no. 2.<br /><h1>Overview</h1><p>Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no. 2 through polling devices from list one by one and checking thier actual states.</p> <p>It is not possible to check the device status before sending a control frame from the key no. 2 if roller blind switch is chosen in parameter 14 (value 2)</p> <p>If devices state is checked before sending asociation then parameter 19 should be set to value 0.</p>
+Checking the device status before sending a control frame from the key no. 2.<br /> <h1>Overview</h1><p>Info: Key no. 2 is not represented by any physical device expect of devices on association list. This functionality prevents of lack of reaction on pressing key no. 2 through polling devices from list one by one and checking thier actual states.</p> <p>It is not possible to check the device status before sending a control frame from the key no. 2 if roller blind switch is chosen in parameter 14 (value 2)</p> <p>If devices state is checked before sending asociation then parameter 19 should be set to value 0.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -120,7 +120,7 @@ Checking the device status before sending a control frame from the key no. 2.<br
                  min="0" max="255">
         <label>10: Time of AUTOMATIC moving between dimming values</label>
         <description><![CDATA[
-Time of Automatic moving the Dimmer between the extreme dimming values<br /><h1>Overview</h1><p>Options for changing parameter 0-255 (0ms – 2.5s)</p> <p>0 - this value disables the smooth change in light intensity</p> <p>NOTE value 0 is required for inductive and capacitive devices unsuitable for dimming, (e.g. fluorescent lamps , motors etc.)</p>
+Time of Automatic moving the Dimmer between the extreme dimming values<br /> <h1>Overview</h1><p>Options for changing parameter 0-255 (0ms – 2.5s)</p> <p>0 - this value disables the smooth change in light intensity</p> <p>NOTE value 0 is required for inductive and capacitive devices unsuitable for dimming, (e.g. fluorescent lamps , motors etc.)</p>
         ]]></description>
         <default>1</default>
       </parameter>
@@ -186,7 +186,7 @@ Time of Automatic moving the Dimmer between the extreme dimming values<br /><h1>
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: 3-way switch</label>
         <description><![CDATA[
-3-way switch function<br /><h1>Overview</h1><p>The function of 3 - way switch, provides the option to double key no. 1.<br />The Dimmer may control two toggle push-buttons or an infinite number of momentary push-buttons.  </p>
+3-way switch function<br /> <h1>Overview</h1><p>The function of 3 - way switch, provides the option to double key no. 1.<br />The Dimmer may control two toggle push-buttons or an infinite number of momentary push-buttons.  </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -210,7 +210,7 @@ Time of Automatic moving the Dimmer between the extreme dimming values<br /><h1>
       <parameter name="config_19_1" type="integer" groupName="configuration">
         <label>19: Change [On-Off] bi-stable keys</label>
         <description><![CDATA[
-Assigns bistable key status to the device status.<br /><h1>Overview</h1><p>Info: Remote control from Fibaro System Is Still Possible. This function is useful When you want display status of external devices, e.g. Motion Sensor, in Fibaro System.  </p>
+Assigns bistable key status to the device status.<br /> <h1>Overview</h1><p>Info: Remote control from Fibaro System Is Still Possible. This function is useful When you want display status of external devices, e.g. Motion Sensor, in Fibaro System.  </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -224,7 +224,7 @@ Assigns bistable key status to the device status.<br /><h1>Overview</h1><p>Info:
                  min="100" max="170">
         <label>20: Minimum level of the Dimmer</label>
         <description><![CDATA[
-Enable decreasing the minimum level of the Dimmer<br /><h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse. [100 - 170]      </p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market have the dimmm</p>
+Enable decreasing the minimum level of the Dimmer<br /> <h1>Overview</h1><p>This function will enable decreasing the minimum level of the Dimmer by extending the control impulse. [100 - 170]      </p> <p>By changing the minimem level, the user may completely dim LED bulbs.</p> <p>Not all LED bulbs available on the market have the dimmm</p>
         ]]></description>
         <default>110</default>
       </parameter>
@@ -232,7 +232,7 @@ Enable decreasing the minimum level of the Dimmer<br /><h1>Overview</h1><p>This 
       <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Relay 1: Response to General Alarm</label>
         <description><![CDATA[
-Resonse to alarm of any type<br /><h1>Overview</h1><p>Alarm of any type (general alarm, water flooding alarm, smoke alarm: CO, CO2, temperature alarm).  </p>
+Resonse to alarm of any type<br /> <h1>Overview</h1><p>Alarm of any type (general alarm, water flooding alarm, smoke alarm: CO, CO2, temperature alarm).  </p>
         ]]></description>
         <default>3</default>
         <options>
@@ -256,7 +256,7 @@ Resonse to alarm of any type<br /><h1>Overview</h1><p>Alarm of any type (general
                  min="1" max="99">
         <label>40: Updating the dimming level without switch.</label>
         <description><![CDATA[
-Available settings: from 1 to 99.<br /><h1>Overview</h1><p>Parameter’s value changes depending on the dimming level.  </p>
+Available settings: from 1 to 99.<br /> <h1>Overview</h1><p>Parameter’s value changes depending on the dimming level.  </p>
         ]]></description>
         <default>99</default>
       </parameter>
@@ -264,7 +264,7 @@ Available settings: from 1 to 99.<br /><h1>Overview</h1><p>Parameter’s value c
       <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: Scene activation functionality</label>
         <description><![CDATA[
-Sending commands with command class scene activation<br /><h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3. Controllers such as Home Center 2 are able to interpret such commands and based on these commands they activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of the button connected to inputs S1 and S2 by distinguishing the actions of keys connected to those inputs. For example: double click would activate the scene "goodnight" and triple click would activate the scene "morning"</p>
+Sending commands with command class scene activation<br /> <h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3. Controllers such as Home Center 2 are able to interpret such commands and based on these commands they activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of the button connected to inputs S1 and S2 by distinguishing the actions of keys connected to those inputs. For example: double click would activate the scene "goodnight" and triple click would activate the scene "morning"</p>
         ]]></description>
         <default>0</default>
         <options>

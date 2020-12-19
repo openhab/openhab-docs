@@ -8,7 +8,7 @@
   <thing-type id="wintop_multisensor_00_000" listed="false">
     <label>Multisensor Multi-sensor</label>
     <description><![CDATA[
-Multi-sensor<br /><h1>Overview</h1><p>motion sensor</p> <br /><h2>Inclusion Information</h2><p>Please press the tamper switch at the back of the device for 3-8 seconds.</p> <p>After 3 seconds, the led will blink; you can now release the button. Now it's ready for learn mode (include/exclude/association). Use your controller to include the sensor to the network during this time.</p> <br /><h2>Exclusion Information</h2><p>Please press the tamper switch at the back of the device for 3-8 seconds.</p> <p>After 3 seconds, the led will blink; you can now release the button. Now it's ready for learn mode (include/exclude/association). Use your controller to include the sensor to the network during this time.</p> <br /><h2>Wakeup Information</h2><p> Press the temper button on the device and keep it for 3-7 seconds, then release.</p>
+Multi-sensor<br /> <h1>Overview</h1><p>motion sensor</p> <br /> <h2>Inclusion Information</h2><p>Please press the tamper switch at the back of the device for 3-8 seconds.</p> <p>After 3 seconds, the led will blink; you can now release the button. Now it's ready for learn mode (include/exclude/association). Use your controller to include the sensor to the network during this time.</p> <br /> <h2>Exclusion Information</h2><p>Please press the tamper switch at the back of the device for 3-8 seconds.</p> <p>After 3 seconds, the led will blink; you can now release the button. Now it's ready for learn mode (include/exclude/association). Use your controller to include the sensor to the network during this time.</p> <br /> <h2>Wakeup Information</h2><p> Press the temper button on the device and keep it for 3-7 seconds, then release.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -88,7 +88,7 @@ Multi-sensor<br /><h1>Overview</h1><p>motion sensor</p> <br /><h2>Inclusion Info
                  min="0" max="3600">
         <label>2: Mode Timeout</label>
         <description><![CDATA[
-The time used in mode 2 to turn the sensor off .<br /><h1>Overview</h1><p>The time used in mode 2 to turn the sensor off . </p> <p>This Time will start running as soon as detection is seen.</p>
+The time used in mode 2 to turn the sensor off .<br /> <h1>Overview</h1><p>The time used in mode 2 to turn the sensor off . </p> <p>This Time will start running as soon as detection is seen.</p>
         ]]></description>
         <default>900</default>
         <limitToOptions>false</limitToOptions>
@@ -98,7 +98,7 @@ The time used in mode 2 to turn the sensor off .<br /><h1>Overview</h1><p>The ti
                  min="0" max="7200">
         <label>3: Switch off time</label>
         <description><![CDATA[
-Switch off time starts after timeout.<br /><h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done. Motion sensor is turned on and when movement is de tected again the mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message is s</p>
+Switch off time starts after timeout.<br /> <h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done. Motion sensor is turned on and when movement is de tected again the mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message is s</p>
         ]]></description>
         <default>2700</default>
         <limitToOptions>false</limitToOptions>
@@ -116,7 +116,7 @@ Switch off time starts after timeout.<br /><h1>Overview</h1><p>The switch off ti
                  min="1" max="3">
         <label>5: Mode</label>
         <description><![CDATA[
-The mode that is entered after detection<br /><h1>Overview</h1><p>Normal operation mode is default.</p>
+The mode that is entered after detection<br /> <h1>Overview</h1><p>Normal operation mode is default.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -126,7 +126,7 @@ The mode that is entered after detection<br /><h1>Overview</h1><p>Normal operati
                  min="-10" max="10">
         <label>6: The temperature offset</label>
         <description><![CDATA[
-An offset for the temperature.<br /><h1>Overview</h1><p>Param1,2: A signed integer to determine the offset off the temperature.</p>
+An offset for the temperature.<br /> <h1>Overview</h1><p>Param1,2: A signed integer to determine the offset off the temperature.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

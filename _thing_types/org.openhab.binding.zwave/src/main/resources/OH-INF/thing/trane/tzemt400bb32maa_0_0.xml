@@ -8,7 +8,7 @@
   <thing-type id="trane_tzemt400bb32maa_00_000" listed="false">
     <label>TZEMT400BB32MAA Trane Z-Wave Programmable Thermostat</label>
     <description><![CDATA[
-Trane Z-Wave Programmable Thermostat<br /><h1>Overview</h1><p>Thermostat for Heating and Cooling HVAC System control</p> <br /><h2>Inclusion Information</h2><ul><li>Press the MENU button on the thermostat.</li> <li>Scroll down to Z Wave Install, and press the Select button.</li> <li>Press the Yes button to enroll the thermostat.</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Press the MENU button on the thermostat.</li> <li>Scroll down to Z Wave Install, and press the Select button.</li> <li>Press the Yes button to enroll the thermostat.</li> </ul>
+Trane Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>Thermostat for Heating and Cooling HVAC System control</p> <br /> <h2>Inclusion Information</h2><ul><li>Press the MENU button on the thermostat.</li> <li>Scroll down to Z Wave Install, and press the Select button.</li> <li>Press the Yes button to enroll the thermostat.</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Press the MENU button on the thermostat.</li> <li>Scroll down to Z Wave Install, and press the Select button.</li> <li>Press the Yes button to enroll the thermostat.</li> </ul>
     ]]></description>
     <category>HVAC</category>
 

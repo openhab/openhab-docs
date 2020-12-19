@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha02_00_000" listed="false">
     <label>HA02 Appliance Module</label>
     <description><![CDATA[
-Appliance Module<br /><h1>Overview</h1><p>Plug-in switch; 15A</p> <br /><h2>Inclusion Information</h2><p>Press the Program button.</p> <br /><h2>Exclusion Information</h2><p>Press the Program button.</p>
+Appliance Module<br /> <h1>Overview</h1><p>Plug-in switch; 15A</p> <br /> <h2>Inclusion Information</h2><p>Press the Program button.</p> <br /> <h2>Exclusion Information</h2><p>Press the Program button.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

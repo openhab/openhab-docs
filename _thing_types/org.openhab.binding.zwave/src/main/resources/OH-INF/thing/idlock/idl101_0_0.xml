@@ -8,7 +8,7 @@
   <thing-type id="idlock_idl101_00_000" listed="false">
     <label>IDL-101 Z-Wave Lock</label>
     <description><![CDATA[
-Z-Wave Lock<br /><h1>Overview</h1><p>http://idlock.no/</p> <br /><h2>Inclusion Information</h2><ol><li>Bring the controller as close as possible to the lock unit</li> <li>Set the controller to inclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Press the key 8 on the outside panel</li> <li>The LED flashes blue when inclusion is in progress</li> <li>The inclusion may take some time as security is required</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the controller to exclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Press the key 8 on the outside panel</li> <li>The LED flashes blue when exclusion is done</li> </ol><br /><h2>Wakeup Information</h2><p>This is a frequently listening device (FLIRS) which supports beaming. This means that the lock will check regularly for incoming commands, and respond quickly without the need for any user specification of wakeup intervals or physical wakeup procedures.</p>
+Z-Wave Lock<br /> <h1>Overview</h1><p>http://idlock.no/</p> <br /> <h2>Inclusion Information</h2><ol><li>Bring the controller as close as possible to the lock unit</li> <li>Set the controller to inclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Press the key 8 on the outside panel</li> <li>The LED flashes blue when inclusion is in progress</li> <li>The inclusion may take some time as security is required</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Set the controller to exclusion mode</li> <li>Push and hold KEY button on the inside panel on the lock until all keys on the outside light up and a audible signal is given.</li> <li>Release the KEY button on the inside panel</li> <li>Press the key 8 on the outside panel</li> <li>The LED flashes blue when exclusion is done</li> </ol> <br /> <h2>Wakeup Information</h2><p>This is a frequently listening device (FLIRS) which supports beaming. This means that the lock will check regularly for incoming commands, and respond quickly without the need for any user specification of wakeup intervals or physical wakeup procedures.</p>
     ]]></description>
     <category>Lock</category>
 
@@ -85,7 +85,7 @@ Z-Wave Lock<br /><h1>Overview</h1><p>http://idlock.no/</p> <br /><h2>Inclusion I
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Door Lock Mode</label>
         <description><![CDATA[
-Sets the door lock mode<br /><h1>Overview</h1><p>No details in manual, will update when the meaning of this parameter is uncovered.</p>
+Sets the door lock mode<br /> <h1>Overview</h1><p>No details in manual, will update when the meaning of this parameter is uncovered.</p>
         ]]></description>
         <default>1</default>
         <options>

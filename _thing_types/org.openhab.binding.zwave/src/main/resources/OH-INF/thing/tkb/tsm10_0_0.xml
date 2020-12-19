@@ -8,7 +8,7 @@
   <thing-type id="tkb_tsm10_00_000" listed="false">
     <label>TSM10 Door/Window Sensor</label>
     <description><![CDATA[
-Door/Window Sensor<br /><h1>Overview</h1><p>A slim door/window sensor.</p> <br /><h2>Inclusion Information</h2><p>Once the Z-Wave controller has entered inclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter inclusion mode.<br />LED will twinkle to indicate success.</p> <br /><h2>Exclusion Information</h2><p>Once the Z-Wave controller has entered exclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter exclusion mode.<br />LED will twinkle to indicate success. Once excluded  LED will flash one second on, one second off.</p> <br /><h2>Wakeup Information</h2><p>When the power on, the device will wake about 10 seconds. In this duration, the controller can communicate with the device. Normally the device is always sleeping to save the battery energy.</p>
+Door/Window Sensor<br /> <h1>Overview</h1><p>A slim door/window sensor.</p> <br /> <h2>Inclusion Information</h2><p>Once the Z-Wave controller has entered inclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter inclusion mode.<br />LED will twinkle to indicate success.</p> <br /> <h2>Exclusion Information</h2><p>Once the Z-Wave controller has entered exclusion mode, pressing tamper key on the TSM10 three times within 1.5 seconds will enter exclusion mode.<br />LED will twinkle to indicate success. Once excluded  LED will flash one second on, one second off.</p> <br /> <h2>Wakeup Information</h2><p>When the power on, the device will wake about 10 seconds. In this duration, the controller can communicate with the device. Normally the device is always sleeping to save the battery energy.</p>
     ]]></description>
     <category>Door</category>
 
@@ -56,7 +56,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>A slim door/window sensor.</p> <br /
                  min="3" max="127">
         <label>1: Turn Off Light Time</label>
         <description><![CDATA[
-Delay before turning light off again.<br /><h1>Overview</h1><p>After turn on light, setting the delay time to turn off the light. 10 seconds per tick, and minimum time is 30 seconds, default tick 3 (30 seconds).</p>
+Delay before turning light off again.<br /> <h1>Overview</h1><p>After turn on light, setting the delay time to turn off the light. 10 seconds per tick, and minimum time is 30 seconds, default tick 3 (30 seconds).</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -66,7 +66,7 @@ Delay before turning light off again.<br /><h1>Overview</h1><p>After turn on lig
                  min="1" max="255">
         <label>2: Basic Set Level</label>
         <description><![CDATA[
-Lights on, or dimmer setting.<br /><h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
+Lights on, or dimmer setting.<br /> <h1>Overview</h1><p>Setting the BASIC command value to turn on the light. The 255 means turn on the light. For dimmer equipment 1 to 99 means the light strength.</p>
         ]]></description>
         <default>255</default>
         <advanced>true</advanced>
@@ -77,7 +77,7 @@ Lights on, or dimmer setting.<br /><h1>Overview</h1><p>Setting the BASIC command
                  min="1" max="168">
         <label>3: Wake up interval</label>
         <description><![CDATA[
-Interval between wake up and auto report.<br /><h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>
+Interval between wake up and auto report.<br /> <h1>Overview</h1><p>The interval time between waking up. 1 hour per tick and minimum time is 1 hour, default tick is 12 (12 hours). Maximum time is 168 hours (7 days).</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Interval between wake up and auto report.<br /><h1>Overview</h1><p>The interval 
                  min="1" max="2">
         <label>4: Operation Mode</label>
         <description><![CDATA[
-Security / Home Automation mode<br /><h1>Overview</h1><p>1 means security mode - only reports events to controller.</p> <p>2 means home automation mode - reports events to controller and sends commands to lighting.</p>
+Security / Home Automation mode<br /> <h1>Overview</h1><p>1 means security mode - only reports events to controller.</p> <p>2 means home automation mode - reports events to controller and sends commands to lighting.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Security / Home Automation mode<br /><h1>Overview</h1><p>1 means security mode -
                  min="0" max="1">
         <label>5: Ignore Magnetic Off</label>
         <description><![CDATA[
-Ignore door/window closing<br /><h1>Overview</h1><p>0 means light control action with the door/window close.</p> <p>1 means ignore the door/window close.</p>
+Ignore door/window closing<br /> <h1>Overview</h1><p>0 means light control action with the door/window close.</p> <p>1 means ignore the door/window close.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

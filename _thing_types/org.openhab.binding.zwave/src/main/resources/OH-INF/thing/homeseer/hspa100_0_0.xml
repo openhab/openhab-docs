@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hspa100_00_000" listed="false">
     <label>HS-PA100+ Appliance Module</label>
     <description><![CDATA[
-Appliance Module<br /><h1>Overview</h1><p>The connected lighting devices can be controlled manually with a push button, your smartphone or a Home Automation system such as HomeSeer. Depending on the capability of your controller/gateway, once the Plug-in Module has been added to your network, you may assign it to a Group or Scene and change its status via your controller/gateway</p> <br /><h2>Inclusion Information</h2><p>Press the button on the front</p> <br /><h2>Exclusion Information</h2><p>Power the module off and then back on</p>
+Appliance Module<br /> <h1>Overview</h1><p>The connected lighting devices can be controlled manually with a push button, your smartphone or a Home Automation system such as HomeSeer. Depending on the capability of your controller/gateway, once the Plug-in Module has been added to your network, you may assign it to a Group or Scene and change its status via your controller/gateway</p> <br /> <h2>Inclusion Information</h2><p>Press the button on the front</p> <br /> <h2>Exclusion Information</h2><p>Power the module off and then back on</p>
     ]]></description>
     <category>PowerOutlet</category>
 

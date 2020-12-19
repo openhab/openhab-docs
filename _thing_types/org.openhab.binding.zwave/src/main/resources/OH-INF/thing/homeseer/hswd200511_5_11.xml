@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hswd200511_05_011" listed="false">
     <label>HS-WD200+ Scene Capable Wall Dimmer Switch</label>
     <description><![CDATA[
-Scene Capable Wall Dimmer Switch<br /><h1>Overview</h1><p>HS-WD200+ is a Z-Wave wall dimmer that’s designed for wireless on-oﬀ-dim control of connected dimmable lighting loads.</p> <br /><h2>Inclusion Information</h2><p>Put your Z-Wave controller into inclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p>
+Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave wall dimmer that’s designed for wireless on-oﬀ-dim control of connected dimmable lighting loads.</p> <br /> <h2>Inclusion Information</h2><p>Put your Z-Wave controller into inclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p> <br /> <h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode, tap the paddle of your new HomeSeer dimmer to begin the inclusion process. This will take a few moments to complete.</p>
     ]]></description>
     <category>WallSwitch</category>
 

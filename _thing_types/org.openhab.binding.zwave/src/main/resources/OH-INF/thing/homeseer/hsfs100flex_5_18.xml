@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hsfs100flex_05_018" listed="false">
     <label>HS-FS100+ Flex Flex Sensor</label>
     <description><![CDATA[
-Flex Sensor<br /><h1>Overview</h1><p>HS-FS100+ (“Flex Sensor”) is a multi functional module that includes a temperature sensor, controllable buzzer, and a port to connect external light or water sensors.</p> <br /><h2>Inclusion Information</h2><ol><li>Attach the included light or water sensor cable. Put your home automation controller into Z-Wave ‘inclusion’ mode.</li> <li>Press the Z-Wave network button on the front of the unit one time. Wait for the inclusion process to finish. This may take some time.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put your home automation controller into Z-Wave ‘exclusion’ mode.</li> <li>Press the Z-Wave network button on the front of the unit one time. Wait for the exclusion process to finish. This may take some time.</li> </ol>
+Flex Sensor<br /> <h1>Overview</h1><p>HS-FS100+ (“Flex Sensor”) is a multi functional module that includes a temperature sensor, controllable buzzer, and a port to connect external light or water sensors.</p> <br /> <h2>Inclusion Information</h2><ol><li>Attach the included light or water sensor cable. Put your home automation controller into Z-Wave ‘inclusion’ mode.</li> <li>Press the Z-Wave network button on the front of the unit one time. Wait for the inclusion process to finish. This may take some time.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Put your home automation controller into Z-Wave ‘exclusion’ mode.</li> <li>Press the Z-Wave network button on the front of the unit one time. Wait for the exclusion process to finish. This may take some time.</li> </ol>
     ]]></description>
     <category>Sensor</category>
 
@@ -70,7 +70,7 @@ Flex Sensor<br /><h1>Overview</h1><p>HS-FS100+ (“Flex Sensor”) is a multi fu
                  min="0" max="2">
         <label>1: Light Sensitvity</label>
         <description><![CDATA[
-Light Sensitvity<br /><h1>Overview</h1><p>0=high sensitvity<br />1=medium sensitvity<br />2=low sensitvity</p>
+Light Sensitvity<br /> <h1>Overview</h1><p>0=high sensitvity<br />1=medium sensitvity<br />2=low sensitvity</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -80,7 +80,7 @@ Light Sensitvity<br /><h1>Overview</h1><p>0=high sensitvity<br />1=medium sensit
                  min="0" max="2">
         <label>2: Water Detecton beep frequency</label>
         <description><![CDATA[
-Water Detecton beep frequency<br /><h1>Overview</h1><p>0=every 10 minutes (approx batery life of 3 months in this mode)<br />1=every 5 minutes<br />2=every 30 minutes</p>
+Water Detecton beep frequency<br /> <h1>Overview</h1><p>0=every 10 minutes (approx batery life of 3 months in this mode)<br />1=every 5 minutes<br />2=every 30 minutes</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -90,7 +90,7 @@ Water Detecton beep frequency<br /><h1>Overview</h1><p>0=every 10 minutes (appro
                  min="30" max="255">
         <label>3: Temperature reportng interval when on line power</label>
         <description><![CDATA[
-Temperature reportng interval when on line power<br /><h1>Overview</h1><p>30-255 seconds, default=60</p>
+Temperature reportng interval when on line power<br /> <h1>Overview</h1><p>30-255 seconds, default=60</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -100,7 +100,7 @@ Temperature reportng interval when on line power<br /><h1>Overview</h1><p>30-255
                  min="0" max="1">
         <label>4: Enable Notfcaton Buzzer</label>
         <description><![CDATA[
-Enable Notfcaton Buzzer<br /><h1>Overview</h1><p>0 = Disabled<br />1 = Enabled (Default)</p>
+Enable Notfcaton Buzzer<br /> <h1>Overview</h1><p>0 = Disabled<br />1 = Enabled (Default)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Enable Notfcaton Buzzer<br /><h1>Overview</h1><p>0 = Disabled<br />1 = Enabled (
                  min="0" max="20">
         <label>5: Flashing LED detection delay</label>
         <description><![CDATA[
-Flashing LED detection delay<br /><h1>Overview</h1><p>Set delay to avoid continuous notifications when detecting flashing LED’s. Flex Sensor will not send notification until flashing LED status changes.</p>
+Flashing LED detection delay<br /> <h1>Overview</h1><p>Set delay to avoid continuous notifications when detecting flashing LED’s. Flex Sensor will not send notification until flashing LED status changes.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -120,7 +120,7 @@ Flashing LED detection delay<br /><h1>Overview</h1><p>Set delay to avoid continu
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Flex Sensor supports Group 1 association. Group 1 reports the sensor’s status and battery if running on batteries.</p>
+<br /> <h1>Overview</h1><p>Flex Sensor supports Group 1 association. Group 1 reports the sensor’s status and battery if running on batteries.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

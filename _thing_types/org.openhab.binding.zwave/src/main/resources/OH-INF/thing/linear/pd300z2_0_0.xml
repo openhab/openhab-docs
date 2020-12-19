@@ -8,7 +8,7 @@
   <thing-type id="linear_pd300z2_00_000" listed="false">
     <label>PD300Z-2 Plug-in Wall Dimmer</label>
     <description><![CDATA[
-Plug-in Wall Dimmer<br /><h1>Overview</h1><p>300 Watt, 120 VAC NWI and Scene Capable Plug-In Lamp Module</p> <br /><h2>Inclusion Information</h2><ol><li>Prepare the Controller to include a unit to the network. The PD300Z-2 must be in its permanently installed location.</li> <li>For NWI Inclusion, press the button on the PD300Z-2 once.</li> <li>For classic inclusion, press the button on the PD300Z-2 twice.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set the Controller into Removal Mode</li> <li>Remove the switch by press the button twice</li> </ol>
+Plug-in Wall Dimmer<br /> <h1>Overview</h1><p>300 Watt, 120 VAC NWI and Scene Capable Plug-In Lamp Module</p> <br /> <h2>Inclusion Information</h2><ol><li>Prepare the Controller to include a unit to the network. The PD300Z-2 must be in its permanently installed location.</li> <li>For NWI Inclusion, press the button on the PD300Z-2 once.</li> <li>For classic inclusion, press the button on the PD300Z-2 twice.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Set the Controller into Removal Mode</li> <li>Remove the switch by press the button twice</li> </ol>
     ]]></description>
     <category>LightBulb</category>
 
@@ -51,7 +51,7 @@ Plug-in Wall Dimmer<br /><h1>Overview</h1><p>300 Watt, 120 VAC NWI and Scene Cap
       <parameter name="config_29_1" type="integer" groupName="configuration">
         <label>29: Load Sense</label>
         <description><![CDATA[
-Turn load sense on with 1, off with 0<br /><h1>Overview</h1><p>Set parameter to 0 to disable load sense, set parameter to 1 to enable load sense.</p>
+Turn load sense on with 1, off with 0<br /> <h1>Overview</h1><p>Set parameter to 0 to disable load sense, set parameter to 1 to enable load sense.</p>
         ]]></description>
         <default>1</default>
         <options>

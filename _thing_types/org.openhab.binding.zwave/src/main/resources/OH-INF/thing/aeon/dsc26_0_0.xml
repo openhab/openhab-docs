@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc26_00_000" listed="false">
     <label>DSC26 Micro Switch G2</label>
     <description><![CDATA[
-Micro Switch G2<br /><h1>Overview</h1><p>Relay based unit designed to be included inside a junction box to switch a load.  Supports external switch.</p> <br /><h2>Inclusion Information</h2><p>Push case button.</p> <p>External switch (if attached) can be toggled 10X quickly to include/exclude.</p> <br /><h2>Exclusion Information</h2><p>Push case button.</p> <p>External switch (if attached) can be toggled 10X quickly to include/exclude.</p>
+Micro Switch G2<br /> <h1>Overview</h1><p>Relay based unit designed to be included inside a junction box to switch a load.  Supports external switch.</p> <br /> <h2>Inclusion Information</h2><p>Push case button.</p> <p>External switch (if attached) can be toggled 10X quickly to include/exclude.</p> <br /> <h2>Exclusion Information</h2><p>Push case button.</p> <p>External switch (if attached) can be toggled 10X quickly to include/exclude.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -51,7 +51,7 @@ Micro Switch G2<br /><h1>Overview</h1><p>Relay based unit designed to be include
                  min="0" max="255">
         <label>2: LED blink repeat</label>
         <description><![CDATA[
-Number of times LED should blink<br /><h1>Overview</h1><p>Number of ON-OFF cycles the LED should complete once set.</p>
+Number of times LED should blink<br /> <h1>Overview</h1><p>Number of ON-OFF cycles the LED should complete once set.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -61,7 +61,7 @@ Number of times LED should blink<br /><h1>Overview</h1><p>Number of ON-OFF cycle
                  min="0" max="255">
         <label>2: LED duty time</label>
         <description><![CDATA[
-length of time LED will blink on/off per cycle<br /><h1>Overview</h1><p>LED will turn on and off for this many tenths of a second once set.</p>
+length of time LED will blink on/off per cycle<br /> <h1>Overview</h1><p>LED will turn on and off for this many tenths of a second once set.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -70,7 +70,7 @@ length of time LED will blink on/off per cycle<br /><h1>Overview</h1><p>LED will
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Notification on Status Change</label>
         <description><![CDATA[
-Notification on Status Change<br /><h1>Overview</h1><p>Send notification to associated devices in Group 1 when device state changed locally.</p>
+Notification on Status Change<br /> <h1>Overview</h1><p>Send notification to associated devices in Group 1 when device state changed locally.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -85,7 +85,7 @@ Notification on Status Change<br /><h1>Overview</h1><p>Send notification to asso
                  min="0" max="65535">
         <label>101: Group 1 report values to send</label>
         <description><![CDATA[
-Group 1 report values to send<br /><h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
+Group 1 report values to send<br /> <h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -95,7 +95,7 @@ Group 1 report values to send<br /><h1>Overview</h1><p>Value is the sum of the i
                  min="0" max="65535">
         <label>102: Group 2 report variables to send</label>
         <description><![CDATA[
-Group 2 report variables to send<br /><h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
+Group 2 report variables to send<br /> <h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -105,7 +105,7 @@ Group 2 report variables to send<br /><h1>Overview</h1><p>Value is the sum of th
                  min="0" max="65535">
         <label>103: Group 3 report variables to send</label>
         <description><![CDATA[
-Group 3 report variables to send<br /><h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
+Group 3 report variables to send<br /> <h1>Overview</h1><p>Value is the sum of the individual parameters:<br /><br />KWH=8<br />Wattage=4<br />Current=2</p> <p>Voltage=1</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -160,7 +160,7 @@ Group 3 report variables to send<br /><h1>Overview</h1><p>Value is the sum of th
                  min="0" max="65535">
         <label>250: CHECK AND DELETE ME formerly parameter 2</label>
         <description><![CDATA[
-CHECK AND DELETE ME formerly parameter 2<br /><h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>(did I do this right for parameter 2?)</p>
+CHECK AND DELETE ME formerly parameter 2<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>CHECK ME!</p> <p>(did I do this right for parameter 2?)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -193,7 +193,7 @@ CHECK AND DELETE ME formerly parameter 2<br /><h1>Overview</h1><p>This is a doub
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 1 will receive hail or basic report (see option 80) when the state of Micro Switch’s load changes.</p>
+<br /> <h1>Overview</h1><p>Group 1 will receive hail or basic report (see option 80) when the state of Micro Switch’s load changes.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -201,7 +201,7 @@ CHECK AND DELETE ME formerly parameter 2<br /><h1>Overview</h1><p>This is a doub
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Retransmit</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When the Micro Switch receives the following commands, they will be forwarded to all Group 2 nodes:  Basic Set, Switch Binary Set, Scene Activation Set.</p>
+<br /> <h1>Overview</h1><p>When the Micro Switch receives the following commands, they will be forwarded to all Group 2 nodes:  Basic Set, Switch Binary Set, Scene Activation Set.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

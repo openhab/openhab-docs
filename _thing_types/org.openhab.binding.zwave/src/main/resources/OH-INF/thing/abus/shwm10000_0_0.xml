@@ -8,7 +8,7 @@
   <thing-type id="abus_shwm10000_00_000" listed="false">
     <label>SHWM10000 Flood Sensor</label>
     <description><![CDATA[
-Flood Sensor<br /><h1>Overview</h1><p>The SHWM10000 consists of a base unit (detector) and a water sensor (sensor), which are connected by a cable. If the sensor comes into contact with water, inform the detector the gateway and an alarm is triggered.</p> <p>It detects sabotage when opening the case, has a battery-empty warning function and was designed for indoor installation.</p> <br /><h2>Inclusion Information</h2><p>Within 3 seconds, press 3 times on the tamper button.</p> <p>The status LED on the sensor front 3 x on. Repeat the inclusion process again if this was not successful.</p> <br /><h2>Exclusion Information</h2><p>Within 3 seconds, press 3 times on the tamper button. The status LED on the sensor front 3 x on.</p> <br /><h2>Wakeup Information</h2><table><tr><td>To wake-up the device immediately, please remove the front cover, and press the tamper key once.</td> </tr></table>
+Flood Sensor<br /> <h1>Overview</h1><p>The SHWM10000 consists of a base unit (detector) and a water sensor (sensor), which are connected by a cable. If the sensor comes into contact with water, inform the detector the gateway and an alarm is triggered.</p> <p>It detects sabotage when opening the case, has a battery-empty warning function and was designed for indoor installation.</p> <br /> <h2>Inclusion Information</h2><p>Within 3 seconds, press 3 times on the tamper button.</p> <p>The status LED on the sensor front 3 x on. Repeat the inclusion process again if this was not successful.</p> <br /> <h2>Exclusion Information</h2><p>Within 3 seconds, press 3 times on the tamper button. The status LED on the sensor front 3 x on.</p> <br /> <h2>Wakeup Information</h2><table><tr><td>To wake-up the device immediately, please remove the front cover, and press the tamper key once.</td> </tr></table>
     ]]></description>
     <category>Sensor</category>
 
@@ -56,7 +56,7 @@ Flood Sensor<br /><h1>Overview</h1><p>The SHWM10000 consists of a base unit (det
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The device sends a notification report of the command class battery report, notification report, and local device reset notification, binary report.</p>
+<br /> <h1>Overview</h1><p>The device sends a notification report of the command class battery report, notification report, and local device reset notification, binary report.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -64,7 +64,7 @@ Flood Sensor<br /><h1>Overview</h1><p>The SHWM10000 consists of a base unit (det
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Root-Device-Group (Binary Sensor)<br /><h1>Overview</h1><p>Binary Sensor Command Class: Compatible with 300 Series</p> <ul><li>Sensor indicates the status of the open or closed door via lifeline.</li> <li>When the sensor changes state between closedand door is opened, the device is triggered.</li> </ul>
+Root-Device-Group (Binary Sensor)<br /> <h1>Overview</h1><p>Binary Sensor Command Class: Compatible with 300 Series</p> <ul> <li>Sensor indicates the status of the open or closed door via lifeline.</li> <li>When the sensor changes state between closedand door is opened, the device is triggered.</li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -72,7 +72,7 @@ Root-Device-Group (Binary Sensor)<br /><h1>Overview</h1><p>Binary Sensor Command
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-Root device group<br /><h1>Overview</h1><p>Binary Sensor Command Class: Compatible with 300 Series</p> <ul><li>Sensor indicates the status, door sensor has been removed.</li> <li>Device triggers when the sensor changes state tamper button detects.</li> </ul>
+Root device group<br /> <h1>Overview</h1><p>Binary Sensor Command Class: Compatible with 300 Series</p> <ul> <li>Sensor indicates the status, door sensor has been removed.</li> <li>Device triggers when the sensor changes state tamper button detects.</li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -80,7 +80,7 @@ Root device group<br /><h1>Overview</h1><p>Binary Sensor Command Class: Compatib
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-Root device group (notification)<br /><h1>Overview</h1><ul><li>Notification Open or Closed Status via Lifeline</li> <li>Device triggers when the sensor has a status change between closed and opened door recognizes.</li> </ul>
+Root device group (notification)<br /> <h1>Overview</h1><ul> <li>Notification Open or Closed Status via Lifeline</li> <li>Device triggers when the sensor has a status change between closed and opened door recognizes.</li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -88,7 +88,7 @@ Root device group (notification)<br /><h1>Overview</h1><ul><li>Notification Open
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Group 5</label>
         <description><![CDATA[
-Root device group (notification)<br /><h1>Overview</h1><ul><li>Sensor reports the status door sensor has been removed.</li> <li>The device triggers when the sensor changes state tamper button detects.</li> </ul>
+Root device group (notification)<br /> <h1>Overview</h1><ul> <li>Sensor reports the status door sensor has been removed.</li> <li>The device triggers when the sensor changes state tamper button detects.</li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

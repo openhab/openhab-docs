@@ -8,7 +8,7 @@
   <thing-type id="danfoss_dthermz5_00_000" listed="false">
     <label>DTHERMZ5 Z-Wave room sensor</label>
     <description><![CDATA[
-Z-Wave room sensor<br /><h1>Overview</h1><p>qheat RS is a battery operated temperature sensor. When included into Z-Wave wireless network, its buttons can also be used to control the heating system.</p> <br /><h2>Inclusion Information</h2><p>Press the LED button on the qheat RS</p> <br /><h2>Exclusion Information</h2><p>Hold down the 3 buttons on the qheat RS for 5 seconds (up, down and LED buttons).</p> <br /><h2>Wakeup Information</h2><p> The qheat RS can be woken manually by pushing any of the three buttons, and will stay awake for 10 seconds</p>
+Z-Wave room sensor<br /> <h1>Overview</h1><p>qheat RS is a battery operated temperature sensor. When included into Z-Wave wireless network, its buttons can also be used to control the heating system.</p> <br /> <h2>Inclusion Information</h2><p>Press the LED button on the qheat RS</p> <br /> <h2>Exclusion Information</h2><p>Hold down the 3 buttons on the qheat RS for 5 seconds (up, down and LED buttons).</p> <br /> <h2>Wakeup Information</h2><p> The qheat RS can be woken manually by pushing any of the three buttons, and will stay awake for 10 seconds</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ Z-Wave room sensor<br /><h1>Overview</h1><p>qheat RS is a battery operated tempe
                  min="1" max="100">
         <label>1: Temperature Report threshold</label>
         <description><![CDATA[
-Temperature Report threshold<br /><h1>Overview</h1><p>Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C</p>
+Temperature Report threshold<br /> <h1>Overview</h1><p>Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>

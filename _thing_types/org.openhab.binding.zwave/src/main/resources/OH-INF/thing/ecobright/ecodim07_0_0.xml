@@ -8,7 +8,7 @@
   <thing-type id="ecobright_ecodim07_00_000" listed="false">
     <label>EcoDim07 Smart Dimmer Switch 200W LED</label>
     <description><![CDATA[
-Smart Dimmer Switch 200W LED<br /><h1>Overview</h1><p>Remotely controlled multi level push / turn dimmer that can be controlled through Z-Wave and Zigbee (by setting a hardware switch). The dimmer is suitable for 0-200W LED lights where the MIN and MAX values can be set with hardware dials. The dimmer can be installed in a 2 wire setup (no N-wire required) and has a soft start system.</p> <br /><h2>Inclusion Information</h2><p>Make sure the right switch is set to Z-Wave. Power on the dimmer, press and hold the reset button for over 4 seconds.</p> <br /><h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>1. Exclusion from the primary controller / gateway:</p> <p>Twice press the reset button, the dimmer will be set to exclusion mode, waiting to be excluded.</p> <p>2. Factory reset the dimmer (forcing it to be excluded from a network):</p> <p>Press and hold down the reset button for over 4 seconds, the dimmer will be reset to factory defaults after the BLUE LED indicator blinks.</p>
+Smart Dimmer Switch 200W LED<br /> <h1>Overview</h1><p>Remotely controlled multi level push / turn dimmer that can be controlled through Z-Wave and Zigbee (by setting a hardware switch). The dimmer is suitable for 0-200W LED lights where the MIN and MAX values can be set with hardware dials. The dimmer can be installed in a 2 wire setup (no N-wire required) and has a soft start system.</p> <br /> <h2>Inclusion Information</h2><p>Make sure the right switch is set to Z-Wave. Power on the dimmer, press and hold the reset button for over 4 seconds.</p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods:</p> <p>1. Exclusion from the primary controller / gateway:</p> <p>Twice press the reset button, the dimmer will be set to exclusion mode, waiting to be excluded.</p> <p>2. Factory reset the dimmer (forcing it to be excluded from a network):</p> <p>Press and hold down the reset button for over 4 seconds, the dimmer will be reset to factory defaults after the BLUE LED indicator blinks.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -51,7 +51,7 @@ Smart Dimmer Switch 200W LED<br /><h1>Overview</h1><p>Remotely controlled multi 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: State after power restored</label>
         <description><![CDATA[
-Switch state after power failure<br /><h1>Overview</h1><p>State after power restored. The state the switch should return to once power is restored after power failure.</p>
+Switch state after power failure<br /> <h1>Overview</h1><p>State after power restored. The state the switch should return to once power is restored after power failure.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -65,7 +65,7 @@ Switch state after power failure<br /><h1>Overview</h1><p>State after power rest
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Notify load status change</label>
         <description><![CDATA[
-Send notification to associated device when status is changed.<br /><h1>Overview</h1><p>Notification when load status changes. The dimmer will send notification to associated device (group lifeline) when the status of the dimmer load is changed.</p>
+Send notification to associated device when status is changed.<br /> <h1>Overview</h1><p>Notification when load status changes. The dimmer will send notification to associated device (group lifeline) when the status of the dimmer load is changed.</p>
         ]]></description>
         <default>1</default>
         <options>

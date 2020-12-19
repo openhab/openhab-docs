@@ -8,7 +8,7 @@
   <thing-type id="rtc_ct80_00_000" listed="false">
     <label>CT80 Z-Wave Thermostat</label>
     <description><![CDATA[
-Z-Wave Thermostat<br /><h1>Overview</h1><p>The CT80 programmable communicating thermostat operates via a high-quality, easy-to-use touch screen. To program or adjust your CT80, simply touch your finger firmly to the screen. The screen will automatically light up. The screen will respond differently to different types of touches, so you may want to experiment with your finger or a stylus (not included), to see what works best for you. The “beep” sound is heard when the CT80 senses a valid touch of the screen.</p> <br /><h2>Inclusion Information</h2><p>Push Menu button, choose network, choose Z-Wave Radio, push "Mate" (only usable with Z-Wave Module)</p> <br /><h2>Exclusion Information</h2><h1>Factory Default Restore</h1> <p>Performing a Factory Default Restore will return your thermostat to the state it was in when it left the factory. This means that all of its configuration and parameters will be returned to their default values. This includes resetting its Z-Wave network information, removing it from its previous network. This action should only be used in the event that the network primary controller is missing or otherwise inoperable. To perform this action, the thermostat must be switch to OFF mode. Wait until the radio wave icons on the left side of the screen stop blinking then touch the screen once to turn on the back light and then hold the center of the screen for about 8 seconds until the thermostat beeps. </p>
+Z-Wave Thermostat<br /> <h1>Overview</h1><p>The CT80 programmable communicating thermostat operates via a high-quality, easy-to-use touch screen. To program or adjust your CT80, simply touch your finger firmly to the screen. The screen will automatically light up. The screen will respond differently to different types of touches, so you may want to experiment with your finger or a stylus (not included), to see what works best for you. The “beep” sound is heard when the CT80 senses a valid touch of the screen.</p> <br /> <h2>Inclusion Information</h2><p>Push Menu button, choose network, choose Z-Wave Radio, push "Mate" (only usable with Z-Wave Module)</p> <br /> <h2>Exclusion Information</h2><h1>Factory Default Restore</h1> <p>Performing a Factory Default Restore will return your thermostat to the state it was in when it left the factory. This means that all of its configuration and parameters will be returned to their default values. This includes resetting its Z-Wave network information, removing it from its previous network. This action should only be used in the event that the network primary controller is missing or otherwise inoperable. To perform this action, the thermostat must be switch to OFF mode. Wait until the radio wave icons on the left side of the screen stop blinking then touch the screen once to turn on the back light and then hold the center of the screen for about 8 seconds until the thermostat beeps. </p>
     ]]></description>
     <category>HVAC</category>
 
@@ -97,7 +97,7 @@ Z-Wave Thermostat<br /><h1>Overview</h1><p>The CT80 programmable communicating t
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Temperature Reporting Threshold</label>
         <description><![CDATA[
-Reporting threshold for changes in the ambient temperature.<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
+Reporting threshold for changes in the ambient temperature.<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -114,7 +114,7 @@ Reporting threshold for changes in the ambient temperature.<br /><h1>Overview</h
                  min="0" max="4294967295">
         <label>2: HVAC Settings</label>
         <description><![CDATA[
-Configured HVAC settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup(Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
+Configured HVAC settings<br /> <h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)</p> <p>Byte 2 = Aux Setup(Gas (0x01) or Electric (0x02)) &amp; Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)</p> <p>Byte 3 = Number of Heat Pump Stages</p> <p>Byte 4 = Number of Cool Stages</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ Configured HVAC settings<br /><h1>Overview</h1><p>Byte 1 = HVAC Setup: Normal (0
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Utility Lock Enable/Disable</label>
         <description><![CDATA[
-Prevents setpoint changes at thermostat.<br /><h1>Overview</h1><p>If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock.  This will prevent changes to the setpoint at the thermostat screen.</p>
+Prevents setpoint changes at thermostat.<br /> <h1>Overview</h1><p>If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock.  This will prevent changes to the setpoint at the thermostat screen.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -137,7 +137,7 @@ Prevents setpoint changes at thermostat.<br /><h1>Overview</h1><p>If set to 0, t
                  min="0" max="255">
         <label>4: Power Status</label>
         <description><![CDATA[
-C-Wire / Battery Status<br /><h1>Overview</h1><p>If 0x01, the thermostat is being powered from a C-wire, if 0x02, the thermostat is being powered off of batteries.</p>
+C-Wire / Battery Status<br /> <h1>Overview</h1><p>If 0x01, the thermostat is being powered from a C-wire, if 0x02, the thermostat is being powered off of batteries.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -146,7 +146,7 @@ C-Wire / Battery Status<br /><h1>Overview</h1><p>If 0x01, the thermostat is bein
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Humidity Reporting Threshold</label>
         <description><![CDATA[
-Reporting threshold for changes in the relative humidity.<br /><h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
+Reporting threshold for changes in the relative humidity.<br /> <h1>Overview</h1><p>This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -161,7 +161,7 @@ Reporting threshold for changes in the relative humidity.<br /><h1>Overview</h1
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Auxiliary/Emergency</label>
         <description><![CDATA[
-Enables or disables auxiliary / emergency heating<br /><h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled, all other values, 1-255, will enable the auxiliary / emergency heat. This can only be enabled when the thermostat is set to Heat Pump mode.</p>
+Enables or disables auxiliary / emergency heating<br /> <h1>Overview</h1><p>If set to 0, auxiliary / emergency heat is disabled, all other values, 1-255, will enable the auxiliary / emergency heat. This can only be enabled when the thermostat is set to Heat Pump mode.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -174,7 +174,7 @@ Enables or disables auxiliary / emergency heating<br /><h1>Overview</h1><p>If se
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Thermostat Swing Temperature</label>
         <description><![CDATA[
-Variance allowed from setpoint to engage HVAC<br /><h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit. A value of 0x01 is 0.05F and 0x02 is 1.0F. The supported values may vary from thermostat to thermostat but typically the allowed values are 0.5F (0x01) to 4.0F (0x08).</p> <p>The Thermostat Swing Temperature configuration command sets swing temperature on the thermostat. The swing temperature is applied to the setpoint to determine when the thermostat will turn on the HVAC system. If the thermostat is heating, the swing temper</p>
+Variance allowed from setpoint to engage HVAC<br /> <h1>Overview</h1><p>The thermostat swing temperature is in units of 0.5 degrees Fahrenheit. A value of 0x01 is 0.05F and 0x02 is 1.0F. The supported values may vary from thermostat to thermostat but typically the allowed values are 0.5F (0x01) to 4.0F (0x08).</p> <p>The Thermostat Swing Temperature configuration command sets swing temperature on the thermostat. The swing temperature is applied to the setpoint to determine when the thermostat will turn on the HVAC system. If the thermostat is heating, the swing temper</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -193,7 +193,7 @@ Variance allowed from setpoint to engage HVAC<br /><h1>Overview</h1><p>The therm
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Thermostat Diff Temperature</label>
         <description><![CDATA[
-Configures additional stages<br /><h1>Overview</h1><p>Sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. This command configures both the heat and cool differential temperatures.</p> <p>See the RTZW-02 manual for command definition.</p>
+Configures additional stages<br /> <h1>Overview</h1><p>Sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. This command configures both the heat and cool differential temperatures.</p> <p>See the RTZW-02 manual for command definition.</p>
         ]]></description>
         <default>4</default>
         <options>
@@ -208,7 +208,7 @@ Configures additional stages<br /><h1>Overview</h1><p>Sets the differential temp
                  min="1" max="2">
         <label>9: Thermostat Recovery Mode</label>
         <description><![CDATA[
-Fast or Economy recovery mode.<br /><h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or economy (0x02).</p>
+Fast or Economy recovery mode.<br /> <h1>Overview</h1><p>The Thermostat Recovery Mode can be either fast (0x01) or economy (0x02).</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -218,7 +218,7 @@ Fast or Economy recovery mode.<br /><h1>Overview</h1><p>The Thermostat Recovery 
                  min="0" max="65535">
         <label>10: Temp Reporting Filter</label>
         <description><![CDATA[
-Upper/Lower bounds for thermostat temperature reporting<br /><h1>Overview</h1><p>Sets the upper/lower bounds for the thermostat reporting ambient temperature changes. The value must be between 0F and 124F. By default the value is set to 0F (report all changes).</p>
+Upper/Lower bounds for thermostat temperature reporting<br /> <h1>Overview</h1><p>Sets the upper/lower bounds for the thermostat reporting ambient temperature changes. The value must be between 0F and 124F. By default the value is set to 0F (report all changes).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -228,7 +228,7 @@ Upper/Lower bounds for thermostat temperature reporting<br /><h1>Overview</h1><p
                  min="0" max="1">
         <label>11: Simple UI Mode</label>
         <description><![CDATA[
-Simple Mode Enable/Disable<br /><h1>Overview</h1><p>If the value is set to 0x00 then Normal Mode is enabled. If the value is set to 0x01 then Simple Mode is enabled.</p>
+Simple Mode Enable/Disable<br /> <h1>Overview</h1><p>If the value is set to 0x00 then Normal Mode is enabled. If the value is set to 0x01 then Simple Mode is enabled.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -238,7 +238,7 @@ Simple Mode Enable/Disable<br /><h1>Overview</h1><p>If the value is set to 0x00 
                  min="0" max="1">
         <label>12: Multicast</label>
         <description><![CDATA[
-Enable or disables Multicast<br /><h1>Overview</h1><p>If set to 0, multicast is disabled, if set to 1, will enable the multicast.</p>
+Enable or disables Multicast<br /> <h1>Overview</h1><p>If set to 0, multicast is disabled, if set to 1, will enable the multicast.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -248,7 +248,7 @@ Enable or disables Multicast<br /><h1>Overview</h1><p>If set to 0, multicast is 
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device support one association group, and up to two nodes in that group. If at least one node is added to association group one (1), the thermostat will send the following association reports when the respective state has changed:</p> <p>• Thermostat Mode Report</p> <p>• Thermostat Operating State Report</p> <p>• Fan Mode Report</p> <p>• Fan State Report</p> <p>• Setpoint Report (for all supported setpoints)</p> <p>• Sensor Multilevel Report (if enabled by Configuration Command Class)</p> <p>The association command class can be configured to send encapsulated reports via the Multi Instance Command Class or the Multi Channel Command Class. If the association configuration commands are sent inside encapsulated commands, the thermostat will respond with encapsulated reports of the same type (Multi Instance v1 or Multi Channel v3). Encapsulation is the only way to configure the thermostat to send humidity sensor multilevel association reports.</p> <p>For example, if an Association Set is encapsulated in a Multi Channel Command Encapsulation command is sent to the humidity instance (2), then the thermostat will encapsulate all un-solicited humidity sensor multilevel reports in the Multi Channel Command Encapsulation Command. The default instance is the temperature instance (1). If the Association Set is sent un-encapsulated then the thermostat will send all un-solicited temperature sensor multilevel reports unencapsulated.</p> <p>All association reports other than the humidity multilevel are in the default instance (1). The thermostat will encapsulate the association reports based on the last Association Set encapsulation type received (i.e. un-encapsulated, Multi Instance v1, or Multi Channel V3).</p>
+<br /> <h1>Overview</h1><p>This device support one association group, and up to two nodes in that group. If at least one node is added to association group one (1), the thermostat will send the following association reports when the respective state has changed:</p> <p>• Thermostat Mode Report</p> <p>• Thermostat Operating State Report</p> <p>• Fan Mode Report</p> <p>• Fan State Report</p> <p>• Setpoint Report (for all supported setpoints)</p> <p>• Sensor Multilevel Report (if enabled by Configuration Command Class)</p> <p>The association command class can be configured to send encapsulated reports via the Multi Instance Command Class or the Multi Channel Command Class. If the association configuration commands are sent inside encapsulated commands, the thermostat will respond with encapsulated reports of the same type (Multi Instance v1 or Multi Channel v3). Encapsulation is the only way to configure the thermostat to send humidity sensor multilevel association reports.</p> <p>For example, if an Association Set is encapsulated in a Multi Channel Command Encapsulation command is sent to the humidity instance (2), then the thermostat will encapsulate all un-solicited humidity sensor multilevel reports in the Multi Channel Command Encapsulation Command. The default instance is the temperature instance (1). If the Association Set is sent un-encapsulated then the thermostat will send all un-solicited temperature sensor multilevel reports unencapsulated.</p> <p>All association reports other than the humidity multilevel are in the default instance (1). The thermostat will encapsulate the association reports based on the last Association Set encapsulation type received (i.e. un-encapsulated, Multi Instance v1, or Multi Channel V3).</p>
         ]]></description>
         <multipleLimit>2</multipleLimit>
       </parameter>

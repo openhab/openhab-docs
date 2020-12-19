@@ -8,7 +8,7 @@
   <thing-type id="ge_28169_00_000" listed="false">
     <label>GE 28169 / Jasco 28168 Plug in Smart Switch</label>
     <description><![CDATA[
-Plug in Smart Switch<br /><h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor <br /><br /></p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
+Plug in Smart Switch<br /> <h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor <br /><br /></p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
     ]]></description>
     <category>PowerOutlet</category>
 

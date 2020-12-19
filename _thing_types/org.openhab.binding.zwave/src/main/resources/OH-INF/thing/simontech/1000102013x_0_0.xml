@@ -8,7 +8,7 @@
   <thing-type id="simontech_1000102013x_00_000" listed="false">
     <label>10001020-13X Dimmer IO: Phase cut dimmer</label>
     <description><![CDATA[
-Dimmer IO: Phase cut dimmer<br /><h1>Overview</h1><p>The electronic dimmer switch 230V ~ with 2/3 wire phase cut is a switch from Simon 100 serie. These types of dimmer switches have a power of 50W to 240W for traditional loads and 9W to 100W for LED loads. This is highly recommended for all types of uses (domestic, hotels, hospitals ...). The dimmer switch is only compatible with Simon 100 frames.</p> <br /><h2>Inclusion Information</h2><ol><li>Put controller into inclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put controller into exclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol>
+Dimmer IO: Phase cut dimmer<br /> <h1>Overview</h1><p>The electronic dimmer switch 230V ~ with 2/3 wire phase cut is a switch from Simon 100 serie. These types of dimmer switches have a power of 50W to 240W for traditional loads and 9W to 100W for LED loads. This is highly recommended for all types of uses (domestic, hotels, hospitals ...). The dimmer switch is only compatible with Simon 100 frames.</p> <br /> <h2>Inclusion Information</h2><ol><li>Put controller into inclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Put controller into exclusion mode.</li> <li>When the pushbutton is released after a press of (2sec&lt;T&lt;20sec) the device will send a NIF to include the device to the Z-Wave network. Main LED will blink with 0,3 sec period.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -69,7 +69,7 @@ Dimmer IO: Phase cut dimmer<br /><h1>Overview</h1><p>The electronic dimmer switc
                  min="0" max="255">
         <label>4: Set time</label>
         <description><![CDATA[
-Set time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+Set time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -79,7 +79,7 @@ Set time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default v
                  min="0" max="255">
         <label>5: Fade time</label>
         <description><![CDATA[
-Fade time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+Fade time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -89,7 +89,7 @@ Fade time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default 
                  min="1" max="99">
         <label>6: Minimum dimming value</label>
         <description><![CDATA[
-Minimum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
+Minimum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -99,7 +99,7 @@ Minimum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percen
                  min="1" max="99">
         <label>7: Maximum dimming value</label>
         <description><![CDATA[
-Maximum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
+Maximum dimming value<br /> <h1>Overview</h1><p>Stablishes the Max and Min percentages that can be reached. Once the devices gets a value through Z-Wave it Scales the value read according this Min and Max margins.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -109,7 +109,7 @@ Maximum dimming value<br /><h1>Overview</h1><p>Stablishes the Max and Min percen
                  min="1" max="99">
         <label>8: Last on value</label>
         <description><![CDATA[
-Last on value<br /><h1>Overview</h1><p>Returns or sets the last non zero dimming value. In case of Set the device turns ON the load.</p>
+Last on value<br /> <h1>Overview</h1><p>Returns or sets the last non zero dimming value. In case of Set the device turns ON the load.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Last on value<br /><h1>Overview</h1><p>Returns or sets the last non zero dimming
                  min="0" max="255">
         <label>10: Delay ON</label>
         <description><![CDATA[
-Delay ON<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+Delay ON<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Delay ON<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default v
                  min="0" max="255">
         <label>11: Activation time</label>
         <description><![CDATA[
-Activation time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+Activation time<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -184,7 +184,7 @@ Activation time<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (de
                  min="0" max="255">
         <label>16: Delay OFF</label>
         <description><![CDATA[
-Delay OFF<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
+Delay OFF<br /> <h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default value) Disable timming</td> </tr><tr><td>0x01-0x7F</td> <td>1 second (0x01) to 127 seconds (0x7F) in 1 second resolution</td> </tr><tr><td>0x80-0xFE</td> <td>1 second (0x80) to 127 minutes (0xFE) in 1 minute resolution</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -207,7 +207,7 @@ Delay OFF<br /><h1>Overview</h1><table><tr><td>0x00</td> <td>Instantly (default 
       <parameter name="config_20_1_wo" type="integer" groupName="configuration">
         <label>20: Identify</label>
         <description><![CDATA[
-Identify<br /><h1>Overview</h1><p>The central LED blinks for 5 seconds in order to identify the device.</p>
+Identify<br /> <h1>Overview</h1><p>The central LED blinks for 5 seconds in order to identify the device.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -220,7 +220,7 @@ Identify<br /><h1>Overview</h1><p>The central LED blinks for 5 seconds in order 
                  min="0" max="65379">
         <label>21: State of charge</label>
         <description><![CDATA[
-State of charge<br /><h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x00 Load is OFF</p> <p>0x01 Load is ON</p> </td> </tr><tr><td>Second byte</td> <td>0x00 - 0x063 Last active dimming value</td> </tr></table>
+State of charge<br /> <h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x00 Load is OFF</p> <p>0x01 Load is ON</p> </td> </tr><tr><td>Second byte</td> <td>0x00 - 0x063 Last active dimming value</td> </tr></table>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -252,7 +252,7 @@ State of charge<br /><h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x0
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul><li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul><p>Instant Power Consumption vary over 10% and is stable almost 2sec:</p> <ul><li>CC Meter, Meter Report, “Electric meter”, “Consumed”, “Watts”, Size 4, Precision 1, Value (W)</li> </ul><p>Calibration requirement change. (If device needs to be calibrated and is Added into a Z-Wave network, it will report after receive an Association Set of life line).</p> <ul><li>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xFF</li> <li>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</li> </ul><p>After reset the Z-Wave module, a DEVICE-RESET-LOCALLY-NOTIFICATION is sent.</p>
+<br /> <h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul> <li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul> <p>Instant Power Consumption vary over 10% and is stable almost 2sec:</p> <ul> <li>CC Meter, Meter Report, “Electric meter”, “Consumed”, “Watts”, Size 4, Precision 1, Value (W)</li> </ul> <p>Calibration requirement change. (If device needs to be calibrated and is Added into a Z-Wave network, it will report after receive an Association Set of life line).</p> <ul> <li>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xFF</li> <li>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</li> </ul> <p>After reset the Z-Wave module, a DEVICE-RESET-LOCALLY-NOTIFICATION is sent.</p>
         ]]></description>
         <multipleLimit>3</multipleLimit>
       </parameter>
@@ -260,7 +260,7 @@ State of charge<br /><h1>Overview</h1><table><tr><td>First byte</td> <td> <p>0x0
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: CTRL</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul><li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul>
+<br /> <h1>Overview</h1><p>On/Off Report when load state is changed:</p> <ul> <li>On -&gt; CC Basic, Basic Report, Value 0x01 - 0x63 Report the dimming level</li> <li>Off -&gt; CC Basic, Basic Report, Value 0x00</li> </ul>
         ]]></description>
         <multipleLimit>20</multipleLimit>
       </parameter>

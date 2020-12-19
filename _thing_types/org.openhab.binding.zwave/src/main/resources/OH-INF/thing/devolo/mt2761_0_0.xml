@@ -8,7 +8,7 @@
   <thing-type id="devolo_mt2761_00_000" listed="false">
     <label>MT2761 Shutter Control</label>
     <description><![CDATA[
-Shutter Control<br /><h1>Overview</h1><p>Flush Shutter</p> <br /><h2>Inclusion Information</h2><p>Set the controller to inclusion mode, toggle the switch connected to the I1 terminal 3 times within 3 seconds OR If the device is powered by 24 V supply, press and hold the S (Service) button between 2 and 6 seconds.</p> <br /><h2>Exclusion Information</h2><p>Set the controller to exclusion mode, toggle the switch connected to the I1 terminal 3 times within 3 seconds OR If the device is powered by 24 V SELV supply, press and hold the S(Service) button between 2 and 6 seconds4.</p>
+Shutter Control<br /> <h1>Overview</h1><p>Flush Shutter</p> <br /> <h2>Inclusion Information</h2><p>Set the controller to inclusion mode, toggle the switch connected to the I1 terminal 3 times within 3 seconds OR If the device is powered by 24 V supply, press and hold the S (Service) button between 2 and 6 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Set the controller to exclusion mode, toggle the switch connected to the I1 terminal 3 times within 3 seconds OR If the device is powered by 24 V SELV supply, press and hold the S(Service) button between 2 and 6 seconds4.</p>
     ]]></description>
     <category>Blinds</category>
 

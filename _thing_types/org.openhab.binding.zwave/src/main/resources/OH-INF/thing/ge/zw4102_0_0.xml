@@ -8,7 +8,7 @@
   <thing-type id="ge_zw4102_00_000" listed="false">
     <label>ZW4102 Energy Monitoring Appliance Module</label>
     <description><![CDATA[
-Energy Monitoring Appliance Module<br /><h1>Overview</h1><p>RF controlled, energy monitoring plug-in relay</p> <br /><h2>Inclusion Information</h2><p>Tap the button (press and release) </p> <br /><h2>Exclusion Information</h2><p>Tap the button (press and release)</p>
+Energy Monitoring Appliance Module<br /> <h1>Overview</h1><p>RF controlled, energy monitoring plug-in relay</p> <br /> <h2>Inclusion Information</h2><p>Tap the button (press and release) </p> <br /> <h2>Exclusion Information</h2><p>Tap the button (press and release)</p>
     ]]></description>
     <category>PowerOutlet</category>
 

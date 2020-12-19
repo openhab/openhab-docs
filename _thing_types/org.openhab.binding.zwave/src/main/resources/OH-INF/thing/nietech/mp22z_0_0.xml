@@ -8,7 +8,7 @@
   <thing-type id="nietech_mp22z_00_000" listed="false">
     <label>MP22Z Z-Wave Outdoor Smart Plug</label>
     <description><![CDATA[
-Z-Wave Outdoor Smart Plug<br /><h1>Overview</h1><p>Outdoor AC Plug</p> <p>Key Features:</p> <ul><li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support Association Group and Auto Report switch status</li> <li>Over temperature protection</li> <li>Support firmware upgrades via Over-the-air (need Gateways support)</li> </ul><br /><h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /><h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network</p>
+Z-Wave Outdoor Smart Plug<br /> <h1>Overview</h1><p>Outdoor AC Plug</p> <p>Key Features:</p> <ul><li>Remote ON/OFF control via the Z-Wave controller</li> <li>Manual ON/OFF control with the front panel push button</li> <li>Support Association Group and Auto Report switch status</li> <li>Over temperature protection</li> <li>Support firmware upgrades via Over-the-air (need Gateways support)</li> </ul> <br /> <h2>Inclusion Information</h2><p>Put the Z-wave interface controller into “Add” mode, triple press the Program button (A). It will be included to network.</p> <br /> <h2>Exclusion Information</h2><p>Put the Z-Wave interface controller into "Remove" mode, triple press the Program button (A). It will be excluded to network</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -50,7 +50,7 @@ Z-Wave Outdoor Smart Plug<br /><h1>Overview</h1><p>Outdoor AC Plug</p> <p>Key Fe
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: LED Indicator</label>
         <description><![CDATA[
-Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>
+Status LED Configuration<br /> <h1>Overview</h1><p>Value: 00(default) outlet on,led on.</p> <p>Value: 01 outlet on,led off.</p> <p>Value: 02 led off, led no work.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -65,7 +65,7 @@ Status LED Configuration<br /><h1>Overview</h1><p>Value: 00(default) outlet on,l
                  min="0" max="65535">
         <label>2: Auto Turn-Off Timer</label>
         <description><![CDATA[
-The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
+The countdown time, the socket closed<br /> <h1>Overview</h1><p>Countdown time can be set.</p> <p>LED flashes two times when the configuration parameter is changed</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -81,7 +81,7 @@ The countdown time, the socket closed<br /><h1>Overview</h1><p>Countdown time ca
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Restores state after power failure</label>
         <description><![CDATA[
-Restores state after power failure<br /><h1>Overview</h1><p>Parameter=6，Size=1，Value=0 output off Value=1 output on Value=2 (default) out put the state after power</p>
+Restores state after power failure<br /> <h1>Overview</h1><p>Parameter=6，Size=1，Value=0 output off Value=1 output on Value=2 (default) out put the state after power</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -96,7 +96,7 @@ Restores state after power failure<br /><h1>Overview</h1><p>Parameter=6，Size=1
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Association group 1<br /><h1>Overview</h1><p>This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication. Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “Device Reset Locally” function. Refer to the instructions of your controller for any available details on how this can be set.</p>
+Association group 1<br /> <h1>Overview</h1><p>This Device supports Lifeline (association group 1) supporting 1 node for lifeline communication. Group 1 must be assigned the Node ID of the primary controller where unsolicited notifications will be sent. The Z-Wave controller should set this association automatically after inclusion. Lifeline association only supports the “Device Reset Locally” function. Refer to the instructions of your controller for any available details on how this can be set.</p>
         ]]></description>
       </parameter>
 

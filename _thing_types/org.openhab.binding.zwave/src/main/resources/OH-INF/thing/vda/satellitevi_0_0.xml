@@ -8,7 +8,7 @@
   <thing-type id="vda_satellitevi_00_000" listed="false">
     <label>Vitrum Satellite VI Vitrum touch switch satellite 6 buttons</label>
     <description><![CDATA[
-Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.</p> <p>Each button can be configured in 4 different modes. Press the 2 service buttons (left and right each) for at least 8 seconds. Buttons will start to flash and the color of the flashing ring will indicate the channel setting:</p> <p>- Yellow: for association with On-Off Modules, toggle-button function (BASIC)</p> <p>- Red: for association with On-Off Modules, push-button function (BASIC)</p> <p>- Magenta: for association with Roller Blinds, 2 buttons will start flashing together for up and down movement (SWITCH_MULTILEVEL)</p> <p>- Green: for association with Dimmer Modules (SWITCH_MULTILEVEL)</p> <p>After mode selection, please proceed with inclusion process.</p> <br /><h2>Inclusion Information</h2><p>With the controller in the inclusion mode, press any of the touch keys on the device. Vitrum indicates that it has been included to the network by flashing the yellow LEDs three times and switching on all the lights connected to the unit.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.</p>
+Vitrum touch switch satellite 6 buttons<br /> <h1>Overview</h1><p>When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.</p> <p>Each button can be configured in 4 different modes. Press the 2 service buttons (left and right each) for at least 8 seconds. Buttons will start to flash and the color of the flashing ring will indicate the channel setting:</p> <p>- Yellow: for association with On-Off Modules, toggle-button function (BASIC)</p> <p>- Red: for association with On-Off Modules, push-button function (BASIC)</p> <p>- Magenta: for association with Roller Blinds, 2 buttons will start flashing together for up and down movement (SWITCH_MULTILEVEL)</p> <p>- Green: for association with Dimmer Modules (SWITCH_MULTILEVEL)</p> <p>After mode selection, please proceed with inclusion process.</p> <br /> <h2>Inclusion Information</h2><p>With the controller in the inclusion mode, press any of the touch keys on the device. Vitrum indicates that it has been included to the network by flashing the yellow LEDs three times and switching on all the lights connected to the unit.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.</p>
     ]]></description>
 
     <!-- CHANNEL DEFINITIONS -->
@@ -93,7 +93,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Button channel 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -101,7 +101,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Button channel 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -109,7 +109,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Button channel 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -117,7 +117,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Button channel 4</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -125,7 +125,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Button channel 5</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -133,7 +133,7 @@ Vitrum touch switch satellite 6 buttons<br /><h1>Overview</h1><p>When the device
       <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: Button channel 6</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
+<br /> <h1>Overview</h1><p>Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

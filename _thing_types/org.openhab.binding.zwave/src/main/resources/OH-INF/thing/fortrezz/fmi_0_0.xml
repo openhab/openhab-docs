@@ -8,7 +8,7 @@
   <thing-type id="fortrezz_fmi_00_000" listed="false">
     <label>FMI Flow Meter</label>
     <description><![CDATA[
-Flow Meter<br /><h1>Overview</h1><p>With Flow meter, you have the power to automate, manage water consumption, and detect leaks in your home or building.</p> <p>This is an integral part to a complete water management solution.  Flow Meter tracks water usage and reports gallons used.  Track your households water usage and drill into reports to find out where your peak consumption is and make changes to reduce your water bills.</p> <p>Flow meter tells you if water is flowing or if it’s off.  It knows if the flow is small, like a running toilet, or if it’s large, like a garden hose left on.</p> <p>Flow meter can detect leaks or fixtures left on.  It tracks usage and allows you create smart triggers using your Z-wave home automation system.  To add to it’s capabilities, flow meter checks the temperature in the nearby surrounds to detect for freezing conditions and sends temperature alerts.</p> <p>There’s also a backup battery, just in case power is interrupted.  You won’t have to worry about lost data or lack of leak monitoring.  Plumbed on the water main, flow meter is sure to be a valuable part of your total home automation &amp; leak prevention system.</p> <br /><h2>Inclusion Information</h2><ol><li>Set up  the  inclusion  mode  at  the  controller;</li> <li>Press  the  switch  once  and  the  controller  will indicate the unit has been included in the network.  Also, the LED will blink when the inclusion completes. </li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set up the exclusion mode at the controller;</li> <li>Briefly press the switch once and then release.  The controller will indicate the unit has been removed from the network.  The LED will blink when the exclusion completes.</li> </ol>
+Flow Meter<br /> <h1>Overview</h1><p>With Flow meter, you have the power to automate, manage water consumption, and detect leaks in your home or building.</p> <p>This is an integral part to a complete water management solution.  Flow Meter tracks water usage and reports gallons used.  Track your households water usage and drill into reports to find out where your peak consumption is and make changes to reduce your water bills.</p> <p>Flow meter tells you if water is flowing or if it’s off.  It knows if the flow is small, like a running toilet, or if it’s large, like a garden hose left on.</p> <p>Flow meter can detect leaks or fixtures left on.  It tracks usage and allows you create smart triggers using your Z-wave home automation system.  To add to it’s capabilities, flow meter checks the temperature in the nearby surrounds to detect for freezing conditions and sends temperature alerts.</p> <p>There’s also a backup battery, just in case power is interrupted.  You won’t have to worry about lost data or lack of leak monitoring.  Plumbed on the water main, flow meter is sure to be a valuable part of your total home automation &amp; leak prevention system.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set up  the  inclusion  mode  at  the  controller;</li> <li>Press  the  switch  once  and  the  controller  will indicate the unit has been included in the network.  Also, the LED will blink when the inclusion completes. </li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Set up the exclusion mode at the controller;</li> <li>Briefly press the switch once and then release.  The controller will indicate the unit has been removed from the network.  The LED will blink when the exclusion completes.</li> </ol>
     ]]></description>
     <category>Sensor</category>
 
@@ -108,7 +108,7 @@ Flow Meter<br /><h1>Overview</h1><p>With Flow meter, you have the power to autom
                  min="0" max="99999999">
         <label>3: Meter Count</label>
         <description><![CDATA[
-Meter Count<br /><h1>Overview</h1><p>Count rolls over at 99,999,999</p>
+Meter Count<br /> <h1>Overview</h1><p>Count rolls over at 99,999,999</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -118,7 +118,7 @@ Meter Count<br /><h1>Overview</h1><p>Count rolls over at 99,999,999</p>
                  min="0" max="255">
         <label>4: Meter Report Interval</label>
         <description><![CDATA[
-Meter Report Interval<br /><h1>Overview</h1><p>Meter Report Interval, <strong>while liquid flow is detected</strong>.  If 0 is set, then no continuous reporting during liquid flow.  Note:  Report is sent every 10 hours whether or not flow is detected.</p> <p>Default is 6, which is 60 seconds.</p>
+Meter Report Interval<br /> <h1>Overview</h1><p>Meter Report Interval, <strong>while liquid flow is detected</strong>.  If 0 is set, then no continuous reporting during liquid flow.  Note:  Report is sent every 10 hours whether or not flow is detected.</p> <p>Default is 6, which is 60 seconds.</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -128,7 +128,7 @@ Meter Report Interval<br /><h1>Overview</h1><p>Meter Report Interval, <strong>wh
                  min="0" max="65535">
         <label>5: Meter Leak Threshold</label>
         <description><![CDATA[
-Meter Leak Threshold<br /><h1>Overview</h1><p>Meter Leak Threshold.  Set the threshold count for reporting Flow vs High Flow.  Default is set to 50 (5 gallons).</p> <p>Flow above 5 gallons/min sends (Above Threshold / 255)</p> <p>Flow below 5 gallons/min sends (Below Threshold / 128)</p> <p>Note: If MLS enabled, Value of 0 = No flow detected (during interval)</p>
+Meter Leak Threshold<br /> <h1>Overview</h1><p>Meter Leak Threshold.  Set the threshold count for reporting Flow vs High Flow.  Default is set to 50 (5 gallons).</p> <p>Flow above 5 gallons/min sends (Above Threshold / 255)</p> <p>Flow below 5 gallons/min sends (Below Threshold / 128)</p> <p>Note: If MLS enabled, Value of 0 = No flow detected (during interval)</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -138,7 +138,7 @@ Meter Leak Threshold<br /><h1>Overview</h1><p>Meter Leak Threshold.  Set the th
                  min="0" max="255">
         <label>6: Notification Commands MLS</label>
         <description><![CDATA[
-Toggle Commands or MLS<br /><h1>Overview</h1><p>Notification Commands vs Multi-Level Sensor Toggle.</p> <p>Notifications set as default - Value "0"</p> <p>To enable MLS - Value set to any number except 0</p>
+Toggle Commands or MLS<br /> <h1>Overview</h1><p>Notification Commands vs Multi-Level Sensor Toggle.</p> <p>Notifications set as default - Value "0"</p> <p>To enable MLS - Value set to any number except 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -148,7 +148,7 @@ Toggle Commands or MLS<br /><h1>Overview</h1><p>Notification Commands vs Multi-L
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Lifeline<br /><h1>Overview</h1><p>The controller should automatically set up this association.</p> <ul><li>Device Reset Locally (via 3 quick presses of the program switch)</li> <li>Multilevel Sensor Temperature Report</li> <li>Meter Pulse Report (flow count)</li> <li>Notifications <ul><li>Under temperature detected</li> <li>Over temperature detected</li> <li>Power (Voltage Drop/Droop)</li> </ul></li> </ul>
+Lifeline<br /> <h1>Overview</h1><p>The controller should automatically set up this association.</p> <ul> <li>Device Reset Locally (via 3 quick presses of the program switch)</li> <li>Multilevel Sensor Temperature Report</li> <li>Meter Pulse Report (flow count)</li> <li>Notifications <ul> <li>Under temperature detected</li> <li>Over temperature detected</li> <li>Power (Voltage Drop/Droop)</li> </ul> </li> </ul>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -156,7 +156,7 @@ Lifeline<br /><h1>Overview</h1><p>The controller should automatically set up thi
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: High Temperature</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature High condition has been detected.  When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
+<br /> <h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature High condition has been detected.  When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -164,7 +164,7 @@ Lifeline<br /><h1>Overview</h1><p>The controller should automatically set up thi
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Low Temperature</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature Low condition has been detected.  When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
+<br /> <h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent to the associated nodes to indicate that a Temperature Low condition has been detected.  When the temperature is back in the normal range, one additional report with value = 0x00 is sent.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -172,7 +172,7 @@ Lifeline<br /><h1>Overview</h1><p>The controller should automatically set up thi
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Flow Detected</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent when the meter count is incremented (i.e., flow has started).</p> <p>Do not set associations for this group if water flow is expected.  When flow is not expected (for example, at a vacant vacation home), this association group can be set to perform various tasks such as commanding a water valve to open in order to stop the flow of water and/or commanding a siren/strobe unit to activate.  Since the Basic Set Command (value 0xFF) is sent every 30 seconds while the water is flowing; this commanding should be turned off by removing the associations in this group if water flow is normally expected.</p> <p>Note that no command is ever sent with a value of 0x00 because the FMI cannot know if or when conditions have returned to normal.</p>
+<br /> <h1>Overview</h1><p>Basic Set Command with value = 0xFF is sent when the meter count is incremented (i.e., flow has started).</p> <p>Do not set associations for this group if water flow is expected.  When flow is not expected (for example, at a vacant vacation home), this association group can be set to perform various tasks such as commanding a water valve to open in order to stop the flow of water and/or commanding a siren/strobe unit to activate.  Since the Basic Set Command (value 0xFF) is sent every 30 seconds while the water is flowing; this commanding should be turned off by removing the associations in this group if water flow is normally expected.</p> <p>Note that no command is ever sent with a value of 0x00 because the FMI cannot know if or when conditions have returned to normal.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

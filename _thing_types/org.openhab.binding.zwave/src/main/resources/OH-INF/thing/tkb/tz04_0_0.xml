@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz04_00_000" listed="false">
     <label>TZ04 In Wall Dual Relay Switch</label>
     <description><![CDATA[
-In Wall Dual Relay Switch<br /><h1>Overview</h1><p>This in-wall switch module is able to detect Instant power wattage (5~1500W) and overload wattage (1600~1700W) of connected light or appliances.</p> <p>When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, disconnect and re-connect the Module will reset its overload condition to normal status.</p> <br /><h2>Inclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter inclusion mode</p> <br /><h2>Exclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter exclusion mode</p>
+In Wall Dual Relay Switch<br /> <h1>Overview</h1><p>This in-wall switch module is able to detect Instant power wattage (5~1500W) and overload wattage (1600~1700W) of connected light or appliances.</p> <p>When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, disconnect and re-connect the Module will reset its overload condition to normal status.</p> <br /> <h2>Inclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter inclusion mode</p> <br /> <h2>Exclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 1.5 seconds will enter exclusion mode</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -195,7 +195,7 @@ In Wall Dual Relay Switch<br /><h1>Overview</h1><p>This in-wall switch module is
                  min="0" max="65535">
         <label>1: W meter report period</label>
         <description><![CDATA[
-Period for reporting W meter<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</p>
+Period for reporting W meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 720), the device will report its instant power consumption every 1 hour to Z-Wave Controller. Unit: 5 seconds</p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Period for reporting W meter<br /><h1>Overview</h1><p>If the setting is configur
                  min="0" max="65535">
         <label>2: kWh meter report period</label>
         <description><![CDATA[
-Period for reporting kWh meter<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (value = 6), the device will report its total power consumption every 1 hour to Z-Wave Controller. </p> <p>Unit: 10 minutes</p>
+Period for reporting kWh meter<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (value = 6), the device will report its total power consumption every 1 hour to Z-Wave Controller. </p> <p>Unit: 10 minutes</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -214,7 +214,7 @@ Period for reporting kWh meter<br /><h1>Overview</h1><p>If the setting is config
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Selected endpoint</label>
         <description><![CDATA[
-Which endpoint is addressed by the BASIC command class<br /><h1>Overview</h1><p>If the Controller is not using Multi_Channel command class to access the endpoint of TZ04, you may configure the endpoint value to react the Basic Command Class</p>
+Which endpoint is addressed by the BASIC command class<br /> <h1>Overview</h1><p>If the Controller is not using Multi_Channel command class to access the endpoint of TZ04, you may configure the endpoint value to react the Basic Command Class</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -228,7 +228,7 @@ Which endpoint is addressed by the BASIC command class<br /><h1>Overview</h1><p>
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Switch mode</label>
         <description><![CDATA[
-Change the external switch mode<br /><h1>Overview</h1><p>Manual switch S1 and S2 can be set to Edge mode, Pulse mode or Edge-Toggle mode. The default value is Edge mode.</p> <p>Edge mode: This mode is suitable for toggle (bi-stable) wall switches that have an indicator point on the switch and the position corresponds to the same state of relay 1 and relay 2. If the TZ04 relay changes state due to a Z-Wave command, the switch may need to be toggled twice (On-&gt;Off or Off-&gt;On) to change the relay state.</p> <p>Pulse Mode: This mode is suitable for momentary contact type wall switches to change the state of relay 1 or relay 2.</p> <p>Edge-Toggle mode: This mode is suitable for normal toggle (bi-stable) switches. Every time the state of the wall switch changes the state of relay 1 or relay 2 will also change.</p>
+Change the external switch mode<br /> <h1>Overview</h1><p>Manual switch S1 and S2 can be set to Edge mode, Pulse mode or Edge-Toggle mode. The default value is Edge mode.</p> <p>Edge mode: This mode is suitable for toggle (bi-stable) wall switches that have an indicator point on the switch and the position corresponds to the same state of relay 1 and relay 2. If the TZ04 relay changes state due to a Z-Wave command, the switch may need to be toggled twice (On-&gt;Off or Off-&gt;On) to change the relay state.</p> <p>Pulse Mode: This mode is suitable for momentary contact type wall switches to change the state of relay 1 or relay 2.</p> <p>Edge-Toggle mode: This mode is suitable for normal toggle (bi-stable) switches. Every time the state of the wall switch changes the state of relay 1 or relay 2 will also change.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -258,7 +258,7 @@ Change the external switch mode<br /><h1>Overview</h1><p>Manual switch S1 and S2
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Restore switch state mode</label>
         <description><![CDATA[
-Restore switch state mode<br /><h1>Overview</h1><p>Restores the switch state setting in case the device was disconnected from the power source.</p>
+Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state setting in case the device was disconnected from the power source.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -273,7 +273,7 @@ Restore switch state mode<br /><h1>Overview</h1><p>Restores the switch state set
                  min="0" max="65535">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
-Auto Off Timer<br /><h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>
+Auto Off Timer<br /> <h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -282,7 +282,7 @@ Auto Off Timer<br /><h1>Overview</h1><p>Whenever the device switches to on, the 
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: RF off command mode</label>
         <description><![CDATA[
-RF off command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASIC_SET, BINARY_SWITCH_SET, SWITCH_ALL_OFF, is received, it could be interpreted as 4 kinds of commands.</p>
+RF off command mode<br /> <h1>Overview</h1><p>Whenever a switch off command, BASIC_SET, BINARY_SWITCH_SET, SWITCH_ALL_OFF, is received, it could be interpreted as 4 kinds of commands.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -297,7 +297,7 @@ RF off command mode<br /><h1>Overview</h1><p>Whenever a switch off command, BASI
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Endpoint 3</label>
         <description><![CDATA[
-Endpoint 3<br /><h1>Overview</h1><p>Multi-Channel Command is a good way to control relay1 and relay2 of TZ04 individually. The endpoint3 of TZ04 is related to both relay1 and relay2. In some condition it becomes redundant in Multi-Channel Command Class.</p>
+Endpoint 3<br /> <h1>Overview</h1><p>Multi-Channel Command is a good way to control relay1 and relay2 of TZ04 individually. The endpoint3 of TZ04 is related to both relay1 and relay2. In some condition it becomes redundant in Multi-Channel Command Class.</p>
         ]]></description>
         <default>1</default>
         <options>

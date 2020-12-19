@@ -8,7 +8,7 @@
   <thing-type id="vda_dimmer3_00_000" listed="false">
     <label>Vitrum III EU Dimmer</label>
     <description><![CDATA[
-<br /><h1>Overview</h1><p>When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.</p> <br /><h2>Inclusion Information</h2><p>With the controller in the inclusion mode, press any of the touch keys on the device.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.</p>
+<br /> <h1>Overview</h1><p>When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.</p> <br /> <h2>Inclusion Information</h2><p>With the controller in the inclusion mode, press any of the touch keys on the device.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.</p>
     ]]></description>
     <category>WallSwitch</category>
 

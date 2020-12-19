@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz65d_00_000" listed="false">
     <label>TZ65D Dual Paddle Wall Dimmer</label>
     <description><![CDATA[
-Dual Paddle Wall Dimmer<br /><h1>Overview</h1><p>The TZ65D wall mounted 3-way dimmer switch is a component of the lighting control system.This wall mounted dimmer switch is designed to work with other Z-Wave enabled devices. Z-Wave nodes of other types can be added to the system and will also act as repeaters if they support this function of repeating the signal received to other modules in the system.As part of a Z-Wave network, the TZ65D will also act as a wireless repeater to insure that commands intended for another device in the network are received. This is useful when the device would otherwise be out of the radio range of the wireless controller.   </p> <br /><h2>Inclusion Information</h2><p>Including to the network (must be installed in its permanent location, not on test bench)</p> <ol><li>Setup the controller you are using to include a device into network.</li> <li>Tap either the top or bottom of the switch once.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Setup the controller you are using to exclude a device from the network.</li> <li>Tap either the top or the bottom of the switch once.</li> </ol>
+Dual Paddle Wall Dimmer<br /> <h1>Overview</h1><p>The TZ65D wall mounted 3-way dimmer switch is a component of the lighting control system.This wall mounted dimmer switch is designed to work with other Z-Wave enabled devices. Z-Wave nodes of other types can be added to the system and will also act as repeaters if they support this function of repeating the signal received to other modules in the system.As part of a Z-Wave network, the TZ65D will also act as a wireless repeater to insure that commands intended for another device in the network are received. This is useful when the device would otherwise be out of the radio range of the wireless controller.   </p> <br /> <h2>Inclusion Information</h2><p>Including to the network (must be installed in its permanent location, not on test bench)</p> <ol><li>Setup the controller you are using to include a device into network.</li> <li>Tap either the top or bottom of the switch once.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Setup the controller you are using to exclude a device from the network.</li> <li>Tap either the top or the bottom of the switch once.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -62,7 +62,7 @@ Dual Paddle Wall Dimmer<br /><h1>Overview</h1><p>The TZ65D wall mounted 3-way di
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Suspend Group 4</label>
         <description><![CDATA[
-Suspend Group 4<br /><h1>Overview</h1><p>Setting this parameter will disable transmitting commands to devices in association group 4</p>
+Suspend Group 4<br /> <h1>Overview</h1><p>Setting this parameter will disable transmitting commands to devices in association group 4</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -75,7 +75,7 @@ Suspend Group 4<br /><h1>Overview</h1><p>Setting this parameter will disable tra
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Blue LED light Behavior</label>
         <description><![CDATA[
-Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.</p>
+Defines the behavior of the blue LED.<br /> <h1>Overview</h1><p>Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -99,7 +99,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Defines the behav
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Enable Shade Control Group 2</label>
         <description><![CDATA[
-Enable Shade Control Group 2<br /><h1>Overview</h1><p>Enable the control of shade devices in association group 2 when this option is activated.</p>
+Enable Shade Control Group 2<br /> <h1>Overview</h1><p>Enable the control of shade devices in association group 2 when this option is activated.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -112,7 +112,7 @@ Enable Shade Control Group 2<br /><h1>Overview</h1><p>Enable the control of shad
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Enable Shade Control Group 3</label>
         <description><![CDATA[
-Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shade devices in association group 3 when this option is activated.</p>
+Enable Shade Control Group 3<br /> <h1>Overview</h1><p>Enable the control of shade devices in association group 3 when this option is activated.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -145,7 +145,7 @@ Enable Shade Control Group 3<br /><h1>Overview</h1><p>Enable the control of shad
       <parameter name="config_22_1" type="integer" groupName="configuration">
         <label>22: Poll Group 2</label>
         <description><![CDATA[
-Should Group 2 be pulled?<br /><h1>Overview</h1><p>Defines if the device will poll association Group 2 at the interval defined in parameter 20.</p>
+Should Group 2 be pulled?<br /> <h1>Overview</h1><p>Defines if the device will poll association Group 2 at the interval defined in parameter 20.</p>
         ]]></description>
         <default>1</default>
         <options>

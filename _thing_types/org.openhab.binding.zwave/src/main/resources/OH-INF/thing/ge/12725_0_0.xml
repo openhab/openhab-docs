@@ -8,7 +8,7 @@
   <thing-type id="ge_12725_00_000" listed="false">
     <label>GE 12725 In-Wall Dimmer</label>
     <description><![CDATA[
-In-Wall Dimmer<br /><h1>Overview</h1><p>RF controlled, in-wall 1000w dimmer, interchangeable paddle</p> <br /><h2>Inclusion Information</h2><p>Press and release the top or bottom of the dimmer smart switch (rocker) to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Press and release the top or bottom of the dimmer smart switch (rocker) to remove it from the network.</p>
+In-Wall Dimmer<br /> <h1>Overview</h1><p>RF controlled, in-wall 1000w dimmer, interchangeable paddle</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the dimmer smart switch (rocker) to add it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the dimmer smart switch (rocker) to remove it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -45,7 +45,7 @@ In-Wall Dimmer<br /><h1>Overview</h1><p>RF controlled, in-wall 1000w dimmer, int
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
-Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.</p>
+Night Light<br /> <h1>Overview</h1><p>Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -59,7 +59,7 @@ Night Light<br /><h1>Overview</h1><p>Defines the behavior of the blue LED. Defau
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert Switch<br /><h1>Overview</h1><p>Invert the ON/OFF Switch State.</p> <p>Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON. </p> <p>Note: If you invert the switches and also install the product upside down, the load will now be control</p>
+Invert Switch<br /> <h1>Overview</h1><p>Invert the ON/OFF Switch State.</p> <p>Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON. </p> <p>Note: If you invert the switches and also install the product upside down, the load will now be control</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -84,7 +84,7 @@ Invert Switch<br /><h1>Overview</h1><p>Invert the ON/OFF Switch State.</p> <p>Se
                  min="1" max="99">
         <label>7: On/Off Command Dim Step</label>
         <description><![CDATA[
-On/Off Command Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
+On/Off Command Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -94,7 +94,7 @@ On/Off Command Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the d
                  min="1" max="255">
         <label>8: On/Off Command Dim Rate</label>
         <description><![CDATA[
-On/Off Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
+On/Off Command Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -104,7 +104,7 @@ On/Off Command Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 mill
                  min="1" max="99">
         <label>9: Local Control Dim Step</label>
         <description><![CDATA[
-Local Control Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
+Local Control Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -114,7 +114,7 @@ Local Control Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the di
                  min="1" max="255">
         <label>10: Local Control Dim Rate</label>
         <description><![CDATA[
-Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
+Local Control Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -124,7 +124,7 @@ Local Control Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 milli
                  min="1" max="99">
         <label>11: ALL ON/ALL OFF Dim Step</label>
         <description><![CDATA[
-ALL ON/ALL OFF Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
+ALL ON/ALL OFF Dim Step<br /> <h1>Overview</h1><p>Indicates how many levels the dimmer will change for each dimming step.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -134,7 +134,7 @@ ALL ON/ALL OFF Dim Step<br /><h1>Overview</h1><p>Indicates how many levels the d
                  min="1" max="255">
         <label>12: ALL ON/ALL OFF Dim Rate</label>
         <description><![CDATA[
-ALL ON/ALL OFF Dim Rate<br /><h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change. </p>
+ALL ON/ALL OFF Dim Rate<br /> <h1>Overview</h1><p>This value indicates in 10 millisecond resolution. This sets how often the dim level will change.</p> <p>For example, if you set this parameter to 1, then every 10ms the dim level will change.</p> <p>If you set it to 255, then every 2.55 seconds the dim level will change. </p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>

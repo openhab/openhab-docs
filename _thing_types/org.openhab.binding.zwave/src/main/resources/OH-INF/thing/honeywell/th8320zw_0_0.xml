@@ -8,7 +8,7 @@
   <thing-type id="honeywell_th8320zw_00_000" listed="false">
     <label>TH8320ZW Touchscreen Programmable Thermostat</label>
     <description><![CDATA[
-Touchscreen Programmable Thermostat<br /><h1>Overview</h1><p>Touchscreen Thermostat, precise comfort control, easy to use touch screen display, extra large backlit display.</p> <br /><h2>Inclusion Information</h2><p>Press UP/DOWN arrows, select option 1 for inclusion.</p> <br /><h2>Exclusion Information</h2><p>Press UP/DOWN arrows, select option 0 for exclusion.</p>
+Touchscreen Programmable Thermostat<br /> <h1>Overview</h1><p>Touchscreen Thermostat, precise comfort control, easy to use touch screen display, extra large backlit display.</p> <br /> <h2>Inclusion Information</h2><p>Press UP/DOWN arrows, select option 1 for inclusion.</p> <br /> <h2>Exclusion Information</h2><p>Press UP/DOWN arrows, select option 0 for exclusion.</p>
     ]]></description>
     <category>HVAC</category>
 

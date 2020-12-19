@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9575_00_000" listed="false">
     <label>RF9575 Anyplace Switch</label>
     <description><![CDATA[
-Anyplace Switch<br /><h1>Overview</h1><p>Anyplace switch controls Z-Wave receptacles, switches or dimmers to provide remote ON/OFF/DIM/BRIGHT control. This provides other programmable functions when used with Z-Wave compliant products. Anyplace switch is intended to manually control other Z-Wave devices through association with or without a controller. Anyplace switch utilizes two CR2025 batteries and mounts flush to the wall. No new wiring is required.</p> <br /><h2>Inclusion Information</h2><p>Press the switch one time to include it in the network. The LED will stop blinking after the device is successfully included</p> <br /><h2>Exclusion Information</h2><p>Press the switch one time to exclude it from the network.</p>
+Anyplace Switch<br /> <h1>Overview</h1><p>Anyplace switch controls Z-Wave receptacles, switches or dimmers to provide remote ON/OFF/DIM/BRIGHT control. This provides other programmable functions when used with Z-Wave compliant products. Anyplace switch is intended to manually control other Z-Wave devices through association with or without a controller. Anyplace switch utilizes two CR2025 batteries and mounts flush to the wall. No new wiring is required.</p> <br /> <h2>Inclusion Information</h2><p>Press the switch one time to include it in the network. The LED will stop blinking after the device is successfully included</p> <br /> <h2>Exclusion Information</h2><p>Press the switch one time to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 

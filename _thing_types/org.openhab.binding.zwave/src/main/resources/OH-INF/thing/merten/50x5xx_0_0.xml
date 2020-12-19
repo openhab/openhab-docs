@@ -8,7 +8,7 @@
   <thing-type id="merten_50x5xx_00_000" listed="false">
     <label>50x5xx Roller shutter push-button</label>
     <description><![CDATA[
-Roller shutter push-button<br /><h1>Overview</h1><p>The roller shutter push-button contains a radio receiver for the Merten CONNECT radio system. If you use the blind control inserts 580699 or 580698, you can operate the connected roller shutter drive remotely using a Merten CONNECT radio transmitter. You can also operate the roller shutters using the rocker on the roller shutter push-button.</p> <p>You can use the Merten CONNECT radio button, the Merten CONNECT radio remote control or the Merten CONNECT radio central unit as the transmitter.</p> <br /><h2>Inclusion Information</h2><p>Program (transmits Node info frame)</p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p> <br /><h2>Exclusion Information</h2><p>Reset to the factory settings; exclude  </p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p>
+Roller shutter push-button<br /> <h1>Overview</h1><p>The roller shutter push-button contains a radio receiver for the Merten CONNECT radio system. If you use the blind control inserts 580699 or 580698, you can operate the connected roller shutter drive remotely using a Merten CONNECT radio transmitter. You can also operate the roller shutters using the rocker on the roller shutter push-button.</p> <p>You can use the Merten CONNECT radio button, the Merten CONNECT radio remote control or the Merten CONNECT radio central unit as the transmitter.</p> <br /> <h2>Inclusion Information</h2><p>Program (transmits Node info frame)</p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p> <br /> <h2>Exclusion Information</h2><p>Reset to the factory settings; exclude  </p> <p>Triple click on operating surface. Used for include/exclude the device by the primary  </p>
     ]]></description>
     <category>Blinds</category>
 
@@ -79,7 +79,7 @@ Roller shutter push-button<br /><h1>Overview</h1><p>The roller shutter push-butt
                  min="0" max="255">
         <label>176: Changeover delay (motor protection)</label>
         <description><![CDATA[
-Changeover delay (motor protection)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Changeover delay =  Input * 0.1s</p>
+Changeover delay (motor protection)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Changeover delay =  Input * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -88,7 +88,7 @@ Changeover delay (motor protection)<br /><h1>Overview</h1><p>Allowed values: 0-2
                  min="0" max="255">
         <label>177: Raising time (Input 1)</label>
         <description><![CDATA[
-Raising time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s</p>
+Raising time (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -96,7 +96,7 @@ Raising time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Rai
       <parameter name="config_178_1_wo" type="integer" groupName="configuration">
         <label>178: Raising time (Input 2)</label>
         <description><![CDATA[
-Raising time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s  </p>
+Raising time (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Raising time = (256 * Input 1 + Input 2) * 0.1s  </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -106,7 +106,7 @@ Raising time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Rai
                  min="0" max="255">
         <label>179: Lowering time (input 1)</label>
         <description><![CDATA[
-Lowering time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
+Lowering time (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -115,7 +115,7 @@ Lowering time (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lo
                  min="0" max="255">
         <label>180: Lowering time (Input 2)</label>
         <description><![CDATA[
-Lowering time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
+Lowering time (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lowering time = (256 * Input 1 + Input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -136,7 +136,7 @@ Lowering time (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>Lo
                  min="0" max="255">
         <label>182: Brightness threshold</label>
         <description><![CDATA[
-Brightness threshold<br /><h1>Overview</h1><p>Allowed values: 0-255</p>
+Brightness threshold<br /> <h1>Overview</h1><p>Allowed values: 0-255</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -145,7 +145,7 @@ Brightness threshold<br /><h1>Overview</h1><p>Allowed values: 0-255</p>
                  min="0" max="255">
         <label>183: Reaction threshold for raising shutter (Input 1)</label>
         <description><![CDATA[
-Reaction threshold for raising shutter (Inpuit 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+Reaction threshold for raising shutter (Inpuit 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -154,7 +154,7 @@ Reaction threshold for raising shutter (Inpuit 1)<br /><h1>Overview</h1><p>Allow
                  min="0" max="255">
         <label>184: Reaction threshold for raising shutter (Input 2)</label>
         <description><![CDATA[
-Reaction threshold for raising shutter (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+Reaction threshold for raising shutter (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -163,7 +163,7 @@ Reaction threshold for raising shutter (Input 2)<br /><h1>Overview</h1><p>Allowe
                  min="0" max="255">
         <label>185: Reaction threshold for lowering shutter (Input 1)</label>
         <description><![CDATA[
-Reaction threshold for lowering shutter (Input 1)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+Reaction threshold for lowering shutter (Input 1)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -172,7 +172,7 @@ Reaction threshold for lowering shutter (Input 1)<br /><h1>Overview</h1><p>Allow
                  min="0" max="255">
         <label>186: Reaction threshold for lowering shutter (Input 2)</label>
         <description><![CDATA[
-Reaction threshold for lowering shutter (Input 2)<br /><h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
+Reaction threshold for lowering shutter (Input 2)<br /> <h1>Overview</h1><p>Allowed values: 0-255</p> <p>(256 * Input 1 + input 2) * 0.1s</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -181,7 +181,7 @@ Reaction threshold for lowering shutter (Input 2)<br /><h1>Overview</h1><p>Allow
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Other device to be switched</label>
         <description><![CDATA[
-<br /><h1>Overview</h1>
+<br /> <h1>Overview</h1>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

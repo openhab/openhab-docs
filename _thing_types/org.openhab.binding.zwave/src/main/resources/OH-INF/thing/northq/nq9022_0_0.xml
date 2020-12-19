@@ -8,7 +8,7 @@
   <thing-type id="northq_nq9022_00_000" listed="false">
     <label>NQ-9022 Electrical Meter</label>
     <description><![CDATA[
-Electrical Meter<br /><h1>Overview</h1><p>The basic purpose of the device is to count impulses / flashes from a metering device and to save impulse count in nonvolatile memory with 15 minutes interval.</p> <br /><h2>Inclusion Information</h2><p>3 times press on the button to include</p> <br /><h2>Exclusion Information</h2><p>3 times press on the button to exclude</p> <br /><h2>Wakeup Information</h2><p>Press the sensor button 1 time to enter Wakeup (real-time) mode </p>
+Electrical Meter<br /> <h1>Overview</h1><p>The basic purpose of the device is to count impulses / flashes from a metering device and to save impulse count in nonvolatile memory with 15 minutes interval.</p> <br /> <h2>Inclusion Information</h2><p>3 times press on the button to include</p> <br /> <h2>Exclusion Information</h2><p>3 times press on the button to exclude</p> <br /> <h2>Wakeup Information</h2><p>Press the sensor button 1 time to enter Wakeup (real-time) mode </p>
     ]]></description>
     <category>Sensor</category>
 
@@ -77,7 +77,7 @@ Electrical Meter<br /><h1>Overview</h1><p>The basic purpose of the device is to 
                  min="0" max="255">
         <label>4: IR Pulse Width</label>
         <description><![CDATA[
-Adjusts transmit signal<br /><h1>Overview</h1><p>Adjusts transmit signal so received signal will in average be equal to this values.</p>
+Adjusts transmit signal<br /> <h1>Overview</h1><p>Adjusts transmit signal so received signal will in average be equal to this values.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Adjusts transmit signal<br /><h1>Overview</h1><p>Adjusts transmit signal so rece
                  min="1" max="50">
         <label>5: Poll / Wake up frequency</label>
         <description><![CDATA[
-Wake device up this many times per second.<br /><h1>Overview</h1><p>This value also controls number of measurements per second on mechanical meters.</p>
+Wake device up this many times per second.<br /> <h1>Overview</h1><p>This value also controls number of measurements per second on mechanical meters.</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Wake device up this many times per second.<br /><h1>Overview</h1><p>This value a
                  min="0" max="65535">
         <label>11: Real-time mode</label>
         <description><![CDATA[
-Set this to enter real-time mode from remote.<br /><h1>Overview</h1><p>Contains seconds * poll frequency before going back to sleep. If you press the button once this value will be set.</p>
+Set this to enter real-time mode from remote.<br /> <h1>Overview</h1><p>Contains seconds * poll frequency before going back to sleep. If you press the button once this value will be set.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -165,7 +165,7 @@ Set this to enter real-time mode from remote.<br /><h1>Overview</h1><p>Contains 
                  min="0" max="65535">
         <label>15: Calibration status</label>
         <description><![CDATA[
-The calibration progress is calculated<br /><h1>Overview</h1><p>The calibration progress is calculated as (value[1] - 65 + value[2] / value[3]) * 25.</p> <p>The calibration is finished successfully when value[0]  =  2 and value[2] = value[3].</p> <p>The calibration has failed if value[0] != 1 OR (value[0] = 2 AND value[2] != value[</p>
+The calibration progress is calculated<br /> <h1>Overview</h1><p>The calibration progress is calculated as (value[1] - 65 + value[2] / value[3]) * 25.</p> <p>The calibration is finished successfully when value[0]  =  2 and value[2] = value[3].</p> <p>The calibration has failed if value[0] != 1 OR (value[0] = 2 AND value[2] != value[</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

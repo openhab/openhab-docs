@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc17_00_000" listed="false">
     <label>DSC17 Micro Double Smart Switch</label>
     <description><![CDATA[
-Micro Double Smart Switch<br /><h1>Overview</h1><p>The Aeon Labs Micro Double SES is a power binary switch device based on Z-wave routing slave library V5.02 Patch3</p> <br /><h2>Inclusion Information</h2><p>Toggle external button or push internal button.</p> <br /><h2>Exclusion Information</h2><p>Toggle external button 10 times in quick succession to initiate removing from the Z-Wave network or push internal button. </p>
+Micro Double Smart Switch<br /> <h1>Overview</h1><p>The Aeon Labs Micro Double SES is a power binary switch device based on Z-wave routing slave library V5.02 Patch3</p> <br /> <h2>Inclusion Information</h2><p>Toggle external button or push internal button.</p> <br /> <h2>Exclusion Information</h2><p>Toggle external button 10 times in quick succession to initiate removing from the Z-Wave network or push internal button. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -87,7 +87,7 @@ Micro Double Smart Switch<br /><h1>Overview</h1><p>The Aeon Labs Micro Double SE
                  min="0" max="65535">
         <label>2: Blink</label>
         <description><![CDATA[
-This is a double byte value.<br /><h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value is set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p> <p>Configuration Value 1 is to Specify the time that Micro Double SES need blink, The unit is Second; Configuration Value 2 is to Specify the Cycle of on/off, the unit of it is 0.1 second. For example: if we set Configuration Value 1 to '15',Configuration Value 2 to '10',then Micro Double SES will open 0.5 second, close 0.5 second, and repeat for 14 times. </p>
+This is a double byte value.<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value is set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p> <p>Configuration Value 1 is to Specify the time that Micro Double SES need blink, The unit is Second; Configuration Value 2 is to Specify the Cycle of on/off, the unit of it is 0.1 second. For example: if we set Configuration Value 1 to '15',Configuration Value 2 to '10',then Micro Double SES will open 0.5 second, close 0.5 second, and repeat for 14 times. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ This is a double byte value.<br /><h1>Overview</h1><p>This is a double byte valu
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Notification on Status Change</label>
         <description><![CDATA[
-Enables automatic notifications to associated devices<br /><h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed</p>
+Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Switch's load changed</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -121,7 +121,7 @@ Enables automatic notifications to associated devices<br /><h1>Overview</h1><p>P
       <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Enables/disables parameter 91 and 92</label>
         <description><![CDATA[
-Automated sending of a Report triggered by minimal change of value.<br /><h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
+Automated sending of a Report triggered by minimal change of value.<br /> <h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -161,7 +161,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
                  min="0" max="15">
         <label>101: Automatic reports for group 1</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 1<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 1<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -178,7 +178,7 @@ Which reports need to send automatically in timing intervals for group 1<br /><h
                  min="0" max="15">
         <label>102: Automatic reports for group 2</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 2<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 2<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -195,7 +195,7 @@ Which reports need to send automatically in timing intervals for group 2<br /><h
                  min="0" max="15">
         <label>103: Automatic reports for group 3</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 3<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>0</default>
         <options>

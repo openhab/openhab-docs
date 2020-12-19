@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen25_00_000" listed="false">
     <label>ZEN25 Double Plug</label>
     <description><![CDATA[
-Double Plug<br /><h1>Overview</h1><p>The Double Plug works great as a low profile on/off device for a couple of lamps or small appliances (10A total between both outlets). But it can serve as a smart power monitor, a signal tester, or extender as well. It's fast, it's secure, and it's small.</p> <p>As always, we've included a bunch of useful settings for you to customize the plug so you get the most of it. There is a built-in timer for remote reboots of connected devices or the option to turn off manual control. But if you find anything missing, just let us know and we'll add it</p> <br /><h2>Inclusion Information</h2><p>AUTO INCLUSION</p> <ol><li>Initiate inclusion (pairing) in the app (or web interface). Not sure how? ask@getzooz.com</li> <li>Plug the device into a grounded 120 VAC receptacle you’re planning to use it at (it doesn’t need to be close. Put your Z-Wave hub into inclusion mode and click the Z-Wave button 3 times quickly. The LED indicators will start blinking and the Double Plug will join the network automatically. If it lights up in yellow, inclusion has failed.</li> <li>You will see 4 new on/off devices in your app: 2 channels for on/off control, 1 channel for on/off monitoring (the USB port reporting charging/ charged status, no control), and 1 master node to control both outlets at the same time and to access and adjust advanced settings in (if your hub supports parameter input).</li> </ol><p>MANUAL INCLUSION</p> <p>Put your Z-Wave hub into inclusion mode and click the Z-Wave button 3 times quickly.</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the plug within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com).</li> <li>Press and release the Z-Wave button 3 times quickly.</li> <li>Your hub will confirm exclusion and all of the channels (child outlets) and the main device will disappear from your controller's device list.</li> </ol>
+Double Plug<br /> <h1>Overview</h1><p>The Double Plug works great as a low profile on/off device for a couple of lamps or small appliances (10A total between both outlets). But it can serve as a smart power monitor, a signal tester, or extender as well. It's fast, it's secure, and it's small.</p> <p>As always, we've included a bunch of useful settings for you to customize the plug so you get the most of it. There is a built-in timer for remote reboots of connected devices or the option to turn off manual control. But if you find anything missing, just let us know and we'll add it</p> <br /> <h2>Inclusion Information</h2><p>AUTO INCLUSION</p> <ol><li>Initiate inclusion (pairing) in the app (or web interface). Not sure how? ask@getzooz.com</li> <li>Plug the device into a grounded 120 VAC receptacle you’re planning to use it at (it doesn’t need to be close. Put your Z-Wave hub into inclusion mode and click the Z-Wave button 3 times quickly. The LED indicators will start blinking and the Double Plug will join the network automatically. If it lights up in yellow, inclusion has failed.</li> <li>You will see 4 new on/off devices in your app: 2 channels for on/off control, 1 channel for on/off monitoring (the USB port reporting charging/ charged status, no control), and 1 master node to control both outlets at the same time and to access and adjust advanced settings in (if your hub supports parameter input).</li> </ol><p>MANUAL INCLUSION</p> <p>Put your Z-Wave hub into inclusion mode and click the Z-Wave button 3 times quickly.</p> <br /> <h2>Exclusion Information</h2><ol><li>Bring the plug within direct range of your Z-Wave gateway (hub).</li> <li>Put the Z-Wave hub into exclusion mode (not sure how to do that? ask@getzooz.com).</li> <li>Press and release the Z-Wave button 3 times quickly.</li> <li>Your hub will confirm exclusion and all of the channels (child outlets) and the main device will disappear from your controller's device list.</li> </ol>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -147,7 +147,7 @@ Double Plug<br /><h1>Overview</h1><p>The Double Plug works great as a low profil
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: On/Off After Power</label>
         <description><![CDATA[
-On/Off Status After Power Failure<br /><h1>Overview</h1><p>Choose the recovery state for your Double Plug’s outlets if power outage occurs.</p>
+On/Off Status After Power Failure<br /> <h1>Overview</h1><p>Choose the recovery state for your Double Plug’s outlets if power outage occurs.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -162,7 +162,7 @@ On/Off Status After Power Failure<br /><h1>Overview</h1><p>Choose the recovery s
                  min="0" max="65535">
         <label>2: Wattage Threshold</label>
         <description><![CDATA[
-Power Wattage Report Value Threshold<br /><h1>Overview</h1><p>Choose how you want your Double Plug to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the Double Plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report).</p>
+Power Wattage Report Value Threshold<br /> <h1>Overview</h1><p>Choose how you want your Double Plug to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the Double Plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report).</p>
         ]]></description>
         <default>10</default>
         <options>
@@ -174,7 +174,7 @@ Power Wattage Report Value Threshold<br /><h1>Overview</h1><p>Choose how you wan
                  min="30" max="2678400">
         <label>3: Wattage Frequency</label>
         <description><![CDATA[
-Power Wattage Report Frequency<br /><h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Double Plug will report power consumption (Wattage) every 30 seconds.</p>
+Power Wattage Report Frequency<br /> <h1>Overview</h1><p>The number entered as value corresponds to the number of seconds. So if 30 is entered by default, the Double Plug will report power consumption (Wattage) every 30 seconds.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -184,7 +184,7 @@ Power Wattage Report Frequency<br /><h1>Overview</h1><p>The number entered as va
                  min="30" max="2678400">
         <label>4: Energy Frequency</label>
         <description><![CDATA[
-Energy (kWh) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report power consumption (W) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report energy usage every 300 seconds (5 minutes).</p>
+Energy (kWh) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report power consumption (W) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report energy usage every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -194,7 +194,7 @@ Energy (kWh) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want
                  min="30" max="2678400">
         <label>5: Voltage Frequency</label>
         <description><![CDATA[
-Voltage (V) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report voltage to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report voltage every 300 seconds (5 minutes).</p>
+Voltage (V) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report voltage to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report voltage every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -204,7 +204,7 @@ Voltage (V) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want 
                  min="30" max="2678400">
         <label>6: Current Frequency</label>
         <description><![CDATA[
-Electrical Current (A) Report Frequency<br /><h1>Overview</h1><p>Choose how often you want your Double Plug to report electrical current (A) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report current every 300 seconds (5 minutes).</p>
+Electrical Current (A) Report Frequency<br /> <h1>Overview</h1><p>Choose how often you want your Double Plug to report electrical current (A) to your controller (hub). The number entered as value corresponds to the number of seconds. So if 300 is entered by default, the Double Plug will report current every 300 seconds (5 minutes).</p>
         ]]></description>
         <default>300</default>
         <limitToOptions>false</limitToOptions>
@@ -214,7 +214,7 @@ Electrical Current (A) Report Frequency<br /><h1>Overview</h1><p>Choose how ofte
                  min="1" max="10">
         <label>7: Overload Protection</label>
         <description><![CDATA[
-Overload Protection<br /><h1>Overview</h1><p>Set the amp level for overload protection to kick in. The number entered as the value corresponds to the total number of amps the Double Plug needs to detect across both outlets to turn off automatically and send a notification to the hub and associated devices.</p>
+Overload Protection<br /> <h1>Overview</h1><p>Set the amp level for overload protection to kick in. The number entered as the value corresponds to the total number of amps the Double Plug needs to detect across both outlets to turn off automatically and send a notification to the hub and associated devices.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -223,7 +223,7 @@ Overload Protection<br /><h1>Overview</h1><p>Set the amp level for overload prot
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Enable Auto-Off (Left)</label>
         <description><![CDATA[
-Enable Auto Turn-Off Timer for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer for the left (CH1) outlet. If this feature is enabled, the device connected to CH1 outlet will automatically turn off after a fixed period of time from being turned on (set in parameter 9).</p>
+Enable Auto Turn-Off Timer for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer for the left (CH1) outlet. If this feature is enabled, the device connected to CH1 outlet will automatically turn off after a fixed period of time from being turned on (set in parameter 9).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -237,7 +237,7 @@ Enable Auto Turn-Off Timer for Left Outlet<br /><h1>Overview</h1><p>Use this par
                  min="1" max="65535">
         <label>9: Turn-Off Time (Left)</label>
         <description><![CDATA[
-Auto Turn-Off Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-Off Time for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -246,7 +246,7 @@ Auto Turn-Off Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter t
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Enable Auto-On (Left)</label>
         <description><![CDATA[
-Enable Auto Turn-On Timer for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer for the left (CH1) outlet. If this feature is enabled, the device connected to CH1 outlet will automatically turn on after a fixed period of time from being turned off (set in parameter 11).</p>
+Enable Auto Turn-On Timer for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer for the left (CH1) outlet. If this feature is enabled, the device connected to CH1 outlet will automatically turn on after a fixed period of time from being turned off (set in parameter 11).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -260,7 +260,7 @@ Enable Auto Turn-On Timer for Left Outlet<br /><h1>Overview</h1><p>Use this para
                  min="1" max="65535">
         <label>11: Turn-On Time (Left)</label>
         <description><![CDATA[
-Auto Turn-On Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-On Time for Left Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the left (CH1) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -269,7 +269,7 @@ Auto Turn-On Time for Left Outlet<br /><h1>Overview</h1><p>Use this parameter to
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Enable Auto-Off (Right)</label>
         <description><![CDATA[
-Enable Auto Turn-Off Timer for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer for the right (CH2) outlet. If this feature is enabled, the device connected to CH2 outlet will automatically turn off after a fixed period of time from being turned on (set in parameter 13).</p>
+Enable Auto Turn-Off Timer for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer for the right (CH2) outlet. If this feature is enabled, the device connected to CH2 outlet will automatically turn off after a fixed period of time from being turned on (set in parameter 13).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -283,7 +283,7 @@ Enable Auto Turn-Off Timer for Right Outlet<br /><h1>Overview</h1><p>Use this pa
                  min="1" max="65535">
         <label>13: Turn-Off Time (Right)</label>
         <description><![CDATA[
-Auto Turn-Off Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-Off Time for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -292,7 +292,7 @@ Auto Turn-Off Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter 
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Enable Auto-On (Right)</label>
         <description><![CDATA[
-Enable Auto Turn-On Timer for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer for the right (CH2) outlet. If this feature is enabled, the device connected to CH2 outlet will automatically turn on after a fixed period of time from being turned off (set in parameter 15).</p>
+Enable Auto Turn-On Timer for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer for the right (CH2) outlet. If this feature is enabled, the device connected to CH2 outlet will automatically turn on after a fixed period of time from being turned off (set in parameter 15).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -306,7 +306,7 @@ Enable Auto Turn-On Timer for Right Outlet<br /><h1>Overview</h1><p>Use this par
                  min="1" max="65535">
         <label>15: Turn-On Time (Right)</label>
         <description><![CDATA[
-Auto Turn-On Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-On Time for Right Outlet<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to the right (CH2) outlet to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -315,7 +315,7 @@ Auto Turn-On Time for Right Outlet<br /><h1>Overview</h1><p>Use this parameter t
       <parameter name="config_16_1" type="integer" groupName="configuration">
         <label>16: Manual Control</label>
         <description><![CDATA[
-Enable/Disable Manual Control<br /><h1>Overview</h1><p>Choose if you want to use the Z-Wave button on the Double Plug to turn the outlets on or off manually or if you want to disable this function. If this parameter is set to 0 (disabled), you will only be able to turn any of the outlets on or off remotely using your Z-Wave gateway controller.</p>
+Enable/Disable Manual Control<br /> <h1>Overview</h1><p>Choose if you want to use the Z-Wave button on the Double Plug to turn the outlets on or off manually or if you want to disable this function. If this parameter is set to 0 (disabled), you will only be able to turn any of the outlets on or off remotely using your Z-Wave gateway controller.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -328,7 +328,7 @@ Enable/Disable Manual Control<br /><h1>Overview</h1><p>Choose if you want to use
       <parameter name="config_17_1" type="integer" groupName="configuration">
         <label>17: LED Mode</label>
         <description><![CDATA[
-LED Indicator Mode<br /><h1>Overview</h1><p>Choose if you want the LED indicators next to each outlet to come on when power is on or off, or if you want to disable them.</p>
+LED Indicator Mode<br /> <h1>Overview</h1><p>Choose if you want the LED indicators next to each outlet to come on when power is on or off, or if you want to disable them.</p>
         ]]></description>
         <default>1</default>
         <options>

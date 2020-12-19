@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrcs4_00_000" listed="false">
     <label>VRCS4 4-Scene Controller</label>
     <description><![CDATA[
-4-Scene Controller<br /><h1>Overview</h1><p>Vizia RF + 4-Button Remote Scene Controller, rated @ 120/240 VAC, 50/60HZ;<br />The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.</p> <br /><h2>Inclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode. When the 4-Scene controller is included in your system the LEDs will turn off. If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.</p> <p>The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.</p> <p>If the 4-Scene controller has been successfully included in the network and the user tries to include it again without first excluding it from the network, the controller will retain the first node ID it had received and ignore the second.</p> <br /><h2>Exclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode. When the 4-Scene controller is excluded from your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.</p>
+4-Scene Controller<br /> <h1>Overview</h1><p>Vizia RF + 4-Button Remote Scene Controller, rated @ 120/240 VAC, 50/60HZ;<br />The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.</p> <br /> <h2>Inclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode. When the 4-Scene controller is included in your system the LEDs will turn off. If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.</p> <p>The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.</p> <p>If the 4-Scene controller has been successfully included in the network and the user tries to include it again without first excluding it from the network, the controller will retain the first node ID it had received and ignore the second.</p> <br /> <h2>Exclusion Information</h2><p>To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.</p> <p>While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode. When the 4-Scene controller is excluded from your system the LEDs will turn off.</p> <p>If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -55,7 +55,7 @@
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-Button 1<br /><h1>Overview</h1><p>First (top) button on controller. Can be associated with up to 32 devices.</p>
+Button 1<br /> <h1>Overview</h1><p>First (top) button on controller. Can be associated with up to 32 devices.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -63,7 +63,7 @@ Button 1<br /><h1>Overview</h1><p>First (top) button on controller. Can be assoc
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Button 2<br /><h1>Overview</h1><p>Second button on controller. Can be associated with up to 32 devices.</p>
+Button 2<br /> <h1>Overview</h1><p>Second button on controller. Can be associated with up to 32 devices.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -71,7 +71,7 @@ Button 2<br /><h1>Overview</h1><p>Second button on controller. Can be associate
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-Button 3<br /><h1>Overview</h1><p>Third button on controller. Can be associated with up to 32 devices.</p>
+Button 3<br /> <h1>Overview</h1><p>Third button on controller. Can be associated with up to 32 devices.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>
@@ -79,7 +79,7 @@ Button 3<br /><h1>Overview</h1><p>Third button on controller. Can be associated 
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-Button 4<br /><h1>Overview</h1><p>Fourth button on controller. Can be associated with up to 32 devices.</p>
+Button 4<br /> <h1>Overview</h1><p>Fourth button on controller. Can be associated with up to 32 devices.</p>
         ]]></description>
         <multipleLimit>32</multipleLimit>
       </parameter>

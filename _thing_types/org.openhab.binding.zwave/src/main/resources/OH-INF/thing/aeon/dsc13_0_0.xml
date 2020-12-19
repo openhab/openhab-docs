@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc13_00_000" listed="false">
     <label>DSC13 Micro Smart Energy Illuminator</label>
     <description><![CDATA[
-Micro Smart Energy Illuminator<br /><h1>Overview</h1><p>The Aeon Labs Micro SEI is a scene multilevel switch device based on Zwave enhanced slave library V4.54.</p> <br /><h2>Inclusion Information</h2><p>Click the button once.</p> <br /><h2>Exclusion Information</h2><p>Click the button once.</p>
+Micro Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Micro SEI is a scene multilevel switch device based on Zwave enhanced slave library V4.54.</p> <br /> <h2>Inclusion Information</h2><p>Click the button once.</p> <br /> <h2>Exclusion Information</h2><p>Click the button once.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -81,7 +81,7 @@ Micro Smart Energy Illuminator<br /><h1>Overview</h1><p>The Aeon Labs Micro SEI 
                  min="0" max="65535">
         <label>2: Blinking Behavior</label>
         <description><![CDATA[
-See overview<br /><h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
+See overview<br /> <h1>Overview</h1><p>The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -129,7 +129,7 @@ See overview<br /><h1>Overview</h1><p>The LSB defines the total time the device 
                  min="0" max="65535">
         <label>101: Reports to send to Group 1</label>
         <description><![CDATA[
-See overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
+See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -139,7 +139,7 @@ See overview<br /><h1>Overview</h1><p>The value is a combination number made up 
                  min="0" max="65535">
         <label>102: Reports to send to Group 2</label>
         <description><![CDATA[
-See overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
+See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -149,7 +149,7 @@ See overview<br /><h1>Overview</h1><p>The value is a combination number made up 
                  min="0" max="65535">
         <label>103: Reports to send to Group 3</label>
         <description><![CDATA[
-See overview<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
+See overview<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz79_00_000" listed="false">
     <label>TZ79 Insert switch module</label>
     <description><![CDATA[
-Insert switch module<br /><h1>Overview</h1><p>The zwave power switch module TZ79 by TKB is designed to be placed into a pattress box behind a normal switch . This switch is no longer controlling the electrical load directly but acts as input device for the micro module. It has an internal relay to control the electrical load attached. With this micro module an existing installation can be turned into a Z-Wave enabled smart system keeping the original switches in place. This is particularly useful if you are using switches of a particular pattern and don't what to change them.</p> <br /><h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter inclusion mode.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Have Z-Zwave controller entered exclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter exclusion mode.</li> </ol>
+Insert switch module<br /> <h1>Overview</h1><p>The zwave power switch module TZ79 by TKB is designed to be placed into a pattress box behind a normal switch . This switch is no longer controlling the electrical load directly but acts as input device for the micro module. It has an internal relay to control the electrical load attached. With this micro module an existing installation can be turned into a Z-Wave enabled smart system keeping the original switches in place. This is particularly useful if you are using switches of a particular pattern and don't what to change them.</p> <br /> <h2>Inclusion Information</h2><ol><li>Have Z-Wave Controller entered inclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter inclusion mode.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Have Z-Zwave controller entered exclusion mode.</li> <li>Pressing On/Off button three times within 1.5 secondes will enter exclusion mode.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -101,7 +101,7 @@ Insert switch module<br /><h1>Overview</h1><p>The zwave power switch module TZ79
                  min="1" max="32767">
         <label>3: Watt Meter Report Period</label>
         <description><![CDATA[
-5s x 720 (default) = 3600s = 1 hour<br /><h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the TZ79 will report its instant power consumption every 1 hour to Z-Wave controller. The maximum interval to report its instant power consumption is 45 hours (5s*36767/3600 = 45 hours)</p>
+5s x 720 (default) = 3600s = 1 hour<br /> <h1>Overview</h1><p>If the setting is configured for 1 hour (set value = 720), the TZ79 will report its instant power consumption every 1 hour to Z-Wave controller. The maximum interval to report its instant power consumption is 45 hours (5s*36767/3600 = 45 hours)</p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>

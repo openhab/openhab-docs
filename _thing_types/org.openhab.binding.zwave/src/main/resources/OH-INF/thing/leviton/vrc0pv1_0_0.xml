@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrc0pv1_00_000" listed="false">
     <label>VRC0P (v1) RS-232 Serial Interface</label>
     <description><![CDATA[
-RS-232 Serial Interface<br /><h1>Overview</h1><p>Serial interface to z-wave over RS-232. Frequently used for integration with older automation systems and alarm panels.</p> <br /><h2>Inclusion Information</h2><ol><li>Plug in VRC0P</li> <li>Press and hold the button on the front of the VRC0P until it flashes amber</li> <li>Place your controller in inclusion mode</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Press and hold the button on the front of the VRC0P until it flashes amber</li> <li>Place your controller in exclusion mode</li> </ol>
+RS-232 Serial Interface<br /> <h1>Overview</h1><p>Serial interface to z-wave over RS-232. Frequently used for integration with older automation systems and alarm panels.</p> <br /> <h2>Inclusion Information</h2><ol><li>Plug in VRC0P</li> <li>Press and hold the button on the front of the VRC0P until it flashes amber</li> <li>Place your controller in inclusion mode</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Press and hold the button on the front of the VRC0P until it flashes amber</li> <li>Place your controller in exclusion mode</li> </ol>
     ]]></description>
     <category>RemoteControl</category>
 

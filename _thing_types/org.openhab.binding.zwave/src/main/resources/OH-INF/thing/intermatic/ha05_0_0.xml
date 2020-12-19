@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha05_00_000" listed="false">
     <label>HA05 Screw in lamp module</label>
     <description><![CDATA[
-Screw in lamp module<br /><h1>Overview</h1><p>Screw-in lamp module</p> <br /><h2>Inclusion Information</h2><p>Press the Program button.</p> <br /><h2>Exclusion Information</h2><p>Press the Program button.</p>
+Screw in lamp module<br /> <h1>Overview</h1><p>Screw-in lamp module</p> <br /> <h2>Inclusion Information</h2><p>Press the Program button.</p> <br /> <h2>Exclusion Information</h2><p>Press the Program button.</p>
     ]]></description>
     <category>LightBulb</category>
 

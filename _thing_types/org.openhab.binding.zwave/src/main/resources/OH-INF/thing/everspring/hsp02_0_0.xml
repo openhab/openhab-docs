@@ -8,7 +8,7 @@
   <thing-type id="everspring_hsp02_00_000" listed="false">
     <label>HSP02 Motion Detector</label>
     <description><![CDATA[
-Motion Detector<br /><h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /><h2>Inclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter exclusion mode.</p> <br /><h2>Wakeup Information</h2><p>Press link key 3 times within 1.5 second</p>
+Motion Detector<br /> <h1>Overview</h1><p>Battery powered Motion Sensor</p> <br /> <h2>Inclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing link key 3 times within 1.5 second will enter exclusion mode.</p> <br /> <h2>Wakeup Information</h2><p>Press link key 3 times within 1.5 second</p>
     ]]></description>
     <category>MotionDetector</category>
 

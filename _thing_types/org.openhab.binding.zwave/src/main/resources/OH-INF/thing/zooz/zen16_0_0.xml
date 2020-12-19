@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen16_00_000" listed="false">
     <label>ZEN16 Multirelay</label>
     <description><![CDATA[
-Multirelay<br /><h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact relays to control loads up to 15 A and 20 A</li> <li>Perfect for outdoor lighting, pool pumps, garage door, or gas fireplace</li> <li>Control up to 3 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li> <li>Built-in timers for each relay to simplify automation</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>S2 security protocol and the latest 500 Z-Wave chip</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN16</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C</li> <li>Maximum Load: Relay 1: 15A (HP), R2: 15A (HP), R3: 20A (HP)</li> <li>Range: Up to 100 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /><h2>Exclusion Information</h2><ol><li>Bring the Multirelay close to the Z-Wave controller and then supply power to it.</li> <li>Put the Z-Wave binding into exclusion mode.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol>
+Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact relays to control loads up to 15 A and 20 A</li> <li>Perfect for outdoor lighting, pool pumps, garage door, or gas fireplace</li> <li>Control up to 3 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li> <li>Built-in timers for each relay to simplify automation</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>S2 security protocol and the latest 500 Z-Wave chip</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN16</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C</li> <li>Maximum Load: Relay 1: 15A (HP), R2: 15A (HP), R3: 20A (HP)</li> <li>Range: Up to 100 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Bring the Multirelay close to the Z-Wave controller and then supply power to it.</li> <li>Put the Z-Wave binding into exclusion mode.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -40,6 +40,7 @@ Multirelay<br /><h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerf
       <property name="modelId">ZEN16</property>
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">A000:A00A</property>
+      <property name="versionMax">1.0</property>
       <property name="dbReference">1176</property>
       <property name="defaultAssociations">1</property>
     </properties>
@@ -76,14 +77,13 @@ Multirelay<br /><h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerf
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Switch Type for Relay 1 (Sw1)</label>
         <description><![CDATA[
-Choose the wall switch type you want to connect to the Sw1 terminal<br /><h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change mode manually</p>
+Choose the wall switch type you want to connect to the Sw1 terminal<br /> <h1>Overview</h1><p>Press and hold the Z-Wave button for 5 seconds to change mode manually</p>
         ]]></description>
         <default>2</default>
         <options>
           <option value="0">Momentary switch</option>
           <option value="1">Normal</option>
           <option value="2">Toggle switch (default)</option>
-          <option value="3">garage door</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -91,14 +91,13 @@ Choose the wall switch type you want to connect to the Sw1 terminal<br /><h1>Ove
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Switch Type for Relay 2 (Sw2)</label>
         <description><![CDATA[
-Choose the wall switch type you want to connect to the Sw2 terminal<br /><h1>Overview</h1><p>Click-click’n’hold the Z-Wave button for 5 seconds to change mode manually.</p>
+Choose the wall switch type you want to connect to the Sw2 terminal<br /> <h1>Overview</h1><p>Click-click’n’hold the Z-Wave button for 5 seconds to change mode manually.</p>
         ]]></description>
         <default>2</default>
         <options>
           <option value="0">Momentary switch</option>
           <option value="1">Normal</option>
           <option value="2">Toggle switch (default)</option>
-          <option value="3">garage door</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -106,14 +105,13 @@ Choose the wall switch type you want to connect to the Sw2 terminal<br /><h1>Ove
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Switch Type for Relay 3 (Sw3)</label>
         <description><![CDATA[
-Choose the wall switch type you want to connect to the Sw3 terminal.<br /><h1>Overview</h1><p>Click-click-click’n’hold the Z-Wave button for 5 seconds to change mode manually</p>
+Choose the wall switch type you want to connect to the Sw3 terminal.<br /> <h1>Overview</h1><p>Click-click-click’n’hold the Z-Wave button for 5 seconds to change mode manually</p>
         ]]></description>
         <default>2</default>
         <options>
           <option value="0">Momentary switch</option>
           <option value="1">Normal</option>
           <option value="2">Toggle switch (default)</option>
-          <option value="3">garage door</option>
         </options>
         <limitToOptions>false</limitToOptions>
       </parameter>
@@ -121,7 +119,7 @@ Choose the wall switch type you want to connect to the Sw3 terminal.<br /><h1>Ov
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: LED Indicator Control</label>
         <description><![CDATA[
-LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indicator to turn on when any of the relays are on or if all of them are off, or if you want it to remain on or off at all times.</p> <p>Click the Z-Wave button 5 times quickly to change mode manually</p>
+LED Indicator Control<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when any of the relays are on or if all of them are off, or if you want it to remain on or off at all times.</p> <p>Click the Z-Wave button 5 times quickly to change mode manually</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -137,7 +135,7 @@ LED Indicator Control<br /><h1>Overview</h1><p>Choose if you want the LED indica
                  min="0" max="65535">
         <label>6: Auto Turn-Off Timer for Relay 1</label>
         <description><![CDATA[
-Auto Turn-Off Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-Off Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -149,7 +147,7 @@ Auto Turn-Off Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to s
                  min="0" max="65535">
         <label>7: Auto Turn-On Timer for Relay 1</label>
         <description><![CDATA[
-Auto Turn-On Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-On Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -161,7 +159,7 @@ Auto Turn-On Timer for Relay 1<br /><h1>Overview</h1><p>Use this parameter to se
                  min="0" max="65535">
         <label>8: Auto Turn-Off Timer for Relay 2</label>
         <description><![CDATA[
-Auto Turn-Off Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-Off Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -173,7 +171,7 @@ Auto Turn-Off Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to s
                  min="0" max="65535">
         <label>9: Auto Turn-On Timer for Relay 2</label>
         <description><![CDATA[
-Auto Turn-On Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-On Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -185,7 +183,7 @@ Auto Turn-On Timer for Relay 2<br /><h1>Overview</h1><p>Use this parameter to se
                  min="0" max="65535">
         <label>10: Auto Turn-Off Timer for Relay 3</label>
         <description><![CDATA[
-Auto Turn-Off Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-Off Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -197,7 +195,7 @@ Auto Turn-Off Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to s
                  min="0" max="65535">
         <label>11: Auto Turn-On Timer for Relay 3</label>
         <description><![CDATA[
-Auto Turn-On Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
+Auto Turn-On Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -208,7 +206,7 @@ Auto Turn-On Timer for Relay 3<br /><h1>Overview</h1><p>Use this parameter to se
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Enable/Disable Manual Control for Sw1</label>
         <description><![CDATA[
-Enable/Disable Manual Control for Sw1<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 1 from the wall switch connected to Sw1 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+Enable/Disable Manual Control for Sw1<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 1 from the wall switch connected to Sw1 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -221,7 +219,7 @@ Enable/Disable Manual Control for Sw1<br /><h1>Overview</h1><p>Enable or disable
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Enable/Disable Manual Control for Sw2</label>
         <description><![CDATA[
-Enable/Disable Manual Control for Sw2<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 2 from the wall switch connected to Sw2 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+Enable/Disable Manual Control for Sw2<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 2 from the wall switch connected to Sw2 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -234,7 +232,7 @@ Enable/Disable Manual Control for Sw2<br /><h1>Overview</h1><p>Enable or disable
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Enable/Disable Manual Control for Sw3</label>
         <description><![CDATA[
-Enable/Disable Manual Control for Sw3<br /><h1>Overview</h1><p>Enable or disable physical on/off control of Relay 3 from the wall switch connected to Sw3 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
+Enable/Disable Manual Control for Sw3<br /> <h1>Overview</h1><p>Enable or disable physical on/off control of Relay 3 from the wall switch connected to Sw3 terminal. If disabled, you’ll only be able to control the connected device via Z-Wave.</p>
         ]]></description>
         <default>1</default>
         <options>

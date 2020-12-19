@@ -8,7 +8,7 @@
   <thing-type id="fakro_amzsolar_00_000" listed="false">
     <label>AMZ Solar Solar Awning</label>
     <description><![CDATA[
-Solar Awning<br /><h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is intended for installation in Fakro roof windows and is adapted to cooperation with elements of wireless remote control system offered by FAKRO and other manufacturers offering products with Z-Wave logo. The awning blind is equipped with a two-way radio communication module. For communication, Z-Wave utilizes radio wave frequency of 868,42 MHz.</p> <br /><h2>Inclusion Information</h2><p>Start the INCLUDE procedure by means of the controller of the existing network and then press the “Programming” button on the awning blind being added to the network.</p> <br /><h2>Exclusion Information</h2><p>Put your controller into exclusion mode, then press the programming button on the awning blind for longer than 1 sec.</p>
+Solar Awning<br /> <h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is intended for installation in Fakro roof windows and is adapted to cooperation with elements of wireless remote control system offered by FAKRO and other manufacturers offering products with Z-Wave logo. The awning blind is equipped with a two-way radio communication module. For communication, Z-Wave utilizes radio wave frequency of 868,42 MHz.</p> <br /> <h2>Inclusion Information</h2><p>Start the INCLUDE procedure by means of the controller of the existing network and then press the “Programming” button on the awning blind being added to the network.</p> <br /> <h2>Exclusion Information</h2><p>Put your controller into exclusion mode, then press the programming button on the awning blind for longer than 1 sec.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -64,7 +64,7 @@ Solar Awning<br /><h1>Overview</h1><p>The AMZ Z-Wave Solar Awning Blind is inten
                  min="0" max="2">
         <label>1: Operation Mode</label>
         <description><![CDATA[
-Operation Mode<br /><h1>Overview</h1><p>0 – manual<br />1 – semi<br />2 – auto</p>
+Operation Mode<br /> <h1>Overview</h1><p>0 – manual<br />1 – semi<br />2 – auto</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -74,7 +74,7 @@ Operation Mode<br /><h1>Overview</h1><p>0 – manual<br />1 – semi<br />2 – 
                  min="1" max="2">
         <label>2: Season</label>
         <description><![CDATA[
-Season<br /><h1>Overview</h1><p>1 – summer<br />2 – winter</p>
+Season<br /> <h1>Overview</h1><p>1 – summer<br />2 – winter</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -100,7 +100,7 @@ Season<br /><h1>Overview</h1><p>1 – summer<br />2 – winter</p>
                  min="1" max="2">
         <label>12: Calibration</label>
         <description><![CDATA[
-Calibration<br /><h1>Overview</h1><p>Value 1 – calibrated<br />Value 2 – discalibrated – to enter the calibration mode must first time discalibrate and then calibrate.</p>
+Calibration<br /> <h1>Overview</h1><p>Value 1 – calibrated<br />Value 2 – discalibrated – to enter the calibration mode must first time discalibrate and then calibrate.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Calibration<br /><h1>Overview</h1><p>Value 1 – calibrated<br />Value 2 – dis
                  min="1" max="2">
         <label>13: Positioning</label>
         <description><![CDATA[
-Positioning<br /><h1>Overview</h1><p>1 – FF go to Max<br />2 – FF go to previous position</p>
+Positioning<br /> <h1>Overview</h1><p>1 – FF go to Max<br />2 – FF go to previous position</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

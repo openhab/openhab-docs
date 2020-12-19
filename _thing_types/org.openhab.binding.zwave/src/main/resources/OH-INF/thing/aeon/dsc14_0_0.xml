@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc14_00_000" listed="false">
     <label>DSC14 Micro Motor Controller</label>
     <description><![CDATA[
-Micro Motor Controller<br /><h1>Overview</h1><p>The Aeon Labs Micro Motor Controller is a Motor Control Class C Specific Device which is connected with window rail to remote control curtain to any position that you want directly.</p> <br /><h2>Inclusion Information</h2><p>Click the Zwave button once.</p> <br /><h2>Exclusion Information</h2><p>Click the Zwave button once.</p>
+Micro Motor Controller<br /> <h1>Overview</h1><p>The Aeon Labs Micro Motor Controller is a Motor Control Class C Specific Device which is connected with window rail to remote control curtain to any position that you want directly.</p> <br /> <h2>Inclusion Information</h2><p>Click the Zwave button once.</p> <br /> <h2>Exclusion Information</h2><p>Click the Zwave button once.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -86,7 +86,7 @@ Micro Motor Controller<br /><h1>Overview</h1><p>The Aeon Labs Micro Motor Contro
       <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Disable automated reporting</label>
         <description><![CDATA[
-Disables automated sending of a Report triggered by minimum value.<br /><h1>Overview</h1><p>Disables Function of automated sending of a Report triggered by minimal change of value.</p>
+Disables automated sending of a Report triggered by minimum value.<br /> <h1>Overview</h1><p>Disables Function of automated sending of a Report triggered by minimal change of value.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -114,7 +114,7 @@ Disables automated sending of a Report triggered by minimum value.<br /><h1>Over
                  min="0" max="65535">
         <label>101: reports to send automatically</label>
         <description><![CDATA[
-Bitmask of Group 1 reports<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
+Bitmask of Group 1 reports<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -124,7 +124,7 @@ Bitmask of Group 1 reports<br /><h1>Overview</h1><p>The value is a combination n
                  min="0" max="65535">
         <label>102: Which reports to send automatically to group 2</label>
         <description><![CDATA[
-Bitmask of Group 2 reports<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
+Bitmask of Group 2 reports<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -134,7 +134,7 @@ Bitmask of Group 2 reports<br /><h1>Overview</h1><p>The value is a combination n
                  min="0" max="65535">
         <label>103: Bitmask of Group 3 reports</label>
         <description><![CDATA[
-Which reports to send automatically to group 3<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
+Which reports to send automatically to group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values:</p> <ul><li>Wattage=4</li> <li>Current=2</li> <li>Voltage=1</li> </ul>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>

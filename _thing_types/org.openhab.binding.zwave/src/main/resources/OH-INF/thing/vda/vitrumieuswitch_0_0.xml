@@ -8,7 +8,7 @@
   <thing-type id="vda_vitrumieuswitch_00_000" listed="false">
     <label>Vitrum I EU switch Vitrum touch switch Relay</label>
     <description><![CDATA[
-Vitrum touch switch Relay<br /><h1>Overview</h1><p>1 channel Switch - 503 BOX - ZWavene button Smart Glass Switch<br />Switch Device for Modbus System with one switche for lighting control or alternatively, sequential pre-programmed settings<br />Configurable aural feedback</p> <br /><h2>Inclusion Information</h2><p>Put your controller into inclusion mode, touch any of the keys on Vitrum to include the unit.</p> <br /><h2>Exclusion Information</h2><p>Put your controller into exclusion mode, touch any of the keys on Vitrum to exclude the unit.</p>
+Vitrum touch switch Relay<br /> <h1>Overview</h1><p>1 channel Switch - 503 BOX - ZWavene button Smart Glass Switch<br />Switch Device for Modbus System with one switche for lighting control or alternatively, sequential pre-programmed settings<br />Configurable aural feedback</p> <br /> <h2>Inclusion Information</h2><p>Put your controller into inclusion mode, touch any of the keys on Vitrum to include the unit.</p> <br /> <h2>Exclusion Information</h2><p>Put your controller into exclusion mode, touch any of the keys on Vitrum to exclude the unit.</p>
     ]]></description>
     <category>WallSwitch</category>
 

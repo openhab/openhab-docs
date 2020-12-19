@@ -8,7 +8,7 @@
   <thing-type id="mcohome_mhs314_00_000" listed="false">
     <label>MH-S314 Four Way Switch</label>
     <description><![CDATA[
-Four Way Switch<br /><h1>Overview</h1><p>Touch Panel Switch is a wall switch with built-in Z-Wave module. It supports basic command class，multi channel command class and multi channel association command class, which can control all associated devices synchronously. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers. </p> <br /><h2>Inclusion Information</h2><p>Press and hold any key on the panel for 8 seconds. If inclusion is successful, all INDICATION LEDs on the panel will turn green, and all switches will turn on.</p> <br /><h2>Exclusion Information</h2><p>Press and hold any key on the panel for 8 seconds.  If the exclusion is successful, all INDICATION LEDs on the panel will turn orange, and all switches will turn off. The exclusion will delete all association data.</p>
+Four Way Switch<br /> <h1>Overview</h1><p>Touch Panel Switch is a wall switch with built-in Z-Wave module. It supports basic command class，multi channel command class and multi channel association command class, which can control all associated devices synchronously. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers. </p> <br /> <h2>Inclusion Information</h2><p>Press and hold any key on the panel for 8 seconds. If inclusion is successful, all INDICATION LEDs on the panel will turn green, and all switches will turn on.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold any key on the panel for 8 seconds.  If the exclusion is successful, all INDICATION LEDs on the panel will turn orange, and all switches will turn off. The exclusion will delete all association data.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -75,7 +75,7 @@ Four Way Switch<br /><h1>Overview</h1><p>Touch Panel Switch is a wall switch wit
                  min="0" max="1">
         <label>2: Switch state saved or not when power failure</label>
         <description><![CDATA[
-Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
+Switch state saved or not when power failure<br /> <h1>Overview</h1><p>0=not saved，switch will be off when powered again 1=saved，switch will keep the same state when powered again</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -85,7 +85,7 @@ Switch state saved or not when power failure<br /><h1>Overview</h1><p>0=not save
                  min="0" max="255">
         <label>3: ALL ON/ALL OFF</label>
         <description><![CDATA[
-ALL ON/ALL OFF<br /><h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p>
+ALL ON/ALL OFF<br /> <h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1=forbid ALL ON, allow ALL OFF</p> <p>2=allow ALL ON, forbid ALL OFF</p> <p>255=allow ALL ON, allow ALL OFF</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -103,7 +103,7 @@ ALL ON/ALL OFF<br /><h1>Overview</h1><p>0=forbid ALL ON, forbid ALL OFF</p> <p>1
                  min="0" max="4">
         <label>5: Key Mode</label>
         <description><![CDATA[
-Key Mode (0-4)<br /><h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
+Key Mode (0-4)<br /> <h1>Overview</h1><p>0=single click to switch on/off status</p> <p>1=Key default as off state. When it is turned on, then it will be turned off automatically after a time period , which can be set in item 5</p> <p>2=Key default as on state. When it is turned off, then it will be turned on automatically after a time period , which can be set in item 5</p> <p>3=hold &gt;3s then key is on, and off once released</p> <p>4=single click to switch on/off status +hold &gt;3s then key is on, and off once released</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

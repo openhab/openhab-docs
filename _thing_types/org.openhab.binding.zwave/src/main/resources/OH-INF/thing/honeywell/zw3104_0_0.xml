@@ -8,7 +8,7 @@
   <thing-type id="honeywell_zw3104_00_000" listed="false">
     <label>39336 / ZW3104 Plug-In Smart Dimmer</label>
     <description><![CDATA[
-Plug-In Smart Dimmer<br /><h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Plug-In Smart Dimmer. The Smart Dimmer enables wireless control of on/off and dim functions for standard incandescent table and floor lamps, as well as dimmable fluorescent, LED and CFL fixtures and more! Use the dimmer control to customize the lighting output and create the perfect ambiance for any room.</p> <p>The space-saving horizontal module plugs into a standard wall receptacle without blocking the second outlet or obstructing placement of furniture. The Dimmer provides one Z-Wave enabled outlet for the lamp you would like to control.</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to add your smart dimmer, single press and release the manual/program button on the smart dimmer to add it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the manual/program button on the smart dimmer to remove it from the network</p>
+Plug-In Smart Dimmer<br /> <h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Plug-In Smart Dimmer. The Smart Dimmer enables wireless control of on/off and dim functions for standard incandescent table and floor lamps, as well as dimmable fluorescent, LED and CFL fixtures and more! Use the dimmer control to customize the lighting output and create the perfect ambiance for any room.</p> <p>The space-saving horizontal module plugs into a standard wall receptacle without blocking the second outlet or obstructing placement of furniture. The Dimmer provides one Z-Wave enabled outlet for the lamp you would like to control.</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your smart dimmer, single press and release the manual/program button on the smart dimmer to add it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to remove your device, press and release the manual/program button on the smart dimmer to remove it from the network</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -70,7 +70,7 @@ Plug-In Smart Dimmer<br /><h1>Overview</h1><p>Transform any home into a smart ho
                  min="1" max="99">
         <label>7: Dim Steps (From Z-Wave Controller)</label>
         <description><![CDATA[
-Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Number of steps or levels</p>
+Dim Rate Adjustments (From Z-Wave Controller)<br /> <h1>Overview</h1><p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -80,7 +80,7 @@ Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Number of
                  min="1" max="255">
         <label>8: Dim Timing (From Z-Wave Controller)</label>
         <description><![CDATA[
-Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Timing of steps</p>
+Dim Rate Adjustments (From Z-Wave Controller)<br /> <h1>Overview</h1><p>Timing of steps</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -90,7 +90,7 @@ Dim Rate Adjustments (From Z-Wave Controller)<br /><h1>Overview</h1><p>Timing of
                  min="1" max="99">
         <label>9: Dim Steps (When Manually Controlled)</label>
         <description><![CDATA[
-Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Number of steps or levels</p>
+Dim Rate Adjustments (When Manually Controlled)<br /> <h1>Overview</h1><p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -100,7 +100,7 @@ Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Number 
                  min="1" max="255">
         <label>10: Dim Timing (When Manually Controlled)</label>
         <description><![CDATA[
-Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Timing of steps</p>
+Dim Rate Adjustments (When Manually Controlled)<br /> <h1>Overview</h1><p>Timing of steps</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Dim Rate Adjustments (When Manually Controlled)<br /><h1>Overview</h1><p>Timing 
                  min="1" max="99">
         <label>11: Dim Steps (All-On/Off Commands)</label>
         <description><![CDATA[
-Dim Rate Adjustments (All-On/Off Commands)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Commands)</p> <p>Number of steps or levels</p>
+Dim Rate Adjustments (All-On/Off Commands)<br /> <h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Commands)</p> <p>Number of steps or levels</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -120,7 +120,7 @@ Dim Rate Adjustments (All-On/Off Commands)<br /><h1>Overview</h1><p>Dim Rate Adj
                  min="1" max="255">
         <label>12: Dim Rate Adjustments (All-On/Off Command)</label>
         <description><![CDATA[
-Dim Rate Adjustments (All-On/Off Command)<br /><h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Command)</p> <p>Timing of steps</p>
+Dim Rate Adjustments (All-On/Off Command)<br /> <h1>Overview</h1><p>Dim Rate Adjustments (When Receiving All-On/Off Command)</p> <p>Timing of steps</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

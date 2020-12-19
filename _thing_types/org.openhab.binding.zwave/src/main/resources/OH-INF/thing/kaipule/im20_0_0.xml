@@ -8,7 +8,7 @@
   <thing-type id="kaipule_im20_00_000" listed="false">
     <label>IM-20 Door/Window Sensor</label>
     <description><![CDATA[
-Door/Window Sensor<br /><h1>Overview</h1><p>Battery powered door/window sensor.</p> <br /><h2>Inclusion Information</h2><p>To include the sensor in a networks start by placing the controller in inclusion mode. Then activate the inclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.</p> <br /><h2>Exclusion Information</h2><p>To exclude the sensor in a networks start by placing the controller in exclusion mode. Then activate the exclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.</p> <br /><h2>Wakeup Information</h2><ul><li>Manual Wake-up<br />Quickly press tamper switch once, the door sensor will automatically send wake-up information, and there will be 10s after wake-up to receive gateway setting information.</li> <li>Automatic Wake-up<br />Default time of automatic wake-up is 24 hours, and there will be 10s after wake-up to receive gateway setting information, the max automatic report time = 24 hours, minimum=30min</li> </ul>
+Door/Window Sensor<br /> <h1>Overview</h1><p>Battery powered door/window sensor.</p> <br /> <h2>Inclusion Information</h2><p>To include the sensor in a networks start by placing the controller in inclusion mode. Then activate the inclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the sensor in a networks start by placing the controller in exclusion mode. Then activate the exclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.</p> <br /> <h2>Wakeup Information</h2><ul><li>Manual Wake-up<br />Quickly press tamper switch once, the door sensor will automatically send wake-up information, and there will be 10s after wake-up to receive gateway setting information.</li> <li>Automatic Wake-up<br />Default time of automatic wake-up is 24 hours, and there will be 10s after wake-up to receive gateway setting information, the max automatic report time = 24 hours, minimum=30min</li> </ul>
     ]]></description>
     <category>Sensor</category>
 
@@ -62,7 +62,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>Battery powered door/window sensor.<
                  min="1" max="255">
         <label>1: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Command will be sent when the door/window is opened or closed<br /><h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value” command to control that device when the door sensor is opened.<br />“Value” configuration rule is as below:<br />Available settings:</p> <ul><li>1 to 100 Dimmer Level</li> <li>255 (Default) For ON/OFF Light Only</li> </ul>
+Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value” command to control that device when the door sensor is opened.<br />“Value” configuration rule is as below:<br />Available settings:</p> <ul><li>1 to 100 Dimmer Level</li> <li>255 (Default) For ON/OFF Light Only</li> </ul>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ Basic Set Command will be sent when the door/window is opened or closed<br /><h1
                  min="1" max="120">
         <label>2: Turn Off Light Time Configuration</label>
         <description><![CDATA[
-Turn Off Light Time<br /><h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value”<br />command to Group2, and send “Basic Set = 0x00” command to turn-off light after “t” seconds,<br />Set value = “t”, means to send Basic Set command after “t” seconds.</p>
+Turn Off Light Time<br /> <h1>Overview</h1><p>If there is any device under Association Group2, the door sensor will send “Basic Set = value”<br />command to Group2, and send “Basic Set = 0x00” command to turn-off light after “t” seconds,<br />Set value = “t”, means to send Basic Set command after “t” seconds.</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -82,7 +82,7 @@ Turn Off Light Time<br /><h1>Overview</h1><p>If there is any device under Associ
                  min="0" max="24">
         <label>3: Door Sensor Status Report</label>
         <description><![CDATA[
-Auto report Door/Window status time<br /><h1>Overview</h1><p>Under normal working status (without trigger), the door sensor will automatically send report<br />to the Gateway about its current tamper &amp; open/close status. Set value = t, means “t” hours,<br />(“t”=0, means no status report)</p>
+Auto report Door/Window status time<br /> <h1>Overview</h1><p>Under normal working status (without trigger), the door sensor will automatically send report<br />to the Gateway about its current tamper &amp; open/close status. Set value = t, means “t” hours,<br />(“t”=0, means no status report)</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -92,14 +92,14 @@ Auto report Door/Window status time<br /><h1>Overview</h1><p>Under normal workin
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Is assigned to the device status - OPEN/CLOSED.<br /><h1>Overview</h1><p>1.It will send “NOTIFICATION_REPORT”to the device in Group 1 when the door sensor is opened / closed, tamper switch is triggered / recovered.</p> <p>2.When in low battery status, door sensor will send “BATTERY_REPORT” to Group 1 device periodically.</p> <p>3.The door sensor will send “DEVICE_RESET_LOCALLY_NOTIFICATION” to Group1 device when the device recovers to factory settings.</p>
+Is assigned to the device status - OPEN/CLOSED.<br /> <h1>Overview</h1><p>1.It will send “NOTIFICATION_REPORT”to the device in Group 1 when the door sensor is opened / closed, tamper switch is triggered / recovered.</p> <p>2.When in low battery status, door sensor will send “BATTERY_REPORT” to Group 1 device periodically.</p> <p>3.The door sensor will send “DEVICE_RESET_LOCALLY_NOTIFICATION” to Group1 device when the device recovers to factory settings.</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Sending control commands to associated devices<br /><h1>Overview</h1><p>When the door sensor is opened, it will send “BASIC SET” command to control these devices in Group2.</p>
+Sending control commands to associated devices<br /> <h1>Overview</h1><p>When the door sensor is opened, it will send “BASIC SET” command to control these devices in Group2.</p>
         ]]></description>
         <multipleLimit>2</multipleLimit>
       </parameter>

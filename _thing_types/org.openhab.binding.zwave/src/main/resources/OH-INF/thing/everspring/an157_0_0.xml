@@ -8,7 +8,7 @@
   <thing-type id="everspring_an157_00_000" listed="false">
     <label>AN157 Switch Plugin</label>
     <description><![CDATA[
-Switch Plugin<br /><h1>Overview</h1><p>Plug-in ON/OFF Module </p> <br /><h2>Inclusion Information</h2><p>Push the ON/OFF button three times within 1.5 seconds</p> <br /><h2>Exclusion Information</h2><p>Push the ON/OFF button three times within 1.5 seconds</p>
+Switch Plugin<br /> <h1>Overview</h1><p>Plug-in ON/OFF Module </p> <br /> <h2>Inclusion Information</h2><p>Push the ON/OFF button three times within 1.5 seconds</p> <br /> <h2>Exclusion Information</h2><p>Push the ON/OFF button three times within 1.5 seconds</p>
     ]]></description>
     <category>WallSwitch</category>
 

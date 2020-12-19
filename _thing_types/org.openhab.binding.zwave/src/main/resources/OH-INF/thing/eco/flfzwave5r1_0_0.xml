@@ -8,7 +8,7 @@
   <thing-type id="eco_flfzwave5r1_00_000" listed="false">
     <label>FLF-ZWAVE5 R1 Z-Wave Wireless Flood/Freeze Sensor</label>
     <description><![CDATA[
-Z-Wave Wireless Flood/Freeze Sensor<br /><h1>Overview</h1><ul><li>Z-Wave+™ enabled device which detects flood and freeze.</li> <li>Reports tamper condition when cover is open</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Remove the battery for at least 10 seconds</li> <li>Reinstall the battery</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the battery for at least 10 seconds</li> <li>Reinstall the battery</li> </ol><br /><h2>Wakeup Information</h2><p>Not provided</p>
+Z-Wave Wireless Flood/Freeze Sensor<br /> <h1>Overview</h1><ul><li>Z-Wave+™ enabled device which detects flood and freeze.</li> <li>Reports tamper condition when cover is open</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Remove the battery for at least 10 seconds</li> <li>Reinstall the battery</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Remove the battery for at least 10 seconds</li> <li>Reinstall the battery</li> </ol> <br /> <h2>Wakeup Information</h2><p>Not provided</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -62,7 +62,7 @@ Z-Wave Wireless Flood/Freeze Sensor<br /><h1>Overview</h1><ul><li>Z-Wave+™ ena
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group one is a lifeline group who will receive unsolicited messages relating to flood/freeze notifications, case tampering notifications, low-battery notifications.</p>
+<br /> <h1>Overview</h1><p>Group one is a lifeline group who will receive unsolicited messages relating to flood/freeze notifications, case tampering notifications, low-battery notifications.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

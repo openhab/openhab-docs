@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ca3000_00_000" listed="false">
     <label>CA3000 Wall Switch</label>
     <description><![CDATA[
-Wall Switch<br /><h1>Overview</h1><p>In-wall switch, 15A</p> <br /><h2>Inclusion Information</h2><p>Press rocker switch up or down.</p> <br /><h2>Exclusion Information</h2><p>Press rocker switch up or down.</p>
+Wall Switch<br /> <h1>Overview</h1><p>In-wall switch, 15A</p> <br /> <h2>Inclusion Information</h2><p>Press rocker switch up or down.</p> <br /> <h2>Exclusion Information</h2><p>Press rocker switch up or down.</p>
     ]]></description>
     <category>WallSwitch</category>
 

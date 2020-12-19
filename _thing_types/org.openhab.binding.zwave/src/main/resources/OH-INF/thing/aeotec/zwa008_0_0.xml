@@ -8,7 +8,7 @@
   <thing-type id="aeotec_zwa008_00_000" listed="false">
     <label>ZWA008 Door/Window Sensor 7</label>
     <description><![CDATA[
-Door/Window Sensor 7<br /><h1>Overview</h1><p>Aeotec Door/ Window Sensor 7 is a small window position sensor for your smart home, it monitors window and their exact opening position and lets your know when a window is tilted or completely opened. It also supports connecting external binary sensors through the dry binary contact of the Door/ Window sensor.</p> <br /><h2>Inclusion Information</h2><p>Tripple click the tamper switch<br /><br /></p> <br /><h2>Exclusion Information</h2><p>Tripple click the tamper switch </p> <br /><h2>Wakeup Information</h2><p>Hit the tamper switch once.</p>
+Door/Window Sensor 7<br /> <h1>Overview</h1><p>Aeotec Door/ Window Sensor 7 is a small window position sensor for your smart home, it monitors window and their exact opening position and lets your know when a window is tilted or completely opened. It also supports connecting external binary sensors through the dry binary contact of the Door/ Window sensor.</p> <br /> <h2>Inclusion Information</h2><p>Tripple click the tamper switch<br /><br /></p> <br /> <h2>Exclusion Information</h2><p>Tripple click the tamper switch </p> <br /> <h2>Wakeup Information</h2><p>Hit the tamper switch once.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -74,7 +74,7 @@ Door/Window Sensor 7<br /><h1>Overview</h1><p>Aeotec Door/ Window Sensor 7 is a 
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Sensor Operation Mode</label>
         <description><![CDATA[
-Defines if internal magnet sensor or the external terminal input is detected<br /><h1>Overview</h1><p>This parameter defines if the internal magnet sensor or the external terminal input is detected and used to issue alarm notification. There is always one input active only. The other sensor input the deactivated. </p>
+Defines if internal magnet sensor or the external terminal input is detected<br /> <h1>Overview</h1><p>This parameter defines if the internal magnet sensor or the external terminal input is detected and used to issue alarm notification. There is always one input active only. The other sensor input the deactivated. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -99,7 +99,7 @@ Defines if internal magnet sensor or the external terminal input is detected<br 
                  min="1" max="31">
         <label>3: Visual LED Indications</label>
         <description><![CDATA[
-Defines when the red LED will indicate events.<br /><h1>Overview</h1><p>Disabling all indications may extend battery life.</p> <table><tr><td><strong>Setting</strong></td> <td><strong>Description</strong></td> </tr><tr><td>Byte 1: 00000001 </td> <td>No Indications</td> </tr><tr><td>Byte 1: 00000010 </td> <td>Open/Close Status Change </td> </tr><tr><td>Byte 1: 00000100 </td> <td>Wake Up </td> </tr><tr><td>Byte 1: 00010000</td> <td>Device Tampering </td> </tr></table>
+Defines when the red LED will indicate events.<br /> <h1>Overview</h1><p>Disabling all indications may extend battery life.</p> <table><tr><td><strong>Setting</strong></td> <td><strong>Description</strong></td> </tr><tr><td>Byte 1: 00000001 </td> <td>No Indications</td> </tr><tr><td>Byte 1: 00000010 </td> <td>Open/Close Status Change </td> </tr><tr><td>Byte 1: 00000100 </td> <td>Wake Up </td> </tr><tr><td>Byte 1: 00010000</td> <td>Device Tampering </td> </tr></table>
         ]]></description>
         <default>7</default>
         <limitToOptions>false</limitToOptions>
@@ -108,7 +108,7 @@ Defines when the red LED will indicate events.<br /><h1>Overview</h1><p>Disablin
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Range Test after double click</label>
         <description><![CDATA[
-Allows to enable the activation of a Z-Wave range.<br /><h1>Overview</h1><p>Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch. </p>
+Allows to enable the activation of a Z-Wave range.<br /> <h1>Overview</h1><p>Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch. </p>
         ]]></description>
         <default>0</default>
         <options>
@@ -121,7 +121,7 @@ Allows to enable the activation of a Z-Wave range.<br /><h1>Overview</h1><p>Allo
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: 2nd Association Group Trigger</label>
         <description><![CDATA[
-Sending a BASIC command to all devices of Association Group 2<br /><h1>Overview</h1><p>This parameter defines the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 2 </p>
+Sending a BASIC command to all devices of Association Group 2<br /> <h1>Overview</h1><p>This parameter defines the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 2 </p>
         ]]></description>
         <default>0</default>
         <options>

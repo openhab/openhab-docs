@@ -8,7 +8,7 @@
   <thing-type id="zwaveproducts_wd100_00_000" listed="false">
     <label>WD-100 In-Wall Dimmer</label>
     <description><![CDATA[
-In-Wall Dimmer<br /><h1>Overview</h1><ul><li>Works with incandescent and dimmable florescent (CFL) or most LED lighting</li> <li>7 segment LED dim level indicator</li> <li>Fits into standard single or multiple gang junction box</li> <li>Over-The-Air firmware upgrade available with compatible gateway, Z-Wave static controller, or PC and software</li> <li>Internal resettable fuse to protect from surge current</li> <li>Manual reset capability</li> <li>Support Central Scene</li> </ul><br /><h2>Inclusion Information</h2><p> single click and release the rocker switch</p> <br /><h2>Exclusion Information</h2><p>single click and release the rocker switch.</p>
+In-Wall Dimmer<br /> <h1>Overview</h1><ul><li>Works with incandescent and dimmable florescent (CFL) or most LED lighting</li> <li>7 segment LED dim level indicator</li> <li>Fits into standard single or multiple gang junction box</li> <li>Over-The-Air firmware upgrade available with compatible gateway, Z-Wave static controller, or PC and software</li> <li>Internal resettable fuse to protect from surge current</li> <li>Manual reset capability</li> <li>Support Central Scene</li> </ul> <br /> <h2>Inclusion Information</h2><p> single click and release the rocker switch</p> <br /> <h2>Exclusion Information</h2><p>single click and release the rocker switch.</p>
     ]]></description>
     <category>WallSwitch</category>
 

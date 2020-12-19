@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc08_00_000" listed="false">
     <label>DSC08 Smart Energy Illuminator</label>
     <description><![CDATA[
-Smart Energy Illuminator<br /><h1>Overview</h1><p>The Aeon Labs Inline Smart Energy Illuminator is a Z-Wave light dimmer specifically used to enable Z-Wave commands and control (on/off/dim) a device that is connected to a standard Schuko Wall Outlet.</p> <p>It can also report immediate power consumption or kWh energy usage over a period of time. The wireless module is powered from the mains supply and is a three-wire design which requires a neutral connection. In the event of power failure, non-volatile memory retains all programmed information relating to the units operating status.</p> <p>The Aeon Labs Inline Smart Energy Illuminator can be plugged between every Standard-Schuko wall outlet and the electrical appliance with maximum load of 625W. To switch the plugged device on or off simply push the local button once or use a Z-Wave Controller. The status is shown by the status LED at the device</p> <br /><h2>Inclusion Information</h2><p>To include the Aeon Labs Inline Smart Energy Illuminator with your Z-Wave controller simple bring it in the inclusion mode and click the Inclusion/Exclusion button at the Aeon Labs Inline Smart Energy Illuminator once. If the Aeon Labs Micro Inline Smart Energy Illuminator was successfully included to a Z-Wave network, the Status Indication LED will either be solid on or off (depending on if the switch is on or off) after the button was last pressed.</p> <br /><h2>Exclusion Information</h2><p>To exclude the Aeon Labs Inline Smart Energy Illuminator with your Z-Wave controller simple bring it in the exclusion mode and click the Inclusion/Exclusion button at the Aeon Labs Inline Smart Energy Illuminator once. </p>
+Smart Energy Illuminator<br /> <h1>Overview</h1><p>The Aeon Labs Inline Smart Energy Illuminator is a Z-Wave light dimmer specifically used to enable Z-Wave commands and control (on/off/dim) a device that is connected to a standard Schuko Wall Outlet.</p> <p>It can also report immediate power consumption or kWh energy usage over a period of time. The wireless module is powered from the mains supply and is a three-wire design which requires a neutral connection. In the event of power failure, non-volatile memory retains all programmed information relating to the units operating status.</p> <p>The Aeon Labs Inline Smart Energy Illuminator can be plugged between every Standard-Schuko wall outlet and the electrical appliance with maximum load of 625W. To switch the plugged device on or off simply push the local button once or use a Z-Wave Controller. The status is shown by the status LED at the device</p> <br /> <h2>Inclusion Information</h2><p>To include the Aeon Labs Inline Smart Energy Illuminator with your Z-Wave controller simple bring it in the inclusion mode and click the Inclusion/Exclusion button at the Aeon Labs Inline Smart Energy Illuminator once. If the Aeon Labs Micro Inline Smart Energy Illuminator was successfully included to a Z-Wave network, the Status Indication LED will either be solid on or off (depending on if the switch is on or off) after the button was last pressed.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the Aeon Labs Inline Smart Energy Illuminator with your Z-Wave controller simple bring it in the exclusion mode and click the Inclusion/Exclusion button at the Aeon Labs Inline Smart Energy Illuminator once. </p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -86,7 +86,7 @@ Smart Energy Illuminator<br /><h1>Overview</h1><p>The Aeon Labs Inline Smart Ene
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Automatic Notifications</label>
         <description><![CDATA[
-Enables automatic notifications to associated devices<br /><h1>Overview</h1><p>Enables automatic notifications to associated devices whenever there is a state change</p>
+Enables automatic notifications to associated devices<br /> <h1>Overview</h1><p>Enables automatic notifications to associated devices whenever there is a state change</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -112,7 +112,7 @@ Enables automatic notifications to associated devices<br /><h1>Overview</h1><p>E
                  min="0" max="65535">
         <label>91: Minimum change in wattage</label>
         <description><![CDATA[
-Minimum change in wattage for a REPORT to be sent.<br /><h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
+Minimum change in wattage for a REPORT to be sent.<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage (in terms of wattage) for a REPORT to be sent.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -122,7 +122,7 @@ Minimum change in wattage for a REPORT to be sent.<br /><h1>Overview</h1><p>The 
                  min="0" max="255">
         <label>92: Minimum change in wattage %</label>
         <description><![CDATA[
-Minimum percent change in wattage for a REPORT to be sent.<br /><h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.</p>
+Minimum percent change in wattage for a REPORT to be sent.<br /> <h1>Overview</h1><p>The value here represents minimum change in wattage percent (in terms of percentage) for a REPORT to be sent.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>

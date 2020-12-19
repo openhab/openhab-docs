@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_pd03z_00_000" listed="false">
     <label>PD03Z PIR Motion Sensor with Temperature Sensor</label>
     <description><![CDATA[
-PIR Motion Sensor with Temperature Sensor<br /><h1>Overview</h1><p>This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.</p> <p>When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.</p> <br /><h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the device cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode.</li> </ol><br /><h2>Wakeup Information</h2><p>You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time. The minimum wakeup interval is 300s, the maximum wakeup interval is 16,777,200s (about 194 days). Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…<br />Note: The default value is 12 hours. This value is longer, the battery life is greater.</p>
+PIR Motion Sensor with Temperature Sensor<br /> <h1>Overview</h1><p>This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.</p> <p>When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.</p> <br /> <h2>Inclusion Information</h2><ol><li>Remove the sensor cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Remove the device cover.</li> <li>Make sure the sensor is powered.</li> <li>Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)</li> <li>Press the button three times within 1.5 second, the device will enter exclusion mode.</li> </ol> <br /> <h2>Wakeup Information</h2><p>You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time. The minimum wakeup interval is 300s, the maximum wakeup interval is 16,777,200s (about 194 days). Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…<br />Note: The default value is 12 hours. This value is longer, the battery life is greater.</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -68,7 +68,7 @@ PIR Motion Sensor with Temperature Sensor<br /><h1>Overview</h1><p>This product 
                  min="8" max="255">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
-Defines the sensitivity of PIR sensor.<br /><h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
+Defines the sensitivity of PIR sensor.<br /> <h1>Overview</h1><p> Where 8 = highest &amp; 255 = lowest sensitivity</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ Defines the sensitivity of PIR sensor.<br /><h1>Overview</h1><p> Where 8 = high
                  min="5" max="600">
         <label>2: ON/OFF Duration Setting</label>
         <description><![CDATA[
-Determined how long the associated devices should stay ON status<br /><h1>Overview</h1><p>For instance, this parameter is set to 30(second), the PIR detector will send a BASIC SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter #6.</p>
+Determined how long the associated devices should stay ON status<br /> <h1>Overview</h1><p>For instance, this parameter is set to 30(second), the PIR detector will send a BASIC SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter #6.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -88,7 +88,7 @@ Determined how long the associated devices should stay ON status<br /><h1>Overvi
                  min="0" max="255">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
-Basic Set Command will be sent when the door/window is opened or closed<br /><h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
+Basic Set Command will be sent when the door/window is opened or closed<br /> <h1>Overview</h1><p>The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.</p> <p>Available Settings:</p> <ul><li>0 - Off, Alarm cancelling or turning a device OFF</li> <li>1~99 or 255 – ON (Binary Switch Device)</li> <li>Dim Level (Multilevel Switch Device)</li> </ul>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -108,7 +108,7 @@ Basic Set Command will be sent when the door/window is opened or closed<br /><h1
                  min="0" max="1000">
         <label>5: Lux Level Set</label>
         <description><![CDATA[
-Set a lux level value which determines when the light sensor is activated.<br /><h1>Overview</h1><p>If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate it.</p>
+Set a lux level value which determines when the light sensor is activated.<br /> <h1>Overview</h1><p>If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate it.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -118,7 +118,7 @@ Set a lux level value which determines when the light sensor is activated.<br />
                  min="1" max="8">
         <label>6: Re-trigger Interval</label>
         <description><![CDATA[
-Adjust the interval of PIR being re-triggered<br /><h1>Overview</h1><p>No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.</p>
+Adjust the interval of PIR being re-triggered<br /> <h1>Overview</h1><p>No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -135,7 +135,7 @@ Adjust the interval of PIR being re-triggered<br /><h1>Overview</h1><p>No report
       <parameter name="config_8_1" type="integer" groupName="configuration">
         <label>8: Lux Level Function Enable</label>
         <description><![CDATA[
-0 = Off, 1 =On<br /><h1>Overview</h1><p>If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC_SET command frame(i.e. BASIC_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.</p>
+0 = Off, 1 =On<br /> <h1>Overview</h1><p>If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC_SET command frame(i.e. BASIC_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -149,7 +149,7 @@ Adjust the interval of PIR being re-triggered<br /><h1>Overview</h1><p>No report
                  min="0" max="255">
         <label>9: Lux Level Changed Report</label>
         <description><![CDATA[
-How much the Lux Level must change<br /><h1>Overview</h1><p>How much the Lux Level must change, in lux, to be reported to the main controller.</p>
+How much the Lux Level must change<br /> <h1>Overview</h1><p>How much the Lux Level must change, in lux, to be reported to the main controller.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -159,7 +159,7 @@ How much the Lux Level must change<br /><h1>Overview</h1><p>How much the Lux Lev
                  min="0" max="127">
         <label>10: Temperature Report</label>
         <description><![CDATA[
-Ambient Temperature Differential Report<br /><h1>Overview</h1><p>This parameter is configured the value that differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured temperature value to nodes associated in lifeline. Differential Value = [Value] × 0.1℃</p>
+Ambient Temperature Differential Report<br /> <h1>Overview</h1><p>This parameter is configured the value that differential between current measured and previous report value. If the differential value larger than the settings, device will report this measured temperature value to nodes associated in lifeline. Differential Value = [Value] × 0.1℃</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -168,7 +168,7 @@ Ambient Temperature Differential Report<br /><h1>Overview</h1><p>This parameter 
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: LED Blink Enable</label>
         <description><![CDATA[
-Defines whether the LED blinking is on / off<br /><h1>Overview</h1><p> 1 = enable -&gt; blink once when motion sensor detect movement,  0= disabled</p>
+Defines whether the LED blinking is on / off<br /> <h1>Overview</h1><p> 1 = enable -&gt; blink once when motion sensor detect movement,  0= disabled</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -181,7 +181,7 @@ Defines whether the LED blinking is on / off<br /><h1>Overview</h1><p> 1 = enab
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Motion Event Report One Time Enable</label>
         <description><![CDATA[
-Motion Event Report One Time Enable<br /><h1>Overview</h1><p>‘1’ – The motion detected event will be sent to controller only once until device report motion cleared event.</p> <p>‘0’ – The motion detected event will be sent to controller when device detects a movement event.</p>
+Motion Event Report One Time Enable<br /> <h1>Overview</h1><p>‘1’ – The motion detected event will be sent to controller only once until device report motion cleared event.</p> <p>‘0’ – The motion detected event will be sent to controller when device detects a movement event.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -195,7 +195,7 @@ Motion Event Report One Time Enable<br /><h1>Overview</h1><p>‘1’ – The mot
                  min="1" max="65535">
         <label>99: Ambient light intensity calibration</label>
         <description><![CDATA[
-Define the calibrated scale for ambient light intensity<br /><h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>
+Define the calibrated scale for ambient light intensity<br /> <h1>Overview</h1><p> This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements</p>
         ]]></description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
@@ -205,14 +205,14 @@ Define the calibrated scale for ambient light intensity<br /><h1>Overview</h1><p
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.<br /><h1>Overview</h1><ul><li>NOTIFICATION_REPORT</li> <li>COMMAND_CLASS_SENSOR_BINARY_V2</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V7</li> <li>BATTERY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
+Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.<br /> <h1>Overview</h1><ul> <li>NOTIFICATION_REPORT</li> <li>COMMAND_CLASS_SENSOR_BINARY_V2</li> <li>COMMAND_CLASS_SENSOR_MULTILEVEL_V7</li> <li>BATTERY_REPORT</li> <li>DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Sending Control Command to associated devices. This association group is configured through the advanced parameters no. 2, 3, 5 and 8<br /><h1>Overview</h1><p>BASIC_SET</p>
+Sending Control Command to associated devices. This association group is configured through the advanced parameters no. 2, 3, 5 and 8<br /> <h1>Overview</h1><p>BASIC_SET</p>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>
@@ -220,7 +220,7 @@ Sending Control Command to associated devices. This association group is configu
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-Send Notification to associated devices.<br /><h1>Overview</h1><p>NOTIFICATION_REPORT_V4</p>
+Send Notification to associated devices.<br /> <h1>Overview</h1><p>NOTIFICATION_REPORT_V4</p>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>
@@ -228,7 +228,7 @@ Send Notification to associated devices.<br /><h1>Overview</h1><p>NOTIFICATION_R
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: Group 4</label>
         <description><![CDATA[
-Send Notification to associated devices.<br /><h1>Overview</h1><p>SENSOR_BINARY_REPORT_V2</p>
+Send Notification to associated devices.<br /> <h1>Overview</h1><p>SENSOR_BINARY_REPORT_V2</p>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>

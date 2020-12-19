@@ -8,7 +8,7 @@
   <thing-type id="enerwave_zwnbpc_00_000" listed="false">
     <label>ZWN-BPC PIR Sensor</label>
     <description><![CDATA[
-PIR Sensor<br /><h1>Overview</h1><p>This sensor acts as a security device by detecting changes in infrared  radiation levels. when some body moves within or across the detection of coverage, one triggering signal will be transmitted to associated Z-Wave devices</p> <br /><h2>Inclusion Information</h2><p>Press and release the program button</p> <br /><h2>Exclusion Information</h2><p>Press and release the program button</p> <br /><h2>Wakeup Information</h2><p>press and hold the program switch for one second,</p>
+PIR Sensor<br /> <h1>Overview</h1><p>This sensor acts as a security device by detecting changes in infrared  radiation levels. when some body moves within or across the detection of coverage, one triggering signal will be transmitted to associated Z-Wave devices</p> <br /> <h2>Inclusion Information</h2><p>Press and release the program button</p> <br /> <h2>Exclusion Information</h2><p>Press and release the program button</p> <br /> <h2>Wakeup Information</h2><p>press and hold the program switch for one second,</p>
     ]]></description>
     <category>MotionDetector</category>
 

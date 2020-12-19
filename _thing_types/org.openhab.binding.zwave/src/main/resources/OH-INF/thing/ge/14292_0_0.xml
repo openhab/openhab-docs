@@ -8,7 +8,7 @@
   <thing-type id="ge_14292_00_000" listed="false">
     <label>GE 14292 In-Wall Toggle Switch</label>
     <description><![CDATA[
-In-Wall Toggle Switch<br /><h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Smart Toggle Switch. The In-Wall Smart Toggle Switch can easily replaces any standard in-wall switch and remotely controls a light in your home. Your home will be equipped with ultimate flexibility with the GE Z-Wave Smart Toggle Switch, capable of being used by itself or with up to four add-on switches. Screw terminal installation provides improved space efficiency when replacing existing switches and the integrated LED indicator light allows you to easily locate the switch in a dark room. </p> <br /><h2>Inclusion Information</h2><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol><br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p>
+In-Wall Toggle Switch<br /> <h1>Overview</h1><p>Transform any home into a smart home with the GE Z-Wave Smart Toggle Switch. The In-Wall Smart Toggle Switch can easily replaces any standard in-wall switch and remotely controls a light in your home. Your home will be equipped with ultimate flexibility with the GE Z-Wave Smart Toggle Switch, capable of being used by itself or with up to four add-on switches. Screw terminal installation provides improved space efficiency when replacing existing switches and the integrated LED indicator light allows you to easily locate the switch in a dark room. </p> <br /> <h2>Inclusion Information</h2><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -56,7 +56,7 @@ In-Wall Toggle Switch<br /><h1>Overview</h1><p>Transform any home into a smart h
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert Switch<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
+Invert Switch<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
         ]]></description>
         <default>0</default>
         <options>

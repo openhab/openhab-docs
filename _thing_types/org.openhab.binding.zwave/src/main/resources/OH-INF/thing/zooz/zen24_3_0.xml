@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen24_03_000" listed="false">
     <label>ZEN24 Toggle Dimmer v3</label>
     <description><![CDATA[
-Toggle Dimmer v3<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightness control</li> <li><strong>Direct 3-way:</strong> worke with regular on/off switches in a 3-way (neutral wire required)</li> <li>Fully adjustable ramp rate for just the right on/off speed</li> <li>Double tap to full brightness feature</li> <li><strong>NEW:</strong> optional scene control</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Works with LED and incandescent bulbs (don't use with fans or tubes)</li> </ul><br /><h2>Inclusion Information</h2><p>Toggle the switch up 5 or 6 times very quickly when adding it.</p> <br /><h2>Exclusion Information</h2><p>Toggle the switch down 3 times quickly</p>
+Toggle Dimmer v3<br /> <h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brightness control</li> <li><strong>Direct 3-way:</strong> worke with regular on/off switches in a 3-way (neutral wire required)</li> <li>Fully adjustable ramp rate for just the right on/off speed</li> <li>Double tap to full brightness feature</li> <li><strong>NEW:</strong> optional scene control</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Works with LED and incandescent bulbs (don't use with fans or tubes)</li> </ul> <br /> <h2>Inclusion Information</h2><p>Toggle the switch up 5 or 6 times very quickly when adding it.</p> <br /> <h2>Exclusion Information</h2><p>Toggle the switch down 3 times quickly</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -59,7 +59,7 @@ Toggle Dimmer v3<br /><h1>Overview</h1><ul><li>Manual or Z-Wave on/off and brigh
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Toggle Control</label>
         <description><![CDATA[
-Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you want the to turn the light on by clicking the toggle up or down.</p>
+Controls behavior of the toggle switch<br /> <h1>Overview</h1><p>Choose if you want the to turn the light on by clicking the toggle up or down.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -72,7 +72,7 @@ Controls behavior of the toggle switch<br /><h1>Overview</h1><p>Choose if you wa
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto Turn-Off Timer Enable</label>
         <description><![CDATA[
-Auto Turn-Off Timer Enable<br /><h1>Overview</h1><p>Enable or disable the auto turn-off timer function.</p>
+Auto Turn-Off Timer Enable<br /> <h1>Overview</h1><p>Enable or disable the auto turn-off timer function.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Auto Turn-Off Timer Enable<br /><h1>Overview</h1><p>Enable or disable the auto t
                  min="1" max="65535">
         <label>4: Auto Turn-Off Timer Time</label>
         <description><![CDATA[
-Auto Turn-Off Timer Time<br /><h1>Overview</h1><p>The number is in minutes.</p> <p>Default: 60 minutes</p>
+Auto Turn-Off Timer Time<br /> <h1>Overview</h1><p>The number is in minutes.</p> <p>Default: 60 minutes</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -95,7 +95,7 @@ Auto Turn-Off Timer Time<br /><h1>Overview</h1><p>The number is in minutes.</p> 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Auto Turn-On Timer Enable</label>
         <description><![CDATA[
-Auto Turn-On Timer Enable<br /><h1>Overview</h1><p>enable or disable the auto turn-on timer function.</p>
+Auto Turn-On Timer Enable<br /> <h1>Overview</h1><p>enable or disable the auto turn-on timer function.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -109,7 +109,7 @@ Auto Turn-On Timer Enable<br /><h1>Overview</h1><p>enable or disable the auto tu
                  min="1" max="65535">
         <label>6: Auto Turn-On Timer Time</label>
         <description><![CDATA[
-Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Default: 60 minutes</p>
+Auto Turn-On Timer Time<br /> <h1>Overview</h1><p>number is in minutes</p> <p>Default: 60 minutes</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Auto Turn-On Timer Time<br /><h1>Overview</h1><p>number is in minutes</p> <p>Def
                  min="1" max="99">
         <label>9: Ramp Rate Control</label>
         <description><![CDATA[
-Ramp Rate Control<br /><h1>Overview</h1><p>Number of seconds for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default: 1 second</p>
+Ramp Rate Control<br /> <h1>Overview</h1><p>Number of seconds for the dimmer to reach full brightness or turn off when operated manually.</p> <p>Default: 1 second</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Ramp Rate Control<br /><h1>Overview</h1><p>Number of seconds for the dimmer to r
                  min="1" max="99">
         <label>10: Minimum Brightness</label>
         <description><![CDATA[
-Minimum Brightness<br /><h1>Overview</h1><p>Minimum brightness level (in %) for your dimmer.</p>
+Minimum Brightness<br /> <h1>Overview</h1><p>Minimum brightness level (in %) for your dimmer.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -151,7 +151,7 @@ Minimum Brightness<br /><h1>Overview</h1><p>Minimum brightness level (in %) for 
                  min="1" max="99">
         <label>11: Maximum Brightness</label>
         <description><![CDATA[
-Maximum Brightness<br /><h1>Overview</h1><p>Maximum brightness level (in %) for your dimmer.</p>
+Maximum Brightness<br /> <h1>Overview</h1><p>Maximum brightness level (in %) for your dimmer.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -171,7 +171,7 @@ Maximum Brightness<br /><h1>Overview</h1><p>Maximum brightness level (in %) for 
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Scene Control Enable</label>
         <description><![CDATA[
-Scene Control Enable<br /><h1>Overview</h1><p>Enable or disable scene control for quick double tap triggers.</p> <p>Find out how to make scene control work at www.support.getzooz.com</p>
+Scene Control Enable<br /> <h1>Overview</h1><p>Enable or disable scene control for quick double tap triggers.</p> <p>Find out how to make scene control work at www.support.getzooz.com</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -185,7 +185,7 @@ Scene Control Enable<br /><h1>Overview</h1><p>Enable or disable scene control fo
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Double &amp; Single Tap Enable</label>
         <description><![CDATA[
-Double &amp; Single Tap Enable<br /><h1>Overview</h1><p>Enable or disable the double-tap function and assign brightness level to single tap.</p>
+Double &amp; Single Tap Enable<br /> <h1>Overview</h1><p>Enable or disable the double-tap function and assign brightness level to single tap.</p>
         ]]></description>
         <default>0</default>
         <options>

@@ -8,7 +8,7 @@
   <thing-type id="evolve_ldm15w_00_000" listed="false">
     <label>LDM-15W Lamp Module</label>
     <description><![CDATA[
-Lamp Module<br /><h1>Overview</h1><p>Plug the Lamp Module into a wall outlet and plug a lamp into the controlled outlet of the Lamp Module. Inclusion of the LDM-15 Lamp Module allows remote ON/OFF control and dimming of lamps connected.</p> <br /><h2>Inclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p> <br /><h2>Exclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p>
+Lamp Module<br /> <h1>Overview</h1><p>Plug the Lamp Module into a wall outlet and plug a lamp into the controlled outlet of the Lamp Module. Inclusion of the LDM-15 Lamp Module allows remote ON/OFF control and dimming of lamps connected.</p> <br /> <h2>Inclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p> <br /> <h2>Exclusion Information</h2><p>Quickly double tap the button or paddle (either top or bottom) on the device–both taps must occur within approximately 20 milliseconds of each other.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

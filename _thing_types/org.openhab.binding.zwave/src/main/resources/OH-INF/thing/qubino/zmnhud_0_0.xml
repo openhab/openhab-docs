@@ -8,7 +8,7 @@
   <thing-type id="qubino_zmnhud_00_000" listed="false">
     <label>ZMNHUD Flush pilot (DIN version)</label>
     <description><![CDATA[
-Flush pilot (DIN version)<br /><h1>Overview</h1><p>The ZMNHUD is used to control electric Radiators with 6 different working modes by pilot wire control signal. The module can be controlled either through a Z-Wave network or through the wall switch.<br />The module is designed to be mounted inside an electrical cabinet onto DIN rail.</p> <br /><h2>Inclusion Information</h2><p>Press the S button for 2 seconds</p> <br /><h2>Exclusion Information</h2><p>Press the S button for 6 seconds</p>
+Flush pilot (DIN version)<br /> <h1>Overview</h1><p>The ZMNHUD is used to control electric Radiators with 6 different working modes by pilot wire control signal. The module can be controlled either through a Z-Wave network or through the wall switch.<br />The module is designed to be mounted inside an electrical cabinet onto DIN rail.</p> <br /> <h2>Inclusion Information</h2><p>Press the S button for 2 seconds</p> <br /> <h2>Exclusion Information</h2><p>Press the S button for 6 seconds</p>
     ]]></description>
     <category>HVAC</category>
 

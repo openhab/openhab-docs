@@ -8,7 +8,7 @@
   <thing-type id="cooper_rfwc5_00_000" listed="false">
     <label>RFWC5 5-Scene Keypad</label>
     <description><![CDATA[
-5-Scene Keypad<br /><h1>Overview</h1><p>The Z-Wave wall mount 5-scene keypad (RFWC5 &amp; RFWC5D) serves as a flush mounted device for activating up to 5 scenes by manually pushing one of the five buttons on the face of the device. The scene keypad has 5 buttons, with LEDs, for turning individual scenes both ON and OFF. Each individual scene can be brightened or dimmed by pressing and holding any active (ON) scene’s corresponding button. The button located on the side of the device transmits an All-OFF command to only the devices associated with that scene controller. Scenes are a group of devices set to customized levels or states. The 5-scene keypad utilizes existing 120V/AC, 60Hz standard house wiring and fits in standard-sized wallboxes.</p> <p><strong>Design features for 5-scene keypad</strong></p> <ul><li>All OFF button provides easy access for turning off all devices associated with scene keypad</li> <li>Aesthetic form factor matches our Z-Wave smart dimmers and switches, providing unified look across wall devices</li> <li>Fits standard-sized wallbox and utilizes existing 120V/AC, 60Hz (neutral wire required)</li> <li>Activates scenes associated with Z-Wave devices and other Z-Wave® compliant devices</li> <li>Provides individual scene DIM/BRIGHT function by pressing and holding any active (ON) scene’s button</li> <li>Stores up to 5 scenes for activation (ON/OFF)</li> <li>Blue LED provided on each button for scene status notification</li> <li>Blue LEDs provides night light feature by dimming when scene has been deactivated</li> <li>Single button programming</li> <li>Transfer function on Eaton’s primary controllers allows user to easily copy scene information from controller to each button on scene keypad</li> <li>Patented indicator system alerts if scene keypad is not set up in the network</li> <li>Keypad button kits available by special order</li> </ul><br /><h2>Inclusion Information</h2><p>Press the All Off (Inclusion) button one time </p> <br /><h2>Exclusion Information</h2><p>Press the All Off (Inclusion) button one time</p>
+5-Scene Keypad<br /> <h1>Overview</h1><p>The Z-Wave wall mount 5-scene keypad (RFWC5 &amp; RFWC5D) serves as a flush mounted device for activating up to 5 scenes by manually pushing one of the five buttons on the face of the device. The scene keypad has 5 buttons, with LEDs, for turning individual scenes both ON and OFF. Each individual scene can be brightened or dimmed by pressing and holding any active (ON) scene’s corresponding button. The button located on the side of the device transmits an All-OFF command to only the devices associated with that scene controller. Scenes are a group of devices set to customized levels or states. The 5-scene keypad utilizes existing 120V/AC, 60Hz standard house wiring and fits in standard-sized wallboxes.</p> <p><strong>Design features for 5-scene keypad</strong></p> <ul><li>All OFF button provides easy access for turning off all devices associated with scene keypad</li> <li>Aesthetic form factor matches our Z-Wave smart dimmers and switches, providing unified look across wall devices</li> <li>Fits standard-sized wallbox and utilizes existing 120V/AC, 60Hz (neutral wire required)</li> <li>Activates scenes associated with Z-Wave devices and other Z-Wave® compliant devices</li> <li>Provides individual scene DIM/BRIGHT function by pressing and holding any active (ON) scene’s button</li> <li>Stores up to 5 scenes for activation (ON/OFF)</li> <li>Blue LED provided on each button for scene status notification</li> <li>Blue LEDs provides night light feature by dimming when scene has been deactivated</li> <li>Single button programming</li> <li>Transfer function on Eaton’s primary controllers allows user to easily copy scene information from controller to each button on scene keypad</li> <li>Patented indicator system alerts if scene keypad is not set up in the network</li> <li>Keypad button kits available by special order</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press the All Off (Inclusion) button one time </p> <br /> <h2>Exclusion Information</h2><p>Press the All Off (Inclusion) button one time</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -83,7 +83,7 @@
                  min="1" max="255">
         <label>1: Group 1 Level</label>
         <description><![CDATA[
-Group 1 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 1</p>
+Group 1 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 1</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -93,7 +93,7 @@ Group 1 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
                  min="1" max="255">
         <label>2: Group 2 Level</label>
         <description><![CDATA[
-Group 2 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 2</p>
+Group 2 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 2</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -103,7 +103,7 @@ Group 2 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
                  min="1" max="255">
         <label>3: Group 3 Level</label>
         <description><![CDATA[
-Group 3 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 3</p>
+Group 3 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 3</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -113,7 +113,7 @@ Group 3 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
                  min="1" max="255">
         <label>4: Group 4 Level</label>
         <description><![CDATA[
-Group 4 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 4</p>
+Group 4 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 4</p>
         ]]></description>
         <default>40</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ Group 4 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for 
                  min="1" max="255">
         <label>5: Group 5 Level</label>
         <description><![CDATA[
-Group 5 Level<br /><h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 5</p>
+Group 5 Level<br /> <h1>Overview</h1><p>Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 5</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>

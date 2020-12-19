@@ -8,7 +8,7 @@
   <thing-type id="everspring_an179_00_000" listed="false">
     <label>AN179 In-Wall Switch Module</label>
     <description><![CDATA[
-In-Wall Switch Module<br /><h1>Overview</h1><p>The In-Wall On/Off Module is designed to control the on/off status of lighting and appliances load in your house. Two sets of dry contacts provide more wiring applications.</p> <br /><h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode</p> <br /><h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode</p>
+In-Wall Switch Module<br /> <h1>Overview</h1><p>The In-Wall On/Off Module is designed to control the on/off status of lighting and appliances load in your house. Two sets of dry contacts provide more wiring applications.</p> <br /> <h2>Inclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode</p> <br /> <h2>Exclusion Information</h2><p>Press the link key three times within 1.5 seconds to put the unit into inclusion mode</p>
     ]]></description>
     <category>WallSwitch</category>
 

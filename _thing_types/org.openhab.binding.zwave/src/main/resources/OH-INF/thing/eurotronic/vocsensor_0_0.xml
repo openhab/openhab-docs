@@ -8,7 +8,7 @@
   <thing-type id="eurotronic_vocsensor_00_000" listed="false">
     <label>VOC-SENSOR Air Quality Sensor</label>
     <description><![CDATA[
-Air Quality Sensor<br /><h1>Overview</h1><p>Z-Wave sensor in an ultra slim design housing provides comprehensive information on indoor air quality.</p> <p>Based on these information it is possible to always ensure a healthy living climate.</p> <p>• Ultra-flat design housing</p> <p>• Use of high-precision, Swiss sensor technology</p> <p>• Multicolor LED for signalling ventilation recommendations</p> <p>• Returns the following values:</p> <p>- VOC value (volatile organic compounds) in ppm</p> <p>- CO2 value (as CO2 equivalent) in ppm</p> <p>- Temperature (°C) and humidity (%)</p> <p>- Dew point (°C)</p> <p>• Supports Z-Wave Plus S2 security (encryption)</p> <p>• Z-Wave repeater function</p> <p>• Operation with plug-in power supply unit</p> <br /><h2>Inclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the inclusion is active, the LED is blinking green. If the inclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /><h2>Exclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the exclusion is active, the LED is blinking green. If the exclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /><h2>Wakeup Information</h2><p>n/a</p>
+Air Quality Sensor<br /> <h1>Overview</h1><p>Z-Wave sensor in an ultra slim design housing provides comprehensive information on indoor air quality.</p> <p>Based on these information it is possible to always ensure a healthy living climate.</p> <p>• Ultra-flat design housing</p> <p>• Use of high-precision, Swiss sensor technology</p> <p>• Multicolor LED for signalling ventilation recommendations</p> <p>• Returns the following values:</p> <p>- VOC value (volatile organic compounds) in ppm</p> <p>- CO2 value (as CO2 equivalent) in ppm</p> <p>- Temperature (°C) and humidity (%)</p> <p>- Dew point (°C)</p> <p>• Supports Z-Wave Plus S2 security (encryption)</p> <p>• Z-Wave repeater function</p> <p>• Operation with plug-in power supply unit</p> <br /> <h2>Inclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the inclusion is active, the LED is blinking green. If the inclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Exclusion Information</h2><p>Press the back button three times within 1 second.</p> <p>While the exclusion is active, the LED is blinking green. If the exclusion was successful the green LED will light up for 5 seconds. Otherwise the red led will light up for 5 seconds to indicate failure.</p> <br /> <h2>Wakeup Information</h2><p>n/a</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -81,7 +81,7 @@ Air Quality Sensor<br /><h1>Overview</h1><p>Z-Wave sensor in an ultra slim desig
                  min="0" max="50">
         <label>1: Temperature on-change reporting</label>
         <description><![CDATA[
-Temperature on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports).</p> <p>0x01 - 0x32 report if temperature changed by delta = 0,1°C - 5,0°C</p>
+Temperature on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports).</p> <p>0x01 - 0x32 report if temperature changed by delta = 0,1°C - 5,0°C</p>
         ]]></description>
         <default>5</default>
         <options>
@@ -93,7 +93,7 @@ Temperature on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change repor
                  min="0" max="10">
         <label>2: Humidity on-change reporting</label>
         <description><![CDATA[
-Humidity on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if humidity changed by delta = 1% ...10%</p>
+Humidity on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if humidity changed by delta = 1% ...10%</p>
         ]]></description>
         <default>5</default>
         <options>
@@ -104,7 +104,7 @@ Humidity on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reportin
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Unit Temperature</label>
         <description><![CDATA[
-Unit for Temperature (Celsius or Fahrenheit)<br /><h1>Overview</h1><p>0x00 Temperature reports in Celsius </p> <p>0x01 Temperature reports in Fahrenheit</p>
+Unit for Temperature (Celsius or Fahrenheit)<br /> <h1>Overview</h1><p>0x00 Temperature reports in Celsius </p> <p>0x01 Temperature reports in Fahrenheit</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -117,7 +117,7 @@ Unit for Temperature (Celsius or Fahrenheit)<br /><h1>Overview</h1><p>0x00 Tempe
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Resolution Temperature</label>
         <description><![CDATA[
-Resolution for Temperature<br /><h1>Overview</h1><p>0x00 No resolution (example 22°C)</p> <p>0x01 1/10 resolution (example 22.3°C)</p> <p>0x02 1/100 resolution (example 22.35°C)</p>
+Resolution for Temperature<br /> <h1>Overview</h1><p>0x00 No resolution (example 22°C)</p> <p>0x01 1/10 resolution (example 22.3°C)</p> <p>0x02 1/100 resolution (example 22.35°C)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -131,7 +131,7 @@ Resolution for Temperature<br /><h1>Overview</h1><p>0x00 No resolution (example 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Resolution Humidity</label>
         <description><![CDATA[
-Resolution Humidity<br /><h1>Overview</h1><p>0x00 No resolution (example 33%)</p> <p>0x01 1/10 resolution (example 33.4%)</p> <p>0x02 1/100 resolution (example 33.45%)</p>
+Resolution Humidity<br /> <h1>Overview</h1><p>0x00 No resolution (example 33%)</p> <p>0x01 1/10 resolution (example 33.4%)</p> <p>0x02 1/100 resolution (example 33.45%)</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -146,7 +146,7 @@ Resolution Humidity<br /><h1>Overview</h1><p>0x00 No resolution (example 33%)</p
                  min="0" max="10">
         <label>6: VOC on-change reporting</label>
         <description><![CDATA[
-VOC on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if VOC reading changed by 100ppb - 1000ppb</p>
+VOC on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if VOC reading changed by 100ppb - 1000ppb</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -156,7 +156,7 @@ VOC on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (on
                  min="0" max="10">
         <label>7: CO2eq on-change reporting</label>
         <description><![CDATA[
-CO2eq on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if CO2eq reading changed by 100ppm - 1000ppm</p>
+CO2eq on-change reporting<br /> <h1>Overview</h1><p>0x00 No on-change reporting (only time-based reports)</p> <p>0x01 - 0x0A report if CO2eq reading changed by 100ppm - 1000ppm</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -166,7 +166,7 @@ CO2eq on-change reporting<br /><h1>Overview</h1><p>0x00 No on-change reporting (
                  min="0" max="1">
         <label>8: Air quality indication via LED</label>
         <description><![CDATA[
-Air quality indication via LED<br /><h1>Overview</h1><p>0x00 No air quality indication via LEDs</p> <p>0x01 Indicate measured air quality via LEDs </p>
+Air quality indication via LED<br /> <h1>Overview</h1><p>0x00 No air quality indication via LEDs</p> <p>0x01 Indicate measured air quality via LEDs </p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -176,14 +176,14 @@ Air quality indication via LED<br /><h1>Overview</h1><p>0x00 No air quality indi
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Air Quality Sensor Z-Wave Plus can be associated with other devices.<br /><h1>Overview</h1><p>Commands:</p> <p>DEVICE_RESET_LOCALLY_NOTIFICATION,NOTIFICATION_REPORT,SENSOR_MULTILEVEL_REPORT</p>
+Air Quality Sensor Z-Wave Plus can be associated with other devices.<br /> <h1>Overview</h1><p>Commands:</p> <p>DEVICE_RESET_LOCALLY_NOTIFICATION,NOTIFICATION_REPORT,SENSOR_MULTILEVEL_REPORT</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Temperature</label>
         <description><![CDATA[
-Air Quality Sensor Z-Wave Plus can be associated with other devices.<br /><h1>Overview</h1><p>Command: SENSOR_MULTILEVEL_REPORT</p>
+Air Quality Sensor Z-Wave Plus can be associated with other devices.<br /> <h1>Overview</h1><p>Command: SENSOR_MULTILEVEL_REPORT</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

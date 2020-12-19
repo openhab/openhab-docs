@@ -8,7 +8,7 @@
   <thing-type id="trane_azemt500bb32ma_00_000" listed="false">
     <label>AZEMT500BB32MA American Standard Z-Wave Programmable Thermostat</label>
     <description><![CDATA[
-American Standard Z-Wave Programmable Thermostat<br /><h1>Overview</h1><p>T500B Z-Wave Thermostat. The ComfortLink™ control is an innovative product that is compatible with Trane products as well as any other brand of standard central heating and air conditioning systems. It works through the Nexia™ Home Intelligence system</p> <br /><h2>Inclusion Information</h2><p>Press the MENU button on the thermostat.<br />Scroll down to Z Wave Install, and press the Select button.<br />Press the Yes button to enroll the thermostat.</p> <br /><h2>Exclusion Information</h2><p>Press the MENU button on the thermostat.<br />Scroll down to Z-Wave Install and press the Select button.<br />Press the Yes button to exclude the thermostat.</p>
+American Standard Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>T500B Z-Wave Thermostat. The ComfortLink™ control is an innovative product that is compatible with Trane products as well as any other brand of standard central heating and air conditioning systems. It works through the Nexia™ Home Intelligence system</p> <br /> <h2>Inclusion Information</h2><p>Press the MENU button on the thermostat.<br />Scroll down to Z Wave Install, and press the Select button.<br />Press the Yes button to enroll the thermostat.</p> <br /> <h2>Exclusion Information</h2><p>Press the MENU button on the thermostat.<br />Scroll down to Z-Wave Install and press the Select button.<br />Press the Yes button to exclude the thermostat.</p>
     ]]></description>
     <category>HVAC</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="polycontrol_umv3btze_00_000" listed="false">
     <label>UMV3-BTZ Danalock Universal Module V3</label>
     <description><![CDATA[
-Danalock Universal Module V3<br /><h1>Overview</h1><p>The Universal Model V3 supports: - S0/S2 Z-Wave Security - Can operate 3 outputs. - Outputs can be delayed. - Bluetooth Smart</p> <p>The UMV3 can be set to factory settings by pushing the switch 10 times. Please use this procedure only when the primary controller is missing or otherwise inoperable.</p> <br /><h2>Inclusion Information</h2><p>To add or include the UMV3 into a Z-Wave network 1. Set the controller in inclusion mode 2. Push the switch once. 3. Wait 5 seconds.</p> <br /><h2>Exclusion Information</h2><p>To remove or exclude the UMV3 into a Z-Wave network 1. Set the controller in exclusion mode 2. Push the switch once. 3. Wait 5 seconds.</p>
+Danalock Universal Module V3<br /> <h1>Overview</h1><p>The Universal Model V3 supports: - S0/S2 Z-Wave Security - Can operate 3 outputs. - Outputs can be delayed. - Bluetooth Smart</p> <p>The UMV3 can be set to factory settings by pushing the switch 10 times. Please use this procedure only when the primary controller is missing or otherwise inoperable.</p> <br /> <h2>Inclusion Information</h2><p>To add or include the UMV3 into a Z-Wave network 1. Set the controller in inclusion mode 2. Push the switch once. 3. Wait 5 seconds.</p> <br /> <h2>Exclusion Information</h2><p>To remove or exclude the UMV3 into a Z-Wave network 1. Set the controller in exclusion mode 2. Push the switch once. 3. Wait 5 seconds.</p>
     ]]></description>
     <category>Lock</category>
 

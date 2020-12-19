@@ -8,7 +8,7 @@
   <thing-type id="benext_thermiqtemp_00_000" listed="false">
     <label>ThermIQ Temperature Sensor Ambient Temperature Sensor</label>
     <description><![CDATA[
-Ambient Temperature Sensor<br /><h1>Overview</h1><p>Simple ambient temperature sensor that comes with ThermIQ infrared panels</p> <br /><h2>Inclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable inclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable exclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul><br /><h2>Wakeup Information</h2><p>Device can be set to wake up on a set time interval</p>
+Ambient Temperature Sensor<br /> <h1>Overview</h1><p>Simple ambient temperature sensor that comes with ThermIQ infrared panels</p> <br /> <h2>Inclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable inclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Remove the back cover</li> <li>Mount 2 AAA batteries</li> <li>Enable exclusion mode on the controller</li> <li>Press and hold tamper switch till the red led starts blinking</li> <li>Release tamper switch</li> </ul> <br /> <h2>Wakeup Information</h2><p>Device can be set to wake up on a set time interval</p>
     ]]></description>
     <category>Sensor</category>
 

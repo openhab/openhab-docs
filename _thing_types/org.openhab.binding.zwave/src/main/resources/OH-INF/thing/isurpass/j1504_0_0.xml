@@ -8,7 +8,7 @@
   <thing-type id="isurpass_j1504_00_000" listed="false">
     <label>J1504 Door Sensor</label>
     <description><![CDATA[
-Door Sensor<br /><h1>Overview</h1><p>The Door/Window sensor JWZH-O-2015-4 is a wireless, battery powered binary sensor which designed for use in home automation systems and place where information related to opening /closing.</p> <br /><h2>Inclusion Information</h2><p>Press the tamper switch of the sensor three times within 1.5 seconds.</p> <br /><h2>Exclusion Information</h2><p>Press the tamper switch of the sensor three times within 1.5 seconds.</p> <br /><h2>Wakeup Information</h2><p>Pressing the tamper switch one time within 1.5 seconds, the sensor will wake up</p>
+Door Sensor<br /> <h1>Overview</h1><p>The Door/Window sensor JWZH-O-2015-4 is a wireless, battery powered binary sensor which designed for use in home automation systems and place where information related to opening /closing.</p> <br /> <h2>Inclusion Information</h2><p>Press the tamper switch of the sensor three times within 1.5 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Press the tamper switch of the sensor three times within 1.5 seconds.</p> <br /> <h2>Wakeup Information</h2><p>Pressing the tamper switch one time within 1.5 seconds, the sensor will wake up</p>
     ]]></description>
     <category>Sensor</category>
 

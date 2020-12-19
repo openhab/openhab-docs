@@ -8,7 +8,7 @@
   <thing-type id="act_zrp100_00_000" listed="false">
     <label>ZRP100 HomePro Appliance Module ZRP100</label>
     <description><![CDATA[
-HomePro Appliance Module ZRP100<br /><h1>Overview</h1><p>Provides wireless ON/OFF control of lamps and other electrical appliances connected to the Plug-In Appliance Module. The wall hugging design plugs into a wall outlet and provides a grounded switched 120 VAC outlet on one side and a grounded pass thru "always powered" 120 VAC outlet on the other. Controlled outlet also has sense feature that turns it on when load is turned on. </p> <br /><h2>Inclusion Information</h2><p>Press the button on the device.</p> <br /><h2>Exclusion Information</h2><p>Press the button on the device.</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+HomePro Appliance Module ZRP100<br /> <h1>Overview</h1><p>Provides wireless ON/OFF control of lamps and other electrical appliances connected to the Plug-In Appliance Module. The wall hugging design plugs into a wall outlet and provides a grounded switched 120 VAC outlet on one side and a grounded pass thru "always powered" 120 VAC outlet on the other. Controlled outlet also has sense feature that turns it on when load is turned on. </p> <br /> <h2>Inclusion Information</h2><p>Press the button on the device.</p> <br /> <h2>Exclusion Information</h2><p>Press the button on the device.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>PowerOutlet</category>
 

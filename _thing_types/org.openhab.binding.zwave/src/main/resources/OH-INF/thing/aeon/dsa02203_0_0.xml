@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsa02203_00_000" listed="false">
     <label>DSA02203 Z-Stick S2 USB Controller</label>
     <description><![CDATA[
-Z-Stick S2 USB Controller<br /><h1>Overview</h1><p>USB stick controller</p> <br /><h2>Inclusion Information</h2><p>use OpenHAB</p> <br /><h2>Exclusion Information</h2><p>use OpenHAB</p>
+Z-Stick S2 USB Controller<br /> <h1>Overview</h1><p>USB stick controller</p> <br /> <h2>Inclusion Information</h2><p>use OpenHAB</p> <br /> <h2>Exclusion Information</h2><p>use OpenHAB</p>
     ]]></description>
     <category>RemoteControl</category>
 

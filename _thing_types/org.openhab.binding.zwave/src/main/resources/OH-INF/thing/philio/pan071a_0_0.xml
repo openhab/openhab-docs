@@ -8,7 +8,7 @@
   <thing-type id="philio_pan071a_00_000" listed="false">
     <label>Philio PAN07-1A TWO SPDT Switch module with meter</label>
     <description><![CDATA[
-TWO SPDT Switch module with meter<br /><h1>Overview</h1><p>This in-wall switch module is able to detect Instant power wattage and overload current (6A) of connected light or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, disconnect and re-connect the Module will reset its overload condition to normal status. </p> <br /><h2>Inclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 2 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 2 seconds will enter exclusion mode. </p>
+TWO SPDT Switch module with meter<br /> <h1>Overview</h1><p>This in-wall switch module is able to detect Instant power wattage and overload current (6A) of connected light or appliances. When detecting overload state, the Module will be disabled and its On/Off button will be lockout of which LED will flash quickly. However, disconnect and re-connect the Module will reset its overload condition to normal status. </p> <br /> <h2>Inclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 2 seconds will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing INCLUDE_BUTTON three times within 2 seconds will enter exclusion mode. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -195,7 +195,7 @@ TWO SPDT Switch module with meter<br /><h1>Overview</h1><p>This in-wall switch m
                  min="1" max="32767">
         <label>1: Watt Meter Report Period</label>
         <description><![CDATA[
-Watt Meter Report Period<br /><h1>Overview</h1><h1> 5 second units</h1> <p>Default: 720*5s=3600s=1 hour</p> <p>If the setting is configured for 1hour (set value =720), the PAN07/PAN09 will report its instant power consumption every 1 hour to the node of correspond Group. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr). </p>
+Watt Meter Report Period<br /> <h1>Overview</h1><h1> 5 second units</h1> <p>Default: 720*5s=3600s=1 hour</p> <p>If the setting is configured for 1hour (set value =720), the PAN07/PAN09 will report its instant power consumption every 1 hour to the node of correspond Group. The maximum interval to report its instant power consumption is 45 hours (5s*32767/3600=45hr). </p>
         ]]></description>
         <default>720</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Watt Meter Report Period<br /><h1>Overview</h1><h1> 5 second units</h1> <p>Defa
                  min="1" max="32767">
         <label>2: KWH Meter Report</label>
         <description><![CDATA[
-KWH Meter Report<br /><h1>Overview</h1><h1>10 minute units</h1> <p>default: 6*10min= 1 hour</p> <p>If the setting is configured for 1hour (set value =6), the PAN07/PAN09 will report its Accumulated Power Consumption (KW/h) every 1 hour to the node of correspond Group. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days)</p>
+KWH Meter Report<br /> <h1>Overview</h1><h1>10 minute units</h1> <p>default: 6*10min= 1 hour</p> <p>If the setting is configured for 1hour (set value =6), the PAN07/PAN09 will report its Accumulated Power Consumption (KW/h) every 1 hour to the node of correspond Group. The maximum interval to report its Accumulated Power Consumption (KW/h) is 227.55 days (10min*32767/1440=227.55 days)</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -214,7 +214,7 @@ KWH Meter Report<br /><h1>Overview</h1><h1>10 minute units</h1> <p>default: 6*1
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Selected Relay</label>
         <description><![CDATA[
-Selected Relay<br /><h1>Overview</h1><p>If Controller not using Multi_Channel command class to access the relay of PAN07/PAN09, you may configure the value of relay to react the Basic Command Class 、Binary Switch Command Class or Meter Command Class V3 </p>
+Selected Relay<br /> <h1>Overview</h1><p>If Controller not using Multi_Channel command class to access the relay of PAN07/PAN09, you may configure the value of relay to react the Basic Command Class 、Binary Switch Command Class or Meter Command Class V3 </p>
         ]]></description>
         <default>3</default>
         <options>
@@ -241,7 +241,7 @@ Selected Relay<br /><h1>Overview</h1><p>If Controller not using Multi_Channel co
                  min="10" max="600">
         <label>5: Threshold of current for Load Caution</label>
         <description><![CDATA[
-Threshold of current for Load Caution<br /><h1>Overview</h1><h1>0.01A units</h1> <p>default 600*0.01A = 6.0A</p> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 600 (6A), when the load current of Relay1 over this value, PAN07/PAN09 will send current meter report to the node of correspond Group, the Range of the setting value is from 10 to 600, and the default value is 600 (6A). </p>
+Threshold of current for Load Caution<br /> <h1>Overview</h1><h1>0.01A units</h1> <p>default 600*0.01A = 6.0A</p> <p>This is a warning when the current of load over the preset threshold value, if the setting value is 600 (6A), when the load current of Relay1 over this value, PAN07/PAN09 will send current meter report to the node of correspond Group, the Range of the setting value is from 10 to 600, and the default value is 600 (6A). </p>
         ]]></description>
         <default>600</default>
         <limitToOptions>false</limitToOptions>
@@ -251,7 +251,7 @@ Threshold of current for Load Caution<br /><h1>Overview</h1><h1>0.01A units</h1>
                  min="1" max="10000">
         <label>6: Threshold of KWH for Load Caution</label>
         <description><![CDATA[
-Threshold of KWH for Load Caution<br /><h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 or Relay2 over this value, PAN07/PAN09 will send KWh Meter Report command to the node of correspond Group, minimum value is 1KWh and default value is 10000 kWh</p>
+Threshold of KWH for Load Caution<br /> <h1>Overview</h1><p>This is a warning when the KWh of load over the preset threshold value, If the setting value is 10000, when the Accumulated Power Consumption of Relay1 or Relay2 over this value, PAN07/PAN09 will send KWh Meter Report command to the node of correspond Group, minimum value is 1KWh and default value is 10000 kWh</p>
         ]]></description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>
@@ -283,7 +283,7 @@ Threshold of KWH for Load Caution<br /><h1>Overview</h1><p>This is a warning whe
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Existence of Endpoint3</label>
         <description><![CDATA[
-Existence of Endpoint3<br /><h1>Overview</h1><p>The endpoint3 of Multi-Channel Command Class is related to relay1 and relay2. It may be redundant for the need to control relay1 or relay2 individually. When the Existence of Endpoint3 is set as 0, the endpoint3 of Multi-Channel Command Class will be disabled. The default value is 1</p>
+Existence of Endpoint3<br /> <h1>Overview</h1><p>The endpoint3 of Multi-Channel Command Class is related to relay1 and relay2. It may be redundant for the need to control relay1 or relay2 individually. When the Existence of Endpoint3 is set as 0, the endpoint3 of Multi-Channel Command Class will be disabled. The default value is 1</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -297,21 +297,21 @@ Existence of Endpoint3<br /><h1>Overview</h1><p>The endpoint3 of Multi-Channel C
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Group 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>For group 1, the Switch will report (1) ON/OFF status of Relay1 and Relay2 (2) Instant Power Consumption (Watt) of Relay1 and Relay2 (3) Accumulated Power Consumption (KWh) of Relay1 and Relay2 to Z-Wave Controller.  </p>
+<br /> <h1>Overview</h1><p>For group 1, the Switch will report (1) ON/OFF status of Relay1 and Relay2 (2) Instant Power Consumption (Watt) of Relay1 and Relay2 (3) Accumulated Power Consumption (KWh) of Relay1 and Relay2 to Z-Wave Controller.  </p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>For group 2, the Switch will report (1) ON/OFF status of Relay1 (2) Instant Power Consumption (Watt) of Relay1 (3) Accumulated Power Consumption (KWh) of Relay1 to Z-Wave Controller. </p>
+<br /> <h1>Overview</h1><p>For group 2, the Switch will report (1) ON/OFF status of Relay1 (2) Instant Power Consumption (Watt) of Relay1 (3) Accumulated Power Consumption (KWh) of Relay1 to Z-Wave Controller. </p>
         ]]></description>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association">
         <label>3: Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>For group 3, the Switch will report (1) ON/OFF status of Relay2 (2) Instant Power Consumption (Watt) of Relay2 (3) Accumulated Power Consumption (KWh) of Relay2 to Z-Wave Controller. </p>
+<br /> <h1>Overview</h1><p>For group 3, the Switch will report (1) ON/OFF status of Relay2 (2) Instant Power Consumption (Watt) of Relay2 (3) Accumulated Power Consumption (KWh) of Relay2 to Z-Wave Controller. </p>
         ]]></description>
       </parameter>
 

@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgpb101_00_000" listed="false">
     <label>FGPB101 A real push button (switch) available in several colors.</label>
     <description><![CDATA[
-A real push button (switch) available in several colors.<br /><h1>Overview</h1><p>FIBARO Button is a compact, battery-powered, Z-Wave Plus compatible device. It allows you to control devices through the Z-Wave network and run various scenes defined in FIBARO System.</p> <p>Different actions may be triggered with one to five clicks or by holding the button down. In panic mode, each press of the button results in triggering the FIBARO Alarm.</p> <p>With its small design and wireless communication, the FIBARO Button can be conveniently mounted on any surface and in any position or location at home, e.g. beside the bed or under the desk.</p> <p>Main features of FIBARO Button:</p> <ul><li>Compatible with any Z-Wave or Z-Wave+ Controller</li> <li>Supports Z-Wave network Security Mode with AES-128 encryption</li> <li>Completely wireless with battery power and Z-Wave communication</li> <li>May be installed anywhere in your home</li> <li>Extremely easy installation - simply add and put on desired surface</li> <li>Many colour variations: black, white, red, green, blue, yellow, orange and brown.</li> </ul><br /><h2>Inclusion Information</h2><p>Adding (Inclusion) - Z-Wave device learning mode, allowing to add the device to existing Z-Wave network.</p> <p>To add the device to the Z-Wave network:</p> <ol><li>Place the Button within the direct range of your Z-Wave controller.</li> <li>Set the main controller in (Security/non-Security) add mode (see the controller’s manual).</li> <li>Click the Button at least six times.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Exclusion Information</h2><p>Removing (Exclusion) - Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network.</p> <p>To remove the device to the Z-Wave network:</p> <ol><li>Place the Button within the direct range of your Z-Wave controller.</li> <li>Set the main controller in remove mode (see the controller’s manual).</li> <li>Click the Button at least six times.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Wakeup Information</h2><p>The Button needs to be woken up to receive information about the new configuration from the controller, like parameters and associations. Click the Button 4 times to wake it up.</p>
+A real push button (switch) available in several colors.<br /> <h1>Overview</h1><p>FIBARO Button is a compact, battery-powered, Z-Wave Plus compatible device. It allows you to control devices through the Z-Wave network and run various scenes defined in FIBARO System.</p> <p>Different actions may be triggered with one to five clicks or by holding the button down. In panic mode, each press of the button results in triggering the FIBARO Alarm.</p> <p>With its small design and wireless communication, the FIBARO Button can be conveniently mounted on any surface and in any position or location at home, e.g. beside the bed or under the desk.</p> <p>Main features of FIBARO Button:</p> <ul><li>Compatible with any Z-Wave or Z-Wave+ Controller</li> <li>Supports Z-Wave network Security Mode with AES-128 encryption</li> <li>Completely wireless with battery power and Z-Wave communication</li> <li>May be installed anywhere in your home</li> <li>Extremely easy installation - simply add and put on desired surface</li> <li>Many colour variations: black, white, red, green, blue, yellow, orange and brown.</li> </ul> <br /> <h2>Inclusion Information</h2><p>Adding (Inclusion) - Z-Wave device learning mode, allowing to add the device to existing Z-Wave network.</p> <p>To add the device to the Z-Wave network:</p> <ol><li>Place the Button within the direct range of your Z-Wave controller.</li> <li>Set the main controller in (Security/non-Security) add mode (see the controller’s manual).</li> <li>Click the Button at least six times.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Exclusion Information</h2><p>Removing (Exclusion) - Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network.</p> <p>To remove the device to the Z-Wave network:</p> <ol><li>Place the Button within the direct range of your Z-Wave controller.</li> <li>Set the main controller in remove mode (see the controller’s manual).</li> <li>Click the Button at least six times.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Wakeup Information</h2><p>The Button needs to be woken up to receive information about the new configuration from the controller, like parameters and associations. Click the Button 4 times to wake it up.</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -62,7 +62,7 @@ A real push button (switch) available in several colors.<br /><h1>Overview</h1><
                  min="1" max="127">
         <label>1: Scenes sent to the controller</label>
         <description><![CDATA[
-This parameter determines which actions result in sending scene IDs to them.<br /><h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs and attributes assigned to them.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time<br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 1 may be combined, e.g. 1+2=3 means that scenes will be sent after pressing the button once or twice.</p>
+This parameter determines which actions result in sending scene IDs to them.<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs and attributes assigned to them.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time<br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 1 may be combined, e.g. 1+2=3 means that scenes will be sent after pressing the button once or twice.</p>
         ]]></description>
         <default>127</default>
       </parameter>
@@ -71,7 +71,7 @@ This parameter determines which actions result in sending scene IDs to them.<br 
                  min="1" max="7">
         <label>3: Associations in Z-Wave network Security Mode</label>
         <description><![CDATA[
-This parameter defines how commands are sent in specified association groups<br /><h1>Overview</h1><p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network Security Mode. It does not apply to 1st „Lifeline” group.<br /><br />1 - 2nd group sent as secure <br />2 - 3rd group sent as secure <br />4 - 4th group sent as secure</p> <p>Values of parameter 3 may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure</p>
+This parameter defines how commands are sent in specified association groups<br /> <h1>Overview</h1><p>This parameter defines how commands are sent in specified association groups: as secure or non-secure. Parameter is active only in Z-Wave network Security Mode. It does not apply to 1st „Lifeline” group.<br /><br />1 - 2nd group sent as secure <br />2 - 3rd group sent as secure <br />4 - 4th group sent as secure</p> <p>Values of parameter 3 may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure</p>
         ]]></description>
         <default>7</default>
       </parameter>
@@ -80,7 +80,7 @@ This parameter defines how commands are sent in specified association groups<br 
                  min="0" max="3">
         <label>10: Key Pressed 1 time – command sent to 2nd group</label>
         <description><![CDATA[
-Associated in 2nd association group after a single click.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Associated in 2nd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>3</default>
       </parameter>
@@ -89,7 +89,7 @@ Associated in 2nd association group after a single click.<br /><h1>Overview</h1>
                  min="1" max="255">
         <label>11: Key Pressed 1 time – value ON sent to 2nd group</label>
         <description><![CDATA[
-Value of SWITCH ON command sent to devices in 2nd association group<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+Value of SWITCH ON command sent to devices in 2nd association group<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -98,7 +98,7 @@ Value of SWITCH ON command sent to devices in 2nd association group<br /><h1>Ove
                  min="0" max="3">
         <label>12: Key Pressed 2 times – command sent to 2nd group</label>
         <description><![CDATA[
-Commands sent to devices associated in 2nd association group<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Commands sent to devices associated in 2nd association group<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>1</default>
       </parameter>
@@ -107,7 +107,7 @@ Commands sent to devices associated in 2nd association group<br /><h1>Overview</
                  min="1" max="255">
         <label>13: Key Pressed 2 times – value ON sent to 2nd group</label>
         <description><![CDATA[
-SWITCH ON command in 2nd association group after double click<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+SWITCH ON command in 2nd association group after double click<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>99</default>
       </parameter>
@@ -116,7 +116,7 @@ SWITCH ON command in 2nd association group after double click<br /><h1>Overview<
                  min="0" max="3">
         <label>14: Key Pressed 3 times 2nd group command</label>
         <description><![CDATA[
-Commands associated in 2nd association group after a triple click.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Commands associated in 2nd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -125,7 +125,7 @@ Commands associated in 2nd association group after a triple click.<br /><h1>Over
                  min="1" max="255">
         <label>15: Key Pressed 3 times – value ON to 2nd group</label>
         <description><![CDATA[
-SWITCH ON sent in 2nd association group after 3 presses<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+SWITCH ON sent in 2nd association group after 3 presses<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 2nd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -134,7 +134,7 @@ SWITCH ON sent in 2nd association group after 3 presses<br /><h1>Overview</h1><p
                  min="0" max="3">
         <label>20: Key Pressed 1 time – command sent to 3rd group</label>
         <description><![CDATA[
-Ssent to devices associated in 3rd association group after a single click.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Ssent to devices associated in 3rd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a single click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>3</default>
       </parameter>
@@ -143,7 +143,7 @@ Ssent to devices associated in 3rd association group after a single click.<br />
                  min="1" max="255">
         <label>21: Key Pressed 1 time – value ON sent to 3rd group</label>
         <description><![CDATA[
-Value of SWITCH ON command sent in 3rd association group after a single click.<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+Value of SWITCH ON command sent in 3rd association group after a single click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a single click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -152,7 +152,7 @@ Value of SWITCH ON command sent in 3rd association group after a single click.<b
                  min="0" max="3">
         <label>22: Key Pressed 2 times – command sent to 3rd group</label>
         <description><![CDATA[
-Sent to associated in 3rd association group after a double click.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Sent to associated in 3rd association group after a double click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a double click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>1</default>
       </parameter>
@@ -161,7 +161,7 @@ Sent to associated in 3rd association group after a double click.<br /><h1>Overv
                  min="1" max="255">
         <label>23: Key Pressed 2 times – value ON sent to 3rd group</label>
         <description><![CDATA[
-Value of SWITCH ON command sent in 3rd association group after a double click.<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+Value of SWITCH ON command sent in 3rd association group after a double click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a double click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>99</default>
       </parameter>
@@ -170,7 +170,7 @@ Value of SWITCH ON command sent in 3rd association group after a double click.<b
                  min="0" max="3">
         <label>24: Key Pressed 3 times – command sent to 3rd group</label>
         <description><![CDATA[
-Sent to devices associated in 3rd association group after a triple click.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
+Sent to devices associated in 3rd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>0 - no action <br />1 - SWITCH ON <br />2 - SWITCH OFF <br />3 - SWITCH ON/OFF – alternately</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -179,7 +179,7 @@ Sent to devices associated in 3rd association group after a triple click.<br /><
                  min="1" max="255">
         <label>25: Key Pressed 3 times – value ON sent to 3rd group</label>
         <description><![CDATA[
-Value SWITCH ON command sent in 3rd association group after a triple click.<br /><h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
+Value SWITCH ON command sent in 3rd association group after a triple click.<br /> <h1>Overview</h1><p>This parameter defines value of SWITCH ON command sent to devices in 3rd association group after a triple click.</p> <p>Available settings:</p> <p>1-255 - sent value</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -188,7 +188,7 @@ Value SWITCH ON command sent in 3rd association group after a triple click.<br /
                  min="0" max="3">
         <label>29: Key Held Down – command sent to 3rd group</label>
         <description><![CDATA[
-Sent associated in 3rd association group after holding the button down.<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after holding the button down.</p> <p>Available settings:</p> <p>0 - no action <br />1 - START LEVEL CHANGE UP (brightening) <br />2 - START LEVEL CHANGE DOWN (dimming) <br />3 - START LEVEL CHANGE UP/DOWN (brightening/dimming) – alternately</p>
+Sent associated in 3rd association group after holding the button down.<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 3rd association group after holding the button down.</p> <p>Available settings:</p> <p>0 - no action <br />1 - START LEVEL CHANGE UP (brightening) <br />2 - START LEVEL CHANGE DOWN (dimming) <br />3 - START LEVEL CHANGE UP/DOWN (brightening/dimming) – alternately</p>
         ]]></description>
         <default>3</default>
       </parameter>
@@ -197,7 +197,7 @@ Sent associated in 3rd association group after holding the button down.<br /><h1
                  min="1" max="127">
         <label>30: Alarm frame triggers</label>
         <description><![CDATA[
-Which actions result in sending alarm frames to 4th association group.<br /><h1>Overview</h1><p>Parameter determines which actions result in sending alarm frames to 4th association group.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time <br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 30 may be combined, e.g. 1+2=3 means that alarm frames will be sent after pressing the button once or twice.</p>
+Which actions result in sending alarm frames to 4th association group.<br /> <h1>Overview</h1><p>Parameter determines which actions result in sending alarm frames to 4th association group.</p> <p>Available settings:</p> <p>1 - Key Pressed 1 time <br />2 - Key Pressed 2 times <br />4 - Key Pressed 3 times <br />8 - Key Pressed 4 times <br />16 - Key Pressed 5 times <br />32 - Key Held Down <br />64 - Key Released</p> <p>Values of parameter 30 may be combined, e.g. 1+2=3 means that alarm frames will be sent after pressing the button once or twice.</p>
         ]]></description>
         <default>127</default>
       </parameter>

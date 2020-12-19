@@ -8,7 +8,7 @@
   <thing-type id="homeseer_hsws200_05_007" listed="false">
     <label>HS-WS200+ Scene Capable Wall Switch</label>
     <description><![CDATA[
-Scene Capable Wall Switch<br /><h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus relay (on-off) wall switch for use with most lighting and appliance loads. The switch includes an RBG LED indicator which may be controlled wirelessly to suit color preferences or to reflect the changing status of other devices in your home. HS-WS200+ is also designed to trigger automation events with a multi-tap operation (up to 5 taps).</p> <br /><h2>Inclusion Information</h2><p>Tap the paddle of your HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /><h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode. Tap the paddle of your HomeSeer switch.</p>
+Scene Capable Wall Switch<br /> <h1>Overview</h1><p>HS-WS200+ is a Z-Wave Plus relay (on-off) wall switch for use with most lighting and appliance loads. The switch includes an RBG LED indicator which may be controlled wirelessly to suit color preferences or to reflect the changing status of other devices in your home. HS-WS200+ is also designed to trigger automation events with a multi-tap operation (up to 5 taps).</p> <br /> <h2>Inclusion Information</h2><p>Tap the paddle of your HomeSeer switch to begin the inclusion process. This will take a few moments to complete.</p> <br /> <h2>Exclusion Information</h2><p>Put your Z-Wave controller into exclusion mode. Tap the paddle of your HomeSeer switch.</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="linear_gctbz48_00_000" listed="false">
     <label>GoControl GC-TBZ48 Z-Wave Plus Thermostat</label>
     <description><![CDATA[
-Z-Wave Plus Thermostat<br /><h1>Overview</h1><p>The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&amp;”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming settings, as well as to display current conditions in the home or office.</p> <br /><h2>Inclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should flash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line.</li> <li>If thermostat fails to connect, repeat Steps three (3) through (7) to re-try connecting.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should fl ash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line. </li> </ol>
+Z-Wave Plus Thermostat<br /> <h1>Overview</h1><p>The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&amp;”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming settings, as well as to display current conditions in the home or office.</p> <br /> <h2>Inclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should flash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line.</li> <li>If thermostat fails to connect, repeat Steps three (3) through (7) to re-try connecting.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).</li> <li>Press any button to take thermostat out of sleep mode.</li> <li>Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.</li> <li>Scroll to “Z-Wave” using up/down buttons. Press SELECT.</li> <li>When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.</li> <li>Press SELECT (mode button) to add thermostat to network.</li> <li>Display line should fl ash WAIT then SUCCESS if Z-Wave connection is made.</li> <li>If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line. </li> </ol>
     ]]></description>
     <category>HVAC</category>
 
@@ -114,7 +114,7 @@ Z-Wave Plus Thermostat<br /><h1>Overview</h1><p>The Z-Wave Thermostat (GC-TBZ48)
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Fan Type</label>
         <description><![CDATA[
-Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Electric (Fan w/Heat)</li> </ul>
+Fan Type<br /> <h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Electric (Fan w/Heat)</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -183,7 +183,7 @@ Fan Type<br /><h1>Overview</h1><ul><li>0 = Gas (no fan w/Heat)</li> <li>1 = Elec
                  min="5" max="9">
         <label>8: Minimum Off Time</label>
         <description><![CDATA[
-Minimum Off Time<br /><h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay before another heating/cooling cycle can begin</p>
+Minimum Off Time<br /> <h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay before another heating/cooling cycle can begin</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -193,7 +193,7 @@ Minimum Off Time<br /><h1>Overview</h1><p>Sets the Minimum Off Time (MOT) delay 
                  min="3" max="9">
         <label>9: Minimum Run Time</label>
         <description><![CDATA[
-Minimum Run Time<br /><h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay before a heating/cooling cycle can turn off</p>
+Minimum Run Time<br /> <h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay before a heating/cooling cycle can turn off</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -203,7 +203,7 @@ Minimum Run Time<br /><h1>Overview</h1><p>Sets the Minimum Run Time (MRT) delay 
                  min="3" max="15">
         <label>10: Setpoint H/C Delta</label>
         <description><![CDATA[
-Setpoint H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between heating and cooling setpoints</p>
+Setpoint H/C Delta<br /> <h1>Overview</h1><p>Sets the minimum separation between heating and cooling setpoints</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -213,7 +213,7 @@ Setpoint H/C Delta<br /><h1>Overview</h1><p>Sets the minimum separation between 
                  min="1" max="6">
         <label>11: H Delta Stage 1 ON</label>
         <description><![CDATA[
-H Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts</p>
+H Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating starts</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -223,7 +223,7 @@ H Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
                  min="0" max="5">
         <label>12: H Delta Stage 1 OFF</label>
         <description><![CDATA[
-H Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops</p>
+H Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 heating stops</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -233,7 +233,7 @@ H Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
                  min="2" max="7">
         <label>13: H Delta Stage 2 ON</label>
         <description><![CDATA[
-H Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating starts</p>
+H Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating starts</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -243,7 +243,7 @@ H Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
                  min="0" max="6">
         <label>14: H Delta Stage 2 OFF</label>
         <description><![CDATA[
-H Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating stops</p>
+H Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 heating stops</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -253,7 +253,7 @@ H Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
                  min="3" max="8">
         <label>15: H Delta Aux ON</label>
         <description><![CDATA[
-H Delta Aux ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating starts</p>
+H Delta Aux ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating starts</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -263,7 +263,7 @@ H Delta Aux ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 
                  min="0" max="7">
         <label>16: H Delta Stage 3 OFF</label>
         <description><![CDATA[
-H Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating stops</p>
+H Delta Stage 3 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 3 heating stops</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -273,7 +273,7 @@ H Delta Stage 3 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
                  min="1" max="6">
         <label>17: C Delta Stage 1 ON</label>
         <description><![CDATA[
-C Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling starts</p>
+C Delta Stage 1 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling starts</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -283,7 +283,7 @@ C Delta Stage 1 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
                  min="0" max="5">
         <label>18: C Delta Stage 1 OFF</label>
         <description><![CDATA[
-C Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling stops</p>
+C Delta Stage 1 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 1 cooling stops</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -293,7 +293,7 @@ C Delta Stage 1 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
                  min="2" max="7">
         <label>19: C Delta Stage 2 ON</label>
         <description><![CDATA[
-C Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling starts</p>
+C Delta Stage 2 ON<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling starts</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -303,7 +303,7 @@ C Delta Stage 2 ON<br /><h1>Overview</h1><p>Sets the delta from setpoint that st
                  min="0" max="6">
         <label>20: C Delta Stage 2 OFF</label>
         <description><![CDATA[
-C Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops</p>
+C Delta Stage 2 OFF<br /> <h1>Overview</h1><p>Sets the delta from setpoint that stage 2 cooling stops</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -313,7 +313,7 @@ C Delta Stage 2 OFF<br /><h1>Overview</h1><p>Sets the delta from setpoint that s
                  min="0" max="65535">
         <label>23: Lifeline Association Group Report To Send</label>
         <description><![CDATA[
-Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to send to the Lifeline Association Group upon change in thermostat state. </p> <p>Bitmask values:</p> <ul><li>1 = Temperature</li> <li>2 = Heat Setpoint</li> <li>4 = Cool Setpoint</li> <li>8 = Thermostat Heat/Cooling Mode</li> <li>16 = Fan Mode</li> <li>32 = Fan State</li> <li>64 = Operating State</li> <li>128 = Schedule (send CC parameter 38)</li> <li>256 = Setback (send CC parameter 40)</li> <li>512 = Run Hold (send CC parameter 39)</li> <li>1024 = Display Lock (send CC parameter 24)</li> <li>8192 = Battery Level</li> <li>16834 = Mechanical Relay State (send CC parameter 21)</li> <li>32768 = Thermostat State Config (send CC parameter 22)    </li> </ul>
+Lifeline Association Group Report To Send<br /> <h1>Overview</h1><p>Report to send to the Lifeline Association Group upon change in thermostat state. </p> <p>Bitmask values:</p> <ul><li>1 = Temperature</li> <li>2 = Heat Setpoint</li> <li>4 = Cool Setpoint</li> <li>8 = Thermostat Heat/Cooling Mode</li> <li>16 = Fan Mode</li> <li>32 = Fan State</li> <li>64 = Operating State</li> <li>128 = Schedule (send CC parameter 38)</li> <li>256 = Setback (send CC parameter 40)</li> <li>512 = Run Hold (send CC parameter 39)</li> <li>1024 = Display Lock (send CC parameter 24)</li> <li>8192 = Battery Level</li> <li>16834 = Mechanical Relay State (send CC parameter 21)</li> <li>32768 = Thermostat State Config (send CC parameter 22)    </li> </ul>
         ]]></description>
         <default>8319</default>
         <advanced>true</advanced>
@@ -335,7 +335,7 @@ Lifeline Association Group Report To Send<br /><h1>Overview</h1><p>Report to sen
                  min="10" max="30">
         <label>26: Backlight Timer</label>
         <description><![CDATA[
-Backlight Timer<br /><h1>Overview</h1><p>Sets the time from last button press that the backlight will turn OFF</p>
+Backlight Timer<br /> <h1>Overview</h1><p>Sets the time from last button press that the backlight will turn OFF</p>
         ]]></description>
         <default>20</default>
         <limitToOptions>false</limitToOptions>
@@ -345,7 +345,7 @@ Backlight Timer<br /><h1>Overview</h1><p>Sets the time from last button press th
                  min="30" max="109">
         <label>33: Max Heat Setpoint</label>
         <description><![CDATA[
-Max Heat Setpoint<br /><h1>Overview</h1><p>Sets the maximum heating setpoint value</p>
+Max Heat Setpoint<br /> <h1>Overview</h1><p>Sets the maximum heating setpoint value</p>
         ]]></description>
         <default>90</default>
         <limitToOptions>false</limitToOptions>
@@ -355,7 +355,7 @@ Max Heat Setpoint<br /><h1>Overview</h1><p>Sets the maximum heating setpoint val
                  min="33" max="112">
         <label>34: Min Cool Setpoint</label>
         <description><![CDATA[
-Min Cool Setpoint<br /><h1>Overview</h1><p>Sets the minimum cooling setpoint value</p>
+Min Cool Setpoint<br /> <h1>Overview</h1><p>Sets the minimum cooling setpoint value</p>
         ]]></description>
         <default>61</default>
         <limitToOptions>false</limitToOptions>
@@ -364,7 +364,7 @@ Min Cool Setpoint<br /><h1>Overview</h1><p>Sets the minimum cooling setpoint val
       <parameter name="config_38_1" type="integer" groupName="configuration">
         <label>38: Schedule Enable</label>
         <description><![CDATA[
-Schedule Enable<br /><h1>Overview</h1><p>Enable or disable thermostat's local scheduler</p>
+Schedule Enable<br /> <h1>Overview</h1><p>Enable or disable thermostat's local scheduler</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -377,7 +377,7 @@ Schedule Enable<br /><h1>Overview</h1><p>Enable or disable thermostat's local sc
       <parameter name="config_39_1" type="integer" groupName="configuration">
         <label>39: Run/Hold Mode</label>
         <description><![CDATA[
-Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
+Run/Hold Mode<br /> <h1>Overview</h1><p>0 = Hold, 1 = Run</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -402,7 +402,7 @@ Run/Hold Mode<br /><h1>Overview</h1><p>0 = Hold, 1 = Run</p>
                  min="30" max="109">
         <label>41: Un-Occupied HSP</label>
         <description><![CDATA[
-Un-Occupied HSP<br /><h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
+Un-Occupied HSP<br /> <h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
         ]]></description>
         <default>62</default>
         <limitToOptions>false</limitToOptions>
@@ -412,7 +412,7 @@ Un-Occupied HSP<br /><h1>Overview</h1><p>Heat Setpoint for Unoccupied mode</p>
                  min="33" max="112">
         <label>42: Un-Occupied CSP</label>
         <description><![CDATA[
-Un-Occupied CSP<br /><h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
+Un-Occupied CSP<br /> <h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
         ]]></description>
         <default>80</default>
         <limitToOptions>false</limitToOptions>
@@ -422,7 +422,7 @@ Un-Occupied CSP<br /><h1>Overview</h1><p>Cool Setpoint for Unoccupied mode</p>
                  min="0" max="252">
         <label>43: Remote Sensor 1 Node Number</label>
         <description><![CDATA[
-Remote Sensor 1 Node Number<br /><h1>Overview</h1><p>Node number for Remote Sensor 1</p>
+Remote Sensor 1 Node Number<br /> <h1>Overview</h1><p>Node number for Remote Sensor 1</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -432,7 +432,7 @@ Remote Sensor 1 Node Number<br /><h1>Overview</h1><p>Node number for Remote Sens
                  min="0" max="112">
         <label>46: Remote Sensor 1 Temperature</label>
         <description><![CDATA[
-Remote Sensor 1 Temperature<br /><h1>Overview</h1><p>Temperature of Remote Sensor 1</p>
+Remote Sensor 1 Temperature<br /> <h1>Overview</h1><p>Temperature of Remote Sensor 1</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -442,7 +442,7 @@ Remote Sensor 1 Temperature<br /><h1>Overview</h1><p>Temperature of Remote Senso
                  min="-7" max="7">
         <label>48: Internal Sensor Temp Offset</label>
         <description><![CDATA[
-Internal Sensor Temp Offset<br /><h1>Overview</h1><p>Internal Sensor Temperature Offset</p>
+Internal Sensor Temp Offset<br /> <h1>Overview</h1><p>Internal Sensor Temperature Offset</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -452,7 +452,7 @@ Internal Sensor Temp Offset<br /><h1>Overview</h1><p>Internal Sensor Temperature
                  min="-7" max="7">
         <label>49: R1 Sensor Temp Offset</label>
         <description><![CDATA[
-R1 Sensor Temp Offset<br /><h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
+R1 Sensor Temp Offset<br /> <h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -462,7 +462,7 @@ R1 Sensor Temp Offset<br /><h1>Overview</h1><p>R1 Sensor Temperature Offset</p>
                  min="0" max="4000">
         <label>54: Heat Timer</label>
         <description><![CDATA[
-Heat Timer<br /><h1>Overview</h1><p>Heat Timer in hours</p>
+Heat Timer<br /> <h1>Overview</h1><p>Heat Timer in hours</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -472,7 +472,7 @@ Heat Timer<br /><h1>Overview</h1><p>Heat Timer in hours</p>
                  min="0" max="4000">
         <label>55: Cool Timer</label>
         <description><![CDATA[
-Cool Timer<br /><h1>Overview</h1><p>Cool Timer in hours</p>
+Cool Timer<br /> <h1>Overview</h1><p>Cool Timer in hours</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -482,7 +482,7 @@ Cool Timer<br /><h1>Overview</h1><p>Cool Timer in hours</p>
                  min="0" max="90">
         <label>61: Fan Purge Heat</label>
         <description><![CDATA[
-Fan Purge Heat<br /><h1>Overview</h1><p>Fan purge period for Heat mode</p>
+Fan Purge Heat<br /> <h1>Overview</h1><p>Fan purge period for Heat mode</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>
@@ -493,7 +493,7 @@ Fan Purge Heat<br /><h1>Overview</h1><p>Fan purge period for Heat mode</p>
                  min="0" max="90">
         <label>62: Fan Purge Cool</label>
         <description><![CDATA[
-Fan Purge Cool<br /><h1>Overview</h1><p>Fan purge period for Cool mode</p>
+Fan Purge Cool<br /> <h1>Overview</h1><p>Fan purge period for Cool mode</p>
         ]]></description>
         <default>0</default>
         <advanced>true</advanced>

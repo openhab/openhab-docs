@@ -8,7 +8,7 @@
   <thing-type id="popp_pope700982_00_000" listed="false">
     <label>POPE700982 POPP Door / Window Sensor</label>
     <description><![CDATA[
-POPP Door / Window Sensor<br /><h1>Overview</h1><p>The POPP Door/Window Sensor is a sensor, which detects, if your window is opened, closed or tilted. The sensor is easily retroﬁttable. Furthermore, the POPP Door/Window Sensor can include other sensors by being connected with other binary sensors like NTC contacts, micro switches or ﬂood sensor. Thanks to its slim design the POPP Door/Windows can be installed unﬂashy on every window. The sensor just has to be installed on the window casement. Additionally, there has to be a slim magnet installed closely to the sensor at the window frame. By using a patented method the sensor can reliably detect the exact position of the window. With the potential free input the Door/Window Sensor can also include other sensors in your Z-Wave system. For that the binary sensor is connected to the potential free input of the sensor. Besides sensors there can also be connected momentary switches, which controls scenes in your gateway.</p> <br /><h2>Inclusion Information</h2><p>Tripple click the tamper switch</p> <br /><h2>Exclusion Information</h2><p>Tripple click the tamper switch</p> <br /><h2>Wakeup Information</h2><p>Tripple click the tamper switch.</p>
+POPP Door / Window Sensor<br /> <h1>Overview</h1><p>The POPP Door/Window Sensor is a sensor, which detects, if your window is opened, closed or tilted. The sensor is easily retroﬁttable. Furthermore, the POPP Door/Window Sensor can include other sensors by being connected with other binary sensors like NTC contacts, micro switches or ﬂood sensor. Thanks to its slim design the POPP Door/Windows can be installed unﬂashy on every window. The sensor just has to be installed on the window casement. Additionally, there has to be a slim magnet installed closely to the sensor at the window frame. By using a patented method the sensor can reliably detect the exact position of the window. With the potential free input the Door/Window Sensor can also include other sensors in your Z-Wave system. For that the binary sensor is connected to the potential free input of the sensor. Besides sensors there can also be connected momentary switches, which controls scenes in your gateway.</p> <br /> <h2>Inclusion Information</h2><p>Tripple click the tamper switch</p> <br /> <h2>Exclusion Information</h2><p>Tripple click the tamper switch</p> <br /> <h2>Wakeup Information</h2><p>Tripple click the tamper switch.</p>
     ]]></description>
     <category>Door</category>
 
@@ -73,7 +73,7 @@ POPP Door / Window Sensor<br /><h1>Overview</h1><p>The POPP Door/Window Sensor i
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Sensor Operation Mode</label>
         <description><![CDATA[
-Iinternal magnet sensor or the external terminal<br /><h1>Overview</h1><p>This parameter deﬁnes if the internal magnet sensor or the external terminal input is detected and used to issue alarm notiﬁcation. There is always one input active only. The other sensor input the deactivated. Size: 1 Byte, Default Value: 0</p>
+Iinternal magnet sensor or the external terminal<br /> <h1>Overview</h1><p>This parameter deﬁnes if the internal magnet sensor or the external terminal input is detected and used to issue alarm notiﬁcation. There is always one input active only. The other sensor input the deactivated. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Iinternal magnet sensor or the external terminal<br /><h1>Overview</h1><p>This p
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Sensor State Polarity</label>
         <description><![CDATA[
-This parameter deﬁnes the polarity of the magnet sensor<br /><h1>Overview</h1><p>This parameter deﬁnes the polarity of the magnet sensor. Size: 1 Byte, Default Value: 0</p>
+This parameter deﬁnes the polarity of the magnet sensor<br /> <h1>Overview</h1><p>This parameter deﬁnes the polarity of the magnet sensor. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -100,7 +100,7 @@ This parameter deﬁnes the polarity of the magnet sensor<br /><h1>Overview</h1>
                  min="0" max="7">
         <label>3: Visual LED Indications</label>
         <description><![CDATA[
-This parameter deﬁnes when the red LED will indicate events<br /><h1>Overview</h1><p>This parameter deﬁnes when the red LED will indicate events. Disabling all indications may extend battery life. Size: 1 Byte, Default Value: 7 (values 1 + 2 + 4 summarized)</p>
+This parameter deﬁnes when the red LED will indicate events<br /> <h1>Overview</h1><p>This parameter deﬁnes when the red LED will indicate events. Disabling all indications may extend battery life. Size: 1 Byte, Default Value: 7 (values 1 + 2 + 4 summarized)</p>
         ]]></description>
         <default>7</default>
         <options>
@@ -114,7 +114,7 @@ This parameter deﬁnes when the red LED will indicate events<br /><h1>Overview<
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Range Test after double click</label>
         <description><![CDATA[
-Allows to enable the activation of a Z-Wave range test<br /><h1>Overview</h1><p>Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch. Size: 1 Byte, Default Value: 0</p>
+Allows to enable the activation of a Z-Wave range test<br /> <h1>Overview</h1><p>Allows to enable the activation of a Z-Wave range test with double clicking the tamper switch. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -127,7 +127,7 @@ Allows to enable the activation of a Z-Wave range test<br /><h1>Overview</h1><p>
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: 2nd Association Group Trigger</label>
         <description><![CDATA[
-Status of the magnet switch that causes sending command<br /><h1>Overview</h1><p>This parameter deﬁnes the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 2. Size: 1 Byte, Default Value: 0</p>
+Status of the magnet switch that causes sending command<br /> <h1>Overview</h1><p>This parameter deﬁnes the status of the magnet switch that causes sending a BASIC command to all devices of Association Group 2. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -141,7 +141,7 @@ Status of the magnet switch that causes sending command<br /><h1>Overview</h1><p
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Command Sent to Devices of Association Group 2</label>
         <description><![CDATA[
-which commands is sent to 2nd Association Group<br /><h1>Overview</h1><p>This parameter deﬁnes which commands is sent to 2nd Association Group Size: 1 Byte, Default Value: 2</p>
+which commands is sent to 2nd Association Group<br /> <h1>Overview</h1><p>This parameter deﬁnes which commands is sent to 2nd Association Group Size: 1 Byte, Default Value: 2</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -155,7 +155,7 @@ which commands is sent to 2nd Association Group<br /><h1>Overview</h1><p>This pa
       <parameter name="config_7_1_wo" type="integer" groupName="configuration">
         <label>7: Value sent to 2nd Association Group on On event</label>
         <description><![CDATA[
-value sent in case of On event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of On event. Size: 1 Byte, Default Value: 255. Only 0 to 99 are valid values</p>
+value sent in case of On event<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of On event. Size: 1 Byte, Default Value: 255. Only 0 to 99 are valid values</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -165,7 +165,7 @@ value sent in case of On event<br /><h1>Overview</h1><p>This is the BASIC comman
                  min="0" max="255">
         <label>8: value sent to 2nd Association Group on Off event</label>
         <description><![CDATA[
-value sent in case of Off event<br /><h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>
+value sent in case of Off event<br /> <h1>Overview</h1><p>This is the BASIC command value sent in case of Off event. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -175,7 +175,7 @@ value sent in case of Off event<br /><h1>Overview</h1><p>This is the BASIC comma
                  min="0" max="32400">
         <label>9: Time Delay of On command frame</label>
         <description><![CDATA[
-sent after a delay<br /><h1>Overview</h1><p>On command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
+sent after a delay<br /> <h1>Overview</h1><p>On command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -185,7 +185,7 @@ sent after a delay<br /><h1>Overview</h1><p>On command is sent after a delay de�
                  min="0" max="32400">
         <label>10: Time Delay of Off command frame</label>
         <description><![CDATA[
-sent after a delay<br /><h1>Overview</h1><p>Off command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
+sent after a delay<br /> <h1>Overview</h1><p>Off command is sent after a delay deﬁned in this parameter. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
       </parameter>
@@ -194,7 +194,7 @@ sent after a delay<br /><h1>Overview</h1><p>Off command is sent after a delay de
                  min="0" max="32400">
         <label>11: Delay of Tamper Alarm Cancellation</label>
         <description><![CDATA[
-Time a tamper alarm is delayed in seconds<br /><h1>Overview</h1><p>Time a tamper alarm is delayed. Size: 2 Byte, Default Value: 0</p>
+Time a tamper alarm is delayed in seconds<br /> <h1>Overview</h1><p>Time a tamper alarm is delayed. Size: 2 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -203,7 +203,7 @@ Time a tamper alarm is delayed in seconds<br /><h1>Overview</h1><p>Time a tamper
       <parameter name="config_12_1" type="integer" groupName="configuration">
         <label>12: Reporting Tamper Alarm Cancellation</label>
         <description><![CDATA[
-This parameter deﬁnes if the alarm cancellation event is reported<br /><h1>Overview</h1><p>This parameter deﬁnes if the alarm cancellation event is reported. Size: 1 Byte, Default Value: 1</p>
+This parameter deﬁnes if the alarm cancellation event is reported<br /> <h1>Overview</h1><p>This parameter deﬁnes if the alarm cancellation event is reported. Size: 1 Byte, Default Value: 1</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -216,7 +216,7 @@ This parameter deﬁnes if the alarm cancellation event is reported<br /><h1>Ove
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Central Scene Event Functionality</label>
         <description><![CDATA[
-enables/disables the central scene function<br /><h1>Overview</h1><p>This parameter enables/disables the central scene function. Size: 1 Byte, Default Value: 0</p>
+enables/disables the central scene function<br /> <h1>Overview</h1><p>This parameter enables/disables the central scene function. Size: 1 Byte, Default Value: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -229,7 +229,7 @@ enables/disables the central scene function<br /><h1>Overview</h1><p>This parame
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Tilt Sensor Functionality</label>
         <description><![CDATA[
-enables/disables the tilt function<br /><h1>Overview</h1><p>This parameter enables/disables the tilt function. Size: 1 Byte, Default Value: 1</p>
+enables/disables the tilt function<br /> <h1>Overview</h1><p>This parameter enables/disables the tilt function. Size: 1 Byte, Default Value: 1</p>
         ]]></description>
         <default>1</default>
         <options>

@@ -8,7 +8,7 @@
   <thing-type id="yale_yrl256_01_078" listed="false">
     <label>US2.0 CP2-5-3 Yale Real Living™ Z-Wave Module</label>
     <description><![CDATA[
-Yale Real Living™ Z-Wave Module<br /><h1>Overview</h1><ul><li>Adds Z-wave connectivity to compatible Yale Real Living locks. Must be paired with a Z-wave controller (sold separately) in order to add remote control and access functionality to your Yale lock.</li> <li>Compatible with these deadbolt and lever locks: YRD210, YRD220, YRD240, YRL210, YRL220</li> <li>Not compatible with Yale Assure Locks or NexTouch Locks. Also not compatible with Apple Home Kit</li> </ul><br /><h2>Inclusion Information</h2><p>To include the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 1, then #</li> </ol><p>The lock will now be in inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>To exclude the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 3, then #</li> </ol><p>The lock will now be in exclusion mode.</p>
+Yale Real Living™ Z-Wave Module<br /> <h1>Overview</h1><ul><li>Adds Z-wave connectivity to compatible Yale Real Living locks. Must be paired with a Z-wave controller (sold separately) in order to add remote control and access functionality to your Yale lock.</li> <li>Compatible with these deadbolt and lever locks: YRD210, YRD220, YRD240, YRL210, YRL220</li> <li>Not compatible with Yale Assure Locks or NexTouch Locks. Also not compatible with Apple Home Kit</li> </ul> <br /> <h2>Inclusion Information</h2><p>To include the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 1, then #</li> </ol><p>The lock will now be in inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>To exclude the lock in a Z-Wave Network:</p> <ol><li>Touch the Yale Icon on the touchscreen to activate</li> <li>Enter the master pin and press #</li> <li>Press 7, then #</li> <li>Press 3, then #</li> </ol><p>The lock will now be in exclusion mode.</p>
     ]]></description>
     <category>Lock</category>
 
@@ -80,7 +80,7 @@ Yale Real Living™ Z-Wave Module<br /><h1>Overview</h1><ul><li>Adds Z-wave conn
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Silent Mode on/off</label>
         <description><![CDATA[
-Changes speaker settigs<br /><h1>Overview</h1><ol><li>High Volume</li> <li>Low Volume</li> <li>Silent</li> </ol>
+Changes speaker settigs<br /> <h1>Overview</h1><ol><li>High Volume</li> <li>Low Volume</li> <li>Silent</li> </ol>
         ]]></description>
         <default>1</default>
         <options>

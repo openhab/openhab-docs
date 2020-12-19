@@ -8,7 +8,7 @@
   <thing-type id="benext_doorsensor_00_000" listed="false">
     <label>doorSensor Door Sensor</label>
     <description><![CDATA[
-Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Sensor can be placed on any door or window.</li> <li>The Door Sensor can report the status of the door (OPEN/CLOSED).</li> <li>The Door Sensor can measure the temperature.</li> <li>The Door Sensor also has a screw connector for an external (dry) contact.</li> <li>Indoor use only.</li> </ul><p>How it operates</p> <p>After a successful inclusion the Door Sensor can be mounted on the wall or door/window. When opening the door the indicator light will blink shortly, this indicates that a z-wave message has been send successfully.</p> <p>With a controller you can request the temperature and battery level.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /><h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for 4 seconds.</p>
+Door Sensor<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Sensor can be placed on any door or window.</li> <li>The Door Sensor can report the status of the door (OPEN/CLOSED).</li> <li>The Door Sensor can measure the temperature.</li> <li>The Door Sensor also has a screw connector for an external (dry) contact.</li> <li>Indoor use only.</li> </ul><p>How it operates</p> <p>After a successful inclusion the Door Sensor can be mounted on the wall or door/window. When opening the door the indicator light will blink shortly, this indicates that a z-wave message has been send successfully.</p> <p>With a controller you can request the temperature and battery level.</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /> <h2>Exclusion Information</h2><p>Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. </p> <br /> <h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for 4 seconds.</p>
     ]]></description>
     <category>Door</category>
 
@@ -107,7 +107,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Send frame to (internal contact) nodes</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Send frame to every node in this group (internal contact)</p>
+<br /> <h1>Overview</h1><p>Send frame to every node in this group (internal contact)</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -115,7 +115,7 @@ Door Sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The Door Senso
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Send frame to external contact nodes</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Send frame to every node in this group (external contact)</p>
+<br /> <h1>Overview</h1><p>Send frame to every node in this group (external contact)</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

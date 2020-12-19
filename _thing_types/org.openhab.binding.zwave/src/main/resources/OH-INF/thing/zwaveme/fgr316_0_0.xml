@@ -8,7 +8,7 @@
   <thing-type id="zwaveme_fgr316_00_000" listed="false">
     <label>FGR-316 DIN Rail 6x2kW Universal Switch / 4xInputs</label>
     <description><![CDATA[
-DIN Rail 6x2kW Universal Switch / 4xInputs<br /><h1>Overview</h1><ul><li>6CH relay switch (max. 16A)</li> <li>Digital temperature sensor</li> <li>Digital input</li> <li>2x analogue inputs 0-10V and 4-20mA (for general use)</li> </ul><br /><h2>Inclusion Information</h2><p>Push 3 times</p> <br /><h2>Exclusion Information</h2><p>Push 3 times</p> <br /><h2>Wakeup Information</h2><p>Push 3 times</p>
+DIN Rail 6x2kW Universal Switch / 4xInputs<br /> <h1>Overview</h1><ul><li>6CH relay switch (max. 16A)</li> <li>Digital temperature sensor</li> <li>Digital input</li> <li>2x analogue inputs 0-10V and 4-20mA (for general use)</li> </ul> <br /> <h2>Inclusion Information</h2><p>Push 3 times</p> <br /> <h2>Exclusion Information</h2><p>Push 3 times</p> <br /> <h2>Wakeup Information</h2><p>Push 3 times</p>
     ]]></description>
     <category>PowerOutlet</category>
 

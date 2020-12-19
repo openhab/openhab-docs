@@ -8,7 +8,7 @@
   <thing-type id="evolve_lrmas_00_000" listed="false">
     <label>LRM-AS Wall Mounted Dimmer</label>
     <description><![CDATA[
-Wall Mounted Dimmer<br /><h1>Overview</h1><p>Scene Capable Wall Switch DimmerThe LRM-AS Wall Mounted Dimmer is a component of the Evolve lighting control system. Inclusion of the LRM-AS Wall Mounted Dimmer allows remote ON/ OFF control and dimming of lights connected. </p> <br /><h2>Inclusion Information</h2><p>Tap the button.</p> <br /><h2>Exclusion Information</h2><p>Tap the button 3 times, then press and hold (Ex. tap, tap, tap, hold)</p>
+Wall Mounted Dimmer<br /> <h1>Overview</h1><p>Scene Capable Wall Switch DimmerThe LRM-AS Wall Mounted Dimmer is a component of the Evolve lighting control system. Inclusion of the LRM-AS Wall Mounted Dimmer allows remote ON/ OFF control and dimming of lights connected. </p> <br /> <h2>Inclusion Information</h2><p>Tap the button.</p> <br /> <h2>Exclusion Information</h2><p>Tap the button 3 times, then press and hold (Ex. tap, tap, tap, hold)</p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="thermofloor_tf016_01_092" listed="false">
     <label>TF016 ZWave Thermostat</label>
     <description><![CDATA[
-ZWave Thermostat<br /><h1>Overview</h1><p>The Heatit Z-Wave is designed for controlling electrical heating cables and electrical radiators/convectors. The thermostat has 2 internal temperature sensors and has 3 algorithms for temperature compensation. After you have set the temperature, the thermostat will use a hysteresis to regulate the temperature. The hysteresis is adjustable.</p> <p>The temperature shown in the display is the actual temperature for floor sensor and the external room sensor. You are able to calibrate the sensor values. When using the internal room sensor, the temperature shown is the set point. When using the internal sensor, the thermostat can seem somewhat inaccurate. This is due to heat generation inside the thermostat, draft and other external influences.</p> <p>1.92 is an unofficial firmware upgrade with the following changes:</p> <p>* Reporting of the relay status is fixed.</p> <p>* All temperature sensors can be reported (internal, floor, external) via its association groups</p> <br /><h2>Inclusion Information</h2><p>To include the thermostat to your home automation gateway, press Center (confirm) for 10 seconds. The display will show OFF. Press Right (down) 4 times till you see Con in the display. Now start add device in your home automation software. Start inclusion mode by pressing Center (confirm) for approximately 2 seconds. The inclusion/exclusion icon will appear in the display. Confirmation will show Inc/EcL in the display. If inclusion fails, Err (error) will appear. Leave programming mode by choosing ESC in menu. Your thermostat is ready for use with default settings</p> <br /><h2>Exclusion Information</h2><p>See information for inclusion.</p> <br /><h2>Wakeup Information</h2><p>Not applicable</p>
+ZWave Thermostat<br /> <h1>Overview</h1><p>The Heatit Z-Wave is designed for controlling electrical heating cables and electrical radiators/convectors. The thermostat has 2 internal temperature sensors and has 3 algorithms for temperature compensation. After you have set the temperature, the thermostat will use a hysteresis to regulate the temperature. The hysteresis is adjustable.</p> <p>The temperature shown in the display is the actual temperature for floor sensor and the external room sensor. You are able to calibrate the sensor values. When using the internal room sensor, the temperature shown is the set point. When using the internal sensor, the thermostat can seem somewhat inaccurate. This is due to heat generation inside the thermostat, draft and other external influences.</p> <p>1.92 is an unofficial firmware upgrade with the following changes:</p> <p>* Reporting of the relay status is fixed.</p> <p>* All temperature sensors can be reported (internal, floor, external) via its association groups</p> <br /> <h2>Inclusion Information</h2><p>To include the thermostat to your home automation gateway, press Center (confirm) for 10 seconds. The display will show OFF. Press Right (down) 4 times till you see Con in the display. Now start add device in your home automation software. Start inclusion mode by pressing Center (confirm) for approximately 2 seconds. The inclusion/exclusion icon will appear in the display. Confirmation will show Inc/EcL in the display. If inclusion fails, Err (error) will appear. Leave programming mode by choosing ESC in menu. Your thermostat is ready for use with default settings</p> <br /> <h2>Exclusion Information</h2><p>See information for inclusion.</p> <br /> <h2>Wakeup Information</h2><p>Not applicable</p>
     ]]></description>
     <category>HVAC</category>
 
@@ -111,7 +111,7 @@ ZWave Thermostat<br /><h1>Overview</h1><p>The Heatit Z-Wave is designed for cont
       <parameter name="config_1_2" type="integer" groupName="configuration">
         <label>1: Operation mode</label>
         <description><![CDATA[
-Defines operation mode of the thermostat<br /><h1>Overview</h1><table><tr><td>Defines Operation Mode of thermostat</td> </tr></table><p>0....OFF(0x00)</p> <p>1.....HEAT (0x01)</p> <p>2.....COOL (0x02)</p> <p>11....ENERGY SAVE HEAT (0x0B)</p> <p>Energy Save heat is a mode with larger hystersis.</p>
+Defines operation mode of the thermostat<br /> <h1>Overview</h1><table><tr><td>Defines Operation Mode of thermostat</td> </tr></table><p>0....OFF(0x00)</p> <p>1.....HEAT (0x01)</p> <p>2.....COOL (0x02)</p> <p>11....ENERGY SAVE HEAT (0x0B)</p> <p>Energy Save heat is a mode with larger hystersis.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -141,7 +141,7 @@ Defines operation mode of the thermostat<br /><h1>Overview</h1><table><tr><td>De
       <parameter name="config_3_2" type="integer" groupName="configuration">
         <label>3: Floor sensor type</label>
         <description><![CDATA[
-The resistance (type) of the external room sensor.<br /><h1>Overview</h1><p>Set this according to the actual floor sensor that is attached to the thermostat.</p>
+The resistance (type) of the external room sensor.<br /> <h1>Overview</h1><p>Set this according to the actual floor sensor that is attached to the thermostat.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -159,7 +159,7 @@ The resistance (type) of the external room sensor.<br /><h1>Overview</h1><p>Set 
                  min="3" max="30">
         <label>4: DIFF l. Temperature control Hysteresis</label>
         <description><![CDATA[
-Range 3-30 (0.3°C 3.0°C)<br /><h1>Overview</h1><p>In this mode you are able to make changes to the hysteresis in the thermostat. This means that you can changes the hysteresis from 0.2°C up to max 3.0°C.  Default setting is 0.5°C. When using a waterbased heating, the recommended hysteresis is a minimum of 1.0°C.</p>
+Range 3-30 (0.3°C 3.0°C)<br /> <h1>Overview</h1><p>In this mode you are able to make changes to the hysteresis in the thermostat. This means that you can changes the hysteresis from 0.2°C up to max 3.0°C.  Default setting is 0.5°C. When using a waterbased heating, the recommended hysteresis is a minimum of 1.0°C.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -243,7 +243,7 @@ Range 3-30 (0.3°C 3.0°C)<br /><h1>Overview</h1><p>In this mode you are able to
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: On/Off control</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>When heating is activated, ON is sent to this channel, and when turned off (due to reaching setpoint), OFF will be sent.</p>
+<br /> <h1>Overview</h1><p>When heating is activated, ON is sent to this channel, and when turned off (due to reaching setpoint), OFF will be sent.</p>
         ]]></description>
         <multipleLimit>8</multipleLimit>
       </parameter>

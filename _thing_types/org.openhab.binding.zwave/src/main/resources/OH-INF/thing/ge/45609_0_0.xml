@@ -8,7 +8,7 @@
   <thing-type id="ge_45609_00_000" listed="false">
     <label>45609 On/Off Relay Switch</label>
     <description><![CDATA[
-On/Off Relay Switch<br /><h1>Overview</h1><p>Wall mounted On/Off switch. Control the On/Off status of permanently installed lighting, fans and more!</p> <br /><h2>Inclusion Information</h2><p>When prompted by your primary controller, tap the top or bottom of the rocker</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to Exclude your device, press and release the top or bottom of the wireless smart switch (rocker) to exclude it from the network</p>
+On/Off Relay Switch<br /> <h1>Overview</h1><p>Wall mounted On/Off switch. Control the On/Off status of permanently installed lighting, fans and more!</p> <br /> <h2>Inclusion Information</h2><p>When prompted by your primary controller, tap the top or bottom of the rocker</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to Exclude your device, press and release the top or bottom of the wireless smart switch (rocker) to exclude it from the network</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -44,7 +44,7 @@ On/Off Relay Switch<br /><h1>Overview</h1><p>Wall mounted On/Off switch. Control
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Night Light</label>
         <description><![CDATA[
-Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night Light mode where LED is on when switch is off.</p>
+Defines the behavior of the blue LED.<br /> <h1>Overview</h1><p>Default is Night Light mode where LED is on when switch is off.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -58,7 +58,7 @@ Defines the behavior of the blue LED.<br /><h1>Overview</h1><p>Default is Night 
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Change the top of the switch to OFF and the bottom of the switch to ON.<br /><h1>Overview</h1><p>Note: If you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.</p>
+Change the top of the switch to OFF and the bottom of the switch to ON.<br /> <h1>Overview</h1><p>Note: If you invert the switches and also install the product upside down, remember the load will now be controlled by the right, not the left switch.</p>
         ]]></description>
         <default>0</default>
         <options>

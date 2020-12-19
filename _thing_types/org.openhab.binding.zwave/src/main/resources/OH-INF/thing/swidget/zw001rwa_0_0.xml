@@ -8,7 +8,7 @@
   <thing-type id="swidget_zw001rwa_00_000" listed="false">
     <label>ZW001RWA Swidget module with USB port</label>
     <description><![CDATA[
-Swidget module with USB port<br /><h1>Overview</h1><p>Swidget USB Z-wave insert module for Swidget outlets. </p> <br /><h2>Inclusion Information</h2><p>Press the button on the face of the insert module for 10-15 seconds.</p> <br /><h2>Exclusion Information</h2><p>Press the button on the face of the insert module for 10-15 seconds.</p>
+Swidget module with USB port<br /> <h1>Overview</h1><p>Swidget USB Z-wave insert module for Swidget outlets. </p> <br /> <h2>Inclusion Information</h2><p>Press the button on the face of the insert module for 10-15 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Press the button on the face of the insert module for 10-15 seconds.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

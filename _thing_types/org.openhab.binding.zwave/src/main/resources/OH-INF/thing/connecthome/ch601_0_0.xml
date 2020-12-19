@@ -8,7 +8,7 @@
   <thing-type id="connecthome_ch601_00_000" listed="false">
     <label>CH-601 CH-601 THE ELECTRIC CRANE</label>
     <description><![CDATA[
-CH-601 THE ELECTRIC CRANE<br /><h1>Overview</h1><p>The electric crane CH-601 is a Z-Wave device that is used for remote or manual opening / closing of water supply in water supply and heating systems. CH-601 is an electromechanical design that consists of an electric drive and a two-way ball valve of the open / closed type.   The crane can be used together with a flood sensor to create a universal device that automatically closes the water supply in case of a leak.   The crane is equipped with manual control, which makes it possible to open and close the valve </p> <br /><h2>Inclusion Information</h2><p>To turn the module on in the Z-Wave network, place the controller in the learning mode (see the instructions of your controller) and turn on the tap in the electrical network. The device will be added automatically (NWI). In case this did not happen automatically, you need to open the top cover of the device and once click the add / remove button from the Z-Wave network.</p> <br /><h2>Exclusion Information</h2><p>To exclude (delete) a module from the Z-Wave network, unscrew the 5 bolts on the top panel of the device and remove the cover. Switch the controller to the exclusion mode (see the controller instruction) and once click the add / remove button from the Z-Wave network.</p> <p>Please note, after excluding the device from the Z-Wave network, all settings you have made will be reset to the factory settings.</p>
+CH-601 THE ELECTRIC CRANE<br /> <h1>Overview</h1><p>The electric crane CH-601 is a Z-Wave device that is used for remote or manual opening / closing of water supply in water supply and heating systems. CH-601 is an electromechanical design that consists of an electric drive and a two-way ball valve of the open / closed type.   The crane can be used together with a flood sensor to create a universal device that automatically closes the water supply in case of a leak.   The crane is equipped with manual control, which makes it possible to open and close the valve </p> <br /> <h2>Inclusion Information</h2><p>To turn the module on in the Z-Wave network, place the controller in the learning mode (see the instructions of your controller) and turn on the tap in the electrical network. The device will be added automatically (NWI). In case this did not happen automatically, you need to open the top cover of the device and once click the add / remove button from the Z-Wave network.</p> <br /> <h2>Exclusion Information</h2><p>To exclude (delete) a module from the Z-Wave network, unscrew the 5 bolts on the top panel of the device and remove the cover. Switch the controller to the exclusion mode (see the controller instruction) and once click the add / remove button from the Z-Wave network.</p> <p>Please note, after excluding the device from the Z-Wave network, all settings you have made will be reset to the factory settings.</p>
     ]]></description>
     <category>Valve</category>
 
@@ -50,7 +50,7 @@ CH-601 THE ELECTRIC CRANE<br /><h1>Overview</h1><p>The electric crane CH-601 is
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Operating Mode</label>
         <description><![CDATA[
-Selecting the operating mode<br /><h1>Overview</h1><p>Parameter value = 0 (OPERATE normally) - close the electric valve when you turn OFF (displayed OFF), when the open (displayed ON)</p> <p>Parameter value = 1 (OPERATE in reverse mode) - open when turning OPEN the electric valve (displayed OFF), when the close (displayed ON)</p>
+Selecting the operating mode<br /> <h1>Overview</h1><p>Parameter value = 0 (OPERATE normally) - close the electric valve when you turn OFF (displayed OFF), when the open (displayed ON)</p> <p>Parameter value = 1 (OPERATE in reverse mode) - open when turning OPEN the electric valve (displayed OFF), when the close (displayed ON)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -64,7 +64,7 @@ Selecting the operating mode<br /><h1>Overview</h1><p>Parameter value = 0 (OPERA
                  min="0" max="65000">
         <label>2: Auto Disabling With Delay</label>
         <description><![CDATA[
-After opening, the tap will automatically close after a certain time.<br /><h1>Overview</h1><p>After opening, the valve will automatically close after a certain time. Auto-disable does not work when "0" is selected in the parameter. The units used in the parameter are: 1 - 65000 (1 = 1sec)</p>
+After opening, the tap will automatically close after a certain time.<br /> <h1>Overview</h1><p>After opening, the valve will automatically close after a certain time. Auto-disable does not work when "0" is selected in the parameter. The units used in the parameter are: 1 - 65000 (1 = 1sec)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

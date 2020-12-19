@@ -8,19 +8,12 @@
   <thing-type id="zooz_zen34_00_000" listed="false">
     <label>ZEN34 Remote switch</label>
     <description><![CDATA[
-Remote switch<br /><h1>Overview</h1><p>* Control other Z-Wave devices and enable scenes with a click of a button</p><p>* Classic paddle switch look and size + magnetic base</p><p>* Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</p><p>* The latest 700 chip with S2 and SmartStart support</p><p>* Powered by batteries, no wires needed<br /></p> <br /><h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /><h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /><h2>Wakeup Information</h2><p>Click the upper paddle 7 times quickly. The LED indicator will stay siolid blue during wakeup and will turn off when the device turns the Z-Wave radio off again.<br /></p>
+Remote switch<br /> <h1>Overview</h1><p>* Control other Z-Wave devices and enable scenes with a click of a button</p><p>* Classic paddle switch look and size + magnetic base</p><p>* Install in your electrical switch box or mount anywhere on a wall with just adhesive tape</p><p>* The latest 700 chip with S2 and SmartStart support</p><p>* Powered by batteries, no wires needed<br /></p> <br /> <h2>Inclusion Information</h2><p>Put the openHAB Z-Wave binding into inclusion mode and click the upper paddle 6 times quickly. The LED indicator will blink blue during the process and light up green once added successfully. It will light up red if failed.<br /></p> <br /> <h2>Exclusion Information</h2><p>Put the openHAB Z-Wave binding into exclusion mode and click the lower paddle 6 times quickly.<br /></p> <br /> <h2>Wakeup Information</h2><p>Click the upper paddle 7 times quickly. The LED indicator will stay siolid blue during wakeup and will turn off when the device turns the Z-Wave radio off again.<br /></p>
     ]]></description>
     <category>RemoteControl</category>
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
-      <channel id="switch_dimmer" typeId="switch_dimmer">
-        <label>Dimmer</label>
-        <properties>
-          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
-        </properties>
-      </channel>
       <channel id="scene_number" typeId="scene_number">
         <label>Scene Number</label>
         <properties>

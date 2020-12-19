@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw098_00_000" listed="false">
     <label>ZW098 LED Bulb</label>
     <description><![CDATA[
-LED Bulb<br /><h1>Overview</h1><p>Aeon Labs LED Bulb is a switch multilevel device based on Z-wave enhanced 232 slave library of V6.51.06. Its bulb has the Smart RGB LEDs in, which can be used for adding colour to your home, the bulb has 5 main colour channels available for you to adjust: Red, Green, Blue, Warm white and Cold white. You can configure its indication colour according to your favour.</p> <p>The LED Bulb can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>The LED Bulb is a security Z-Wave device, so a security enabled controller is needed for take full advantage of all functionally for the LED Bulb. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. </p> <br /><h2>Inclusion Information</h2><p>Non-secure inclusion:</p> <ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on.</li> <li>If the inclusion is failed, please repeat the process from step 2. </li> </ol><p>Secure inclusion:</p> <ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on it on 3 times within 2 seconds.</li> <li>If the inclusion fails, please repeat the process from step 2.</li> </ol><p>Note: If LED Bulb has been successfully included into your Z-Wave network, its warm white LED will be solid. If the linking was unsuccessful and the LED Bulb continues to be active with a colourful gradient. </p> <br /><h2>Exclusion Information</h2><ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into exclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on 3 times within 2 seconds.</li> <li>If the exclusion fails, please repeat the process from step 2.</li> </ol><p>Note: If LED Bulb has been successfully excluded from your Z-Wave network, its warm white LED will be active with a colourful gradient. If the exclusion was unsuccessful and the LED Bulb continues to be solid. </p>
+LED Bulb<br /> <h1>Overview</h1><p>Aeon Labs LED Bulb is a switch multilevel device based on Z-wave enhanced 232 slave library of V6.51.06. Its bulb has the Smart RGB LEDs in, which can be used for adding colour to your home, the bulb has 5 main colour channels available for you to adjust: Red, Green, Blue, Warm white and Cold white. You can configure its indication colour according to your favour.</p> <p>The LED Bulb can be included and operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers and/or other applications. All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.</p> <p>The LED Bulb is a security Z-Wave device, so a security enabled controller is needed for take full advantage of all functionally for the LED Bulb. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. </p> <br /> <h2>Inclusion Information</h2><p>Non-secure inclusion:</p> <ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on.</li> <li>If the inclusion is failed, please repeat the process from step 2. </li> </ol><p>Secure inclusion:</p> <ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into inclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on it on 3 times within 2 seconds.</li> <li>If the inclusion fails, please repeat the process from step 2.</li> </ol><p>Note: If LED Bulb has been successfully included into your Z-Wave network, its warm white LED will be solid. If the linking was unsuccessful and the LED Bulb continues to be active with a colourful gradient. </p> <br /> <h2>Exclusion Information</h2><ol><li>Power on your LED Bulb.</li> <li>Set the primary controller into exclusion mode (If you don’t know how to do this, please refer to its manual).</li> <li>Turn off the LED Bulb and then turn on 3 times within 2 seconds.</li> <li>If the exclusion fails, please repeat the process from step 2.</li> </ol><p>Note: If LED Bulb has been successfully excluded from your Z-Wave network, its warm white LED will be active with a colourful gradient. If the exclusion was unsuccessful and the LED Bulb continues to be solid. </p>
     ]]></description>
     <category>LightBulb</category>
 
@@ -66,7 +66,7 @@ LED Bulb<br /><h1>Overview</h1><p>Aeon Labs LED Bulb is a switch multilevel devi
       <parameter name="config_32_1" type="integer" groupName="configuration">
         <label>32: Toggle send report on color change</label>
         <description><![CDATA[
-Toggle send report on color change<br /><h1>Overview</h1><p>Enable/disable to send out a report when the color is changed.<br />0=disable.&lt;default&gt;<br />1=Hail CC.<br />Others=ignore.</p>
+Toggle send report on color change<br /> <h1>Overview</h1><p>Enable/disable to send out a report when the color is changed.<br />0=disable.&lt;default&gt;<br />1=Hail CC.<br />Others=ignore.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -79,7 +79,7 @@ Toggle send report on color change<br /><h1>Overview</h1><p>Enable/disable to se
       <parameter name="config_34_1" type="integer" groupName="configuration">
         <label>34: Allow external switch to toggle bulb</label>
         <description><![CDATA[
-Allow external switch to toggle bulb<br /><h1>Overview</h1><p>Enable/disable the function of using External Switch to turn<br />on/off the bulb.<br />0=disable.<br />1=enable.<br />Others=ignore.</p>
+Allow external switch to toggle bulb<br /> <h1>Overview</h1><p>Enable/disable the function of using External Switch to turn<br />on/off the bulb.<br />0=disable.<br />1=enable.<br />Others=ignore.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -92,7 +92,7 @@ Allow external switch to toggle bulb<br /><h1>Overview</h1><p>Enable/disable the
       <parameter name="config_35_1" type="integer" groupName="configuration">
         <label>35: Allow external switch to change color</label>
         <description><![CDATA[
-Allow external switch to change color<br /><h1>Overview</h1><p>Enable/disable the function of using External Switch to changes<br />the bulb’s color.<br />0=disable.<br />1=enable.<br />Others=ignore.</p>
+Allow external switch to change color<br /> <h1>Overview</h1><p>Enable/disable the function of using External Switch to changes<br />the bulb’s color.<br />0=disable.<br />1=enable.<br />Others=ignore.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -105,7 +105,7 @@ Allow external switch to change color<br /><h1>Overview</h1><p>Enable/disable th
       <parameter name="config_36_1_wo" type="integer" groupName="configuration">
         <label>36: Control color mode</label>
         <description><![CDATA[
-Reboot/save/exit Colorful mode<br /><h1>Overview</h1><p>Reboot/save/exit Colorful mode.<br />0==Un-reboot Colorful mode.<br />1==Reboot Colorful mode.<br />2==Exit Colorful mode.<br />3==Save the current Colorful mode value and then exit</p>
+Reboot/save/exit Colorful mode<br /> <h1>Overview</h1><p>Reboot/save/exit Colorful mode.<br />0==Un-reboot Colorful mode.<br />1==Reboot Colorful mode.<br />2==Exit Colorful mode.<br />3==Save the current Colorful mode value and then exit</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -121,7 +121,7 @@ Reboot/save/exit Colorful mode<br /><h1>Overview</h1><p>Reboot/save/exit Colorfu
                  min="0" max="255">
         <label>37: Colour Residence Time</label>
         <description><![CDATA[
-Colour Residence Time<br /><h1>Overview</h1><p>0-254 : Corresponds from 0 to 25.4 seconds.</p> <p>255 : no change</p>
+Colour Residence Time<br /> <h1>Overview</h1><p>0-254 : Corresponds from 0 to 25.4 seconds.</p> <p>255 : no change</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -131,7 +131,7 @@ Colour Residence Time<br /><h1>Overview</h1><p>0-254 : Corresponds from 0 to 25.
                  min="0" max="255">
         <label>37: Colour Change Speed</label>
         <description><![CDATA[
-Colour Change Speed<br /><h1>Overview</h1><p>Colour Change Speed (8 bits)<br />This field specifies the transition speed when one colour changes to another.</p> <p>0 is slowest adn 254 is fastest.  255 will have no effect.</p>
+Colour Change Speed<br /> <h1>Overview</h1><p>Colour Change Speed (8 bits)<br />This field specifies the transition speed when one colour changes to another.</p> <p>0 is slowest adn 254 is fastest.  255 will have no effect.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Colour Change Speed<br /><h1>Overview</h1><p>Colour Change Speed (8 bits)<br />T
                  min="0" max="255">
         <label>37: Cycle count</label>
         <description><![CDATA[
-Cycle count<br /><h1>Overview</h1><p><br />The Cycle Count is used to define the number of repetitions/cycles displayed by your LED Bulb in Colour<br />Display Cycle before stopping.</p> <p>0 = Unlimited</p> <p>1-254 = cycle this number and then stop</p> <p>255 = no change to setting</p> <p>For example:<br /><br />When the Bulb is in Rainbow mode, the colour change from red to pink (Red Orange Yellow Green<br />Cyan Blue Purple Pink), going through the colours is regarded as 1 cycle.</p>
+Cycle count<br /> <h1>Overview</h1><p><br />The Cycle Count is used to define the number of repetitions/cycles displayed by your LED Bulb in Colour<br />Display Cycle before stopping.</p> <p>0 = Unlimited</p> <p>1-254 = cycle this number and then stop</p> <p>255 = no change to setting</p> <p>For example:<br /><br />When the Bulb is in Rainbow mode, the colour change from red to pink (Red Orange Yellow Green<br />Cyan Blue Purple Pink), going through the colours is regarded as 1 cycle.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -150,7 +150,7 @@ Cycle count<br /><h1>Overview</h1><p><br />The Cycle Count is used to define the
       <parameter name="config_37_4_7F000000" type="integer" groupName="configuration">
         <label>37: Color transitions (Value 1 MSB) see Overview</label>
         <description><![CDATA[
-Value 1 (MSB) see Overview<br /><h1>Overview</h1><p>scroll to bottom for examples.</p> <ul><li>bits 7 and 6 for colour transition style</li> <li>bits 5 and 4 are reserved (always 0)</li> <li>bits 3,2,1,0 are colour display</li> </ul><p>colour display options are:</p> <ul><li>0 single colour mode</li> <li>1 Rainbow Mode(red, orange, yellow, green, cyan, blue, violet,pinkish)</li> <li>2 Multi Colour Mode(colours cycle between selected colours)</li> <li>3 Random mode</li> <li>15 Inactive (keep current mode)</li> </ul><p>Single colour mode: The Bulb is solid with one colour in this mode. If you want to change its current<br />colour, you need to turn the Bulb off and on 2 times via wall switch within 1 second, the Bulb will enter<br />into colour change status. During this time, turning the wall switch off when your desired colour appears,<br />will be used as the colour of the bulb when it is on.<br />→<br />Rainbow mode: The Bulb has 8 colours to display and will change through a range of colors (Red<br />Orange Yellow Green Cyan Blue Violet pinkish).<br />Multi-colour mode: The Bulb can change between multiple colours according to the colour index which<br />is configurable through configuration parameter 38, see the configuration table of parameter 38 below.</p> <p>Random mode: The Bulb’s colour will be displayed randomly.</p> <p>Colour Transition Style (2 bits)</p> <ul><li>0 Smooth transitions</li> <li>1 Fast/Direct transition</li> <li>2 Fade out/Fade in</li> <li>3 Inactive (keep current configuration)</li> </ul>
+Value 1 (MSB) see Overview<br /> <h1>Overview</h1><p>scroll to bottom for examples.</p> <ul><li>bits 7 and 6 for colour transition style</li> <li>bits 5 and 4 are reserved (always 0)</li> <li>bits 3,2,1,0 are colour display</li> </ul><p>colour display options are:</p> <ul><li>0 single colour mode</li> <li>1 Rainbow Mode(red, orange, yellow, green, cyan, blue, violet,pinkish)</li> <li>2 Multi Colour Mode(colours cycle between selected colours)</li> <li>3 Random mode</li> <li>15 Inactive (keep current mode)</li> </ul><p>Single colour mode: The Bulb is solid with one colour in this mode. If you want to change its current<br />colour, you need to turn the Bulb off and on 2 times via wall switch within 1 second, the Bulb will enter<br />into colour change status. During this time, turning the wall switch off when your desired colour appears,<br />will be used as the colour of the bulb when it is on.<br />→<br />Rainbow mode: The Bulb has 8 colours to display and will change through a range of colors (Red<br />Orange Yellow Green Cyan Blue Violet pinkish).<br />Multi-colour mode: The Bulb can change between multiple colours according to the colour index which<br />is configurable through configuration parameter 38, see the configuration table of parameter 38 below.</p> <p>Random mode: The Bulb’s colour will be displayed randomly.</p> <p>Colour Transition Style (2 bits)</p> <ul><li>0 Smooth transitions</li> <li>1 Fast/Direct transition</li> <li>2 Fade out/Fade in</li> <li>3 Inactive (keep current configuration)</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -174,7 +174,7 @@ Value 1 (MSB) see Overview<br /><h1>Overview</h1><p>scroll to bottom for example
                  min="0" max="136">
         <label>38: Color index configuration for multi mode (1,2)</label>
         <description><![CDATA[
-Color index configuration for multi mode (1,2)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 1 and 2</p> <p>Values are additive.  The smaller numbers control index 1, and the larger control index 2. </p> <p><strong>Example:</strong></p> <p>You want to have the 1st color be red and the 2nd color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
+Color index configuration for multi mode (1,2)<br /> <h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 1 and 2</p> <p>Values are additive.  The smaller numbers control index 1, and the larger control index 2. </p> <p><strong>Example:</strong></p> <p>You want to have the 1st color be red and the 2nd color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -184,7 +184,7 @@ Color index configuration for multi mode (1,2)<br /><h1>Overview</h1><p>The colo
                  min="0" max="136">
         <label>38: Color index configuration for multi mode (3,4)</label>
         <description><![CDATA[
-Color index configuration for multi mode (3,4)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 3 and 4</p> <p>Values are additive.  The smaller numbers control index 3, and the larger control index 4. </p> <p><strong>Example:</strong></p> <p>You want to have the 3rd color be red and the 4th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
+Color index configuration for multi mode (3,4)<br /> <h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 3 and 4</p> <p>Values are additive.  The smaller numbers control index 3, and the larger control index 4. </p> <p><strong>Example:</strong></p> <p>You want to have the 3rd color be red and the 4th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -194,7 +194,7 @@ Color index configuration for multi mode (3,4)<br /><h1>Overview</h1><p>The colo
                  min="0" max="136">
         <label>38: Color index configuration for multi mode (5.6)</label>
         <description><![CDATA[
-Color index configuration for multi mode (5,6)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 5 and 6</p> <p>Values are additive.  The smaller numbers control index 5, and the larger control index 6. </p> <p><strong>Example:</strong></p> <p>You want to have the 5th color be red and the 6th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
+Color index configuration for multi mode (5,6)<br /> <h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This value controls indexes 5 and 6</p> <p>Values are additive.  The smaller numbers control index 5, and the larger control index 6. </p> <p><strong>Example:</strong></p> <p>You want to have the 5th color be red and the 6th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -204,7 +204,7 @@ Color index configuration for multi mode (5,6)<br /><h1>Overview</h1><p>The colo
                  min="0" max="136">
         <label>38: Color index configuration for multi mode (7,8)</label>
         <description><![CDATA[
-Color index configuration for multi mode (7,8)<br /><h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This is value 1, the MSB.  It controls indexes 7 and 8</p> <p>Values are additive.  The smaller numbers control index 7, and the larger control index 8. </p> <p><strong>Example:</strong></p> <p>You want to have the 7th color be red and the 8th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
+Color index configuration for multi mode (7,8)<br /> <h1>Overview</h1><p>The colour will be changed from index 1 to index 8 circularly when your bulb is in Multi colour mode.</p> <p>This is value 1, the MSB.  It controls indexes 7 and 8</p> <p>Values are additive.  The smaller numbers control index 7, and the larger control index 8. </p> <p><strong>Example:</strong></p> <p>You want to have the 7th color be red and the 8th color switched to to be blue.  Set this value to 97 (1+96)</p> <p>The colors are:</p> <p>1,16 = red</p> <p>2,32 = orange</p> <p>3,48 = yellow</p> <p>4,64 = green</p> <p>5,80 = cyan</p> <p>6,96 = blue</p> <p>7,112 = violet</p> <p>8,128 = pinkish (Aeon's term)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

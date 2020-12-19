@@ -8,7 +8,7 @@
   <thing-type id="ge_46202_00_000" listed="false">
     <label>GE 46202 GE Enbrighten Z-Wave Plus Smart Switch</label>
     <description><![CDATA[
-GE Enbrighten Z-Wave Plus Smart Switch<br /><h1>Overview</h1><p>Home automation is even smarter with the GE Enbrighten Z-Wave Plus In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, Nexia and more.</p> <br /><h2>Inclusion Information</h2><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol><br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p>
+GE Enbrighten Z-Wave Plus Smart Switch<br /> <h1>Overview</h1><p>Home automation is even smarter with the GE Enbrighten Z-Wave Plus In-Wall Smart Switch with QuickFit™ and SimpleWire™. When paired with a compatible hub, the hardwired smart switch operates wall, ceiling and accent lighting through individual commands and programmed settings. Wirelessly control and schedule indoor or outdoor fixtures for effortless management of your home. Your automation possibilities are seemingly infinite when connected to hubs from Ring, Wink, SmartThings, HomeSeer, Vera, Nexia and more.</p> <br /> <h2>Inclusion Information</h2><ol><li>Once the controller is ready to include your device, press up and release on the toggle to include it in the network. </li> <li>Once your controller has confirmed that the device has been included, refresh the Z-Wave network to optimize performance. </li> </ol> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press up and release on the toggle to exclude it from the network. </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -56,7 +56,7 @@ GE Enbrighten Z-Wave Plus Smart Switch<br /><h1>Overview</h1><p>Home automation 
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED Mode</label>
         <description><![CDATA[
-LED Indication Configuration<br /><h1>Overview</h1><p>Sets mode for LED inside toggle switch</p>
+LED Indication Configuration<br /> <h1>Overview</h1><p>Sets mode for LED inside toggle switch</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -71,7 +71,7 @@ LED Indication Configuration<br /><h1>Overview</h1><p>Sets mode for LED inside t
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Invert Switch</label>
         <description><![CDATA[
-Invert Switch<br /><h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
+Invert Switch<br /> <h1>Overview</h1><p>If the switch is accidentally installed upside down with “On” at the bottom and “Off” at the top, the default On/Off rocker settings can be reversed by changing parameter 4’s value to “1”.</p>
         ]]></description>
         <default>0</default>
         <options>

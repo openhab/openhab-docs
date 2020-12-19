@@ -8,7 +8,7 @@
   <thing-type id="zipato_hmhs1cgz_00_000" listed="false">
     <label>HM-HS1CG-Z Combustible Gas Sensor</label>
     <description><![CDATA[
-Combustible Gas Sensor<br /><h1>Overview</h1><p>This Smart Combustible Gas Sensor adopts super low power consumption Z-Wave Wireless module. Used for detecting combusting gas leakage and preventing danger caused by gas leakage it also can be used as Z-Wave repealer to extend wireless transmission distance. It adopts high stability semi-conductor gas sensor. Sensor alarms if gas density in air exceeds set alarm level. It is applicable for kitchen or possible gas leakage in in-door area.</p> <br /><h2>Inclusion Information</h2><ul><li>Click [Add] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.</li> <li>If add Process is successful, Green LED will turn on</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Click [Remove] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s</li> <li>If remove Process is successful, Green LED is Blinking 6 times, then turn on</li> </ul>
+Combustible Gas Sensor<br /> <h1>Overview</h1><p>This Smart Combustible Gas Sensor adopts super low power consumption Z-Wave Wireless module. Used for detecting combusting gas leakage and preventing danger caused by gas leakage it also can be used as Z-Wave repealer to extend wireless transmission distance. It adopts high stability semi-conductor gas sensor. Sensor alarms if gas density in air exceeds set alarm level. It is applicable for kitchen or possible gas leakage in in-door area.</p> <br /> <h2>Inclusion Information</h2><ul><li>Click [Add] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.</li> <li>If add Process is successful, Green LED will turn on</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Click [Remove] icon in Z-Wave Controller.</li> <li>Press the Net_Button 3 times within 1.5s</li> <li>If remove Process is successful, Green LED is Blinking 6 times, then turn on</li> </ul>
     ]]></description>
     <category>Sensor</category>
 
@@ -45,14 +45,14 @@ Combustible Gas Sensor<br /><h1>Overview</h1><p>This Smart Combustible Gas Senso
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ul><li>Lifeline between controller and the device.</li> <li>Supported command classes: Notification report, and Device Reset Locally notification.</li> <li>Association Group description: Association group 1: Lifeline association group</li> <li>Maximum supported node is 1.</li> </ul><p>Include command classes: Notification Report and Device Reset Locally notification.</p>
+<br /> <h1>Overview</h1><ul> <li>Lifeline between controller and the device.</li> <li>Supported command classes: Notification report, and Device Reset Locally notification.</li> <li>Association Group description: Association group 1: Lifeline association group</li> <li>Maximum supported node is 1.</li> </ul> <p>Include command classes: Notification Report and Device Reset Locally notification.</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Root Device group(Notification)</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Maximum supported nodes are 5.<br /><br />1-Notification reports status of gas detected or no gas <br /><br />    Association group 1: Lifeline association group<br /><br />2-When the sensor detects status change of gas detected and no gas detected, the device will be triggered.</p>
+<br /> <h1>Overview</h1><p>Maximum supported nodes are 5.<br /><br />1-Notification reports status of gas detected or no gas <br /><br />    Association group 1: Lifeline association group<br /><br />2-When the sensor detects status change of gas detected and no gas detected, the device will be triggered.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

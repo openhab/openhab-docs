@@ -8,7 +8,7 @@
   <thing-type id="merten_505160_00_000" listed="false">
     <label>5071xx Radio Push-button CONNECT, 1 button</label>
     <description><![CDATA[
-Radio Push-button CONNECT, 1 button<br /><h1>Overview</h1><p>Single-surface push-button: Top button: Association Group = 1 Parameter no. = 0 Bottom button: Association Group = 2 Parameter no. = 1</p> <br /><h2>Inclusion Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds. Used for include/exclude the device by the primary</p> <br /><h2>Exclusion Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds. Used for include/exclude the device by the primary</p> <br /><h2>Wakeup Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds.</p>
+Radio Push-button CONNECT, 1 button<br /> <h1>Overview</h1><p>Single-surface push-button: Top button: Association Group = 1 Parameter no. = 0 Bottom button: Association Group = 2 Parameter no. = 1</p> <br /> <h2>Inclusion Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds. Used for include/exclude the device by the primary</p> <br /> <h2>Exclusion Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds. Used for include/exclude the device by the primary</p> <br /> <h2>Wakeup Information</h2><p>Triple click on operating surface LED flashes approx. 6 seconds.</p>
     ]]></description>
     <category>RemoteControl</category>
 

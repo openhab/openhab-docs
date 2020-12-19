@@ -8,7 +8,7 @@
   <thing-type id="quby_en00_00_000" listed="false">
     <label>EN00 Engie Meter Adapter</label>
     <description><![CDATA[
-Engie Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and electricity usage of analog meters. The analog meters are read by means of optical sensors that can be placed on the meter to monitor the rotating disc or the blinking LED. The meter adapter measures the cumulative and instantaneous gas and electricity consumption.</p> <br /><h2>Inclusion Information</h2><p>To add the Meter Module into a Z-Wave network, the inclusion process should be started on the controller. In factory default mode, the Meter Module will try to join a Z-Wave network automatically after being plugged into a power socket. If the Meter Module was previously included in a Z-Wave network, or was not just plugged into a power socket, one needs to triple-press the button (quickly).</p> <br /><h2>Exclusion Information</h2><p>The button on the Meter Module should be triple-pressed (quickly).</p>
+Engie Meter Adapter<br /> <h1>Overview</h1><p>The meter adapter measures gas and electricity usage of analog meters. The analog meters are read by means of optical sensors that can be placed on the meter to monitor the rotating disc or the blinking LED. The meter adapter measures the cumulative and instantaneous gas and electricity consumption.</p> <br /> <h2>Inclusion Information</h2><p>To add the Meter Module into a Z-Wave network, the inclusion process should be started on the controller. In factory default mode, the Meter Module will try to join a Z-Wave network automatically after being plugged into a power socket. If the Meter Module was previously included in a Z-Wave network, or was not just plugged into a power socket, one needs to triple-press the button (quickly).</p> <br /> <h2>Exclusion Information</h2><p>The button on the Meter Module should be triple-pressed (quickly).</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -69,7 +69,7 @@ Engie Meter Adapter<br /><h1>Overview</h1><p>The meter adapter measures gas and 
                  min="120" max="40000">
         <label>2: Analog gas/heat port resolution</label>
         <description><![CDATA[
-Analog gas/heat port resolution<br /><h1>Overview</h1><p>Analog gas/heat port resolution</p> <p>(pulses per cubic meter / pulses per MJ; in Q14.2 notation)</p>
+Analog gas/heat port resolution<br /> <h1>Overview</h1><p>Analog gas/heat port resolution</p> <p>(pulses per cubic meter / pulses per MJ; in Q14.2 notation)</p>
         ]]></description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>
@@ -91,7 +91,7 @@ Analog gas/heat port resolution<br /><h1>Overview</h1><p>Analog gas/heat port re
                  min="120" max="40000">
         <label>4: Analog electricity port resolution</label>
         <description><![CDATA[
-Analog electricity port resolution<br /><h1>Overview</h1><p>Analog electricity port resolution</p> <p>(pulses per kWh; in Q14.2 notation)</p>
+Analog electricity port resolution<br /> <h1>Overview</h1><p>Analog electricity port resolution</p> <p>(pulses per kWh; in Q14.2 notation)</p>
         ]]></description>
         <default>400</default>
         <limitToOptions>false</limitToOptions>

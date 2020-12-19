@@ -8,7 +8,7 @@
   <thing-type id="bremicker_abuscfa3010_00_000" listed="false">
     <label>CFA3010 Z-Wave controlled door lock</label>
     <description><![CDATA[
-Z-Wave controlled door lock<br /><h1>Overview</h1><p>The ABUS Z-Wave HomeTec CFA3010 wireless door lock actuator is a system designed for retrofitting to doors that open inwards to provide motorized locking and unlocking functions. The door can be electronically operated using local buttons and any Z-Wave device capable to control door locks. For the wireless door lock actuator to work, the cylinder must project 7-12 mm on the inside of the door (plus the thickness of the fitting or collar). Because the actuator operates with a key permanently inserted in the lock, the cylinder must have an emergency feature where the door can be opened with a key from the outside even when another key is inserted on the inside. In addition, the door lock must be a profile cylinder compliant with DIN 18252. This device is security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products. This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.</p> <br /><h2>Inclusion Information</h2><p>In order to include (add) a Z-Wave device to a network it <strong>must be in factory default state.</strong> Please make sure to reset the device into factory default. You can do this by performing an Exclusion operation as described below in the manual. Every Z-Wave controller is able to perform this operation however it is recommended to use the primary controller of the previous network to make sure the very device is excluded properly from this network. <strong> Reset to factory defaul </strong> This device also allows to be reset without any involvement of a Z-Wave controller. This procedure should only be used when the primary controller is inoperable.</p> <ul><li>Enable management mode by holding down <strong>F1</strong> and <strong>F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing <strong>F1</strong> or <strong>F2</strong> Arrows. The left LED will change its color to indicate different menu items. left LED = green: Learn Mode, left LED = red: Reset Mode</li> <li>Enter the menu, where left LED is RED, by pushing<strong> F1</strong> or <strong>F2</strong>.</li> <li>Hit Enter (door close button). The right LED will change its color to indicate different reset options.<br />right LED = green: Reset only Lock,<br />right LED = yellow: Reset only Z-Wave, <br />right LED = red: Reset Lock and Z-Wave</li> <li>Using the keys <strong>F1</strong> and <strong>F2</strong> you can change the setting. Change the setting to be RED (Reset Lock and Z-Wave)</li> <li>Push the Enter-button for 3 seconds until both LEDs are flashing.</li> <li>Push the Enter-button again for 3 seconds to confirm the reset to factory default.</li> </ul><p>All settings are deleted. Configuration parameters are NOT reset to default values. The user must explicitly reset them. <strong>Enable Fallback to S0 Security</strong><br /><br />The device will not allow legacy security S0 on default. If you like to operate the device with a controller not supporting S2 security you need to enable fallback into S0.</p> <ul><li>Enable management mode by holding down<strong> F1</strong> and <strong>F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Again pushing <strong>F1</strong> and <strong>F2</strong> for 3 seconds to enter Menu mode. Green left LED will blink to confirm.</li> <li>Move in this menu by pushing F1 or F2 Arrows. The left LED will change its color to indicate different menu items. left LED = yellow: Speed settings, left LED = green: Power settings, <br />left LED = red: Z-Wave Security</li> <li>Enter the menu, where left LED blinks RED, by pushing <strong>F1</strong> or <strong>F2</strong> Arrows.</li> <li>Hit "Enter" (door close button). Now you will see the actual status of S0 fallback: right LED = red: S2+S0, right LED = green: S2 only</li> <li>Using the keys <strong>F1</strong> and<strong> F2</strong> you can change the setting. Change the setting to be RED (S2 + S0)</li> <li>Confirm selection with "Enter" (door close button)</li> <li>Leave the menu by clicking "door open". Leave the management mode by clicking "door open" again</li> </ul><p><strong>Inclusion</strong></p> <ul><li>Set Z-Wave controller to inclusion mode</li> <li>Enable management mode by holding down<strong> F1</strong> and<strong> F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing<strong> F1</strong> or<strong> F2</strong>. The left LED will change its color to indicate different menu items.<br />left LED = green: Learn Mode, <br />left LED = red: Reset Mode</li> <li>Enter the menu, where the left LED is GREEN, by pushing F1 or F2 Arrows.</li> <li>Hit "Enter" (door close button).</li> <li>Both LED will flash GREEN indicating readiness to include</li> <li>After successful inclusion left LED is GREEN, right LED is off</li> <li>Hit "Return" (door unlock button)</li> </ul><p>Clicking the "unlock button", when Learn Mode is started, will terminate the inclusion mode and also the management mode.</p> <br /><h2>Exclusion Information</h2><p><strong>Exclusion</strong></p> <ul><li>Set Z-Wave controller to exclusion mode</li> <li>Enable management mode by holding down<strong> F1</strong> and<strong> F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing<strong> F1</strong> or<strong> F2</strong>. The left LED will change its color to indicate different menu items.<br />left LED = green: Learn Mode, <br />left LED = red: Reset Mode</li> <li>Enter the menu, where the left LED is GREEN, by pushing F1 or F2 Arrows.</li> <li>Hit "Enter" (door close button).</li> <li>Both LED will flash GREEN indicating readiness to exclude</li> <li>After successful exclusion left LED is GREEN, right LED is off</li> <li>Hit "Return" (door unlock button)</li> </ul><p>Clicking the "unlock button", when Learn Mode is started, will terminate the inclusion mode and also the management mode.</p>
+Z-Wave controlled door lock<br /> <h1>Overview</h1><p>The ABUS Z-Wave HomeTec CFA3010 wireless door lock actuator is a system designed for retrofitting to doors that open inwards to provide motorized locking and unlocking functions.</p><p>The door can be electronically operated using local buttons and any Z-Wave device capable to control door locks. For the wireless door lock actuator to work, the cylinder must project 7-12 mm on the inside of the door (plus the thickness of the fitting or collar).</p><p>Because the actuator operates with a key permanently inserted in the lock, the cylinder must have an emergency feature where the door can be opened with a key from the outside even when another key is inserted on the inside. In addition, the door lock must be a profile cylinder compliant with DIN 18252. This device is security enabled Z-Wave Plus product that is able to use encrypted Z-Wave Plus messages to communicate to other security enabled Z-Wave Plus products.</p><p>This device must be used in conjunction with a Security Enabled Z-Wave Controller in order to fully utilize all implemented functions.</p> <br /> <h2>Inclusion Information</h2><p>In order to include (add) a Z-Wave device to a network it <strong>must be in factory default state.</strong> Please make sure to reset the device into factory default. You can do this by performing an Exclusion operation as described below in the manual. Every Z-Wave controller is able to perform this operation however it is recommended to use the primary controller of the previous network to make sure the very device is excluded properly from this network. <strong> Reset to factory default</strong>. This device also allows to be reset without any involvement of a Z-Wave controller. This procedure should only be used when the primary controller is inoperable.</p> <ul><li>Enable management mode by holding down <strong>F1</strong> and <strong>F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing <strong>F1</strong> or <strong>F2</strong> Arrows. The left LED will change its color to indicate different menu items. left LED = green: Learn Mode, left LED = red: Reset Mode</li> <li>Enter the menu, where left LED is RED, by pushing<strong> F1</strong> or <strong>F2</strong>.</li> <li>Hit Enter (door close button). The right LED will change its color to indicate different reset options.<br />right LED = green: Reset only Lock,<br />right LED = yellow: Reset only Z-Wave, <br />right LED = red: Reset Lock and Z-Wave</li> <li>Using the keys <strong>F1</strong> and <strong>F2</strong> you can change the setting. Change the setting to be RED (Reset Lock and Z-Wave)</li> <li>Push the Enter-button for 3 seconds until both LEDs are flashing.</li> <li>Push the Enter-button again for 3 seconds to confirm the reset to factory default.</li> </ul><p>All settings are deleted. Configuration parameters are NOT reset to default values. The user must explicitly reset them. <strong>Enable Fallback to S0 Security</strong><br /><br />The device will not allow legacy security S0 on default. If you like to operate the device with a controller not supporting S2 security you need to enable fallback into S0.</p> <ul><li>Enable management mode by holding down<strong> F1</strong> and <strong>F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Again pushing <strong>F1</strong> and <strong>F2</strong> for 3 seconds to enter Menu mode. Green left LED will blink to confirm.</li> <li>Move in this menu by pushing F1 or F2 Arrows. The left LED will change its color to indicate different menu items. left LED = yellow: Speed settings, left LED = green: Power settings, <br />left LED = red: Z-Wave Security</li> <li>Enter the menu, where left LED blinks RED, by pushing <strong>F1</strong> or <strong>F2</strong> Arrows.</li> <li>Hit "Enter" (door close button). Now you will see the actual status of S0 fallback: right LED = red: S2+S0, right LED = green: S2 only</li> <li>Using the keys <strong>F1</strong> and<strong> F2</strong> you can change the setting. Change the setting to be RED (S2 + S0)</li> <li>Confirm selection with "Enter" (door close button)</li> <li>Leave the menu by clicking "door open". Leave the management mode by clicking "door open" again</li> </ul><p><strong>Inclusion</strong></p> <ul><li>Set Z-Wave controller to inclusion mode</li> <li>Enable management mode by holding down<strong> F1</strong> and<strong> F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing<strong> F1</strong> or<strong> F2</strong>. The left LED will change its color to indicate different menu items.<br />left LED = green: Learn Mode, <br />left LED = red: Reset Mode</li> <li>Enter the menu, where the left LED is GREEN, by pushing F1 or F2 Arrows.</li> <li>Hit "Enter" (door close button).</li> <li>Both LED will flash GREEN indicating readiness to include</li> <li>After successful inclusion left LED is GREEN, right LED is off</li> <li>Hit "Return" (door unlock button)</li> </ul><p>Clicking the "unlock button", when Learn Mode is started, will terminate the inclusion mode and also the management mode.</p> <br /> <h2>Exclusion Information</h2><p><strong>Exclusion</strong></p> <ul><li>Set Z-Wave controller to exclusion mode</li> <li>Enable management mode by holding down<strong> F1</strong> and<strong> F2</strong> for 3 seconds. Green left LED will light up to confirm management mode.</li> <li>Move in this menu by pushing<strong> F1</strong> or<strong> F2</strong>. The left LED will change its color to indicate different menu items.<br />left LED = green: Learn Mode, <br />left LED = red: Reset Mode</li> <li>Enter the menu, where the left LED is GREEN, by pushing F1 or F2 Arrows.</li> <li>Hit "Enter" (door close button).</li> <li>Both LED will flash GREEN indicating readiness to exclude</li> <li>After successful exclusion left LED is GREEN, right LED is off</li> <li>Hit "Return" (door unlock button)</li> </ul><p>Clicking the "unlock button", when Learn Mode is started, will terminate the inclusion mode and also the management mode.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>Lock</category>
 
@@ -18,6 +18,12 @@ Z-Wave controlled door lock<br /><h1>Overview</h1><p>The ABUS Z-Wave HomeTec CFA
         <label>Door Lock</label>
         <properties>
           <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="sensor_door" typeId="sensor_door">
+        <label>Door Sensor</label>
+        <properties>
+          <property name="binding:*:OpenClosedType">COMMAND_CLASS_DOOR_LOCK</property>
         </properties>
       </channel>
       <channel id="alarm_access" typeId="alarm_access">
@@ -81,7 +87,7 @@ Z-Wave controlled door lock<br /><h1>Overview</h1><p>The ABUS Z-Wave HomeTec CFA
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Latch Torque</label>
         <description><![CDATA[
-This parameter defines the torque of the latch.<br /><h1>Overview</h1><p>Setting of  current torque  during travel of  latch:<br />1 = high (max.) <br />2 = medium (standard/default) <br />3 = low (min.)</p>
+This parameter defines the torque of the latch.<br /> <h1>Overview</h1><p>Setting of  current torque  during travel of  latch:<br />1 = high (max.) <br />2 = medium (standard/default) <br />3 = low (min.)</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -95,7 +101,7 @@ This parameter defines the torque of the latch.<br /><h1>Overview</h1><p>Setting
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Acoustic Feedback</label>
         <description><![CDATA[
-This parameter defines Acoustic Feedback signals.<br /><h1>Overview</h1><p>Setting of  acoustic signals to the following values: <br />1 = all signals inactive <br />2 = signal only at start of  travel <br />3 = signal when latch position is reached <br />4 = signal when  locked position is reached <br />5 = signal when  end position is reached <br />Button, low-battery and error/alarm signals cannot be changed.</p>
+This parameter defines Acoustic Feedback signals.<br /> <h1>Overview</h1><p>Setting of  acoustic signals to the following values: <br />1 = all signals inactive <br />2 = signal only at start of  travel <br />3 = signal when latch position is reached <br />4 = signal when  locked position is reached <br />5 = signal when  end position is reached <br />Button, low-battery and error/alarm signals cannot be changed.</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -111,7 +117,7 @@ This parameter defines Acoustic Feedback signals.<br /><h1>Overview</h1><p>Setti
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Travel Time</label>
         <description><![CDATA[
-This parameter defines the travel path of the Lock.<br /><h1>Overview</h1><p>Current setting of travel path  at drive that is  intended and/ or allowed to  be travelled: <br />1 = Automatic/ normal  (travel  according to  teach-in run parameters) <br />2 = in case of multiple locking only  one locking action <br />3 = motor travel from window tilt position is allowed (ABUS FCA3000)</p>
+This parameter defines the travel path of the Lock.<br /> <h1>Overview</h1><p>Current setting of travel path  at drive that is  intended and/ or allowed to  be travelled: <br />1 = Automatic/ normal  (travel  according to  teach-in run parameters) <br />2 = in case of multiple locking only  one locking action <br />3 = motor travel from window tilt position is allowed (ABUS FCA3000)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -125,7 +131,7 @@ This parameter defines the travel path of the Lock.<br /><h1>Overview</h1><p>Cur
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Touch Panel Settings</label>
         <description><![CDATA[
-This parameter defines Touch Panel settings.<br /><h1>Overview</h1><p>Current setting  of touch field  function: <br />1 = all active <br />2 = only operating buttons active <br />3 = all inactive <br />4 = only latch pull inactive</p>
+This parameter defines Touch Panel settings.<br /> <h1>Overview</h1><p>Current setting  of touch field  function: <br />1 = all active <br />2 = only operating buttons active <br />3 = all inactive <br />4 = only latch pull inactive</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -140,7 +146,7 @@ This parameter defines Touch Panel settings.<br /><h1>Overview</h1><p>Current se
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Motor Force</label>
         <description><![CDATA[
-This parameter defines the motor force, when turning the lock.<br /><h1>Overview</h1><p>Setting of current torque  during travel of  bolt: <br />1 = Automatic/normal (travel  according to  teach-in run parameters) <br />2 = maximum</p>
+This parameter defines the motor force, when turning the lock.<br /> <h1>Overview</h1><p>Setting of current torque  during travel of  bolt: <br />1 = Automatic/normal (travel  according to  teach-in run parameters) <br />2 = maximum</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -154,7 +160,7 @@ This parameter defines the motor force, when turning the lock.<br /><h1>Overview
                  min="0" max="16700000">
         <label>153: Driving Cycles Interlocked</label>
         <description><![CDATA[
-Counter, how often in the direction of "Locked" navigated was.<br /><h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
+Counter, how often in the direction of "Locked" navigated was.<br /> <h1>Overview</h1><p>Counter, how  often travel in „Locked“ direction.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -163,7 +169,7 @@ Counter, how often in the direction of "Locked" navigated was.<br /><h1>Overview
       <parameter name="config_250_1" type="integer" groupName="configuration" readOnly="true">
         <label>250: Lock Status</label>
         <description><![CDATA[
-This parameter reports the status of the lock.<br /><h1>Overview</h1><p>Status of lock: <br />0 = unknown <br />1 = open <br />2 = unlocked <br />3 = 1 x locked <br />4 = 2 x locked <br />5 = locked (end stop) <br />6 = multiple  locking</p>
+This parameter reports the status of the lock.<br /> <h1>Overview</h1><p>Status of lock: <br />0 = unknown <br />1 = open <br />2 = unlocked <br />3 = 1 x locked <br />4 = 2 x locked <br />5 = locked (end stop) <br />6 = multiple  locking</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -182,7 +188,7 @@ This parameter reports the status of the lock.<br /><h1>Overview</h1><p>Status o
                  min="0" max="16700000">
         <label>251: Drive Cycles Trap</label>
         <description><![CDATA[
-Counter, how often the trap is activated was.<br /><h1>Overview</h1><p>Counter, how often latch was actuated.</p>
+Counter, how often the trap is activated was.<br /> <h1>Overview</h1><p>Counter, how often latch was actuated.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -192,7 +198,7 @@ Counter, how often the trap is activated was.<br /><h1>Overview</h1><p>Counter, 
                  min="0" max="16700000">
         <label>252: Driving Cycles Unlocked</label>
         <description><![CDATA[
-Counter, how often in the direction of Unlocked navigated was.<br /><h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
+Counter, how often in the direction of Unlocked navigated was.<br /> <h1>Overview</h1><p>Counter, how often travel in „Unlocked“ direction.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -202,7 +208,7 @@ Counter, how often in the direction of Unlocked navigated was.<br /><h1>Overview
                  min="0" max="65535">
         <label>254: ABUS Firmware Version</label>
         <description><![CDATA[
-Display of ABUS Firmware version, e.g. 1.05.<br /><h1>Overview</h1><p>Display ABUS  firmware version, e.g. 1.05.</p>
+Display of ABUS Firmware version, e.g. 1.05.<br /> <h1>Overview</h1><p>Display ABUS  firmware version, e.g. 1.05.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -212,7 +218,7 @@ Display of ABUS Firmware version, e.g. 1.05.<br /><h1>Overview</h1><p>Display AB
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Assossiation Groups</label>
         <description><![CDATA[
-Lifeline<br /><h1>Overview</h1><p>Z-Wave devices control other Z-Wave devices. The relationship between one device controlling another device is called association. In order to control a different device, the controlling device needs to maintain a list of devices that will receive controlling commands. These lists are called association groups and they are always related to certain events (e.g. button pressed, sensor triggers, ...). In case the event happens all devices stored in the respective association group will receive the same wireless command wireless command, typically a 'Basic Set' Command.</p>
+Lifeline<br /> <h1>Overview</h1><p>Z-Wave devices control other Z-Wave devices. The relationship between one device controlling another device is called association. In order to control a different device, the controlling device needs to maintain a list of devices that will receive controlling commands. These lists are called association groups and they are always related to certain events (e.g. button pressed, sensor triggers, ...). In case the event happens all devices stored in the respective association group will receive the same wireless command wireless command, typically a 'Basic Set' Command.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

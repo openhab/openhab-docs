@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen21_03_000" listed="false">
     <label>ZEN21 Paddle Switch</label>
     <description><![CDATA[
-Paddle Switch<br /><h1>Overview</h1><p>Z-Wave on.off switch with Scene control</p> <br /><h2>Inclusion Information</h2><p>Tap the upper paddle of the switch 3 times very quickly</p> <br /><h2>Exclusion Information</h2><p>Tap the lower paddle of the switch 3 times very quickly</p>
+Paddle Switch<br /> <h1>Overview</h1><p>Z-Wave on.off switch with Scene control</p> <br /> <h2>Inclusion Information</h2><p>Tap the upper paddle of the switch 3 times very quickly</p> <br /> <h2>Exclusion Information</h2><p>Tap the lower paddle of the switch 3 times very quickly</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -82,7 +82,7 @@ Paddle Switch<br /><h1>Overview</h1><p>Z-Wave on.off switch with Scene control</
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto Turn-off enable / disable</label>
         <description><![CDATA[
-Enable / Disable Auto Turn-off<br /><h1>Overview</h1><p>Default disabled</p>
+Enable / Disable Auto Turn-off<br /> <h1>Overview</h1><p>Default disabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -96,7 +96,7 @@ Enable / Disable Auto Turn-off<br /><h1>Overview</h1><p>Default disabled</p>
                  min="1" max="65535">
         <label>4: Auto-Turn-off time</label>
         <description><![CDATA[
-Auto-Turn-off time<br /><h1>Overview</h1><p>Default 60 minutes</p>
+Auto-Turn-off time<br /> <h1>Overview</h1><p>Default 60 minutes</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -105,7 +105,7 @@ Auto-Turn-off time<br /><h1>Overview</h1><p>Default 60 minutes</p>
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Auto Turn-on enable/disable</label>
         <description><![CDATA[
-Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default timer disabled</p>
+Auto Turn-on enable/disable<br /> <h1>Overview</h1><p>Default timer disabled</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -119,7 +119,7 @@ Auto Turn-on enable/disable<br /><h1>Overview</h1><p>Default timer disabled</p>
                  min="1" max="65535">
         <label>6: Auto Turn-on timer</label>
         <description><![CDATA[
-Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
+Auto Turn-on timer<br /> <h1>Overview</h1><p>Default 60 minutes</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -163,14 +163,14 @@ Auto Turn-on timer<br /><h1>Overview</h1><p>Default 60 minutes</p>
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BASIC REPORT to Group 1 when operated manually.</p>
+<br /> <h1>Overview</h1><p>This device will send BASIC REPORT to Group 1 when operated manually.</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Basic Report</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BASIC SET to group 2 when operated manually.</p>
+<br /> <h1>Overview</h1><p>This device will send BASIC SET to group 2 when operated manually.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

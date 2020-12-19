@@ -8,7 +8,7 @@
   <thing-type id="cooper_rf9518_00_000" listed="false">
     <label>RF9518 Single-Pole Wireless Light Switch</label>
     <description><![CDATA[
-Single-Pole Wireless Light Switch<br /><h1>Overview</h1><p>The ASPIRE RF 8A switch (RF9518) replaces regular switches or dimmers to provide local and remote ON/OFF control for incandescent loads. Each switch can be manually controlled and remotely controlled by commands sent from an ASPIRE RF controller or other Z-Wave compatible controllers or programs. An ASPIRE RF switch utilizes existing 120V/AC, 60Hz standard house wiring and fits in a standard wallbox. No new wiring is needed.</p> <br /><h2>Inclusion Information</h2><p>To include this device in a Z-Wave network, select the command on your Z-Wave controller for inclusion (Install, Add Device, Add Node, Include Device, etc.). Then press the RF switch ON/OFF switch one time to include it in the network. The LED will stop blinking.</p> <br /><h2>Exclusion Information</h2><p>To exclude this device from a Z-Wave network, select the command on your Z-Wave controller for exclusion (Uninstall, Remove Device, Remove Node, Exclude Device, etc.). Then press the RF switch ON/OFF switch one time to exclude it from the network. The LED will start blinking.</p>
+Single-Pole Wireless Light Switch<br /> <h1>Overview</h1><p>The ASPIRE RF 8A switch (RF9518) replaces regular switches or dimmers to provide local and remote ON/OFF control for incandescent loads. Each switch can be manually controlled and remotely controlled by commands sent from an ASPIRE RF controller or other Z-Wave compatible controllers or programs. An ASPIRE RF switch utilizes existing 120V/AC, 60Hz standard house wiring and fits in a standard wallbox. No new wiring is needed.</p> <br /> <h2>Inclusion Information</h2><p>To include this device in a Z-Wave network, select the command on your Z-Wave controller for inclusion (Install, Add Device, Add Node, Include Device, etc.). Then press the RF switch ON/OFF switch one time to include it in the network. The LED will stop blinking.</p> <br /> <h2>Exclusion Information</h2><p>To exclude this device from a Z-Wave network, select the command on your Z-Wave controller for exclusion (Uninstall, Remove Device, Remove Node, Exclude Device, etc.). Then press the RF switch ON/OFF switch one time to exclude it from the network. The LED will start blinking.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -63,7 +63,7 @@ Single-Pole Wireless Light Switch<br /><h1>Overview</h1><p>The ASPIRE RF 8A swit
                  min="-128" max="127">
         <label>1: Delayed off</label>
         <description><![CDATA[
-Delayed off<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or dedsired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Delayed off<br /> <h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or dedsired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -73,7 +73,7 @@ Delayed off<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seco
                  min="-128" max="127">
         <label>2: Panic On Time</label>
         <description><![CDATA[
-Panic On Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Panic On Time<br /> <h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -83,7 +83,7 @@ Panic On Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 se
                  min="-128" max="127">
         <label>2: Panic On Time</label>
         <description><![CDATA[
-Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time. </strong></p> <p>-<strong>128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Panic On Time<br /> <h1>Overview</h1><p>The configuration value is a signed single byte number This value may represent a value such as time.</p> <p><strong>0 to 127 (decimal) represents 0 to 127 seconds of time. </strong></p> <p>-<strong>128 to -1 (negative decimal numbers) represents 128 to 255 seconds</strong> as calculated by this formula:</p> <p>config value = desired time in seconds – 256</p> <p>For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -93,7 +93,7 @@ Panic On Time<br /><h1>Overview</h1><p>The configuration value is a signed singl
                  min="-128" max="127">
         <label>3: Panic Off Time</label>
         <description><![CDATA[
-Panic Off Time<br /><h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
+Panic Off Time<br /> <h1>Overview</h1><p>0 to 127 (decimal) represents 0 to 127 seconds of time. -128 to -1 (negative decimal numbers) represents 128 to 255 seconds as calculated by this formula:<br />config value = desired time in seconds (or desired value) – 256 For an example of 172 seconds: config value = 172 – 256 = -84 (decimal) or 0xAC (hex)</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

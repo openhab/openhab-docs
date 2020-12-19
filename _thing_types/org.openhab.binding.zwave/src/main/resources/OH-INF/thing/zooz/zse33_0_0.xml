@@ -8,7 +8,7 @@
   <thing-type id="zooz_zse33_00_000" listed="false">
     <label>ZSE33 Smart Chime/Alarm</label>
     <description><![CDATA[
-Smart Chime/Alarm<br /><h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio and visual notifications triggered by other Z-Wave devices or scheduled in your routine</li> <li>Choose from 10 different sounds for chime and siren modes</li> <li>Advanced configuration available</li> <li>Powerful long-lasting batteries</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Small size and quick installation</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 2 CR123 batteries (included)</li> <li>Power Consumption: 2W</li> <li>Operating Temperature: 32 – 104 F</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> <li>Dimensions: 2.7” x 1.2”</li> <li>Weight: 3 oz</li> </ul><br /><h2>Inclusion Information</h2><p>Auto Inclusion:</p> <ol><li>Put your Z-Wave controller in inclusion mode</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot – the Chime will automatically enter inclusion mode for 20 seconds</li> <li>A new alarm siren / doorbell device will appear on your controller's device list</li> </ol><p>Manual Inclusion:</p> <ol><li>Bring the Smart Chime within direct range of your controller</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot. The LED indicator will blink slowly</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the Z-Wave button on the Smart Chime 3 TIMES quickly. The LED indicator will flash quickly</li> <li>A new alarm siren / doorbell device will appear on your controller's device list (if it connects as an on/off switch, you may need to change the device type manually. Contact us for instructions).</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Make sure the Smart Chime is powered on and located within direct range of your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash quickly</li> <li>The Smart Chime should disappear from your controller's device list</li> </ol><p>If the first attempt is unsuccessful, please repeat the process following all steps carefully.</p>
+Smart Chime/Alarm<br /> <h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio and visual notifications triggered by other Z-Wave devices or scheduled in your routine</li> <li>Choose from 10 different sounds for chime and siren modes</li> <li>Advanced configuration available</li> <li>Powerful long-lasting batteries</li> <li>Z-Wave Plus with improved 500 chip for faster and safer wireless communication</li> <li>Small size and quick installation</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 2 CR123 batteries (included)</li> <li>Power Consumption: 2W</li> <li>Operating Temperature: 32 – 104 F</li> <li>Range: Up to 100 feet line of sight</li> <li>Installation and Use: Indoor only</li> <li>Dimensions: 2.7” x 1.2”</li> <li>Weight: 3 oz</li> </ul> <br /> <h2>Inclusion Information</h2><p>Auto Inclusion:</p> <ol><li>Put your Z-Wave controller in inclusion mode</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot – the Chime will automatically enter inclusion mode for 20 seconds</li> <li>A new alarm siren / doorbell device will appear on your controller's device list</li> </ol><p>Manual Inclusion:</p> <ol><li>Bring the Smart Chime within direct range of your controller</li> <li>Carefully remove the cover from the device</li> <li>Remove the plastic pull-tab from the battery slot. The LED indicator will blink slowly</li> <li>Put your Z-Wave controller in inclusion mode</li> <li>Press and release the Z-Wave button on the Smart Chime 3 TIMES quickly. The LED indicator will flash quickly</li> <li>A new alarm siren / doorbell device will appear on your controller's device list (if it connects as an on/off switch, you may need to change the device type manually. Contact us for instructions).</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Make sure the Smart Chime is powered on and located within direct range of your Z-Wave gateway controller</li> <li>Put your Z-Wave controller in exclusion mode</li> <li>Press and release the Z-Wave button 3 TIMES quickly. The LED indicator will flash quickly</li> <li>The Smart Chime should disappear from your controller's device list</li> </ol><p>If the first attempt is unsuccessful, please repeat the process following all steps carefully.</p>
     ]]></description>
     <category>Siren</category>
 
@@ -62,7 +62,7 @@ Smart Chime/Alarm<br /><h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio a
                  min="1" max="3">
         <label>1: Siren Volume</label>
         <description><![CDATA[
-3 volume levels for the alarm siren sound.<br /><h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
+3 volume levels for the alarm siren sound.<br /> <h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ Smart Chime/Alarm<br /><h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio a
                  min="0" max="255">
         <label>2: Siren Alarm Duration</label>
         <description><![CDATA[
-5 modes to set the duration for siren alarm<br /><h1>Overview</h1><p>0 – alarm is off</p> <p>1 – alarm goes off for 30 seconds</p> <p>2 – alarm goes off for 60 seconds</p> <p>3 – alarm goes off for 5 minutes</p> <p>255 – alarm continues until battery drains</p> <p>Values: 0, 1 – 3, 255; 1 – default setting.</p>
+5 modes to set the duration for siren alarm<br /> <h1>Overview</h1><p>0 – alarm is off</p> <p>1 – alarm goes off for 30 seconds</p> <p>2 – alarm goes off for 60 seconds</p> <p>3 – alarm goes off for 5 minutes</p> <p>255 – alarm continues until battery drains</p> <p>Values: 0, 1 – 3, 255; 1 – default setting.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -82,7 +82,7 @@ Smart Chime/Alarm<br /><h1>Overview</h1><p>Smart Chime/Alarm</p> <ul><li>Audio a
                  min="0" max="255">
         <label>3: Chime Sound Duration</label>
         <description><![CDATA[
-Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should repeat the doorbell sound once triggered by a BASIC_SET alarm command from a door sensor.</p> <p>Values: 0 – chime is off, 1 – 254 (cycles); 255 – chime</p> <p>sound continues until battery drains; 2 – default setting.</p>
+Chime Sound Duration<br /> <h1>Overview</h1><p>how many times the chime should repeat the doorbell sound once triggered by a BASIC_SET alarm command from a door sensor.</p> <p>Values: 0 – chime is off, 1 – 254 (cycles); 255 – chime</p> <p>sound continues until battery drains; 2 – default setting.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -92,7 +92,7 @@ Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should re
                  min="1" max="3">
         <label>4: Chime Volume</label>
         <description><![CDATA[
-3 volume levels for the doorbell sound. Set volume to low, medium, or high.<br /><h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
+3 volume levels for the doorbell sound. Set volume to low, medium, or high.<br /> <h1>Overview</h1><p>Values: 1 – low, 2 – medium, 3 – high (default)</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -102,7 +102,7 @@ Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should re
                  min="1" max="10">
         <label>5: Siren Alarm Tone</label>
         <description><![CDATA[
-10 different tones for alarm siren<br /><h1>Overview</h1><p>Values: 1-10; 10 – default setting.</p>
+10 different tones for alarm siren<br /> <h1>Overview</h1><p>Values: 1-10; 10 – default setting.</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -112,7 +112,7 @@ Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should re
                  min="1" max="10">
         <label>6: Chime Tone</label>
         <description><![CDATA[
-10 different tones for doorbell<br /><h1>Overview</h1><p>Values: 1-10; 4 – default setting.</p>
+10 different tones for doorbell<br /> <h1>Overview</h1><p>Values: 1-10; 4 – default setting.</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -122,7 +122,7 @@ Chime Sound Duration<br /><h1>Overview</h1><p>how many times the chime should re
                  min="1" max="2">
         <label>7: Siren Alarm or Chime Mode</label>
         <description><![CDATA[
-Siren Alarm or Chime Mode<br /><h1>Overview</h1><p>Switch between Siren Alarm (configu-red by parameters 1, 2, 5, 8) and Chime / Doorbell (parameters 3, 4, 6, 9) modes.</p> <p>Values: 1 – Siren Alarm enabled; 2 – Chime enabled (default).</p>
+Siren Alarm or Chime Mode<br /> <h1>Overview</h1><p>Switch between Siren Alarm (configu-red by parameters 1, 2, 5, 8) and Chime / Doorbell (parameters 3, 4, 6, 9) modes.</p> <p>Values: 1 – Siren Alarm enabled; 2 – Chime enabled (default).</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -132,7 +132,7 @@ Siren Alarm or Chime Mode<br /><h1>Overview</h1><p>Switch between Siren Alarm (c
                  min="0" max="1">
         <label>8: LED Notifications for Siren Alarm</label>
         <description><![CDATA[
-LED Notifications for Siren Alarm<br /><h1>Overview</h1><p>Enable or disable visual alarm for Siren mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled; 1 – LED enabled (default).</p>
+LED Notifications for Siren Alarm<br /> <h1>Overview</h1><p>Enable or disable visual alarm for Siren mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled; 1 – LED enabled (default).</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -142,7 +142,7 @@ LED Notifications for Siren Alarm<br /><h1>Overview</h1><p>Enable or disable vis
                  min="0" max="1">
         <label>9: LED Notifications for Chime</label>
         <description><![CDATA[
-LED Notifications for Chime<br /><h1>Overview</h1><p>Enable or disable visual alarm for Chime mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled (default); 1 – LED enabled.</p>
+LED Notifications for Chime<br /> <h1>Overview</h1><p>Enable or disable visual alarm for Chime mode. The LED will blink when triggered.</p> <p>Values: 0 – LED disabled (default); 1 – LED enabled.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -157,7 +157,7 @@ LED Notifications for Chime<br /><h1>Overview</h1><p>Enable or disable visual al
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 2 for status notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: SWITCH_BINARY_REPORT</p>
+<br /> <h1>Overview</h1><p>Group 2 for status notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: SWITCH_BINARY_REPORT</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -165,7 +165,7 @@ LED Notifications for Chime<br /><h1>Overview</h1><p>Enable or disable visual al
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Group 3</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group 3 for notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: NOTIFICATION_REPORT</p>
+<br /> <h1>Overview</h1><p>Group 3 for notifications to Z-Wave devices associated in this group.</p> <p>Supported command classes: NOTIFICATION_REPORT</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

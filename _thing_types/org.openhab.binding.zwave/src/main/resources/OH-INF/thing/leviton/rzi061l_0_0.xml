@@ -8,7 +8,7 @@
   <thing-type id="leviton_rzi061l_00_000" listed="false">
     <label>RZI06-1L Dimmer switch 600w incandescent</label>
     <description><![CDATA[
-Dimmer switch 600w incandescent<br /><h1>Overview</h1><p>Scene-Capable Preset Digital / Z-Wave 900MHz Incandescent Return to Neutral Dimmer. </p> <br /><h2>Inclusion Information</h2><ol><li>Install RZI06</li> <li>Place controller in inclusion mode</li> <li>Press light on/off paddle on RZI06</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press light on/off paddle on RZI06</li> </ol><br /><h2>Wakeup Information</h2><p>Mains connected, not applicable.</p>
+Dimmer switch 600w incandescent<br /> <h1>Overview</h1><p>Scene-Capable Preset Digital / Z-Wave 900MHz Incandescent Return to Neutral Dimmer. </p> <br /> <h2>Inclusion Information</h2><ol><li>Install RZI06</li> <li>Place controller in inclusion mode</li> <li>Press light on/off paddle on RZI06</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Place controller in exclusion mode</li> <li>Press light on/off paddle on RZI06</li> </ol> <br /> <h2>Wakeup Information</h2><p>Mains connected, not applicable.</p>
     ]]></description>
     <category>WallSwitch</category>
 

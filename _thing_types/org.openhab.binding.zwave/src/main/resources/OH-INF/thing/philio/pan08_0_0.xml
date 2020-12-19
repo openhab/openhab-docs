@@ -8,7 +8,7 @@
   <thing-type id="philio_pan08_00_000" listed="false">
     <label>PAN08 Roller shutter controller</label>
     <description><![CDATA[
-Roller shutter controller<br /><h1>Overview</h1><p>The in-wall MicroModule Motor Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to this Roller Controller</p> <br /><h2>Inclusion Information</h2><p>Pressing Include button three times within 2 seconds will enter inclusion mode.</p> <br /><h2>Exclusion Information</h2><p>Pressing Include button three times within 2 seconds will enter exclusion mode.</p>
+Roller shutter controller<br /> <h1>Overview</h1><p>The in-wall MicroModule Motor Controller is designed to switch rise/lower roller shutter connected to its terminals using radio waves, controllers and a push button directly connected to this Roller Controller</p> <br /> <h2>Inclusion Information</h2><p>Pressing Include button three times within 2 seconds will enter inclusion mode.</p> <br /> <h2>Exclusion Information</h2><p>Pressing Include button three times within 2 seconds will enter exclusion mode.</p>
     ]]></description>
     <category>Blinds</category>
 

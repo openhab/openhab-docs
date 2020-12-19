@@ -8,7 +8,7 @@
   <thing-type id="zipato_keypad_00_000" listed="false">
     <label>MINI KEYPAD RFID Keypad with alarm activation rfid tag</label>
     <description><![CDATA[
-Keypad with alarm activation rfid tag<br /><h1>Overview</h1><p>Place the Tag Reader close to the main exit of your office or home to enjoy it’s full potential.</p> <p>With the Tag Reader you can activate or de-activate your security by simply passing the RFID Tag in front of the reader. It is called a Tag Reader because it uses RFID Tags to identify people and their personal preferences around leaving the house or coming home.</p> <p>Separately from working with RFID Tags, the Tag Reader also has a numerical keypad. Within the free of charge online manager you can configure a numerical code. This way you prevent being locked out of the system in case you may have lost the RFID Tag.</p> <p>By using the Tag Reader intelligently you can secure your house and save money on your energy bill at the same time. You can actually let your house ‘fall asleep’ when enabling the ‘Away Scene’. This is especially noted when u are using energy saving products of BeNext such as Radiator Control and of course a Energy Switch.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /><h2>Wakeup Information</h2><p>Tap a button. The always awake mode can be activated by: CONFIGURATION_SET / Parameter: 0x05 / Size: 0x01 (can’t be different from 1) / Value: 0x03 (mode 3)</p>
+Keypad with alarm activation rfid tag<br /> <h1>Overview</h1><p>Place the Tag Reader close to the main exit of your office or home to enjoy it’s full potential.</p> <p>With the Tag Reader you can activate or de-activate your security by simply passing the RFID Tag in front of the reader. It is called a Tag Reader because it uses RFID Tags to identify people and their personal preferences around leaving the house or coming home.</p> <p>Separately from working with RFID Tags, the Tag Reader also has a numerical keypad. Within the free of charge online manager you can configure a numerical code. This way you prevent being locked out of the system in case you may have lost the RFID Tag.</p> <p>By using the Tag Reader intelligently you can secure your house and save money on your energy bill at the same time. You can actually let your house ‘fall asleep’ when enabling the ‘Away Scene’. This is especially noted when u are using energy saving products of BeNext such as Radiator Control and of course a Energy Switch.</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.</p> <br /> <h2>Wakeup Information</h2><p>Tap a button. The always awake mode can be activated by: CONFIGURATION_SET / Parameter: 0x05 / Size: 0x01 (can’t be different from 1) / Value: 0x03 (mode 3)</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -89,7 +89,7 @@ Keypad with alarm activation rfid tag<br /><h1>Overview</h1><p>Place the Tag Rea
                  min="-128" max="127">
         <label>3: Feedback timeout</label>
         <description><![CDATA[
-Timeout beep<br /><h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beep are fixed 8 beeps shortly after each other.</p>
+Timeout beep<br /> <h1>Overview</h1><p>To configure the timeout to wait for a WAKEUP_NO_MORE_INFORMATION before the error beep is automatically sound. The error beep are fixed 8 beeps shortly after each other.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -106,7 +106,7 @@ Timeout beep<br /><h1>Overview</h1><p>To configure the timeout to wait for a WAK
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: The mode</label>
         <description><![CDATA[
-Operating mode<br /><h1>Overview</h1><p>1   -&gt;   Normal operating mode 3   -&gt;   Z‐Wave chip is always on to request e.g. version or manufacturer id. 2   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. 4 - 127   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</p>
+Operating mode<br /> <h1>Overview</h1><p>1   -&gt;   Normal operating mode 3   -&gt;   Z‐Wave chip is always on to request e.g. version or manufacturer id. 2   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. 4 - 127   -&gt;   If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.</p>
         ]]></description>
         <default>1</default>
         <options>

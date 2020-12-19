@@ -8,7 +8,7 @@
   <thing-type id="ge_14318_00_000" listed="false">
     <label>Jasco 14318 Jasco 3-way Light Switch</label>
     <description><![CDATA[
-Jasco 3-way Light Switch<br /><h1>Overview</h1><p>Transform any home into a smart home with the Jasco Z-Wave In-Wall Smart Switch. The on/off switch replaces your current light switch, uses your existing wiring, and provides Z-Wave wireless and in-wall control of overhead lighting. The switch enables wireless control of on/off functions of direct wire incandescent, LED, xenon, halogen and fluorescent lighting. Providing ultimate flexibility, the Jasco Z-Wave Smart Lighting Control On/Off Switch allows you to operate the switch by itself or easily integrate the switch with two-way, three-way or four-way wiring configurations by adding the Jasco Add-On switch. Single pole wiring configuration turns the light or appliance on/off from one location. Three-way wiring configuration turns the light on/off from two separate locations. Four-way wiring configuration turns the light on/off from three separate locations. The Jasco Add-On Switch is required for Three-way or Four-way installations. The lighting control includes a blue LED indicator light to easily locate the switch in a dark room. Take control of your home lighting with Jasco Z-Wave Smart Lighting Controls!</p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your device, press and release the top or bottom of the wireless smart switch(rocker) to include it in the network.</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top button of the wireless smart switch (rocker) to exclude it from the network.</p>
+Jasco 3-way Light Switch<br /> <h1>Overview</h1><p>Transform any home into a smart home with the Jasco Z-Wave In-Wall Smart Switch. The on/off switch replaces your current light switch, uses your existing wiring, and provides Z-Wave wireless and in-wall control of overhead lighting. The switch enables wireless control of on/off functions of direct wire incandescent, LED, xenon, halogen and fluorescent lighting. Providing ultimate flexibility, the Jasco Z-Wave Smart Lighting Control On/Off Switch allows you to operate the switch by itself or easily integrate the switch with two-way, three-way or four-way wiring configurations by adding the Jasco Add-On switch. Single pole wiring configuration turns the light or appliance on/off from one location. Three-way wiring configuration turns the light on/off from two separate locations. Four-way wiring configuration turns the light on/off from three separate locations. The Jasco Add-On Switch is required for Three-way or Four-way installations. The lighting control includes a blue LED indicator light to easily locate the switch in a dark room. Take control of your home lighting with Jasco Z-Wave Smart Lighting Controls!</p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your device, press and release the top or bottom of the wireless smart switch(rocker) to include it in the network.</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your device, press and release the top button of the wireless smart switch (rocker) to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -83,7 +83,7 @@ Jasco 3-way Light Switch<br /><h1>Overview</h1><p>Transform any home into a smar
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: ontrolled with the local load.</label>
         <description><![CDATA[
-Supports Basic Set<br /><h1>Overview</h1><p>Supports Basic Set and is controlled with the local load.</p>
+Supports Basic Set<br /> <h1>Overview</h1><p>Supports Basic Set and is controlled with the local load.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -91,7 +91,7 @@ Supports Basic Set<br /><h1>Overview</h1><p>Supports Basic Set and is controlled
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: ontrolled by double pressing the On or Off button.</label>
         <description><![CDATA[
-Supports Basic Set<br /><h1>Overview</h1><p>Supports Basic Set and is controlled by double pressing the On or Off button.</p>
+Supports Basic Set<br /> <h1>Overview</h1><p>Supports Basic Set and is controlled by double pressing the On or Off button.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

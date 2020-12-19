@@ -8,7 +8,7 @@
   <thing-type id="willis_nzw30_00_000" listed="false">
     <label>NZW30 In-Wall Switch</label>
     <description><![CDATA[
-In-Wall Switch<br /><h1>Overview</h1><p>Inovelli's In-Wall Smart Switch (On/Off) not only has the ability to turn on and off appliances, lights, and more from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.<br /><br />In addition, it has scene control enabled, which allows you to double tap the switch to activate a Z-Wave scene. An example would be a bedtime scene, which turns off all lights, locks the door(s) and sets the temperature to 68 degrees.</p> <br /><h2>Inclusion Information</h2><p>triple press the Up/Down push button to include it in the network</p> <br /><h2>Exclusion Information</h2><p>triple press the Up/Down push button to exclude it from the network.</p>
+In-Wall Switch<br /> <h1>Overview</h1><p>Inovelli's In-Wall Smart Switch (On/Off) not only has the ability to turn on and off appliances, lights, and more from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.<br /><br />In addition, it has scene control enabled, which allows you to double tap the switch to activate a Z-Wave scene. An example would be a bedtime scene, which turns off all lights, locks the door(s) and sets the temperature to 68 degrees.</p> <br /> <h2>Inclusion Information</h2><p>triple press the Up/Down push button to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>triple press the Up/Down push button to exclude it from the network.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -45,7 +45,7 @@ In-Wall Switch<br /><h1>Overview</h1><p>Inovelli's In-Wall Smart Switch (On/Off)
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
+<br /> <h1>Overview</h1><p>An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

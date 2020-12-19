@@ -8,7 +8,7 @@
   <thing-type id="zwaveme_hs1ds_00_000" listed="false">
     <label>HS1DS Window / Door Sensor</label>
     <description><![CDATA[
-Window / Door Sensor<br /><h1>Overview</h1><p>This is a intelligent door sensor , adopts super low power Z-Wave wireless networking technology, makes a longer battery life-span, Feel open or close state of the door or window through the near and separation between sensor and magnetic. Dual sensor design, makes the installation more flexible and adaptable. Products are suitable for home, villas, factories, shops, warehouses, office buildings, banks, room and other places of safety prevention</p> <br /><h2>Inclusion Information</h2><p> press the device networking hole for 3 times in 1.5 seconds, then the green LED flashes quickly</p> <br /><h2>Exclusion Information</h2><p>Not provided</p> <br /><h2>Wakeup Information</h2><p>Not provided</p>
+Window / Door Sensor<br /> <h1>Overview</h1><p>This is a intelligent door sensor , adopts super low power Z-Wave wireless networking technology, makes a longer battery life-span, Feel open or close state of the door or window through the near and separation between sensor and magnetic. Dual sensor design, makes the installation more flexible and adaptable. Products are suitable for home, villas, factories, shops, warehouses, office buildings, banks, room and other places of safety prevention</p> <br /> <h2>Inclusion Information</h2><p> press the device networking hole for 3 times in 1.5 seconds, then the green LED flashes quickly</p> <br /> <h2>Exclusion Information</h2><p>Not provided</p> <br /> <h2>Wakeup Information</h2><p>Not provided</p>
     ]]></description>
     <category>Window</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="honeywell_39351_00_000" listed="false">
     <label>39351 / Jasco ZW3005 In-Wall Smart Dimmer</label>
     <description><![CDATA[
-In-Wall Smart Dimmer<br /><h1>Overview</h1><ul><li>Indoor</li> <li>Dimmer Switch</li> <li>120 VAC, 60 Hz</li> <li>908.42/916 MHz</li> <li>Max Incandescent Load 1-gang 600W</li> <li>Max Incandescent Load 2-gang 500W</li> <li>Max Incandescent Load 3-gang 400W</li> <li>Max CFL/LED Load 150W</li> <li>Max Range 45 m</li> <li>Operating Temperature Range 0°C to 40°C</li> <li>UL Listed</li> <li>FCC ID U2ZZW3005A</li> <li>IC 6924A-ZW3005A</li> </ul><br /><h2>Inclusion Information</h2><p>Press and release the top or bottom of the dimmer (rocker).  (Tested to work with Network Wide Inclusion.)</p> <br /><h2>Exclusion Information</h2><p>Press and release the top or bottom of the dimmer (rocker).</p>
+In-Wall Smart Dimmer<br /> <h1>Overview</h1><ul><li>Indoor</li> <li>Dimmer Switch</li> <li>120 VAC, 60 Hz</li> <li>908.42/916 MHz</li> <li>Max Incandescent Load 1-gang 600W</li> <li>Max Incandescent Load 2-gang 500W</li> <li>Max Incandescent Load 3-gang 400W</li> <li>Max CFL/LED Load 150W</li> <li>Max Range 45 m</li> <li>Operating Temperature Range 0°C to 40°C</li> <li>UL Listed</li> <li>FCC ID U2ZZW3005A</li> <li>IC 6924A-ZW3005A</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom of the dimmer (rocker).  (Tested to work with Network Wide Inclusion.)</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom of the dimmer (rocker).</p>
     ]]></description>
     <category>WallSwitch</category>
 

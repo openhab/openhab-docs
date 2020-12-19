@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgr223_00_000" listed="false">
     <label>FGR223 Roller Shutter 3</label>
     <description><![CDATA[
-Roller Shutter 3<br /><h1>Overview</h1><p>FIBARO Roller Shutter 3 is a device designed to control roller blinds, awnings, venetian blinds, gates and other single phase, AC powered devices.</p> <p>Roller Shutter 3 allows precise positioning of roller blinds or venetian blind lamellas. The device is equipped with power and energy monitoring. It allows to control connected devices either via the Z-Wave network or via a switch connected directly to it.</p> <br /><h2>Inclusion Information</h2><p>Adding (Inclusion) – Z-Wave device learning mode, allowing to add the device to existing Z-Wave network.</p> <p>To add the device to the Z-Wave network using Smart Start:</p> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual).</li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).<br />(on the device label).</li> <li>Power the device (turn on the mains voltage).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>To add the device to the Z-Wave network manually:</p> <ol><li>Power the device.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>If you are adding in Security S2, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box)</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with adding using the S1 switch, use B-button instead (located on the housing).<br />SmartStart enabled products can be added to SmartStart enabled Z-Wave controller by scanning the Z-Wave QR Code present on the product. SmartStart product will be added automatically within 10 minutes of being switched on in the network range.</p> <br /><h2>Exclusion Information</h2><p>Removing (Exclusion) – Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing the device restores all the default parameters of the device, but does not reset power metering data.</p> <p>To remove the device from the Z-Wave network:</p> <ol><li>Make sure the device is powered.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in remove mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with removing using the S1 switch, use B-button instead (located on the housing).</p> <p>If parameter 40 enables scenes for triple S1 click, disable it or use B-button instead to remove the device.</p> <p>If parameter 24 is set to 1, use S2 switch instead to remove the device.</p>
+Roller Shutter 3<br /> <h1>Overview</h1><p>FIBARO Roller Shutter 3 is a device designed to control roller blinds, awnings, venetian blinds, gates and other single phase, AC powered devices.</p> <p>Roller Shutter 3 allows precise positioning of roller blinds or venetian blind lamellas. The device is equipped with power and energy monitoring. It allows to control connected devices either via the Z-Wave network or via a switch connected directly to it.</p> <br /> <h2>Inclusion Information</h2><p>Adding (Inclusion) – Z-Wave device learning mode, allowing to add the device to existing Z-Wave network.</p> <p>To add the device to the Z-Wave network using Smart Start:</p> <ol><li>Set the main controller in Security S2 Authenticated add mode (see the controller’s manual).</li> <li>Scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box).<br />(on the device label).</li> <li>Power the device (turn on the mains voltage).</li> <li>LED will start blinking yellow, wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>To add the device to the Z-Wave network manually:</p> <ol><li>Power the device.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in (Security/non-Security Mode) add mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>If you are adding in Security S2, scan the DSK QR code or input the underlined part of the DSK (label on the bottom of the box)</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with adding using the S1 switch, use B-button instead (located on the housing).<br />SmartStart enabled products can be added to SmartStart enabled Z-Wave controller by scanning the Z-Wave QR Code present on the product. SmartStart product will be added automatically within 10 minutes of being switched on in the network range.</p> <br /> <h2>Exclusion Information</h2><p>Removing (Exclusion) – Z-Wave device learning mode, allowing to remove the device from existing Z-Wave network. Removing the device restores all the default parameters of the device, but does not reset power metering data.</p> <p>To remove the device from the Z-Wave network:</p> <ol><li>Make sure the device is powered.</li> <li>Identify the S1 switch.</li> <li>Set the main controller in remove mode (see the controller’s manual).</li> <li>Quickly, triple click the S1 switch.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><p>In case of problems with removing using the S1 switch, use B-button instead (located on the housing).</p> <p>If parameter 40 enables scenes for triple S1 click, disable it or use B-button instead to remove the device.</p> <p>If parameter 24 is set to 1, use S2 switch instead to remove the device.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -122,7 +122,7 @@ Roller Shutter 3<br /><h1>Overview</h1><p>FIBARO Roller Shutter 3 is a device d
       <parameter name="config_20_1" type="integer" groupName="configuration">
         <label>20: Switch type</label>
         <description><![CDATA[
-Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the device should treat the switch connected to the S1 and S2 terminals.</p> <p>This parameter is not relevant in gate operating modes (parameter 151 set to 3 or 4). In this case switch always works as a momentary and has to be connected to S1 terminal.</p> <p>If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
+Switch type<br /> <h1>Overview</h1><p>This parameter defines as what type the device should treat the switch connected to the S1 and S2 terminals.</p> <p>This parameter is not relevant in gate operating modes (parameter 151 set to 3 or 4). In this case switch always works as a momentary and has to be connected to S1 terminal.</p> <p>If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -136,7 +136,7 @@ Switch type<br /><h1>Overview</h1><p>This parameter defines as what type the dev
       <parameter name="config_24_1" type="integer" groupName="configuration">
         <label>24: Inputs orientation</label>
         <description><![CDATA[
-Inputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the operation of switches connected to S1 and S2 without changing the wiring.</p>
+Inputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing the operation of switches connected to S1 and S2 without changing the wiring.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -149,7 +149,7 @@ Inputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the 
       <parameter name="config_25_1" type="integer" groupName="configuration">
         <label>25: Outputs orientation</label>
         <description><![CDATA[
-Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the operation of Q1 and Q2 without changing the wiring (in case of invalid motor connection) to ensure proper operation.</p>
+Outputs orientation<br /> <h1>Overview</h1><p>This parameter allows reversing the operation of Q1 and Q2 without changing the wiring (in case of invalid motor connection) to ensure proper operation.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -400,7 +400,7 @@ Outputs orientation<br /><h1>Overview</h1><p>This parameter allows reversing the
       <parameter name="config_150_1" type="integer" groupName="configuration">
         <label>150: Force calibration</label>
         <description><![CDATA[
-Force calibration<br /><h1>Overview</h1><p>By setting this parameter to 2 the device enters the calibration mode. The parameter relevant only if the device is set to work in positioning mode (parameter 151 set to 1, 2 or 4).</p>
+Force calibration<br /> <h1>Overview</h1><p>By setting this parameter to 2 the device enters the calibration mode. The parameter relevant only if the device is set to work in positioning mode (parameter 151 set to 1, 2 or 4).</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -414,7 +414,7 @@ Force calibration<br /><h1>Overview</h1><p>By setting this parameter to 2 the de
       <parameter name="config_151_1" type="integer" groupName="configuration">
         <label>151: Operating mode</label>
         <description><![CDATA[
-Operating mode<br /><h1>Overview</h1><p>This parameter allows adjusting operation according to the connect- ed device.</p>
+Operating mode<br /> <h1>Overview</h1><p>This parameter allows adjusting operation according to the connect- ed device.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -439,7 +439,7 @@ Operating mode<br /><h1>Overview</h1><p>This parameter allows adjusting operatio
       <parameter name="config_153_1" type="integer" groupName="configuration">
         <label>153: Set slats back to previous position</label>
         <description><![CDATA[
-Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds (parameter 151 set to 2) the parameter determines slats positioning in various situations.<br />The parameter is irrelevant for other modes.<br />If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
+Set slats back to previous position<br /> <h1>Overview</h1><p>For Venetian blinds (parameter 151 set to 2) the parameter determines slats positioning in various situations.<br />The parameter is irrelevant for other modes.<br />If parameter 20 is set to 1 (toggle switch), change value of pa- rameter 153 to 0 for slats to work properly.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -490,7 +490,7 @@ Set slats back to previous position<br /><h1>Overview</h1><p>For Venetian blinds
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Roller Shutter</label>
         <description><![CDATA[
-Shutter position control<br /><h1>Overview</h1><p>"Roller Shutter" is assigned to shutter position control – UP/DOWN (uses Switch Multilevel command class).</p>
+Shutter position control<br /> <h1>Overview</h1><p>"Roller Shutter" is assigned to shutter position control – UP/DOWN (uses Switch Multilevel command class).</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -498,7 +498,7 @@ Shutter position control<br /><h1>Overview</h1><p>"Roller Shutter" is assigned t
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Slats</label>
         <description><![CDATA[
-Slats position control<br /><h1>Overview</h1><p>"Slats" is assigned to slats position control – UP/DOWN (uses Switch Multilevel command class).</p>
+Slats position control<br /> <h1>Overview</h1><p>"Slats" is assigned to slats position control – UP/DOWN (uses Switch Multilevel command class).</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

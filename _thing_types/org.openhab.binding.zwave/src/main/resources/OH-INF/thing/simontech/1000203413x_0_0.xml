@@ -8,7 +8,7 @@
   <thing-type id="simontech_1000203413x_00_000" listed="false">
     <label>10002080-13x Simon IO: Roller Blind</label>
     <description><![CDATA[
-Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to operate with Z-Wave controllers and configured to be managed by Simon100 IO APP using the HUB plug IO for getting a better user experience. Sending the Blind Up/Down or setting a specific position.</p> <br /><h2>Inclusion Information</h2><p>When the pushbutton is released after a press of (2&lt;T&lt;10sec) the device will send a NIF to include from Z-Wave network or perform an association with other Z-Wave device.</p> <p>Central LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <p>This process does not perform a default reset of configurations.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <br /><h2>Exclusion Information</h2><p>When the pushbutton is released after a press of (2&lt;T&lt;10sec) the device will send a NIF to exclude from Z-Wave network or perform an association with other Z-Wave device.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <p>This process does not perform a default reset of configurations.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p>
+Simon IO: Roller Blind<br /> <h1>Overview</h1><p>Roller Blind IO is ready to operate with Z-Wave controllers and configured to be managed by Simon100 IO APP using the HUB plug IO for getting a better user experience. Sending the Blind Up/Down or setting a specific position.</p> <br /> <h2>Inclusion Information</h2><p>When the pushbutton is released after a press of (2&lt;T&lt;10sec) the device will send a NIF to include from Z-Wave network or perform an association with other Z-Wave device.</p> <p>Central LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <p>This process does not perform a default reset of configurations.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <br /> <h2>Exclusion Information</h2><p>When the pushbutton is released after a press of (2&lt;T&lt;10sec) the device will send a NIF to exclude from Z-Wave network or perform an association with other Z-Wave device.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p> <p>This process does not perform a default reset of configurations.</p> <p>Main LED will Blink with 0,3 sec period to inform that NIF can be send after release of pushbutton.</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -85,7 +85,7 @@ Simon IO: Roller Blind<br /><h1>Overview</h1><p>Roller Blind IO is ready to oper
       <parameter name="config_9_1_wo" type="integer" groupName="configuration">
         <label>9: Calibration</label>
         <description><![CDATA[
-Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically</p>
+Calibration<br /> <h1>Overview</h1><p>255 - The device will perform a calibration process in order to Set the UP and DOWN times automatically</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -152,7 +152,7 @@ Calibration<br /><h1>Overview</h1><p>255 - The device will perform a calibrati
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Lifeline<br /><h1>Overview</h1><p>Change on Sunblind position:</p> <ul><li>On -&gt; CC Basic, Basic Report.</li> <li>Value 0x01 - 0x63 Report sunblind position</li> </ul><p>Calibration requirement change. (If device needs to be calibrated and is Added into a ZWave network, it will report after receive an Association Set of life line).</p> <ul><li>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xF</li> <li>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</li> </ul>
+Lifeline<br /> <h1>Overview</h1><p>Change on Sunblind position:</p> <ul> <li>On -&gt; CC Basic, Basic Report.</li> <li>Value 0x01 - 0x63 Report sunblind position</li> </ul> <p>Calibration requirement change. (If device needs to be calibrated and is Added into a ZWave network, it will report after receive an Association Set of life line).</p> <ul> <li>Calibration required -&gt; CC Configuration, Configuration Report, Param 23, Value 0xF</li> <li>Calibration not required -&gt; CC Configuration, Configuration Report, Param 23, Value 0x00</li> </ul>
         ]]></description>
         <multipleLimit>3</multipleLimit>
       </parameter>
@@ -160,7 +160,7 @@ Lifeline<br /><h1>Overview</h1><p>Change on Sunblind position:</p> <ul><li>On -&
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: ctrl</label>
         <description><![CDATA[
-Control<br /><h1>Overview</h1><p>Change on Sunblind position:</p> <ul><li>CC Basic, Basic Report.</li> <li>Value 0x00 - 0x63 Report sunblind position</li> </ul>
+Control<br /> <h1>Overview</h1><p>Change on Sunblind position:</p> <ul> <li>CC Basic, Basic Report.</li> <li>Value 0x00 - 0x63 Report sunblind position</li> </ul>
         ]]></description>
         <multipleLimit>20</multipleLimit>
       </parameter>

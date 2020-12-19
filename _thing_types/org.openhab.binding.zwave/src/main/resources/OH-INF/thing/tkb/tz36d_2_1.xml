@@ -8,7 +8,7 @@
   <thing-type id="tkb_tz36d_02_001" listed="false">
     <label>TZ36D Dual Paddle Wall Switch</label>
     <description><![CDATA[
-Dual Paddle Wall Switch<br /><h1>Overview</h1><p>The TKB Z-Wave dual wall switch is switching attached loads and is controlled either by the local switching paddle or remotely via the Z-Wave wireless protocol<br />It is included and controlled in a Z-Wave network by a remote control, a wireless control centre or any other kind of Z-Wave controller including a PC-software.</p> <br /><h2>Inclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p> <br /><h2>Exclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p>
+Dual Paddle Wall Switch<br /> <h1>Overview</h1><p>The TKB Z-Wave dual wall switch is switching attached loads and is controlled either by the local switching paddle or remotely via the Z-Wave wireless protocol<br />It is included and controlled in a Z-Wave network by a remote control, a wireless control centre or any other kind of Z-Wave controller including a PC-software.</p> <br /> <h2>Inclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p> <br /> <h2>Exclusion Information</h2><p>Press On/Off button three times within 1.5 seconds.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@ Dual Paddle Wall Switch<br /><h1>Overview</h1><p>The TKB Z-Wave dual wall switch
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Night light</label>
         <description><![CDATA[
-LED behaviour control.<br /><h1>Overview</h1><p>From the manual: The LED on the switch will by default, turn ON when the load attached is turned OFF. To make the LED turn ON when the attached load is turned ON, set the parameter 1 to a value of 1.</p>
+LED behaviour control.<br /> <h1>Overview</h1><p>From the manual: The LED on the switch will by default, turn ON when the load attached is turned OFF. To make the LED turn ON when the attached load is turned ON, set the parameter 1 to a value of 1.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -70,7 +70,7 @@ LED behaviour control.<br /><h1>Overview</h1><p>From the manual: The LED on the 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Memory function</label>
         <description><![CDATA[
-Memory function behaviour control.<br /><h1>Overview</h1><p>From the manual: Default value is 1, when the value is 0, switch memory function not open; when the value is 1, open switch memory function.</p>
+Memory function behaviour control.<br /> <h1>Overview</h1><p>From the manual: Default value is 1, when the value is 0, switch memory function not open; when the value is 1, open switch memory function.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -83,7 +83,7 @@ Memory function behaviour control.<br /><h1>Overview</h1><p>From the manual: Def
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Invert switch</label>
         <description><![CDATA[
-Swap top and bottom switch/button.<br /><h1>Overview</h1><p>To switch top and bottom switch, set this parameter to 1.</p>
+Swap top and bottom switch/button.<br /> <h1>Overview</h1><p>To switch top and bottom switch, set this parameter to 1.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -96,7 +96,7 @@ Swap top and bottom switch/button.<br /><h1>Overview</h1><p>To switch top and bo
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: LED transmission indication</label>
         <description><![CDATA[
-LED transmission indication<br /><h1>Overview</h1><p>Tranmission indication behaviour control.</p> <p>This parameter controls the LED behaviour when transmitting data to any of the group members.</p>
+LED transmission indication<br /> <h1>Overview</h1><p>Tranmission indication behaviour control.</p> <p>This parameter controls the LED behaviour when transmitting data to any of the group members.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -110,7 +110,7 @@ LED transmission indication<br /><h1>Overview</h1><p>Tranmission indication beha
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Suspend group 4</label>
         <description><![CDATA[
-Group 4 command sending behaviour control.<br /><h1>Overview</h1><p>Disable transmitting commands to Group 4.</p>
+Group 4 command sending behaviour control.<br /> <h1>Overview</h1><p>Disable transmitting commands to Group 4.</p>
         ]]></description>
         <default>0</default>
         <options>

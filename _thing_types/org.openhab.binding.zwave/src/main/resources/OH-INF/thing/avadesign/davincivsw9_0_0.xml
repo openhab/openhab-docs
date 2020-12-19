@@ -8,7 +8,7 @@
   <thing-type id="avadesign_davincivsw9_00_000" listed="false">
     <label>Da Vinci Switch Default</label>
     <description><![CDATA[
-<br /><h1>Overview</h1><p>The Da Vinci wall controller is a Multi Chanel Z-Wave device that contains up to 6 relays and up to 9 touch buttons that can be set to control either the relays (On/Off switches and shutters) or any other on/off (SWITCH_BINARY)  , shutter (MULTILEVEL_SWITCH) Z-Wave device.</p> <br /><h2>Inclusion Information</h2><p>Press the #1 button 3 times.</p> <br /><h2>Exclusion Information</h2><p>Press the #1 button 3 times.</p>
+<br /> <h1>Overview</h1><p>The Da Vinci wall controller is a Multi Chanel Z-Wave device that contains up to 6 relays and up to 9 touch buttons that can be set to control either the relays (On/Off switches and shutters) or any other on/off (SWITCH_BINARY)  , shutter (MULTILEVEL_SWITCH) Z-Wave device.</p> <br /> <h2>Inclusion Information</h2><p>Press the #1 button 3 times.</p> <br /> <h2>Exclusion Information</h2><p>Press the #1 button 3 times.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -180,7 +180,7 @@
                  min="1" max="6">
         <label>1: EP 1 Type</label>
         <description><![CDATA[
-EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 1 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -206,7 +206,7 @@ EP 1 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="1" max="6">
         <label>4: EP 1 Output</label>
         <description><![CDATA[
-EP 1 Output<br /><h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output</p>
+EP 1 Output<br /> <h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -216,7 +216,7 @@ EP 1 Output<br /><h1>Overview</h1><p>0 = not used<br />1 – 6 = Num. of output<
                  min="0" max="7">
         <label>5: EP 1 Button attribute</label>
         <description><![CDATA[
-EP 1 Button attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1] = Sound enable<br />Bit [2] = Dry contact enable<br />Bit [3] = Motor enable</p>
+EP 1 Button attribute<br /> <h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1] = Sound enable<br />Bit [2] = Dry contact enable<br />Bit [3] = Motor enable</p>
         ]]></description>
         <default>7</default>
         <limitToOptions>false</limitToOptions>
@@ -226,7 +226,7 @@ EP 1 Button attribute<br /><h1>Overview</h1><p>Bit [0] = LED enable<br />Bit [1]
                  min="0" max="6">
         <label>6: EP 2 Type</label>
         <description><![CDATA[
-EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 2 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -252,7 +252,7 @@ EP 2 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>11: EP 3 Type</label>
         <description><![CDATA[
-EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 3 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -278,7 +278,7 @@ EP 3 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>16: EP 4 Type</label>
         <description><![CDATA[
-EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 4 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -304,7 +304,7 @@ EP 4 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>21: EP 5 Type</label>
         <description><![CDATA[
-EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 5 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -330,7 +330,7 @@ EP 5 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>26: EP 6 Type</label>
         <description><![CDATA[
-EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 6 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -356,7 +356,7 @@ EP 6 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>31: EP 7 Type</label>
         <description><![CDATA[
-EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 7 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -382,7 +382,7 @@ EP 7 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>36: EP 8 Type</label>
         <description><![CDATA[
-EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 8 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -408,7 +408,7 @@ EP 8 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>
                  min="0" max="6">
         <label>41: EP 9 Type</label>
         <description><![CDATA[
-EP 9 Type<br /><h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
+EP 9 Type<br /> <h1>Overview</h1><p>1 = switch on/off</p> <p>2 = blind up</p> <p>3 = blind down</p> <p>4 = switch multiway</p> <p>5 = blind-up multiway</p> <p>6 = blind-down multiway</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

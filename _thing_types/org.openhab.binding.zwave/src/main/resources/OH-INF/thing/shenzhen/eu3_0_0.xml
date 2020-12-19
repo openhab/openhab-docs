@@ -8,7 +8,7 @@
   <thing-type id="shenzhen_eu3_00_000" listed="false">
     <label>EU-3 Light Switch 3 Channel</label>
     <description><![CDATA[
-Light Switch 3 Channel<br /><h1>Overview</h1><p>Light Switch is an intelligent device that can be remotely controlled through Z-Wave network and radio waves. In the Z-Wave network communications, light switch can be connected to any Z-Wave gateway. When using radio waves, light switch can be used in conjunction with Z-Wave gateway. The frequency of radio waves used by gateway and switch is like this: different countries or areas, the radio frequency is different. Each light switch has a unique ID code. When we add or remove the switch from the alarm host, just place light switch in the Z-Wave network range of gateway. Then we can easily find the switch through the device ID code. In communication with gateway, light switch not only can send signals to Z-Wave gateway, but also can receive signals from it. When touch the button on light switch, it would send signals to Z-Wave gateway, then gateway can correctly display the switch on / off state; when light switch receives signals from gateway, the switch state would be remotely switched on/off.</p> <br /><h2>Inclusion Information</h2><ol><li>Connect switch to power source, after making it powred, please do not operate it within 20s.</li> <li>Make sure Light Switch is powered.</li> <li>Set Z-Wave gateway into inclusion mode (Refer to gateway user manual)</li> <li>Touch the button three times continuously within 1.5 second, then Light Switch will enter inclusion mode. Meanwhile, LED light would flash red color five times on and off alternately.</li> <li>Light Switch will be detected and included in the Z-Wave network.</li> <li>Wait for gateway to configure the switch.</li> </ol><p><strong>Note:</strong> If Light Switch has not been added to Z-Wave network, it can enter inclusion mode automatically when it is powered on. But in order to run this function, should let the controller enter into inclusion first before making Light Switch powered on.</p> <br /><h2>Exclusion Information</h2><ol><li>Make sure Light Switch is powered.</li> <li>Set Z-Wave gateway into exclusion mode (Refer to gateway user manual)</li> <li>Touch the button three times continuously within 1.5 second, then Light Switch will enter exclusion mode. Meanwhile, LED light would flash red color once then pink color 4 times on and off alternately.</li> <li>Wait for gateway to delete the switch.</li> </ol>
+Light Switch 3 Channel<br /> <h1>Overview</h1><p>Light Switch is an intelligent device that can be remotely controlled through Z-Wave network and radio waves. In the Z-Wave network communications, light switch can be connected to any Z-Wave gateway. When using radio waves, light switch can be used in conjunction with Z-Wave gateway. The frequency of radio waves used by gateway and switch is like this: different countries or areas, the radio frequency is different. Each light switch has a unique ID code. When we add or remove the switch from the alarm host, just place light switch in the Z-Wave network range of gateway. Then we can easily find the switch through the device ID code. In communication with gateway, light switch not only can send signals to Z-Wave gateway, but also can receive signals from it. When touch the button on light switch, it would send signals to Z-Wave gateway, then gateway can correctly display the switch on / off state; when light switch receives signals from gateway, the switch state would be remotely switched on/off.</p> <br /> <h2>Inclusion Information</h2><ol><li>Connect switch to power source, after making it powred, please do not operate it within 20s.</li> <li>Make sure Light Switch is powered.</li> <li>Set Z-Wave gateway into inclusion mode (Refer to gateway user manual)</li> <li>Touch the button three times continuously within 1.5 second, then Light Switch will enter inclusion mode. Meanwhile, LED light would flash red color five times on and off alternately.</li> <li>Light Switch will be detected and included in the Z-Wave network.</li> <li>Wait for gateway to configure the switch.</li> </ol><p><strong>Note:</strong> If Light Switch has not been added to Z-Wave network, it can enter inclusion mode automatically when it is powered on. But in order to run this function, should let the controller enter into inclusion first before making Light Switch powered on.</p> <br /> <h2>Exclusion Information</h2><ol><li>Make sure Light Switch is powered.</li> <li>Set Z-Wave gateway into exclusion mode (Refer to gateway user manual)</li> <li>Touch the button three times continuously within 1.5 second, then Light Switch will enter exclusion mode. Meanwhile, LED light would flash red color once then pink color 4 times on and off alternately.</li> <li>Wait for gateway to delete the switch.</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -68,7 +68,7 @@ Light Switch 3 Channel<br /><h1>Overview</h1><p>Light Switch is an intelligent d
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Relay On/Off Status Saved Enable</label>
         <description><![CDATA[
-Restore switch status on power restore.<br /><h1>Overview</h1><p>This parameter defines the on/off status of relay is need to save or not. The status will be saved when relay status is changed if this parameter is set to 1. Otherwise the relay status is not saved. The Light Switch will restore the relay On/Off status previous when power on again.</p>
+Restore switch status on power restore.<br /> <h1>Overview</h1><p>This parameter defines the on/off status of relay is need to save or not. The status will be saved when relay status is changed if this parameter is set to 1. Otherwise the relay status is not saved. The Light Switch will restore the relay On/Off status previous when power on again.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -81,7 +81,7 @@ Restore switch status on power restore.<br /><h1>Overview</h1><p>This parameter 
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Backlight Enable</label>
         <description><![CDATA[
-Enable back light when Light Switch is powered on.<br /><h1>Overview</h1><p>This parameter defines the back light state of touch buton. The back light LED would be on when Light Switch is powered on if this parameter is set to '1'; otherwise the back light LED would be off</p>
+Enable back light when Light Switch is powered on.<br /> <h1>Overview</h1><p>This parameter defines the back light state of touch buton. The back light LED would be on when Light Switch is powered on if this parameter is set to '1'; otherwise the back light LED would be off</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -94,7 +94,7 @@ Enable back light when Light Switch is powered on.<br /><h1>Overview</h1><p>This
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Relay On/Off Indicate</label>
         <description><![CDATA[
-Switch on LED indicator.<br /><h1>Overview</h1><p>This parameter defines the relay state. The LED will be turned on with pink color when the button is touched to turn on relay if this parameter is set to '1'; otherwise the LED state is not changed.</p>
+Switch on LED indicator.<br /> <h1>Overview</h1><p>This parameter defines the relay state. The LED will be turned on with pink color when the button is touched to turn on relay if this parameter is set to '1'; otherwise the LED state is not changed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -107,7 +107,7 @@ Switch on LED indicator.<br /><h1>Overview</h1><p>This parameter defines the rel
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Root Device Mapped Setting</label>
         <description><![CDATA[
-Endpoint device mapping setting for associated devices.<br /><h1>Overview</h1><p>This parameter defines which endpoint is mapped to root device (Endpoint 0). The valid values are explained as follow. </p> <p>0 - No endpoint is mapped to root endpoint</p> <p>1 - Endpoint 1 is mapped to root endpoint</p> <p>2 - Endpoint 2 is mapped to root endpoint</p> <p>3 - Endpoint 3 is mapped to root endpoint</p> <p>4 - All 3 endpoints are mapped to root endpoint.</p> <p>For example, assumes this parameter is set to 1 (default value). Controller or other devices (such as door/windows sensor, motion sensor, etc.) that associated the Light Switch send a command BASIC_SET = 0xFF to Light Switch, the relay in endpoint 1 will be turned on. Other relay status will not be changed.</p>
+Endpoint device mapping setting for associated devices.<br /> <h1>Overview</h1><p>This parameter defines which endpoint is mapped to root device (Endpoint 0). The valid values are explained as follow. </p> <p>0 - No endpoint is mapped to root endpoint</p> <p>1 - Endpoint 1 is mapped to root endpoint</p> <p>2 - Endpoint 2 is mapped to root endpoint</p> <p>3 - Endpoint 3 is mapped to root endpoint</p> <p>4 - All 3 endpoints are mapped to root endpoint.</p> <p>For example, assumes this parameter is set to 1 (default value). Controller or other devices (such as door/windows sensor, motion sensor, etc.) that associated the Light Switch send a command BASIC_SET = 0xFF to Light Switch, the relay in endpoint 1 will be turned on. Other relay status will not be changed.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -123,7 +123,7 @@ Endpoint device mapping setting for associated devices.<br /><h1>Overview</h1><p
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Button Switch Function Disable</label>
         <description><![CDATA[
-Enables/disables button<br /><h1>Overview</h1><p>Setting this configuration as 0 will be disabling to turn on and off the relay by pressed button.</p>
+Enables/disables button<br /> <h1>Overview</h1><p>Setting this configuration as 0 will be disabling to turn on and off the relay by pressed button.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -136,7 +136,7 @@ Enables/disables button<br /><h1>Overview</h1><p>Setting this configuration as 0
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Timer enable</label>
         <description><![CDATA[
-Timer to turn off the relay automatically<br /><h1>Overview</h1><p>Setting this configuration as 1 will start the timing function of the plug and the length of time is determined by the setting of next configurations. This function can only provide the time to turn off device function when the device is open.</p>
+Timer to turn off the relay automatically<br /> <h1>Overview</h1><p>Setting this configuration as 1 will start the timing function of the plug and the length of time is determined by the setting of next configurations. This function can only provide the time to turn off device function when the device is open.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -150,7 +150,7 @@ Timer to turn off the relay automatically<br /><h1>Overview</h1><p>Setting this 
                  min="0" max="32767">
         <label>7: Channel 1 Off Time Settings</label>
         <description><![CDATA[
-Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 1 when channel 1 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
+Delay timer to turn off the channel<br /> <h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 1 when channel 1 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -160,7 +160,7 @@ Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration 
                  min="0" max="32767">
         <label>8: Channel 2 Off Time Settings</label>
         <description><![CDATA[
-Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 2 when channel 2 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
+Delay timer to turn off the channel<br /> <h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 2 when channel 2 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration 
                  min="0" max="32767">
         <label>9: Channel 3 Off Time Settings</label>
         <description><![CDATA[
-Delay timer to turn off the channel<br /><h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 3 when channel 3 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
+Delay timer to turn off the channel<br /> <h1>Overview</h1><p>This configuration sets the time delay to turn off switch channel 3 when channel 3 is turned on. This configuration is only valid when previous configuration Timer enabled is set to 1.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

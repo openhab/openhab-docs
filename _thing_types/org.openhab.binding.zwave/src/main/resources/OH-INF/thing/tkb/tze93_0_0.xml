@@ -8,7 +8,7 @@
   <thing-type id="tkb_tze93_00_000" listed="false">
     <label>TZE93 Weekly Programming Thermostat with LCD Touch Screen</label>
     <description><![CDATA[
-Weekly Programming Thermostat with LCD Touch Screen<br /><h1>Overview</h1><p>TZE93.716 Plus Z-WAVE Weekly Programming Heating Thermostat with LCD Touch Screen</p> <ul><li>868.42MHz(EU), 869MHz(RU) </li> <li>Adopt Z-Wave 500 series chip </li> <li>Voltage: AC230V, 50Hz </li> <li>Current: 16A</li> <li>Setting range: 5~90℃ </li> <li>Switching differential: ±1℃ </li> <li>Ambient temperature: -5~50℃ </li> <li>Protective housing: IP20 </li> <li>Housing material: Anti-flammable PC </li> <li>Operation range: up to 130 feet line of sight</li> </ul><br /><h2>Inclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter inclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter inclusion mode. The wireless icon will start to blink.</li> <li>After the blink stop, if the wireless icon lights steady means product inclusion is completed</li> </ul><br /><h2>Exclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter exclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter exclusion mode. The wireless icon will blink.</li> <li>After the blink stop, if the wireless icon is off that means product exclusion is completed.</li> </ul>
+Weekly Programming Thermostat with LCD Touch Screen<br /> <h1>Overview</h1><p>TZE93.716 Plus Z-WAVE Weekly Programming Heating Thermostat with LCD Touch Screen</p> <ul><li>868.42MHz(EU), 869MHz(RU) </li> <li>Adopt Z-Wave 500 series chip </li> <li>Voltage: AC230V, 50Hz </li> <li>Current: 16A</li> <li>Setting range: 5~90℃ </li> <li>Switching differential: ±1℃ </li> <li>Ambient temperature: -5~50℃ </li> <li>Protective housing: IP20 </li> <li>Housing material: Anti-flammable PC </li> <li>Operation range: up to 130 feet line of sight</li> </ul> <br /> <h2>Inclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter inclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter inclusion mode. The wireless icon will start to blink.</li> <li>After the blink stop, if the wireless icon lights steady means product inclusion is completed</li> </ul> <br /> <h2>Exclusion Information</h2><ul><li>Make sure the thermostat in the off mode.</li> <li>Have Z-Wave controller enter exclusion mode.</li> <li>Press &lt;book&gt; key on thermostat 3 times in 1.5 seconds - will enter exclusion mode. The wireless icon will blink.</li> <li>After the blink stop, if the wireless icon is off that means product exclusion is completed.</li> </ul>
     ]]></description>
     <category>HVAC</category>
 
@@ -74,7 +74,7 @@ Weekly Programming Thermostat with LCD Touch Screen<br /><h1>Overview</h1><p>TZE
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Memory function</label>
         <description><![CDATA[
-Recover after a power failure<br /><h1>Overview</h1><p>The memory function means the thermostat will recover the operating mode after a power failure.</p>
+Recover after a power failure<br /> <h1>Overview</h1><p>The memory function means the thermostat will recover the operating mode after a power failure.</p>
         ]]></description>
         <default>1</default>
         <options>

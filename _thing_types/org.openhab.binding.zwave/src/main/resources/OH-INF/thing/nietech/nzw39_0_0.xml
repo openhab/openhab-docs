@@ -8,7 +8,7 @@
   <thing-type id="nietech_nzw39_00_000" listed="false">
     <label>NZW39 Dimmable Smart Plug</label>
     <description><![CDATA[
-Dimmable Smart Plug<br /><h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repeater, combines a Z-Wave Outlet &amp; Range Extender in 1 Module</p> <br /><h2>Inclusion Information</h2><p>Put the controller into inclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /><h2>Exclusion Information</h2><p>Put the controller into exclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /><h2>Wakeup Information</h2><p>N/A</p>
+Dimmable Smart Plug<br /> <h1>Overview</h1><p>Z-Wave Plug/Dimmer w/Built-in Z-Wave Repeater, combines a Z-Wave Outlet &amp; Range Extender in 1 Module</p> <br /> <h2>Inclusion Information</h2><p>Put the controller into inclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /> <h2>Exclusion Information</h2><p>Put the controller into exclusion mode, then push the middle button on the smart plug 3-5 times within 3 seconds</p> <br /> <h2>Wakeup Information</h2><p>N/A</p>
     ]]></description>
     <category>PowerOutlet</category>
 

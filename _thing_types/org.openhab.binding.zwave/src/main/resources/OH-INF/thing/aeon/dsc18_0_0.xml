@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc18_00_000" listed="false">
     <label>DSC18 Micro Smart Energy Switch G2</label>
     <description><![CDATA[
-Micro Smart Energy Switch G2<br /><h1>Overview</h1><p>The Aeotec Micro Smart Energy Switch G2 is a low-cost Z-Wave appliance module specifically used to enable Z-Wave command and control (on/ off) for existing in-wall switches. It can also report immediate wattage consumption or kWh energy usage over a period of time</p> <br /><h2>Inclusion Information</h2><p>While the Micro Smart Energy Switch G2 is powered in a 3-wire system, the external switch/button can be toggled to initiate pairing into the Z-Wave network. Or the internal button can be pushed to initiate pairing into the Z-Wave network if the Micro Smart Energy Switch G2 was not put into in-wall box. </p> <p>Troubleshooting:</p> <p>If the Aeotec Micro Smart Energy Switch G2 was not successfully included into any Z-Wave network, the LED will continually blink slowly. If the Aeotec Micro Smart Energy Switch G2 was successfully included to a Z-Wave network, the Status Indication LED will either be solid on or off depending on if the switch is on or off. </p> <br /><h2>Exclusion Information</h2><p>While the Micro Smart Energy Switch G2 is powered in a 3-wire system, the external switch/button can be toggled 10 times in quick succession to initiate removing from the Z-Wave network. Or the internal button can be pushed to initiate pairing into the Z-Wave network if Micro Smart Energy Switch G2 was not put into in-wall box.</p> <p>Troubleshooting: If the Aeotec Micro Smart Energy Switch G2 was removed from the Z-Wave network, the Status Indication LED will be blinking. If the Aeotec Micro Smart Energy Switch G2 was not successfully removed from the Z-Wave network, the Status Indication LED will either be solid on or off depending on if the switch is on or off</p>
+Micro Smart Energy Switch G2<br /> <h1>Overview</h1><p>The Aeotec Micro Smart Energy Switch G2 is a low-cost Z-Wave appliance module specifically used to enable Z-Wave command and control (on/ off) for existing in-wall switches. It can also report immediate wattage consumption or kWh energy usage over a period of time</p> <br /> <h2>Inclusion Information</h2><p>While the Micro Smart Energy Switch G2 is powered in a 3-wire system, the external switch/button can be toggled to initiate pairing into the Z-Wave network. Or the internal button can be pushed to initiate pairing into the Z-Wave network if the Micro Smart Energy Switch G2 was not put into in-wall box. </p> <p>Troubleshooting:</p> <p>If the Aeotec Micro Smart Energy Switch G2 was not successfully included into any Z-Wave network, the LED will continually blink slowly. If the Aeotec Micro Smart Energy Switch G2 was successfully included to a Z-Wave network, the Status Indication LED will either be solid on or off depending on if the switch is on or off. </p> <br /> <h2>Exclusion Information</h2><p>While the Micro Smart Energy Switch G2 is powered in a 3-wire system, the external switch/button can be toggled 10 times in quick succession to initiate removing from the Z-Wave network. Or the internal button can be pushed to initiate pairing into the Z-Wave network if Micro Smart Energy Switch G2 was not put into in-wall box.</p> <p>Troubleshooting: If the Aeotec Micro Smart Energy Switch G2 was removed from the Z-Wave network, the Status Indication LED will be blinking. If the Aeotec Micro Smart Energy Switch G2 was not successfully removed from the Z-Wave network, the Status Indication LED will either be solid on or off depending on if the switch is on or off</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -59,7 +59,7 @@ Micro Smart Energy Switch G2<br /><h1>Overview</h1><p>The Aeotec Micro Smart Ene
       <property name="manufacturerId">0086</property>
       <property name="manufacturerRef">0003:0012</property>
       <property name="dbReference">278</property>
-      <property name="defaultAssociations">1,2</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -194,6 +194,9 @@ Micro Smart Energy Switch G2<br /><h1>Overview</h1><p>The Aeotec Micro Smart Ene
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Target for automatic reports</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

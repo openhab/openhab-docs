@@ -8,7 +8,7 @@
   <thing-type id="philio_psr04_00_000" listed="false">
     <label>PSR04 Smart Color Button</label>
     <description><![CDATA[
-Smart Color Button<br /><h1>Overview</h1><p>This device is a multiple functions button switch. It is able to switch the appliances on/off or adjust the percentage of dimmer.<br />It can also work as a timer. The well designed wall bracket and magnetic back let the switch can be fixed on the wall. This product<br />can be included and operated in any Z-Wave™ network with other Z-Wave™ certified devices from other manufacturers and/or other applications.</p> <br /><h2>Inclusion Information</h2><p><strong>See manual for details.</strong></p> <p>Pointing the arrowhead to area A first (shown in Fig. 2). Pressing the button three times within 1.5 seconds. The red LED will light up for 1 second if succeed.  </p> <br /><h2>Exclusion Information</h2><p><strong>See manual for details.</strong></p> <p> Pointing the arrowhead to area A first (shown in Fig. 2). Pressing the button three times within 1.5 seconds. </p> <br /><h2>Wakeup Information</h2><p>By default, this device only wakes up every 86400 seconds (24 hours). To manually wake this device up:</p> <ol><li>Hold the device vertically, or against a wall (this will not work if the device is horizontal).</li> <li>Rotate the wheel so that the pointer is at the top of the device.</li> <li>Wait at least three seconds.</li> <li>Rotate the wheel clockwise through 180 degrees to the bottom of the device.</li> <li>Immediately press the centre button once.</li> </ol><p>This activates the wakeup for 10 seconds, during which time you will be able to identify the device correctly.</p>
+Smart Color Button<br /> <h1>Overview</h1><p>This device is a multiple functions button switch. It is able to switch the appliances on/off or adjust the percentage of dimmer.<br />It can also work as a timer. The well designed wall bracket and magnetic back let the switch can be fixed on the wall. This product<br />can be included and operated in any Z-Wave™ network with other Z-Wave™ certified devices from other manufacturers and/or other applications.</p> <br /> <h2>Inclusion Information</h2><p><strong>See manual for details.</strong></p> <p>Pointing the arrowhead to area A first (shown in Fig. 2). Pressing the button three times within 1.5 seconds. The red LED will light up for 1 second if succeed.  </p> <br /> <h2>Exclusion Information</h2><p><strong>See manual for details.</strong></p> <p> Pointing the arrowhead to area A first (shown in Fig. 2). Pressing the button three times within 1.5 seconds. </p> <br /> <h2>Wakeup Information</h2><p>By default, this device only wakes up every 86400 seconds (24 hours). To manually wake this device up:</p> <ol><li>Hold the device vertically, or against a wall (this will not work if the device is horizontal).</li> <li>Rotate the wheel so that the pointer is at the top of the device.</li> <li>Wait at least three seconds.</li> <li>Rotate the wheel clockwise through 180 degrees to the bottom of the device.</li> <li>Immediately press the centre button once.</li> </ol><p>This activates the wakeup for 10 seconds, during which time you will be able to identify the device correctly.</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -62,7 +62,7 @@ Smart Color Button<br /><h1>Overview</h1><p>This device is a multiple functions 
                  min="0" max="99">
         <label>1: Basic Set OFF level</label>
         <description><![CDATA[
-Control the value represented by the left-side in area D.<br /><h1>Overview</h1><p> E.g. Setting this configuration to 0x0F means range of Command Basic Set value start from 0x0F.</p>
+Control the value represented by the left-side in area D.<br /> <h1>Overview</h1><p> E.g. Setting this configuration to 0x0F means range of Command Basic Set value start from 0x0F.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -72,7 +72,7 @@ Control the value represented by the left-side in area D.<br /><h1>Overview</h1>
                  min="0" max="99">
         <label>2: Basic Set ON level</label>
         <description><![CDATA[
-Control the value represented by the right-side in area D.<br /><h1>Overview</h1><p> E.g. Setting this configuration to 0x1E means range of Command Basic Set value start from 0x1E.</p>
+Control the value represented by the right-side in area D.<br /> <h1>Overview</h1><p> E.g. Setting this configuration to 0x1E means range of Command Basic Set value start from 0x1E.</p>
         ]]></description>
         <default>99</default>
         <limitToOptions>false</limitToOptions>
@@ -82,7 +82,7 @@ Control the value represented by the right-side in area D.<br /><h1>Overview</h1
                  min="0" max="127">
         <label>10: Auto Report Battery Time</label>
         <description><![CDATA[
-The interval time for auto reporting the Battery level.<br /><h1>Overview</h1><p>0: Function is disabled.<br />1 - 127: Define the time interval.</p> <p>0 means turn off auto report battery. The default value of 12 is equivalent to 6 hours.</p>
+The interval time for auto reporting the Battery level.<br /> <h1>Overview</h1><p>0: Function is disabled.<br />1 - 127: Define the time interval.</p> <p>0 means turn off auto report battery. The default value of 12 is equivalent to 6 hours.</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>

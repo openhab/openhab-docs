@@ -8,7 +8,7 @@
   <thing-type id="kichler_15dc200_00_000" listed="false">
     <label>15DC200 200W Design Pro LED Controller</label>
     <description><![CDATA[
-200W Design Pro LED Controller<br /><h1>Overview</h1><p> Design Pro LED Controller</p> <br /><h2>Inclusion Information</h2><p>On the Controller intended to be the subservient press: <strong>Home&gt;Network&gt;Join Network</strong>. Then press Enter</p> <br /><h2>Exclusion Information</h2><p>On the Controller to be removed press: <strong>Home&gt;Network&gt;Leave Network</strong>. Then press Enter</p>
+200W Design Pro LED Controller<br /> <h1>Overview</h1><p> Design Pro LED Controller</p> <br /> <h2>Inclusion Information</h2><p>On the Controller intended to be the subservient press: <strong>Home&gt;Network&gt;Join Network</strong>. Then press Enter</p> <br /> <h2>Exclusion Information</h2><p>On the Controller to be removed press: <strong>Home&gt;Network&gt;Leave Network</strong>. Then press Enter</p>
     ]]></description>
     <category>PowerOutlet</category>
 

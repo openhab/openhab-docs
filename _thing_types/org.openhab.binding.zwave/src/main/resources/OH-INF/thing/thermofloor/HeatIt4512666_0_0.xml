@@ -8,7 +8,7 @@
   <thing-type id="thermofloor_HeatIt4512666_00_000" listed="false">
     <label>HEATIT Z-TEMP2 Z-Wave thermostat for controlling external relay</label>
     <description><![CDATA[
-Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit Z-Temp2 is a battery-operated thermostat designed for use</p><p>with water based heating systems. </p> <br /><h2>Inclusion Information</h2><p>1. Set the controller/gateway in add mode (security/non-security).</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>3. The thermostat will display “INC” when the thermostat is successfully included.</p><p>If adding/removing fails, Err (error) will appear</p> <br /><h2>Exclusion Information</h2><p>1. Remove device from controller/gateway.</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>If removing fails, Err (error) will appear</p> <br /><h2>Wakeup Information</h2><p><br /></p>
+Z-Wave thermostat for controlling external relay<br /> <h1>Overview</h1><p>Heatit Z-Temp2 is a battery-operated thermostat designed for use</p><p>with water based heating systems. </p> <br /> <h2>Inclusion Information</h2><p>1. Set the controller/gateway in add mode (security/non-security).</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>3. The thermostat will display “INC” when the thermostat is successfully included.</p><p>If adding/removing fails, Err (error) will appear</p> <br /> <h2>Exclusion Information</h2><p>1. Remove device from controller/gateway.</p><p>2. Press the link button 3 times in a rapid sequence.</p><p>If removing fails, Err (error) will appear</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>HVAC</category>
 
@@ -195,7 +195,7 @@ Z-Wave thermostat for controlling external relay<br /><h1>Overview</h1><p>Heatit
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Report when presence is detected</label>
         <description><![CDATA[
-Decides if the thermostat sends temperature when presence is detected<br /><h1>Overview</h1><p><br /></p>
+Decides if the thermostat sends temperature when presence is detected<br /> <h1>Overview</h1><p><br /></p>
         ]]></description>
         <default>0</default>
         <options>
@@ -209,7 +209,7 @@ Decides if the thermostat sends temperature when presence is detected<br /><h1>O
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Lifeline. (Normally used by the Z-Wave Controller)<br /><h1>Overview</h1><p>Lifeline. (Normally used by the Z-Wave Controller) Sends:</p><p>- Battery Report (sent when battery runs low).</p><p>- Notification Report (sent first time power on).</p><p>- Device Reset Locally Notification (sent if device is reset).</p><p>- Indicator Report</p><p>- Thermostat Mode Report (sent when mode changed from panel).</p><p>- Thermostat Setpoint Report (sent when setpoint changed from panel).</p><p>- Thermostat Operating State Report (sent when heating should be active).</p><p>- Sensor Multilevel Report (periodical reports).</p><p>- Protection Report (childlock activated/deactived from panel).</p>
+Lifeline. (Normally used by the Z-Wave Controller)<br /> <h1>Overview</h1><p>Lifeline. (Normally used by the Z-Wave Controller) Sends:</p><p>- Battery Report (sent when battery runs low).</p><p>- Notification Report (sent first time power on).</p><p>- Device Reset Locally Notification (sent if device is reset).</p><p>- Indicator Report</p><p>- Thermostat Mode Report (sent when mode changed from panel).</p><p>- Thermostat Setpoint Report (sent when setpoint changed from panel).</p><p>- Thermostat Operating State Report (sent when heating should be active).</p><p>- Sensor Multilevel Report (periodical reports).</p><p>- Protection Report (childlock activated/deactived from panel).</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -223,7 +223,7 @@ Lifeline. (Normally used by the Z-Wave Controller)<br /><h1>Overview</h1><p>Life
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: ON/OFF Control</label>
         <description><![CDATA[
-Binary Switch Set (normally used to control external relays).<br /><h1>Overview</h1><p>Binary Switch Set (normally used to control external relays).</p><p>Sends:</p><p>0x00 = OFF</p><p>0xFF = ON</p>
+Binary Switch Set (normally used to control external relays).<br /> <h1>Overview</h1><p>Binary Switch Set (normally used to control external relays).</p><p>Sends:</p><p>0x00 = OFF</p><p>0xFF = ON</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha20_00_000" listed="false">
     <label>HA20 Dimmer Switch</label>
     <description><![CDATA[
-Dimmer Switch<br /><h1>Overview</h1><p>600W In-Wall Toggle Style Dimmer</p> <br /><h2>Inclusion Information</h2><ol><li>Put the controller in inclusion mode</li> <li>Flip the toggle switch on the HA-20</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Put the controller in exclusion mode</li> <li>Flip the toggle switch on the HA-20</li> </ol>
+Dimmer Switch<br /> <h1>Overview</h1><p>600W In-Wall Toggle Style Dimmer</p> <br /> <h2>Inclusion Information</h2><ol><li>Put the controller in inclusion mode</li> <li>Flip the toggle switch on the HA-20</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Put the controller in exclusion mode</li> <li>Flip the toggle switch on the HA-20</li> </ol>
     ]]></description>
     <category>WallSwitch</category>
 

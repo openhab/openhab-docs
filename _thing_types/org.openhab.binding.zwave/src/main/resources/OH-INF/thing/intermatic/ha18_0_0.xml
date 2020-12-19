@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha18_00_000" listed="false">
     <label>HA18 15-amp Wall Switch</label>
     <description><![CDATA[
-15-amp Wall Switch<br /><h1>Overview</h1><p>15-amp Z-Wave Wall Switch.</p> <br /><h2>Inclusion Information</h2><p>Press and release the top or bottom ROCKER button of the HA18 In-Wall Switch.</p> <br /><h2>Exclusion Information</h2><p>Press and release the top or bottom ROCKER button of the HA18 In-Wall Switch.</p>
+15-amp Wall Switch<br /> <h1>Overview</h1><p>15-amp Z-Wave Wall Switch.</p> <br /> <h2>Inclusion Information</h2><p>Press and release the top or bottom ROCKER button of the HA18 In-Wall Switch.</p> <br /> <h2>Exclusion Information</h2><p>Press and release the top or bottom ROCKER button of the HA18 In-Wall Switch.</p>
     ]]></description>
     <category>WallSwitch</category>
 

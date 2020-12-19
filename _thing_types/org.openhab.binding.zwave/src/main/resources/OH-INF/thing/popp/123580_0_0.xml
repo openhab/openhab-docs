@@ -8,7 +8,7 @@
   <thing-type id="popp_123580_00_000" listed="false">
     <label>123580 Wall Plug Dimmer</label>
     <description><![CDATA[
-Wall Plug Dimmer<br /><h1>Overview</h1><p>This is a wall plug dimmer that can be placed between a schuko wall outlet and electric devices, plugged in by cord. It can dim all incandescent lights, high voltage halogen lamps and transformers operated low voltage lamps without any restriction. Special optimization functions support the dimming of the majority of dimmable LED lights and Compact Fluorescent Lights (CFLs). The device is IP20 rated and can therefore only be used in dry environments. The device offers a Baby-Dim Function which dims down a lamp from a defined level into another defined level in a longer but also definable period (e.g. 20 minutes). An automatic Light-Off function and programmable dimming and switching behavior makes the device a very flexible tool for inhouse lighting.</p> <br /><h2>Inclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p> <br /><h2>Exclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p>
+Wall Plug Dimmer<br /> <h1>Overview</h1><p>This is a wall plug dimmer that can be placed between a schuko wall outlet and electric devices, plugged in by cord. It can dim all incandescent lights, high voltage halogen lamps and transformers operated low voltage lamps without any restriction. Special optimization functions support the dimming of the majority of dimmable LED lights and Compact Fluorescent Lights (CFLs). The device is IP20 rated and can therefore only be used in dry environments. The device offers a Baby-Dim Function which dims down a lamp from a defined level into another defined level in a longer but also definable period (e.g. 20 minutes). An automatic Light-Off function and programmable dimming and switching behavior makes the device a very flexible tool for inhouse lighting.</p> <br /> <h2>Inclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p> <br /> <h2>Exclusion Information</h2><p> Inclusion and Exclusion are confirmed by a tripple click of the button. </p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -71,7 +71,7 @@ Wall Plug Dimmer<br /><h1>Overview</h1><p>This is a wall plug dimmer that can be
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: RF Off command</label>
         <description><![CDATA[
-RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:</p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics;</li> <li>Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</li> </ul>
+RF Off command<br /> <h1>Overview</h1><p>Defines how to interpret RF Off command. Can be used in conjunction with Auto Off function:</p> <ul><li>Ignore - to switch on the light by motion detectors and switch it off after some amount of time: in case of multiple motion detectors each would try to switch the light off that would break logics;</li> <li>Switch on - to switch on the light on both On and Off paddle press on the remote and switch it off after some amount of time. Button off click will still work (if button operations are not disabled).</li> </ul>
         ]]></description>
         <default>0</default>
         <options>
@@ -97,7 +97,7 @@ RF Off command<br /><h1>Overview</h1><p>Defines how to interpret RF Off command.
                  min="0" max="255">
         <label>5: Speed for fast dimming</label>
         <description><![CDATA[
-Speed for fast dimming<br /><h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
+Speed for fast dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ Speed for fast dimming<br /><h1>Overview</h1><p>Time to dim on button presses an
                  min="0" max="255">
         <label>6: Speed for slow dimming</label>
         <description><![CDATA[
-Speed for slow dimming<br /><h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
+Speed for slow dimming<br /> <h1>Overview</h1><p>Time to dim on button presses and Set command (if it has no duration specified).</p> <p>If not 0, dimming will be done smoothly to preserve bulb life.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -116,7 +116,7 @@ Speed for slow dimming<br /><h1>Overview</h1><p>Time to dim on button presses an
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Behavior when ON received</label>
         <description><![CDATA[
-Behavior when ON received<br /><h1>Overview</h1><p>Defines the dim level on command 'ON'. On default he dimmer restores last dim level.</p> <p>This parameter allows configuring the maximum level on second On command (if already On) or to always switch on to maximum level.</p>
+Behavior when ON received<br /> <h1>Overview</h1><p>Defines the dim level on command 'ON'. On default he dimmer restores last dim level.</p> <p>This parameter allows configuring the maximum level on second On command (if already On) or to always switch on to maximum level.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -131,7 +131,7 @@ Behavior when ON received<br /><h1>Overview</h1><p>Defines the dim level on comm
                  min="0" max="99">
         <label>8: Baby dimming time</label>
         <description><![CDATA[
-Baby dimming time<br /><h1>Overview</h1><p>Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action.</p> <p><strong>If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</strong></p>
+Baby dimming time<br /> <h1>Overview</h1><p>Time to dim on double click Off button for Baby-Dim function. This function works only if the load is operated by single press and hold button action.</p> <p><strong>If enabled, the device will wait for a click timeout to see if the second click would be pressed. This will introduce a small delay for single click commands</strong></p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -141,7 +141,7 @@ Baby dimming time<br /><h1>Overview</h1><p>Time to dim on double click Off butto
                  min="0" max="100">
         <label>9: Baby target light level</label>
         <description><![CDATA[
-Baby target level<br /><h1>Overview</h1><p>Target percentage level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</p>
+Baby target level<br /> <h1>Overview</h1><p>Target percentage level on which to stop while executing Baby Dimming. Can be 0 to completely switch off the light.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -151,7 +151,7 @@ Baby target level<br /><h1>Overview</h1><p>Target percentage level on which to s
                  min="0" max="100">
         <label>10: Baby target time level</label>
         <description><![CDATA[
-Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks.</p> <p>Set in 10ms steps.</p>
+Baby target level<br /> <h1>Overview</h1><p>Typical time used to differentiate click, hold, double and triple clicks.</p> <p>Set in 10ms steps.</p>
         ]]></description>
         <default>50</default>
         <limitToOptions>false</limitToOptions>
@@ -177,7 +177,7 @@ Baby target level<br /><h1>Overview</h1><p>Typical time used to differentiate cl
                  min="0" max="99">
         <label>19: Dim Level on 'Switch On'</label>
         <description><![CDATA[
-Dim Level on 'Switch On'<br /><h1>Overview</h1><p>defines how the dimmer hall react on a simple ON Command.</p> <p>Set to 0 to restore last level, otherwise sets dim level.</p>
+Dim Level on 'Switch On'<br /> <h1>Overview</h1><p>defines how the dimmer hall react on a simple ON Command.</p> <p>Set to 0 to restore last level, otherwise sets dim level.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -187,7 +187,7 @@ Dim Level on 'Switch On'<br /><h1>Overview</h1><p>defines how the dimmer hall re
                  min="5" max="60">
         <label>51: Pause before pulse</label>
         <description><![CDATA[
-Pause before pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 1.</p> <p>For other bulbs use default value.</p>
+Pause before pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 1.</p> <p>For other bulbs use default value.</p>
         ]]></description>
         <default>28</default>
         <advanced>true</advanced>
@@ -198,7 +198,7 @@ Pause before pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these setti
                  min="5" max="60">
         <label>52: Pause after pulse</label>
         <description><![CDATA[
-Pause after pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 40.</p> <p>For other bulbs use default value.</p>
+Pause after pulse<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 40.</p> <p>For other bulbs use default value.</p>
         ]]></description>
         <default>28</default>
         <advanced>true</advanced>
@@ -209,7 +209,7 @@ Pause after pulse<br /><h1>Overview</h1><p><strong>NB: Do not touch these settin
                  min="3" max="20">
         <label>53: Pulse width</label>
         <description><![CDATA[
-Pulse width<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 20.</p> <p>For other bulbs use default value.</p>
+Pulse width<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean! </strong></p> <p>For dimmable LEDs and CFL with bypass use value 20.</p> <p>For other bulbs use default value.</p>
         ]]></description>
         <default>10</default>
         <advanced>true</advanced>
@@ -219,7 +219,7 @@ Pulse width<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if 
       <parameter name="config_54_1" type="integer" groupName="configuration">
         <label>54: Pulse type</label>
         <description><![CDATA[
-NB: Do not touch these settings if you are not sure what they mean!<br /><h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean!</strong></p>
+NB: Do not touch these settings if you are not sure what they mean!<br /> <h1>Overview</h1><p><strong>NB: Do not touch these settings if you are not sure what they mean!</strong></p>
         ]]></description>
         <default>0</default>
         <options>

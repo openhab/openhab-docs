@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgk101_02_005" listed="false">
     <label>FGK101 Door/Window Sensor</label>
     <description><![CDATA[
-Door/Window Sensor<br /><h1>Overview</h1><p>The Fibaro Door / Window Sensor is a wireless, battery powered, Z-Wave compatible reed sensor. Each time its two parts, i.e. the sensor's body and a magnet separate, a radio signal is sent. In addition the Fibaro Door / Window Sensor supports one DS18B20 temperature sensor and has one potential free input.</p> <p>The Fibaro Door / Window Sensor is designed for use with scenes in home automation systems and everywhere else where information related to opening / closing of doors, windows, garage gates, etc. is needed.</p> <br /><h2>Inclusion Information</h2><ol><li>Place the device within direct range of the Z-Wave controller.</li> <li>Make sure that Sensor’s cover is closed.</li> <li>Find the TMP button located on the underside of the device, which allows for proper inclusion.</li> <li>Set the main Z-Wave controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the TMP button.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>Adding/removing will be confirmed by LED blinking. Fast blinking means that the inclusion process has not been successful.</p> <br /><h2>Exclusion Information</h2><ol><li>Place the device within direct range of the Z-Wave controller.</li> <li>Make sure that Sensor’s cover is closed.</li> <li>Find the TMP button located on the underside of the device, which allows for proper inclusion.</li> <li>Set the main Z-Wave controller into exclusion mode (see main controller’s operating manual).</li> <li>Quickly, triple click the TMP button.</li> <li>Wait for the exclusion process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol><br /><h2>Wakeup Information</h2><p>FIBARO Door/Window Sensor needs to be woken up to receive information about the new configuration from the controller, like parameters and associations.</p> <p>To wake up the sensor manually triple click the TMP button located underside the casing.</p>
+Door/Window Sensor<br /> <h1>Overview</h1><p>The Fibaro Door / Window Sensor is a wireless, battery powered, Z-Wave compatible reed sensor. Each time its two parts, i.e. the sensor's body and a magnet separate, a radio signal is sent. In addition the Fibaro Door / Window Sensor supports one DS18B20 temperature sensor and has one potential free input.</p> <p>The Fibaro Door / Window Sensor is designed for use with scenes in home automation systems and everywhere else where information related to opening / closing of doors, windows, garage gates, etc. is needed.</p> <br /> <h2>Inclusion Information</h2><ol><li>Place the device within direct range of the Z-Wave controller.</li> <li>Make sure that Sensor’s cover is closed.</li> <li>Find the TMP button located on the underside of the device, which allows for proper inclusion.</li> <li>Set the main Z-Wave controller into the learning mode (see main controller’s operating manual).</li> <li>Quickly, triple click the TMP button.</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller’s message.</li> </ol><p>Adding/removing will be confirmed by LED blinking. Fast blinking means that the inclusion process has not been successful.</p> <br /> <h2>Exclusion Information</h2><ol><li>Place the device within direct range of the Z-Wave controller.</li> <li>Make sure that Sensor’s cover is closed.</li> <li>Find the TMP button located on the underside of the device, which allows for proper inclusion.</li> <li>Set the main Z-Wave controller into exclusion mode (see main controller’s operating manual).</li> <li>Quickly, triple click the TMP button.</li> <li>Wait for the exclusion process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller’s message.</li> </ol> <br /> <h2>Wakeup Information</h2><p>FIBARO Door/Window Sensor needs to be woken up to receive information about the new configuration from the controller, like parameters and associations.</p> <p>To wake up the sensor manually triple click the TMP button located underside the casing.</p>
     ]]></description>
     <category>Door</category>
 
@@ -94,7 +94,7 @@ Door/Window Sensor<br /><h1>Overview</h1><p>The Fibaro Door / Window Sensor is a
                  min="0" max="65535">
         <label>1: Input IN alarm cancellation delay</label>
         <description><![CDATA[
-Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1><p>The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.    </p>
+Additional delay after an alarm from input IN1 has ceased.<br /> <h1>Overview</h1><p>The parameter allows you to specify additional time, after which the input no. 1 alarm is cancelled once its violation has ceased.    </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -114,7 +114,7 @@ Additional delay after an alarm from input IN1 has ceased.<br /><h1>Overview</h1
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Type of IN input</label>
         <description><![CDATA[
-Type of IN input<br /><h1>Overview</h1><p>Type of IN input</p>
+Type of IN input<br /> <h1>Overview</h1><p>Type of IN input</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -129,7 +129,7 @@ Type of IN input<br /><h1>Overview</h1><p>Type of IN input</p>
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Type of control frame transmitted for group 1</label>
         <description><![CDATA[
-Type of transmitted control frame for association group 1<br /><h1>Overview</h1><p>The parameter allows you to specify the type of an alarm frame or to force control frames transmission (BASIC_SET)</p> <p>Available settings:<br /><b>1</b> – ALARM SMOKE frame<br /><b>2</b> – ALARM CO frame<br /><b>3</b> – ALARM CO2 frame<br /><b>4</b> – ALARM HEAT frame<br /><b>5</b> – ALARM WATER frame<br /><b>255</b> – Control frame BASIC_SET<br />Default setting: <strong>255</strong></p>
+Type of transmitted control frame for association group 1<br /> <h1>Overview</h1><p>The parameter allows you to specify the type of an alarm frame or to force control frames transmission (BASIC_SET)</p> <p>Available settings:<br /><b>1</b> – ALARM SMOKE frame<br /><b>2</b> – ALARM CO frame<br /><b>3</b> – ALARM CO2 frame<br /><b>4</b> – ALARM HEAT frame<br /><b>5</b> – ALARM WATER frame<br /><b>255</b> – Control frame BASIC_SET<br />Default setting: <strong>255</strong></p>
         ]]></description>
         <default>255</default>
         <options>
@@ -147,7 +147,7 @@ Type of transmitted control frame for association group 1<br /><h1>Overview</h1>
                  min="1" max="255">
         <label>7: Forced Level of Dimming group 1</label>
         <description><![CDATA[
-Parameter for dimming/opening blinds<br /><h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified.</p> <p>Default value: <strong>255</strong></p> <p>Possible parameter settings: (<strong>1 – 99</strong>) and <strong>255</strong></p> <p>Value of <strong>255</strong> makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%</p>
+Parameter for dimming/opening blinds<br /> <h1>Overview</h1><p>Value of the parameter specifying the forced level of dimming/opening roller blinds when “switch on”/”open” commands are sent to devices from association group no.1. In case of alarm frames an alarm priority is specified.</p> <p>Default value: <strong>255</strong></p> <p>Possible parameter settings: (<strong>1 – 99</strong>) and <strong>255</strong></p> <p>Value of <strong>255</strong> makes it possible to activate a device. In case of the Dimmer module it means activating the device and setting it to the previously stored condition, e.g. when Dimmer is set to 30%, deactivated and then reactivated using 255 commend, it will be automatically set to the previous condition i.e. 30%</p>
         ]]></description>
         <default>255</default>
       </parameter>
@@ -155,7 +155,7 @@ Parameter for dimming/opening blinds<br /><h1>Overview</h1><p>Value of the param
       <parameter name="config_9_1" type="integer" groupName="configuration">
         <label>9: Enable/Disable cancelling alarm</label>
         <description><![CDATA[
-Enable/Disable transmission of frame cancelling alarm<br /><h1>Overview</h1><p>Deactivating transmission of the alarm cancelling frame or the control frame deactivating the device (Basic).</p> <p>It allows for disabling the function of deactivating the device and cancelling alarms for devices associated with IN input.</p> <p>Available parameter settings:</p> <p><strong>0</strong> – for association group no. 1 information is sent</p> <p><strong>1</strong> – for association group no. 1 information is not sent.</p> <p>Default value: <strong>0</strong></p> <p>The parameter cancels alarms only. Information on alarm violation or activation commands for devices from association groups are always sent.</p>
+Enable/Disable transmission of frame cancelling alarm<br /> <h1>Overview</h1><p>Deactivating transmission of the alarm cancelling frame or the control frame deactivating the device (Basic).</p> <p>It allows for disabling the function of deactivating the device and cancelling alarms for devices associated with IN input.</p> <p>Available parameter settings:</p> <p><strong>0</strong> – for association group no. 1 information is sent</p> <p><strong>1</strong> – for association group no. 1 information is not sent.</p> <p>Default value: <strong>0</strong></p> <p>The parameter cancels alarms only. Information on alarm violation or activation commands for devices from association groups are always sent.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -168,7 +168,7 @@ Enable/Disable transmission of frame cancelling alarm<br /><h1>Overview</h1><p>D
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Tamper alarm</label>
         <description><![CDATA[
-Enable/disable tamper alarm<br /><h1>Overview</h1><p>Enable/disable tamper alarm.</p> <p>Available settings:<br /><b>0</b> – Tamper alarm cancellation inactive<br /><b>1</b> – Tamper alarm cancellation active<br />Default setting: <strong>1</strong></p>
+Enable/disable tamper alarm<br /> <h1>Overview</h1><p>Enable/disable tamper alarm.</p> <p>Available settings:<br /><b>0</b> – Tamper alarm cancellation inactive<br /><b>1</b> – Tamper alarm cancellation active<br />Default setting: <strong>1</strong></p>
         ]]></description>
         <default>1</default>
         <options>
@@ -182,7 +182,7 @@ Enable/disable tamper alarm<br /><h1>Overview</h1><p>Enable/disable tamper alarm
                  min="0" max="255">
         <label>12: Sensitivity to temperature changes</label>
         <description><![CDATA[
-Sensitivity to temperature changes<br /><h1>Overview</h1><p>The maximum acceptable difference between the last reported temperature and the current temperature read from the sensor. If the temperatures differ by the set value or more, a report with the current temperature value is sent to the device assigned to association group no. 3.</p> <p>Default value: 8 [0.5 °C]</p> <p>Available parameter settings:<strong> 0 – 255</strong> [0 °C to 16 °C] [32 °F – 60.8 °F]</p> <p> To set an appropriate parameter value use the following formula:</p> <p>x = delta T x 16 - for Celsius</p> <p>x = delta T x 80 / 9 - for Fahrenheit</p> <p>x = parameter value</p> <p>delta T – maximum acceptable temperature gradient in Celsius or Fahrenheit</p> <p>If the value is set to 0: - if the wake-up interval is set to 255 seconds, temperature report will be sent according to the interval, - if the wake-up interval is set to over 255, temperature report will be sent each ca. 4 minutes.</p>
+Sensitivity to temperature changes<br /> <h1>Overview</h1><p>The maximum acceptable difference between the last reported temperature and the current temperature read from the sensor. If the temperatures differ by the set value or more, a report with the current temperature value is sent to the device assigned to association group no. 3.</p> <p>Default value: 8 [0.5 °C]</p> <p>Available parameter settings:<strong> 0 – 255</strong> [0 °C to 16 °C] [32 °F – 60.8 °F]</p> <p> To set an appropriate parameter value use the following formula:</p> <p>x = delta T x 16 - for Celsius</p> <p>x = delta T x 80 / 9 - for Fahrenheit</p> <p>x = parameter value</p> <p>delta T – maximum acceptable temperature gradient in Celsius or Fahrenheit</p> <p>If the value is set to 0: - if the wake-up interval is set to 255 seconds, temperature report will be sent according to the interval, - if the wake-up interval is set to over 255, temperature report will be sent each ca. 4 minutes.</p>
         ]]></description>
         <default>8</default>
       </parameter>
@@ -190,7 +190,7 @@ Sensitivity to temperature changes<br /><h1>Overview</h1><p>The maximum acceptab
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Transmitting the alarm or control frame broadcast</label>
         <description><![CDATA[
-Enabling/Disabling broadcast alarm for IN and TMP<br /><h1>Overview</h1><p>Sending an alarm or control frame (for IN input, depending on parameter no.5 value), and TMP button alarm frame. The frame is sent in “broadcast” mode, i.e. to all devices within range - information sent in this mode is not repeated by the mesh network.</p> <p>Default value: <strong>0</strong></p> <p>Available parameter settings:</p> <p><strong>0</strong> – IN and TMP Broadcast mode inactive,</p> <p><strong>1</strong> – IN broadcast mode active, TMP broadcast mode inactive</p> <p><strong>2</strong> – IN broadcast mode inactive, TMP broadcast mode active</p> <p><strong>3</strong> – IN and TMP broadcast mode active</p>
+Enabling/Disabling broadcast alarm for IN and TMP<br /> <h1>Overview</h1><p>Sending an alarm or control frame (for IN input, depending on parameter no.5 value), and TMP button alarm frame. The frame is sent in “broadcast” mode, i.e. to all devices within range - information sent in this mode is not repeated by the mesh network.</p> <p>Default value: <strong>0</strong></p> <p>Available parameter settings:</p> <p><strong>0</strong> – IN and TMP Broadcast mode inactive,</p> <p><strong>1</strong> – IN broadcast mode active, TMP broadcast mode inactive</p> <p><strong>2</strong> – IN broadcast mode inactive, TMP broadcast mode active</p> <p><strong>3</strong> – IN and TMP broadcast mode active</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -205,7 +205,7 @@ Enabling/Disabling broadcast alarm for IN and TMP<br /><h1>Overview</h1><p>Sendi
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Scene activation</label>
         <description><![CDATA[
-Enable/Disable scene functionality<br /><h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3</p> <p>Available settings:<br /><strong>0</strong> – functionality deactivated<br /><strong>1</strong> – functionality activated<br />Default setting: <strong>0</strong></p> <p>Controllers such as the Home Center 2 are able to interpret such commands and based on these commands activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of a button connected to IN input by distinguishing the sequence of it being pushed. For example: double click would trigger the “goodnight” scene and triple click would trigger the “morning” scene. To fully use the possibilities offered by the parameter no.14 it is recommended to use a momentary or a toggle switch (parameter no.3).</p> <p>Scene ID is determined in the following manner:<br />IN input:<br />Switch from “off” to “on” ID10<br />Switch from “on” to “off” ID11<br />Remaining IDs are recognized correctly if the value of parameter no.3 was set to 2<br />Holding down ID12<br />Releasing ID13<br />Double click ID14<br />Triple click ID15</p>
+Enable/Disable scene functionality<br /> <h1>Overview</h1><p>The device offers the possibility of sending commands compatible with Command class scene activation. Information is sent to devices assigned to association group no. 3</p> <p>Available settings:<br /><strong>0</strong> – functionality deactivated<br /><strong>1</strong> – functionality activated<br />Default setting: <strong>0</strong></p> <p>Controllers such as the Home Center 2 are able to interpret such commands and based on these commands activate scenes, to which specific scene IDs have been assigned. The user may expand the functionality of a button connected to IN input by distinguishing the sequence of it being pushed. For example: double click would trigger the “goodnight” scene and triple click would trigger the “morning” scene. To fully use the possibilities offered by the parameter no.14 it is recommended to use a momentary or a toggle switch (parameter no.3).</p> <p>Scene ID is determined in the following manner:<br />IN input:<br />Switch from “off” to “on” ID10<br />Switch from “on” to “off” ID11<br />Remaining IDs are recognized correctly if the value of parameter no.3 was set to 2<br />Holding down ID12<br />Releasing ID13<br />Double click ID14<br />Triple click ID15</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -218,7 +218,7 @@ Enable/Disable scene functionality<br /><h1>Overview</h1><p>The device offers th
       <parameter name="config_15_1" type="integer" groupName="configuration" readOnly="true">
         <label>15: DS18B20</label>
         <description><![CDATA[
-Status of DS18B20 sensor<br /><h1>Overview</h1><p>The parameter value is automatically sent to the association group III if the connected sensor DS18B20 four times mistakenly read the temperature. In case of Wake Up Interval set for 4000 seconds temperature sensor will be checked every 5 minutes.</p>
+Status of DS18B20 sensor<br /> <h1>Overview</h1><p>The parameter value is automatically sent to the association group III if the connected sensor DS18B20 four times mistakenly read the temperature. In case of Wake Up Interval set for 4000 seconds temperature sensor will be checked every 5 minutes.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -233,7 +233,7 @@ Status of DS18B20 sensor<br /><h1>Overview</h1><p>The parameter value is automat
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Input IN1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group I is assigned to input IN1 (and the magnetic sensor). Sending BASIC SET or ALARM command frames.</p>
+<br /> <h1>Overview</h1><p>Group I is assigned to input IN1 (and the magnetic sensor). Sending BASIC SET or ALARM command frames.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -241,7 +241,7 @@ Status of DS18B20 sensor<br /><h1>Overview</h1><p>The parameter value is automat
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: TMP Button</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group II is assigned to TMP button. Once the button is released, ALARM GENERIC frame is sent to associated devices.</p>
+<br /> <h1>Overview</h1><p>Group II is assigned to TMP button. Once the button is released, ALARM GENERIC frame is sent to associated devices.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -249,7 +249,7 @@ Status of DS18B20 sensor<br /><h1>Overview</h1><p>The parameter value is automat
       <parameter name="group_3" type="text" groupName="association">
         <label>3: Condition</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Group III reports on the condition of the device, only one device may be assigned to the group (main controller, by default).</p>
+<br /> <h1>Overview</h1><p>Group III reports on the condition of the device, only one device may be assigned to the group (main controller, by default).</p>
         ]]></description>
       </parameter>
 

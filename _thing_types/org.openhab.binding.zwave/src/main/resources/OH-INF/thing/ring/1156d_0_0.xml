@@ -8,7 +8,7 @@
   <thing-type id="ring_1156d_00_000" listed="false">
     <label>PIR Motion Sensor Motion Sensor</label>
     <description><![CDATA[
-Motion Sensor<br /><h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Ring Alarm system to secure each room in your home, and get alerts as soon as they detect motion.</p> <br /><h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Press and hold the reset button found under the pinhole on the back of the device.</li> <li>The LED of the sensor should begin blinking. Hold the  button down until the blinking stops</li> <li>Remove the cover from your motion sensor.</li> <li>Remove the battery.</li> <li>Place the battery back in the device.</li> <li>Put the cover back on the device. </li> </ol><br /><h2>Wakeup Information</h2><p>By opening the cover, the sensor will get to tamper state and stay awake.</p>
+Motion Sensor<br /> <h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Ring Alarm system to secure each room in your home, and get alerts as soon as they detect motion.</p> <br /> <h2>Inclusion Information</h2><ol><li>Activate inclusion mode on controller</li> <li>Pull tab/quickly disconnect and reconnect battery</li> <li>Device should appear in Inbox</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Initiate exclusion mode on controller</li> <li>Open contact sensor’s cover Remove and replace battery quickly</li> </ol><p>Reset:</p> <ol><li>Press and hold the reset button found under the pinhole on the back of the device.</li> <li>The LED of the sensor should begin blinking. Hold the  button down until the blinking stops</li> <li>Remove the cover from your motion sensor.</li> <li>Remove the battery.</li> <li>Place the battery back in the device.</li> <li>Put the cover back on the device. </li> </ol> <br /> <h2>Wakeup Information</h2><p>By opening the cover, the sensor will get to tamper state and stay awake.</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -62,7 +62,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Ring Alarm Motion Sensor: Expand your Rin
                  min="1" max="9">
         <label>2: Dwell Time</label>
         <description><![CDATA[
-Dwell Time<br /><h1>Overview</h1><p>Configures the “dwell” window or how long the sensor should not be detecting motion before sending the “no motion detected” message. </p> <p>1 to 9 minutes.</p>
+Dwell Time<br /> <h1>Overview</h1><p>Configures the “dwell” window or how long the sensor should not be detecting motion before sending the “no motion detected” message. </p> <p>1 to 9 minutes.</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -71,7 +71,7 @@ Dwell Time<br /><h1>Overview</h1><p>Configures the “dwell” window or how lon
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Pet Immunity</label>
         <description><![CDATA[
-Pet Immunity<br /><h1>Overview</h1><p>Configures the “Pet Immunity,” or sensitivity of the motion detection used mostly so only human motion is detected.</p>
+Pet Immunity<br /> <h1>Overview</h1><p>Configures the “Pet Immunity,” or sensitivity of the motion detection used mostly so only human motion is detected.</p>
         ]]></description>
         <default>2</default>
         <options>
@@ -85,7 +85,7 @@ Pet Immunity<br /><h1>Overview</h1><p>Configures the “Pet Immunity,” or sens
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Walk Test</label>
         <description><![CDATA[
-Walk Test<br /><h1>Overview</h1><p>Parameter 4 is used to activate a “walk test” mode to test the PIR motion detection coverage after being installed.</p> <p>This mode is active for 15 minutes only after which the sensor returns to normal operation.</p>
+Walk Test<br /> <h1>Overview</h1><p>Parameter 4 is used to activate a “walk test” mode to test the PIR motion detection coverage after being installed.</p> <p>This mode is active for 15 minutes only after which the sensor returns to normal operation.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -104,7 +104,7 @@ Walk Test<br /><h1>Overview</h1><p>Parameter 4 is used to activate a “walk tes
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Basic Report</label>
         <description><![CDATA[
-Basic Report<br /><h1>Overview</h1><p>Basic Report</p>
+Basic Report<br /> <h1>Overview</h1><p>Basic Report</p>
         ]]></description>
       </parameter>
 

@@ -8,7 +8,7 @@
   <thing-type id="fakro_vmzsolar_00_000" listed="false">
     <label>VMZ Solar Awning Blind</label>
     <description><![CDATA[
-Awning Blind<br /><h1>Overview</h1><p>The VMZ Solar awning blind is intended for installation on facade windows. The device is equippedin the wireless module of the ZWave control system</p> <br /><h2>Inclusion Information</h2><p>Within 10s press the programming button P on the awning blind until the network status LED flashes once 0.5s</p> <br /><h2>Exclusion Information</h2><p>Within 10s press P on the awning and hold until the network status LED will light up for 5s</p>
+Awning Blind<br /> <h1>Overview</h1><p>The VMZ Solar awning blind is intended for installation on facade windows. The device is equippedin the wireless module of the ZWave control system</p> <br /> <h2>Inclusion Information</h2><p>Within 10s press the programming button P on the awning blind until the network status LED flashes once 0.5s</p> <br /> <h2>Exclusion Information</h2><p>Within 10s press P on the awning and hold until the network status LED will light up for 5s</p>
     ]]></description>
     <category>Blinds</category>
 
@@ -57,7 +57,7 @@ Awning Blind<br /><h1>Overview</h1><p>The VMZ Solar awning blind is intended for
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: mode</label>
         <description><![CDATA[
-operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p>0 - manual</p> <p>1 - semiauto</p> <p>2 - auto</p>
+operating mode<br /> <h1>Overview</h1><p>Operating mode. Available values:</p> <p>0 - manual</p> <p>1 - semiauto</p> <p>2 - auto</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -71,7 +71,7 @@ operating mode<br /><h1>Overview</h1><p>Operating mode. Available values:</p> <p
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: winter mode</label>
         <description><![CDATA[
-Summer/Winter mode<br /><h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Auto (summer / winter mode)</p> <p>0 - summer mode only</p>
+Summer/Winter mode<br /> <h1>Overview</h1><p>Summer / Winter mode</p> <p>50 - Auto (summer / winter mode)</p> <p>0 - summer mode only</p>
         ]]></description>
         <default>50</default>
         <options>

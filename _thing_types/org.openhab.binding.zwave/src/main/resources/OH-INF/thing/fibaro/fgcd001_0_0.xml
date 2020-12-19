@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgcd001_00_000" listed="false">
     <label>FGCD001 Carbon Monoxide Sensor</label>
     <description><![CDATA[
-Carbon Monoxide Sensor<br /><h1>Overview</h1><p>FIBARO CO Sensor is an ultra-light, compact, battery-powered carbon monoxide detector, designed to be placed on a wall. Its high sensitivity allows to detect the presence of the carbon monoxide (CO) gas at the early stage in order to prevent carbon monoxide poisoning.</p> <br /><h2>Inclusion Information</h2><p>Quickly, triple click the button located on the casing.</p> <br /><h2>Exclusion Information</h2><p>Quickly, triple click the button located on the casing.</p> <br /><h2>Wakeup Information</h2><p>To wake up the sensor manually click the button located on the casing.</p>
+Carbon Monoxide Sensor<br /> <h1>Overview</h1><p>FIBARO CO Sensor is an ultra-light, compact, battery-powered carbon monoxide detector, designed to be placed on a wall. Its high sensitivity allows to detect the presence of the carbon monoxide (CO) gas at the early stage in order to prevent carbon monoxide poisoning.</p> <br /> <h2>Inclusion Information</h2><p>Quickly, triple click the button located on the casing.</p> <br /> <h2>Exclusion Information</h2><p>Quickly, triple click the button located on the casing.</p> <br /> <h2>Wakeup Information</h2><p>To wake up the sensor manually click the button located on the casing.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -103,7 +103,7 @@ Carbon Monoxide Sensor<br /><h1>Overview</h1><p>FIBARO CO Sensor is an ultra-lig
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Z-Wave notifications</label>
         <description><![CDATA[
-Set the actions sent to controller<br /><h1>Overview</h1><p>This parameter allows to set the actions which result in sending notifications to the Z-Wave network controller.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
+Set the actions sent to controller<br /> <h1>Overview</h1><p>This parameter allows to set the actions which result in sending notifications to the Z-Wave network controller.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -118,7 +118,7 @@ Set the actions sent to controller<br /><h1>Overview</h1><p>This parameter allow
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: LED diode indications</label>
         <description><![CDATA[
-Set the actions which result in LED diode indications<br /><h1>Overview</h1><p>This parameter allows to set the actions which result in LED diode indications.</p> <p>This parameter does not apply to the most important actions, such as CO Alarm, Malfunction Alarm and Low Battery Alarm.</p> <p>The CO Sensor allows to customize its operation to user’s needs.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
+Set the actions which result in LED diode indications<br /> <h1>Overview</h1><p>This parameter allows to set the actions which result in LED diode indications.</p> <p>This parameter does not apply to the most important actions, such as CO Alarm, Malfunction Alarm and Low Battery Alarm.</p> <p>The CO Sensor allows to customize its operation to user’s needs.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -137,7 +137,7 @@ Set the actions which result in LED diode indications<br /><h1>Overview</h1><p>T
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Acoustic signals</label>
         <description><![CDATA[
-Set the actions which result in acoustic signals<br /><h1>Overview</h1><p>This parameter allows to set the actions which result in acoustic signals.</p> <p>This parameter does not apply to the most important actions, such as CO Alarm, Malfunction Alarm and Low Battery Alarm.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
+Set the actions which result in acoustic signals<br /> <h1>Overview</h1><p>This parameter allows to set the actions which result in acoustic signals.</p> <p>This parameter does not apply to the most important actions, such as CO Alarm, Malfunction Alarm and Low Battery Alarm.</p> <p>Default setting: 0</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -157,7 +157,7 @@ Set the actions which result in acoustic signals<br /><h1>Overview</h1><p>This p
                  min="0" max="63">
         <label>7: Associations in Z-Wave network security mode</label>
         <description><![CDATA[
-Secure or non-secure commands to assoc groups<br /><h1>Overview</h1><p>Parameter defines how commands are sent in specified association groups: as secure or non-secure.</p> <p>Parameter is active only in Z-Wave network security mode.</p> <p>It does not apply to 1st “Lifeline” association group.</p> <p>Available settings:</p> <p>1 - 2nd group sent as secure</p> <p>2 - 3rd group sent as secure</p> <p>4 - 4th group sent as secure</p> <p>8 - 5th group sent as secure</p> <p>16 - 6th group sent as secure</p> <p>32 - 7th group sent as secure</p> <p>Parameter values may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure.</p> <p>Default setting: 63</p> <p>Parameter size: 1 [byte]</p>
+Secure or non-secure commands to assoc groups<br /> <h1>Overview</h1><p>Parameter defines how commands are sent in specified association groups: as secure or non-secure.</p> <p>Parameter is active only in Z-Wave network security mode.</p> <p>It does not apply to 1st “Lifeline” association group.</p> <p>Available settings:</p> <p>1 - 2nd group sent as secure</p> <p>2 - 3rd group sent as secure</p> <p>4 - 4th group sent as secure</p> <p>8 - 5th group sent as secure</p> <p>16 - 6th group sent as secure</p> <p>32 - 7th group sent as secure</p> <p>Parameter values may be combined, e.g. 1+2=3 means that 2nd &amp; 3rd group are sent as secure.</p> <p>Default setting: 63</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>63</default>
         <limitToOptions>false</limitToOptions>
@@ -166,7 +166,7 @@ Secure or non-secure commands to assoc groups<br /><h1>Overview</h1><p>Parameter
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Commands sent to 2nd association group (CO Alarm)</label>
         <description><![CDATA[
-Commands sent to devices in 2nd association group<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group (CO Alarm).</p> <p>Values of specified commands may be set in parameters 11 and 12.</p> <p>Default setting: 3 (ON &amp; OFF)</p> <p>Parameter size: 1 [byte]</p>
+Commands sent to devices in 2nd association group<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 2nd association group (CO Alarm).</p> <p>Values of specified commands may be set in parameters 11 and 12.</p> <p>Default setting: 3 (ON &amp; OFF)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -180,7 +180,7 @@ Commands sent to devices in 2nd association group<br /><h1>Overview</h1><p>This 
       <parameter name="config_11_2" type="integer" groupName="configuration">
         <label>11: Value of BASIC ON command sent to 2nd assoc group</label>
         <description><![CDATA[
-Define value of BASIC ON cmd sent to 2nd assoc group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC ON command sent to devices in 2nd association group after the CO Alarm activation.</p> <p>Default setting: 255 (turn on)</p> <p>Parameter size: 2 [bytes]</p>
+Define value of BASIC ON cmd sent to 2nd assoc group<br /> <h1>Overview</h1><p>This parameter defines the value of BASIC ON command sent to devices in 2nd association group after the CO Alarm activation.</p> <p>Default setting: 255 (turn on)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -195,7 +195,7 @@ Define value of BASIC ON cmd sent to 2nd assoc group<br /><h1>Overview</h1><p>Th
                  min="0" max="255">
         <label>12: Value of BASIC OFF cmd sent to 2nd assoc group</label>
         <description><![CDATA[
-Defines value of BASIC OFF cmd sent 2nd assoc group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 2nd association group after the CO Alarm cancellation.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
+Defines value of BASIC OFF cmd sent 2nd assoc group<br /> <h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 2nd association group after the CO Alarm cancellation.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Defines value of BASIC OFF cmd sent 2nd assoc group<br /><h1>Overview</h1><p>Thi
                  min="1" max="3">
         <label>13: Commands sent to 4th association group (CO Level)</label>
         <description><![CDATA[
-Defines cmd sent to devices in 4th association group<br /><h1>Overview</h1><p>This parameter defines commands sent to devices associated in 4th association group (CO Level).</p> <p>Values of specified commands may be set in parameters 16 and 19.</p> <p>Available settings:</p> <p>1 - BASIC ON</p> <p>2 - BASIC OFF</p> <p>3 - BASIC ON &amp; BASIC OFF</p> <p>Default setting: 3 (ON &amp; OFF)</p> <p>Parameter size: 1 [byte]</p>
+Defines cmd sent to devices in 4th association group<br /> <h1>Overview</h1><p>This parameter defines commands sent to devices associated in 4th association group (CO Level).</p> <p>Values of specified commands may be set in parameters 16 and 19.</p> <p>Available settings:</p> <p>1 - BASIC ON</p> <p>2 - BASIC OFF</p> <p>3 - BASIC ON &amp; BASIC OFF</p> <p>Default setting: 3 (ON &amp; OFF)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -215,7 +215,7 @@ Defines cmd sent to devices in 4th association group<br /><h1>Overview</h1><p>Th
                  min="25" max="400">
         <label>14: CO level for sending BASIC ON to 4th assoc group</label>
         <description><![CDATA[
-Defines min level of CO concentration starting timer<br /><h1>Overview</h1><p>This parameter defines the minimum level of CO concentration which exceeding will result in starting the timer set in parameter 15.</p> <p>Available settings: 25-400 - CO concentration level in ppm</p> <p>Parameter value must be at least 4 ppm higher than parameter 17 value.</p> <p>Default setting: 40 (40 ppm)</p> <p>Parameter size: 2 [bytes]</p>
+Defines min level of CO concentration starting timer<br /> <h1>Overview</h1><p>This parameter defines the minimum level of CO concentration which exceeding will result in starting the timer set in parameter 15.</p> <p>Available settings: 25-400 - CO concentration level in ppm</p> <p>Parameter value must be at least 4 ppm higher than parameter 17 value.</p> <p>Default setting: 40 (40 ppm)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>40</default>
         <limitToOptions>false</limitToOptions>
@@ -225,7 +225,7 @@ Defines min level of CO concentration starting timer<br /><h1>Overview</h1><p>Th
                  min="0" max="2880">
         <label>15: Time required for BASIC ON cmd to 4th assoc group</label>
         <description><![CDATA[
-Defines time of CO concentration should remain above param values<br /><h1>Overview</h1><p>This parameter defines the time during which the level of CO concentration should remain above the value set in parameter 14 to send the BASIC ON command to 4th association group.</p> <p>Available settings:</p> <p>0 - immediate sending of BASIC ON command</p> <p>1-2880 (30s - 24h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
+Defines time of CO concentration should remain above param values<br /> <h1>Overview</h1><p>This parameter defines the time during which the level of CO concentration should remain above the value set in parameter 14 to send the BASIC ON command to 4th association group.</p> <p>Available settings:</p> <p>0 - immediate sending of BASIC ON command</p> <p>1-2880 (30s - 24h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -235,7 +235,7 @@ Defines time of CO concentration should remain above param values<br /><h1>Overv
                  min="0" max="255">
         <label>16: Value of BASIC ON cmd sent to 4th assoc group</label>
         <description><![CDATA[
-Defines value of BASIC ON cmd to 4th assoc group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC ON command sent to devices in 4th association group after exceeding the CO level set in parameter 14 through the time set in parameter 15.</p> <p>Available settings: 0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 255 (turn on)</p> <p>Parameter size: 2 [bytes]</p>
+Defines value of BASIC ON cmd to 4th assoc group<br /> <h1>Overview</h1><p>This parameter defines the value of BASIC ON command sent to devices in 4th association group after exceeding the CO level set in parameter 14 through the time set in parameter 15.</p> <p>Available settings: 0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 255 (turn on)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -245,7 +245,7 @@ Defines value of BASIC ON cmd to 4th assoc group<br /><h1>Overview</h1><p>This p
                  min="10" max="400">
         <label>17: CO Level for sending BASIC OFF to 4th assoc group</label>
         <description><![CDATA[
-Defines level of CO concentration for BASIC OFF to 4th assoc group<br /><h1>Overview</h1><p>This parameter defines the level of CO concentration below which falling will result in sending the BASIC OFF command to 4th association group. Available settings: 10-400 - CO concentration level in ppm</p> <p>Default setting: 25 (25 ppm)</p> <p>Parameter value must be at least 4 ppm lower than parameter 14 value.</p> <p>Parameter size: 2 [bytes]</p>
+Defines level of CO concentration for BASIC OFF to 4th assoc group<br /> <h1>Overview</h1><p>This parameter defines the level of CO concentration below which falling will result in sending the BASIC OFF command to 4th association group. Available settings: 10-400 - CO concentration level in ppm</p> <p>Default setting: 25 (25 ppm)</p> <p>Parameter value must be at least 4 ppm lower than parameter 14 value.</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>25</default>
         <limitToOptions>false</limitToOptions>
@@ -255,7 +255,7 @@ Defines level of CO concentration for BASIC OFF to 4th assoc group<br /><h1>Over
                  min="0" max="255">
         <label>19: Value of BASIC OFF cmd sent to 4th assoc group</label>
         <description><![CDATA[
-Defines value of BASIC OFF sent to 4th association group<br /><h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 4th association group after falling below the CO level set in parameter 17.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
+Defines value of BASIC OFF sent to 4th association group<br /> <h1>Overview</h1><p>This parameter defines the value of BASIC OFF command sent to devices in 4th association group after falling below the CO level set in parameter 17.</p> <p>Available settings:</p> <p>0-99 or 255</p> <p>Setting parameter to appropriate value will result in:</p> <p>0 - turning associated devices off</p> <p>1-99 - forcing level of associated devices</p> <p>255 - setting associated devices to the last remembered state or turning them on.</p> <p>Default setting: 0 (turn off)</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -265,7 +265,7 @@ Defines value of BASIC OFF sent to 4th association group<br /><h1>Overview</h1><
                  min="0" max="1440">
         <label>20: Temperature reporting time interval</label>
         <description><![CDATA[
-Time interval between consecutive reports of temperature<br /><h1>Overview</h1><p>Time interval (in seconds) between consecutive reports of temperature (done by built-in temperature sensor).</p> <p>Short time interval means more frequent communication, which results in shortened battery life.</p> <p>Available settings:</p> <p>0 - no periodical reports</p> <p>10-1440 (5min - 12h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
+Time interval between consecutive reports of temperature<br /> <h1>Overview</h1><p>Time interval (in seconds) between consecutive reports of temperature (done by built-in temperature sensor).</p> <p>Short time interval means more frequent communication, which results in shortened battery life.</p> <p>Available settings:</p> <p>0 - no periodical reports</p> <p>10-1440 (5min - 12h, in 30s steps)</p> <p>Default setting: 0</p> <p>Parameter size: 2 [bytes]</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -275,7 +275,7 @@ Time interval between consecutive reports of temperature<br /><h1>Overview</h1><
                  min="1" max="20">
         <label>21: Temperature reporting hysteresis</label>
         <description><![CDATA[
-Min change in temperature resulting in a report being sent<br /><h1>Overview</h1><p>This parameter defines a minimum change in temperature resulting in a report being sent to the main Z-Wave controller.</p> <p>Available settings: 1-20 (0.5°C - 10°C, each 0.5°C)</p> <p>Default setting: 2 (1°C)</p> <p>Parameter size: 1 [byte]</p>
+Min change in temperature resulting in a report being sent<br /> <h1>Overview</h1><p>This parameter defines a minimum change in temperature resulting in a report being sent to the main Z-Wave controller.</p> <p>Available settings: 1-20 (0.5°C - 10°C, each 0.5°C)</p> <p>Default setting: 2 (1°C)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -285,7 +285,7 @@ Min change in temperature resulting in a report being sent<br /><h1>Overview</h1
                  min="1" max="85">
         <label>22: Threshold of exceeding the temperature</label>
         <description><![CDATA[
-Temp level resulting in sending actions (parameters 2, 3 and 4)<br /><h1>Overview</h1><p>This parameter defines the temperature level, which exceeding will result in sending actions set in parameters 2, 3 and 4.</p> <p>Available settings: 1-85 (1°C - 85°C, each 1°C)</p> <p>Default setting: 55 (55°C)</p> <p>Parameter size: 1 [byte]</p>
+Temp level resulting in sending actions (parameters 2, 3 and 4)<br /> <h1>Overview</h1><p>This parameter defines the temperature level, which exceeding will result in sending actions set in parameters 2, 3 and 4.</p> <p>Available settings: 1-85 (1°C - 85°C, each 1°C)</p> <p>Default setting: 55 (55°C)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>55</default>
         <limitToOptions>false</limitToOptions>
@@ -295,7 +295,7 @@ Temp level resulting in sending actions (parameters 2, 3 and 4)<br /><h1>Overvie
                  min="0" max="1">
         <label>23: CO meter activation</label>
         <description><![CDATA[
-Activates reporting of CO concentration to controller.<br /><h1>Overview</h1><p>This parameter activates reporting the value of CO concentration level to the main Z-Wave controller.</p> <p>Available settings:</p> <p>0 - disabled</p> <p>1 - enabled</p> <p>Default setting: 1 (enabled)</p> <p>Parameter size: 1 [byte]</p>
+Activates reporting of CO concentration to controller.<br /> <h1>Overview</h1><p>This parameter activates reporting the value of CO concentration level to the main Z-Wave controller.</p> <p>Available settings:</p> <p>0 - disabled</p> <p>1 - enabled</p> <p>Default setting: 1 (enabled)</p> <p>Parameter size: 1 [byte]</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -305,7 +305,7 @@ Activates reporting of CO concentration to controller.<br /><h1>Overview</h1><p>
                  min="2" max="6">
         <label>25: CO level reporting hysteresis</label>
         <description><![CDATA[
-Minchange in CO concentration resulting in sending new value to controller<br /><h1>Overview</h1><p>This parameter defines a minimum change in CO concentration level which results in sending a new value to the main Z-Wave controller. Available settings:2-6 (10 ppm - 30 ppm, each 5 ppm)</p> <p>Default setting: 2 (10 ppm)</p> <p>Parameter size: 1 [byte]</p> <p>Parameter is closely related to parameter 26.</p>
+Minchange in CO concentration resulting in sending new value to controller<br /> <h1>Overview</h1><p>This parameter defines a minimum change in CO concentration level which results in sending a new value to the main Z-Wave controller. Available settings:2-6 (10 ppm - 30 ppm, each 5 ppm)</p> <p>Default setting: 2 (10 ppm)</p> <p>Parameter size: 1 [byte]</p> <p>Parameter is closely related to parameter 26.</p>
         ]]></description>
         <default>2</default>
         <limitToOptions>false</limitToOptions>
@@ -315,7 +315,7 @@ Minchange in CO concentration resulting in sending new value to controller<br />
                  min="10" max="255">
         <label>26: Threshold of CO meter activation</label>
         <description><![CDATA[
-Defines CO concentration level sending a new value to controller<br /><h1>Overview</h1><p>This parameter defines the CO concentration level, which exceeding will result in sending a new value to the main Z-Wave controller, according to parameter 25 settings.</p> <p>Adjusting the value allows to get the accurate data in case of danger and helps to save the battery in normal conditions.</p> <p>Available settings: 10-255 (ppm)</p> <p>Default setting: 30 (30 ppm)</p> <p>Parameter size: 2 [bytes]</p> <p>Parameter is closely related to parameter 25.</p>
+Defines CO concentration level sending a new value to controller<br /> <h1>Overview</h1><p>This parameter defines the CO concentration level, which exceeding will result in sending a new value to the main Z-Wave controller, according to parameter 25 settings.</p> <p>Adjusting the value allows to get the accurate data in case of danger and helps to save the battery in normal conditions.</p> <p>Available settings: 10-255 (ppm)</p> <p>Default setting: 30 (30 ppm)</p> <p>Parameter size: 2 [bytes]</p> <p>Parameter is closely related to parameter 25.</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -325,14 +325,14 @@ Defines CO concentration level sending a new value to controller<br /><h1>Overvi
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-“Lifeline” reports the device status and allows for assigning single device only (main controller by default).<br /><h1>Overview</h1><p>The device provides the association of six groups: 1st association group – “Lifeline” reports the device status and allows for assigning single device only (main controller by default).</p> <p>“LifeLine” group is reserved solely for the controller and hence only 1 node can be assigned. It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p> <p>Notification report: The device uses Notification Command Class to report different events to 1st association group (Lifeline).</p> <table><tr><td>Notification Type</td> <td>Triggering Event</td> </tr><tr><td>CO Alarm</td> <td> <p>1. Carbon monoxide detected, unknown location <br />2. Carbon monoxide test<br />3. Replacement required </p> </td> </tr><tr><td>Heat Alarm</td> <td>Overheat detected, unknown location</td> </tr><tr><td>Home Security</td> <td>Tampering, product covering removed</td> </tr><tr><td>Power Management</td> <td>Replace battery soon </td> </tr><tr><td>System</td> <td>System hardware failure</td> </tr></table>
+“Lifeline” reports the device status and allows for assigning single device only (main controller by default).<br /> <h1>Overview</h1><p>The device provides the association of six groups: 1st association group – “Lifeline” reports the device status and allows for assigning single device only (main controller by default).</p> <p>“LifeLine” group is reserved solely for the controller and hence only 1 node can be assigned. It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p> <p>Notification report: The device uses Notification Command Class to report different events to 1st association group (Lifeline).</p> <table> <tr> <td>Notification Type</td> <td>Triggering Event</td> </tr> <tr> <td>CO Alarm</td> <td> <p>1. Carbon monoxide detected, unknown location <br />2. Carbon monoxide test<br />3. Replacement required </p> </td> </tr> <tr> <td>Heat Alarm</td> <td>Overheat detected, unknown location</td> </tr> <tr> <td>Home Security</td> <td>Tampering, product covering removed</td> </tr> <tr> <td>Power Management</td> <td>Replace battery soon </td> </tr> <tr> <td>System</td> <td>System hardware failure</td> </tr> </table>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: CO Alarm Status</label>
         <description><![CDATA[
-Devices in this group will be switched on/off when CO Alarm status changes.<br /><h1>Overview</h1><p>2nd association group – “CO Alarm” is assigned to the device status - devices in this group will be switched on/off when CO Alarm status changes.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group.</p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
+Devices in this group will be switched on/off when CO Alarm status changes.<br /> <h1>Overview</h1><p>2nd association group – “CO Alarm” is assigned to the device status - devices in this group will be switched on/off when CO Alarm status changes.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group.</p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -340,7 +340,7 @@ Devices in this group will be switched on/off when CO Alarm status changes.<br /
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: CO Alarm</label>
         <description><![CDATA[
-Devices in this group will receive notification when CO Alarm status changes.<br /><h1>Overview</h1><p>3rd association group – “CO Alarm” is assigned to the device status - devices in this group will receive notification when CO Alarm status changes. Useful for devices that can trigger alarms.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
+Devices in this group will receive notification when CO Alarm status changes.<br /> <h1>Overview</h1><p>3rd association group – “CO Alarm” is assigned to the device status - devices in this group will receive notification when CO Alarm status changes. Useful for devices that can trigger alarms.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -348,7 +348,7 @@ Devices in this group will receive notification when CO Alarm status changes.<br
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: CO Level</label>
         <description><![CDATA[
-Devices in this group will be switched on/off after exceeding the level of CO concentration specified in parameter 14.<br /><h1>Overview</h1><p>4th association group – “CO Level” is assigned to measured CO level - devices in this group will be switched on/off after exceeding the level of CO concentration specified in parameter 14.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
+Devices in this group will be switched on/off after exceeding the level of CO concentration specified in parameter 14.<br /> <h1>Overview</h1><p>4th association group – “CO Level” is assigned to measured CO level - devices in this group will be switched on/off after exceeding the level of CO concentration specified in parameter 14.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -356,7 +356,7 @@ Devices in this group will be switched on/off after exceeding the level of CO co
       <parameter name="group_5" type="text" groupName="association" multiple="true">
         <label>5: Tamper Alarm</label>
         <description><![CDATA[
-Sends tamper alarm and cancellation frames to the associated devices.<br /><h1>Overview</h1><p>5th association group – “Tamper Alarm” is assigned to the tamper - sends tamper alarm and cancellation frames to the associated devices.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed. </p>
+Sends tamper alarm and cancellation frames to the associated devices.<br /> <h1>Overview</h1><p>5th association group – “Tamper Alarm” is assigned to the tamper - sends tamper alarm and cancellation frames to the associated devices.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed. </p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -364,7 +364,7 @@ Sends tamper alarm and cancellation frames to the associated devices.<br /><h1>O
       <parameter name="group_6" type="text" groupName="association" multiple="true">
         <label>6: CO Alarm BC</label>
         <description><![CDATA[
-Devices in this group will receive sensor alarm frames when CO Alarm status changes.<br /><h1>Overview</h1><p>6th association group – “CO Alarm BC” is assigned to the device status - devices in this group will receive sensor alarm frames when CO Alarm status changes. Provides backward compatibility with controllers not supporting Z-Wave+ protocol.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
+Devices in this group will receive sensor alarm frames when CO Alarm status changes.<br /> <h1>Overview</h1><p>6th association group – “CO Alarm BC” is assigned to the device status - devices in this group will receive sensor alarm frames when CO Alarm status changes. Provides backward compatibility with controllers not supporting Z-Wave+ protocol.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -372,7 +372,7 @@ Devices in this group will receive sensor alarm frames when CO Alarm status chan
       <parameter name="group_7" type="text" groupName="association" multiple="true">
         <label>7: Tamper Alarm BC</label>
         <description><![CDATA[
-Sends tamper alarm and alarm cancellation frames to the associated devices.<br /><h1>Overview</h1><p>7th association group – “Tamper Alarm BC” is assigned to the tamper - sends tamper alarm and alarm cancellation frames to the associated devices. Provides backward compatibility with controllers not supporting Z-Wave+ protocol.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
+Sends tamper alarm and alarm cancellation frames to the associated devices.<br /> <h1>Overview</h1><p>7th association group – “Tamper Alarm BC” is assigned to the tamper - sends tamper alarm and alarm cancellation frames to the associated devices. Provides backward compatibility with controllers not supporting Z-Wave+ protocol.</p> <p>The CO Sensor in 2nd to 7th group allows to control 5 regular or multichannel devices per an association group. </p> <p>It is not recommended to associate more than 10 devices in general, as the response time to control commands depends on the number of associated devices. In extreme cases, system response may be delayed.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

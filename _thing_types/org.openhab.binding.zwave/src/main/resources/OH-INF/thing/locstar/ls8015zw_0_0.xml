@@ -8,7 +8,7 @@
   <thing-type id="locstar_ls8015zw_00_000" listed="false">
     <label>LS-8015-ZW KAS-600 Z-Wave Electronic Lock</label>
     <description><![CDATA[
-KAS-600 Z-Wave Electronic Lock<br /><h1>Overview</h1><p>Zwave enabled single latch door lock with 20 user codes,access logging and scheduled access.</p> <br /><h2>Inclusion Information</h2><p>Enter programming code (Default 12345678) followed by 0</p> <br /><h2>Exclusion Information</h2><p>Enter programming code (Default 12345678) followed by 0</p>
+KAS-600 Z-Wave Electronic Lock<br /> <h1>Overview</h1><p>Zwave enabled single latch door lock with 20 user codes,access logging and scheduled access.</p> <br /> <h2>Inclusion Information</h2><p>Enter programming code (Default 12345678) followed by 0</p> <br /> <h2>Exclusion Information</h2><p>Enter programming code (Default 12345678) followed by 0</p>
     ]]></description>
     <category>Lock</category>
 

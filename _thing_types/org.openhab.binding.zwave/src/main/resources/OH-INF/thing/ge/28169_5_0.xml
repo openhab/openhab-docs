@@ -8,7 +8,7 @@
   <thing-type id="ge_28169_05_000" listed="false">
     <label>GE 28169 / Jasco 28168 Plug in Smart Switch</label>
     <description><![CDATA[
-Plug in Smart Switch<br /><h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor </p> <br /><h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
+Plug in Smart Switch<br /> <h1>Overview</h1><p>Z-wave controlled AC outlet for standard incandescent lighting, CFL/LEDs, fans or small appliances.<br />Must not exceed 600 watts (Incandescent); 1800W (15A) Resistive or ½ HP Motor </p> <br /> <h2>Inclusion Information</h2><p>Put controller into inclusion mode, single press and release the manual/program button on the smart switch to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>Put controller into exclusion mode, single press and release the manual/program button on the smart switch to exclude it from the network</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -76,7 +76,7 @@ Plug in Smart Switch<br /><h1>Overview</h1><p>Z-wave controlled AC outlet for st
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Single Press Button</label>
         <description><![CDATA[
-Sends message directly to configured node on single press of button.<br /><h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you single press the on/off button. For example, if you map this setting to a wall switch and then single press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
+Sends message directly to configured node on single press of button.<br /> <h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you single press the on/off button. For example, if you map this setting to a wall switch and then single press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -84,7 +84,7 @@ Sends message directly to configured node on single press of button.<br /><h1>Ov
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: Double Press button</label>
         <description><![CDATA[
-Sends message directly to configured node on double press of button.<br /><h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you double press the on/off button. For example, if you map this setting to a wall switch and then double press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
+Sends message directly to configured node on double press of button.<br /> <h1>Overview</h1><p>This device will send a Basic Set Message directly to whatever Z-wave device you have mapped this setting to when you double press the on/off button. For example, if you map this setting to a wall switch and then double press the on/off button on this "Plug in Smart Switch," a corresponding on/off message will be sent directly to that wall switch, bypassing openHAB.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

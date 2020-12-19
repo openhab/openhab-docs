@@ -8,7 +8,7 @@
   <thing-type id="ameta_hazw5se_00_000" listed="false">
     <label>HA-ZW-5SE Door/Window Sensor</label>
     <description><![CDATA[
-Door/Window Sensor<br /><h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor contains a sensor body and a magnet.</li> <li>The AIBASE Door/Window Sensor detects through the separation and combination of the main body and the magnet.</li> <li>Recommend installation distance between the sensor body and the magnet is 10mm.</li> <li>The Sensor also anti‐tamper functionality. Once the sensor is moved, it will notify the gateway.</li> <li>The AIBASE Door/Window Sensor is powered by CR2 battery with 2 years battery life.</li> <li>The AIBASE Door/Window Sensor is designed to be mounted on the door or windows.</li> <li>The AIBASE Door/Window Sensor supports low battery alarm function.</li> <li>The AIBASE Door/Window Sensor supports firmware OTA.</li> </ul><br /><h2>Inclusion Information</h2><p>Add for inclusion: </p> <ol><li>Insert the battery.</li> <li>Set the Z-Wave network main controller into learning mode.</li> <li>Short press the action button one time.</li> <li>If the add for inclusion is successful, the LED will blink fast and then keep on 3 seconds. Otherwise, the LED will blink 25 seconds and then turn off, in which case you need to repeat the process from step </li> </ol><br /><h2>Exclusion Information</h2><p>Remove for exclusion;</p> <ol><li>Insert the CR battery.</li> <li>Set the Z-Wave network main controller into exclusion mode.</li> <li>Short press the action button one time.</li> </ol><p>If the remove for exclusion is successful, the LED will blink fast and turn off. Otherwise, the LED will keep solid for 2 seconds and then turn off, in which case you need to repeat the process from step 2.</p> <br /><h2>Wakeup Information</h2><ol><li>Short press 3 time.</li> <li>LED will blink one time; sending wake up notification cc</li> </ol>
+Door/Window Sensor<br /> <h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor contains a sensor body and a magnet.</li> <li>The AIBASE Door/Window Sensor detects through the separation and combination of the main body and the magnet.</li> <li>Recommend installation distance between the sensor body and the magnet is 10mm.</li> <li>The Sensor also anti‐tamper functionality. Once the sensor is moved, it will notify the gateway.</li> <li>The AIBASE Door/Window Sensor is powered by CR2 battery with 2 years battery life.</li> <li>The AIBASE Door/Window Sensor is designed to be mounted on the door or windows.</li> <li>The AIBASE Door/Window Sensor supports low battery alarm function.</li> <li>The AIBASE Door/Window Sensor supports firmware OTA.</li> </ul> <br /> <h2>Inclusion Information</h2><p>Add for inclusion: </p> <ol><li>Insert the battery.</li> <li>Set the Z-Wave network main controller into learning mode.</li> <li>Short press the action button one time.</li> <li>If the add for inclusion is successful, the LED will blink fast and then keep on 3 seconds. Otherwise, the LED will blink 25 seconds and then turn off, in which case you need to repeat the process from step </li> </ol> <br /> <h2>Exclusion Information</h2><p>Remove for exclusion;</p> <ol><li>Insert the CR battery.</li> <li>Set the Z-Wave network main controller into exclusion mode.</li> <li>Short press the action button one time.</li> </ol><p>If the remove for exclusion is successful, the LED will blink fast and turn off. Otherwise, the LED will keep solid for 2 seconds and then turn off, in which case you need to repeat the process from step 2.</p> <br /> <h2>Wakeup Information</h2><ol><li>Short press 3 time.</li> <li>LED will blink one time; sending wake up notification cc</li> </ol>
     ]]></description>
     <category>Door</category>
 
@@ -68,7 +68,7 @@ Door/Window Sensor<br /><h1>Overview</h1><ul><li>The AIBASE Door/Window Sensor c
                  min="0" max="50">
         <label>10: Level of low battery</label>
         <description><![CDATA[
-This parameter defines a battery level as the “low battery”<br /><h1>Overview</h1><p>Available settings: 0‐50 (0% ‐ 50%) </p> <p>Default setting: 10 (10%)</p>
+This parameter defines a battery level as the “low battery”<br /> <h1>Overview</h1><p>Available settings: 0‐50 (0% ‐ 50%) </p> <p>Default setting: 10 (10%)</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -77,7 +77,7 @@ This parameter defines a battery level as the “low battery”<br /><h1>Overvie
       <parameter name="config_14_1" type="integer" groupName="configuration">
         <label>14: Enable/Disable BASIC SET command</label>
         <description><![CDATA[
-Door/Window Sensor can send BASIC SET command to nodes associated with group 2.<br /><h1>Overview</h1><p>0 – Disable.<br />1 – Enable.</p>
+Door/Window Sensor can send BASIC SET command to nodes associated with group 2.<br /> <h1>Overview</h1><p>0 – Disable.<br />1 – Enable.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -90,7 +90,7 @@ Door/Window Sensor can send BASIC SET command to nodes associated with group 2.<
       <parameter name="config_15_1" type="integer" groupName="configuration">
         <label>15: Value of the BASIC SET</label>
         <description><![CDATA[
-Reverse value of BASIC SET when the magnet is triggered.<br /><h1>Overview</h1><p>0 –Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is closed.</p> <p>1 –Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is closed.</p>
+Reverse value of BASIC SET when the magnet is triggered.<br /> <h1>Overview</h1><p>0 –Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is closed.</p> <p>1 –Send BASIC SET VALUE = 0 to nodes associated with group 2 when door/window is opened. Send BASIC SET VALUE = 255 to nodes associated with group 2 when door/window is closed.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -103,7 +103,7 @@ Reverse value of BASIC SET when the magnet is triggered.<br /><h1>Overview</h1><
       <parameter name="config_254_1" type="integer" groupName="configuration">
         <label>254: Enable/disable the configuration command</label>
         <description><![CDATA[
-Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>0 – Unlock.<br />1 – Lock.<br />Default setting: 0</p>
+Lock/unlock all configuration parameters.<br /> <h1>Overview</h1><p>0 – Unlock.<br />1 – Lock.<br />Default setting: 0</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -117,7 +117,7 @@ Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>0 – Unlock
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ol><li>Notification Report.<br />Sensor will send Notification Report when the supported event is triggered.</li> <li>Battery Report.<br />Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally.</li> </ol>
+<br /> <h1>Overview</h1><ol> <li>Notification Report.<br />Sensor will send Notification Report when the supported event is triggered.</li> <li>Battery Report.<br />Sensor will send Battery Report when the battery level is low and the battery report’s value is 0xFF.</li> <li>Device Reset Locally.</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -125,7 +125,7 @@ Lock/unlock all configuration parameters.<br /><h1>Overview</h1><p>0 – Unlock
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Basic Set, Sensor will send Basic Set when the sensor body and magnet removed or combined.</p>
+<br /> <h1>Overview</h1><p>Basic Set, Sensor will send Basic Set when the sensor body and magnet removed or combined.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

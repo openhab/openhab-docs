@@ -8,7 +8,7 @@
   <thing-type id="mcohome_mhs212_00_000" listed="false">
     <label>MH-S212 Mini Combo Switch</label>
     <description><![CDATA[
-Mini Combo Switch<br /><h1>Overview</h1><p>In-wall Mini Combo Switch </p> <br /><h2>Inclusion Information</h2><p>Press the ON/OFF/PROGRAM button on the Mini Combo Switch, or toggle/press the external switch/button 6 times in quick succession (within approx 2sec). </p> <br /><h2>Exclusion Information</h2><p>Press the ON/OFF/PROGRAM button on the Mini Combo Switch, or toggle/press the external switch/button 6 times in quick succession (within approx 2sec). </p>
+Mini Combo Switch<br /> <h1>Overview</h1><p>In-wall Mini Combo Switch </p> <br /> <h2>Inclusion Information</h2><p>Press the ON/OFF/PROGRAM button on the Mini Combo Switch, or toggle/press the external switch/button 6 times in quick succession (within approx 2sec). </p> <br /> <h2>Exclusion Information</h2><p>Press the ON/OFF/PROGRAM button on the Mini Combo Switch, or toggle/press the external switch/button 6 times in quick succession (within approx 2sec). </p>
     ]]></description>
     <category>WallSwitch</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc12_00_000" listed="false">
     <label>DSC12 Micro Smart Energy Switch</label>
     <description><![CDATA[
-Micro Smart Energy Switch<br /><h1>Overview</h1><p>The Aeon Labs Micro SES is a binary power switch device based on Zwave enhanced slave library V5.02P3.</p> <br /><h2>Inclusion Information</h2><p>Click the button once.</p> <br /><h2>Exclusion Information</h2><p>Click the button once.</p>
+Micro Smart Energy Switch<br /> <h1>Overview</h1><p>The Aeon Labs Micro SES is a binary power switch device based on Zwave enhanced slave library V5.02P3.</p> <br /> <h2>Inclusion Information</h2><p>Click the button once.</p> <br /> <h2>Exclusion Information</h2><p>Click the button once.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -96,7 +96,7 @@ Micro Smart Energy Switch<br /><h1>Overview</h1><p>The Aeon Labs Micro SES is a 
       <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Enable Automated sending of a Report</label>
         <description><![CDATA[
-Automated sending of a Report triggered by minimal change of value.<br /><h1>Overview</h1><p>Automated sending of a Report triggered by minimal change of value.</p>
+Automated sending of a Report triggered by minimal change of value.<br /> <h1>Overview</h1><p>Automated sending of a Report triggered by minimal change of value.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -124,7 +124,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
                  min="0" max="65535">
         <label>101: Automatic reports for group 1</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 1<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 1</p>
+Which reports need to send automatically in timing intervals for group 1<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 1</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -134,7 +134,7 @@ Which reports need to send automatically in timing intervals for group 1<br /><h
                  min="0" max="65535">
         <label>102: Automatic reports for group 2</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 2<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 2</p>
+Which reports need to send automatically in timing intervals for group 2<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 2</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -144,7 +144,7 @@ Which reports need to send automatically in timing intervals for group 2<br /><h
                  min="0" max="65535">
         <label>103: Automatic reports for group 3</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 3<br /><h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 3</p>
+Which reports need to send automatically in timing intervals for group 3<br /> <h1>Overview</h1><p>Which reports need to send automatically in timing intervals for group 3</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>

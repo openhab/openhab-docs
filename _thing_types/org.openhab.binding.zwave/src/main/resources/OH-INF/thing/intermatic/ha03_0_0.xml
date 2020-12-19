@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ha03_00_000" listed="false">
     <label>HA03 Lamp Module</label>
     <description><![CDATA[
-Lamp Module<br /><h1>Overview</h1><p>Plug-in dimmer; 300W</p> <br /><h2>Inclusion Information</h2><p>Press the Program button.</p> <br /><h2>Exclusion Information</h2><p>Press the Program button.</p>
+Lamp Module<br /> <h1>Overview</h1><p>Plug-in dimmer; 300W</p> <br /> <h2>Inclusion Information</h2><p>Press the Program button.</p> <br /> <h2>Exclusion Information</h2><p>Press the Program button.</p>
     ]]></description>
     <category>LightBulb</category>
 

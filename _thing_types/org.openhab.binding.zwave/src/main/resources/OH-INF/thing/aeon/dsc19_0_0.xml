@@ -8,7 +8,7 @@
   <thing-type id="aeon_dsc19_00_000" listed="false">
     <label>DSC19 Micro Smart Energy Illuminator G2</label>
     <description><![CDATA[
-Micro Smart Energy Illuminator G2<br /><h1>Overview</h1><p>The Aeon Labs Micro Smart Dimmer (2nd Edition) is a scene multilevel switch device based on Z‐wave enhanced slave library V4.55.00.</p> <br /><h2>Inclusion Information</h2><p>Include Smart Dimmer into an existing Z‐Wave network: 1. Install Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC‐input power source. 2. Let the primary controller of existing Z‐Wave network into inclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Z‐Wave button. 4. If the Learning failed, please repeat the process from step 2.</p> <br /><h2>Exclusion Information</h2><p>Remove Smart Switch from an existing Z‐Wave network: 1. Installed Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC‐ input power source. 2. Let the primary controller of existing Z‐Wave network into remove mode (If you don’t know how to do this, refer to its manual). 3. Press the Z‐Wave button. 4. If the remove failed, please repeat the process from step 2</p>
+Micro Smart Energy Illuminator G2<br /> <h1>Overview</h1><p>The Aeon Labs Micro Smart Dimmer (2nd Edition) is a scene multilevel switch device based on Z‐wave enhanced slave library V4.55.00.</p> <br /> <h2>Inclusion Information</h2><p>Include Smart Dimmer into an existing Z‐Wave network: 1. Install Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC‐input power source. 2. Let the primary controller of existing Z‐Wave network into inclusion mode (If you don’t know how to do this, refer to its manual). 3. Press the Z‐Wave button. 4. If the Learning failed, please repeat the process from step 2.</p> <br /> <h2>Exclusion Information</h2><p>Remove Smart Switch from an existing Z‐Wave network: 1. Installed Micro Smart Dimmer, and connect Micro Smart Dimmer to an AC‐ input power source. 2. Let the primary controller of existing Z‐Wave network into remove mode (If you don’t know how to do this, refer to its manual). 3. Press the Z‐Wave button. 4. If the remove failed, please repeat the process from step 2</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -88,7 +88,7 @@ Micro Smart Energy Illuminator G2<br /><h1>Overview</h1><p>The Aeon Labs Micro S
                  min="0" max="65535">
         <label>2: Make Micro Smart Dimmer 2nd Edition Blink</label>
         <description><![CDATA[
-The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
+The LSB defines the total time the device need to blink.<br /> <h1>Overview</h1><p>This is a double byte value. The LSB defines the total time the device need to blink. The value if set in seconds. The MSB defines the on/off interval of the blinking. The unit is 0.1 s.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -116,7 +116,7 @@ The LSB defines the total time the device need to blink.<br /><h1>Overview</h1><
       <parameter name="config_80_1" type="integer" groupName="configuration">
         <label>80: Notification on Status Change</label>
         <description><![CDATA[
-Send load notification to associated devices<br /><h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Dimmer's load changed</p>
+Send load notification to associated devices<br /> <h1>Overview</h1><p>Parameter to Enable to send notification to associated devices (Group 1) when the state of Micro Smart Dimmer's load changed</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -130,7 +130,7 @@ Send load notification to associated devices<br /><h1>Overview</h1><p>Parameter 
       <parameter name="config_90_1" type="integer" groupName="configuration">
         <label>90: Sending a Report triggered by min change of value</label>
         <description><![CDATA[
-Automated sending of a Report triggered by minimal change of value.<br /><h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
+Automated sending of a Report triggered by minimal change of value.<br /> <h1>Overview</h1><p>Parameter to Enable/Disable automated sending of a Report triggered by minimal change of value.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -152,7 +152,7 @@ Automated sending of a Report triggered by minimal change of value.<br /><h1>Ove
                  min="0" max="255">
         <label>92: Minimum Change to send Report (%)</label>
         <description><![CDATA[
-The minimum change in Watage Percent for a report to be sent.<br /><h1>Overview</h1><p>The value represents the minimum change in Watage Percent for a report to be sent.</p>
+The minimum change in Watage Percent for a report to be sent.<br /> <h1>Overview</h1><p>The value represents the minimum change in Watage Percent for a report to be sent.</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -162,7 +162,7 @@ The minimum change in Watage Percent for a report to be sent.<br /><h1>Overview<
                  min="0" max="65535">
         <label>101: Reports for Group 1</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 1<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 1<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -172,7 +172,7 @@ Which reports need to send automatically in timing intervals for group 1<br /><h
                  min="0" max="65535">
         <label>102: Reports for Group 2</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 2<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 2<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -182,7 +182,7 @@ Which reports need to send automatically in timing intervals for group 2<br /><h
                  min="0" max="65535">
         <label>103: Reports for Group 3</label>
         <description><![CDATA[
-Which reports need to send automatically in timing intervals for group 3<br /><h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
+Which reports need to send automatically in timing intervals for group 3<br /> <h1>Overview</h1><p>The value is a combination number made up of the sum of the values for the individual parameters. The parameters have the values: KWH=8, Wattage=4, Current=2, Voltage=1.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -230,7 +230,7 @@ Which reports need to send automatically in timing intervals for group 3<br /><h
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Target for automatic reports</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>According to the info in de nodeXX.xml file, this group doesn't exist for this device. - It doesn't work.</p>
+<br /> <h1>Overview</h1><p>According to the info in de nodeXX.xml file, this group doesn't exist for this device. - It doesn't work.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

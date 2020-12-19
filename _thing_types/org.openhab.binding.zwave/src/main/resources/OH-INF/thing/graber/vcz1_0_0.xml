@@ -8,7 +8,7 @@
   <thing-type id="graber_vcz1_00_000" listed="false">
     <label>VCZ1 Two Button Remote</label>
     <description><![CDATA[
-Two Button Remote<br /><h1>Overview</h1><p>The two-button remote is usually used to control a single shade, but it can control up to 12 shades at once. Can also pair with a zwave hub for control.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the program button on the back for 3 seconds. When the remote LED flashes green, release the button. The remote should appear as a found Z-Wave device in your home automation system’s user interface.</p> <br /><h2>Exclusion Information</h2><p>Press and hold the program button on the back of the remote for 15 seconds until the remote LED stops flashing. The remote LED should flash green, amber, and red before turning off</p> <br /><h2>Wakeup Information</h2><p>not provided</p>
+Two Button Remote<br /> <h1>Overview</h1><p>The two-button remote is usually used to control a single shade, but it can control up to 12 shades at once. Can also pair with a zwave hub for control.</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the program button on the back for 3 seconds. When the remote LED flashes green, release the button. The remote should appear as a found Z-Wave device in your home automation system’s user interface.</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the program button on the back of the remote for 15 seconds until the remote LED stops flashing. The remote LED should flash green, amber, and red before turning off</p> <br /> <h2>Wakeup Information</h2><p>not provided</p>
     ]]></description>
     <category>RemoteControl</category>
 
@@ -65,7 +65,7 @@ Two Button Remote<br /><h1>Overview</h1><p>The two-button remote is usually used
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>SWITCH MULTILEVEL REPORT after movement<br />BATTERY STATUS after movement or critical status<br />DEVICE RESET LOCALLY</p>
+<br /> <h1>Overview</h1><p>SWITCH MULTILEVEL REPORT after movement<br />BATTERY STATUS after movement or critical status<br />DEVICE RESET LOCALLY</p>
         ]]></description>
       </parameter>
 

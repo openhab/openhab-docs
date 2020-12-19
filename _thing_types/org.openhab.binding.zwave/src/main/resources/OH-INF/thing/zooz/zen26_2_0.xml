@@ -8,7 +8,7 @@
   <thing-type id="zooz_zen26_02_000" listed="false">
     <label>ZEN26 Paddle Switch v2</label>
     <description><![CDATA[
-Paddle Switch v2<br /><h1>Overview</h1><p>Manual or Z-Wave on/off control with instant status updates</p> <p>Simple Direct 3-Way: connect with existing on/off switches in 3-way, 4-way, and 5-way set-ups, no add-on needed (neutral wire required)</p> <p>Remembers and restores on/off status after power failure</p> <p>LED indicator signals inclusion, exclusion, reset, and setting changes</p> <p>Built-in Z-Wave Plus signal repeater to extend network range</p> <p>Works with LED, CFL, and incandescent bulbs</p> <p>S2 security protocol and the latest 500 Z-Wave chip for faster and safer wireless communication</p> <p>Supported by most Z-Wave controllers</p> <br /><h2>Inclusion Information</h2><p>TAP Upper paddle 3-5 TIMES QUICKLY</p> <p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion</p> <br /><h2>Exclusion Information</h2><p>Tap the lower paddle on the switch 3 times quickly</p>
+Paddle Switch v2<br /> <h1>Overview</h1><p>Manual or Z-Wave on/off control with instant status updates</p> <p>Simple Direct 3-Way: connect with existing on/off switches in 3-way, 4-way, and 5-way set-ups, no add-on needed (neutral wire required)</p> <p>Remembers and restores on/off status after power failure</p> <p>LED indicator signals inclusion, exclusion, reset, and setting changes</p> <p>Built-in Z-Wave Plus signal repeater to extend network range</p> <p>Works with LED, CFL, and incandescent bulbs</p> <p>S2 security protocol and the latest 500 Z-Wave chip for faster and safer wireless communication</p> <p>Supported by most Z-Wave controllers</p> <br /> <h2>Inclusion Information</h2><p>TAP Upper paddle 3-5 TIMES QUICKLY</p> <p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion</p> <br /> <h2>Exclusion Information</h2><p>Tap the lower paddle on the switch 3 times quickly</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -57,7 +57,7 @@ Paddle Switch v2<br /><h1>Overview</h1><p>Manual or Z-Wave on/off control with i
       <parameter name="config_1_1" type="integer" groupName="configuration">
         <label>1: Paddle control</label>
         <description><![CDATA[
-Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want the upper paddle to turn the light ON or turn the light OFF when tapped</p>
+Choose paddle functionality (invert)<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light ON or turn the light OFF when tapped</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -71,7 +71,7 @@ Choose paddle functionality (invert)<br /><h1>Overview</h1><p>Choose if you want
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: LED indicator control</label>
         <description><![CDATA[
-Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is ON or OFF, or if you want it to remain ON or OIFF at all times. 6 x TAP PADDLE to manually change the LED indicator mode.</p>
+Change behavior of the LED indicator<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is ON or OFF, or if you want it to remain ON or OIFF at all times. 6 x TAP PADDLE to manually change the LED indicator mode.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -86,7 +86,7 @@ Change behavior of the LED indicator<br /><h1>Overview</h1><p>Choose if you want
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Auto turn-OFF timer</label>
         <description><![CDATA[
-Enable/disable turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-OFF timer function</p>
+Enable/disable turn-OFF timer<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-OFF timer function</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -100,7 +100,7 @@ Enable/disable turn-OFF timer<br /><h1>Overview</h1><p>Use this parameter to ena
                  min="0" max="65535">
         <label>4: Auto turn-OFF timer length</label>
         <description><![CDATA[
-Length of time before switch turns OFF<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of minutes.</p>
+Length of time before switch turns OFF<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn OFF once it has been turned ON. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
       </parameter>
@@ -108,7 +108,7 @@ Length of time before switch turns OFF<br /><h1>Overview</h1><p>Use this paramet
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Auto turn-ON timer</label>
         <description><![CDATA[
-Enable/disable turn-ON timer<br /><h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-ON timer function</p>
+Enable/disable turn-ON timer<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-ON timer function</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -122,7 +122,7 @@ Enable/disable turn-ON timer<br /><h1>Overview</h1><p>Use this parameter to enab
                  min="0" max="65535">
         <label>6: Auto turn-ON timer length</label>
         <description><![CDATA[
-Length of time before switch turns ON<br /><h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn ON once it has been turned OFF. The number entered as value corresponds to the number of minutes.</p>
+Length of time before switch turns ON<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the switch to automatically turn ON once it has been turned OFF. The number entered as value corresponds to the number of minutes.</p>
         ]]></description>
         <default>60</default>
       </parameter>
@@ -130,7 +130,7 @@ Length of time before switch turns ON<br /><h1>Overview</h1><p>Use this paramete
       <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Association reports</label>
         <description><![CDATA[
-Association reports<br /><h1>Overview</h1><p>Choose which physical and Z-Wave triggers should prompt the switch to send a status change report to associated devices.</p> <p><strong>Values: </strong></p> <p>0 – none</p> <p>1 – physical tap on ZEN26 only</p> <p>2 – physical tap on connected 3-way switch only</p> <p>3 – physical tap on ZEN26 or connected 3-way switch</p> <p>4 – Z-Wave command from hub</p> <p>5 – physical tap on ZEN26 or Z-Wave command from hub</p> <p>6 – physical tap on connected 3-way switch or Z-Wave command from hub</p> <p>7 – physical tap on ZEN26 / connected 3-way switch or Z-Wave command from hub</p> <p>8 – timer only; 9 – physical tap on ZEN26 or timer</p> <p>10 – physical tap on connected 3-way switch or timer</p> <p>11 – physical tap on ZEN26 / connected 3-way switch or timer</p> <p>12 – Z-Wave command from hub or timer</p> <p>13 – physical tap on ZEN26, Z-Wave command from hub, or timer</p> <p>14 – physical tap on ZEN26 / connected 3-way switch, Z-Wave command from hub, or timer</p> <p>15 – all of the above (default)</p>
+Association reports<br /> <h1>Overview</h1><p>Choose which physical and Z-Wave triggers should prompt the switch to send a status change report to associated devices.</p> <p><strong>Values: </strong></p> <p>0 – none</p> <p>1 – physical tap on ZEN26 only</p> <p>2 – physical tap on connected 3-way switch only</p> <p>3 – physical tap on ZEN26 or connected 3-way switch</p> <p>4 – Z-Wave command from hub</p> <p>5 – physical tap on ZEN26 or Z-Wave command from hub</p> <p>6 – physical tap on connected 3-way switch or Z-Wave command from hub</p> <p>7 – physical tap on ZEN26 / connected 3-way switch or Z-Wave command from hub</p> <p>8 – timer only; 9 – physical tap on ZEN26 or timer</p> <p>10 – physical tap on connected 3-way switch or timer</p> <p>11 – physical tap on ZEN26 / connected 3-way switch or timer</p> <p>12 – Z-Wave command from hub or timer</p> <p>13 – physical tap on ZEN26, Z-Wave command from hub, or timer</p> <p>14 – physical tap on ZEN26 / connected 3-way switch, Z-Wave command from hub, or timer</p> <p>15 – all of the above (default)</p>
         ]]></description>
         <default>15</default>
         <options>
@@ -169,7 +169,7 @@ Association reports<br /><h1>Overview</h1><p>Choose which physical and Z-Wave tr
       <parameter name="config_10_1" type="integer" groupName="configuration">
         <label>10: Enable/disable scene control</label>
         <description><![CDATA[
-Enable/disable scene control<br /><h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers</p>
+Enable/disable scene control<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -182,7 +182,7 @@ Enable/disable scene control<br /><h1>Overview</h1><p>Enable or disable scene co
       <parameter name="config_11_1" type="integer" groupName="configuration">
         <label>11: Enable/disable paddle control</label>
         <description><![CDATA[
-Enable or disable local ON/OFF control<br /><h1>Overview</h1><p>Enable or disabvle local ON/OFF control. If enabled, you will only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p>
+Enable or disable local ON/OFF control<br /> <h1>Overview</h1><p>Enable or disabvle local ON/OFF control. If enabled, you will only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -196,14 +196,14 @@ Enable or disable local ON/OFF control<br /><h1>Overview</h1><p>Enable or disabv
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
+<br /> <h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
+<br /> <h1>Overview</h1><p>This device will send BINARY SWITCH REPORT to Group 1 and 2 when operated manually</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

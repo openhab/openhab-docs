@@ -8,7 +8,7 @@
   <thing-type id="wintop_easyplug_00_000" listed="false">
     <label>EasyPlug Wall Plug</label>
     <description><![CDATA[
-Wall Plug<br /><h1>Overview</h1><ul><li>Power supply, home automation</li> <li>Expansion to easy starter pack contains:</li> <li>1x EASYPlug surface-mounted dim adapter</li> <li>Power supply accessory</li> </ul><br /><h2>Inclusion Information</h2><p>Press and hold the button on the front side of the device for 1 second (count 21).</p> <br /><h2>Exclusion Information</h2><p>Not provided</p>
+Wall Plug<br /> <h1>Overview</h1><ul><li>Power supply, home automation</li> <li>Expansion to easy starter pack contains:</li> <li>1x EASYPlug surface-mounted dim adapter</li> <li>Power supply accessory</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press and hold the button on the front side of the device for 1 second (count 21).</p> <br /> <h2>Exclusion Information</h2><p>Not provided</p>
     ]]></description>
     <category>PowerOutlet</category>
 

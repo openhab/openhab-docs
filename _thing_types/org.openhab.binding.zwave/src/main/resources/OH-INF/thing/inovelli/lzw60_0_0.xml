@@ -8,7 +8,7 @@
   <thing-type id="inovelli_lzw60_00_000" listed="false">
     <label>LZW60 4-in-1 motion sensor</label>
     <description><![CDATA[
-4-in-1 motion sensor<br /><h1>Overview</h1><ul><li>Light: Save energy by making sure lights don’t turn on if it’s bright enough.</li> <li>Motion: Be notified when you’re away and automate your lighting.</li> <li>Humidity: To avoid excess moisture, trigger fans and dehumidifiers.</li> <li>Temperature: Smarter climate control by monitoring every room in your home.</li> </ul><br /><h2>Inclusion Information</h2><p>Put your hub into inclusion mode and press the button on the back of the 4-in-1 sensor one time.</p> <br /><h2>Exclusion Information</h2><p>Put your hub into exclusion mode and press the button on the back of the 4-in-1 sensor one time. </p> <br /><h2>Wakeup Information</h2><p>To wake up the sensor so that your hub can send it configuration parameters quickly press on the button on the back 3 times.</p>
+4-in-1 motion sensor<br /> <h1>Overview</h1><ul><li>Light: Save energy by making sure lights don’t turn on if it’s bright enough.</li> <li>Motion: Be notified when you’re away and automate your lighting.</li> <li>Humidity: To avoid excess moisture, trigger fans and dehumidifiers.</li> <li>Temperature: Smarter climate control by monitoring every room in your home.</li> </ul> <br /> <h2>Inclusion Information</h2><p>Put your hub into inclusion mode and press the button on the back of the 4-in-1 sensor one time.</p> <br /> <h2>Exclusion Information</h2><p>Put your hub into exclusion mode and press the button on the back of the 4-in-1 sensor one time. </p> <br /> <h2>Wakeup Information</h2><p>To wake up the sensor so that your hub can send it configuration parameters quickly press on the button on the back 3 times.</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -95,7 +95,7 @@
                  min="5" max="15300">
         <label>13: PIR Trigger Time</label>
         <description><![CDATA[
-PIR Trigger Time (Time Between PIR Readings)<br /><h1>Overview</h1><p>The amount of seconds between motion detection (ie. interval)</p> <p>5 = 5 seconds</p>
+PIR Trigger Time (Time Between PIR Readings)<br /> <h1>Overview</h1><p>The amount of seconds between motion detection (ie. interval)</p> <p>5 = 5 seconds</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -105,7 +105,7 @@ PIR Trigger Time (Time Between PIR Readings)<br /><h1>Overview</h1><p>The amount
                  min="0" max="1">
         <label>14: Basic Set Command Send after PIR Trigger</label>
         <description><![CDATA[
-Basic Set Command Send after PIR Trigger<br /><h1>Overview</h1><p>Should Basic Set Command be sent after PIR is triggered:</p> <p>0=No, 1 = Yes</p>
+Basic Set Command Send after PIR Trigger<br /> <h1>Overview</h1><p>Should Basic Set Command be sent after PIR is triggered:</p> <p>0=No, 1 = Yes</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -115,7 +115,7 @@ Basic Set Command Send after PIR Trigger<br /><h1>Overview</h1><p>Should Basic S
                  min="0" max="1">
         <label>15: PIR Trigger Correspondence Action</label>
         <description><![CDATA[
-PIR Trigger Correspondence Action<br /><h1>Overview</h1><p>Ability to reverse the Basic Set behavior for devices associated in group 2.</p> <p>0 = Turn the associated device ON when motion is tripped, and OFF when motion stops.</p> <p>1 = Turn the associated device OFF when motion is tripped, and ON when motion stops.</p>
+PIR Trigger Correspondence Action<br /> <h1>Overview</h1><p>Ability to reverse the Basic Set behavior for devices associated in group 2.</p> <p>0 = Turn the associated device ON when motion is tripped, and OFF when motion stops.</p> <p>1 = Turn the associated device OFF when motion is tripped, and ON when motion stops.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -125,7 +125,7 @@ PIR Trigger Correspondence Action<br /><h1>Overview</h1><p>Ability to reverse th
                  min="0" max="1">
         <label>100: Change Parameters 101-104 Back to Default Settings</label>
         <description><![CDATA[
-Change Parameters 101-104 Back to Default Settings<br /><h1>Overview</h1><p>If changes are made to parameters 101-104, you can set parameter 100 to 1 to reset 101-104 back to default.</p>
+Change Parameters 101-104 Back to Default Settings<br /> <h1>Overview</h1><p>If changes are made to parameters 101-104, you can set parameter 100 to 1 to reset 101-104 back to default.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -135,7 +135,7 @@ Change Parameters 101-104 Back to Default Settings<br /><h1>Overview</h1><p>If c
                  min="0" max="2678400">
         <label>101: Temperature Reporting Interval</label>
         <description><![CDATA[
-Temperature Reporting Interval<br /><h1>Overview</h1><p>The interval between when temperature is reported to the gateway</p> <p>0=Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
+Temperature Reporting Interval<br /> <h1>Overview</h1><p>The interval between when temperature is reported to the gateway</p> <p>0=Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
         <limitToOptions>false</limitToOptions>
@@ -145,7 +145,7 @@ Temperature Reporting Interval<br /><h1>Overview</h1><p>The interval between whe
                  min="0" max="2678400">
         <label>102: Humidity Reporting Interval</label>
         <description><![CDATA[
-Humidity Reporting Interval<br /><h1>Overview</h1><p>The interval between when humidity is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
+Humidity Reporting Interval<br /> <h1>Overview</h1><p>The interval between when humidity is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
         <limitToOptions>false</limitToOptions>
@@ -155,7 +155,7 @@ Humidity Reporting Interval<br /><h1>Overview</h1><p>The interval between when h
                  min="0" max="2678400">
         <label>103: Luminance Reporting Interval</label>
         <description><![CDATA[
-Luminance Reporting Interval<br /><h1>Overview</h1><p>The interval between when luminance is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
+Luminance Reporting Interval<br /> <h1>Overview</h1><p>The interval between when luminance is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>7200</default>
         <limitToOptions>false</limitToOptions>
@@ -165,7 +165,7 @@ Luminance Reporting Interval<br /><h1>Overview</h1><p>The interval between when�
                  min="0" max="2678400">
         <label>104: Battery Reporting Interval</label>
         <description><![CDATA[
-Battery Reporting Interval<br /><h1>Overview</h1><p>The interval between when battery is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
+Battery Reporting Interval<br /> <h1>Overview</h1><p>The interval between when battery is reported to the gateway</p> <p>0 = Off, 1 = 1 second</p> <p>(Note: the sensor reporting time will round to the nearest minute)</p>
         ]]></description>
         <default>86400</default>
         <limitToOptions>false</limitToOptions>
@@ -175,7 +175,7 @@ Battery Reporting Interval<br /><h1>Overview</h1><p>The interval between when b
                  min="0" max="1">
         <label>110: Send Reports According to Threshold</label>
         <description><![CDATA[
-Only send sensor reports if the below thresholds are met<br /><h1>Overview</h1><p>Only send sensor reports if the below thresholds are met. 1:Yes, 0:No</p>
+Only send sensor reports if the below thresholds are met<br /> <h1>Overview</h1><p>Only send sensor reports if the below thresholds are met. 1:Yes, 0:No</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -185,7 +185,7 @@ Only send sensor reports if the below thresholds are met<br /><h1>Overview</h1><
                  min="1" max="500">
         <label>111: Temperature Threshold</label>
         <description><![CDATA[
-Temperature Threshold<br /><h1>Overview</h1><p>Set the threshold of the temperature for your sensor</p> <p>1 = .1 degree Celsius (I know... wish it was Fahrenheit), 500 = 50 degrees Celsius</p>
+Temperature Threshold<br /> <h1>Overview</h1><p>Set the threshold of the temperature for your sensor</p> <p>1 = .1 degree Celsius (I know... wish it was Fahrenheit), 500 = 50 degrees Celsius</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -195,7 +195,7 @@ Temperature Threshold<br /><h1>Overview</h1><p>Set the threshold of the temperat
                  min="1" max="32">
         <label>112: Humidity Threshold</label>
         <description><![CDATA[
-Humidity Threshold<br /><h1>Overview</h1><p>Set the threshold of the humidity for your sensor</p> <p>1 = 1%, 2 = 2%</p>
+Humidity Threshold<br /> <h1>Overview</h1><p>Set the threshold of the humidity for your sensor</p> <p>1 = 1%, 2 = 2%</p>
         ]]></description>
         <default>5</default>
         <limitToOptions>false</limitToOptions>
@@ -205,7 +205,7 @@ Humidity Threshold<br /><h1>Overview</h1><p>Set the threshold of the humidity fo
                  min="1" max="65528">
         <label>113: Luminance Threshold</label>
         <description><![CDATA[
-Luminance Threshold<br /><h1>Overview</h1><p>Set the threshold of the luminance for your sensor</p> <p>1 = 1 unit lux, 2 = 2 unit lux</p>
+Luminance Threshold<br /> <h1>Overview</h1><p>Set the threshold of the luminance for your sensor</p> <p>1 = 1 unit lux, 2 = 2 unit lux</p>
         ]]></description>
         <default>150</default>
         <limitToOptions>false</limitToOptions>
@@ -215,7 +215,7 @@ Luminance Threshold<br /><h1>Overview</h1><p>Set the threshold of the luminance 
                  min="0" max="100">
         <label>114: Battery Threshold</label>
         <description><![CDATA[
-Battery Threshold<br /><h1>Overview</h1><p>Set the threshold of the battery for your sensor</p> <p>1 = 1%, 2 = 2%</p>
+Battery Threshold<br /> <h1>Overview</h1><p>Set the threshold of the battery for your sensor</p> <p>1 = 1%, 2 = 2%</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -225,7 +225,7 @@ Battery Threshold<br /><h1>Overview</h1><p>Set the threshold of the battery for 
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-Sensor will send updates<br /><h1>Overview</h1><ol><li>Notification Report<br />Sensor will send notification report when motion detection unknown location and (event inactive)</li> <li>Multilevel Sensor Report<br />Sensor will send multilevel sensor report (temperature, humidity, luminance) interval of 2 hours</li> <li>Battery Report<br />Sensor will send battery report when the battery level is low and the battery report's value is 0xFF</li> <li>Device Reset Locally</li> </ol>
+Sensor will send updates<br /> <h1>Overview</h1><ol> <li>Notification Report<br />Sensor will send notification report when motion detection unknown location and (event inactive)</li> <li>Multilevel Sensor Report<br />Sensor will send multilevel sensor report (temperature, humidity, luminance) interval of 2 hours</li> <li>Battery Report<br />Sensor will send battery report when the battery level is low and the battery report's value is 0xFF</li> <li>Device Reset Locally</li> </ol>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

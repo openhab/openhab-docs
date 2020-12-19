@@ -8,7 +8,7 @@
   <thing-type id="benext_alarmsound_00_000" listed="false">
     <label>Alarm Sound Alarm sound</label>
     <description><![CDATA[
-Alarm sound<br /><h1>Overview</h1><p>The Alarm Sound is a plug&amp;play product developed by BeNext. Depending on present situations and scenes it sets off an alarm sound warning you and your family or scaring off unwanted activities. Use the Alarm Sound for security purposes and notifications indoors.</p> <p>Use the Alarm Sound in combination with the Door Sensor or MoLite Sensor to alert you when someone undesirably enters your home or work-space. The Alarm Sound possesses six different sound- and lighting-configurations to scare off any possible intruder. You can also customize personal preferred ‘scenes’ and ‘rules’ in our free of charge online manager in order to give the Alarm Sound dual functionality. You can even choose to create a new kind of alarm clock, which in combination with the Door Sensor or MoLite Sensor gives a wake up alarm if you haven’t left your bedroom after 09:00 am.</p> <br /><h2>Inclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p> <br /><h2>Exclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p>
+Alarm sound<br /> <h1>Overview</h1><p>The Alarm Sound is a plug&amp;play product developed by BeNext. Depending on present situations and scenes it sets off an alarm sound warning you and your family or scaring off unwanted activities. Use the Alarm Sound for security purposes and notifications indoors.</p> <p>Use the Alarm Sound in combination with the Door Sensor or MoLite Sensor to alert you when someone undesirably enters your home or work-space. The Alarm Sound possesses six different sound- and lighting-configurations to scare off any possible intruder. You can also customize personal preferred ‘scenes’ and ‘rules’ in our free of charge online manager in order to give the Alarm Sound dual functionality. You can even choose to create a new kind of alarm clock, which in combination with the Door Sensor or MoLite Sensor gives a wake up alarm if you haven’t left your bedroom after 09:00 am.</p> <br /> <h2>Inclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process</p>
     ]]></description>
     <category>Siren</category>
 
@@ -57,7 +57,7 @@ Alarm sound<br /><h1>Overview</h1><p>The Alarm Sound is a plug&amp;play product 
                  min="1" max="255">
         <label>1: Set to Default</label>
         <description><![CDATA[
-Set all configuration values to default values (factory settings)<br /><h1>Overview</h1><p>If value is set to 255 reset to default settings.</p>
+Set all configuration values to default values (factory settings)<br /> <h1>Overview</h1><p>If value is set to 255 reset to default settings.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -67,7 +67,7 @@ Set all configuration values to default values (factory settings)<br /><h1>Overv
                  min="0" max="255">
         <label>2: Destination routine on/off</label>
         <description><![CDATA[
-Test connection by sending a periodic test with sound on failure<br /><h1>Overview</h1><p>Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.</p> <p>0 this is turned off. 1-255 turn it on.</p>
+Test connection by sending a periodic test with sound on failure<br /> <h1>Overview</h1><p>Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.</p> <p>0 this is turned off. 1-255 turn it on.</p>
         ]]></description>
         <default>255</default>
         <limitToOptions>false</limitToOptions>
@@ -77,7 +77,7 @@ Test connection by sending a periodic test with sound on failure<br /><h1>Overvi
                  min="0" max="60">
         <label>3: Desitnation routine succes time</label>
         <description><![CDATA[
-Time it takes to send a new frame after the last frame has succesfully send<br /><h1>Overview</h1><p>t(s) = param1 * 6 *60</p>
+Time it takes to send a new frame after the last frame has succesfully send<br /> <h1>Overview</h1><p>t(s) = param1 * 6 *60</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -87,7 +87,7 @@ Time it takes to send a new frame after the last frame has succesfully send<br /
                  min="0" max="240">
         <label>4: Destination routine failed time</label>
         <description><![CDATA[
-Time elapsed between failing to end a frame and sending a new frame.<br /><h1>Overview</h1><p>t(s) = param1 *60</p>
+Time elapsed between failing to end a frame and sending a new frame.<br /> <h1>Overview</h1><p>t(s) = param1 *60</p>
         ]]></description>
         <default>240</default>
         <limitToOptions>false</limitToOptions>
@@ -97,7 +97,7 @@ Time elapsed between failing to end a frame and sending a new frame.<br /><h1>Ov
                  min="0" max="6">
         <label>7: Select index sound/light mode</label>
         <description><![CDATA[
-The index of the sound mode when a switch binary/basic set frame been received<br /><h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
+The index of the sound mode when a switch binary/basic set frame been received<br /> <h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -107,7 +107,7 @@ The index of the sound mode when a switch binary/basic set frame been received<b
                  min="0" max="6">
         <label>8: power offline sound/light mode</label>
         <description><![CDATA[
-The sound and light mode that will be used when the device gets unplugged.<br /><h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
+The sound and light mode that will be used when the device gets unplugged.<br /> <h1>Overview</h1><p>0 to switch off, 1-6 to select light/sound mode.</p> <p>If value is put higher then 5 the application will read this as 1.</p>
         ]]></description>
         <default>6</default>
         <limitToOptions>false</limitToOptions>
@@ -117,7 +117,7 @@ The sound and light mode that will be used when the device gets unplugged.<br />
                  min="0" max="4294967295">
         <label>10: sound/light index 1</label>
         <description><![CDATA[
-Sound/light that will be played when index 1 has been selected<br /><h1>Overview</h1><p>Params 10-27 are the values to set the sound/light (this will be set when index 1)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 1 has been selected<br /> <h1>Overview</h1><p>Params 10-27 are the values to set the sound/light (this will be set when index 1)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -127,7 +127,7 @@ Sound/light that will be played when index 1 has been selected<br /><h1>Overview
                  min="0" max="4294967295">
         <label>28: sound/light index 2</label>
         <description><![CDATA[
-Sound/light that will be played when index 2 has been selected<br /><h1>Overview</h1><p>Params 28-45 are the values to set the sound/light (this will be set when index 2)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 2 has been selected<br /> <h1>Overview</h1><p>Params 28-45 are the values to set the sound/light (this will be set when index 2)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -137,7 +137,7 @@ Sound/light that will be played when index 2 has been selected<br /><h1>Overview
                  min="0" max="4294967295">
         <label>46: sound/light index 3</label>
         <description><![CDATA[
-Sound/light that will be played when index 3 has been selected<br /><h1>Overview</h1><p>Params 45-63 are the values to set the sound/light (this will be set when index 3)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 3 has been selected<br /> <h1>Overview</h1><p>Params 45-63 are the values to set the sound/light (this will be set when index 3)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -147,7 +147,7 @@ Sound/light that will be played when index 3 has been selected<br /><h1>Overview
                  min="0" max="4294967295">
         <label>64: sound/light index 4</label>
         <description><![CDATA[
-Sound/light that will be played when index 4 has been selected<br /><h1>Overview</h1><p>Params 64-81 are the values to set the sound/light (this will be set when index 4)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 4 has been selected<br /> <h1>Overview</h1><p>Params 64-81 are the values to set the sound/light (this will be set when index 4)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -157,7 +157,7 @@ Sound/light that will be played when index 4 has been selected<br /><h1>Overview
                  min="0" max="4294967295">
         <label>82: sound/light index 5</label>
         <description><![CDATA[
-Sound/light that will be played when index 5 has been selected<br /><h1>Overview</h1><p>Params 82-99 are the values to set the sound/light (this will be set when index 5)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 5 has been selected<br /> <h1>Overview</h1><p>Params 82-99 are the values to set the sound/light (this will be set when index 5)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -167,7 +167,7 @@ Sound/light that will be played when index 5 has been selected<br /><h1>Overview
                  min="0" max="4294967295">
         <label>100: sound/light index 6</label>
         <description><![CDATA[
-Sound/light that will be played when index 6 has been selected<br /><h1>Overview</h1><p>Params 100-117 are the values to set the sound/light (this will be set when index 6)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
+Sound/light that will be played when index 6 has been selected<br /> <h1>Overview</h1><p>Params 100-117 are the values to set the sound/light (this will be set when index 6)</p> <p>When the configuration is not this size the frame will be ignored.</p> <p>For the configuration of the light/sound mode i would like to refer to the manual.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -177,14 +177,14 @@ Sound/light that will be played when index 6 has been selected<br /><h1>Overview
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Association group 1</label>
         <description><![CDATA[
-Changes the LED on the device<br /><h1>Overview</h1><p>When the device receives an binary switch/ basic report, this will update the LED</p>
+Changes the LED on the device<br /> <h1>Overview</h1><p>When the device receives an binary switch/ basic report, this will update the LED</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Association group 2</label>
         <description><![CDATA[
-The alarm sound reports it status to the associated devices<br /><h1>Overview</h1><p>- In case the device gets unplugged this shall send Alarm report (code 3, Triggered).</p> <p>- When the device is connected to the power, this shall send an Alarm report (code 3, off).</p> <p>- When the device is truned of by clicking on the button, this shall send a Switch binary (off).</p> <p>- When the device gets unplugged the standard "power offline" sound is on, the device will send a Switch binary report (on).</p> <p>When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.</p>
+The alarm sound reports it status to the associated devices<br /> <h1>Overview</h1><p>- In case the device gets unplugged this shall send Alarm report (code 3, Triggered).</p> <p>- When the device is connected to the power, this shall send an Alarm report (code 3, off).</p> <p>- When the device is truned of by clicking on the button, this shall send a Switch binary (off).</p> <p>- When the device gets unplugged the standard "power offline" sound is on, the device will send a Switch binary report (on).</p> <p>When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.</p>
         ]]></description>
       </parameter>
 

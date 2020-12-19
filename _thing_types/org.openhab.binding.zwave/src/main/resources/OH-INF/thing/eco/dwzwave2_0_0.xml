@@ -8,7 +8,7 @@
   <thing-type id="eco_dwzwave2_00_000" listed="false">
     <label>DWZWAVE2 Z-Wave Door/Window Sensor</label>
     <description><![CDATA[
-Z-Wave Door/Window Sensor<br /><h1>Overview</h1><ul><li>Z-Wave enabled device which provides open/closed status</li> <li>Transmits open/closed status</li> <li>Reports tamper condition when cover is open</li> </ul><br /><h2>Inclusion Information</h2><ol><li>Remove the battery for at least 5 seconds,</li> <li>Reinstall the battery</li> <li>Replace the sensor cover</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Remove the battery from the Sensor.</li> <li>Leave the battery out for at least ten (10) seconds.</li> <li>Reinstall the battery into the Sensor.</li> </ol><br /><h2>Wakeup Information</h2><p>Press the "+" button once.</p>
+Z-Wave Door/Window Sensor<br /> <h1>Overview</h1><ul><li>Z-Wave enabled device which provides open/closed status</li> <li>Transmits open/closed status</li> <li>Reports tamper condition when cover is open</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Remove the battery for at least 5 seconds,</li> <li>Reinstall the battery</li> <li>Replace the sensor cover</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Remove the battery from the Sensor.</li> <li>Leave the battery out for at least ten (10) seconds.</li> <li>Reinstall the battery into the Sensor.</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the "+" button once.</p>
     ]]></description>
     <category>Door</category>
 
@@ -84,7 +84,7 @@ Z-Wave Door/Window Sensor<br /><h1>Overview</h1><ul><li>Z-Wave enabled device wh
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Group 1</label>
         <description><![CDATA[
-Association Group 1<br /><h1>Overview</h1><p>Association group one is intended for but not limited to controllers. All nodes whose Node ID that have been set in Association group one will receive all unsolicited Alarm Report frames, and Basic Report frames of 0x00 and 0xFF.  When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one.</p>
+Association Group 1<br /> <h1>Overview</h1><p>Association group one is intended for but not limited to controllers. All nodes whose Node ID that have been set in Association group one will receive all unsolicited Alarm Report frames, and Basic Report frames of 0x00 and 0xFF.  When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
@@ -92,7 +92,7 @@ Association Group 1<br /><h1>Overview</h1><p>Association group one is intended f
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Association Group 2<br /><h1>Overview</h1><p>Association group two is intended for any device Ecolink Z-Wave Command Class Specification 2 that is controllable with a Basic Set of 0xFF such as lights, sirens, or chimes. When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one. The Configuration command class can configure the sensor to send Basic Sets of 0x00 to nodes in group two (turning devices off).</p>
+Association Group 2<br /> <h1>Overview</h1><p>Association group two is intended for any device Ecolink Z-Wave Command Class Specification 2 that is controllable with a Basic Set of 0xFF such as lights, sirens, or chimes. When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one. The Configuration command class can configure the sensor to send Basic Sets of 0x00 to nodes in group two (turning devices off).</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="vemmio_mt100_00_000" listed="false">
     <label>MT-100 Motion and Light Mini Sensor</label>
     <description><![CDATA[
-Motion and Light Mini Sensor<br /><h1>Overview</h1><p>Motion Mini Sensor provides accurate motion and illumination level detection. When integrated with your controller - wireless notifications, low battery alerts, custom automation scenarios based on both light and motion triggers become available. For example, when motion is detected, the controller will send an alert to any smartphone, set off an alarm or trigger a lighting scene. The sensor works with any Z-Wave-certified controller </p> <p>Wireless standard Z-Wave Plus Frequency 868.40 MHz Network range 30 m line of sight Operating temperature 0°C ~ 40°C Illumination measurement range 0 ~ 8500 lux Movement Sensor Measurement range 6 m Battery CR123A 3V Battery &gt;2 years, low power indication.</p> <p>Factory reset: press and hold the Z-Wave button for at least 10 seconds until the LED indicator flashes once (it may then flash 5 times to indicate the device is no longer part of Z-Wave network). Release the button.</p> <br /><h2>Inclusion Information</h2><p>When prompted by the controller, press quickly one of the Z-wave button 3 times in a row. The sensor should be included in 5 seconds. The sensor should appear on your controller’s device list.</p> <br /><h2>Exclusion Information</h2><p>When prompted by the controller, press quickly one of the Z-wave button 3 times in a row. The sensor should be excluded in 5 seconds. The sensor should appear on your controller’s device list.</p> <br /><h2>Wakeup Information</h2><p>You can press the button once to wake up the device and send wakeup notification to controller -the LED will flash once.</p>
+Motion and Light Mini Sensor<br /> <h1>Overview</h1><p>Motion Mini Sensor provides accurate motion and illumination level detection. When integrated with your controller - wireless notifications, low battery alerts, custom automation scenarios based on both light and motion triggers become available. For example, when motion is detected, the controller will send an alert to any smartphone, set off an alarm or trigger a lighting scene. The sensor works with any Z-Wave-certified controller </p> <p>Wireless standard Z-Wave Plus Frequency 868.40 MHz Network range 30 m line of sight Operating temperature 0°C ~ 40°C Illumination measurement range 0 ~ 8500 lux Movement Sensor Measurement range 6 m Battery CR123A 3V Battery &gt;2 years, low power indication.</p> <p>Factory reset: press and hold the Z-Wave button for at least 10 seconds until the LED indicator flashes once (it may then flash 5 times to indicate the device is no longer part of Z-Wave network). Release the button.</p> <br /> <h2>Inclusion Information</h2><p>When prompted by the controller, press quickly one of the Z-wave button 3 times in a row. The sensor should be included in 5 seconds. The sensor should appear on your controller’s device list.</p> <br /> <h2>Exclusion Information</h2><p>When prompted by the controller, press quickly one of the Z-wave button 3 times in a row. The sensor should be excluded in 5 seconds. The sensor should appear on your controller’s device list.</p> <br /> <h2>Wakeup Information</h2><p>You can press the button once to wake up the device and send wakeup notification to controller -the LED will flash once.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -68,7 +68,7 @@ Motion and Light Mini Sensor<br /><h1>Overview</h1><p>Motion Mini Sensor provide
                  min="8" max="255">
         <label>1: Sensitivity Level Setting</label>
         <description><![CDATA[
-This parameter defines the sensitivity of PIR detector<br /><h1>Overview</h1><p>This parameter defines the sensitivity of PIR detector, it is recommended to test the detector with movements from a farthest end of the coverage area at first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter.</p> <p>This Parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means lowest sensitivity.</p>
+This parameter defines the sensitivity of PIR detector<br /> <h1>Overview</h1><p>This parameter defines the sensitivity of PIR detector, it is recommended to test the detector with movements from a farthest end of the coverage area at first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter.</p> <p>This Parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means lowest sensitivity.</p>
         ]]></description>
         <default>12</default>
         <limitToOptions>false</limitToOptions>
@@ -78,7 +78,7 @@ This parameter defines the sensitivity of PIR detector<br /><h1>Overview</h1><p>
                  min="5" max="600">
         <label>2: On/Off Duration</label>
         <description><![CDATA[
-how long the associated devices should stay ON status<br /><h1>Overview</h1><p>This parameter can be determined how long the associated devices should stay ON status. For instance, this parameter is set to 30(second), the PIR detector will send a BASIC_SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter 6#. If user set this parameter to default by Configure CC, the parameter #6 will be set to default value</p>
+how long the associated devices should stay ON status<br /> <h1>Overview</h1><p>This parameter can be determined how long the associated devices should stay ON status. For instance, this parameter is set to 30(second), the PIR detector will send a BASIC_SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter 6#. If user set this parameter to default by Configure CC, the parameter #6 will be set to default value</p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>
@@ -88,7 +88,7 @@ how long the associated devices should stay ON status<br /><h1>Overview</h1><p>T
                  min="0" max="99">
         <label>3: Basic Set Level</label>
         <description><![CDATA[
-value when PIR detector is triggered and Basic Set command sent<br /><h1>Overview</h1><p>Valid Values: (0 – 99) </p> <p>0 – OFF , 255 - ON </p> <p>Basic Set Command will be sent where contains a value when PIR detector is triggered, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be. This Parameter is used to some associated devices</p>
+value when PIR detector is triggered and Basic Set command sent<br /> <h1>Overview</h1><p>Valid Values: (0 – 99) </p> <p>0 – OFF , 255 - ON </p> <p>Basic Set Command will be sent where contains a value when PIR detector is triggered, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be. This Parameter is used to some associated devices</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -99,7 +99,7 @@ value when PIR detector is triggered and Basic Set command sent<br /><h1>Overvie
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: PIR Detecting Function Enabled/Disabled</label>
         <description><![CDATA[
-enabled or disabled the PIR<br /><h1>Overview</h1><p>Valid Values: 0 – Disable PIR, 255 – Enable PIR</p> <p>This parameter can be enabled or disabled the PIR detector detecting function.</p>
+enabled or disabled the PIR<br /> <h1>Overview</h1><p>Valid Values: 0 – Disable PIR, 255 – Enable PIR</p> <p>This parameter can be enabled or disabled the PIR detector detecting function.</p>
         ]]></description>
         <default>255</default>
         <options>
@@ -113,7 +113,7 @@ enabled or disabled the PIR<br /><h1>Overview</h1><p>Valid Values: 0 – Disable
                  min="0" max="1000">
         <label>5: Ambient illumination Lux Level</label>
         <description><![CDATA[
-Set a lux level value which determines when the light sensor is activated<br /><h1>Overview</h1><p>This parameter can be set a lux level value which determines when the light sensor is activated. If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET (value = parameter 3) to an associated device and activate i</p>
+Set a lux level value which determines when the light sensor is activated<br /> <h1>Overview</h1><p>This parameter can be set a lux level value which determines when the light sensor is activated. If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET (value = parameter 3) to an associated device and activate i</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -123,7 +123,7 @@ Set a lux level value which determines when the light sensor is activated<br /><
                  min="0" max="8">
         <label>6: Retrigger Interval Setting</label>
         <description><![CDATA[
-Interval of being re-triggered after the PIR detector has been triggered.<br /><h1>Overview</h1><p>This Parameter can be used to adjust the interval of being re-triggered after the PIR detector has been triggered.</p> <p>This Parameter value must be less than Parameter 2#. If user set this parameter to default by Configure CC, the para</p>
+Interval of being re-triggered after the PIR detector has been triggered.<br /> <h1>Overview</h1><p>This Parameter can be used to adjust the interval of being re-triggered after the PIR detector has been triggered.</p> <p>This Parameter value must be less than Parameter 2#. If user set this parameter to default by Configure CC, the para</p>
         ]]></description>
         <default>8</default>
         <limitToOptions>false</limitToOptions>
@@ -133,7 +133,7 @@ Interval of being re-triggered after the PIR detector has been triggered.<br /><
                  min="60" max="36000">
         <label>7: Light Sensor Polling Interva Time</label>
         <description><![CDATA[
-Set the light sensor measure ambient illumination level interval time<br /><h1>Overview</h1><p>This Parameter can be set the light sensor measure ambient illumination level</p> <p>interval time. NOTE: This Value Must Be less than Wakeup Interval Time</p>
+Set the light sensor measure ambient illumination level interval time<br /> <h1>Overview</h1><p>This Parameter can be set the light sensor measure ambient illumination level</p> <p>interval time. NOTE: This Value Must Be less than Wakeup Interval Time</p>
         ]]></description>
         <default>180</default>
         <limitToOptions>false</limitToOptions>
@@ -143,7 +143,7 @@ Set the light sensor measure ambient illumination level interval time<br /><h1>O
                  min="0" max="1">
         <label>8: Lux Level Function Enable</label>
         <description><![CDATA[
-Lux Level Function Enable<br /><h1>Overview</h1><p>If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC_SET command frame (i.e. BASIC_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.</p>
+Lux Level Function Enable<br /> <h1>Overview</h1><p>If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC_SET command frame (i.e. BASIC_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -153,7 +153,7 @@ Lux Level Function Enable<br /><h1>Overview</h1><p>If this parameter is set to �
                  min="0" max="255">
         <label>9: Ambient illumination Lux Level Report</label>
         <description><![CDATA[
-Ambient illumination Lux Level Report<br /><h1>Overview</h1><p>This parameter defines by how much Lux Level must change, in lux, to be reported to the main controller.</p>
+Ambient illumination Lux Level Report<br /> <h1>Overview</h1><p>This parameter defines by how much Lux Level must change, in lux, to be reported to the main controller.</p>
         ]]></description>
         <default>100</default>
         <limitToOptions>false</limitToOptions>
@@ -163,7 +163,7 @@ Ambient illumination Lux Level Report<br /><h1>Overview</h1><p>This parameter de
                  min="0" max="1">
         <label>10: Led Flash Enable</label>
         <description><![CDATA[
-This parameter defines the Led on/off enable<br /><h1>Overview</h1><p>This parameter defines the Led on/off enable. If this parameter is set to ‘1’, the led blink will be enabled, the led will flash once when motion sensor detect a movement. Otherwise, the led will be turned off always.</p>
+This parameter defines the Led on/off enable<br /> <h1>Overview</h1><p>This parameter defines the Led on/off enable. If this parameter is set to ‘1’, the led blink will be enabled, the led will flash once when motion sensor detect a movement. Otherwise, the led will be turned off always.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -173,7 +173,7 @@ This parameter defines the Led on/off enable<br /><h1>Overview</h1><p>This param
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: GROUP 1</label>
         <description><![CDATA[
-lifeline service that assigned to Motion detector status<br /><h1>Overview</h1><p>GROUP 1 is lifeline service that assigned to Sensor (Motion detector) status – Open/Close. It enables the sensor to send reports and readings to Z-Wave Controller or ZWave Gateway whenever the sensor is triggered. This Group Supports:</p> <ul><li>NOTIFICATION_REPORT_V4</li> <li>SENSOR_BINARY_REPORT_V2</li> <li>SENSOR_MULTILEVEL_REPORT_V7</li> <li>BATTERY_REPORT DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
+lifeline service that assigned to Motion detector status<br /> <h1>Overview</h1><p>GROUP 1 is lifeline service that assigned to Sensor (Motion detector) status – Open/Close. It enables the sensor to send reports and readings to Z-Wave Controller or ZWave Gateway whenever the sensor is triggered. This Group Supports:</p> <ul> <li>NOTIFICATION_REPORT_V4</li> <li>SENSOR_BINARY_REPORT_V2</li> <li>SENSOR_MULTILEVEL_REPORT_V7</li> <li>BATTERY_REPORT DEVICE_RESET_LOCALLY_NOTIFICATION</li> </ul>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>
@@ -181,7 +181,7 @@ lifeline service that assigned to Motion detector status<br /><h1>Overview</h1><
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: GROUP 2</label>
         <description><![CDATA[
-allows for sending control commands to associated devices<br /><h1>Overview</h1><p>GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 2, 3, 5 and 8. This Group Supports:</p> <ul><li> BASIC_SET</li> </ul>
+allows for sending control commands to associated devices<br /> <h1>Overview</h1><p>GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 2, 3, 5 and 8. This Group Supports:</p> <ul> <li> BASIC_SET</li> </ul>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>
@@ -189,7 +189,7 @@ allows for sending control commands to associated devices<br /><h1>Overview</h1>
       <parameter name="group_3" type="text" groupName="association" multiple="true">
         <label>3: GROUP 3</label>
         <description><![CDATA[
-allows for Send Notification to associated devices<br /><h1>Overview</h1><p>GROUP 3 allows for Send Notification to associated devices in this group. This Group Supports:</p> <ul><li>NOTIFICATION_REPORT_V4</li> </ul>
+allows for Send Notification to associated devices<br /> <h1>Overview</h1><p>GROUP 3 allows for Send Notification to associated devices in this group. This Group Supports:</p> <ul> <li>NOTIFICATION_REPORT_V4</li> </ul>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>
@@ -197,7 +197,7 @@ allows for Send Notification to associated devices<br /><h1>Overview</h1><p>GROU
       <parameter name="group_4" type="text" groupName="association" multiple="true">
         <label>4: GROUP 4</label>
         <description><![CDATA[
-allows for Send Sensor Binary Report to associated devices<br /><h1>Overview</h1><p>GROUP 4 allows for Send Sensor Binary Report to associated devices in this group. This Group Supports:</p> <ul><li>SENSOR_BINARY_REPORT_V2</li> </ul>
+allows for Send Sensor Binary Report to associated devices<br /> <h1>Overview</h1><p>GROUP 4 allows for Send Sensor Binary Report to associated devices in this group. This Group Supports:</p> <ul> <li>SENSOR_BINARY_REPORT_V2</li> </ul>
         ]]></description>
         <multipleLimit>4</multipleLimit>
       </parameter>

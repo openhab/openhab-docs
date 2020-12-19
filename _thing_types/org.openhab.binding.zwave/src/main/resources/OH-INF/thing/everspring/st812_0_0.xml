@@ -8,7 +8,7 @@
   <thing-type id="everspring_st812_00_000" listed="false">
     <label>ST812 Flood Sensor</label>
     <description><![CDATA[
-Flood Sensor<br /><h1>Overview</h1><p>The flood detector is designed to sense the presence of water in basements, yachts and many others residential and commercial applications, providing early warning of developing floods. The flood detector is designed so that the transceiver is mounted on the wall and its probe is placed in a location where leakage or flooding is probable.</p> <br /><h2>Inclusion Information</h2><p>Have Z-Wave Controller enter inclusion mode.<br />Pressing link key three times within 1.5 second will enter inclusion mode. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /><h2>Exclusion Information</h2><p>Have Z-Wave Controller enter exclusion mode.<br />Pressing link key three times within 1.5 second will enter exclusion mode. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /><h2>Wakeup Information</h2><p>Pressing link key three times within 1.5 second will wake the device. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p>
+Flood Sensor<br /> <h1>Overview</h1><p>The flood detector is designed to sense the presence of water in basements, yachts and many others residential and commercial applications, providing early warning of developing floods. The flood detector is designed so that the transceiver is mounted on the wall and its probe is placed in a location where leakage or flooding is probable.</p> <br /> <h2>Inclusion Information</h2><p>Have Z-Wave Controller enter inclusion mode.<br />Pressing link key three times within 1.5 second will enter inclusion mode. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /> <h2>Exclusion Information</h2><p>Have Z-Wave Controller enter exclusion mode.<br />Pressing link key three times within 1.5 second will enter exclusion mode. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p> <br /> <h2>Wakeup Information</h2><p>Pressing link key three times within 1.5 second will wake the device. The detector will stay “awake” for 10 minutes to allow time for setting and device status enquiring.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -70,14 +70,14 @@ Flood Sensor<br /><h1>Overview</h1><p>The flood detector is designed to sense th
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Power applied and Sensor Alarm</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>The Detector will send ALARM_REPORT command to the nodes of Group 1 to inform the devices that the Detector is powered up.</p> <p>ALARM_REPORT Command: [Command Class Alarm, Alarm Type = 0x02, Alarm Level = 0x01]</p> <p>The second type for Group 1 is SENSOR_ALARM_REPORT.  255 = Alarm, 00 = Event clear.</p> <p>The third type for Group 1 is ALARM_REPORT type 0x01, Low battery</p>
+<br /> <h1>Overview</h1><p>The Detector will send ALARM_REPORT command to the nodes of Group 1 to inform the devices that the Detector is powered up.</p> <p>ALARM_REPORT Command: [Command Class Alarm, Alarm Type = 0x02, Alarm Level = 0x01]</p> <p>The second type for Group 1 is SENSOR_ALARM_REPORT.  255 = Alarm, 00 = Event clear.</p> <p>The third type for Group 1 is ALARM_REPORT type 0x01, Low battery</p>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Device control</label>
         <description><![CDATA[
-Group to send trigger value to<br /><h1>Overview</h1><p>Will send values of 0-99 to devices in Group 2.  Set the value to send in Parameter 1.</p>
+Group to send trigger value to<br /> <h1>Overview</h1><p>Will send values of 0-99 to devices in Group 2.  Set the value to send in Parameter 1.</p>
         ]]></description>
         <multipleLimit>3</multipleLimit>
       </parameter>

@@ -8,7 +8,7 @@
   <thing-type id="leviton_vrf01_00_000" listed="false">
     <label>VRF01 Scene Capable Quiet Fan Speed Control</label>
     <description><![CDATA[
-Scene Capable Quiet Fan Speed Control<br /><h1>Overview</h1><p>Vizia RF + 1.5A Scene Capable Quiet Fan Speed Control</p> <br /><h2>Inclusion Information</h2><p>Install Switch</p> <p>Place controller in inclusion mode</p> <p>Press on/off paddle on the Switch to include</p> <br /><h2>Exclusion Information</h2><p>Place controller in exclusion mode</p> <p>Press on/off paddle on the Switch to exclude</p>
+Scene Capable Quiet Fan Speed Control<br /> <h1>Overview</h1><p>Vizia RF + 1.5A Scene Capable Quiet Fan Speed Control</p> <br /> <h2>Inclusion Information</h2><p>Install Switch</p> <p>Place controller in inclusion mode</p> <p>Press on/off paddle on the Switch to include</p> <br /> <h2>Exclusion Information</h2><p>Place controller in exclusion mode</p> <p>Press on/off paddle on the Switch to exclude</p>
     ]]></description>
     <category>WallSwitch</category>
 

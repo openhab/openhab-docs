@@ -8,7 +8,7 @@
   <thing-type id="honeywell_th6320zw_00_000" listed="false">
     <label>TH6320ZW T6 Pro Z-Wave Programmable Thermostat</label>
     <description><![CDATA[
-T6 Pro Z-Wave Programmable Thermostat<br /><h1>Overview</h1><p>The Honeywell T6 Pro Z-Wave Programmable Thermostat lets you program and control your home’s HVAC system as well as control other Z-Wave devices connected to the same Z-Wave controller.</p> <p>Displays ambient air temperature, % relative indoor humidity and reports HVAC system status.</p> <br /><h2>Inclusion Information</h2><p>After inclusion procedure has been initiated on your Z-Wave controller, touch Select on the thermostat.</p> <br /><h2>Exclusion Information</h2><p>After exclusion procedure has been initiated on your Z-Wave controller, touch Select on the thermostat.</p>
+T6 Pro Z-Wave Programmable Thermostat<br /> <h1>Overview</h1><p>The Honeywell T6 Pro Z-Wave Programmable Thermostat lets you program and control your home’s HVAC system as well as control other Z-Wave devices connected to the same Z-Wave controller.</p> <p>Displays ambient air temperature, % relative indoor humidity and reports HVAC system status.</p> <br /> <h2>Inclusion Information</h2><p>After inclusion procedure has been initiated on your Z-Wave controller, touch Select on the thermostat.</p> <br /> <h2>Exclusion Information</h2><p>After exclusion procedure has been initiated on your Z-Wave controller, touch Select on the thermostat.</p>
     ]]></description>
     <category>HVAC</category>
 

@@ -8,7 +8,7 @@
   <thing-type id="widom_ums2_00_000" listed="false">
     <label>UMS2 WiDom Smart Roller Shutter</label>
     <description><![CDATA[
-WiDom Smart Roller Shutter<br /><h1>Overview</h1><p>WiDom Smart Roller Shutter is an "in wall device", for the multilevel control of roller shutter motors. It can accurately control the opening and closing of blinds, curtains, shutters, venetian blinds as requested by the user through local commands or remotely using computers, smartphones, tablets. At the same time, it is completely configurable so that it can adapt to the most varied customers’ needs, while being ready for use without needing additional configurations in order to operate.  After an initial calibration procedure, thanks to a proprietary algorithm, WiDom Smart Roller Shutter is able to identify the exact position of the roller shutter without using external sensors. During the operation, a continuous and automatic control of the limit switches allows maintaining the calibration. In the absence of a power source, the system runs a self-repositioning procedure that restores calibration. The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Roller Shutter will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /><h2>Inclusion Information</h2><p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. </p> <br /><h2>Exclusion Information</h2><p>The procedure of exclusion can be activated by Removing a node from the Z-Wave network and any click sequence on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED </p>
+WiDom Smart Roller Shutter<br /> <h1>Overview</h1><p>WiDom Smart Roller Shutter is an "in wall device", for the multilevel control of roller shutter motors. It can accurately control the opening and closing of blinds, curtains, shutters, venetian blinds as requested by the user through local commands or remotely using computers, smartphones, tablets. At the same time, it is completely configurable so that it can adapt to the most varied customers’ needs, while being ready for use without needing additional configurations in order to operate.  After an initial calibration procedure, thanks to a proprietary algorithm, WiDom Smart Roller Shutter is able to identify the exact position of the roller shutter without using external sensors. During the operation, a continuous and automatic control of the limit switches allows maintaining the calibration. In the absence of a power source, the system runs a self-repositioning procedure that restores calibration. The device is equipped with contact protection technology (Zero Crossing) which reduces the electrical stress on the relay contacts and ensures a longer life. The open / closed switching of the device always occur when the instantaneous value of voltage is 0. </p> <p>It operates in any Z-Wave network with other Z-Wave/Z-Wave Plus certified devices and controllers from any other manufacturer. As a constantly powered node, WiDom Smart Roller Shutter will act as repeater regardless of the vendor in order to increase the reliability of the network.</p> <br /> <h2>Inclusion Information</h2><p>Before including the device the LED status indicator is solid RED. The procedure of inclusion is activated by clicking Add in the inclusion interface and by pressing any sequence of click on the integrated button. As soon as the inclusion procedure initiates the LED indicator starts a sequence of GREEN-BLUE blinks. </p> <br /> <h2>Exclusion Information</h2><p>The procedure of exclusion can be activated by Removing a node from the Z-Wave network and any click sequence on the integrated button; as soon as the exclusion initiates, the LED indicator starts a sequence of RED-BLUE blinks. The device is excluded from the network when the LED status indicator is solid RED </p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -100,7 +100,7 @@ WiDom Smart Roller Shutter<br /><h1>Overview</h1><p>WiDom Smart Roller Shutter i
                  min="-1" max="99">
         <label>4: Value for Group 2 with 1 click on UP button</label>
         <description><![CDATA[
-Value for Group 2 with 1 click on UP button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 2 when UP button receive 1 Click</p>
+Value for Group 2 with 1 click on UP button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 2 when UP button receive 1 Click</p>
         ]]></description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
@@ -110,7 +110,7 @@ Value for Group 2 with 1 click on UP button<br /><h1>Overview</h1><p>Value used 
                  min="-1" max="99">
         <label>5: Value for Group 2 with 1 click on DOWN button</label>
         <description><![CDATA[
-Value for Group 2 with 1 click on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 2 when DOWN button receive 1 Click </p>
+Value for Group 2 with 1 click on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 2 when DOWN button receive 1 Click </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -120,7 +120,7 @@ Value for Group 2 with 1 click on DOWN button<br /><h1>Overview</h1><p>Value use
                  min="-1" max="99">
         <label>6: Value for Group 3 with 2 clicks on UP button</label>
         <description><![CDATA[
-Value for Group 3 with 2 clicks on UP button<br /><h1>Overview</h1><p> Value used for devices belonging to Group 3 when UP button receive 2 Clicks</p>
+Value for Group 3 with 2 clicks on UP button<br /> <h1>Overview</h1><p> Value used for devices belonging to Group 3 when UP button receive 2 Clicks</p>
         ]]></description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
@@ -130,7 +130,7 @@ Value for Group 3 with 2 clicks on UP button<br /><h1>Overview</h1><p> Value us
                  min="-1" max="99">
         <label>7: Value for Group 3 with 2 clicks on DOWN button</label>
         <description><![CDATA[
-Value for Group 3 with 2 clicks on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 3 when DOWN button receive 2 Clicks </p>
+Value for Group 3 with 2 clicks on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 3 when DOWN button receive 2 Clicks </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -140,7 +140,7 @@ Value for Group 3 with 2 clicks on DOWN button<br /><h1>Overview</h1><p>Value us
                  min="-1" max="99">
         <label>8: Value for Group 4 with 3 clicks on UP button</label>
         <description><![CDATA[
-Value for Group 4 with 3 clicks on UP button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 4 when UP button receive 3 Clicks </p>
+Value for Group 4 with 3 clicks on UP button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 4 when UP button receive 3 Clicks </p>
         ]]></description>
         <default>-1</default>
         <limitToOptions>false</limitToOptions>
@@ -150,7 +150,7 @@ Value for Group 4 with 3 clicks on UP button<br /><h1>Overview</h1><p>Value used
                  min="-1" max="99">
         <label>9: Value for Group 4 with 3 clicks on DOWN button</label>
         <description><![CDATA[
-Value for Group 4 with 3 clicks on DOWN button<br /><h1>Overview</h1><p>Value used for devices belonging to Group 4 when DOWN button receive 3 Clicks</p>
+Value for Group 4 with 3 clicks on DOWN button<br /> <h1>Overview</h1><p>Value used for devices belonging to Group 4 when DOWN button receive 3 Clicks</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -160,7 +160,7 @@ Value for Group 4 with 3 clicks on DOWN button<br /><h1>Overview</h1><p>Value us
                  min="0" max="2">
         <label>20: Calibration</label>
         <description><![CDATA[
-Defines the status of the calibration procedure<br /><h1>Overview</h1><p>Defines the status of the calibration procedure. By default, as soon as the device has been included, the calibration starts in automatic mode. At the end of the calibration, this parameter is set to 1. Afterwards the calibration can be done again by setting this parameter to 0 (AUTO) or 2 (MANUAL) and clicking on any external button.  If the calibration is set in AUTO mode, it will be completed automatically.  If the calibration is set in MANUAL mode, a click on any external button is necessary to carry on the next step.  During the calibration, the LED indicator blinks repeatedly in BLUE. </p>
+Defines the status of the calibration procedure<br /> <h1>Overview</h1><p>Defines the status of the calibration procedure. By default, as soon as the device has been included, the calibration starts in automatic mode. At the end of the calibration, this parameter is set to 1. Afterwards the calibration can be done again by setting this parameter to 0 (AUTO) or 2 (MANUAL) and clicking on any external button.  If the calibration is set in AUTO mode, it will be completed automatically.  If the calibration is set in MANUAL mode, a click on any external button is necessary to carry on the next step.  During the calibration, the LED indicator blinks repeatedly in BLUE. </p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ Defines the status of the calibration procedure<br /><h1>Overview</h1><p>Defines
                  min="0" max="3000">
         <label>21: Motor idle state definition</label>
         <description><![CDATA[
-Motor idle state definition<br /><h1>Overview</h1><p>Defines the level of power consumption under which the motor is considered steady (stationary) </p>
+Motor idle state definition<br /> <h1>Overview</h1><p>Defines the level of power consumption under which the motor is considered steady (stationary) </p>
         ]]></description>
         <default>1000</default>
         <limitToOptions>false</limitToOptions>
@@ -180,7 +180,7 @@ Motor idle state definition<br /><h1>Overview</h1><p>Defines the level of power 
                  min="0" max="127">
         <label>22: Limit switch recognition</label>
         <description><![CDATA[
-Limit switch recognition<br /><h1>Overview</h1><p>The motor has reached the limit switch when its power consumption is lower than PLIMIT (the power defined in parameter No. 21) for an amount of time defined by this parameter. </p>
+Limit switch recognition<br /> <h1>Overview</h1><p>The motor has reached the limit switch when its power consumption is lower than PLIMIT (the power defined in parameter No. 21) for an amount of time defined by this parameter. </p>
         ]]></description>
         <default>30</default>
         <limitToOptions>false</limitToOptions>

@@ -8,7 +8,7 @@
   <thing-type id="technisat_03009498_00_000" listed="false">
     <label>0300/9499 Single ON/OFF Switch Relay</label>
     <description><![CDATA[
-Single ON/OFF Switch Relay<br /><h1>Overview</h1><p>The Single-Switch Relay controls the on/off function for one electrical device. It measures power consumption of the connected device. The single is installed in standard flush-mounted boxes.</p> <br /><h2>Inclusion Information</h2><ol><li>Install the TechniSat Shutter.</li> <li>After checking the correct installation, re-enable electrical power at the main fuse or circuit breaker.</li> <li>Start the Z-Wave device add mode on your Z-Wave gateway, according to the gateway‘s manual.</li> <li>Press T1 3x within 1 second.</li> <li>The red status LED is on while the device is added to the Z-Wave network.</li> <li>The green LED is on for 5 seconds after successfully adding the device.</li> </ol><br /><h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.</p>
+Single ON/OFF Switch Relay<br /> <h1>Overview</h1><p>The Single-Switch Relay controls the on/off function for one electrical device. It measures power consumption of the connected device. The single is installed in standard flush-mounted boxes.</p> <br /> <h2>Inclusion Information</h2><ol><li>Install the TechniSat Shutter.</li> <li>After checking the correct installation, re-enable electrical power at the main fuse or circuit breaker.</li> <li>Start the Z-Wave device add mode on your Z-Wave gateway, according to the gateway‘s manual.</li> <li>Press T1 3x within 1 second.</li> <li>The red status LED is on while the device is added to the Z-Wave network.</li> <li>The green LED is on for 5 seconds after successfully adding the device.</li> </ol> <br /> <h2>Exclusion Information</h2><p>Press and hold the upper position of the left button (T1) for at least 10 seconds when the shutter is in the top position.</p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -86,7 +86,7 @@ Single ON/OFF Switch Relay<br /><h1>Overview</h1><p>The Single-Switch Relay cont
                  min="0" max="8640">
         <label>2: Current wattage meter</label>
         <description><![CDATA[
-Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>3 ... 8640</strong> (30 seconds - 1 day)</p>
+Interval of current wattage meter reports in 10 seconds<br /> <h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>3 ... 8640</strong> (30 seconds - 1 day)</p>
         ]]></description>
         <default>3</default>
         <limitToOptions>false</limitToOptions>
@@ -96,7 +96,7 @@ Interval of current wattage meter reports in 10 seconds<br /><h1>Overview</h1><p
                  min="0" max="30240">
         <label>3: Active energy meter</label>
         <description><![CDATA[
-Interval of active energy meter reports in minutes<br /><h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>10 ... 30240</strong> (10 minutes - 3 weeks)</p>
+Interval of active energy meter reports in minutes<br /> <h1>Overview</h1><p><strong>0</strong> - disable unsolicited reports</p> <p><strong>10 ... 30240</strong> (10 minutes - 3 weeks)</p>
         ]]></description>
         <default>60</default>
         <limitToOptions>false</limitToOptions>
@@ -105,7 +105,7 @@ Interval of active energy meter reports in minutes<br /><h1>Overview</h1><p><str
       <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Operation mode of button T</label>
         <description><![CDATA[
-Change Operation mode of button T<br /><h1>Overview</h1><p><strong>0</strong> - T1 turns output L1 on, T2 turn output L1 off</p> <p><strong>1</strong> - T1 &amp; T2 toggle output L1</p>
+Change Operation mode of button T<br /> <h1>Overview</h1><p><strong>0</strong> - T1 turns output L1 on, T2 turn output L1 off</p> <p><strong>1</strong> - T1 &amp; T2 toggle output L1</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -118,7 +118,7 @@ Change Operation mode of button T<br /><h1>Overview</h1><p><strong>0</strong> - 
       <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Extension connector switch type</label>
         <description><![CDATA[
-Configuration of switch type connected to extension connector S<br /><h1>Overview</h1><p><strong>0</strong> - toggle switch</p> <p><strong>1</strong> - push button switch</p>
+Configuration of switch type connected to extension connector S<br /> <h1>Overview</h1><p><strong>0</strong> - toggle switch</p> <p><strong>1</strong> - push button switch</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -131,7 +131,7 @@ Configuration of switch type connected to extension connector S<br /><h1>Overvie
       <parameter name="config_6_1" type="integer" groupName="configuration">
         <label>6: Extension input scene mapping</label>
         <description><![CDATA[
-Central Scene mapping of extension input S<br /><h1>Overview</h1><p><strong>1</strong> - map S to central scene of T1</p> <p><strong>2</strong> - map S to central scene of T2</p> <p><strong>3</strong>- map S to own central scene</p>
+Central Scene mapping of extension input S<br /> <h1>Overview</h1><p><strong>1</strong> - map S to central scene of T1</p> <p><strong>2</strong> - map S to central scene of T2</p> <p><strong>3</strong>- map S to own central scene</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -146,14 +146,14 @@ Central Scene mapping of extension input S<br /><h1>Overview</h1><p><strong>1</s
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Lifeline</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ul><li>Device Reset Locally Notification</li> <li>Central Scene notification</li> <li>Meter Report</li> <li>Switch Binary Report</li> <li>Notification Report</li> </ul>
+<br /> <h1>Overview</h1><ul> <li>Device Reset Locally Notification</li> <li>Central Scene notification</li> <li>Meter Report</li> <li>Switch Binary Report</li> <li>Notification Report</li> </ul>
         ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Switch-State</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><ul><li>Basic Set</li> </ul>
+<br /> <h1>Overview</h1><ul> <li>Basic Set</li> </ul>
         ]]></description>
         <multipleLimit>10</multipleLimit>
       </parameter>

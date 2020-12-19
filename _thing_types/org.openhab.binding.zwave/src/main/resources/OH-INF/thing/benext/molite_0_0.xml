@@ -8,7 +8,7 @@
   <thing-type id="benext_molite_00_000" listed="false">
     <label>Molite Movement sensor with temperature and light sensor</label>
     <description><![CDATA[
-Movement sensor with temperature and light sensor<br /><h1>Overview</h1><p>Basic operations</p> <ul><li>The MoLiTe can detect movement,</li> <li>The MoLiTe can measure light intensity</li> <li>The MoLiTe can measure the temperature</li> <li>The MoLiTe can trigger a security system</li> </ul><br /><h2>Inclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /><h2>Exclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /><h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for four seconds (mount the device).</p>
+Movement sensor with temperature and light sensor<br /> <h1>Overview</h1><p>Basic operations</p> <ul><li>The MoLiTe can detect movement,</li> <li>The MoLiTe can measure light intensity</li> <li>The MoLiTe can measure the temperature</li> <li>The MoLiTe can trigger a security system</li> </ul> <br /> <h2>Inclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /> <h2>Exclusion Information</h2><p>Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process</p> <br /> <h2>Wakeup Information</h2><p>It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for four seconds (mount the device).</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -82,7 +82,7 @@ Movement sensor with temperature and light sensor<br /><h1>Overview</h1><p>Basic
                  min="0" max="900">
         <label>2: Mode timeout</label>
         <description><![CDATA[
-Mode timeout<br /><h1>Overview</h1><p>The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.</p>
+Mode timeout<br /> <h1>Overview</h1><p>The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.</p>
         ]]></description>
         <default>900</default>
         <limitToOptions>false</limitToOptions>
@@ -92,7 +92,7 @@ Mode timeout<br /><h1>Overview</h1><p>The time used in mode 2 to turn the sensor
                  min="0" max="2700">
         <label>3: Switch off time</label>
         <description><![CDATA[
-Switch off time<br /><h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done.</p> <p>The Motion sensor is turned on and when movement is detected again.</p> <p>The mode timeout (cfg param 1) will start running all over again.</p> <p>When switch off time is done a basic off message is sent to the associated node</p>
+Switch off time<br /> <h1>Overview</h1><p>The switch off time will start running as soon as mode timeout is done.</p> <p>The Motion sensor is turned on and when movement is detected again.</p> <p>The mode timeout (cfg param 1) will start running all over again.</p> <p>When switch off time is done a basic off message is sent to the associated node</p>
         ]]></description>
         <default>2700</default>
         <limitToOptions>false</limitToOptions>
@@ -130,7 +130,7 @@ Switch off time<br /><h1>Overview</h1><p>The switch off time will start running 
                  min="0" max="17">
         <label>7: Light table 100 %</label>
         <description><![CDATA[
-Light table 100 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 100%.</p> <p>See chapter light table for more information.</p>
+Light table 100 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 100%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>17</default>
         <limitToOptions>false</limitToOptions>
@@ -140,7 +140,7 @@ Light table 100 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower th
                  min="0" max="38">
         <label>8: Light table 90 %</label>
         <description><![CDATA[
-Light table 90 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 90%.</p> <p>See chapter light table for more information.</p>
+Light table 90 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 90%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>38</default>
         <limitToOptions>false</limitToOptions>
@@ -150,7 +150,7 @@ Light table 90 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="85">
         <label>9: Light table 80 %</label>
         <description><![CDATA[
-Light table 80 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 80%.</p> <p>See chapter light table for more information.</p>
+Light table 80 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 80%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>85</default>
         <limitToOptions>false</limitToOptions>
@@ -160,7 +160,7 @@ Light table 80 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="186">
         <label>10: Light table 70 %</label>
         <description><![CDATA[
-Light table 70 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 70%.</p> <p>See chapter light table for more information.</p>
+Light table 70 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 70%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>186</default>
         <limitToOptions>false</limitToOptions>
@@ -170,7 +170,7 @@ Light table 70 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="407">
         <label>11: Light table 60 %</label>
         <description><![CDATA[
-Light table 60 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 60%.</p> <p>See chapter light table for more information.</p>
+Light table 60 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 60%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>407</default>
         <limitToOptions>false</limitToOptions>
@@ -180,7 +180,7 @@ Light table 60 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="891">
         <label>12: Light table 50 %</label>
         <description><![CDATA[
-Light table 50 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 50%.</p> <p>See chapter light table for more information.</p>
+Light table 50 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 50%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>891</default>
         <limitToOptions>false</limitToOptions>
@@ -190,7 +190,7 @@ Light table 50 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="1949">
         <label>13: Light table 40 %</label>
         <description><![CDATA[
-Light table 40 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 40%.</p> <p>See chapter light table for more information.</p>
+Light table 40 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 40%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>1949</default>
         <limitToOptions>false</limitToOptions>
@@ -200,7 +200,7 @@ Light table 40 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="4265">
         <label>14: Light table 30 %</label>
         <description><![CDATA[
-Light table 30 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 30%.</p> <p>See chapter light table for more information.</p>
+Light table 30 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 30%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>4265</default>
         <limitToOptions>false</limitToOptions>
@@ -210,7 +210,7 @@ Light table 30 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="9332">
         <label>15: Light table 20 %</label>
         <description><![CDATA[
-Light table 20 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 20%.</p> <p>See chapter light table for more information.</p>
+Light table 20 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 20%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>9332</default>
         <limitToOptions>false</limitToOptions>
@@ -220,7 +220,7 @@ Light table 20 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
                  min="0" max="20417">
         <label>16: Light table 10 %</label>
         <description><![CDATA[
-Light table 10 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 10%.</p> <p>See chapter light table for more information.</p>
+Light table 10 %<br /> <h1>Overview</h1><p>If a LDR resistance measured lower then this value the returned light percentage is 10%.</p> <p>See chapter light table for more information.</p>
         ]]></description>
         <default>20417</default>
         <limitToOptions>false</limitToOptions>
@@ -230,7 +230,7 @@ Light table 10 %<br /><h1>Overview</h1><p>If a LDR resistance measured lower the
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Devices to be switched on when motion detected</label>
         <description><![CDATA[
-<br /><h1>Overview</h1><p>Devices to be switched on when motion detected and off after on time</p>
+<br /> <h1>Overview</h1><p>Devices to be switched on when motion detected and off after on time</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

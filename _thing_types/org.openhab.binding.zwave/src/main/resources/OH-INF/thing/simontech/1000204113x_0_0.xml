@@ -8,7 +8,7 @@
   <thing-type id="simontech_1000204113x_00_000" listed="false">
     <label>10002041-13X iO Cover for the Simon 100 Schuko Plug Socket</label>
     <description><![CDATA[
-iO Cover for the Simon 100 Schuko Plug Socket<br /><h1>Overview</h1><p>Once plugged to 10002432-039 this front permits the direct control of a load plugged toggling it each time that the pushbutton is pressed. It is also possible to control the load using Z- Wave devices.</p> <br /><h2>Inclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p> <br /><h2>Exclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p>
+iO Cover for the Simon 100 Schuko Plug Socket<br /> <h1>Overview</h1><p>Once plugged to 10002432-039 this front permits the direct control of a load plugged toggling it each time that the pushbutton is pressed. It is also possible to control the load using Z- Wave devices.</p> <br /> <h2>Inclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p> <br /> <h2>Exclusion Information</h2><p>KeyPad long press (2s&lt;t&lt;30s) -&gt; Central LED blinks until release of Pushbutton -&gt; The Node Information Frame is sent via Z- Wave.</p>
     ]]></description>
     <category>PowerOutlet</category>
 
@@ -80,7 +80,7 @@ iO Cover for the Simon 100 Schuko Plug Socket<br /><h1>Overview</h1><p>Once plug
                  min="0" max="65535">
         <label>2: Custom consumption limit</label>
         <description><![CDATA[
-Custom consumption limit<br /><h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets the power in Watts that is supported. (once the load is over, it is disconnected).</p>
+Custom consumption limit<br /> <h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets the power in Watts that is supported. (once the load is over, it is disconnected).</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -90,7 +90,7 @@ Custom consumption limit<br /><h1>Overview</h1><p>0x0001 - 0xFFFF -&gt; Sets the
                  min="0" max="99">
         <label>3: Beacon</label>
         <description><![CDATA[
-Beacon LEDs<br /><h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensity of the beacon LEDs.</p>
+Beacon LEDs<br /> <h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensity of the beacon LEDs.</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -104,7 +104,7 @@ Beacon LEDs<br /><h1>Overview</h1><p>0x01-0x63 (1-100%) -&gt; Sets the intensity
                  min="0" max="254">
         <label>10: Delay ON</label>
         <description><![CDATA[
-Delay<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+Delay<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -114,7 +114,7 @@ Delay<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <l
                  min="0" max="254">
         <label>11: Activation TIME</label>
         <description><![CDATA[
-Activation TIME<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+Activation TIME<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -156,7 +156,7 @@ Activation TIME<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timi
                  min="0" max="254">
         <label>16: Delay OFF</label>
         <description><![CDATA[
-Delay OFF<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
+Delay OFF<br /> <h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li> <li>0x01-0x7F -&gt; Sets a timing with a range of (1-127sec)</li> <li>0x80-0xFE -&gt; Sets a timing with range of (1-127min)</li> </ul>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -166,7 +166,7 @@ Delay OFF<br /><h1>Overview</h1><ul><li>0x00 -&gt; (Default) Disables timing</li
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
         <description><![CDATA[
-Group 1 (Lifeline) -&gt; Name “lifeline”<br /><h1>Overview</h1><p>COMMAND_CLASS_BASIC_REPORT</p> <p>It is sent to the associated nodes when the load changes state:</p> <ul><li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul><p>COMMAND_CLASS_METER_REPORT_V4</p> <p>It is sent to the associated nodes when the power consumed varies more than 10%</p> <p>“Electric meter”, “Consumed”, “Watts”, Size 4, Precision 1, Value (W)</p> <p>COMMAND_CLASS_DEVICE_RESET_LOCALLY_ NOTIFICATION</p> <p>The associated nodes are sent when the device is deleted from the Z-Wave network</p>
+Group 1 (Lifeline) -&gt; Name “lifeline”<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC_REPORT</p> <p>It is sent to the associated nodes when the load changes state:</p> <ul> <li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul> <p>COMMAND_CLASS_METER_REPORT_V4</p> <p>It is sent to the associated nodes when the power consumed varies more than 10%</p> <p>“Electric meter”, “Consumed”, “Watts”, Size 4, Precision 1, Value (W)</p> <p>COMMAND_CLASS_DEVICE_RESET_LOCALLY_ NOTIFICATION</p> <p>The associated nodes are sent when the device is deleted from the Z-Wave network</p>
         ]]></description>
         <multipleLimit>3</multipleLimit>
       </parameter>
@@ -174,7 +174,7 @@ Group 1 (Lifeline) -&gt; Name “lifeline”<br /><h1>Overview</h1><p>COMMAND_CL
       <parameter name="group_2" type="text" groupName="association" multiple="true">
         <label>2: Group 2</label>
         <description><![CDATA[
-Group 2 (Control) -&gt; Name “ctrl"<br /><h1>Overview</h1><p>COMMAND_CLASS_BASIC_REPORT</p> <p>It is sent to the associated nodes when the load changes state:</p> <ul><li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul>
+Group 2 (Control) -&gt; Name “ctrl"<br /> <h1>Overview</h1><p>COMMAND_CLASS_BASIC_REPORT</p> <p>It is sent to the associated nodes when the load changes state:</p> <ul> <li>ON -&gt; 0xFF</li> <li>OFF -&gt; 0x00</li> </ul>
         ]]></description>
         <multipleLimit>20</multipleLimit>
       </parameter>

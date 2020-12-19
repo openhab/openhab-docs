@@ -8,7 +8,7 @@
   <thing-type id="ge_zw6302_00_000" listed="false">
     <label>ZW6302 Portable Smart Motion Sensor</label>
     <description><![CDATA[
-Portable Smart Motion Sensor<br /><h1>Overview</h1><p>Make the move toward convenience with the Z-Wave Portable Smart Motion Sensor for your home.  This Z-Wave compatible device boosts the safety of your home by working with your home’s gateway  to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is detected. <br />Use the included batteries for easy placement anywhere, plug into the wall using a AC adapter and  USB cable – never replace batteries again. </p> <br /><h2>Inclusion Information</h2><p>Once the controller is ready to include your motion sensor, press and release the button on the sensor to include it in the network</p> <br /><h2>Exclusion Information</h2><p>Once the controller is ready to exclude your motion sensor, press and release the button on the sensor to exclude it from the network. </p> <br /><h2>Wakeup Information</h2><p>Press and release the button on the sensor</p>
+Portable Smart Motion Sensor<br /> <h1>Overview</h1><p>Make the move toward convenience with the Z-Wave Portable Smart Motion Sensor for your home.  This Z-Wave compatible device boosts the safety of your home by working with your home’s gateway  to wirelessly trigger scenes and send alerts to your smartphone or tablet whenever motion is detected. <br />Use the included batteries for easy placement anywhere, plug into the wall using a AC adapter and  USB cable – never replace batteries again. </p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to include your motion sensor, press and release the button on the sensor to include it in the network</p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to exclude your motion sensor, press and release the button on the sensor to exclude it from the network. </p> <br /> <h2>Wakeup Information</h2><p>Press and release the button on the sensor</p>
     ]]></description>
     <category>MotionDetector</category>
 
@@ -61,7 +61,7 @@ Portable Smart Motion Sensor<br /><h1>Overview</h1><p>Make the move toward conve
       <parameter name="config_13_1" type="integer" groupName="configuration">
         <label>13: Motion Sensor</label>
         <description><![CDATA[
-Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
+Motion Sensor<br /> <h1>Overview</h1><p>Detect Motion</p>
         ]]></description>
         <default>3</default>
         <options>
@@ -101,7 +101,7 @@ Motion Sensor<br /><h1>Overview</h1><p>Detect Motion</p>
       <parameter name="config_28_1" type="integer" groupName="configuration">
         <label>28: Enable &amp; Disable the LED indication</label>
         <description><![CDATA[
-Enable &amp; Disable the LED indication<br /><h1>Overview</h1><p>Enable &amp; Disable the LED indication when PIR is triggered</p>
+Enable &amp; Disable the LED indication<br /> <h1>Overview</h1><p>Enable &amp; Disable the LED indication when PIR is triggered</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -115,7 +115,7 @@ Enable &amp; Disable the LED indication<br /><h1>Overview</h1><p>Enable &amp; Di
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: ZW6302</label>
         <description><![CDATA[
-Portable Smart Motion Sensor<br /><h1>Overview</h1><p>Group 1 supports Z-Wave Plus lifeline communication and notification. lifeline association only supports the "manual reset" event and notification report, however it can be changed to send basic set with notification and basic report with notification. See programming instructions.</p>
+Portable Smart Motion Sensor<br /> <h1>Overview</h1><p>Group 1 supports Z-Wave Plus lifeline communication and notification. lifeline association only supports the "manual reset" event and notification report, however it can be changed to send basic set with notification and basic report with notification. See programming instructions.</p>
         ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>

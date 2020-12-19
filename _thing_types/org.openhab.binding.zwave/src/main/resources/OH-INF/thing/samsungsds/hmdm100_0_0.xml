@@ -8,7 +8,7 @@
   <thing-type id="samsungsds_hmdm100_00_000" listed="false">
     <label>hmdm100 Doorlock Control Module for Samsung Locks</label>
     <description><![CDATA[
-Doorlock Control Module for Samsung Locks<br /><h1>Overview</h1><p>Chip Insert for Zwave controll of the Samsung Lock</p> <br /><h2>Inclusion Information</h2><p>triple press the inclusing button</p> <br /><h2>Exclusion Information</h2><p>Triple press inclusion button</p> <br /><h2>Wakeup Information</h2><p>triple press inclusion button</p>
+Doorlock Control Module for Samsung Locks<br /> <h1>Overview</h1><p>Chip Insert for Zwave controll of the Samsung Lock</p> <br /> <h2>Inclusion Information</h2><p>triple press the inclusing button</p> <br /> <h2>Exclusion Information</h2><p>Triple press inclusion button</p> <br /> <h2>Wakeup Information</h2><p>triple press inclusion button</p>
     ]]></description>
     <category>Lock</category>
 
@@ -56,7 +56,7 @@ Doorlock Control Module for Samsung Locks<br /><h1>Overview</h1><p>Chip Insert f
                  min="0" max="5">
         <label>1: Security Function</label>
         <description><![CDATA[
-0=Disable 1=Enable 2=SystemDisable 3=SystemEnable 4=RequestForEnable 5=Fail<br /><h1>Overview</h1><p>0=Disable 1=Enable 2=SystemDisable 3=SystemEnable 4=RequestForEnable 5=Fail</p> <p>- 0x02 : Command for disable which is set by platform of Samsung SDS. After setting, if you try to get value of Security Function , '0x00' will be reported.</p> <p>- 0x03 : Command for enable which is set by platform of Samsung SDS. After setting, if you try to get value of Security Function, '0x01' will be reported.</p> <p>- 0x04 : 'Request for Enable' command which is reported by Doorlock. This cannot be set. (8th function in manual)</p> <p>- 0x05 : If the request for 'Request for Enable' command is failed in platform, this will be set by platform of Samsung SDS.</p>
+0=Disable 1=Enable 2=SystemDisable 3=SystemEnable 4=RequestForEnable 5=Fail<br /> <h1>Overview</h1><p>0=Disable 1=Enable 2=SystemDisable 3=SystemEnable 4=RequestForEnable 5=Fail</p> <p>- 0x02 : Command for disable which is set by platform of Samsung SDS. After setting, if you try to get value of Security Function , '0x00' will be reported.</p> <p>- 0x03 : Command for enable which is set by platform of Samsung SDS. After setting, if you try to get value of Security Function, '0x01' will be reported.</p> <p>- 0x04 : 'Request for Enable' command which is reported by Doorlock. This cannot be set. (8th function in manual)</p> <p>- 0x05 : If the request for 'Request for Enable' command is failed in platform, this will be set by platform of Samsung SDS.</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -66,7 +66,7 @@ Doorlock Control Module for Samsung Locks<br /><h1>Overview</h1><p>Chip Insert f
                  min="0" max="1">
         <label>2: Privacy Mode</label>
         <description><![CDATA[
-0=Disable 1=Enable<br /><h1>Overview</h1><p>0=Disable 1=Enable</p>
+0=Disable 1=Enable<br /> <h1>Overview</h1><p>0=Disable 1=Enable</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -76,7 +76,7 @@ Doorlock Control Module for Samsung Locks<br /><h1>Overview</h1><p>Chip Insert f
                  min="1" max="130">
         <label>3: Registered User ID</label>
         <description><![CDATA[
-The number of registered user codes.2<br /><h1>Overview</h1><p>The number of registered user codes.</p> <p>This parameter is supported to ‘Configuration Get Command’ only.</p>
+The number of registered user codes.2<br /> <h1>Overview</h1><p>The number of registered user codes.</p> <p>This parameter is supported to ‘Configuration Get Command’ only.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -86,7 +86,7 @@ The number of registered user codes.2<br /><h1>Overview</h1><p>The number of reg
                  min="0" max="1">
         <label>10: Platform</label>
         <description><![CDATA[
-0=Common 1=Samsung SDS<br /><h1>Overview</h1><p>0=Common 1=Samsung SDS</p> <p>This value set by platform after device connected with platform of Samsung SDS.</p>
+0=Common 1=Samsung SDS<br /> <h1>Overview</h1><p>0=Common 1=Samsung SDS</p> <p>This value set by platform after device connected with platform of Samsung SDS.</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>

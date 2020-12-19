@@ -8,7 +8,7 @@
   <thing-type id="intermatic_ca3500_00_000" listed="false">
     <label>CA3500 15 Amp Split-Duplex Receptacle</label>
     <description><![CDATA[
-15 Amp Split-Duplex Receptacle<br /><h1>Overview</h1><p>In-Wall receptacle (dual, one switched); 15A</p> <br /><h2>Inclusion Information</h2><p>Press the Activator button.</p> <br /><h2>Exclusion Information</h2><p>Press the Activator button.</p>
+15 Amp Split-Duplex Receptacle<br /> <h1>Overview</h1><p>In-Wall receptacle (dual, one switched); 15A</p> <br /> <h2>Inclusion Information</h2><p>Press the Activator button.</p> <br /> <h2>Exclusion Information</h2><p>Press the Activator button.</p>
     ]]></description>
     <category>PowerOutlet</category>
 

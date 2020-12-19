@@ -8,7 +8,7 @@
   <thing-type id="aeon_zw122_00_000" listed="false">
     <label>ZW122 Water Sensor 6</label>
     <description><![CDATA[
-Water Sensor 6<br /><h1>Overview</h1><p>The ZW122  contains 4 sensing points, which would be more accurately to detect the presence and absence of water or detect whether there is water leak in some places of your home. The Water Sensor 6 has an inbuilt buzzer that can play alarm sounds to let you know when the water is detected.</p> <br /><h2>Inclusion Information</h2><ol><li>Let your Z-Wave primary controller/gateway enter into adding/inclusion mode. Take your Sensor near to your primary controller.</li> <li>Press the Action Button once on your Sensor, the green LED will blink.</li> <li>If your Water Sensor has been successfully added to your Z-Wave network, its green LED will be solid for 2 seconds and then the orange LED will fast blink for 10 minutes if the Sensor does not receive the Wake Up No More info Command from Controller. If the adding was unsuccessful and the red LED will be solid for 2 seconds and then become colourful gradient for a few seconds before it turns off, repeat the above steps.</li> </ol><br /><h2>Exclusion Information</h2><ol><li>Turn your primary controller into device removal mode. Take the Sensor unit near to your primary controller.</li> <li>Press the Action Button on your Sensor.</li> <li>If your Water Sensor is successfully removed from the Z-Wave network, the RGB LED will become a colourful gradient for a few seconds and then turn off. If the removing was unsuccessful, the blue LED will be solid for 2 seconds and then turn off, repeat the above steps</li> </ol><br /><h2>Wakeup Information</h2><p>Press the Action Button on the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.<br />If you want your Sensor to keep awake for a longer time, press and hold the Action Button on the back of the Sensor unit for 3 seconds, then your Sensor will wake up for 10 minutes and the orange LED will fast blink while it is awake.</p>
+Water Sensor 6<br /> <h1>Overview</h1><p>The ZW122  contains 4 sensing points, which would be more accurately to detect the presence and absence of water or detect whether there is water leak in some places of your home. The Water Sensor 6 has an inbuilt buzzer that can play alarm sounds to let you know when the water is detected.</p> <br /> <h2>Inclusion Information</h2><ol><li>Let your Z-Wave primary controller/gateway enter into adding/inclusion mode. Take your Sensor near to your primary controller.</li> <li>Press the Action Button once on your Sensor, the green LED will blink.</li> <li>If your Water Sensor has been successfully added to your Z-Wave network, its green LED will be solid for 2 seconds and then the orange LED will fast blink for 10 minutes if the Sensor does not receive the Wake Up No More info Command from Controller. If the adding was unsuccessful and the red LED will be solid for 2 seconds and then become colourful gradient for a few seconds before it turns off, repeat the above steps.</li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Turn your primary controller into device removal mode. Take the Sensor unit near to your primary controller.</li> <li>Press the Action Button on your Sensor.</li> <li>If your Water Sensor is successfully removed from the Z-Wave network, the RGB LED will become a colourful gradient for a few seconds and then turn off. If the removing was unsuccessful, the blue LED will be solid for 2 seconds and then turn off, repeat the above steps</li> </ol> <br /> <h2>Wakeup Information</h2><p>Press the Action Button on the Sensor unit and then release the Action Button. This will trigger and send a wake up notification command to your controller/gateway.<br />If you want your Sensor to keep awake for a longer time, press and hold the Action Button on the back of the Sensor unit for 3 seconds, then your Sensor will wake up for 10 minutes and the orange LED will fast blink while it is awake.</p>
     ]]></description>
     <category>Sensor</category>
 
@@ -85,7 +85,7 @@ Water Sensor 6<br /><h1>Overview</h1><p>The ZW122  contains 4 sensing points, w
       <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Enable/Disable Power On Wake Period</label>
         <description><![CDATA[
-Enables or disables a wake period of 10 minutes after power up.<br /><h1>Overview</h1><p>Enable/disable wake up for 10 minutes state when re-power on the Sensor. ( 0 = Disable, 1 = Enable. )</p>
+Enables or disables a wake period of 10 minutes after power up.<br /> <h1>Overview</h1><p>Enable/disable wake up for 10 minutes state when re-power on the Sensor. ( 0 = Disable, 1 = Enable. )</p>
         ]]></description>
         <default>0</default>
         <options>
@@ -99,7 +99,7 @@ Enables or disables a wake period of 10 minutes after power up.<br /><h1>Overvie
                  min="15" max="255">
         <label>8: WakeUp Time Out</label>
         <description><![CDATA[
-The number of seconds for the device to stay awake after the WakeUp is sent out.<br /><h1>Overview</h1><p>Set the timeout to go into the sleep state after the Wake Up Notification was sent out. 15 - 255</p>
+The number of seconds for the device to stay awake after the WakeUp is sent out.<br /> <h1>Overview</h1><p>Set the timeout to go into the sleep state after the Wake Up Notification was sent out. 15 - 255</p>
         ]]></description>
         <default>30</default>
       </parameter>
@@ -108,7 +108,7 @@ The number of seconds for the device to stay awake after the WakeUp is sent out.
                  min="0" max="65535">
         <label>9: Current power mode (read only)</label>
         <description><![CDATA[
-Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Battery power</p> <p>Value 2: 0=sleeping after powered on, 1=keep awake for 10 min after power on, 2=always awake</p>
+Get the current power mode<br /> <h1>Overview</h1><p>Value 1: 0=USB power, 1=Battery power</p> <p>Value 2: 0=sleeping after powered on, 1=keep awake for 10 min after power on, 2=always awake</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -127,7 +127,7 @@ Get the current power mode<br /><h1>Overview</h1><p>Value 1: 0=USB power, 1=Batt
                  min="0" max="255">
         <label>10: Repeat cyle</label>
         <description><![CDATA[
-Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the buzzer from ON state to OFF state</p>
+Repeat cylce of buzzer alarm<br /> <h1>Overview</h1><p>Once cycle is equal to the buzzer from ON state to OFF state</p>
         ]]></description>
         <default>10</default>
         <limitToOptions>false</limitToOptions>
@@ -153,7 +153,7 @@ Repeat cylce of buzzer alarm<br /><h1>Overview</h1><p>Once cycle is equal to the
                  min="10" max="50">
         <label>39: Low Battery Threshold</label>
         <description><![CDATA[
-Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the low battery value. Range: 10% to 50%. </p>
+Set the low battery value. (Range: 10% to 50%)<br /> <h1>Overview</h1><p>Set the low battery value. Range: 10% to 50%. </p>
         ]]></description>
         <default>20</default>
       </parameter>
@@ -181,7 +181,7 @@ Set the low battery value. (Range: 10% to 50%)<br /><h1>Overview</h1><p>Set the 
       <parameter name="config_49_4_0000FF00" type="integer" groupName="configuration">
         <label>49: Temperature Unit</label>
         <description><![CDATA[
-Celsius or Fahrenheit<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
+Celsius or Fahrenheit<br /> <h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -195,7 +195,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F),
                  min="0" max="32767">
         <label>49: Temperature value</label>
         <description><![CDATA[
-Temperature value<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
+Temperature value<br /> <h1>Overview</h1><p>US Version: 0x04100100 (104 °F), other versions: 0x01900000 (40 °C)</p>
         ]]></description>
         <default>4</default>
         <limitToOptions>false</limitToOptions>
@@ -213,7 +213,7 @@ Temperature value<br /><h1>Overview</h1><p>US Version: 0x04100100 (104 °F), oth
       <parameter name="config_50_4_0000FF00" type="integer" groupName="configuration">
         <label>50: Temperature underheat unit</label>
         <description><![CDATA[
-Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
+Celsius or Fahrenheit<br /> <h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -227,7 +227,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
                  min="0" max="32767">
         <label>50: Temperature limit value</label>
         <description><![CDATA[
-Temperature limit value<br /><h1>Overview</h1><p>US Version: 0x01400100 (32 °F), other versions: 0x00000000 (0 °C)</p>
+Temperature limit value<br /> <h1>Overview</h1><p>US Version: 0x01400100 (32 °F), other versions: 0x00000000 (0 °C)</p>
         ]]></description>
         <default>1</default>
         <limitToOptions>false</limitToOptions>
@@ -245,7 +245,7 @@ Temperature limit value<br /><h1>Overview</h1><p>US Version: 0x01400100 (32 °F)
       <parameter name="config_57_2_0000000F" type="integer" groupName="configuration">
         <label>57: Temperature recover unit</label>
         <description><![CDATA[
-Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
+Celsius or Fahrenheit<br /> <h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -266,7 +266,7 @@ Celsius or Fahrenheit<br /><h1>Overview</h1><p>0=Celsius, 1=Fahrenheit</p>
       <parameter name="config_64_1" type="integer" groupName="configuration">
         <label>64: Default Temperature Unit</label>
         <description><![CDATA[
-Sets the default temperature unit.<br /><h1>Overview</h1><p>Sets the default temperature unit.  0 = Celsius unit. 1 = Fahrenheit unit.</p>
+Sets the default temperature unit.<br /> <h1>Overview</h1><p>Sets the default temperature unit.  0 = Celsius unit. 1 = Fahrenheit unit.</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -280,7 +280,7 @@ Sets the default temperature unit.<br /><h1>Overview</h1><p>Sets the default tem
                  min="0" max="1">
         <label>84: State of tilt sensor</label>
         <description><![CDATA[
-State of tilt sensor, read only<br /><h1>Overview</h1><p>0=main unit horizontal, 1=main unit vertical</p>
+State of tilt sensor, read only<br /> <h1>Overview</h1><p>0=main unit horizontal, 1=main unit vertical</p>
         ]]></description>
         <default>0</default>
         <limitToOptions>false</limitToOptions>
@@ -289,7 +289,7 @@ State of tilt sensor, read only<br /><h1>Overview</h1><p>0=main unit horizontal,
       <parameter name="config_86_1" type="integer" groupName="configuration">
         <label>86: Enable/Disable the buzzer</label>
         <description><![CDATA[
-Enables or disables the buzzer<br /><h1>Overview</h1><p>Enable/Disable the buzzer 1 - Enabled, 0 - Disabled</p>
+Enables or disables the buzzer<br /> <h1>Overview</h1><p>Enable/Disable the buzzer 1 - Enabled, 0 - Disabled</p>
         ]]></description>
         <default>1</default>
         <options>
@@ -303,7 +303,7 @@ Enables or disables the buzzer<br /><h1>Overview</h1><p>Enable/Disable the buzze
                  min="1" max="55">
         <label>87: Buzzer Trigger(s)</label>
         <description><![CDATA[
-Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To set which sensor is triggered the buzzer will alarm.</p> <ul><li>1 = If the Water leak is triggered, the buzzer will alarm.</li> <li>2 = If the vibration is triggered, the buzzer will alarm.</li> <li>4 = If the tilt sensor is triggered, the buzzer will alarm.</li> <li>16 = If the under heat is triggered, the buzzer will alarm.</li> <li>32 = If the overheat is triggered, the buzzer will alarm.</li> </ul><p>Note: if the value = 1+2+4+16+32=55, which means if any sensor is triggered, the buzzer will alarm. </p>
+Sets which of the alarms should trigger the buzzer.<br /> <h1>Overview</h1><p>To set which sensor is triggered the buzzer will alarm.</p> <ul><li>1 = If the Water leak is triggered, the buzzer will alarm.</li> <li>2 = If the vibration is triggered, the buzzer will alarm.</li> <li>4 = If the tilt sensor is triggered, the buzzer will alarm.</li> <li>16 = If the under heat is triggered, the buzzer will alarm.</li> <li>32 = If the overheat is triggered, the buzzer will alarm.</li> </ul><p>Note: if the value = 1+2+4+16+32=55, which means if any sensor is triggered, the buzzer will alarm. </p>
         ]]></description>
         <default>55</default>
       </parameter>
@@ -346,7 +346,7 @@ Sets which of the alarms should trigger the buzzer.<br /><h1>Overview</h1><p>To 
       <parameter name="config_101_1_00000065" type="integer" groupName="configuration">
         <label>101: Lifeline Report Type</label>
         <description><![CDATA[
-To set what unsolicited report would be sent to the Lifeline group.<br /><h1>Overview</h1><p>To set what unsolicited report would be sent to the Lifeline group.</p> <ul><li>0 = Send Nothing.</li> <li>1 = Battery Report.</li> <li>2 = Multilevel sensor report for temperature.</li> <li>3 = Battery Report and Multilevel sensor report for temperature. </li> </ul>
+To set what unsolicited report would be sent to the Lifeline group.<br /> <h1>Overview</h1><p>To set what unsolicited report would be sent to the Lifeline group.</p> <ul><li>0 = Send Nothing.</li> <li>1 = Battery Report.</li> <li>2 = Multilevel sensor report for temperature.</li> <li>3 = Battery Report and Multilevel sensor report for temperature. </li> </ul>
         ]]></description>
         <default>3</default>
         <options>
@@ -362,7 +362,7 @@ To set what unsolicited report would be sent to the Lifeline group.<br /><h1>Ove
                  min="5" max="2678400">
         <label>111: Lifeline Report Interval</label>
         <description><![CDATA[
-Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1><p>Set the interval time for sending the unsolicited report that configured by parameter 0x65. (Valid values 0x05-0x28DE80)</p> <p>Note: 1. The unit of interval time is second if USB power. 2. If battery power, the minimum interval time is equal to Wake Up interval set by the Wake Up CC. </p>
+Set the interval time for sending the unsolicited report.<br /> <h1>Overview</h1><p>Set the interval time for sending the unsolicited report that configured by parameter 0x65. (Valid values 0x05-0x28DE80)</p> <p>Note: 1. The unit of interval time is second if USB power. 2. If battery power, the minimum interval time is equal to Wake Up interval set by the Wake Up CC. </p>
         ]]></description>
         <default>3600</default>
       </parameter>
@@ -395,7 +395,7 @@ Set the interval time for sending the unsolicited report.<br /><h1>Overview</h1>
       <parameter name="config_201_2_0000000F" type="integer" groupName="configuration">
         <label>201: Temperature unit</label>
         <description><![CDATA[
-Temperature unit<br /><h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
+Temperature unit<br /> <h1>Overview</h1><p>0=Celsius,1=Fahrenheit</p>
         ]]></description>
         <default>1</default>
         <options>

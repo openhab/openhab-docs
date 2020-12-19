@@ -8,7 +8,7 @@
   <thing-type id="merten_508519_00_000" listed="false">
     <label>508519 Switch Plug</label>
     <description><![CDATA[
-Switch Plug<br /><h1>Overview</h1><p>Please find user manual of this device under the following link:</p> <p>https://www.merten.de/uploads/tx_seqdownload/V5085_581_01_web.pdf</p> <br /><h2>Inclusion Information</h2><p>Triple click on operating surface. Used for include/exclude the device by the primary</p> <br /><h2>Exclusion Information</h2><p>Triple click on operating surface. Used for include/exclude the device by the primary</p>
+Switch Plug<br /> <h1>Overview</h1><p>Please find user manual of this device under the following link:</p> <p>https://www.merten.de/uploads/tx_seqdownload/V5085_581_01_web.pdf</p> <br /> <h2>Inclusion Information</h2><p>Triple click on operating surface. Used for include/exclude the device by the primary</p> <br /> <h2>Exclusion Information</h2><p>Triple click on operating surface. Used for include/exclude the device by the primary</p>
     ]]></description>
     <category>PowerOutlet</category>
 
