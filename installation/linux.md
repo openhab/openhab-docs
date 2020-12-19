@@ -160,7 +160,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     name=openHAB Testing
     baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/testing
     gpgcheck=1
-    gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public
+    gpgkey=https://openhab.jfrog.io/artifactory/api/gpg/key/public
     enabled=1
     ```
 
@@ -174,7 +174,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     name=openHAB Snapshots
     baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/unstable
     gpgcheck=1
-    gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public
+    gpgkey=https://openhab.jfrog.io/artifactory/api/gpg/key/public
     enabled=1
     ```
 
