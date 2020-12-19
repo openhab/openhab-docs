@@ -32,7 +32,7 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |-------- feature.xml   Your OSGI feature file
 |---- java             Your Java code
 |-------- org/openhab/[...]
-|- src/main/resources/ESH-INF
+|- src/main/resources/OH-INF
 |---- binding
 |-------- binding.xml      Binding name, description, author and other meta data
 |---- config              Configuration description files when not in things files

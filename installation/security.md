@@ -518,7 +518,7 @@ Log into your DiskStation by SSH.
 Use the admin username and password.
 Create a .htpasswd file in your openHAB userdata folder (your userdata location may vary, update accordingly):
 ```shell
-htpasswd -c /volume1/SmartHome/openHAB/userdata/.htpasswd username
+htpasswd -c /volume1/openHAB/userdata/.htpasswd username
 ```
 Next, add a very simple NGINX configuration similar to that created above, but without the SSL parameters. 
 DSM comes with vi installed by default, but you may wish to [install nano](https://anto.online/other/how-to-install-nano-on-your-synology-nas/)
@@ -555,7 +555,7 @@ server {
         allow                                   127.0.0.1;
         deny                                    all;
         auth_basic                              "Username and Password Required";
-        auth_basic_user_file                    /volume1/SmartHome/openHAB/userdata/.htpasswd; #Update with your userdata folder if different
+        auth_basic_user_file                    /volume1/openHAB/userdata/.htpasswd; #Update with your userdata folder if different
     }
 
 }

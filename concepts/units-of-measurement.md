@@ -68,8 +68,9 @@ In order to match `NumberItems` and Channels and define a default state descript
 The state description pattern "%.1f %unit%" describes the value format as floating point with one decimal place and also the special placeholder for the unit.
 
 ## Implementing UoM
+
 When creating QuantityType states the framework offers some useful packages and classes:
-The `org.openhab.core.library.unit` package contains the classes `SIUnits`, `ImperialUnits` and `SmartHomeUnits` which provide units unique to either of the measurement systems and common units used in both systems.
+The `org.openhab.core.library.unit` package contains the classes `SIUnits`, `ImperialUnits` and `Units` which provide units unique to either of the measurement systems and common units used in both systems.
 
 The `MetricPrefix` class provides prefixes like MILLI, CENTI, HECTO, etc. and the `BinaryPrefix` class provides prefixes like KIBI, MEBI, etc. both of which are wrappers to create derived units.
 

@@ -9,14 +9,14 @@ title: Configuration Descriptions
 
 Specific services or bindings usually require a configuration to be operational in a meaningful way.
 To visualize or validate concrete configuration properties, configuration descriptions should be provided.
-All available configuration descriptions are accessible through the `org.eclipse.smarthome.config.core.ConfigDescriptionRegistry` service.
+All available configuration descriptions are accessible through the `org.openhab.core.config.core.ConfigDescriptionRegistry` service.
 
-Although configuration descriptions are usually specified in a declarative way (as described in this section), they can also be provided as `org.eclipse.smarthome.config.core.ConfigDescriptionProvider`.
+Although configuration descriptions are usually specified in a declarative way (as described in this section), they can also be provided as `org.openhab.core.config.core.ConfigDescriptionProvider`.
 Any `ConfigDescriptionProvider`s must be registered as service at the *OSGi* service registry.
-The full Java API for configuration descriptions can be found in the Java package `org.eclipse.smarthome.config.core`.
-In addition to this there is a `org.eclipse.smarthome.config.core.validation.ConfigDescriptionValidator` that can be used to validate a set of configuration parameters against their declarations in the configuration description before the actual configuration is updated with the new configuration parameters.
+The full Java API for configuration descriptions can be found in the Java package `org.openhab.core.config.core`.
+In addition to this there is a `org.openhab.core.config.core.validation.ConfigDescriptionValidator` that can be used to validate a set of configuration parameters against their declarations in the configuration description before the actual configuration is updated with the new configuration parameters.
 
-Configuration descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/ESH-INF/config/`.
+Configuration descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/config/`.
 
 ## Formatting Labels
 

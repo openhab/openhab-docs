@@ -54,28 +54,6 @@ Detailed instructions and requirements may be found in the corresponding documen
     {% endfor %}
     <tr>
       <td>
-        <h4><a href="{{base}}/configuration/restdocs.html">REST API</a></h4>
-      </td>
-      <td>
-        <p>
-        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items.
-        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients).
-        The REST API also supports server-push, so you can subscribe on change notification for certain resources.
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h4><a href="{{base}}/configuration/eclipseiotmarket.html"><img class="logo" src="{{base}}/images/addons/eclipseiotmarketplace.png" title="Eclipse IoT Marketplace" alt="Eclipse IoT Marketplace" /></a></h4>
-      </td>
-      <td>
-        <p>
-        The <a href="https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title">Eclipse IoT Marketplace</a> hosts third-party add-ons that can be browsed and installed to openHAB through this integration.
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <h4><a href="http://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
       </td>
       <td>
