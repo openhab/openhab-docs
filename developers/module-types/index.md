@@ -46,7 +46,7 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
     private Map<String, ModuleType> providedModuleTypes;
 
     public MyModuleTypeProvider() {
-        providedModuleTypes = new HashMap<String, ModuleType>();
+        providedModuleTypes = new HashMap<>();
         providedModuleTypes.put(TemperatureTriggerType.UID, TemperatureTriggerType.initialize());
         providedModuleTypes.put(PresenceConditionType.UID, PresenceConditionType.initialize());
         providedModuleTypes.put(AirConditionerActionType.UID, AirConditionerActionType.initialize());
@@ -231,7 +231,7 @@ You will learn an easier way in a moment for statically defined module types
 In the last section we learned about the programmatic way of exposing *Module Types*.
 It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
 
-To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/ESH-INF/automation/moduletypes/`.
+To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/OH-INF/automation/moduletypes/`.
 A module type file can contain one or multiple type descriptions.
 
 For our scenario we go with one file:

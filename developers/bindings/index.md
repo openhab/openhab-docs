@@ -193,9 +193,9 @@ For example, the Yahoo Weather binding allows configuration of the location and 
 If you would like to add meta data to your thing, e.g. the vendor of the thing, then you can define your own thing properties by simply adding them to the thing type definition.
 The properties section [here](thing-definition.html#Properties) explains how to specify such properties.
 
-To retrieve the properties one can call the operation `getProperties` of the corresponding `org.eclipse.smarthome.core.thing.type.ThingType` instance.
+To retrieve the properties one can call the operation `getProperties` of the corresponding `org.openhab.core.thing.type.ThingType` instance.
 If a thing will be created for this thing type then its properties will be automatically copied into the new thing instance.
-Therefore the `org.eclipse.smarthome.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties.
+Therefore the `org.openhab.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties.
 In contrast to the `getProperties` operation of the thing type instance the result of the thing´s `getProperties` operation will also contain the properties updated during runtime (cp. the thing handler [documentation](thing-handler.html)).
 
 ### Handling Commands
@@ -525,19 +525,19 @@ Each entity that has a configuration can provide its current configuration statu
 
 This information is available to user-interfaces to present configuration errors to the user.
 
-For this purpose the handler of the entity implements the interface `org.eclipse.smarthome.config.core.status.ConfigStatusProvider`.
+For this purpose the handler of the entity implements the interface `org.openhab.core.config.core.status.ConfigStatusProvider`.
 
 ### Providing the Configuration Status
 
-A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.eclipse.smarthome.config.core.status.ConfigStatusProvider` interface.
+A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.openhab.core.config.core.status.ConfigStatusProvider` interface.
 
 For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface.
 Currently the framework provides two base thing handler implementations for the configuration status provider interface:
 
-* `org.eclipse.smarthome.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
-* `org.eclipse.smarthome.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
+* `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
+* `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
 
-Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.eclipse.smarthome.config.core.status.ConfigStatusMessage`s.
+Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
 #### Internationalization
 
