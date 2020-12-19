@@ -94,33 +94,3 @@ The following table lists the different status details for each status:
 <tr valign="top"><td>REMOVED</td>                  <td>NONE</td><td>No further status details available.</td></tr>
 </table>
 
-### Status Description 
-
-To provide additional information about the current status a description is used.
-The status description is to be specified by the binding.
-This description can be used for debugging purposes and should not be presented to the user, as it might contain unreadable technical information (e.g. an HTTP status code, or any other protocol-specific information, which helps to identify the current problem).
-
-### Thing Status API
-
-The Thing interface defines a method `getStatusInfo()` to retrieve the current status of the Thing.
-The following code shows how to print the status of each Thing to the console:
-
-```java
-Collection<Thing> things = thingRegistry.getAll();
-for (Thing thing : things) {
-    ThingStatusInfo statusInfo = thing.getStatusInfo();
-    switch (statusInfo.getStatus()) {
-        case ONLINE:
-            System.out.println("Thing is online");
-            break;
-        case OFFLINE:
-            System.out.println("Thing is offline");
-            break;
-        default:
-            System.out.println("Thing status: " + statusInfo.getStatus());
-            break;
-    }
-    System.out.println("Thing status detail: " + statusInfo.getStatusDetail());
-    System.out.println("Thing status description: " + statusInfo.getDescription());
-}
-```
