@@ -58,13 +58,7 @@ One can configure whether specific log entries are logged out and where they get
 ### Exec Actions
 
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
-- `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
-
-::: tip Note
-Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`.
-When one or more arguments contain spaces, use `@@` instead of a space as the argument separator.
-For example the bash command `touch -t 01010000 "some file with space.txt"` will have to be written as `touch@@-t@@01010000@@some file with space.txt`.
-:::
+- `executeCommandLine(java.time.Duration timeout, String commandLine)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
 ### HTTP Actions
 
@@ -233,11 +227,11 @@ One must import the Ephemeris Action and then call the above functions using `Ep
 
 ### Configuration
 
-#### PaperUI
+#### UI
 
-In PaperUI one has the ability to configure which days of the week are considered weekends and set your country, region, and city.
+In UI one has the ability to configure which days of the week are considered weekends and set your country, region, and city.
 If no country is provided the service uses your system default locale settings.
-Browse to Configuration and System and scroll down to the Ephemeris section.
+Browse to Settings -> Ephemeris.
 Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/svendiedrichsen/jollyday).
 You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays).
 You can find the localized mapping files that map between the holiday name in the XML and your preferred language [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
@@ -249,7 +243,7 @@ There are no special bank holidays defined by Jollyday for that level.
 
 By default Ephemeris supports a weekend dayset and a school dayset.
 You can define additional daysets or modify the school dayset.
-If you need to define custom daysets, you must do all your configuration through the `ephemeris.cfg` file instead of using PaperUI as described above so make sure to at least redefine the weekend dayset.
+If you need to define custom daysets, you must do all your configuration through the `ephemeris.cfg` file instead of using UI as described above so make sure to at least redefine the weekend dayset.
 If there is no `dayset-weekend` defined, calls to `isWeekend` will generate errors.
 
 Config file location: `$OH_CONF/services/ephemeris.cfg`.
@@ -311,7 +305,7 @@ Ephemeris supports translation of holidays into many languages. Localization sup
 
 Feel free to extent this list by providing additional language support files.
 
-To enable localization, 
+To enable localization,
 
 * copy the file for your language to your OH setup.
   * again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
