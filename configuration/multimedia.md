@@ -9,7 +9,7 @@ title: Multimedia
 
 ## Volume
 
-The framework supports some base [functions](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#getMasterVolume--) to control the audio sinks' volume.
+The framework supports some base [functions](https://next.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#method.summary) to control the audio sinks' volume.
 
 ### Actions
 
@@ -40,7 +40,7 @@ Additionally, certain bindings register their supported devices as audio sinks, 
 To check, which audio sinks are available, you can use the console:
 
 ```text
-openhab> smarthome:audio sinks
+openhab> openhab:audio sinks
 enhancedjavasound
 javasound
 webaudio
@@ -51,14 +51,14 @@ You can define the default audio sink either by textual configuration in `$OPENH
 In order to play a sound, you can use the following command on the console:
 
 ```text
-openhab> smarthome:audio play doorbell.mp3
+openhab> openhab:audio play doorbell.mp3
 
-openhab> smarthome:audio stream example.com
+openhab> openhab:audio stream example.com
 ```
 
 ### Actions
 
-Alternatively the [`playSound()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) or [`playStream()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playStream-java.lang.String-) functions can be used in DSL rules:
+Alternatively the [`playSound()`](https://next.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://next.openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
 - `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
 - `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
@@ -91,7 +91,7 @@ In order to use text-to-speech, you need to install at least one [TTS service](/
 Once you have done so, you will find voices available in your system:
 
 ```text
-openhab> smarthome:voice voices
+openhab> openhab:voice voices
 mactts:Jorge Jorge (es_ES)
 mactts:Moira Moira (en_IE)
 mactts:Alice Alice (it_IT)
@@ -104,12 +104,12 @@ You can define a default TTS service and a default voice to use either by textua
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
 ```text
-openhab> smarthome:voice say Hello world!
+openhab> openhab:voice say Hello world!
 ```
 
 ### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-) function:
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://next.openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#say(java.lang.String)) function:
 
 ```java
 say("Hello world!")
@@ -137,21 +137,21 @@ Human language interpreters are meant to process prose that e.g. is a result of 
 
 There are two implementations available by default:
 
-| Interpreter | Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|-------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.                                                                                                                                                                                                                                                                                                                                   |
-| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.voice/src/main/java/org/eclipse/smarthome/core/voice/internal/text/StandardInterpreter.java#L37). |
+| Interpreter | Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|-------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.                                                                                                                                                                                                                                                                                                             |
+| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L48). |
 
 To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
 
 ```text
-openhab> smarthome:voice interpret turn on the light
+openhab> openhab:voice interpret turn on the light
 ```
 
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-) function)
+Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://next.openhab.org/javadoc/latest/org/openhab/core/voice/voicemanager#interpret(java.lang.String)) function)
 
 ```java
 interpret("turn on the light")

@@ -5,7 +5,7 @@ title: Docker
 
 {% include base.html %}
 
-# openHAB 2 inside a Docker Container
+# openHAB inside a Docker Container
 
 Docker is the most popular among a collection of tools that provide containerization.
 Containerization allows one to run a server in its own isolated environment without the overhead of running a full virtual machine.
@@ -38,8 +38,6 @@ The install is a manual installation so all of the files are located here.
 This is also set as the home directory of the `openhab` user.
 
 The Image has a very minimal installation of Linux with no services running and just enough installed to allow openHAB to run.
-
-At the time of this writing, the official image uses the latest snapshot version of openHAB 2.
 
 ## Installation through Docker
 
@@ -97,7 +95,7 @@ docker run \
         -e USER_ID=<uid> \
         -e GROUP_ID=<gid> \
         --restart=always \
-        openhab/openhab:<version>-<architecture>-<distribution>
+        openhab/openhab:<version>-<distribution>
 ```
 
 Where
@@ -105,7 +103,6 @@ Where
 - `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`,
 - `<gid>` is the group ID number for the `openhab` user,
 - `<version>` is the version of openHAB,
-- `<architecture>` is the architecture of your system and
 - `<distribution>` is the base system (debian or alpine).
 
 It is important that the ID number is passed in.
@@ -125,15 +122,15 @@ To change the runtime parameters stop the container then execute the long comman
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 If running on a Systemd based Linux distro (Ubuntu 16.04 to be specific).
-The following openhab2.service file will start a new openHAB 2 container every time it starts the service and destroy that container when the service stops.
-What that means is any data that you want to preserve between restarts of openHAB 2 (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
+The following openhab2.service file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
+What that means is any data that you want to preserve between restarts of openHAB (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
 
 Creating a new container on every run greatly simplifies the upgrade and update process.
 It also ensures that you start with a fresh install every time you run which can avoid some problems.
 
 ```bash
 [Unit]
-Description=openHAB 2
+Description=openHAB
 Requires=docker.service
 After=docker.service
 
@@ -149,14 +146,14 @@ ExecStart=/usr/bin/docker run --name=%n --net=host \
   --device=/dev/ttyUSB0 \
   -e USER_ID=<uid_of_openhab> \
   -e GROUP_ID=<gid_of_openhab> \
-  openhab/openhab:<version>-<architecture>-<distribution>
+  openhab/openhab:<version>-<distribution>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB, `<architecture>` is the architecture of your system and `<distribution>` is the base system (debian or alpine).
+Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB and `<distribution>` is the base system (debian or alpine).
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
@@ -171,7 +168,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
-- `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
+- `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
 - `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
@@ -180,8 +177,8 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token
 - `--device=/dev/ttyUSB0` : location of my zwave controller, change and/or add more --device tags to pass all your devices needed by openHAB to the container
 - `--restart=always` : if the container crashes or the system reboots the container is restarted
-- `openhab/openhab:<version>-<architecture>-<distribution>` : name of the Docker Image
-- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<architecture>-<distribution> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
+- `openhab/openhab:<version>-<distribution>` : name of the Docker Image
+- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<distribution> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
 
 ## Environment Variables
 
@@ -212,10 +209,10 @@ Delete the container:
 Pull down the latest image:
 
 ```bash
-docker pull openhab/openhab:<version>-<architecture>-<distribution>
+docker pull openhab/openhab:<version>-<distribution>
 ```
 
-where `<version>` is the version of openHAB, `<architecture>` is your architecture and `<distribution>` is the base system (debian or alpine).
+where `<version>` is the version of openHAB and `<distribution>` is the base system (debian or alpine).
 
 Restart the container using the full command above.
 

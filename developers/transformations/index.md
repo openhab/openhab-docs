@@ -28,7 +28,7 @@ your needs like `AbstractFileTransformationService`.
 
 ```java
 @NonNullByDefault
-@Component(immediate = true, property = { "smarthome.transform=BRO" })
+@Component(immediate = true, property = { "openhab.transform=BRO" })
 public class TheBroTransformationService implements TransformationService {
     private final Logger logger = LoggerFactory.getLogger(TheBroTransformationService.class);
 

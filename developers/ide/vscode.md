@@ -13,9 +13,16 @@ The following steps will only need to be done once to setup both VSCode and your
 
 1. Install Java Extension Pack for VSCode (https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
    
-2. Clone the addons (https://github.com/openhab/openhab-addons.git or preferably your own fork) to %BASE%\openhab-addons
+1. Clone the addons (https://github.com/openhab/openhab-addons.git or preferably your own fork) to %BASE%\openhab-addons
    
-3. If you want to setup openHAB code formatting guidelines, add the following to the VSCode settings:
+3. On Windows, VSCode should be configured to use powershell instead of the classic command line.
+If not configured already, add the following to the VSCode settings:
+         
+     ```"terminal.integrated.automationShell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe"```
+
+     Either globally define the options via the global ```settings.json```.  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
+
+1. If you want to setup openHAB code formatting guidelines, add the following to the VSCode settings:
          
     ![define .vscode](images/ide_setup_vscode_settings.png)
 
@@ -83,7 +90,7 @@ You can now make changes, set breakpoints, etc.
 
 1. May take openHAB a few seconds to realize there is a new bundle and to reinitilize it after it's been copied.  Be a little bit patient.
 2. You must run the `mvn Compile (Online)` task atleast once to allow the offline compile to occur.  You should use the `mvn Compile (Offline)` task for most of your development as it's quicker since it uses the cache files.  When you are ready to commit (or release a test bundle) - you should run the `mvn Compile (Release)` task to include code checks (and resolve them).
-3. Win10+ allows forward slashes as part of it's path.  If you use backward slashes instead - you will need to double up on them since tasks.json uses a backward slash as a delimiter.  Example: `c:\\\\openhab`
+3. Win10+ allows forward slashes as part of its path.  If you use backward slashes instead - you will need to double up on them since tasks.json uses a backward slash as a delimiter.  Example: `c:\\\\openhab`
    
 ## Tasks
 

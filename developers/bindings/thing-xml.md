@@ -19,9 +19,9 @@ which describe details about their functionality and configuration options.
 
 ## ThingTypeProvider / ChannelTypeProvider
 
-Technically, the thing types are provided by `ThingTypeProvider`s (`org.eclipse.smarthome.core.thing.binding.ThingTypeProvider`).
+Technically, the thing types are provided by `ThingTypeProvider`s (`org.openhab.core.thing.binding.ThingTypeProvider`).
 
-openHAB comes with an implementation of such a provider that reads XML files from the folder `ESH-INF/thing` of bundles.
+openHAB comes with an implementation of such a provider that reads XML files from the folder `OH-INF/thing` of bundles.
 Although we refer to this XML syntax in the following, you also have the option to provide directly object model instances through your own provider implementation.
 
 The same applies for the channel types.
@@ -77,6 +77,8 @@ That way channels can be reused in different things.
 The granularity of channel types should be on its semantic level, i.e. very fine-grained:
 If a Thing measures two temperature values, one for indoor and one for outdoor, this should be modelled as two different channel types.
 Overriding labels of a channel type must only be done if the very same functionality is offered multiple times, e.g. having an actuator with 5 relays, which each is a simple "switch", but you want to individually name the channels (1-5).
+
+### State Channel Types
 
 The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
 
@@ -152,6 +154,8 @@ Especially for complex devices with a lot of channels, only a small set of chann
 Whether a channel should be declared as `advanced` depends on the device and can be decided by the binding developer.
 If a functionality is rarely used it should be better marked as `advanced`.
 
+### Trigger Channel Types
+
 The following XML snippet shows a trigger channel:
 
 ```xml
@@ -192,7 +196,7 @@ There exist system-wide trigger channel types that are available by default:
 | rawrocker       | system.rawrocker       | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail. 
-For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](xml-reference.html).
+For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
 
 ### Default Tags
 
@@ -244,7 +248,10 @@ The following XML snippet shows the definition for a temperature actuator channe
 
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
-A `String` item must be used as item type.
+A `String` or `Number` item must be used as item type.
+In general `String` should be preferred with a meaningful option value.
+This prevents the user from having to guess what a value represents if a number is used as option value.
+`Number` is useful when the value represents a quantity (e.g. like in the system-wide channel type `signal-strength`).
 
 The following XML snippet defines a list of predefined state options:
 
@@ -484,7 +491,7 @@ In contrast to the properties defined in the 'ThingType' definitions the thing h
 ### Representation Property
 
 A thing type can contain a so-called `representation property`.
-This optional property contains the _name_ of a property whose value can be used to uniquely identify a device.
+This optional property contains the **name** of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
@@ -492,7 +499,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` will be defined in the thing type XML: 
+The `representation property` shall be defined in the thing type XML: 
 
 ```xml
     <thing-type id="thingTypeId">
@@ -500,27 +507,47 @@ The `representation property` will be defined in the thing type XML:
         <properties>
             <property name="vendor">Philips</property>
         </properties>
-        <representation-property>serialNumber</representation-property>
+        <representation-property>uniqueId</representation-property>
         ...
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type.
-The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization.
+Note that the `representation property` is normally not listed in the `properties` part of the Thing type XML, as this part contains static properties, that are the same for all instances of this Thing type.
+The name of the `representation property` identifies a property or configuration parameter that is added to the Thing in the Thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
-The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing.
-This happens if a device is being added manually.
-If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
-If this is the case, the result in the inbox is automatically set to ignored.
-Note that this result is automatically removed when the manual added thing is eventually removed.
-A new discovery would then automatically find this device again and add it to the inbox properly.
+The representation property is used to auto-ignore discovery results of Things that already exist in the system.
+This can happen if, a) a Thing has been created manually, or b) the Thing has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If this is the case, the Thing in the inbox is automatically ignored.
+Note that this Thing is automatically removed when the manually added Thing is removed.
+A new discovery would then automatically find this Thing again and add it to the inbox properly.
+
+See also [Implementing a Discovery Service](index.md#representation-property)
+
+When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](config-xml.md):
+
+```xml
+    <thing-type id="thingTypeId">
+        ...
+        <representation-property>uniqueId</representation-property>
+        ...
+    		<config-description>
+  			  <parameter name="uniqueId" type="text">
+		  		  <label>Unique Id</label>
+			  	  <description>The Unique Id for Representation Property</description>
+  			  </parameter>
+    		</config-description>
+        ...
+    </thing-type>
+```
 
 ## Formatting Labels and Descriptions
 
 The label and descriptions for things, channels and config descriptions should follow the following format.
 The label should be short so that for most UIs it does not spread across multiple lines.
+Guideline is 2-3 words with up to 25 chars.
 Labels should be capitalized using the following rules:
 * Always capitalize the first and the last word.
 * Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
@@ -580,10 +607,10 @@ Every binding has to provide meta information about which bridges and/or *Thing*
 In that way a binding could describe that it requires specific bridges to be operational or define which channels (e.g. temperature, color, etc.) it provides.
 
 Every bridge or *Thing* has to provide meta information such as label or description.
-The meta information of all bridges and *Thing*s is accessible through the `org.eclipse.smarthome.core.thing.binding.ThingTypeProvider` service.
+The meta information of all bridges and *Thing*s is accessible through the `org.openhab.core.thing.binding.ThingTypeProvider` service.
 
-Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/ESH-INF/thing/`.
-The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.eclipse.smarthome.core.thing.type`.
+Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
+The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
 
 
 ### XML Structure for Thing Descriptions

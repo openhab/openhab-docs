@@ -20,7 +20,7 @@ This page is structured as follows:
 Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
 Sitemaps follow the syntax described in this article.
 
-For easy editing of sitemap definition files, we suggest to use on of the [openHAB supporting editors]({{base}}/configuration/editors.html).
+For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 These provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
 The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
@@ -85,7 +85,7 @@ openHAB supports these dependencies by providing parameters for dynamic behavior
 Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
 
 For the technically interested: The Sitemap definition language is an
-Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/eclipse/smarthome/blob/master/bundles/model/org.eclipse.smarthome.model.sitemap/src/org/eclipse/smarthome/model/Sitemap.xtext).
+Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
 
 ### Special Element 'sitemap'
 
@@ -247,7 +247,7 @@ Switch item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<map
 ```
 
 Switches are one of the more common elements of a typical Sitemap.
-A Switch will present a discrete state Item and allow changing of it's value.
+A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
@@ -288,8 +288,8 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
-- `minValue` and `maxValue` limit the possible range of the value (both included in the range).
-- `step` defines how much the value will change when the button is pressed one time.
+- `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+- `step` (defaults to 1) defines how much the value will change when the button is pressed one time.
 
 **Example:**
 
@@ -403,6 +403,9 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 
 ```perl
 Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
+
+// display a snapshot image from an IP camera, using refresh parameter to get updated images
+Image url="http://192.168.1.203:8080/?action=snapshot" refresh=10000
 ```
 
 ![Presentation of the Image element in BasicUI](images/sitemap_demo_image.png)
@@ -467,7 +470,7 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 - When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
-- When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
+- When charting a group of item, make sure that every label is unique.
 
 ## Mappings
 
@@ -536,9 +539,9 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 **Examples:**
 
 ```perl
-visibility=[Battery_Level<30]
-visibility=[TV_Power==ON]
-visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
+Text item=BatteryWarning visibility=[Battery_Level<30]
+Switch item=CinemaLight "Cinema light" visibility=[TV_Power==ON]
+Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.

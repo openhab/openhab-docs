@@ -107,6 +107,7 @@ var Timer myTimer = createTimer(now.plusMinutes(5), [ |
 The Timer object supports the following methods:
 
 - `cancel`: prevents the scheduled timer from executing
+- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed
 - `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running)
 - `hasTerminated`: returns true if the code has run and completed
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
@@ -198,31 +199,31 @@ Action | Returns
 -|-
 `getBankHolidayName` | name of the holiday today, or `null` if today is not a bank holiday
 `getBankHolidayName(<offset>)` | name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday
-`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday
+`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not a bank holiday
 `getBankHolidayName(<offset>, <file>)` | name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`
-`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`
+`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not defined in `<file>`
 `getDaysUntil(<holiday name>)` | number of days from today to the given `<holiday name>`
 `getDaysUntil(<holiday name>, <file>)` | number of days from today to the given `<holiday name>` defined in `<file>`
-`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`
-`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`
+`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>`
+`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>` defined in `<file>`
 `getHolidayDescription(<holiday name>)` | Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`
 `getNextBankHoliday` | name of the next bank holiday
 `getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
 `getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
-`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
-`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`
-`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`
+`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`. :warning: This action is broken in OH 2.5.x. Use `getNextBankHoliday(<datetime>, <file>)` instead by replacing `<datetime>` with `new DateTimeType().zonedDateTime.now().plusDays(<offset>)`
+`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>`
+`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>` defined in `<file>`
 `isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
 `isBankHoliday(<offset>)` | `true` if the day `<offset>` days from today is a bank holiday, `false` otherwise
-`isBankHoliday(<datetime>)` | `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday, `false` otherwise.
+`isBankHoliday(<datetime>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is a bank holiday, `false` otherwise.
 `isBankHoliday(<offset>, <file>)` | `true` if the day `<offset>` days from today is a day defined in `<file>`, use 0 for `<offset>` for today; returns `false` otherwise
-`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`, `false` otherwise
+`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is in `<file>`, `false` otherwise
 `isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
 `isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
-`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` os in dayset `<set>`, `false` otherwise
 `isWeekend` | `true` if today is a weekend, `false` otherwise
 `isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
-`isWeekend(<datetime>)` | `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise
+`isWeekend(<datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` is a weekend, `false` otherwise
 
 In all examples that take `<offset>`, use a negative value to check days in the past.
 
@@ -296,6 +297,25 @@ For further examples and to find the list of elements to reference holidays that
 You can place these XML files anywhere on your file system that openHAB has permission to read.
 In the calls to the Actions, use the fully qualified path.
 We recommend placing these custom files somewhere inside your `$OH_CONF` folder, such as `$OH_CONF/services`.
+
+#### Localisation
+
+Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions). Currently these language supports are available:
+
+1. [Dutch](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_nl.properties)
+1. [English](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_en.properties)
+1. [French](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_fr.properties)
+1. [German](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_de.properties)
+1. [Portuguese](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_pt.properties)
+1. [Swedish](https://github.com/svendiedrichsen/jollyday/blob/master/src/main/resources/descriptions/holiday_descriptions_sv.properties)
+
+Feel free to extent this list by providing additional language support files.
+
+To enable localization, 
+
+* copy the file for your language to your OH setup.
+  * again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
+* use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
 
 ## Installable Actions
 

@@ -15,7 +15,7 @@ Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start
 Add-ons and the openHAB core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-The different guides of this chapter assume that you are somewhat familiar with Java and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
+The different guides of this chapter assume that you are somewhat familiar with Java 11 and that you have a rough understanding of Git's workflow (e.g. "checkout", "branches", "push").
 
 ## Choose the Right Concept
 
@@ -38,7 +38,7 @@ Sometimes it may not even be worth writing a binding or other addon if you can a
 For example, you may be better off using an http action in a rule or script to retrieve some values.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](development/guidelines.html) apply to all types of addon development.
+General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 
@@ -48,7 +48,7 @@ Please ensure that you have the following prerequisites installed as well:
 
 1. [Git](https://git-scm.com/downloads) For retrieving our source code and push changes back. On Windows: Must be available in %PATH%
 1. [Maven 3.x](https://maven.apache.org/download.cgi) Our buildsystem tool. On Windows: Must be available in %PATH%
-1. Java JDK 8, for example from Oracle [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). On Windows: %JAVA% must be set.
+1. Java JDK 11, for example from Oracle [Oracle JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html). On Windows: %JAVA% must be set.
 
 You can use any IDE that is suitable for OSGi/Java development.
 We have prepared some step-by-step guides for the following IDEs:

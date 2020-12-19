@@ -49,25 +49,9 @@ Example for a Group Item as a simple collection of other Items:
 Group Items can derive their own state from their member Items.
 To derive a state the Group Item must be constructed using a base Item and a Group function.
 When calculating the state, Group functions recursively traverse the Group's members and also take members of subgroups into account.
-If a subgroup however defines a state on its own (having base Item & Group function set) traversal stops and the state of the subgroup member is taken. 
+If a subgroup however defines a state on its own (having base Item & Group function set) traversal stops and the state of the subgroup member is taken.
 
-Available Group functions:
-
-| Function           | Parameters                    | Base Item                                   | Description                                                                                                                                      |
-|--------------------|-------------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| EQUALITY           | -                             | \<all\>                                     | Sets the state of the members if all have equal state. Otherwise UNDEF is set. In the Item DSL `EQUALITY` is the default and may be omitted.     |
-| AND, OR, NAND, NOR | <activeState>, <passiveState> | \<all\> (must match active & passive state) | Sets the \<activeState\>, if the member state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |
-| SUM, AVG, MIN, MAX | -                             | Number                                      | Sets the state according to the arithmetic function over all member states.                                                                      |
-| COUNT              | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                 |
-| LATEST, EARLIEST   | -                             | DateTime                                    | Sets the state to the latest/earliest date from all member states                                                                                |
-
-Examples for derived states on Group Items when declared in the Item DSL:
-
-- `Group:Number:COUNT(".*")` counts all members of the Group matching the given regular expression, here any character or state (simply count all members).
-- `Group:Number:AVG` calculates the average value over all member states which can be interpreted as `DecimalTypes`.
-- `Group:Switch:OR(ON,OFF)` sets the Group state to `ON` if any of its members has the state `ON`, `OFF` if all are off.    
-- `Group:Switch:AND(ON,OFF)` sets the Group state to `ON` if all of its members have the state `ON`, `OFF` if any of the Group members has a different state than `ON`.
-- `Group:DateTime:LATEST` sets the Group state to the latest date from all its members states.
+For available Group functions and examples see [Configuration Guide](../configuration/items.html#group-type).
 
 ## State and Command Type Formatting
 
@@ -99,12 +83,12 @@ Examples for derived states on Group Items when declared in the Item DSL:
 ### QuantityType
 
 A numerical type which carries a unit in addition to its value.
-The framework is capable of automatic conversion between units depending on the users locale settings.
+The framework is capable of automatic conversion between units depending on the user's locale settings.
 See the concept on [Units of Measurement](units-of-measurement.html) for more details.
 
 ### HSBType
 
-HSB string values consist of three comma-separated values for hue (0-360°), saturation (0-100%), and value (0-100%) respectively, e.g. `240,100,100` for blue.
+HSB string values consist of three comma-separated values for hue (0-360°), saturation (0-100%), and brightness (0-100%) respectively, e.g. `240,100,100` for "maximum" blue.
 
 ### PointType
 
@@ -148,6 +132,11 @@ Each metadata entry has a main value and optionally additional key/value pairs.
 There can be metadata attached to an Item for as many namespaces as desired, like in the following example: 
 
     Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
+
+The metdata can be included with the channel linking, an Alexa metadata mapping is added after the channel linking separated with a comma in the example for a ZWave switch below.
+```
+Switch LightSwitch "Light Switch" {channel="zwave:device:22c99d1e:node3:switch_binary", alexa="PowerController.powerState"}
+``` 
 
 The metadata can be maintained via a dedicated REST endpoint and is included in the `EnrichedItemDTO` responses.
 

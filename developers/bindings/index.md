@@ -183,7 +183,7 @@ Moreover the configuration class has a utility method `as(Class<T> configuration
 
 All configuration values will be mapped to properties of the class.
 The type of the property must match the type of the configuration.
-Only the following types are supported for configuration values: `Boolean`, `String` and `BigDecimal`.
+The following types are supported for configuration values: `Boolean`, `boolean`, `String`, `BigDecimal`, `int`, `long`, `float` and `double`.
 
 For example, the Yahoo Weather binding allows configuration of the location and the refresh frequency.
 
@@ -193,9 +193,9 @@ For example, the Yahoo Weather binding allows configuration of the location and 
 If you would like to add meta data to your thing, e.g. the vendor of the thing, then you can define your own thing properties by simply adding them to the thing type definition.
 The properties section [here](thing-definition.html#Properties) explains how to specify such properties.
 
-To retrieve the properties one can call the operation `getProperties` of the corresponding `org.eclipse.smarthome.core.thing.type.ThingType` instance.
+To retrieve the properties one can call the operation `getProperties` of the corresponding `org.openhab.core.thing.type.ThingType` instance.
 If a thing will be created for this thing type then its properties will be automatically copied into the new thing instance.
-Therefore the `org.eclipse.smarthome.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties.
+Therefore the `org.openhab.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties.
 In contrast to the `getProperties` operation of the thing type instance the result of the thing´s `getProperties` operation will also contain the properties updated during runtime (cp. the thing handler [documentation](thing-handler.html)).
 
 ### Handling Commands
@@ -286,13 +286,11 @@ The following code block shows how to start a polling job in the initialize meth
 ```java
 @Override
 public void initialize() {
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            // execute some binding specific polling code
-        }
-    };
-    pollingJob = scheduler.scheduleAtFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
+    pollingJob = scheduler.scheduleWithFixedDelay(this::pollingCode, 0, 30, TimeUnit.SECONDS);
+}
+
+private void pollingCode() {
+    // execute some binding specific polling code
 }
 ```
 
@@ -527,19 +525,19 @@ Each entity that has a configuration can provide its current configuration statu
 
 This information is available to user-interfaces to present configuration errors to the user.
 
-For this purpose the handler of the entity implements the interface `org.eclipse.smarthome.config.core.status.ConfigStatusProvider`.
+For this purpose the handler of the entity implements the interface `org.openhab.core.config.core.status.ConfigStatusProvider`.
 
 ### Providing the Configuration Status
 
-A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.eclipse.smarthome.config.core.status.ConfigStatusProvider` interface.
+A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.openhab.core.config.core.status.ConfigStatusProvider` interface.
 
 For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface.
 Currently the framework provides two base thing handler implementations for the configuration status provider interface:
 
-* `org.eclipse.smarthome.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
-* `org.eclipse.smarthome.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
+* `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
+* `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
 
-Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.eclipse.smarthome.config.core.status.ConfigStatusMessage`s.
+Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
 #### Internationalization
 
@@ -591,7 +589,7 @@ public class MQTTActions implements ThingActions {
     private @Nullable AbstractBrokerHandler handler;
 
     @Override
-    public void setThingHandler(@Nullable ThingHandler handler) { handler = (AbstractBrokerHandler) handler; }
+    public void setThingHandler(@Nullable ThingHandler handler) { this.handler = (AbstractBrokerHandler) handler; }
 
     @Override
     public @Nullable ThingHandler getThingHandler() { return handler; }
@@ -660,9 +658,9 @@ The following table gives an overview about the main parts of a `DiscoveryResult
 | `bridgeUID` | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge.
 | `properties` | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing.
 | `label` | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead. |
-| `representationProperty` | The name of one of the properties which discriminates the discovery result best against other results of the same type. Typically this is a serial number, IP or MAC address. The representationProperty often matches a configuration parameter and is also explicitly given in the thing-type definition. |
+| `representationProperty` | The name of one of the properties or configuration parameters, which best discriminates the result from other results of the same type. See chapter [Representation Property](#representation-property) below. |
 
-To simplify the implementation of own discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService`, that must only be extended.
+To simplify the implementation of custom discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService` and just needs to be extended.
 Subclasses of `AbstractDiscoveryService` do not need to handle the `DiscoveryListeners` themselves, they can use the methods `thingDiscovered` and `thingRemoved` to notify the registered listeners.
 Most of the descriptions in this chapter refer to the `AbstractDiscoveryService`.
 
@@ -691,6 +689,57 @@ It uses the `DiscoveryResultBuilder` to create the discovery result.
 
 The discovery service needs to provide the list of supported thing types, that can be found by the discovery service.
 This list will be given to the constructor of `AbstractDiscoveryService` and can be requested by using `DiscoveryService#getSupportedThingTypes` method.
+
+### Representation Property
+
+The name of one of the properties or configuration parameters, which best discriminates the discovery result from other results of the same type.
+Typically this is a serial number, or an IP or MAC address.
+The representation property is used to auto-ignore discovery results of Things that already exist in the system.
+This can happen, a) if a Thing has been created manually, or b) if the Thing has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If a new Thing goes online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the existing representation property is identical to the representation property of the newly discovered Thing.
+If this is the case, the Thing in the inbox is automatically ignored.
+The representation property must be declared in the [thing-types.xml](thing-xml.md#representation-property)
+
+When comparing representation properties, the framework checks for matches between the representation property of the newly discovered Thing, and both the `properties` and the `configuration parameters` of existing Things.
+
+If defining a representation property for a bridge, the representation property does not need to be **globally** unique, but only unique within the context of the bridge, so long as the discovery service calls `.withBridge(bridgeUID)` when building the DiscoveryResult. e.g. if bridge A. has child Things with representation properties of 1, 2, and 3, and bridge B. also has child Things with representation properties of 1, 2, and 3, they will not conflict.
+
+```java
+DiscoveryResult result = DiscoveryResultBuilder.create(thingUID)
+  .withProperty("uniqueId", nonUniquePropertyValue)
+  .withBridge(bridgeUID) // bridgeUID plus nonUniquePropertyValue are unique
+  .withRepresentationProperty("uniqueId")
+  .build();
+```
+
+Furthermore, if a Thing has two configuration parameters where each individually is not globally unique, but the combination of the two is unique, one can define an extra property that combines the two:
+
+```java
+String cfgParamValA = "value-of-non-unique-config-param-A";
+String cfgParamValB = "value-of-non-unique-config-param-B";
+String uniquePropVal = String.format("%s-%s", cfgParamValA, cfgParamValB);
+...
+DiscoveryResult hub = DiscoveryResultBuilder.create(thingUID)
+  .withProperty("uniqueId", uniquePropVal)
+  .withRepresentationProperty("uniqueId")
+  .build();
+```
+
+If Things are created manually, the property or configuration parameter that will match the auto discovery representation property must be set.
+In the case that a `property` will be used to match the representation property its value must be set in the Thing handler's `initialize()` method:
+
+```java
+updateProperty("uniqueId", uniquePropVal);
+```
+
+Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property, the parameter must be declared in either, a) the `thing-types.xml` file, or b) the `config-description` [XML file](config-xml.md).
+And it must also be declared in the Thing handler's `Configuration` class:
+
+```java
+public class MyThingConfiguration {
+    public String uniqueId;
+}
+```
 
 ### Registering as an OSGi service
 
@@ -725,7 +774,7 @@ The following example shows the implementation of the above mentioned methods in
     @Override
     protected void stopBackgroundDiscovery() {
         logger.debug("Stop WeMo device background discovery");
-        if (wemoDiscoveryJob != null && !wemoDiscoveryJob.isCancelled()) {
+        if (wemoDiscoveryJob != null) {
             wemoDiscoveryJob.cancel(true);
             wemoDiscoveryJob = null;
         }
@@ -760,6 +809,17 @@ Already discovered things are identified by the ThingUID the DiscoveryResult was
 The `getThingUID` method of the discovery service should create a consistent UID every time the same thing gets discovered.
 This way existing discovery results and existing things with this UID will be updated with the properties from the current scan.
 With this, dynamic discoveries (like UPnP or mDNS) can re-discover existing things and update communication properties like host names or TCP ports.
+
+### Ending an Active Scan
+
+As described above an active scan is initiated via `startScan`.
+There is no explicit end to an active scan and discovery results can be provided even after `startScan` completes (e.g. from a separate thread).
+If you would like assistance with enforcing a scan end pass a timeout to the `AbstractDiscoveryService` constructor.
+`stopScan` will then be called on your discovery service upon timeout expiration allowing you to stop your scan however needed.
+If a timeout is specified the scan will be considered active until the timeout expires even if `startScan` completed beforehand.
+In particular UIs such as the Paper UI will show the scan as in progress throughout the timeout.
+If you override `stopScan` don't forget to call `super.stopScan` as `AbstractDiscoveryService` performs some cleanup in its version.
+If the timeout is set to 0 `stopScan` will not be called.
 
 ### Remove older results
 

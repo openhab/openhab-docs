@@ -7,14 +7,14 @@ title: Binding Descriptions
 
 Every binding has to provide meta information such as binding id or name.
 
-Background information: The meta information of all bindings is accessible through the `org.eclipse.smarthome.core.binding.BindingInfoRegistry` service.
+Background information: The meta information of all bindings is accessible through the `org.openhab.core.binding.BindingInfoRegistry` service.
 
 Although binding definitions are usually specified in a declarative way (as described in this section),
-they can also be provided as `org.eclipse.smarthome.core.binding.BindingInfo`.
+they can also be provided as `org.openhab.core.binding.BindingInfo`.
 Any `BindingInfo` must be registered as service at the *OSGi* service registry.
-The full Java API for binding definitions can be found in the Java package `org.eclipse.smarthome.core.binding`.
+The full Java API for binding definitions can be found in the Java package `org.openhab.core.binding`.
 
-For the declarative way, you add your binding information in form of a `binding.xml` file to the bundle's folder `/src/main/resources/ESH-INF/binding/binding.xml`.
+For the declarative way, you add your binding information in form of a `binding.xml` file to the bundle's folder `/src/main/resources/OH-INF/binding/binding.xml`.
 
 
 ### XML Structure for Binding Definitions
@@ -52,7 +52,7 @@ For the declarative way, you add your binding information in form of a `binding.
 | config-description-ref.uri | The URI of the configuration description for the binding within the ConfigDescriptionRegistry | mandatory |
 
 
-The full XML schema for binding definitions is specified in the [ESH binding XSD](https://openhab.org/schemas/binding-1.0.0.xsd) file.
+The full XML schema for binding definitions is specified in the [Binding XSD](https://openhab.org/schemas/binding-1.0.0.xsd) file.
 
 **Hints:**
 
