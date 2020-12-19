@@ -80,9 +80,9 @@
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
                   <includes>
-                    <include>org.openhab.binding.*/**/README.md</include>
-                    <include>org.openhab.binding.*/**/doc/**</include>
-                    <include>org.openhab.binding.*/**/cfg/**</include>
+                    <include>org.openhab.automation.*/**/README.md</include>
+                    <include>org.openhab.automation.*/**/doc/**</include>
+                    <include>org.openhab.automation.*/**/cfg/**</include>
                   </includes>
                 </resource>
               </resources>
