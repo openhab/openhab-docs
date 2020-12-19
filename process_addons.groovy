@@ -108,6 +108,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
 
 def process_addon_files = { features ->
     //                 features, sources,               type,          collection,               suffix,                       lblremoves,                  pkgremoves
+    process_addon_type(features, ['oh3'],        'automation',  'addons_automation',      ' - Automation',              [:],                         ['org.openhab.automation.'])
     process_addon_type(features, ['oh3'],        'binding',     'addons_bindings',        ' - Bindings',                [' Binding'],                ['org.openhab.binding.'])
     process_addon_type(features, ['oh3'],        'iconset',     'addons_iconsets',        ' - Icon Sets',               [:],                         ['org.openhab.ui.iconset.'])
     process_addon_type(features, ['oh3', 'ext'], 'io',          'addons_ios',             ' - System Integrations',     [' Service'],                ['org.openhab.io.'])
