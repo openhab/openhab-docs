@@ -28,11 +28,30 @@ A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
 It therefore makes sense to have different rule files for different use-cases or categories.
 
+### UI based definition
+
+Rules can be created and edited with in the UI.
+You can find the editor browsing to `Settings` -> `Rules`.
+Click on the `+` icon to add a rule and define a name and a trigger.
+
+  ![openHAB DSL Rules through UI - Creation](images/ui_rules_dsl_test_example.png)
+
+In our example we will catch the openHAB Startup to initialize our environment.
+
+  ![openHAB DSL Rules through UI - Add Action](images/ui_rules_dsl_test_example_action.png)
+
+Click on `Add Action` and choose `Run Script`.
+
+  ![openHAB DSL Rules through UI - Use DSL Language](images/ui_rules_dsl_test_example_dsl.png)
+
+Choose `Rule DSL` and enter a rule like it is described below in this article.
+
 ### IDE Support
 
 The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
+Check out the editors page for more information and additional editor possibilities.
 
 ### The Syntax
 
