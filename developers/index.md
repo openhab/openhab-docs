@@ -5,7 +5,8 @@ title: Developer Guide
 
 # Overview
 
-A variety of different parts of openHAB can be extended. We will cover the most important ones here.
+A variety of different parts of openHAB can be extended.
+We will cover the most important ones here.
 
 openHAB uses [git](https://git-scm.com/) as its version control system and [GitHub](https://github.com/openhab) for hosting the different repositories and source code.
 You will come in contact with git in many places, and it makes sense to familiarize yourself with its basic commands and concepts.
