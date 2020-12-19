@@ -11,8 +11,8 @@ openHAB is written completely in Java.
 As such, it only depends on a Java Virtual Machine, which is available for most platforms.
 openHAB can be run on different versions of **macOS** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, etc.).
 
-Please be aware of the fact that openHAB is continuously changed and improved.
-Therefore, tutorials and help you may find on the Internet for it **might** be outdated!
+Please be aware of the fact that openHAB is continuously updated and improved.
+Therefore, tutorials and help you may find on the Internet for it **may** be outdated!
 Always keep this in mind when searching for help and solutions.
 
 ## Platform Recommendations
