@@ -41,7 +41,7 @@ To install it, follow these simple steps:
 
 2.  Unzip the file in your chosen directory (e.g. `C:\openHAB`)
 
-    ![openHAB 2 Folders](images/openHAB_3_Folders.png)
+    ![openHAB 2 Folders](images/openHAB_Folders.png)
 
 3.  Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
 
