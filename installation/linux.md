@@ -94,7 +94,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     Add the **openHAB Beta Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 -   **Snapshot Release**
@@ -106,7 +106,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     To use it, add the **openHAB Unstable Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 Next, resynchronize the package index:
@@ -144,7 +144,7 @@ You may add all three to the same file, but make sure the desired repo is is set
 
     ```text
     [openHAB-Stable]
-    name=openHAB 3.x.x Stable
+    name=openHAB Stable
     baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
     gpgcheck=1
     gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
@@ -157,10 +157,10 @@ You may add all three to the same file, but make sure the desired repo is is set
 
     ```text
     [openHAB-Testing]
-    name=openHAB 3.x.x Testing
-    baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/testing
+    name=openHAB Testing
+    baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/testing
     gpgcheck=1
-    gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public
     enabled=1
     ```
 
@@ -171,8 +171,8 @@ You may add all three to the same file, but make sure the desired repo is is set
 
     ```text
     [openHAB-Snapshots]
-    name=openHAB 3.x.x Snapshots
-    baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
+    name=openHAB Snapshots
+    baseurl=https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/unstable
     gpgcheck=1
     gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public
     enabled=1
@@ -372,7 +372,7 @@ apt-cache showpkg openhab
 Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install openhab=[version]` command, for example:
 
 ```shell
-sudo apt-get install openhab=3.0.0
+sudo apt-get install openhab=3.0.0-1
 ```
 
 {% include collapsible/item-end.html %}
@@ -398,7 +398,7 @@ rpm -q openhab
 Once you know which version you want, you can upgrade/downgrade to it by using the `yum install openhab-[version]` command, for example:
 
 ```shell
-sudo yum install openhab-3.0.0
+sudo yum install openhab-3.0.0-1
 ```
 
 {% include collapsible/item-end.html %}
@@ -429,7 +429,7 @@ Yum or Dnf Based Systems
 
 ```shell
 sudo yum remove openhab*
-sudo rm /etc/yum.repos.d/openHAB.repo
+sudo rm /etc/yum.repos.d/openhab.repo
 ```
 
 {% include collapsible/item-end.html %}
@@ -735,8 +735,8 @@ Next, add the desired share configurations to the end of the file:
 -   Package repository based installation:
 
     ```ini
-    [openHAB2-userdata]
-      comment=openHAB2 userdata
+    [openHAB-userdata]
+      comment=openHAB userdata
       path=/var/lib/openhab
       browseable=Yes
       writeable=Yes
@@ -745,8 +745,8 @@ Next, add the desired share configurations to the end of the file:
       create mask=0777
       directory mask=0777
 
-    [openHAB2-conf]
-      comment=openHAB2 site configuration
+    [openHAB-conf]
+      comment=openHAB site configuration
       path=/etc/openhab
       browseable=Yes
       writeable=Yes
@@ -755,8 +755,8 @@ Next, add the desired share configurations to the end of the file:
       create mask=0777
       directory mask=0777
 
-    [openHAB2-logs]
-      comment=openHAB2 logs
+    [openHAB-logs]
+      comment=openHAB logs
       path=/var/log/openhab
       browseable=Yes
       writeable=Yes
@@ -770,7 +770,7 @@ Next, add the desired share configurations to the end of the file:
 
     ```ini
     [openHAB-files]
-      comment=openHAB2
+      comment=openHAB
       path=/opt/openhab
       browseable=Yes
       writeable=Yes
