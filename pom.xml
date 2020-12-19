@@ -35,6 +35,9 @@
         <configuration>
           <filesets>
             <fileset>
+              <directory>${basedir}/_addons_automation/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/_addons_bindings/</directory>
             </fileset>
             <fileset>
@@ -65,6 +68,26 @@
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.0.2</version>
         <executions>
+          <execution>
+            <id>copy-oh3-automation-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_automation/oh3</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.binding.*/**/README.md</include>
+                    <include>org.openhab.binding.*/**/doc/**</include>
+                    <include>org.openhab.binding.*/**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
           <execution>
             <id>copy-oh3-binding-docs</id>
             <phase>process-resources</phase>
