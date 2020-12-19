@@ -38,7 +38,7 @@ Some of openHAB's strengths are:
 Home automation is fascinating and requires a considerable investment of your time.
 Here are some key considerations especially for new users. To be successful, you will need to:
 
-* Start slowly and one step at a time
+* Start slowly and proceed one step at a time
 * Be prepared to learn
 * Remain flexible in how you want to achieve your goal
 * Celebrate all the small successes
@@ -52,7 +52,7 @@ openHAB is fully customizable, but doing so will require substantial effort on y
 After you have read the documentation for openHAB, you will have:
 
 * Identified a computer on which to run openHAB
-* Learned how to install openHAB, as well as all other software that is needed to run openHAB (e.g., JAVA)
+* Learned how to install openHAB, as well as all other software that is needed to run openHAB (e.g. Java)
 * Learned how your smart devices communicate with openHAB; how to make openHAB give commands to your smart devices; and how you can interact with openHAB
 
 Keep your focus.
@@ -191,6 +191,6 @@ openHAB is developed in [Java](https://www.java.com/) and uses [OSGi](https://ww
 
 openHAB is highly modular software that can be extended through "Add-ons".
 Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things.
-Add-ons may come from the openHAB distribution, the legacy openHAB 1 distribution or from other external sources.
+Add-ons may come from the openHAB distribution or from other external sources.
 
 If you are new to openHAB, we suggest you continue to the [Concepts]({{base}}/concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.
