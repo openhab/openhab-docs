@@ -61,6 +61,3 @@ If you need to `restoreOnStartup` unsupported Item types, `MapDB` might be a bet
 As with the model, the reason why one would set up the Model discussed in the previous tutorial and Persistence is that it will make creating your user interfaces much easier and much more rich.
 For example, a set of UI pages will be created automatically in MainUI based on the model.
 And just about any place you can interact with an Item in MainUI there will be an "Analyze" button that will generate a chart based on the data saved in persistence.
-
-<!--Next: [Pages - Introduction]({{base}}/tutorial/pages_intro.html)-->
-Previous: [Semantic Model]({{base}}/tutorial/model.html)

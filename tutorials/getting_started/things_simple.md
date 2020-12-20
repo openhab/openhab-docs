@@ -118,6 +118,3 @@ Go back to Things: the newly approved Hue Things should appear on the list.
 You now have the Bridge Thing and the two light bulbs added to openHAB.
 Thankfully most of the bindings you will work with in openHAB will work in this simple way.
 However, there are some technologies that require a bit more manual configuration.
-
-Next: [Intermediate Thing Creation]({{base}}/tutorial/things_intermediate.html)
-Previous: [First Steps]({{base}}/tutorial/first_steps.html)

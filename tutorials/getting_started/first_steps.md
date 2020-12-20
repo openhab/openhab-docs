@@ -76,6 +76,3 @@ Inbox | Settings that affect how Items are shown and approved in the Inbox where
 Charts | Default settings for generated charts.
 Voice | Settings for voice-to-text, text-to-voice and human language processing.
 Other Services | The items that appear here will changed based on the set of add-ons installed. These are places to configure those bindings and capabilities (e.g. set up the connection for InfluxDB Persistence).
-
-Next: [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
-Previous: [Introduction]({{base}}/tutorial/index.html)

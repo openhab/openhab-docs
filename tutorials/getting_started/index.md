@@ -95,5 +95,3 @@ There may be concepts or steps that are presented earlier that are required to u
 
 [Putting it all Together]({{base}}/tutorial/example.html) Comprehensive Example
 -->
-
-Next: [Let's get started with First Steps]({{base}}/tutorial/first_steps.html)
