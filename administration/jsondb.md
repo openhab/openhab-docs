@@ -192,7 +192,7 @@ Step 3. Using Paper UI :arrow_right: Configuration :arrow_right: Things, edit th
 - Retry (from 1 to 3)
 - Timeout (from 5000 to 10000)
 and save:
-![Edit_Thing_Paper_UI](./images/ui_edit_thing.png)
+![Edit_Thing_UI](./images/ui_edit_thing.png)
 
 Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.openhab.core.thing.Thing.json` file:
 ![New_Json](./images/new_json_file.png)
