@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+description: openHAB tutorial for beginners.
 ---
 
 {% include base.html %}

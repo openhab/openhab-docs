@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+description: This article explains of the logging system in openHAB and how to use it as a part of the beginners Tutorial.
 ---
 
 {% include base.html %}
@@ -21,7 +22,7 @@ You can also use SAMBA/network shares to open or copy the file directly.
 tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
 ```
 
-Bindings can have the level of detail increased or decreased on a per binding basis and this is done with the Karaf console. 
+Bindings can have the level of detail increased or decreased on a per binding basis and this is done with the Karaf console.
 
 To find them if you are not using openHABian:
 

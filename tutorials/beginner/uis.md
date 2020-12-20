@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+description: This article describes different available UIs for openHAB as a part of the beginners Tutorial.
 ---
 
 {% include base.html %}
