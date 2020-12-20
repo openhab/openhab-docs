@@ -45,14 +45,10 @@ Once the bridge created, you will be able to launch discovery of the vehicles at
 
 The 'VolvoOnCall API' bridge uses the owner's email address and password in order to access the VOC Remote API.
 
-
 | Parameter       | Name             | Description                                             | Required |
 |-----------------|------------------|---------------------------------------------------------|----------|
 | vin             | Vin              | Vehicle Identification Number of the car                | yes      |
 | refreshinterval | Refresj Interval | Interval in minutes to refresh the data (default=10)    | yes      |
-
-
-
 
 ## Channels
 
@@ -61,7 +57,6 @@ This means you can easily change the desired unit e.g. miles/h instead of km/h j
 
 #####Thing properties
 Some of the channels are only available for specific cars and models.
-Availability of specific action can be found in PaperUI -> Configuration -> Things -> <your car thing> -> SHOW PROPERTIES
 
 Following channels are currently available:
 
@@ -113,7 +108,6 @@ Following channels are currently available:
 | lasttrip#tripStopOdometer                     | Number:Length        | Last trip stop odometer                          |                                                 |
 | lasttrip#startPosition                        | Location             | Last trip start location                         |                                                 |
 | lasttrip#endPosition                          | Location             | Last trip end location                           |                                                 |
-
 
 ## Events
 

@@ -22,7 +22,6 @@ It defines how common parameters like AC/DC voltage and current, lifetime produc
 SunSpec is supported by several manufacturers like ABB, Fronius, LG, SMA, SolarEdge, Schneider Electric.
 For a list of certified products see this page: https://sunspec.org/sunspec-certified-products/
 
-
 ## Supported Things
 
 This bundle adds the following thing types to the Modbus binding.
@@ -71,7 +70,6 @@ The following parameters are valid for all thing types:
 | refresh   | integer | no       | 5                   | Poll interval in seconds. Increase this if you encounter connection errors |
 | maxTries  | integer | no       | 3                   | Number of retries when before giving up reading from this thing. |
 
-
 ## Channels
 
 Channels are grouped into channel groups.
@@ -110,7 +108,6 @@ Even if the inverter supports multiple phases this group will appear only once.
 
 Supported by: all inverter things
 
-
 #### Meters
 
 This group contains summarized values for the power meter over all phases.
@@ -135,7 +132,6 @@ This group contains summarized values for the power meter over all phases.
 | ac-total-exported-reactive-energy-q4 | Number:Energy            | Total Reactive Energy Exported Quadrant 4 over all phases (VARh)    |
 
 Supported by: all meter things
-
 
 ### AC Phase Specific Group
 
@@ -169,7 +165,6 @@ acPhaseB: available for meter-split-phase, meter-wye-phase and meter-delta-phase
 
 acPhaseC: available only for meter-wye-phase and meter-delta-phase meters type inverters.
 
-
 | Channel ID                     | Item Type                | Description                                                         |
 |--------------------------------|--------------------------|---------------------------------------------------------------------|
 | ac-phase-current               | Number:ElectricCurrent   | Actual current over this line in Watts                              |
@@ -188,7 +183,6 @@ acPhaseC: available only for meter-wye-phase and meter-delta-phase meters type i
 | ac-exported-reactive-energy-q3 | Number:Energy            | Reactive Energy Exported Quadrant 3 (VARh)                          |
 | ac-exported-reactive-energy-q4 | Number:Energy            | Reactive Energy Exported Quadrant 4 (VARh)                          |
 
-
 Supported by: all meter things
 
 ### DC General Group
@@ -203,7 +197,6 @@ DC information is summarized even if the inverter has multiple strings.
 | dc-power             | Number:Power             | Actual DC power produced                                            |
 
 Supported by: all inverter things
-
 
 ## Full Example
 
