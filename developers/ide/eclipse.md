@@ -7,14 +7,18 @@ title: Eclipse IDE
 
 Eclipse is the development environment used since the inception of openHAB.
 To make development easier an out-of-the-box setup is available that completely configures Eclipse to easily develop for the openHAB projects.
-This guide describes the steps to setup Eclipse and how to debug an add-on in Eclipse.
+This guide describes the steps to setup Eclipse and how to run and debug an add-on in Eclipse.
+
+::: tip Existing Eclipse Installations
+If you already have Eclipse installed it is recommended to perform a separate Eclipse install for OpenHAB to avoid overriding your existing Eclipse configuration. 
+:::
 
 ## Eclipse IDE Setup
 
-1. Install the Java 8 JDK if you did not have it installed.
+1. Install the Java 11 JDK if you did not have it installed.
 
    ::: warning Attention
-   openHAB development requires **Java JDK version 8**.
+   openHAB development requires **Java JDK version 11**.
    :::
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
@@ -47,7 +51,7 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
 
     ::: warning Attention
     Select `2.5.x` if you want to develop for 2.5.x.
-    The Core Framework only has a master branch (3.0 development).
+    The Core Framework only has a master branch (3.0 development), which means you can no longer make Core Framework changes for a 2.5.x system.
     :::
 
 1. Click `Next>`, verify/modify Root and install folder name. Click on `Show all variables` to open the window shown below.
@@ -80,29 +84,19 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
 
 1. After all tasks are finished you are ready to start developing.
 
-    ::: tip
-    The Maven build system is configured to download the SNAPSHOT version daily.
-    As a result when you restart Eclipse the other day.
-    It may take some time as it updates all SNAPSHOT versions of openHAB.
-    :::
-
-1. If you have selected `openHAB Add-ons` the installer will clone the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository.
-    To get an existing binding project into Eclipse import it as a Maven project.
-    Goto `File` -> `Import...` -> `Maven` -> `Existing Maven projects` and follow the wizard to select the directory of the binding or bindings to import.
-
-1. If you want to develop a new binding. Read about the [Skeleton Script](../#develop-a-new-binding) to generate the base for your binding, creating all required files.
-
 1. If you need additional libraries see the [Build System](../buildsystem.html) documentation.
 For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
 
-## Debugging an Add-on
+## Working with Add-ons
 
-To test your binding you can build the add-on on the command line with Maven and drop the jar file in an `addons/` folder of an existing installation.
-But to easily debug an add-on the `openHAB Development` setup installs and imports a demo project that contains a complete openHAB environment to run and debug an add-on.
+To easily run, modify and debug an add-on the `openHAB Development` setup installs and imports a demo project that contains a complete openHAB environment to run and debug an add-on. 
+This mechanism replaces the add-on installation process via the PaperUI that you would use outside the IDE. 
+
+### Running Add-ons
 
 Under `Infrastructure` you will find the project `org.openhab.demo.app`.
-This project contains the full configuration to start a debug sessions.
-The following files are of interest for the debug environment:
+This project contains the full configuration to run OpenHAB.
+The following files are of interest for the execution environment:
 
 ```
 |- org.openhab.demo.app
@@ -110,16 +104,9 @@ The following files are of interest for the debug environment:
 |------- conf             Here you configure the manual text files
 |------- userdata         Here is the openHAB user data
 |------- logback.xml      XML file for logging options
-|--- app.bndrun           The file to start a debug session
+|--- app.bndrun           The file to start OpenHAB
 |--- pom.xml              The pom file with all dependencies for the demo project
 ```
-
-1. Import the add-on in Eclipse.
-Either it is an existing add-on or a new binding created with the skeleton script.
-Import the add-on project via `File > Import... > General > Existing Projects into Workspace`.
-Importing an add-on is necessary if you want to modify or debug the add-on.
-It is also possible to run existing add-ons part of the SNAPSHOT release in the demo project without having it imported in Eclipse.
-Simply follow the next step to add the add-on.
 
 1. To let the demo project know about the add-on, the add-on must be added to the demo project `pom.xml`.
 Here is an example for the `astro` binding:
@@ -133,17 +120,12 @@ Here is an example for the `astro` binding:
         </dependency>
     ```
 
-    ::: tip
-    To only run a binding in the demo you don't need to import the binding in Eclipse.
-    Add the binding to the pom.xml and follow the steps below and you will be able to use that binding in the demo.
-    :::
-
-1. To debug the add-on with the `app.bndrun` run configuration.
+1. To run the add-on with the `app.bndrun` run configuration.
     Double click to open `app.bndrun` file (takes a few seconds):
 
     ![Bndtools](images/ide_debug_eclipse_1_bndtools.png)
 
-1. Under `Browse Repos` search for the binding you want to run/debug (`astro` in our case) and add it to the `Run Requirements` list using drag&drop from the `Browse Repos` list:
+1. Under `Browse Repos` search for the add-on you want to run (`astro` in our case) and add it to the `Run Requirements` list using drag&drop from the `Browse Repos` list:
 
     ::: tip
     If you cannot find the binding you want run/debug in the Browse Repos list, or the list is empty,
@@ -156,17 +138,61 @@ Here is an example for the `astro` binding:
 
 1. Save and click "Resolve": a window with the list of resolved bundles will be shown.
     Click `Finish` and save the file.
+    
+    ::: tip
+    Watch out - it's easy to miss saving the `app.bndrun` file. 
+    If you see the little asterisk next to `app` in the `app` tab you haven't yet saved. 
+    :::
 
-    Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, UIs and the selected binding you want to run/debug.
+    Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, UIs and the add-ons you configured.
 
-1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi" (upper right of the `app.bndrun` window)
+1. Start openHAB from the IDE by clicking "Run OSGi" (upper right of the `app.bndrun` window).
 
-1. You can check openHAB is running going with your browser to: http://localhost:8080/paperui/ (the last `/` is important!)
+1. You can check that openHAB is running with your browser by going to: http://localhost:8080/paperui/ (the last `/` is important!)
+
+1. You can check log output in the `Console` tab at the bottom.
 
 1. Check the chosen binding is active in `Paper UI > Configuration > Bindings`
 
-### From start to debug in a single animation
+View all the above steps in a single animation:
 
 ![Debug Animation](images/ide_eclipse_debug_animation.gif)
 
+### Modifying and Debugging Add-ons
 
+If you don't just want to run an add-on, but also want to modify and debug it you need to install sources for the add-on and build them locally. 
+
+1. Install Sources
+
+    Sources are installed by cloning the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository. 
+    If you select `openHAB Add-ons` during installation the installer automatically clones the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository into `git\openhab-addons` under your installation folder.
+
+    If you didn't install `openHAB Add-ons` you can manually clone the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository by executing `git clone https://github.com/openhab/openhab-addons.git` in the `git` folder under your installation folder. 
+
+    You can now modify add-on sources as needed.
+
+1. Build Sources
+
+    Add the add-on as an Eclipse project so that Eclipse will build it automatically. 
+    Import the add-on project via `File > Import... > Maven > Existing Maven Projects`. 
+    Specify your add-on's source root folder (e.g. `git\openhab-addons\bundles\org.openhab.binding.astro` under the installation folder) as the root folder in the wizard. 
+
+1. Start a Debug Session
+
+    Simply start your debug session by clicking "Debug OSGi" (upper right of the `app.bndrun` window). 
+    You can now use breakpoints and all other Eclipse debug tools. 
+
+::: tip Where do add-on jar files come from?
+If you just run an add-on following the above steps then the required add-on jar files are retrieved through your Maven repository folder `.m2/repository` (e.g. `.m2\repository\org\openhab\addons\bundles\org.openhab.binding.astro`).
+If you imported your add-on as a project then the jar file is no longer retrieved from the Maven repository, but instead from the project build (e.g. `git\openhab-addons\bundles\org.openhab.binding.astro\target` under the installation folder).
+:::
+
+### Using New Bindings
+
+If you want to develop a new binding read about the [Skeleton Script](../#develop-a-new-binding) to generate the base for your binding and create all required files.
+Then follow the above steps to build your sources and to configure the demo app to run your binding. 
+
+## Updating OpenHAB
+
+You can update the OpenHAB version you are running in the IDE at any time simply by updating your git repos under your install folder. 
+For example to update to the latest version run `git checkout` in each repo folder under your `git` folder in the installation folder. 

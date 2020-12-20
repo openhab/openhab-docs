@@ -6,19 +6,19 @@ layout: documentation
 
 # Installation of Add-ons
 
-Depending on the [package](/docs/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
-Additional add-ons can be installed in the different ways, described below.
+Add-ons can be installed in different ways, described below.
 
-## Through Paper UI
+## Through UI
 
-Navigate to the add-ons section.
+Log into your admin account (if not already done).
+Navigate to `Settings` and have a look for the add-ons section.
 Search for the desired add-on in the categories and press install.
 
-![installing Add-ons through Paper UI](./images/addons_index_installation_paperui.gif)
+![installing Add-ons through Paper UI](./images/InstallAddonsThroughUi.gif)
 
 ## Through Configuration Files
 
-For this installation option you need to know the `id` of the desired add-on, e.g., network or mqtt1.
+For this installation option you need to know the `id` of the desired add-on, e.g., network or mqtt.
 
 You can find it out with the following command within [openHAB console](/docs/administration/console.html):
 
@@ -31,44 +31,35 @@ It could look similar to this example:
 
 ```text
 ...
-openhab-transformation-xslt               | 0.9.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | XSLT Transformation
-openhab-voice-mactts                      | 0.9.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | macOS Text-to-Speech
-openhab-binding-amazondashbutton          | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Amazon Dash Button Binding
-openhab-binding-astro                     | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Astro Binding
-openhab-binding-autelis                   | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Autelis Binding
-openhab-binding-avmfritz                  | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | AVM Fritz!Box Binding
+openhab-binding-mqtt                      | 3.0.0.M5         |          | Started     | openhab-addons-3.0.0.M5 | MQTT Binding
+openhab-binding-netatmo                   | 3.0.0.M5         |          | Started     | openhab-addons-3.0.0.M5 | Netatmo Binding
+openhab-binding-onewire                   | 3.0.0.M5         |          | Uninstalled | openhab-addons-3.0.0.M5 | OneWire Binding
 ...
-openhab-binding-network                   │ 2.2.0            │          │ Uninstalled │ openhab-addons-2.2.0    │ Network Binding
+openhab-binding-network                   | 3.0.0.M5         |          | Uninstalled | openhab-addons-3.0.0.M5 | Network Binding
 ...
 ```
 
 According to the [naming convention for bundles](/docs/administration/bundles.html#naming-convention-for-bundles) the *id* for the shown example is *network*.
 
 Another way to find the correct `id` is to look at the URL of the add-on documentation page.
-For example the url for the [mqtt Binding documentation](/addons/bindings/mqtt1/) is
+For example the url for the [Network Binding documentation](/addons/bindings/network/) is
 
 ```text
-https://www.openhab.org/addons/bindings/mqtt1/
+https://www.openhab.org/addons/bindings/network/
 ```
 
-In this case, the `id` would be "mqtt1".
-Did you notice the trailing *1* in this id?
-This is because the mqtt Binding is a 1.x add-on.
-
-The trailing `1` has to be appended for `binding`- and `misc`-addons.
-It is *not needed* for other addon types like `persistence`.
+In this case, the `id` would be "network".
 
 With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CONF/services` folder on the machine you are running openHAB on.
-The path is depending on your installation.
+The path depends on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux](/docs/installation/linux.html#file-locations) or [Windows](/docs/installation/windows.html#file-locations).
 
-The file could look like this (depending on your choosen package and already installed add-ons):
+The file could look like this (depending on your chosen package and already installed add-ons):
 
 ```text
-package = standard
-ui = basic,paper,habpanel,restdocs
+ui = basic,habpanel
 action = pushover
-binding = astro,mqtt1
+binding = astro
 transformation = jsonpath
 persistence = influxdb
 ```
@@ -76,7 +67,7 @@ persistence = influxdb
 To install the network Binding like we want in this example, we just need to add the id *network* to the Binding section.
 
 ```text
-binding = astro,mqtt1,network
+binding = astro,network
 ```
 
 After saving the file, the add-on will be installed.
@@ -93,5 +84,5 @@ For this installation option you need a bundles `.jar` file.
 One way of retrieving those files is mentioned above in the openHAB console part.
 
 Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
-As described already for the addons.cfg option, the path is depending on your installation.
+As described already for the addons.cfg option, the path depends on your installation.
 Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macos.html#file-locations)).

@@ -59,7 +59,7 @@ sudo armbian-config
 ![System and 3rd party software](images/armbian-step2.png)
 ![Softy](images/armbian-step3.png)
 
-Select OpenHAB with **SPACE** and press **ENTER**
+Select OpenHAB2 (old version) or OpenHAB3 with **SPACE** and press **ENTER**
 
 ![Openhab](images/armbian-step4.png)
 

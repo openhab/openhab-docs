@@ -7,7 +7,7 @@ title: Concepts
 
 # Concepts
 
-When first thinking about your home automation system, it may be helpful to bear in mind that there are two ways of thinking about or viewing your system; the physical view and the functional view.
+When first thinking about your home automation system, it may be helpful to bear in mind that there are two ways of thinking about or viewing your system: the physical view and the functional view.
 
 The physical view will be familiar to you.
 This view focuses on the devices in your system, the connections between these devices (e.g. wires, Z-Wave, WiFi hardware), and other physical aspects of the system.
@@ -49,4 +49,4 @@ To illustrate these concepts, consider the example below of a two-channel actuat
 The actuator is a Thing that might be installed in an electrical cabinet.
 It has a physical address and it must be configured in order to be used (remember the physical view introduced at the beginning of this article).
 
-In order for the user to control the two lights, he or she access the capability of the actuator Thing (turning on and off two separate lights) through two Channels, that are Linked to two switch Items presented to the user through a user interface.
+In order for the user to control the two lights, he or she accesses the capability of the actuator Thing (turning on and off two separate lights) through two Channels, that are Linked to two switch Items presented to the user through a user interface.

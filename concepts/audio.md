@@ -9,14 +9,14 @@ title: Audio & Voice
 
 Audio and voice features are an important aspect of any smart home solution as it is a very natural way to interact with the user.
 
-openHAB comes with a very modular architecture that enables all kinds of different use cases. 
+openHAB has a very modular architecture that enables many different use cases.
 At its core, there is the notion of an *audio stream*. 
 Audio streams are provided by *audio sources* and consumed by *audio sinks*.  
 
 ![](images/audio.png)
 
-- *Audio Streams* are essentially a byte stream with a given *audio format*. 
-They do not need to be limited in size, i.e. it is also allowed to have continuous streams, e.g. the input from a microphone or from an Internet radio station.
+- *Audio Streams* are essentially byte streams with a given *audio format*.
+They do not need to be limited in size, i.e. it is allowed to have continuous streams, e.g. the input from a microphone or from an Internet radio station.
 - *Audio Formats* define the container (e.g. WAV), encoding, bit rate, sample frequency and depth and the bit order (little or big endian).
 - *Audio Sources* are services that are capable of producing audio streams. 
 They can support different formats and provide a stream in a requested format upon request. 

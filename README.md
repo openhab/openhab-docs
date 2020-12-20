@@ -9,7 +9,7 @@ The result is available at [https://next.openhab.org/docs/](https://www.openhab.
 ## How it works
 
 In this repo you can find and improve all *general* documentation contents.
-In fact that is all you can see in the `2.5.x` branch.
+In fact that is all you can see in the `main` branch.
 There are also other *read-only* branches, which hold external content like the *add-ons* and *concepts* documentation.
 We will read about them later.
 
@@ -40,7 +40,7 @@ will help you to get it right.
 
 We use them to bring together all relevant articles or to archive versioned content.
 Mostly those branches will get updated automatically through our continuous integration builds.
-You can read a bit more below about our external ressources and how we get them.
+You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 

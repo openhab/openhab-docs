@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title: Transformation Services
+title: Transformations
 ---
 
 {% include base.html %}
 
-# Transformation Services
+# Transformations
 
 Transformations are used to translate data from a cluttered or technical raw value to a processed or human-readable representation.
 They are often useful, to **interpret received Item values**, like sensor readings or state variables, and to translate them into a human-readable or better processible format.
@@ -40,7 +40,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
     Usage of Transformations in the [label parameter of Sitemap elements]({{base}}/configuration/sitemaps.html#element-type-text) works the same way.
 
-2.  Rules
+1. Rules
 
     Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
     The following shows three examples:
@@ -50,6 +50,15 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var temperature = transform("JSONPATH", "$.temperature", jsonstring)
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
+
+1. Bindings
+
+    Transformations can sometimes be used in binding add-ons.  For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
+    If, and how, this use may be available is described in individual binding documentation.
+
+1. Profiles
+
+    Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
 
 To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
 More details regarding this and other Transformation services can be found in the individual transformation articles linked below.

@@ -20,7 +20,7 @@ Items are used to control Things and consume their information.
 Ultimately, when Items are linked to Channels on a Thing, they become available to the various user interfaces and to the rules engine.
 
 ::: tip Note
-Things are a new concept in openHAB 2, Things definitions are not needed for 1.x bindings.
+Things are a new concept in openHAB, Things definitions are not needed for 1.x bindings.
 :::
 
 ## Defining Things
@@ -53,7 +53,7 @@ Other bindings (such as the [ZWave](/addons/bindings/zwave/) binding) currently 
 
 Things can be added to the system using [discovery]({{base}}/concepts/discovery.html), which allows Things to be discovered automatically if the appropriate binding has been installed and configured.
 When a Thing has been discovered, it appears in the discovery inbox.
-Newly discovered Things can be added to the system from the inbox using the [Paper UI]({{base}}/configuration/paperui.html).
+Newly discovered Things can be added to the system from the inbox using the UI.
 
 Things that are added to openHAB from the inbox are maintained in an internal database as opposed to a manually defined `.things` file (see below).
 Unlike manually defined Things, if a Thing has configurable properties, these properties can be set through a user interface.
@@ -76,12 +76,12 @@ Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 
 The first keyword defines whether the entry is a bridge or a thing.
 The next statement defines the UID of the thing which contains of the following three segments: `binding id`, `thing type id`, `thing id`.
-So the first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
+The first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
 Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (`Location` in the example above).
 
-Inside the squared brackets configuration parameters of the thing are defined.
+Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
 
@@ -106,7 +106,7 @@ Please check each individual binding's [documentation](/addons/#binding) for det
 
 ### Defining Bridges Using Files
 
-Bridges can be defined together with contained things. The following configuration shows the definition of a hue bridge with two hue lamps:
+Bridges can be defined together with contained things. The following configuration shows the definition of a Hue bridge with two Hue lamps:
 
 ```xtend
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
@@ -123,7 +123,7 @@ The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
 Bridges that are defined somewhere else can also be referenced in the DSL:
 
 ```xtend
-Thing hue:0210:mybridge:bulb (hue:bridge:mybridge) [lightId="3"]
+Thing hue:0210:mybridge:bulb "Label" (hue:bridge:mybridge) @ "Location" [lightId="3"]
 ```
 
 The referenced bridge is specified in the parentheses.

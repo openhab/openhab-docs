@@ -297,7 +297,7 @@ The types in the **Configuration** object are restricted to the following:
 There are several ways to add new rules:
 
   * using **JAVA API** from package: **org.openhab.automation.api**;
-  * using **text console commands: smarthome automation**;
+  * using **text console commands: openhab:automation**;
   * using **resource bundles** that provide moduletypes, rules and rule templates stored in **.json** files;
   * using **REST API** - see the next chapter bellow.
 
@@ -384,11 +384,11 @@ There are several ways to add new rules:
 
 Bundles that provide rules in json format should have the following folder structure:
 
-`ESH-INF\automation\moduletypes` - folder for .json files with module types;
+`OH-INF\automation\moduletypes` - folder for .json files with module types;
 
-`ESH-INF\automation\rules` - folder for .json files with rule instances;
+`OH-INF\automation\rules` - folder for .json files with rule instances;
 
-`ESH-INF\automation\templates` - folder for .json files with rule templates.
+`OH-INF\automation\templates` - folder for .json files with rule templates.
 
 ## Rule Templates
 
@@ -489,20 +489,20 @@ The above example uses two rule configuration properties:
 
 GenericEventTrigger has 3 configuration paramters: `eventTopic`,` eventSource` and `eventTypes` and one output: 'event'.
 
-      {  
+      {
          "uid":"GenericEventTrigger",
          "label":"Basic Event Trigger",
          "description":"Triggers Rules on Events",
          "configDescriptions":[  
-            {  
+            {
                "name":"eventTopic",
                "type":"TEXT",
                "label":"Topic",
-               "description":"This is the topic, the trigger will listen to: >>smarthome/*<<",
+               "description":"This is the topic, the trigger will listen to: >>openhab/*<<",
                "required":true,
-               "defaultValue":"smarthome/*"
+               "defaultValue":"openhab/*"
             },
-            {  
+            {
                "name":"eventSource",
                "type":"TEXT",
                "label":"Source",
@@ -510,7 +510,7 @@ GenericEventTrigger has 3 configuration paramters: `eventTopic`,` eventSource` a
                "required":true,
                "defaultValue":""
             },
-            {  
+            {
                "name":"eventTypes",
                "type":"TEXT",
                "label":"Event Type",
@@ -519,8 +519,8 @@ GenericEventTrigger has 3 configuration paramters: `eventTopic`,` eventSource` a
                "defaultValue":""
             }
          ],
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"event",
                "type":"org.openhab.core.events.Event",
                "label":"Event",
@@ -591,12 +591,12 @@ Another way to extend the supported module types is by defining composite module
 The composite module type wraps one or more instances of a system module type and defines new configuration parameters, inputs and outputs.
 
 
-      {  
+      {
          "uid":"ItemStateChangeTrigger",
          "label":"Item State Trigger",
          "description":"This triggers a rule if an items state changed",
          "configDescriptions":[  
-            {  
+            {
                "name":"itemName",
                "type":"TEXT",
                "context":"item",
@@ -605,19 +605,19 @@ The composite module type wraps one or more instances of a system module type an
                "required":true
             }
          ],
-         "children":[  
-            {  
+         "children":[
+            {
                "id":"itemStateChangeTriggerID",
                "type":"GenericEventTrigger",
                "configuration":{  
                   "eventSource":"$itemName",
-                  "eventTopic":"smarthome/items/*",
+                  "eventTopic":"openhab/items/*",
                   "eventTypes":"ItemStateEvent"
                }
             }
          ],
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"event",
                "type":"org.openhab.core.events.Event",
                "description":"the event of the item state change",
