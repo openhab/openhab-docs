@@ -15,7 +15,7 @@ The following instructions will guide you through the initial steps to take afte
 {:toc}
 
 ## Create the Admin User
-Once installed and started, launch openHAB's user interface by navigating to [http://localhost:8080]() (if not running locally, replace localhost with the server's address or hostname accordingly).
+Once openHAB is installed and started, launch the user interface by navigating to [http://localhost:8080]() (if not running locally, replace localhost with the server's address or hostname accordingly).
 If you installed from the openHABian image, you can use [http://openhab:8080]().
 
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
@@ -32,11 +32,11 @@ You have to add some geographical information and start (or skip) the setup wiza
 
 ![](images/wizard_location.png)
 
-You have the ability to install some addons, if you already know that you will need them later.
+You have the ability to install some addons if you already know that you will need them later.
 
 ![](images/wizard_addons.png)
 
-After finishing the wizard you will get a welcome message and get redirected to your dashboard.
+After finishing the wizard you will get a welcome message and be redirected to your dashboard.
 
 ![](images/wizard_welcome.png)
 
@@ -60,7 +60,8 @@ If you need to sign out, or check what sessions are open with this account with 
 
 ![](images/account_option.png)
 
-Note that by default, using openHAB doesn't require you to sign in, only administrative operations require a user with an administrator role to be logged in.
+Note that by default, using openHAB doesn't require you to sign in.
+Only administrative operations require a user with an administrator role to be logged in.
 
 ## Initial Settings
 Click on Settings.
@@ -72,7 +73,8 @@ Click on Regional Settings under System Services.
 ![](images/regional_settings.png)
 
 Configure the local language, region and time zone.
-You can also specify the exact location (latitude, longitude, altitude) of your home, which some add-ons can use to preset their configuration - for instance the Astro binding will use the location to determine the time of astrological events, like sunrise and sunset in your area.
+You can also specify the exact location (latitude, longitude, altitude) of your home, which some add-ons can use to preset their configuration.
+For instance, the Astro binding will use the location to determine the time of astrological events like sunrise and sunset in your area.
 
 If you're not using the metric system, click "Show advanced" and change the measurement system.
 
@@ -85,10 +87,10 @@ Setting | Purpose
 -|-
 Network Settings | Configure the default networks OH listens on and broadcasts on, IPV6, etc.
 Audio | Configure the default microphone and audio destination
-Ephemeris | Configure day types (e.g. which days of the week are weekends and import your locale's holidays), can be used in rules
-API Security | Allows Basic Auth to be used for accessing protected parts of the openHAB API. Otherwise an authorization token or OAuth2 is required.
-Addon Management | Whether to download add-ons when they are installed or use a locally installed collection of all the add-ons.
-Persistence | Set the system wide default persistence engine.
+Ephemeris | Configure day types (e.g. which days of the week are weekends) and import your locale's holidays. Can be used in rules.
+API Security | Allows Basic Auth to be used for accessing protected parts of the openHAB API. By default an authorization token or OAuth2 is required.
+Addon Management | Choose whether to download add-ons when they are installed or use a locally stored collection of all the add-ons.
+Persistence | Set the system-wide default persistence engine.
 Json Storage | Settings for the automatic backup of UI generated configs.
 Inbox | Settings that affect how Items are shown and approved in the Inbox where discovered Things appear.
 Charts | Default settings for generated charts.
