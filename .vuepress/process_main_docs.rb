@@ -53,13 +53,13 @@ def process_main_docs(docs_source_dir)
     puts ">>> Migrating the Tutorial section"
 
 
-    Dir.glob("#{docs_source_dir}/tutorials/beginner/*.md") { |path|
+    Dir.glob("#{docs_source_dir}/tutorials/getting_started/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
-        process_file("#{docs_source_dir}/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
+        process_file("#{docs_source_dir}/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
     }
     puts " -> images"
-    # FileUtils.cp_r("#{docs_source_dir}/tutorials/beginner/images", "docs/tutorial/images")
+     FileUtils.cp_r("#{docs_source_dir}/tutorials/getting_started/images", "docs/tutorial/images")
     # FileUtils.cp_r("#{docs_source_dir}/tutorials/images/*", "docs/tutorial/images")
 
 

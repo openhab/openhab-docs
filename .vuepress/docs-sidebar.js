@@ -35,20 +35,26 @@ module.exports = [
       ['installation/security', 'Security']
     ]
   },
-  // {
-  //   title: 'New User Tutorial',
-  //   collapsable: false,
-  //   children: [
-  //     ['tutorial/', 'Tutorial Overview'],
-  //     'tutorial/1sttimesetup',
-  //     'tutorial/uis',
-  //     'tutorial/configuration',
-  //     'tutorial/sitemap',
-  //     'tutorial/rules',
-  //     'tutorial/logs',
-  //     ['tutorial/persistence', 'Persistence']
-  //   ]
-  // },
+  {
+    title: 'Beginner Tutorial',
+    collapsable: false,
+    children: [
+      ['tutorial/', 'Tutorial Overview'],
+      'tutorial/first_steps',
+      'tutorial/things_simple',
+      'tutorial/things_intermediate',
+      'tutorial/things_advanced',
+      'tutorial/model',
+      'tutorial/persistence',
+      /*'tutorial/pages_intro',
+      'tutorial/pages_widgets',
+      'tutorial/pages_types',
+      'tutorial/rules_simple',
+      'tutorial/rules_intermediate',
+      'tutorial/cloud',
+      'tutorial/example'*/
+    ]
+  },
   {
     title: 'Configuration Guide',
     collapsable: false,
