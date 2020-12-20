@@ -98,6 +98,7 @@ Within the `OPENHAB_USERDATA/jsondb/` directory, you will find the following fil
 In this example, we will use the Network Binding (2.0) to Search for Things, add a new Thing to openHAB and then modify its parameters to check the information that is stored in the JsonDB.
 
 Step 1. Add new Thing (name: `ISP_Gateway`) from UI:
+
 ![Add_Thing_UI](./images/ui_add_thing.png)
 
 Step 2. Check the contents of the `OPENHAB_USERDATA/jsondb/org.openhab.core.thing.Thing.json` file:
