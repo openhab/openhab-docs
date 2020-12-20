@@ -263,7 +263,7 @@ Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
 
   # Make openHAB automatically start after booting the Linux host
   sudo update-rc.d openhab2 defaults
-  ```openHAB 2 on Linux
+  ```
 
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}

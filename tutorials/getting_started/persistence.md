@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title:  - Persistence
+title:  Persistence
 ---
 
 {% include base.html %}
@@ -18,7 +18,7 @@ With Persistence one can:
 There are many different databases, some embedded and others running as an external service that are supported for Persistence.
 Those that are not embedded require the installation and configuration of a separate database server.
 
-Note that Persistence only saves Item states. 
+Note that Persistence only saves Item states.
 
 {::options toc_levels="2..4"/}
 
@@ -47,7 +47,7 @@ See the [Persistence docs]({{base}}/configuration/persistence.html) for the full
 At a high level, you will create a file in `$OH_CONF/persistence` with the name of the add-on and a .persist extension (e.g. `influxdb.persist`).
 Edit the file per the docs to define the strategies.
 
-Often, one will not want to use the same persistence strategy for all Items. 
+Often, one will not want to use the same persistence strategy for all Items.
 One may not even want to save all their Items or may want to save different Items to different databases using different strategies.
 For example, a common approach would be to use [`MapDB`]({{base}}/addons/persistence/mapdb/) only for those Items that should be restored on startup, [`rrd4j`]({{base}}/addons/persistence/rrd4j) with an `everyChange` and every minute strategy for number and binary (Switch, Contact) type Items that are to be charted, and [`Influxdb`]({{base}}/addons/persistence/influxdb) with an `everyUpdate` strategy for analysis with external tools.
 

@@ -1,24 +1,24 @@
 ---
 layout: documentation
-title:  - Adding Things - Simple
+title:  Adding Things - Simple
 ---
 
 {% include base.html %}
 
 # Adding Things - Simple
 
-As covered in the [concepts section]({{base}}/../../../concepts/index.html) of the openHAB Docs, a binding is an add-on to openHAB that understands how to communicate with a home automation technology or API. 
-A Thing represents a single device in openHAB. Each sensor (information provided by the device) or actuator (control on the device to cause it to do something) is represented by a Channel on the device. 
+As covered in the [concepts section]({{base}}/../../../concepts/index.html) of the openHAB Docs, a binding is an add-on to openHAB that understands how to communicate with a home automation technology or API.
+A Thing represents a single device in openHAB. Each sensor (information provided by the device) or actuator (control on the device to cause it to do something) is represented by a Channel on the device.
 Things are the connection between openHAB and your external device or API using the binding.
 
-Some technologies require a special type of Thing called a "bridge". 
-A bridge is a device or connection through which openHAB connects to other devices. 
-For example, in this tutorial light bulbs are accessed through a hub device. 
+Some technologies require a special type of Thing called a "bridge".
+A bridge is a device or connection through which openHAB connects to other devices.
+For example, in this tutorial light bulbs are accessed through a hub device.
 That hub device is represented by a bridge Thing.
 
-This tutorial covers an example of the easiest and most common method for adding Things, using automatic discovery. 
+This tutorial covers an example of the easiest and most common method for adding Things, using automatic discovery.
 
-Scenario: You have some Philips Hue light bulbs connected to an official Hue bridge. 
+Scenario: You have some Philips Hue light bulbs connected to an official Hue bridge.
 In this case, the Hue binding supports auto discovery of both the bridge, the bulbs and other devices.
 
 {::options toc_levels="2..4"/}
@@ -31,66 +31,66 @@ In this case, the Hue binding supports auto discovery of both the bridge, the bu
 
 After logging in as an administrator click on `Settings` from the sidebar, then click on `Things`.
 
-![](images/empty_things_menu.png) 
+![](images/empty_things_menu.png)
 
 Click on the blue "+" button located at the bottom-right corner.
 
 Since you have no bindings, this screen will appear:
 
-![](images/choose_binding.png) 
+![](images/choose_binding.png)
 
 Click on `Install Bindings`.
 
 Look for the Hue binding (The search bar at the top can help find bindings quicker by filtering the long list), click on it then on Install:
 
-![](images/install_hue.png) 
+![](images/install_hue.png)
 
 It will take from a few seconds to a minute for the binding to install...
 
-![](images/installing_hue.png) 
+![](images/installing_hue.png)
 
 Wait for it to disappear from the list, then click < Back (or use the browser controls).
 The Hue binding will now appear on the previous screen.
 You will notice that the auto discovery has already detected something (note the red "1" badge).
 
-![](images/installed_hue.png) 
+![](images/installed_hue.png)
 
 ## Accept the Discovered Bridge Thing
 
 Click on the binding.
 
-The bridge has indeed been detected and appears under Discovered Things. 
+The bridge has indeed been detected and appears under Discovered Things.
 If not, you can try again by clicking the `Scan Again` button.
 
 ![](images/hue_things_discover_bridge.png) Thing
 
 Click on the discovered `Hue Bridge`.
 
-![](images/add_hue_bridge.png) 
+![](images/add_hue_bridge.png)
 
-openHAB will ask you to confirm or change the label/name. 
+openHAB will ask you to confirm or change the label/name.
 Click OK after naming the new Thing.
 
 You will be taken back to the Things page, where now the Hue Bridge should now appear:
 
-![](images/hue_bridge_offline.png) 
+![](images/hue_bridge_offline.png)
 
-However, we can see that it's marked offline. 
+However, we can see that it's marked offline.
 To find out why we can click on the `Hue Bridge`.
 
-![](images/hue_bridge_config_error.png) 
+![](images/hue_bridge_config_error.png)
 
-The error description below the status gives some more information: You have to press the physical button on the device to let openHAB authenticate to it. 
+The error description below the status gives some more information: You have to press the physical button on the device to let openHAB authenticate to it.
 Once you've done this, the Thing will become online:
 
-![](images/hue_bridge_online.png) 
+![](images/hue_bridge_online.png)
 
 ## Accept the Light Bulb Things
 
 Go back to Things.
 You will notice a new red button on that screen:
 
-![](images/hue_inbox.png) 
+![](images/hue_inbox.png)
 
 It means that there are newly discovered devices that you can add; since the Hue bridge is now working, the binding has detected all the Hue devices (bulbs, switches and so on) attached to it.
 
@@ -98,13 +98,13 @@ The Inbox is a consolidated view of all the discovery results, alternatively you
 
 Click Inbox.
 
-![](images/discovered_hue_things.png) 
+![](images/discovered_hue_things.png)
 
 You can either click on an individual thing to see actions related to it, or you can click on Select in the top-right corner to add check boxes beside items, which will allow you to perform actions on several inbox entries at once.
 
-![](images/hue_individual_add.png) 
+![](images/hue_individual_add.png)
 
-![](images/hue_bulk_add.png) 
+![](images/hue_bulk_add.png)
 
 These actions are:
 - Approve: promote the candidate from the Inbox to a Thing
@@ -115,8 +115,8 @@ Go back to Things: the newly approved Hue Things should appear on the list.
 
 ![](images/hue_things_added.png)
 
-You now have the Bridge Thing and the two light bulbs added to openHAB. 
-Thankfully most of the bindings you will work with in openHAB will work in this simple way. 
+You now have the Bridge Thing and the two light bulbs added to openHAB.
+Thankfully most of the bindings you will work with in openHAB will work in this simple way.
 However, there are some technologies that require a bit more manual configuration.
 
 Next: [Intermediate Thing Creation]({{base}}/tutorials/getting_started/things_intermediate.html)
