@@ -141,7 +141,7 @@ Note that, in the last example above, inclusion and formatting of values is done
 By default all log entries are saved in the file `openhab.log` and event-specific entries are saved in `events.log`.
 Additional log files can be defined in order to write specifics logs to a separate place.
 
-In order to create a new log file, two sections like the following to be added to the [configuration file](#config-file):
+In order to create a new log file, two sections like the following need to be added to the [configuration file](#config-file):
 
 **New logger:**
 
