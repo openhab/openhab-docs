@@ -61,7 +61,8 @@ For instance if you live in a flat (apartment) your root Locations might just be
 If you only have one building, you can omit the indoor/outdoor layer and the building layer to only have a hierarchy of floors and rooms, etc.
 
 Equipment are often mapped to Things, but not always.
-You can represent a single Equipment with several Things. For instance, a computer might have points to switch it on (send a wake-on-lan packet), off (shell command), determine if it is online (network polling), and how much power it consumes (Z-Wave wall plug).
+You can represent a single Equipment with several Things.
+For instance, a computer might have points to switch it on (send a wake-on-lan packet), off (shell command), determine if it is online (network polling), and how much power it consumes (Z-Wave wall plug).
 All of these multiple Things from different bindings can be combined to model a single piece of Equipment.
 
 The `Computer` is the equipment and it could be located in a room called the `study` location.
