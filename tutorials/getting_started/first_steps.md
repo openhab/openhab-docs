@@ -15,7 +15,7 @@ The following instructions will guide you through the initial steps to take afte
 {:toc}
 
 ## Create the Admin User
-Once installed and started, launch openHAB's user interface by navigating to [http://localhost:8080]() (if not running locally, replace localhost with the server's address or hostname accordingly). 
+Once installed and started, launch openHAB's user interface by navigating to [http://localhost:8080]() (if not running locally, replace localhost with the server's address or hostname accordingly).
 If you installed from the openHABian image, you can use [http://openhab:8080]().
 
 The following screen should appear:
@@ -24,7 +24,7 @@ The following screen should appear:
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
 Click on the shield icon in the lower-left corner of the sidebar:
 
-![](images/shield.png) 
+![](images/shield.png)
 
 If you don't see it, click on the menu icon ![](menu_icon.png) located at the top-left corner to reveal the sidebar.
 
@@ -36,24 +36,24 @@ Currently the only way to add additional users or manage existing ones (includin
 
 Once you have successfully created the admin account, you will be taken back to the previous screen, except the Administration area will now be accessible in the sidebar:
 
-![](images/administrator.png) 
+![](images/administrator.png)
 
 If you need to sign out, or check what sessions are open with this account with the option to terminate them, click on the account option which has replaced the "Unlock administration" shield:
 
-![](images/account_option.png) 
+![](images/account_option.png)
 
 Note that by default, using openHAB doesn't require you to sign in, only administrative operations require a user with an administrator role to be logged in.
 
 ## Initial Settings
 Click on Settings.
 
-![](images/initial_settings.png) 
+![](images/initial_settings.png)
 
 Click on Regional Settings under System Services.
 
 ![](images/regional_settings.png)
 
-Configure the local language, region and time zone. 
+Configure the local language, region and time zone.
 You can also specify the exact location (latitude, longitude, altitude) of your home, which some add-ons can use to preset their configuration - for instance the Astro binding will use the location to determine the time of astrological events, like sunrise and sunset in your area.
 
 If you're not using the metric system, click "Show advanced" and change the measurement system.
@@ -77,5 +77,5 @@ Charts | Default settings for generated charts.
 Voice | Settings for voice-to-text, text-to-voice and human language processing.
 Other Services | The items that appear here will changed based on the set of add-ons installed. These are places to configure those bindings and capabilities (e.g. set up the connection for InfluxDB Persistence).
 
-Next: [Adding Things - Simple]({{base}}/tutorials/getting_started/things_simple.html)
-Previous: [Introduction]({{base}}/tutorials/getting_started/index.html)
+Next: [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
+Previous: [Introduction]({{base}}/tutorial/index.html)

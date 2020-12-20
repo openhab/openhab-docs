@@ -174,4 +174,4 @@ Some of these edits are possible from the Model Page itself.
 Where that's not supported, you can change these through the Item's Page.
 
 <!--Next -> [Persistence](https://community.openhab.org/t/wiki-building-pages-in-the-oh3-ui-documentation-draft-1-3/104382)-->
-Previous: [Adding Things - Advanced]({{base}//tutorials/getting_started/things_advanced.html)
+Previous: [Adding Things - Advanced]({{base}//tutorial/things_advanced.html)

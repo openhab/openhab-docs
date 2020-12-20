@@ -127,5 +127,5 @@ Note that you cannot change the channel type if you picked the wrong one, in tha
 This concludes the Thing discovery and creation examples.
 Next Items and the model.
 
-Next: [The Semantic Model]({{base}}/tutorials/getting_started/model.html) -->
-Previous: [Adding Things - Intermediate]({{base}}/tutorials/getting_started/things_intermediate.html)
+Next: [The Semantic Model]({{base}}/tutorial/model.html) -->
+Previous: [Adding Things - Intermediate]({{base}}/tutorial/things_intermediate.html)

@@ -119,5 +119,5 @@ You now have the Bridge Thing and the two light bulbs added to openHAB.
 Thankfully most of the bindings you will work with in openHAB will work in this simple way.
 However, there are some technologies that require a bit more manual configuration.
 
-Next: [Intermediate Thing Creation]({{base}}/tutorials/getting_started/things_intermediate.html)
-Previous: [First Steps]({{base}}/tutorials/getting_started/first_steps.html)
+Next: [Intermediate Thing Creation]({{base}}/tutorial/things_intermediate.html)
+Previous: [First Steps]({{base}}/tutorial/first_steps.html)

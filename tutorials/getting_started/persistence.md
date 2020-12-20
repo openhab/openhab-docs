@@ -62,5 +62,5 @@ As with the model, the reason why one would set up the Model discussed in the pr
 For example, a set of UI pages will be created automatically in MainUI based on the model.
 And just about any place you can interact with an Item in MainUI there will be an "Analyze" button that will generate a chart based on the data saved in persistence.
 
-<!--Next: [Pages - Introduction]({{base}}/tutorials/getting_started/pages_intro.html)-->
-Previous: [Semantic Model]({{base}}/tutorials/getting_started/model.html)
+<!--Next: [Pages - Introduction]({{base}}/tutorial/pages_intro.html)-->
+Previous: [Semantic Model]({{base}}/tutorial/model.html)

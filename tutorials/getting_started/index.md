@@ -7,15 +7,15 @@ title: Getting Started - Introduction
 
 # Welcome!
 
-Welcome to openHAB 3! 
-We hope that your journey with openHAB is a rewarding one. 
-If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org). 
-There are many fellow openHAB users ready and willing to help as much as possible. 
+Welcome to openHAB 3!
+We hope that your journey with openHAB is a rewarding one.
+If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org).
+There are many fellow openHAB users ready and willing to help as much as possible.
 Most requests for help have a response within a couple of hours.
 
-First, a word on the order of the sections in the docs. 
-This tutorial assumes users have read the concepts and installation guide already. 
-Thus it assumes at least a basic knowledge of the concepts of openHAB. 
+First, a word on the order of the sections in the docs.
+This tutorial assumes users have read the concepts and installation guide already.
+Thus it assumes at least a basic knowledge of the concepts of openHAB.
 The tutorial also assumes that the user has already installed openHAB and confirmed it is working.
 
 ## File-based vs. UI-driven Configuration
@@ -54,46 +54,46 @@ Cons:
 - Some things cannot be configured with the UI yet (e.g. persistence).
 - You need to sit in front of a computer with access to the UI to make changes.
 
-It's possible to mix the two, for example use the UI for things and files for items, but avoid using both techniques at the same time in other cases. 
+It's possible to mix the two, for example use the UI for things and files for items, but avoid using both techniques at the same time in other cases.
 This tutorial targets new users.
 Therefore the tutorial will present a purely UI-driven approach.
 Review the reference documentation for details on the text based approach.
 
 When building a configuration through the UI, one still has access to a text based YAML formatted representation of their configs.
 On most of the configuration screens there will be two tabs, a "Design" tab anda  "Code" tab.
-If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum using code fences instead of or in addition to screen shots. 
+If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum using code fences instead of or in addition to screen shots.
 
 ## Table of Contents
 
-This tutorial presents a series of steps that build upon one another so please review the tutorial in order. 
+This tutorial presents a series of steps that build upon one another so please review the tutorial in order.
 There may be concepts or steps that are presented earlier that are required to understand the parts of the tutorial presented later.
 
-[First Steps]({{base}}/tutorials/getting_started/first_steps.html): Initial configuration
+[First Steps]({{base}}/tutorial/first_steps.html): Initial configuration
 
-[Adding Things: Simple]({{base}}/tutorials/getting_started/things_simple.html): Discovering Things
+[Adding Things: Simple]({{base}}/tutorial/things_simple.html): Discovering Things
 
-[Adding Things: Intermediate]({{base}}/tutorials/getting_started/things_intermediate.html): Creating Bridges
+[Adding Things: Intermediate]({{base}}/tutorial/things_intermediate.html): Creating Bridges
 
-[Adding Things: Advanced]({{base}}/tutorials/getting_started/things_advanced.html): Manual creation of Things
+[Adding Things: Advanced]({{base}}/tutorial/things_advanced.html): Manual creation of Things
 
-[Items and the Semantic Model]({{base}}/tutorials/getting_started/model.html): Creating Items and putting them into a semantic model
+[Items and the Semantic Model]({{base}}/tutorial/model.html): Creating Items and putting them into a semantic model
 
-[Persistence]({{base}}/tutorials/getting_started/persistence.html): Saving and retrieving historic data
+[Persistence]({{base}}/tutorial/persistence.html): Saving and retrieving historic data
 
 <!--
-[Pages: Introduction]({{base}}//tutorials/getting_started/pages_intro.html): What are Pages?
+[Pages: Introduction]({{base}}//tutorial/pages_intro.html): What are Pages?
 
-[Pages: Widgets]({{base}}/tutorials/getting_started/pages_widgets.html): Introduction to populating Pages
+[Pages: Widgets]({{base}}/tutorial/pages_widgets.html): Introduction to populating Pages
 
-[Pages: Page Types]({{base}}/tutorials/getting_started/pages_types.html): Layout, Charts, and Tabbed type Pages
+[Pages: Page Types]({{base}}/tutorial/pages_types.html): Layout, Charts, and Tabbed type Pages
 
-[Rules: Simple]({{base}}/tutorials/getting_started/rules_simple.html): Introduction to rules and a simple example
+[Rules: Simple]({{base}}/tutorial/rules_simple.html): Introduction to rules and a simple example
 
-[Rules: Intermediate]({{base}}/tutorials/getting_started/rules_intermediate.html): Rules that involve some scripting
+[Rules: Intermediate]({{base}}/tutorial/rules_intermediate.html): Rules that involve some scripting
 
-[openHAB Cloud]({{base}}/tutorials/getting_started/cloud.html): Connecting to the free openHAB Cloud Service
+[openHAB Cloud]({{base}}/tutorial/cloud.html): Connecting to the free openHAB Cloud Service
 
-[Putting it all Together]({{base}}/tutorials/getting_started/example.html) Comprehensive Example
+[Putting it all Together]({{base}}/tutorial/example.html) Comprehensive Example
 -->
 
-Next: [Let's get started with First Steps]({{base}}/tutorials/getting_started/first_steps.html)
+Next: [Let's get started with First Steps]({{base}}/tutorial/first_steps.html)
