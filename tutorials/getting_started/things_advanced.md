@@ -42,7 +42,7 @@ From Settings, click on Transformations under Add-ons.
 
 Click on the blue "+" button, and find JSONPath Transformation. Click on it, then Install.
 
-![](images/install_jaonpath.png)
+![](images/install_jsonpath.png)
 
 Wait for it to disappear from the list, then click back twice to go back to Settings.
 
