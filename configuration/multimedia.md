@@ -9,7 +9,7 @@ title: Multimedia
 
 ## Volume
 
-The framework supports some base [functions](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#getMasterVolume--) to control the audio sinks' volume.
+The framework supports some base [functions](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/model/script/actions/audio#method.summary) to control the audio sinks' volume.
 
 ### Actions
 
@@ -58,7 +58,7 @@ openhab> smarthome:audio stream example.com
 
 ### Actions
 
-Alternatively the [`playSound()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) or [`playStream()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playStream-java.lang.String-) functions can be used in DSL rules:
+Alternatively the [`playSound()`](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
 - `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
 - `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
@@ -109,7 +109,7 @@ openhab> smarthome:voice say Hello world!
 
 ### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-) function:
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/core/voice/voicemanager#say(java.lang.String)) function:
 
 ```java
 say("Hello world!")
@@ -151,7 +151,7 @@ openhab> smarthome:voice interpret turn on the light
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-) function)
+Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/core/voice/voicemanager#interpret(java.lang.String)) function)
 
 ```java
 interpret("turn on the light")

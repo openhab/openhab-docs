@@ -10,8 +10,10 @@ title: JSR223 Jython Scripting
 ## Configuration
 
 [Download](https://jython.github.io/index) the Jython 2.7.0 standalone or installer package, or install through a package repository.
-Newer versions are not yet supported.
-Install Jython on the local filesystem and make note of the installation directory location.
+Install Jython on the local filesystem into a directory of your choice.
+A good installation directory is `/etc/openhab2/automation/jython`.
+For the easiest installation mechanism simply download `jython-standalone-2.7.0.jar` and copy it into your installation directory. Alternatively you can execute the installer and specify your installation directory during the install. 
+Note that newer versions than 2.7.0 are not yet supported.
 
 The Jython implementation will need to be added to openHAB's Java classpath.
 How this is done depends on the specific installation technique and operating system.
@@ -26,6 +28,9 @@ EXTRA_JAVA_OPTS="-Xbootclasspath/a:/etc/openhab2/automation/jython/jython-standa
 
 This will add the Jython library to the Java classpath,
 set the Jython home directory and specify the initial Python path for the Jython runtime.
+Specifically `bootclasspath` must point to your installation directory plus the Jython library, which is 
+`jython-standalone-2.7.0.jar` if you copied the jar directly or `jython.jar` if you ran the installer. 
+Similarly `python.home` points to your installation directory. 
 Python modules and packages can be installed into the `python.path` locations and imported from scripts.
 Note that library modules and packages are not automatically reloaded when they change.
 
@@ -44,15 +49,8 @@ or viewing the `openhab.log` file directly).
 You should see a log line with information similar to:
 
 ```text
-    ... [INFO ] [s.i.GenericScriptEngineFactory:28   ] - Activated scripting support for ECMAScript
-    ... [INFO ] [s.i.GenericScriptEngineFactory:28   ] - Activated scripting support for python
-        ...
     ... [INFO ] [.a.m.s.r.i.l.ScriptFileWatcher:150  ] - Loading script 'test.py'
 ```
-
-::: tip Note
-ECMAScript is Javascript
-:::
 
 Look for any potentially related error messages.
 
@@ -133,7 +131,7 @@ In this case, the `RuleSimple` extension is used to import the `SimpleRule` base
 The `RuleSupport` extensions provides the `automationManager` that allows you to register rule instances with openHAB.
 
 The Jython rule class uses the `SimpleRule` subclass to simplify some aspects of the openHAB interface for use with JSR223.
-n the constructor, the triggers atribute is set to a list of [triggers](jsr223.html#trigger_types).
+In the constructor, the `triggers` atribute is set to a list of [triggers](jsr223.html#trigger_types).
 In this example, the trigger is a state update trigger.
 The trigger name identifies the trigger and the configuration direction provides trigger-specific options.
 For the item update trigger, the configuration provides the item name of the monitored item.

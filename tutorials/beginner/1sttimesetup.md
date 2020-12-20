@@ -8,7 +8,7 @@ description: This article explains the needed steps for a first time setup in op
 # First-time setup of openHAB
 
 When you start openHAB for the first time, it only starts the dashboard.
-So let's have a look at it: open a browser and browse to you openHAB dashboard:
+So let's have a look at it: open a browser and browse to your openHAB dashboard:
 
 <http://IP-of-your-machine:8080>
 
