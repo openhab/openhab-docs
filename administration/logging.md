@@ -7,7 +7,7 @@ title: Logging
 
 # Logging in openHAB
 
-This article describes the logging functionality in openHAB 2.
+This article describes the logging functionality in openHAB 3.
 This includes how to access logging information and configure logging for user-defined rules.
 
 There are two ways to check log entries:
@@ -24,9 +24,9 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 ## Karaf Console
 
-The [Karaf console](console.html) allows to monitor the log in real-time.
+The [Karaf console](console.html) allows you to monitor the log in real-time.
 
-The log shell comes with the following commands:
+The log shell provides the following commands:
 
 | Log Command             | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
@@ -39,7 +39,7 @@ The log shell comes with the following commands:
 | `log:set`               | Set the log level                                                 |
 | `log:tail`              | Continuously display log entries. Use ctrl-c to quit this command |
 
-For example, the following command enables the real-time monitoring of the default log:
+For example, the following command enables real-time monitoring of the default log:
 
 ```
 openhab> log:tail
@@ -49,7 +49,7 @@ openhab> log:tail
 20:38:21.444 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Mirror' with value 'ON'.
 ```
 
-A useful functionality is that filters can be applied:
+A useful feature is that filters can be applied:
 
 ```
 openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
@@ -66,7 +66,7 @@ The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userd
 ## Defining what to log
 
 By default, openHAB comes with logging enabled for several standard packages.
-In order to enable logging for additional packages, you need to define what should be logged and in which detail.
+In order to enable logging for additional packages, you need to define what should be logged and at what level of detail.
 
 This can be done in Karaf using the following console command:
 
@@ -92,13 +92,13 @@ The levels build a hierarchy with **ERROR** logging critical messages only and *
 **ALL** includes every log level from weight 100 to 600.
 Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
-Following example sets the logging for the Z-Wave binding to **DEBUG**
+The following example sets the logging for the Z-Wave binding to **DEBUG**
 
 ```text
 log:set DEBUG org.openhab.binding.zwave
 ```
 
-Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.
+Note that the log levels set using the `log:set` command are persistent and will be re-applied upon restart.
 To modify the stored log levels, use the console or edit the [configuration file](#config-file).
 
 ## Create Log Entries in Rules
@@ -120,7 +120,7 @@ The main package of all script/rules based log entries is predefined as `org.ecl
 The chosen subpackage is appended to the end of the main package.
 It can be useful for filtering or package-based log level settings.
 
-Examples for typical logging lines found in rules:
+Examples of typical logging lines found in rules:
 
 ```text
 logInfo("heating-control.rules", "Heating mode set to normal")
@@ -138,10 +138,10 @@ Note that, in the last example above, inclusion and formatting of values is done
 
 ## Logging into Separate File
 
-Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`.
-Additional files can be defined in order to write specifics logs to a separate place.
+By default all log entries are saved in the file `openhab.log` and event-specific entries are saved in `events.log`.
+Additional log files can be defined in order to write specifics logs to a separate place.
 
-In order to create a new log file following two areas needs to be added to the [configuration file](#config-file):
+In order to create a new log file, two sections like the following to be added to the [configuration file](#config-file):
 
 **New logger:**
 
@@ -175,15 +175,15 @@ log4j2.appender.ZWave.strategy.max = 10
 
 ## Logback Configuration File
 
-In order to define custom log patterns, log to network sockets and so on we can prepare a logging configuration file.
+In order to define custom log patterns, log to network sockets, and so on, we can prepare a logging configuration file.
 
-There are several things, that you might want to change in the configuration:
+There are several things that you might want to change in the configuration:
 
-- the log level for a logger;
-- the pattern of an appender;
-- redirect the log to a text file.
+- The log level for a logger
+- The pattern of an appender
+- Redirect the log to a text file
 
-The configuration file for openHAB is placed in the [openhab-distro/lauch/home/logback_debug.xml](https://github.com/openhab/openhab-distro/blob/master/launch/home/logback_debug.xml) file. We have added a few comments on this file in order to attract your attention on some significant points:
+The configuration file for openHAB is placed in the [openhab-distro/lauch/home/logback_debug.xml](https://github.com/openhab/openhab-distro/blob/master/launch/home/logback_debug.xml) file. We have added comments in this file in order to draw your attention to some significant points:
 
 ```xml
 <configuration scan="true">
@@ -246,7 +246,7 @@ You can pass the start argument `-Dlogback.configurationFile` to use your own lo
 
 ### Setting up the Log Level
 
-As you can see from the example configuration file above, the level for jUPnP is set to ERROR. If you develop a binding that is using jUPnP, you might want to see more logs on your console. You can simply change the log level to TRACE or DEBUG:
+As you can see in the example configuration file above, the level for jUPnP is set to ERROR. If you develop a binding that is using jUPnP, you might want to see more log messages related to it on your console. You can then simply change the log level to TRACE or DEBUG:
 
 ```xml
 <logger name="org.jupnp" level="TRACE"/>
@@ -268,11 +268,11 @@ In order to see this in the logs, you have to add the conversion word `t` to the
 ### Redirect the Log to a Text File
 
 You might want to redirect your log to a text file.
-This gives you the flexibility to search easier for a specific log or to save your logs.
-If you have looked at the [default configuration file](#logback-configuration-file) you might have noticed that several appenders are listed there.
+This gives you the flexibility to search more easily for a specific log or to save your logs.
+If you have looked at the [default configuration file](#logback-configuration-file) you may have noticed that several appenders are listed there.
 The process of redirecting the log to a text file is as simple as :
 
-- adding a new `FileAppender` and specifying the path of the output file:
+- Adding a new `FileAppender` and specifying the path of the output file:
 
 ```xml 
 <appender name="YOUR_APPENDER_NAME" class="ch.qos.logback.core.FileAppender">
@@ -283,7 +283,7 @@ The process of redirecting the log to a text file is as simple as :
 	</encoder>
 </appender>
 ```
-- adding your logger, setting up the log level and adding `appender-ref` element to the logger element.
+- Adding your logger, setting up the log level, and adding `appender-ref` element to the logger element.
 For this example we will assume that you want to add the following logger with the name `com.logger.example`:
 
 ```xml
