@@ -24,9 +24,9 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 ## Console
 
-The [openHAB console](console.html) allows to monitor the log in real-time.
+The [openHAB console](console.html) allows you to monitor the log in real-time.
 
-The log shell comes with the following commands:
+The log shell provides the following commands:
 
 | Log Command             | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
@@ -39,7 +39,7 @@ The log shell comes with the following commands:
 | `log:set`               | Set the log level                                                 |
 | `log:tail`              | Continuously display log entries. Use ctrl-c to quit this command |
 
-For example, the following command enables the real-time monitoring of the default log:
+For example, the following command enables real-time monitoring of the default log:
 
 ```
 openhab> log:tail
@@ -49,7 +49,7 @@ openhab> log:tail
 20:38:21.444 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Mirror' with value 'ON'.
 ```
 
-A useful functionality is that filters can be applied:
+A useful feature is that filters can be applied:
 
 ```
 openhab> log:tail org.openhab.io.rest.core.item.ItemResource
@@ -71,7 +71,7 @@ Do not delete the `.cfg` though, it needs to include the new `.xml`.
 ## Defining what to log
 
 By default, openHAB comes with logging enabled for several standard packages.
-In order to enable logging for additional packages, you need to define what should be logged and in which detail.
+In order to enable logging for additional packages, you need to define what should be logged and at what level of detail.
 
 This can be done in Karaf using the following console command:
 
@@ -122,14 +122,13 @@ openhab> list -s | grep zwave
 
 ```
 
-Following example sets the logging for the Z-Wave binding to **DEBUG**
+The following example sets the logging for the Z-Wave binding to **DEBUG**
 
 ```text
 log:set DEBUG org.openhab.binding.zwave
 ```
 
-
-Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.
+Note that the log levels set using the `log:set` command are persistent and will be re-applied upon restart.
 To modify the stored log levels, use the console or edit the [configuration file](#config-file).
 
 ## Create log entries in rules
@@ -161,16 +160,15 @@ An example output of the last log statement above is:
 Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
 
 ## Log4j configuration and logging into separate files
-
-As per default, all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`.
-Additional files can be defined in order to write specifics logs to a separate place.
+By default, all log entries are saved in the file `openhab.log` and event-specific entries are saved in `events.log`.
+Additional log files can be defined in order to write specifics logs to a separate place.
 
 In order to define custom log patterns, log to network sockets and so on we can prepare a logging configuration in `log4j2.xml`.
 There are several things that you might want to change in the configuration:
 
-- the log level for a logger;
-- the pattern of an appender;
-- redirect the log to a text file.
+- The log level for a logger
+- The pattern of an appender
+- Redirect the log to a text file
 
 ### Further Reading
 
