@@ -24,7 +24,7 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 ## Karaf Console
 
-The [Karaf console](console.html) allows you to monitor the log in real-time.
+The [openHAB console](console.html) allows you to monitor the log in real-time.
 
 The log shell provides the following commands:
 
