@@ -11,30 +11,30 @@ Welcome to openHAB 3!
 We hope that your journey with openHAB is a rewarding one.
 If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org).
 There are many fellow openHAB users ready and willing to help as much as possible.
-Most requests for help have a response within a couple of hours.
+Most requests for help receive a response within a couple of hours.
 
 First, a word on the order of the sections in the docs.
-This tutorial assumes users have read the concepts and installation guide already.
+This tutorial assumes users have read the concepts and installation guides already.
 Thus it assumes at least a basic knowledge of the concepts of openHAB.
 The tutorial also assumes that the user has already installed openHAB and confirmed it is working.
 
 ## File-based vs. UI-driven Configuration
 
 Early on the user must choose between a text file based configuration or a User Interface driven configuration.
-Switching from one approach to the other is not trivial to change later on.
+Switching from one approach to the other later on is not trivial.
 
-To help you choose between the two approaches the following is a summary of the pros & cons for each:
+To help you choose between the two approaches, the following is a summary of the pros & cons for each:
 
 ### File-based
 Pros:
-- File based has been the only really practical way to define most objects (things excluded) in previous versions so a lot of examples in the docs and the forum will assume that approach. However, as time passes there will be more and more UI driven examples.
-- File based configs are easier to make bulk changes, bulk updates, duplicate similar objects or separate domains into distinct files.
-- The config files can be treated as source files easing backups, version control. Though that does not mean that source control, backups, and version control cannot be done with UI driven configs.
+- File based has been the only really practical way to define most objects (things excluded) in previous versions, so a lot of examples in the docs and the forum will assume that approach. However, as time passes there will be more and more UI driven examples.
+- With file based configs it is easier to make bulk changes and bulk updates, to duplicate similar objects, and to separate domains into distinct files.
+- The config files can be treated as source files, easing backups and version control. Though that does not mean that source control, backups, and version control cannot be done with UI driven configs.
 - Files can be synced through any file sync services (e.g. Dropbox, Nextcloud) to the openHAB machine.
 - Easier to share configurations between multiple openHAB instances.
 
 Cons:
-- Config files are more prone to errors. The slightest typo leads to a syntax error that could cause the file to become invalid which will result in everything defined in that file removed from the system until you fix it.
+- Config files are more prone to errors. The slightest typo leads to a syntax error that could cause the file to become invalid, which will result in everything defined in that file being removed from the system until you fix it.
 - The syntax for the config files can be a little overwhelming for novice users, as you have to learn and understand the syntax in addition to openHAB concepts and home automation technologies.
 - You will see most objects defined in files in the UI but you won't be able to edit them (those objects will have a lock besides their name/label :lock:).
 - You need to sit in front of a computer with access to the files to make changes.
@@ -45,14 +45,14 @@ Pros:
 - All objects can be altered from anywhere the UI can be reached (including on mobile).
 - Things can be auto-discovered.
 - Items can be auto-created from Things (with a chance to edit).
-- The internal database is somewhat faster especially on resource-limited devices (e.g. Raspberry Pis) than the file parsing.
+- The internal database is somewhat faster, especially on resource-limited devices (e.g. Raspberry Pis) than the file parsing.
 - A backup of the internal database is created on every change.
 
 Cons:
-- Can be slower to reach one's goals if you already know what you're doing, if there's a lot of changing or duplicating involved etc.
+- Can be slower to reach one's goals if you already know what you're doing and if there's a lot of bulk changes or duplicating required.
 - Harder to remove obsolete stuff.
 - Some things cannot be configured with the UI yet (e.g. persistence).
-- You need to sit in front of a computer with access to the UI to make changes.
+- You need to sit in front of a device with access to the UI to make changes.
 
 It's possible to mix the two, for example use the UI for things and files for items, but avoid using both techniques at the same time in other cases.
 This tutorial targets new users.
