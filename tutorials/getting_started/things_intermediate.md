@@ -4,6 +4,7 @@ title:  Adding Things - Intermediate
 ---
 
 {% include base.html %}
+Previous: [Adding Things - Simple]({{base}}/tutorial/things_simple.html)
 
 # Adding Things - Intermediate
 
@@ -66,5 +67,4 @@ To speed up the process activate the device several times until the Thing shows 
 As shown, some technologies like Zwave and Zigbee require additional manual steps to add them to openHAB.
 However, there are some technologies and bindings that simply do not support automatic discovery at all.
 
-Next: [Advanced Thing Creation]({{base}}/things_advanced.html)
-Previous: [Adding Things - Simple]({{base}}/things_simple.html)
+Next: [Advanced Thing Creation]({{base}}/tutorial/things_advanced.html)
