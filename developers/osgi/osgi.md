@@ -37,7 +37,7 @@ The OSGi framework consist of several layers build on top of each other (See Fig
   - **Actual Services** (Bundles on Fig.1) - this is the application layer, using all other layers;
   - **Security Layer** - optional layer, based on the Java 2 security architecture, that manages permissions for different modules.
 
-![OSGi Layers][fig1]  
+![OSGi Layers][fig1]
 Fig.1 OSGi Layering (Source:<https://www.osgi.org/wp-content/uploads/layering-osgi.png>)
 
 More details about the OSGi architecture can be found at <https://www.osgi.org/developer/architecture/>
@@ -52,7 +52,7 @@ The *Bundle-SymbolicName* and the *Bundle-Version* headers uniquely identify a b
 In OSGi is allowed to have **bundles with same name, but different version running at the same time.**
 
 Some of the most important information that the manifest contains are the bundle dependencies.
-**A bundle can depend on another bundle or on a package**. 
+**A bundle can depend on another bundle or on a package**.
 
 The **OSGi runtime uses the information about the dependencies to *wire* the bundles and hides everything in this JAR unless it is explicitly exported**.
 The dependencies to the Java standard libraries are managed by the *Bundle-RequiredExecutionEnvironment* header, so it is not needed to import the Java core packages.
@@ -92,13 +92,13 @@ The table below shows the possible states of an OSGi bundle with a short explana
 | STARTING    | A temporary state that the bundle goes through while the bundle is starting, after all dependencies have been resolved. The bundle is permitted to register services.                      |
 | ACTIVE      | The bundle is running                                                                                                                                                                      |
 | STOPPING    | A temporary state that the bundle goes through while the bundle is stopping                                                                                                                |
-| UNINSTALLED | The bundle has been removed from the OSGi container.                                                                                                                                       | 
+| UNINSTALLED | The bundle has been removed from the OSGi container.                                                                                                                                       |
 
 Table 1 Bundle states description
 
 The possible status transitions are shown in the state diagram below:
 
-![Bundle lifecycle][fig2]  
+![Bundle lifecycle][fig2]
 Fig.2 Bundle State diagram
 
 ## Services
@@ -114,7 +114,7 @@ A bundle can therefore register a service, it can get a service and it can track
 **Any number of bundles can register the same service type and any number of bundles can get the same service.**
 A simple diagram of the service usage and tracking is shown on Fig. 3.
 
-![OSGi Services][fig3]  
+![OSGi Services][fig3]
 Fig.3 OSGi Services (Source: <https://www.osgi.org/wp-content/uploads/services.png>)
 
 If you are keen to know how that works in code, read on in [OSGi Declarative Services](osgids.html).
@@ -149,8 +149,8 @@ We will list the most popular OSGi containers with a short description of their 
 - Open source:
   - [Equinox](https://www.eclipse.org/equinox/) - this is the reference implementation of OSGi and developed by the Eclipse Foundation.
     As it is used in the openHAB project, we have [more detailed information](equinox.html).
-  - [Apache Felix](http://felix.apache.org/) - developed by the Apache Software Foundation.
-    [Apache Karaf](http://karaf.apache.org/) is a distribution based on Apache Felix that provides some additional features on top of it (e.g. folder based hot deployment, improved default console with remote SSH, maven plugins and others). The openHAB project is using karaf for runtime dependency installation.
+  - [Apache Felix](https://felix.apache.org/) - developed by the Apache Software Foundation.
+    [Apache Karaf](https://karaf.apache.org/) is a distribution based on Apache Felix that provides some additional features on top of it (e.g. folder based hot deployment, improved default console with remote SSH, maven plugins and others). The openHAB project is using karaf for runtime dependency installation.
   - [Concierge](https://www.eclipse.org/concierge/) - is aimed at mobile and embedded devices. With a size of around 250 kb it has the smallest footprint of the presented containers;
 
 - Commercial:
@@ -172,7 +172,7 @@ We will list the most popular OSGi containers with a short description of their 
  - [OSGi API](https://osgi.org/javadoc/osgi.core/7.0.0/)
  - [OSGi Vogella guide](http://www.vogella.com/tutorials/OSGi/article.html)
  - [Lifecycle of a bundle](https://developer.atlassian.com/docs/atlassian-platform-common-components/plugin-framework/behind-the-scenes-in-the-plugin-framework/lifecycle-of-a-bundle)
- - [OSGi enRoute](http://enroute.osgi.org/)
+ - [OSGi enRoute](https://enroute.osgi.org/)
  - <https://www.osgi.org/developer/where-to-start/>
 
 [OSGi]: https://www.osgi.org/

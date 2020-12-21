@@ -23,7 +23,7 @@ Detailed instructions and requirements may be found in the corresponding documen
       </td>
       <td>
         <p>
-        Some openHAB 1 service modules have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.  
+        Some openHAB 1 service modules have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
         All openHAB 1 addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.
         We need your help testing them so that they may be easily installed in a future distribution.
         Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
@@ -54,13 +54,13 @@ Detailed instructions and requirements may be found in the corresponding documen
     {% endfor %}
     <tr>
       <td>
-        <h4><a href="http://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
+        <h4><a href="https://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
       </td>
       <td>
         <p>
         Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy.
         Just log in to your IFTTT account and activate the openHAB channel.
-        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection.
+        You will be forwarded to the <a href="https://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection.
         Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB.
         Only those items will be visible to IFTTT.
         You will also be able to send commands to those items from IFTTT Applets.

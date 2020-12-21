@@ -195,13 +195,13 @@ There exist system-wide trigger channel types that are available by default:
 | button          | system.button          | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED` |
 | rawrocker       | system.rawrocker       | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
-In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail. 
+In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail.
 For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
 
 ### Default Tags
 
-The XML definition of a ThingType allows to assign default tags to channels. 
-All items bound to this channel will automatically be tagged with these default tags. 
+The XML definition of a ThingType allows to assign default tags to channels.
+All items bound to this channel will automatically be tagged with these default tags.
 The following snippet shows a 'Lighting' tag definition:
 
 ```xml
@@ -241,7 +241,7 @@ The following XML snippet shows the definition for a temperature actuator channe
   For all sensors the `readonly` attribute should be set to `true`.
 * The `pattern` attribute can be used for `Number` and  `String` items.
   It gives user interface a hint how to render the item.
-  The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
+  The format of the pattern must be compliant to the [Java Number Format](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
   The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
   The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
   These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
@@ -434,7 +434,7 @@ Inside the thing types XML file channel groups can be defined like this:
         <channel-group id="switchActor2" typeId="switchActor" />
     </channel-groups>
     <!-- ... -->
-</thing-type>    
+</thing-type>
 ```
 
 The channel group type is defined on the same level as the thing types and channel types.
@@ -499,7 +499,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` shall be defined in the thing type XML: 
+The `representation property` shall be defined in the thing type XML:
 
 ```xml
     <thing-type id="thingTypeId">
@@ -618,7 +618,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <thing:thing-descriptions bindingId="bindingID"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
     xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
     xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
         https://openhab.org/schemas/thing-description-1.0.0.xsd">
@@ -739,7 +739,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
         ...
       </options>
     </event>
-    
+
     <command>
       <options>
         <option value="String" />
@@ -754,7 +754,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
     </config-description>
     OR
     <config-description-ref uri="{binding|thing-type|channel-type|any_other}:bindingID:..." />
-  </channel-type>   
+  </channel-type>
 
   <channel-group-type id="channelGroupTypeID" advanced="{true|false}">
     <label>String</label>
@@ -765,7 +765,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
       <channel id="channelID" typeId="channelTypeID" />
       ...
     </channels>
-  </channel-group-type>   
+  </channel-group-type>
 
   ...
 

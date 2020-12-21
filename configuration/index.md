@@ -22,7 +22,7 @@ In order to represent all of these, openHAB defines the following base component
 - [Transformations](transform.html) - Helper functions to transform your data
 - [Persistence](persistence.html) - Services to store data over time
 - [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
-- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](http://openjdk.java.net/projects/nashorn/), [Jython](http://www.jython.org) or [Groovy](http://www.groovy-lang.org/)
+- [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](https://openjdk.java.net/projects/nashorn/), [Jython](https://www.jython.org) or [Groovy](https://www.groovy-lang.org/)
 
 The individual articles have all the details needed to understand the concepts behind these building blocks for your Smart Home.
 For more details on the basic concepts behind openHAB, please visit the [Concepts Overview page](/docs/concepts/index.html).
@@ -146,7 +146,7 @@ It would work to mix these, but you can easily forget which is your "source of t
 
 Things/Items configured in files will become visible in Main UI if no Thing/Item of the same name is already present in the system database, but a lock will symbolize that you can NOT change them in the GUI. You can only change them by editing the source files.
 **Note:** Things/Items you create via Main UI will be stored in the system database, but those additions or changes will not be written back into any `.things / .items` file.
-Textual configuration is a one-way street. 
+Textual configuration is a one-way street.
 Likewise, openHAB settings defined in `services/addons.cfg` and `services/runtime.cfg` will take precedence over any settings made via Main UI.
 
 ::: warning Important
@@ -168,4 +168,4 @@ Here are some hints to avoid some common pitfalls when starting out.
   You can use the import function to import `.items` files or snippets taken from other sources like the openHAB community forum.
 * Use VS code extensions to [edit rules, items and sitemap files](editors.html).
   You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.
-  
+

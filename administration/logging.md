@@ -57,7 +57,7 @@ openhab> log:tail org.openhab.io.rest.core.item.ItemResource
 20:36:53.545 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'OFF'.
 ```
 
-Please see the [Karaf documentation](http://karaf.apache.org/manual/latest/#_commands_2) for more examples and details.
+Please see the [Karaf documentation](https://karaf.apache.org/manual/latest/#_commands_2) for more examples and details.
 
 ## Config file
 

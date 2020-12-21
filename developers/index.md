@@ -11,7 +11,7 @@ We will cover the most important ones here.
 openHAB uses [git](https://git-scm.com/) as its version control system and [GitHub](https://github.com/openhab) for hosting the different repositories and source code.
 You will come in contact with git in many places, and it makes sense to familiarize yourself with its basic commands and concepts.
 There are many places to learn about Git.
-Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start.
+Try [git - the simple guide](https://rogerdudler.github.io/git-guide/) as a start.
 
 Add-ons and the openHAB core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
