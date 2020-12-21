@@ -83,7 +83,7 @@ module.exports = [
       ['configuration/ui/habot/', 'HABot'],
       'configuration/habpanel',
       ['configuration/ui/basic/', 'Basic UI'],
-      // 'configuration/rules-ng',
+      ['configuration/rules-ng', 'Next Generation Rules'],
       ['apps/android', 'Android App'],
       'apps/ios',
       'apps/windows',
