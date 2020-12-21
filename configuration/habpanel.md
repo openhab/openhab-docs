@@ -126,7 +126,7 @@ Modifications to the dashboard are not saved automatically, use the **Save** but
 When a dashboard is running, widgets can be interacted with, and server-sent events are received when items' states are updated, so widgets update automatically in HABPanel.
 
 The icons in the top-right corner perform the following:
-- the **speech balloon** activates the speech recognition feature and send the results as text to openHAB's default human language interpreter. This implies [some configuration on the server]({{base}}/configuration/multimedia.html#human-language-interpreter), and this icon might not be displayed if the browser doesn't support voice recognition ([mainly only in Chrome and other webkit variants currently](http://caniuse.com/#feat=speech-recognition){:target="_blank"}). It can also be configured in the panel configuration to appear on the bottom of the screen;
+- the **speech balloon** activates the speech recognition feature and send the results as text to openHAB's default human language interpreter. This implies [some configuration on the server]({{base}}/configuration/multimedia.html#human-language-interpreter), and this icon might not be displayed if the browser doesn't support voice recognition ([mainly only in Chrome and other webkit variants currently](https://caniuse.com/#feat=speech-recognition){:target="_blank"}). It can also be configured in the panel configuration to appear on the bottom of the screen;
 - the **refresh** button forces HABPanel to retrieve the current state of all items;
 - the **fullscreen** button tells the browser to go fullscreen, if supported.
 
@@ -194,7 +194,7 @@ Multiple buttons are often used together to present different options for an ite
 
 ![Slider widget](images/habpanel_widget-slider.png)
 
-The slider widget can reflect the state of, and update, numerical items within a range of values. Several options are available to alter its appearance and behavior. 
+The slider widget can reflect the state of, and update, numerical items within a range of values. Several options are available to alter its appearance and behavior.
 
 #### Knob (knob)
 
@@ -264,7 +264,7 @@ The list of custom widgets either via the dashboard designer (click/tap the gear
 
 From the list, custom widgets can be created from scratch, or imported from a previously exported .json file or a GitHub repository. Members of the openHAB community also present their custom widgets on the forum: the _Get widgets from the openHAB community_ link brings up a filtered lists of custom widgets from the community.
 
-Widgets can also come from [an openHAB addon or OSGi bundle](https://community.openhab.org/t/new-feature-globally-provisioned-widgets-i-e-with-osgi-bundles/26994): those are "globally-provisioned widgets". They cannot be modified or deleted (but can be cloned and then modified), and are available to all panel configurations. 
+Widgets can also come from [an openHAB addon or OSGi bundle](https://community.openhab.org/t/new-feature-globally-provisioned-widgets-i-e-with-osgi-bundles/26994): those are "globally-provisioned widgets". They cannot be modified or deleted (but can be cloned and then modified), and are available to all panel configurations.
 
 The context menu **⁝** can be used to perform operations on the widget: globally-provisioned widgets can only be cloned, and manually defined or imported widgets can be exported or deleted. Widgets imported from GitHub can also be updated and include a link to repository's Readme file.
 

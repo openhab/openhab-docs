@@ -28,12 +28,12 @@ The filename and format of the uploaded file will be checked before installation
 If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.synology.com/en-us/dsm/packages/Java8).
 
 The best option for older unsupported Synology models such as **PowerPC** and **ARMv5** is to include the [PC-Loadletter](https://pcloadletter.co.uk/2011/08/23/java-package-for-synology/) Repo.
-[Download Java SE](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html) [(latest ARMv6)](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the *public* folder of your NAS.
+[Download Java SE](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html) [(latest ARMv6)](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the *public* folder of your NAS.
 Then start the installation of Java8 SE.
 
 *Note that it may be necessary to rename the downloaded file to match the name the Loadletter utility expects which may be an older version than what is currently available.*
 
-The **Java8 PowerPC** versions are available from [Oracle](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javaseembedded8u6-2406243.html).
+The **Java8 PowerPC** versions are available from [Oracle](https://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javaseembedded8u6-2406243.html).
 
 ## Installation
 
@@ -52,7 +52,7 @@ If your NAS cannot connect to the internet, the installer will tell you to downl
 
 ## Configuration
 
-The location of configuration files by openHAB differs depending on wether or not a shared folder named `public` exists: 
+The location of configuration files by openHAB differs depending on wether or not a shared folder named `public` exists:
 
 * with public share folder: `/volume1/public/openHAB2/conf/`
 * without public share folder: `/volume1/@appstore/openHAB2/conf/`

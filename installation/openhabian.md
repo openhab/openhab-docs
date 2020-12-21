@@ -246,7 +246,7 @@ openHABian is supposed to provide a ready-to-use openHAB base system. There are 
 
 All of these settings **can easily be changed** via the openHABian Configuration Tool.
 
-Here are the passwords in question with their respective default "username:password" values. 
+Here are the passwords in question with their respective default "username:password" values.
 All password can be changed from openHABian menu.
 
 {: #passwords}

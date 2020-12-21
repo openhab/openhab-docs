@@ -65,7 +65,7 @@ There are many different solutions for VPN, so we cannot give any specific advic
 You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
 openHAB will see these incoming requests as originating from the local loopback interface.
 
-The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](http://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
+The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](https://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
 
 {: #nginx-reverse-proxy}
 ### Running openHAB Behind a Reverse Proxy
@@ -250,9 +250,9 @@ To generate a trusted certificate, you need to own a domain. To acquire your own
 
 | Method                           | Example Links | Note |
 |:-------------------------------- |:------------- |:---- |
-| Purchasing a domain name         | [GoDaddy](http://www.godaddy.com), [Namecheap](http://www.namecheap.com), [Enom](http://www.enom.com), [Register](http://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS *A record* so that your domain/subdomain to point towards your IP. |
-| Obtaining a free domain | [FreeNom](http://www.freenom.com) | Setup is the same as above. |
-| Using a "Dynamic DNS" sevice | [No-IP](http://www.noip.com), [Dyn](http://www.dyn.com/dns), [FreeDNS](http://freedns.afraid.org) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too. |
+| Purchasing a domain name         | [GoDaddy](https://www.godaddy.com), [Namecheap](https://www.namecheap.com), [Enom](https://www.enom.com), [Register](https://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS *A record* so that your domain/subdomain to point towards your IP. |
+| Obtaining a free domain | [FreeNom](https://www.freenom.com) | Setup is the same as above. |
+| Using a "Dynamic DNS" sevice | [No-IP](https://www.noip.com), [Dyn](https://www.dyn.com/dns), [FreeDNS](https://freedns.afraid.org) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too. |
 
 {: #nginx-https}
 #### Enabling HTTPS
@@ -380,7 +380,7 @@ server {
 ```
 
 It might be the case that you can't use standard ports. When trying to access a HTTPS port with HTTP, NGINX will respond with a `400 Bad Request`.
-We can redirect this gracefully using a "HTTPS [error page](http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page)" for the [non-standard HTTP error code 497](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#errors)
+We can redirect this gracefully using a "HTTPS [error page](https://nginx.org/en/docs/http/ngx_http_core_module.html#error_page)" for the [non-standard HTTP error code 497](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#errors)
 
 ```nginx
 server {
@@ -434,7 +434,7 @@ server {
 {: #synology-remote-config}
 #### Configuration on Synology DiskStation
 
-Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required. 
+Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required.
 The majority of the configuration mentioned above can be completed through the DSM GUI, but SSH access is required to implement authentication (**authentication is essential for remote access to your openHAB instance**).
 
 Before you continue, make sure you have the below conditions:
@@ -444,11 +444,11 @@ Before you continue, make sure you have the below conditions:
 - Access to your DiskStation by SSH ([How to login to DSM with root permission via SSH/Telnet](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/General_Setup/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet/))
 - Ports 80 and 443 forwarded from your router to your DiskStation (make sure you reconfigure the router web UI to a different port first, so you don't lose access!)
 
-Log into the GUI of your DiskStation as administrator, and open the package center. 
-Install Apache HTTP Server. 
+Log into the GUI of your DiskStation as administrator, and open the package center.
+Install Apache HTTP Server.
 This is needed to generate the password files.
 
-Go to Control Panel > Application Portal > Reverse Proxy. We will set up two reverse proxies, one for HTTP and one for HTTPS. 
+Go to Control Panel > Application Portal > Reverse Proxy. We will set up two reverse proxies, one for HTTP and one for HTTPS.
 The HTTP one can be disabled later if desired (not at all essential if you will only use the app remotely, and never a browser).
 
 Create two reverse proxies as follows:
@@ -485,10 +485,10 @@ Next, acquire certificates from Let's Encrypt using the GUI in DSM.
 
 Go to Control Panel > Security > Certificate, and click on 'Add'.
 Select the option to 'Add a new Certificate'.
-Put in a description, something like 'openHAB SSL Cert' (it doesn't matter). 
-Select 'Get a certificate from Let's Encrypt' and check the box to set it as default. 
+Put in a description, something like 'openHAB SSL Cert' (it doesn't matter).
+Select 'Get a certificate from Let's Encrypt' and check the box to set it as default.
 Click next.
-Put in your domain name and email address. 
+Put in your domain name and email address.
 Add a 'Subject Alternative Name' if you want a different topic in the subject line when Let's Encrypt email you about that certificate (not essential).
 Click Apply, and wait a few minutes - your certificate is done!
 
@@ -498,7 +498,7 @@ If the certifcate has been generated, you are good to go.
 :::
 
 Select the certificate that has just been created, and click on 'Configure'.
-Ensure that the new certificate is listed next to your-hostname.com in the table - something like the below. 
+Ensure that the new certificate is listed next to your-hostname.com in the table - something like the below.
 If it's not selected, update it.
 
 | Services                  | Certificate     |
@@ -511,16 +511,16 @@ If it's not selected, update it.
 Once this is done, update the CAA record for your-hostname.com with your registrar (exact process will vary by registrar).
 Within an hour or so, you should not receive the security warning for https://your-hostname.com.
 
-Next, you must add authentication to the reverse proxy. 
+Next, you must add authentication to the reverse proxy.
 There's no GUI way to do this, so we need to create another small NGINX virtual host on the DiskStation.
 
-Log into your DiskStation by SSH. 
+Log into your DiskStation by SSH.
 Use the admin username and password.
 Create a .htpasswd file in your openHAB userdata folder (your userdata location may vary, update accordingly):
 ```shell
 htpasswd -c /volume1/openHAB/userdata/.htpasswd username
 ```
-Next, add a very simple NGINX configuration similar to that created above, but without the SSL parameters. 
+Next, add a very simple NGINX configuration similar to that created above, but without the SSL parameters.
 DSM comes with vi installed by default, but you may wish to [install nano](https://anto.online/other/how-to-install-nano-on-your-synology-nas/)
 
 ```shell
@@ -534,7 +534,7 @@ server {
     listen                          2020; #This is simply an unused port, it can be any number
 
     server_name                     your_domain.com;
-    
+
     return 301                      https://$server_name$request_uri;
 }
 
@@ -565,8 +565,8 @@ Once you are done, save the file, restart and test NGINX:
 ```shell
 sudo nginx -s reload && sudo nginx -t
 ```
-As above, the first part of the file redirects any HTTP queries to HTTPS directly. 
-If you don't get any errors, update the reverse proxy settings in the DSM GUI to point to these new endpoints. 
+As above, the first part of the file redirects any HTTP queries to HTTPS directly.
+If you don't get any errors, update the reverse proxy settings in the DSM GUI to point to these new endpoints.
 Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make the updates below:
 
 | Parameter                 | Value           |
@@ -608,7 +608,7 @@ openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 ```
 
 Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``.
-All of these settings are customisable, but make sure you [read up on](http://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
+All of these settings are customisable, but make sure you [read up on](https://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
 
 ```nginx
     ssl_protocols                   TLSv1 TLSv1.1 TLSv1.2;

@@ -177,7 +177,7 @@ then
 end
 ```
 
-For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](http://www.myopenhab.org).
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](https://www.myopenhab.org).
 
 ## Ephemeris
 
@@ -275,8 +275,8 @@ The following is an example listing a few custom days.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <tns:Configuration hierarchy="us" description="United States"
-    xmlns:tns="http://www.example.org/Holiday" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.example.org/Holiday /Holiday.xsd">
+    xmlns:tns="https://www.example.org/Holiday" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.example.org/Holiday /Holiday.xsd">
     <tns:Holidays>
         <tns:Fixed month="MARCH" day="20" descriptionPropertiesKey="Rich Birthday" />
         <tns:Fixed month="MARCH" day="27" descriptionPropertiesKey="Son's Birthday" />

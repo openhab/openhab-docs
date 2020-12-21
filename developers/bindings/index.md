@@ -916,7 +916,7 @@ mDNS discovery is implemented in the framework as `MDNSDiscoveryService`.
 To facilitate the development, binding developers only need to implement a `MDNSDiscoveryParticipant`.
 Here the developer only needs to implement four simple methods:
 
-- `getServiceType` - Defines the [mDNS service type](http://www.dns-sd.org/ServiceTypes.html).
+- `getServiceType` - Defines the [mDNS service type](https://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
 The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.

@@ -31,7 +31,7 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
 You may want to install Zulu, a fully certified Java build [as a package or manually](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallZulu.htm).
 
-Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](http://www.azul.com/downloads/zulu-embedded/).
+Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](https://www.azul.com/downloads/zulu-embedded/).
 If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
 
 When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).

@@ -17,7 +17,7 @@ Let's use the definition for the pattern that can be found in the [OSGi Compendi
 The publisher posts events to the channel, which identifies which handlers need to be notified and then takes care of the notification process.*
 
 Both publishers and subscribers can disappear at any time.
-A central module to track the handlers availability is needed - the *Event Admin Service*. 
+A central module to track the handlers availability is needed - the *Event Admin Service*.
 
 ## Event Admin Service
 
@@ -28,7 +28,7 @@ But let's illustrate that with the following picture:
 
 ![Bundle lifecycle][fig1]
 
-Fig.1 Event Admin Service (Source: <http://enroute.osgi.org/img/services/org.osgi.service.event.overview.png>)
+Fig.1 Event Admin Service (Source: <https://enroute.osgi.org/img/services/org.osgi.service.event.overview.png>)
 
 Before going into more details, let's take a look at the events.
 
@@ -79,7 +79,7 @@ The service contains two methods for sending events:
 ## Further Reading
 
  - [OSGi Compendium Release 7][OSGi-cmpn]
- - <http://enroute.osgi.org/services/org.osgi.service.event.html>
+ - <https://enroute.osgi.org/services/org.osgi.service.event.html>
  - <http://blog.vogella.com/2017/05/16/osgi-event-admin-publish-subscribe/>
 
 [fig1]:images/event-admin.png

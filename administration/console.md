@@ -196,4 +196,4 @@ sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab2/etc/org.apach
 
 ----
 
-Please check the [Apache Karaf reference](http://karaf.apache.org/manual/latest/) for more details.
+Please check the [Apache Karaf reference](https://karaf.apache.org/manual/latest/) for more details.

@@ -86,7 +86,7 @@ The rules are defined at https://github.com/openhab/static-code-analysis/tree/ma
 
 ### Java Coding Style
 
-* The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
+* The [Java naming conventions](https://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
 * Generics must be used where applicable. See example below:
 
 ```java

@@ -37,7 +37,7 @@ These must be inside the XML escape sequence - eg.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-descriptions
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
     xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
     xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
         https://openhab.org/schemas/config-description-1.0.0.xsd">
@@ -80,7 +80,7 @@ These must be inside the XML escape sequence - eg.
   <tr><td>parameter.name</td><td>The name of the configuration parameter (mandatory).</td></tr>
   <tr><td>parameter.type</td><td>The data type of the configuration parameter (mandatory).</td></tr>
   <tr><td>parameter.min</td><td>The minimal value for numeric types, or the minimal length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>
-  <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>  
+  <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>
   <tr><td>parameter.step</td><td>The value granularity for a numeric value (optional).</td></tr>
   <tr><td>parameter.pattern</td><td>The regular expression for a text type (optional).</td></tr>
   <tr><td>parameter.required</td><td>Specifies whether the value is required (optional).</td></tr>
@@ -100,8 +100,8 @@ These must be inside the XML escape sequence - eg.
   <tr><td>option.value</td><td>The value of the selection list element. Note that the value may be outside of the range specified in the min/max if this is specified.</td></tr>
   <tr><td>multipleLimit</td><td>If `multiple` is true, sets the maximum number of options that can be selected (optional).</td></tr>
   <tr><td>limitToOptions</td><td>If true (default) will only allow the user to select items in the options list. If false, will allow the user to enter other text (optional).</td></tr>
-  <tr><td>criteria</td><td>The filter criteria for values of a dynamic selection list (optional).</td></tr>  
-  <tr><td>criteria.name</td><td>The name of the context related filter.</td></tr>  
+  <tr><td>criteria</td><td>The filter criteria for values of a dynamic selection list (optional).</td></tr>
+  <tr><td>criteria.name</td><td>The name of the context related filter.</td></tr>
 </table>
 
 ### Supported Contexts
@@ -145,10 +145,10 @@ Further, the <strong>item</strong> context can contain criteria to filter the li
 ```
 
 In the case of above filter only those items will be shown that satisfy the filter's conditions.
-The above filter is evaluated as follows: 
+The above filter is evaluated as follows:
 
 ```
-(type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating) 
+(type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
 
 ```
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.
@@ -186,7 +186,7 @@ The following code gives an example for one configuration description.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-description uri="thing-type:my-great-binding:my-bridge-name"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
     xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
     xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
         https://openhab.org/schemas/config-description-1.0.0.xsd">

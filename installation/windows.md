@@ -28,7 +28,7 @@ Please be sure you have installed the required supporting applications as descri
 
 ![JAVA_HOME](images/JAVA_HOME.png)
 
-### Choose a folder name for the openHAB installation. 
+### Choose a folder name for the openHAB installation.
 The name must **contain no spaces**. On this page, we will be using `C:\openHAB` as an example.
 
 ## Installation
@@ -49,10 +49,10 @@ To install it, follow these simple steps:
 
 4.  Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting you to set up an administrator username and password:
-    
+
 ![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
-    
-You are now able to work in the openHAB environment, when launched using  `C:\openHAB\start.bat`. 
+
+You are now able to work in the openHAB environment, when launched using  `C:\openHAB\start.bat`.
 You can choose to add a link to it on your Desktop, Taskbar or start menu as you deem more convenient.
 If you instead would like to have openHAB start automatically with Windows and run in the background, you can choose to install it as a service as described below.
 
@@ -172,7 +172,7 @@ By installing the openHAB process as a service in Windows, you can:
         ![Windows Service](images/Windows_Service.jpg)
 
     -   Logging in with an SSH client to the console (see info below)
-   
+
 
 ### File Locations
 
@@ -189,7 +189,7 @@ Assuming a successful install, you will now have various folders inside `C:\open
 
 ## What next?
 You can:
-- continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview 
+- continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview
 - read more about how to handle basic maintenance tasks, in the section below
 
 ## Maintenance
@@ -213,7 +213,7 @@ Update-openHAB -OHVersion x.x.x
 ```
 Now that openHAB has updated, you only need to run the above commands again for future versions.
 
-### Uninstallation 
+### Uninstallation
 - perform a backup as described above
 - uninstall openHAB as a Windows service: run PowerShell as an administrator and use the following commands
 ```
@@ -224,7 +224,7 @@ C:\openHAB\userdata\bin\openHAB-service.bat remove
 
 ### Connecting to the openHAB console
 
-You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine. 
+You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine.
 Alternatively, you can use a standard SSH client:
 
 -   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
