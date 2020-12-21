@@ -64,17 +64,15 @@ Note that by default, using openHAB doesn't require you to sign in.
 Only administrative operations require a user with an administrator role to be logged in.
 
 ## Initial Settings
-Click on Settings.
+
+Most of the needed settings have already been accomplished, when you have followed the wizard.
+Fro further configuration (e.g. the measurement system) click on Settings.
 
 ![](images/initial_settings.png)
 
 Click on Regional Settings under System Services.
 
 ![](images/regional_settings.png)
-
-Configure the local language, region and time zone.
-You can also specify the exact location (latitude, longitude, altitude) of your home, which some add-ons can use to preset their configuration.
-For instance, the Astro binding will use the location to determine the time of astrological events like sunrise and sunset in your area.
 
 If you're not using the metric system, click "Show advanced" and change the measurement system.
 

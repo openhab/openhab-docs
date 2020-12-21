@@ -7,6 +7,26 @@ module.exports = [
     ]
   },
   {
+    title: 'Beginner Tutorial',
+    collapsable: false,
+    children: [
+      ['tutorial/', 'Tutorial Overview'],
+      'tutorial/first_steps',
+      'tutorial/things_simple',
+      'tutorial/things_intermediate',
+      'tutorial/things_advanced',
+      'tutorial/model',
+      'tutorial/persistence',
+      /*'tutorial/pages_intro',
+      'tutorial/pages_widgets',
+      'tutorial/pages_types',
+      'tutorial/rules_simple',
+      'tutorial/rules_intermediate',
+      'tutorial/cloud',
+      'tutorial/example'*/
+    ]
+  },
+  {
     title: 'Concepts',
     collapsable: false,
     children: [
@@ -33,26 +53,6 @@ module.exports = [
       'installation/synology',
       // 'installation/qnap', // Remove until we get feedback about the current package state
       ['installation/security', 'Security']
-    ]
-  },
-  {
-    title: 'Beginner Tutorial',
-    collapsable: false,
-    children: [
-      ['tutorial/', 'Tutorial Overview'],
-      'tutorial/first_steps',
-      'tutorial/things_simple',
-      'tutorial/things_intermediate',
-      'tutorial/things_advanced',
-      'tutorial/model',
-      'tutorial/persistence',
-      /*'tutorial/pages_intro',
-      'tutorial/pages_widgets',
-      'tutorial/pages_types',
-      'tutorial/rules_simple',
-      'tutorial/rules_intermediate',
-      'tutorial/cloud',
-      'tutorial/example'*/
     ]
   },
   {
@@ -83,7 +83,6 @@ module.exports = [
       ['configuration/ui/habot/', 'HABot'],
       'configuration/habpanel',
       ['configuration/ui/basic/', 'Basic UI'],
-      // 'configuration/rules-ng',
       ['apps/android', 'Android App'],
       'apps/ios',
       'apps/windows',
