@@ -95,7 +95,8 @@ You will notice a new red button on that screen.
 
 ![](images/hue_inbox.png)
 
-This means that there are newly discovered devices that you can add. Since the Hue bridge is now working, the binding has detected all the Hue devices (bulbs, switches and so on) attached to it.
+This means that there are newly discovered devices that you can add.
+Since the Hue bridge is now working, the binding has detected all the Hue devices (bulbs, switches and so on) attached to it.
 
 The Inbox shows a consolidated view of all the discovery results.
 Alternatively, you can also click on the "+" button to get a per-binding view and the ability to perform a new scan.
