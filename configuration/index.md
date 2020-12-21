@@ -38,7 +38,7 @@ PaperUI and HABmin are no longer supported, they are replaced by the new Main UI
 It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
 v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
 File-based configuration is still available, but we recommend that everyone start over with a fresh setup built using the new Main UI.<br>
-_Note there is an option in Main UI to bulk create Things and Items where you can copy'n'paste the contents of your .things/.items files._
+_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your .items files._
 :::
 
 <table class="centered highlight">
