@@ -135,7 +135,7 @@ module.exports = [
       'developer/governance',
       {
         title: 'Javadoc',
-        path: 'https://next.openhab.org/javadoc/latest/'
+        path: 'https://openhab.org/javadoc/latest/'
       }
     ]
   },
