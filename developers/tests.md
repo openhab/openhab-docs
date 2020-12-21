@@ -44,7 +44,7 @@ assertThat(pt.toString(), is(equalTo("0.0001")));
 
 In order to keep tests as focused as possible we use the mocking framework [https://github.com/mockito/mockito Mockito].
 Mockito lets us verify interactions between supporting classes and the unit under test and additionally supports stubbing of method calls for these classes.
-Please read the very short but expressive introduction on the [http://site.mockito.org/ Mockito homepage] in addition to this small example:
+Please read the very short but expressive introduction on the [https://site.mockito.org/ Mockito homepage] in addition to this small example:
 
 ```java
 public class MyBindingHandlerTest {
@@ -60,7 +60,7 @@ public class MyBindingHandlerTest {
         handler = new MyBindingHandler(thing);
         handler.setCallback(callback);
     }
-    
+
     @After
     public void tearDown() {
         // Free any resources, like open database connections, files etc.
@@ -113,7 +113,7 @@ public void assertionsToBeUsed() {
     assertThat(null, is(nullValue()));
     assertThat(new Object(), is(not(nullValue())));
     assertThat(true, is(not(false)));
-} 
+}
 ```
 
 ## Integration tests
@@ -131,7 +131,7 @@ Most situations can be tested using mocks (see [Mockito](#mockito)) and unit tes
 
 From maven one can execute the test with `mvn install` command from the folder of the test fragment bundle.
 
-### Example 
+### Example
 
 The base class `JavaOSGiTest` sets up a bundle context and has convenience methods for registering mocks as OSGi services and the retrieval of registered OSGi services.
 Public methods with a @Test annotation will automatically be executed as OSGi tests, as long as the class-name ends with `Test`.

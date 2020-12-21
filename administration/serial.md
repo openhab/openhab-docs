@@ -40,4 +40,4 @@ udevadm info -a -p $(udevadm info -q path -n /dev/ttyACM0)
 
 ## macOS
 
-When working with a Mac, it may be necessary to install a driver for the USB-RS232 converter (e.g. [Prolific PL2303](http://www.prolific.com.tw/us/showproduct.aspx?p_id=229&pcid=41) and create the `/var/lock` folder; see the [rxtx troubleshooting guide](http://rxtx.qbang.org/wiki/index.php/Trouble_shooting#Mac_OS_X_users).
+When working with a Mac, it may be necessary to install a driver for the USB-RS232 converter (e.g. [Prolific PL2303](https://www.prolific.com.tw/us/showproduct.aspx?p_id=229&pcid=41) and create the `/var/lock` folder; see the [rxtx troubleshooting guide](https://rxtx.qbang.org/wiki/index.php/Trouble_shooting#Mac_OS_X_users).

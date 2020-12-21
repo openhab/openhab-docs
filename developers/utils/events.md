@@ -160,7 +160,7 @@ Received events can be cast to the event implementation class for further proces
 Each event subscriber must be registered via OSGi Declarative Services (DS) under the `org.openhab.core.event.EventSubscriber` interface.
 
 ```xml
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
+<scr:component xmlns:scr="https://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeItemEventSubscriber">
    <implementation class="org.openhab.core.items.events.SomeItemEventSubscriber"/>
    <service>
       <provide interface="org.openhab.core.events.EventSubscriber"/>

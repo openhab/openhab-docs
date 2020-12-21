@@ -16,7 +16,7 @@ This page is structured as follows:
 
 If you're unfamiliar with using the macOS terminal, then feel free to follow the many guides on the internet. For example:
 
-[Macworld: How to use Terminal on mac](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
+[Macworld: How to use Terminal on mac](https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
 
 ## Installation
 

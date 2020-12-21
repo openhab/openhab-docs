@@ -22,7 +22,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 ### File Location
 
 Rules are placed in the folder `$OPENHAB_CONF/rules`.
-The [demo setup](http://demo.openhab.org:8080/) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
+The [demo setup](https://demo.openhab.org) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
@@ -56,7 +56,7 @@ Check out the editors page for more information and additional editor possibilit
 ### The Syntax
 
 ::: tip Note
-The rule syntax is based on [Xbase](http://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](http://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+The rule syntax is based on [Xbase](https://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](https://www.eclipse.org/xtend/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
 :::
 
@@ -68,7 +68,7 @@ A rule file is a text file with the following structure:
 
 The **Imports** section contains import statement just like in Java.
 As in Java, they make the imported types available without having to use the fully qualified name for them.
-For further details, please see the [Xtend documentation for imports](http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports).
+For further details, please see the [Xtend documentation for imports](https://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports).
 
 Example:
 
@@ -88,7 +88,7 @@ org.openhab.model.script.actions
 
 The **Variable Declarations** section can be used to declare variables that should be accessible to all rules in this file.
 You can declare variables with or without initial values and modifiable or read-only.
-For further details, please see the [Xtend documentation for variable declarations](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration).
+For further details, please see the [Xtend documentation for variable declarations](https://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration).
 
 Example:
 
@@ -192,7 +192,7 @@ A cron expression takes the form of six or optionally seven fields:
 6. Day-of-Week
 7. Year (optional field)
 
-You may use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
+You may use [CronMaker](https://www.cronmaker.com/) or the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
 {: #system-based-triggers}
 ### System-based Triggers
@@ -281,7 +281,7 @@ end
 {: #scripts}
 ## Scripts
 
-The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
+The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](https://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
 
 The syntax is very similar to Java, but has many nice features that allow writing concise code.
 It is especially powerful in handling collections.

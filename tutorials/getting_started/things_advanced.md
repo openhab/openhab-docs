@@ -30,7 +30,7 @@ Instead, it's publishing metrics regularly in a simple JSON structure like the f
 ## Prerequisites
 - A basic understanding of how MQTT works (HiveMQ provides a good [tutorial](https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/)
 - An installed and configured MQTT Broker (e.g. Mosquitto which can be installed through openHABian if that is how you installed openHAB)
-- A MiFlora device configured to connect to the MQTT Broker, or an MQTT client application (e.g. [MQTT Explorer](http://mqtt-explorer.com/), [MQTT.fx](http://mqttfx.org/) that allows one to publish and subscribe to MQTT topics
+- A MiFlora device configured to connect to the MQTT Broker, or an MQTT client application (e.g. [MQTT Explorer](https://mqtt-explorer.com/), [MQTT.fx](http://mqttfx.org/) that allows one to publish and subscribe to MQTT topics
 
 ## Install the Binding and Transformation
 This device publishes JSON formatted messages so we need to install an add-on that can process JSON: the JSONPath Transformation.

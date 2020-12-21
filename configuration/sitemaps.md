@@ -74,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
@@ -362,7 +362,7 @@ Please be aware that Webview elements are not usable by all user interface optio
 **Example:**
 
 ```perl
-Webview url="http://www.openhab.org" height=5
+Webview url="https://www.openhab.org" height=5
 ```
 
 ![Presentation of the Webview element in BasicUI](images/sitemap_demo_webview.png)
@@ -393,7 +393,7 @@ Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labeln
 
 This element type is able to present an image.
 The image must be available on a reachable website or webserver without password or access token.
-Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, http://<my.openHAB.device>:8080/static/YourImageFile.png.
+Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, https://<my.openHAB.device>:8080/static/YourImageFile.png.
 
 - `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
@@ -405,7 +405,7 @@ Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in 
 Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
 
 // display a snapshot image from an IP camera, using refresh parameter to get updated images
-Image url="http://192.168.1.203:8080/?action=snapshot" refresh=10000
+Image url="https://192.168.1.203:8080/?action=snapshot" refresh=10000
 ```
 
 ![Presentation of the Image element in BasicUI](images/sitemap_demo_image.png)
@@ -430,7 +430,7 @@ An embedded and/or protected video is not supported.
 **Example:**
 
 ```perl
-Video url="http://demo.openhab.org/Hue.m4v"
+Video url="https://demo.openhab.org/Hue.m4v"
 ```
 
 ![Presentation of the Video element in BasicUI](images/sitemap_demo_video.png)
@@ -463,7 +463,7 @@ Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for e
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
-For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](http://grafana.org)).
+For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](https://grafana.org)).
 See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
@@ -743,10 +743,10 @@ sitemap demo label="My home automation" {
         Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
     }
     Frame {
-        Video url="http://demo.openhab.org/Hue.m4v"
+        Video url="https://demo.openhab.org/Hue.m4v"
     }
     Frame {
-        Webview url="http://www.openhab.org" height=5
+        Webview url="https://www.openhab.org" height=5
     }
     Frame {
         Text item=Temperature label="Livingroom [22.0 °C]" icon="temperature" labelcolor=[!=1="blue"] valuecolor=[!=1="green"]

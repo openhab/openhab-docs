@@ -5,11 +5,11 @@ title: openhab-docs Markdown StyleGuide
 
 {% include base.html %}
 
-# openHAB Documentation Style Guide 
+# openHAB Documentation Style Guide
 
 ## General Remarks
 
-First and foremost we are following the recommendations given at: [http://www.cirosantilli.com/markdown-style-guide/](http://www.cirosantilli.com/markdown-style-guide/).
+First and foremost we are following the recommendations given at: [https://www.cirosantilli.com/markdown-style-guide/](https://www.cirosantilli.com/markdown-style-guide/).
 
 ## Markdown Decisions
 
