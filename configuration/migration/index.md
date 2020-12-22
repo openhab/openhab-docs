@@ -18,7 +18,7 @@ Please read them carefully and check if you are affected by some of the changes,
 Below you can find some general informations for the technical upgrade process to openHAB 3.
 Please be aware of possible changes needed for your specific environment in case of the breaking changes after upgrading.
 
-## Upgrade Process for different instalaltion variants
+## Upgrade Process for different installation variants
 
 ### openHABian
 
