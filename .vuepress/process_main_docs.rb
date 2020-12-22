@@ -84,7 +84,7 @@ def process_main_docs(docs_source_dir)
     puts ">>> Migrating the Migration Tutorial section"
 
 
-    Dir.glob("#{docs_source_dir}/configuration/migration*.md") { |path|
+    Dir.glob("#{docs_source_dir}/configuration/migration/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
