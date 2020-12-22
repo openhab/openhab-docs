@@ -173,11 +173,6 @@ sudo service nginx restart
 For further security, you may wish to ask for a **username and password** before users have access to openHAB.
 This is fairly simple in NGINX once you have the reverse proxy setup, you just need to provide the server with a basic authentication user file.
 
-::: tip Note
-There is currently an issue with Proxy Authentication and HABmin when using some browsers.
-If you require HABmin, consider connecting locally or using Safari for now.
-:::
-
 {: #nginx-auth-user}
 ##### Creating the First User
 
