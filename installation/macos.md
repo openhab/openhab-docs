@@ -93,7 +93,8 @@ To exit, use '<ctrl-d>' or 'logout'.
 openhab>
 ```
 
-Without closing the terminal, open your favorite web browser and type the following URL: [http://localhost:8080](http://localhost:8080), you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorials/beginner/1sttimesetup.html). If you installed openHAB on a different device, replace localhost with the IP address of the device.
+Without closing the terminal, open your favorite web browser and type the following URL: [http://localhost:8080](http://localhost:8080), you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorials/first_steps.html). 
+If you installed openHAB on a different device, replace localhost with the IP address of the device.
 
 ## Updating openHAB
 
