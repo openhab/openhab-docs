@@ -58,7 +58,7 @@ One can configure whether specific log entries are logged out and where they get
 ### Exec Actions
 
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
-- `executeCommandLine(java.time.Duration timeout, String commandLine)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
+- `executeCommandLine(java.time.Duration timeout, String commandLine)`: Executes a command on the command and waits timeout seconds for the command to complete, returning the output from the command as a String
 
 ### HTTP Actions
 
