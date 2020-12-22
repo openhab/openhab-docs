@@ -117,7 +117,7 @@ More details about all of the available Item types and their commands are availa
 [Item Types Overview]({{base}}/concepts/items.html)
 
 To learn about the technical internals of the individual Item types, please refer to:
-[Javadoc on Generic Item and its subclasses](https://www.openhab.org/javadoc/v2.5/org/openhab/core/items/genericitem)
+[Javadoc on Generic Item and its subclasses](https://www.openhab.org/javadoc/latest/org/openhab/core/items/genericitem)
 
 <!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
 
