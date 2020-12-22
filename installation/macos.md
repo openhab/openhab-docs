@@ -21,7 +21,8 @@ If you're unfamiliar with using the macOS terminal, then feel free to follow the
 ## Installation
 
 openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unziping it into a unique folder.
-First, make sure that your system meets the [prerequisites](index.html#prerequisites). When you are running macOS BigSur or higher, make sure
+First, make sure that your system meets the [prerequisites](index.html#prerequisites).
+When you are running macOS BigSur or higher, make sure
 that you select the right platform depending on your hardware (x86 or ARM 64-bit). 
 
 You have the choice to use the current stable version or the latest snapshot build:
@@ -111,7 +112,8 @@ cd ~/openhab
 sudo runtime/bin/update
 ```
 
-You can also specify any version as a parameter. For example, to switch back to 2.5.11:
+You can also specify any version as a parameter.
+For example, to switch back to 2.5.11:
 
 ```shell
 sudo runtime/bin/update 2.5.11
