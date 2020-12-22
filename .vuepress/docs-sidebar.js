@@ -72,7 +72,7 @@ module.exports = [
       'configuration/jsr223',
       'configuration/services',
       'configuration/multimedia',
-      // ['configuration/migration/', 'Migration from 1.x']
+      ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
   {
