@@ -121,12 +121,12 @@ import org.osgi.service.component.annotations.Reference;
 @NonNullByDefault
 public class TimeEventHandler {
 
-    @Reference
-    private @NonNullByDefault({}) ConfigurationAdmin configurationAdmin;
+    private final ConfigurationAdmin configurationAdmin;
 
     // Here we perform a configuration update as soon as this service gets activated
     @Activate
-    protected void activate() {
+    public TimeEventHandler(@Reference ConfigurationAdmin configurationAdmin) {
+        this.configurationAdmin = configurationAdmin;
         try {
             Configuration config = configurationAdmin.getConfiguration("com.example.handler", null);
             Dictionary<String, Object> props = config.getProperties();
