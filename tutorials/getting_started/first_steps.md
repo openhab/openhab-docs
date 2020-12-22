@@ -66,7 +66,7 @@ Only administrative operations require a user with an administrator role to be l
 ## Initial Settings
 
 Most of the needed settings have already been accomplished, when you have followed the wizard.
-Fro further configuration (e.g. the measurement system) click on Settings.
+For further configuration (e.g. the measurement system) click on Settings.
 
 ![](images/initial_settings.png)
 
