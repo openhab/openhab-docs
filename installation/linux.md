@@ -261,7 +261,7 @@ sudo systemctl enable openhab.service
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB Dashboard at [http://openhab-device:8080]() at this point.
-If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
+If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorial/first_steps.html)!
 
 ![The openHAB Dashboard page](images/Home_Openhab_3.png)
 
