@@ -60,7 +60,7 @@ Therefore the tutorial will present a purely UI-driven approach.
 Review the reference documentation for details on the text based approach.
 
 When building a configuration through the UI, one still has access to a text based YAML formatted representation of their configs.
-On most of the configuration screens there will be two tabs, a "Design" tab anda  "Code" tab.
+On most of the configuration screens there will be two tabs, a "Design" tab and a  "Code" tab.
 If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum using code fences instead of or in addition to screen shots.
 
 ## Table of Contents
