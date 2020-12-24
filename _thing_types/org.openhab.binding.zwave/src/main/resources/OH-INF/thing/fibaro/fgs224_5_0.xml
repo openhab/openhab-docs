@@ -57,7 +57,7 @@ Fibaro Double Smart Module<br /> <h1>Overview</h1><h1>Description</h1> <p>The re
       <property name="vendor">Fibargroup</property>
       <property name="modelId">FGS224</property>
       <property name="manufacturerId">010F</property>
-      <property name="manufacturerRef">0204:1000</property>
+      <property name="manufacturerRef">0204:1000,0204:3000</property>
       <property name="versionMin">5.0</property>
       <property name="versionMax">5.0</property>
       <property name="dbReference">1275</property>

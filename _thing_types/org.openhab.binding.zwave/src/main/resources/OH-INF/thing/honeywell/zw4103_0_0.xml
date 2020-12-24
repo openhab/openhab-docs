@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="honeywell_zw4103_00_000" listed="false">
+    <label>ZW4103 Z-Wave Plug in Smart Switch</label>
+    <description><![CDATA[
+Z-Wave Plug in Smart Switch<br /> <h1>Overview</h1><p>Control, automate, and schedule your homes lighting and appliances with the Plug-In Smart Switch. Using this Smart Switch means taking control of your homes lighting and appliances regardless of if you are in a different part of your home, the couch, work or away on vacation - all from your mobile device and Z-Wave compatible hub.</p><p>The plug-in smart switch gives you wireless control of your plug-in lighting and appliances from any mobile device, computer or Z-Wave enabled remote via a Z-Wave Certified gateway/hub. Automating you lights will not only make your life easier but it will also save energy, cut costs, and boost your home’s security. Plug-in Smart Switch has 1 grounded outlet located on the left side of the module and leaves bottom outlet<br /></p><p>Schedule timed events and customize scenes for day or night, home or away - wirelessly control from anywhere through your smartphone, tablet, PC or Z-Wave remote</p><ul><li>Features 1 controlled grounded outlet w/ manual ON/OFF &amp; program button - works with all LED, CFL, halogen and incandescent bulbs and other devices</li><li>Requires a Z-Wave Certified Hub: Compatible with the following Z-Wave Hubs: Honeywell, Ring, SmartThings, Wink, HomeSeer, Fibaro, Trane, Nexia, ADT, Vera, and more</li><li>Simply plug the module into any in-wall outlet, then connect your light to the smart outlet located on the left side of the plug-in</li><li>2nd wallplate outlet still free for use</li></ul> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include the device to the Z-Wave network.</li><li>Once the controller is ready to include your smart switch, single press and release the manual/program button on the smart dimmer to include it in the network.</li><li>Once your controller has confirmed that the smart switch has been included, refresh the Z-Wave network to optimize performance.</li></ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li><li>Once the controller is ready to exclude your device, press and release the manual/program button on the smart switch to exclude it from the network. </li></ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>PowerOutlet</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SCENE_ACTIVATION</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Honeywell</property>
+      <property name="modelId">ZW4103</property>
+      <property name="manufacturerId">0039</property>
+      <property name="manufacturerRef">5052:3038</property>
+      <property name="dbReference">1329</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>3: LED Light</label>
+        <description><![CDATA[
+Changes the behavior of the LED light<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Supports device reset locally and receives unsolicited status updates</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Single Press</label>
+        <description>Association Group 2 supports BasicSet and is controlled by single pressing the button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Double Press</label>
+        <description>Association Group 3 supports BasicSet and is controlled by double pressing the button</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

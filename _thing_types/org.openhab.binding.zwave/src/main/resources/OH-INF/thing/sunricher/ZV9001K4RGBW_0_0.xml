@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="sunricher_ZV9001K4RGBW_00_000" listed="false">
+    <label>ZV9001K4-RGBW Z-Wave RGBW Remote Control</label>
+    <description><![CDATA[
+Z-Wave RGBW Remote Control<br /> <h1>Overview</h1><p>The remote control is a Z-Wave device that can both control other Z-Wave devices and activate scenes in Gateways. Although it is controlling other devices, the device cannot act as Z-Wave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network. It also supports the Over The Air (OTA) feature for the product’s firmware upgrade. The remote control has following functions: 1. Control of groups of other Z-Wave devices using 'ON', 'OFF', Dim and RGB color control commands. 2. Activation of scenes in Gateway mode. The encryption modes that the remote control supports are S0, S2 Authenticated, S2 Unauthenticated. When the remote control is being included into a Z-Wave network, you can use your primary controller/gateway to enable one encryption mode or disable encryption. (The primary controller/gateway shall support encryption mode configuration). </p> <br /> <h2>Inclusion Information</h2><p>Step 1. Make sure the remote control does not belong to any Z-Wave network, short press any button, if LED indicator does not turn on, the remote control does not belong to any network, then continue step 2,if LED indicator turns on, it means the remote control has already been included to a network, please first set the remote control to exclusion mode (refer to the part "Exclusion" of this manual),then continue step 2. Step 2. Set primary controller/gateway into inclusion mode (Please refer to your primary controllers manual on how to turn your controller into inclusion). Step 3. Press and hold down both buttons and of Group 2 over 3 seconds, LED indicator turns on, the remote control will be set to inclusion mode, and waiting to be included, after 10s LED indicator blinks 6 times quickly to indicate successful inclusion. The remote control is a sleepy device, after inclusion it will not enter into sleepy mode immediately, and will continue activation status for 30s and wait data interaction from the gateway, the LED indicator will stay solid on, please be patient to wait LED indicator to turn off.</p> <br /> <h2>Exclusion Information</h2><p>There are two exclusion methods: Method 1: Exclusion from the primary controller/gateway as follows: 1. Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion). 2. Press and hold down both buttons and of Group 2 over 3 seconds, LED indicator turns on, the remote control will be set to exclusion mode, and waiting to be excluded, after 7s LED indicator blinks 4 times quickly to indicate successful exclusion. Z-Wave RGBW Remote Control Front side 55.57 mm 71.20 mm 11 mm Back side Battery: CR2450 Before the first use, please remove the protective film 55.57 mm 71.20 mm The remote control can be fixed on the wall with 3M glue or screw. Group 2: click to turn on/off Group 2: press and hold down to increase/decrease light intensity Group 2: click to turn on/off white channel Group 2: click to get R, G, B colors one by one, press and hold down to cycle RGB colors Press and hold down both keys together for 3s to be added to or removed from Z-Wave network by Z-Wave master (primary) controller. Product Data Z-Wave Frequency Power Supply Operating temperature Relative humidity Dimensions Waterproof Grade 868.42MHz 3VDC(1xCR2450 battery) 0 to 40°C 8% to 80% 71.2x71.2x13.6mm IP20 Method 2: Factory reset the remote control will force the remote control to be excluded from a network. (please refer to the part “Factory Reset” of this manual) Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable</p> <br /> <h2>Wakeup Information</h2><p>The remote control is under sleepy mode for most of the time to save battery power. It can not receive wireless command under sleepy mode. Before the gateway interacts data with the remote, the remote control shall be activated manually first. Short press any button to activate the remote control for 3s, and press and hold down and buttons of Group 2 together over 1 second to activate the remote control for 7s. </p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Sunricher</property>
+      <property name="modelId">ZV9001K4-RGBW</property>
+      <property name="manufacturerId">0330</property>
+      <property name="manufacturerRef">0003:A30C</property>
+      <property name="dbReference">1285</property>
+      <property name="defaultAssociations">1,2</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>1. Send Command Class "Device Reset Locally Notification V1" to associated devices of this group to report factory reset information when factory reset the remote control. 2. When remote control battery power value changes, send Command Class "Battery Report V1" to associated devices of this group to report power value information. 3. Short press or press and hold down any button to send scene activation command to the associated devices of this group using Command Class “Central Scene Notification V3” </p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Launch 1<br /> <h1>Overview</h1><p>• devices of this group using Command Class "Basic Set V2". • Press and hold down button to send light intensity increase/decrease command to associated devices of this group using Command Class "Multilevel V4". • Short press W/ button of Group 2, turn on/off white/RGB channel of associated devices of this group using Command Class “Color Switch Set”. • Press and hold down W/ button of Group 2, adjust intensity of white/RGB channel of associated devices of this group using Command Class “Color Switch Start Level Change”. Short press button to send ON/OFF command to associated</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

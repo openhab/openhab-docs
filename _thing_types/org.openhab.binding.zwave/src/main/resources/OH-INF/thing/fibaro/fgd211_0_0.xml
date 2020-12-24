@@ -8,7 +8,7 @@
   <thing-type id="fibaro_fgd211_00_000" listed="false">
     <label>FGD211 Universal Dimmer 500W</label>
     <description><![CDATA[
-Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <p>As a Dimmer it operates under the following loads:</p> <ul><li>conventional incandescent</li> <li>Halogen 230V</li> <li>low voltage halogen 12V (with electronic transformers)</li> <li>dimmable LED</li> <li>when used with FGB001 it may operate with any dimmable load up to 500W</li> </ul> <br /> <h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes.</p> <br /> <h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes</p>
+Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer designed to operate with or without neutral lead. It may be used as a switch in systems without neutral lead.</p> <p>As a Dimmer it operates under the following loads:</p> <ul><li>conventional incandescent</li> <li>Halogen 230V</li> <li>low voltage halogen 12V (with electronic transformers)</li> <li>dimmable LED</li> <li>when used with FGB001 it may operate with any dimmable load up to 500W</li> </ul> <br /> <h2>Inclusion Information</h2><p>The Dimmer enters the mode of inclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes.</p> <br /> <h2>Exclusion Information</h2><p>The Dimmer enters the mode of exclusion after a quick pressing three times the push-button connected to S1 terminal or push-button B located inside the housing. For bi-stable switch perform 3 position changes</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -28,7 +28,7 @@ Universal Dimmer 500W<br /> <h1>Overview</h1><p>Remotely controlled Dimmer desig
       <property name="vendor">Fibargroup</property>
       <property name="modelId">FGD211</property>
       <property name="manufacturerId">010F</property>
-      <property name="manufacturerRef">0100:0104,0100:0106,0100:0107,0100:0109,0100:100A,0100:300A</property>
+      <property name="manufacturerRef">0100:0103,0100:0104,0100:0106,0100:0107,0100:0109,0100:100A,0100:300A</property>
       <property name="versionMax">1.8</property>
       <property name="dbReference">117</property>
       <property name="defaultAssociations">3</property>

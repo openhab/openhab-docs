@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_psm09_00_000" listed="false">
+    <label>PSM09 Recessed Door Sensor + Door lock Sensor</label>
+    <description><![CDATA[
+Recessed Door Sensor + Door lock Sensor<br /> <h1>Overview</h1><p>The PSM09 can detect the the door is open or not, and lock or unlock. The Recessed door sensor PSM09 is Base on Z-WaveTM technology. It is the Z-WaveTM plus product, it support the security, OTA... Those newest features of the Z-WaveTM technology. Z-WaveTM is a wireless communication protocol designed for home automation, specifically to remotely control applications in residential and light commercial environments. The technology uses a low-power RF radio embedded or retrofitted into home electronics devices and systems, such as lighting, home access control, entertainment systems and household appliances</p> <br /> <h2>Inclusion Information</h2><p>Have Z-WaveTM Controller entered inclusion mode. Pressing tamper key three times within 3 seconds to enter the inclusion mode. If the learning code is successful, the LED will flash slowly.</p> <br /> <h2>Exclusion Information</h2><p>Have Z-WaveTM Controller entered exclusion mode. Pressing tamper key three times within 3 seconds to enter the exclusion mode. If the removal is successful, the code light will flash for 30 seconds. Node ID has been excluded.</p> <br /> <h2>Wakeup Information</h2><p>If the user want to wake-up the device immediately, please press the tamper key once. The device will wake-up 10 seconds.<br /></p>
+    ]]></description>
+    <category>Sensor</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PSM09</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0002:006A</property>
+      <property name="dbReference">1225</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="0" max="127">
+        <label>1: Auto report state time</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>The interval time for auto report the door/window &amp; Lock state &amp; battery level. 0 means turn off auto report state. Units of 30 minutes.</p>
+        ]]></description>
+        <default>12</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Door lock detect function switch</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>0 means turn off Door lock detect funtion.</p> <p>1 means turn on Door lock detect funtion.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="127">
+        <label>3: Door lock detect timer</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>Units of 20 seconds.</p>
+        ]]></description>
+        <default>3</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="10">
+        <label>4: Door lock detect level</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p>When an error condition occurs in the door lock detection.</p> <p>Can reduce its level to avoid door lock detection errors.</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

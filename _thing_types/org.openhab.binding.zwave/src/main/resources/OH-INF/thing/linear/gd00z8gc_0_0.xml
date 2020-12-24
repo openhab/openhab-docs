@@ -14,6 +14,12 @@ Garage Door Opener<br /> <h1>Overview</h1><p>A garage door remote command transc
 
     <!-- CHANNEL DEFINITIONS -->
     <channels>
+      <channel id="barrier_state" typeId="barrier_state">
+        <label>Barrier State</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_BARRIER_OPERATOR</property>
+        </properties>
+      </channel>
       <channel id="alarm_burglar" typeId="alarm_burglar">
         <label>Alarm (burglar)</label>
         <properties>

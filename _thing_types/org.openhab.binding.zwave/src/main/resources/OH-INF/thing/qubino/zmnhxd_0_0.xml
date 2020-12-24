@@ -178,8 +178,7 @@ Available configuration parameters for input switch I1<br /> <h1>Overview</h1><u
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="100">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: Reporting on power change</label>
         <description><![CDATA[
 This parameter is valid for Active Powers Total, Phase1, Phase2 and Phase3.<br /> <h1>Overview</h1><p>Available configuration parameters (data type is 1 Byte DEC)</p> <ul><li>Default value 50</li> <li>0 – reporting disabled</li> <li>1-100 = 1% - 100% reporting enabled. Power report is send only when actual power in Watts (in real time changes for more than set percentage comparing to previous Active Power, step is 1%.</li> </ul><p><strong>NOTE:</strong> if power change is less than 5 W, the report is not send (pushed).<br /><strong>NOTE:</strong> Device is measuring also some disturbances even if on the output is no load. To avoid disturbances:</p> <ul><li>If measured Active Power (W) is below e.g. 5W-&gt; the reported value in this case is 0W</li> </ul>
@@ -189,10 +188,10 @@ This parameter is valid for Active Powers Total, Phase1, Phase2 and Phase3.<br /
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_42_2" type="integer" groupName="configuration"
-                 min="600" max="65535">
+      <parameter name="config_42_2" type="integer" groupName="configuration">
         <label>42: Reporting on time interval</label>
         <description><![CDATA[
 Energy report time intervals<br /> <h1>Overview</h1><p>This parameter is currently valid only for Active Energy Total Import/Export (kWh), Reactive<br />Energy Total (kvarh), Total Energy (kVAh)</p> <p><strong>Available configuration parameters (data type is 2 Byte DEC)</strong></p> <ul><li>Default value 600 (600 seconds - 10 minutes)</li> <li>0 – reporting disabled</li> <li>600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is send with the time interval set by entered value.</li> </ul><p><strong>Note:</strong> Device is reporting only if there was a change of 0.1 in Energy</p> <p><strong>Note:</strong> In the future will be possible to measure and report also Active Energy on PH1, PH2 and PH3.</p>
@@ -202,10 +201,10 @@ Energy report time intervals<br /> <h1>Overview</h1><p>This parameter is current
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_43_2" type="integer" groupName="configuration"
-                 min="600" max="65535">
+      <parameter name="config_43_2" type="integer" groupName="configuration">
         <label>43: Other Values - Reporting on time interval</label>
         <description><![CDATA[
 Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power<br /> <h1>Overview</h1><p><strong>Available configuration parameters (data type is 2 Byte DEC)</strong></p> <ul><li>Default value 600 (600 seconds - 10 minutes)</li> <li>0 – reporting disabled</li> <li>600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is sent with the time interval set by entered value.</li> <li>Note: Device is reporting only if there was a change</li> </ul>
@@ -215,6 +214,7 @@ Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power<br
           <option value="0">reporting disabled</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1" type="integer" groupName="configuration">

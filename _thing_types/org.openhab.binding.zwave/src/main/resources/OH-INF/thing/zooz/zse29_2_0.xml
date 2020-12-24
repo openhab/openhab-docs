@@ -78,9 +78,11 @@ Outdoor Motion Sensor v2<br /> <h1>Overview</h1><p>OUTDOOR SENSOR: Introducing t
 Basic Set Report Value Sent to Associated Devices<br /> <h1>Overview</h1><p>Set the value of basic set report sent to the light associated with the sensor in Group 2 (so the light turns on to the selected brightness level). 99 is the equivalent of full brightness in Z-Wave terms.</p>
         ]]></description>
         <default>99</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration">
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>2: Enable / Disable Motion Reports</label>
         <description><![CDATA[
 Enable / Disable Motion Reports<br /> <h1>Overview</h1><p>Enable or disable motion reports completely. If motion sensor is disabled, the device will not report motion at all to your hub.</p>
@@ -90,7 +92,6 @@ Enable / Disable Motion Reports<br /> <h1>Overview</h1><p>Enable or disable moti
           <option value="0">Motion reports disabled</option>
           <option value="1">Motion reports enabled (default)</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -100,10 +101,10 @@ Enable / Disable Motion Reports<br /> <h1>Overview</h1><p>Enable or disable moti
 Motion sensitivity<br /> <h1>Overview</h1><p>Adjust motion sensitivity where 10 is the most sensitive setting. The default sensitivity is 1.</p>
         ]]></description>
         <default>1</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_2" type="integer" groupName="configuration"
-                 min="10" max="900">
+      <parameter name="config_4_2" type="integer" groupName="configuration">
         <label>4: Lux level trigger</label>
         <description><![CDATA[
 Lux level trigger<br /> <h1>Overview</h1><p>Set lux level trigger with 10 being the lowest reported value and 900 being the highest reported value. The sensor will report motion to the hub and associated devices only if the brightness (lux) level is below the set trigger value.</p> <p>0 - set manually by lux knob (default)</p> <p>1 - ignore lux readings and always report motion</p> <p>10-900 - set custom trigger</p>
@@ -113,10 +114,10 @@ Lux level trigger<br /> <h1>Overview</h1><p>Set lux level trigger with 10 being 
           <option value="0">Set manually by lux knob</option>
           <option value="1">Ignore lux readings and always report motion</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="720">
+      <parameter name="config_5_2" type="integer" groupName="configuration">
         <label>5: Motion re-trigger time</label>
         <description><![CDATA[
 Motion re-trigger time<br /> <h1>Overview</h1><p>Set motion re-trigger time for the delay before the sensor reports no motion to the hub and associated devices after detecting the last motion activity.</p> <p>0 - set manually by timer knob (default)</p> <p>5-720 (seconds) - set custom re-trigger time</p>
@@ -125,6 +126,7 @@ Motion re-trigger time<br /> <h1>Overview</h1><p>Set motion re-trigger time for 
         <options>
           <option value="0">Set manually by timer knob</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
@@ -134,6 +136,7 @@ Motion re-trigger time<br /> <h1>Overview</h1><p>Set motion re-trigger time for 
 Lux reporting frequency<br /> <h1>Overview</h1><p>Set lux reporting frequency to decide how often in minutes the sensor will measure and send brightness level data to the hub and associated devices. The default is 30 minutes and the range is 1-1440. Note: Frequent reports will affect battery life.</p>
         ]]></description>
         <default>30</default>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_7_2" type="integer" groupName="configuration" readOnly="true"

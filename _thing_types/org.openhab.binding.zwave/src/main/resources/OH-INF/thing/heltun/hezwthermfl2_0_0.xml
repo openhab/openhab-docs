@@ -81,7 +81,7 @@ Wall Heating Thermostat<br /> <h1>Overview</h1><p>The Heltun Heating Thermostat 
       <property name="vendor">Heltun</property>
       <property name="modelId">HE-ZW-THERM-FL2</property>
       <property name="manufacturerId">0344</property>
-      <property name="manufacturerRef">0003:0001,0004:0001</property>
+      <property name="manufacturerRef">0003:0001</property>
       <property name="dbReference">1023</property>
       <property name="defaultAssociations">1</property>
     </properties>

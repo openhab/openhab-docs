@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="philio_pab04_00_000" listed="false">
+    <label>PAB04 Smart Energy Flow Meter</label>
+    <description><![CDATA[
+Smart Energy Flow Meter<br /> <h1>Overview</h1><p>This valves controller PAB04 is a security enabled wireless switch, based on Z-Wave Plus technology. <br /></p><p>Connect PAB04 with an external water meter which can output pulse signals. PAB04 is able to detect instance water flow and the accumulated water.<br /></p> <br /> <h2>Inclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter inclusion mode.<br /></p> <br /> <h2>Exclusion Information</h2><p>Pressing On/Off button three times within 2 seconds will enter exclusion mode.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Valve</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="water_flow" typeId="water_flow">
+        <label>Sensor (WATER_FLOW)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=WATER_FLOW</property>
+        </properties>
+      </channel>
+      <channel id="meter_water_gallons" typeId="meter_water_gallons">
+        <label>Water meter (gal)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=W_Gallons</property>
+        </properties>
+      </channel>
+      <channel id="meter_water_cubic_meters" typeId="meter_water_cubic_meters">
+        <label>Water meter (m3)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=W_Cubic_Meters</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Philio Technology Corp</property>
+      <property name="modelId">PAB04</property>
+      <property name="manufacturerId">013C</property>
+      <property name="manufacturerRef">0001:0076</property>
+      <property name="dbReference">1224</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="2">
+        <label>1: Unit of Water Flow</label>
+        <description>Unit of Water Flow</description>
+        <default>2</default>
+        <options>
+          <option value="1">US Gallon</option>
+          <option value="2">KL</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>2: Accumulated Water Report</label>
+        <description>Accumulated Water Report</description>
+        <default>1</default>
+        <options>
+          <option value="0">Disable Report</option>
+          <option value="1">Enable Report</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Instant Water Flow Percent Reported</label>
+        <description>Instant Water Flow Percent Reported</description>
+        <default>10</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_2" type="integer" groupName="configuration"
+                 min="1" max="32676">
+        <label>4: Pulses per Liter</label>
+        <description>Pulses per Liter</description>
+        <default>450</default>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>5: Relay Control Mode</label>
+        <description>Relay Control Mode</description>
+        <default>0</default>
+        <options>
+          <option value="0">Normally Closed</option>
+          <option value="1">Normally Open</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Periodic Auto Report Timer</label>
+        <description>Periodic Auto Report Timer</description>
+        <default>60</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

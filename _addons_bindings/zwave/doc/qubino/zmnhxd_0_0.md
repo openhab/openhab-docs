@@ -287,7 +287,7 @@ Available configuration parameters (data type is 1 Byte DEC)
 **NOTE:** Device is measuring also some disturbances even if on the output is no load. To avoid disturbances:
 
   * If measured Active Power (W) is below e.g. 5W-> the reported value in this case is 0WThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-The following option values may be configured, in addition to values in the range 0 to 100 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -313,7 +313,7 @@ Energy Total (kvarh), Total Energy (kVAh)
 **Note:** Device is reporting only if there was a change of 0.1 in Energy
 
 **Note:** In the future will be possible to measure and report also Active Energy on PH1, PH2 and PH3.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-The following option values may be configured, in addition to values in the range 600 to 65535 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
@@ -333,7 +333,7 @@ Energy reports for Voltage, Current, Total Power Factor, Total Reactive Power
   * 0 – reporting disabled
   * 600-65536 = 600 (600 seconds – 65536 seconds). Reporting enabled. Report is sent with the time interval set by entered value.
   * Note: Device is reporting only if there was a changeThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-The following option values may be configured, in addition to values in the range 600 to 65535 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
