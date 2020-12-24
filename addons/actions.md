@@ -57,8 +57,36 @@ One can configure whether specific log entries are logged out and where they get
 
 ### Exec Actions
 
+You have different options to execute a command through an action.
+
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
-- `executeCommandLine(Duration.fromSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String
+For example you could run `executeCommandLine("path/to/my/script.sh")` which then would be executed and the rule would continue processing.
+
+- `executeCommandLine(Duration.ofSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String
+For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
+
+Other Durations than `ofSeconds` units are possible too.
+Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
+
+#### Scripts with parameters
+
+Let's assume that your `path/to/my/script.sh`-Script needs two item states to process them with some calculation.
+In console you would call it like
+
+```text
+path/to/my/script.sh itemState1 itemState2
+```
+
+To solve this constellation within a rule you have to add one argument per script parameter to the function.
+The script above would be configured like shown below.
+
+```text
+// When you are not interested in the script output
+executeCommandLine("path/to/my/script.sh", itemState1, itemState2);
+
+// When you need the output in your further rule processing
+var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh", itemState1, itemState2);
+```
 
 ### HTTP Actions
 
