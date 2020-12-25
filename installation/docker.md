@@ -166,6 +166,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 ## Explanation of Arguments Passed to Docker
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
+
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
@@ -237,7 +238,6 @@ docker exec \
     openhab \
     /bin/chmod o+rw /dev/ttyACM0
 ```
-
 
 This command changes permissions of the specific device as expected (readable and writable for everyone).
 
