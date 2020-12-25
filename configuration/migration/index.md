@@ -7,7 +7,7 @@ description: Description of Beaking Changes and needed steps for a proper Migrat
 # Migrating from openHAB 2 to openHAB 3
 
 There are different approaches to get your openHAB 2 Environment upgraded to openHAB 3.
-You could start with a fresh isntall and migrate your environment step-by-step or you can upgrade your rinnung environment and change your configuration where needed.
+You could start with a fresh install and migrate your environment step-by-step or you can upgrade your running environment and change your configuration where needed.
 
 Since this is a major version release you have to pay attention to some `Breaking Changes` that may affect your environment too.
 You can find a general note on the `Breaking Changes` here:
