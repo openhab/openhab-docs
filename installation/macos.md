@@ -23,16 +23,16 @@ If you're unfamiliar with using the macOS terminal, then feel free to follow the
 openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unziping it into a unique folder.
 First, make sure that your system meets the [prerequisites](index.html#prerequisites).
 When you are running macOS BigSur or higher, make sure
-that you select the right platform depending on your hardware (x86 or ARM 64-bit). 
+that you select the right platform depending on your hardware (x86 or ARM 64-bit).
 
 You have the choice to use the current stable version or the latest snapshot build:
 
--   **Stable**
+- **Stable**
 
     The stable builds have undergone testing, it is the recommended version to download.
     Download the latest `openhab-3.x.x.zip` [here](https://www.openhab.org/download/).
 
--   **Snapshot (Unstable)**
+- **Snapshot (Unstable)**
 
     Snapshots are built daily, and contain the latest changes to openHAB's source code.
     These changes haven't undergone the same amount of testing as the stable releases, so only use them if you **need** a new feature.
@@ -79,11 +79,11 @@ The first run may take a while to process, wait until the "`openhab>`" prompt ap
 $ ./start.sh
 Launching the openHAB runtime...
 
-                           _   _     _     ____  
-   ___   ___   ___   ___  | | | |   / \   | __ ) 
-  / _ \ / _ \ / _ \ / _ \ | |_| |  / _ \  |  _ \ 
+                           _   _     _     ____
+   ___   ___   ___   ___  | | | |   / \   | __ )
+  / _ \ / _ \ / _ \ / _ \ | |_| |  / _ \  |  _ \
  | (_) | (_) |  __/| | | ||  _  | / ___ \ | |_) )
-  \___/|  __/ \___/|_| |_||_| |_|/_/   \_\|____/ 
+  \___/|  __/ \___/|_| |_||_| |_|/_/   \_\|____/
        |_|       3.0.0 - Release Build
 
 Use '<tab>' for a list of available commands
@@ -94,7 +94,7 @@ To exit, use '<ctrl-d>' or 'logout'.
 openhab>
 ```
 
-Without closing the terminal, open your favorite web browser and type the following URL: [http://localhost:8080](http://localhost:8080), you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorial/first_steps.html). 
+Without closing the terminal, open your favorite web browser and type the following URL: [http://localhost:8080](http://localhost:8080), you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorial/first_steps.html).
 If you installed openHAB on a different device, replace localhost with the IP address of the device.
 
 ## Updating openHAB
