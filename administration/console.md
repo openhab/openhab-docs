@@ -5,6 +5,11 @@ title: The Console
 
 {% include base.html %}
 
+{::options toc_levels="2..4"/}
+
+- TOC
+{:toc}
+
 # The Console
 
 The console offers the option to:
@@ -139,10 +144,10 @@ The pertinent files controlling console settings are stored under `$OPENHAB_USER
 | `org.apache.karaf.shell.cfg` | Controls most console settings |
 | `users.properties`           | Stores console password        |
 
-The exact locations of these files will vary based on your platform and installation method, e.g. `/var/lib/openhab2/etc/` or `openhab2/userdata/etc/`.
+The exact locations of these files will vary based on your platform and installation method, e.g. `/var/lib/openhab/etc/` or `openhab/userdata/etc/`.
 
 Be aware that the these files may get overwritten when upgrading openHAB.
-To add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
+To add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab/services/runtime.cfg`.
 
 ### Changing the Password
 
@@ -154,7 +159,7 @@ Alternately, run the following Linux shell command, which will perform the repla
 Substitute `securePassword` with your desired password.
 
 ```shell
-sudo sed -i -e "s/openhab = .*,/openhab = securePassword,/g" /var/lib/openhab2/etc/users.properties
+sudo sed -i -e "s/openhab = .*,/openhab = securePassword,/g" /var/lib/openhab/etc/users.properties
 ```
 
 Depending on your system, you may have to [change the directory](#console-settings-files-and-directories) at the end of the command.
@@ -163,7 +168,7 @@ Please restart openHAB for the changes to take effect. The clear text password w
 ### Bind Console to All Interfaces
 
 The network interface configuration is defined in the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
-As this file may get overwritten when upgrading openHAB, you can change this parameter in the `runtime.cfg` file which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
+As this file may get overwritten when upgrading openHAB, you can change this parameter in the `runtime.cfg` file which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab/services/runtime.cfg`.
 
 The `sshHost` entry controls the interface address to bind to.
 `sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
@@ -191,7 +196,7 @@ Substitute `1234` with your desired port number.
 Depending on your system, you may have to substitute [the directory](#console-settings-files-and-directories) at the end of the command.
 
 ```shell
-sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
+sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg
 ```
 
 ----
