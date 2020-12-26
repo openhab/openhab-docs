@@ -62,9 +62,11 @@ curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID
 
 The commands above have been copied from the REST API documentation for illustration.
 
+## Rest Api Explorer
+
+You can try and validate rest api calles from within the openHAB UI.
+Just log in with an admin user, navigate to `Developer Tools -> API Explorer` and start exploring.
+
 ## Additional Considerations
 
 The REST API also supports server-push supporting subscriptions on change notification for certain resources.
-
-One final remark - when openHAB's REST API is accessed from another domain the following error may be encountered: [No 'Access-Control-Allow-Origin' header is present on the requested resource](https://community.openhab.org/t/cors-problem-at-rest-api/3712/10).
-In this case, it may be necessary to add the line `org.eclipse.smarthome.cors:enable=true` in the file `services/runtime.cfg`.
