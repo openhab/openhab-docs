@@ -7,21 +7,25 @@ title: Getting Started - Introduction
 
 # Welcome!
 
-Welcome to openHAB 3!
+Welcome to openHAB.
 We hope that your journey with openHAB is a rewarding one.
 If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org).
-There are many fellow openHAB users ready and willing to help as much as possible.
-Most requests for help receive a response within a couple of hours.
+There are many fellow openHAB users ready and willing to help out as much as possible.
+Most requests for help usually receive a response within a couple of hours, but please use the search on the forum to check if the topic has already been discussed.
 
-First, a word on the order of the sections in the docs.
-This tutorial assumes users have read the concepts and installation guides already.
-Thus it assumes at least a basic knowledge of the concepts of openHAB.
-The tutorial also assumes that the user has already installed openHAB and confirmed it is working.
+This new user tutorial assumes that you have at least a basic understanding of the [concepts of openHAB](https://www.openhab.org/docs/concepts/), and already have a working installation of openHAB.
 
 ## File-based vs. UI-driven Configuration
 
-Early on the user must choose between a text file based configuration or a User Interface driven configuration.
-Switching from one approach to the other later on is not trivial.
+Early on you must choose between using a textual (file) based configuration, or the easier to use User Interface (UI) method for your setting up and configuration needs.
+Switching an entire openHAB from one approach to the other can be very time consuming, so choosing one and sticking with it is highly recomended.
+This tutorial is for new users so will only cover the easier UI method, so feel free to skip ahead to the next page if editing files and learning a syntax is something that does not interest you further.
+
+When using the UI method you will notice that most configuration screens will have a "Code" tab.
+If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum ( [using code fences](https://community.openhab.org/t/how-to-use-code-fences/38383) ) instead of, or in addition to using screen shots.
+
+You can review the reference documentation for details on the text based approach here <https://www.openhab.org/docs/configuration/>.
+Whilst it is possible to mix the two, for example use the UI for things and files for items, doing this is not recommended as it increases complexity.
 
 To help you choose between the two approaches, the following is a summary of the pros & cons for each:
 
@@ -53,15 +57,6 @@ Cons:
 - Harder to remove obsolete stuff.
 - Some things cannot be configured with the UI yet (e.g. persistence).
 - You need to sit in front of a device with access to the UI to make changes.
-
-It's possible to mix the two, for example use the UI for things and files for items, but avoid using both techniques at the same time in other cases.
-This tutorial targets new users.
-Therefore the tutorial will present a purely UI-driven approach.
-Review the reference documentation for details on the text based approach.
-
-When building a configuration through the UI, one still has access to a text based YAML formatted representation of their configs.
-On most of the configuration screens there will be two tabs, a "Design" tab and a  "Code" tab.
-If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum using code fences instead of or in addition to screen shots.
 
 ## Table of Contents
 
