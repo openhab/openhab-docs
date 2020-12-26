@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="fibaro_fgt001_00_000" listed="false">
+    <label>FGT001 Thermostatic Valve</label>
+    <description><![CDATA[
+Thermostatic Valve<br /> <h1>Overview</h1><p>FIBARO Heat Controller is a remotely controlled thermostatic head to control temperature in the room. It measures the temperature and automatically adjust the heat level. It can be mounted without tools on three types of thermostatic radiator valves. It is also possible to create schedules via app to easily manage temperature throughout the week. <br />Main features:</p> <ul><li>to be installed on three types of valves: M30 x 1.5, Danfoss RTD-N and Danfoss RA-N,</li> <li>compatible with any Z-Wave or Z-Wave+ Controller,</li> <li>supports Z-Wave network Security Modes: S0 with AES-128 encryption and S2 with PRNG-based encryption,</li> <li>built-in battery recharged through standard micro-USB port,</li> <li>easy installation - no tools required,</li> <li>can use dedicated temperature sensor,</li> <li>supports heating schedules,</li> <li>automatic calibration,</li> <li>anti-freeze function,</li> <li>decalc function,</li> <li>unconstrained rotation spherical knob to set desired temperature.</li> </ul> <br /> <h2>Inclusion Information</h2><p>Add the device to the Z-Wave network:</p> <ol><li>Make sure the device is within the direct range of your Z-Wave controller.</li> <li>Set the main controller in (security/non-security) add mode.</li> <li>Use the included key to quickly triple click the button on the thermostatic head.</li> <li>The LED ring will start blinking white.</li> <li>If you are adding in S2 authenticated mode, type in the device pin code (underlined part of the public key on the label).</li> <li>Wait for the adding process to end.</li> <li>Successful adding will be confirmed by the Z-Wave controller.</li> </ol> <br /> <h2>Exclusion Information</h2><p>To remove the device from the Z-Wave network:</p> <ol><li>Make sure the device is within the direct range of your Z-Wave controller.</li> <li>Set the main controller into remove mode.</li> <li>Use the included key to quickly triple click the button on the thermostatic head.</li> <li>The LED ring will start blinking white.</li> <li>Wait for the removing process to end.</li> <li>Successful removing will be confirmed by the Z-Wave controller.</li> </ol> <br /> <h2>Wakeup Information</h2><p>FIBARO Heat Controller is a FLiRS device. The FLiRS device alternates between sleep mode and a partially awake mode in which it is listening beam signal. When device receives this beam, it immediately fully wakes up and then communicates with the controller or other Z-Wave device.</p>
+    ]]></description>
+    <category>RadiatorControl</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="sensor_binary" typeId="sensor_binary">
+        <label>Binary Sensor</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SENSOR_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature" typeId="sensor_temperature">
+        <label>Sensor (temperature)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode" typeId="fibaro_fgt001_00_000_thermostat_mode">
+        <label>Thermostat mode</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating" typeId="thermostat_setpoint">
+        <label>Setpoint (heating)</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system" typeId="alarm_system">
+        <label>Alarm (system)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_mode1" typeId="fibaro_fgt001_00_000_thermostat_mode">
+        <label>Thermostat mode 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_THERMOSTAT_MODE:1</property>
+        </properties>
+      </channel>
+      <channel id="thermostat_setpoint_heating1" typeId="thermostat_setpoint">
+        <label>Setpoint (heating) 1</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_THERMOSTAT_SETPOINT:1;type=HEATING</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power1" typeId="alarm_power">
+        <label>Alarm (power) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_system1" typeId="alarm_system">
+        <label>Alarm (system) 1</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:1;type=SYSTEM</property>
+        </properties>
+      </channel>
+      <channel id="battery-level1" typeId="system.battery-level">
+        <label>Battery Level 1</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset1" typeId="time_offset">
+        <label>Clock Time Offset 1</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CLOCK:1</property>
+        </properties>
+      </channel>
+      <channel id="sensor_temperature2" typeId="sensor_temperature">
+        <label>Sensor (temperature) 2</label>
+        <properties>
+          <property name="binding:*:QuantityType">COMMAND_CLASS_SENSOR_MULTILEVEL:2;type=TEMPERATURE</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power2" typeId="alarm_power">
+        <label>Alarm (power) 2</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM:2;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="battery-level2" typeId="system.battery-level">
+        <label>Battery Level 2</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Fibargroup</property>
+      <property name="modelId">FGT001</property>
+      <property name="manufacturerId">010F</property>
+      <property name="manufacturerRef">1301:1000,1301:1001</property>
+      <property name="dbReference">749</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_4" type="integer" groupName="configuration"
+                 min="10" max="10000">
+        <label>1: Override Schedule duration</label>
+        <description><![CDATA[
+Duration of Override Schedule after turning knob<br /> <h1>Overview</h1><p>This parameter determines duration of Override Schedule after turning the knob while normal schedule is active (set by Schedule CC).</p> <p>Units = minutes</p>
+        ]]></description>
+        <default>240</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_4" type="integer" groupName="configuration"
+                 min="0" max="1023">
+        <label>2: Additional functions</label>
+        <description><![CDATA[
+This parameter allows to enable different additional functions of the device.<br /> <h1>Overview</h1><p>Parameter 2 values may be combined, e.g. 1+8=9 means that Open Window Detector and LED indications when controlling remotely are enabled.</p> <p>1 (bit 0) - enable Open Window Detector</p> <p>2 (bit 1) - enable fast Open Window Detector</p> <p>4 (bit 2) - increase receiver sensitivity (shortens battery life)</p> <p>8 (bit 3) - enabled LED indications when controlling remotely</p> <p>16 (bit 4) - protect from setting Full ON and Full OFF mode by turning the knob manually</p><p>32 (bit 5) - device mounted in vertical position<br /></p><p>64 (bit 6) - moderate regulator behaviour (instead of Rapid)<br /></p><p>128 (bit 7) - inverted knob operation</p><p>256 (bit 8) - report when heating medium is required</p><p>512 (bit 9) - detecting heating system failures</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration" readOnly="true"
+                 min="0" max="3">
+        <label>3: Additional functions status (READ-ONLY)</label>
+        <description><![CDATA[
+This parameter allows to check statuses of different additional functions.<br /> <h1>Overview</h1><p>Parameter 3 values may be combined, e.g. 1+2=3 means optional sensor works properly and open window detection was triggered.</p> <p>1 (bit 0) - optional temperature sensor connected and operational</p> <p>2 (bit 1) - open window detected</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Z-Wave Plus Lifeline association group that reports the device status and allows for assigning single device only (main controller by default)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+  <channel-type id="fibaro_fgt001_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+  <channel-type id="fibaro_fgt001_00_000_thermostat_mode">
+    <item-type>Number</item-type>
+    <label>Thermostat Mode</label>
+    <description>Sets the thermostat mode</description>
+    <category>Temperature</category>
+    <state pattern="%s">
+      <options>
+        <option value="0">Off</option>
+        <option value="1">Heat</option>
+      </options>
+    </state>
+  </channel-type>
+
+</thing:thing-descriptions>

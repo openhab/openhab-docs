@@ -130,16 +130,16 @@ Parameter to set the sensor functions<br /> <h1>Overview</h1><p>Bit0: Disable ma
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_7_1" type="integer" groupName="configuration">
         <label>7: Customer Function</label>
         <description><![CDATA[
 Parameter to set the Customer Function<br /> <h1>Overview</h1><p>Bit0: Reserve.</p> <p>Bit1: Enable sending motion OFF report.</p> <p>Note: Depends on the Bit4, 0: Report Notification CC, Type: 0x07, Event: 0xFE 1: Sensor Binary Report, Type: 0x0C, Value: 0x00</p> <p>Bit2: Enable PIR super sensitivity mode.</p> <p>Bit3: Enable don't send out BASIC OFF after door closed.</p> <p>Bit4: Notification Type, 0: Using Notification Report. 1: Using Sensor Binary Report.</p> <p>Bit5: Disable Multi CC in auto report.</p> <p>Bit6: Disable to report battery state when the device triggered.</p> <p>Bit7: Reserve.</p>
         ]]></description>
         <default>4</default>
         <options>
-          <option value="20">PIR Super Sensitivity and Binary Report</option>
+          <option value="4">Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_1" type="integer" groupName="configuration"
