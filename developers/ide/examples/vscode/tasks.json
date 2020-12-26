@@ -100,7 +100,7 @@
             "args": [
                 "-n",
                 "50",
-                "-f",
+                "-F",
                 "$openhab_logs/events.log"
             ],
             "windows": {
@@ -126,7 +126,7 @@
             "args": [
                 "-n",
                 "50",
-                "-f",
+                "-F",
                 "$openhab_logs/openhab.log"
             ],
             "windows": {
