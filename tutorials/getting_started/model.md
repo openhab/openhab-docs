@@ -52,7 +52,7 @@ The House has a Ground Floor and the Ground Floor has rooms including a Living R
 The Living Room has a Rollershutter equipment which in turn has a Control and Power point Item.
 The locations and equipment are Group Items and Control and Power are other types of Items.
 
-One key feature of the this example model is that you are not required to *only* use the semantic model.
+One key feature of this example model is that you are not required to *only* use the semantic model.
 It is possible and encouraged to create Groups and Items that are outside of the model where necessary.
 In this example, the Rollershutter in the Living Room is a member of the AllRollershutters Group which could be used to determine if any are OPEN and send commands to all the rollershutters in the house at once.
 
