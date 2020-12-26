@@ -320,7 +320,7 @@ You can place these XML files anywhere on your file system that openHAB has perm
 In the calls to the Actions, use the fully qualified path.
 We recommend placing these custom files somewhere inside your `$OH_CONF` folder, such as `$OH_CONF/services`.
 
-#### Localisation
+#### Localization
 
 Ephemeris supports translation of holidays into many languages. Localization support files can be found in the [GitHub repo](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions). Currently these language supports are available:
 
