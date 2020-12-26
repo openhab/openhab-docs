@@ -83,6 +83,7 @@ module.exports = [
       ['configuration/ui/habot/', 'HABot'],
       'configuration/habpanel',
       ['configuration/ui/basic/', 'Basic UI'],
+      ['configuration/restdocs', 'REST API'],
       ['apps/android', 'Android App'],
       'apps/ios',
       'apps/windows',
