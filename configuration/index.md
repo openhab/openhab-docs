@@ -132,7 +132,7 @@ In openHAB 1.x, smart home configuration was done via configuration files only.
 openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 now further streamlines input capabilities with "Main UI".
 Things and Items can still be defined either in configuration files or via the GUI.
 We highly recommend adding them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
-Note there is an option in Main UI to bulk create Things and Items by copy and pasting the contents of existing .things/.items files.
+Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing .items files.
 Bulk delete is there, too.
 _Be sure to try out Semantic Modeling in Main UI_.
 
