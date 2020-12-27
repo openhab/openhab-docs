@@ -87,6 +87,37 @@ Before you can start, two decisions have to be made:
 
 Please follow the instructions in the installation article matching your platform (see the menu to the left).
 
+### Getting installation info
+
+For many actions you need to know the pathes where openHAB checks for files, or where you need to install additional packages.
+To find out where these locations are, e.g. where `$OPENHAB_CONF` points to, use the [console](https://www.openhab.org/docs/administration/console.html):
+
+```shell
+openhab-cli info
+```
+ will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
+
+
+```shell
+Version:     3.0.0 (Build)
+
+User:        openhab (Active Process 7466)
+User Groups: openhab tty dialout audio bluetooth gpio
+
+Directories: Folder Name      | Path                        | User:Group
+             -----------      | ----                        | ----------
+             OPENHAB_HOME     | /usr/share/openhab          | openhab:openhab
+             OPENHAB_RUNTIME  | /usr/share/openhab/runtime  | openhab:openhab
+             OPENHAB_USERDATA | /var/lib/openhab            | openhab:openhab
+             OPENHAB_CONF     | /etc/openhab                | openhab:openhab
+             OPENHAB_LOGDIR   | /var/log/openhab            | openhab:openhab
+
+URLs:        http://169.254.63.209:8080
+             https://169.254.63.209:8443
+```
+
+
+
 ## Additional Steps
 
 After you get openHAB set up and running, there are a few additional setup steps you should consider:
