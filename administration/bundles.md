@@ -13,7 +13,7 @@ However some basic console commands may be needed when dealing with certain adva
 
 ## List Bundles
 
-The _bundle:list_ command returns a list of all currently installed bundles and theit states, names, and versions.
+The _bundle:list_ command returns a list of all currently installed bundles and their states, names, and versions.
 The core openHAB system is composed of many bundles.
 There will also be a bundle for each add-on, such a binding, that you have installed.
 A state of "Active" means the bundle is running.
@@ -35,7 +35,7 @@ START LEVEL 100 , List Threshold: 50
 
 ## Start/Stop Bundles
 
-Stopping a bundle is done with the command _stop_ and the ID of the bundle:
+Stopping a bundle is done using the command _stop_ and the ID of the bundle:
 
 ```text
 openhab> bundle:stop 209
@@ -44,7 +44,7 @@ openhab> bundle:list
 209 | Resolved |  80 | 3.0.0                 | openHAB Add-ons :: Bundles :: Network Binding
 ```
 
-Starting a bundle is done with the _start_ command and the ID of the bundle:
+Starting a bundle is done using the _start_ command and the ID of the bundle:
 
 ```text
 openhab> bundle:start 209
