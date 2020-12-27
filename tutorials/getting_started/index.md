@@ -7,21 +7,25 @@ title: Getting Started - Introduction
 
 # Welcome!
 
-Welcome to openHAB 3!
+Welcome to openHAB.
 We hope that your journey with openHAB is a rewarding one.
 If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org).
-There are many fellow openHAB users ready and willing to help as much as possible.
-Most requests for help receive a response within a couple of hours.
+There are many fellow openHAB users ready to help out, and polite constructive feedback can help us to improve this documentation for the next new user.
+Most requests for help usually receive a response within a couple of hours, but please use the search on the forum to check if the topic has already been discussed.
 
-First, a word on the order of the sections in the docs.
-This tutorial assumes users have read the concepts and installation guides already.
-Thus it assumes at least a basic knowledge of the concepts of openHAB.
-The tutorial also assumes that the user has already installed openHAB and confirmed it is working.
+This new user tutorial assumes that you have at least a basic understanding of the [concepts of openHAB](https://www.openhab.org/docs/concepts/), and already have a working installation of openHAB.
 
 ## File-based vs. UI-driven Configuration
 
-Early on the user must choose between a text file based configuration or a User Interface driven configuration.
-Switching from one approach to the other later on is not trivial.
+Early on you must choose between either textual (file) based configuration, or the easier to use User Interface (UI) method for your setting up and configuration needs.
+This getting started tutorial will only cover the easier UI method, however since many areas of the documentation give textual examples (often marked as `Full Example`), it is important to recognize that these examples do not apply if you have chosen to use the UI.
+If this does not make sense at the moment, don't worry, just continue on with this tutorial to learn how to use the UI method first, as you can always come back and learn how to use file based configuration.
+
+When using the UI method you will notice that most configuration screens will have a "Code" tab.
+If you run into problems or want to share something that you've created through the UI, click on the "Code" tab and post that YAML to the forum ( [using code fences](https://community.openhab.org/t/how-to-use-code-fences/38383) ) instead of, or in addition to using screen shots.
+
+You can review the reference documentation for details on the text based approach here <https://www.openhab.org/docs/configuration/>.
+Whilst it is possible to mix the two, for example use the UI for things and files for items, doing this is not recommended as it increases complexity.
 
 To help you choose between the two approaches, the following is a summary of the pros & cons for each:
 
@@ -41,32 +45,22 @@ Cons:
 
 ### UI-driven
 Pros:
-- Easier to understand for novices. The UI assists you with built in documents and help. There's fewer opportunities to make mistakes since the syntax is almost impossible to get wrong.
+- Easier to understand for novices. The UI assists you with its built in documents and help. There are fewer opportunities to make mistakes since the syntax is almost impossible to get wrong.
 - All objects can be altered from anywhere the UI can be reached (including on mobile).
 - Things can be auto-discovered.
-- Items can be auto-created from Things (with a chance to edit).
-- The internal database is somewhat faster, especially on resource-limited devices (e.g. Raspberry Pis) than the file parsing.
+- Items can be auto-created from Things (with the ability to edit).
+- The internal database is somewhat faster, especially on resource-limited devices (e.g. Raspberry Pis) compared to reading the file based contents.
 - A backup of the internal database is created on every change.
 
 Cons:
-- Can be slower to reach one's goals if you already know what you're doing and if there's a lot of bulk changes or duplicating required.
+- Can be slower to reach one's goal if you already know what you're doing and if there's a lot of bulk changes or duplicating required.
 - Harder to remove obsolete stuff.
 - Some things cannot be configured with the UI yet (e.g. persistence).
 - You need to sit in front of a device with access to the UI to make changes.
 
-It's possible to mix the two, for example use the UI for things and files for items, but avoid using both techniques at the same time in other cases.
-This tutorial targets new users.
-Therefore the tutorial will present a purely UI-driven approach.
-Review the reference documentation for details on the text based approach.
-
-When building a configuration through the UI, one still has access to a text based YAML formatted representation of their configs.
-On most of the configuration screens there will be two tabs, a "Design" tab and a  "Code" tab.
-If you run into problems or want to share something you've created through the UI, click on the "Code" tab and post that YAML to the forum using code fences instead of or in addition to screen shots.
-
 ## Table of Contents
 
-This tutorial presents a series of steps that build upon one another so please review the tutorial in order.
-There may be concepts or steps that are presented earlier that are required to understand the parts of the tutorial presented later.
+This tutorial presents a series of concepts and steps that build upon one another, so please review the tutorial in the recommended order.
 
 [First Steps]({{base}}/tutorial/first_steps.html): Initial configuration
 
