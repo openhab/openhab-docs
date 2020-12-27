@@ -1,21 +1,21 @@
 ---
 layout: documentation
-title: Z-Push Button 4 - ZWave
+title: Heatit Z-Push Button 4 - ZWave
 ---
 
 {% include base.html %}
 
-# Z-Push Button 4 Wall Mounted Switch
-This describes the Z-Wave device *Z-Push Button 4*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_pushbutton4_00_000```.
+# Heatit Z-Push Button 4 Wall Mounted Switch
+This describes the Z-Wave device *Heatit Z-Push Button 4*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_pushbutton4_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Z-Push Button 4 product image](https://www.cd-jackson.com/zwave_device_uploads/1162/1162_default.png)
+![Heatit Z-Push Button 4 product image](https://opensmarthouse.org/zwavedatabase/1162/image/)
 
 
-The Z-Push Button 4 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+The Heatit Z-Push Button 4 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
-The Z-Push Button 4 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+The Heatit Z-Push Button 4 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
@@ -58,7 +58,7 @@ _Note: Factory reset is not recommended for removing, please use this procedure
 
 ### Wakeup Information
 
-The Z-Push Button 4 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+The Heatit Z-Push Button 4 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
@@ -67,12 +67,14 @@ The remote control is under sleepy mode for most of the time to save battery pow
 
 ## Channels
 
-The following table summarises the channels available for the Z-Push Button 4 -:
+The following table summarises the channels available for the Heatit Z-Push Button 4 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Scene Number | scene_number | scene_number |  | Number | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
+| Dimmer  [Deprecated]| switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Dimmer  [Deprecated]| switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -95,6 +97,22 @@ Represents the battery level as a percentage (0-100%). Bindings for things suppo
 
 The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
 This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
+### Dimmer [Deprecated]
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
+
+### Dimmer [Deprecated]
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
+
 
 
 ## Device Configuration
@@ -105,7 +123,7 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Z-Push Button 4 supports 3 association groups.
+The Heatit Z-Push Button 4 supports 3 association groups.
 
 ### Group 1: Lifeline
 
@@ -169,10 +187,10 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installers manual - English](https://www.cd-jackson.com/zwave_device_uploads/1162/Manual-Heatit-Z-Push-Button-4--FW-1-26-Ver2019-A-ENG.pdf)
-* [Product Sheet - Eng.](https://www.cd-jackson.com/zwave_device_uploads/1162/fdv-heatit-z-push-button-4-eng.pdf)
+* [Installers manual - English](https://opensmarthouse.org/zwavedatabase/1162/reference/Manual-Heatit-Z-Push-Button-4--FW-1-26-Ver2019-A-ENG.pdf)
+* [Product Sheet - Eng.](https://opensmarthouse.org/zwavedatabase/1162/reference/fdv-heatit-z-push-button-4-eng.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1162).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1162).

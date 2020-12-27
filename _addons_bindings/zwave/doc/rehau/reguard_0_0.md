@@ -42,33 +42,35 @@ The following table summarises the channels available for the RE.GUARD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch | switch_binary | switch_binary | Switch | Switch | 
-| Sensor (WATER_FLOW) | water_flow | water_flow |  |  | 
-| Sensor (water_temperature) | water_temperature | water_temperature |  |  | 
-| Sensor (WATER_PRESSURE) | water_pressure | water_pressure |  |  | 
-| Water meter (m³) | meter_water_cubic_meters | meter_water_cubic_meters | Water | Number | 
+| Open/Close | switch_binary | switch_binary | Switch | Switch | 
+| Sensor (water_flow) | sensor_waterflow | sensor_waterflow |  |  | 
+| Sensor (water_temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (water_pressure) | sensor_waterpressure | sensor_waterpressure |  |  | 
+| water meter (m³) | meter_water_cubic_meters | meter_water_cubic_meters | Water | Number | 
 | Alarm (flood) | alarm_flood | alarm_flood | Water | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
-| Alarm (water_valve) | water_valve | water_valve |  |  | 
+| Alarm (water_valve) | alarm_system | alarm_system |  | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 | Clock Time Offset | time_offset | time_offset | Time | Number | 
 
-### Switch
+### Open/Close
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
-### Sensor (WATER_FLOW)
+### Sensor (water_flow)
 Channel type information on this channel is not found.
 
 ### Sensor (water_temperature)
+Indicates the current temperature.
+
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Sensor (water_pressure)
 Channel type information on this channel is not found.
 
-### Sensor (WATER_PRESSURE)
-Channel type information on this channel is not found.
-
-### Water meter (m³)
+### water meter (m³)
 Indicates the instantaneous water consumption.
 
 The ```meter_water_cubic_meters``` channel is of type ```meter_water_cubic_meters``` and supports the ```Number``` item and is in the ```Water``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -98,7 +100,16 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (water_valve)
-Channel type information on this channel is not found.
+Indicates if a system alarm is triggered.
+
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.
@@ -176,9 +187,15 @@ Detailed information on each parameter can be found in the sections below.
 
 0 valve always off; 1 user absent/holiday; 2 user present; 3 valve always on
 
-Values in the range 0 to 3 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```2```.
+| Value  | Description |
+|--------|-------------|
+| 0 | valve always off |
+| 1 | user absent/holiday |
+| 2 | user present |
+
+The manufacturer defined default value is ```2``` (user present).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 

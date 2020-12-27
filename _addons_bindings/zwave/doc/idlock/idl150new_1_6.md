@@ -5,7 +5,7 @@ title: ID-150 - ZWave
 
 {% include base.html %}
 
-# ID-150 Z wave module for ID Lock 150 and 101
+# ID-150 Z wave module for ID Lock 150
 This describes the Z-Wave device *ID-150*, manufactured by *ID Lock AS* with the thing type UID of ```idlock_idl150new_01_006```.
 This version of the device is limited to firmware versions above 1.6
 
@@ -13,8 +13,6 @@ The device is in the category of *Lock*, defining Devices whose primary pupose i
 
 ![ID-150 product image](https://opensmarthouse.org/zwavedatabase/1106/image/)
 
-
-The ID-150 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -48,7 +46,7 @@ The ID Lock Z-wave module can be included and operated in any Z-wave network con
 
 ### General Usage Information
 
-Configuration parameters 2 RFID Registration Configuration and 10 Retrieve RFID Information have not been added since they are only valid for the 101 model. 
+
 
 ## Channels
 
@@ -363,13 +361,13 @@ Association group 1 supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
-| COMMAND_CLASS_DOOR_LOCK_V1| |
+| COMMAND_CLASS_DOOR_LOCK_V2| |
 | COMMAND_CLASS_USER_CODE_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V4| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V2| |
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
