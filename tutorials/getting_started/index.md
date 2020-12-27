@@ -10,7 +10,7 @@ title: Getting Started - Introduction
 Welcome to openHAB.
 We hope that your journey with openHAB is a rewarding one.
 If you encounter problems or simply cannot figure something out on your own, please do not hesitate to post a question on [the forum](https://community.openhab.org).
-There are many fellow openHAB users ready to help out, and polite constructive feedback always helps us to improve our documentation for the next new user.
+There are many fellow openHAB users ready to help out, and polite constructive feedback can help us to improve this documentation for the next new user.
 Most requests for help usually receive a response within a couple of hours, but please use the search on the forum to check if the topic has already been discussed.
 
 This new user tutorial assumes that you have at least a basic understanding of the [concepts of openHAB](https://www.openhab.org/docs/concepts/), and already have a working installation of openHAB.
@@ -19,8 +19,7 @@ This new user tutorial assumes that you have at least a basic understanding of t
 
 Early on you must choose between either textual (file) based configuration, or the easier to use User Interface (UI) method for your setting up and configuration needs.
 This getting started tutorial will only cover the easier UI method, however since many areas of the documentation give textual examples (often marked as `Full Example`), it is important to recognize that these examples do not apply if you have chosen to use the UI.
-If this does not make sense at the moment, don't worry, just continue on with this tutorial to learn how to use the UI method first, as you can always come back and learn how to use the file based configuration.
-As switching an entire openHAB from one approach to the other can be very time consuming, it is best to choose either one and sticking with it.
+If this does not make sense at the moment, don't worry, just continue on with this tutorial to learn how to use the UI method first, as you can always come back and learn how to use file based configuration.
 
 When using the UI method you will notice that most configuration screens will have a "Code" tab.
 If you run into problems or want to share something that you've created through the UI, click on the "Code" tab and post that YAML to the forum ( [using code fences](https://community.openhab.org/t/how-to-use-code-fences/38383) ) instead of, or in addition to using screen shots.
