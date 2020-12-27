@@ -67,6 +67,27 @@ The commands above have been copied from the REST API documentation for illustra
 You can try and validate rest api calles from within the openHAB UI.
 Just log in with an admin user, navigate to `Developer Tools -> API Explorer` and start exploring.
 
+## Authentication
+
+Starting with version 3, openHAB supports password protection for sensible contents such as parts of the semantic model.
+To access this kind of information, the REST API provides the common mechanism [Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) and [OAuth authorization](https://en.wikipedia.org/wiki/OAuth).
+Both mechanisms can be used out of the box by the most programming languages and frameworks, but with regard to the `curl` examples from above, there are two alternative ways of authenticating yourself:
+
+### With username/password
+
+To the complete command, **add `-u {USER_NAME}`,** then enter your password as prompted.
+You can also do this in a single, non-interactive command, in this case **add `-u {USER_NAME}:{PASSWORD}` instead.**
+
+**Note:** This approach uses basic authentication which needs to be enabled in the `org.openhab.restauth` settings (accessible under Main UI > Settings > API Security).
+
+### With an API token
+
+This method is often recommended in order to keep your passwords safe and avoid to store them without encryption in any public places.
+To authenticate with an API token, **apaddpend `-u '{API_TOKEN}:'` to the commandline.**
+
+You can manage all access tokens in your profile settings in the Main UI.
+
+
 ## Additional Considerations
 
 The REST API also supports server-push supporting subscriptions on change notification for certain resources.
