@@ -7,7 +7,7 @@ title: The Console
 
 # The Console
 
-The console offers the option to:
+The console offers the ability to:
 
 * Monitor the [log](logging.html#karaf-console) in realtime
 * Manage [bundles](bundles.html)
@@ -15,7 +15,7 @@ The console offers the option to:
 
 ## Accessing the Console
 
-The method to access the console depends on how openHAB was started.
+The method used to access the console depends on how openHAB was started.
 
 * When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
 * When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
@@ -25,7 +25,7 @@ The default username/password is **openhab:habopen**, so enter `habopen` at the 
 
 ### Connecting via SSH
 
-The console can also be reached via secure shell connection ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)).
+The console can also be reached via a secure shell ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)) connection.
 
 To reach the console using SSH, use the following command to connect to the localhost interface on TCP port 8101:
 
@@ -34,7 +34,7 @@ ssh -p 8101 openhab@localhost
 ```
 
 ::: tip Note
-By default, connection is only allowed from localhost, i.e. only from the machine running openHAB.
+By default, connections are only allowed from localhost, i.e. only from the machine running openHAB.
 Connections are intentionally not allowed from remote hosts due to security concerns.
 To change this, see [Bind Console to All Interfaces](#bind-console-to-all-interfaces).
 :::
@@ -69,17 +69,16 @@ If this happens, simply try connecting again until successful.
 After successful connection and authentication, the console will appear:
 
 ```text
-                          __  _____    ____
-  ____  ____  ___  ____  / / / /   |  / __ )
- / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
-/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
-\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
-    /_/                        2.2.0
-                               Release Build
+                           _   _     _     ____
+   ___   ___   ___   ___  | | | |   / \   | __ )
+  / _ \ / _ \ / _ \ / _ \ | |_| |  / _ \  |  _ \
+ | (_) | (_) |  __/| | | ||  _  | / ___ \ | |_) )
+  \___/|  __/ \___/|_| |_||_| |_|/_/   \_\|____/
+       |_|       3.0.0 - Release Build
 
-Hit '<tab>' for a list of available commands
+Use '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
-Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
+To exit, use '<ctrl-d>' or 'logout'.
 
 openhab>
 ```
@@ -112,10 +111,12 @@ Another useful feature is the combination of the `|` (pipe) and `grep` functiona
 
 ```text
 openhab> bundle:list | grep openHAB
-164 | Active    |  90 | 2.0.0.201607210102    | openHAB Core
-165 | Active    |  80 | 2.0.0.201607210102    | openHAB Karaf Integration
-195 | Active    |  80 | 2.0.0.201607210102    | openHAB 1.x Compatibility Layer
-196 | Active    |  80 | 2.0.0.201607210102    | openHAB REST Documentation
+128 x Active x  80 x 3.0.0                   x openHAB Core :: Bundles :: Core
+129 x Active x  80 x 3.0.0                   x openHAB Core :: Bundles :: Audio
+130 x Active x  80 x 3.0.0                   x openHAB Core :: Bundles :: JAAS Authentication
+131 x Active x  80 x 3.0.0                   x openHAB Core :: Bundles :: OAuth2Client
+132 x Active x  80 x 3.0.0                   x openHAB Core :: Bundles :: Automation
+...
 ```
 
 The session is ended by using the logout command:
@@ -124,7 +125,7 @@ The session is ended by using the logout command:
 openhab> logout
 ```
 
-Learn about all available commands by using the initially introduced `help` command.
+Learn about all of the available commands by using the `help` command.
 
 ## Modifying the Console Settings
 
@@ -167,10 +168,10 @@ As this file may get overwritten when upgrading openHAB, you can change this par
 
 The `sshHost` entry controls the interface address to bind to.
 `sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
-If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
+If you are on a secure network or you are fully aware of all of the risks of exposing your system to the public, you can change the bind address.
 Replace the `sshHost` IP `127.0.0.1` by `0.0.0.0` to bind to all available network interfaces.
-Please be aware, that the console will now be accessible from all devices in your subnet and is only secured by the password defined in `users.properties` (same path).
-You should thereby [change the password](#changing-the-password).
+Please be aware that the console will now be accessible from all devices in your subnet and only secured by the password defined in `users.properties` (same path).
+You should therefore [change the password](#changing-the-password)!
 Depending on your network configuration the console may also be exposed to the public internet, so check your routing and firewall configuration.
 
 To enable binding to all interfaces, uncomment the line
@@ -184,7 +185,7 @@ in `services/runtime.cfg`.
 
 The SSH port configuration is done through the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
 The `sshPort` entry controls the port number.
-`sshPort = 8101` is the default, but can be changed to any available port per your choosing.
+`sshPort = 8101` is the default, but can be changed to any available port of your choosing.
 
 Alternately, run the following Linux shell command, which will perform the replacement for you.
 Substitute `1234` with your desired port number.
