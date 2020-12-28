@@ -59,7 +59,7 @@ The good thing about `rrd4j` is that the database never grows beyond a given siz
 However, the way it achieves this (replacing ten readings with the average of the ten readings as the data gets older) makes the database not work for all Item types.
 If you need to `restoreOnStartup` unsupported Item types, `MapDB` might be a better choice for you.
 
-## Why Bother with Persitence?
+## Why Bother with Persistence?
 The reason one would set up both the Model discussed in the previous tutorial and Persistence is that it will make creating your user interfaces much easier and much more rich.
 For example, a set of UI pages will be created automatically in MainUI based on the model.
 And just about anyplace you can interact with an Item in MainUI, there will be an "Analyze" button that will generate a chart based on the data saved in persistence.
