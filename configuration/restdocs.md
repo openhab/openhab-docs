@@ -28,37 +28,37 @@ Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/C
 
 - Switching ```My_Item``` OFF by issuing an http [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) request:
 
-```java
-curl -X POST --header "Content-Type: text/plain" --header "Accept: application/json" -d "OFF" "http://{openHAB_IP}:8080/rest/items/My_Item"
-```
+  ```bash
+  curl -X POST --header "Content-Type: text/plain" --header "Accept: application/json" -d "OFF" "http://{openHAB_IP}:8080/rest/items/My_Item"
+  ```
 
 - Setting a Contact item  ```My_Item``` to CLOSED by issuing an http PUT request to ```My_Item/state```:
 
-```java
-curl -X PUT --header "Content-Type: text/plain" --header "Accept: application/json" -d "CLOSED" "http://{openHAB_IP}:8080/rest/items/My_Item/state"
-```
+  ```bash
+  curl -X PUT --header "Content-Type: text/plain" --header "Accept: application/json" -d "CLOSED" "http://{openHAB_IP}:8080/rest/items/My_Item/state"
+  ```
 
 - Retrieving a list of all Items and Groups by issuing a GET request:
 
-```java
-curl -X GET --header "Accept: application/json" "http://{openHAB_IP}:8080/rest/items?recursive=false"
-```
+  ```bash
+  curl -X GET --header "Accept: application/json" "http://{openHAB_IP}:8080/rest/items?recursive=false"
+  ```
 
 - Retrieving a list of all sitemaps by issuing a GET request:
 
-```java
-curl -X GET --header "Accept: application/json" "http://{openHAB_IP}:8080/rest/sitemaps"
-```
+  ```bash
+  curl -X GET --header "Accept: application/json" "http://{openHAB_IP}:8080/rest/sitemaps"
+  ```
 
 - Subscription to events:
 
-```java
-// ThingStatusInfoChangedEvent - The status of a thing changed.
-curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/things/{thingUID}/statuschanged"
+  ```bash
+  # ThingStatusInfoChangedEvent - The status of a thing changed.
+  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/things/{thingUID}/statuschanged"
 
-// ChannelTriggeredEvent - A channel has been triggered.
-curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID}/triggered"
-```
+  # ChannelTriggeredEvent - A channel has been triggered.
+  curl "http://{openHAB_IP}:8080/rest/events?topics=smarthome/channels/{channelUID}/triggered"
+  ```
 
 The commands above have been copied from the REST API documentation for illustration.
 
