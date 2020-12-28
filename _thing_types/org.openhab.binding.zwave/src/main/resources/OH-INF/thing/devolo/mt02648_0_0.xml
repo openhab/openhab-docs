@@ -80,8 +80,7 @@ Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><p>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: PIR Sensitivity</label>
         <description><![CDATA[
 PIR sensitivity settings.<br /> <h1>Overview</h1><p>0 means disable the PIR motion. 1 means the lowest sensitivity, 99 means the highest sensitivity. High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequency. </p>
@@ -92,6 +91,7 @@ PIR sensitivity settings.<br /> <h1>Overview</h1><p>0 means disable the PIR moti
           <option value="1">Lowest sensitivity</option>
           <option value="99">Highest sensitivity</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration">
@@ -107,8 +107,7 @@ Setting the illumination threshold to turn on the light<br /> <h1>Overview</h1><
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_5_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_5_1" type="integer" groupName="configuration">
         <label>5: Operation Mode</label>
         <description><![CDATA[
 Parameter to set the Operation Mode<br /> <h1>Overview</h1><p>Bit0: Reserve.</p> <p>Bit1: 1 means enable test mode, 0 means disable normal mode. (Notice: This bit only effect by the DIP Switch setting to program mode.) </p> <p>Bit2: Disable the door/window function.</p> <p>Bit3: Setting the temperature scale. 0: Fahrenheit, 1:Celsius</p> <p>Bit4: Disable the illumination report after event triggered.</p> <p>Bit5: Disable the temperature report after event triggered.</p> <p>Bit6: Reserve.</p> <p>Bit7: Disable the back key release into test mode.</p>
@@ -118,6 +117,7 @@ Parameter to set the Operation Mode<br /> <h1>Overview</h1><p>Bit0: Reserve.</p>
           <option value="8">Celsius and LED off = Bits: 00001000 = 8</option>
           <option value="10">Preset: Celsius and LED on = Bits: 00001010 = 10</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_1" type="integer" groupName="configuration"

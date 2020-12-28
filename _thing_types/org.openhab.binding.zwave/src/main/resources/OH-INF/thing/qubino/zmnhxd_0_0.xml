@@ -256,8 +256,7 @@ maximum power threshold of all phases together<br /> <h1>Overview</h1><p>Externa
         <advanced>true</advanced>
       </parameter>
 
-      <parameter name="config_112_2" type="integer" groupName="configuration"
-                 min="0" max="32535">
+      <parameter name="config_112_2" type="integer" groupName="configuration">
         <label>112: Power threshold – Delay before power on</label>
         <description><![CDATA[
 Power threshold – Delay before power on<br /> <h1>Overview</h1><p>External IR relay/ External relay is turned off due to detected overload (as set by parameter 106&amp;107) and remains off for a time, defined in this parameter. After that time, the output turns on to check, if the overload is still present.</p> <p>Available configuration parameters (data type is 2 Byte DEC)</p> <ul><li>Default value 0 (disabled)</li> <li>0 – External IR relay/ External relay will not turn back on</li> <li>30 – 32535 = 30 s – 32535 s</li> </ul><p><strong>NOTE:</strong> the delay time may be prolonged for more then 10s of the time set by the parameter.</p>
@@ -267,6 +266,7 @@ Power threshold – Delay before power on<br /> <h1>Overview</h1><p>External IR 
           <option value="0">External relay will not turn back on</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <!-- ASSOCIATION DEFINITIONS -->

@@ -117,7 +117,7 @@ The binding is able to search the network to get a list of what devices can comm
 
 Please note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in PaperUI.
 
-##### Network Size (zigbee_networksize)
+##### Network Size (zigbee_networksize)
 
 Some coordinators may need to allocate memory to handle each node in the network. This is an integer setting, and should be set to the maximum number of nodes expected to be added to the network. It should be noted that this will consume memory on the coordinator which may impact on other services such as packet buffers, so it is not advised to simply set this to the maximum value.
 

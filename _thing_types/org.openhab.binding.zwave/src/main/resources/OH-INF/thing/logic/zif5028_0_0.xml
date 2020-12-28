@@ -190,8 +190,7 @@ This parameter can be used to change the mode of the front-mounted status LED.<b
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="99">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Brightness of status LED.</label>
         <description><![CDATA[
 Determines the brightness of the status LED.<br /> <h1>Overview</h1><table><tr><td><strong>VALUE</strong></td> <td><strong>DESCRIPTION</strong></td> </tr><tr><td>0</td> <td>Switch off LED.</td> </tr><tr><td>1-99</td> <td>Brightness level (%). (Standard 50%)</td> </tr></table>
@@ -203,6 +202,7 @@ Determines the brightness of the status LED.<br /> <h1>Overview</h1><table><tr><
           <option value="99">Maximum brightness.</option>
         </options>
         <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">

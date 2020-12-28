@@ -113,14 +113,16 @@ In Wall Dimmer module<br /> <h1>Overview</h1><p>Z-Wave Built-in receiver with di
         </options>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration"
-                 min="0" max="127">
+      <parameter name="config_4_1" type="integer" groupName="configuration">
         <label>4: Default Fade Time</label>
-        <description>Default Fade Time in Seconds</description>
+        <description><![CDATA[
+Default Fade Time in Seconds<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="0">Instantly</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"

@@ -337,8 +337,7 @@ duration of alarm sequence<br /> <h1>Overview</h1><p>This parameter defines dura
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_40_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_40_1" type="integer" groupName="configuration">
         <label>40: S1 input – scenes sent</label>
         <description><![CDATA[
 actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learning mode by triple clicking.</p> <p>15 (all active) Available values</p> <p>0 – no scenes sent</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p>
@@ -352,10 +351,10 @@ actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter det
           <option value="8">Key hold down and key released</option>
           <option value="15">all active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_41_1" type="integer" groupName="configuration"
-                 min="0" max="15">
+      <parameter name="config_41_1" type="integer" groupName="configuration">
         <label>41: S2 input – scenes sent</label>
         <description><![CDATA[
 actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter determines which actions result in sending scene IDs assigned to them. Values can be combined (e.g. 1+2=3 means that scenes for single and double click are sent). Enabling scenes for triple click disables entering the device in learning mode by triple clicking.</p> <p>0 – no scenes sent</p> <p>1 – Key pressed 1 time</p> <p>2 – Key pressed 2 times</p> <p>4 – Key pressed 3 times</p> <p>8 – Key hold down and key released</p> <p>15 - all active</p>
@@ -369,6 +368,7 @@ actions result in sending scene IDs<br /> <h1>Overview</h1><p>This parameter det
           <option value="8">Key hold down and key released</option>
           <option value="15">all active</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_150_1" type="integer" groupName="configuration">

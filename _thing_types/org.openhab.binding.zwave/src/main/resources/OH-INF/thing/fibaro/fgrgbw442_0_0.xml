@@ -309,14 +309,16 @@ RGBW CONTROLLER 2<br /> <h1>Overview</h1><p>FIBARO RGBW Controller 2 uses PWM ou
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_35_2_0000FFFF" type="integer" groupName="configuration"
-                 min="0" max="32400">
+      <parameter name="config_35_2_0000FFFF" type="integer" groupName="configuration">
         <label>35: Duration of alarm signalization</label>
-        <description>Duration of alarm signalization</description>
+        <description><![CDATA[
+Duration of alarm signalization<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>600</default>
         <options>
           <option value="0">infinite signalization</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_40_1" type="integer" groupName="configuration"

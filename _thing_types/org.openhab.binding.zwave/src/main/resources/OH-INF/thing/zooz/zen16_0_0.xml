@@ -131,8 +131,7 @@ LED Indicator Control<br /> <h1>Overview</h1><p>Choose if you want the LED indic
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_6_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_6_4" type="integer" groupName="configuration">
         <label>6: Auto Turn-Off Timer for Relay 1</label>
         <description><![CDATA[
 Auto Turn-Off Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
@@ -141,10 +140,10 @@ Auto Turn-Off Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to 
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_7_4" type="integer" groupName="configuration">
         <label>7: Auto Turn-On Timer for Relay 1</label>
         <description><![CDATA[
 Auto Turn-On Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 1 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
@@ -153,10 +152,10 @@ Auto Turn-On Timer for Relay 1<br /> <h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_8_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_8_4" type="integer" groupName="configuration">
         <label>8: Auto Turn-Off Timer for Relay 2</label>
         <description><![CDATA[
 Auto Turn-Off Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
@@ -165,10 +164,10 @@ Auto Turn-Off Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to 
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_9_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_9_4" type="integer" groupName="configuration">
         <label>9: Auto Turn-On Timer for Relay 2</label>
         <description><![CDATA[
 Auto Turn-On Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 2 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
@@ -177,10 +176,10 @@ Auto Turn-On Timer for Relay 2<br /> <h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_10_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_10_4" type="integer" groupName="configuration">
         <label>10: Auto Turn-Off Timer for Relay 3</label>
         <description><![CDATA[
 Auto Turn-Off Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn off once it has been turned on. The number entered as value corresponds to the number of minutes.</p>
@@ -189,10 +188,10 @@ Auto Turn-Off Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to 
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_11_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+      <parameter name="config_11_4" type="integer" groupName="configuration">
         <label>11: Auto Turn-On Timer for Relay 3</label>
         <description><![CDATA[
 Auto Turn-On Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to set the time after which you want the device connected to Relay 3 to automatically turn on once it has been turned off. The number entered as value corresponds to the number of minutes.</p>
@@ -201,6 +200,7 @@ Auto Turn-On Timer for Relay 3<br /> <h1>Overview</h1><p>Use this parameter to s
         <options>
           <option value="0">Timer disabled (default)</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_12_1" type="integer" groupName="configuration">

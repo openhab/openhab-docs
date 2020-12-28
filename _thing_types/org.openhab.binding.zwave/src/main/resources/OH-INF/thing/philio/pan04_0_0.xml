@@ -191,7 +191,7 @@ In Wall Dual Relay(1 Way) Switch Module 2x 1.5kW with power meter<br /> <h1>Over
       <property name="manufacturerId">013C</property>
       <property name="manufacturerRef">0001:0003,0001:0012,0001:0014,0001:0061</property>
       <property name="dbReference">172</property>
-      <property name="defaultAssociations">2,3</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -229,7 +229,8 @@ Period for reporting kWh meter<br /> <h1>Overview</h1><p>If the setting is confi
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_3_1" type="integer" groupName="configuration">
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="1" max="3">
         <label>3: Selected endpoint</label>
         <description><![CDATA[
 Which endpoint is addressed by the BASIC command class<br /> <h1>Overview</h1><p>If the Controller is not using Multi_Channel command class to access the endpoint of PAN04, you may configure the endpoint value to react the Basic Command Class</p>
@@ -240,38 +241,44 @@ Which endpoint is addressed by the BASIC command class<br /> <h1>Overview</h1><p
           <option value="2">Relay 2</option>
           <option value="3">Relay 1 + 2</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_4_1" type="integer" groupName="configuration">
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="3">
         <label>4: Switch mode</label>
-        <description>Change the external switch mode</description>
+        <description><![CDATA[
+Change the external switch mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="1">Edge mode</option>
           <option value="2">Pulse mode</option>
           <option value="3">Edge-Toggle mode</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_5_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="10" max="1500">
         <label>5: Threshold of Watt for Load Caution</label>
-        <description>If threshold of wattage is reached, a meter report will be generated</description>
-        <default>750</default>
+        <description><![CDATA[
+If threshold of wattage is reached, a meter report will be generated<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>1500</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_6_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="1" max="10000">
         <label>6: Threshold of kWh for Load Caution</label>
-        <description>If threshold of kWh is reached, a Meter Report will be generated</description>
+        <description><![CDATA[
+If threshold of kWh is reached, a Meter Report will be generated<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>10000</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_7_1" type="integer" groupName="configuration">
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="0" max="2">
         <label>7: Restore switch state mode</label>
         <description><![CDATA[
 Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state setting in case the device was disconnected from the power source.</p>
@@ -282,11 +289,10 @@ Restore switch state mode<br /> <h1>Overview</h1><p>Restores the switch state se
           <option value="1">Last State</option>
           <option value="2">Switch On</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_8_2" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="0" max="32767">
         <label>8: Auto Off Timer</label>
         <description><![CDATA[
 Auto Off Timer<br /> <h1>Overview</h1><p>Whenever the device switches to on, the auto off timer begin to count down. After the timer decrease to zero, it will switch off automatically.</p>
@@ -326,14 +332,23 @@ Endpoint 3<br /> <h1>Overview</h1><p>Multi-Channel Command is a good way to cont
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association">
         <label>1: Relay 1 + 2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
       </parameter>
 
       <parameter name="group_2" type="text" groupName="association">
         <label>2: Relay 1</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
       </parameter>
 
       <parameter name="group_3" type="text" groupName="association">
         <label>3: Relay 2</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
       </parameter>
 
       <!-- STATIC DEFINITIONS -->
