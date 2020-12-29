@@ -528,7 +528,7 @@ A Light in a typical home setup can be represented by a Switch, a Dimmer or a Co
 To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
 
 ```java
-Switch Livingroom_Light "Livingroom Ceiling Light" ["Lighting"]
+Switch Livingroom_Light "Livingroom Ceiling Light" {homekit="Lighting"}
 ```
 
 Tagging is a new feature and only a few I/O add-ons have implemented it.
