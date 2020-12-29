@@ -117,7 +117,7 @@ Select where in the model you want to add the Equipment, for instance the kitche
 ![](images/create_equipment_model.png)
 
 Select the Thing you want to create the Equipment from, and alter the details of the Equipment item that will be created.
-If you don't find an appropriate Equipment class, choose 'Equipment'.
+If you don't find an appropriate Equipment class, choose **Equipment**.
 
 Below are all the Channels defined by the Thing.
 Sometimes Things will have hundreds of channels, so here you have the opportunity of choosing which ones will be linked to new Points items.
