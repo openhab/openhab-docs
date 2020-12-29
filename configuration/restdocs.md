@@ -87,7 +87,6 @@ To authenticate with an API token, **apaddpend `-u '{API_TOKEN}:'` to the comman
 
 You can manage all access tokens in your profile settings in the Main UI.
 
-
 ## Additional Considerations
 
 The REST API also supports server-push supporting subscriptions on change notification for certain resources.
