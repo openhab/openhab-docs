@@ -125,7 +125,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.8=-Dopenhab.home="%OPENHAB_HOME%"
     wrapper.java.additional.9=-Dopenhab.conf="%OPENHAB_HOME%\conf"
     wrapper.java.additional.10=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
-    wrapper.java.additional.11-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+    wrapper.java.additional.11=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
     wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
     wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
     wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
