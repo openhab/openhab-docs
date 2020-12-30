@@ -89,9 +89,9 @@ Choose a label, a category (it mostly defines the default icon), and then specia
 Here we use "GroundFloor".
 
 Once it's created, make sure it's still selected on the left, and click on "Add Location" again.
-This will add another location _within_ the first floor.
+This will add another location _within_ the ground floor.
 Typically rooms are directly under floor locations.
-Add an item representing the living room, calling it `Living`.
+Add an item representing the living room, calling it `LivingRoom`.
 Set the `sofa` category and the `LivingRoom` semantic class.
 
 Now let's add the kitchen. Make sure to select Ground Floor again and choose Add Location to add the third item (name: `Kitchen`, category: kitchen, semantic class: Kitchen).
@@ -117,7 +117,7 @@ Select where in the model you want to add the Equipment, for instance the kitche
 ![](images/create_equipment_model.png)
 
 Select the Thing you want to create the Equipment from, and alter the details of the Equipment item that will be created.
-If you don't find an appropriate Equipment class, choose Equipment.
+If you don't find an appropriate Equipment class, choose **Equipment**.
 
 Below are all the Channels defined by the Thing.
 Sometimes Things will have hundreds of channels, so here you have the opportunity of choosing which ones will be linked to new Points items.
@@ -159,7 +159,7 @@ If this equipment is a part of another equipment, choose that equipment as the p
 
 Then do the same as above, configure the Equipment item and the Points, then click Add.
 
-Go back to the Model by choosing Model in the sidebar and verify that the Equipment added to the model from the thing page is effectively there as well as its Points.
+Go back to the Model by choosing Model in the sidebar and verify that the Equipment added to the model from the thing page is effectively there as well as, its Points.
 
 ![](images/create_equipment_things_added.png)
 
