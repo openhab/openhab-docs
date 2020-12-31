@@ -94,6 +94,7 @@ docker run \
         -d \
         -e USER_ID=<uid> \
         -e GROUP_ID=<gid> \
+        -e CRYPTO_POLICY=unlimited \
         --restart=always \
         openhab/openhab:<version>-<distribution>
 ```
@@ -146,6 +147,7 @@ ExecStart=/usr/bin/docker run --name=%n --net=host \
   --device=/dev/ttyUSB0 \
   -e USER_ID=<uid_of_openhab> \
   -e GROUP_ID=<gid_of_openhab> \
+  -e CRYPTO_POLICY=unlimited \
   openhab/openhab:<version>-<distribution>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
