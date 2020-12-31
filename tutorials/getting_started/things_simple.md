@@ -6,6 +6,7 @@ title:  Adding Things - Simple
 {% include base.html %}
 
 # Adding Things - Simple
+
 As covered in the [concepts section]({{base}}/concepts/index.html) of the openHAB Docs, a binding is an add-on to openHAB that understands how to communicate with a specific home automation technology or API.
 A Thing represents a single device in openHAB.
 Each sensor (information provided by the device) or actuator (control on the device that causes it to do something) is represented by a Channel on the Thing.
