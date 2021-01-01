@@ -41,14 +41,16 @@ As of the November 2016 release, Raspbian has the SSH server disabled by default
 You will have to enable it manually.
 For headless setup, SSH can be enabled by placing a file named "ssh", without any extension, onto the boot partition of the SD card.
 
-**Connecting:**
+### Connecting: 
+
 Get your SD card and network cable plugged in and power up.
 Booting up takes up to 10 minutes.
 To connect with an SSH client (like [Putty](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md)), you need to know the IP address or hostname of your device.
 A standard Raspbian setup should be reachable either by the hostname "raspberrypi" or though the local domain name "raspberrypi.local".
 If you are not able to connect, check your routers web frontend for newly connected devices.
 
-**First Steps:**
+### First Steps:
+
 Connected via SSH, execute the Raspbian configuration menu by running `sudo raspi-config`.
 Go through the following steps:
 
@@ -72,9 +74,51 @@ Raspbian in the latest full version already includes Oracle Java 11.
 However, at the time of this writing, the installed revision is lower than the [recommended](index.html#prerequisites).
 Raspbian Lite comes without Java to begin with.
 
-Please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
+ ### Manual setup of Zulu 11
+ 
+The following steps refer specifically to Raspberry Pi devices. For a more general overview. please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
-**Installation:**
+1. create a folder for Zulu 11 and make it the current folder. For instance, ``/opt/jdk``. You can use the commands
+```
+sudo mkdir /opt/jdk
+cd /opt/jdk
+```
+2. verify the architecture of your device. You perform this issuing the command:
+```
+dpkg --print-architecture
+```
+this will show whether you need files for  Soft Float (```armsf```) or Hard Float (```armhf```) .
+Raspberry Pi 4 runs on ARM32-bit HF architecture (```armhf```), for instance. 
+
+
+Now, to install Zulu 11, you need to download and install a tar.gz package for your architecture following the steps described below (```armhf``` architecture assumed for reference):
+
+
+3. Download the latest Zulu 11 build from [the Azul download page](https://www.azul.com/downloads/zulu-community/?version=java-11-lts&architecture=arm-32-bit-hf&package=jdk) - at the time of writing, it's `` zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf ``. You can use the command:
+```
+sudo wget http://cdn.azul.com/zulu-embedded/bin/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf.tar.gz
+```
+4. Extract the archive
+```
+sudo tar -xzvf -zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf
+```
+5. Install ```java``` and ```javac```
+```
+sudo update-alternatives --install /usr/bin/java java /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/javac 1
+```
+6. change the current alternative:
+```
+sudo update-alternatives --config java
+```
+You'll be prompted to select the alternative, pick the zulu11 you installed.
+
+5. If you wish so, you can now delete the downloaded tar file
+```
+sudo rm *.tar.gz
+```
+### Installation:
+
 Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB on Linux](linux.html) article:
 
 - [Package Repository based Installation on Linux](linux.html#package-repository-installation)
