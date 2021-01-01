@@ -123,7 +123,7 @@ To change the runtime parameters stop the container then execute the long comman
 
 Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 If running on a Systemd based Linux distro (Ubuntu 16.04 to be specific).
-The following openhab2.service file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
+The following `openhab.service` file will start a new openHAB container every time it starts the service and destroy that container when the service stops.
 What that means is any data that you want to preserve between restarts of openHAB (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
 
 Creating a new container on every run greatly simplifies the upgrade and update process.
@@ -159,11 +159,11 @@ Where `<uid>` is the user ID number for the `openhab` user which you can obtain 
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
-Place this openhab2.service file into `/etc/systemd/system`.
+Place this `openhab.service` file into `/etc/systemd/system`.
 
-Then run `sudo systemctl enable openhab2.service`.
+Then run `sudo systemctl enable openhab.service`.
 
-Finally run `sudo systemctl start openhab2.service` to start openHAB running.
+Finally run `sudo systemctl start openhab.service` to start openHAB running.
 
 ## Explanation of Arguments Passed to Docker
 

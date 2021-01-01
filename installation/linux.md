@@ -628,7 +628,7 @@ sudo systemctl daemon-reload
 ## Backup and Restore
 
 It is recommended to make a backup of your configuration before *any* major change.
-To make a backup of openHAB2, you need to retain your configuration and userdata files.
+To make a backup of openHAB 2 or higher, you need to retain your configuration and userdata files.
 openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab/backups` for automatic installs and `openhab/backups` for manual installs.
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
 
