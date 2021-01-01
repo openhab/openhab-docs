@@ -50,6 +50,7 @@ A standard Raspbian setup should be reachable either by the hostname "raspberryp
 If you are not able to connect, check your routers web frontend for newly connected devices.
 
 ### First Steps:
+
 Connected via SSH, execute the Raspbian configuration menu by running `sudo raspi-config`.
 Go through the following steps:
 
