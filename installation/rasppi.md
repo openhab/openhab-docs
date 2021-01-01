@@ -118,6 +118,7 @@ You'll be prompted to select the alternative, pick the zulu11 you installed.
 sudo rm *.tar.gz
 ```
 ### Installation:
+
 Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB on Linux](linux.html) article:
 
 - [Package Repository based Installation on Linux](linux.html#package-repository-installation)
