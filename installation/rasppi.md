@@ -73,7 +73,9 @@ sudo apt-get install screen mc vim git htop
 Raspbian in the latest full version already includes Oracle Java 11.
 However, at the time of this writing, the installed revision is lower than the [recommended](index.html#prerequisites).
 Raspbian Lite comes without Java to begin with.
+
  ### Manual setup of Zulu 11
+ 
 The following steps refer specifically to Raspberry Pi devices. For a more general overview. please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
 1. create a folder for Zulu 11 and make it the current folder. For instance, ``/opt/jdk``. You can use the commands
