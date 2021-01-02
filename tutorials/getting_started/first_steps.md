@@ -7,7 +7,7 @@ title: Getting Started - First Steps
 
 # First Steps
 
-The following instructions will guide you through the initial steps to take after first installing openHAB.
+The following instructions will guide you through the initial steps after first installing openHAB.
 
 {::options toc_levels="2..4"/}
 
@@ -20,31 +20,30 @@ If you installed from the openHABian image, you can use [http://openhab:8080]().
 
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
 Since there are no users yet, openHAB will ask you to create an administrator account.
-The following screen should appear:
 
 ![](images/create_user.png)
 
-After creating a first admin user you will be guided trough a first time setup wizard.
+### Add geographic information
 
-You have to add some geographical information and start (or skip) the setup wizard.
+After creating an admin user, you will be guided through a first-time setup wizard. Start by setting your language, region, and time zone. You can also set your location, or skip this step and complete it later.
 
 ![](images/wizard_geo.png)
 
 ![](images/wizard_location.png)
 
-You have the ability to install some addons if you already know that you will need them later.
+### Install add-ons
+
+You now have the option to install openHAB add-ons. Do this if you already know that you'll need specific add-ons (e.g. if you're upgrading from an older openHAB system), or skip this step if you prefer to install add-ons individually. You can always install/remove add-ons in the future, enabling you to modify and improve your system over time.
 
 ![](images/wizard_addons.png)
 
 After finishing the wizard you will get a welcome message and be redirected to your dashboard.
-
 ![](images/wizard_welcome.png)
-
 ![](images/welcome_page.png)
 
-### Log in into dashboard with an existing user
+### Log into the dashboard with an existing user
 
-To log in with an existing user you can do the following.
+To log in with an existing user, you can do the following.
 Click on the shield icon in the lower-left corner of the sidebar:
 
 ![](images/shield.png)
@@ -63,18 +62,21 @@ If you need to sign out, or check what sessions are open with this account with 
 Note that by default, using openHAB doesn't require you to sign in.
 Only administrative operations require a user with an administrator role to be logged in.
 
-## Initial Settings
+## Modify Settings
 
-Most of the needed settings have already been accomplished, when you have followed the wizard.
-For further configuration (e.g. the measurement system) click on Settings.
+You already completed the required steps of choosing your language, region, and time zone in the setup wizard, and are now logged in as an administrator. If you didn't add a geographic location during setup, you can do so via the Settings. You can also set your preferred measurement system (openHAB defaults to the Metric system).
 
+### Set your geographic location (latitude and longitude) and measurement system
+
+1. In the left-hand menu under Administration, select Settings to open the Settings page.
 ![](images/initial_settings.png)
 
-Click on Regional Settings under System Services.
-
+2. Under System Settings, select Regional Settings.
 ![](images/regional_settings.png)
 
-If you're not using the metric system, click "Show advanced" and change the measurement system.
+3. Under Location, click the Map button to add your geographic coordinates.
+
+4. If you also want to set your measurement system, click "Show advanced" and choose between Metric and Imperial.
 
 ![](images/units_settings.png)
 
