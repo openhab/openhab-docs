@@ -5,6 +5,12 @@ title: Raspberry Pi
 
 {% include base.html %}
 
+**Contents**
+{::options toc_levels="2..4"/}
+
+- TOC
+{:toc}
+
 # Raspberry Pi
 
 Because of its **low price**, its **small form factor** and the **low energy consumption**, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB.
@@ -17,7 +23,7 @@ These including the official [raspberrypi.org help articles](https://www.raspber
 
 Recommendations for a ["headless"](https://en.wikipedia.org/wiki/Headless_computer) hardware setup:
 
-- [Raspberry Pi 2 or better](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
+- [Raspberry Pi 2 or better](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications), compare the available devices [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
 - SD card (16GB or more to support [wear-leveling](https://en.wikipedia.org/wiki/Wear_leveling))
 - Steady power supply
 - Ethernet connection
@@ -79,15 +85,15 @@ Raspbian Lite comes without Java to begin with.
 The following steps refer specifically to Raspberry Pi devices. For a more general overview. please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
 1. create a folder for Zulu 11 and make it the current folder. For instance, ``/opt/jdk``. You can use the commands
-```
-sudo mkdir /opt/jdk
-cd /opt/jdk
-```
+   ```shell
+   sudo mkdir /opt/jdk
+   cd /opt/jdk
+   ```
 2. verify the architecture of your device. You perform this issuing the command:
-```
-dpkg --print-architecture
-```
-this will show whether you need files for  Soft Float (```armsf```) or Hard Float (```armhf```) .
+   ```shell
+   dpkg --print-architecture
+   ```
+   this will show whether you need files for  Soft Float (```armsf```) or Hard Float (```armhf```) .
 Raspberry Pi 4 runs on ARM32-bit HF architecture (```armhf```), for instance. 
 
 
@@ -95,30 +101,273 @@ Now, to install Zulu 11, you need to download and install a tar.gz package for y
 
 
 3. Download the latest Zulu 11 build from [the Azul download page](https://www.azul.com/downloads/zulu-community/?version=java-11-lts&architecture=arm-32-bit-hf&package=jdk) - at the time of writing, it's `` zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf ``. You can use the command:
-```
-sudo wget http://cdn.azul.com/zulu-embedded/bin/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf.tar.gz
-```
+   ```shell
+   sudo wget http://cdn.azul.com/zulu-embedded/bin/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf.tar.gz
+   ```
 4. Extract the archive
-```
-sudo tar -xzvf -zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf
-```
+    ```shell
+   sudo tar -xzvf -zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf
+   ```
 5. Install ```java``` and ```javac```
-```
-sudo update-alternatives --install /usr/bin/java java /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/java 1
-sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/javac 1
-```
+   ```shell
+    sudo update-alternatives --install /usr/bin/java java /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/java 1
+    sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/javac 1
+   ```
 6. change the current alternative:
-```
-sudo update-alternatives --config java
-```
-You'll be prompted to select the alternative, pick the zulu11 you installed.
+    ```shell
+    sudo update-alternatives --config java
+    ```
+   You'll be prompted to select the alternative, pick the zulu11 you installed.
 
 5. If you wish so, you can now delete the downloaded tar file
-```
-sudo rm *.tar.gz
-```
-### Installation:
+    ```shell
+    sudo rm *.tar.gz
+    ```
 
-Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB on Linux](linux.html) article:
+### Installation of openHAB:
 
-- [Package Repository based Installation on Linux](linux.html#package-repository-installation)
+
+This section describes the steps required to install openHAB on the Raspberry device, after you completed the above mentioned *prerequisites* steps. 
+It is a selection of the general Linux installation steps described in  [Package Repository based Installation on Linux](linux.html#package-repository-installation) . Refer to that page if you wish to view a comprehensive guide to every possible Linux installation environments instead. 
+
+1. First, add the openHAB Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
+
+   ```shell
+   wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+   sudo apt-get install apt-transport-https
+   ```
+
+2. choose the openHAB package to install. You can choose between *Official (Stable)*, *Beta* or *Snapshot* builds.
+
+    If you are new to openHAB and don't know what to pick, you likely need the *Stable* version. Expand the section of your choice for the details of the installation step.
+
+    <details>
+     <summary>Official (Stable)</summary>
+  
+     The stable builds contain the latest official release with tested features.
+
+    Add the **openHAB Stable Repository** to your systems apt sources list:
+
+    ```shell
+    echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    ```
+    </details>
+
+    <details>
+     <summary >Testing Release</summary>
+  
+     The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
+
+    Add the **openHAB Beta Repository** to your systems apt sources list:
+
+    ```shell
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    ```
+
+    </details>
+     <details>
+       <summary >Snapshot Release</summary>
+  
+     The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB core and add-ons.
+    These changes are often unstable, so you should use this branch only for testing or development purposes.
+
+    The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
+    To use it, add the **openHAB Unstable Repository** to your systems apt sources list:
+
+    ```shell
+    echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+    ```
+
+</details>
+
+    
+
+
+    
+
+3. resynchronize the package index:
+
+    ```shell
+    sudo apt-get update
+    ```
+
+4. Install openHAB with the following command:
+
+    ```shell
+    sudo apt-get install openhab
+    ```
+
+5. *(optional)* When you choose to install an add-on, openHAB will download it from the internet on request.
+
+   If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
+
+    ```shell
+    sudo apt-get install openhab-addons
+    ```
+
+If everything went well, you can now start openHAB and test it as described in the following points
+
+6. Start openHAB
+ ```shell
+sudo systemctl start openhab.service
+sudo systemctl status openhab.service
+```
+7. test that openHAB is running fine. You can try to reach the openHAB dashboard, using the link:  `http://openhab-device:8080` (replace localhost or your device IP address to *openhab-device*). You should get the *create new admin* screen 
+![The openHAB Dashboard page](images/Home_Openhab_4.png)
+
+8. Install openHAB as a service. This will allow openHAB to run without need for a manual start as described above.
+ ```shell
+sudo systemctl daemon-reload
+sudo systemctl enable openhab.service
+```
+
+You are all set.
+
+## What next?
+
+You can:
+
+- continue reading the [Additional steps]({{base}}/installation/index.md#additional-steps) section of the Installation overview
+- read more about how to handle basic maintenance tasks, in the section below
+
+## Maintenance
+
+### File Locations
+
+|                               | Repository Installation      
+|:-----------------------------:|------------------------------|------------------------------------------------------------------|
+|      openHAB application      | `/usr/share/openhab`                                                        |
+|    Additional add-on files    | `/usr/share/openhab/addons` |                                         |
+|       Site configuration      | `/etc/openhab`              |                                     |
+|           Log files           | `/var/log/openhab`          |                        |
+| Userdata like rrd4j databases | `/var/lib/openhab`          |                               |
+|         Backups folder        | `/var/lib/openhab/backups`  |                      |
+|     Service configuration     | `/etc/default/openhab`      | (                                 |
+
+
+### Utilities
+
+#### Service Control
+
+
+openHAB will run as a service in the background.
+The most important commands to control the openHAB service are given below.
+
+  ```shell
+  # Learn about the current service status
+  sudo systemctl status openhab.service
+
+  # (Re-)Start openHAB (background service)
+  sudo systemctl restart openhab.service
+
+  # Stop the openHAB background service
+  sudo systemctl stop openhab.service
+
+  # Get the service log since the last boot
+  sudo journalctl -u openhab.service -b
+
+  # Make openHAB automatically start after booting the Linux host
+  sudo systemctl daemon-reload
+  sudo systemctl enable openhab.service
+  ```
+
+#### Command Line Interface (CLI)
+
+After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB-specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/console.html)).
+To use the shortcuts in a terminal, simply type `openhab-cli` followed by the command.
+For example:
+
+```shell
+Usage:  openhab-cli command [options]
+
+Possible commands:
+  start [--debug]     -- Starts openHAB in the terminal.
+  stop                -- Stops any running instance of openHAB.
+  status              -- Checks to see if openHAB is running.
+  console             -- Opens the openHAB console.
+  backup [filename]   -- Stores the current configuration of openHAB.
+  restore filename    -- Restores the openHAB configuration from a backup.
+  showlogs            -- Displays the log messages of openHAB.
+  info                -- Displays distribution information.
+```
+
+
+
+## Viewing Log Messages
+
+You can learn more about openHAB and how it works by looking at your log files.
+These will tell you everything you might need to know.
+Execute the following command in one session or have both files separated in sessions side by side:
+
+- Package repository based installation:
+
+  ```shell
+  tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log
+  ```
+
+## Backup and Restore
+
+It is recommended to make a backup of your configuration before *any* major change.
+To make a backup of openHAB2, you need to retain your configuration and userdata files.
+openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab/backups` for automatic installs
+You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
+
+```shell
+sudo $OPENHAB_RUNTIME/bin/backup
+## OR ##
+sudo $OPENHAB_RUNTIME/bin/backup /path/to/backups/folder/myBackup.zip
+```
+
+To restore from these generated files:
+
+```shell
+sudo $OPENHAB_RUNTIME/bin/restore $OPENHAB_BACKUPS/myBackup.zip
+```
+
+If you're unsure how to use the above files, just use `--help` or `-h`:
+
+```shell
+$OPENHAB_RUNTIME/bin/backup --help
+```
+### Upgrade
+
+To stay up to date with new releases, you should do regular upgrades.
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated constantly.
+
+Your personal configuration will be retained on upgrades.
+We still recommend a backup before each upgrade.
+
+You can upgrade issuing the following commands:
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+### Change of Version
+
+You may want to switch to a different repo, or an older (but more stable) version of openHAB.
+
+To do this,  select the repo as described in the installation instructions above, then find the version by bringing a list of all versions available to install:
+
+```shell
+sudo apt-get update
+apt-cache showpkg openhab
+```
+
+Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install openhab=[version]` command, for example:
+
+```shell
+sudo apt-get install openhab=3.0.0-1
+```
+### Uninstallation
+
+To uninstall openHAB and get rid of all related files managed by the package manager, make a backup as described above, then uninstall openHAB and remove the repository:
+
+```shell
+sudo apt-get purge openhab*
+sudo rm /etc/apt/sources.list.d/openhab.list
+```
+
+### Additional Setup steps
+Please refer to the [Recommended Additional Setup Steps]({{base}}/installation/linux.md#Recommended-Additional-Setup-Steps) in the Linux installation guide.
