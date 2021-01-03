@@ -3,9 +3,14 @@ name: Linting
 on:
   push:
     branches:
-      - '**'
+      - 'main'
+      - '2.5.x'
     tags-ignore:
       - '**'
+  pull_request:
+    branches:
+      - main
+    types: [open,synchronize,reopen]
 
 jobs:
   markdownlint:
