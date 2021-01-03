@@ -1,0 +1,4 @@
+- name: Run markdownlint (mdl)
+  uses: bewuethr/mdl-action@v1.0.12
+  with:
+  style-file: .github/markdownStyle.rb
