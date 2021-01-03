@@ -87,6 +87,11 @@ executeCommandLine("path/to/my/script.sh", itemState1, itemState2);
 // When you need the output in your further rule processing
 var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh", itemState1, itemState2);
 ```
+When using ECMA rules, you need to make the Java functions available like in this exampe:
+```text
+var Exec = Java.type("org.openhab.core.model.script.actions.Exec");
+Exec.executeCommandLine("path/to/my/script.sh");
+```
 
 ### HTTP Actions
 
