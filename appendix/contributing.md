@@ -20,8 +20,8 @@ When no solution was found, use the table below to determine where your issue sh
 
 | Issue                                                        | Where to report                                                    |
 |--------------------------------------------------------------|--------------------------------------------------------------------|
-| Problems and feature requests for openHAB 1 add-ons          | [openHAB](https://github.com/openhab/openhab/issues)               |
-| Problems and feature requests for openHAB 2 add-ons          | [openHAB2](https://github.com/openhab/openhab2/issues)             |
+| Problems and feature requests for openHAB 1 add-ons          | [openHAB 1](https://github.com/openhab/openhab/issues)               |
+| Problems and feature requests for openHAB 2 add-ons          | [openHAB 2+](https://github.com/openhab/openhab-addons/issues)             |
 | Issues related to the runtime environment, IDE and packaging | [openHAB-distro](https://github.com/openhab/openhab-distro/issues) |
 | Issues related to the core openHAB bundles                   | [openHAB-core](https://github.com/kaikreuzer/openhab-core/issues)  |
 
