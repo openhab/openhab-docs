@@ -9,7 +9,12 @@ on:
 
 jobs:
   markdownlint:
+    runs-on: ubuntu-latest
     steps:
+
+      - name: Check out code
+          uses: actions/checkout@v2
+
       - name: Run markdownlint (mdl)
         uses: bewuethr/mdl-action@v1.0.12
         with:
