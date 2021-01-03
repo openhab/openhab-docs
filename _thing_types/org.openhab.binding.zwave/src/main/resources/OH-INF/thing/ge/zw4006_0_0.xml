@@ -8,7 +8,7 @@
   <thing-type id="ge_zw4006_00_000" listed="false">
     <label>26931/ZW4006 In-Wall Smart Motion Switch</label>
     <description><![CDATA[
-In-Wall Smart Motion Switch<br /> <h1>Overview</h1><p>The switch enables wireless control of On/OFF functions of incandescent, LED, xenon, halogen and fluorescent lighting. Not only does it act as a switch but the GE In-Wall Smart Motion Switch has a built in PIR sensor which can control the local and be set in occupancy or vacancy mode.</p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include the smart switch to the Z-Wave network.</li> <li>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network. </li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network. </li> </ol>
+In-Wall Smart Motion Switch<br /> <h1>Overview</h1><p>The switch enables wireless control of On/OFF functions of incandescent, LED, xenon, halogen and fluorescent lighting. Not only does it act as a switch but the GE In-Wall Smart Motion Switch has a built in PIR sensor which can control the local and be set in occupancy or vacancy mode.</p> <br /> <h2>Inclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to include the smart switch to the Z-Wave network.</li> <li>Once the controller is ready to include your smart switch, press and release the top or bottom button on the smart switch to include it in the network. </li> </ol> <br /> <h2>Exclusion Information</h2><ol><li>Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.</li> <li>Once the controller is ready to exclude your device, press and release the top or bottom button on the smart switch to exclude it from the network. </li> </ol> <br /> <h2>Wakeup Information</h2><p><br /></p>
     ]]></description>
     <category>WallSwitch</category>
 
@@ -69,7 +69,7 @@ In-Wall Smart Motion Switch<br /> <h1>Overview</h1><p>The switch enables wireles
       <property name="vendor">Jasco Products</property>
       <property name="modelId">26931/ZW4006</property>
       <property name="manufacturerId">0063</property>
-      <property name="manufacturerRef">494D:3032</property>
+      <property name="manufacturerRef">494D:3031,494D:3032</property>
       <property name="dbReference">658</property>
       <property name="defaultAssociations">1</property>
     </properties>

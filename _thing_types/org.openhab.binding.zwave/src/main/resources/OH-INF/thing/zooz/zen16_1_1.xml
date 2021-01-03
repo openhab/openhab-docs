@@ -5,7 +5,7 @@
   xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
-  <thing-type id="zooz_zen16_01_010" listed="false">
+  <thing-type id="zooz_zen16_01_001" listed="false">
     <label>ZEN16 Multirelay</label>
     <description><![CDATA[
 Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Powerful dry contact relays to control loads up to 15 A and 20 A</li> <li>Perfect for outdoor lighting, pool pumps, garage door, or gas fireplace</li> <li>Control up to 3 connected loads independently or together</li> <li>Z-Wave or optional wall switch control (toggle or momentary type)</li> <li>Built-in timers for each relay to simplify automation</li> <li>Remembers and restores on/off status after power failure</li> <li>Built-in Z-Wave Plus signal repeater to extend network range</li> <li>Powered by 12-24 V DC/AC or USB C port for easy set-up</li> <li>Wall mounting and minimal design for clean installation</li> <li>S2 security protocol and the latest 500 Z-Wave chip</li> </ul><p><strong>Specifications</strong></p> <ul><li>Model Number: ZEN16</li> <li>Z-Wave Signal Frequency: 908.42 MHz</li> <li>Power: 12-24 V DC/AC or USB C</li> <li>Maximum Load: Relay 1: 15A (HP), R2: 15A (HP), R3: 20A (HP)</li> <li>Range: Up to 100 feet line of sight</li> <li>Operating Temperature: 32-104° F (0-40° C)</li> <li>Installation and Use: Indoor only</li> </ul> <br /> <h2>Inclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Exclusion Information</h2><ol><li>Start Z-Wave inclusion.</li> <li>Quickly press the Z-Wave button 3 times.</li> </ol><p>The LED indicator will blink to signal communication and remain on for 2 seconds to confirm inclusion.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
@@ -88,8 +88,8 @@ Multirelay<br /> <h1>Overview</h1><p><strong>Features</strong></p> <ul><li>Power
       <property name="modelId">ZEN16</property>
       <property name="manufacturerId">027A</property>
       <property name="manufacturerRef">A000:A00A,A000:A055</property>
-      <property name="versionMin">1.10</property>
-      <property name="versionMax">1.30</property>
+      <property name="versionMin">1.1</property>
+      <property name="versionMax">1.3</property>
       <property name="dbReference">1326</property>
       <property name="defaultAssociations">1</property>
     </properties>
