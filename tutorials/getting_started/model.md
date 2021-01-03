@@ -44,7 +44,7 @@ The above drawing shows the relationship between the four main concepts in the m
 
 Example of an advanced model:
 
-![](https://community-openhab-org.s3.dualstack.eu-central-1.amazonaws.com/original/3X/2/9/29a0c27e6af6a78073754e88b12ca51dbaf85cb0.png)
+![](images/example_model.png)
 <!--(made with https://www.diagrameditor.com - file here: [Semantic Model.txt|attachment](upload://qEPmmmDomSr4F5dRBHMXajOzO0c.txt) (3.3 KB) change extension to .drawio) -->
 
 We have an Indoor location which has a House.
