@@ -16,7 +16,7 @@ This section introduces the event API and illustrates how to receive such events
 Furthermore, the sending of events and the implementation of new event types will be described.
 
 {::options toc_levels="2,3"/}
-* TOC
+- TOC
 {:toc}
 
 ## API Introduction

@@ -9,15 +9,13 @@ title: Configuration Admin
 
 As defined in the [OSGi Compendium Release 7][OSGi-cmpn] *configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform.*
 
-### Configuration Admin Service
-
 In OSGi, configurations are stored in a central database that is being managed by a special service - the *Configuration Admin Service*(`org.osgi.service.cm.ConfigurationAdmin`).
 This service monitors the service registry and **provides a configuration to the services** that are registered with a *service.pid* property.
 Configuration changes are first made persistent, and then are passed to the target service.
 It is important to understand that **the target bundle receives updates from the Configuration Admin service**.
 Implementations should be aware that the update reception could be delayed if the Configuration Admin service is missing.
 
-### Configuration properties
+## Configuration properties
 
 Each configuration is uniquely identified by a PID (Persistent IDentifier) and stores properties.
 The properties can be edited, or new properties could be added during runtime by other bundle that uses the Configuration Admin service.
