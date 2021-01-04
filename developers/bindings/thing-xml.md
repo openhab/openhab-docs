@@ -14,7 +14,7 @@ These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
 
 {::options toc_levels="2,3"/}
-* TOC
+- TOC
 {:toc}
 
 ## ThingTypeProvider / ChannelTypeProvider
@@ -43,7 +43,7 @@ Which Things can be associated through which bridge type is defined within the d
         <label>Sample Thing</label>
         <description>Some sample description</description>
         <category>Lightbulb</category>
-		...
+    ...
     </thing-type>
 ```
 
@@ -221,7 +221,6 @@ This library is still in development., and only a very small set of tags are def
 | TargetTemperature  | Number, Number:Temperature | A target temperature that should engage a thermostats heating and cooling actions.   |
 | CurrentHumidity    | Number                     | An accessory that provides a single read-only value indicating the relative humidity. |
 
-
 ### State Description
 
 The state description allows to specify restrictions and additional information for the state of an item, that is linked to the channel.
@@ -232,14 +231,14 @@ The following XML snippet shows the definition for a temperature actuator channe
 <state min="12" max="30" step="0.5" pattern="%.1f %unit%" readOnly="false"></state>
 ```
 
-* The attributes `min` and `max` can only be declared for channel with the item type `Number`.
+- The attributes `min` and `max` can only be declared for channel with the item type `Number`.
   It defines the range of the numeric value.
   The Java data type is a BigDecimal.
   For example user interfaces can create sliders with an appropriate scale based on this information.
-* The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
-* The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
+- The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
+- The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
   For all sensors the `readonly` attribute should be set to `true`.
-* The `pattern` attribute can be used for `Number` and  `String` items.
+- The `pattern` attribute can be used for `Number` and  `String` items.
   It gives user interface a hint how to render the item.
   The format of the pattern must be compliant to the [Java Number Format](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
   The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
@@ -287,8 +286,8 @@ The following XML snippet defines a list of commands:
 ```
 
 The user interface can use these values to render
-* a drop down and also represent the current state or
-* as push buttons to simply send a command to the ThingHandler.
+- a drop down and also represent the current state or
+- as push buttons to simply send a command to the ThingHandler.
 
 The option labels can also be localized.
 
@@ -479,7 +478,7 @@ To define such thing meta data the thing type definition provides the possibilit
              <property name="protocol">ZigBee</property>
              ...
         </properties>
-		...
+    ...
     </thing-type>
 ```
 
@@ -533,12 +532,12 @@ If a configuration parameter will be used, then its respective `parameter` shall
         ...
         <representation-property>uniqueId</representation-property>
         ...
-    		<config-description>
-  			  <parameter name="uniqueId" type="text">
-		  		  <label>Unique Id</label>
-			  	  <description>The Unique Id for Representation Property</description>
-  			  </parameter>
-    		</config-description>
+        <config-description>
+          <parameter name="uniqueId" type="text">
+            <label>Unique Id</label>
+            <description>The Unique Id for Representation Property</description>
+          </parameter>
+        </config-description>
         ...
     </thing-type>
 ```
@@ -549,10 +548,10 @@ The label and descriptions for things, channels and config descriptions should f
 The label should be short so that for most UIs it does not spread across multiple lines.
 Guideline is 2-3 words with up to 25 chars.
 Labels should be capitalized using the following rules:
-* Always capitalize the first and the last word.
-* Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
-* Capitalize all other words.
-* Brand- or product names that starts with a lowercase character can be written using their official spelling.
+- Always capitalize the first and the last word.
+- Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
+- Capitalize all other words.
+- Brand- or product names that starts with a lowercase character can be written using their official spelling.
 
 The description can contain longer text to describe the thing in more detail.
 Limited use of HTML tags is permitted to enhance the description - if a long description is provided, the first line should be kept short, and a line break (```<br />```) placed at the end of the line to allow UIs to display a short description in limited space.
@@ -592,14 +591,13 @@ In this example, an auto update policy is defined for the channel type, but is o
 
 The following policies are supported:
 
-* **veto**: No automatic state update should be sent by the framework.
+- **veto**: No automatic state update should be sent by the framework.
   The thing handler will make sure it sends a state update and it can do it better than just converting the command to a state.
-* **default**: The binding does not care and the framework may do what it deems to be right.
+- **default**: The binding does not care and the framework may do what it deems to be right.
   The state update which the framework will send out normally will correspond the command state anyway.
   This is the default if no other policy is set explicitly.
-* **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding.
+- **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding.
   This usually is the case when devices don't expose their current state to the handler.
-
 
 ## Bridges and Thing Descriptions
 
@@ -611,7 +609,6 @@ The meta information of all bridges and *Thing*s is accessible through the `org.
 
 Bridge and *Thing* descriptions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/OH-INF/thing/`.
 The full Java API for bridge and *Thing* descriptions can be found in the Java package `org.openhab.core.thing.type`.
-
 
 ### XML Structure for Thing Descriptions
 
@@ -847,8 +844,7 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 | channel.id                  | An identifier of the channel the bridge/Thing provides | mandatory |
 | channel.typeId              | An identifier of the channel type definition the bridge/Thing provides | mandatory |
 
-
-The full XML schema for Thing type descriptions is specified in the <a href="https://openhab.org/schemas/thing-description-1.0.0.xsd">openHAB thing description XSD</a> file.
+The full XML schema for Thing type descriptions is specified in the [https://openhab.org/schemas/thing-description-1.0.0.xsd](https://openhab.org/schemas/thing-description-1.0.0.xsd) openHAB thing description XSD</a> file.
 
 **Hints:**
 

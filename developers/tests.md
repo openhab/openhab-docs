@@ -42,9 +42,9 @@ assertThat(pt.toString(), is(equalTo("0.0001")));
 
 ### Mockito
 
-In order to keep tests as focused as possible we use the mocking framework [https://github.com/mockito/mockito Mockito].
+In order to keep tests as focused as possible we use the mocking framework [<https://github.com/mockito/mockito> Mockito].
 Mockito lets us verify interactions between supporting classes and the unit under test and additionally supports stubbing of method calls for these classes.
-Please read the very short but expressive introduction on the [https://site.mockito.org/ Mockito homepage] in addition to this small example:
+Please read the very short but expressive introduction on the [<https://site.mockito.org/> Mockito homepage] in addition to this small example:
 
 ```java
 public class MyBindingHandlerTest {
@@ -199,9 +199,9 @@ At the end the mock is unregistered again.
 
 ## Common errors
 
-### Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:XXX:test (default-test) on project XXX: No tests found.
+### Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:XXX:test (default-test) on project XXX: No tests found
 
 Maven might report this error when building your project, it means that the maven surefire plugin cannot find any tests to execute, please check the following details:
 
-* Did you add any test classes with a class-name which ends with `Test` (singular)
-* Did you annotate any methods with `@Test`
+- Did you add any test classes with a class-name which ends with `Test` (singular)
+- Did you annotate any methods with `@Test`

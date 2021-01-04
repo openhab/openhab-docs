@@ -11,9 +11,9 @@ title: Contribution
 
 The main parts of openHAB can be found in the following repositories:
 
-* [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
-* [openHAB Add-ons](https://github.com/openhab/openhab-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository.
-* [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
+- [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
+- [openHAB Add-ons](https://github.com/openhab/openhab-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository.
+- [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
 
 Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings, HABPanel and HABot and many more.
 If you want to get involved with any of these, best check their respective README and CONTRIBUTING files in the root of the repos.
@@ -41,13 +41,13 @@ This gives other contributors a chance to point you in the right
 direction, give feedback on your design, and maybe point out if someone
 else is working on the same thing.
 
-### Create Issues...
+### Create Issues
 
 Any significant improvement should be documented as a GitHub
 issue in the [appropriate repository](#the-repositories) before anybody
 starts working on it.
 
-### ...but Check for Existing Issues First!
+### ...but Check for Existing Issues First
 
 Please take a moment to check that an issue doesn't already exist
 documenting your bug report or improvement proposal. If it does, it
@@ -101,8 +101,6 @@ or `Fixes #XXX`, which will automatically close the issue when merged.
 
 openHAB maintainers use the [GitHub review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
 
-
-<a id="sign-your-work"></a>
 ### Sign your Work
 
 The sign-off is a simple line at the end of the explanation for the
@@ -111,7 +109,7 @@ pass it on as an open-source patch.  The rules are pretty simple: if you
 can certify the below (from
 [developercertificate.org](https://developercertificate.org/)):
 
-```
+```text
 Developer Certificate of Origin
 Version 1.1
 
@@ -171,34 +169,36 @@ If your commit contains code from others as well, please ensure that they certif
 
 There are several exceptions to the signing requirement. Currently these are:
 
-* Your patch fixes spelling or grammar errors.
-* Your patch is a single line change to documentation.
+- Your patch fixes spelling or grammar errors.
+- Your patch is a single line change to documentation.
 
 ### How can I Become a Maintainer?
 
-* Step 1: learn the component inside out
-* Step 2: make yourself useful by contributing code, bugfixes, support etc.
-* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate GitHub project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
+- Step 1: learn the component inside out
+- Step 2: make yourself useful by contributing code, bugfixes, support etc.
+- Step 3: volunteer [in the community] (<https://community.openhab.org/c/development/misc>) or in the appropriate GitHub project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
 
 Don't forget: being a maintainer is a time investment.
 Make sure you will have time to make yourself available.
 You don't have to be a maintainer to make a difference on the project!
 
 ### Contributing to the Documentation
+
 Sharing your knowledge through documentation contributions is incredibly valuable for the community allowing everybody to benefit from your lessons learned.
 If you are not yet ready to contribute code don't let that stop you from contributing to the documentation.
 Documentation change requests are very easy.
 No need to file an issue.
 You don't even need to know Git.
-* Create a GitHub account and configure your full name in your profile.
-* Go to the documentation page that you want to update and click on "Edit this page on GitHub" at the bottom.
-* GitHub will bring up a web editor where you can enter your desired changes.
-* You can preview your changes under the "Preview changes" tab.
-* Add a title and optional description for your proposed change at the bottom of the editor.
-* The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well.
+
+- Create a GitHub account and configure your full name in your profile.
+- Go to the documentation page that you want to update and click on "Edit this page on GitHub" at the bottom.
+- GitHub will bring up a web editor where you can enter your desired changes.
+- You can preview your changes under the "Preview changes" tab.
+- Add a title and optional description for your proposed change at the bottom of the editor.
+- The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well.
 Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.
 Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
-* Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
+- Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
 
 If you prefer to use Git you can of course use the code contribution process for documentation contributions as well.
 
@@ -208,20 +208,20 @@ We want to keep the openHAB community awesome, growing and collaborative. We
 need your help to keep it that way. To help with this we've come up with some
 general guidelines for the community as a whole:
 
-* Be nice: Be courteous, respectful and polite to fellow community members: no
+- Be nice: Be courteous, respectful and polite to fellow community members: no
   regional, racial, gender, or other abuse will be tolerated. We like nice people
   way better than mean ones!
 
-* Encourage diversity and participation: Make everyone in our community
+- Encourage diversity and participation: Make everyone in our community
   feel welcome, regardless of their background and the extent of their
   contributions, and do everything possible to encourage participation in
   our community.
 
-* Keep it legal: Basically, don't get us in trouble. Share only content that
+- Keep it legal: Basically, don't get us in trouble. Share only content that
   you own, do not share private or sensitive information, and don't break the
   law.
 
-* Stay on topic: Make sure that you are posting to the correct channel
+- Stay on topic: Make sure that you are posting to the correct channel
   and avoid off-topic discussions. Remember when you update an issue or
   respond to an email you are potentially sending to a large number of
   people.  Please consider this before you update.  Also remember that

@@ -22,9 +22,10 @@ This section talks about some common buildsystem related topics and also some qu
 Generally all dependencies should be OSGi-bundles and available on JCenter.
 
 ### External dependency
+
 In most cases they should be referenced in the project POM with scope `provided`:
 
-```
+```xml
   <dependencies>
     <dependency>
       <groupId>foo.bar</groupId>
@@ -45,13 +46,14 @@ There are two exceptions:
 Dependencies on other openHAB bundles should have the scope `provided`.
 To ensure that they are available at runtime they also need to be added to the `feature.xml`:
 
-```
+```xml
   <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT</bundle>
 ```
 
 ### Internal dependency
 
 In two cases libraries can be added to the `/lib` directory:
+
 1. The bundle is not available for download
 2. The bundle is not an OSGi bundle but needs to be used for integration tests.
 Unlike Karaf, BND is not able to wrap bundles on its own.
@@ -61,9 +63,9 @@ You need add the library and export all needed packages manually.
 The build system automatically picks up all JAR files in `/lib` and embeds them in the new bundle.
 In this case they must not be added to the feature.
 
-If the bundles manifest is not properly exporting all needed packages, you can import them manually by adding 
+If the bundles manifest is not properly exporting all needed packages, you can import them manually by adding
 
-```
+```xml
   <properties>
     <dep.noembedding>netty-common</dep.noembedding>
   </properties>
@@ -77,7 +79,7 @@ If you only depend on shared bundles you can also omit the exclusion statement a
 
 If the imported packages need to be exposed to other bundles (e.g. case 2 above), this has to be done manually by adding
 
-```
+```xml
   <properties>
     <bnd.exportpackage>foo.bar.*;version="1.0.0"</bnd.exportpackage>
   </properties>
@@ -109,7 +111,7 @@ Two cases need to be treated differently:
 In some cases a binding consists of several bundles (e.g. `mqtt`).
 The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification suceeds:
 
-```
+```xml
 <feature>openhab-transport-mqtt</feature>
 <bundle start-level="80">mvn:org.openhab.addons.bundles/org.openhab.binding.mqtt/${project.version}</bundle>
 ```
@@ -117,7 +119,7 @@ The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles
 To  make sure that all sub-bundles are installed together with the main-bundle, the `feature.xml` of the bundles needs to be excluded from the aggregation.
 Therefore an exclusion needs to be added to `features/openhab-addons/pom.xml` (starting from l. 47):
 
-```
+```xml
 <exclude name="**/org.openhab.binding.mqtt*/**/feature.xml"/>
 ```
 

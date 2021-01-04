@@ -22,16 +22,16 @@ The different guides of this chapter assume that you are somewhat familiar with 
 
 openHAB allows you to build upon the following concepts:
 
-* **Bindings**: A binding connects to external services or devices.
-* **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
-* **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*.
-* **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
-* **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
-* **Natural language processing skill**:
+- **Bindings**: A binding connects to external services or devices.
+- **Automation engine module**: A trigger, condition, or action that can be used in automation rules (or scripts).
+- **Transformation / Profiles**: Can be used to transform a *Thing Channel*- value before it is assigned to an *Item*.
+- **An IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service).
+- **A Persistence service**: Persist item state updates and/or changes and allows them to be retrieved for specific points in time.
+- **Natural language processing skill**:
   Executes something depending on the understood Intents and returns something back to the user.
-* **Audio sinks/sources**:
+- **Audio sinks/sources**:
   Control where audio can be played or implement audio sources.
-* and many more (not covered yet).
+- and many more (not covered yet).
 
 First think about what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
@@ -84,12 +84,14 @@ This script is specific for binding addons. Follow these steps to generate your 
 1. From the command line in `openhab-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
 
    On Linux:
-    ```
+
+    ```bash
     ./create_openhab_binding_skeleton.sh  MyNewBinding "<Author>" <GitHubUsername>
     ```
 
    On Windows:
-    ```
+
+    ```bash
     create_openhab_binding_skeleton.cmd MyNewBinding "<Author>" <GitHubUsername>
     ```
 
@@ -98,19 +100,22 @@ This script is specific for binding addons. Follow these steps to generate your 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
 1. From `openhab-addons` root you can build only your binding with maven using the `-pl` option:
-    ```
+
+    ```bash
     mvn clean install -pl :org.openhab.binding.mynewbinding
     ```
+
    Where `mynewbinding` is the name of your new binding.
    Some additional maven options that may help:
-   * `-U`: Forces all dependencies to be downloaded again.
-   * `-am`: Builds all projects in openhab-addons your project dependends on.
-   * `-o`: Won't update any dependencies.
-   * `-DskipChecks`: Skips the static analysis checks
-   * `-DskipTests`: Skips the unit tests
+   - `-U`: Forces all dependencies to be downloaded again.
+   - `-am`: Builds all projects in openhab-addons your project dependends on.
+   - `-o`: Won't update any dependencies.
+   - `-DskipChecks`: Skips the static analysis checks
+   - `-DskipTests`: Skips the unit tests
 
 1. To start your new binding it's a good practise to commit your code on a new git branch:
-   ```
+
+   ```bash
    git checkout -b <mynewbranch>
    ```
 

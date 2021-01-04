@@ -147,10 +147,11 @@ Further, the <strong>item</strong> context can contain criteria to filter the li
 In the case of above filter only those items will be shown that satisfy the filter's conditions.
 The above filter is evaluated as follows:
 
-```
+```text
 (type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
 
 ```
+
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.
 The value of <strong>kind</strong> can either be STATE or TRIGGER.
 For example:

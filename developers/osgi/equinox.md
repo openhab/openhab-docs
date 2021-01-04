@@ -16,7 +16,7 @@ The openHAB bundles are deployed on an Equinox runtime.
 Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process.
 
 {::options toc_levels="2,3"/}
-* TOC
+- TOC
 {:toc}
 
 ## Start Equinox Runtime from Eclipse
@@ -46,8 +46,8 @@ Find it in your maven cache directory (linux `~/.m2/repository/org/eclipse/platf
 and windows `C:\Users\your.name\.m2\..`).
 
  1. Create `configuration` folder in that directory.
- 2. Inside the `configuration` folder create a file `config.ini`.
- 3. Save the following content in the `config.ini` file:
+ 1. Inside the `configuration` folder create a file `config.ini`.
+ 1. Save the following content in the `config.ini` file:
 
 ```ini
     osgi.bundles=\
@@ -67,7 +67,7 @@ and windows `C:\Users\your.name\.m2\..`).
     eclipse.consoleLog=true
 ```
 
- 6. Use the following command line to run Equinox:
+ 1. Use the following command line to run Equinox:
 
 ```shell
 java -jar org.eclipse.osgi-3.x.x.jar -console -configuration configuration

@@ -6,6 +6,7 @@ title: OSGi Declarative Services
 {% include base.html %}
 
 # Declarative Services
+
 {:.no_toc}
 
 In the [OSGi Overview article](osgi.html) we have mentioned that a bundle can register, unregister, get and unget services from a central point - the Service Registry.
@@ -13,14 +14,16 @@ In the [OSGi Overview article](osgi.html) we have mentioned that a bundle can re
 In order to simplify the usage of services the [OSGi Alliance](https://www.osgi.org/about-us/) has developed a model of managing services dynamically called *Declarative Services*.
 
 {::options toc_levels="2"/}
-* TOC
+
+- TOC
+
 {:toc}
 
 ## Model & Terms
 
 In order to understand this model, we will have to first explain a few terms, used below:
 
-- **Declarative Services Container** (we will use the shorthand **DS**) - a module that is managing the [lifecycle](#vii-component-lifecycle) of a *service component* dynamically.
+- **Declarative Services Container** (we will use the shorthand **DS**) - a module that is managing the [lifecycle](#vii-component-lifecycle) of a *service component- dynamically.
   It activates and deactivates different components, basing its decisions on the information contained in the *component description*;
 - **Service Component** (or also **component**) - an object whose lifecycle is managed,
   usually by a component framework such as Declarative Services (DS).
@@ -41,7 +44,7 @@ This ensures that service components are managed dynamically.
 
 ## Components
 
-It is important to understand the difference between a *component* and a *service*.
+It is important to understand the difference between a *component** and a *service*.
 A component is a normal Java class, that can reference services and provide services.
 What makes a component specific is that it is declared in a XML file and is managed completely by DS.
 That means that DS instantiates the component, calls method on this component and manages the lifecycle of a component.
@@ -112,16 +115,16 @@ public class MyService {
 Let's take a look at some configuration parameters, that we can apply:
 
 - **immediate**:
-    - *true* - the component is activated as soon as all dependencies are satisfied. Adding this option will ensure that the component will be activated right after the bundle is activated and the component is satisfied;
-    - *false* - the component has lazy activation. The activation of the component is delayed(lazy activation) until the service is requested. This is the default value;
+  - *true- - the component is activated as soon as all dependencies are satisfied. Adding this option will ensure that the component will be activated right after the bundle is activated and the component is satisfied;
+  - *false- - the component has lazy activation. The activation of the component is delayed(lazy activation) until the service is requested. This is the default value;
 - **cardinality**:
-    - *1..1* - single service reference, that is mandatory. If your referenced service gets inactive, DS deactivates your service component as well (default value);
-    - *0..1* - single service reference(not mandatory). You have to be aware that you might not have your reference resolved, your component can live with the absence;
-    - *0..n* - multiple service references (not mandatory). The referenced service can be implemented multiple times, so they are added to a list in your component implementation;
-    - *1..n* = like the above, but mandatory;
+  - *1..1- - single service reference, that is mandatory. If your referenced service gets inactive, DS deactivates your service component as well (default value);
+  - *0..1- - single service reference(not mandatory). You have to be aware that you might not have your reference resolved, your component can live with the absence;
+  - *0..n- - multiple service references (not mandatory). The referenced service can be implemented multiple times, so they are added to a list in your component implementation;
+  - *1..n- = like the above, but mandatory;
 - **policy**:
-    - *static* - the default policy. Component configuration are deactivated every time, when a reference with static policy becomes unavailable. This causes the activating and deactivating of the component. It can be very expensive, when we have multiple bound services, or when a service is often unregistered and re-registered;
-    - *dynamic* - with this policy the component is not deactivated, when a referenced service is changed. It is slightly more complex, as the component implementation has to properly handle changes in the set of bound services.
+  - *static- - the default policy. Component configuration are deactivated every time, when a reference with static policy becomes unavailable. This causes the activating and deactivating of the component. It can be very expensive, when we have multiple bound services, or when a service is often unregistered and re-registered;
+  - *dynamic- - with this policy the component is not deactivated, when a referenced service is changed. It is slightly more complex, as the component implementation has to properly handle changes in the set of bound services.
 
 ### Method Injection
 
@@ -208,7 +211,7 @@ You can find more information in the [OSGi Compendium Release 7, Chapter 112.2: 
 A component goes through several states in his lifecycle:
 
 - **UNSATISFIED** - initial state of the Service Component, after the bundle is started;
-- **REGISTERED** - temporary state. Only *delayed* components go through this state;
+- **REGISTERED** - temporary state. Only *delayed- components go through this state;
 - **ACTIVE** - the component is active and component instance is created.
 
 <img src="images/immediatecomponent.png" width="320" height="200" />
@@ -229,8 +232,8 @@ The next step is to satisfy the component configuration.
 
 The component **configuration is satisfied** when:
 
- - component is **enabled**;
- - all the **component references are satisfied**.
+- component is **enabled**;
+- all the **component references are satisfied**.
    A reference is satisfied when the reference specifies optional cardinality or there is at least one target service for the reference.
 If the component has lazy initialization (the component is *delayed*), it is moved to the REGISTERED state and it is waiting to be activated, when the service is requested (see Fig.2).
 Otherwise (the component is *immediate*) as soon as its dependencies are satisfied, the component is activated (see Fig.1).
@@ -245,15 +248,15 @@ Activation consists of following steps:
 - The method that is annotated with `@Activate` is called, if present
 
 After the activation, the component is in ACTIVE state.
-From this state the component can go back to the *REGISTERED* state (or to the *UNSATISFIED* state), if the component configuration becomes unsatisfied.
+From this state the component can go back to the *REGISTERED- state (or to the*UNSATISFIED- state), if the component configuration becomes unsatisfied.
 
 ### Deactivation
 
 Deactivation consists of the following actions:
 
- - The method that is annotated with `@Deactivate` is called, if present
- - All `@Reference`d services are unbound
- - Release all references to the component instance.
+- The method that is annotated with `@Deactivate` is called, if present
+- All `@Reference`d services are unbound
+- Release all references to the component instance.
 
 ## Troubleshooting
 

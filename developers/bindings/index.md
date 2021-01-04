@@ -19,7 +19,7 @@ It makes sense to briefly read over all sections to make you familiar with what 
 During development you might come back with specific questions.
 
 {::options toc_levels="2,3"/}
-* TOC
+- TOC
 {:toc}
 
 ## Structure of a Binding
@@ -208,8 +208,8 @@ Inside the `handleCommand` method binding specific logic can be executed.
 
 The ThingHandler implementation must be prepared to
 
-* handle different command types depending on the item types, that are defined by the channels,
-* be called at the same time from different threads.
+- handle different command types depending on the item types, that are defined by the channels,
+- be called at the same time from different threads.
 
 If an exception is thrown in the method, it will be caught by the framework and logged as an error.
 So it is better to handle communication errors within the binding and to update the thing status accordingly.
@@ -220,19 +220,19 @@ The following code block shows a typical implementation of the `handleCommand` m
 @Override
 public void handleCommand(ChannelUID channelUID, Command command) {
     try {
-    	switch (channelUID.getId()) {
-	    	case CHANNEL_TEMPERATURE:
-	        	if(command instanceof OnOffType.class) {
-	        		// binding specific logic goes here
-	        		SwitchState deviceSwitchState = convert((OnOffType) command);
-	        		updateDeviceState(deviceSwitchState);
-	        	}
-	        	break;
-	    	// ...
-    	}
-    	statusUpdated(ThingStatus.ONLINE);
-	} catch(DeviceCommunicationException ex) {
-		// catch exceptions and handle it in your binding
+        switch (channelUID.getId()) {
+            case CHANNEL_TEMPERATURE:
+                if(command instanceof OnOffType.class) {
+                    // binding specific logic goes here
+                    SwitchState deviceSwitchState = convert((OnOffType) command);
+                    updateDeviceState(deviceSwitchState);
+                }
+                break;
+            // ...
+        }
+        statusUpdated(ThingStatus.ONLINE);
+    } catch(DeviceCommunicationException ex) {
+        // catch exceptions and handle it in your binding
         statusUpdated(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, ex.getMessage());
     }
 }
@@ -356,11 +356,11 @@ All other states are managed by the framework.
 Furthermore bindings can specify a localized description of the thing status by providing the reference of the localization string, e.g &#64;text/rate_limit.
 The corresponding handler is able to provide placeholder values as a JSON-serialized array of strings:
 
-```
+```text
 &#64;text/rate_limit ["60", "10", "@text/hour"]
 ```
 
-```
+```text
 rate_limit=Device is blocked by remote service for {0} minutes.
 Maximum limit of {1} configuration changes per {2} has been exceeded.
 For further info please refer to device vendor.
@@ -407,7 +407,7 @@ The following example shows how to modify two properties of a thing:
 
 ```java
 protected void devicePropertiesChanged(DeviceInfo deviceInfo) {
-	Map<String, String> properties = editProperties();
+    Map<String, String> properties = editProperties();
     properties.put(Thing.PROPERTY_SERIAL_NUMBER, deviceInfo.getSerialNumber());
     properties.put(Thing.PROPERTY_FIRMWARE_VERSION, deviceInfo.getFirmwareVersion());
     updateProperties(properties);
@@ -501,7 +501,6 @@ Therefore, the `BridgeHandler` interface extends the `ThingHandler` interface.
 openHAB provides an abstract implementation of the `BridgeHandler` interface named `BaseBridgeHandler`.
 It is recommended to use this class, because it covers a lot of common logic.
 
-
 ### Life cycle
 
 A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](#lifecycle)).
@@ -534,8 +533,8 @@ A *ThingHandler* as handler for the thing entity can provide the configuration s
 For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface.
 Currently the framework provides two base thing handler implementations for the configuration status provider interface:
 
-* `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
-* `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
+- `org.openhab.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
+- `org.openhab.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
@@ -548,10 +547,10 @@ The actual message key is built by the operation `withMessageKeySuffix(String)` 
 
 As a result depending on the type of the message the final constructed message keys are:
 
-* config-status.information.any-suffix
-* config-status.warning.any-suffix
-* config-status.error.any-suffix
-* config-status.pending.any-suffix
+- config-status.information.any-suffix
+- config-status.warning.any-suffix
+- config-status.error.any-suffix
+- config-status.pending.any-suffix
 
 ## Handling Thing / Bridge Removal
 
@@ -572,9 +571,9 @@ Quite often the device or service you expose via openHAB Things allows certain a
 
 Examples are:
 
-* Reboot / Restart device
-* Start searching for new lights for a Hue lights bridge
-* Send message (via E-Mail / SMS Gateway service / Instant Messanger)
+- Reboot / Restart device
+- Start searching for new lights for a Hue lights bridge
+- Send message (via E-Mail / SMS Gateway service / Instant Messanger)
 
 If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions.
 
@@ -848,6 +847,7 @@ The devoloper has to take care about that.
     protected @NonNullByDefault({}) TranslationProvider i18nProvider;
     protected @NonNullByDefault({}) LocaleProvider localeProvider;
 ```
+
 :::
 
 ### UPnP Discovery
@@ -937,17 +937,17 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/master/bundles/pom.xml).
-* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/master/bom/openhab-addons/pom.xml).
-* If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
+- Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/master/bundles/pom.xml).
+- Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/master/bom/openhab-addons/pom.xml).
+- If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
-* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+- Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
 
 > Please make sure you add the above entries at their alphabetically correct position!
 
 Before you create a pull request on GitHub, you should now run
 
-```
+```bash
 mvn clean install
 ```
 

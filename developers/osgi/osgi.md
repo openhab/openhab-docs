@@ -6,13 +6,14 @@ title: OSGi
 {% include base.html %}
 
 # OSGi Overview
+
 {:.no_toc}
 
 openHAB is being based on [OSGi][OSGi] and understanding of OSGi modular architecture is very important.
 This page is aimed to help developers, that are going to use OSGi for the first time and contains a basic overview of the OSGi technology.
 
 {::options toc_levels="2,3"/}
-* TOC
+- TOC
 {:toc}
 
 ## Concepts
@@ -31,11 +32,11 @@ Key features of OSGi are:
 
 The OSGi framework consist of several layers build on top of each other (See Fig. 1):
 
-  - **Module Layer** - it is responsible for managing dependencies between bundles and for class loading ([See Bundles Section](#bundles));
-  - **Life Cycle Layer** - controls the lifecycle of the bundles ([See Lifecycle Section](#lifecycle));
-  - **Service Layer** - defines a dynamic model (publish/find/bind) of communication between different modules ([See Services Section](#services));
-  - **Actual Services** (Bundles on Fig.1) - this is the application layer, using all other layers;
-  - **Security Layer** - optional layer, based on the Java 2 security architecture, that manages permissions for different modules.
+- **Module Layer** - it is responsible for managing dependencies between bundles and for class loading ([See Bundles Section](#bundles));
+- **Life Cycle Layer** - controls the lifecycle of the bundles ([See Lifecycle Section](#lifecycle));
+- **Service Layer** - defines a dynamic model (publish/find/bind) of communication between different modules ([See Services Section](#services));
+- **Actual Services** (Bundles on Fig.1) - this is the application layer, using all other layers;
+- **Security Layer** - optional layer, based on the Java 2 security architecture, that manages permissions for different modules.
 
 ![OSGi Layers][fig1]
 Fig.1 OSGi Layering (Source:<https://www.osgi.org/wp-content/uploads/layering-osgi.png>)
@@ -168,12 +169,12 @@ We will list the most popular OSGi containers with a short description of their 
 
 ## Further Reading
 
- - [OSGi Core Release 7][OSGi-core]
- - [OSGi API](https://osgi.org/javadoc/osgi.core/7.0.0/)
- - [OSGi Vogella guide](http://www.vogella.com/tutorials/OSGi/article.html)
- - [Lifecycle of a bundle](https://developer.atlassian.com/docs/atlassian-platform-common-components/plugin-framework/behind-the-scenes-in-the-plugin-framework/lifecycle-of-a-bundle)
- - [OSGi enRoute](https://enroute.osgi.org/)
- - <https://www.osgi.org/developer/where-to-start/>
+- [OSGi Core Release 7][OSGi-core]
+- [OSGi API](https://osgi.org/javadoc/osgi.core/7.0.0/)
+- [OSGi Vogella guide](http://www.vogella.com/tutorials/OSGi/article.html)
+- [Lifecycle of a bundle](https://developer.atlassian.com/docs/atlassian-platform-common-components/plugin-framework/behind-the-scenes-in-the-plugin-framework/lifecycle-of-a-bundle)
+- [OSGi enRoute](https://enroute.osgi.org/)
+- <https://www.osgi.org/developer/where-to-start/>
 
 [OSGi]: https://www.osgi.org/
 [OSGi-core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
