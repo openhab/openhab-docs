@@ -16,7 +16,6 @@ The full Java API for binding definitions can be found in the Java package `org.
 
 For the declarative way, you add your binding information in form of a `binding.xml` file to the bundle's folder `/src/main/resources/OH-INF/binding/binding.xml`.
 
-
 ### XML Structure for Binding Definitions
 
 ```xml
@@ -51,7 +50,6 @@ For the declarative way, you add your binding information in form of a `binding.
 | config-description-ref     | The reference to a configuration description for the binding within the ConfigDescriptionRegistry | optional |
 | config-description-ref.uri | The URI of the configuration description for the binding within the ConfigDescriptionRegistry | mandatory |
 
-
 The full XML schema for binding definitions is specified in the [Binding XSD](https://openhab.org/schemas/binding-1.0.0.xsd) file.
 
 **Hints:**
@@ -60,7 +58,6 @@ The full XML schema for binding definitions is specified in the [Binding XSD](ht
 - If a configuration description is already specified somewhere else and the binding wants to (re-)use it, a `config-description-ref` should be used instead.
 - Normally the service id must not be defined, because it is implicitly set to "binding.&lt;binding.id&gt;".
 A binding can register an OSGi service which implements the ManagedService interface and define the service.pid as e.g."binding.hue" to receive the configuration.
-
 
 ### Example
 
