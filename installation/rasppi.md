@@ -119,16 +119,18 @@ Now, to install Zulu 11, you need to download and install a tar.gz package for y
     ```
    You'll be prompted to select the alternative, pick the zulu11 you installed.
 
-5. If you wish so, you can now delete the downloaded tar file
+7. If you wish so, you can now delete the downloaded tar file
     ```shell
     sudo rm *.tar.gz
     ```
 
 ### Installation of openHAB:
 
-
 This section describes the steps required to install openHAB on the Raspberry device, after you completed the above mentioned *prerequisites* steps. 
-It is a selection of the general Linux installation steps described in  [Package Repository based Installation on Linux](linux.html#package-repository-installation) . Refer to that page if you wish to view a comprehensive guide to every possible Linux installation environments instead. 
+
+It is a selection of the general Linux installation steps described in  [Package Repository based Installation on Linux](linux.html#package-repository-installation) .
+
+Refer to that page if you wish to view a comprehensive guide to every possible Linux installation environments instead. 
 
 1. First, add the openHAB Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
@@ -137,9 +139,12 @@ It is a selection of the general Linux installation steps described in  [Package
    sudo apt-get install apt-transport-https
    ```
 
-2. choose the openHAB package to install. You can choose between *Official (Stable)*, *Beta* or *Snapshot* builds.
+2. choose the openHAB package to install. 
 
-    If you are new to openHAB and don't know what to pick, you likely need the *Stable* version. Expand the section of your choice for the details of the installation step.
+    You can choose between *Official (Stable)*, *Beta* or *Snapshot* builds.
+
+    If you are new to openHAB and don't know what to pick, you likely need the *Stable* version. 
+    Expand the section of your choice for the details of the installation step.
 
     <details>
      <summary>Official (Stable)</summary>
@@ -177,15 +182,9 @@ It is a selection of the general Linux installation steps described in  [Package
     ```shell
     echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
-
 </details>
 
-    
-
-
-    
-
-3. resynchronize the package index:
+3. re-synchronize the package index:
 
     ```shell
     sudo apt-get update
@@ -199,21 +198,26 @@ It is a selection of the general Linux installation steps described in  [Package
 
 5. *(optional)* When you choose to install an add-on, openHAB will download it from the internet on request.
 
-   If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
+   If you plan on working off-line, you might consider installing the add-ons package.
 
     ```shell
     sudo apt-get install openhab-addons
     ```
+---
+If everything went well, the installation is complete. 
 
-If everything went well, you can now start openHAB and test it as described in the following points
+You can now start openHAB and test it as described in the following points
 
 6. Start openHAB
  ```shell
 sudo systemctl start openhab.service
 sudo systemctl status openhab.service
 ```
-7. test that openHAB is running fine. You can try to reach the openHAB dashboard, using the link:  `http://openhab-device:8080` (replace localhost or your device IP address to *openhab-device*). You should get the *create new admin* screen 
-![The openHAB Dashboard page](images/Home_Openhab_4.png)
+7. test that openHAB is running fine. 
+
+    You can try to reach the openHAB dashboard, using the link:  `http://openhab-device:8080` (replace localhost or your device IP address to *openhab-device*). You should get the *create new admin* screen 
+
+   ![The openHAB Dashboard page](images/Home_Openhab_4.png)
 
 8. Install openHAB as a service. This will allow openHAB to run without need for a manual start as described above.
  ```shell
@@ -234,8 +238,10 @@ You can:
 
 ### File Locations
 
+This is the location of folders of  interest for the user:
+
 |                               | Repository Installation      
-|:-----------------------------:|------------------------------|------------------------------------------------------------------|
+|:-----------------------------|------------------------------|------------------------------------------------------------------|
 |      openHAB application      | `/usr/share/openhab`                                                        |
 |    Additional add-on files    | `/usr/share/openhab/addons` |                                         |
 |       Site configuration      | `/etc/openhab`              |                                     |
@@ -248,7 +254,6 @@ You can:
 ### Utilities
 
 #### Service Control
-
 
 openHAB will run as a service in the background.
 The most important commands to control the openHAB service are given below.
@@ -271,7 +276,7 @@ The most important commands to control the openHAB service are given below.
   sudo systemctl enable openhab.service
   ```
 
-#### Command Line Interface (CLI)
+#### Command Line Interface
 
 After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB-specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/console.html)).
 To use the shortcuts in a terminal, simply type `openhab-cli` followed by the command.
@@ -297,13 +302,21 @@ Possible commands:
 
 You can learn more about openHAB and how it works by looking at your log files.
 These will tell you everything you might need to know.
-Execute the following command in one session or have both files separated in sessions side by side:
 
-- Package repository based installation:
+To access the current log of openHAB, execute the following command in one session or have both files separated in sessions side by side:
+
+
 
   ```shell
   tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log
   ```
+  - if you wish to filter the results, please notice that there is an utility to support you, named *grep*. A quick example below:
+      ```
+      tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log | grep "theStringYourLookingForGoesHere"
+      ```
+      Refer to its help for details.
+
+   - if you wish to modify the level of detail of logging, you'll need to interact with the [openHAB console](#command-line-interface), as described int the [Administration-Logging]({{base}}/administration/logging.md) page.
 
 ## Backup and Restore
 
