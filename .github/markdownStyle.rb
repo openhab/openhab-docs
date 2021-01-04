@@ -3,6 +3,9 @@ all
 # Expect dash usage for unorderd lists
 rule 'MD004', :style => :dash
 
+# Allow trailing spaces
+exclude_rule 'MD009'
+
 # Allow long line lengths
 exclude_rule 'MD013'
 
