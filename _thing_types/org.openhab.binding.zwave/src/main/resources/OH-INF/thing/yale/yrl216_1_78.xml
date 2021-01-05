@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="yale_yrl216_01_078" listed="false">
+    <label>YRL216 Yale Smart Door Lock YRL216 with Z-Wave Module</label>
+    <description><![CDATA[
+Yale Smart Door Lock YRL216 with Z-Wave Module<br /> <h1>Overview</h1><p>Adds Z-Wave functionality for Yale YRL216 and YRL236 locks.</p> <br /> <h2>Inclusion Information</h2><p>• Enter the 4-8 digit Master PIN code followed by the # key.</p><p>• Press the 7 key followed by the # key.</p><p>• Press the 1 key followed by the # key.</p> <br /> <h2>Exclusion Information</h2><p>• Enter the 4-8 digit Master PIN code followed by the # key.</p><p>• Press the 7 key followed by the # key.</p><p>• Press the 3 key followed by the # key.</p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>Lock</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="lock_door" typeId="lock_door">
+        <label>Door Lock</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_DOOR_LOCK</property>
+        </properties>
+      </channel>
+      <channel id="alarm_power" typeId="alarm_power">
+        <label>Alarm (power)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=POWER_MANAGEMENT</property>
+        </properties>
+      </channel>
+      <channel id="alarm_access" typeId="alarm_access">
+        <label>Alarm (access)</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_ALARM;type=ACCESS_CONTROL</property>
+        </properties>
+      </channel>
+      <channel id="battery-level" typeId="system.battery-level">
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_BATTERY</property>
+        </properties>
+      </channel>
+      <channel id="time_offset" typeId="time_offset">
+        <label>Clock Time Offset</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_TIME_PARAMETERS</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">ASSA ABLOY</property>
+      <property name="modelId">YRL216</property>
+      <property name="manufacturerId">0129</property>
+      <property name="manufacturerRef">800B:0F00</property>
+      <property name="versionMin">1.78</property>
+      <property name="dbReference">1338</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration"
+                 min="1" max="3">
+        <label>1: Silent Mode on/off</label>
+        <description><![CDATA[
+Changes speaker settings<br /> <h1>Overview</h1><p>1. Sound Enable</p><p>3. Sound Disable</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="1">Sound Enable</option>
+          <option value="3">Sound Disable</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>2: Auto Relock on/off</label>
+        <description><![CDATA[
+Turn on/off auto re-lock function<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto Relock Off</option>
+          <option value="255">Auto Relock On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="10" max="180">
+        <label>3: Auto Relock Time</label>
+        <description><![CDATA[
+Set time after unlock to trigger auto relock function<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>30</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="3" max="10">
+        <label>4: Wrong Code Entry Limit</label>
+        <description><![CDATA[
+Set number of unsuccessful attempts before shutdown<br /> <h1>Overview</h1><p>After (<b>Wrong Code Entry Limit</b>) unsuccessful attempts at entering a valid PIN code, the unit will shut down and not allow operation for (<b>Shut Down Time</b>) seconds.</p>
+        ]]></description>
+        <default>5</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration"
+                 min="10" max="180">
+        <label>7: Shut Down Time</label>
+        <description><![CDATA[
+Set time to shutdown unit after Wrong Code Entry Limit exceeded<br /> <h1>Overview</h1><p>The unit will shutdown (flashing RED) for (<b>Shutdown Time</b>) seconds and not allow operation after the (<b>Wrong Code Entry L</b><b>imit</b>) has been met.</p>
+        ]]></description>
+        <default>60</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>8: Operating Mode</label>
+        <description><![CDATA[
+Set Normal or Vacation Mode<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal Mode (Default)</option>
+          <option value="1">Vacation Mode (Keypad Locked Out)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>11: One Touch Locking</label>
+        <description><![CDATA[
+Turn on/off one touch locking feature<br /> <h1>Overview</h1><p>When the latch is retracted, activating the keypad will extend the latch (during Automatic Re-lock duration or when Automatic Re-lock is disabled). When One-Touch Re-lock is not in use (disabled), any valid PIN code will re-lock the lock.</p>
+        ]]></description>
+        <default>255</default>
+        <options>
+          <option value="0">One Touch Locking Off</option>
+          <option value="255">One Touch Locking On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="255">
+        <label>13: Lock Status LED</label>
+        <description><![CDATA[
+Turn on/off lock status LED<br /> <h1>Overview</h1><p>Located on the interior escutcheon. Shows active status (Locked) of lock and can be enabled or disabled with this parameter.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED Off</option>
+          <option value="255">LED On</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>15: Reset to factory defaults</label>
+        <description><![CDATA[
+Reset to Factory Defaults<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association">
+        <label>1: Lifeline</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

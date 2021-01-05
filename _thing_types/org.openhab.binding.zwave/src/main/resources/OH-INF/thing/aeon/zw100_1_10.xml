@@ -471,7 +471,8 @@ Default unit of the automatic temperature report<br /> <h1>Overview</h1><p>Set t
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_81_1" type="integer" groupName="configuration">
+      <parameter name="config_81_1" type="integer" groupName="configuration"
+                 min="0" max="2">
         <label>81: LED function</label>
         <description><![CDATA[
 Disable/Enable LED function<br /> <h1>Overview</h1><p>Enable/disable the LED blinking.<br />0 = Enable LED blinking.<br />1 = Disable LED blinking only when the PIR is triggered.<br />2 = Completely disable LED for motion, wakeup, and sensor report.  </p>
@@ -482,7 +483,6 @@ Disable/Enable LED function<br /> <h1>Overview</h1><p>Enable/disable the LED bli
           <option value="1">Disable PIR LED</option>
           <option value="2">Disable ALL</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_100_1_wo" type="integer" groupName="configuration">
@@ -574,14 +574,17 @@ Temperature calibration in 0.1 deg steps<br /> <h1>Overview</h1><p>Temperature c
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_201_2_000000FF" type="integer" groupName="configuration">
+      <parameter name="config_201_2_000000FF" type="integer" groupName="configuration"
+                 min="1" max="2">
         <label>201: Temperature Calibration Unit</label>
+        <description><![CDATA[
+<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>1</default>
         <options>
           <option value="1">Celsius</option>
           <option value="2">Fahrenheit</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_201_2_0000FF00" type="integer" groupName="configuration"
@@ -622,7 +625,8 @@ Ultraviolet Sensor Calibration<br /> <h1>Overview</h1><p>Ultraviolet sensor cali
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_252_1" type="integer" groupName="configuration">
+      <parameter name="config_252_1" type="integer" groupName="configuration"
+                 min="0" max="1">
         <label>252: Disable/Enable Configuration Lock</label>
         <description><![CDATA[
 Disable/Enable Configuration Lock (0=Disable, 1=Enable)<br /> <h1>Overview</h1><p>Enable/disable Configuration Locked (0 =disable, 1 = enable).</p>
@@ -632,7 +636,6 @@ Disable/Enable Configuration Lock (0=Disable, 1=Enable)<br /> <h1>Overview</h1><
           <option value="0">Disable</option>
           <option value="1">Enable</option>
         </options>
-        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_255_4_wo" type="integer" groupName="configuration">

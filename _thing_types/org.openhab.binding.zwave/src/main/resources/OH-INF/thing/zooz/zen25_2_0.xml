@@ -180,12 +180,9 @@ On/Off Status After Power Failure<br /> <h1>Overview</h1><p>Choose the recovery 
                  min="0" max="65535">
         <label>2: Wattage Threshold</label>
         <description><![CDATA[
-Power Wattage Report Value Threshold<br /> <h1>Overview</h1><p>Choose how you want your Double Plug to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the Double Plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report).</p>
+Power Wattage Report Value Threshold<br /> <h1>Overview</h1><p>Choose how you want your Double Plug to report power consumption to your hub. The number entered as value corresponds to the number of Watts the appliance needs to go over for the change to be reported. So if 5 Watts are entered by default, the Double Plug will report any change in power usage over 5 Watts for each outlet (whether it’s at least 5 Watts more or 5 Watts less compared to previous report). 0 = Disable.</p>
         ]]></description>
         <default>10</default>
-        <options>
-          <option value="0">Disable</option>
-        </options>
       </parameter>
 
       <parameter name="config_3_4" type="integer" groupName="configuration"

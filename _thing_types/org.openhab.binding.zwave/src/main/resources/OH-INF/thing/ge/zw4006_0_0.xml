@@ -104,14 +104,16 @@ In-Wall Smart Motion Switch<br /> <h1>Overview</h1><p>The switch enables wireles
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_2_1" type="integer" groupName="configuration">
         <label>2: Dim level</label>
-        <description>Change brightness of associated light bulb(s)</description>
+        <description><![CDATA[
+Change brightness of associated light bulb(s)<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>255</default>
         <options>
           <option value="255">Default</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration">

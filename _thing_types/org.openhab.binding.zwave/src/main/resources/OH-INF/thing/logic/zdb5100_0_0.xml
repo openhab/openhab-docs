@@ -316,7 +316,7 @@ Timer value for pushbutton 1<br /> <h1>Overview</h1><p>This parameter specifies 
       </parameter>
 
       <parameter name="config_18_4" type="integer" groupName="configuration"
-                 min="0" max="33514240">
+                 min="0" max="4294967295">
         <label>18: Multi-Level Switch Set values for pushbutton 1</label>
         <description><![CDATA[
 Multi-Level Switch Set values for pushbutton 1<br /> <h1>Overview</h1><table><tr><td><strong>Byte 1</strong></td> <td><strong>Enable / Disable</strong></td> </tr><tr><td>0</td> <td> <p>Disabled – A single activation of the pushbutton will not send commands to devices in association group 4.</p> </td> </tr><tr><td>1</td> <td> <p>Enabled – A single activation will send commands to devices in association group 4. Devices will receive commands with the values set in Byte 2 and 3 (Default).</p> </td> </tr><tr><td><strong>Byte 2</strong></td> <td><strong>Upper switch value</strong></td> </tr><tr><td> <p>0 - 99, 255</p> </td> <td> <p>When single pressing the pushbutton for ON, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 255)</p> </td> </tr><tr><td><strong>Byte 3</strong></td> <td><strong>Lower switch value</strong></td> </tr><tr><td>0 - 99</td> <td> <p>hen single pressing the pushbutton for OFF, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 0)</p> </td> </tr><tr><td><strong>Byte 4</strong></td> <td><strong>Not used</strong></td> </tr><tr><td>0</td> <td>must be set to 0.</td> </tr></table>
@@ -378,12 +378,12 @@ ON indication RGB-saturation for pushbutton 1<br /> <h1>Overview</h1><p>This par
       </parameter>
 
       <parameter name="config_23_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="0" max="4294967295">
         <label>23: OFF indication RGB-saturation for pushbutton 1</label>
         <description><![CDATA[
 OFF indication RGB-saturation for pushbutton 1<br /> <h1>Overview</h1><p>This parameter specifies the saturation levels for the red, green and blue LEDs, when OFF status is indicated. (Default is the OFF-state indicated as a low white light on 5%).</p> <table><tr><td><strong>Byte 1</strong></td> <td><strong>Colour saturation, red.</strong></td> </tr><tr><td>0 - 255</td> <td>Specifies the saturation for the red LEDs. (Default is 47).</td> </tr><tr><td><strong>Byte 2</strong></td> <td><strong>Colour saturation, green. </strong></td> </tr><tr><td>0 – 255 </td> <td>Specifies the saturation for the green LEDs. (Default is 47) </td> </tr><tr><td><strong>Byte 3</strong></td> <td><strong>Colour saturation, blue. </strong></td> </tr><tr><td>0 - 255</td> <td>Specifies the saturation for the blue LEDs. (Default is 47)</td> </tr><tr><td><strong>Byte 4</strong></td> <td><strong>LED control.</strong></td> </tr><tr><td>0 - 255 </td> <td>LED indicator control; see the application note about this parameter. (Default is 0)</td> </tr></table>
         ]]></description>
-        <default>0</default>
+        <default>791621376</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
@@ -412,12 +412,12 @@ Timer value for pushbutton 2<br /> <h1>Overview</h1><p>This parameter specifies 
       </parameter>
 
       <parameter name="config_26_4" type="integer" groupName="configuration"
-                 min="0" max="65535">
+                 min="0" max="4294967295">
         <label>26: Multi-Level Switch Set values for pushbutton 2.</label>
         <description><![CDATA[
 Multi-Level Switch Set values for pushbutton 2.<br /> <h1>Overview</h1><table><tr><td><strong>Byte 1</strong></td> <td><strong>Enable / Disable</strong></td> </tr><tr><td>0</td> <td> <p>Disabled – A single activation of the pushbutton will not send commands to devices in association group 4.</p> </td> </tr><tr><td>1</td> <td> <p>Enabled – A single activation will send commands to devices in association group 4. Devices will receive commands with the values set in Byte 2 and 3 (Default).</p> </td> </tr><tr><td><strong>Byte 2</strong></td> <td><strong>Upper switch value</strong></td> </tr><tr><td> <p>0 - 99, 255</p> </td> <td> <p>When single pressing the pushbutton for ON, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 255)</p> </td> </tr><tr><td><strong>Byte 3</strong></td> <td><strong>Lower switch value</strong></td> </tr><tr><td>0 - 99</td> <td> <p>hen single pressing the pushbutton for OFF, a Multilevel Switch Set with this value will be send to devices in association group 4. (Default = 0)</p> </td> </tr><tr><td><strong>Byte 4</strong></td> <td><strong>Not used</strong></td> </tr><tr><td>0</td> <td>must be set to 0.</td> </tr></table>
         ]]></description>
-        <default>0</default>
+        <default>33488896</default>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
