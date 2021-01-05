@@ -69,11 +69,8 @@ Note that the software running inside a Docker container cannot follow the symbo
 Make sure the `openhab` user owns these directories.
 
 ```bash
-mkdir /opt/openhab
-mkdir /opt/openhab/conf
-mkdir /opt/openhab/userdata
-mkdir /opt/openhab/addons
-chown -R openhab:openhab /opt/openhab
+sudo mkdir -p /opt/openhab/{conf,userdata,addons}
+sudo chown -R openhab:openhab /opt/openhab
 ```
 
 ### Running the Container as a Service Managed by Docker
