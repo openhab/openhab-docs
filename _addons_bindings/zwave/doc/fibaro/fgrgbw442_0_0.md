@@ -439,7 +439,7 @@ This parameter has the configuration ID ```config_34_4_000000FF``` and is of typ
 
 Duration of alarm signalization
 
-The following option values may be configured, in addition to values in the range 0 to 32400 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

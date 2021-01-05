@@ -36,6 +36,10 @@ This Plug provides line voltage, current load, power consumption and energy cons
   2. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
   3. Press the button three times within 1.5 second, the device will enter exclusion mode. And the LED will flash on and off with yellow alternately five times within 2 seconds.
 
+### General Usage Information
+
+
+
 ## Channels
 
 The following table summarises the channels available for the NAS-WR01ZE -:
@@ -117,7 +121,7 @@ Detailed information on each parameter can be found in the sections below.
 
 This parameter defines Disable/Enable meter report measure data to controller.
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -167,7 +171,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 This parameter defines the LED indication Function ON/OFF.
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -194,7 +198,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 Plug state after power-on
 Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -210,7 +214,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 Timer plug OFF after time period
 Defines if the timer function is enabled/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -237,7 +241,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 Enable/Disable top button function
 If this parameter is set to ‘1’, users can turn on and off the wall plug by pressing the button on the top of the wall plug. If this parameter is set to ‘0’, the wall plug cannot be turned on and off by pressing the button.
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 1 -:
 
 | Value  | Description |
 |--------|-------------|

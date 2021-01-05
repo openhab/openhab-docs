@@ -300,7 +300,7 @@ cessed, the transition cannot be interrupted by any motion event in any case.
 210 - 254 = Reserved
 
 255 = Lamp/relay is switched off for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.
-The following option values may be configured, in addition to values in the range 0 to 209 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

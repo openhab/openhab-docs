@@ -426,7 +426,7 @@ Available configuration parameters (data type is 2 Byte DEC)
   * 30 – 32535 = 30 s – 32535 s
 
 **NOTE:** the delay time may be prolonged for more then 10s of the time set by the parameter.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-The following option values may be configured, in addition to values in the range 0 to 32535 -:
+The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|

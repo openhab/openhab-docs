@@ -19,17 +19,27 @@ The MATRIX ZBA7140 does not permanently listen for messages sent from the contro
 
 ## Overview
 
-MATRIX type ZBA7140 (from hereon called MATRIX ZBA) is a multifunction battery wall controller that can be mounted in a modular wall-box or directly ontothe wall. It is compatible with existing FUGA® frames and wall boxes.MATRIX ZBA has four configurable pushbuttons that can control other Z-Wave devices through the wireless Z-Wave network. These buttons can send ‘ON’, ‘OFF’ and ‘DIM’ commands to the associated Z-Wave devices. These devices could be light dimmers, blinds, sunscreens, etc.MATRIX ZBA can also issue scene activation commands that can be used to activate scenes in the Z-Wave Controller.MATRIX ZBA has four RGB indicator LEDs, one for each pushbutton, that indicates activation of the pushbutton, and when MATRIX ZBA is in inclusion or exclusion mode. These indicators can be configured to a desired indication colour, or they can indicate the battery level when a pushbutton is activated.MATRIX ZBA is equipped with the newest battery-saving 700-series Z-Wave chip that uses up to 65% less power and have improved wireless range. This means that the small coin-cell battery can last between 5 –10years. MATRIX ZBA is estimated toabattery lifetime, at normal use, to approximately 5 years.
+MATRIX type ZBA7140 (from hereon called MATRIX ZBA) is a multifunction battery wall controller that can be mounted in a modular wall-box or directly ontothe wall. It is compatible with existing FUGA® frames and wall boxes.
+
+MATRIX ZBA has four configurable pushbuttons that can control other Z-Wave devices through the wireless Z-Wave network. These buttons can send ‘ON’, ‘OFF’ and ‘DIM’ commands to the associated Z-Wave devices. These devices could be light dimmers, blinds, sunscreens, etc.
+
+MATRIX ZBA can also issue scene activation commands that can be used to activate scenes in the Z-Wave Controller.
+
+MATRIX ZBA has four RGB indicator LEDs, one for each pushbutton, that indicates activation of the pushbutton, and when MATRIX ZBA is in inclusion or exclusion mode. These indicators can be configured to a desired indication colour, or they can indicate the battery level when a pushbutton is activated.
+
+MATRIX ZBA is equipped with the newest battery-saving 700-series Z-Wave chip that uses up to 65% less power and have improved wireless range. This means that the small coin-cell battery can last between 5 –10years.
+
+MATRIX ZBA is estimated to have a battery lifetime, at normal use, to approximately 5 years.
 
 ### Inclusion Information
 
-MATRIXZBAis a SmartStart enabled product and can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the SmartStart product will be added automatically within 10 minutes of being switched on in the network vicinity.Find the QR code and PIN Code on the back of the module.
+MATRIXZBA is a SmartStart enabled product and can be added into a Z-Wave network by scanning the Z-Wave QR Code present on the product with a controller providing SmartStart inclusion. No further action is required and the SmartStart product will be added automatically within 10 minutes of being switched on in the network vicinity.Find the QR code and PIN Code on the back of the module.
 
 Find the full DSK on the product packaging.
 
 Add MATRIX ZBA to a network with Classic Inclusion by pressing once on the switch behind the pushbutton-cover. The LED near pushbutton 1 will start blinking.
 
-Use same procedure for removing MATRIX ZBAwith Classic Exclusion. If MATRIXZBA already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.
+Use same procedure for removing MATRIX ZBA with Classic Exclusion. If MATRIXZBA already belongs to a Z-Wave network, the remove process must be performed before adding it in a new network. Otherwise, the adding of the device will fail.
 
 ### Exclusion Information
 
@@ -44,7 +54,7 @@ The MATRIX ZBA7140 does not permanently listen for messages sent from the contro
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-MATRIX ZBA is a battery-operated device and is turned into deep sleep state most of the time to save battery. Communication with the device is limited. In order to communicate with the device, a controller is needed in the network. This controller will maintain a mailbox for the battery-operated devices and store commands that can’t be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery lifetime is significantly decreased. This device will wake up every 6 hours and announce the wake-upstate by sending out a so-called Wake Up Notification. The controller can then empty the mailbox. The wake-up interval is a trade-off between maximal battery lifetime and the desired responses of the device. The device will stay awake right after inclusion for 10 seconds allowing the controller to perform certain configuration. It is possible to manually wake up the device by double-activating the button
+This device will wake up every 6 hours and announce the wake-upstate by sending out a so-called Wake Up Notification. The controller can then empty the mailbox. The wake-up interval is a trade-off between maximal battery lifetime and the desired responses of the device. The device will stay awake right after inclusion for 10 seconds allowing the controller to perform certain configuration. It is possible to manually wake up the device by double-activating the button
 
 ### General Usage Information
 
