@@ -183,3 +183,44 @@ To change the location of an equipment or room, simply change the parent Group.
 To change the type of an equipment or point, simply edit the tags.
 Some of these edits are possible from the Model Page itself.
 Where that's not supported, you can make the changes through the Item's Page.
+
+ ## Controls and Sensor types
+
+This is a table descibing the Equipment types and point class and type to enable display of badges and measurements on the location cards.
+This is based off the sources linked below.
+
+ - https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63
+ - https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48
+
+ ### Badges
+
+| Type      | Equipment | Equipment subtypes allowed | Point Class | Point Type | Point Subtypes allowed |
+| ----------- | --- | ---- | ----------- | ---- | ----- |
+| Lights | ANY | NA |Control | Light | yes |
+| Windows  | Window | no | Status | OpenState | no |
+| Doors | Door or FrontDoor | no | Status | OpenState | no |
+| Garage Doors | GarageDoor | no | Status | OpenState | no |
+| Blinds | Blinds | no | Status | OpenState | no |
+| Presence | ANY | NA | Status | Presence | yes |
+| Lock | Lock | no | Status |  OpenState | no |
+| Lock | Lock | no | Status |  ANY | no |
+| Lock | Lock | no | Control |  ANY | yes |
+| Climate | HVAC | yes | Status | ANY | no |
+| Climate | HVAC | yes | Control | ANY | yes |
+| Screens | Screen | yes | Status | Power | no |
+| Screens | Screen | yes | Control | Power | yes |
+| Speakers | Receiver or Speaker | Status | Power | no |
+| Speakers | Receiver or Speaker | Control | Power | yes |
+| Projectors | Projector | no | Status | Power | no |
+| Projectors | Projector | no | Control | Power | yes |
+| Alarms | ANY | NA | Alarm | ANY | yes |
+
+ ### Measurements
+
+ These don't care about equipment and just look at points
+
+ | Type      |  Point Class | Point Type | Point Subtypes allowed |
+| ----------- | ----------- | ---- | ----- |
+| luminance |  Measurement | Light | yes |
+| temperature |  Measurement | Temperature | yes |
+| humidity |  Measurement | Humidity | yes |
