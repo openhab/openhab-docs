@@ -150,7 +150,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     name=openHAB Stable
     baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
     gpgcheck=1
-    gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    gpgkey="https://bintray.com/user/downloadSubjectPublicKey?username=openhab"
     enabled=1
     ```
 
