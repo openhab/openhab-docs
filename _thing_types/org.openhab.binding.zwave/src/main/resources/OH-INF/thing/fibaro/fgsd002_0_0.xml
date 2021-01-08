@@ -118,16 +118,6 @@ This parameter allows to activate excess temperature ...<br /> <h1>Overview</h1>
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_2_1" type="integer" groupName="configuration"
-                 min="0" max="255">
-        <label>2: Z-Wave notifications status</label>
-        <description><![CDATA[
-This parameter allows to activate excess temperature ...<br /> <h1>Overview</h1><p>...  and/or enclosure opening notifications sent to the main controller</p>
-        ]]></description>
-        <default>255</default>
-        <limitToOptions>false</limitToOptions>
-      </parameter>
-
       <parameter name="config_3_1" type="integer" groupName="configuration">
         <label>3: Visual indicator notifications status</label>
         <description><![CDATA[
