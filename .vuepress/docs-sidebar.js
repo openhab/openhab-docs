@@ -92,7 +92,7 @@ module.exports = [
       ['../link/homekit', 'Apple HomeKit'],
       // ['ecosystem/ifttt/', 'IFTTT'], // Temporary remove until service gets reactivated
       ['ecosystem/mycroft/', 'Mycroft.AI'],
-      ['../link/openhabcloud', 'Cloud COnnector (For 3rd party integration)'],
+      ['../link/openhabcloud', 'openHAB Cloud'],
     ]
   },
   {
