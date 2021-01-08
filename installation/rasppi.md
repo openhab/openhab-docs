@@ -106,7 +106,7 @@ Now, to install Zulu 11, you need to download and install a tar.gz package for y
    ```
 4. Extract the archive
     ```shell
-   sudo tar -xzvf -zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf
+   sudo tar -xzvf zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf
    ```
 5. Install ```java``` and ```javac```
    ```shell
