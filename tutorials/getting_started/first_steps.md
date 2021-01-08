@@ -25,7 +25,8 @@ Since there are no users yet, openHAB will ask you to create an administrator ac
 
 ### Add geographic information
 
-After creating an admin user, you will be guided through a first-time setup wizard. Start by setting your language, region, and time zone. You can also set your location, or skip this step and complete it later.
+After creating an admin user, you will be guided through a first-time setup wizard.
+Start by setting your language, region, and time zone. You can also set your location, or skip this step and complete it later.
 
 ![](images/wizard_geo.png)
 
@@ -33,7 +34,9 @@ After creating an admin user, you will be guided through a first-time setup wiza
 
 ### Install add-ons
 
-You now have the option to install openHAB add-ons. Do this if you already know that you'll need specific add-ons (e.g. if you're upgrading from an older openHAB system), or skip this step if you prefer to install add-ons individually. You can always install/remove add-ons in the future, enabling you to modify and improve your system over time.
+You now have the option to install openHAB add-ons.
+Do this if you already know that you'll need specific add-ons (e.g. if you're upgrading from an older openHAB system), or skip this step if you prefer to install add-ons individually.
+You can always install/remove add-ons in the future, enabling you to modify and improve your system over time.
 
 ![](images/wizard_addons.png)
 
@@ -41,30 +44,18 @@ After finishing the wizard you will get a welcome message and be redirected to y
 ![](images/wizard_welcome.png)
 ![](images/welcome_page.png)
 
-### Log into the dashboard with an existing user
+### Log into the dashboard
 
-To log in with an existing user, you can do the following.
-Click on the shield icon in the lower-left corner of the sidebar:
-
-![](images/shield.png)
-
-If you don't see it, click on the menu icon ![](menu_icon.png) located at the top-left corner to reveal the sidebar.
-Once you have successfully created the admin account, you will be taken back to the previous screen, except the Administration area will now be accessible in the sidebar:
-
-![](images/administrator.png)
+You'll be automatically logged into your dashboard using your administrator when the setup wizard is completed.
+openHAB doesn't require you to sign in, but you can only access the settings if you're logged in as an administrator.
 
 Currently the only way to add additional users or manage existing ones (including changing passwords and attributing roles) is with the [Console]({{base}}/administration/console.html).
 
-If you need to sign out, or check what sessions are open with this account with the option to terminate them, click on the account option which has replaced the "Unlock administration" shield:
-
-![](images/account_option.png)
-
-Note that by default, using openHAB doesn't require you to sign in.
-Only administrative operations require a user with an administrator role to be logged in.
-
 ## Modify Settings
 
-You already completed the required steps of choosing your language, region, and time zone in the setup wizard, and are now logged in as an administrator. If you didn't add a geographic location during setup, you can do so via the Settings. You can also set your preferred measurement system (openHAB defaults to the Metric system).
+You already completed the required steps of choosing your language, region, and time zone in the setup wizard, and are now logged in as an administrator.
+If you didn't add a geographic location during setup, you can do so via the Settings.
+You can also set your preferred measurement system (openHAB defaults to the Metric system).
 
 ### Set your geographic location (latitude and longitude) and measurement system
 
