@@ -61,8 +61,6 @@ Unlike manually defined Things, if a Thing has configurable properties, these pr
 **Attention:** It has to be noted, that Things and Items added through Paper UI / discovery to the internal database will **not** be written to configuration files.
 Things and Items definitions can be distributed and mixed among the internal database and manually defined text files.
 
-See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html) for a step-by-step guide on how to configure Things using discovery.
-
 ### Defining Things Using Files
 
 Things can also be defined manually by creating `.things` configuration text files.
