@@ -58,7 +58,7 @@ Newly discovered Things can be added to the system from the inbox using the UI.
 Things that are added to openHAB from the inbox are maintained in an internal database as opposed to a manually defined `.things` file (see below).
 Unlike manually defined Things, if a Thing has configurable properties, these properties can be set through a user interface.
 
-**Attention:** It has to be noted, that Things and Items added through Paper UI / discovery to the internal database will **not** be written to configuration files.
+**Attention:** It has to be noted, that Things and Items added through the UI / discovery to the internal database will **not** be written to configuration files.
 Things and Items definitions can be distributed and mixed among the internal database and manually defined text files.
 
 See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html) for a step-by-step guide on how to configure Things using discovery.
