@@ -31,7 +31,7 @@ The description can include limited HTML to enhance the display of this informat
 
 The following HTML tags are allowed -: ```<b>, <br>, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <i>, <p>, <small>, <strong>, <sub>, <sup>, <ul>, <ol>, <li>```.
 These must be inside the XML escape sequence - eg.
-```<description><![CDATA[ HTML marked up text here ]]></description>```.
+`<description><![CDATA[ HTML marked up text here ]]></description>`.
 
 ## XML Structure for Configuration Descriptions
 
@@ -150,7 +150,6 @@ The above filter is evaluated as follows:
 
 ```text
 (type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
-
 ```
 
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.

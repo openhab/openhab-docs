@@ -18,7 +18,7 @@ We will read about them later.
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
 This is fairly easy:
-on most of the documentation pages on https://openhab.org/,
+on most of the documentation pages on <https://openhab.org/>,
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
 ![Contribution link to a specific page](./images/contribution_link.png)
@@ -96,4 +96,4 @@ In short, the following has to be considered:
 - Versions like "2.1.0" are marked by git tags.
 - Based on tags branches like "2.1-patch" are created, to include later discovered changes (like fixed links).
 
-When a version is tagged (or updated), a static version of the website has to be generated and copied into the correct sub-folder, this is currently a manual operation described succinctly here: https://github.com/openhab/website/issues/72
+When a version is tagged (or updated), a static version of the website has to be generated and copied into the correct sub-folder, this is currently a manual operation described succinctly here: <https://github.com/openhab/website/issues/72>

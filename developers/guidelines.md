@@ -149,15 +149,15 @@ See [Default libraries](#default-libraries) for more details.
 ## E. Runtime Behavior
 
 1. Overridden methods from abstract classes or interfaces are expected to return fast unless otherwise stated in their JavaDoc.
-Expensive operations should therefore rather be scheduled as a job.
-2. Creation of threads must be avoided.
-Instead, resort into using existing schedulers which use pre-configured thread pools.
-If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
-For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
-3. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
-This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
-4. Bundles must not require any substantial CPU time.
-Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
+  Expensive operations should therefore rather be scheduled as a job.
+1. Creation of threads must be avoided.
+  Instead, resort into using existing schedulers which use pre-configured thread pools.
+  If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
+  For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,long,long,java.util.concurrent.TimeUnit)).
+1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
+  This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
+1. Bundles must not require any substantial CPU time.
+  Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
 
 ## F. Logging
 
@@ -185,8 +185,8 @@ void myFun() {
 ```
 
 - Exceptions with stacktraces in the log are considered to be bugs in your binding that should be reported and fixed.
-If you add an exception as a last parameter to the logging, the stack trace will be printed.
-Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
+  If you add an exception as a last parameter to the logging, the stack trace will be printed.
+  Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
 
 ```java
 void myFun() {

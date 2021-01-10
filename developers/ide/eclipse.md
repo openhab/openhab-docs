@@ -83,7 +83,7 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 1. After all tasks are finished you are ready to start developing.
 
 1. If you need additional libraries see the [Build System](../buildsystem.html) documentation.
-For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
+    For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
 
 ## Working with Add-ons
 
@@ -107,7 +107,7 @@ The following files are of interest for the execution environment:
 ```
 
 1. To let the demo project know about the add-on, the add-on must be added to the demo project `pom.xml`.
-Here is an example for the `astro` binding:
+    Here is an example for the `astro` binding:
 
     ```xml
         <dependency>

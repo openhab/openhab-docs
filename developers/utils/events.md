@@ -173,19 +173,19 @@ Each event subscriber must be registered via OSGi Declarative Services (DS) unde
 The listing below summarizes some best practices in order to implement event subscribers:
 
 - To subscribe to only one event type openHAB provides the `org.openhab.core.events.AbstractTypedEventSubscriber` implementation.
-To receive an already cast event the `receiveTypedEvent(T)` method must be implemented.
-To provide an event filter the method `getEventFilter()` can be overridden.
+    To receive an already cast event the `receiveTypedEvent(T)` method must be implemented.
+    To provide an event filter the method `getEventFilter()` can be overridden.
 - openHAB provides an `AbstractItemEventSubscriber` class in order to receive `ItemStateEvents` and `ItemCommandEvents` (more information can be obtained in the next chapter).
 - To filter events based on a topic the  `org.openhab.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
-The filtering is based on [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
+    The filtering is based on [Java regular expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html).
 - The subscribed event types and the filter should be stored as class members (see example above) due to performance reasons.
 - If the subscribed event types are sufficient in order to receive all interested events, do not return any filter (in that case the method getFilter() returns null) due to performance reasons.
 - Avoid the creation of too many event subscribers.
-Similar event types can be received in one event subscriber.
+    Similar event types can be received in one event subscriber.
 - Handle exceptions in event subscriber implementation and throw only serious exceptions.
-Thrown exceptions will be handled in the framework by logging an error message with the cause.
+    Thrown exceptions will be handled in the framework by logging an error message with the cause.
 - The receive method should terminate quickly, since it blocks other event subscribers.
-Create a thread for long running operations.
+    Create a thread for long running operations.
 
 ### Receive ItemStateEvents and ItemCommandEvents
 

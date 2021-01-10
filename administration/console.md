@@ -19,7 +19,7 @@ The method used to access the console depends on how openHAB was started.
 
 - When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
 - When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
-Linux package based installations can also use the command `openhab-cli console`.
+  Linux package based installations can also use the command `openhab-cli console`.
 
 The default username/password is **openhab:habopen**, so enter `habopen` at the password prompt.
 
