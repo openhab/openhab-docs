@@ -32,9 +32,9 @@ For example, an Item bound to a sensor receives updated sensor readings and an I
 
 There are two methods for defining Items:
 
-1.  Through UI
+1. Through UI
 
-2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
+2. Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
     Files here must have the extension `.items`; you may create as many `.items` files as needed.
     However, each Item must be unique across all `.items` files.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
@@ -51,6 +51,7 @@ It's recommended to edit `.items` files using one of the [openHAB supporting edi
 Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
 
 {: #syntax}
+
 ## Item Definition and Syntax
 
 Items are defined using the following syntax:
@@ -89,6 +90,7 @@ The last example above defines an Item with the following fields:
 The remainder of this article provides additional information regarding Item definition fields.
 
 {: #type}
+
 ### Type
 
 The Item type defines what kind of state can be stored in that Item and which commands the Item will accept.
@@ -145,6 +147,7 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 -->
 
 {: #name}
+
 ### Name
 
 The Item name is used to uniquely identify an Item.
@@ -164,13 +167,13 @@ An Item naming scheme with a physical or logical top-down will ensure you can ea
 
 The following naming style guide is recommended:
 
--   Words build a physical or logical hierarchy
+- Words build a physical or logical hierarchy
 
--   Every word of the Item name starts with an uppercase letter
+- Every word of the Item name starts with an uppercase letter
 
--   Words should be separated by an underscore character, except for words that logically belong together
+- Words should be separated by an underscore character, except for words that logically belong together
 
--   Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
+- Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
 (Example: Bathroom = BR)
 
 Examples:
@@ -187,9 +190,9 @@ Examples:
 Users are encouraged to apply the style guide above to group names as well as Item names.
 Two naming schemes are established in the community for Group names:
 
-1.  Use a plural word form (e.g. Batteries) where possible.
+1. Use a plural word form (e.g. Batteries) where possible.
     Otherwise the word "Group" may be appended for clarity.
-2.  Prepend a lowercase "g" to the name (e.g. gBattery)
+2. Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation                                                        |
 |-------------------------------------------|-----------------------------------------------------------------------|
@@ -199,6 +202,7 @@ Two naming schemes are established in the community for Group names:
 | "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
+
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
@@ -215,28 +219,31 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/configuration/sitemaps.html#element-types).
 
 {: #state}
+
 ### State
 
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
 A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
 
 {: #item-state}
+
 #### Item State
 
 This section provides information about what a user can expect regarding the behavior of the state of an Item.
 
--   Items are created with a state of `NULL`
+- Items are created with a state of `NULL`
 
--   Operations in openHAB such as a user interacting with the Item using the Basic UI, or a Binding updating the state of an Item will change the state of the Item
+- Operations in openHAB such as a user interacting with the Item using the Basic UI, or a Binding updating the state of an Item will change the state of the Item
 
--   An Item's state may also be set through a Binding which may be reacting to changes in the real world
+- An Item's state may also be set through a Binding which may be reacting to changes in the real world
 
--   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
+- A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
 *N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
+
 #### Command vs. Status
 
 Users should bear in mind the difference between an Item used to send a command to a Thing, and an Item that reflects the status of a real-world Thing in the UI.
@@ -258,6 +265,7 @@ Then you add the light-level Item to your UI.
 Now when you send the Switch Item command, and you see a corresponding increase in light level in the room, you know for sure that your command has been received and acted upon, because you have a return status Item in your UI.
 
 {: #state-presentation}
+
 #### State Presentation
 
 The Item definition determines the Item's textual state presentation, e.g., regarding formatting, decimal places, unit display and more.
@@ -286,6 +294,7 @@ Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g.
 ```
 
 {: #state-transformation}
+
 #### State Transformation
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
@@ -299,6 +308,7 @@ Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 Please refer to the article on [Transformations](/docs/configuration/transformations.html) for more usage details and a list of available transformation services.
 
 {: #icons}
+
 ### Icons
 
 The icon name is used by openHAB to select the image to display next to an Item name when using one of openHAB's UIs, e.g. Basic UI.
@@ -332,6 +342,7 @@ Note that image files with the wrong file ending will be ignored.
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
 {: #icons-dynamic}
+
 #### Dynamic Icons
 
 Some icons are dynamically selected by openHAB depending on the Item's state.
@@ -353,15 +364,15 @@ Dynamic icon filenames follow the pattern below:
 Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
--   A default icon is mandatory.
+- A default icon is mandatory.
     The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
 
--   Icon filenames must follow the naming restrictions given for [icons](#icons) above
+- Icon filenames must follow the naming restrictions given for [icons](#icons) above
 
--   The state name must reflect the Item's raw state.
+- The state name must reflect the Item's raw state.
     [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
 
--   The state portion of the icon name must be in lowercase letters
+- The state portion of the icon name must be in lowercase letters
 
 **Example:**
 
@@ -403,6 +414,7 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
 {: #groups}
+
 ### Groups
 
 The Group is a special Item type that can be used to define a category or collection into which you can combine other Items or Groups.
@@ -416,12 +428,12 @@ Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 The Group item is commonly used to define hierarchies of Items from different perspectives.
 For example:
 
--   Location-oriented or physical perspective:
-    - Floors in your house → Rooms on that floor → An appliance in that room...
+- Location-oriented or physical perspective:
+  - Floors in your house → Rooms on that floor → An appliance in that room...
 
--   Functional or logical perspective:
-    - Maintenance Group → All battery states → Individual battery states in percentage
-    - Further examples: all lights, all room temperatures, combined power consumption
+- Functional or logical perspective:
+  - Maintenance Group → All battery states → Individual battery states in percentage
+  - Further examples: all lights, all room temperatures, combined power consumption
 
 These relationships can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
@@ -455,6 +467,7 @@ Because of the hierarchical structure of your group items, the rule will be clea
 Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
 
 {: #group-type}
+
 ### Derive Group State from Member Items
 
 As you are now aware, an Item can have a state (e.g. "ON", "OFF").
@@ -492,13 +505,13 @@ Incompatible Item types within a Group may result in the invalid aggregation res
 Examples for derived states on Group Items when declared in the Item DSL:
 
 ```java
-Group:Number             			Lights       	"Active Lights [%d]"              // e.g. "2"
-Group:Switch:OR(ON,OFF)  			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
-Group:Switch:AND(ON,OFF) 			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
-Group:Number:AVG         			Temperatures 	"All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
-Group:DateTime:EARLIEST  			LatestUpdate	"Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:DateTime:LATEST    			LastSeen		"Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
-Group:String:COUNT("OFFLINE")	    OfflineDevices	"Offline Devices [%d]"			  // e.g. "2"
+Group:Number                Lights        "Active Lights [%d]"              // e.g. "2"
+Group:Switch:OR(ON,OFF)     Lights        "Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:AND(ON,OFF)    Lights        "Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:AVG            Temperatures  "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
+Group:DateTime:EARLIEST     LatestUpdate "Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:DateTime:LATEST       LastSeen  "Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:String:COUNT("OFFLINE")     OfflineDevices "Offline Devices [%d]"     // e.g. "2"
 ```
 
 The first three examples above compute the number of active lights and store them as group state.
@@ -518,6 +531,7 @@ The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function ret
 The last Group counts all members of it matching the given regular expression, here any character or state (simply counts all members).
 
 {: #tags}
+
 ### Tags
 
 Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
@@ -538,6 +552,7 @@ Tags will be ignored if no Items in the openHAB installation support it.
 See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
+
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
@@ -609,8 +624,8 @@ Switch Office_PC {channel="lgwebos:WebOSTV:01dd3ac4-62f4-7505-208b-12345679", ch
 
 The first example shows a symbiosis of the LG webOS Binding and the Wake-on-LAN Binding to interact with a TV.
 
-
 {: #autoupdate}
+
 #### Parameter `autoupdate`
 
 When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*.
@@ -626,6 +641,7 @@ Switch Garage_Gate {channel="xxx", autoupdate="false"}
 ```
 
 {: #expire}
+
 #### Parameter `expire`
 
 This parameter allows to post an update or command to an item after a period of time has passed.
@@ -702,6 +718,7 @@ You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
 Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
 ```
+
 and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
 
 ```java

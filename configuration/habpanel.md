@@ -39,6 +39,7 @@ HABPanel uses service configuration variables to store its data on the openHAB s
 openhab> config:edit org.openhab.habpanel
 openhab> config:property-get <property>
 ```
+
 The following properties are defined:
 
 - `panelsRegistry`: contains the entire registry serialized in JSON, it is maintained by the application and shouldn't be modified directly (editing it by hand, while possible, is strongly discouraged);
@@ -58,6 +59,7 @@ Use the gears icon in the top-right corner to switch between the two modes.
 ![Main menu - edit mode](images/habpanel_main-menu-edit.png)
 
 When in edit mode, several features are available:
+
 * Add a new empty dashboard with the **Add new dashboard** link;
 * Go to the settings screen (for instance, to switch from local storage to a server-managed panel configuration) by clicking on the **Advanced settings** link;
 * Adjust the number of columns for the grid of main menu tiles with the slider, from 1 (the default) to 6;
@@ -126,6 +128,7 @@ Modifications to the dashboard are not saved automatically, use the **Save** but
 When a dashboard is running, widgets can be interacted with, and server-sent events are received when items' states are updated, so widgets update automatically in HABPanel.
 
 The icons in the top-right corner perform the following:
+
 - the **speech balloon** activates the speech recognition feature and send the results as text to openHAB's default human language interpreter. This implies [some configuration on the server]({{base}}/configuration/multimedia.html#human-language-interpreter), and this icon might not be displayed if the browser doesn't support voice recognition ([mainly only in Chrome and other webkit variants currently](https://caniuse.com/#feat=speech-recognition){:target="_blank"}). It can also be configured in the panel configuration to appear on the bottom of the screen;
 - the **refresh** button forces HABPanel to retrieve the current state of all items;
 - the **fullscreen** button tells the browser to go fullscreen, if supported.
@@ -135,7 +138,6 @@ Tip: while running a dasboard, append `?kiosk=on` to the URL in the web browser 
 ## Additional features and settings
 
 Apart from the storage configuration discussed above, the settings screen contains several settings kept as part of the panel configuration (meaning they are set separately):
-
 
 | Setting                                                                | Description                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -156,7 +158,6 @@ Apart from the storage configuration discussed above, the settings screen contai
 | When this item changes to a dashboard's name, switch to it             | This allows controlling the currently displayed dashboard by an openHAB item (useful with rules and as a side-effect to commands)                                                                                                                                                                                                                                         |
 
 *Note: the text-to-speech functionality featured in HABPanel is unrelated to the [TTS services]({{base}}/configuration/multimedia.html#text-to-speech) defined on the openHAB server, and they are not compatible (this is why a String item is required and the `say()` function cannot be used). However, HABPanel will play audio streamed through the ['webaudio' sink]({{base}}/configuration/multimedia.html#audio), including spoken text.
-
 
 ## Widgets
 

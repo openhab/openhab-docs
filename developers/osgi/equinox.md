@@ -6,6 +6,7 @@ title: Equinox
 {% include base.html %}
 
 # Equinox
+
 {:.no_toc}
 
 [Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 7][OSGi-core].
@@ -16,6 +17,7 @@ The openHAB bundles are deployed on an Equinox runtime.
 Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process.
 
 {::options toc_levels="2,3"/}
+
 - TOC
 {:toc}
 

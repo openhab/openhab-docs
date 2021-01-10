@@ -86,7 +86,7 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>transform/*.map *.js files</td>
+      <td>transform/*.map*.js files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
@@ -168,4 +168,3 @@ Here are some hints to avoid some common pitfalls when starting out.
   You can use the import function to import `.items` files or snippets taken from other sources like the openHAB community forum.
 * Use VS code extensions to [edit rules, items and sitemap files](editors.html).
   You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.
-

@@ -57,7 +57,6 @@ The placeholder `%unit%` can be placed anywhere in the state description.
 
 In order to match `NumberItems` and Channels and define a default state description with unit placeholder the Channel also has to provide an Item type which includes the dimension information:
 
-
     <channel-type id="temperature">
         <item-type>Number:Temperature</item-type>
         <label>Temperature</label>
@@ -79,7 +78,6 @@ The `org.openhab.core.library.dimension` and `javax.measure.quantity` packages p
 ## List of Units
 
 All units which are currently supported by default are listed in the tables below.
-
 
 Imperial (base unit symbols):
 
@@ -213,6 +211,7 @@ Binary Prefixes:
 | Yobi | Yi     | 2⁸⁰    |
 
 To use the prefixes simply add the prefix to the unit symbol - for example:
+
 * milliAmpere - `mA`
 * centiMetre - `cm`
 * kiloWatt - `kW`

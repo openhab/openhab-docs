@@ -12,7 +12,6 @@ Join today and find answers for all details of openHAB:
 
 * [community.openhab.org](https://community.openhab.org)
 
-
 # FAQs - Frequently Asked Questions
 
 In the community forum you'll also find a list of recurring questions with short answers, commonly known as FAQs.

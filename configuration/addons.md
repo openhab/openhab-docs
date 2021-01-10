@@ -72,7 +72,6 @@ binding = astro,network
 
 After saving the file, the add-on will be installed.
 
-
 ## Through manually provided add-ons
 
 ::: warning Attention

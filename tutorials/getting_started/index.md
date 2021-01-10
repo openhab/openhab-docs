@@ -5,7 +5,7 @@ title: Getting Started - Introduction
 
 {% include base.html %}
 
-# Welcome!
+# Welcome
 
 Welcome to openHAB.
 We hope that your journey with openHAB is a rewarding one.
@@ -30,7 +30,9 @@ Whilst it is possible to mix the two, for example use the UI for things and file
 To help you choose between the two approaches, the following is a summary of the pros & cons for each:
 
 ### File-based
+
 Pros:
+
 - File based has been the only really practical way to define most objects (things excluded) in previous versions, so a lot of examples in the docs and the forum will assume that approach. However, as time passes there will be more and more UI driven examples.
 - With file based configs it is easier to make bulk changes and bulk updates, to duplicate similar objects, and to separate domains into distinct files.
 - The config files can be treated as source files, easing backups and version control. Though that does not mean that source control, backups, and version control cannot be done with UI driven configs.
@@ -38,13 +40,16 @@ Pros:
 - Easier to share configurations between multiple openHAB instances.
 
 Cons:
+
 - Config files are more prone to errors. The slightest typo leads to a syntax error that could cause the file to become invalid, which will result in everything defined in that file being removed from the system until you fix it.
 - The syntax for the config files can be a little overwhelming for novice users, as you have to learn and understand the syntax in addition to openHAB concepts and home automation technologies.
 - You will see most objects defined in files in the UI but you won't be able to edit them (those objects will have a lock besides their name/label :lock:).
 - You need to sit in front of a computer with access to the files to make changes.
 
 ### UI-driven
+
 Pros:
+
 - Easier to understand for novices. The UI assists you with its built in documents and help. There are fewer opportunities to make mistakes since the syntax is almost impossible to get wrong.
 - All objects can be altered from anywhere the UI can be reached (including on mobile).
 - Things can be auto-discovered.
@@ -53,6 +58,7 @@ Pros:
 - A backup of the internal database is created on every change.
 
 Cons:
+
 - Can be slower to reach one's goal if you already know what you're doing and if there's a lot of bulk changes or duplicating required.
 - Harder to remove obsolete stuff.
 - Some things cannot be configured with the UI yet (e.g. persistence).

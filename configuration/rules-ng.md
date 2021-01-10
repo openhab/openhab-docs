@@ -11,7 +11,6 @@ title: Next-Gen Rules
 
 Since openHAB 2.4 another Rule Engine has been added. It works fundamentally different than what you find with our current [Rules](https://www.openhab.org/docs/configuration/rules-dsl.html). It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
-
 ## Installation
 
 Install the rule engine from Add-ons → Misc → Rule Engine (Experimental).
@@ -27,7 +26,7 @@ When you now refresh your browser, you will see a `Rules` menu appearing in the 
 In general this rule engine aims to support rules defined with syntax similar to:
 
 ```text
-ON item_id state changed IF item_id.state == desired_value THEN item_id2.state = desired_value2 
+ON item_id state changed IF item_id.state == desired_value THEN item_id2.state = desired_value2
 ```
 
 A rule consists of basic information like name, tags and a description. The main building blocks of rules are modules however, and each rule consists of one or more instances of each of the following modules:
@@ -79,7 +78,6 @@ A given **Module type** has the following elements:
     defaultValue - default value for the configuration property when not specified in the rule
     tags - shows how to be considered a given value. For example, as a Temperature
 
-
 **Output property** has the following metadata:
 
     name
@@ -109,13 +107,13 @@ The types in the **Configuration** object are restricted to the following:
 
 **JSON schemas for:**
 
- * [module types](../../schemas/ModuleTypes_schema.json)
- * [rule templates](../../schemas/Templates_schema.json)
- * [rule instances](../../schemas/Rules_schema.json)
+* [module types](../../schemas/ModuleTypes_schema.json)
+* [rule templates](../../schemas/Templates_schema.json)
+* [rule instances](../../schemas/Rules_schema.json)
 
 ### Sample Rules
 
- * **Sample rule instance referencing module types:**
+* **Sample rule instance referencing module types:**
 
 ```
 {
@@ -157,16 +155,16 @@ The types in the **Configuration** object are restricted to the following:
 }
 ```
 
- * **Sample module types:**
+* **Sample module types:**
 
 ```
-"triggers":[  
-      {  
+"triggers":[
+      {
          "uid":"SampleTrigger",
          "label":"SampleTrigger label",
          "description":"Sample Trigger description.",
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"triggerOutput",
                "type":"java.lang.String",
                "label":"TriggerOutput label",
@@ -176,12 +174,12 @@ The types in the **Configuration** object are restricted to the following:
             }
          ]
       },
-      {  
+      {
          "uid":"CompositeSampleTrigger",
          "label":"CompositeTrigger label",
          "description":"Composite Trigger description.",
-         "outputs":[  
-            {  
+         "outputs":[
+            {
                "name":"compositeTriggerOutput",
                "type":"java.lang.String",
                "label":"compositeTriggerOutput label",
@@ -189,8 +187,8 @@ The types in the **Configuration** object are restricted to the following:
                "reference":"compositeChildTrigger1.triggerOutput"
             }
          ],
-         "children":[  
-            {  
+         "children":[
+            {
                "id":"compositeChildTrigger1",
                "type":"SampleTrigger"
             }
@@ -200,27 +198,27 @@ The types in the **Configuration** object are restricted to the following:
 ```
 
 ```
-   "conditions":[  
-      {  
+   "conditions":[
+      {
          "uid":"SampleCondition",
          "label":"SampleCondition label",
          "description":"Sample Condition description",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"operator",
                "type":"TEXT",
                "description":"Valid operators are =,>,<,!=",
                "required":true
             },
-            {  
+            {
                "name":"constraint",
                "type":"TEXT",
                "description":"Right operand which is compared with the input.",
                "required":true
             }
          ],
-         "inputs":[  
-            {  
+         "inputs":[
+            {
                "name":"conditionInput",
                "type":"java.lang.String",
                "label":"ConditionInput label",
@@ -233,13 +231,13 @@ The types in the **Configuration** object are restricted to the following:
 ```
 
 ```
-"actions":[  
-      {  
+"actions":[
+      {
          "uid":"SampleAction",
          "label":"SampleAction label",
          "description":"Sample Action description.",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"message",
                "type":"TEXT",
                "label":"message label",
@@ -249,12 +247,12 @@ The types in the **Configuration** object are restricted to the following:
             }
          ]
       },
-      {  
+      {
          "uid":"CompositeSampleAction",
          "label":"CompositeAction label",
          "description":"Composite Action description.",
-         "configDescriptions":[  
-            {  
+         "configDescriptions":[
+            {
                "name":"compositeMessage",
                "type":"TEXT",
                "label":"custom message label",
@@ -263,8 +261,8 @@ The types in the **Configuration** object are restricted to the following:
                "required":false
             }
          ],
-         "inputs":[  
-            {  
+         "inputs":[
+            {
                "name":"compositeActionInput",
                "type":"java.lang.String",
                "label":"ActionInput label",
@@ -272,18 +270,18 @@ The types in the **Configuration** object are restricted to the following:
                "required":true
             }
          ],
-         "children":[  
-            {  
+         "children":[
+            {
                "id":"SampleAction1",
                "type":"SampleAction",
-               "configuration":{  
+               "configuration":{
                   "message":"$compositeMessage"
                }
             },
-            {  
+            {
                "id":"SampleAction2",
                "type":"SampleAction",
-               "configuration":{  
+               "configuration":{
                   "message":"$compositeActionInput"
                }
             }
@@ -296,46 +294,46 @@ The types in the **Configuration** object are restricted to the following:
 
 There are several ways to add new rules:
 
-  * using **JAVA API** from package: **org.openhab.automation.api**;
-  * using **text console commands: openhab:automation**;
-  * using **resource bundles** that provide moduletypes, rules and rule templates stored in **.json** files;
-  * using **REST API** - see the next chapter bellow.
+* using **JAVA API** from package: **org.openhab.automation.api**;
+* using **text console commands: openhab:automation**;
+* using **resource bundles** that provide moduletypes, rules and rule templates stored in **.json** files;
+* using **REST API** - see the next chapter bellow.
 
 ## REST API
 
 * http://<host:port>/rest/module-types - lists module types.
-* http://<host:port>/rest/templates" - lists rule templates. 
+* http://<host:port>/rest/templates" - lists rule templates.
 * http://<host:port>/rest/rules - lists rule instances.
 
 #### /rest/templates
 
- - GET /rest/templates - returns all registered rule templates.
- - GET /rest/templates/{templateUID} - returned response includes only the content of the specified template.
+- GET /rest/templates - returns all registered rule templates.
+- GET /rest/templates/{templateUID} - returned response includes only the content of the specified template.
 
 #### /rest/module-types
 
- - GET /rest/module-types - returns all registered module types.
- - optional parameter 'type' with possible values: 'trigger', 'condition' or 'action' - filters the response to include only module definitions of specified type.
- - optional parameter 'tags' - filters the response to include only module types which have specified tags.
- - GET /rest/module-types/{moduleTypeUID} - returned response includes only the content of the specified module type.
-  
+- GET /rest/module-types - returns all registered module types.
+- optional parameter 'type' with possible values: 'trigger', 'condition' or 'action' - filters the response to include only module definitions of specified type.
+- optional parameter 'tags' - filters the response to include only module types which have specified tags.
+- GET /rest/module-types/{moduleTypeUID} - returned response includes only the content of the specified module type.
+
 #### /rest/rules
 
- - GET /rest/rules - returns all registered rule instances.
- - POST /rest/rules - adds new rule instance to the rule registry.
- - DELETE /rest/rules/{ruleUID} - deletes the specified rule instance.
- - PUT /rest/rules/{ruleUID} - updates the specified rule instance.
- - PUT /rest/rules/{ruleUID}/enable - enable/disable specified rule instance.
- - PUT /rest/rules/{ruleUID}/runnow - executes actions of specified rule instance.
- - GET /rest/rules/{ruleUID}/config - returns the configuration of the specified rule instance.
- - PUT /rest/rules/{ruleUID}/config - updates the configuration of the specified rule instance.
- - GET /rest/rules/{ruleUID}/triggers - returns the triggers defined for the specified rule instance.
- - GET /rest/rules/{ruleUID}/conditions - returns the conditions defined for the specified rule instance.
- - GET /rest/rules/{ruleUID}/actions - returns the actions defined for the specified rule instance.
- - GET /rest/rules/{ruleUID}/{moduleCategory}/{id} - returns module instance with specified id and category {triggers/conditions/actions} of the specified rule. 
- - GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config - returns the configuration of the specified module instance.
- - GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - returns the value of specified module configuration parameter (media type is text/plain).
- - PUT /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - updates the value of specified module configuration parameter (media type is text/plain).
+- GET /rest/rules - returns all registered rule instances.
+- POST /rest/rules - adds new rule instance to the rule registry.
+- DELETE /rest/rules/{ruleUID} - deletes the specified rule instance.
+- PUT /rest/rules/{ruleUID} - updates the specified rule instance.
+- PUT /rest/rules/{ruleUID}/enable - enable/disable specified rule instance.
+- PUT /rest/rules/{ruleUID}/runnow - executes actions of specified rule instance.
+- GET /rest/rules/{ruleUID}/config - returns the configuration of the specified rule instance.
+- PUT /rest/rules/{ruleUID}/config - updates the configuration of the specified rule instance.
+- GET /rest/rules/{ruleUID}/triggers - returns the triggers defined for the specified rule instance.
+- GET /rest/rules/{ruleUID}/conditions - returns the conditions defined for the specified rule instance.
+- GET /rest/rules/{ruleUID}/actions - returns the actions defined for the specified rule instance.
+- GET /rest/rules/{ruleUID}/{moduleCategory}/{id} - returns module instance with specified id and category {triggers/conditions/actions} of the specified rule.
+- GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config - returns the configuration of the specified module instance.
+- GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - returns the value of specified module configuration parameter (media type is text/plain).
+- PUT /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - updates the value of specified module configuration parameter (media type is text/plain).
 
 ## JAVA API
 
@@ -346,36 +344,35 @@ There are several ways to add new rules:
 
 `org.openhab.automation.template.TemplateRegistry` - provides functionality to get templates from the Rule Engine.
 
-
 ## Text console commands
 
-`automation listModuleTypes [-st] <filter> ` - lists all Module Types. If filter is present, lists only matching Module Types.
+`automation listModuleTypes [-st] <filter>` - lists all Module Types. If filter is present, lists only matching Module Types.
 
-`automation listTemplates [-st] <filter> ` - lists all Templates. If filter is present, lists only matching Templates.
+`automation listTemplates [-st] <filter>` - lists all Templates. If filter is present, lists only matching Templates.
 
-`automation listRules [-st] <filter> `- lists all Rules. If filter is present, lists only matching Rules.
+`automation listRules [-st] <filter>`- lists all Rules. If filter is present, lists only matching Rules.
 
-`automation removeModuleTypes [-st] <url> ` - Removes the Module Types, loaded from the given url.
+`automation removeModuleTypes [-st] <url>` - Removes the Module Types, loaded from the given url.
 
-`automation removeTemplates [-st] <url ` - Removes the Templates, loaded from the given url.
+`automation removeTemplates [-st] <url` - Removes the Templates, loaded from the given url.
 
-`automation removeRule [-st] <uid> ` - Removes the rule, specified by given UID.
+`automation removeRule [-st] <uid>` - Removes the rule, specified by given UID.
 
-`automation removeRules [-st] <filter> `- Removes the rules. If filter is present, removes only matching Rules.
+`automation removeRules [-st] <filter>`- Removes the rules. If filter is present, removes only matching Rules.
 
-`automation importModuleTypes [-p] <parserType> [-st] <url> ` - Imports Module Types from given url. If parser type missing, "json" parser will be set as default.
+`automation importModuleTypes [-p] <parserType> [-st] <url>` - Imports Module Types from given url. If parser type missing, "json" parser will be set as default.
 
-`automation importTemplates [-p] <parserType> [-st] <url> ` - Imports Templates from given url. If parser type missing, "json" parser will be set as default.
+`automation importTemplates [-p] <parserType> [-st] <url>` - Imports Templates from given url. If parser type missing, "json" parser will be set as default.
 
-`automation importRules [-p] <parserType> [-st] <url> ` - Imports Rules from given url. If parser type missing, "json" parser will be set as default.
+`automation importRules [-p] <parserType> [-st] <url>` - Imports Rules from given url. If parser type missing, "json" parser will be set as default.
 
-`automation exportModuleTypes [-p] <parserType> [-st] <file> ` - Exports Module Types in a file. If parser type missing, "json" parser will be set as default.
+`automation exportModuleTypes [-p] <parserType> [-st] <file>` - Exports Module Types in a file. If parser type missing, "json" parser will be set as default.
 
-`automation exportTemplates [-p] <parserType> [-st] <file> ` - Exports Templates in a file. If parser type missing, "json" parser will be set as default.
+`automation exportTemplates [-p] <parserType> [-st] <file>` - Exports Templates in a file. If parser type missing, "json" parser will be set as default.
 
-`automation exportRules [-p] <parserType> [-st] <file> ` - Exports Rules in a file. If parser type missing, "json" parser will be set as default.
+`automation exportRules [-p] <parserType> [-st] <file>` - Exports Rules in a file. If parser type missing, "json" parser will be set as default.
 
-`automation enableRule [-st] <uid> <enable> ` - Enables the Rule, specified by given UID.
+`automation enableRule [-st] <uid> <enable>` - Enables the Rule, specified by given UID.
   The use of the 'enable' argument is optional, and will accept a boolean value.
   If used, the command will enable (true) or disable (false) the Rule.
   If it is not used, the command will return the current status of the Rule.
@@ -397,51 +394,51 @@ The rule template is used only once when the rule is imported in the Rule Engine
 After that the reference from the rule instance to the rule template is removed and a given rule may exist even if the rule template is removed or modified.
 This will not have any impact on the already imported rules.
 
- * **Sample rule instance referencing rule template:**
+* **Sample rule instance referencing rule template:**
 
 ```
-  {  
+  {
     "uid": "sample.rulebytemplate",
     "name": "RuleByTemplate",
     "templateUID": "SampleRuleTemplate",
-    "tags": [  
+    "tags": [
       "rule",
       "template"
     ],
-    "configuration": {  
+    "configuration": {
       "condition_operator": "!=",
       "condition_constraint": "template"
     }
   }
 ```
 
- * **Sample rule template:**
+* **Sample rule template:**
 
 ```
-  {  
+  {
     "uid":"SampleRuleTemplate",
     "description":"Sample Rule Template",
-    "tags":[  
+    "tags":[
       "sample",
       "rule",
       "template"
     ],
-    "configDescriptions":[  
+    "configDescriptions":[
          {
-          "name":"condition_operator",              
+          "name":"condition_operator",
           "type": "TEXT",
           "description": "Valid operators are =,>,<,!=",
           "required": true
         },
          {
-          "name":"condition_constraint",              
+          "name":"condition_constraint",
           "type": "TEXT",
           "description": "Right operand which is compared with the input.",
           "required": true
         }
     ],
-    "triggers": [  
-      {  
+    "triggers": [
+      {
         "id": "CompositeSampleTriggerTemplateID",
         "type": "CompositeSampleTrigger",
         "label": "Sample Trigger",
@@ -464,7 +461,7 @@ This will not have any impact on the already imported rules.
       }
     ],
     "actions": [
-      {  
+      {
         "id": "CompositeActionTemplateID",
         "type": "CompositeSampleAction",
         "label": "Sample Action",
@@ -472,7 +469,7 @@ This will not have any impact on the already imported rules.
         "configuration": {
           "compositeMessage": "Hello World!!!"
         },
-        "inputs": {  
+        "inputs": {
           "compositeActionInput": "CompositeSampleTriggerTemplateID.compositeTriggerOutput"
         }
       }
@@ -487,13 +484,13 @@ The above example uses two rule configuration properties:
 
 ### GenericEventTrigger
 
-GenericEventTrigger has 3 configuration paramters: `eventTopic`,` eventSource` and `eventTypes` and one output: 'event'.
+GenericEventTrigger has 3 configuration paramters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
 
       {
          "uid":"GenericEventTrigger",
          "label":"Basic Event Trigger",
          "description":"Triggers Rules on Events",
-         "configDescriptions":[  
+         "configDescriptions":[
             {
                "name":"eventTopic",
                "type":"TEXT",
@@ -529,7 +526,6 @@ GenericEventTrigger has 3 configuration paramters: `eventTopic`,` eventSource` a
             }
          ]
       }
-
 
 ### GenericCompareCondition
 
@@ -576,9 +572,9 @@ The value to be compared can be specified either as an input or as a configurati
 
 ## Providing new Module Types
 
-The rule engine is pluggable - any OSGi bundle can provide implementation for triggers, actions and condition module types and their corresponding metatype definition in JSON format. 
+The rule engine is pluggable - any OSGi bundle can provide implementation for triggers, actions and condition module types and their corresponding metatype definition in JSON format.
 
-The extension bundle should register the service ModuleHandlerFactory (`org.openhab.automation.handler.ModuleHandlerFactory`) 
+The extension bundle should register the service ModuleHandlerFactory (`org.openhab.automation.handler.ModuleHandlerFactory`)
 and implement the necessary methods for creation of instances of the supported module handlers:
 
 - `org.openhab.automation.handler.TriggerHandler`
@@ -590,12 +586,11 @@ and implement the necessary methods for creation of instances of the supported m
 Another way to extend the supported module types is by defining composite module types as an extension of the system module types.
 The composite module type wraps one or more instances of a system module type and defines new configuration parameters, inputs and outputs.
 
-
       {
          "uid":"ItemStateChangeTrigger",
          "label":"Item State Trigger",
          "description":"This triggers a rule if an items state changed",
-         "configDescriptions":[  
+         "configDescriptions":[
             {
                "name":"itemName",
                "type":"TEXT",
@@ -609,7 +604,7 @@ The composite module type wraps one or more instances of a system module type an
             {
                "id":"itemStateChangeTriggerID",
                "type":"GenericEventTrigger",
-               "configuration":{  
+               "configuration":{
                   "eventSource":"$itemName",
                   "eventTopic":"openhab/items/*",
                   "eventTypes":"ItemStateEvent"
@@ -630,4 +625,4 @@ The composite module type wraps one or more instances of a system module type an
 This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger*.
 It defines the new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*.
 The other config parameters `eventTopic` and `eventTypes` are staticly defined.
-The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s). 
+The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s).

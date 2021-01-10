@@ -97,6 +97,7 @@ Stop openhab and add this part to ```$OPENHAB_USERDATA/etc/org.apache.karaf.feat
         <feature>openhab-*-auth</feature>
     </blacklistedFeatures>
 ```
+
 Once openhab is restarted authentication will be disabled.
 
 ## Additional Considerations

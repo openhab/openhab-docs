@@ -33,7 +33,6 @@ A typical example of a bridge is an IP gateway for some non-IP based home automa
 
 As many Things can be automatically discovered, there are special mechanisms available that deal with the handling of [automatically discovered Things](discovery.html).
 
-
 ## Thing Status
 
 Each Thing has a status object, which helps to identify possible problems with the device or service.
@@ -93,4 +92,3 @@ The following table lists the different status details for each status:
 <tr valign="top"><td>REMOVING</td>                 <td>NONE</td><td>No further status details available.</td></tr>
 <tr valign="top"><td>REMOVED</td>                  <td>NONE</td><td>No further status details available.</td></tr>
 </table>
-

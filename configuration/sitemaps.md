@@ -133,16 +133,16 @@ This provides the flexibility to present Items in the way desired in your home a
 
 **General remarks on parameters:**
 
--   In the following definitions, parameters in `[square brackets]` are optional.
+- In the following definitions, parameters in `[square brackets]` are optional.
 
--   Parameters must be supplied in the order shown.
+- Parameters must be supplied in the order shown.
 
--   Common parameters, also known from [items definition](items.html#item-syntax):
-    - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
-    - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
-    - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
+- Common parameters, also known from [items definition](items.html#item-syntax):
+  - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
+  - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
+  - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
 
--   When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
+- When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
 If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
 Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
@@ -163,9 +163,10 @@ sitemap demo label="My home automation" {
     }
 }
 ```
+
 UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
 
--   Additional parameters such as `mappings` and `valuecolor` are described below.
+- Additional parameters such as `mappings` and `valuecolor` are described below.
 
 ### Element Type 'Frame'
 
@@ -196,7 +197,6 @@ Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
-
 
 ### Element Type 'Text'
 
@@ -307,16 +307,16 @@ Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
 
--   `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
+- `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
--   `switchSupport` is a parameter without an assignment.
-    - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
-    - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
-    - This parameter has no effect in other UIs.
+- `switchSupport` is a parameter without an assignment.
+  - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+  - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+  - This parameter has no effect in other UIs.
 
--   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
--   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
+- `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+- `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
 
 **Example:**
 
@@ -335,7 +335,6 @@ Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequ
 This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
 The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
 The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
-
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
@@ -393,7 +392,7 @@ Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labeln
 
 This element type is able to present an image.
 The image must be available on a reachable website or webserver without password or access token.
-Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, https://<my.openHAB.device>:8080/static/YourImageFile.png.
+Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, `https://<my.openHAB.device>:8080/static/YourImageFile.png`.
 
 - `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
@@ -444,18 +443,18 @@ Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
 
 Adds a time-series chart object for the display of logged data.
 
--   `refresh` defines the refresh period of the Image (in milliseconds).
+- `refresh` defines the refresh period of the Image (in milliseconds).
 
--   `service` sets the persistence service to use.
+- `service` sets the persistence service to use.
 If no service is specified, openHAB will use the first queryable persistence service it finds.
 Therefore, for an installation with only a single persistence service, this is not required.
 
--   `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
+- `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 
--   `begin` / `end` sets the beginning and end of the time axis.
+- `begin` / `end` sets the beginning and end of the time axis.
 Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
 
--   `legend` is used to show or to hide the chart legend.
+- `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).
     If this parameter is not set, the legend is hidden if there is only one chart series.
 
@@ -498,7 +497,6 @@ Imagine your TV is part of your openHAB setup.
 Its power state is represented by a binary Switch Item.
 Its channel number is a discrete number Item that may only be set to one of three states.
 By using a Switch or Selection element with a mappings array, you can replace these meaningless values with user-friendly descriptions for display on the user interface.
-
 
 This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
@@ -654,34 +652,34 @@ sitemap demo label="My home automation" {
 
 Explanation:
 
--   The Sitemap "demo" with the shown title "My home automation" is defined.
+- The Sitemap "demo" with the shown title "My home automation" is defined.
 
--   One first Frame with a date stamp is shown.
+- One first Frame with a date stamp is shown.
 
--   Another Frame with a visual label "Demo" is presented, containing:
+- Another Frame with a visual label "Demo" is presented, containing:
 
-    -   A Switch for the Item "Lights"
+  - A Switch for the Item "Lights"
 
-    -   A Text element showing a temperature in a given format
+  - A Text element showing a temperature in a given format
 
-    -   A Group element. Upon clicking the element, a new view containing all "Heating" Items will be shown.
+  - A Group element. Upon clicking the element, a new view containing all "Heating" Items will be shown.
 
-    -   Another Text element showing a "Multimedia" summary, e.g. "Currently playing".
+  - Another Text element showing a "Multimedia" summary, e.g. "Currently playing".
         The element is additionally the host for a nested block.
         By clicking in the element, a new view with two elements is presented:
-        - A Selection presenting four options in a modal dialog prompt
-        - A Slider to set the volume (e.g. 0-100%)
+    - A Selection presenting four options in a modal dialog prompt
+    - A Slider to set the volume (e.g. 0-100%)
 
 <!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
 
 ## Further notes and comparison details
 
--   String comparisons are case sensitive, so `==ON` is not the same as `==on`.
+- String comparisons are case sensitive, so `==ON` is not the same as `==on`.
 
--   DateTime comparisons are relative to the current time and specified in seconds.
+- DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).
 
--   Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
+- Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
 
 <!-- Note to author:
 - The screenshot were created with chrome mobile developer tools on a page width of 529px
@@ -694,7 +692,6 @@ Location Demo_Location "Location [48.858377,2.294486,66.0]"
 
 Number Demo_TV_Channel
 Color Demo_Color
-
 
 sitemap demo label="My home automation" {
         Frame label="Date" {

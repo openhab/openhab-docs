@@ -34,6 +34,7 @@ These must be inside the XML escape sequence - eg.
 ```<description><![CDATA[ HTML marked up text here ]]></description>```.
 
 ## XML Structure for Configuration Descriptions
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-descriptions

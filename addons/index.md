@@ -8,7 +8,7 @@ layout: documentation
 
 All add-ons for openHAB 2 are part of the distribution.
 This includes all 2.x Bindings as well as all 1.x add-ons that were reported to be compatible.
-There are several ways you can install an add-on. 
+There are several ways you can install an add-on.
 These are described under *Installation of Add-ons* below
 
 | Add-on Type                             | Description                                                                                                               |
@@ -98,7 +98,6 @@ binding = astro,mqtt1,network
 ```
 
 After saving the file, the add-on will be installed.
-
 
 ### Through manually provided add-ons
 

@@ -22,17 +22,20 @@ Instead, it is publishing metrics regularly on a preconfigured MQTT topic in a s
 ```json
 {"light": 5424, "moisture": 30, "temperature": 21.4, "conductivity": 1020, "battery": 100}
 ```
+
 {::options toc_levels="2..4"/}
 
 - TOC
 {:toc}
 
 ## Prerequisites
+
 - A basic understanding of how MQTT works (HiveMQ provides a good [tutorial](https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/)
 - An installed and configured MQTT Broker (e.g. Mosquitto, which can be installed through openHABian if that is how you installed openHAB)
 - A MiFlora device configured to connect to the MQTT Broker, or an MQTT client application (e.g. [MQTT Explorer](https://mqtt-explorer.com/), [MQTT.fx](http://mqttfx.org/) that allows one to publish and subscribe to MQTT topics
 
 ## Install the Binding and Transformation
+
 This device publishes JSON formatted messages, so we need to install an add-on that can process JSON: the JSONPath Transformation.
 A Transformation takes incoming data and transformes is somehow.
 In this case it will extract certain fields from the JSON.
@@ -52,6 +55,7 @@ Click on it, then click Install.
 Wait for it to disappear from the list, then go back twice to return to the main Settings screen.
 
 ## Create the Bridge Thing
+
 First we need to add the broker, which is a Bridge.
 Click on Things.
 
@@ -68,6 +72,7 @@ If you need credentials to connect to the broker, click on "Show advanced" to re
 ![](images/mqtt_bridge_config.png)
 
 ## Create the Generic MQTT Thing
+
 Now we have to add the plant sensor itself as a generic Thing.
 
 On the Things page, first verify that the broker is indeed present and online; if so, click on the blue "+" button then on the MQTT Binding.

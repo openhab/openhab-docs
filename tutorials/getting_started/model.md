@@ -169,6 +169,7 @@ Since it's linked to the Color channel of the Hue bulb, the light will reflect t
 Finish adding Equipment and Points from your Things.
 
 ## Retrofitting Existing Items to the Model
+
 There may be times where a user needs to add existing Items to their model.
 Perhaps they are migrating from an older version of OH, they did not follow the advice above to start with the model to begin with, or they are following a tutorial or example that doesn't include the model.
 In this case all is not lost.
@@ -178,21 +179,22 @@ Then add the Point as a member of the appropriate Equipment or Location Group.
 If the Equipment Group doesn't exist yet, create a Group and use the appropriate Equipment semantic tag first and add the Equipment to the appropriate Location Group.
 
 ## Modifying the Model
+
 As illustrated here, the model consists mainly of Group membership and tags on Items.
 To change the location of an equipment or room, simply change the parent Group.
 To change the type of an equipment or point, simply edit the tags.
 Some of these edits are possible from the Model Page itself.
 Where that's not supported, you can make the changes through the Item's Page.
 
- ## Controls and Sensor types
+## Controls and Sensor types
 
 This is a table descibing the Equipment types and point class and type to enable display of badges and measurements on the location cards.
 This is based off the sources linked below.
 
- - https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63
- - https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48
+- <https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
+- <https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>
 
- ### Badges
+### Badges
 
 | Type      | Equipment | Equipment subtypes allowed | Point Class | Point Type | Point Subtypes allowed |
 | ----------- | --- | ---- | ----------- | ---- | ----- |
@@ -215,7 +217,7 @@ This is based off the sources linked below.
 | Projectors | Projector | no | Control | Power | yes |
 | Alarms | ANY | NA | Alarm | ANY | yes |
 
- ### Measurements
+### Measurements
 
  These don't care about equipment and just look at points
 

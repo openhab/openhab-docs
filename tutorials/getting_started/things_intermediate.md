@@ -18,6 +18,7 @@ Scenario: you have some Z-Wave devices, including a wall plug and a rollershutte
 {:toc}
 
 ## Install the Binding
+
 From Settings, go to Things, then click the blue "+" button.
 
 We need to install the Z-Wave binding.
@@ -34,6 +35,7 @@ Wait for it to disappear from the list, then go back.
 ![](images/installed_zwave.png)
 
 ## Create the Bridge Thing
+
 Click on the new option: Z-Wave Binding.
 
 Click on Z-Wave Serial Controller to add the controller.
@@ -48,6 +50,7 @@ In certain cases, depending on your system, you will be provided with a list of 
 Choose the correct port, alter the name and/or ID of the controller Thing, then click Add in the top-right corner.
 
 ## Discover Things
+
 Once back on the Things screen, click on the "+" button then on Z-Wave Binding again.
 Click scan and all the devices already paired with the Zwave controller will be discovered and appear in the Inbox.
 To pair a new device, while on this screen, perform the procedure specific to the device to include it in your network.

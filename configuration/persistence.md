@@ -67,6 +67,7 @@ The following strategies are defined internally and may be used in place of `str
 - `restoreOnStartup`: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).
 
 #### Cron Persistence Triggers
+
 openHAB uses [Quartz](https://www.quartz-scheduler.org/documentation) for time-related cron events.
 See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-triggers) for more information.
 
@@ -151,8 +152,8 @@ Items {
   item1, item2 : strategy = everyChange, restoreOnStartup
 }
 ```
-It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
+It is usually not necessary to restore all Items since there is a good chance that they are no longer accurate (switches may have been toggled, sensor values are likely to have changed), and the restoration may result in unwanted rule actions.
 
 ## Persistence Extensions in Scripts and Rules
 
