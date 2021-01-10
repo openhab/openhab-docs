@@ -46,7 +46,7 @@ openHAB stores configuration information in JSON (JavaScript Object Notation) fo
 
 ## Storage Scope
 
-All configuration information regarding _**Items, Links, and Things**_ are defined via the User Interfaces (Paper UI, HABmin, REST) or via internal openHAB services.
+All configuration information regarding _**Items, Links, and Things**_ are defined via the User Interfaces (UI, REST) or via internal openHAB services.
 
 ::: tip Note
 The JSON DB does NOT store information for manually configured _**Items, Links, or Things**_, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab/items/`).
@@ -66,7 +66,7 @@ openHAB writes the `*.json` files every time a change is made via the User Inter
 openHAB _**reads the `*.json` files only once at startup**_.  So, if you edit them manually, you should restart openHAB.
 
 The system employs two write mechanisms to improve performance where there are multiple writes in a short time. When the service is closed, all open services are written to disk.
-The parameters for the two mechanisms may be modified in Paper UI :arrow_right: Configuration :arrow_right: System :arrow_right: Json Storage
+The parameters for the two mechanisms may be modified in UI :arrow_right: Settings :arrow_right: Json Storage
 
 1. _Write delay_ (defaults to 500 ms): Sets the time to wait before writing changes to disk.
 This can reduce the number of writes when many changes are being introduced within a short period, and
@@ -88,7 +88,7 @@ Within the `OPENHAB_USERDATA/jsondb/` directory, you will find the following fil
 
 | Filename                                                        | _Contents_                            |
 |-----------------------------------------------------------------|---------------------------------------|
-| org.openhab.config.discovery.**DiscoveryResult.json** | _Results of Paper UI Discovery_       |
+| org.openhab.config.discovery.**DiscoveryResult.json** | _Results of UI Discovery_       |
 | org.openhab.core.items.**Item.json**                  | _Items configurations_                |
 | org.openhab.core.thing.link.**ItemChannelLink.json**  | _Item to Channel Link configurations_ |
 | org.openhab.core.thing.link.**ItemThingLink.json**    | _Item to Thing Link configurations_   |
@@ -189,7 +189,7 @@ root@rpi3:~# more /var/lib/openhab/jsondb/org.openhab.core.thing.Thing.json
 }
 ```
 
-Step 3. Using Paper UI :arrow_right: Configuration :arrow_right: Things, edit the new `ISP_Gateway` Thing and modify the following parameters:
+Step 3. Using UI :arrow_right: Settings :arrow_right: Things, edit the new `ISP_Gateway` Thing and modify the following parameters:
 
 - Location (from unset to `MyHome`)
 - Retry (from 1 to 3)
