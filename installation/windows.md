@@ -166,15 +166,14 @@ By installing the openHAB process as a service in Windows, you can:
     ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
 1. Your openHAB Windows service is now installed and running.
+
     Validate proper operations by:
 
     - Browsing to [http://localhost:8080](http://localhost:8080)
-
     - Verifying that the Windows Service is running and set to Automatic Startup type.
         Use `services.msc` and find the `openHAB` service.
 
         ![Windows Service](images/Windows_Service.jpg)
-
     - Logging in with an SSH client to the console (see info below)
 
 ### File Locations
@@ -238,10 +237,13 @@ Alternatively, you can use a standard SSH client:
 1. Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 
 1. Setup a session with the following parameters:
-    - Host: 127.0.0.1
-    - Port: 8101
-    - Username: `openhab`
-    - Password: `habopen`
+
+    ```text
+    Host: 127.0.0.1
+    Port: 8101
+    Username: openhab
+    Password: habopen
+    ```
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
 
