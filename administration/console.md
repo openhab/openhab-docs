@@ -194,4 +194,6 @@ Depending on your system, you may have to substitute [the directory](#console-se
 sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg
 ```
 
+## More Information
+
 Please check the [Apache Karaf reference](https://karaf.apache.org/manual/latest/) for more details.
