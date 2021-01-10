@@ -167,13 +167,10 @@ By installing the openHAB process as a service in Windows, you can:
 
 1. Your openHAB Windows service is now installed and running.
 
-    Validate proper operations by:
+    Validate proper operations by browsing to `http://localhost:8080` and verifying that the Windows Service is running and set to Automatic Startup type.
+    Use `services.msc` and find the `openHAB` service.
+    ![Windows Service](images/Windows_Service.jpg)
 
-    - Browsing to [http://localhost:8080](http://localhost:8080)
-    - Verifying that the Windows Service is running and set to Automatic Startup type.
-        Use `services.msc` and find the `openHAB` service.
-
-        ![Windows Service](images/Windows_Service.jpg)
     - Logging in with an SSH client to the console (see info below)
 
 ### File Locations
