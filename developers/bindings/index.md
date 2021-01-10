@@ -540,7 +540,7 @@ Currently the framework provides two base thing handler implementations for the 
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
-#### Internationalization
+#### Internationalization of Config Status Messages
 
 The framework will take care of internationalizing messages.
 
@@ -835,7 +835,7 @@ If this behavior is not appropriate for the implemented discovery service, one c
     }
 ```
 
-### Internationalization
+### Internationalization of Discovery result labels
 
 The framework will take care of internationalizing labels of discovery results if you extend the `AbstractDiscoveryService`.
 See [i18n](../utils/i18n.html#discovery) for more information.

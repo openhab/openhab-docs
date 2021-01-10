@@ -217,7 +217,7 @@ Ephemeris is a way to determine what type of day today or a number of days befor
 For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
 
-### Actions
+### Actions Examples
 
 #### Rules DSL
 
