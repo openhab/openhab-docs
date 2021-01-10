@@ -14,3 +14,6 @@ exclude_rule 'MD025'
 
 # Allow inline HTML
 exclude_rule 'MD033'
+
+# Allow Frontmatter and exclude top level header on first line rule
+exclude_rule 'MD041'
