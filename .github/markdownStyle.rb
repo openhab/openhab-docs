@@ -15,7 +15,13 @@ rule 'MD024', :allow_different_nesting  => true
 # Allow Multiple top level headers in the same document
 exclude_rule 'MD025'
 
+# Allow trailing punctuation in headers
+exclude_rule 'MD026'
+
 # Allow inline HTML
+exclude_rule 'MD033'
+
+# Allow bare urls (at least until they don't produce errors in source code blocks anymore)
 exclude_rule 'MD033'
 
 # Allow Frontmatter and exclude top level header on first line rule

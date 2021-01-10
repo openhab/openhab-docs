@@ -12,8 +12,7 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
 
 ## Structuring Things and Thing Types
 
-1. _I am implementing a binding for system X.
-Shall I design this as one Thing or as a Bridge with multiple Things for the different functionalities?_
+1. _I am implementing a binding for system X. Shall I design this as one Thing or as a Bridge with multiple Things for the different functionalities?_
 
     In general, both options are valid:
 
@@ -34,16 +33,14 @@ Shall I design this as one Thing or as a Bridge with multiple Things for the dif
     Nonetheless, the static XML descriptions of thing types can be picked up for documentation generation and other purposes.
     So whenever possible, static XML descriptions should be provided.
 
-1. _For my system XY, there are so many different variants of devices.
-Do I really need to define a thing type for every single one of them?_
+1. _For my system XY, there are so many different variants of devices. Do I really need to define a thing type for every single one of them?_
 
     Thing types are important if you have no chance to request any structural information about the devices from your system and if you need users to manually chose a thing to add or configure (i.e. there is also no automatic discovery).
     The thing types that you provide will be the list the user can choose from.
     If your system supports auto-discovery and you can also dynamically construct things (and their channels) from structural information that you can access during runtime, there is in theory no need to provide any thing type description at all.
     Nonetheless, static descriptions of thing types have the advantage that the user knows which kind of devices are supported, no matter if he has a device at home or not - so you should at least have static XML descriptions for the devices that are known to you at implementation time.
 
-1. _I have a device that can have different firmware versions with slightly different functionality.
-Should I create one or two thing types for it?_
+1. _I have a device that can have different firmware versions with slightly different functionality. Should I create one or two thing types for it?_
 
     If the firmware version makes a huge difference for the device (and can be seen as a different model of it), then it is ok to have different things defined.
     If the list of channels can be determined by knowing the firmware revision, this is good.

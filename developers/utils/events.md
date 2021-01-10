@@ -282,7 +282,7 @@ public class SunriseEvent extends AbstractEvent {
 The listing below summarizes some coding guidelines as illustrated in the example above:
 
 - Events should only be created by event factories.
-Constructors do not have any access specifier in order to make the class package private.
+    Constructors do not have any access specifier in order to make the class package private.
 - The serialization of the payload into a data transfer object (e.g. `SunriseDTO`) should be part of the event factory and will be assigned to a class member via the constructor.
 - A public member `TYPE` represents the event type as string representation and is usually the name of the class.
 - The `toString()` method should deliver a meaningful string since it is used for event logging.
@@ -330,14 +330,14 @@ public class SunEventFactory extends AbstractEventFactory {
 The listing below summarizes some guidelines as illustrated in the example above:
 
 - Provide the supported event types (`SunriseEvent.TYPE`) via an `AbstractEventFactory` constructor call.
-The supported event types will be returned by the `AbstractEventFactory.getSupportedEventTypes()` method.
+    The supported event types will be returned by the `AbstractEventFactory.getSupportedEventTypes()` method.
 - The event factory defines the topic (`SUNRISE_EVENT_TOPIC`) of the supported event types.
-Please ensure that the topic format follows the topic structure of the openHAB core events, similar to a REST URI (`{namespace}/{entityType}/{entity}/{sub-entity-1}/.../{sub-entity-n}/{action}`).
-The namespace must be `openhab`.
+    Please ensure that the topic format follows the topic structure of the openHAB core events, similar to a REST URI (`{namespace}/{entityType}/{entity}/{sub-entity-1}/.../{sub-entity-n}/{action}`).
+    The namespace must be `openhab`.
 - Implement the method `createEventByType(String eventType, String topic, String payload, String source)` to create a new event based on the topic and the payload, determined by the event type.
-This method will be called by the framework in order to dispatch received events to the corresponding event subscribers.
-If the payload is serialized with JSON, the method `deserializePayload(String payload, Class<T> classOfPayload)` can be used to deserialize the payload into a data transfer object.
+    This method will be called by the framework in order to dispatch received events to the corresponding event subscribers.
+    If the payload is serialized with JSON, the method `deserializePayload(String payload, Class<T> classOfPayload)` can be used to deserialize the payload into a data transfer object.
 - Provide a static method to create event instances based on a domain object (Item, Thing, or in the example above `Sunrise`).
-This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
-If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
-Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.
+    This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
+    If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
+    Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.
