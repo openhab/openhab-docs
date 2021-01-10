@@ -18,9 +18,7 @@ This article refers to the directory where you installed the distribution as `<D
 
 ## Build the addons repostory
 
-1. fork and clone the [openhab addons repository](https://www.github.com/openhab/openhab-addons) into a new directory (Reference `<ADDON_DIR>` from now on for this arcticle)
-
-    - Clone with `git clone https://github.com/<yourgitusername>/openhab-addons`  (replace git user name accordingly)
+1. fork and clone the [openhab addons repository](https://www.github.com/openhab/openhab-addons) into a new directory (Reference `<ADDON_DIR>` from now on for this arcticle) with `git clone https://github.com/<yourgitusername>/openhab-addons`  (replace git user name accordingly)
 
 1. open IntelliJ and create a new Project from existing sources (File | New | Project from existing sources) and pick `<ADDON_DIR>`/pom.xml
 

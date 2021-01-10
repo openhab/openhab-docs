@@ -1,5 +1,8 @@
 all
 
+# Exclude first headline rule to avoid breaking of the introduction page for now
+exclude_rule 'MD002'
+
 # Expect dash usage for unorderd lists
 rule 'MD004', :style => :dash
 
