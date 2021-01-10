@@ -288,6 +288,8 @@ public class MyClass(){}
 This forces you to think about every field in your class if it can be null at any point, or should rather be default initialized.
 If you have fields that are neither marked as nullable, nor are initialized, the code will not compile.
 
+When using data transfer objects (DTO), you can move this into a package called dto or append DTO to the class name to get rid of the checkstyle warning about missing NonNullByDefault annotation.
+
 Fields that can be null are to be annotated like this:
 
 ```java
