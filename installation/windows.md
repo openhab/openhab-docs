@@ -85,74 +85,74 @@ By installing the openHAB process as a service in Windows, you can:
     1. Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
     1. Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
-  ```conf
-  #*******************************************************
-  # openHAB-wrapper.conf for Windows Service Installation
-  #*******************************************************
+    ```conf
+    #*******************************************************
+    # openHAB-wrapper.conf for Windows Service Installation
+    #*******************************************************
 
-  # openHAB installation dir (Adapt this first setting to your system)
-  set.default.OPENHAB_HOME=C:\openHAB
+    # openHAB installation dir (Adapt this first setting to your system)
+    set.default.OPENHAB_HOME=C:\openHAB
 
-  # Wrapper Properties
-  set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
-  set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
-  set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
-  set.default.OPENHAB_LOGDIR=%OPENHAB_USERDATA%\logs
-  set.default.KARAF_HOME=%OPENHAB_RUNTIME%
-  set.default.KARAF_BASE=%OPENHAB_USERDATA%
-  set.default.KARAF_DATA=%OPENHAB_USERDATA%
-  set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
-  set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
+    # Wrapper Properties
+    set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
+    set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
+    set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
+    set.default.OPENHAB_LOGDIR=%OPENHAB_USERDATA%\logs
+    set.default.KARAF_HOME=%OPENHAB_RUNTIME%
+    set.default.KARAF_BASE=%OPENHAB_USERDATA%
+    set.default.KARAF_DATA=%OPENHAB_USERDATA%
+    set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
+    set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
 
-  # Java Application
-  wrapper.working.dir=%KARAF_BASE%
-  wrapper.java.command=%JAVA_HOME%\bin\java
-  wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
-  wrapper.java.classpath.1=%KARAF_HOME%\lib\boot\*.jar
-  wrapper.java.classpath.2=%KARAF_DATA%\lib\wrapper\*.jar
-  wrapper.java.classpath.3=%KARAF_HOME%\lib\jdk9plus\*.jar
-  wrapper.java.classpath.4=%KARAF_HOME%\lib\endorsed\*.jar
-  wrapper.java.library.path.1=%KARAF_DATA%\lib\wrapper\
+    # Java Application
+    wrapper.working.dir=%KARAF_BASE%
+    wrapper.java.command=%JAVA_HOME%\bin\java
+    wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
+    wrapper.java.classpath.1=%KARAF_HOME%\lib\boot\*.jar
+    wrapper.java.classpath.2=%KARAF_DATA%\lib\wrapper\*.jar
+    wrapper.java.classpath.3=%KARAF_HOME%\lib\jdk9plus\*.jar
+    wrapper.java.classpath.4=%KARAF_HOME%\lib\endorsed\*.jar
+    wrapper.java.library.path.1=%KARAF_DATA%\lib\wrapper\
 
-  # Java Parameters
-  wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
-  wrapper.java.additional.2=-Dkaraf.base="%KARAF_BASE%"
-  wrapper.java.additional.3=-Dkaraf.data="%KARAF_DATA%"
-  wrapper.java.additional.4=-Dkaraf.etc="%KARAF_ETC%"
-  wrapper.java.additional.5=-Dcom.sun.management.jmxremote
-  wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
-  wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
-  wrapper.java.additional.8=-Dopenhab.home="%OPENHAB_HOME%"
-  wrapper.java.additional.9=-Dopenhab.conf="%OPENHAB_HOME%\conf"
-  wrapper.java.additional.10=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
-  wrapper.java.additional.11=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
-  wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
-  wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
-  wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
-  wrapper.java.additional.15=-Dorg.osgi.service.http.port.secure=8443
-  wrapper.java.additional.16=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
-  wrapper.java.additional.17=-Dkaraf.logs="%OPENHAB_LOGDIR%"
-  wrapper.java.maxmemory=512
+    # Java Parameters
+    wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
+    wrapper.java.additional.2=-Dkaraf.base="%KARAF_BASE%"
+    wrapper.java.additional.3=-Dkaraf.data="%KARAF_DATA%"
+    wrapper.java.additional.4=-Dkaraf.etc="%KARAF_ETC%"
+    wrapper.java.additional.5=-Dcom.sun.management.jmxremote
+    wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
+    wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
+    wrapper.java.additional.8=-Dopenhab.home="%OPENHAB_HOME%"
+    wrapper.java.additional.9=-Dopenhab.conf="%OPENHAB_HOME%\conf"
+    wrapper.java.additional.10=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
+    wrapper.java.additional.11=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+    wrapper.java.additional.12=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
+    wrapper.java.additional.13=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
+    wrapper.java.additional.14=-Dorg.osgi.service.http.port=8080
+    wrapper.java.additional.15=-Dorg.osgi.service.http.port.secure=8443
+    wrapper.java.additional.16=-Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties"
+    wrapper.java.additional.17=-Dkaraf.logs="%OPENHAB_LOGDIR%"
+    wrapper.java.maxmemory=512
 
-  # Wrapper Logging Properties
-  wrapper.console.format=PM
-  wrapper.console.loglevel=INFO
-  wrapper.logfile=%OPENHAB_USERDATA%\logs\wrapper.log
-  wrapper.logfile.format=LPTM
-  wrapper.logfile.loglevel=INFO
-  wrapper.logfile.maxsize=10m
-  wrapper.logfile.maxfiles=5
-  wrapper.syslog.loglevel=NONE
+    # Wrapper Logging Properties
+    wrapper.console.format=PM
+    wrapper.console.loglevel=INFO
+    wrapper.logfile=%OPENHAB_USERDATA%\logs\wrapper.log
+    wrapper.logfile.format=LPTM
+    wrapper.logfile.loglevel=INFO
+    wrapper.logfile.maxsize=10m
+    wrapper.logfile.maxfiles=5
+    wrapper.syslog.loglevel=NONE
 
-  # Wrapper Windows Properties
-  wrapper.console.title=openHAB
-  wrapper.ntservice.name=openHAB
-  wrapper.ntservice.displayname=openHAB
-  wrapper.ntservice.description=openHAB Service
-  wrapper.ntservice.dependency.1=
-  wrapper.ntservice.starttype=AUTO_START
-  wrapper.ntservice.interactive=false
-  ```
+    # Wrapper Windows Properties
+    wrapper.console.title=openHAB
+    wrapper.ntservice.name=openHAB
+    wrapper.ntservice.displayname=openHAB
+    wrapper.ntservice.description=openHAB Service
+    wrapper.ntservice.dependency.1=
+    wrapper.ntservice.starttype=AUTO_START
+    wrapper.ntservice.interactive=false
+    ```
 
 1. Open an elevated command prompt and type the following commands:
 
