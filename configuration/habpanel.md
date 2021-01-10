@@ -276,9 +276,10 @@ Upon clicking on a custom widget definition, the widget designer opens. It conta
 - **Code:** This tab is an editor for the template's code. You can use the Ctrl-S (or Cmd-S) keyboard shortcut to save the widget while editing the code;
 
 - **Settings:** This tab hosts the widget's general settings and configuration settings structure to be defined.
-Click on the **Add setting** to add a new configuration setting. Each configuration setting must have a type, a technical ID, and other optional attributes. Each type of setting determines the UI element presented in the dashboard designer when configuring instances of the custom widget.
-Use the arrow buttons to move configuration settings up or down, and the trash bin icon to remove them.
-When instantiated, the value of configuration settings are set in the template's scope as `config.<setting_id>` (except those of type Icon which define an additional value, the iconset name, as `config.<setting_id>_iconset`);
+    Click on the **Add setting** to add a new configuration setting. Each configuration setting must have a type, a technical ID, and other optional attributes.
+    Each type of setting determines the UI element presented in the dashboard designer when configuring instances of the custom widget.
+    Use the arrow buttons to move configuration settings up or down, and the trash bin icon to remove them.
+    When instantiated, the value of configuration settings are set in the template's scope as `config.<setting_id>` (except those of type Icon which define an additional value, the iconset name, as `config.<setting_id>_iconset`);
 
 - **Preview:** Upon switching to this tab, a test instance of the widget is rendered in an otherwise blank testbed dashboard. Use the sliders to resize the widget in order to preview it at different sizes. If it defines configuration settings, they must likely be set for this preview using the gears icon: this will bring up the widget instance's configuration dialog as it would appear in the dashboard designer.
 

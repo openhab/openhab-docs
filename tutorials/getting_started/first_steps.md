@@ -61,9 +61,11 @@ You can also set your preferred measurement system (openHAB defaults to the Metr
 ### Set your geographic location (latitude and longitude) and measurement system
 
 1. In the left-hand menu under Administration, select Settings to open the Settings page.
+
 ![initial settings](images/initial_settings.png)
 
 1. Under System Settings, select Regional Settings.
+
 ![regional settings](images/regional_settings.png)
 
 1. Under Location, click the Map button to add your geographic coordinates.

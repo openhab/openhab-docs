@@ -68,19 +68,15 @@ The following steps will show you how to setup a specific bundle for development
     ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 
 1. Edit launch.json and ...
-
     ![launch.json changes](./images/ide_setup_vscode_launch.png)
-
     1. Set the `port` to xxxx (from step 7).  This can be skipped if xxxx was 5005 from step 7.
     1. Set the `hostName` to the hostname running openHAB.  This can be skipped if running locally (localhost)
     1. Save and close launch.json
 
 1. Verify that VSCode can build the system and connect to a debug instance of openHAB:
-
     1. Shutdown any instances of openHAB
     1. Press `CTRL-SHIFT-P -> Tasks: Run Task -> Start openHAB (Debug)` to start an openHAB instance in debug mode.  You should see openHAB startup in a new VSCode terminal.
     1. Press F5 (or bring up debug in VSCode and choose the "Debug (Attach) - openHAB" configuration) and the following should occur in the VSCode terminal
-
         1. The maven compile occuring (successfully)
         1. The resulting JAR is copied to the openHAB addons directory (`openhab_addons`)
         1. Connecting to the openHAB instance (the debug call stack should show a bunch of openHAB type threads running)

@@ -41,12 +41,12 @@ A Transformation takes incoming data and transformes is somehow.
 In this case it will extract certain fields from the JSON.
 From Settings, click on Transformations under Add-ons.
 
-![](images/choose_transformation.png)
+![choose transformation](images/choose_transformation.png)
 
 Click on the blue "+" button and find JSONPath Transformation.
 Click on it, then click Install.
 
-![](images/install_jsonpath.png)
+![install_jsonpath](images/install_jsonpath.png)
 
 Wait for it to disappear from the list, then click back twice to go back to Settings.
 
@@ -63,13 +63,13 @@ Click on the blue "+" button.
 
 Choose "MQTT Binding", then choose "MQTT Broker".
 
-![](images/mqtt_things.png)
+![mqtt things](images/mqtt_things.png)
 
 Fill in the details to connect to the broker.
 You may also alter its ID and name.
 If you need credentials to connect to the broker, click on "Show advanced" to reveal additional options, including Username and Password.
 
-![](images/mqtt_bridge_config.png)
+![mqtt bridge config](images/mqtt_bridge_config.png)
 
 ## Create the Generic MQTT Thing
 
@@ -91,7 +91,7 @@ Back on the Things page, choose the Thing you created.
 It should be marked online, but it will not have any Channels on the Channel tab.
 You have to configure them yourself.
 
-![](images/mqtt_generic_thing.png)
+![mqtt generic thing](images/mqtt_generic_thing.png)
 
 Click on Add Channel.
 
@@ -107,16 +107,16 @@ Click on "Show advanced" above MQTT State Topic to reveal more settings.
 
 Scroll down, find the "Incoming Value Transformations" setting, and specify the transformation to apply there:
 
-```
+```json
 JSONPATH:$.temperature
 ```
 
-![](images/mqtt_temp_channel.png)
+![mqtt temp channel](images/mqtt_temp_channel.png)
 
 Click Done in the title bar to add the channel.
 It should now be added to the Channels tab.
 
-![](images/mqtt_temp_channel_created.png)
+![mqtt temp channel created](images/mqtt_temp_channel_created.png)
 
 Repeat the procedure for the other channels:
 
@@ -131,7 +131,7 @@ All channels should specify the MQTT topic where the JSON message is published.
 
 If you want to check the configuration for a channel, or if you made a mistake while adding it, open the channel details by clicking on it, and choose Configure Channel.
 
-![](images/mqtt_config_channel.png)
+![mqtt config channel](images/mqtt_config_channel.png)
 
 Note that you cannot change the channel type if you picked the wrong one.
 In that case, remove the channel by clicking on Remove Channel and then add it again.

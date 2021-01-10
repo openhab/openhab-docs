@@ -165,7 +165,9 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     Add the **openHAB Stable Repository** to your systems apt sources list:
 
     ```shell
+
     echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+
     ```
 
     </details>
@@ -178,7 +180,9 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     Add the **openHAB Beta Repository** to your systems apt sources list:
 
     ```shell
+
     echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
+
     ```
 
     </details>
@@ -192,7 +196,9 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     To use it, add the **openHAB Unstable Repository** to your systems apt sources list:
 
     ```shell
+
     echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
+
     ```
 
 </details>
@@ -244,7 +250,7 @@ sudo systemctl enable openhab.service
 
 You are all set.
 
-## What next?
+## What next ?
 
 You can:
 

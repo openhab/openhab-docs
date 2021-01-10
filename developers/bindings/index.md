@@ -119,34 +119,34 @@ For an example, our exemplary Weather binding starts and stops a scheduled job t
 The startup of a handler is divided in two essential steps:
 
 1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework.
-In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
+    In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
 
-2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
-This method is only called if all 'required' configuration parameters of the Thing are present.
-The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
+1. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
+    This method is only called if all 'required' configuration parameters of the Thing are present.
+    The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
 
-The diagram below illustrates the startup of a handler in more detail.
-The life cycle is controlled by the `ThingManager`.
+    The diagram below illustrates the startup of a handler in more detail.
+    The life cycle is controlled by the `ThingManager`.
 
-![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
+    ![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
 
-The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding.
-The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`.
-Therefore, it tracks all `ThingHandlerFactory`s from the binding.
+    The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding.
+    The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`.
+    Therefore, it tracks all `ThingHandlerFactory`s from the binding.
 
-The `ThingManager` determines if the `Thing` is initializable or not.
-A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](config-xml.html)) are available.
-If so, the method `ThingHandler.initialize()` is called.
+    The `ThingManager` determines if the `Thing` is initializable or not.
+    A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](config-xml.html)) are available.
+    If so, the method `ThingHandler.initialize()` is called.
 
-Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later.
-To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience.
-Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly.
-For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually.
-Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to *OFFLINE* with the corresponding status detail (e.g. *COMMUNICATION_ERROR* or *CONFIGURATION_ERROR* including a meaningful description) instead of throwing exceptions.
+    Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later.
+    To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience.
+    Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly.
+    For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually.
+    Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to *OFFLINE* with the corresponding status detail (e.g. *COMMUNICATION_ERROR* or *CONFIGURATION_ERROR* including a meaningful description) instead of throwing exceptions.
 
-If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`.
-The binding has to notify the `ThingManager` about the updated configuration by a callback.
-The `ThingManager` tries to initialize the `ThingHandler` resp. `Thing` again.
+    If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`.
+    The binding has to notify the `ThingManager` about the updated configuration by a callback.
+    The `ThingManager` tries to initialize the `ThingHandler` resp. `Thing` again.
 
 After the handler is initialized, the handler must be ready to handle methods calls like `handleCommand` and `handleUpdate`, as well as `thingUpdated`.
 
@@ -157,9 +157,9 @@ The shutdown of a handler is also divided in two essential steps:
 1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework.
 The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
 
-2. Handler is disposed: `ThingHandler.disposed()` method is called.
-The framework expects `dispose()` to be non-blocking and to return quickly.
-For longer running disposals, the implementation has to take care of scheduling a separate job.
+1. Handler is disposed: `ThingHandler.disposed()` method is called.
+    The framework expects `dispose()` to be non-blocking and to return quickly.
+    For longer running disposals, the implementation has to take care of scheduling a separate job.
 
 ![thing_life_cycle_shutdown](images/thing_life_cycle_shutdown.png)
 
@@ -860,12 +860,12 @@ To facilitate the development, binding developers only need to implement a `Upnp
 Here the developer only needs to implement three simple methods:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the UPnP result or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
 The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
 
@@ -920,12 +920,12 @@ Here the developer only needs to implement four simple methods:
 
 - `getServiceType` - Defines the [mDNS service type](https://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
 ### Discovery that is bound to a Thing
 

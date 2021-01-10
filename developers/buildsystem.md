@@ -40,8 +40,8 @@ These dependencies are embedded in the resulting bundle automatically.
 
 There are two exceptions:
 
-1) Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/2.5.0-SNAPSHOT`).
-2) Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
+1. Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/2.5.0-SNAPSHOT`).
+1. Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
 
 Dependencies on other openHAB bundles should have the scope `provided`.
 To ensure that they are available at runtime they also need to be added to the `feature.xml`:
@@ -55,10 +55,10 @@ To ensure that they are available at runtime they also need to be added to the `
 In two cases libraries can be added to the `/lib` directory:
 
 1. The bundle is not available for download
-2. The bundle is not an OSGi bundle but needs to be used for integration tests.
-Unlike Karaf, BND is not able to wrap bundles on its own.
-In this case the binding works as wrapper.
-You need add the library and export all needed packages manually.
+1. The bundle is not an OSGi bundle but needs to be used for integration tests.
+    Unlike Karaf, BND is not able to wrap bundles on its own.
+    In this case the binding works as wrapper.
+    You need add the library and export all needed packages manually.
 
 The build system automatically picks up all JAR files in `/lib` and embeds them in the new bundle.
 In this case they must not be added to the feature.
