@@ -55,6 +55,7 @@ The following table summarises the channels available for the ZMNHYD -:
 | Electric meter (amps) | meter_current | meter_current | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Reset Power Consumption | meter_reset | meter_reset | Energy | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
@@ -81,6 +82,11 @@ The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Numbe
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Power Consumption
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.
@@ -111,8 +117,8 @@ Detailed information on each parameter can be found in the sections below.
 | 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
 | 41 | Threshold time for power reporting | Threshold time for power reporting [Seconds] |
 | 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Seconds] |
-| 50 | Down value | Down value [watt] |
-| 51 | Up value | Upper power threshold used in parameter no. 52 |
+| 50 | Down value | Lower power threshold [watt] used in parameter no. 52 |
+| 51 | Up value | Upper power threshold [watt] used in parameter no. 52 |
 | 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -257,7 +263,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 50: Down value
 
-Down value [watt]
+Lower power threshold [watt] used in parameter no. 52
 Lower power threshold used in parameter no. 52. 
 
 Values:
@@ -283,7 +289,7 @@ This parameter has the configuration ID ```config_50_2``` and is of type ```INTE
 
 ### Parameter 51: Up value
 
-Upper power threshold used in parameter no. 52
+Upper power threshold [watt] used in parameter no. 52
 Values
 
   * default value 50 : 50 W
@@ -407,6 +413,8 @@ Association group 5 supports 5 nodes.
 ### Documentation Links
 
 * [Qubino Smart Plug 16A extended manual](https://opensmarthouse.org/zwavedatabase/822/reference/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
+* [Qubino Smart Plug 16A extended manual V2.6](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.6_2019-04-10.pdf)
+* [Qubino Smart Plug 16A extended manual V2.7](https://opensmarthouse.org/zwavedatabase/822/reference/qubino-smart-plug-16a-plus-extended-manual-eng-V2.7_2019-05-09.pdf)
 
 ---
 

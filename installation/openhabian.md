@@ -9,7 +9,7 @@ source: https://github.com/openhab/openhabian/blob/master/docs/openhabian.md
 <!-- Attention authors: Do not edit directly. Please add your changes to the source repository -->
 
 ::: tip TL;DR
-Jump to [install instructions](#Raspberry-Pi-prepackaged-SD-card-image).
+Jump to [install instructions](#raspberry-pi-prepackaged-sd-card-image). But read the full docs before you ask for help !
 :::
 
 # openHABian - Hassle-free openHAB Setup
@@ -19,14 +19,13 @@ However, setting up a fully working Linux system with all recommended packages a
 <p style="text-align: center; font-size: 1.2em; font-style: italic;"><q>A home automation enthusiast doesn't have to be a Linux enthusiast!</q></p>
 
 openHABian aims to provide a **self-configuring** Linux system setup specific to the needs of every openHAB user.
-To that end, the project provides two things:
+It provides:
 
-*   Complete **SD-card images pre-configured with openHAB** and many other openHAB- and Hardware-specific preparations for the Raspberry Pi
-*   The openHABian Configuration Tool to set up and configure openHAB and many related things on any Debian based system
+*   complete **SD-card images pre-configured with openHAB** for the Raspberry Pi line of SBCs 
+*   The openHABian configuration tool to set up and configure openHAB and many related things on any Debian based system
 
 #### Table of Contents
 {::options toc_levels="2..3"/}
-
 -   TOC
 {:toc}
 
@@ -69,11 +68,12 @@ Let's put this first: our current recommendation is to get a RPi 4 with 2 or 4 G
 a 3 A power supply and a 16 GB SD card.
 Also get another 32 GB or larger SD card and a USB card reader to make use of the
 ["auto backup" feature](docs/openhabian.md#Auto-Backup).
-***
-ATTENTION:<br>
+
+::: warning ATTENTION
 Avoid getting the 8 GB model of RPi 4. 8 GB are a waste of money and it has issues,
 you must [disable ZRAM](https://github.com/openhab/openhabian/blob/master/docs/openhabian.md#disable-zram) or use the 64bit image (untested).
-***
+:::
+
 ### Hardware and OS support
 As of openHABian version 1.6 and later, all Raspberry Pi models are supported as
 hardware. Anything x86 based may work or not. Anything else ARM based such as ODroids,
@@ -97,7 +97,7 @@ that to run on hardware other than RPi 2/3/4 or (bare metal i.e. not virtualized
 x86 may work but this is **not** supported.
 
 It may work to install and run openHABian on unsupported hardware. If it does
-not work, you are welcome to find out what's missing and contribute it back to
+not, you are welcome to find out what's missing and contribute it back to
 the community with a Pull Request. It is sometimes simple things like a naming
 string. We'll be happy to include that in openHABian so you can use your box
 with openHABian unless there's a valid reason to change or remove it.
@@ -176,10 +176,11 @@ You will see the following welcome screen:
 
 <a id="manual-setup"></a>
 ### Other Linux Systems (add openHABian just like any other software)
-Going beyond what the RPi image provides, we support running openHABian on x86 hardware on top of any existing
-Debian installation.
+Going beyond what the RPi image provides, you can also openHABian on x86 hardware on top of any existing Debian installation.
+Please note that the unattended install is tailored to work for Raspberries. We cannot test HW/OS combos beyond RPis upfront so there is no promise for this work.
+See the [Hardware and OS section](#hardware-and-os-support) for details on supported hardware and OSs before you proceed.
 Note that although the core parts of openHABian were reported to work on there, Ubuntu is not supported and untested.
-See the [README](https://github.com/openhab/openhabian#hardware-and-os-support) for details on supported hardware and OSs before you proceed.
+If you try and fail, please help and drop us a note on Github with debug log enabled, see [DEBUG guide](openhabian-DEBUG.md).
 ***
 
 Start with a fresh installation of your operating system, login and run
@@ -201,31 +202,25 @@ git clone -b openHAB3 https://github.com/openhab/openhabian.git /opt/openhabian
 ln -s /opt/openhabian/openhabian-setup.sh /usr/local/bin/openhabian-config
 cp /opt/openhabian/openhabian.conf.dist /etc/openhabian.conf
 ```
-
-#### Interactive Install on generic Linux
-Start `openhabian-config` to get into the openHABian configuration tool.
-➜ Continue at the ["openHABian Configuration Tool"](#openhabian-configuration-tool) chapter below!
-
-#### Unattended Install on generic Linux
-BEWARE:<br>
-This install method is only for experts that already know to handle and debug openHABian.
-As a beginner, use the interactive `openhabian-config` tool !
-
-That being said, you actually _can_ install openHABian in an unattended mode.
-
-To do so, edit `/etc/openhabian.conf` to match your needs, then use
+Edit `/etc/openhabian.conf` to match your needs, then finally use
 
 ```shell
 openhabian-config unattended
 ```
+to install.
 
-to get the automated openHABian installation going.
+#### Interactive install on generic x86 Linux
+We strongly recommend you to use the automated install but you actually *can* walk through the interactive tool.
+Start `openhabian-config`.
+Get the bare minimum you will *need* installed by selecting menu option 03.
+To install the recommended components that automated install will get in one go select menu options 33, 32, 31, 11, 12, 15, Zulu 11 OpenJDK 64-bit (in menu 4X), 13, 16, 14, 21, 38, 53, 52.
+We try to make install options independent of each other but there may be dependencies we are not aware of left so any other order may or may not work.
 
-Please note that we cannot test HW/OS combos beyond RPis upfront so there is no support / no promise for this work as explained in the [README](https://github.com/openhab/openhabian#hardware-and-os-support). 
+➜ Continue at the ["openHABian Configuration Tool"](#openhabian-configuration-tool) chapter below
 
 ## openHABian Configuration Tool
-The following instructions are targeted at a Raspberry Pi but should be applicable to all openHABian environments.
-Once connected to the command line console of your system, please execute the openHABian configuration tool by typing the following command.
+The following instructions are developed for a Raspberry Pi but should be applicable to all hardware / all openHABian environments.
+Once connected to the command line console of your system, please execute the openHABian configuration tool by typing the following command:
 
 (Hint: sudo executes a command with elevated rights and will hence ask for your password: `openhabian`).
 
@@ -236,15 +231,13 @@ sudo openhabian-config
 ![openHABian-config menu](images/openHABian-config.png)
 
 The configuration tool is the heart of openHABian.
-It is not only a menu with a set of options, it's also used in a special unattended mode to automate the setup run,
-as either part of the RPi image as well as in a manual install.
+It is not only a menu with a set of options, it's also used in a special unattended mode to automate the setup run, either as part of the RPi image or in a manual install run.
 
 ⌨ - A quick note on menu navigation.
 Use the cursor keys to navigate, <kbd>Enter</kbd> to execute, <kbd>Space</kbd> to select and <kbd>Tab</kbd> to jump to the actions on the bottom of the screen. Press <kbd>Esc</kbd> twice to exit the configuration tool.
 
 ### Linux Hints
-If you are unfamiliar with Linux, SSH and the Linux console or if you want to improve your skills, read up on these important topics.
-A lot of helpful articles can be found on the internet, for example:
+Many helpful articles can be found on the internet, for example:
 
 -   "Learn the ways of Linux-fu, for free" interactively with exercises at [linuxjourney.com](https://linuxjourney.com).
 -   The official Raspberry Pi help articles over at [raspberrypi.org](https://www.raspberrypi.org/help)
@@ -349,7 +342,7 @@ So in addition to the setup instructions given above, uncomment and complete the
 Whenever the WiFi interface wlan0 exists but does not have connectivity, openHABian will launch a **Hotspot**.
 When you use your mobile phone to scan for WiFi networks, you should be seeing a new network called `openHABian-<n>`.
 Connecting will work without a password. Once connected, open your browser and point it at `http://raspberrypi.local` or `http://comitup-<n>`.
-This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities. If you cannot connect to this address, go to `http://10.42.0.1`.
+This may or may not work for your mobile browser as it requires Bonjour/ZeroConf abilities. If you cannot connect to this address, go to `http://10.41.0.1`.
 On that page you can select the SSID of the network you want to connect your system to. Provide the password and press the button.
 Note that as soon as you do, the wlan0 IP address changes so your mobile browser will not be able to provide you any feedback if that worked out.
 Try to ping the new system's hostname (default is `openHABianDevice`) or check DHCP on your router if your openHABian system appeared there.
@@ -413,7 +406,7 @@ Follow the instructions in the previous section and insert a line into `openhabi
 
 #### Fake hardware mode
 If to install openHABian fails because you have a non-supported hardware or run an unsupported OS release, you can "fake" your hardware and OS to make openHABian behave as if you did own that HW/OS.
-In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `release=` with the hw and os versions you want to attempt installation with.
+In `openhabian.conf`, uncomment and complete the lines reading `hw=`, `hwarch=` and/or `osrelease=` with the hw and os versions you want to attempt installation with.
 
 ## Optional Components
 openHABian comes with a number of additional routines to quickly install and set up home automation related software.
