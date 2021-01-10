@@ -27,7 +27,6 @@ In this case, the Hue binding supports auto-discovery of both the bridge and the
 - TOC
 {:toc}
 
-
 ## Install the Binding
 
 After logging in as an administrator, click on `Settings` from the sidebar, then click on `Things`.
@@ -112,6 +111,7 @@ You can either click on an individual thing to see actions related to it, or you
 ![](images/hue_bulk_add.png)
 
 These actions are:
+
 - Approve: To promote the candidate from the Inbox to a Thing.
 - Ignore: To hide the candidate from the list (you will be able to see it again and un-ignore it by clicking on "Show ignored" above the list).
 - Remove: To remove the candidate from the Inbox (it might be detected again later).

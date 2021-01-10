@@ -36,7 +36,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       <td>
         <p>
         Most bindings developed for openHAB 1 can also be used in openHAB 2.
-        These bindings are connected directly to <a href="{{base}}/concepts/items.html">items</a> by editing text files.  
+        These bindings are connected directly to <a href="{{base}}/concepts/items.html">items</a> by editing text files.
         </p>
       </td>
     </tr>

@@ -18,7 +18,6 @@ It is possible to query and even change the state of entities like items or thin
 Some of the described commands are executed on the internal database and could break your installation. Please use this functionality only if you know what you are doing!
 :::
 
-
 ## Examples
 
 Query an item's state:

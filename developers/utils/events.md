@@ -6,6 +6,7 @@ title: Event Bus
 {% include base.html %}
 
 # Event Bus
+
 {:.no_toc}
 
 The openHAB framework provides an event bus for inter-component communication.
@@ -16,6 +17,7 @@ This section introduces the event API and illustrates how to receive such events
 Furthermore, the sending of events and the implementation of new event types will be described.
 
 {::options toc_levels="2,3"/}
+
 - TOC
 {:toc}
 

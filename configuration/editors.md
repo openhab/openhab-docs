@@ -27,6 +27,7 @@ If you are using [openHABian]({{base}}/installation/openhabian.html), the networ
 *Attention Windows users:* Directly accessing network shares (UNC paths) is often not supported. Please be sure to mount the network share to a drive letter.
 
 {: #openhab-vscode}
+
 ## openHAB VS Code Extension
 
 openHAB VS Code is an extension for the [Visual Studio Code](https://code.visualstudio.com) editor.
@@ -50,6 +51,7 @@ The validation needs a running openHAB installation in your environment and can 
 You can find all important information in the extensions [readme file](https://github.com/openhab/openhab-vscode#validating-the-rules).
 
 {: #others}
+
 ## Other Editor Integrations
 
 The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality.
@@ -60,6 +62,7 @@ mcedit is an editor which comes with mc (Midnight Commander).
 You can find the syntax files and installation instructions on [openhab-mcedit](https://github.com/CWempe/openhab-mcedit).
 
 {: #notepadpp}
+
 ### Notepad++
 
 Notepad++ is a free source code editor for Windows.
@@ -85,4 +88,3 @@ You can find the syntax file and installation instructions on [openhab-syntax-te
 
 BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
 You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
-

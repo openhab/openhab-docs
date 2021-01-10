@@ -60,13 +60,13 @@ openhab> openhab:audio stream example.com
 
 Alternatively the [`playSound()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
-- `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
-- `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
-- `playSound(String sink, String filename)` :	plays a sound from the sounds folder to the given sink(s)
-- `playSound(String sink, String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the given sink(s)
+- `playSound(String filename)` : plays a sound from the sounds folder to the default sink
+- `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
+- `playSound(String sink, String filename)` : plays a sound from the sounds folder to the given sink(s)
+- `playSound(String sink, String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the given sink(s)
 
-- `playStream(String url)` :	plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
-- `playStream(String sink, String url)` :	plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
+- `playStream(String url)` : plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
+- `playStream(String sink, String url)` : plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
 
 #### Examples
 

@@ -84,7 +84,6 @@ To help organizing your things, you also may define a location (`Location` in th
 Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
-
 **Examples:**
 
 ```xtend
@@ -110,8 +109,8 @@ Bridges can be defined together with contained things. The following configurati
 
 ```xtend
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
-	Thing 0210 bulb1 [ lightId="1" ]
-	Thing 0210 bulb2 [ lightId="2" ]
+ Thing 0210 bulb1 [ lightId="1" ]
+ Thing 0210 bulb2 [ lightId="2" ]
 }
 ```
 
@@ -160,11 +159,11 @@ It is also possible to add additional channels to existing things and for bindin
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		State String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		State Number : customChannel2 []
+ Channels:
+  State String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  State Number : customChannel2 []
 }
 ```
 
@@ -176,11 +175,11 @@ As state channels are the default channels, you can omit the `State` keyword, th
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		Number : customChannel2 []
+ Channels:
+  String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  Number : customChannel2 []
 }
 ```
 
@@ -190,10 +189,10 @@ You may optionally give the channel a proper label (like “My Custom Channel”
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		Trigger String : customChannel1 [
-			configParameter="Value"
-		]
+ Channels:
+  Trigger String : customChannel1 [
+   configParameter="Value"
+  ]
 }
 ```
 

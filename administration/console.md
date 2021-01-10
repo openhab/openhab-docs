@@ -148,7 +148,7 @@ To add custom parameters or overwrite the default values, you can change the con
 ### Changing the Password
 
 The password is stored in the file `users.properties`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
-By default, the line with the password contains the text `openhab = `, followed by the current password (e.g. `habopen`) or a password hash (e.g. `{CRYPT}4AE1A0FD...{CRYPT}`).
+By default, the line with the password contains the text `openhab =`, followed by the current password (e.g. `habopen`) or a password hash (e.g. `{CRYPT}4AE1A0FD...{CRYPT}`).
 
 To change the authentication password edit the file manually, replacing the password or password hash (including `{CRYPT}`) with your new password in clear text.
 Alternately, run the following Linux shell command, which will perform the replacement for you.
@@ -179,7 +179,6 @@ To enable binding to all interfaces, uncomment the line
 ```#org.apache.karaf.shell:sshHost = 0.0.0.0```
 
 in `services/runtime.cfg`.
-
 
 ### Change the Port Number
 

@@ -106,6 +106,7 @@ All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpP
 :::
 
 For example:
+
 ```javascript
 val headers = newHashMap("Cache-control" -> "no-cache")
 val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
@@ -158,6 +159,7 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 ```
 
 ### openHAB Subsystem Actions
+
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
 - `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
@@ -182,6 +184,7 @@ Three different actions are available:
 - `sendLogNotification(message)`: Sends a log notification to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
 
 For each of the three actions, there's another variant accepting an icon name and a severity:
+
 - `sendNotification(emailAddress, message, icon, severity)`
 - `sendBroadcastNotification(message, icon, severity)`
 - `sendLogNotification(message, icon, severity)`
@@ -189,6 +192,7 @@ For each of the three actions, there's another variant accepting an icon name an
 Icon and severity can potentially be used by cloud instance clients (such as the openHAB apps for Android or iOS) to be displayed in the list of notifications.
 
 The parameters for these actions have the following meaning:
+
 - `emailAddress`: String containing the email address the target user is registered with in the cloud instance
 - `message`: String containing the notification message text
 - `icon`: String containing the icon name (as described in [Items]({{base}}/configuration/items.html#icons))
@@ -294,6 +298,7 @@ dayset-workday=[MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
 dayset-weekend=[SATURDAY,SUNDAY]
 dayset-trash=[MONDAY]
 ```
+
 #### Custom Bank Holidays
 
 In addition to the ability to define custom daysets, one can define a custom list of holidays or other important days.
@@ -314,6 +319,7 @@ The following is an example listing a few custom days.
     </tns:Holidays>
 </tns:Configuration>
 ```
+
 For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
 
 You can place these XML files anywhere on your file system that openHAB has permission to read.
