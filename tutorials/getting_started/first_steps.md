@@ -15,22 +15,23 @@ The following instructions will guide you through the initial steps after first 
 {:toc}
 
 ## Create the Admin User
-Once openHAB is installed and started, launch the user interface by navigating to [http://localhost:8080]() (if not running locally, replace localhost with the server's address or hostname accordingly).
-If you installed from the openHABian image, you can use [http://openhab:8080]().
+
+Once openHAB is installed and started, launch the user interface by navigating to `http://localhost:8080` (if not running locally, replace localhost with the server's address or hostname accordingly).
+If you installed from the openHABian image, you can use `http://openhab:8080`.
 
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
 Since there are no users yet, openHAB will ask you to create an administrator account.
 
-![](images/create_user.png)
+![create user](images/create_user.png)
 
 ### Add geographic information
 
 After creating an admin user, you will be guided through a first-time setup wizard.
 Start by setting your language, region, and time zone. You can also set your location, or skip this step and complete it later.
 
-![](images/wizard_geo.png)
+![geo wizard](images/wizard_geo.png)
 
-![](images/wizard_location.png)
+![location wizard](images/wizard_location.png)
 
 ### Install add-ons
 
@@ -38,11 +39,11 @@ You now have the option to install openHAB add-ons.
 Do this if you already know that you'll need specific add-ons (e.g. if you're upgrading from an older openHAB system), or skip this step if you prefer to install add-ons individually.
 You can always install/remove add-ons in the future, enabling you to modify and improve your system over time.
 
-![](images/wizard_addons.png)
+![addons wizard](images/wizard_addons.png)
 
 After finishing the wizard you will get a welcome message and be redirected to your dashboard.
-![](images/wizard_welcome.png)
-![](images/welcome_page.png)
+![welcome wizard](images/wizard_welcome.png)
+![welcome page](images/welcome_page.png)
 
 ### Log into the dashboard
 
@@ -60,18 +61,19 @@ You can also set your preferred measurement system (openHAB defaults to the Metr
 ### Set your geographic location (latitude and longitude) and measurement system
 
 1. In the left-hand menu under Administration, select Settings to open the Settings page.
-![](images/initial_settings.png)
+![initial settings](images/initial_settings.png)
 
-2. Under System Settings, select Regional Settings.
-![](images/regional_settings.png)
+1. Under System Settings, select Regional Settings.
+![regional settings](images/regional_settings.png)
 
-3. Under Location, click the Map button to add your geographic coordinates.
+1. Under Location, click the Map button to add your geographic coordinates.
 
-4. If you also want to set your measurement system, click "Show advanced" and choose between Metric and Imperial.
+1. If you also want to set your measurement system, click "Show advanced" and choose between Metric and Imperial.
 
-![](images/units_settings.png)
+![unit settings](images/units_settings.png)
 
 ## Additional Settings
+
 The following settings are available but not covered by this tutorial.
 
 Setting | Purpose
