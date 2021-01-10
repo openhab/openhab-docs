@@ -79,7 +79,7 @@ Before you can start, two decisions have to be made:
     - **Package setup:** Install from a package repository, using a package manager such as apt or yum.
     This option is only available for certain Linux distributions such as Debian or Ubuntu derivatives, but allows you to take advantage of automatic updates and is the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
-2. Stable release or cutting edge:
+1. Stable release or cutting edge:
     - **Stable:** Use the latest official release [hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro) (recommended for new users).
     - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org/)).
 
@@ -95,8 +95,8 @@ To find out where these locations are, e.g. where `$OPENHAB_CONF` points to, use
 ```shell
 openhab-cli info
 ```
- will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
+will result in e.g. for an [openHABian](https://www.openhab.org/docs/installation/openhabian.html) installation
 
 ```shell
 Version:     3.0.0 (Build)
@@ -115,8 +115,6 @@ Directories: Folder Name      | Path                        | User:Group
 URLs:        http://169.254.63.209:8080
              https://169.254.63.209:8443
 ```
-
-
 
 ## Additional Steps
 

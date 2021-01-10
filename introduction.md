@@ -38,10 +38,10 @@ Some of openHAB's strengths are:
 Home automation is fascinating and requires a considerable investment of your time.
 Here are some key considerations especially for new users. To be successful, you will need to:
 
-* Start slowly and proceed one step at a time
-* Be prepared to learn
-* Remain flexible in how you want to achieve your goal
-* Celebrate all the small successes
+- Start slowly and proceed one step at a time
+- Be prepared to learn
+- Remain flexible in how you want to achieve your goal
+- Celebrate all the small successes
 
 Remember, openHAB is just a computer program.
 The computer will only do what *you* tell it to do.
@@ -51,9 +51,9 @@ openHAB is fully customizable, but doing so will require substantial effort on y
 
 After you have read the documentation for openHAB, you will have:
 
-* Identified a computer on which to run openHAB
-* Learned how to install openHAB, as well as all other software that is needed to run openHAB (e.g. Java)
-* Learned how your smart devices communicate with openHAB; how to make openHAB give commands to your smart devices; and how you can interact with openHAB
+- Identified a computer on which to run openHAB
+- Learned how to install openHAB, as well as all other software that is needed to run openHAB (e.g. Java)
+- Learned how your smart devices communicate with openHAB; how to make openHAB give commands to your smart devices; and how you can interact with openHAB
 
 Keep your focus.
 For almost everything, there is more than one way in openHAB to achieve a goal or perform a task.
@@ -163,13 +163,13 @@ Once you have got a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
-3. Install a binding (in openHAB)
-4. Define a “thing”
-5. Add a “channel” to the “thing” if not created by the binding
-6. Define an “item”
-7. Link the “channel” to your “item”
-8. Establish a sitemap
+1. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize)
+1. Install a binding (in openHAB)
+1. Define a “thing”
+1. Add a “channel” to the “thing” if not created by the binding
+1. Define an “item”
+1. Link the “channel” to your “item”
+1. Establish a sitemap
 
 Most of the above can be done in openHAB through point-and-click processes in a graphical user interface.
 But remember, there is always more than one way to achieve your goal in openHAB.

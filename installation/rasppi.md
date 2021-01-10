@@ -47,7 +47,7 @@ As of the November 2016 release, Raspbian has the SSH server disabled by default
 You will have to enable it manually.
 For headless setup, SSH can be enabled by placing a file named "ssh", without any extension, onto the boot partition of the SD card.
 
-### Connecting: 
+### Connecting
 
 Get your SD card and network cable plugged in and power up.
 Booting up takes up to 10 minutes.
@@ -55,7 +55,7 @@ To connect with an SSH client (like [Putty](https://www.raspberrypi.org/document
 A standard Raspbian setup should be reachable either by the hostname "raspberrypi" or though the local domain name "raspberrypi.local".
 If you are not able to connect, check your routers web frontend for newly connected devices.
 
-### First Steps:
+### First Steps
 
 Connected via SSH, execute the Raspbian configuration menu by running `sudo raspi-config`.
 Go through the following steps:
@@ -80,57 +80,68 @@ Raspbian in the latest full version already includes Oracle Java 11.
 However, at the time of this writing, the installed revision is lower than the [recommended](index.html#prerequisites).
 Raspbian Lite comes without Java to begin with.
 
- ### Manual setup of Zulu 11
- 
+### Manual setup of Zulu 11
+
 The following steps refer specifically to Raspberry Pi devices. For a more general overview. please refer to the Linux article for instructions on [how to install the latest Java 11 revision](linux.html).
 
 1. create a folder for Zulu 11 and make it the current folder. For instance, ``/opt/jdk``. You can use the commands
+
    ```shell
    sudo mkdir /opt/jdk
    cd /opt/jdk
    ```
-2. verify the architecture of your device. You perform this issuing the command:
+
+1. verify the architecture of your device. You perform this issuing the command:
+
    ```shell
    dpkg --print-architecture
    ```
-   this will show whether you need files for  Soft Float (```armsf```) or Hard Float (```armhf```) .
-Raspberry Pi 4 runs on ARM32-bit HF architecture (```armhf```), for instance. 
 
+   this will show whether you need files for  Soft Float (```armsf```) or Hard Float (```armhf```) .
+Raspberry Pi 4 runs on ARM32-bit HF architecture (```armhf```), for instance.
 
 Now, to install Zulu 11, you need to download and install a tar.gz package for your architecture following the steps described below (```armhf``` architecture assumed for reference):
 
+1. Download the latest Zulu 11 build from [the Azul download page](https://www.azul.com/downloads/zulu-community/?version=java-11-lts&architecture=arm-32-bit-hf&package=jdk) - at the time of writing, it's `` zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf ``. You can use the command:
 
-3. Download the latest Zulu 11 build from [the Azul download page](https://www.azul.com/downloads/zulu-community/?version=java-11-lts&architecture=arm-32-bit-hf&package=jdk) - at the time of writing, it's `` zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf ``. You can use the command:
    ```shell
    sudo wget http://cdn.azul.com/zulu-embedded/bin/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf.tar.gz
    ```
-4. Extract the archive
+
+1. Extract the archive
+
     ```shell
    sudo tar -xzvf zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf.tar.gz
    ```
-5. Install ```java``` and ```javac```
+
+1. Install ```java``` and ```javac```
+
    ```shell
     sudo update-alternatives --install /usr/bin/java java /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/java 1
     sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/zulu11.43.100-ca-jdk11.0.9.1-linux_aarch32hf/bin/javac 1
    ```
-6. change the current alternative:
+
+1. change the current alternative:
+
     ```shell
     sudo update-alternatives --config java
     ```
+
    You'll be prompted to select the alternative, pick the zulu11 you installed.
 
-7. If you wish so, you can now delete the downloaded tar file
+1. If you wish so, you can now delete the downloaded tar file
+
     ```shell
     sudo rm *.tar.gz
     ```
 
-### Installation of openHAB:
+### Installation of openHAB
 
-This section describes the steps required to install openHAB on the Raspberry device, after you completed the above mentioned *prerequisites* steps. 
+This section describes the steps required to install openHAB on the Raspberry device, after you completed the above mentioned *prerequisites* steps.
 
 It is a selection of the general Linux installation steps described in  [Package Repository based Installation on Linux](linux.html#package-repository-installation) .
 
-Refer to that page if you wish to view a comprehensive guide to every possible Linux installation environments instead. 
+Refer to that page if you wish to view a comprehensive guide to every possible Linux installation environments instead.
 
 1. First, add the openHAB Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
@@ -139,16 +150,16 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
    sudo apt-get install apt-transport-https
    ```
 
-2. choose the openHAB package to install. 
+1. choose the openHAB package to install.
 
     You can choose between *Official (Stable)*, *Beta* or *Snapshot* builds.
 
-    If you are new to openHAB and don't know what to pick, you likely need the *Stable* version. 
+    If you are new to openHAB and don't know what to pick, you likely need the *Stable* version.
     Expand the section of your choice for the details of the installation step.
 
     <details>
      <summary>Official (Stable)</summary>
-  
+
      The stable builds contain the latest official release with tested features.
 
     Add the **openHAB Stable Repository** to your systems apt sources list:
@@ -156,11 +167,12 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     ```shell
     echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
+
     </details>
 
     <details>
      <summary >Testing Release</summary>
-  
+
      The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
     Add the **openHAB Beta Repository** to your systems apt sources list:
@@ -172,7 +184,7 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     </details>
      <details>
        <summary >Snapshot Release</summary>
-  
+
      The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
 
@@ -182,45 +194,50 @@ Refer to that page if you wish to view a comprehensive guide to every possible L
     ```shell
     echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
+
 </details>
 
-3. re-synchronize the package index:
+1. re-synchronize the package index:
 
     ```shell
     sudo apt-get update
     ```
 
-4. Install openHAB with the following command:
+1. Install openHAB with the following command:
 
     ```shell
     sudo apt-get install openhab
     ```
 
-5. *(optional)* When you choose to install an add-on, openHAB will download it from the internet on request.
+1. *(optional)* When you choose to install an add-on, openHAB will download it from the internet on request.
 
    If you plan on working off-line, you might consider installing the add-ons package.
 
     ```shell
     sudo apt-get install openhab-addons
     ```
+
 ---
-If everything went well, the installation is complete. 
+If everything went well, the installation is complete.
 
 You can now start openHAB and test it as described in the following points
 
-6. Start openHAB
- ```shell
+1. Start openHAB
+
+```shell
 sudo systemctl start openhab.service
 sudo systemctl status openhab.service
 ```
-7. test that openHAB is running fine. 
 
-    You can try to reach the openHAB dashboard, using the link:  `http://openhab-device:8080` (replace localhost or your device IP address to *openhab-device*). You should get the *create new admin* screen 
+1. test that openHAB is running fine.
+
+    You can try to reach the openHAB dashboard, using the link:  `http://openhab-device:8080` (replace localhost or your device IP address to *openhab-device*). You should get the *create new admin* screen
 
    ![The openHAB Dashboard page](images/Home_Openhab_4.png)
 
-8. Install openHAB as a service. This will allow openHAB to run without need for a manual start as described above.
- ```shell
+1. Install openHAB as a service. This will allow openHAB to run without need for a manual start as described above.
+
+```shell
 sudo systemctl daemon-reload
 sudo systemctl enable openhab.service
 ```
@@ -240,7 +257,7 @@ You can:
 
 This is the location of folders of  interest for the user:
 
-|                               | Repository Installation      
+|                               | Repository Installation      |
 |:-----------------------------|------------------------------|------------------------------------------------------------------|
 |      openHAB application      | `/usr/share/openhab`                                                        |
 |    Additional add-on files    | `/usr/share/openhab/addons` |                                         |
@@ -249,7 +266,6 @@ This is the location of folders of  interest for the user:
 | Userdata like rrd4j databases | `/var/lib/openhab`          |                               |
 |         Backups folder        | `/var/lib/openhab/backups`  |                      |
 |     Service configuration     | `/etc/default/openhab`      | (                                 |
-
 
 ### Utilities
 
@@ -296,8 +312,6 @@ Possible commands:
   info                -- Displays distribution information.
 ```
 
-
-
 ## Viewing Log Messages
 
 You can learn more about openHAB and how it works by looking at your log files.
@@ -305,18 +319,19 @@ These will tell you everything you might need to know.
 
 To access the current log of openHAB, execute the following command in one session or have both files separated in sessions side by side:
 
-
-
   ```shell
   tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log
   ```
-  - if you wish to filter the results, please notice that there is an utility to support you, named *grep*. A quick example below:
-      ```
-      tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log | grep "theStringYourLookingForGoesHere"
-      ```
-      Refer to its help for details.
 
-   - if you wish to modify the level of detail of logging, you'll need to interact with the [openHAB console](#command-line-interface), as described int the [Administration-Logging]({{base}}/administration/logging.md) page.
+- if you wish to filter the results, please notice that there is an utility to support you, named *grep*. A quick example below:
+
+   ```bash
+   tail -f /var/log/openhab/openhab.log -f /var/log/openhab/events.log | grep "theStringYourLookingForGoesHere"
+   ```
+
+   Refer to its help for details.
+
+- if you wish to modify the level of detail of logging, you'll need to interact with the [openHAB console](#command-line-interface), as described int the [Administration-Logging]({{base}}/administration/logging.md) page.
 
 ## Backup and Restore
 
@@ -342,6 +357,7 @@ If you're unsure how to use the above files, just use `--help` or `-h`:
 ```shell
 $OPENHAB_RUNTIME/bin/backup --help
 ```
+
 ### Upgrade
 
 To stay up to date with new releases, you should do regular upgrades.
@@ -373,6 +389,7 @@ Once you know which version you want, you can upgrade/downgrade to it by using t
 ```shell
 sudo apt-get install openhab=3.0.0-1
 ```
+
 ### Uninstallation
 
 To uninstall openHAB and get rid of all related files managed by the package manager, make a backup as described above, then uninstall openHAB and remove the repository:
@@ -383,4 +400,5 @@ sudo rm /etc/apt/sources.list.d/openhab.list
 ```
 
 ### Additional Setup steps
+
 Please refer to the [Recommended Additional Setup Steps]({{base}}/installation/linux.md#Recommended-Additional-Setup-Steps) in the Linux installation guide.
