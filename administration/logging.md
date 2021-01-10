@@ -13,7 +13,7 @@ This includes how to access logging information and configure logging for user-d
 There are two ways to check log entries:
 
 1. Through files stored on the **file system**
-2. During runtime in the **Karaf Console**
+1. During runtime in the **Karaf Console**
 
 ## Filesystem
 
@@ -41,7 +41,7 @@ The log shell provides the following commands:
 
 For example, the following command enables real-time monitoring of the default log:
 
-```
+```shell
 openhab> log:tail
 20:38:00.031 [DEBUG] [sistence.rrd4j.internal.RRD4jService] - Stored 'Temperature_FF_Child' with state '19.1' in rrd4j database
 20:38:00.032 [DEBUG] [sistence.rrd4j.internal.RRD4jService] - Stored 'Temperature_FF_Bed' with state '19.5' in rrd4j database
@@ -51,7 +51,7 @@ openhab> log:tail
 
 A useful feature is that filters can be applied:
 
-```
+```shell
 openhab> log:tail org.openhab.io.rest.core.item.ItemResource
 20:36:52.879 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'ON'.
 20:36:53.545 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'OFF'.
@@ -98,10 +98,13 @@ The levels build a hierarchy with **ERROR** logging critical messages only and *
 Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
 If the name of `package.subpackage` is not known, the name can be found out in the console:
+
 ```text
 list -s
 ```
+
 returns a list of all modules and the last column contains the information about the symbolic name of the bundle:
+
 ```text
 openhab> list -s
 START LEVEL 100 , List Threshold: 50
@@ -115,8 +118,10 @@ START LEVEL 100 , List Threshold: 50
  24 │ Active │  80 │ 3.0.0.v201312141243     │ com.google.inject
 
 ```
+
 The list can be also filtered with grep. To find out the Z-Wave binding the following command can be used
-```Text
+
+```shell
 openhab> list -s | grep zwave
 253 x Active x  80 x 2.5.5                   x org.openhab.binding.zwave
 
@@ -124,7 +129,7 @@ openhab> list -s | grep zwave
 
 The following example sets the logging for the Z-Wave binding to **DEBUG**
 
-```text
+```shell
 log:set DEBUG org.openhab.binding.zwave
 ```
 
@@ -153,13 +158,14 @@ For example you can use `log:set info org.openhab.core.model.script` and `log:se
 
 An example output of the last log statement above is:
 
-```
+```shell
 2016-06-04 16:28:39.482 [DEBUG] [org.openhab.core.model.script.heating] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
 
 Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
 
 ## Log4j configuration and logging into separate files
+
 By default, all log entries are saved in the file `openhab.log` and event-specific entries are saved in `events.log`.
 Additional log files can be defined in order to write specifics logs to a separate place.
 

@@ -42,15 +42,15 @@ To install it, follow these simple steps:
 
 1. Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
 
-2. Unzip the file in your chosen directory (e.g. `C:\openHAB`)
+1. Unzip the file in your chosen directory (e.g. `C:\openHAB`)
 
     ![openHAB Folders](images/openHAB_Folders.png)
 
-3. Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
+1. Start the server: Launch the runtime by executing the script `C:\openHAB\start.bat` and wait a while for it to start and complete.
 
     ![Karaf_Windows](images/Karaf_Windows.png)
 
-4. Point your browser to `http://localhost:8080`.
+1. Point your browser to `http://localhost:8080`.
     You should be looking at the openHAB page requesting you to set up an administrator username and password:
 
 ![Home_OH_adminCreate](images/Home_OH_adminCreate.png)
@@ -69,7 +69,7 @@ By installing the openHAB process as a service in Windows, you can:
 #### Windows Service Installation Steps
 
 1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps.
-2. Issue the following two commands in your openHAB console:
+1. Issue the following two commands in your openHAB console:
 
     ```shell
     feature:install service-wrapper
@@ -78,9 +78,9 @@ By installing the openHAB process as a service in Windows, you can:
 
     ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
-3. Shutdown the openHAB instance by typing `logout` in the currently running console.
+1. Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-4. Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters:
+1. Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters:
 
     - Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
     - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
@@ -154,7 +154,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.ntservice.interactive=false
     ```
 
-5. Open an elevated command prompt and type the following commands:
+1. Open an elevated command prompt and type the following commands:
 
     ```text
     C:\openHAB\userdata\bin\openHAB-service.bat install
@@ -165,7 +165,7 @@ By installing the openHAB process as a service in Windows, you can:
 
     ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
-6. Your openHAB Windows service is now installed and running.
+1. Your openHAB Windows service is now installed and running.
     Validate proper operations by:
 
     - Browsing to [http://localhost:8080](http://localhost:8080)
