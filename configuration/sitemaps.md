@@ -144,7 +144,7 @@ This provides the flexibility to present Items in the way desired in your home a
 
 - When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
     If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
-    etting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
+    Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
 In the following example a Item which has a label and state defined is overwritten.
@@ -452,7 +452,7 @@ Adds a time-series chart object for the display of logged data.
 - `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 
 - `begin` / `end` sets the beginning and end of the time axis.
-    Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
+    Valid values are in the format: `yyyyMMddHHmm` (`yyyy` = year, `MM` = month, `dd` = day, `HH` = hour (0-23), `mm` = minutes).
 
 - `legend` is used to show or to hide the chart legend.
     Valid values are `true` (always show the legend) and `false` (never show the legend).

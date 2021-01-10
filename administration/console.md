@@ -191,9 +191,7 @@ Substitute `1234` with your desired port number.
 Depending on your system, you may have to substitute [the directory](#console-settings-files-and-directories) at the end of the command.
 
 ```shell
-
 sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg
-
 ```
 
 ---

@@ -62,17 +62,17 @@ You can also set your preferred measurement system (openHAB defaults to the Metr
 
 1. In the left-hand menu under Administration, select Settings to open the Settings page.
 
-![initial settings](images/initial_settings.png)
+    ![initial settings](images/initial_settings.png)
 
 1. Under System Settings, select Regional Settings.
 
-![regional settings](images/regional_settings.png)
+    ![regional settings](images/regional_settings.png)
 
 1. Under Location, click the Map button to add your geographic coordinates.
 
 1. If you also want to set your measurement system, click "Show advanced" and choose between Metric and Imperial.
 
-![unit settings](images/units_settings.png)
+    ![unit settings](images/units_settings.png)
 
 ## Additional Settings
 

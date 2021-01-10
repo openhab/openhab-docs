@@ -67,7 +67,7 @@ The following steps will show you how to setup a specific bundle for development
 
     ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 
-1. Edit launch.json and ...
+1. Edit launch.json and ...<br>
     ![launch.json changes](./images/ide_setup_vscode_launch.png)
     1. Set the `port` to xxxx (from step 7).  This can be skipped if xxxx was 5005 from step 7.
     1. Set the `hostName` to the hostname running openHAB.  This can be skipped if running locally (localhost)

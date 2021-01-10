@@ -9,8 +9,8 @@ description: Description of Beaking Changes and needed steps for a proper Migrat
 There are different approaches to get your openHAB 2 Environment upgraded to openHAB 3.
 You could start with a fresh install and migrate your environment step-by-step or you can upgrade your running environment and change your configuration where needed.
 
-Since this is a major version release you have to pay attention to some `Breaking Changes` that may affect your environment too.
-You can find a general note on the `Breaking Changes` here:
+Since this is a major version release you have to pay attention to some **Breaking Changes** that may affect your environment too.
+You can find a general note on the **Breaking Changes** here:
 <https://github.com/openhab/openhab-distro/wiki/Breaking-Changes-in-openHAB-3>
 
 Please read them carefully and check if you are affected by some of the changes, like the changes to some rules namespaces and the handling of time functions.

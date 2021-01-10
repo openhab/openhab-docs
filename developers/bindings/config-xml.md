@@ -36,42 +36,42 @@ These must be inside the XML escape sequence - eg.
 ## XML Structure for Configuration Descriptions
 
 ```xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <config-description:config-descriptions
-      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-      xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
-      xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
-          https://openhab.org/schemas/config-description-1.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<config-description:config-descriptions
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
+        https://openhab.org/schemas/config-description-1.0.0.xsd">
 
-    <config-description uri="{binding|thing-type|channel-type|any_other}:bindingID:...">
-      <parameter-group name="String">
-        <label>String</label>
-        <description>String</description>
-        <context>String</context>
-        <advanced>{true|false}</advanced>
-      </parameter-group>
+  <config-description uri="{binding|thing-type|channel-type|any_other}:bindingID:...">
+    <parameter-group name="String">
+      <label>String</label>
+      <description>String</description>
+      <context>String</context>
+      <advanced>{true|false}</advanced>
+    </parameter-group>
 
-      <parameter name="String" type="{text|integer|decimal|boolean}" min="Decimal" max="Decimal" step="Decimal" pattern="String" required="{true|false}" readOnly="{true|false}" multiple="{true|false}" groupName="String" unit="A|cd|K|kg|m|mol|s|g|rad|sr|Hz|N|Pa|J|W|C|V|F|Ω|S|Wb|T|H|Cel|lm|lx|Bq|Gy|Sv|kat|m/s2|m2v|m3|kph|%|l|ms|min|h|d|week|y">
-        <context>{network-address|serial-port|password|password-create|color|date|datetime|email|month|week|dayOfWeek|time|tel|url|item|thing|group|tag|service|channel|rule|location}</context>
-        <required>{true|false}</required>
-        <default>String</default>
-        <label>String</label>
-        <description>String</description>
-        <unitLabel>String</unitLabel>
-        <options>
-          <option value="String">String</option>
-        </options>
-        <filter>
-          <criteria name="String">String</criteria>
-        </filter>
-      </parameter>
-    </config-description>
+    <parameter name="String" type="{text|integer|decimal|boolean}" min="Decimal" max="Decimal" step="Decimal" pattern="String" required="{true|false}" readOnly="{true|false}" multiple="{true|false}" groupName="String" unit="A|cd|K|kg|m|mol|s|g|rad|sr|Hz|N|Pa|J|W|C|V|F|Ω|S|Wb|T|H|Cel|lm|lx|Bq|Gy|Sv|kat|m/s2|m2v|m3|kph|%|l|ms|min|h|d|week|y">
+      <context>{network-address|serial-port|password|password-create|color|date|datetime|email|month|week|dayOfWeek|time|tel|url|item|thing|group|tag|service|channel|rule|location}</context>
+      <required>{true|false}</required>
+      <default>String</default>
+      <label>String</label>
+      <description>String</description>
+      <unitLabel>String</unitLabel>
+      <options>
+        <option value="String">String</option>
+      </options>
+      <filter>
+        <criteria name="String">String</criteria>
+      </filter>
+    </parameter>
+  </config-description>
 
-    <config-description uri="{binding|thing-type|channel-type|any_other}:bindingID:...">
-      ...
-    </config-description>
-  ...
-  </config-description:config-descriptions>
+  <config-description uri="{binding|thing-type|channel-type|any_other}:bindingID:...">
+    ...
+  </config-description>
+...
+</config-description:config-descriptions>
 ```
 
 <table>
@@ -139,17 +139,17 @@ The following contexts require a specific format of the content:
 Further, the <strong>item</strong> context can contain criteria to filter the list of items. For example:
 
 ```xml
-  <filter>
-    <criteria name="type">Switch,Dimmer</criteria>
-    <criteria name="tag">Light,Heating</criteria>
-  </filter>
+<filter>
+  <criteria name="type">Switch,Dimmer</criteria>
+  <criteria name="tag">Light,Heating</criteria>
+</filter>
 ```
 
 In the case of above filter only those items will be shown that satisfy the filter's conditions.
 The above filter is evaluated as follows:
 
 ```text
-  (type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
+(type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
 ```
 
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.
@@ -157,9 +157,9 @@ The value of <strong>kind</strong> can either be STATE or TRIGGER.
 For example:
 
 ```xml
-  <filter>
-    <criteria name="kind">STATE|TRIGGER</criteria>
-  </filter>
+<filter>
+  <criteria name="kind">STATE|TRIGGER</criteria>
+</filter>
 ```
 
 Groups allow parameters to be grouped together into logical blocks so that the user can find the parameters they are looking for.
@@ -185,41 +185,41 @@ Only for embedded configuration descriptions in documents for binding definition
 The following code gives an example for one configuration description.
 
 ```xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <config-description:config-description uri="thing-type:my-great-binding:my-bridge-name"
-      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-      xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
-      xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
-          https://openhab.org/schemas/config-description-1.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<config-description:config-description uri="thing-type:my-great-binding:my-bridge-name"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
+        https://openhab.org/schemas/config-description-1.0.0.xsd">
 
-    <parameter-group name="connection">
-      <label>Connection</label>
-      <description>Connection settings.</description>
-    </parameter-group>
+  <parameter-group name="connection">
+    <label>Connection</label>
+    <description>Connection settings.</description>
+  </parameter-group>
 
-    <parameter-group name="authentication">
-      <label>Authentication</label>
-      <description>Authentication settings.</description>
-    </parameter-group>
+  <parameter-group name="authentication">
+    <label>Authentication</label>
+    <description>Authentication settings.</description>
+  </parameter-group>
 
-    <parameter name="ipAddress" type="text" required="true" groupName="connection">
-      <context>network-address</context>
-      <label>Network Address</label>
-      <description>Network address of the device.</description>
-    </parameter>
+  <parameter name="ipAddress" type="text" required="true" groupName="connection">
+    <context>network-address</context>
+    <label>Network Address</label>
+    <description>Network address of the device.</description>
+  </parameter>
 
-    <parameter name="port" type="integer" min="0" max="65535" multiple="true" groupName="connection">
-      <label>Port</label>
-      <default>80,443,8080</default>
-    </parameter>
+  <parameter name="port" type="integer" min="0" max="65535" multiple="true" groupName="connection">
+    <label>Port</label>
+    <default>80,443,8080</default>
+  </parameter>
 
-    <parameter name="userName" type="text" required="true" groupName="authentication">
-      <label>User Name</label>
-    </parameter>
+  <parameter name="userName" type="text" required="true" groupName="authentication">
+    <label>User Name</label>
+  </parameter>
 
-    <parameter name="password" type="text" required="false" groupName="authentication">
-      <context>password</context>
-    </parameter>
+  <parameter name="password" type="text" required="false" groupName="authentication">
+    <context>password</context>
+  </parameter>
 
-  </config-description:config-description>
+</config-description:config-description>
 ```
