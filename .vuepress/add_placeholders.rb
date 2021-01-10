@@ -14,7 +14,7 @@ def add_placeholder_pages()
         "docs/ecosystem/google-assistant",
         "docs/ecosystem/ifttt",
         "docs/ecosystem/mycroft",
-        "/docs/installation/openhabian.md",
+        "docs/installation/openhabian.md",
         "link/homekit",
         "link/openhabcloud"
     ].each { |path|
