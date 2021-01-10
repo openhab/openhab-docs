@@ -198,7 +198,7 @@ The parameters for these actions have the following meaning:
 - `icon`: String containing the icon name (as described in [Items]({{base}}/configuration/items.html#icons))
 - `severity`: String containing a description of the severity of the incident
 
-**Example**
+### Example
 
 ```javascript
 rule "Front Door Notification"
@@ -341,9 +341,9 @@ Feel free to extent this list by providing additional language support files.
 
 To enable localization,
 
-* copy the file for your language to your OH setup.
-  * again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
-* use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
+- copy the file for your language to your OH setup.
+  - again a folder in `$OH_CONF` folder, such as `$OH_CONF/services` is proposed.
+- use function 'Ephemeris.getHolidayDescription' to convert the name according to your localization file.
 
 ## Installable Actions
 

@@ -35,7 +35,7 @@ Even when there is an active panel configuration, HABPanel uses the browser's st
 
 HABPanel uses service configuration variables to store its data on the openHAB server. They can be accessed using Paper UI (_Configuration > Services > UI > HABPanel > Configure_) or in the openHAB Karaf console:
 
-```
+```shell
 openhab> config:edit org.openhab.habpanel
 openhab> config:property-get <property>
 ```
@@ -60,13 +60,13 @@ Use the gears icon in the top-right corner to switch between the two modes.
 
 When in edit mode, several features are available:
 
-* Add a new empty dashboard with the **Add new dashboard** link;
-* Go to the settings screen (for instance, to switch from local storage to a server-managed panel configuration) by clicking on the **Advanced settings** link;
-* Adjust the number of columns for the grid of main menu tiles with the slider, from 1 (the default) to 6;
-* Drag the arrow icons in the top-left corner of each tile to move it;
-* Resize tiles with the chevron (triangle) in the bottom-right corner of each tile;
-* Configure the tiles and the dashboards themselves with the gears icons in the top-right corner of each tile;
-* Enter the dashboard designer by clicking inside a tile.
+- Add a new empty dashboard with the **Add new dashboard** link;
+- Go to the settings screen (for instance, to switch from local storage to a server-managed panel configuration) by clicking on the **Advanced settings** link;
+- Adjust the number of columns for the grid of main menu tiles with the slider, from 1 (the default) to 6;
+- Drag the arrow icons in the top-left corner of each tile to move it;
+- Resize tiles with the chevron (triangle) in the bottom-right corner of each tile;
+- Configure the tiles and the dashboards themselves with the gears icons in the top-right corner of each tile;
+- Enter the dashboard designer by clicking inside a tile.
 
 The configuration dialog when clicking on a tile's gear icon contains the following settings:
 
@@ -93,8 +93,8 @@ The side drawer can be accessed from any screen by a swipe or drag to the right 
 It is comprised of three parts:
 
 1. A **header** - clicking on it returns to the main menu. Note: if defined, the title of the panel is displayed instead of the default "HABPanel" label, it is configured in the settings (see below);
-2. A **list of dashboards** for quick switching between dashboards without going back to the main menu - they are presented in the order of the menu (sorted by row, then by column);
-3. A **footer** displaying the current date & time and featuring a link to the settings screen (if available).
+1. A **list of dashboards** for quick switching between dashboards without going back to the main menu - they are presented in the order of the menu (sorted by row, then by column);
+1. A **footer** displaying the current date & time and featuring a link to the settings screen (if available).
 
 ### The dashboard designer
 

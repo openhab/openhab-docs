@@ -41,28 +41,30 @@ The unit given in the state description is parsed and then used for conversion (
 The framework assumes that the unit to parse is always the last token in the state description.
 If the parsing failed the locale-based default conversion takes place.
 
-    Number:Temperature temperature "Outside [%.2f °F]" { channel="...:current#temperature" }
+`Number:Temperature temperature "Outside [%.2f °F]" { channel="...:current#temperature" }`
 
 In the example the `NumberItem` is specified to bind to Channels which offer values from the dimension `Temperature`.
 Without the dimension information the `NumberItem` only will receive updates of type `DecimalType` without a unit and any conversion.
 The state description defines two decimal places for the value and the fix unit °F.
 In case the state description should display the unit the binding delivers or the framework calculates through locale-based conversion the pattern will look like this:
 
-    "Outside [%.2f %unit%]"
+`"Outside [%.2f %unit%]"`
 
 The special placeholder `%unit%` will then be replaced by the actual unit symbol.
 The placeholder `%unit%` can be placed anywhere in the state description.
 
-#### Defining ChannelTypes
+### Defining ChannelTypes
 
 In order to match `NumberItems` and Channels and define a default state description with unit placeholder the Channel also has to provide an Item type which includes the dimension information:
 
-    <channel-type id="temperature">
-        <item-type>Number:Temperature</item-type>
-        <label>Temperature</label>
-        <description>Current temperature</description>
-        <state readOnly="true" pattern="%.1f %unit%" />
-    </channel-type>
+```xml
+<channel-type id="temperature">
+    <item-type>Number:Temperature</item-type>
+    <label>Temperature</label>
+    <description>Current temperature</description>
+    <state readOnly="true" pattern="%.1f %unit%" />
+</channel-type>
+```
 
 The state description pattern "%.1f %unit%" describes the value format as floating point with one decimal place and also the special placeholder for the unit.
 
@@ -212,7 +214,7 @@ Binary Prefixes:
 
 To use the prefixes simply add the prefix to the unit symbol - for example:
 
-* milliAmpere - `mA`
-* centiMetre - `cm`
-* kiloWatt - `kW`
-* KibiByte - `KiB`
+- milliAmpere - `mA`
+- centiMetre - `cm`
+- kiloWatt - `kW`
+- KibiByte - `KiB`

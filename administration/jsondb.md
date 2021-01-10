@@ -40,7 +40,7 @@ Most data stored in the database is written in a way that should be understandab
 
 As stated above, the files are only read during system startup - therefore if you change a file you will need to stop openHAB, make your changes and restart the system for the changes to take effect.
 
-----
+---
 
 openHAB stores configuration information in JSON (JavaScript Object Notation) formatted (structured) text files located in the `OPENHAB_USERDATA/jsondb/` directory.
 
@@ -69,7 +69,7 @@ The system employs two write mechanisms to improve performance where there are m
 The parameters for the two mechanisms may be modified in UI :arrow_right: Settings :arrow_right: Json Storage
 
 1. _Write delay_ (defaults to 500 ms): Sets the time to wait before writing changes to disk.
-This can reduce the number of writes when many changes are being introduced within a short period, and
+  This can reduce the number of writes when many changes are being introduced within a short period, and
 1. _Maximum write delay_ (defaults to 30000 ms): Sets the maximum period the service will wait to write data in cases where changes are happening continually.
 
 The service keeps up to five backups of each table.
@@ -194,6 +194,7 @@ Step 3. Using UI :arrow_right: Settings :arrow_right: Things, edit the new `ISP_
 - Location (from unset to `MyHome`)
 - Retry (from 1 to 3)
 - Timeout (from 5000 to 10000)
+
 and save:
 
 ![Edit_Thing_UI](./images/ui_edit_thing.png)

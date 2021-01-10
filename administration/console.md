@@ -9,16 +9,16 @@ title: The Console
 
 The console offers the ability to:
 
-* Monitor the [log](logging.html#karaf-console) in realtime
-* Manage [bundles](bundles.html)
-* Execute [runtime commands](runtime.html)
+- Monitor the [log](logging.html#karaf-console) in realtime
+- Manage [bundles](bundles.html)
+- Execute [runtime commands](runtime.html)
 
 ## Accessing the Console
 
 The method used to access the console depends on how openHAB was started.
 
-* When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
-* When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
+- When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
+- When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
 Linux package based installations can also use the command `openhab-cli console`.
 
 The default username/password is **openhab:habopen**, so enter `habopen` at the password prompt.
@@ -194,6 +194,6 @@ Depending on your system, you may have to substitute [the directory](#console-se
 sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg
 ```
 
-----
+---
 
 Please check the [Apache Karaf reference](https://karaf.apache.org/manual/latest/) for more details.

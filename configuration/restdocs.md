@@ -92,7 +92,7 @@ You can manage all access tokens in your profile settings in the Main UI.
 It is possible to disable authentication.
 Stop openhab and add this part to ```$OPENHAB_USERDATA/etc/org.apache.karaf.features.xml``` before ```</featuresProcessing>```:
 
-```
+```xml
     <blacklistedFeatures>
         <feature>openhab-*-auth</feature>
     </blacklistedFeatures>

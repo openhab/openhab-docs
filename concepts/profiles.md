@@ -17,12 +17,12 @@ With this, it is possible to take into account the temporal dimension when calcu
 
 There exist two different kinds of profiles: state and trigger profiles.
 
-### State Profiles
+## State Profiles
 
 State profiles are responsible for communication between Items and their corresponding state Channels (`ChannelKind.STATE`).
 Their purpose is to forward state updates and commands to and from the Thing handlers.
 
-### Trigger Profiles
+## Trigger Profiles
 
 Trigger Channels (`ChannelKind.TRIGGER`) by themselves do not maintain a state (as by their nature they only fire events).
 With the help of trigger profiles they can be linked to Items anyway.
