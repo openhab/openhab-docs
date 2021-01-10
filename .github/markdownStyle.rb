@@ -22,7 +22,7 @@ exclude_rule 'MD026'
 exclude_rule 'MD033'
 
 # Allow bare urls (at least until they don't produce errors in source code blocks anymore)
-exclude_rule 'MD033'
+exclude_rule 'MD034'
 
 # Allow Frontmatter and exclude top level header on first line rule
 exclude_rule 'MD041'
