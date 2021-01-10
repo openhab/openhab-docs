@@ -34,7 +34,7 @@ There are two methods for defining Items:
 
 1. Through UI
 
-2. Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
+1. Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
     Files here must have the extension `.items`; you may create as many `.items` files as needed.
     However, each Item must be unique across all `.items` files.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
@@ -192,7 +192,7 @@ Two naming schemes are established in the community for Group names:
 
 1. Use a plural word form (e.g. Batteries) where possible.
     Otherwise the word "Group" may be appended for clarity.
-2. Prepend a lowercase "g" to the name (e.g. gBattery)
+1. Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation                                                        |
 |-------------------------------------------|-----------------------------------------------------------------------|
@@ -651,7 +651,7 @@ Any future expiring update or command is cancelled, if the item receives an upda
 
 The parameter accepts a duration of time that can be a combination of hours, minutes and seconds in the format
 
-```
+```shell
 expire="1h 30m 45s"
 expire="1h05s"
 expire="55h 59m 12s"
@@ -663,7 +663,7 @@ Whitespaces are allowed between the sections.
 This duration can optionally be followed by a comma and the state or command to post, when the timer expires.
 If this optional section is not present, it defaults to the Undefined (`UnDefType.UNDEF`) state.
 
-```
+```shell
 Player MyPlayer   { expire="1h,command=STOP" } // send STOP command after one hour
 Number MyChannel  { expire="5m,state=0" }      // update state to 0 after five minutes
 String MyMessage  { expire="3m12s,Hello" }     // update state to Hello after three minutes and 12 seconds

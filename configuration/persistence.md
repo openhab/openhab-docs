@@ -194,7 +194,7 @@ These extensions use the default persistence service.
 (Refer to 'Default Persistence Service' above to configure this.)
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
 
-#### Examples
+### Examples
 
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`

@@ -157,14 +157,14 @@ All text files must be created with UTF-8 encoding. When using Visual Studio Cod
 
 Here are some hints to avoid some common pitfalls when starting out.
 
-* Start by modelling your house using a Semantic Model in Main UI.
+- Start by modelling your house using a Semantic Model in Main UI.
   Use it to create groups for rooms and apply proper semantic tags right away.
   This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_" and
   also enable voice assistants to properly execute your instructions.
   Be careful to apply a consistent naming scheme right in the beginning.
-* Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
-* Run autodiscovery for _Things_ wherever offered so that you don't have to enter all of them manually
-* Also use Main UI to manage Items.
+- Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
+- Run autodiscovery for _Things_ wherever offered so that you don't have to enter all of them manually
+- Also use Main UI to manage Items.
   You can use the import function to import `.items` files or snippets taken from other sources like the openHAB community forum.
-* Use VS code extensions to [edit rules, items and sitemap files](editors.html).
+- Use VS code extensions to [edit rules, items and sitemap files](editors.html).
   You can also use any text editor or cloud based tool, but VS code extensions will work locally and help you by highlighting and cross-checking the file syntax.

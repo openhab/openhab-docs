@@ -33,11 +33,11 @@ From then on, everything else is configured at the application layer for that en
 From start to finish, the process for fully configuring a physical entity represented by a Thing looks like this:
 
 1. Identify the binding required for the Thing
-2. Install the binding if it has not already been installed
-3. Define and configure the Thing
-4. Identify the Channels provided by the Thing
-5. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
-6. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
+1. Install the binding if it has not already been installed
+1. Define and configure the Thing
+1. Identify the Channels provided by the Thing
+1. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
+1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
 
 There are two methods for defining Things provided by the various bindings:
 through [discovery]({{base}}/concepts/discovery.html) or by manual definition in configuration text files.

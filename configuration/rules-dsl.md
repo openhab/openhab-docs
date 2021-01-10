@@ -189,12 +189,12 @@ Time cron "<cron expression>"
 A cron expression takes the form of six or optionally seven fields:
 
 1. Seconds
-2. Minutes
-3. Hours
-4. Day-of-Month
-5. Month
-6. Day-of-Week
-7. Year (optional field)
+1. Minutes
+1. Hours
+1. Day-of-Month
+1. Month
+1. Day-of-Week
+1. Year (optional field)
 
 You may use [CronMaker](https://www.cronmaker.com/) or the generator at [FreeFormatter.com](https://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
@@ -357,8 +357,8 @@ Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
 
-* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
-* However, the following command **will work**: `MyItem.sendCommand(new_state)`.
+- the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
+- However, the following command **will work**: `MyItem.sendCommand(new_state)`.
 
 Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code.
 It provides by far the best option for avoiding most problems.
@@ -569,7 +569,7 @@ DecimalType and QuantityType are also java.lang.Number so all the conversions li
 
 Here some other commonly needed conversions:
 
-* For DecimalType states:
+- For DecimalType states:
 
 ```java
 // convert integer_number to string containing hex_code
@@ -584,7 +584,7 @@ var myNumber = Long.parseLong(hex, 16) as Number
 var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 ```
 
-* For QuantityType states:
+- For QuantityType states:
 
 ```java
 // define a QuantityType variable
@@ -649,7 +649,7 @@ val stateAsString = MyStringItem.state.toString
 
 In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
 
-```
+```shell
 //Loading hexvalue from string
 val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 ```

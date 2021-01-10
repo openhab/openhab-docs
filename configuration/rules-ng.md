@@ -53,42 +53,50 @@ Those use predefined configurations and/or modified module input/output objects.
 
 A given **Module type** has the following elements:
 
-    uid - unique id
-    label - localizable text
-    description - localizable text
-    configDescriptions - list of meta data for the configuration properties
-    input variables - list of meta data for the supported input objects
-    output variables - list of meta data for the supported output objects
+```text
+uid - unique id
+label - localizable text
+description - localizable text
+configDescriptions - list of meta data for the configuration properties
+input variables - list of meta data for the supported input objects
+output variables - list of meta data for the supported output objects
+```
 
 **configDescriptions** has the following metadata defined for each property:
 
-    name
-    type - one of the following "text", "integer", "decimal", "boolean"
-    label - localizable text
-    description - localizable text
-    required - boolean flag indicating if this configuration property can be optional and thus it can be ommited in the rule, by default required is false
-    defaultValue - default value for the configuration property when not specified in the rule
+```text
+name
+type - one of the following "text", "integer", "decimal", "boolean"
+label - localizable text
+description - localizable text
+required - boolean flag indicating if this configuration property can be optional and thus it can be ommited in the rule, by default required is false
+defaultValue - default value for the configuration property when not specified in the rule
+```
 
 **Input property** has the following metadata:
 
-    name
-    type - fully qualified name of Java class ("java.lang.Integer")
-    label - localizable text
-    description - localizable text
-    defaultValue - default value for the configuration property when not specified in the rule
-    tags - shows how to be considered a given value. For example, as a Temperature
+```text
+name
+type - fully qualified name of Java class ("java.lang.Integer")
+label - localizable text
+description - localizable text
+defaultValue - default value for the configuration property when not specified in the rule
+tags - shows how to be considered a given value. For example, as a Temperature
+```
 
 **Output property** has the following metadata:
 
-    name
-    type - fully qualified name of Java class ("java.lang.Integer")
-    label - localizable text
-    description - localizable text
-    defaultValue - default value for the configuration property when not specified in the rule
-    reference - which means the property value can be specified as a reference to configuration parameter or input parameter
-    tags - shows how a given value should be considered (e.g. as a Temperature)
+```text
+name
+type - fully qualified name of Java class ("java.lang.Integer")
+label - localizable text
+description - localizable text
+defaultValue - default value for the configuration property when not specified in the rule
+reference - which means the property value can be specified as a reference to configuration parameter or input parameter
+tags - shows how a given value should be considered (e.g. as a Temperature)
+```
 
-**Supported Types**
+### Supported Types
 
 The types supported in the **input/output** objects can be any string and the following validation is performed:
 
@@ -107,15 +115,15 @@ The types in the **Configuration** object are restricted to the following:
 
 **JSON schemas for:**
 
-* [module types](../../schemas/ModuleTypes_schema.json)
-* [rule templates](../../schemas/Templates_schema.json)
-* [rule instances](../../schemas/Rules_schema.json)
+- [module types](../../schemas/ModuleTypes_schema.json)
+- [rule templates](../../schemas/Templates_schema.json)
+- [rule instances](../../schemas/Rules_schema.json)
 
 ### Sample Rules
 
-* **Sample rule instance referencing module types:**
+- **Sample rule instance referencing module types:**
 
-```
+```json
 {
         "uid":"sample.rule1",
         "name":"SampleRule",
@@ -155,9 +163,9 @@ The types in the **Configuration** object are restricted to the following:
 }
 ```
 
-* **Sample module types:**
+- **Sample module types:**
 
-```
+```json
 "triggers":[
       {
          "uid":"SampleTrigger",
@@ -197,7 +205,7 @@ The types in the **Configuration** object are restricted to the following:
 ]
 ```
 
-```
+```json
    "conditions":[
       {
          "uid":"SampleCondition",
@@ -230,7 +238,7 @@ The types in the **Configuration** object are restricted to the following:
    ]
 ```
 
-```
+```json
 "actions":[
       {
          "uid":"SampleAction",
@@ -294,30 +302,30 @@ The types in the **Configuration** object are restricted to the following:
 
 There are several ways to add new rules:
 
-* using **JAVA API** from package: **org.openhab.automation.api**;
-* using **text console commands: openhab:automation**;
-* using **resource bundles** that provide moduletypes, rules and rule templates stored in **.json** files;
-* using **REST API** - see the next chapter bellow.
+- using **JAVA API** from package: **org.openhab.automation.api**;
+- using **text console commands: openhab:automation**;
+- using **resource bundles** that provide moduletypes, rules and rule templates stored in **.json** files;
+- using **REST API** - see the next chapter bellow.
 
 ## REST API
 
-* http://<host:port>/rest/module-types - lists module types.
-* http://<host:port>/rest/templates" - lists rule templates.
-* http://<host:port>/rest/rules - lists rule instances.
+- http://<host:port>/rest/module-types - lists module types.
+- http://<host:port>/rest/templates" - lists rule templates.
+- http://<host:port>/rest/rules - lists rule instances.
 
-#### /rest/templates
+### /rest/templates
 
 - GET /rest/templates - returns all registered rule templates.
 - GET /rest/templates/{templateUID} - returned response includes only the content of the specified template.
 
-#### /rest/module-types
+### /rest/module-types
 
 - GET /rest/module-types - returns all registered module types.
 - optional parameter 'type' with possible values: 'trigger', 'condition' or 'action' - filters the response to include only module definitions of specified type.
 - optional parameter 'tags' - filters the response to include only module types which have specified tags.
 - GET /rest/module-types/{moduleTypeUID} - returned response includes only the content of the specified module type.
 
-#### /rest/rules
+### /rest/rules
 
 - GET /rest/rules - returns all registered rule instances.
 - POST /rest/rules - adds new rule instance to the rule registry.
@@ -394,9 +402,9 @@ The rule template is used only once when the rule is imported in the Rule Engine
 After that the reference from the rule instance to the rule template is removed and a given rule may exist even if the rule template is removed or modified.
 This will not have any impact on the already imported rules.
 
-* **Sample rule instance referencing rule template:**
+- **Sample rule instance referencing rule template:**
 
-```
+```json
   {
     "uid": "sample.rulebytemplate",
     "name": "RuleByTemplate",
@@ -412,9 +420,9 @@ This will not have any impact on the already imported rules.
   }
 ```
 
-* **Sample rule template:**
+- **Sample rule template:**
 
-```
+```json
   {
     "uid":"SampleRuleTemplate",
     "description":"Sample Rule Template",
@@ -486,89 +494,93 @@ The above example uses two rule configuration properties:
 
 GenericEventTrigger has 3 configuration paramters: `eventTopic`,`eventSource` and `eventTypes` and one output: 'event'.
 
+```json
+{
+   "uid":"GenericEventTrigger",
+   "label":"Basic Event Trigger",
+   "description":"Triggers Rules on Events",
+   "configDescriptions":[
       {
-         "uid":"GenericEventTrigger",
-         "label":"Basic Event Trigger",
-         "description":"Triggers Rules on Events",
-         "configDescriptions":[
-            {
-               "name":"eventTopic",
-               "type":"TEXT",
-               "label":"Topic",
-               "description":"This is the topic, the trigger will listen to: >>openhab/*<<",
-               "required":true,
-               "defaultValue":"openhab/*"
-            },
-            {
-               "name":"eventSource",
-               "type":"TEXT",
-               "label":"Source",
-               "description":"This is the source of the event (eg. item name)",
-               "required":true,
-               "defaultValue":""
-            },
-            {
-               "name":"eventTypes",
-               "type":"TEXT",
-               "label":"Event Type",
-               "description":"the event type, the trigger should listen to. Multiple types can be specified comma-separated",
-               "required":true,
-               "defaultValue":""
-            }
-         ],
-         "outputs":[
-            {
-               "name":"event",
-               "type":"org.openhab.core.events.Event",
-               "label":"Event",
-               "description":"The events which was sent.",
-               "reference":"event"
-            }
-         ]
+         "name":"eventTopic",
+         "type":"TEXT",
+         "label":"Topic",
+         "description":"This is the topic, the trigger will listen to: >>openhab/*<<",
+         "required":true,
+         "defaultValue":"openhab/*"
+      },
+      {
+         "name":"eventSource",
+         "type":"TEXT",
+         "label":"Source",
+         "description":"This is the source of the event (eg. item name)",
+         "required":true,
+         "defaultValue":""
+      },
+      {
+         "name":"eventTypes",
+         "type":"TEXT",
+         "label":"Event Type",
+         "description":"the event type, the trigger should listen to. Multiple types can be specified comma-separated",
+         "required":true,
+         "defaultValue":""
       }
+   ],
+   "outputs":[
+      {
+         "name":"event",
+         "type":"org.openhab.core.events.Event",
+         "label":"Event",
+         "description":"The events which was sent.",
+         "reference":"event"
+      }
+   ]
+}
+```
 
 ### GenericCompareCondition
 
 This module type is used to compare a value against a configuration property using an operator like `<, >, =`.
 The value to be compared can be specified either as an input or as a configuration property.
 
-    {
-      "uid":"GenericCompareCondition",
-      "label":"CompareCondition",
-      "description":"configurable compare condition",
-      "configDescriptions":[
-        {
-          "name":"inputproperty",
-          "label":"Input property",
-          "type":"TEXT",
-          "description":"property of the input to be compared",
-          "required":false
-        },
-        {
-          "name":"right",
-          "type":"TEXT",
-          "label":"compare with",
-          "description":"the value to be compared with the input",
-          "required":true
-        },
-        {
-          "name":"operator",
-          "type":"TEXT",
-          "description":"the compare operator, allowed are <, >, =",
-          "required":true,
-          "defaultValue":"="
-        }
-      ],
-        "inputs": [
-            {
-              "name":"input",
-              "type": "java.lang.Object",
-              "label": "input",
-              "description": "The input which will be compared.",
-              "required":true
-            }
-    ]
-    }
+```json
+{
+   "uid":"GenericCompareCondition",
+   "label":"CompareCondition",
+   "description":"configurable compare condition",
+   "configDescriptions":[
+      {
+         "name":"inputproperty",
+         "label":"Input property",
+         "type":"TEXT",
+         "description":"property of the input to be compared",
+         "required":false
+      },
+      {
+         "name":"right",
+         "type":"TEXT",
+         "label":"compare with",
+         "description":"the value to be compared with the input",
+         "required":true
+      },
+      {
+         "name":"operator",
+         "type":"TEXT",
+         "description":"the compare operator, allowed are <, >, =",
+         "required":true,
+         "defaultValue":"="
+      }
+   ],
+      "inputs": [
+         {
+            "name":"input",
+            "type": "java.lang.Object",
+            "label": "input",
+            "description": "The input which will be compared.",
+            "required":true
+         }
+   ]
+}
+```
 
 ## Providing new Module Types
 
@@ -586,41 +598,43 @@ and implement the necessary methods for creation of instances of the supported m
 Another way to extend the supported module types is by defining composite module types as an extension of the system module types.
 The composite module type wraps one or more instances of a system module type and defines new configuration parameters, inputs and outputs.
 
+```json
+{
+   "uid":"ItemStateChangeTrigger",
+   "label":"Item State Trigger",
+   "description":"This triggers a rule if an items state changed",
+   "configDescriptions":[
       {
-         "uid":"ItemStateChangeTrigger",
-         "label":"Item State Trigger",
-         "description":"This triggers a rule if an items state changed",
-         "configDescriptions":[
-            {
-               "name":"itemName",
-               "type":"TEXT",
-               "context":"item",
-               "label":"item name",
-               "description":"the name of the item which's state change should be observed",
-               "required":true
-            }
-         ],
-         "children":[
-            {
-               "id":"itemStateChangeTriggerID",
-               "type":"GenericEventTrigger",
-               "configuration":{
-                  "eventSource":"$itemName",
-                  "eventTopic":"openhab/items/*",
-                  "eventTypes":"ItemStateEvent"
-               }
-            }
-         ],
-         "outputs":[
-            {
-               "name":"event",
-               "type":"org.openhab.core.events.Event",
-               "description":"the event of the item state change",
-               "label":"event",
-               "reference":"itemStateChangeTriggerID.event"
-            }
-         ]
+         "name":"itemName",
+         "type":"TEXT",
+         "context":"item",
+         "label":"item name",
+         "description":"the name of the item which's state change should be observed",
+         "required":true
       }
+   ],
+   "children":[
+      {
+         "id":"itemStateChangeTriggerID",
+         "type":"GenericEventTrigger",
+         "configuration":{
+            "eventSource":"$itemName",
+            "eventTopic":"openhab/items/*",
+            "eventTypes":"ItemStateEvent"
+         }
+      }
+   ],
+   "outputs":[
+      {
+         "name":"event",
+         "type":"org.openhab.core.events.Event",
+         "description":"the event of the item state change",
+         "label":"event",
+         "reference":"itemStateChangeTriggerID.event"
+      }
+   ]
+}
+```
 
 This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger*.
 It defines the new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*.
