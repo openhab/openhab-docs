@@ -22,7 +22,7 @@ Audio streams are provided by *audio sources* and consumed by *audio sinks*.
   They can support different formats and provide a stream in a requested format upon request.
   Typical audio source services are microphones. Typically, a continuous stream is expected from them.
 - *Audio Sinks* are services that accept audio streams of certain formats.
-Typically, these are expected to play the audio stream, i.e. they are some kind of speaker or media device.
+  Typically, these are expected to play the audio stream, i.e. they are some kind of speaker or media device.
 - *Text-to-Speech* (TTS) services are similar to audio sources with respect to the ability to create audio streams.
   The difference is that they take a string as an input and will synthesize this string to a spoken text using a given voice.
   TTS services can provide information about the voices that they support and the locale that those voices are associated with.

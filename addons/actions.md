@@ -62,8 +62,8 @@ You have different options to execute a command through an action.
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete.
   For example you could run `executeCommandLine("path/to/my/script.sh")` which then would be executed and the rule would continue processing.
 
-- `executeCommandLine(Duration.ofSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String
-For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
+- `executeCommandLine(Duration.ofSeconds(timeout), String commandLine)`: Executes a command on the command and waits `timeout` seconds for the command to complete, returning the output from the command as a String.
+  For example you could run `var ScriptResponse = executeCommandLine(Duration.ofSeconds(60), "path/to/my/script.sh");` would get executed and wait 1 minute for the output to be responded back and write it into the `ScriptResponse` variable.
 
 Other Durations than `ofSeconds` units are possible too.
 Check out the [Java Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html?is-external=true) for possible units.
