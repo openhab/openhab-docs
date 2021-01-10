@@ -7,10 +7,10 @@ on:
       - '2.5.x'
     tags-ignore:
       - '**'
-#  pull_request:
-#    branches:
-#      - main
-#    types: [open,synchronize,reopen]
+ pull_request:
+   branches:
+     - main
+   types: [open,synchronize,reopen]
 
 jobs:
   markdownlint:
