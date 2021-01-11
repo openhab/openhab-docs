@@ -57,6 +57,9 @@ You can find all important information in the extensions [readme file](https://g
 
 The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality.
 
+
+
+
 ### mcedit
 
 mcedit is an editor which comes with mc (Midnight Commander).
