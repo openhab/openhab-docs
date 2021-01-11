@@ -59,7 +59,6 @@ The here summarized projects provide syntax highlighting for different text edit
 
 
 
-
 ### mcedit
 
 mcedit is an editor which comes with mc (Midnight Commander).
