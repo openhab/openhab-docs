@@ -2,8 +2,6 @@
 layout: documentation
 ---
 
-{% include base.html %}
-
 # Installation of Add-ons
 
 Add-ons can be installed in different ways, described below.
