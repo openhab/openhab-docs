@@ -1,17 +1,20 @@
 name: Checking Markdown For Errors
 
 on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - open
+      - synchronize
+      - reopen
+
   push:
     branches:
       - main
       - 2.5.x
     tags-ignore:
       - '**'
-  pull_request:
-    branches:
-      - main
-    types:
-      [open,synchronize,reopen]
 
 jobs:
   markdownlint:
