@@ -1,4 +1,4 @@
-name: Linting
+name: Checking Markdown For Errors
 
 on:
   push:
@@ -10,7 +10,8 @@ on:
   pull_request:
     branches:
       - 'main'
-    types: [open,synchronize,reopen]
+    types:
+      [open,synchronize,reopen]
 
 jobs:
   markdownlint:
@@ -20,7 +21,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Run markdownlint (mdl)
-        uses: bewuethr/mdl-action@v1.0.12
+      - name: Run markdownlint-cli
+        uses: Confectrician/github-action-markdown-cli@v2.0.0
         with:
-          style-file: .github/markdownStyle.rb
+          files: .
+          config_file: ".markdownlint.yaml"

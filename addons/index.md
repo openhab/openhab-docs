@@ -2,8 +2,6 @@
 layout: documentation
 ---
 
-{% include base.html %}
-
 # Add-ons
 
 All add-ons for openHAB 2 are part of the distribution.
