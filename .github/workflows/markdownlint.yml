@@ -1,5 +1,7 @@
 name: Checking Markdown For Errors
 
+# https://github.blog/2020-08-03-github-actions-improvements-for-fork-and-pull-request-workflows/
+
 on:
   push:
     branches:
@@ -8,7 +10,7 @@ on:
     tags-ignore:
       - '**'
 
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types:
