@@ -31,13 +31,13 @@ In this case, the Hue binding supports auto-discovery of both the bridge and the
 
 After logging in as an administrator, click on `Settings` from the sidebar, then click on `Things`.
 
-![](images/empty_things_menu.png)
+![empty things menu](images/empty_things_menu.png)
 
 Click on the blue "+" button located at the bottom-right corner.
 
 Since you have no bindings, this screen will appear:
 
-![](images/choose_binding.png)
+![choose binding](images/choose_binding.png)
 
 Click on `Install Bindings`.
 
@@ -45,17 +45,17 @@ Look for the Hue binding.
 Note the search bar at the top can help find bindings quickly by filtering the long list.
 Click on the binding, then on Install.
 
-![](images/install_hue.png)
+![install hue](images/install_hue.png)
 
 It will take from a few seconds to a minute for the binding to install...
 
-![](images/installing_hue.png)
+![installing hue](images/installing_hue.png)
 
 Wait for it to disappear from the list, then click < Back (or use the browser controls).
 The Hue binding will now appear on the previous screen.
 You will notice that the auto-discovery has already detected something (note the red "1" badge).
 
-![](images/installed_hue.png)
+![installed hue](images/installed_hue.png)
 
 ## Accept the Discovered Bridge Thing
 
@@ -64,35 +64,35 @@ Click on the binding.
 The bridge has indeed been detected and appears under Discovered Things.
 If not, you can try again by clicking the `Scan Again` button.
 
-![](images/hue_things_discover_bridge.png) Thing
+![hue things discover bridge](images/hue_things_discover_bridge.png) Thing
 
 Click on the discovered `Hue Bridge`.
 
-![](images/add_hue_bridge.png)
+![add hue bridge](images/add_hue_bridge.png)
 
 openHAB will ask you to confirm or change the label/name.
 Click OK after naming the new Thing.
 
 You will be taken back to the Things page, where the Hue Bridge should now appear.
 
-![](images/hue_bridge_offline.png)
+![hue bridge offline](images/hue_bridge_offline.png)
 
 However, we can see that it's marked offline.
 To find out why we can click on the `Hue Bridge`.
 
-![](images/hue_bridge_config_error.png)
+![hue bridge config error](images/hue_bridge_config_error.png)
 
 The error description below the status gives some more information: You have to press the physical button on the device to let openHAB authenticate to it.
 Once you've done this, the Thing will become online.
 
-![](images/hue_bridge_online.png)
+![hue bridge online](images/hue_bridge_online.png)
 
 ## Accept the Light Bulb Things
 
 Go back to Things.
 You will notice a new red button on that screen.
 
-![](images/hue_inbox.png)
+![hue inbox](images/hue_inbox.png)
 
 This means that there are newly discovered devices that you can add.
 Since the Hue bridge is now working, the binding has detected all the Hue devices (bulbs, switches and so on) attached to it.
@@ -102,13 +102,13 @@ Alternatively, you can also click on the "+" button to get a per-binding view an
 
 Click Inbox.
 
-![](images/discovered_hue_things.png)
+![dicsovered hue things](images/discovered_hue_things.png)
 
 You can either click on an individual thing to see actions related to it, or you can click on Select in the top-right corner to add check boxes beside items, which will allow you to perform actions on several inbox entries at once.
 
-![](images/hue_individual_add.png)
+![hue individual add](images/hue_individual_add.png)
 
-![](images/hue_bulk_add.png)
+![hue bulk add](images/hue_bulk_add.png)
 
 These actions are:
 
@@ -119,7 +119,7 @@ These actions are:
 Now go back to Things.
 The newly approved Hue Things should appear on the list.
 
-![](images/hue_things_added.png)
+![hue things added](images/hue_things_added.png)
 
 You now have the Bridge Thing and the two light bulbs added to openHAB.
 Thankfully most of the bindings you will work with in openHAB will work in this simple way.

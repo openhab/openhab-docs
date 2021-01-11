@@ -33,7 +33,7 @@ The semantic model, when set up correctly, will allow openHAB to turn all lights
 
 ## Introduction to the Ontology and Relationships
 
-![](images/ontology_relationships.jpeg)
+![ontology relationships](images/ontology_relationships.jpeg)
 
 The above drawing shows the relationship between the four main concepts in the model.
 
@@ -44,7 +44,7 @@ The above drawing shows the relationship between the four main concepts in the m
 
 Example of an advanced model:
 
-![](images/example_model.png)
+![example model](images/example_model.png)
 <!--(made with https://www.diagrameditor.com - file here: [Semantic Model.txt|attachment](upload://qEPmmmDomSr4F5dRBHMXajOzO0c.txt) (3.3 KB) change extension to .drawio) -->
 
 We have an Indoor location which has a House.
@@ -77,11 +77,11 @@ Using the example above, the Z-Wave plug might be modeled as a subequipment of t
 
 From the Settings screen, click on Model.
 
-![](images/start_model.png)
+![start model](images/start_model.png)
 
 Let's start with a hierarchy of Locations. Click on Add Location.
 
-![](images/create_location.png)
+![create location](images/create_location.png)
 
 Add your first item, a Group representing the ground floor.
 Give it a name, but choose carefully as you cannot change it afterward.
@@ -102,7 +102,7 @@ Add the ground floor and its rooms (master bedroom, bathroom, etc...) to your mo
 
 You should end up with something resembling this:
 
-![](images/locations_model.png)
+![model locations](images/locations_model.png)
 
 ## Modeling Equipment
 
@@ -114,7 +114,7 @@ If the Equipment you're adding is one of the Things that you have already added,
 
 Select where in the model you want to add the Equipment, for instance the kitchen, and click on Create Equipment from Thing.
 
-![](images/create_equipment_model.png)
+![model create equipment](images/create_equipment_model.png)
 
 Select the Thing you want to create the Equipment from, and alter the details of the Equipment item that will be created.
 If you don't find an appropriate Equipment class, choose **Equipment**.
@@ -123,7 +123,7 @@ Below are all the Channels defined by the Thing.
 Sometimes Things will have hundreds of channels, so here you have the opportunity of choosing which ones will be linked to new Points items.
 Check the channels you're interested in and only those.
 
-![](images/create_equipment_model_channels.png)
+![model create equipment channels](images/create_equipment_model_channels.png)
 
 For the plant sensor Thing added earlier, we have an opportunity to change the default basic Number types and make them quantifiable.
 Quantity types (Number with a dimension) provide conversion facilities between Units of Measurement, and the default persistence is more granular.
@@ -134,7 +134,7 @@ Also set the semantic class to Measurement and choose an appropriate related pro
 When you're finished, click Add in the title bar.
 The Equipment and Points should be added to the model where you wanted.
 
-![](images/create_equipment_model_added.png)
+![model created equipment added](images/create_equipment_model_added.png)
 
 The "Plant Sensor" Equipment has now been created under the Kitchen location, and all the selected Points represent the selected Channels of the Thing.
 
@@ -143,25 +143,25 @@ The "Plant Sensor" Equipment has now been created under the Kitchen location, an
 From the Settings, click on Things and then click on the Thing you wish to add to the model.
 Switch to the Channels tab.
 
-![](images/create_equipment_things_channels.png)
+![create equipment things channels](images/create_equipment_things_channels.png)
 
 Click on Add Equipment to Model below the list.
 You'll encounter a similar screen to the one above.
 The difference is, rather than selecting the Thing, you have to select where in the model you want to add the Equipment.
 
-![](images/create_equipment_things_location.png)
+![create equipment things location](images/create_equipment_things_location.png)
 
 Select Pick From Model in the Parent Group section, and the tree view of the Locations and Equipments will appear.
 Select the parent group, for instance Living Room, then choose Pick in the top-right corner of the dialog box.
 If this equipment is a part of another equipment, choose that equipment as the parent instead of a location.
 
-![](images/create_equipment_things_parent.png)
+![create equipment things parent](images/create_equipment_things_parent.png)
 
 Then do the same as above, configure the Equipment item and the Points, then click Add.
 
 Go back to the Model by choosing Model in the sidebar and verify that the Equipment added to the model from the thing page is effectively there as well as, its Points.
 
-![](images/create_equipment_things_added.png)
+![create equipment things added](images/create_equipment_things_added.png)
 
 Note how the Channel Links section lists the link to the Thing/Channel, and you also have a control widget to control the item.
 Since it's linked to the Color channel of the Hue bulb, the light will reflect the state of the item.

@@ -24,7 +24,7 @@ In order to simplify the usage of services the [OSGi Alliance](https://www.osgi.
 In order to understand this model, we will have to first explain a few terms, used below:
 
 - **Declarative Services Container** (we will use the shorthand **DS**) - a module that is managing the [lifecycle](#vii-component-lifecycle) of a *service component- dynamically.
-  It activates and deactivates different components, basing its decisions on the information contained in the *component description*;
+  It activates and deactivates different components, basing its decisions on the information contained in the _component description_;
 - **Service Component** (or also **component**) - an object whose lifecycle is managed,
   usually by a component framework such as Declarative Services (DS).
   A component may publish itself as an OSGi service or consume OSGi services.
