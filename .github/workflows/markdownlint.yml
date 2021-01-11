@@ -3,13 +3,13 @@ name: Checking Markdown For Errors
 on:
   push:
     branches:
-      - 'main'
-      - '2.5.x'
+      - main
+      - 2.5.x
     tags-ignore:
       - '**'
   pull_request:
     branches:
-      - 'main'
+      - main
     types:
       [open,synchronize,reopen]
 
