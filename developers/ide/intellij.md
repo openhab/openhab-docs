@@ -22,7 +22,7 @@ This article refers to the directory where you installed the distribution as `<D
 
 1. open IntelliJ and create a new Project from existing sources (File | New | Project from existing sources) and pick `<ADDON_DIR>`/pom.xml
 
-    - IntelliJ will start importing, indexing and building, it will take while, wait until finished (see status bar)
+    IntelliJ will start importing, indexing and building, it will take while, wait until finished (see status bar)
 
 1. Use Maven to clean & install the addons project
 
