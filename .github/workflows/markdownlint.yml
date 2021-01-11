@@ -1,20 +1,22 @@
 name: Checking Markdown For Errors
 
-on:
-  pull_request:
-    branches:
-      - main
-    types:
-      - open
-      - synchronize
-      - reopen
+# https://github.blog/2020-08-03-github-actions-improvements-for-fork-and-pull-request-workflows/
 
+on:
   push:
     branches:
       - main
       - 2.5.x
     tags-ignore:
       - '**'
+
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - open
+      - synchronize
+      - reopen
 
 jobs:
   markdownlint:
