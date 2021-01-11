@@ -1,6 +1,13 @@
 name: Checking Markdown For Errors
 
 on:
+  push:
+    branches:
+      - main
+      - 2.5.x
+    tags-ignore:
+      - '**'
+
   pull_request:
     branches:
       - main
@@ -8,13 +15,6 @@ on:
       - open
       - synchronize
       - reopen
-
-  push:
-    branches:
-      - main
-      - 2.5.x
-    tags-ignore:
-      - '**'
 
 jobs:
   markdownlint:
