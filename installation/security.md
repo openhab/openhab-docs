@@ -604,7 +604,7 @@ Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make 
 We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a linux installation.
 :::
 
-Give it a try again - you should now get redirected to <https://your-hostname.com> from <http://your-hostname.com>, and should receive a username and password prompt before you see the openHAB landing page.
+Give it a try again - you should now get redirected to `https://your-hostname.com` from `http://your-hostname.com`, and should receive a username and password prompt before you see the openHAB landing page.
 
 If you need to troubleshoot the nginx server, SSH into your DiskStation, and check the NGINX error log:
 
