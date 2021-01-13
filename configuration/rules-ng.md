@@ -309,9 +309,9 @@ There are several ways to add new rules:
 
 ## REST API
 
-- http://<host:port>/rest/module-types - lists module types.
-- http://<host:port>/rest/templates" - lists rule templates.
-- http://<host:port>/rest/rules - lists rule instances.
+- `http://<host:port>/rest/module-types` - lists module types.
+- `http://<host:port>/rest/templates` - lists rule templates.
+- `http://<host:port>/rest/rules` - lists rule instances.
 
 ### /rest/templates
 

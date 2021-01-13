@@ -11,7 +11,7 @@ Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspe
 This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke actions that can change the state of Items or influence the behavior of other elements of openHAB.
 Interactions with the REST API are based on the http protocol.
 Access over the Internet to the REST API is possible, but this represents a significant security risk.
-Users are encouraged to [ensure safe and secure connections](http://docs.openhab.org/installation/security.html).
+Users are encouraged to [ensure safe and secure connections](/docs/installation/security.html).
 Be aware that the documentation of the REST API may not be automatically installed, but once installed it is accessible through the openHAB dashboard.
 
 ## REST API Examples
