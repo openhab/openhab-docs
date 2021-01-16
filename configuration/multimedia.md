@@ -31,7 +31,7 @@ The distribution comes with these options built-in:
 |---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface.                                                                                                                                                                                                                                                                         |
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                             |
-| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Paper UI and HABPanel. |
+| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by UI and HABPanel. |
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 
@@ -46,7 +46,7 @@ javasound
 webaudio
 ```
 
-You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Audio`.
+You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
 
 In order to play a sound, you can use the following command on the console:
 
@@ -99,7 +99,7 @@ mactts:Ioana Ioana (ro_RO)
 mactts:Kanya Kanya (th_TH)
 ```
 
-You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Voice`.
+You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
 
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 

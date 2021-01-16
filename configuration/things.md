@@ -234,11 +234,11 @@ If you decide not to, then the label from the referenced channel type definition
 
 ### Linking Items
 
-Items can be linked to Channels of discovered or manually defined Things inside Paper UI or inside configuration files.
+Items can be linked to Channels of discovered or manually defined Things inside UI or inside configuration files.
 For more details about Item definition and usage, please refer to the [Items configuration article]({{base}}/configuration/items.html).
 
 It is important to note, that Channels of discovered Things can also be linked to Items defined in `.items` files.
-In order to link a Thing to an Item in an `.items` file, open the Thing in Paper UI under *Configuration → Things*.
+In order to link a Thing to an Item in an `.items` file, open the Thing in UI under `Settings → Things`.
 In the list of Thing Channels, look for the Channel you wish to link to an Item and copy the Channel's ID.
 For instance, a Z-Wave switch might have a Switch Channel that has an ID like this:
 
