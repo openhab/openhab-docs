@@ -206,7 +206,7 @@ One system-based trigger is provided as described in the table below:
 
 | Trigger           | Description                                                                                                                                                                                        |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System started    | ```System started``` is triggered upon openHAB startup.  In openHAB version 2, ```System started``` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
+| System started    | `System started` is triggered upon openHAB startup.  In openHAB version 2, `System started` is also triggered after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
