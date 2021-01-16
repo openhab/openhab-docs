@@ -752,5 +752,5 @@ Switch Outdoor_Temperature_Low_Alert { channel="openweathermap:weather-and-forec
 
 // Indicates a battery low alarm if battery level drops below 15
 Number Battery_Level { channel="serialbutton:button:mybutton:battery-level" }
-Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level", [profile="hysteresis", lower=15, inverted=true] }
+Switch Low_Battery { channel="serialbutton:button:mybutton:battery-level" [profile="hysteresis", lower=15, inverted=true] }
 ```
