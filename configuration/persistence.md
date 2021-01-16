@@ -22,8 +22,8 @@ Please refer to the [available persistence service add-on](/addons/#persistence)
 It is important to select a default persistence service.
 You should do this even if you have only one persistence add-on installed.
 
-To select a default persistence service, in paper UI, select Configuration and then System from the side menu.
-Scroll down to "Persistence", and select your default service from the drop-down list.
+To select a default persistence service, in UI, select `Settings->Persistence`.
+Select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 

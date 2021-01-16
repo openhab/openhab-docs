@@ -23,7 +23,7 @@ The id is provided through a static method and can be retrieved through
 
 The `NetworkAddressService` is an OSGi service that can be used like any other OSGi service by adding a service reference to it.
 Its OSGi service name is `org.openhab.core.network`.
-A user can configure his default network address via Paper UI under `Configuration -> System -> Network Settings`.
+A user can configure his default network address via UI under `Settings -> Network Settings`.
 One can obtain the configured address via the `getPrimaryIpv4HostAddress()` method on the service.
 This service is useful for example in the `ThingHandlerFactory` or an `AudioSink` where one needs a specific IP address of the host system to provide something like a `callback` URL.
 

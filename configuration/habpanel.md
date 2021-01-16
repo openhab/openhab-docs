@@ -33,7 +33,7 @@ To switch from the local storage to a server-hosted panel configuration, go to t
 
 Even when there is an active panel configuration, HABPanel uses the browser's storage to sync a locally-managed copy. With the **Edit the local panel configuration (experts only)** link under the _"Local storage"_ storage configuration option in the settings screen, the raw structure of the panel configuration can be inspected, modified, and exported or imported from/to a .json file. It is also an alternative way to backup, restore and share the configuration.
 
-HABPanel uses service configuration variables to store its data on the openHAB server. They can be accessed using Paper UI (_Configuration > Services > UI > HABPanel > Configure_) or in the openHAB Karaf console:
+HABPanel uses service configuration variables to store its data on the openHAB server. They can be accessed using UI (_Settings > UI > HABPanel > Configure_) or in the openHAB Karaf console:
 
 ```shell
 openhab> config:edit org.openhab.habpanel

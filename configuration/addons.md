@@ -12,7 +12,7 @@ Log into your admin account (if not already done).
 Navigate to `Settings` and have a look for the add-ons section.
 Search for the desired add-on in the categories and press install.
 
-![installing Add-ons through Paper UI](./images/InstallAddonsThroughUi.gif)
+![installing Add-ons through UI](./images/InstallAddonsThroughUi.gif)
 
 ## Through Configuration Files
 

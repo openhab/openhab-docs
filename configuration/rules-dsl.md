@@ -241,7 +241,7 @@ You can find all the possible values for status from [Thing Status](/docs/concep
 And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
-You can find it from PaperUI or from Karaf remote console.
+You can find it from UI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 
 ::: tip Note
