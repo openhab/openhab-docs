@@ -133,7 +133,7 @@ Assuming the openHAB directory is in `~/openhab` simply run the following comman
 
 ```shell
 cd ~/openhab
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/main/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
 ```
 
 ## Backup and Restore

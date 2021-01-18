@@ -29,7 +29,7 @@ The following steps will only need to be done once to setup both VSCode and your
 
     Either globally define the formatting options via ```Files->Preferences->Settings->Extendions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
- Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/settings.json) for the recommended settings (or simply wish to copy the URLs in the above image).
+ Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/settings.json) for the recommended settings (or simply wish to copy the URLs in the above image).
 
 ## Steps for each Bundle
 
@@ -47,7 +47,7 @@ The following steps will show you how to setup a specific bundle for development
 
     ![define .vscode](images/ide_setup_vscode_folder.png)
 
-1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
+1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
 
     ![define tasks.json](./images/ide_setup_vscode_folder_tasks.png)
 
@@ -64,7 +64,7 @@ The following steps will show you how to setup a specific bundle for development
 1. Start the openHAB instance with the debug option - `start.bat debug` from a console in the openHAB home directory.  You should see the following line printed somewhere in the karaf console:
  `Listening for transport dt_socket at address: xxxx` (where xxxx should be 5005)
 
-1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
+1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
 
     ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 

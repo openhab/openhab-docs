@@ -191,8 +191,8 @@ Where that's not supported, you can make the changes through the Item's Page.
 This is a table descibing the Equipment types and point class and type to enable display of badges and measurements on the location cards.
 This is based off the sources linked below.
 
-- <https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
-- <https://github.com/openhab/openhab-webui/blob/master/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>
+- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/status-badge.vue#L63>
+- <https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/web/src/components/cards/glance/location/measurement-badge.vue#L48>
 
 ### Badges
 

@@ -23,7 +23,7 @@ Sitemaps follow the syntax described in this article.
 For easy editing of sitemap definition files, we suggest to use one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 These provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
-The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
+The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/main/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
 You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.
 
 The following example illustrates what a typical Sitemap definition might look like:
@@ -85,7 +85,7 @@ openHAB supports these dependencies by providing parameters for dynamic behavior
 Be sure to check out the [Dynamic Sitemaps](#dynamic-sitemaps) chapter.
 
 For the technically interested: The Sitemap definition language is an
-Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
+Xtext Domain Specific Language and the sitemap file model can be found [here](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.model.sitemap/src/org/openhab/core/model/sitemap/Sitemap.xtext).
 
 ### Special Element 'sitemap'
 
