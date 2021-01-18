@@ -42,7 +42,7 @@ You can find it in the [Microsoft Visual Studio Marketplace](https://marketplace
   ![openHAB VS Code Extension alternative installation](images/vscode_extensiontab_icon.png)
 1. Search for openHAB and install the extension.
 
-[Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/master/README.md "GitHub Repo for the VS Code Extension")
+[Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/main/README.md "GitHub Repo for the VS Code Extension")
 
 ### Rule Validation
 
