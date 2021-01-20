@@ -30,13 +30,18 @@ If you are working with an [openHABian](https://www.openhab.org/docs/installatio
 
 ### Package-based Installations
 
-Since the openHAB 2 Linux `openhab2*` packages used folder names like `/etc/openhab2` we used this opportunity to remove the version out of anything the packages provides, including the name of the package itself. Some files such as `openhab-cli` didn't use any version in the naming at all, and therefore haven't moved anywhere.
+Since the openHAB 2 Linux `openhab2*` packages used folder names like `/etc/openhab2` we used this opportunity to remove the version out of anything the packages provides, including the name of the package itself.
+Some files such as `openhab-cli` didn't use any version in the naming at all, and therefore haven't moved anywhere.
 
 Unfortunately, it means that in terms of openHAB 2 and openHAB 3, you cannot install both at the same time and openHAB 2 will not automatically update to openHAB 3, but if you use the commands to install openHAB 3 whilst openHAB 2 is installed, then the configs will copy across automatically.
+Please be aware that system configuration done for openHAB 2 is not copied across automatically.
+E.g. if you have changed /etc/default/openhab2, similar changes in /etc/default/openhab might be required.
 
 #### Backup first
 
-If you've got an existing openHAB 2 installation, back it up before you do anything. `openhab-cli backup [filepath]/[filename].zip` will create a zip file which can be used to restore the same version of openHAB later using `openhab-cli restore [filepath]/[filename].zip`. Put the file somewhere not related to openHAB, such as your own home directory (e.g. `/home/pi/`). You should probably do your usual OS backup too to make sure you can get back to where you left off.
+If you've got an existing openHAB 2 installation, back it up before you do anything. `openhab-cli backup [filepath]/[filename].zip` will create a zip file which can be used to restore the same version of openHAB later using `openhab-cli restore [filepath]/[filename].zip`.
+Put the file somewhere not related to openHAB, such as your own home directory (e.g. `/home/pi/`).
+You should probably do your usual OS backup too to make sure you can get back to where you left off.
 
 #### Prerequisites
 
