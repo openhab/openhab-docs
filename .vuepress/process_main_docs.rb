@@ -3,7 +3,7 @@ require_relative "./process_file.rb"
 def process_main_docs(docs_source_dir)
 
     puts ">>> Migrating the introduction article"
-    process_file(".", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/master/introduction.md")
+    process_file(".", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/main/introduction.md")
     FileUtils.mv("docs/introduction.md", "docs/readme.md")
 
 

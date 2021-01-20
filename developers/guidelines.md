@@ -66,7 +66,7 @@ Rules are enforced as part of the build process using [Spotless Maven Plugin](ht
 To check if your code is following the code style run `mvn spotless:check`. If Maven prints `[INFO] Spotless check skipped` then run `mvn spotless:check -Dspotless.check.skip=false` instead as the check isn't mandatory yet.
 To reformat you code run `mvn spotless:apply`
 
-Code styles files are located in here: <https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources>
+Code styles files are located in here: <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources>
 
 #### Java Code
 
@@ -74,7 +74,7 @@ The rules are defined using the Eclipse Java Formatter definitions. There are pl
 
 - Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
 - Eclipse standalone installation
-  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
+  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/main/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/main/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
 - IntelliJ using plugin <https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter>
   - Same files as for the Eclipse standalone installation. Be sure to follow *all- the plugin configuration steps.
 
@@ -84,7 +84,7 @@ The rules are defined using the Eclipse Java Formatter definitions. There are pl
 - Other `xml` files shall have 1 tab indentation
 - Line length shall be 120 characters
 
-The rules are defined at <https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources> for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
+The rules are defined at <https://github.com/openhab/static-code-analysis/tree/main/codestyle/src/main/resources> for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
 
 ### Java Coding Style
 
@@ -264,7 +264,7 @@ This sections provides some background and more detailed information about parts
 ### Static Code Analysis
 
 The openHAB Maven build includes [tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the Coding Guidelines and some additional best practices.
-Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/master/docs/included-checks.md).
+Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/main/docs/included-checks.md).
 
 The tool will generate an individual report for each bundle that you can find in `path/to/bundle/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `target/summary_report.html`.
 The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info).

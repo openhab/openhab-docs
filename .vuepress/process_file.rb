@@ -57,24 +57,18 @@ def process_file(indir, file, outdir, source)
                             addon_type = outdir_parts[1]
                             addon = file.split('/')[0]
                             source = ""
-                            if addon == "habmin" then
-                                puts "    (add-on is habmin)"
-                                source = "https://github.com/openhab/org.openhab.ui.habmin/blob/master/README.md"
-                            elsif addon == "habpanel" then
+                            if addon == "habpanel" then
                                 puts "    (add-on is habpanel)"
-                                source = "https://github.com/openhab/org.openhab.ui.habpanel/blob/master/README.md"
+                                source = "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui.habpanel/README.md"
                             elsif addon == "zigbee" then
                                 puts "    (add-on is zigbee)"
-                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/org.openhab.binding.zigbee/README.md"
+                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/main/org.openhab.binding.zigbee/README.md"
                             elsif addon == "zwave" && !(file =~ /things/) then
                                 puts "    (add-on is zwave)"
-                                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
-                            elsif $esh_features.include?("esh-#{addon_type}-#{addon.gsub('.', '-')}") then
-                                puts "    (add-on is from ESH)"
-                                source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
+                                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/main/README.md"
                             elsif !(file =~ /things/) then
                                 puts "    (add-on is from openhab-addons)"
-                                source = "https://github.com/openhab/openhab-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
+                                source = "https://github.com/openhab/openhab-addons/blob/main/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
                             out.puts "source: #{source}" if source != ""

@@ -209,7 +209,7 @@ then
 end
 ```
 
-For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](https://www.myopenhab.org).
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/main/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](https://www.myopenhab.org).
 
 ## Ephemeris
 

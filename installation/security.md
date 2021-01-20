@@ -62,7 +62,7 @@ There are many different solutions for VPN, so we cannot give any specific advic
 
 ### myopenHAB Cloud Service
 
-You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
+You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/main/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
 openHAB will see these incoming requests as originating from the local loopback interface.
 
 The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](https://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).

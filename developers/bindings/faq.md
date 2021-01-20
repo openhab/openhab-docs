@@ -29,7 +29,7 @@ If you do not find an answer to your question, do not hesitate to ask it on the 
 1. _Do I have to create XML files in `OH-INF/thing` for all devices or is there any other option?_
 
     No, the XML files are only one way to describe your devices.
-    Alternatively, you can implement your own [ThingTypeProvider](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.thing/src/main/java/org/openhab/core/thing/binding/ThingTypeProvider.java), through which you can provide thing descriptions in a programmatic way.
+    Alternatively, you can implement your own [ThingTypeProvider](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.thing/src/main/java/org/openhab/core/thing/binding/ThingTypeProvider.java), through which you can provide thing descriptions in a programmatic way.
     Nonetheless, the static XML descriptions of thing types can be picked up for documentation generation and other purposes.
     So whenever possible, static XML descriptions should be provided.
 
