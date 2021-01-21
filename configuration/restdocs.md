@@ -83,7 +83,7 @@ You can also do this in a single, non-interactive command, in this case **add `-
 ### With an API token
 
 This method is often recommended in order to keep your passwords safe and avoid to store them without encryption in any public places.
-To authenticate with an API token, **apaddpend `-u '{API_TOKEN}:'` to the commandline.**
+To authenticate with an API token, **add `-u '{API_TOKEN}:'` to the commandline.**
 
 You can manage all access tokens in your profile settings in the Main UI.
 
