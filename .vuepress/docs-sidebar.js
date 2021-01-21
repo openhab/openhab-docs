@@ -73,6 +73,8 @@ module.exports = [
       'configuration/jsr223',
       'configuration/services',
       'configuration/multimedia',
+      ['configuration/restdocs', 'REST API'],
+      ['configuration/apitokens', 'API Token Generation'],
       ['configuration/migration/', 'Migration from openHAB 2']
     ]
   },
