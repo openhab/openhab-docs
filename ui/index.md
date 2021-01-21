@@ -91,9 +91,9 @@ You will often find black buttons denoting that the component beside or beneath 
 
 In the Code tab, you will be able to alter the component structure of the page, either with the sitemap syntax, or with YAML. In case of YAML, you can trigger autocompletion in many places of the YAML code:
 
-- at the root or component level, hit <kbd>Ctrl+Enter</kbd> to start a `config` section, a `slots` section, or a `slots` section with a `default` slot;
-- at the `config` level, hit <kbd>Ctrl+Enter</kbd> before the property name to display a list of properties and add one of them;
-- at the start of a property's value in `config`, hit <kbd>Ctrl+Enter</kbd> to display a list of options if the property has some (including items).
+- at the root or component level, hit <kbd>Ctrl+Space</kbd> to start a `config` section, a `slots` section, or a `slots` section with a `default` slot;
+- at the `config` level, hit <kbd>Ctrl+Space</kbd> before the property name to display a list of properties and add one of them;
+- at the start of a property's value in `config`, hit <kbd>Ctrl+Space</kbd> to display a list of options if the property has some (including items).
 
 Some of the designers will also have a Run mode that you can activate with the switch on the bottom toolbar if present, or the <kbd>Ctrl+R</kbd> keyboard shortcut. It will allow you to preview the page as it would be rendered (some actions will still not work in Run mode).
 

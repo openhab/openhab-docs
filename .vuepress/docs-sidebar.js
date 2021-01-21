@@ -80,7 +80,7 @@ module.exports = [
   },
   {
     title: 'User Interface Guide',
-    collapable: false,
+    collapsable: false,
     children: [
       'ui/',
       'ui/sitemaps',
