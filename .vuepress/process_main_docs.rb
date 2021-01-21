@@ -99,8 +99,8 @@ def process_main_docs(docs_source_dir)
         file = File.basename(path)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
-        puts " -> images (#{file})"
     }
+    puts " -> images"
     FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui/images")
 
 
