@@ -64,7 +64,6 @@ module.exports = [
       'configuration/addons',
       'configuration/things',
       'configuration/items',
-      'configuration/sitemaps',
       'configuration/persistence',
       'configuration/rules-dsl',
       'configuration/transformations',
