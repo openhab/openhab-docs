@@ -98,10 +98,10 @@ def process_main_docs(docs_source_dir)
     Dir.glob("#{docs_source_dir}/ui/*.md") { |path|
         file = File.basename(path)
         puts " -> #{file}"
-        process_file("#{docs_source_dir}/ui", file, "docs/configuration/ui", "")
+        process_file("#{docs_source_dir}/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
         puts " -> images (#{file})"
-        FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui")
     }
+    FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui/images")
 
 
 
