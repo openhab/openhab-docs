@@ -95,14 +95,12 @@ def process_main_docs(docs_source_dir)
     puts ">>> Migrating the UI section"
 
 
-    Dir.glob("#{docs_source_dir}/_addons_uis/**") { |path|
-        next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
-        addon = File.basename(path)
-        puts " -> #{addon}"
-        FileUtils.mkdir_p("docs/configuration/ui/" + addon)
-        process_file("#{docs_source_dir}/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
-        puts " -> images (#{addon})"
-        FileUtils.cp_r("#{docs_source_dir}/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}") if Dir.exists?("#{docs_source_dir}/_addons_uis/#{addon}/doc")
+    Dir.glob("#{docs_source_dir}/ui/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/ui", file, "docs/configuration/ui", "")
+        puts " -> images (#{file})"
+        FileUtils.cp_r("#{docs_source_dir}/ui/images", "docs/ui")
     }
 
 

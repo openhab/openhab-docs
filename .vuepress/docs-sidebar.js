@@ -7,7 +7,7 @@ module.exports = [
     ]
   },
   {
-    title: 'Beginner Tutorial',
+    title: 'Getting Started',
     collapsable: false,
     children: [
       ['tutorial/', 'Tutorial Overview'],
@@ -24,18 +24,6 @@ module.exports = [
       'tutorial/rules_intermediate',
       'tutorial/cloud',
       'tutorial/example'*/
-    ]
-  },
-  {
-    title: 'Concepts',
-    collapsable: false,
-    children: [
-      ['concepts/', 'Concepts Overview'],
-      'concepts/things',
-      'concepts/items',
-      'concepts/discovery',
-      'concepts/audio',
-      'concepts/units-of-measurement',  // from v2.3 onwards
     ]
   },
   {
@@ -56,10 +44,23 @@ module.exports = [
     ]
   },
   {
+    title: 'Concepts',
+    collapsable: false,
+    children: [
+      ['concepts/', 'Concepts Overview'],
+      'concepts/things',
+      'concepts/items',
+      'concepts/discovery',
+      'concepts/audio',
+      'concepts/units-of-measurement',  // from v2.3 onwards
+    ]
+  },
+  {
     title: 'Configuration Guide',
     collapsable: false,
     children: [
       ['configuration/', 'Configuration Overview'],
+      'configuration/editors',
       'configuration/addons',
       'configuration/things',
       'configuration/items',
@@ -76,18 +77,25 @@ module.exports = [
     ]
   },
   {
-    title: 'Interfaces and Ecosystem',
-    collapsable: false,
+    title: 'User Interface Guide',
+    collapable: false,
     children: [
-      'configuration/editors',
-      ['configuration/ui/habot/', 'HABot'],
-      'configuration/habpanel',
-      ['configuration/ui/basic/', 'Basic UI'],
-      ['configuration/restdocs', 'REST API'],
-      ['configuration/apitokens', 'API Token Generation'],
+      'ui/',
+      'ui/sitemaps',
+      'ui/layout-pages',
+      'ui/map-pages',
+      'ui/floorplan-pages',
+      'ui/tabbed-pages',
+      'ui/habpanel',
       ['apps/android', 'Android App'],
       'apps/ios',
-      'apps/windows',
+      'apps/windows'
+    ]
+  },
+  {
+    title: 'Ecosystem',
+    collapsable: false,
+    children: [
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
       ['../addons/integrations/homekit/', 'Apple HomeKit'],
