@@ -881,7 +881,7 @@ rule "Start wake up light on sunrise"
 when
     Channel "astro:sun:home:rise#event" triggered
 then
-    switch(receivedEvent.getEvent()) {
+    switch(receivedEvent) {
         case "START": {
             Light.sendCommand(ON)
         }
