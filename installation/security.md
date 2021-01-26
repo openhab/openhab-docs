@@ -138,6 +138,11 @@ If this doesn't fit for you, you just have to replace `proxy_pass http://localho
 server {
     listen                                    80;
     server_name                               mydomain_or_myip;
+    
+    add_header 'Access-Control-Allow-Origin' '*' always;
+    add_header 'Access-Control-Allow_Credentials' 'true' always;
+    add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
+    add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
 
     location / {
         proxy_pass                            http://localhost:8080/;
@@ -145,6 +150,7 @@ server {
         proxy_set_header X-Real-IP            $remote_addr;
         proxy_set_header X-Forwarded-For      $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto    $scheme;
+        proxy_read_timeout                    3600;
     }
 }
 ```
@@ -207,6 +213,15 @@ Open the configuration file and **add** the following lines underneath the proxy
 ```nginx
         auth_basic                            "Username and Password Required";
         auth_basic_user_file                  /etc/nginx/.htpasswd;
+```
+
+##### Add authorization and cookie directives in NGINX Configuration
+
+This is an important new requirment in openHAB 3.0 and later versions.  This is not required prior to openHAB 3.0. In the `location /` block, you must add the following two directives underneath the `add_header` and `proxy_set_header` items respectively:
+
+```nginx
+        add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
+        proxy_set_header Authorization          "";
 ```
 
 Once done, **test and restart your NGINX service** and authentication should now be enabled on your server!
@@ -421,6 +436,12 @@ server {
 server {
     listen                          443 ssl;
     server_name                     mydomain_or_myip;
+    
+    add_header 'Access-Control-Allow-Origin' '*' always;
+    add_header 'Access-Control-Allow_Credentials' 'true' always;
+    add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
+    add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
+    add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
 
     ssl_certificate                 /etc/letsencrypt/live/mydomain/fullchain.pem; # or /etc/ssl/openhab.crt
     ssl_certificate_key             /etc/letsencrypt/live/mydomain/privkey.pem;   # or /etc/ssl/openhab.key
@@ -434,6 +455,7 @@ server {
         proxy_set_header X-Forwarded-Proto      $scheme;
         proxy_set_header Upgrade                $http_upgrade;
         proxy_set_header Connection             "Upgrade";
+        proxy_set_header Authorization          "";
         satisfy                                 any;
         allow                                   192.168.0.0/24;
         allow                                   127.0.0.1;
@@ -563,6 +585,12 @@ server {
     listen                          7443 ssl; #This is simply an unused port, it can be any number
     server_name                     your_domain.com;
 
+    add_header 'Access-Control-Allow-Origin' '*' always;
+    add_header 'Access-Control-Allow_Credentials' 'true' always;
+    add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range' always;
+    add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH' always;
+    add_header Set-Cookie X-OPENHAB-AUTH-HEADER=1;
+
     location / {
         proxy_pass                              https://localhost:8443/; #Update the port number if needed
         proxy_set_header Host                   $http_host;
@@ -571,6 +599,7 @@ server {
         proxy_set_header X-Forwarded-Proto      $scheme;
         proxy_set_header Upgrade                $http_upgrade;
         proxy_set_header Connection             "Upgrade";
+        proxy_set_header Authorization          "";
         satisfy                                 any;
         allow                                   192.168.1.0/24;
         allow                                   127.0.0.1;
