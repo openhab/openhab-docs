@@ -8,6 +8,7 @@ def add_placeholder_pages()
         "docs/configuration/iconsets/classic",
         "docs/configuration/ui/habmin",
         "docs/configuration/ui/habot",
+        "docs/configuration/ui/habpanel",
         "docs/configuration/ui/basic",
         "docs/configuration/ui/classic",
         "docs/ecosystem/alexa",
