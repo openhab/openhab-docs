@@ -9,17 +9,17 @@ title: The Console
 
 The console offers the ability to:
 
-* Monitor the [log](logging.html#karaf-console) in realtime
-* Manage [bundles](bundles.html)
-* Execute [runtime commands](runtime.html)
+- Monitor the [log](logging.html#karaf-console) in realtime
+- Manage [bundles](bundles.html)
+- Execute [runtime commands](runtime.html)
 
 ## Accessing the Console
 
 The method used to access the console depends on how openHAB was started.
 
-* When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
-* When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
-Linux package based installations can also use the command `openhab-cli console`.
+- When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
+- When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
+  Linux package based installations can also use the command `openhab-cli console`.
 
 The default username/password is **openhab:habopen**, so enter `habopen` at the password prompt.
 
@@ -148,7 +148,7 @@ To add custom parameters or overwrite the default values, you can change the con
 ### Changing the Password
 
 The password is stored in the file `users.properties`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
-By default, the line with the password contains the text `openhab = `, followed by the current password (e.g. `habopen`) or a password hash (e.g. `{CRYPT}4AE1A0FD...{CRYPT}`).
+By default, the line with the password contains the text `openhab =`, followed by the current password (e.g. `habopen`) or a password hash (e.g. `{CRYPT}4AE1A0FD...{CRYPT}`).
 
 To change the authentication password edit the file manually, replacing the password or password hash (including `{CRYPT}`) with your new password in clear text.
 Alternately, run the following Linux shell command, which will perform the replacement for you.
@@ -180,7 +180,6 @@ To enable binding to all interfaces, uncomment the line
 
 in `services/runtime.cfg`.
 
-
 ### Change the Port Number
 
 The SSH port configuration is done through the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
@@ -191,10 +190,8 @@ Alternately, run the following Linux shell command, which will perform the repla
 Substitute `1234` with your desired port number.
 Depending on your system, you may have to substitute [the directory](#console-settings-files-and-directories) at the end of the command.
 
-```shell
-sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg
-```
+```sudo sed -i -e "s/sshPort = .*/sshPort = 1234/g" /var/lib/openhab/etc/org.apache.karaf.shell.cfg```
 
-----
+## More Information
 
 Please check the [Apache Karaf reference](https://karaf.apache.org/manual/latest/) for more details.

@@ -17,7 +17,7 @@ The following instructions will guide you through the initial steps after first 
 ## Create the Admin User
 
 Once openHAB is installed and started, launch the user interface by navigating to `http://localhost:8080` (if not running locally, replace localhost with the server's address or hostname accordingly).
-If you installed from the openHABian image, you can use `http://openhab:8080`.
+If you installed from the openHABian image, you can use `http://openhabianpi:8080`.
 
 By default, the administration pages can only be accessed if you are logged in with an administrator account.
 Since there are no users yet, openHAB will ask you to create an administrator account.
@@ -61,16 +61,18 @@ You can also set your preferred measurement system (openHAB defaults to the Metr
 ### Set your geographic location (latitude and longitude) and measurement system
 
 1. In the left-hand menu under Administration, select Settings to open the Settings page.
-![initial settings](images/initial_settings.png)
+
+    ![initial settings](images/initial_settings.png)
 
 1. Under System Settings, select Regional Settings.
-![regional settings](images/regional_settings.png)
+
+    ![regional settings](images/regional_settings.png)
 
 1. Under Location, click the Map button to add your geographic coordinates.
 
 1. If you also want to set your measurement system, click "Show advanced" and choose between Metric and Imperial.
 
-![unit settings](images/units_settings.png)
+    ![unit settings](images/units_settings.png)
 
 ## Additional Settings
 

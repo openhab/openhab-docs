@@ -82,8 +82,8 @@ By installing the openHAB process as a service in Windows, you can:
 
 1. Update the newly created `C:\openHAB\userdata\etc\openHAB-wrapper.conf` to include all necessary parameters:
 
-    - Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
-    - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
+    1. Copy all the config text from the below section and paste it in your `openHAB-wrapper.conf`, replacing all existing content.
+    1. Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
     #*******************************************************
@@ -166,16 +166,12 @@ By installing the openHAB process as a service in Windows, you can:
     ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
 1. Your openHAB Windows service is now installed and running.
-    Validate proper operations by:
 
-    - Browsing to [http://localhost:8080](http://localhost:8080)
+    Validate proper operations by browsing to `http://localhost:8080` and verifying that the Windows Service is running and set to Automatic Startup type.
+    Use `services.msc` and find the `openHAB` service.
+    Or by logging in with an SSH client to the console (see info below)
 
-    - Verifying that the Windows Service is running and set to Automatic Startup type.
-        Use `services.msc` and find the `openHAB` service.
-
-        ![Windows Service](images/Windows_Service.jpg)
-
-    - Logging in with an SSH client to the console (see info below)
+    ![Windows Service](images/Windows_Service.jpg)
 
 ### File Locations
 
@@ -235,13 +231,16 @@ C:\openHAB\userdata\bin\openHAB-service.bat remove
 You can connect to openHAB's console using the the `C:\openHAB\runtime\bin\client.bat` script on the local machine.
 Alternatively, you can use a standard SSH client:
 
-- Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+1. Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 
-- Setup a session with the following parameters:
-  - Host: 127.0.0.1
-  - Port: 8101
-  - Username: `openhab`
-  - Password: `habopen`
+1. Setup a session with the following parameters:
+
+    ```text
+    Host: 127.0.0.1
+    Port: 8101
+    Username: openhab
+    Password: habopen
+    ```
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
 

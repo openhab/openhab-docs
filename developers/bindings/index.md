@@ -6,6 +6,7 @@ title: Bindings
 {% include base.html %}
 
 # Developing a Binding
+
 {:.no_toc}
 
 A binding is an extension to openHAB that integrates an external system like a software service or a hardware device.
@@ -19,6 +20,7 @@ It makes sense to briefly read over all sections to make you familiar with what 
 During development you might come back with specific questions.
 
 {::options toc_levels="2,3"/}
+
 - TOC
 {:toc}
 
@@ -117,16 +119,16 @@ For an example, our exemplary Weather binding starts and stops a scheduled job t
 The startup of a handler is divided in two essential steps:
 
 1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework.
-In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
+    In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
 
-2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
-This method is only called if all 'required' configuration parameters of the Thing are present.
-The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
+1. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
+    This method is only called if all 'required' configuration parameters of the Thing are present.
+    The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
 
-The diagram below illustrates the startup of a handler in more detail.
-The life cycle is controlled by the `ThingManager`.
+    The diagram below illustrates the startup of a handler in more detail.
+    The life cycle is controlled by the `ThingManager`.
 
-![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
+    ![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
 
 The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding.
 The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`.
@@ -153,11 +155,11 @@ After the handler is initialized, the handler must be ready to handle methods ca
 The shutdown of a handler is also divided in two essential steps:
 
 1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework.
-The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
+    The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
 
-2. Handler is disposed: `ThingHandler.disposed()` method is called.
-The framework expects `dispose()` to be non-blocking and to return quickly.
-For longer running disposals, the implementation has to take care of scheduling a separate job.
+1. Handler is disposed: `ThingHandler.disposed()` method is called.
+    The framework expects `dispose()` to be non-blocking and to return quickly.
+    For longer running disposals, the implementation has to take care of scheduling a separate job.
 
 ![thing_life_cycle_shutdown](images/thing_life_cycle_shutdown.png)
 
@@ -538,7 +540,7 @@ Currently the framework provides two base thing handler implementations for the 
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.openhab.core.config.core.status.ConfigStatusMessage`s.
 
-#### Internationalization
+#### Internationalization of Config Status Messages
 
 The framework will take care of internationalizing messages.
 
@@ -816,7 +818,7 @@ There is no explicit end to an active scan and discovery results can be provided
 If you would like assistance with enforcing a scan end pass a timeout to the `AbstractDiscoveryService` constructor.
 `stopScan` will then be called on your discovery service upon timeout expiration allowing you to stop your scan however needed.
 If a timeout is specified the scan will be considered active until the timeout expires even if `startScan` completed beforehand.
-In particular UIs such as the Paper UI will show the scan as in progress throughout the timeout.
+In particular UIs the scan will be shown as in progress throughout the timeout.
 If you override `stopScan` don't forget to call `super.stopScan` as `AbstractDiscoveryService` performs some cleanup in its version.
 If the timeout is set to 0 `stopScan` will not be called.
 
@@ -833,7 +835,7 @@ If this behavior is not appropriate for the implemented discovery service, one c
     }
 ```
 
-### Internationalization
+### Internationalization of Discovery result labels
 
 The framework will take care of internationalizing labels of discovery results if you extend the `AbstractDiscoveryService`.
 See [i18n](../utils/i18n.html#discovery) for more information.
@@ -858,12 +860,12 @@ To facilitate the development, binding developers only need to implement a `Upnp
 Here the developer only needs to implement three simple methods:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the UPnP result or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
 The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
 
@@ -918,12 +920,12 @@ Here the developer only needs to implement four simple methods:
 
 - `getServiceType` - Defines the [mDNS service type](https://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
+    The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result.
+    This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
-This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result.
+    This method is called from the discovery service to create the actual discovery result.
+    It uses the `getThingUID` method to create the thing UID of the result.
 
 ### Discovery that is bound to a Thing
 
@@ -937,11 +939,11 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-- Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/master/bundles/pom.xml).
-- Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/master/bom/openhab-addons/pom.xml).
+- Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/main/bundles/pom.xml).
+- Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/main/bom/openhab-addons/pom.xml).
 - If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
-- Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+- Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/main/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
 
 > Please make sure you add the above entries at their alphabetically correct position!
 

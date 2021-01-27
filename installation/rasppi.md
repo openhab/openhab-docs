@@ -244,7 +244,7 @@ sudo systemctl enable openhab.service
 
 You are all set.
 
-## What next?
+## What next ?
 
 You can:
 

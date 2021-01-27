@@ -94,7 +94,7 @@ To exit, use '<ctrl-d>' or 'logout'.
 openhab>
 ```
 
-Without closing the terminal, open your favorite web browser and type the following URL: [http://localhost:8080](http://localhost:8080), you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorial/first_steps.html).
+Without closing the terminal, open your favorite web browser and type the following URL: `http://localhost:8080`, you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorial/first_steps.html).
 If you installed openHAB on a different device, replace localhost with the IP address of the device.
 
 ## Updating openHAB
@@ -133,7 +133,7 @@ Assuming the openHAB directory is in `~/openhab` simply run the following comman
 
 ```shell
 cd ~/openhab
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/main/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
 ```
 
 ## Backup and Restore
