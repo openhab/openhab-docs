@@ -34,11 +34,12 @@ openHAB 3 provides a _single_ graphical user interface to modify settings, to ma
 While there are no full-scale starter and migration tutorials available yet, see the [recording of the recent 2020 openHAB virtual meetup](https://www.youtube.com/watch?v=pwZ8AOwRDEk) for a tour of the new Main UI (starting at 26:26).
 
 ::: tip Important changes for openHAB 2 users<br>
-PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.
+PaperUI and HABmin are no longer supported, they are replaced by the new Main UI.<br>
 It also provides flexible charting now so you won't require Grafana or a similar external tool any more.<br>
-v1 bindings are no longer available. The expire binding's functionality is now part of the core (item configuration stays the same).<br>
+v1 bindings are no longer available, see [this list](https://github.com/openhab/openhab-addons/issues/6179#migrated) what has been migrated to OH3.<br>
+The expire binding's functionality is now part of the core (item configuration stays the same).<br>
 File-based configuration is still available, but we recommend that everyone start over with a fresh setup built using the new Main UI.<br>
-_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your .items files._
+_Note there is an option in Main UI to bulk create Items where you can copy'n'paste the contents of your `.items` files._
 :::
 
 <table class="centered highlight">
@@ -128,11 +129,11 @@ _Note there is an option in Main UI to bulk create Items where you can copy'n'pa
 
 ### Textual vs. Graphical Configuration
 
-In openHAB 1.x, smart home configuration was done via configuration files only.
+In openHAB 1, smart home configuration was done via configuration files only.
 openHAB 2 added the general administrative web interface "Paper UI", and openHAB 3 now further streamlines input capabilities with "Main UI".
 Things and Items can still be defined either in configuration files or via the GUI.
 We highly recommend adding them to the [system database](/docs/administration/jsondb.html) via Main UI, though.
-Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing .items files.
+Note there is an option in Main UI to bulk create Items by copy and pasting the contents of existing `.items` files.
 Bulk delete is there, too.
 _Be sure to try out Semantic Modeling in Main UI_.
 
@@ -159,7 +160,7 @@ Here are some hints to avoid some common pitfalls when starting out.
 
 - Start by modelling your house using a Semantic Model in Main UI.
   Use it to create groups for rooms and apply proper semantic tags right away.
-  This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_" and
+  This will ultimately save a lot of setup work, as it will allow for group functions such as "switch off lights in _kitchen_" or _ground floor_ or _house_ and
   also enable voice assistants to properly execute your instructions.
   Be careful to apply a consistent naming scheme right in the beginning.
 - Use Main UI to manage Things. Remember that once initially configured, their configuration will not change much over time.
