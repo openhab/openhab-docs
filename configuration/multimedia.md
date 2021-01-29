@@ -31,7 +31,7 @@ The distribution comes with these options built-in:
 |---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface.                                                                                                                                                                                                                                                                         |
 | `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                             |
-| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Paper UI and HABPanel. |
+| `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by UI and HABPanel. |
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
 
@@ -46,7 +46,7 @@ javasound
 webaudio
 ```
 
-You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Audio`.
+You can define the default audio sink either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Audio`.
 
 In order to play a sound, you can use the following command on the console:
 
@@ -60,13 +60,13 @@ openhab> openhab:audio stream example.com
 
 Alternatively the [`playSound()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playSound(java.lang.String)) or [`playStream()`](https://openhab.org/javadoc/latest/org/openhab/core/model/script/actions/audio#playStream(java.lang.String)) functions can be used in DSL rules:
 
-- `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
-- `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
-- `playSound(String sink, String filename)` :	plays a sound from the sounds folder to the given sink(s)
-- `playSound(String sink, String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the given sink(s)
+- `playSound(String filename)` : plays a sound from the sounds folder to the default sink
+- `playSound(String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the default sink
+- `playSound(String sink, String filename)` : plays a sound from the sounds folder to the given sink(s)
+- `playSound(String sink, String filename, PercentType volume)` : plays a sound with the given volume from the sounds folder to the given sink(s)
 
-- `playStream(String url)` :	plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
-- `playStream(String sink, String url)` :	plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
+- `playStream(String url)` : plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
+- `playStream(String sink, String url)` : plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
 
 #### Examples
 
@@ -99,7 +99,7 @@ mactts:Ioana Ioana (ro_RO)
 mactts:Kanya Kanya (th_TH)
 ```
 
-You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the Paper UI in `Configuration->System->Voice`.
+You can define a default TTS service and a default voice to use either by textual configuration in `$OPENHAB_CONF/services/runtime.cfg` or in the UI in `Settings->Voice`.
 
 In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
@@ -140,7 +140,7 @@ There are two implementations available by default:
 | Interpreter | Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |-------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.                                                                                                                                                                                                                                                                                                             |
-| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/openhab/openhab-core/blob/master/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L48). |
+| `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/openhab/openhab-core/blob/main/bundles/org.openhab.core.voice/src/main/java/org/openhab/core/voice/internal/text/StandardInterpreter.java#L48). |
 
 To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
 

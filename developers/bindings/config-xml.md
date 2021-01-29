@@ -31,9 +31,10 @@ The description can include limited HTML to enhance the display of this informat
 
 The following HTML tags are allowed -: ```<b>, <br>, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <i>, <p>, <small>, <strong>, <sub>, <sup>, <ul>, <ol>, <li>```.
 These must be inside the XML escape sequence - eg.
-```<description><![CDATA[ HTML marked up text here ]]></description>```.
+`<description><![CDATA[ HTML marked up text here ]]></description>`.
 
 ## XML Structure for Configuration Descriptions
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-descriptions
@@ -149,7 +150,6 @@ The above filter is evaluated as follows:
 
 ```text
 (type=Switch OR type=Dimmer) AND (tag=Light OR tag=Heating)
-
 ```
 
 Similarly, the <strong>Channel</strong> context can contain criteria to filter channels based on <strong>kind</strong> field.
@@ -164,6 +164,7 @@ For example:
 
 Groups allow parameters to be grouped together into logical blocks so that the user can find the parameters they are looking for.
 A parameter can be placed into a group so that the UI knows how to display the information.
+
 <table>
   <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
   <tr><td>group.name</td><td>The group name - this is used to link the parameters into the group, along with the groupName option in the parameter (mandatory).</td></tr>
@@ -178,7 +179,7 @@ The full XML schema for configuration descriptions is specified in the [openHAB 
 **Hints:**
 
 - Although the attribute `uri` is optional, it *must* be specified in configuration description files.
-Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
+  Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
 
 ## Example
 

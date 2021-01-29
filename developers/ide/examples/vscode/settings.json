@@ -7,7 +7,7 @@
     "java.saveActions.organizeImports": true,
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.codeGeneration.generateComments": true,
-    "java.format.settings.url": "https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml",
+    "java.format.settings.url": "https://raw.githubusercontent.com/openhab/static-code-analysis/main/codestyle/src/main/resources/openhab_codestyle.xml",
     "java.format.settings.profile": "openHAB",
     "[java]": {
         "editor.defaultFormatter": "redhat.java",

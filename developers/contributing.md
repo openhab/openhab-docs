@@ -89,11 +89,6 @@ sure to post a comment after pushing. The new commits will show up in the pull
 request automatically, but the reviewers will not be notified unless you
 comment.
 
-Before the pull request is merged, make sure that you squash your commits into
-logical units of work using `git rebase -i` and `git push -f`. After every
-commit the test suite should be passing. Include documentation changes in the
-same commit so that a revert would remove all traces of the feature or fix.
-
 Commits that fix or close an issue should include a reference like `Closes #XXX`
 or `Fixes #XXX`, which will automatically close the issue when merged.
 
@@ -150,7 +145,9 @@ By making a contribution to this project, I certify that:
 
 then you just add a line to every git commit message:
 
-    Signed-off-by: Joe Smith <joe.smith@email.com>
+ ```text
+ Signed-off-by: Joe Smith <joe.smith@email.com>
+ ```
 
 using your real name (sorry, no pseudonyms or anonymous contributions.) and an
 e-mail address under which you can be reached (sorry, no github noreply e-mail
@@ -161,9 +158,11 @@ Additionally can also sign off commits automatically by adding the `-s` or `--si
 
 If your commit contains code from others as well, please ensure that they certify the DCO as well and add them with an "Also-By" line to your commit message:
 
-    Also-by: Ted Nerd <ted.nerd@email.com>
-    Also-by: Sue Walker <sue.walker@email.com>
-    Signed-off-by: Joe Smith <joe.smith@email.com>
+```text
+  Also-by: Ted Nerd <ted.nerd@email.com>
+  Also-by: Sue Walker <sue.walker@email.com>
+  Signed-off-by: Joe Smith <joe.smith@email.com>
+```
 
 #### Small Patch Exception
 
@@ -196,8 +195,8 @@ You don't even need to know Git.
 - You can preview your changes under the "Preview changes" tab.
 - Add a title and optional description for your proposed change at the bottom of the editor.
 - The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well.
-Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.
-Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
+  Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.
+  Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
 - Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
 
 If you prefer to use Git you can of course use the code contribution process for documentation contributions as well.

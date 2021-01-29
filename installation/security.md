@@ -62,7 +62,7 @@ There are many different solutions for VPN, so we cannot give any specific advic
 
 ### myopenHAB Cloud Service
 
-You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
+You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/main/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
 openHAB will see these incoming requests as originating from the local loopback interface.
 
 The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](https://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
@@ -604,7 +604,7 @@ Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make 
 We do this 'double' redirect to take advantage of the GUI certificate handling in DSM - this is the equivalent of CertBot for a linux installation.
 :::
 
-Give it a try again - you should now get redirected to <https://your-hostname.com> from <http://your-hostname.com>, and should receive a username and password prompt before you see the openHAB landing page.
+Give it a try again - you should now get redirected to `https://your-hostname.com` from `http://your-hostname.com`, and should receive a username and password prompt before you see the openHAB landing page.
 
 If you need to troubleshoot the nginx server, SSH into your DiskStation, and check the NGINX error log:
 

@@ -22,28 +22,31 @@ Instead, it is publishing metrics regularly on a preconfigured MQTT topic in a s
 ```json
 {"light": 5424, "moisture": 30, "temperature": 21.4, "conductivity": 1020, "battery": 100}
 ```
+
 {::options toc_levels="2..4"/}
 
 - TOC
 {:toc}
 
 ## Prerequisites
+
 - A basic understanding of how MQTT works (HiveMQ provides a good [tutorial](https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/)
 - An installed and configured MQTT Broker (e.g. Mosquitto, which can be installed through openHABian if that is how you installed openHAB)
 - A MiFlora device configured to connect to the MQTT Broker, or an MQTT client application (e.g. [MQTT Explorer](https://mqtt-explorer.com/), [MQTT.fx](http://mqttfx.org/) that allows one to publish and subscribe to MQTT topics
 
 ## Install the Binding and Transformation
+
 This device publishes JSON formatted messages, so we need to install an add-on that can process JSON: the JSONPath Transformation.
 A Transformation takes incoming data and transformes is somehow.
 In this case it will extract certain fields from the JSON.
 From Settings, click on Transformations under Add-ons.
 
-![](images/choose_transformation.png)
+![choose transformation](images/choose_transformation.png)
 
 Click on the blue "+" button and find JSONPath Transformation.
 Click on it, then click Install.
 
-![](images/install_jsonpath.png)
+![install_jsonpath](images/install_jsonpath.png)
 
 Wait for it to disappear from the list, then click back twice to go back to Settings.
 
@@ -52,6 +55,7 @@ Click on it, then click Install.
 Wait for it to disappear from the list, then go back twice to return to the main Settings screen.
 
 ## Create the Bridge Thing
+
 First we need to add the broker, which is a Bridge.
 Click on Things.
 
@@ -59,15 +63,16 @@ Click on the blue "+" button.
 
 Choose "MQTT Binding", then choose "MQTT Broker".
 
-![](images/mqtt_things.png)
+![mqtt things](images/mqtt_things.png)
 
 Fill in the details to connect to the broker.
 You may also alter its ID and name.
 If you need credentials to connect to the broker, click on "Show advanced" to reveal additional options, including Username and Password.
 
-![](images/mqtt_bridge_config.png)
+![mqtt bridge config](images/mqtt_bridge_config.png)
 
 ## Create the Generic MQTT Thing
+
 Now we have to add the plant sensor itself as a generic Thing.
 
 On the Things page, first verify that the broker is indeed present and online; if so, click on the blue "+" button then on the MQTT Binding.
@@ -86,7 +91,7 @@ Back on the Things page, choose the Thing you created.
 It should be marked online, but it will not have any Channels on the Channel tab.
 You have to configure them yourself.
 
-![](images/mqtt_generic_thing.png)
+![mqtt generic thing](images/mqtt_generic_thing.png)
 
 Click on Add Channel.
 
@@ -102,16 +107,16 @@ Click on "Show advanced" above MQTT State Topic to reveal more settings.
 
 Scroll down, find the "Incoming Value Transformations" setting, and specify the transformation to apply there:
 
-```
+```json
 JSONPATH:$.temperature
 ```
 
-![](images/mqtt_temp_channel.png)
+![mqtt temp channel](images/mqtt_temp_channel.png)
 
 Click Done in the title bar to add the channel.
 It should now be added to the Channels tab.
 
-![](images/mqtt_temp_channel_created.png)
+![mqtt temp channel created](images/mqtt_temp_channel_created.png)
 
 Repeat the procedure for the other channels:
 
@@ -126,7 +131,7 @@ All channels should specify the MQTT topic where the JSON message is published.
 
 If you want to check the configuration for a channel, or if you made a mistake while adding it, open the channel details by clicking on it, and choose Configure Channel.
 
-![](images/mqtt_config_channel.png)
+![mqtt config channel](images/mqtt_config_channel.png)
 
 Note that you cannot change the channel type if you picked the wrong one.
 In that case, remove the channel by clicking on Remove Channel and then add it again.

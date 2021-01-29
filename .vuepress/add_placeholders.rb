@@ -3,19 +3,21 @@
 def add_placeholder_pages()
     puts ">>> Adding placeholder pages for preview"
     [
+        "addons/integrations/homekit",
+        "docs/apps/android.md",
         "docs/configuration/iconsets/classic",
         "docs/configuration/ui/habmin",
         "docs/configuration/ui/habot",
+        "docs/configuration/ui/habpanel",
         "docs/configuration/ui/basic",
         "docs/configuration/ui/classic",
         "docs/ecosystem/alexa",
         "docs/ecosystem/google-assistant",
         "docs/ecosystem/ifttt",
         "docs/ecosystem/mycroft",
-        "addons/integrations/homekit",
+        "docs/installation/openhabian.md",
         "link/homekit",
-        "link/openhabcloud",
-        "docs/apps/android.md"
+        "link/openhabcloud"
     ].each { |path|
         puts " -> #{path}"
         page = path

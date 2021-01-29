@@ -64,7 +64,7 @@ Bundles are named according to the following convention:
 where
 
 - **prefix** is the first element to categorize the bundle.
-  For addons this is `org.openhab`. 
+  For addons this is `org.openhab`.
 - **type** is the add-on type, e.g. "binding", "persistence", or "ui"
 - **id** is the identifier for this bundle
 

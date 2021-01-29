@@ -33,11 +33,11 @@ From then on, everything else is configured at the application layer for that en
 From start to finish, the process for fully configuring a physical entity represented by a Thing looks like this:
 
 1. Identify the binding required for the Thing
-2. Install the binding if it has not already been installed
-3. Define and configure the Thing
-4. Identify the Channels provided by the Thing
-5. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
-6. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
+1. Install the binding if it has not already been installed
+1. Define and configure the Thing
+1. Identify the Channels provided by the Thing
+1. [Add Items]({{base}}/configuration/items.html) and link them to the Thing's Channels
+1. At this point Items can be used to control the Thing or consume its information in e.g. [Sitemaps]({{base}}/configuration/sitemaps.html) or [Rules]({{base}}/configuration/rules-dsl.html)
 
 There are two methods for defining Things provided by the various bindings:
 through [discovery]({{base}}/concepts/discovery.html) or by manual definition in configuration text files.
@@ -84,7 +84,6 @@ To help organizing your things, you also may define a location (`Location` in th
 Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
-
 **Examples:**
 
 ```xtend
@@ -110,8 +109,8 @@ Bridges can be defined together with contained things. The following configurati
 
 ```xtend
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
-	Thing 0210 bulb1 [ lightId="1" ]
-	Thing 0210 bulb2 [ lightId="2" ]
+ Thing 0210 bulb1 [ lightId="1" ]
+ Thing 0210 bulb2 [ lightId="2" ]
 }
 ```
 
@@ -160,11 +159,11 @@ It is also possible to add additional channels to existing things and for bindin
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		State String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		State Number : customChannel2 []
+ Channels:
+  State String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  State Number : customChannel2 []
 }
 ```
 
@@ -176,11 +175,11 @@ As state channels are the default channels, you can omit the `State` keyword, th
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		String : customChannel1 "My Custom Channel" [
-			configParameter="Value"
-		]
-		Number : customChannel2 []
+ Channels:
+  String : customChannel1 "My Custom Channel" [
+   configParameter="Value"
+  ]
+  Number : customChannel2 []
 }
 ```
 
@@ -190,10 +189,10 @@ You may optionally give the channel a proper label (like “My Custom Channel”
 
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
-	Channels:
-		Trigger String : customChannel1 [
-			configParameter="Value"
-		]
+ Channels:
+  Trigger String : customChannel1 [
+   configParameter="Value"
+  ]
 }
 ```
 
@@ -235,11 +234,11 @@ If you decide not to, then the label from the referenced channel type definition
 
 ### Linking Items
 
-Items can be linked to Channels of discovered or manually defined Things inside Paper UI or inside configuration files.
+Items can be linked to Channels of discovered or manually defined Things inside UI or inside configuration files.
 For more details about Item definition and usage, please refer to the [Items configuration article]({{base}}/configuration/items.html).
 
 It is important to note, that Channels of discovered Things can also be linked to Items defined in `.items` files.
-In order to link a Thing to an Item in an `.items` file, open the Thing in Paper UI under *Configuration → Things*.
+In order to link a Thing to an Item in an `.items` file, open the Thing in UI under `Settings → Things`.
 In the list of Thing Channels, look for the Channel you wish to link to an Item and copy the Channel's ID.
 For instance, a Z-Wave switch might have a Switch Channel that has an ID like this:
 

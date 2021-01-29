@@ -29,13 +29,14 @@ The following steps will only need to be done once to setup both VSCode and your
 
     Either globally define the formatting options via ```Files->Preferences->Settings->Extendions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
- Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/settings.json) for the recommended settings (or simply wish to copy the URLs in the above image).
+ Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/settings.json) for the recommended settings (or simply wish to copy the URLs in the above image).
 
 ## Steps for each Bundle
 
 The following steps will show you how to setup a specific bundle for development with VSCode.  These steps will show how to setup the Russound bundle but are generic to any bundle in the system.
 
 1. Ensure the bundle builds correctly (natively with maven)
+
    1. Open console to the bundle location (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound`)
    1. `mvn clean install -DskipChecks` in the console to build the bundle
    1. Should produce a jar file in the 'target' directory of the bundle(example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\target\org.openhab.binding.russound-2.5.0-SNAPSHOT.jar`)
@@ -46,7 +47,7 @@ The following steps will show you how to setup a specific bundle for development
 
     ![define .vscode](images/ide_setup_vscode_folder.png)
 
-1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
+1. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
 
     ![define tasks.json](./images/ide_setup_vscode_folder_tasks.png)
 
@@ -63,13 +64,11 @@ The following steps will show you how to setup a specific bundle for development
 1. Start the openHAB instance with the debug option - `start.bat debug` from a console in the openHAB home directory.  You should see the following line printed somewhere in the karaf console:
  `Listening for transport dt_socket at address: xxxx` (where xxxx should be 5005)
 
-1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
+1. Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/main/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
 
     ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 
-1. Edit launch.json and ...
-
-    ![launch.json changes](./images/ide_setup_vscode_launch.png)
+1. Edit launch.json and ...<br>![launch.json changes](./images/ide_setup_vscode_launch.png)
 
     1. Set the `port` to xxxx (from step 7).  This can be skipped if xxxx was 5005 from step 7.
     1. Set the `hostName` to the hostname running openHAB.  This can be skipped if running locally (localhost)
@@ -80,7 +79,6 @@ The following steps will show you how to setup a specific bundle for development
     1. Shutdown any instances of openHAB
     1. Press `CTRL-SHIFT-P -> Tasks: Run Task -> Start openHAB (Debug)` to start an openHAB instance in debug mode.  You should see openHAB startup in a new VSCode terminal.
     1. Press F5 (or bring up debug in VSCode and choose the "Debug (Attach) - openHAB" configuration) and the following should occur in the VSCode terminal
-
         1. The maven compile occuring (successfully)
         1. The resulting JAR is copied to the openHAB addons directory (`openhab_addons`)
         1. Connecting to the openHAB instance (the debug call stack should show a bunch of openHAB type threads running)

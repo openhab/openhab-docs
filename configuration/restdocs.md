@@ -11,7 +11,7 @@ Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspe
 This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke actions that can change the state of Items or influence the behavior of other elements of openHAB.
 Interactions with the REST API are based on the http protocol.
 Access over the Internet to the REST API is possible, but this represents a significant security risk.
-Users are encouraged to [ensure safe and secure connections](http://docs.openhab.org/installation/security.html).
+Users are encouraged to [ensure safe and secure connections](/docs/installation/security.html).
 Be aware that the documentation of the REST API may not be automatically installed, but once installed it is accessible through the openHAB dashboard.
 
 ## REST API Examples
@@ -83,21 +83,9 @@ You can also do this in a single, non-interactive command, in this case **add `-
 ### With an API token
 
 This method is often recommended in order to keep your passwords safe and avoid to store them without encryption in any public places.
-To authenticate with an API token, **apaddpend `-u '{API_TOKEN}:'` to the commandline.**
+To authenticate with an API token, **add `-u '{API_TOKEN}:'` to the commandline.**
 
 You can manage all access tokens in your profile settings in the Main UI.
-
-### Disable authentication
-
-It is possible to disable authentication.
-Stop openhab and add this part to ```$OPENHAB_USERDATA/etc/org.apache.karaf.features.xml``` before ```</featuresProcessing>```:
-
-```
-    <blacklistedFeatures>
-        <feature>openhab-*-auth</feature>
-    </blacklistedFeatures>
-```
-Once openhab is restarted authentication will be disabled.
 
 ## Additional Considerations
 

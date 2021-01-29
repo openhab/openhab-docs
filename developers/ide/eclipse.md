@@ -83,12 +83,12 @@ If you already have Eclipse installed it is recommended to perform a separate Ec
 1. After all tasks are finished you are ready to start developing.
 
 1. If you need additional libraries see the [Build System](../buildsystem.html) documentation.
-For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
+    For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
 
 ## Working with Add-ons
 
 To easily run, modify and debug an add-on the `openHAB Development` setup installs and imports a demo project that contains a complete openHAB environment to run and debug an add-on.
-This mechanism replaces the add-on installation process via the PaperUI that you would use outside the IDE.
+This mechanism replaces the add-on installation process via the UI that you would use outside the IDE.
 
 ### Running Add-ons
 
@@ -107,7 +107,7 @@ The following files are of interest for the execution environment:
 ```
 
 1. To let the demo project know about the add-on, the add-on must be added to the demo project `pom.xml`.
-Here is an example for the `astro` binding:
+    Here is an example for the `astro` binding:
 
     ```xml
         <dependency>
@@ -146,11 +146,11 @@ Here is an example for the `astro` binding:
 
 1. Start openHAB from the IDE by clicking "Run OSGi" (upper right of the `app.bndrun` window).
 
-1. You can check that openHAB is running with your browser by going to: `http://localhost:8080/paperui/` (the last `/` is important!)
+1. You can check that openHAB is running with your browser by going to: `http://localhost:8080/` (the last `/` is important!)
 
 1. You can check log output in the `Console` tab at the bottom.
 
-1. Check the chosen binding is active in `Paper UI > Configuration > Bindings`
+1. Check the chosen binding is active in `UI > Settings > Bindings`
 
 View all the above steps in a single animation:
 

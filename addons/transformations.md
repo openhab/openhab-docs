@@ -23,7 +23,7 @@ The relevant transformation service needs to be installed via the paperUI before
 Be aware, that some Transformation services rely on transformation files, while others work by directly providing the transformation logic.
 Transformation files need to be placed in the directory `$OPENHAB_CONF/transform`.
 
-1.  Item and Sitemap Labels
+1. Item and Sitemap Labels
 
      Transformations used in the [state/value part]({{base}}/configuration/items.html#state-transformations) of labels are applied **on the fly**.
      While the **transformed value** will (for example) be visible on a Sitemap, the **original value** is stored in the Item.
