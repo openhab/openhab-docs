@@ -5,7 +5,7 @@ title: ZMNHMD - ZWave
 
 {% include base.html %}
 
-# ZMNHMD Water meter and leakage detector with valve control
+# ZMNHMD Smart leak protector
 This describes the Z-Wave device *ZMNHMD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhmd_00_000```.
 
 The device is in the category of *Valve*, defining Valves used to control water or gas. e.g. a flow stop valve..

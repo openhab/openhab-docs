@@ -6,9 +6,9 @@
                       https://openhab.org/schemas/thing-description/v1.0.0">
 
   <thing-type id="aeotec_zwa009_00_000" listed="false">
-    <label>ZWA009 Small sensor that offers monitoring of temperature, humidity, dew and mold.</label>
+    <label>ZWA009 Temperature and Humidity Sensor</label>
     <description><![CDATA[
-Small sensor that offers monitoring of temperature, humidity, dew and mold.<br /> <h1>Overview</h1><p>Small sensor that offers monitoring of temperature, humidity, dew and mold. Uses a CR2477 battery with up to 2 years' lifespan.</p> <br /> <h2>Inclusion Information</h2><p>Triple click the intrusion (button on the front) button.<br /></p> <br /> <h2>Exclusion Information</h2><p>Triple click the intrusion (button on the front) button.</p> <br /> <h2>Wakeup Information</h2><p>Click the intrusion (button on the front) button.<br /></p>
+Temperature and Humidity Sensor<br /> <h1>Overview</h1><p>Small sensor that offers monitoring of temperature, humidity, dew and mold. Uses a CR2477 battery with up to 2 years' lifespan.</p> <br /> <h2>Inclusion Information</h2><p>Triple click the intrusion (button on the front) button.<br /></p> <br /> <h2>Exclusion Information</h2><p>Triple click the intrusion (button on the front) button.</p> <br /> <h2>Wakeup Information</h2><p>Click the intrusion (button on the front) button.<br /></p>
     ]]></description>
     <category>Sensor</category>
 
@@ -56,8 +56,9 @@ Small sensor that offers monitoring of temperature, humidity, dew and mold.<br /
       <property name="vendor">Aeotec Limited</property>
       <property name="modelId">ZWA009</property>
       <property name="manufacturerId">0371</property>
-      <property name="manufacturerRef">0102:0009</property>
+      <property name="manufacturerRef">0002:0009,0102:0009</property>
       <property name="dbReference">1336</property>
+      <property name="defaultAssociations">1</property>
     </properties>
 
     <!-- CONFIGURATION DESCRIPTIONS -->
@@ -231,7 +232,9 @@ This parameter helps reset configuration parameters and the device to factory de
       <!-- ASSOCIATION DEFINITIONS -->
       <parameter name="group_1" type="text" groupName="association" multiple="true">
         <label>1: Lifeline</label>
-        <description>Lifeline</description>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <multipleLimit>5</multipleLimit>
       </parameter>
 

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="zooz_zen71_00_000" listed="false">
+    <label>ZEN71 Paddle Switch (On/Off)</label>
+    <description><![CDATA[
+Paddle Switch (On/Off)<br /> <h1>Overview</h1><p>Z-Wave on/off paddle switch, 700 series, operating in compatibility mode.<br /></p> <br /> <h2>Inclusion Information</h2><p>1.  Put hub in inclusion mode<br /></p><p>2.  Tap UP three (3) times<br /></p> <br /> <h2>Exclusion Information</h2><p>1.  Bring hub close to switch, if possible</p><p>2.  Put hub in exclusion mode</p><p>3.  Tap DOWN three (3) times<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_binary" typeId="switch_binary">
+        <label>Switch</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_SWITCH_BINARY</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Zooz</property>
+      <property name="modelId">ZEN71</property>
+      <property name="manufacturerId">027A</property>
+      <property name="manufacturerRef">7000:A001</property>
+      <property name="dbReference">1340</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_0" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>1: On/Off Paddle Orientation</label>
+        <description><![CDATA[
+Reverse default on/off operation or set to toggle mode<br /> <h1>Overview</h1><p>Choose if you want the upper paddle to turn the light on or turn the light off when tapped.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Upper paddle turns the light on, lower paddle turns it off (default)</option>
+          <option value="1">Upper paddle turns the light off, lower paddle turns it on</option>
+          <option value="2">Any paddle turns light on/off</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>2: LED Indicator Control</label>
+        <description><![CDATA[
+Adjust LED function<br /> <h1>Overview</h1><p>Choose if you want the LED indicator to turn on when the switch (light) is on or off, or if you want it to remain on or off at all times.</p><p>NOTE: tap the upper paddle 6 times quickly to change this mode.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">LED indicator is on when switch is off, LED indicator is off when swit</option>
+          <option value="1">LED indicator is on when switch is on, LED indicator is off when switc</option>
+          <option value="2">LED indicator is always OFF</option>
+          <option value="3">LED indicator is always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_3_4" type="integer" groupName="configuration">
+        <label>3: Auto Turn-Off Timer</label>
+        <description><![CDATA[
+How long the switch remains on<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-off timer function (the time after which you want the switch to automatically turn off once it has been turned on).</p><p>Values other than 0, up to 65535, are the timer length, in minutes.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_4" type="integer" groupName="configuration">
+        <label>5: Auto Turn-On Timer</label>
+        <description><![CDATA[
+How long the switch remains off<br /> <h1>Overview</h1><p>Use this parameter to enable or disable the auto turn-on timer function (the time after which you want the switch to automatically turn on once it has been turned off).</p><p>Values other than 0, up to 65535, are the timer length, in minutes.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Timer disabled (default)</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>8: On Off Status After Power Failure</label>
+        <description><![CDATA[
+How switch reacts to power failures<br /> <h1>Overview</h1><p>Set the on off status for the switch after power failure.</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Forced to OFF (regardless of state prior to power outage)</option>
+          <option value="1">Forced to ON (regardless of state prior to power outage)</option>
+          <option value="2">Remembers and restores on/off status after power failure (default)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_9_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>9: Enable/Disable Scene Control</label>
+        <description><![CDATA[
+Whether scene control functionality is enabled<br /> <h1>Overview</h1><p>Enable or disable scene control functionality for quick double tap triggers.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Scene control disabled (default)</option>
+          <option value="1">Scene control enabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_11_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>11: Smart Bulb Mode: Enable/Disable Paddle</label>
+        <description><![CDATA[
+Allow or disallow local control (paddle)<br /> <h1>Overview</h1><p>Enable or disable local on/off control. If enabled, you’ll only be able to control the connected light via Z-Wave. Scenes and other functionality will still be available through paddles.</p><p>NOTE: tap the upper paddle 10 times quickly to change this mode. NOTE: hold the lower paddle for 10 seconds until the LED indicator starts blinking, then within 2 seconds, tap the upper paddle 5 times quickly to change this mode. The LED indicator will stay solid green for 3 seconds to confirm the change.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Physical paddle control disabled</option>
+          <option value="1">Physical paddle control enabled (default)</option>
+          <option value="2">Physical paddle and Z-Wave control disabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_12_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>12: 3-Way Switch Type</label>
+        <description><![CDATA[
+Two options for type of 3-way switch<br /> <h1>Overview</h1><p>Choose the type of 3-way switch you want to use with this switch in a 3-way set-up.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Regular mechanical 3-way on/off switch (default)</option>
+          <option value="1">Momentary switch, click once to change status (light on or off)</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_13_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>13: Reporting Behavior for Parameter 11</label>
+        <description><![CDATA[
+Set reporting behavior for disabled physical control<br /> <h1>Overview</h1><p>Whether to ignore status and not change LED state when physical control (11) disabled.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Switch always reports status and changes LED state (default)</option>
+          <option value="1">No status or LED state change when physical control disabled</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <parameter name="config_15_1" type="integer" groupName="configuration"
+                 min="0" max="2">
+        <label>15: LED Brightness Level</label>
+        <description><![CDATA[
+How bright the LED is<br /> <h1>Overview</h1><p>Choose the LED indicator's brightness level.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Bright (100%)</option>
+          <option value="1">Medium (60%) (default)</option>
+          <option value="2">Low (30%)</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>16: Association Reports</label>
+        <description><![CDATA[
+How the switch reports paddle control<br /> <h1>Overview</h1><p>Choose how the switch reports its status back to the hub.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Z-Wave control = binary; paddle control = basic set</option>
+          <option value="1">Z-Wave control and paddle control = binary</option>
+        </options>
+        <advanced>true</advanced>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

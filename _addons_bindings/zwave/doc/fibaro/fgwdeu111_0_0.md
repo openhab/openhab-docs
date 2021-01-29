@@ -548,17 +548,9 @@ Available values:
 4 – Key pressed 3 times
 
 8 – Key hold down and key released
-The following option values may be configured, in addition to values in the range 0 to 15 -:
+Values in the range 0 to 15 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | no scenes |
-| 1 | Key pressed once |
-| 2 | Key pressed twice |
-| 4 | Key pressed 3 times |
-| 8 | Key held down and released |
-
-The manufacturer defined default value is ```0``` (no scenes).
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 

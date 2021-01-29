@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="inovelli_lzw45_00_000" listed="false">
+    <label>LZW45 Red Series - RGBTW Lightstrip</label>
+    <description><![CDATA[
+Red Series - RGBTW Lightstrip<br /> <h1>Overview</h1><p>The LZW45 Inovelli RGBTW Smart LED Strip is the first Z-Wave enabled individually addressable lightstrip that works with many different hubs and gateways and allows remote control from anywhere in the world.<br /></p> <br /> <h2>Inclusion Information</h2><p>Tap A button (rectangle) 3x</p> <br /> <h2>Exclusion Information</h2><p>Tap A button (rectangle) 3x<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>LightBulb</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="meter_watts" typeId="meter_watts">
+        <label>Electric meter (watts)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_W</property>
+        </properties>
+      </channel>
+      <channel id="meter_kwh" typeId="meter_kwh">
+        <label>Electric meter (kWh)</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_METER;type=E_KWh</property>
+        </properties>
+      </channel>
+      <channel id="meter_reset" typeId="meter_reset">
+        <label>Meter reset</label>
+        <properties>
+          <property name="binding:*:OnOffType">COMMAND_CLASS_METER</property>
+        </properties>
+      </channel>
+      <channel id="color_color" typeId="color_color">
+        <label>Color Control</label>
+        <properties>
+          <property name="binding:*:HSBType">COMMAND_CLASS_SWITCH_COLOR</property>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="color_temperature" typeId="color_temperature">
+        <label>Color Temperature</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_COLOR;colorMode=DIFF_WHITE</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Inovelli</property>
+      <property name="modelId">LZW45</property>
+      <property name="manufacturerId">031E</property>
+      <property name="manufacturerRef">000A:0001</property>
+      <property name="dbReference">1346</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_1_1" type="integer" groupName="configuration">
+        <label>1: # of Pixels</label>
+        <description><![CDATA[
+When individually addressable LEDs are used, this parameter tells the controller the number of pixels that are attached.<br /> <h1>Overview</h1><p>When individually addressable LEDs are used, this parameter tells the controller the number of pixels that are attached. 0 - Automatic recognition of pixels. 1..130 - Manually set the number of pixels.</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Auto</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_2_1" type="integer" groupName="configuration">
+        <label>2: Dimming Speed</label>
+        <description><![CDATA[
+This changes the speed in which the lightstrip dims up or down.<br /> <h1>Overview</h1><p>This changes the speed in which the lightstrip dims up or down. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. 0 - Instant, 1 - Fast .. 98 - Slow</p>
+        ]]></description>
+        <default>3</default>
+        <options>
+          <option value="0">Instant</option>
+          <option value="1">Fast</option>
+          <option value="98">Slow</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_3_1" type="integer" groupName="configuration">
+        <label>3: Ramp Rate</label>
+        <description><![CDATA[
+This changes the speed in which the lightstrip turns on or off.<br /> <h1>Overview</h1><p>This changes the speed in which the lightstrip turns on or off. For example, when a user sends the switch a basicSet(value: 0xFF) or basicSet(value: 0x00), this is the speed in which those actions take place. A setting of 0 should turn the light immediately on or off (almost like an on/off switch). Increasing the value should slow down the transition speed. A setting of 99 should keep this in sync with parameter 2. 0 - Instant. 1 - Fast .. 98 - Slow. 99 - Keep in sync with parameter 2</p>
+        ]]></description>
+        <default>99</default>
+        <options>
+          <option value="0">Instant</option>
+          <option value="1">Fast</option>
+          <option value="98">Slow</option>
+          <option value="99">Sync with Parameter 2</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_4_1" type="integer" groupName="configuration"
+                 min="1" max="45">
+        <label>4: Minimum Level</label>
+        <description><![CDATA[
+The minimum level that the strip can be dimmed to.<br /> <h1>Overview</h1><p>The minimum level that the strip can be dimmed to. Useful when the user has an LED strip that does not turn on or flickers at a lower level.</p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_5_1" type="integer" groupName="configuration"
+                 min="55" max="99">
+        <label>5: Maximum Level</label>
+        <description><![CDATA[
+The maximum level that the strip can be dimmed to.<br /> <h1>Overview</h1><p>The maximum level that the strip can be dimmed to. Useful when the user has an LED strip that reaches its maximum level before the dimmer value of 99.</p>
+        ]]></description>
+        <default>99</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_6_2" type="integer" groupName="configuration">
+        <label>6: Auto Off Timer</label>
+        <description><![CDATA[
+Automatically turns the strip off after this many seconds.<br /> <h1>Overview</h1><p>Automatically turns the strip off after this many seconds. When the strip is turned on a timer is started that is the duration of this setting. When the timer expires, the strip is turned off. 0 - Auto off is disabled</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_7_1" type="integer" groupName="configuration">
+        <label>7: Default Level (Local)</label>
+        <description><![CDATA[
+Default level for the strip when it is powered on from the local switch.<br /> <h1>Overview</h1><p>Default level for the strip when it is powered on from the local switch. A setting of 0 means that the switch will return to the level that it was on before it was turned off. 0 - Previous</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Previous</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_8_1" type="integer" groupName="configuration">
+        <label>8: Default Level (Z-Wave)</label>
+        <description><![CDATA[
+Default level for the dimmer when it is powered on from a Z-Wave command (i.e. BasicSet(0xFF).<br /> <h1>Overview</h1><p>Default level for the dimmer when it is powered on from a Z-Wave command (i.e. BasicSet(0xFF). A setting of 0 means that the switch will return to the level that it was on before it was turned off. 0 - Previous</p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Previous</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_9_4" type="integer" groupName="configuration"
+                 min="0" max="6500">
+        <label>9: Default Color</label>
+        <description><![CDATA[
+Byte(3-2): Values between 2700-6500 represent a color temperature. Byte(1-0): Values between 1-360 represent the color on the Hue color wheel. The value of 361 represents a random color and a value of 0 represents the previous color.<br /> <h1>Overview</h1><p>Byte(3-2): Values between 2700-6500 represent a color temperature. Byte(1-0): Values between 1-360 represent the color on the Hue color wheel. The value of 361 represents a random color and a value of 0 represents the previous color.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_10_1" type="integer" groupName="configuration">
+        <label>10: State after power Restored</label>
+        <description><![CDATA[
+The state the switch should return to once power is restored after power failure.<br /> <h1>Overview</h1><p>The state the switch should return to once power is restored after power failure. 0 - Off. 1 - Default Color / Level (Parameter 9). 2 - Previous</p>
+        ]]></description>
+        <default>2</default>
+        <options>
+          <option value="0">Off</option>
+          <option value="1">Default Color/Level (P9)</option>
+          <option value="2">Previous</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_17_1" type="integer" groupName="configuration">
+        <label>17: Active Power Reports</label>
+        <description><![CDATA[
+The power level change that will result in a new power report being sent.<br /> <h1>Overview</h1><p>The power level change that will result in a new power report being sent. The value is a percentage of the previous report. 0 = disabled.<br /></p>
+        ]]></description>
+        <default>10</default>
+        <options>
+          <option value="0">Disabled</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_18_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>18: Periodic Power &amp; Energy Reports</label>
+        <description><![CDATA[
+Time period between consecutive power &amp; energy reports being sent (in seconds).<br /> <h1>Overview</h1><p>Time period between consecutive power &amp; energy reports being sent (in seconds). The timer is reset after each report is sent</p>
+        ]]></description>
+        <default>3600</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration"
+                 min="0" max="100">
+        <label>19: Active Energy Reports</label>
+        <description><![CDATA[
+Energy reports Energy level change which will result in sending a new energy report.<br /> <h1>Overview</h1><p>Energy reports Energy level change which will result in sending a new energy report. Available settings: 0 - energy reports disabled, 1-127 (0.01-1.27 kWh) - report triggering threshold,</p><p>Default setting: 10 (0.1 kWh)</p>
+        ]]></description>
+        <default>10</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_21_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>21: Quick Strip Effect</label>
+        <description><![CDATA[
+Turn on a quick effect that is similar to the LED notifications on our dimmers and switches.<br /> <h1>Overview</h1><p>Turn on a quick effect that is similar to the LED notifications on our dimmers and switches.</p><p>See website for details.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_22_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>22: Custom Effect Parameter 1</label>
+        <description><![CDATA[
+A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. (Color/Transition)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the color and transition of those actions. See website for details.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_23_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>23: Custom Effect Parameter 2</label>
+        <description><![CDATA[
+A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Level)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the level of those actions. See website for details.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_24_4" type="integer" groupName="configuration"
+                 min="0" max="2147483647">
+        <label>24: Custom Effect Parameter 3</label>
+        <description><![CDATA[
+A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Duration)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the duration of those actions. See website for details.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_4" type="integer" groupName="configuration"
+                 min="0" max="32768">
+        <label>30: Custom Effect Parameter 4</label>
+        <description><![CDATA[
+A custom effect with up to 4 actions can be turned on with correct input for parameters 22- 24, 30. (Iterations/Scale)<br /> <h1>Overview</h1><p>A custom effect with up to 4 actions can be turned on with correct input for parameters 22-24, 30. This parameter controls the number of iterations, the end effect, and the scale of the duration in parameter 24. See website for details.</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_2" type="integer" groupName="configuration"
+                 min="0" max="32767">
+        <label>31: Pixel Effect</label>
+        <description><![CDATA[
+Turn on an effect that utilizes the individually addressable LEDs.<br /> <h1>Overview</h1><p>Turn on an effect that utilizes the individually addressable LEDs. Listed Below.</p><p>Byte 0 = Effect, Byte 1 = Level</p><p>1. Static</p><p>2. Blink</p><p>3. Breath</p><p>4. Color Wipe</p><p>5. Color Wipe Reverse Inverse</p><p>6. Color Wipe Random</p><p>7. Random Color</p><p>8. Single Dynamic</p><p>9. Multi Dynamic</p><p>10. Rainbow</p><p>11. Rainbow Cycle</p><p>12. Scan</p><p>13. Dual Scan</p><p>14. Fade</p><p>15. Running Lights</p><p>16. Twinkle</p><p>17. Twinkle Random</p><p>18. Twinkle Fade</p><p>19. Twinkle Fade Random</p><p>20. Sparkle</p><p>21. Flash Sparkle</p><p>22. Hyper Sparkle</p><p>23. Strobe</p><p>24. Blink Rainbow</p><p>25. Chase White</p><p>26. Chase Color</p><p>27. Chase Random</p><p>28. Chase Rainbow</p><p>29. Chase Flash</p><p>30. Chase Flash Random</p><p>31. Chase Rainbow White</p><p>32. Chase Blackout</p><p>33. Chase Blackout Rainbow</p><p>34. Color Sweep Random</p><p>35. Running Color</p><p>36. Running Red Blue</p><p>37. Running Random</p><p>38. Larson Scanner</p><p>39. Comet</p><p>40. Fireworks</p><p>41. Fireworks Random</p><p>42. Merry Christmas</p><p>43. Circus Combustus</p><p>44. Halloween</p><p>45. Aurora</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_51_1" type="integer" groupName="configuration"
+                 min="0" max="1">
+        <label>51: Disable Physical On/Off Delay</label>
+        <description><![CDATA[
+The 700ms delay that occurs after pressing the physical button to turn the switch on/off is removed.<br /> <h1>Overview</h1><p>The 700ms delay that occurs after pressing the physical button to turn the switch on/off is removed. Consequently this also removes the following scenes: 2x, 3x, 4x, 5x tap. Still working are the 1x tap, held, released, and the level up/down scenes.</p>
+        ]]></description>
+        <default>1</default>
+        <options>
+          <option value="0">Yes</option>
+          <option value="1">No</option>
+        </options>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Group 1</label>
+        <description><![CDATA[
+Lifeline<br /> <h1>Overview</h1><p>Members of this group will receive unsolicited messages related to the status of the switch.</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Group 2</label>
+        <description><![CDATA[
+Basic Set<br /> <h1>Overview</h1><p>Sends On &amp; Off commands to associated devices. (1. Single press UP button sends BasicSet (0xFF) and 2. Single press Down sends BasicSet (0x00)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Group 3</label>
+        <description><![CDATA[
+Switch Multilevel Set<br /> <h1>Overview</h1><p>Sends set level commands to associated devices when the up/down  button is pressed.</p><p>(1. Hold &amp; Release Up or Down button sends SwitchMultiLevelSet which keeps associated devices in sync with this device. 2. Single press Up button sends SwitchMultiLevelSet(0xFF) and 4. Single press Down button sends SwitchMultiLevelSet(0x00)</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_4" type="text" groupName="association" multiple="true">
+        <label>4: Group 4</label>
+        <description><![CDATA[
+Switch Multilevel Set<br /> <h1>Overview</h1><p>Sends start / stop level change to associated devices.</p><p>(1. Hold Up button sends SW_MULTILEVEL_START_LEVEL_CHANGE (Up)</p><p>2: Hold Down button sends SW_MULTILEVEL_START_LEVEL_CHANGE (Down) 3.</p><p>Release Either button sends SW_MULTILEVEL_STOP_LEVEL_CHANGE</p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>

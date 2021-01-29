@@ -311,10 +311,11 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave
         <limitToOptions>false</limitToOptions>
       </parameter>
 
-      <parameter name="config_30_1" type="integer" groupName="configuration"
-                 min="0" max="255">
+      <parameter name="config_30_1" type="integer" groupName="configuration">
         <label>30: Blink Frequency</label>
-        <description>Set blink frequency when displaying custom status</description>
+        <description><![CDATA[
+Set blink frequency when displaying custom status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
         <default>0</default>
         <options>
           <option value="0">No Blink</option>
@@ -324,6 +325,7 @@ Scene Capable Wall Dimmer Switch<br /> <h1>Overview</h1><p>HS-WD200+ is a Z-Wave
           <option value="4">Blink 400ms ON, 400ms OFF</option>
           <option value="5">Blink 500ms ON, 500ms OFF</option>
         </options>
+        <limitToOptions>false</limitToOptions>
       </parameter>
 
       <parameter name="config_31_1_00000001" type="integer" groupName="configuration">

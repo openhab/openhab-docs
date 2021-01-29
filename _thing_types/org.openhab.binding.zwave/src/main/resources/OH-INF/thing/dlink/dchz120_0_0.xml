@@ -77,10 +77,6 @@ Battery Motion Sensor<br /> <h1>Overview</h1><p>The sensor DCH-Z120 has a PIR se
 Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul><li>0: Turn off the light.</li> <li>1 - 100: For dimmers 1 to 100 means the light level.</li> <li>255: Turns on the light. (Default) </li> </ul>
         ]]></description>
         <default>255</default>
-        <options>
-          <option value="0">Off</option>
-          <option value="255">On</option>
-        </options>
       </parameter>
 
       <parameter name="config_3_1" type="integer" groupName="configuration"
@@ -90,9 +86,6 @@ Setting the BASIC command value to turn on the light.<br /> <h1>Overview</h1><ul
 Set the sensitivity for the PIR (Passive Infrared Sensor).<br /> <h1>Overview</h1><ul><li>0 = Disable the PIR motion detection.</li> <li>1 - 99 = 1 means the lowest sensitivity, 99 means the highest sensitivity</li> </ul><p>High sensitivity means can detected long distance, but if there is more noise signal in the environment, it will re-trigger too frequency.  </p>
         ]]></description>
         <default>80</default>
-        <options>
-          <option value="0">Disable</option>
-        </options>
       </parameter>
 
       <parameter name="config_4_1" type="integer" groupName="configuration"
@@ -102,10 +95,6 @@ Set the sensitivity for the PIR (Passive Infrared Sensor).<br /> <h1>Overview</h
 Set the illumination threshold to turn on the light.<br /> <h1>Overview</h1><p>When the event triggers and the environment illumination is lower than the threshold, the device will turn on the light.</p> <ul><li>0 means turn off illumination detected function. And never turn on the light.</li> <li>1 means darkest. 99 means brightest.</li> <li>100 means turn off illumination detected function. And always turn on the light.  </li> </ul><p>Notice: In none test mode, only the value in 1 to 99 will enable the illumination detected function and update the illumination value.  </p>
         ]]></description>
         <default>99</default>
-        <options>
-          <option value="0">Disable, Light OFF</option>
-          <option value="100">Disable, Light ON</option>
-        </options>
       </parameter>
 
       <parameter name="config_5_1" type="integer" groupName="configuration"

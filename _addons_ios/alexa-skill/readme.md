@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Amazon Alexa Smart Home Skill
-source: https://github.com/openhab/openhab-alexa/blob/master/USAGE.md
+source: https://github.com/openhab/openhab-alexa/blob/main/USAGE.md
 description: "Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Dot."
 ---
 
@@ -68,7 +68,12 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
 
 ## Requirements
 
-* [openHAB Cloud Connector](https://www.openhab.org/addons/integrations/openhabcloud/) configured using myopenHAB.org
+::: tip
+This integration relies on the cloud connector addon.
+More information can be found in the corresponding [docs page](https://www.openhab.org/link/openhabcloud).
+:::
+
+* openHAB Cloud Connector configured using myopenHAB.org
 * Amazon account
 * Amazon Echo, Amazon Echo Dot or compatible Alexa device
 

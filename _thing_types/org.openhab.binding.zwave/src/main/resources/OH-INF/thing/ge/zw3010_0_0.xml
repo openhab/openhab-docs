@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="zwave"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+  xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+                      https://openhab.org/schemas/thing-description/v1.0.0">
+
+  <thing-type id="ge_zw3010_00_000" listed="false">
+    <label>ZW3010 In-Wall Smart Dimmer ZW3010 / 39351</label>
+    <description><![CDATA[
+In-Wall Smart Dimmer ZW3010 / 39351<br /> <h1>Overview</h1><p><br /></p> <br /> <h2>Inclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the smart fan control switch (rocker) to add it in the network.<br /></p> <br /> <h2>Exclusion Information</h2><p>Once the controller is ready to add your device, press and release the top or bottom of the switch (rocker) to add it in the network.<br /></p> <br /> <h2>Wakeup Information</h2><p><br /></p>
+    ]]></description>
+    <category>WallSwitch</category>
+
+    <!-- CHANNEL DEFINITIONS -->
+    <channels>
+      <channel id="switch_dimmer" typeId="switch_dimmer">
+        <label>Dimmer</label>
+        <properties>
+          <property name="binding:*:PercentType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+          <property name="binding:Command:OnOffType">COMMAND_CLASS_SWITCH_MULTILEVEL</property>
+        </properties>
+      </channel>
+      <channel id="scene_number" typeId="scene_number">
+        <label>Scene Number</label>
+        <properties>
+          <property name="binding:*:DecimalType">COMMAND_CLASS_CENTRAL_SCENE</property>
+        </properties>
+      </channel>
+    </channels>
+
+    <!-- DEVICE PROPERTY DEFINITIONS -->
+    <properties>
+      <property name="vendor">Jasco Products</property>
+      <property name="modelId">ZW3010</property>
+      <property name="manufacturerId">0063</property>
+      <property name="manufacturerRef">4944:3339</property>
+      <property name="dbReference">1341</property>
+      <property name="defaultAssociations">1</property>
+    </properties>
+
+    <!-- CONFIGURATION DESCRIPTIONS -->
+    <config-description>
+
+      <!-- GROUP DEFINITIONS -->
+      <parameter-group name="configuration">
+        <context>setup</context>
+        <label>Configuration Parameters</label>
+      </parameter-group>
+
+      <parameter-group name="association">
+        <context>link</context>
+        <label>Association Groups</label>
+      </parameter-group>
+
+      <!-- PARAMETER DEFINITIONS -->
+      <parameter name="config_3_1" type="integer" groupName="configuration"
+                 min="0" max="3">
+        <label>3: LED Status</label>
+        <description><![CDATA[
+LED Status<br /> <h1>Overview</h1><p><br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Device is ON, LED is OFF; device is OFF, LED is ON</option>
+          <option value="1">Device is ON, LED is ON; device is OFF, LED is OFF</option>
+          <option value="2">LED always OFF</option>
+          <option value="3">LED always ON</option>
+        </options>
+      </parameter>
+
+      <parameter name="config_6_1" type="integer" groupName="configuration">
+        <label>6: Dim up/down rate</label>
+        <description><![CDATA[
+Dim up/down rate<br /> <h1>Overview</h1><p>Adjust the speed at which the ramps to a specific value other than 0 and FF<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Quickly</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_16_1" type="integer" groupName="configuration">
+        <label>16: Switch Mode</label>
+        <description><![CDATA[
+Switch Mode<br /> <h1>Overview</h1><p>Turn your dimmer into an On/Off switch with switch mode<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Dimmer Mode</option>
+          <option value="1">Switch Mode</option>
+        </options>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_19_1" type="integer" groupName="configuration">
+        <label>19: Alternate Exclusion</label>
+        <description><![CDATA[
+Alternate Exclusion<br /> <h1>Overview</h1><p>Never accidentally remove a device with alternate exclusion.<br /></p>
+        ]]></description>
+        <default>0</default>
+        <options>
+          <option value="0">Normal, Press Any Button on the device</option>
+          <option value="1">Alternate</option>
+        </options>
+        <advanced>true</advanced>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_30_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>30: Minimum Dim Threshold</label>
+        <description><![CDATA[
+Minimum Dim Threshold<br /> <h1>Overview</h1><p>Set the minimum dimmer threshold when manually or remotely controlled<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_31_1" type="integer" groupName="configuration"
+                 min="1" max="99">
+        <label>31: Maximum Brightness Threshold</label>
+        <description><![CDATA[
+Maximum Brightness Threshold<br /> <h1>Overview</h1><p>Set the maximum brightness threshold when manually or remotely controlled<br /></p>
+        ]]></description>
+        <default>1</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <parameter name="config_32_1" type="integer" groupName="configuration"
+                 min="0" max="99">
+        <label>32: Default Brightness Level</label>
+        <description><![CDATA[
+Default Brightness Level<br /> <h1>Overview</h1><p>Set the default brightness level that the dimmer will turn on when being controlled manually</p><p>0 = Default</p><p>1 - 99 = percentage</p>
+        ]]></description>
+        <default>0</default>
+        <limitToOptions>false</limitToOptions>
+      </parameter>
+
+      <!-- ASSOCIATION DEFINITIONS -->
+      <parameter name="group_1" type="text" groupName="association" multiple="true">
+        <label>1: Lifeline</label>
+        <description>Z-Wave Plus Lifeline, Multilevel Switch Report</description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_2" type="text" groupName="association" multiple="true">
+        <label>2: Basic Set Local Load</label>
+        <description><![CDATA[
+Support Basic Set and is controlled with the local load<br /> <h1>Overview</h1><p>Supports Basic Set and is controlled with local load<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <parameter name="group_3" type="text" groupName="association" multiple="true">
+        <label>3: Basic Set Double Press</label>
+        <description><![CDATA[
+Supports Basic Set and is controlled by double pressing the On or Off button<br /> <h1>Overview</h1><p>Basic Set and is controlled by double pressing the ON or OFF button<br /></p>
+        ]]></description>
+        <multipleLimit>5</multipleLimit>
+      </parameter>
+
+      <!-- STATIC DEFINITIONS -->
+      <parameter name="node_id" type="integer" min="1" max="232" readOnly="true" required="true">
+        <label>Node ID</label>
+        <advanced>true</advanced>
+      </parameter>
+
+    </config-description>
+
+  </thing-type>
+
+</thing:thing-descriptions>
