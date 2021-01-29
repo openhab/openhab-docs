@@ -87,6 +87,7 @@ module.exports = [
       'ui/map-pages',
       'ui/floorplan-pages',
       'ui/tabbed-pages',
+      ['ui/building-pages', 'Building Pages'],
       'ui/habpanel',
       ['apps/android', 'Android App'],
       'apps/ios',

@@ -25,7 +25,7 @@ Some of these cards will also feature glance badges that will extract some prede
 
 ### Sitemaps
 
-**Sitemaps** are hierarchies of pages and sub-pages that are comprised of simple controls from a well-defined, limited set.
+[**Sitemaps**](./sitemaps.html) are hierarchies of pages and sub-pages that are comprised of simple controls from a well-defined, limited set.
 They have existed in openHAB since its first versions, therefore you will probably encounter a lot of examples referring to them throughout the documentation and in the older community discussions.
 
 As they have less customization options than the other types of pages, notably as compared to the more powerful layout pages, they are also arguably easier to learn.
@@ -35,26 +35,26 @@ Fortunately, there are however several other mature apps, notably the mobile app
 
 ### Layout Pages
 
-**Layout pages**, introduced in openHAB 3, are the most common and versatile way of displaying information in the main UI.
-They have extensive options to control how they are laid out, and can display **Widgets** coming from the built-in libraries or widgets that you have designed or imported in your personal library.
+[**Layout pages**](./layout-pages.html), introduced in openHAB 3, are the most common and versatile way of displaying information in the main UI.
+They have extensive options to control how they are laid out, and can display [**Widgets**](./building-pages.html) coming from the built-in libraries or widgets that you have designed or imported in your personal library.
 
 
 ### Maps & Floorplans
 
-**Maps** and **Floorplans** are Pages dedicated to displaying markers and other elements on a background overlay.
+[**Maps**](./map-pages.html) and [**Floorplans**](./floorplan-pages.html) are Pages dedicated to displaying markers and other elements on a background overlay.
 
 In case of floorplans, the background will be a custom image defined by you; in case of maps, it will be a zoomable view of the world from a provider service, either an actual map layer or a satellite view, centered on the markers that you defined.
 
 ### Charts
 
-**Chart** pages are meant for interactive visualization of persisted data in the main UI.
+[**Chart**](./chart-pages.html) pages are meant for interactive visualization of persisted data in the main UI.
 Options include displaying time series, aggregates, heatmaps, calendars, with the ability to select the period and date to show.
 
 You can either start them from scratch by creating a new Chart page from the Pages section, or, when in the Analyzer, you can save the result of a analyzing session to a chart page for further customization and retaining the current view.
 
 ### Tabbed Pages
 
-**Tabbed Pages** are Pages used to combine several other Pages and render them in tabs.
+[**Tabbed Pages**](./tabbed-pages.html) are Pages used to combine several other Pages and render them in tabs.
 
 You simply configure the Pages that you wish to show, choose a few details about the tabs themselves (label, icon...) and can then consider the result as a single Page.
 
@@ -65,12 +65,12 @@ The table below summarizes the different types of Pages and their compatibility:
 |Type|Designed in|Viewed in|Stored in|
 |----|-----------|---------|---------|
 |Home|main UI|main UI|JSON DB|
-|Sitemap|main UI or `.sitemap` file|Basic UI, iOS/Android apps and others|Configuration folder or JSON DB|
-|Layout|main UI|main UI|JSON DB|
-|Map|main UI|main UI|JSON DB|
-|Floorplan|main UI|main UI|JSON DB|
-|Chart|main UI|main UI|JSON DB|
-|Tabbed|main UI|main UI|JSON DB|
+|[Sitemap](./sitemaps.html)|main UI or `.sitemap` file|Basic UI, iOS/Android apps and others|Configuration folder or JSON DB|
+|[Layout](./layout-pages.html)|main UI|main UI|JSON DB|
+|[Map](./map-pages.html)|main UI|main UI|JSON DB|
+|[Floorplan](./floorplan-pages.html)|main UI|main UI|JSON DB|
+|[Chart](./chart-pages.html)|main UI|main UI|JSON DB|
+|[Tabbed](./tabbed-pages.html)|main UI|main UI|JSON DB|
 
 
 ## Designing Pages
@@ -85,7 +85,7 @@ Sitemaps that you created in configuration files (`sitemaps/*.sitemap` files) ar
 
 Every type of Page has its own designer but all of them with feature a *Design* tab and a *Code* tab.
 
-In the Design tab, you have a view of the Page that easily allows you to add components in various parts. Every designer also has a _"general settings"_ table that will allow you to specify the identifier, the label, as well as some common settings.
+In the Design tab, you have a view of the Page that easily allows you to add [Widgets](./building-pages.html) in various parts. Every designer also has a _"general settings"_ table that will allow you to specify the identifier, the label, as well as some common settings.
 
 You will often find black buttons denoting that the component beside or beneath it can be customized. Some will open menus, that allow to open the configuration sheet for this particular component, reorder them, copy or paste them, remove them, or bring up the part of the YAML structure describing it and its descendents.
 
