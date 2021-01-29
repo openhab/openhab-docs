@@ -48,16 +48,16 @@ pull_or_clone_repo() {
 }
 
 # Pull or clone the repo with a specified branch into the given folder
-pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" master
+pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" main
 pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" main
-pull_or_clone_repo "openhabian" "openhab/openhabian.git" master
-pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" master
-pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" master
-pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" master
-pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" master
-pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" master
-pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zigbee" "openhab/org.openhab.binding.zigbee.git" master
-pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zwave" "openhab/org.openhab.binding.zwave.git" master
+pull_or_clone_repo "openhabian" "openhab/openhabian.git" main
+pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" main
+pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" main
+pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" main
+pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" main
+pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" main
+pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zigbee" "openhab/org.openhab.binding.zigbee.git" main
+pull_or_clone_repo "openhab-addons/bundles/org.openhab.binding.zwave" "openhab/org.openhab.binding.zwave.git" main
 # copy zigbee readme to where the groovy script will see it
 cp $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/org.openhab.binding.zigbee/README.md $resourcefolder/openhab-addons/bundles/org.openhab.binding.zigbee/
 #rm -rf openhab-addons/bundles/org.openhab.binding.zwave
