@@ -210,7 +210,7 @@ Analyze Item(s) | Opens the Analyzer window for the specified item(s) and period
 External URL | Open an external web page
 Set Variable | Set a variable that you can use in other parts of the page or widget.
 
-::: TIP
+::: tip
 
 In your own personal widgets (see below), you can define a parameter group with an `action` context to automatically define implicit props that you can pass "en masse" to built-in components that accept actions with the `actionPropsParameterGroup` property:
 
