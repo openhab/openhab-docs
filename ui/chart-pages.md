@@ -51,6 +51,7 @@ Usually, you will first add a Grid, then either directly one or more Time Series
 When doing aggregations, you have to be careful to add the right type of axes based on the period that you chose (Aggregate Series don't support Dynamic period as chart type).
 
 Examples:
+
 - For bars representing hourly aggregates, use a value Y axis and a category axis configured as "Hours of day".
 Then click Add Aggregate Series, choose the item, the Bar type, and "Hour of Day" as first dimension.
 - For a 2-dimension heatmap representing hours for an entire month, add a category Y axis configured as "days of month" and a category X axis configured as "hours of day".
